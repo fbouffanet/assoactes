@@ -1,0 +1,178 @@
+/* css de la mise à jour sommaire */
+
+body {
+   background-color: #F7F7F0;
+/*   margin: 5px 5px 5px 5px;
+   font-family: "verdana", comic, sans-serif;
+*/	
+}
+
+h2 {
+	text-align: center;
+}
+
+input {
+	box-shadow: 3px 3px 3px #4c6ec8;
+}
+
+.cadre_titre {
+   position: absolute;
+	top: 50px;
+	left: 290px;
+   width: 500px;
+	height: 50px;
+/*	padding-left: 30px;*/
+/*	text-align: right;*/
+/*	border: 1px solid #333333;
+	background-color: #ecf7f9; */
+}
+
+.cadre_depart {
+   position: absolute;
+	top: 210px;
+	left: 290px;
+   width: 500px;
+	height: 300px;
+/*	border: 1px solid #333333;
+	background-color: #ecf7f9;  */
+}
+
+		 
+.creat, .maj, .retour
+{
+   width: 500px;
+   height: 30px;
+   text-align: center;
+}
+
+.cadre_table {
+   position: absolute;
+	top: 120px;
+	left: 120px;
+   width: 900px;
+	height: 360px;
+/*	border: 1px solid #333333;
+	background-color: #ecf7f9;  */
+}
+
+.cadre_saisie {
+   position: absolute;
+	top: 210px;
+	left: 210px;
+   width: 700px;
+	height: 360px;
+/*	border: 1px solid #333333;
+	background-color: #ecf7f9;  */
+}
+
+div input.droite{
+   float: right;
+}
+
+label {
+   display: inline-block;
+   width: 280px;
+	padding-left: 5px;
+}
+
+#MenuAGC, #MenuAGC ul /* Liste */     
+{
+        padding : 0; /* pas de marge intérieure */
+        margin : 0; /* ni extérieure */
+        list-style : none; /* on supprime le style par défaut de la liste */
+        line-height : 21px; /* on définit une hauteur pour chaque élément */
+        text-align : center; /* on centre le texte qui se trouve dans la liste */
+        z-index:2;
+}
+
+#MenuAGC /* Ensemble du menu */
+{
+        font-weight : bold; /* on met le texte en gras */
+        font-family : Arial; /* on utilise Arial, c'est plus beau ^^ */
+        font-size : 12px; /* hauteur du texte : 12 pixels */
+        z-index:2;
+}
+
+#MenuAGC a /* Contenu des listes */
+{
+        display : block; /* on change le type d'élément, les liens deviennent des balises de type block */
+        padding : 0; /* aucune marge intérieure */
+        background : #ddd; /* couleur de fond */        
+        color : blue; /* couleur du texte */
+        text-decoration : none; /* on supprime le style par défaut des liens (la plupart du temps = souligné) */
+        width : 150px; /* largeur */
+        z-index:2;
+}
+
+#MenuAGC li /* Elements des listes */      
+{ 
+        float : left; 
+        /* pour IE qui ne reconnaît pas "transparent" */
+        border-right : 1px solid #fff; /* on met une bordure blanche à droite de chaque élément */
+        z-index:2;
+}
+
+/* IE ne reconnaissant pas le sélecteur ">" */
+html>body #MenuAGC li
+{
+        border-right: 1px solid transparent ; /* on met une bordure transparente à droite de chaque élément */
+        z-index:2;
+}
+
+#MenuAGC li ul /* Sous-listes */
+{ 
+        position: absolute; /* Position absolue */
+        width: 120px; /* Largeur des sous-listes */
+        left: -999em; /* Hop, on envoie loin du champ de vision */
+        z-index:2;
+}
+
+
+#MenuAGC li ul li /* +léments de sous-listes */
+{
+        /* pour IE qui ne reconnaît pas "transparent" (comme précédemment) */
+        border-top : 1px solid #fff; /* on met une bordure blanche en haut de chaque élément d'une sous liste */
+        z-index:2;
+}
+
+/* IE ne reconnaissant pas le sélecteur ">" */
+html>body #MenuAGC li ul li                
+{
+        border-top : 1px solid transparent; /* on met une bordure transparente en haut de chaque élément */
+        z-index:2;
+}
+
+#MenuAGC li ul ul 
+{
+        margin    : -22px 0 0 120px ; /* On décale les sous-sous-listes pour qu'elles ne soient pas au dessus des sous-listes */ 
+        /* pour IE qui ne reconnaît pas "transparent" (comme précédemment) */
+        border-left     : 1px solid #fff ; /* Petite bordure à gauche pour ne pas coller ... */     
+        z-index:2; 
+}
+
+/* IE ne reconnaissant pas le sélecteur ">" ... je me répète ;-) */
+html>body #MenuAGC li ul ul                
+{
+        border-left     : 1px solid transparent ; /* on met une bordure transparente sur la gauche de chaque élément */
+        z-index:2;
+}
+
+#MenuAGC a:hover /* Lorsque la souris passe sur un des liens */    
+{
+        color: white; /* On passe le texte en noir... */
+        background: #777; /* ... et au contraire, le fond en gris fonc‚ */
+        z-index:2;
+}
+
+#MenuAGC li:hover ul ul, #MenuAGC li.sfhover ul ul /* Sous-sous-listes lorsque la souris passe sur un élément de liste */
+{
+        left: -999em; /* On expédie les sous-sous-listes hors du champ de vision */
+        z-index:2;
+}
+
+#MenuAGC li:hover ul, #MenuAGC li li:hover ul, #MenuAGC li.sfhover ul, #MenuAGC li li.sfhover ul  /* Sous-listes lorsque la souris passe sur un élément de liste ET sous-sous-lites lorsque la souris passe sur un élément de sous-liste */
+{
+        left: auto; /* Repositionnement normal */
+        min-height: 0; /* Corrige un bug sous IE */
+        z-index:2;
+}
