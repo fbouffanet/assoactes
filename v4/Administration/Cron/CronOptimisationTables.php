@@ -1,0 +1,35 @@
+<?php
+
+require_once '/var/www/clients/client1/web12/web/v4/Commun/config.php';
+require_once '/var/www/clients/client1/web12/web/v4/Commun/constantes.php';
+require_once '/var/www/clients/client1/web12/web/v4/Commun/ConnexionBD.php';
+
+$connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
+
+$ga_tables = array('acte','chargement','commune_personne','personne','prenom','profession','stats_commune','stats_patronyme','tableau_kilometrique','type_acte','union','variantes_patro');
+
+
+$st_texte = '';
+foreach ($ga_tables as $st_table) {
+  print("Table $st_table<br>");
+  list($usec, $sec) = explode(" ",microtime());
+  $i_temp_prec= (float)$usec + (float)$sec;
+  $connexionBD->execute_requete("optimize table `$st_table`");
+  list($usec, $sec) = explode(" ",microtime());
+$i_temp_cour= (float)$usec + (float)$sec;
+  $st_texte .= sprintf("Optimisation de <b>%s</b> en %d ms<br>\n",strtoupper($st_table),$i_temp_cour-$i_temp_prec);
+  $st_texte .= sprintf("Derniere erreur SQL=%s <br>\n",$connexionBD->msg_erreur());
+}
+
+
+//
+$st_entete  = 'MIME-Version: 1.0' . "\r\n";    
+$st_entete .= 'Content-type: text/html; charset=cp1252' . "\r\n";
+$st_entete .= "From: FB <genefreb@neuf.fr>\r\n";
+mail('genefreb@neuf.fr', "Cron Optimisation V4 terminé", $st_texte, $st_entete);  
+//mail('genefreb@neuf.fr,fbouffanet@yahoo.fr', "Cron Optimisation V4 terminé", $st_texte, $st_entete);   
+$connexionBD->ferme();
+
+print("Script terminé<br>");
+
+?>
