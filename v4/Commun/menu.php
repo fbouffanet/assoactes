@@ -1,17 +1,4 @@
-<script type='text/javascript'>
-sfHover = function() {
-        var sfEls = document.getElementById("MenuAGC").getElementsByTagName("LI");
-        for (var i=0; i<sfEls.length; i++) {
-                sfEls[i].onmouseover=function() {
-                        this.className+=" sfhover";
-                }
-                sfEls[i].onmouseout=function() {
-                        this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
-                }
-        }
-}
-if (window.attachEvent) window.attachEvent("onload", sfHover);
-</script>
+
 <?php
 // connexion BD doit avoir été chargé
 $a_categories_menu =$connexionBD->sql_select_multiple("select libelle,script,droit from categorie_menu order by rang");
@@ -22,27 +9,28 @@ else
   $a_privileges_utilisateur = array();
 
 $gst_racine_site = $gst_url_site;
-//print("\n<!--[if IE]><div  class=\"ContenuMenuIE\"><![endif]-->\n");
-print("<div>");
-print('<ul id="MenuAGC" >');
 
+
+
+print("<nav class=\"navbar navbar-default navbar-static-top\">\n");
+print("<ul class=\"nav navbar-nav\">\n");
 foreach ($a_categories_menu as $a_categorie)
 {
    list($st_categorie,$st_script,$st_droit) = $a_categorie;
    if ($st_droit=='' || in_array($st_droit,$a_privileges_utilisateur))
-   {  
-      print("<li>\n");
-      if ($st_script=='')        
-         print("<a href=\"#\">$st_categorie</a>\n");
+   {        
+      /*if ($st_script=='')        
+         print("<li class=\"dropdown\"><a href=\"#\" data-toggle=\"dropdown\">$st_categorie</a></li>\n");
       else if (preg_match('/^http\:\/\//',$st_script))
-                 print("<a href=\"$st_script\" target=\"_blank\">$st_categorie</a>\n");   
+                 print("<li><a href=\"$st_script\" target=\"_blank\" data-toggle=\"dropdown\">$st_categorie</a></li>\n");   
       else 
-         print("<a href=\"$gst_racine_site/$st_script\">$st_categorie</a>\n");            
+         print("<li class=\"dropdown\"><a href=\"$gst_racine_site/$st_script\" data-toggle=\"dropdown\">$st_categorie</a></li>\n");            
+      */
       if (isset($a_elements_menu[strval($st_categorie)]))
       {
+         print("<li class=\"dropdown\"><a data-toggle=\"dropdown\" href=\"$st_script\">$st_categorie<b class=\"caret\"></b></a>\n");
          $a_elements_categorie = $a_elements_menu[strval($st_categorie)]; 
-//         print("<ul class=\"Menu\">\n");
-         print("<ul>\n");
+         print("<ul class=\"dropdown-menu\">\n");
          foreach ($a_elements_categorie as $st_libelle => $a_elements)
          {
            list($st_script,$st_droit)= $a_elements;
@@ -60,10 +48,11 @@ foreach ($a_categories_menu as $a_categorie)
          }
          print("</ul>\n");
       }
-      print("</li>\n");
+      else
+        print("<li ><a href=\"$st_script\">$st_categorie</a>\n");
    }   
 }
 
 //print ('</ul><br><br><br>');
 
-print ('</ul><br><br><br></div>');
+print ('</ul></nav>');
