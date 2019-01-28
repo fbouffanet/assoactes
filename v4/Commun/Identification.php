@@ -101,7 +101,7 @@ function verifie_utilisateur($pst_ident,$pst_mdp)
 function affiche_menu_auth($pst_message)
 {
   global $gst_url_site;
-  print("<!DOCTYPE html><html>");
+  print("<!DOCTYPE html>");
   print("<head>\n");
   //print("<script src='$gst_url_site/Commun/Identification.js' type='text/javascript'></script>\n");
   print("<link href='$gst_url_site/Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
