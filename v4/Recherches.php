@@ -13,16 +13,19 @@ print('<title>Base AGC: Vos recherches</title>');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+//print("<link href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
 print("<link href='Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
 print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
+//print("<script src='https://code.jquery.com/jquery-3.3.1.min.js' type='text/javascript'></script>");
 print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>");
 print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='js/select2.min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
+//print("<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js' type='text/javascript'></script>"); 
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 ?>
 <script type='text/javascript'>
