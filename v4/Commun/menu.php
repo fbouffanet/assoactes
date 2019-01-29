@@ -10,8 +10,6 @@ else
 
 $gst_racine_site = $gst_url_site;
 
-
-
 print("<nav class=\"navbar navbar-default navbar-static-top\">\n");
 print("<ul class=\"nav navbar-nav\">\n");
 foreach ($a_categories_menu as $a_categorie)
@@ -19,13 +17,6 @@ foreach ($a_categories_menu as $a_categorie)
    list($st_categorie,$st_script,$st_droit) = $a_categorie;
    if ($st_droit=='' || in_array($st_droit,$a_privileges_utilisateur))
    {        
-      /*if ($st_script=='')        
-         print("<li class=\"dropdown\"><a href=\"#\" data-toggle=\"dropdown\">$st_categorie</a></li>\n");
-      else if (preg_match('/^http\:\/\//',$st_script))
-                 print("<li><a href=\"$st_script\" target=\"_blank\" data-toggle=\"dropdown\">$st_categorie</a></li>\n");   
-      else 
-         print("<li class=\"dropdown\"><a href=\"$gst_racine_site/$st_script\" data-toggle=\"dropdown\">$st_categorie</a></li>\n");            
-      */
       if (isset($a_elements_menu[strval($st_categorie)]))
       {
          print("<li class=\"dropdown\"><a data-toggle=\"dropdown\" href=\"$st_script\">$st_categorie<b class=\"caret\"></b></a>\n");
@@ -46,13 +37,17 @@ foreach ($a_categories_menu as $a_categorie)
               print("</li>");   
            }
          }
-         print("</ul>\n");
+         print("</ul></li>\n");
       }
       else
-        print("<li ><a href=\"$st_script\">$st_categorie</a>\n");
+      {
+        if ($st_script=='')        
+          print("<li ><a href=\"#\">$st_categorie</a>\n");
+        else if (preg_match('/^http\:\/\//',$st_script))
+          print("<li ><a href=\"$st_script\" target=\"_blank\">$st_categorie</a>\n"); 
+        else 
+          print("<li ><a href=\"$st_script\">$st_categorie</a>\n");
+      }  
    }   
 }
-
-//print ('</ul><br><br><br>');
-
 print ('</ul></nav>');
