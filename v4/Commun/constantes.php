@@ -78,7 +78,7 @@ define('EMAIL_GBKADMIN','agc-geneabank@genea16.net');
 define('EMAIL_PRESASSO','agc-dir@genea16.net');
 define('IDF_ASSO_GBK','gbkagcharente');
 define('PREFIXE_ADH_GBK','AGC');
-define('NB_POINTS_GBK',70);
+define('NB_POINTS_GBK',100);
 
 define('TOUS_ADHERENTS','T');
 define('ADHESION_BULLETIN','B');
