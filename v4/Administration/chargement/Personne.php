@@ -45,6 +45,7 @@ class Personne
          $this -> st_origine = null;
          $this -> a_origine = array();
          $this -> a_profession = array();
+         $this -> st_age =null;
          $this -> i_idf_mere = 0;
          $this -> i_idf_pere = 0;
          $this -> i_est_decede = null;
@@ -90,6 +91,15 @@ class Personne
          $this -> c_sexe = $pst_sexe;
          } 
     
+    public function setAge($pst_age)
+    {
+         $this -> st_age = $pst_age;
+         }
+    
+    public function getAge($pst_age)
+    {
+         return $this -> st_age;
+         }
     public function getSexe()
     {
          return $this -> c_sexe;
