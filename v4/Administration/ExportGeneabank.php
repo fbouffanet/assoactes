@@ -239,7 +239,7 @@ switch ($gst_mode) {
      ExporteIndexesCommunes($connexionBD,$gst_repertoire_indexes_geneabank,$gst_compteurs_communes_geneabank,$gst_url_indexes_geneabank);
    break;
    case 'EXPORT_COMPTEURS':
-   MajCompteurAdherents($connexionBD,$gst_repertoire_indexes_geneabank,$gst_compteurs_adherents_geneabank,$gst_url_indexes_geneabank,PREFIXE_ADH_GBK,$gi_nb_demandes_gbk);
+   MajCompteurAdherents($connexionBD,$gst_repertoire_indexes_geneabank,$gst_compteurs_adherents_geneabank,$gst_url_indexes_geneabank,PREFIXE_ADH_GBK,NB_POINTS_GBK);
    break;
    default : print("Mode $gst_mode non reconnu");
 }
