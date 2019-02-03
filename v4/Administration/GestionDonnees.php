@@ -1166,7 +1166,8 @@ $i_session_idf_releveur= isset($_SESSION['idf_releveur']) ? $_SESSION['idf_relev
 $gi_idf_releveur = empty($_POST['idf_releveur']) ? $i_session_idf_releveur: (int) $_POST['idf_releveur'];
 $gc_idf_type_acte = empty($_POST['idf_type_acte']) ? '0': $_POST['idf_type_acte'];
 $gi_idf_version_nimegue = empty($_POST['idf_version_nimegue']) ? 3 : (int) $_POST['idf_version_nimegue'];
-$gi_annee_recens = empty($_POST['annee_recens']) ? null : (int) $_POST['annee_recens'];
+$i_session_annee_recens = isset($_SESSION['annee_recens']) ? $_SESSION['annee_recens'] : '';
+$gi_annee_recens = empty($_POST['annee_recens']) ? $i_session_annee_recens : (int) $_POST['annee_recens'];
 $ga_sources = $connexionBD->liste_valeur_par_clef("select idf,nom from source order by nom");
 $ga_communes_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from commune_acte order by nom");
 $ga_adherents = $connexionBD->sql_select_multiple_par_idf("select idf,prenom,nom from adherent order by nom,prenom");
@@ -1319,7 +1320,7 @@ $(document).ready(function() {
     }
 	},
   submitHandler: function(form) {
-    var source=$('#idf_source option:selected').text();
+    var annee_recens=$('#annee_recens').val();
     var commune=$('#idf_commune_recens option:selected').text();
     if (confirm('Etes-vous sûr de charger les recensements de la commune '+commune+' ('+annee_recens+') ?'))
     {
