@@ -24,6 +24,7 @@ require_once 'chargement/StatsCommune.php';
 require_once 'chargement/StatsPatronyme.php';
 require_once 'chargement/ChargementNimV2.php';
 require_once 'chargement/ChargementNimV3.php';
+require_once 'chargement/ChargementRecens.php';
 require_once 'chargement/Releveur.php';
 
 /**
@@ -1097,7 +1098,7 @@ function export_index_AD($pconnexionBD,$pst_fichier)
  */
 function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_idf_type_acte,$pi_idf_version_nimegue)
 {
-    global $gi_max_taille_upload,$ga_sources,$ga_communes_acte,$ga_adherents,$ga_types_nimegue,$ga_versions_nimegue; 
+    global $gi_max_taille_upload,$ga_sources,$ga_communes_acte,$gi_annee_recens,$ga_adherents,$ga_types_nimegue,$ga_versions_nimegue; 
     print("<form id=chargement enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
      print("<div class=TITRE>Chargement/Export des donn&eacute;es d'une commune/paroisse<br></div>"); 
      print("<div align=center><input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\" >"); 
@@ -1134,10 +1135,21 @@ function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_i
      print('<input type="hidden" name="mode" id="mode_export" value="">'); 
      print('<div align=center><br><input type="submit" value="Exporter la commune au format sélectionné"/><br></div>');
      print("</form>");
-     print("<form id=export_ad  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
+     print("<form id=chgt_recens  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
      print('<input type="hidden" name="mode" id=\"mode_export\" value="">'); 
      print('<div align=center><br><input type="submit" value="Exporter les index pour les AD""/><br></div>');
      print("</form>");
+     print("<form id=chargement_recens enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+     print("<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\" >"); 
+     print('<input type="hidden" name="mode" value="CHARGEMENT_RECENS">');
+     print('<div align=center><br>Commune: <select name=idf_commune_acte id=idf_commune_recens class="js-select-avec-recherche" >');
+     print(chaine_select_options($pi_idf_commune_acte,$ga_communes_acte));
+     print('</select><br></div>');
+     print("<div align=center><br>Ann&eacute;e:<input type=\"text\" name=\"annee_recens\" id=\"annee_recens\" size=\"4\" maxlength=\"4\" value=\"$gi_annee_recens\" ></div>");
+     print('<div align=center><br>Fichier: <input name="FichRecens" type="file" /><br></div>');
+     print('<div align=center><br><input type="submit" value="Charger le recensement"/><br></div>');
+     print("</form>");
+
 }     
 
 /*------------------------------------------------------------------------------
@@ -1154,6 +1166,7 @@ $i_session_idf_releveur= isset($_SESSION['idf_releveur']) ? $_SESSION['idf_relev
 $gi_idf_releveur = empty($_POST['idf_releveur']) ? $i_session_idf_releveur: (int) $_POST['idf_releveur'];
 $gc_idf_type_acte = empty($_POST['idf_type_acte']) ? '0': $_POST['idf_type_acte'];
 $gi_idf_version_nimegue = empty($_POST['idf_version_nimegue']) ? 3 : (int) $_POST['idf_version_nimegue'];
+$gi_annee_recens = empty($_POST['annee_recens']) ? null : (int) $_POST['annee_recens'];
 $ga_sources = $connexionBD->liste_valeur_par_clef("select idf,nom from source order by nom");
 $ga_communes_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from commune_acte order by nom");
 $ga_adherents = $connexionBD->sql_select_multiple_par_idf("select idf,prenom,nom from adherent order by nom,prenom");
@@ -1280,6 +1293,39 @@ $(document).ready(function() {
 			 form.submit();
     }
     }       
+  });
+  
+   $("#chargement_recens").validate({
+	 rules: {
+    annee_recens: {
+       required:true,
+       integer:true,
+       minlength:4
+    },
+     FichRecens: {
+        required: true,
+        extension: "csv|txt"
+      }
+    },  
+	 messages: {
+	  FichRecens: {
+			required: "Un fichier doit être choisi",
+			extension: "Le fichier doit être du type csv ou txt"
+		},
+    annee_recens: {
+       required: "L'année doit être spécifiée",
+       integer: "L'année doit être un entier",
+       minlength: "L'année doit comporter 4 chiffes"
+    }
+	},
+  submitHandler: function(form) {
+    var source=$('#idf_source option:selected').text();
+    var commune=$('#idf_commune_recens option:selected').text();
+    if (confirm('Etes-vous sûr de charger les recensements de la commune '+commune+' ('+annee_recens+') ?'))
+    {
+			 form.submit();
+    }
+    }      
   });
 
   //validation rules
@@ -1453,6 +1499,45 @@ switch($gst_mode)
    print("<input type=submit value=\"Menu Chargement\"></div>");
     print("</form>");   
    break;
+   
+   case 'CHARGEMENT_RECENS' :
+     ini_set("memory_limit","256M");    
+     $_SESSION['idf_source'] = $gi_idf_source;
+     $_SESSION['idf_commune_acte'] = $gi_idf_commune_acte;
+     $_SESSION['annee_recens'] = $gi_annee_recens;
+     list($st_nom_commune,$i_code_insee,$i_numero_paroisse) = $connexionBD->sql_select_liste("select nom,code_insee,numero_paroisse from commune_acte where idf=$gi_idf_commune_acte");     
+     // Suppression des quotes ‚ventuelles
+     $st_nom_commune= str_replace ("'",'',$st_nom_commune);
+     if (preg_match("/^([\w\-]+)\s*/",$st_nom_commune,$a_correspondances))
+     {
+        // Récupère le premier champ de la commune qui doit ˆtre un alphanumerique
+        $st_nom=$a_correspondances[1];
+        $st_nom_fich_dest = sprintf("%s_%.5d%.2d-recens.txt",$st_nom,$i_code_insee,$i_numero_paroisse);   
+        
+     }
+     else
+        $st_nom_fich_dest = sprintf("INCONNU_%.5d%.2d-$st_type_nimegue.txt",$i_code_insee,$i_numero_paroisse);     
+     $st_fich_dest = "$gst_repertoire_telechargement/$st_nom_fich_dest";
+     if (!move_uploaded_file($_FILES['FichRecens']['tmp_name'],$st_fich_dest)) 
+     {
+        print("Erreur de telechargement : impossible de copier en $st_fich_dest:<br>");
+        switch($_FILES['FichRecens']['error'])
+        { 
+           case 2 : print("Fichier trop gros par rapport a MAX_FILE_SIZE");break;
+           default : print("Erreur inconnue");print_r($_FILES);
+        }
+        
+        exit;
+     }
+     chmod($st_fich_dest,0444);
+     $i_nb_actes_charges =charge_recensement($st_fich_dest,$gi_idf_commune_acte,$gi_annee_recens,IDF_SOURCE_RECENS,null,$gst_repertoire_chargement_actes);
+     //$connexionBD->execute_requete("insert into chargement(date_chgt,idf_commune,type_acte_nim,nb_actes) values(now(),$gi_idf_commune_acte,".IDF_RECENS.",$i_nb_actes_charges)");
+     print("<br><div align=center>$i_nb_actes_charges actes charg&eacute;s<br>");
+     print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
+     print('<input type="hidden" name="mode" value="FORMULAIRE" >');
+     print("<div align=center><input type=submit value=\"Menu Chargement\"></div></div>");
+     print("</form>");
+   break; 
    
    default : print("mode $gst_mode inconnu");   
 }
