@@ -65,9 +65,9 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 		 $acte = new Acte($connexionBD,$pi_idf_commune,LIB_RECENSEMENT,'N',$pi_idf_source,sprintf("00/00/%04d",$pi_annee),$releveur->idf_releveur($pi_idf_releveur));
 		 $st_commentaires = sprintf("Nom de la Rue: %s\n",$st_rue_ligne);
 		 $st_commentaires .= sprintf("Quartier: %s\n",$st_quartier_ligne);
-		 $st_commentaires .= sprintf("NÂ° maison: %d\n",$i_maison_ligne);
-		 $st_commentaires .= sprintf("NÂ° mÃ©nage: %d\n",$i_menage_ligne);
-		 $st_commentaires .= sprintf("NÂ° de page: %d",$i_page_ligne);
+		 $st_commentaires .= sprintf("N° maison: %d\n",$i_maison_ligne);
+		 $st_commentaires .= sprintf("N° ménage: %d\n",$i_menage_ligne);
+		 $st_commentaires .= sprintf("N° de page: %d",$i_page_ligne);
 		 $acte->setCommentaires($st_commentaires);
 		 $a_liste_actes[] = $acte;
 		 $i_acte_courant = $acte->getIdf();
