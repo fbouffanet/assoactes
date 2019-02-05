@@ -1142,6 +1142,9 @@ function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_i
      print("<form id=chargement_recens enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
      print("<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\" >"); 
      print('<input type="hidden" name="mode" value="CHARGEMENT_RECENS">');
+	 print('<div align=center><br>Source: <select name=idf_source id=idf_source_recense class="js-select-avec-recherche">');
+     print(chaine_select_options($pi_idf_source,$ga_sources));
+     print('</select><br></div>');
      print('<div align=center><br>Commune: <select name=idf_commune_acte id=idf_commune_recens class="js-select-avec-recherche" >');
      print(chaine_select_options($pi_idf_commune_acte,$ga_communes_acte));
      print('</select><br></div>');
@@ -1531,8 +1534,8 @@ switch($gst_mode)
         exit;
      }
      chmod($st_fich_dest,0444);
-     $i_nb_actes_charges =charge_recensement($st_fich_dest,$gi_idf_commune_acte,$gi_annee_recens,IDF_SOURCE_RECENS,null,$gst_repertoire_chargement_actes);
-     //$connexionBD->execute_requete("insert into chargement(date_chgt,idf_commune,type_acte_nim,nb_actes) values(now(),$gi_idf_commune_acte,".IDF_RECENS.",$i_nb_actes_charges)");
+     $i_nb_actes_charges =charge_recensement($st_fich_dest,$gi_idf_commune_acte,$gi_annee_recens,$gi_idf_source,null,$gst_repertoire_chargement_actes);
+     $connexionBD->execute_requete("insert into chargement(date_chgt,idf_commune,type_acte_nim,nb_actes) values(now(),$gi_idf_commune_acte,".IDF_RECENS.",$i_nb_actes_charges)");
      print("<br><div align=center>$i_nb_actes_charges actes charg&eacute;s<br>");
      print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
      print('<input type="hidden" name="mode" value="FORMULAIRE" >');
