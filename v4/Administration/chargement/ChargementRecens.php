@@ -69,6 +69,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 		 $st_commentaires .= sprintf("N° ménage: %d\n",$i_menage_ligne);
 		 $st_commentaires .= sprintf("N° de page: %d",$i_page_ligne);
 		 $acte->setCommentaires($st_commentaires);
+		 $acte->setDetailSupp(1);
 		 $a_liste_actes[] = $acte;
 		 $i_acte_courant = $acte->getIdf();
 		 $i_nb_actes++;
