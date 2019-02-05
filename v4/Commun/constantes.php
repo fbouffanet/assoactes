@@ -430,6 +430,5 @@ $ga_annees_revolutionnaires      = array(
                                 );
 define('IDF_SOURCE_RELEVES_AGC',1); 
 define('IDF_SOURCE_TD',4);
-define('IDF_SOURCE_RECENS',5);
 define('SEUIL_RETENTION_ADHTS',5);                   
 ?>
