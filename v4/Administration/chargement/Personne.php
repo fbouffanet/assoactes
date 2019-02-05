@@ -254,11 +254,11 @@ class Personne
          switch ($this -> i_idf_type_presence)
          {
         case IDF_PRESENCE_INTV:
-             $st_chaine .= $this -> i_num_param == 1 ? "De: " : "Avec: ";
+             
              switch ($pi_idf_type_acte)
              {
             case IDF_NAISSANCE:
-                 $st_chaine .= sprintf("%s %s (%s)\n", $this -> st_patronyme, $this -> st_prenom, $this -> c_sexe);
+                 $st_chaine .= sprintf("De: %s %s (%s)\n", $this -> st_patronyme, $this -> st_prenom, $this -> c_sexe);
                  $i_nb_lignes=1;
                  if (!empty($this -> st_commentaire))
                  {
@@ -266,8 +266,33 @@ class Personne
                      $i_nb_lignes++;
                  }
                  break;
+		     case IDF_RECENS:
+			    $st_chaine .= sprintf("%s %s (%s) ", $this -> st_patronyme, $this -> st_prenom, $this -> c_sexe);
+				$i_nb_lignes=1;
+                 if (!empty($this -> st_commentaire))
+                 {
+                     $st_chaine .= $this -> st_commentaire ;
+                     $i_nb_lignes++;
+                 }
+                 $st_ligne = '';
+				 if (!preg_match('/^\s*$/', $this -> st_age))
+                     {
+                    $st_lib = $this -> c_sexe != 'F'? 'Agé':'Agée';
+                     $st_ligne .= sprintf(" $st_lib de %s", $this -> st_age);
+                     if (preg_match('/^\d+$/', $this -> st_age))
+                         $st_ligne .= " ans";
+                     } 
+                 if (!empty($this -> st_profession))
+                     $st_ligne .= sprintf(" Profession de %s", $this -> st_profession);
+                 if ($st_ligne != '')
+                     $st_chaine .= "$st_ligne\n";
+                     $i_nb_lignes++;
+				
+			 break;
              default:
-                 $st_chaine .= sprintf("%s %s (%s)\n", $this -> st_patronyme, $this -> st_prenom, $this -> c_sexe);
+                 $st_chaine .= $this -> i_num_param == 1 ? "De: " : "Avec: ";
+				 $st_chaine .= sprintf("%s %s (%s)\n", $this -> st_patronyme, $this -> st_prenom, $this -> c_sexe);
+				 
                 $i_nb_lignes=1;
                  if (!empty($this -> st_commentaire))
                  {
