@@ -25,7 +25,7 @@ function getRecapitulatifMessage($pst_type, $pi_max, $pi_compteur){
     default:            $pst_type = "mariages et actes divers";
     break;
   }
-  return sprintf("<div align='center'>Il vous reste %d demandes de $type dans ce mois<br></div>", $pi_max-$pi_compteur);
+  return sprintf("<div align='center'>Il vous reste %d demandes de $pst_type dans ce mois<br></div>", $pi_max-$pi_compteur);
 }
 
 function getContentBottom($type, $st_email_adht, $pi_idf_acte){
