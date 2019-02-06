@@ -303,7 +303,8 @@ date_default_timezone_set($gst_time_zone);
 
     $start = $current_page * $_SESSION['per_page'];
     $gst_requete_actes = "$gst_requete_nb_actes $st_clauses group by a.idf order by annee,mois,jour LIMIT " .  $start . "," . $_SESSION['per_page'];
-    //FBOprint("Req=$gst_requete_actes<br>");
+    //FBO
+	print("Req=$gst_requete_actes<br>");
 
     if (!empty($gst_variantes_epx) || !empty($st_variantes_prenoms_epx))
     {
