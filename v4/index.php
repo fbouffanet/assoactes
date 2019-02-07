@@ -104,6 +104,7 @@ else
          case 1: $st_type_acte='X';break;
          case 4: $st_type_acte='†';break;
          case 2: $st_type_acte='Divers(CM...)';break;
+         case 147: $st_type_acte='Recensement';break;
       }
       print("<tr class=chargement>");
       print("<td>$st_commune</td><td>$st_type_acte</td><td>$i_nb_actes</td>");
