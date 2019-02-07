@@ -63,6 +63,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 	  if ((empty($st_rue_courante) && empty($st_quartier_courant) && empty($i_maison_courante) && empty($i_menage_courant)) || ($st_rue_ligne!=$st_rue_courante || $st_quartier_ligne!=$st_quartier_courant ||  $i_maison_ligne!=$i_maison_courante || $i_menage_ligne!=$i_menage_courant))
 	  {
 		 $acte = new Acte($connexionBD,$pi_idf_commune,LIB_RECENSEMENT,'N',$pi_idf_source,sprintf("00/00/%04d",$pi_annee),$releveur->idf_releveur($pi_idf_releveur));
+		 $stats_commune->compte_acte(LIB_RECENSEMENT,$pi_annee); 
 		 $st_commentaires = sprintf("Nom de la Rue: %s\n",$st_rue_ligne);
 		 $st_commentaires .= sprintf("Quartier: %s\n",$st_quartier_ligne);
 		 $st_commentaires .= sprintf("N° maison: %d\n",$i_maison_ligne);
