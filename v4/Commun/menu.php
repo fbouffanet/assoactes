@@ -43,11 +43,11 @@ foreach ($a_categories_menu as $a_categorie)
       {
         print("<li>");
         if ($st_script=='')        
-          print("<li ><a href=\"#\">$st_categorie</a>");
+          print("<a href=\"#\">$st_categorie</a>");
         else if (preg_match('/^http\:\/\//',$st_script))
-          print("<li ><a href=\"$st_script\" target=\"_blank\">$st_categorie</a>"); 
+          print("<a href=\"$st_script\" target=\"_blank\">$st_categorie</a>"); 
         else 
-          print("<li ><a href=\"$st_script\">$st_categorie</a>");
+          print("<a href=\"$st_script\">$st_categorie</a>");
         print("</li>\n");   
       }  
    }   
