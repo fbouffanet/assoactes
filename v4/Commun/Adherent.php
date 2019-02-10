@@ -268,7 +268,7 @@ class Adherent
    public function formulaire_infos_personnelles($pb_gestionnaire)
    {
       global $ga_pays;
-      print(sprintf("<input type=\"hidden\" name=\"idf_adht\" value=\"%d\">",$this -> i_idf));
+      print(sprintf("<input type=\"hidden\" id=\"idf_adht\" name=\"idf_adht\" value=\"%d\">",$this -> i_idf));
       $st_chaine = '<table border=1>';
       if (a_droits($this->st_ident_modificateur,DROIT_GESTION_ADHERENT))
       {
