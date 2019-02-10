@@ -20,7 +20,8 @@ if (isset($_GET['mod']))
    $gi_idf_adherent = (int) $_GET['mod'];
 }
 else
-  $gi_idf_adherent = isset($_POST['idf_adherent']) ? (int) $_POST['idf_adherent']:null;
+  $gi_idf_adherent = isset($_POST['idf_adht']) ? (int) $_POST['idf_adht']:null;
+
 
 if (isset($_GET['visu']))
 {
