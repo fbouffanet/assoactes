@@ -1,4 +1,4 @@
-T<?php
+<?php
 
 require_once('../Commun/config.php');
 require_once('../Commun/Identification.php');
@@ -371,11 +371,11 @@ $(document).ready(function() {
 				success: function(response) {  
 					if (response=="")
 					{
-                  console.log($('idf_acte_cour').val());
+                        $('#idf_acte_cour').val('');
 						$('#jour').val('');
-                  $('#jour_rep').val('');
-                  $('#mois_rep').val('');
-                  $('#annee_rep').val('');
+						$('#jour_rep').val('');
+						$('#mois_rep').val('');
+						$('#annee_rep').val('');
 						$('#type_acte').val('');	
 						$('#nom1').val('');
 						$('#prenom1').val('');
