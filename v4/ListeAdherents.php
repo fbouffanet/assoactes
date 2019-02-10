@@ -1004,13 +1004,12 @@ switch ($gst_mode) {
    case 'RECREER_MDP':
       $adherent = new Adherent($connexionBD,$gi_idf_adherent);
       $st_mdp = Adherent::mdp_alea();
-        //print("Nouveau MDP=$st_mdp<br>");
-        $adherent->change_mdp($st_mdp);
-        if (envoie_mail($i_idf,$st_nom,$st_prenom,$st_ident,$st_mdp,$pst_email))
-           print("<div> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
-        else
-           print("<div class=ERREUR> Echec lors de l'envoi du  message &agrave; l'adh&eacute;rent</div>");
-        menu_liste($connexionBD,$gst_ident,$gst_nom_a_chercher,$gc_statut);
+      //print("Nouveau MDP=$st_mdp<br>");        
+      if ($adherent->change_mdp($st_mdp))
+        print("<div> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
+      else
+        print("<div class=ERREUR> Echec lors de l'envoi du  message &agrave; l'adh&eacute;rent</div>");
+      menu_liste($connexionBD,$gst_ident,$gst_nom_a_chercher,$gc_statut);
    break;       
 }  
 print('</body></html>');
