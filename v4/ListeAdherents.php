@@ -980,8 +980,14 @@ switch ($gst_mode) {
    break;
    case 'READHESION':
     $adherent = new Adherent($connexionBD,$gi_idf_adherent);
+    if ($adherent->getStatut()==ADHESION_SUSPENDU)
+    {
+      $st_mdp = Adherent::mdp_alea();
+      $adherent->cree_utilisateur_gbk($st_mdp);
+      $adherent->envoie_message_geneabank_changement_mdp();    
+    }
     $adherent->initialise_depuis_formulaire();
-    $adherent->modifie_avec_droits();      
+    $adherent->modifie_avec_droits();       
     if ($adherent->envoie_message_readhesion())
       print("<div> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
     else
