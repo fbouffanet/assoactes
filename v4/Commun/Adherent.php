@@ -176,6 +176,15 @@ class Adherent
     {
        return $this->st_email_perso;
     }
+    
+    
+	  /**
+    *  Renvoie le statut de l'adhérent
+    */
+    public function getStatut() 
+    {
+       return $this->st_statut;
+    }
    
    /**
      * Renvoie la liste des filtres jquery validator … activer par champ de paramŠtre
@@ -1127,12 +1136,13 @@ class Adherent
    /*
    * Crée l'adhérent dans Geneabank
    */
-   public function cree_utilisateur_gbk()
+   public function cree_utilisateur_gbk($pst_nouveau_mdp='')
    {
+      if (!empty(pst_nouveau_mdp))
+		     $this->st_mdp=$pst_nouveau_mdp;
       $st_cmd_gbk = sprintf("register AGC%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
       $st_cmd_gbk .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
       return self::execute_cmd_gbk($st_cmd_gbk);
-      return true; 
    }
    
    /*
