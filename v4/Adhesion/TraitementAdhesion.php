@@ -55,16 +55,12 @@ if ($response['result']['code'] == '00000' )
   {
 	   // le compte généabank doit être recréé
 	   $adherent = new Adherent($connexionBD,$i_idf_agc);
+     if ($st_ancien_statut==ADHESION_SUSPENDU)
+		   $adherent->reactive();
 	   $adherent->initialise_readhesion_en_ligne($st_token);
 	   $adherent->modifie();
 	   $adherent->modifie_adhesion();
 	   $adherent->envoie_message_readhesion();
-	   if ($st_ancien_statut==ADHESION_SUSPENDU)
-	   {
-		   $st_mdp = Adherent::mdp_alea();
-		   $adherent->cree_utilisateur_gbk($st_mdp);
-		   $adherent->envoie_message_geneabank_changement_mdp();		   
-	   }	
   }
   $st_chaine_log = sprintf("%s;%s;%s;%d;%s",$st_date_log,$_SERVER['REQUEST_URI'],$st_token,$i_idf_agc,$st_type_adhesion);
   $st_requete = "delete from `inscription_prov` where ins_token='$st_token'";
