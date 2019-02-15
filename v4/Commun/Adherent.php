@@ -466,7 +466,7 @@ class Adherent
    */
    private function change_mdp_base($pst_nouveau_mdp)
    {
-	  $st_mdp_hash = password_hash($pst_nouveau_mdp, PASSWORD_DEFAULT);
+	    $st_mdp_hash = password_hash($pst_nouveau_mdp, PASSWORD_DEFAULT);
       $this->connexionBD->initialise_params(array(':ident'=>$this->st_ident,':mdp'=>$st_mdp_hash));
       $st_requete =  "update adherent set mdp=:mdp where ident=:ident";
       $this->connexionBD->execute_requete($st_requete);
@@ -494,6 +494,7 @@ class Adherent
    */
    public function reactive()
    {
+      global $gst_administrateur_gbk;
       if (!empty($gst_administrateur_gbk))
       {
 		    $st_mdp = self::mdp_alea();
@@ -501,6 +502,8 @@ class Adherent
 	      $this->change_mdp_base($st_mdp);
 	      return $this->envoie_message_geneabank_changement_mdp();
 	    }
+      else
+        return true;
    }
    
    /*
