@@ -461,6 +461,18 @@ class Adherent
    }
    
    /*
+   * Change le mot de passe de l'adhérent uniquement dans la base 
+   * @param string $pst_nouveau_mdp nouveau mot de passe
+   */
+   private function change_mdp_base($pst_nouveau_mdp)
+   {
+	  $st_mdp_hash = password_hash($pst_nouveau_mdp, PASSWORD_DEFAULT);
+      $this->connexionBD->initialise_params(array(':ident'=>$this->st_ident,':mdp'=>$st_mdp_hash));
+      $st_requete =  "update adherent set mdp=:mdp where ident=:ident";
+      $this->connexionBD->execute_requete($st_requete);
+   }
+   
+   /*
    * Change le mot de passe de l'adhérent
    * @param string $pst_nouveau_mdp nouveau mot de passe
    */
@@ -473,11 +485,22 @@ class Adherent
         if (!$this->change_mdp_gbk($pst_nouveau_mdp))
           $this->envoie_message_geneabank_erreur_changement_mdp();         
       }
-      $st_mdp_hash = password_hash($pst_nouveau_mdp, PASSWORD_DEFAULT);
-      $this->connexionBD->initialise_params(array(':ident'=>$this->st_ident,':mdp'=>$st_mdp_hash));
-      $st_requete =  "update adherent set mdp=:mdp where ident=:ident";
-      $this->connexionBD->execute_requete($st_requete);
+      $this->change_mdp_base($pst_nouveau_mdp);
       return $this->envoie_message_geneabank_changement_mdp();
+   }
+   
+   /*
+   * Reactive l'adhérent (recréation du compte gbk et changement de mot de passe)
+   */
+   public function reactive()
+   {
+      if (!empty($gst_administrateur_gbk))
+      {
+		    $st_mdp = self::mdp_alea();
+		    $this->cree_utilisateur_gbk($st_mdp);
+	      $this->change_mdp_base($st_mdp);
+	      return $this->envoie_message_geneabank_changement_mdp();
+	    }
    }
    
    /*
