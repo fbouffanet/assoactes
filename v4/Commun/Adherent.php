@@ -78,7 +78,7 @@ class Adherent
       {
         $this -> i_idf =$pi_idf_adherent;  
         $this->connexionBD->initialise_params(array(':idf'=>$this -> i_idf));
-        list($st_statut,$st_nom,$st_prenom,$st_adr1,$st_adr2,$st_code_postal,$st_ville,$st_pays,$st_tel,$st_email_perso,$st_email_forum,$st_site,$st_confidentiel,$st_ident_adh,$st_mdp_adh,$i_aide,$i_origine,$st_origine,$st_infos_agc,$st_date_premiere_adhesion,$st_date_paiement,$i_prix,$i_annee_cotisation,$st_ip_connexion,$st_ip_restreinte,$st_jeton_paiement,$i_max_nai,$i_max_mar_div,$i_max_dec,$i_clef_nouveau_mdp)=$this -> connexionBD->sql_select_liste("select adherent.statut,adherent.nom,prenom, adr1, adr2, cp, ville, pays,tel,email_perso,email_forum,site,confidentiel,ident,mdp,aide,type_origine,description_origine,infos_agc,date_format(date_premiere_adhesion,'%d/%m/%Y'),date_format(date_paiement,'%d/%m/%Y'),prix, annee_cotisation,ip_connexion,ip_restreinte,jeton_paiement,max_nai,max_mar_div,max_dec,clef_nouveau_mdp from adherent where adherent.idf=:idf");
+        list($st_statut,$st_nom,$st_prenom,$st_adr1,$st_adr2,$st_code_postal,$st_ville,$st_pays,$st_tel,$st_email_perso,$st_email_forum,$st_site,$st_confidentiel,$st_ident_adh,$i_aide,$i_origine,$st_origine,$st_infos_agc,$st_date_premiere_adhesion,$st_date_paiement,$i_prix,$i_annee_cotisation,$st_ip_connexion,$st_ip_restreinte,$st_jeton_paiement,$i_max_nai,$i_max_mar_div,$i_max_dec,$i_clef_nouveau_mdp)=$this -> connexionBD->sql_select_liste("select adherent.statut,adherent.nom,prenom, adr1, adr2, cp, ville, pays,tel,email_perso,email_forum,site,confidentiel,ident,aide,type_origine,description_origine,infos_agc,date_format(date_premiere_adhesion,'%d/%m/%Y'),date_format(date_paiement,'%d/%m/%Y'),prix, annee_cotisation,ip_connexion,ip_restreinte,jeton_paiement,max_nai,max_mar_div,max_dec,clef_nouveau_mdp from adherent where adherent.idf=:idf");
         $this->st_statut=$st_statut;
         $this->st_nom=$st_nom;
         $this->st_prenom=$st_prenom;
@@ -93,7 +93,6 @@ class Adherent
         $this->st_site=$st_site;
         $this->b_confidentiel=$st_confidentiel=='O'? true: false;
         $this->st_ident=$st_ident_adh;
-        $this->st_mdp=$st_mdp_adh;
         $this->i_aide=$i_aide;
         $this->i_origine=$i_origine;
         $this->st_origine=$st_origine;
@@ -590,7 +589,7 @@ class Adherent
    */
    public function cree() 
    {
-      if (!$this->cree_utilisateur_gbk())
+      if (!$this->cree_utilisateur_gbk($this->st_mdp))
           $this->envoie_message_geneabank();
       $st_confidentiel = $this->b_confidentiel ? 'O' :' N';
       $st_mdp_hash = password_hash($this->st_mdp, PASSWORD_DEFAULT);
