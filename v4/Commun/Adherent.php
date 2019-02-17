@@ -78,7 +78,7 @@ class Adherent
       {
         $this -> i_idf =$pi_idf_adherent;  
         $this->connexionBD->initialise_params(array(':idf'=>$this -> i_idf));
-        list($st_statut,$st_nom,$st_prenom,$st_adr1,$st_adr2,$st_code_postal,$st_ville,$st_pays,$st_tel,$st_email_perso,$st_email_forum,$st_site,$st_confidentiel,$st_ident_adh,$st_mdp_adh,$i_aide,$i_origine,$st_origine,$st_infos_agc,$st_date_premiere_adhesion,$st_date_paiement,$i_prix,$i_annee_cotisation,$st_ip_connexion,$st_ip_restreinte,$st_jeton_paiement,$i_max_nai,$i_max_mar_div,$i_max_dec,$i_clef_nouveau_mdp)=$this -> connexionBD->sql_select_liste("select adherent.statut,adherent.nom,prenom, adr1, adr2, cp, ville, pays,tel,email_perso,email_forum,site,confidentiel,ident,mdp,aide,type_origine,description_origine,infos_agc,date_format(date_premiere_adhesion,'%d/%m/%Y'),date_format(date_paiement,'%d/%m/%Y'),prix, annee_cotisation,ip_connexion,ip_restreinte,jeton_paiement,max_nai,max_mar_div,max_dec,clef_nouveau_mdp from adherent where adherent.idf=:idf");
+        list($st_statut,$st_nom,$st_prenom,$st_adr1,$st_adr2,$st_code_postal,$st_ville,$st_pays,$st_tel,$st_email_perso,$st_email_forum,$st_site,$st_confidentiel,$st_ident_adh,$i_aide,$i_origine,$st_origine,$st_infos_agc,$st_date_premiere_adhesion,$st_date_paiement,$i_prix,$i_annee_cotisation,$st_ip_connexion,$st_ip_restreinte,$st_jeton_paiement,$i_max_nai,$i_max_mar_div,$i_max_dec,$i_clef_nouveau_mdp)=$this -> connexionBD->sql_select_liste("select adherent.statut,adherent.nom,prenom, adr1, adr2, cp, ville, pays,tel,email_perso,email_forum,site,confidentiel,ident,aide,type_origine,description_origine,infos_agc,date_format(date_premiere_adhesion,'%d/%m/%Y'),date_format(date_paiement,'%d/%m/%Y'),prix, annee_cotisation,ip_connexion,ip_restreinte,jeton_paiement,max_nai,max_mar_div,max_dec,clef_nouveau_mdp from adherent where adherent.idf=:idf");
         $this->st_statut=$st_statut;
         $this->st_nom=$st_nom;
         $this->st_prenom=$st_prenom;
@@ -93,7 +93,6 @@ class Adherent
         $this->st_site=$st_site;
         $this->b_confidentiel=$st_confidentiel=='O'? true: false;
         $this->st_ident=$st_ident_adh;
-        $this->st_mdp=$st_mdp_adh;
         $this->i_aide=$i_aide;
         $this->i_origine=$i_origine;
         $this->st_origine=$st_origine;
@@ -176,6 +175,15 @@ class Adherent
     {
        return $this->st_email_perso;
     }
+    
+    
+	  /**
+    *  Renvoie le statut de l'adhérent
+    */
+    public function getStatut() 
+    {
+       return $this->st_statut;
+    }
    
    /**
      * Renvoie la liste des filtres jquery validator … activer par champ de paramŠtre
@@ -246,7 +254,6 @@ class Adherent
       $this->b_confidentiel= ($confidentiel=='O')? true: false;
       if (isset($_POST['statut_adherent'])) $this->st_statut=$_POST['statut_adherent']; 
       $this->st_ident = isset($_POST['ident_adh']) ? substr(trim($_POST['ident_adh']),0,12):'';
-      //$this->st_mdp = isset($_POST['mdp_adh']) ? substr(trim($_POST['mdp_adh']),0,12): '';
       $this->st_date_paiement = isset($_POST['date_paiement']) ? trim($_POST['date_paiement']) : '';
       $this->i_prix = isset($_POST['prix']) ? (int) trim($_POST['prix']) : 0;
       $this->st_date_premiere_adhesion = isset($_POST['date_premiere_adhesion']) ? trim($_POST['date_premiere_adhesion']): 0;       
@@ -268,7 +275,7 @@ class Adherent
    public function formulaire_infos_personnelles($pb_gestionnaire)
    {
       global $ga_pays;
-      print(sprintf("<input type=\"hidden\" name=\"idf_adht\" value=\"%d\">",$this -> i_idf));
+      print(sprintf("<input type=\"hidden\" id=\"idf_adht\" name=\"idf_adht\" value=\"%d\">",$this -> i_idf));
       $st_chaine = '<table border=1>';
       if (a_droits($this->st_ident_modificateur,DROIT_GESTION_ADHERENT))
       {
@@ -289,7 +296,6 @@ class Adherent
         $st_readonly = $pb_gestionnaire ? 'readonly' : '';
         // L'administrateur n'est pas supposé changer l'identifiant d'un utilisateur
         $st_chaine .= sprintf("<tr><th>Votre identifiant (base AGC): </th><td><input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adh value=\"%s\" $st_readonly></td></tr>",$this->st_ident);
-        //$st_chaine .= sprintf("<tr><th>Votre Mot de passe: </th><td><input type=\"text\" maxlength=12 size=12 name=mdp_adh id=mdp_adh value=\"%s\"></td></tr>",$this->st_mdp);
         $st_chaine .= sprintf("<tr><th>Votre identifiant G&eacute;n&eacute;bank : </th><td><input type=\"text\" value=\"".PREFIXE_ADH_GBK."%04d\" size=8 readonly></td></tr>",$this -> i_idf);
       }   
       $st_chaine .= sprintf("<tr><th>Nom</th><td><input type=\"text\" maxlength=20 size=20 name=nom value=\"%s\" id=\"nom\" class=\"majuscule\"></td></tr>",$this->st_nom);      
@@ -373,8 +379,6 @@ class Adherent
         $st_chaine = "<div>";
         $st_chaine .= sprintf("Identifiant: <input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adh value=\"%s\">",$this->st_ident);
         $this->a_filtres_parametres["ident_adh"] = array(array("required", "true", "L'identifiant est obligatoire"));
-        //$st_chaine .= sprintf("Mot de passe: <input type=\"text\" maxlength=12 size=8 name=mdp_adh id=mdp_adh value=\"%s\"><br>",$this->st_mdp);
-        //$this->a_filtres_parametres["mdp_adh"] = array(array("required", "true", "Le mot de passe est obligatoire"));
         $st_chaine .= "</div>";
         $st_chaine .= "<div>";
         $st_chaine .= sprintf("Infos AGC :<br><textarea name=\"infos_agc\" cols=\"60\" rows=\"10\" id=\"infos_agc\">%s</textarea><br>",$this->st_infos_agc);
@@ -452,6 +456,18 @@ class Adherent
    }
    
    /*
+   * Change le mot de passe de l'adhérent uniquement dans la base 
+   * @param string $pst_nouveau_mdp nouveau mot de passe
+   */
+   private function change_mdp_base($pst_nouveau_mdp)
+   {
+	    $st_mdp_hash = password_hash($pst_nouveau_mdp, PASSWORD_DEFAULT);
+      $this->connexionBD->initialise_params(array(':ident'=>$this->st_ident,':mdp'=>$st_mdp_hash));
+      $st_requete =  "update adherent set mdp=:mdp where ident=:ident";
+      $this->connexionBD->execute_requete($st_requete);
+   }
+   
+   /*
    * Change le mot de passe de l'adhérent
    * @param string $pst_nouveau_mdp nouveau mot de passe
    */
@@ -464,11 +480,25 @@ class Adherent
         if (!$this->change_mdp_gbk($pst_nouveau_mdp))
           $this->envoie_message_geneabank_erreur_changement_mdp();         
       }
-      $st_mdp_hash = password_hash($pst_nouveau_mdp, PASSWORD_DEFAULT);
-      $this->connexionBD->initialise_params(array(':ident'=>$this->st_ident,':mdp'=>$st_mdp_hash));
-      $st_requete =  "update adherent set mdp=:mdp where ident=:ident";
-      $this->connexionBD->execute_requete($st_requete);
+      $this->change_mdp_base($pst_nouveau_mdp);
       return $this->envoie_message_geneabank_changement_mdp();
+   }
+   
+   /*
+   * Reactive l'adhérent (recréation du compte gbk et changement de mot de passe)
+   */
+   public function reactive()
+   {
+      global $gst_administrateur_gbk;
+      if (!empty($gst_administrateur_gbk))
+      {
+		   $st_mdp = self::mdp_alea();
+		   $this->cree_utilisateur_gbk($st_mdp);
+	      $this->change_mdp_base($st_mdp);
+	      return $this->envoie_message_geneabank_changement_mdp();
+	    }
+      else
+        return true;
    }
    
    /*
@@ -555,7 +585,7 @@ class Adherent
    */
    public function cree() 
    {
-      if (!$this->cree_utilisateur_gbk())
+      if (!$this->cree_utilisateur_gbk($this->st_mdp))
           $this->envoie_message_geneabank();
       $st_confidentiel = $this->b_confidentiel ? 'O' :' N';
       $st_mdp_hash = password_hash($this->st_mdp, PASSWORD_DEFAULT);
@@ -1127,12 +1157,13 @@ class Adherent
    /*
    * Crée l'adhérent dans Geneabank
    */
-   public function cree_utilisateur_gbk()
+   public function cree_utilisateur_gbk($pst_nouveau_mdp='')
    {
+      if (!empty(pst_nouveau_mdp))
+		     $this->st_mdp=$pst_nouveau_mdp;
       $st_cmd_gbk = sprintf("register AGC%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
       $st_cmd_gbk .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
       return self::execute_cmd_gbk($st_cmd_gbk);
-      return true; 
    }
    
    /*
