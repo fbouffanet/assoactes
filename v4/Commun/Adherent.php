@@ -254,7 +254,6 @@ class Adherent
       $this->b_confidentiel= ($confidentiel=='O')? true: false;
       if (isset($_POST['statut_adherent'])) $this->st_statut=$_POST['statut_adherent']; 
       $this->st_ident = isset($_POST['ident_adh']) ? substr(trim($_POST['ident_adh']),0,12):'';
-      //$this->st_mdp = isset($_POST['mdp_adh']) ? substr(trim($_POST['mdp_adh']),0,12): '';
       $this->st_date_paiement = isset($_POST['date_paiement']) ? trim($_POST['date_paiement']) : '';
       $this->i_prix = isset($_POST['prix']) ? (int) trim($_POST['prix']) : 0;
       $this->st_date_premiere_adhesion = isset($_POST['date_premiere_adhesion']) ? trim($_POST['date_premiere_adhesion']): 0;       
@@ -297,7 +296,6 @@ class Adherent
         $st_readonly = $pb_gestionnaire ? 'readonly' : '';
         // L'administrateur n'est pas supposé changer l'identifiant d'un utilisateur
         $st_chaine .= sprintf("<tr><th>Votre identifiant (base AGC): </th><td><input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adh value=\"%s\" $st_readonly></td></tr>",$this->st_ident);
-        //$st_chaine .= sprintf("<tr><th>Votre Mot de passe: </th><td><input type=\"text\" maxlength=12 size=12 name=mdp_adh id=mdp_adh value=\"%s\"></td></tr>",$this->st_mdp);
         $st_chaine .= sprintf("<tr><th>Votre identifiant G&eacute;n&eacute;bank : </th><td><input type=\"text\" value=\"".PREFIXE_ADH_GBK."%04d\" size=8 readonly></td></tr>",$this -> i_idf);
       }   
       $st_chaine .= sprintf("<tr><th>Nom</th><td><input type=\"text\" maxlength=20 size=20 name=nom value=\"%s\" id=\"nom\" class=\"majuscule\"></td></tr>",$this->st_nom);      
@@ -381,8 +379,6 @@ class Adherent
         $st_chaine = "<div>";
         $st_chaine .= sprintf("Identifiant: <input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adh value=\"%s\">",$this->st_ident);
         $this->a_filtres_parametres["ident_adh"] = array(array("required", "true", "L'identifiant est obligatoire"));
-        //$st_chaine .= sprintf("Mot de passe: <input type=\"text\" maxlength=12 size=8 name=mdp_adh id=mdp_adh value=\"%s\"><br>",$this->st_mdp);
-        //$this->a_filtres_parametres["mdp_adh"] = array(array("required", "true", "Le mot de passe est obligatoire"));
         $st_chaine .= "</div>";
         $st_chaine .= "<div>";
         $st_chaine .= sprintf("Infos AGC :<br><textarea name=\"infos_agc\" cols=\"60\" rows=\"10\" id=\"infos_agc\">%s</textarea><br>",$this->st_infos_agc);
@@ -496,8 +492,8 @@ class Adherent
       global $gst_administrateur_gbk;
       if (!empty($gst_administrateur_gbk))
       {
-		    $st_mdp = self::mdp_alea();
-		    $this->cree_utilisateur_gbk($st_mdp);
+		   $st_mdp = self::mdp_alea();
+		   $this->cree_utilisateur_gbk($st_mdp);
 	      $this->change_mdp_base($st_mdp);
 	      return $this->envoie_message_geneabank_changement_mdp();
 	    }
