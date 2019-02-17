@@ -118,11 +118,6 @@ function affiche_statut($pst_jeton)
    print("<div align=center><br><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    print("<input type=\"submit\" value=\"Retour à la liste des adhésions en cours\">");
    print("</form>");
-   /*
-   print("<pre>");
-   print_r($a_reponse);
-   print("</pre>");
-   */
    print("</div>");
 }
 
@@ -148,14 +143,12 @@ function cree_adherent($pst_jeton)
 	   // le compte génébank doit être recréé
 	   $adherent = new Adherent($connexionBD,$i_idf_agc);
 	   if ($st_ancien_statut==ADHESION_SUSPENDU)
-	   {
-		    $adherent->cree_utilisateur_gbk();
-	   }
+	      $adherent->reactive();
 	   // c'est forcément une réadhésion
 	   $adherent->initialise_readhesion_en_ligne($pst_jeton);
 	   $adherent->modifie();
-     $adherent->modifie_adhesion();
-     $adherent->envoie_message_readhesion(); 
+      $adherent->modifie_adhesion();
+      $adherent->envoie_message_readhesion(); 
   }
   $st_requete = "delete from `inscription_prov` where ins_token='$pst_jeton'";
   $connexionBD->execute_requete($st_requete);
