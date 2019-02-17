@@ -1,33 +1,18 @@
 <?php
 
-//Serveur OVH  
-/*
-//$gst_serveur_bd  = '178.33.180.71';
-$gst_serveur_bd  = '127.0.0.1';
-$gst_utilisateur_bd = 'usrgenea16basev4';
-$gst_mdp_utilisateur_bd = '2!bTOuMx';
-$gst_nom_bd = 'dbgenea16v4';
-$gst_administrateur_gbk = 'agcharente';
-$gst_mdp_administrateur_gbk = 'fc16hpb9';
-$gst_url_site = 'http://adherents.genea16.net';
-$gst_url_serveur = "http://adherents.genea16.net";
-$gst_rep_site = "/var/www/genea16.net/web/v4";
-$gst_url_readhesion = 'http://readhesion.genea16.net';
-$gst_url_inscription = 'http://inscription.genea16.net';
-$gst_url_interrogation_geneabank = "http://geneabank.genea16.net/index.php";
-*/
+
 
 //Serveur ispconfi-02.genea16.net
 
-$gst_serveur_bd  = "localhost";
-$gst_utilisateur_bd = "usrdefaultv4";
-$gst_mdp_utilisateur_bd = "nhjpBSG!3";
-$gst_nom_bd = "dbgenea16v4";
-$gst_url_site = 'https://www.adherents.ispconfig-02.genea16.net';
+$gst_serveur_bd  = "127.0.0.1";
+$gst_utilisateur_bd = "userv4";
+$gst_mdp_utilisateur_bd = "iejjzhk99";
+$gst_nom_bd = "basev4"; 
+$gst_url_site = 'http://basev4';
 //$gst_url_site = $_SERVER["SERVER_NAME"];
-$gst_url_serveur = "https://www.adherents.ispconfig-02.genea16.net";
+$gst_url_serveur = 'http://basev4';
 //$gst_url_serveur = $_SERVER["SERVER_NAME"];
-$gst_rep_site = $_SERVER['DOCUMENT_ROOT']."/v4";
+$gst_rep_site = 'E:\Documents\Genealogie\AGC\V4\Depot_Git\website\v4';
 $gst_url_readhesion = 'https://www.adherents.ispconfig-02.genea16.net/Readhesion/';
 $gst_url_inscription = 'https://www.adherents.ispconfig-02.genea16.net/Adhesion/';
 $gst_url_interrogation_geneabank = "http://geneabank.genea16.net/index.php";
