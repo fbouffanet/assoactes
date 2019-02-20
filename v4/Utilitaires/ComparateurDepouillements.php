@@ -68,6 +68,7 @@ $ga_nom_commune_cgcp_vers_insee_agc =array(
 							 'Messeux'=>162422,
                       'Montmoreau'=>162301,
 							 'Moutardon'=>162423,
+                      'Nanteuil-en-Vallée'=>162424,
 							 'Négrat' => 163221,
 							 'Négret'=>163081,
                       'Nonaville'=>162470,
