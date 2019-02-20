@@ -29,24 +29,26 @@ foreach ($a_categories_menu as $a_categorie)
            {
               print("<li>");
               if ($st_script=='')
-                 print("$st_libelle\n");
+                 print("$st_libelle");
               else if (preg_match('/^http\:\/\//',$st_script))
-                 print("<a href=\"$st_script\" target=\"_blank\">$st_libelle</a>\n");   
+                 print("<a href=\"$st_script\" target=\"_blank\">$st_libelle</a>");   
               else
-                 print("<a href=\"$gst_racine_site/$st_script\">$st_libelle</a>\n");
-              print("</li>");   
+                 print("<a href=\"$gst_racine_site/$st_script\">$st_libelle</a>");
+              print("</li>\n");   
            }
          }
          print("</ul></li>\n");
       }
       else
       {
+        print("<li>");
         if ($st_script=='')        
-          print("<li ><a href=\"#\">$st_categorie</a>\n");
+          print("<a href=\"#\">$st_categorie</a>");
         else if (preg_match('/^http\:\/\//',$st_script))
-          print("<li ><a href=\"$st_script\" target=\"_blank\">$st_categorie</a>\n"); 
+          print("<a href=\"$st_script\" target=\"_blank\">$st_categorie</a>"); 
         else 
-          print("<li ><a href=\"$st_script\">$st_categorie</a>\n");
+          print("<a href=\"$st_script\">$st_categorie</a>");
+        print("</li>\n");   
       }  
    }   
 }
