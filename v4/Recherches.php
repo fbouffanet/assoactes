@@ -5,12 +5,15 @@ require_once('Commun/commun.php');
 require_once('Commun/constantes.php');
 require_once('Commun/ConnexionBD.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr"> ');
 print('<title>Base AGC: Vos recherches</title>');
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
@@ -19,7 +22,8 @@ print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
 print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>");
 print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
-print("<script src='js/select2.min.js' type='text/javascript'></script>"); 
+print("<script src='js/select2.min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 ?>
 <script type='text/javascript'>
@@ -367,6 +371,7 @@ $(document).ready(function() {
 <?php
 print("</head>");
 print("<body>");
+print('<div class="container">');
 //print("Vous etes authentifi&eacute; :-)<br>");
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
@@ -469,80 +474,90 @@ $a_types_presence[0] = 'Toutes';
 $a_sources = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM source order by nom");
 
 
-print('<div style="text-align:center">');
+
+
+print('<div class="panel-group">');
+print('<div class="panel-body">');
+print('<form id="recherches_communes">');
+//print('<form id="recherches_communes" class="form-horizontal">');
 print("<input type=hidden name=recherche value=\"\">");
-
-print('<form id="recherches_communes" >');
-
-print('<span style="text-align:center"><br>'); 
-print('Source: <select name="idf_source_recherches_communes" id="idf_source_recherches_communes" class="js-select-avec-recherche" >');
+print('<div class="form-row col-md-12">');
+print('<div class="form-group col-md-4"><label for="idf_source_recherches_communes">Source:</label><select name="idf_source_recherches_communes" id="idf_source_recherches_communes" class="js-select-avec-recherche form-control">');
 $a_sources[0] = 'Toutes';
 print(chaine_select_options($gi_idf_source,$a_sources));
-print('</select>');
+print('</select></div>');
 
-print(' Type d\'acte: <select name="idf_type_acte_recherches_communes" id="idf_type_acte_recherches_communes" class="js-select-avec-recherche">');
+print('<div class="form-group col-md-offset-4 col-md-4"><label for="idf_type_acte_recherches_communes">Type d\'acte:</label><select name="idf_type_acte_recherches_communes" id="idf_type_acte_recherches_communes" class="js-select-avec-recherche form-control">');
 $a_types_acte[0] = 'Tous';
 print(chaine_select_options($gi_idf_type_acte,$a_types_acte));
 print('</select>');
-print('<br></span>');
+print('</div></div>');
 
-print('<span style="text-align:center"><br>');
-print('Commune/Paroisse : <select name="idf_commune_recherches_communes" id="idf_commune_recherches_communes" class="js-select-avec-recherche">');
-//$a_communes_acte[0] = 'Toutes';
+print('<div class="form-row col-md-12">');
+print('<div class="form-group col-md-4"><label for="idf_commune_recherches_communes">Commune/Paroisse:</label><select name="idf_commune_recherches_communes" id="idf_commune_recherches_communes" class="js-select-avec-recherche form-control">');
 $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
 print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
-print('</select>');
+print('</select></div>');
 
-print(" Rayon de recherche : <input type=text name=rayon id='rayon_recherches_communes' size=2 MAXLENGTH=2 value=\"$gi_rayon\"> Km");
-
-print(' Paroisses rattach&eacute;es: ');
+print('<div class="form-check col-md-4">');
 
 if ($gst_paroisses_rattachees=='')
-   print('<input type=checkbox name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui >');
+   print('<input type=checkbox name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui class="form-check-input">');
 else
-   print('<input type=checkbox name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui checked>');
-print('<br></span>');
+   print('<input type=checkbox name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui checked class="form-check-input" >');
+print('<label for="paroisses_rattachees_recherches_communes" class="form-check-label">Paroisses rattach&eacute;es</label>');
+print('</div>');
 
-print('<span style="text-align:center"><br>');
-print("Ann&eacute;es de <input type=text name=annee_min id=\"annee_min_recherches_communes\" size =4 value=\"$gi_annee_min\"> &agrave; <input type=text name=annee_max size =4 id=\"annee_max_recherches_communes\" value=\"$gi_annee_max\"><br><br>");
-print('</span>');
+print("<div class=\"form-group col-md-4\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><input type=text name=rayon id='rayon_recherches_communes' size=2 MAXLENGTH=2 value=\"$gi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");
 
+print('</div>');
+
+print('<div class="form-row col-md-12">'); 
+print('<div class="input-group col-md-offset-4 col-md-4">');
+print("<span class=\"input-group-addon\">Ann&eacute;es de</span><input type=text name=annee_min id=\"annee_min_recherches_communes\" size=4 value=\"$gi_annee_min\" class=\"form-control\">");
+print("<span class=\"input-group-addon\">&agrave;</span><input type=text name=annee_max size=4 id=\"annee_max_recherches_communes\" value=\"$gi_annee_max\" class=\"form-control\">");
+print('</div>');
+
+print('</div>');
 
 /* dates de releves */
-print('<span style="text-align:center">');
-print("Actes <select id=\"releve_type_communes\" name=\"releve_type_communes\">");
+
+print('<div class="form-row col-md-12">');
+print('<div class="form-group col-md-8">');
+print('<div class="input-group">');
+print("<span class=\"input-group-addon\">Actes</span><select id=\"releve_type_communes\" name=\"releve_type_communes\" class=\"form-control form-control-sm\">");
 $options = array(0=>'publiés', 1=>"modifiés");
 print(chaine_select_options($gst_releve_type,$options));
-print("</select>");
-print(" entre <select id=\"releve_mois_min_communes\" name=\"releve_mois_min_communes\">");
-
+print("</select></div>");
+print('<div class="input-group">');
+print("<span class=\"input-group-addon\">entre</span><select id=\"releve_mois_min_communes\" name=\"releve_mois_min_communes\" class=\"form-control form-control-sm\">");
 for($i = 1; $i <= 12; $i++){
 	$mois[$i] = str_pad($i, 2, '0', STR_PAD_LEFT);
 }
-
 $a_mois = array(''=>'Mois')+$mois;
 print(chaine_select_options($gst_releve_mois_min,$a_mois));
-print("</select> <input type=\"text\" name=\"releve_annee_min_communes\" id=\"releve_annee_min_communes\" size=\"4\" maxlength=\"4\" value=\"$gst_releve_annee_min\" > et <select id=\"releve_mois_max_communes\" name=\"releve_mois_max_communes\" data-max=\"" . date('n') . "\">");
+print("</select><input type=\"text\" name=\"releve_annee_min_communes\" id=\"releve_annee_min_communes\" size=\"4\" maxlength=\"4\" value=\"$gst_releve_annee_min\" class=\"form-control form-control-sm\"><span class=\"input-group-addon\">et</span><select id=\"releve_mois_max_communes\" name=\"releve_mois_max_communes\" data-max=\"" . date('n') . "\" class=\"form-control form-control-sm\">");
 print(chaine_select_options($gst_releve_mois_max,$a_mois));
-print("</select> <input type=\"text\" name=\"releve_annee_max_communes\" id=\"releve_annee_max_communes\" size=\"4\" maxlength=\"4\" value=\"$gst_releve_annee_max\" data-max=\"" . date('Y') . "\">");
-
-$checked = ($gst_releve_tous_patronymes)? ' checked="checked" ' : '';
-print("<input type=\"checkbox\" name=\"releve_tous_patronymes\" id=\"releve_tous_patronymes_communes\" ". $checked ." value=\"1\" /> <label for=\"releve_tous_patronymes_communes\" style=\"width:auto;padding-left:0\" >Tous patronymes</label>");
-
-
-print('<br><br><br></span>');
-
-
-
-print("</form>");
+print("</select><input type=\"text\" name=\"releve_annee_max_communes\" id=\"releve_annee_max_communes\" size=\"4\" maxlength=\"4\" value=\"$gst_releve_annee_max\" data-max=\"" . date('Y') . "\" class=\"form-control form-control-sm\" >");
+print("</div>");
 print("</div>");
 
-print('<div class="PAVE pave-couple">');
-print('Recherche par couple');
-print('<br></div>');
+print('<div class="form-check col-md-4">');
+$checked = ($gst_releve_tous_patronymes)? ' checked="checked" ' : '';
+print("<input type=\"checkbox\" name=\"releve_tous_patronymes\" id=\"releve_tous_patronymes_communes\" ". $checked ." value=\"1\" class=\"form-check-input\" ><label  for=\"releve_tous_patronymes_communes\" class=\"form-check-label\" >Tous patronymes</label>");
+print('</div>');
+
+print('</div>');
+
+print("</form>");
+print('</div>');
+
+
+print('<div class="pave-couple panel panel-primary">');
+print('<div class="panel-heading">Recherche par couple</div>');
+print('<div class="panel-body">');
 print('<form id="recherches_couple" method="post" action="ReponsesRecherches.php">');
 print('<input type="hidden" name="type_recherche" value="couple">');
-print('<div style="text-align:center"><br>');
 print('<input type="hidden" id="idf_source_recherches_couple" name="idf_source_recherche">');
 print('<input type="hidden" id="idf_type_acte_recherches_couple" name="idf_type_acte_recherche">');
 print('<input type="hidden" id="idf_commune_recherches_couple" name="idf_commune_recherche">');
@@ -555,31 +570,52 @@ print('<input type="hidden" id="releve_annee_min_couple" name="releve_annee_min"
 print('<input type="hidden" id="releve_mois_max_couple" name="releve_mois_max">');
 print('<input type="hidden" id="releve_annee_max_couple" name="releve_annee_max">');
 print('<input type="hidden" id="releve_type_couple" name="releve_type">');
-print("Nom Epoux: <input type=text id=nom_epx name=nom_epx size=15 MAXLENGTH=30 value=\"$gst_nom_epx\" > Prénom Epoux: <input type=text name=prenom_epx id=prenom_epx size=15 MAXLENGTH=30 value=\"$gst_prenom_epx\" > ");
-print(' Recherche par variantes connues:');
+print('<div class="form-row col-md-12">');
+print('<div class="form-group col-md-4">');
+print("<label for=\"nom_epx\">Nom Epoux:</label><input type=text id=nom_epx name=nom_epx size=15 maxlength=30 value=\"$gst_nom_epx\" class=\"form-control\">");
+print('</div>');
+print('<div class="form-group col-md-4">');
+print("<label for=\"prenom_epx\">Pr&eacute;nom Epoux:</label><input type=text name=prenom_epx id=prenom_epx size=15 maxlength=30 value=\"$gst_prenom_epx\" class=\"form-control\">");
+print('</div>');
+print('<div class="form-check col-md-4">');
 if ($gst_variantes_epx=='')
-   print('<input type=checkbox name=variantes_epx id=variantes_epx value=oui >');
+   print('<input type=checkbox name=variantes_epx id=variantes_epx value="oui" class="form-check-input">');
 else
-   print('<input type=checkbox name=variantes_epx id=variantes_epx value=oui checked>');   
+   print('<input type=checkbox name=variantes_epx id=variantes_epx value="oui" checked class="form-check-input">');   
+print('<label for="variantes_epx" class="form-check-label">Recherche par variantes connues</label>');
+print('</div>');
+print('</div>');
 
-print('<br></div>');
-
-print('<div style="text-align:center">');
-print('<img src="./images/swap.png" id="echange_patros" alt="Echange les patronymes"> ');
-print("Nom Epouse: <input type=text id=nom_epse name=nom_epse size=15 MAXLENGTH=30 value=\"$gst_nom_epse\"> Prénom Epouse: <input type=text name=prenom_epse id=prenom_epse size=15 MAXLENGTH=30 value=\"$gst_prenom_epse\">");
-
-print(' Recherche par variantes connues:');
+print('<div class="form-row col-md-12">');
+print('<div class="form-group col-md-4">');
+print('<img src="./images/swap.png" id="echange_patros" alt="Echange les patronymes">');
+print("<label for=\"nom_epse\">Nom Epouse:</label><input type=text id=nom_epse name=nom_epse size=15 maxlength=30 value=\"$gst_nom_epse\" class=\"form-control\">");
+print('</div>');
+print('<div class="form-group col-md-4">');
+print("<label for=\"prenom_epse\">Pr&eacute;nom Epouse:</label><input type=text name=prenom_epse id=prenom_epse size=15 maxlength=30 value=\"$gst_prenom_epse\" class=\"form-control\">");
+print('</div>');
+print('<div class="col-md-4">');
 if ($gst_variantes_epse=='')
-   print('<input type=checkbox name=variantes_epse id=variantes_epse value=oui >');
+   print('<input type=checkbox name=variantes_epse id=variantes_epse value="oui class="form-check-input">');
 else
-   print('<input type=checkbox name=variantes_epse id=variantes_epse value=oui checked>'); 
-print('<br></div>');
+   print('<input type=checkbox name=variantes_epse id=variantes_epse value="oui"  checked class="form-check-input">'); 
+print('<label for="variantes_epse" class="form-check-label">Recherche par variantes connues</label>');
+print('</div>');
+print('</div>');
 
-print('<div style="text-align:center"><br><input type=submit name=Rechercher value="Rechercher le couple"> <input type=button value="Effacer tous les Champs" name="raz" class="raz"><br><br></form></div>');
+print('<div class="form-row">');
+print('<div class="btn-group" role="group">');
+print('<input class="btn btn-primary" type=submit name=Rechercher value="Rechercher le couple">');
+print('<input class="btn btn-warning raz" type=button value="Effacer tous les Champs" name="raz">');
+print('</div>');
+print('</div>');
+print('</form>');
+print('</div>');
 
-print('<div CLASS="PAVE pave-personne">');
-print('Recherche par personne');
-print('<br></div>');
+print('<div class="pave-personne panel panel-primary">');
+print('<div class="panel-heading">Recherche par personne</div>');
+print('<div class="panel-body">');
+
 print('<form id="recherches_personne" method="post" action="ReponsesRecherches.php">');
 print('<input type="hidden" name="type_recherche" value="personne">');
 print('<input type="hidden" id="idf_source_recherches_personne" name="idf_source_recherche">');
@@ -596,32 +632,54 @@ print('<input type="hidden" id="releve_annee_max_personne" name="releve_annee_ma
 print('<input type="hidden" id="releve_type_personne" name="releve_type">');
 
 $ga_sexe[0] = 'Tous';
-print("");
-print('<div style="text-align:center"><br>');
-print('Sexe: <select name="sexe" id="sexe">');
+print('<div class="form-row">');
+print('<div class="form-group col-md-2">');
+print('<label for="sexe">Sexe:</label><select name="sexe" id="sexe" class="form-control">');
 print(chaine_select_options($gst_sexe,$ga_sexe));
 print('</select>');
+print('</div>');
 
-print(" Nom: <input type=text name=nom id=nom size=15 MAXLENGTH=30 value=\"$gst_nom\" > Prénom: <input type=text name=prenom id=prenom size=15 MAXLENGTH=30 value=\"$gst_prenom\">" );
-print(' Type de pr&eacute;sence<sup>*</sup>: <select name="idf_type_presence" id="idf_type_presence">');
+print('<div class="form-group col-md-3">');
+print("<label for=\"nom\">Nom:</label><input type=text name=nom id=nom size=15 maxlength=30 value=\"$gst_nom\" class=\"form-control\">");
+print('</div>');
+
+print('<div class="form-group col-md-3">');
+print("<label for=\"prenom\">Pr&eacute;nom:</label><input type=text name=prenom id=prenom size=15 maxlength=30 value=\"$gst_prenom\" class=\"form-control\">" );
+print('</div>');
+
+print('<div class="form-group col-md-3">');
+print('<label for="idf_type_presence"> Type de pr&eacute;sence<sup>*</sup>:</label><select name="idf_type_presence" id="idf_type_presence" class="form-control" aria-describedby="aideTP">');
 print(chaine_select_options($gi_idf_type_presence,$a_types_presence));
 print('</select>');
-print(' Recherche par variantes connues:');
+print('<small id="aideTP" class="form-text text-muted">Nim&egrave;gue ne renseignant pas le sexe d\'un parrain, t&eacute;moin ou marraine, ne pas le sp&eacute;cifier dans une recherche de ce type</small>');
+print('</div>');
+
+print('<div class="form-group col-md-1">');
 if ($gst_variantes=='')
-   print('<input type=checkbox name=variantes id=variantes value=oui >');
+   print('<input type=checkbox name=variantes id=variantes value=oui class="form-check-input">');
 else
-   print('<input type=checkbox name=variantes id=variantes value=oui checked>');
-print('<br></div>');    
-print("<div style=\"text-align:center\">Recherche libre dans les commentaires:  <input type=text name=commentaires id=commentaires size=40 MAXLENGTH=40 value=\"$gst_commentaires\"></div>");
+   print('<input type=checkbox name=variantes id=variantes value=oui checked class="form-check-input">');
+print('<label for="variantes" class="form-check-label">Recherche par variantes connues</label>');    
+print('</div>');
+print('</div>');
 
-print('<div class=alignCenter><br>(*) Nim&egrave;gue ne renseignant pas le sexe d\'un parrain, t&eacute;moin ou marraine, ne pas le sp&eacute;cifier dans une recherche de ce type<br></div>');
-print('<div style="text-align:center"><br><input type=submit name=Rechercher value="Rechercher la personne" > <input type=button value="Effacer tous les Champs" name="raz" class="raz"></div> ');
+print('<div class="form-row col-md-6">');
+print("<label for=\"commentaires\">Recherche libre dans les commentaires:</label><input type=text name=commentaires id=commentaires size=40 maxlength=40 value=\"$gst_commentaires\" class=\"form-control\">");
+print('</div>');
+print('</div>');
+
+print('<div class="btn-group" role="group">');
+print('<input type=submit name=Rechercher value="Rechercher la personne" class="btn btn-primary">');
+print('<input type=button value="Effacer tous les Champs" name="raz" class="btn btn-warning raz">');
+print('</div>');
+print('</div>');
 print("</form>");
+print('</div>');
 
-print('<br>');
-print('<div class="PAVE pave-tous-patronymes">');
-print('Recherche sur tous les patronymes');
-print('<br></div>');
+
+print('<div class="pave-tous-patronymes panel panel-primary">');
+print('<div class="panel-heading">Recherche sur tous les patronymes</div>');
+print('<div class="panel-body">');
 
 print('<form id="recherches_tous_patronymes" method="post" action="ReponsesRecherches.php">');
 print('<input type="hidden" name="type_recherche" value="tous_patronymes">');
@@ -636,11 +694,21 @@ print('<input type="hidden" id="releve_mois_min_tous_patronymes" name="releve_mo
 print('<input type="hidden" id="releve_annee_min_tous_patronymes" name="releve_annee_min">');
 print('<input type="hidden" id="releve_mois_max_tous_patronymes" name="releve_mois_max">');
 print('<input type="hidden" id="releve_annee_max_tous_patronymes" name="releve_annee_max">');
-print('<input type="hidden" id="releve_type_tous_patronymes" name="releve_type">');   
-print('<div style="text-align:center"><br><input type=submit name=Rechercher value="Rechercher les patronymes" > <input type=button value="Effacer tous les Champs" name="raz" class="raz"></div> ');
+print('<input type="hidden" id="releve_type_tous_patronymes" name="releve_type">');
+
+print('<div class="btn-group" role="group">');   
+print('<input type=submit name=Rechercher value="Rechercher les patronymes" class="btn btn-primary">');
+print('<input type=button value="Effacer tous les Champs" name="raz" class="btn btn-warning raz"></div> ');
+print('</div>');
+
+print('</div>');
+print('</div>');
 print("</form>");
+print('</div>');
 
-
+print("</div>");
+print("</div>");
+print("</div>");
 print("</body>");
 print("</html>");
 //print_r($_SESSION);
