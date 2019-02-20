@@ -15,12 +15,14 @@ define('IDF_DIVERS',2);
 define('IDF_NAISSANCE',3);
 define('IDF_DECES',4);
 define('IDF_UNION',6); 
-define('IDF_CM',2); 
+define('IDF_CM',2);
+define('IDF_RECENS',147);  
 
 // libelles
 define('LIB_MARIAGE','Mariage');
 define('LIB_DECES','Sépulture/Décès');
 define('LIB_NAISSANCE','Baptême/Naissance');
+define('LIB_RECENSEMENT','Recensement');
 
 define('SEP_CSV',';');
 define('FDL_CSV','\n');
@@ -78,7 +80,7 @@ define('EMAIL_GBKADMIN','agc-geneabank@genea16.net');
 define('EMAIL_PRESASSO','agc-dir@genea16.net');
 define('IDF_ASSO_GBK','gbkagcharente');
 define('PREFIXE_ADH_GBK','AGC');
-define('NB_POINTS_GBK',70);
+define('NB_POINTS_GBK',100);
 
 define('TOUS_ADHERENTS','T');
 define('ADHESION_BULLETIN','B');
@@ -428,5 +430,6 @@ $ga_annees_revolutionnaires      = array(
                                 );
 define('IDF_SOURCE_RELEVES_AGC',1); 
 define('IDF_SOURCE_TD',4);
+define('IDF_SOURCE_RECENS',5);
 define('SEUIL_RETENTION_ADHTS',5);                   
 ?>
