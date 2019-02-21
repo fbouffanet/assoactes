@@ -7,12 +7,15 @@ require_once('./Commun/constantes.php');
 require_once('./Commun/commun.php');
 require_once('./Commun/ConnexionBD.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
 print('<meta http-equiv="content-language" content="fr">');
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
@@ -21,6 +24,7 @@ print("<script src='Commun/menu.js' type='text/javascript'></script>");
 print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>");
 print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
 print('<title>Base AGC: Etat des relevés</title>');
 ?>
 <SCRIPT type="text/javascript">
@@ -32,7 +36,17 @@ $('#commune_a_chercher').autocomplete({
     },
    minLength: 3
 });
+
+$('#idf_source').change(function() {
+     $("form").submit();
 });
+
+$('#liste_communes').click(function() {
+     $("form").submit();
+});
+
+});
+
 
 
 function ouvre_plan(num_com) {
@@ -70,26 +84,26 @@ function affiche_entete_liens_navigation($pi_num_page_cour,$pi_nb_pages)
    $i_deb = ($pi_num_page_cour-DELTA_NAVIGATION)>0 ? ($pi_num_page_cour-DELTA_NAVIGATION) : 1;
    $i_fin = ($pi_num_page_cour+DELTA_NAVIGATION)<=$pi_nb_pages? $pi_num_page_cour + DELTA_NAVIGATION : $pi_nb_pages;
 
-   print("<div class=alignCenter><br>");
+   print('<ul class="pagination justify-content-center">');
    if ($i_deb>1)
-      print("<a href=\"".$_SERVER['PHP_SELF']."?num_page_statcom=1\">D&eacute;but</a> ");     
+      print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?num_page_statcom=1\" class=\"page-item\">D&eacute;but</a></li> ");     
    if ($i_deb<$i_fin)
    {  
       for ($i=$i_deb;$i<=$i_fin;$i++)
       {
         if ($i==$pi_num_page_cour)
-          print("<span style=\"font-weight:bold;\"
->- Page $i - </span> "); 
+			print("<li class=\"page-item active\"><span class=\"page-link\">$i<span class=\"sr-only\">(current)</span></span></li>");
         else
-          print("<a href=\"".$_SERVER['PHP_SELF']."?num_page_statcom=$i\">$i</a> ");   
+          print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?num_page_statcom=$i\">$i</a></li>");   
       }
    }
    if ($i_fin<$pi_nb_pages)
-      print(" <a href=\"".$_SERVER['PHP_SELF']."?num_page_statcom=$pi_nb_pages\">Fin</a>");
-   print("<br></div>");   
+      print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?num_page_statcom=$pi_nb_pages\">Fin</a></li>");
+   print("</ul>");   
 }
 
 print("<body>");
+print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("Commun/menu.php");
 $a_sources = $connexionBD->liste_valeur_par_clef("select idf,nom from source order by nom");
@@ -129,16 +143,15 @@ else
      
 print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
 
-
 switch ($gst_mode) {
   case 'LISTE' : 
-     print('<div class=alignCenter>Source: <select name=idf_source id=idf_source onChange="javascript:submit();">');
+     print('<div class="form-row"><label for"idf_source" class="form-check-label">Source:</label><select name=idf_source id=idf_source class="form-control col-md-offset-5 col-md-2">');
      print(chaine_select_options($gi_idf_source,$a_sources));
-     print('</select><br></div>');
-     print('<div class=alignCenter><br>');
-     print("Commune : <input name=\"commune_a_chercher\"  id=\"commune_a_chercher\" value=\"$gst_commune_a_chercher\" size=\"25\" maxlength=\"50\" type=\"Text\">");
-     print(' <input type=submit value=Chercher><br>');
-     print('<div>Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: saint*)<br></div></div>');
+     print('</select></div>');
+     print('<div class="form-row">');
+     print("<label for=\"commune_a_chercher\" class=\"form-check-label\">Commune:</label><input name=\"commune_a_chercher\"  id=\"commune_a_chercher\" value=\"$gst_commune_a_chercher\" size=\"25\" maxlength=\"50\" type=\"Text\" class=\"form-control col-md-offset-5 col-md-2\">");
+     print('<div class="form-row"><input type=submit value=Chercher class="btn btn-primary"></div>');
+     print('<div class="form-row">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: saint*)<br></div>');
          
      // Affichage des initiales
      $gst_commune_a_chercher = str_replace('*','%',$gst_commune_a_chercher);
@@ -164,9 +177,10 @@ switch ($gst_mode) {
      //FBOprint("Req=$st_requete<br>"); 
      $a_initiales_communes = $connexionBD->sql_select($st_requete);
      
-     print("<div align=center>");
+     print('<div class="form-row">');
      if (count($a_initiales_communes)>0)
      {
+		print('<ul class="pagination justify-content-center">'); 
         $i_session_initiale = isset($_SESSION['initiale_statcom']) ? $_SESSION['initiale_statcom'] : $a_initiales_communes[0];
         $gc_initiale = empty($_GET['initiale_statcom']) ? $i_session_initiale : $_GET['initiale_statcom'];   
         if (!in_array($gc_initiale,$a_initiales_communes))
@@ -175,13 +189,13 @@ switch ($gst_mode) {
         foreach ($a_initiales_communes as $c_initiale)
         {
           if ($c_initiale==$gc_initiale)
-            print("<span style=\"font-weight: bold;\">$c_initiale </span>");
+            print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
           else
-           print("<a href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=$c_initiale&amp;idf_source=$gi_idf_source\">$c_initiale</a> ");
+           print("<li class=\"page-item\"><a class=\"page-link\" href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=$c_initiale&amp;idf_source=$gi_idf_source\">$c_initiale</a></li>");
         }
-        print("<br></div>");
+        print("</ul>");
      }
-     
+     print('</div>');
      //Calcul de la liste complète des communes commencant par l'initiale
      if (empty($gi_idf_source))
      {
@@ -259,9 +273,8 @@ switch ($gst_mode) {
       $a_stats_communes=$connexionBD->liste_valeur_par_doubles_clefs($st_requete);
       if (count($a_liste_communes)!=0)
       {
-         print("<div align=center><br>");
-         print("<div>La fourchette affich&eacute;e est l'intervalle maximal de couverture. Pour obtenir le d&eacute;tail des p&eacute;riodes relev&eacute;es, cliquer sur le nombre d'actes<br></div>");
-         print("<br><table border=1>\n");
+         print("<div class=\"row\">La fourchette affich&eacute;e est l'intervalle maximal de couverture. Pour obtenir le d&eacute;tail des p&eacute;riodes relev&eacute;es, cliquer sur le nombre d'actes</div>");
+         print("<div class=\"row\"><table class=\"table table-bordered table-striped table-condensed\">\n");
          print("<tr>");
          print("<th>Commune/Paroisse</th><th>D&eacute;but Coll.<br>Greffe (AD)</th><th>D&eacute;but Coll.<br>communale</th><th>Naissances</th><th>Mariages</th><th>D&eacute;c&eacute;s</th><th>Contrats de mariage</th>");
          print("</tr>\n");
@@ -269,8 +282,7 @@ switch ($gst_mode) {
          foreach ($a_liste_communes as $i_idf_commune => $a_info_commune)
          {
             list($st_nom_commune,$i_debut_communale,$i_debut_greffe) = $a_info_commune;
-            $st_class = ($i%2==0) ? 'ligne_paire':  'ligne_impaire';
-            print("<tr class=$st_class>");
+            print("<tr>");
             print("<td><a href=\"javascript:ouvre_plan($i_idf_commune);\">$st_nom_commune</a></td>");
             if (empty($i_debut_greffe))
               print("<td>&nbsp;</td>");
@@ -311,28 +323,27 @@ switch ($gst_mode) {
            print("</tr>\n");
            $i++;
         }
-        print("</table><br></div>\n");
+        print("</table></div>\n");
         // Affichage de la page courante     
         affiche_entete_liens_navigation($gi_num_page_cour,$i_nb_pages);
      }
      else
      {
-        print("<div class=alignCenter>Pas de relev&eacute;s</div>");
+        print("<div class=\"row\">Pas de relev&eacute;s</div>");
      }
      break;
   case 'DETAIL' :  
-     print("<div CLASS=TITRE>");
+     print('<div class="pave-tous-patronymes panel panel-primary">');
+     print('<div class="panel-heading">');
      print("Liste des ann&eacute;es disponibles de: $gst_nom_commune ($gst_type_acte)");
      if  ($gst_canton!='')
         print("<br> Canton de $gst_canton");
      print("<br>Source: $a_sources[$gi_idf_source]");   
      print("<br></div>");
      
-     print("<div align=center>");
-     print("<div><br>");
-     if ($gi_debut_communale!=0) print("D&eacute;but de la collection communale:$gi_debut_communale<br>");
-     if ($gi_debut_greffe!=0) print("D&eacute;but de la collection du greffe:$gi_debut_greffe<br>");
-     print("<br></div>");
+     print('<div class="panel-body">');
+     if ($gi_debut_communale!=0) print("<div class=\"row\">D&eacute;but de la collection communale:$gi_debut_communale</div>");
+     if ($gi_debut_greffe!=0) print("<div class=\"row\">D&eacute;but de la collection du greffe:$gi_debut_greffe</div>");
      if (empty($gi_idf_source))
        $st_requete = "select distinct annee,count(idf) from acte where idf_commune=$gi_idf_commune and idf_type_acte=$gi_idf_type_acte group by annee order by annee";
      else
@@ -345,7 +356,7 @@ switch ($gst_mode) {
      if (count($a_liste_annnees)>0)
      {
         $i_nb_actes =0;
-        print("<table border=1>");
+        print("<table class=\"table table-bordered table-striped table-condensed\">");
         print("<tr><th>Ann&eacute;es</th><th>Nombre d'actes</th></tr>");
         foreach ($a_liste_annnees as $i_annee => $i_nb_actes_annee)
         {
@@ -365,25 +376,24 @@ switch ($gst_mode) {
           }
           else
           {
-             $st_class = ($i_cpt%2==0) ? 'ligne_paire':  'ligne_impaire';
-             print("<tr class=$st_class>");
-             print("<td align=center>".chaine_intervalle($i_annee_binf,$i_annee_cour)."</td><td align=center>$i_nb_actes</td></tr>\n");
+             
+             print("<tr>");
+             print("<td>".chaine_intervalle($i_annee_binf,$i_annee_cour)."</td><td >$i_nb_actes</td></tr>\n");
              $i_annee_binf = $i_annee;
              $i_annee_cour = $i_annee;
              $i_nb_actes   = $i_nb_actes_annee;
              $i_cpt++;
           }      
         }
-        $st_class = ($i_cpt%2==0) ? 'ligne_paire':  'ligne_impaire';
-        print("<tr class=$st_class>");
-        print("<td align=center>".chaine_intervalle($i_annee_binf,$i_annee_cour)."</td><td align=center>$i_nb_actes</td></tr>\n");
+        print("<tr>");
+        print("<td >".chaine_intervalle($i_annee_binf,$i_annee_cour)."</td><td>$i_nb_actes</td></tr>\n");
         print("</table>");
      }
      else
      {
         print("Pas d'actes");
      }
-     print("<br><div class=alignCenter><input type=button value=\"Liste des communes\" onClick=\"submit()\"></div>");
+     print("<div class=\"row\"><input type=button value=\"Liste des communes\" id=\"liste_communes\"></div>");
      print("</div>");
      $pf=@fopen("$gst_rep_logs/requetes_depouillements.log",'a');
      date_default_timezone_set($gst_time_zone);
@@ -400,5 +410,5 @@ switch ($gst_mode) {
   default : print("mode $gst_mode inconnu");
   }
 print ("</form>");
-print('</body></html>');
+print('</div></body></html>');
 ?>
