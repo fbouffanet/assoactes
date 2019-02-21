@@ -520,7 +520,7 @@ print('</div>');
 
 /* dates de releves */
 
-print('<div class="form-row col-md-12">');
+print('<div class="form-group row col-md-12">');
 
 print('<div class="input-group col-md-2">');
 print("<div class=\"input-group-prepend\"><span class=\"input-group-addon\">Actes</span></div><select id=\"releve_type_communes\" name=\"releve_type_communes\" class=\"form-control\">");
