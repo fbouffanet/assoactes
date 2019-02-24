@@ -11,7 +11,6 @@ print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"
 print('<meta http-equiv="content-language" content="fr"> ');
 print('<title>Base AGC: Vos recherches</title>');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
