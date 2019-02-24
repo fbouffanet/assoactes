@@ -19,15 +19,12 @@ if(isset($_GET['per_page']) && in_array($_GET['per_page'], array_keys($per_page_
   $_SESSION['per_page'] = $_GET['per_page'];
 }
 
-
-
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
-print("<Head>\n");
+print('<!DOCTYPE html>');
+print("<head>\n");
 print('<meta http-equiv="content-language" content="fr"> ');
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
 print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/menu.js' type='text/javascript'></script>");
 print("<script type='text/javascript'>");
 ?>
 
@@ -46,8 +43,16 @@ $('a.popup').click(function(){
 <?php
 print("</script>");
 print('<title>Base AGC: Reponses a une recherche</title>');
-print('</Head>');
-
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
+print('<link rel="shortcut icon" href="images/favicon.ico">');
+print('</head>');
+print("<body>");
+print('<div class="container">');
+$connexionBD            = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
+require_once("Commun/menu.php");
 
 /*
 * Renvoie la valeur du paramètre de type entier selon les variables de session et CGI
@@ -101,7 +106,9 @@ function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$
     global $requeteRecherche;
     global $st_criteres;
     $a_params_precedents=$pconnexionBD->params();
-    $st_bloc_rappel = "<div id=col_paroisses class=\"centre\">";
+	print("<div class=\"panel panel-default col-md-4\">");
+	print("<div class=\"panel-heading\">Vos crit&egrave;res de recherche</div>");
+	print("<div class=\"panel-body\">");
     $st_criteres ="$pst_titre\n";
     if (!empty($pi_idf_type_acte))
     {
@@ -115,26 +122,24 @@ function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$
     else if ($pi_annee_max!='')
       $st_criteres .=" jusqu'en $pi_annee_max";
     $st_criteres .= "\n";
-    if ($pi_idf_commune!=0)
-    {
-      $st_nom_commune = $pconnexionBD->sql_select1("select nom from commune_acte where idf=$pi_idf_commune");
-    }
-    else
-      $st_nom_commune = 'Pas de commune selectionn&eacute;e';
+    $st_nom_commune =  $pi_idf_commune!=0 ? $pconnexionBD->sql_select1("select nom from commune_acte where idf=$pi_idf_commune") : 'Pas de commune selectionn&eacute;e';
+
     $st_criteres .= "Commune s&eacute;lectionn&eacute;e: $st_nom_commune\n";
-    $st_bloc_rappel .= nl2br($st_criteres);
+    $st_bloc_rappel = nl2br($st_criteres);
     $st_communes_voisines=join("\n",array_values($requeteRecherche->communes_voisines()));
     if (count(array_values($requeteRecherche->communes_voisines()))>1)
     {
-      $st_bloc_rappel .="Paroisses voisines ou rattach&eacute;es<br>";
+      $st_bloc_rappel .="<div class=\"form-group\"><label for=\"communes_voisines\">Paroisses voisines ou rattach&eacute;es";
       if (!empty($pi_rayon))
       {
         $st_bloc_rappel .="(avec recherches dans un rayon de $pi_rayon km)\n";
       }
-      $st_bloc_rappel .="<div class=alignLeft><textarea rows=6 cols=40>$st_communes_voisines</textarea></div>";
+	  $st_bloc_rappel .="</label>";
+      $st_bloc_rappel .="<textarea rows=6 cols=40 id=\"communes_voisines\">$st_communes_voisines</textarea></div>";
     }
     $st_bloc_rappel .="</div>";
-    $pconnexionBD->initialise_params($a_params_precedents);
+    $st_bloc_rappel .="</div>";
+	$pconnexionBD->initialise_params($a_params_precedents);
     return $st_bloc_rappel;
 }
 
@@ -184,8 +189,7 @@ $_SESSION['releve_annee_max']      = $gi_releve_annee_max;
 $_SESSION['releve_type']        	= $releve_type;
 
 $gst_adresse_ip         = $_SERVER['REMOTE_ADDR'];
-$connexionBD            = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-require_once("Commun/menu.php");
+
 $st_criteres            = '';
 
 $requeteRecherche = new RequeteRecherche($connexionBD);
@@ -307,36 +311,49 @@ date_default_timezone_set($gst_time_zone);
 
     if (!empty($gst_variantes_epx) || !empty($st_variantes_prenoms_epx))
     {
-      print("<div id=col_variantes_epoux class=\"gauche\">Variantes connues pour l'&eacute;poux");
-      print("<div class=\"deux_colonnes\">");
-      if ($st_variantes_epx_trouvees!="")
-        print("<div class\"nowrap\">Patronyme:<br><textarea rows=8 cols=20>$st_variantes_epx_trouvees</textarea></div>");
+      print("<div class=\"panel panel-default col-md-4\">");
+	  print("<div class=\"panel-heading\">Variantes connues pour l'&eacute;poux</div>");
+      print("<div class=\"panel-body\">");
+	  print('<form>'); 
+	  print('<div class="form-row">');
+	  if ($st_variantes_epx_trouvees!="")
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epx\">Patronyme:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_patros_epx\">$st_variantes_epx_trouvees</textarea></div>");
       else
-        print("<div>Pas de variantes patronymiques connues</div>");
+        print("<div class=\"col-md-4\">Pas de variantes patronymiques connues</div>");
       if ($st_variantes_prenoms_epx!="")
-        print("<div class\"nowrap\">Pr&eacute;nom:<br><textarea rows=8 cols=20>$st_variantes_prenoms_epx</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms_epx\">Pr&eacute;nom:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_prenoms_epx\">$st_variantes_prenoms_epx</textarea></div>");
       else
-        print("<div>Pas de variantes de pr&eacute;noms connues</div>");
-      print("</div>");    
-      print("</div>");
+        print("<div class=\"col-md-6\">Pas de variantes de pr&eacute;noms connues</div>");
+      print("</div>"); // fin ligne
+	  print("</form>");    
+      print("</div>");	  
+	  print("</div>");
     }
+	else
+	  print("<div class=\"row col-md-4\"></div>");
+	print(rappel_recherches_communes($connexionBD,"Recherche du couple: $gst_prenom_epx $gst_nom_epx X $gst_prenom_epse $gst_nom_epse",$gi_idf_type_acte,$gi_annee_min,$gi_annee_max,$gi_idf_commune,$gi_rayon));
     if (!empty($gst_variantes_epse) ||  !empty($st_variantes_prenoms_epse))
-    {      
-      print("<div id=col_variantes_epouse class=\"droite\">Variantes connues pour l'&eacute;pouse");
-      print("<div class=\"deux_colonnes\">");
+    { 
+      print("<div class=\"panel panel-default col-md-4\">");
+	  print("<div class=\"panel-heading\">Variantes connues pour l'&eacute;pouse</div>");
+      print("<div class=\"panel-body\">");
+	  print('<form>');
+	  print('<div class="form-row">');
       if ($st_variantes_epse_trouvees!="")
-        print("<div class\"nowrap\">Patronyme:<br><textarea rows=8 cols=20>$st_variantes_epse_trouvees</textarea></div>"
-      );
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epse\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros_epse\" rows=8 cols=20>$st_variantes_epse_trouvees</textarea></div>");
       else
-        print("<div>Pas de variantes patronymiques connues</div>");
+        print("<div class=\"col-md-6\">Pas de variantes patronymiques connues</div>");
       if ($st_variantes_prenoms_epse!="")
-        print("<div class\"nowrap\">Pr&eacute;nom:<br><textarea rows=8 cols=20>$st_variantes_prenoms_epse</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms_epse\">Pr&eacute;nom:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_prenoms_epse\">$st_variantes_prenoms_epse</textarea></div>");
       else
-        print("<div>Pas de variantes de pr&eacute;noms connues</div>");
-      print("</div>");     
+        print("<div class=\"col-md-6\">Pas de variantes de pr&eacute;noms connues</div>");
+	  print("</div>"); // fin ligne
+      print("</form>");
+      print("</div>");	  
       print("</div>");
     }
-    print(rappel_recherches_communes($connexionBD,"Recherche du couple: $gst_prenom_epx $gst_nom_epx X $gst_prenom_epse $gst_nom_epse",$gi_idf_type_acte,$gi_annee_min,$gi_annee_max,$gi_idf_commune,$gi_rayon));
+	else
+	  print("<div class=\"row col-md-4\"></div>");
   break;
   case 'personne':
   case 'tous_pat':
@@ -444,25 +461,32 @@ date_default_timezone_set($gst_time_zone);
 
     if (!empty($gst_variantes) || !empty($st_variantes_prenoms))
     {
-    
-       print("<div id=col_variantes_epoux class=\"gauche\">Variantes connues");
-      print("<div class=\"deux_colonnes\">");
+       print("<div class=\"panel panel-default col-md-4\">");
+	   print("<div class=\"panel-heading\">Variantes connues</div>");
+       print("<div class=\"panel-body\">");
+	   print('<form>');
+	   print('<div class="form-row">');
+        
       if ($st_variantes_trouvees!="")
-        print("<div>Patronyme:<br><textarea rows=8 cols=20>$st_variantes_trouvees</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros\" rows=8 cols=20>$st_variantes_trouvees</textarea></div>");
       else
-        print("<div>Pas de variantes connues</div>");
+        print("<div class=\"col-md-6\">Pas de variantes connues</div>");
       if ($st_variantes_prenoms!="")
-        print("<div>Pr&eacute;nom:<br><textarea rows=8 cols=20>$st_variantes_prenoms</textarea></div>");
+		print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms\">Pr&eacute;nom:</label><textarea class=\"form-control\" id=\"variantes_prenoms\" rows=8 cols=20>$st_variantes_prenoms</textarea></div>");
       else
-        print("<div>Pas de variantes connues</div>");
-      print("</div>");    
+        print("<div class=\"col-md-6\">Pas de variantes connues</div>");
+      print("</div>"); // fin ligne
+      print("</form>");
+      print("</div>");	  
       print("</div>");
     }
     print(rappel_recherches_communes($connexionBD,"Recherche de la personne: $gst_prenom $gst_nom",$gi_idf_type_acte,$gi_annee_min,$gi_annee_max,$gi_idf_commune,$gi_rayon));
+	print("<div class=\"col-md-4\"></div>");
+	
     //FBOprint("Req=$gst_requete_actes<br>");
   break;
   default:
-    print("<div class=\"IMPORTANT\">Erreur: mode $gst_type_recherche inconnu</div>");
+    print("<span class=\"label label-danger\">Erreur: mode $gst_type_recherche inconnu</span>");
 }
 
 $etape_prec = getmicrotime();
@@ -475,20 +499,18 @@ $ga_sources=$connexionBD->sql_select_multiple_par_idf("select idf,script_demande
 print benchmark("Temps de recherche");
 
 $i_nb_actes = count($a_actes);
-print("<div class=alignCenter>$a_actes_total occurrence(s) trouv&eacute;e(s). ");
+print("<div class=\"row col-md-12\">$a_actes_total occurrence(s) trouv&eacute;e(s). ");
 print('<div id="curseur" class="infobulle"></div>');
-print('<div>');
-
-print '<label>Nombre de r&eacute;sultats par page</label>';
-print '<select id="per-page" name="per_page">';
+print("<div class='form-group col-md-2 col-md-offset-5'>");
+print '<label for=\"per-page\">Nombre de r&eacute;sultats par page</label>';
+print '<select id="per-page" name="per_page" class="form-control">';
 foreach ($per_page_options as $key => $value) {
   $elected = ($value == $_SESSION['per_page'])? ' selected="selected" ' : '';
   print '<option value="' . $key . '" ' . $elected . '>' . $value . '</option>';
 }
 print '</select>';
+print("</div></div>");
 
-
-print("<br></div>");
 if ($i_nb_actes>0)
 {
   foreach ($a_actes as $a_acte)
@@ -515,7 +537,6 @@ if ($i_nb_actes>0)
           break;
           default:
             $st_icone_td = $st_icone_ninfo;
-            //$st_detail = "<a href=\"PropositionModification.php?idf_acte=$i_idf_acte\" target=\"_blank\"  title=\"$releve\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\"></a>";
             $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" target=\"_blank\"  title=\"$releve\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\"></a>";
         }
       }
@@ -568,10 +589,10 @@ else
 }
 else
 {
-   print('<div style="text-align:center">');
+   print('<div class="row">');
    print("Aucun r&eacute;sultat<br>");
    print("V&eacute;rifiez que vous n'avez pas mis trop de contraintes (commune,type d'acte,...)<br>");
-   print("<br><div class=IMPORTANT>");
+   print("<br><div class=\"bg-danger\">");
    print("Rappel de vos crit&egrave;res: <br>");
    print(nl2br($st_criteres));
    print("</div>");
@@ -579,11 +600,12 @@ else
 
 }
 
-print('<div align=center><br>');
-print("<a style=\"align:center\" href=\"Recherches.php\" class=\"RetourReponses\">Revenir &agrave; la page de recherche</a>");
-print("<a style=\"align:center\" href=\"Recherches.php?recherche=nouvelle\" class=\"RetourReponses\">Commencer une nouvelle recherche</a>");
+print('<div class="btn-group col-md-offset-3 col-md-6" role="group">');
+print('<a class="btn btn-primary" href="Recherches.php" role="button">Revenir &agrave; la page de recherche</a>');  
+print('<a class="btn btn-primary" href="Recherches.php?recherche=nouvelle" role="button">Commencer une nouvelle recherche</a>');
 print("</div>");
-print ("</form>");
+
+print("</div>");
 print("</body></html>");
 $connexionBD->ferme();
 ?>
