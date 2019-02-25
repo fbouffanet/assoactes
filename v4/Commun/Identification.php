@@ -163,13 +163,13 @@ function affiche_menu_auth($pst_message)
   print("<input type=\"password\" name=\"mdp\" id=\"mdp\" size=\"30\" maxlength=\"30\" class=\"js-select-avec-recherche form-control\">\n");
   print("</div>\n");
   print('<div class="form-row col-md-12">');
-  print("<input type=\"submit\" value=\"Se connecter\" lass=\"form-row col-md-offset-4 col-md-4\">\n");  
+  print("<input type=\"submit\" value=\"Se connecter\" class=\"form-row col-md-offset-3 col-md-6 btn btn-primary\">\n");  
   print("</div>\n");
 
   print('</form>');
   print('</div>'); // fin panel body
   
-  print("<div align=center><button onClick=\"window.open('$gst_url_site/Commun/DemandeNouveauMDP.php','RecreeMDP','width=400,height=280');\">J'ai oubli&eacute; mon mot de passe</button></div>");
+  print("<button class=\"form-row col-md-offset-2 col-md-8 btn btn-primary\" onClick=\"window.open('$gst_url_site/Commun/DemandeNouveauMDP.php','RecreeMDP','width=400,height=280');\">J'ai oubli&eacute; mon mot de passe</button>");
   print("</div>");
   print("</body>");
   print("</html>");
