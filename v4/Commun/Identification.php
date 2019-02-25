@@ -193,7 +193,7 @@ function affiche_menu_refus()
   print('<div class="panel-heading">Refus de connexion</div>');
   print('<div class="panel-body">');  
   print("<div class=\"alert alert-danger\">L'acc&egrave;s &agrave la base de l'AGC est limit&eacute; &agrave; ses adh&eacute;rents &agrave; jour<br>Les intrus ne sont pas autoris&eacute;s</div>");
-  print('</div>')
+  print('</div>');
   print("</body>");
   print("</html>");
   die();
