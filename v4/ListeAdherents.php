@@ -20,7 +20,8 @@ if (isset($_GET['mod']))
    $gi_idf_adherent = (int) $_GET['mod'];
 }
 else
-  $gi_idf_adherent = isset($_POST['idf_adherent']) ? (int) $_POST['idf_adherent']:null;
+  $gi_idf_adherent = isset($_POST['idf_adht']) ? (int) $_POST['idf_adht']:null;
+
 
 if (isset($_GET['visu']))
 {
@@ -979,8 +980,10 @@ switch ($gst_mode) {
    break;
    case 'READHESION':
     $adherent = new Adherent($connexionBD,$gi_idf_adherent);
+    if ($adherent->getStatut()==ADHESION_SUSPENDU)
+		   $adherent->reactive();
     $adherent->initialise_depuis_formulaire();
-    $adherent->modifie_avec_droits();      
+    $adherent->modifie_avec_droits();       
     if ($adherent->envoie_message_readhesion())
       print("<div> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
     else
@@ -1004,13 +1007,12 @@ switch ($gst_mode) {
    case 'RECREER_MDP':
       $adherent = new Adherent($connexionBD,$gi_idf_adherent);
       $st_mdp = Adherent::mdp_alea();
-        //print("Nouveau MDP=$st_mdp<br>");
-        $adherent->change_mdp($st_mdp);
-        if (envoie_mail($i_idf,$st_nom,$st_prenom,$st_ident,$st_mdp,$pst_email))
-           print("<div> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
-        else
-           print("<div class=ERREUR> Echec lors de l'envoi du  message &agrave; l'adh&eacute;rent</div>");
-        menu_liste($connexionBD,$gst_ident,$gst_nom_a_chercher,$gc_statut);
+      //print("Nouveau MDP=$st_mdp<br>");        
+      if ($adherent->change_mdp($st_mdp))
+        print("<div> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
+      else
+        print("<div class=ERREUR> Echec lors de l'envoi du  message &agrave; l'adh&eacute;rent</div>");
+      menu_liste($connexionBD,$gst_ident,$gst_nom_a_chercher,$gc_statut);
    break;       
 }  
 print('</body></html>');
