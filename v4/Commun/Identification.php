@@ -181,16 +181,19 @@ function affiche_menu_auth($pst_message)
 function affiche_menu_refus()
 {
   global $gst_url_site;
-  print("<!DOCTYPE html><html>");
+  print("<!DOCTYPE html>");
   print("<head>\n");
-  //print("<script src='$gst_url_site/Commun/Identification.js' type='text/javascript'></script>\n");
-  print("<link href='$gst_url_site/Commun/Styles.css' type='text/css' rel='stylesheet'/>");
   print("<link rel=\"shortcut icon\" href=\"$gst_url_site/images/favicon.ico\">");
   print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />');
+  print("<link href='$gst_url_site/css/styles.css' type='text/css' rel='stylesheet'>");
+  print("<link href='$gst_url_site/css/bootstrap.min.css' rel='stylesheet'>");
   print("<title>Refus de connexion</title>\n");
   print("</head><body>");
-  print('<div class=TITRE>Refus de connexion</div>');
-  print("<div class=IMPORTANT><br>L'acc&egrave;s &agrave la base de l'AGC est limit&eacute; &agrave; ses adh&eacute;rents &agrave; jour<br>Les intrus ne sont pas autoris&eacute;s</div>");
+  print('<div class="panel panel-primary col-md-offset-4 col-md-4">');
+  print('<div class="panel-heading">Refus de connexion</div>');
+  print('<div class="panel-body">');  
+  print("<div class=\"alert alert-danger\">L'acc&egrave;s &agrave la base de l'AGC est limit&eacute; &agrave; ses adh&eacute;rents &agrave; jour<br>Les intrus ne sont pas autoris&eacute;s</div>");
+  print('</div>')
   print("</body>");
   print("</html>");
   die();
