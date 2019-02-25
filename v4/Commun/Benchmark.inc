@@ -15,7 +15,7 @@ function benchmark ($nom_etape)
 {
 	global $etape_prec;
 	$temps_ecoule = ($etape_prec) ? round((getmicrotime() - $etape_prec)*1000) : 0;
-	$retour = '<div class="alerte"><br>' . $nom_etape . ' : ' . $temps_ecoule . 'ms<br></div>';
+	$retour = '<div class="text-center">' . $nom_etape . ' : ' . $temps_ecoule . 'ms</div>';
 	$etape_prec = getmicrotime();
 	return $retour;
 }
