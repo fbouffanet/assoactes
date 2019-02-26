@@ -103,17 +103,21 @@ function affiche_menu_auth($pst_message)
   global $gst_url_site;
   print("<!DOCTYPE html>");
   print("<head>\n");
-  //print("<script src='$gst_url_site/Commun/Identification.js' type='text/javascript'></script>\n");
+
+  print("<link href='$gst_url_site/css/styles.css' type='text/css' rel='stylesheet'>");
+  print("<link href='$gst_url_site/css/bootstrap.min.css' rel='stylesheet'>");
+   
   print("<link href='$gst_url_site/Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
   print("<link href='$gst_url_site/Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
   print("<link href='$gst_url_site/Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
   print("<script src='$gst_url_site/Commun/jquery-min.js' type='text/javascript'></script>");
   print("<script src='$gst_url_site/js/jquery-ui.min.js' type='text/javascript'></script>");
   print("<script src='$gst_url_site/Commun/jquery.validate.min.js' type='text/javascript'></script>\n");
-  print("<link href='$gst_url_site/Commun/Styles.css' type='text/css' rel='stylesheet'/>");
+  print("<script src='$gst_url_site/js/bootstrap.min.js' type='text/javascript'></script>");
   print("<link rel=\"shortcut icon\" href=\"$gst_url_site/images/favicon.ico\">");
   print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />');
   print("<title>Identification</title>\n");
+  print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
   print("<script type='text/javascript'>");
   print("$(document).ready(function() {
   $(\"#identification\").validate({
@@ -139,32 +143,34 @@ function affiche_menu_auth($pst_message)
  ");
   print("</script>");
   print("</head><body>");
+  
+  print('<div class="container">');
+  print("<div class=\"form-row col-md-offset-4 col-md-4\"><img src= '$gst_url_site/images/LogoAGC.jpg' class=\"rounded mx-auto d-block\"  alt='Logo AGC'/></div>");
+  print('<div class="panel panel-primary col-md-offset-4 col-md-4">');
+  print('<div class="panel-heading">Authentification requise</div>');
+  print('<div class="panel-body">');  
   print('<form method="post" action='.$_SERVER['PHP_SELF'].' id="identification">');
-  print('<div align=center>');
-  print('<div>');
-  print('<div align=center>');
-  print("<img src= '$gst_url_site/images/LogoAGC.jpg' alt='Logo AGC'/><br><br>"); 
-  print('<div class=TITRE>Authentification requise </div>');
-  print("</div><br>\n");
   if ($pst_message!= '')
   {
-     print("<div class=IMPORTANT>$pst_message</div>");
+     print("<div class=\"alert alert-danger\">$pst_message</div>");
   }
-  print('Identifiant : ');
-  print("<input type=\"text\" name=\"ident\" size=\"30\" maxlength=\"30\">\n");
+  print('<div class="form-group row">');
+  print('<label for="ident" class="col-sm-6 col-form-label"> Identifiant:</label>');
+  print("<input type=\"text\" name=\"ident\" id=\"ident\" size=\"30\" maxlength=\"30\" class=\"js-select-avec-recherche form-control\">\n");
   print('</div>');
-  print('<br><div>');
-  print('Mot de passe : ');
-  print("<input type=\"password\" name=\"mdp\" size=\"30\" maxlength=\"30\">\n");
-  print("</div><br>\n");
-  print('<div>');
-  print("<input type=\"submit\" value=\"Se connecter\" >\n");  
-  print("</div><br>\n");
+  print('<div class="form-group row">');
+  print('<label for="mdp" class="col-sm-6 col-form-label">Mot de passe:</label>');
+  print("<input type=\"password\" name=\"mdp\" id=\"mdp\" size=\"30\" maxlength=\"30\" class=\"js-select-avec-recherche form-control\">\n");
+  print("</div>\n");
+  print('<div class="form-row col-md-12">');
+  print("<input type=\"submit\" value=\"Se connecter\" class=\"form-row col-md-offset-3 col-md-6 btn btn-primary\">\n");  
+  print("</div>\n");
 
-  
-  print('</div>');
   print('</form>');
-  print("<div align=center><button onClick=\"window.open('$gst_url_site/Commun/DemandeNouveauMDP.php','RecreeMDP','width=400,height=280');\">J'ai oubli&eacute; mon mot de passe</button></div>");
+  print('</div>'); // fin panel body
+  
+  print("<button class=\"form-row col-md-offset-2 col-md-8 btn btn-primary\" onClick=\"window.open('$gst_url_site/Commun/DemandeNouveauMDP.php','RecreeMDP','width=400,height=280');\">J'ai oubli&eacute; mon mot de passe</button>");
+  print("</div>");
   print("</body>");
   print("</html>");
 }
@@ -175,16 +181,19 @@ function affiche_menu_auth($pst_message)
 function affiche_menu_refus()
 {
   global $gst_url_site;
-  print("<!DOCTYPE html><html>");
+  print("<!DOCTYPE html>");
   print("<head>\n");
-  //print("<script src='$gst_url_site/Commun/Identification.js' type='text/javascript'></script>\n");
-  print("<link href='$gst_url_site/Commun/Styles.css' type='text/css' rel='stylesheet'/>");
   print("<link rel=\"shortcut icon\" href=\"$gst_url_site/images/favicon.ico\">");
   print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />');
+  print("<link href='$gst_url_site/css/styles.css' type='text/css' rel='stylesheet'>");
+  print("<link href='$gst_url_site/css/bootstrap.min.css' rel='stylesheet'>");
   print("<title>Refus de connexion</title>\n");
   print("</head><body>");
-  print('<div class=TITRE>Refus de connexion</div>');
-  print("<div class=IMPORTANT><br>L'acc&egrave;s &agrave la base de l'AGC est limit&eacute; &agrave; ses adh&eacute;rents &agrave; jour<br>Les intrus ne sont pas autoris&eacute;s</div>");
+  print('<div class="panel panel-primary col-md-offset-4 col-md-4">');
+  print('<div class="panel-heading">Refus de connexion</div>');
+  print('<div class="panel-body">');  
+  print("<div class=\"alert alert-danger\">L'acc&egrave;s &agrave la base de l'AGC est limit&eacute; &agrave; ses adh&eacute;rents &agrave; jour<br>Les intrus ne sont pas autoris&eacute;s</div>");
+  print('</div>');
   print("</body>");
   print("</html>");
   die();
