@@ -8,22 +8,24 @@ require_once 'Commun/commun.php';
 require_once('Commun/ConnexionBD.php');
 require_once('Commun/PaginationTableau.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
 print('<meta http-equiv="content-language" content="fr">');
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
 print("<link href='Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
 print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/menu.js' type='text/javascript'></script>");
 print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>");
 print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='js/select2.min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
 print("<script type='text/javascript'>");
 ?>
 
@@ -36,23 +38,29 @@ $('#patro_patcom').autocomplete({
    minLength: 3
 });
 $(".js-select-avec-recherche").select2();
+
+$("#idf_source").change(function() {
+     this.form.submit();
 });
 
-function maj(Formulaire)
-{
-   
-   if (document.forms[Formulaire].num_page_patcom)
-      document.forms[Formulaire].num_page_patcom.value=1;
-   document.forms[Formulaire].submit();
-}
+$("#idf_commune").change(function() {
+     this.form.submit();
+});
+
+$("#idf_type_acte").change(function() {
+     this.form.submit();
+});
+
+
+});
 
 <?php
 print("</script>");
 print('<title>Base AGC: Patronymes par communes</title>');
-print('</head>');
+print("</head>\n");
 
-print("\n<body>");
-
+print("<body>");
+print('<div class="container">');
 
 $i_session_idf_source = isset($_SESSION['idf_source_patcom']) ? $_SESSION['idf_source_patcom'] : 1;
 $i_get_idf_source=isset($_GET['idf_source']) ? (integer) $_GET['idf_source']: $i_session_idf_source; 
@@ -85,7 +93,6 @@ $_SESSION['idf_source_patcom'] = $gi_idf_source;
 $_SESSION['idf_commune_patcom'] = $gi_idf_commune;
 $_SESSION['idf_type_acte_patcom'] = $gi_idf_type_acte;
 $_SESSION['patro_patcom'] = $gst_patronyme;
-
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
@@ -126,23 +133,30 @@ $a_types_acte[-1] = "Tous";
 if (!in_array($gi_idf_type_acte,$a_types_acte_dispo))
    $gi_idf_type_acte=-1;    
 print("<form name=\"PatrosCommune\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-print('<div class=alignCenter><br>Source: <select name=idf_source id=idf_source class="js-select-avec-recherche" onChange="javascript:maj(0);">');
+print('<div class="form-row col-md-12"><div class="form-group col-md-4 col-md-offset-4">');
+print('<label for="idf_source">Source:</label><select name=idf_source id=idf_source class="js-select-avec-recherche form-control" ">');
 print(chaine_select_options($gi_idf_source,$a_sources));
-print('</select><br></div>');
+print('</select></div></div>');
 
-print('<div class=alignCenter><br>Commune: <select name=idf_commune id=idf_commune class="js-select-avec-recherche" onChange="javascript:maj(0);">');
+print('<div class="form-row col-md-12"><div class="form-group col-md-4 col-md-offset-4">');
+print('<label for="idf_commune">Commune:</label><select name=idf_commune id=idf_commune class="js-select-avec-recherche form-control" >');
 print(chaine_select_options($gi_idf_commune,$a_communes));
-print('</select><br></div>');
+print('</select></div></div>');
 
-print('<div class=alignCenter><br>Type d\'acte: <select name=idf_type_acte id=idf_type_acte class="js-select-avec-recherche" onChange="javascript:maj(0);">');
+print('<div class="form-row col-md-12"><div class="form-group col-md-4 col-md-offset-4">');
+print('<label for="idf_type_acte">Type d\'acte:</label><select name=idf_type_acte id=idf_type_acte class="js-select-avec-recherche form-control" >');
 print(chaine_select_options($gi_idf_type_acte,$a_types_acte));
-print('</select><br></div>');
+print('</select></div></div>');
 
-print("<div class=alignCenter><br>Patronyme (laisser * si aucun patronyme choisi): <input type=text id=patro_patcom name=patro_patcom size=15 maxlength=30 value=\"$gst_patronyme\"> <input type=submit value='Chercher'><br></div>");
+print('<div class="form-row col-md-12"><div class="form-group col-md-4 col-md-offset-4">');
+print("<label for=\"patro_patcom\">Patronyme:</label> <input type=text id=patro_patcom name=patro_patcom size=15 maxlength=30 value=\"$gst_patronyme\" class=\"form-control\" aria-describedby=\"aideCommune\">");
+print('<small id="aideCommune" class="form-text text-muted">laisser * si aucun patronyme choisi</small></div>');
+print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Chercher</button></div>');
+print('</div>'); // fin ligne
 
 if (empty($gi_idf_commune))
 {
-   print("<div class=alignCenter><br>Pas de donn&eacute;es</div>");
+   print("<div class=\"text-center alert alert-danger\">Pas de donn&eacute;es</div>");
 }
 else if ($gi_idf_type_acte==-1)
 {
@@ -155,7 +169,7 @@ else if ($gi_idf_type_acte==-1)
    $connexionBD->initialise_params(array(":patro"=>$gst_patronyme));   
    //print("Req=$st_requete< br>");
    $a_initiales_patronymes = $connexionBD->sql_select($st_requete);
-   print("<div class=alignCenter><br>");
+   print('<ul class="pagination justify-content-center">');
    $st_patro = isset($a_initiales_patronymes[0]) ? $a_initiales_patronymes[0] : '';
    $i_session_initiale = isset($_SESSION['initiale_patcom']) ? $_SESSION['initiale_patcom'] : $st_patro;
    if (empty($_GET['initiale_patcom']) )
@@ -176,12 +190,11 @@ else if ($gi_idf_type_acte==-1)
    foreach ($a_initiales_patronymes as $c_initiale)
    {
       if ($c_initiale==$gc_initiale)
-        print("<span style=\"font-weight:bold;\"
->$c_initiale </span>");
+        print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
       else
-        print("<a href=\"".$_SERVER['PHP_SELF']."?initiale_patcom=$c_initiale\">$c_initiale</a> ");
+        print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_patcom=$c_initiale\">$c_initiale</a></li>");
    }
-   print("<br></div>");
+   print("</ul>");
    if ($gst_patronyme=='')
      $st_requete="select sp.patronyme,sp.idf_type_acte,ta.nom, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join type_acte ta on (sp.idf_type_acte=ta.idf) where idf_source=$gi_idf_source and idf_commune=$gi_idf_commune and sp.patronyme like '$gc_initiale%' order by sp.patronyme,ta.nom";
     else
@@ -208,7 +221,7 @@ else if ($gi_idf_type_acte==-1)
       $pagination->affiche_entete_liste_select('PatrosCommune');
    }
    else
-      print("<div align=center>Pas de donn&eacute;es</div>\n");
+      print("<div class=\"text-center alert alert-danger\">Pas de donn&eacute;es</div>\n");
 }
 else
 {
@@ -221,7 +234,7 @@ else
      $connexionBD->initialise_params(array(":patro"=>$gst_patronyme)); 
    }
    $a_initiales_patronymes = $connexionBD->sql_select($st_requete);
-   print("<div class=alignCenter>");
+   print('<ul class="pagination justify-content-center">');
    $i_session_initiale = isset($_SESSION['initiale_patcom']) ? $_SESSION['initiale_patcom'] : $a_initiales_patronymes[0];
    if (empty($_GET['initiale_patcom']))
      $gc_initiale = $i_session_initiale;
@@ -242,12 +255,11 @@ else
    foreach ($a_initiales_patronymes as $c_initiale)
    {
       if ($c_initiale==$gc_initiale)
-        print("<span style=\"font-weight: bold;\"
->$c_initiale </span>");
+        print("<li class=\"page-item active\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
       else
-        print("<a href=".$_SERVER['PHP_SELF']."?initiale_patcom=$c_initiale>$c_initiale</a> ");
+        print("<li class=\"page-item\"><a href=".$_SERVER['PHP_SELF']."?initiale_patcom=$c_initiale>$c_initiale</a></li>");
    }
-   print("</div><br>");
+   print("</ul>");
    
    if ($gst_patronyme=='')
       $st_requete="select sp.patronyme, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp where idf_source=$gi_idf_source and idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and sp.patronyme like '$gc_initiale%' order by sp.patronyme";
@@ -266,7 +278,6 @@ else
       {
          list($st_patronyme,$i_annee_min,$i_annee_max,$i_nb_pers) = $a_stat_patro;
          $a_tableau_affichage[] = array("<a href=\"Recherches.php?recherche=nouvelle&idf_src=$gi_idf_source&idf_ca=$gi_idf_commune&idf_ta=$gi_idf_type_acte&a_min=$i_annee_min&a_max=$i_annee_max&var=N&nom=$st_patronyme\">$st_patronyme</a>",$i_annee_min,$i_annee_max,$i_nb_pers);
-         //$a_tableau_affichage[] = array("<a href=\"Recherches.php?recherche=nouvelle&idf_src=$gi_idf_source&idf_ca=$gi_idf_commune&idf_ta=$gi_idf_type_acte&var=N&nom=$st_patronyme\">$st_patronyme</a>",$i_annee_min,$i_annee_max,$i_nb_pers);
       }
       $pagination->init_page_cour($gi_num_page);
       $pagination->affiche_entete_liste_select('PatrosCommune');
@@ -274,8 +285,8 @@ else
       $pagination->affiche_entete_liste_select('PatrosCommune');      
    }
    else
-      print("<div align=center>Pas de donn&eacute;es</div>\n");
+      print("<div class=\"text-center alert alert-danger\">Pas de donn&eacute;es</div>\n");
 }
 print ("</form>");
-print("</body></html>");
+print("</div></body></html>");
 ?>
