@@ -185,15 +185,16 @@ print('</select></div></div>');
 
 print('<div class="form-row">');
 print('<div class="form-group col-md-4 col-md-offset-4">');
-print("<label for=\"annee_min\">Annee minimale:</label><input type=text name=annee_min id=annee_min size=4 maxlength=4 value=\"$gi_annee_min\" class=\"form-control\"></div>");
+print("<label for=\"annee_min\">Annee minimale:</label><input type=text name=annee_min id=annee_min size=4 maxlength=4 value=\"$gi_annee_min\" class=\"form-control\">");
 print('</div></div>');
+print('<div class="form-row">');
 print('<div class="form-group col-md-4 col-md-offset-4">');
-print("<label for=\"annee_max\">Annee maximale:</label><input type=text name=annee_max id=annee_max size=4 maxlength=4 value=\"$gi_annee_max\" class=\"form-control\"></div>");
+print("<label for=\"annee_max\">Annee maximale:</label><input type=text name=annee_max id=annee_max size=4 maxlength=4 value=\"$gi_annee_max\" class=\"form-control\">");
 print('</div></div>');
 
 print('<div class="form-row">');
 print('<button type=submit name=Rechercher class="btn btn-primary col-md-4 col-md-offset-4">Afficher les Statistiques</button>');   
-print('</div></div>');
+print('</div></div></div>');
 print('</form>');
 
 print('<div>');
