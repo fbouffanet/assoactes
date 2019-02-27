@@ -476,24 +476,24 @@ print('<div class="panel-body">');
 print('<form id="recherches_communes" class="form-inline">');
 print("<input type=hidden name=recherche value=\"\">");
 print('<div class="form-row col-md-12">');
-print('<div class="form-group  col-md-offset-1  col-md-2"><label for="idf_source_recherches_communes">Source:</label><select name="idf_source_recherches_communes" id="idf_source_recherches_communes" class="js-select-avec-recherche form-control">');
+print('<div class="form-group form-group col-md-4"><label for="idf_source_recherches_communes">Source:</label><select name="idf_source_recherches_communes" id="idf_source_recherches_communes" class="js-select-avec-recherche form-control">');
 $a_sources[0] = 'Toutes';
 print(chaine_select_options($gi_idf_source,$a_sources));
 print('</select></div>');
 
-print('<div class="form-group col-md-offset-2 col-md-2"><label for="idf_type_acte_recherches_communes">Type d\'acte:</label><select name="idf_type_acte_recherches_communes" id="idf_type_acte_recherches_communes" class="js-select-avec-recherche form-control">');
+print('<div class="form-group col-md-offset-2 col-md-6"><label for="idf_type_acte_recherches_communes">Type d\'acte:</label><select name="idf_type_acte_recherches_communes" id="idf_type_acte_recherches_communes" class="js-select-avec-recherche form-control">');
 $a_types_acte[0] = 'Tous';
 print(chaine_select_options($gi_idf_type_acte,$a_types_acte));
 print('</select>');
 print('</div></div>');
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-4"><label for="idf_commune_recherches_communes">Commune/Paroisse:</label><select name="idf_commune_recherches_communes" id="idf_commune_recherches_communes" class="js-select-avec-recherche form-control">');
+print('<div class="form-group col-md-6"><label for="idf_commune_recherches_communes">Commune/Paroisse:</label><select name="idf_commune_recherches_communes" id="idf_commune_recherches_communes" class="js-select-avec-recherche form-control">');
 $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
 print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
 print('</select></div>');
 
-print('<div class="form-check col-md-4">');
+print('<div class="form-check col-md-3">');
 
 if ($gst_paroisses_rattachees=='')
    print('<input type=checkbox name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui class="form-check-input">');
@@ -503,7 +503,7 @@ print('<label for="paroisses_rattachees_recherches_communes" class="form-check-l
 print('</div>');
 
 
-print("<div class=\"form-group col-md-4\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");
+print("<div class=\"form-group col-md-3\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");
 
 
 print('</div>');
