@@ -11,18 +11,21 @@ require_once '../Commun/ConnexionBD.php';
 require_once('../Commun/PaginationTableau.php');
 require_once('../Commun/commun.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print("<title>Gestion des sources</title>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr">');
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../Commun/menu.js' type='text/javascript'></script>");
 print("<link href='../Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
 print("<link href='../Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
 print("<link href='../Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
 print("<script src='../Commun/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>"); 
 ?>
 <script type='text/javascript'>
 
@@ -67,6 +70,7 @@ $(document).ready(function() {
 <?php
 print('</head>');
 print('<body>');
+print('<div class="container">');
 
 $gst_mode = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;
 if (isset($_GET['mod']))
@@ -87,7 +91,9 @@ $gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 function menu_liste($pconnexionBD)
 {
    global $gi_num_page_cour;
-   print("<div class=TITRE>Gestion des sources</div>");
+   print('<div class="panel panel-primary">');
+   print('<div class="panel-heading">Gestion des sources</div>');
+   print('<div class="panel-body">');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"suppression_sources\" >");
    $st_requete = "select idf,nom from source order by nom";
    $a_liste_sources = $pconnexionBD->liste_valeur_par_clef($st_requete);
@@ -101,14 +107,14 @@ function menu_liste($pconnexionBD)
       $pagination->affiche_tableau_edition();
    }
    else
-     print("<div align=center>Pas de sources</div>\n");
-   print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER\">");
-   print("<br><input type=submit value=\"Supprimer les sources sélectionnées\" ></div>");   
+     print('<div class="alert alert-danger">Pas de sources</div>');
+   print("<input type=hidden name=mode value=\"SUPPRIMER\">");
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Supprimer les sources s&eacute;lectionn&eacute;es</button>'); 
    print("</form>");  
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-   print("<div align=center><br><input type=hidden name=mode value=\"MENU_AJOUTER\">");  
-   print("<input type=submit value=\"Ajouter une source\"></div>");  
-   print('</form>');  
+   print("<input type=hidden name=mode value=\"MENU_AJOUTER\">");
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Ajouter une source</button>');   
+   print('</form></div></div>');  
 
 }
 
@@ -125,7 +131,7 @@ function menu_liste($pconnexionBD)
 function menu_edition($pst_nom_source,$pi_publication_gbk,$pst_script_demande,$pi_utilise_details,$pst_icone_info,$pst_icone_ninfo,$pst_icone_index)
 {
    global $ga_scripts_demande,$ga_booleen_oui_non,$ga_icones_source;
-   print("<table border=1>");
+   print("<table class=\"table table-bordered table-striped\">");
    print("<tr><th>Nom</th><td><input type=\"text\" maxlength=50 size=30 name=nom_source value=\"$pst_nom_source\"></td></tr>");
    $st_checked = $pi_publication_gbk==1? 'checked': '';
    print("<tr><th>Publication G&eacute;n&eacute;abank</th><td><input type=\"checkbox\" name=publication_geneabank value=1 $st_checked></td></tr>");
@@ -147,15 +153,14 @@ function menu_modifier($pconnexionBD,$pi_idf_source)
 {
    list($st_nom_source,$i_publication_gbk,$st_script_demande,$i_utilise_details,$st_icone_info,$st_icone_ninfo,$st_icone_index)=$pconnexionBD->sql_select_liste("select nom,publication_geneabank,script_demande,utilise_ds,icone_info,icone_ninfo,icone_index from source where idf=$pi_idf_source");
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"edition_source\">");
-   print("<div align=center><input type=hidden name=mode value=MODIFIER>");
+   print("<input type=hidden name=mode value=MODIFIER>");
    print("<input type=hidden name=idf_source value=$pi_idf_source>");
    menu_edition($st_nom_source,$i_publication_gbk,$st_script_demande,$i_utilise_details,$st_icone_info,$st_icone_ninfo,$st_icone_index);
-   print("</div>");
-   print("<div align=center><br><input type=submit value=\"Modifier\"></div>");
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Modifier</button>');
    print('</form>');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    print("<div align=center><input type=hidden name=mode value=LISTE>");
-   print("<br><input type=submit value=\"Annuler\"></div>");
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
    print('</form>');
 }
 
@@ -164,14 +169,13 @@ function menu_modifier($pconnexionBD,$pi_idf_source)
 function menu_ajouter()
 {
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"edition_source\">");
-   print("<div align=center><input type=hidden name=mode value=\"AJOUTER\">");
+   print("<input type=hidden name=mode value=\"AJOUTER\">");
    menu_edition('',0,'',0,'','','');
-   print("</div>");
-   print("<div align=center><br><input type=submit value=\"Ajouter\" ></div>");
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Ajouter</button>');
    print('</form>');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<div align=center><br><input type=hidden name=mode value=LISTE>");
-   print("<input type=submit value=\"Annuler\"></div>");
+   print("<input type=hidden name=mode value=LISTE>");
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
    print('</form>');
 }
 
@@ -221,22 +225,22 @@ switch ($gst_mode) {
         }
         else
         {
-          print("<div align=center>Les actes suivants doivent &ecirc;tre supprim&egrave;s auparavant:<br></div>");
+          print('<div class="alert alert-danger">Les actes suivants doivent &ecirc;tre supprim&egrave;s auparavant:</div>');
           $st_nom_source = $connexionBD->sql_select1("select nom from source where idf=$i_idf_source");
-          print("<div align=center>Source: $st_nom_source<br></div>");
-          print("<div align=center><table border=1>");
+          print("<div class=\"align-center\">Source: $st_nom_source</div>");
+          print("<table class=\"table table-bordered table-striped\">");
           print("<tr><th>Commune</th><th>Type d'acte</th></tr>\n");
           foreach ($a_actes as $a_acte)
           {
              list($st_commune,$st_type) = $a_acte;
              print("<tr><td>$st_commune</td><td>$st_type</td></tr>\n");
           }
-          print("</table><br></div>");          
+          print("</table>");          
         } 
      }
      menu_liste($connexionBD);
    break;  
       
 }  
-print('</body></html>');
+print('</div></body></html>');
 ?>
