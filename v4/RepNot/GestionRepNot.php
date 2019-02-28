@@ -48,17 +48,18 @@ switch ($gst_mode) {
  break;  
 }
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print("<title>Gestion des Repertoires de notaire</title>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr">');
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../Commun/jquery.validate.min.js' type='text/javascript'></script>");
 print("<script src='../Commun/additional-methods.min.js' type='text/javascript'></script>");
-print("<script src='../Commun/menu.js' type='text/javascript'></script>");
-
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 
 ?>
 <script type='text/javascript'>
@@ -172,7 +173,7 @@ $("#suppression_repertoires").validate({
 <?php
 print('</head>');
 print('<body>');
-
+print('<div class="container">');
 
 if (isset($_GET['mod']))
 {
@@ -204,7 +205,9 @@ function menu_liste($pconnexionBD)
 	global $gi_num_page_cour,$gi_max_taille_upload;  
   $st_requete = "SELECT rnd.idf_repertoire,rnd.nom_notaire,ca.nom,rnd.cote,rnd.publication, concat(adht.prenom,' ',adht.nom),count(rna.idf_acte) FROM rep_not_desc rnd join commune_acte ca on (rnd.idf_commune=ca.idf) left join rep_not_actes rna on (rnd.idf_repertoire=rna.idf_repertoire) left join adherent adht on (rnd.idf_releveur=adht.idf) group by rnd.idf_repertoire order by rnd.nom_notaire,ca.nom";
 	$a_liste_rep_not =liste_rep_not($pconnexionBD);
-  print("<div class=TITRE>Gestion des R&eacute;pertoires de notaire</div>");
+	print('<div class="panel panel-primary">');
+    print('<div class="panel-heading">Gestion des R&eacute;pertoires de notaire</div>');
+    print('<div class="panel-body">');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"suppression_repertoires\">");
 	$a_liste_repertoires = $pconnexionBD->sql_select_multiple_par_idf($st_requete);
   $i_nb_repertoires=count($a_liste_repertoires);
@@ -217,70 +220,107 @@ function menu_liste($pconnexionBD)
 		$pagination->affiche_tableau_edition();
 	}
 	else
-		print("<div align=center>Pas de r&eacute;pertoires</div>\n");
-	print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER\">");
-	print("<br><input type=submit value=\"Supprimer les repertoires selectionnes\" ></div>");   
+		print("<div class=\"alert alert-danger\">Pas de r&eacute;pertoires</div>\n");
+	print("<input type=hidden name=mode value=\"SUPPRIMER\">");
+	print('<div class="form-row">');   
+    print('<button type=submit class="btn btn-danger col-md-offset-4 col-md-4">Supprimer les r&eacute;pertoires selectionn&eacute;s</button>');
+    print('</div>');
+ 
 	print("</form>");  
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><br><input type=hidden name=mode value=\"MENU_AJOUTER\">");  
-	print("<input type=submit value=\"Ajouter un repertoire\"></div>");  
+	print("<input type=hidden name=mode value=\"MENU_AJOUTER\">");
+	print('<div class="form-row">');
+    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Ajouter un r&eacute;pertoire </button>');
+    print('</div>');	
+ 	print('</form>');
+	
+	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+	print('<div align=center><br><input type="hidden" name="mode" value="CALCUL_VARIANTES" />');
+
+	print('<div class="form-row">');
+    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">(Re)Calculer les variantes</button>');
+    print('</div>');
 	print('</form>');
-  print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-  print('<div align=center><br><input type="hidden" name="mode" value="CALCUL_VARIANTES" />');
-  print('<input type="submit" value="(Re)Calculer les variantes"/></div>');
-  print('</form>');  
-  print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-  print('<fieldset><legend>Export:</legend>');
-  print("<div align=center><select name=idf_rep id=idf_rep_export>");
-  foreach($a_liste_rep_not as $i_idf_rep => $a_ligne)
-  {
+  
+    print('<div class="panel">');
+    print('<div class="panel-heading">Export</div>');
+    print('<div class="panel-body">');
+	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+	print('<div class="form-row col-md-12">');
+    print('<div class="form-group col-md-6">');
+	print("<select name=idf_rep id=idf_rep_export class=\"form-control\">");
+	foreach($a_liste_rep_not as $i_idf_rep => $a_ligne)
+	{
       list($st_notaire,$st_paroisse,$st_cote) = $a_ligne;
       print("<option value=\"$i_idf_rep\">$st_notaire - $st_paroisse ($st_cote)</option>");
-  }
-  print("</div>"); 
-  print('<div align=center><br><input type="hidden" name="mode" value="EXPORT" />');
-  print('<input type="submit" value="Exporter le répertoire"/></div>');
-  print('</fieldset>');
-  print('</form>');
-  print('<fieldset><legend>Import:</legend>');
-  print("<form enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"import_rep_not\">");
-  print('<div align=center><br><input type="hidden" name="MAX_FILE_SIZE" value="$gi_max_taille_upload" >'); 
-  print("<div align=center><select name=idf_rep id=idf_rep_import>");
-  foreach($a_liste_rep_not as $i_idf_rep => $a_ligne)
-  {
+	}
+	print("</div>"); 
+	print('<input type="hidden" name="mode" value="EXPORT" />');
+	print('<button type="submit" class="col-md-6 btn btn-primary">Exporter le r&eacute;pertoire</button>');
+	print("</div></div>"); 
+	
+	print('</form></div></div>');
+  
+    print('<div class="panel">');
+    print('<div class="panel-heading">Import:</div>');
+    print('<div class="panel-body">');
+	print("<form enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"import_rep_not\">");
+	print('<input type="hidden" name="MAX_FILE_SIZE" value="$gi_max_taille_upload" >');
+    print('<div class="form-row col-md-12">');
+    print('<div class="col-md-4">');	
+	print("<select name=idf_rep id=idf_rep_import class=\"form-control\">");
+	foreach($a_liste_rep_not as $i_idf_rep => $a_ligne)
+	{
       list($st_notaire,$st_paroisse,$st_cote) = $a_ligne;
       print("<option value=\"$i_idf_rep\">$st_notaire - $st_paroisse ($st_cote)</option>");
-  }
-  print("</select></div>");
-  print('<input type="hidden" name="mode" value="IMPORT" >');
-  print('Fichier: <input name="RepNotFich" type="file" id="RepNotFich"><br></div>');
-  print('<div align=center><br><input type="submit" value="Charger le fichier répertoire"/></div>');
-  print('</form>');
-  print('</fieldset>');
-  print('<fieldset><legend>Fusion de types:</legend>');
-  print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"fusionner_type\">");
-  print("<div align=center><input type=hidden name=mode value=\"FUSIONNER_TYPE\">");
-  $st_requete ="SELECT distinct `type` from `rep_not_actes` order by `type`";
+	}
+	print("</select></div>");
+	print('<input type="hidden" name="mode" value="IMPORT" >');
+	print('<div class="col-md-4">');
+	print('<label for="RepNotFich" class="custom-file-label">Fichier:</label><input name="RepNotFich" type="file" id="RepNotFich" class="custom-file-input"></div>');
+	print('<div class="col-md-4">');
+	print('<button type=submit class="btn btn-primary">Charger le fichier r&eacute;pertoire</button></div></div>');
+	print('</form></div></div>');
+	
+	print('<div class="panel">');
+    print('<div class="panel-heading">Fusion de types:</div>');
+    print('<div class="panel-body">');
+	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"fusionner_type\">");
+	print("<input type=hidden name=mode value=\"FUSIONNER_TYPE\">");
+	$st_requete ="SELECT distinct `type` from `rep_not_actes` order by `type`";
 	$a_types = $pconnexionBD->sql_select($st_requete);
-  print("Remplacer le type: <select name=\"type_acte_orig\" id=\"type_acte_orig\"><option></option>");
-  foreach ($a_types as $st_type)
-  {
-    print("<option>$st_type</option>\n");
-  }
-  print("</select>\n");
-  print("par le type: <select name=\"type_acte_dest\" id=\"type_acte_dest\"><option></option>");
-  print("</select>\n");
-  foreach ($a_types as $st_type)
-  print("</div>");
-  print("<div align=center><br><input type=submit value=\"Fusionner\" ></div>");
-  print('</form>');
-  print('</fieldset>');
-  print('<fieldset><legend>Liste des r&eacute;pertoires:</legend>');
-  print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"exporter_liste\">");
-  print("<input type=hidden name=mode value=\"LISTE_REP\">");
-  print("<div align=center><br><input type=submit value=\"Exporter la liste des notaires\" ></div>");
-  print('</form>');
-  print('</fieldset>');
+	print('<div class="form-row col-md-12">');
+	print('<div class="form-group col-md-5">');
+	print("<label for\"type_acte_orig\">Remplacer le type:</label><select name=\"type_acte_orig\" id=\"type_acte_orig\" class=\"form-control\"><option></option>");
+	foreach ($a_types as $st_type)
+	{
+		print("<option>$st_type</option>\n");
+	}
+	print("</select></div>");
+	print('<div class="form-group col-md-5">');
+	print("<label for\"type_acte_dest\">par le type:</label><select name=\"type_acte_dest\" id=\"type_acte_dest\" class=\"form-control\"><option></option>");	
+	foreach ($a_types as $st_type)
+   {
+		print("<option>$st_type</option>\n");
+	}
+   print("</select>\n");
+	print("</div>");
+	print('<div class="form-group col-md-2">');
+	print("<button type=submit>Fusionner</button></div></div>");
+	print('</form>');
+	print('</div></div>');
+  
+    print('<div class="panel">');
+    print('<div class="panel-heading">Liste des r&eacute;pertoires:</div>');
+    print('<div class="panel-body">'); 
+    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"exporter_liste\">");
+    print("<input type=hidden name=mode value=\"LISTE_REP\">");
+	print('<div class="form-row col-md-12">');
+    print("<button type=submit class=\"col-md-offset-4 col-md-4\">Exporter la liste des notaires</button>");
+    print('</div>');
+	print('</form></div></div>');
+  
+    print('</div></div>');
 }
 
 /**
@@ -296,7 +336,7 @@ function menu_liste($pconnexionBD)
  */ 
 function menu_edition($pa_communes,$pa_releveurs,$pi_idf_repertoire,$pst_nom_notaire,$pst_cote,$pi_idf_commune,$pi_idf_releveur,$pc_publication)
 {
-   print("<table border=1>");
+   print("<table class=\"table table-bordered table-striped\">");
    print("<tr><th>Identifiant du r&eacute;pertoire</th><td>$pi_idf_repertoire</td></tr>");
    print("<tr><th>Nom du notaire</th><td><input type=\"text\" maxlength=50 size=30 name=nom_notaire id=nom_notaire value=\"$pst_nom_notaire\"></td></tr>");
    print("<tr><th>Cote du notaire</th><td><input type=\"text\" maxlength=10 size=10 name=cote id=cote value=\"$pst_cote\"></td></tr>");
@@ -321,15 +361,18 @@ function menu_modifier($pconnexionBD,$pi_idf_repertoire,$pa_communes,$pa_releveu
 {
    list($st_nom_notaire,$st_cote,$idf_commune,$idf_releveur,$c_publication)=$pconnexionBD->sql_select_liste("select nom_notaire,cote,idf_commune,idf_releveur,publication from `rep_not_desc` where idf_repertoire=$pi_idf_repertoire");  
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"modifie_rep_not\">");
-   print("<div align=center><input type=hidden name=mode value=MODIFIER>");
+   print("<input type=hidden name=mode value=MODIFIER>");
    print("<input type=hidden name=idf_repertoire value=$pi_idf_repertoire>");
    menu_edition($pa_communes,$pa_releveurs,$pi_idf_repertoire,$st_nom_notaire,$st_cote,$idf_commune,$idf_releveur,$c_publication);
-   print("</div>");
-   print("<div align=center><br><input type=submit value=\"Modifier\"></div>");
+   print('<div class="form-row col-md-12">');
+   print("<button type=submit class=\"col-md-offset-4 col-md-4\">Modifier</button>");
+   print('</div>');
    print('</form>');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<div align=center><input type=hidden name=mode value=LISTE>");
-   print("<br><input type=submit value=\"Annuler\"></div>");
+   print("<input type=hidden name=mode value=LISTE>");
+   print('<div class="form-row col-md-12">');
+   print("<button type=submit class=\"col-md-offset-4 col-md-4\">Annuler</button>");
+   print('</div>');
    print('</form>');
 }
 
@@ -340,27 +383,26 @@ function menu_modifier($pconnexionBD,$pi_idf_repertoire,$pa_communes,$pa_releveu
 function menu_ajouter($pa_communes,$pa_releveurs)
 {
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"ajoute_rep_not\">");
-   print("<div align=center><input type=hidden name=mode value=\"AJOUTER\">");
+   print("<input type=hidden name=mode value=\"AJOUTER\">");
    menu_edition($pa_communes,$pa_releveurs,null,'','',0,0,'N');
-   print("</div>");
-   print("<div align=center><br><input type=submit value=\"Ajouter\" ></div>");
+   print('<div class="form-row col-md-12">');
+   print("<button type=submit class=\"col-md-offset-4 col-md-4\">Ajouter</button>");
+   print('</div>');
    print('</form>');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<div align=center><br><input type=hidden name=mode value=LISTE>");
-   print("<input type=submit value=\"Annuler\"></div>");
+   print("<input type=hidden name=mode value=LISTE>");
+   print('<div class="form-row col-md-12">');
+   print("<button type=submit class=\"col-md-offset-4 col-md-4\">Annuler</button>");
+   print('</div>');
    print('</form>');
 }
-
-
 
 /**
  * Calcule les variantes de tous les patronymes commençant par une lettre ou une parenthese
  * @param object $pconnexionBD Connexion à la base 
  * @param string $pst_rep_tmp répertoire temporaire où est stocké le fichier avant chargement en base
- * @global string $gst_jeu_de_caracteres_par_defaut jeu de caractères par défaut
  */
 function calcule_variantes($pconnexionBD,$pst_rep_tmp,$pst_parametres_load_data) {
-    global $gst_jeu_de_caracteres_par_defaut;
     $ga_patronymes = $pconnexionBD->sql_select("select distinct nom1 as patronyme from rep_not_actes union select distinct nom2 as patronyme from rep_not_actes");
     //$i_precision = 5; 
     //$i_precision = 6;
@@ -409,17 +451,17 @@ function calcule_variantes($pconnexionBD,$pst_rep_tmp,$pst_parametres_load_data)
     }
     catch (Exception $e) {
        unlink($st_fich_temp);
-       die('Suppression rep_not_variantes impossible: ' . $e->getMessage());
+       die('<div class=\"alert alert-danger\">Suppression rep_not_variantes impossible: ' . $e->getMessage()).'</div>';
     }   
     $st_fich_temp=addslashes($st_fich_temp);
-    $st_requete="LOAD DATA $pst_parametres_load_data INFILE '$st_fich_temp' IGNORE INTO TABLE `rep_not_variantes` CHARACTER SET $gst_jeu_de_caracteres_par_defaut FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n' (idf_groupe,nom)";
+    $st_requete="LOAD DATA $pst_parametres_load_data INFILE '$st_fich_temp' IGNORE INTO TABLE `rep_not_variantes` FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n' (idf_groupe,nom)";
      try
      {
        $pconnexionBD->execute_requete($st_requete);
      }
      catch (Exception $e) {
        unlink($st_fich_temp);
-       die('Chargement variantes rep_not impossible: ' . $e->getMessage());
+       die('<div class=\"alert alert-danger\">Chargement variantes rep_not impossible: ' . $e->getMessage()).'</div>';
      }   
      unlink($st_fich_temp);    
 }   
@@ -451,11 +493,9 @@ function exporte_rep_not($pconnexionBD,$pi_idf_rep)
  * @param object $pconnexionBD Identifiant de la connexion de base 
  * @param integer $pi_idf_rep Identifiant du répertoire
  * @param string $pst_parametre_load_data Paramètres du Load Data
-* @global string $gst_jeu_de_caracteres_par_defaut jeu de caractères par défaut
  */
 function importe_rep_not($pconnexionBD,$pi_idf_rep,$pst_parametre_load_data)
 {
-    global $gst_jeu_de_caracteres_par_defaut;
     global $gst_repertoire_telechargement;
     $st_nom_fich_dest = sprintf("rep_not_%d.txt",$pi_idf_rep);     
     $st_fich_dest = "$gst_repertoire_telechargement/$st_nom_fich_dest";
@@ -500,7 +540,7 @@ function importe_rep_not($pconnexionBD,$pi_idf_rep,$pst_parametre_load_data)
     chmod($st_fich_chgt,0644);
     $st_requete = "delete from rep_not_actes  where idf_repertoire=$pi_idf_rep";
     $pconnexionBD->execute_requete($st_requete); 
-    $st_requete = "load data $pst_parametre_load_data infile '$st_fich_chgt' into table rep_not_actes CHARACTER SET $gst_jeu_de_caracteres_par_defaut fields terminated by '".SEP_CSV."' OPTIONALLY ENCLOSED BY '\"' lines terminated by '\n' (idf_repertoire,jour,mois,annee,date_rep,type,nom1,prenom1,nom2,prenom2,paroisse,commentaires,page)"; 
+    $st_requete = "load data $pst_parametre_load_data infile '$st_fich_chgt' into table rep_not_actes fields terminated by '".SEP_CSV."' OPTIONALLY ENCLOSED BY '\"' lines terminated by '\n' (idf_repertoire,jour,mois,annee,date_rep,type,nom1,prenom1,nom2,prenom2,paroisse,commentaires,page)"; 
     $pconnexionBD->execute_requete($st_requete);
     print('<div align=center class="INFO">Chargement effectu&eacute;</div><br>');
     sleep(1);
@@ -533,13 +573,13 @@ switch ($gst_mode) {
 		$i_idf_commune = (int) ($_POST['idf_commune']);
 		$i_idf_releveur = (int) ($_POST['idf_releveur']);
 		$c_publication = isset ($_POST['publication']) ? 'O' : 'N';
-    $connexionBD->initialise_params(array(':notaire'=>$st_notaire,':cote'=>$st_cote,':idf_commune'=>$i_idf_commune,':idf_releveur'=>$i_idf_releveur,':publication'=>$c_publication,':idf_repertoire'=>$i_idf_repertoire));
+		$connexionBD->initialise_params(array(':notaire'=>$st_notaire,':cote'=>$st_cote,':idf_commune'=>$i_idf_commune,':idf_releveur'=>$i_idf_releveur,':publication'=>$c_publication,':idf_repertoire'=>$i_idf_repertoire));
 		$st_requete = "update `rep_not_desc` set nom_notaire=:notaire, cote=:cote,idf_commune=:idf_commune,idf_releveur=:idf_releveur,publication=:publication where idf_repertoire=:idf_repertoire";
 		$connexionBD->execute_requete($st_requete);
 	}
 	else
 	{
-		print("<div class=ERROR>Identifiant de r&eacute;pertoire non sp&eacute;cifi&eacute;</div>");
+		print("<div class=\"alert alert-danger\">Identifiant de r&eacute;pertoire non sp&eacute;cifi&eacute;</div>");
 	}
 	menu_liste($connexionBD);  
   break;
@@ -574,13 +614,13 @@ switch ($gst_mode) {
 			if ($i_nb_actes==0)
 				$connexionBD->execute_requete("delete from `rep_not_desc` where idf_repertoire=$i_idf_repertoire");
 			else
-				print("<div class=IMPORTANT>Des actes sont d&eacute;j&agrave; index&eacute;s pour ce r&eacute;pertoire</div>");
+				print("<div class=\"alert alert-danger\">Des actes sont d&eacute;j&agrave; index&eacute;s pour ce r&eacute;pertoire</div>");
         }
 		menu_liste($connexionBD);
 	break;
   case 'CALCUL_VARIANTES':
      calcule_variantes($connexionBD,$gst_repertoire_chargement_actes,$gst_parametres_load_data);
-     print("<div class=IMPORTANT>Variantes calcul&eacute;es</div>");
+     print("<div class=\"alert alert-success\">Variantes calcul&eacute;es</div>");
      menu_liste($connexionBD);  
   break;
   case 'IMPORT':
@@ -591,10 +631,11 @@ switch ($gst_mode) {
   case 'FUSIONNER_TYPE':
      $st_type_acte_orig = trim($_POST['type_acte_orig']);
 		 $st_type_acte_orig = substr($st_type_acte_orig,0,40);
+		 $st_type_acte_orig= mysql_real_escape_string($st_type_acte_orig);
      $st_type_acte_dest = trim($_POST['type_acte_dest']);
 		 $st_type_acte_dest = substr($st_type_acte_dest,0,40);
-     $connexionBD->initialise_params(array(':type_acte_orig'=>$st_type_acte_orig,':type_acte_dest'=>$st_type_acte_dest));
-     $st_requete = "update `rep_not_actes` set `type`=:type_acte_dest where `type`=:type_acte_orig";
+		 $st_type_acte_dest= mysql_real_escape_string($st_type_acte_dest);
+     $st_requete = "update `rep_not_actes` set `type`='$st_type_acte_dest' where `type`='$st_type_acte_orig'";
      try
      {
         $connexionBD->execute_requete($st_requete);
@@ -603,9 +644,9 @@ switch ($gst_mode) {
      {
       echo 'Exception reçue : ',  $e->getMessage(), "\n";
      }
-     print("<div class=IMPORTANT>Remplacement effectu&eacute;</div>");
+     print("<div class=\"alert alert-success\">Remplacement effectu&eacute;</div>");
      menu_liste($connexionBD);
   break;    
 }  
-print('</body></html>');
+print('</div></body></html>');
 ?>
