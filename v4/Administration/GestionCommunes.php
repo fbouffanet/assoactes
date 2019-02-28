@@ -11,12 +11,15 @@ require_once '../Commun/ConnexionBD.php';
 require_once('../Commun/PaginationTableau.php');
 require_once('../Commun/commun.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print("<title>Gestion des communes</title>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr">');
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+
 print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../Commun/menu.js' type='text/javascript'></script>");
 
@@ -26,6 +29,7 @@ print("<link href='../Commun/jquery-ui.theme.min.css' type='text/css' rel='style
 print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../Commun/jquery.validate.min.js' type='text/javascript'></script>");
 print("<script src='../Commun/additional-methods.min.js' type='text/javascript'></script>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>"); 
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {
@@ -112,6 +116,7 @@ $("#suppression_communes").validate({
 <?php
 print('</head>');
 print('<body>');
+print('<div class="container">');
 
 $gst_mode = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;
 if (isset($_GET['mod']))
@@ -134,22 +139,25 @@ function menu_liste($pconnexionBD)
    global $gi_num_page_cour;
    $st_requete = "SELECT DISTINCT (left( nom, 1 )) AS init FROM `commune_acte` ORDER BY init";
    $a_initiales_communes = $pconnexionBD->sql_select($st_requete);
-   print("<div class=TITRE>Gestion des communes/paroisses</div>");
-   print("<div align=center><br><form  action=\"".$_SERVER['PHP_SELF']."\" id=\"suppression_communes\" method=\"post\">");
-
-   print("<div><br>");
+   print('<div class="panel panel-primary">');
+   print('<div class="panel-heading">Gestion des communes/paroisses</div>');
+   print('<div class="panel-body">');
+   print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"suppression_communes\" method=\"post\">");
+   
+   print('<div class="form-row col-md-12">');   
+   print('<ul class="pagination justify-content-center">');
    $i_session_initiale = isset($_SESSION['initiale']) ? $_SESSION['initiale'] : $a_initiales_communes[0];
    $gc_initiale = empty($_GET['initiale']) ? $i_session_initiale : $_GET['initiale'];
    $_SESSION['initiale'] = $gc_initiale;   
    foreach ($a_initiales_communes as $c_initiale)
    {
      if ($c_initiale==$gc_initiale)
-        print("<span style=\"font-weight: bold;\"
->$c_initiale </span>");
+        print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
      else
-        print("<a href=\"".$_SERVER['PHP_SELF']."?initiale=$c_initiale\">$c_initiale</a> ");
+        print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale=$c_initiale\">$c_initiale</a></li>");
    }
-   print("<br></div>");
+   print("</ul></div>");
+   
    $st_requete = "select idf,nom from commune_acte where nom like '$gc_initiale%' order by nom";
    $a_liste_communes = $pconnexionBD->liste_valeur_par_clef($st_requete);
    $i_nb_communes=count($a_liste_communes);
@@ -163,18 +171,19 @@ function menu_liste($pconnexionBD)
       $pagination->affiche_entete_liens_navigation();      
    }
    else
-     print("<div align=center>Pas de communes</div>\n");
-    print("<div align=center><br><input type=hidden name=mode value=\"SUPPRIMER\">");
-   print("<input type=submit value=\"Supprimer les communes sélectionnées\" ></div>");   
+   print('<div class="alert alert-danger">Pas de communes</div>');
+   print("<input type=hidden name=mode value=\"SUPPRIMER\">");
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Supprimer les communes s&eacute;lectionn&eacute;es</button>');   
    print("</form>");  
+   
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-   print("<div align=center><br><input type=hidden name=mode value=\"MENU_AJOUTER\">");  
-   print("<input type=submit value=\"Ajouter une commune\"></div>");  
+   print("<input type=hidden name=mode value=\"MENU_AJOUTER\">");
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Ajouter une commune</button>');      
    print('</form>');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-   print("<div align=center><br><input type=hidden name=mode value=\"EXPORTER\">");  
-   print("<input type=submit value=\"Exporter les communes\"></div>");  
-   print('</form></div>');  
+   print("<input type=hidden name=mode value=\"EXPORTER\">");
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Exporter les communes</button>');    
+   print('</form></div></div>');  
 
 }
 
@@ -198,7 +207,7 @@ function menu_liste($pconnexionBD)
  */ 
 function menu_edition($pst_nom_commune,$pi_code_insee,$pi_num_paroisse,$pst_latitude,$pst_longitude,$pi_idf_canton,$pa_cantons,$pi_debut_communale,$pi_debut_greffe,$pst_protestants,$pst_sans_rp,$pst_points_svg,$pst_bureau_controle,$pst_date_min_controle,$pst_date_max_controle)
 {
-   print("<table border=1>");
+   print("<table class=\"table table-bordered table-striped\">");
    print("<tr><th>Nom</th><td><input type=\"text\" maxlength=50 size=30 name=nom_commune value=\"$pst_nom_commune\"></td></tr>");
    print("<tr><th>Code Insee</th><td><input type=\"text\" maxlength=5 size=5 name=code_insee value=\"$pi_code_insee\"></td></tr>");
    print("<tr><th>Numéro Paroisse</th><td><input type=\"text\" maxlength=2 size=2 name=num_paroisse value=\"$pi_num_paroisse\"></td></tr>");
@@ -228,15 +237,15 @@ function menu_modifier($pconnexionBD,$pi_idf_commune,$pa_cantons)
 {
    list($st_commune_acte,$st_code_insee,$i_num_paroisse,$st_latitude,$st_longitude,$i_idf_canton,$i_debut_communale,$i_debut_greffe,$st_points_svg,$st_protestants,$st_sans_rp,$st_bureau_controle,$st_date_min_controle,$st_date_max_controle)=$pconnexionBD->sql_select_liste("select nom,code_insee,numero_paroisse,latitude, longitude,idf_canton,debut_communale, debut_greffe,points_svg,protestants,sans_rp,bureau_controle,date_min_controle,date_max_controle from commune_acte where idf=$pi_idf_commune");
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"edition_commune\">");
-   print("<div align=center><input type=hidden name=mode value=\"MODIFIER\">");
+   print("<input type=hidden name=mode value=\"MODIFIER\">");
    print("<input type=hidden name=idf_commune value=$pi_idf_commune>");
    menu_edition($st_commune_acte,$st_code_insee,$i_num_paroisse,$st_latitude,$st_longitude,$i_idf_canton,$pa_cantons,$i_debut_communale,$i_debut_greffe,$st_protestants,$st_sans_rp,$st_points_svg,$st_bureau_controle,$st_date_min_controle,$st_date_max_controle);
    print("</div>");
-   print("<div align=center><br><input type=submit value=\"Modifier\"></div>");
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Modifier</button>');
    print('</form>');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
-   print("<br><input type=submit value=\"Annuler\"></div>");
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
+   print("<input type=hidden name=mode value=\"LISTE\">");
    print('</form>');
 }
 
@@ -246,14 +255,13 @@ function menu_modifier($pconnexionBD,$pi_idf_commune,$pa_cantons)
 function menu_ajouter($pa_cantons)
 {
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"edition_commune\">");
-   print("<div align=center><input type=hidden name=mode value=\"AJOUTER\">");
+   print("<input type=hidden name=mode value=\"AJOUTER\">");
    menu_edition('','','','','',0,$pa_cantons,'','','N','N','','N','','');
-   print("</div>");
-   print("<div align=center><br><input type=submit value=\"Ajouter\"></div>");
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Ajouter</button>');
    print('</form>');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
-   print("<br><input type=submit value=\"Annuler\"></div>");
+   print("<input type=hidden name=mode value=\"LISTE\">");
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
    print('</form>');
 }
 
@@ -447,17 +455,17 @@ switch ($gst_mode) {
         }
         else
         {
-          print("<div align=center>Les actes suivants doivent &ecirc;tre supprim&eacute;s auparavant :</div><br>");
+          print("<div class=\"text-center\">Les actes suivants doivent &ecirc;tre supprim&eacute;s auparavant :</div>");
           $st_nom_commune = $connexionBD->sql_select1("select nom from commune_acte where idf=$i_idf_commune");
-          print("<div align=center>Commune: $st_nom_commune</div><br>");
-          print("<div align=center><table border=1>");
+          print("<div class=\"text-center\">Commune: $st_nom_commune</div>");
+          print("<table class=\"table table-bordered table-striped\">");
           print("<tr><th>Source</th><th>Type d'acte</th></tr>\n");
           foreach ($a_actes as $a_acte)
           {
              list($st_source,$st_type) = $a_acte;
              print("<tr><td>$st_source</td><td>$st_type</td></tr>\n");
           }
-          print("</table></div><br>");          
+          print("</table>");          
         } 
      }
      menu_liste($connexionBD);
@@ -465,12 +473,12 @@ switch ($gst_mode) {
    case 'EXPORTER':
      $st_export_nimv2 = "$gst_repertoire_telechargement/CommunesNim.csv";
      exporte_communes_Nim($connexionBD,$st_export_nimv2);
-     print("<div align=center>Export cr&eacute;&eacute;: <a href=\"./telechargements/CommunesNim.csv\">Communes Nim&egrave;gue</a><br></div>");
+     print("<div class=\"text-center\">Export cr&eacute;&eacute;: <a href=\"./telechargements/CommunesNim.csv\">Communes Nim&egrave;gue</a><br></div>");
      menu_liste($connexionBD);
    break;
       
 }  
 
-print('</body></html>');
+print('</div></body></html>');
 
 ?>
