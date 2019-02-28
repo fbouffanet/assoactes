@@ -27,11 +27,13 @@ function nombre_permaliens($pi_idf_commune_acte,$pc_idf_type_acte)
    return $connexionBD->sql_select1($st_requete); 
 }
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr">');
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<link href='../Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
 print("<link href='../Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
 print("<link href='../Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
@@ -42,6 +44,7 @@ print("<script src='../Commun/jquery.validate.min.js' type='text/javascript'></s
 print("<script src='../Commun/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='../js/select2.min.js' type='text/javascript'></script>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print("<script type='text/javascript'>");
 ?>
 $(document).ready(function() {
@@ -123,6 +126,7 @@ print("</script>");
 print("<title>Suppression des donnees</title>");
 print("</head>");
 print("<body>");
+print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("../Commun/menu.php");
 
@@ -146,32 +150,44 @@ switch($gst_mode)
      $a_types_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from type_acte order by nom");
      unset($a_types_acte[IDF_UNION]);
      $a_types_acte['DIV']="Tous divers Nimegue";
+	 print('<div class="panel panel-primary">');
+     print('<div class="panel-heading">Suppression des donn&eacute;es d\'une commune/paroisse</div>');
+     print('<div class="panel-body">');
      print("<form enctype=\"multipart/form-data\" id=\"formulaire_suppression\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
-     print("<div class=TITRE>Suppression des donn&eacute;es d'une commune/paroisse<br></div>"); 
-     print('<div align=center><input type="hidden" name="mode" value="SUPPRESSION">');
-     print('<br>Source: <select name=idf_source id=idf_source class="js-select-avec-recherche">');
+     print('<input type="hidden" name="mode" value="SUPPRESSION">');
+     print('<div class="form-row col-md-12">');
+     print('<div class="input-group col-md-offset-4 col-md-4">');
+	 print('<label for="idf_source">Source:</label><select name=idf_source id=idf_source class="js-select-avec-recherche form-control">');
      print(chaine_select_options($gi_idf_source,$a_sources));
-     print('</select><br></div>');
-     print('<div align=center><br>Commune: <select name=idf_commune_acte id=idf_commune_acte class="js-select-avec-recherche">');
+     print('</select></div></div>');
+	 print('<div class="form-row col-md-12">');
+     print('<div class="input-group col-md-offset-4 col-md-4">');
+     print('<label for="idf_commune_acte">Commune: <select name=idf_commune_acte id=idf_commune_acte class="js-select-avec-recherche form-control">');
      print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
-     print('</select><br></div>');
-     print('<div align=center><br>Type d\'acte : <select name=idf_type_acte id=idf_type_acte class="js-select-avec-recherche">');
+     print('</select></div></div>');
+	 print('<div class="form-row col-md-12">');
+     print('<div class="input-group col-md-offset-4 col-md-4">');
+     print('<label for="idf_type_acte">Type d\'acte:</label><select name=idf_type_acte id=idf_type_acte class="js-select-avec-recherche form-control">');
      print(chaine_select_options($gc_idf_type_acte,$a_types_acte));
-     print('</select><br></div>');
-     print('<div align=center><br>Annee minimale : <input type=text name=annee_min id=annee_min size=4 MAXLENGTH=4><br></div>');
-     print('<div align=center><br>Annee maximale : <input type=text name=annee_max id=annee_max size=4 MAXLENGTH=4><br></div>');   
-     print('<div align=center><br><input type="submit" value="Supprimer les actes" /></div>');
-     print('</form>');
+     print('</select></div></div>');
+	 print('<div class="form-row col-md-12">');
+     print('<div class="input-group col-md-offset-4 col-md-4">');
+     print('<label for="annee_min">Annee minimale:</label><input type=text name=annee_min id=annee_min size=4 maxlength=4 class="form-control"></div></div>');
+     print('<div class="form-row col-md-12">');
+     print('<div class="input-group col-md-offset-4 col-md-4">');
+	 print('<label for="annee_max">Annee maximale:</label><input type=text name=annee_max id=annee_max size=4 maxlength=4 class="form-control"></div></div>');
+    print('<div class="form-row">');   
+     print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Supprimer les actes</button>');
+     print('</div>');   
+     print('</form></div></div>');
    break;
    case 'SUPPRESSION' : 
-                        $_SESSION['idf_commune_acte'] = $gi_idf_commune_acte;                                                                        
-                        $i_nb_permaliens = nombre_permaliens($gi_idf_commune_acte,$gc_idf_type_acte);
+                        $_SESSION['idf_commune_acte'] = $gi_idf_commune_acte;                                                            $i_nb_permaliens = nombre_permaliens($gi_idf_commune_acte,$gc_idf_type_acte);
                         if ($i_nb_permaliens!=0)
                         {
-                            print("<div align=center>");
+                            print("<div class=\"alert alert-danger\">");
                             print("Confirmation des suppressions:<br>");
-                            if ($i_nb_permaliens!=0)
-                               print("$i_nb_permaliens permalien(s) r&eacute;f&eacute;renc&eacute;(s)<br>");
+                            print("$i_nb_permaliens permalien(s) r&eacute;f&eacute;renc&eacute;(s)</div>");
                             print("<form id=\"suppression\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");           
                             print('<input type="hidden" name="mode" value="SUPPRESSION_CONFIRMEE" >');
                             print("<input type=\"hidden\" name=\"idf_source\" value=$gi_idf_source >");
@@ -179,18 +195,22 @@ switch($gst_mode)
                             print("<input type=\"hidden\" name=\"idf_type_acte\" value=$gc_idf_type_acte >");
                             print("<input type=\"hidden\" name=\"annee_min\" value=$gi_annee_min >");
                             print("<input type=\"hidden\" name=\"annee_max\" value=$gi_annee_max >");
-                            print('<div align=center><input type="submit" value="Confirmer la suppression"></div>');
+							print('<div class="form-row">');   
+                            print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Confirmer la suppression</button>');
+                            print('</div>');
                             print('</form>');
                             print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
-                            print('<div align=center><br><input type="hidden" name="mode" value="FORMULAIRE" />');
-                            print('<input type="submit" value="Annuler"></div>');
+                            print('<input type="hidden" name="mode" value="FORMULAIRE" />');
+							print('<div class="form-row">');   
+                            print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Annuler</button>');
+                            print('</div>');
                             break;
                         }            
                         
       case 'SUPPRESSION_CONFIRMEE' :
                         print("<form id=\"suppression_confirmee\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
-                        print('<div align=center><br><input type="hidden" name="mode" value="FORMULAIRE" />');
-                        print("<div align=center>");
+                        print('<input type="hidden" name="mode" value="FORMULAIRE" />');
+                        print("<div class=\"align-center\">");
                         print("Suppression des statistiques<br>");
                         $i_temps_courant = time();
                         if ($gc_idf_type_acte != 'DIV')
@@ -291,12 +311,14 @@ switch($gst_mode)
                               print("Dur&eacute;e: ".(time()-$i_temps_courant)." s<br>");
                            }
                         }
-                        print("<input type=submit value=\"Menu Suppression\"></div>");
+						print('<div class="form-row">');   
+                        print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Menu Suppression</button>');
+                        print('</div>');
                         print("</form>");                  
    
    break;
    default : print("mode $gst_mode inconnu");   
 }
 
-print("</body></html>");
+print("</div></body></html>");
 ?>
