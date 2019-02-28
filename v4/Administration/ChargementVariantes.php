@@ -40,8 +40,7 @@ function entre_quotes($pst_nom) {
  * @param string $pst_fichier Chemin du fichier à exporter 
  */ 
 function complete_variantes_connues($pconnexionBD,$pst_fichier) {
-    
-    
+       
     $a_patronymes = $pconnexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme REGEXP '^[A-Z \?\(\)]+$' and patronyme not in (select patronyme from `variantes_patro`)");
     $a_groupes_variantes = $pconnexionBD->liste_valeur_par_clef("select patronyme,idf_groupe from `variantes_patro` order by idf_groupe, majeure desc");
     $oPhonex = new phonex;
@@ -148,37 +147,67 @@ function exporte_variantes_nimV3($pconnexionBD,$pst_fichier) {
  */
 function affiche_menu() {
    global $gi_max_taille_upload;
-   print('<div class=TITRE>Gestion des variantes</div>');
+   print('<div class="panel panel-primary">');
+   print('<div class="panel-heading">Gestion des variantes</div>');
+   print('<div class="panel-body">');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
-   print('<div align=center><br><input type="hidden" name="mode" value="EXTRAIT_ACCENTS" />');
-   print('<input type="submit" value="Calculer les patronymes avec accents"/></div>');
+   print('<input type="hidden" name="mode" value="EXTRAIT_ACCENTS" />');
+   print('<div class="form-row">'); 
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Calculer les patronymes avec accents</button>');
+   print("</div>"); 
    print('</form>');
+
+   print('<div class="panel">');
+   print('<div class="panel-heading">Chargement</div>');
+   print('<div class="panel-body">'); 
    print("<form enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id='chargement_variantes'>");
-   print('<div align=center><br><input type="hidden" name="MAX_FILE_SIZE" value="$gi_max_taille_upload" >'); 
+   print('<input type="hidden" name="MAX_FILE_SIZE" value="$gi_max_taille_upload" >'); 
    print('<input type="hidden" name="mode" value="CHARGEMENT" >');
-   print('Fichier: <input name="Variantes" type="file" ><br></div>');
-   print('<div align=center><br><input type="submit" value="Charger le fichier Nimegue V3"/></div>');
-   print('</form>');
+   print('Fichier: <input name="Variantes" type="file" class="custom-file-label">');
+   print('<div class="form-row">'); 
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Charger le fichier Nimegue V3</button>');
+   print("</div>"); 
+   print('</form></div></div>');
+   
+   print('<div class="panel">');
+   print('<div class="panel-heading">Export</div>');
+   print('<div class="panel-body">'); 
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
-   print('<div align=center><br><input type="hidden" name="mode" value="EXPORT_NIMV3" >');
-   print('<input type="submit" value="Exporter au format Nimegue V3"></div>');
-   print('</form>');
+   print('<input type="hidden" name="mode" value="EXPORT_NIMV3" >');
+   print('<div class="form-row">'); 
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Exporter au format Nimegue V3</button>');
+   print("</div>"); 
+   print('</form>');   
+   
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
-   print('<div align=center><br><input type="hidden" name="mode" value="EXPORT_NIMV2" >');
-   print('<input type="submit" value="Exporter au format Nimegue V2"></div>');
-   print('</form>');
+   print('<input type="hidden" name="mode" value="EXPORT_NIMV2" >');
+   print('<div class="form-row">'); 
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Exporter au format Nimegue V2</button>');
+   print("</div>"); 
+   print('</form></div></div>');
+   
    print("<form  id='suppression_variantes' action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
-   print('<div align=center><br><input type="hidden" name="mode" value="SUPPRESSION" />');
-   print('<input type="submit" value="Supprimer les variantes"/></div>');
+   print('<input type="hidden" name="mode" value="SUPPRESSION" />');
+   print('<div class="form-row">'); 
+   print('<button type=submit class="btn btn-danger col-md-offset-4 col-md-4">Supprimer les variantes</button>');
+   print("</div>"); 
    print('</form>');
+   
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print('<div align=center><br><input type="hidden" name="mode" value="COMPLETE_VARIANTES" />');
-   print('<input type="submit" value="Completer les variantes connues"/></div>');
+   print('<input type="hidden" name="mode" value="COMPLETE_VARIANTES" />');
+   print('<div class="form-row">'); 
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Completer les variantes connues</button>');
+   print("</div>"); 
    print('</form>');
+   
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print('<div align=center><br><input type="hidden" name="mode" value="CALCUL_PHONEX" />');
-   print('<input type="submit" value="(Re)Calculer les Phonex"/></div>');
+   print('<input type="hidden" name="mode" value="CALCUL_PHONEX" />');
+   print('<div class="form-row">'); 
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">(Re)Calculer les Phonex</button>');
+   print("</div>"); 
    print('</form>');
+   
+   print('</div></div>');
 }  
 
 /**
@@ -203,7 +232,7 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp,$pst_parametre_load_d
    $st_fich_dest = tempnam($pst_rep_tmp,"var_dest");
    if (!move_uploaded_file($_FILES['Variantes']['tmp_name'],$st_fich_dest)) 
    {
-      print("<div CLASS=IMPORTANT>Erreur de t&eacute;l&eacute;chargement :</div><br>");
+      print("<div class=\"alert alert-danger\">Erreur de t&eacute;l&eacute;chargement :</div>");
       switch($_FILES['Variantes']['error'])
       { 
            case 2 : print("Fichier trop gros par rapport à MAX_FILE_SIZE");break;
@@ -277,27 +306,24 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp,$pst_parametre_load_d
       fwrite($pf,"$i_idf_groupe;$st_patronyme;$b_majeure\n");
    }
    fclose($pf);
-   /*
-   print("<pre>");
-   readfile($st_fich_chargement);
-   print("</pre>");
-   */
+
    $st_fich_chargement=addslashes($st_fich_chargement);
    usleep(500000);
    chmod($st_fich_chargement,0444);
    usleep(500000);
    $st_requete = "load data $pst_parametre_load_data infile '$st_fich_chargement' into table variantes_patro fields terminated by ';' lines terminated by '\n' (idf_groupe,patronyme,majeure)";
-   print("Req=$st_requete<br>");
    $pconnexionBD->execute_requete($st_requete);
-   print("<div align=center>Dur&eacute;e: ".(time()-$i_temps_courant)." s</div><br>");
+   print("<div class=\"alert alert-info\">Dur&eacute;e: ".(time()-$i_temps_courant)." s</div>");
    unlink($st_fich_chargement); 
    unlink($st_fich_dest); 
-   print('<div align=center>Chargement effectu&eacute;</div><br>');
+   print('<div class="alert alert-success">Chargement effectu&eacute;</div>');
    print('<div align=center></div><br>');
-   print('</form>');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    print('<input type="hidden" name="mode" value="FORMULAIRE" />');
-   print('<div align=center><input type="submit" value="RETOUR"/></div>');    
+   print('<div class="form-row">'); 
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Retour</button>');
+   print("</div>"); 
+   print('</form>');   
  }
  
 /**
@@ -351,16 +377,18 @@ function calcule_phonex($pconnexionBD,$pst_rep_tmp,$pst_parametres_load_data) {
 // Corps du programme
 //------------------------------------------------------------------------------
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr">');
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../Commun/menu.js' type='text/javascript'></script>");
 print("<script src='../Commun/jquery.validate.min.js' type='text/javascript'></script>");
 print("<script src='../Commun/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 ?>
 <script type="text/javascript">
 
@@ -397,7 +425,7 @@ $(document).ready(function() {
 print("<title>Gestion des variantes</title>");
 print('</head>');
 print('<body>');
-
+print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("../Commun/menu.php");
 
@@ -412,8 +440,8 @@ switch($gst_mode)
    case 'EXTRAIT_ACCENTS' :
        $i_temps_courant = time();
        extrait_patro_accents($connexionBD);
-       print("<div align=center><br>Dur&eacute;e: ".(time()-$i_temps_courant)." s<br></div>");
-       print("<div align=center><br>Calcul termin&eacute;<br></div>");
+       print("<div class=\"alert alert-info\"><br>Dur&eacute;e: ".(time()-$i_temps_courant)." s</div>");
+       print("<div class=\"alert alert-success\"><br>Calcul termin&eacute;</div>");
        affiche_menu();       
    break;
    
@@ -425,20 +453,20 @@ switch($gst_mode)
    case 'EXPORT_NIMV3':
        $st_export_nimv3 = "$gst_repertoire_telechargement/ExportNimV3.csv";
        exporte_variantes_nimV3($connexionBD,$st_export_nimv3);
-       print("<div align=center><br>Export cr&eacute;e: <a href=\"./telechargements/ExportNimV3.csv\">Variantes Nimègue V3</a><br></div>");
+       print("<div class=\"align-center\"><br>Export cr&eacute;e: <a href=\"./telechargements/ExportNimV3.csv\">Variantes Nimègue V3</a></div>");
        affiche_menu();       
    break;
    
    case 'EXPORT_NIMV2':
        $st_export_nimv2 = "$gst_repertoire_telechargement/ExportNimV2.csv";
        exporte_variantes_nimV2($connexionBD,$st_export_nimv2);
-       print("<div align=center><br>Export cr&eacute;e: <a href=\"./telechargements/ExportNimV2.csv\">Variantes Nimègue V2</a><br></div>");
+       print("<div class=\"align-center\">Export cr&eacute;e: <a href=\"./telechargements/ExportNimV2.csv\">Variantes Nimègue V2</a></div>");
        affiche_menu();       
    break;
    
    case 'SUPPRESSION':
        $connexionBD->execute_requete("truncate variantes_patro");
-       print("<div class=IMPORTANT>Variantes supprim&eacute;es</div>");
+       print("<div class=\"alert alert-danger\">Variantes supprim&eacute;es</div>");
        affiche_menu();
    break;
       
@@ -455,26 +483,25 @@ switch($gst_mode)
      $zip->addFile($st_variantes_nimv3,"VariantesNimegue.txt");
      $zip->close();
        
-       print("<div align=center>Dur&eacute;e: ".(time()-$i_temps_courant)." s</div><br>");
-       print("<div align=center>Export cr&eacute;e: <a href=\"./telechargements/VariantesCompleteesNimV3.zip\">Variantes Nimègue Complétées V3</a></div><br>");
-              print('<div align=center></div><br>');
+       print("<div class=\"align-center\">Dur&eacute;e: ".(time()-$i_temps_courant)." s</div>");
+       print("<div class=\"align-center\">Export cr&eacute;e: <a href=\"./telechargements/VariantesCompleteesNimV3.zip\">Variantes Nim&egrave;gue Compl&eacute;t&eacute;es V3</a></div>");
        print('</form>');
        print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
        print('<input type="hidden" name="mode" value="FORMULAIRE" />');
-       print('<div align=center><input type="submit" value="RETOUR"/></div>');
+	   print('<div class="form-row">'); 
+	   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Retour</button>');
+       print('</div>');
        
    break;
    
    case 'CALCUL_PHONEX':
        calcule_phonex($connexionBD,$gst_repertoire_chargement_actes,$gst_parametres_load_data);
-       print("<div class=IMPORTANT>Phonex calcul&eacute;s</div>");
+       print("<div class=\"alert alert-success\">Phonex calcul&eacute;s</div>");
        affiche_menu();
    break;
         
 }
-
-
-print('</body></html>');
+print('</div></body></html>');
 
 
 ?>
