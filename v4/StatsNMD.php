@@ -16,11 +16,13 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 $a_communes_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from commune_acte order by nom");
 $a_types_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from type_acte where idf in (".IDF_MARIAGE.','.IDF_NAISSANCE.','.IDF_DECES.") order by nom");
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
 print('<meta http-equiv="content-language" content="fr">');
-print("<link href='./Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 
 print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
@@ -33,7 +35,8 @@ print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
 
 print("<script src='js/select2.min.js' type='text/javascript'></script>");
 print("<script src='js/Chart.min.js' type='text/javascript'></script>");
-print("<script src='./Commun/menu.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
+
 ?>
 
 <script type='text/javascript'>
@@ -143,21 +146,34 @@ $("#stats_nmd").validate({
 print("<title>Stats NMD</title>");
 print("</head>");
 print("<body>");
+print('<div class="container">');
 
 ?>
 <?php  
 require_once("./Commun/menu.php");
   
-print("<div class=TITRE>Statistiques NMD d'une commune/paroisse<br></div>"); 
+print('<div class="panel panel-primary">');
+print('<div class="panel-heading">Statistiques NMD d\'une commune/paroisse</div>');
+print('<div class="panel-body">');
+ 
 print("<form id='stats_nmd' action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-print('<div align=center><input type="hidden" name="mode" value="STATS">');
-print('<br>Commune: <select name=idf_commune_acte id=idf_commune_acte class="js-select-avec-recherche">');
+print('<input type="hidden" name="mode" value="STATS">');
+print('<div class="form-row">');
+print('<div class="form-group col-md-4 col-md-offset-4">');
+print('<label for="idf_commune_acte">Commune:</label><select name=idf_commune_acte id=idf_commune_acte class="js-select-avec-recherche form-control">');
 print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
-print('</select><br></div>');
-print('<div align=center><br>Type d\'acte : <select name=idf_type_acte id=idf_type_acte>');
+print('</select></div>');
+print('</div>');
+print('<div class="form-row">');
+print('<div class="form-group col-md-4 col-md-offset-4">');
+print('<label for="idf_type_acte">Type d\'acte:</label><select name=idf_type_acte id=idf_type_acte class="form-control">');
 print(chaine_select_options($gc_idf_type_acte,$a_types_acte));
-print('</select><br></div>');
-print('<div align=center><br>Rayon : <select name=rayon id=rayon>');
+print('</select></div>');
+print('</div>');
+
+print('<div class="form-row">');
+print('<div class="form-group col-md-4 col-md-offset-4">');
+print('<label for="rayon">Rayon:</label><select name=rayon id=rayon class="form-control">');
 foreach ($ga_rayons as $i_rayon => $st_label)
 {
   if ($gi_rayon==$i_rayon)
@@ -165,14 +181,25 @@ foreach ($ga_rayons as $i_rayon => $st_label)
   else
      print("<option value=$i_rayon>$st_label</option>");
 }
-print('</select><br></div>');
-print("<div align=center><br>Annee minimale : <input type=text name=annee_min id=annee_min size=4 MAXLENGTH=4 value=\"$gi_annee_min\"><br></div>");
-print("<div align=center><br>Annee maximale : <input type=text name=annee_max id=annee_max size=4 MAXLENGTH=4 value=\"$gi_annee_max\"><br></div>");   
-print('<div align=center><br><input type="submit" value="Afficher les Statistiques" /></div>');
+print('</select></div></div>');
+
+print('<div class="form-row">');
+print('<div class="form-group col-md-4 col-md-offset-4">');
+print("<label for=\"annee_min\">Annee minimale:</label><input type=text name=annee_min id=annee_min size=4 maxlength=4 value=\"$gi_annee_min\" class=\"form-control\">");
+print('</div></div>');
+print('<div class="form-row">');
+print('<div class="form-group col-md-4 col-md-offset-4">');
+print("<label for=\"annee_max\">Annee maximale:</label><input type=text name=annee_max id=annee_max size=4 maxlength=4 value=\"$gi_annee_max\" class=\"form-control\">");
+print('</div></div>');
+
+print('<div class="form-row">');
+print('<button type=submit name=Rechercher class="btn btn-primary col-md-4 col-md-offset-4">Afficher les Statistiques</button>');   
+print('</div></div></div>');
 print('</form>');
 
 print('<div>');
 print('<canvas id="MonGraphe" width="900" height="500"></canvas>');
 print('</div>');
-print("</body></html>");
+print('</div>'); // fin panel body
+print("</div></body></html>");
 ?>
