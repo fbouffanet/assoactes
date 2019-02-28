@@ -96,7 +96,7 @@ function liste_naissances_existant ($pconnexionBD,$pi_idf_source,$pi_idf_commune
 
 /**
  * Renvoie la liste des deces pour la source et la commune donn‚es
- * sous la forme d'un table ou chaque ligne est (date,nom ‚poux, pr‚nom ‚poux,nom ‚pouse, pr‚nom ‚pouse) - Premier temps : seuls les CM sont v‚rifi‚s
+ * sous la forme d'un table ou chaque ligne est (date,nom ‚poux, pr‚nom ‚poux,nom ‚pouse, pr‚nom ‚pouse) - Premier temps : seuls les CM sont vérifiés
  * ou acte divers ayant un couple 
  * @param object $pconnexionBD Identifiant de la connexion BD
  * @param integer $pi_idf_source identifiant de la source
@@ -1534,7 +1534,7 @@ switch($gst_mode)
      $i_nb_unions_sans_pers = $connexionBD->sql_select1($st_requete);
      if ($i_nb_unions_sans_pers >0)
      {
-        print("<div class=\"alert alert-danger\"><br><div class=\"IMPORTANT\">ERREUR: $i_nb_unions_sans_pers unions avec des personnes inexistantes. Recharger le fichier !</div>"); 
+        print("<div class=\"alert alert-danger\">ERREUR: $i_nb_unions_sans_pers unions avec des personnes inexistantes. Recharger le fichier !</div>"); 
      }
      print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
      print('<input type="hidden" name="mode" value="FORMULAIRE" >');
