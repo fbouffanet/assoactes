@@ -13,14 +13,12 @@ print('<link rel="shortcut icon" href="images/favicon.ico">');
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
 print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/menu.js' type='text/javascript'></script>");
 print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>");
 print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
@@ -45,13 +43,13 @@ $('#liste_communes').click(function() {
      $("form").submit();
 });
 
+$('a.lien_geoportail').click(function(){
+	window.open(this.href, 'GeoPortail', '_blank');
+    return false;
 });
 
+});
 
-
-function ouvre_plan(num_com) {
-    window.open('./GeoPortail.php?idf_commune='+num_com);
-}
 </script>
 <?php
 print('</head>');
@@ -141,19 +139,20 @@ else
    $gi_num_page_cour = empty($_GET['num_page_statcom']) ? $i_session_num_page : (int) $_GET['num_page_statcom'];
 }
      
-print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
+print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" class=\"form-inline\">");
 
 switch ($gst_mode) {
   case 'LISTE' : 
-     print('<div class="form-row"><label for"idf_source" class="form-check-label">Source:</label><select name=idf_source id=idf_source class="form-control col-md-offset-5 col-md-2">');
+     print('<div class="form-row col-md-12"><div class="form-group col-md-8"><label for="idf_source" class="form-check-label">Source</label><select name=idf_source id=idf_source class="form-control">');
      print(chaine_select_options($gi_idf_source,$a_sources));
-     print('</select></div>');
-     print('<div class="form-row">');
-     print("<label for=\"commune_a_chercher\" class=\"form-check-label\">Commune:</label><input name=\"commune_a_chercher\"  id=\"commune_a_chercher\" value=\"$gst_commune_a_chercher\" size=\"25\" maxlength=\"50\" type=\"Text\" class=\"form-control col-md-offset-5 col-md-2\">");
-     print('<div class="form-row"><input type=submit value=Chercher class="btn btn-primary"></div>');
-     print('<div class="form-row">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: saint*)<br></div>');
-         
-     // Affichage des initiales
+     print('</select></div></div>');
+     print('<div class="form-row col-md-12"> <div class="form-group col-md-10">');
+     print("<label for=\"commune_a_chercher\" class=\"form-check-label\">Commune</label><input name=\"commune_a_chercher\"  id=\"commune_a_chercher\" value=\"$gst_commune_a_chercher\" size=\"25\" maxlength=\"50\" type=\"Text\" class=\"form-control\" aria-describedby=\"aideCommune\">");
+	 print('<small id="aideCommune" class="form-text text-muted">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: saint*)</small></div>');
+     print('<div class="form-group col-md-2"><button type=submit class="btn btn-primary">Chercher</button></div>');
+     print('</div>');
+     
+	 // Affichage des initiales
      $gst_commune_a_chercher = str_replace('*','%',$gst_commune_a_chercher);
      if (empty($gi_idf_source))
      {
@@ -283,7 +282,7 @@ switch ($gst_mode) {
          {
             list($st_nom_commune,$i_debut_communale,$i_debut_greffe) = $a_info_commune;
             print("<tr>");
-            print("<td><a href=\"javascript:ouvre_plan($i_idf_commune);\">$st_nom_commune</a></td>");
+            print("<td><a class=\"lien_geoportail\" href=\"./GeoPortail.php?idf_commune=$i_idf_commune\">$st_nom_commune</a></td>");
             if (empty($i_debut_greffe))
               print("<td>&nbsp;</td>");
             else
@@ -333,13 +332,13 @@ switch ($gst_mode) {
      }
      break;
   case 'DETAIL' :  
-     print('<div class="pave-tous-patronymes panel panel-primary">');
+     print('<div class="panel panel-primary">');
      print('<div class="panel-heading">');
      print("Liste des ann&eacute;es disponibles de: $gst_nom_commune ($gst_type_acte)");
      if  ($gst_canton!='')
         print("<br> Canton de $gst_canton");
      print("<br>Source: $a_sources[$gi_idf_source]");   
-     print("<br></div>");
+     print("</div>");
      
      print('<div class="panel-body">');
      if ($gi_debut_communale!=0) print("<div class=\"row\">D&eacute;but de la collection communale:$gi_debut_communale</div>");
