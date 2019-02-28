@@ -10,7 +10,7 @@ require_once('Commun/commun.php');
 require_once('Commun/Adherent.php');
 
 if(!isset($_SESSION['ident']))
-   die("<div class=ERREUR> Identifiant non reconnu</div>");
+   die("<div class=\"alert alert-danger\"> Identifiant non reconnu</div>");
 $gst_ident = $_SESSION['ident'];
 
 $gst_mode = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;
@@ -45,12 +45,14 @@ switch ($gst_mode) {
    exit();
 }
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>\n");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
 print('<meta http-equiv="content-language" content="fr">');
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
 print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
@@ -61,6 +63,7 @@ print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></scri
 print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>\n");
 print("<link href='Commun/select2.min.css' type='text/css' rel='stylesheet'>");
 print("<script src='js/select2.min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 print("<script type='text/javascript'>");
 $adherent = new Adherent($connexionBD,$gi_idf_adherent);
 ?>
@@ -225,18 +228,24 @@ $(document).ready(function() {
   }  
   });
   
-   $("#bouton_recreer_mdp").click(function() {
+   $("#recreer_mdp").click(function() {
     if (confirm("Souhaitez-vous mettre réellement créer un nouveau mot de passe ?"))   
     {
       $('#mode_modifier').val("RECREER_MDP");
       $("#modification_adherent").submit();
     }
-  });  
+  });
+
+  $('a.lien_edition').click(function(){
+	window.open(this.href, 'GeoPortail');
+    return false;
+  });
+  
 });
 
 <?php
 print("</script>");
-print('<title>Base AGC: Les Adhérents</title>');
+print('<title>Base AGC: Les Adherents</title>');
 print('</head>');
 
 /**
@@ -250,24 +259,27 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
 {
    global $gi_num_page_cour;
    
-   print("<form action=\"".$_SERVER['PHP_SELF']."\" id=\"liste_filtree\" method=\"post\">");
-   print("<div class=alignCenter>");
-   print("<input type=hidden name=mode id=mode_statut value=\"LISTE\">");   
-   print("G&eacute;n&eacute;alogiste : <input name=\"nom_a_chercher\" id=\"nom_a_chercher\" value=\"$pst_nom_a_chercher\" size=\"25\" maxlength=\"25\" type=\"Text\">");
-   print(' <input type=submit value=Chercher>');
-   print('<div><br>Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: dio*)</div>');
+   print("<form action=\"".$_SERVER['PHP_SELF']."\" id=\"liste_filtree\" method=\"post\" class=\"form-inline\">");
+   print("<input type=hidden name=mode id=mode_statut value=\"LISTE\">");
    if (a_droits($pst_ident,DROIT_GESTION_ADHERENT))
    {
-      print("<div class=alignCenter><br>");
-      $a_statuts_adherents = $pconnexionBD->liste_valeur_par_clef("select idf,nom from statut_adherent order by nom");
+	  print('<div class="form-row">');   
+      print('<div class="form-group col-md-offset-4 col-md-4">');      
+	  $a_statuts_adherents = $pconnexionBD->liste_valeur_par_clef("select idf,nom from statut_adherent order by nom");
       $a_statuts_adherents['T'] = 'Tous';
-      print('Statut: <select name="statut_listadh" id="statut_listadh" >');
+      print('<label for="statut_listadh">Statut:</label><select name="statut_listadh" id="statut_listadh" class="form-control">');
       print(chaine_select_options($pc_statut,$a_statuts_adherents));
       print('</select>');
-      print("<br></div>"); 
+      print("</div></div>"); 
    }    
-   print("</div>");
+   
+   print('<div class="form-row">');
+   print('<div class="form-group col-md-offset-2 col-md-4">');    
+   print("<label for=\"nom_a_chercher\">G&eacute;n&eacute;alogiste:</label><input name=\"nom_a_chercher\" id=\"nom_a_chercher\" value=\"$pst_nom_a_chercher\" size=\"25\" maxlength=\"25\" type=\"Text\" class=\"form-control\" aria-describedby=\"aideAdht\">");
+   print('<small id="aideAdht" class="form-text text-muted">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: ber*)</small></div>');
+   print(' <button type=submit class="col-md-4">Chercher</button></div>');
    print("</form>");
+   
    $a_champs_recherche = array();
    $st_clause_statut = '';
    if (!empty($pc_statut) && $pc_statut!='T')
@@ -278,9 +290,9 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
    $st_requete = "SELECT DISTINCT (left( nom, 1 )) AS init FROM `adherent` $st_clause_statut ORDER BY init";
    $pconnexionBD->initialise_params($a_champs_recherche);
    $a_initiales_adherents = $pconnexionBD->sql_select($st_requete);
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"liste_adherents\" method=\"post\">");
+   print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"liste_adherents\" method=\"post\" class=\"form-inline\">");
    print("<input type=hidden name=mode id=\"mode_selection\" value=\"LISTE\">"); 
-   print("<div class=alignCenter><br>");
+   print('<ul class="pagination justify-content-center">');
    if ($pst_nom_a_chercher=='')
    {
      $i_session_initiale = isset($_SESSION['initiale_adh']) ? $_SESSION['initiale_adh'] : $a_initiales_adherents[0];
@@ -297,12 +309,13 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
    foreach ($a_initiales_adherents as $c_initiale)
    {
      if ($c_initiale==$gc_initiale)
-        print("<span style=\"font-weight: bold;\"
->$c_initiale </span>");
+        print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
      else
-        print("<a href=\"".$_SERVER['PHP_SELF']."?initiale_adh=$c_initiale\">$c_initiale</a> ");
+        print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_adh=$c_initiale\">$c_initiale</a></li>");
    }
-   print("<br></div>");
+   print("</ul>");
+   
+   
    $pst_nom_a_chercher = str_replace('*','%',$pst_nom_a_chercher);  
    $a_champs_recherche = array();
    $st_clause_statut = '';
@@ -337,13 +350,13 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
          foreach ($a_liste_adherents as $a_adherent)
          {
             list($i_idf_adh,$st_adherent,$st_ident_adh,$st_email_adh,$st_derniere_connexion_adh,$st_statut_adh) = $a_adherent;
-            $a_tableau_modification[] = array($st_adherent,$st_ident_adh,$st_email_adh,$st_derniere_connexion_adh,$st_statut_adh,"<input id=\"$i_idf_adh\" value=\"Modifier\" onclick=\"document.location.href='".$_SERVER['PHP_SELF']."?mod=$i_idf_adh'\" type=\"button\">","<input type=checkbox name=\"supp[]\" id=\"$st_ident_adh\" value=$i_idf_adh>","<a href='Stats/StatsAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='lien_bouton'>Stats</a>","<a href='Stats/RecherchesAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='lien_bouton'>Recherches</a>");
+            $a_tableau_modification[] = array($st_adherent,$st_ident_adh,$st_email_adh,$st_derniere_connexion_adh,$st_statut_adh,"<input id=\"$i_idf_adh\" value=\"Modifier\" onclick=\"document.location.href='".$_SERVER['PHP_SELF']."?mod=$i_idf_adh'\" type=\"button\">","<input type=checkbox name=\"supp[]\" id=\"$st_ident_adh\" value=$i_idf_adh>","<a href='Stats/StatsAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info'>Stats</a>","<a href='Stats/RecherchesAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info'>Recherches</a>");
          }
          $pagination->affiche_tableau_simple($a_tableau_modification);
       }
       else if (a_droits($pst_ident,DROIT_STATS))
       {
-          // adhérent avent les droits stats        
+          // adhérent avec les droits stats        
          $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_liste_adherents),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Adh&eacute;rent','Identifiant','Email','Site','Stats','Recherches'));
          $pagination->init_page_cour($gi_num_page_cour);
          $pagination->affiche_entete_liens_navigation();
@@ -353,7 +366,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
             list($st_adherent,$i_idf_adh,$st_email_forum,$st_site) = $a_adherent;
             $st_email_forum = ($st_email_forum!='') ? "<a href=\"mailto:$st_email_forum\">$st_email_forum</a>" : $st_email_forum;
             $st_site = ($st_site!='') ? "<a href=\"$st_site\">$st_site</a>": $st_site;
-            $a_tableau_visualisation[] = array("<a href=\"".$_SERVER['PHP_SELF']."?visu=$i_idf_adh\">$st_adherent</a>",$i_idf_adh,$st_email_forum,$st_site,"<a href='Stats/StatsAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='lien_bouton'>Stats</a>","<a href='Stats/RecherchesAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='lien_bouton'>Recherches</a>");
+            $a_tableau_visualisation[] = array("<a href=\"".$_SERVER['PHP_SELF']."?visu=$i_idf_adh\">$st_adherent</a>",$i_idf_adh,$st_email_forum,$st_site,"<a href='Stats/StatsAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info lien_edition'>Stats</a>","<a href='Stats/RecherchesAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info lien_edition'>Recherches</a>");
          }
          $pagination->affiche_tableau_simple($a_tableau_visualisation);
       }
@@ -375,140 +388,150 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
       }
    }
    else
-     print("<div class=alignCenter>Pas d'adh&eacute;rents</div>\n");   
+     print("<div class=\"alert alert-danger\">Pas d'adh&eacute;rents</div>\n");   
    if (a_droits($pst_ident,DROIT_GESTION_ADHERENT))  
    {
-      print("<div class=alignCenter><br>");
-      print("<input type=button id=supprimer_adherents value=\"Supprimer les adhérents sélectionnés\">");
-      print("<input type=button id=fusionner_adherents value=\"Fusionner les adhérents sélectionnés\"></div>");    
-      print("</form>");  
+	  print('<div class="btn-group" role="group">');   
+      print("<button type=button id=supprimer_adherents class=\"btn btn-primary\">Supprimer les adh&eacute;rents s&eacute;lectionn&eacute;s</button>");
+      print("<button type=button id=fusionner_adherents class=\"btn btn-primary\"> Fusionner les adh&eacute;rents s&eacute;lectionn&eacute;s</button>");
+      print('</div>');	  
+      print("</form>");
+	  
       print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-      print("<div class=alignCenter><input type=hidden name=mode value=MENU_AJOUTER>");  
-      print("<input type=submit value=\"Ajouter un adhérent\"></div>");
-      print("</form>");  
+      print("<input type=hidden name=mode value=MENU_AJOUTER>");
+      print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Ajouter un adh&eacute;rent</button></div>'); 	  
+      print("</form>");
+	  
       print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"maj_statut_adhts\" method=\"post\">");  
-      print("<div class=alignCenter><input type=hidden name=mode value=MAJ_STATUT>");
-      
-      print("<input type=button value=\"Mettre a jour le statut des adherents qui ne sont pas a jour\" id=\"bouton_maj_statut_adhts\"></div>");
+      print("<input type=hidden name=mode value=MAJ_STATUT>");
+      print('<div class="form-group col-md-6 col-md-offset-2"><button type="submit" class="btn btn-primary">Mettre &agrave; jour le statut des adh&eacute;rents qui ne sont pas &agrave; jour</button></div>'); 
+	  print('</form>');
    }  
-   print('</form>');
+   
    if (a_droits($pst_ident,DROIT_GESTION_ADHERENT))  
-   {
-      
+   {     
       print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-      print("<div class=alignCenter><br>");
       $a_statuts_adherents = $pconnexionBD->liste_valeur_par_clef("select idf,nom from statut_adherent order by nom");
     
-      $a_statuts_adherents[ADHESION_PARIS] = 'Adherents parisiens';
-      $a_statuts_adherents[TOUS_ADHERENTS] = 'Adherents à jour';
+      $a_statuts_adherents[ADHESION_PARIS] = 'Adh&eacute;rents parisiens';
+      $a_statuts_adherents[TOUS_ADHERENTS] = 'Adherents &agrave; jour';
       print("<input type=hidden name=mode value=EXPORTER>");
-           
-      print("<input type=submit value=\"Exporter les adherents\">");
-      print(' dont le statut est: <select name="statut_export">');
+	  print('<div class="form-row col-md-12">');
+	  print('<button type=submit class="btn btn-primary col-md-4">Exporter les adherents</button>');
+	  print('<div class="form-group col-md-8">');
+	  print('<label for="statut_export">dont le statut est:</label><select name="statut_export" id="statut_export" class="form-control">');
       print(chaine_select_options($pc_statut,$a_statuts_adherents));
-      print('</select> ');
-      print("<br></div>");
+      print('</select></div>');
+	  print("</div>"); 
       print("</form>");  
       
       print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-      print("<div class=alignCenter>");
-      print("<input type=hidden name=mode value=PUBLIPOSTAGE>");           
-      print("<input type=submit value=\"Exporter les @ pour le bulletin (Excel)\">");
-      print("</div>");
+      print("<input type=hidden name=mode value=PUBLIPOSTAGE>"); 
+      print('<div class="form-row col-md-12">');
+	  print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Exporter les @ pour le bulletin (Excel)</button>');
+	  print("</div>");	  
       print("</form>");
        
       print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-      print("<div class=alignCenter>"); 
       print("<input type=hidden name=mode value=EXPORT_COMPLET>");           
-      print("<input type=submit value=\"Exporter tout (Excel)\">");
-      print("<br></div>");
-      print("</form>");        
+	  print('<div class="form-row col-md-12">');
+	  print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Exporter tout (Excel)</button>');
+      print("</div>");
+      print("</form>");
+	  
       print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-      print("<div class=alignCenter>");
-      print("<input type=hidden name=mode value=AIDE_ADHERENTS>");           
-      print("<input type=submit value=\"Montrer les aides possibles\">");
-      print("<br></div></form>");
+      print("<input type=hidden name=mode value=AIDE_ADHERENTS>");
+	  print('<div class="form-row col-md-12">');
+      print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Montrer les aides possibles</button>');	  
+      print("</div>");
+	  print("</form>");
    }  
-}
-
-/**
- * Affiche de la table d'édition
- * @param object $padherent objet adhérent à éditer
- * @global string $gst_rep_trombinoscope 
- * @global string $gst_url_trombinoscope
-
- */ 
-function menu_edition_adherent($padherent,$pi_idf_adh)
-{
-   global $gst_ident,$gst_rep_trombinoscope,$gst_url_trombinoscope;
-   print("<div class=gauche_adherent>");
-   print($padherent->formulaire_infos_personnelles(a_droits($gst_ident,DROIT_GESTION_ADHERENT)));
-   
-   print("<div class=aide_gauche>");
-   print($padherent->formulaire_aides_possibles());
-   print($padherent->formulaire_origine());
-   print("</div>");
-   print("</div>");
-   print("<div class=droite_adherent>");
-   if (a_droits($gst_ident,DROIT_GESTION_ADHERENT))
-   {     
-       print($padherent->formulaire_infos_agc());
-   }
-   print($padherent->formulaire_droits_adherents());
-   print("</div>");
-   if (!empty($pi_idf_adh) && file_exists("$gst_rep_trombinoscope/$pi_idf_adh.jpg"))
-   {
-      print("<div class=haut_adherent_milieu>");
-      print("<img src=\"$gst_url_trombinoscope/$pi_idf_adh.jpg\" width=115 height=132 alt=\"MaPhoto\">");
-      print("</div>");       
-   }
 }
 
 /** Affiche le menu de modification d'un adhérent
  * @param object $padherent
+ * @param integer $pi_idf_adherent identifiant de l'adht
+ * @global string $gst_rep_trombinoscope 
+ * @global string $gst_url_trombinoscope
  */ 
 function menu_modifier($padherent,$pi_idf_adherent)
 {
-   global $gst_ident;
+   global $gst_ident,$gst_rep_trombinoscope,$gst_url_trombinoscope;;
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"modification_adherent\">");
-   print("<div align=center>");
    print("<input type=hidden name=mode id=mode_modifier value=MODIFIER>");
-   menu_edition_adherent($padherent,$pi_idf_adherent);
+   print('<div class="row col-md-12">');
+   print('<div class="col-md5">');
+   print($padherent->formulaire_infos_personnelles(a_droits($gst_ident,DROIT_GESTION_ADHERENT)));
+   print($padherent->formulaire_aides_possibles());
+   print($padherent->formulaire_origine());
    print("</div>");
-   print("<div class=bas_adherent_gauche><input type=submit value=\"Modifier\">");   
+   print('<div class="col-md2">');
+   if (!empty($pi_idf_adh) && file_exists("$gst_rep_trombinoscope/$pi_idf_adh.jpg"))      
+      print("<img src=\"$gst_url_trombinoscope/$pi_idf_adh.jpg\" width=115 height=132 alt=\"MaPhoto\">");
    if (a_droits($gst_ident,DROIT_GESTION_ADHERENT))
    {
-      print("<input type=button id=\"notifier_adherent\" value=\"Modifier et notifier\nune réadhésion\" >");
-      print("<input type=button id=\"bouton_recreer_mdp\" value=\"Créer un nouveau\nmot de passe\" >");
+	  print('<div class="btn-group-vertical">'); 
+	  print("<button type=submit>Modifier</button>"); 
+      print("<button type=button id=\"notifier_adherent\">Modifier et notifier une r&eacute;adh&eacute;sion</button>");
+      print("<button type=button id=\"recreer_mdp\">Cr&eacute;er un nouveau mot de passe</button>");
+	  print('</div>');
    }
-   print("</div></form><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<div class=bas_adherent_droite>");
+   print("</div>");
+   print('<div class="col-md5">');
+   if (a_droits($gst_ident,DROIT_GESTION_ADHERENT))
+   {     
+       print($padherent->formulaire_infos_agc());
+	   print($padherent->formulaire_droits_adherents());
+   } 
+   print("</div></div>");      
+   print("</form>");
+   
+   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    print("<input type=hidden name=mode value=LISTE>");
-   print("<input type=submit value=Annuler><br></div></form>");
+   print('<div class="form-row col-md-12">');
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
+   print("</div>");
+   print("</form>");
 }
 
-/** Affiche le menu d'ajout d'une commune
+/* Affiche le menu d'ajout d'un adhérent
  * @param object $pconnexionBD Identifiant de la connexion de base
  * @param string $pst_ident identifiant de l'utilisateur courant 
  */ 
 function menu_ajouter($padherent)
 {
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"ajout_adherent\">");
-   print("<div align=center>");
-   print("<input type=hidden name=mode value=AJOUTER>");
-   menu_edition_adherent($padherent,null); 
+   print("<input type=hidden name=mode id=mode_ajouter value=AJOUTER>");
+   print('<div class="row col-md-12">');
+   print('<div class="col-md5">');
+   print($padherent->formulaire_infos_personnelles(a_droits($gst_ident,DROIT_GESTION_ADHERENT)));
+   print($padherent->formulaire_aides_possibles());
+   print($padherent->formulaire_origine());
    print("</div>");
-   print("<div class=bas_adherent_gauche><input type=submit value=\"Ajouter\"></div>");
-   print('</form>');
+   print('<div class="col-md2">');
+   if (a_droits($gst_ident,DROIT_GESTION_ADHERENT)) 
+	  print("<button type=submit>Ajouter</button>"); 
+   print("</div>");
+   print('<div class="col-md5">');
+   if (a_droits($gst_ident,DROIT_GESTION_ADHERENT))
+   {     
+       print($padherent->formulaire_infos_agc());
+	   print($padherent->formulaire_droits_adherents());
+   } 
+   print("</div></div>");      
+   print("</form>");
+   
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<div class=bas_adherent_droite><input type=hidden name=mode value=LISTE>");
-   print("<input type=submit value=Annuler></div>");
-   print('</form>');
+   print("<input type=hidden name=mode value=LISTE>");
+   print('<div class="form-row col-md-12">');
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
+   print("</div>");
+   print("</form>");
 }
 
-/** Affiche le menu de modification d'une commune
+/** Affiche le menu de visualisation d'un adhérent (visiteur sans aucun droit)
  * @param object $pconnexionBD Identifiant de la connexion de base
- * @param integer $pi_idf_adherent Identifiant de l'adherent Ó modifier 
+ * @param integer $pi_idf_adherent Identifiant de l'adherent à modifier 
  * @param string $pst_ident identifiant de l'utilisateur courant
  * @global string $gst_rep_trombinoscope répertoire du trombinoscope
  * @global string $gst_url_trombinoscope url du trombinoscope  
@@ -517,12 +540,11 @@ function menu_visualiser($pconnexionBD,$pi_idf_adherent)
 {
    global $gst_rep_trombinoscope,$gst_url_trombinoscope;
    list($i_idf,$st_nom,$st_prenom,$st_email,$st_site,$c_confidentiel,$st_adr1,$st_adr2,$st_cp,$st_ville,$st_pays) = $pconnexionBD->sql_select_liste("select idf,nom,prenom,email_forum,site, confidentiel,adr1,adr2,cp,ville,pays from adherent where idf=$pi_idf_adherent");
-   print("<div class=alignCenter>");
-   print("<table border=1 align=center>");
+   print("<table class=\"table table-bordered table-striped\">");
    if (file_exists("$gst_rep_trombinoscope/$pi_idf_adherent.jpg"))
    {
       print("<tr><th>Photo</th>");
-      print("<td align=center><img src=\"$gst_url_trombinoscope/$pi_idf_adherent.jpg\" width=115 height=132></td>");
+      print("<td><img src=\"$gst_url_trombinoscope/$pi_idf_adherent.jpg\" width=115 height=132></td>");
       print("</tr>");       
    }
    print("<tr><th>Nom</th><td>$st_prenom $st_nom (Num&eacute;ro d'adh&eacute;rent: $i_idf)</td></tr>");
@@ -538,12 +560,14 @@ function menu_visualiser($pconnexionBD,$pi_idf_adherent)
       print("<tr><th>Code postal</th><td>$st_cp</tr>"); 
       print("<tr><th>Ville</th><td>$st_ville</tr>");
    }
-   print("</table><br></div>");
-   print("<div class=alignCenter>");
+   print("</table>");
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    print("<input type=hidden name=mode value=LISTE>");   
-   print("<input type=submit value=\"Liste des adherents\"><br></form>");
-   print("</div>");
+   print('<div class="form-row">');   
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Liste des adherents</button>');
+   print('</div>');
+   print("</form>");
+
 }
 
 /** Exporte les adhérents définis par le statut. Le résultat est un tableau HTML
@@ -567,16 +591,15 @@ function exporte_adresses_par_statut($pconnexionBD,$pc_statut)
     }
     //print("R=$st_requete<br>");
     $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);       
-    print("<div class=alignCenter>");
     if (count($a_liste_adherents)==0)
     {
-       print("<div class=alignCenter>");
+       print("<div class=\"alert alert-danger\">");
        print("Pas d'adh&eacute;rent avec le  statut '$pc_statut'");
        print("</div>");
     }
     else
     {
-       print("<table border=1 align=center>\n");
+       print("<table class=\"table table-bordered table-striped\">\n");
        print("<tr><th>Adh&eacute;rent</th><th>N°</th><th>Email</th><th>Adresse1</th><th>Adresse2</th><th>CP</th><th>Ville</th><th>Pays</th></tr>\n");
        foreach ($a_liste_adherents as $a_ligne)
        {
@@ -592,12 +615,13 @@ function exporte_adresses_par_statut($pconnexionBD,$pc_statut)
        }
        print("</table>\n");
     }
-    print("<br></div>");
     
     print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-    print("<div class=alignCenter>");
-    print("<input type=hidden name=mode value=LISTE>");   
-    print("<input type=submit value=\"Liste des adherents\"><br></div></form>");
+    print("<input type=hidden name=mode value=LISTE>");
+    print('<div class="form-row">');   
+    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Liste des adherents</button>');
+    print('</div>');	
+	print("</form>");
 }
 
 /** Exporte les adhérents définis par le statut. Le résultat est un tableau HTML
@@ -610,13 +634,13 @@ function exporte_adresses_publipostage($pconnexionBD)
    $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);       
    if (count($a_liste_adherents)==0)
    {
-     print("<div class=alignCenter>");
+     print("<div class=\"alert alert-danger\">");
      print("Pas d'adh&eacute;rent");
      print("</div>");
    }
    else
    {
-     print("<table border=1 align=center>\n");
+     print("<table class=\"table table-bordered table-striped\">\n");
      print("<tr><th>Adh&eacute;rent</th><th>N°</th><th>Email</th><th>Adresse1</th><th>Adresse2</th><th>CP</th><th>Ville</th><th>Pays</th></tr>\n");     
      foreach ($a_liste_adherents as $a_ligne)
      {
@@ -645,13 +669,13 @@ function exporte_tout($pconnexionBD)
    $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);       
    if (count($a_liste_adherents)==0)
    {
-     print("<div class=alignCenter>");
+     print("<div class=\"alert alert-danger\">");
      print("Pas d'adh&eacute;rent");
      print("</div>");
    }
    else
    {
-     print("<table border=1 align=center>\n");
+     print("<table class=\"table table-bordered table-striped\">\n");
      foreach ($a_liste_adherents as $a_ligne)
      {
         print("<tr>"); 
@@ -674,17 +698,19 @@ function exporte_tout($pconnexionBD)
 function montre_aides_adherents($pconnexionBD)
 {
    $st_requete = "select nom,prenom, idf from adherent where aide &".AIDE_RELEVES." and statut in ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."','".ADHESION_HONNEUR."') order by nom, prenom";
-   $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);       
-   print("<div class=TITRE>Aide aux relev&eacute;s<br></div>");
+   $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);
+   print('<div class="panel-group">');
+   print('<div class="panel-heading">Aide aux relev&eacute;s</div>'); 
+   print('<div class="panel-body">');
    if (count($a_liste_adherents)==0)
    {
-     print("<div class=alignCenter>");
+     print("<div class=\"alert alert-danger\">");
      print("Pas d'adh&eacute;rent");
      print("</div>");
    }
    else
    {
-     print("<table border=1 align=center>\n");
+     print("<table class=\"table table-bordered table-striped\">\n");
      foreach ($a_liste_adherents as $a_ligne)
      {
         print("<tr>"); 
@@ -696,18 +722,20 @@ function montre_aides_adherents($pconnexionBD)
      }
      print("</table>\n");
    }
+   print("</div>");
    $st_requete = "select nom,prenom, idf from adherent where aide &".AIDE_INFORMATIQUE." and statut in ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."','".ADHESION_HONNEUR."') order by nom, prenom";
-   $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);       
-   print("<div class=TITRE><br>Aide &agrave; l'informatique<br></div>");
+   $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);
+   print('<div class="panel-heading">Aide &agrave; l\'informatique</div>'); 
+   print('<div class="panel-body">');   
    if (count($a_liste_adherents)==0)
    {
-     print("<div class=alignCenter>");
+     print("<div class=\"alert alert-danger\">");
      print("Pas d'adh&eacute;rent");
      print("</div>");
    }
    else
    {
-     print("<table border=1 align=center>\n");
+     print("<table class=\"table table-bordered table-striped\">\n");
      foreach ($a_liste_adherents as $a_ligne)
      {
         print("<tr>"); 
@@ -719,18 +747,20 @@ function montre_aides_adherents($pconnexionBD)
      }
      print("</table>\n");
    }
+   print("</div>");
    $st_requete = "select nom,prenom, idf from adherent where aide &".AIDE_AD." and statut in ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."','".ADHESION_HONNEUR."') order by nom, prenom";
    $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);       
-   print("<div class=TITRE><br>Entraide aux AD<br></div>");
+   print('<div class="panel-heading">Entraide aux AD</div>'); 
+   print('<div class="panel-body">');
    if (count($a_liste_adherents)==0)
    {
-     print("<div class=alignCenter>");
+     print("<div class=\"alert alert-danger\">");
      print("Pas d'adh&eacute;rent");
      print("</div>");
    }
    else
    {
-     print("<table border=1 align=center>\n");
+     print("<table class=\"table table-bordered table-striped\">\n");
      foreach ($a_liste_adherents as $a_ligne)
      {
         print("<tr>"); 
@@ -742,18 +772,20 @@ function montre_aides_adherents($pconnexionBD)
      }
      print("</table>\n");
    }
+   print("</div>");
    $st_requete = "select nom,prenom, idf from adherent where aide &".AIDE_BULLETIN." and statut in ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."','".ADHESION_HONNEUR."') order by nom, prenom";
-   $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);       
-   print("<div class=TITRE><br>Participation au bulletin<br></div>");
+   $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);
+   print('<div class="panel-heading">Participation au bulletin</div>'); 
+   print('<div class="panel-body">');    
    if (count($a_liste_adherents)==0)
    {
-     print("<div class=alignCenter>");
+     print("<div class=\"alert alert-danger\">");
      print("Pas d'adh&eacute;rent");
      print("</div>");
    }
    else
    {
-     print("<table border=1 align=center>\n");
+     print("<table class=\"table table-bordered table-striped\">\n");
      foreach ($a_liste_adherents as $a_ligne)
      {
         print("<tr>"); 
@@ -765,11 +797,14 @@ function montre_aides_adherents($pconnexionBD)
      }
      print("</table>\n");
    }
+   print("</div>");
    
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<div class=alignCenter><br>");
-   print("<input type=hidden name=mode value=LISTE>");   
-   print("<input type=submit value=\"Liste des adherents\"><br></div></form>");
+   print("<input type=hidden name=mode value=LISTE>");
+   print('<div class="form-row">');   
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Liste des adherents</button>');
+   print('</div>');   
+   print("</form></div>");
 }
 
 
@@ -875,8 +910,8 @@ function fusionner($pconnexionBD,$pi_idf_adh1,$pi_idf_adh2)
    }
    if (count($a_erreurs)>0)
    {
-      print("<div class=\"IMPORTANT\">Fusion impossible. Merci de corriger les champs suivants auparavant:</div>");
-      print("<div align=\"center\"><br><table border=1>");
+      print("<div class=\"alert alert-danger\">Fusion impossible. Merci de corriger les champs suivants auparavant:</div>");
+      print("<table class=\"table table-bordered table-striped\">");
       print("<tr><th>Adh&eacute;rent</th><th>$i_ancien_numero</th><th>$i_nouveau_numero</th></tr>");
       foreach ($a_erreurs as $st_lib => $a_val)
       {
@@ -899,7 +934,7 @@ function fusionner($pconnexionBD,$pi_idf_adh1,$pi_idf_adh2)
 * Corps du programme
 -----------------------------------------------------------------------------*/
 print('<body>');
-
+print('<div class="container">');
 $gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 
 require_once("Commun/menu.php");
@@ -985,9 +1020,9 @@ switch ($gst_mode) {
     $adherent->initialise_depuis_formulaire();
     $adherent->modifie_avec_droits();       
     if ($adherent->envoie_message_readhesion())
-      print("<div> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
+      print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
     else
-      print("<div class=ERREUR> Echec lors de l'envoi du  message &agrave; l'adh&eacute;rent</div>");
+      print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; l'adh&eacute;rent</div>");
     menu_liste($connexionBD,$gst_ident,$gst_nom_a_chercher,$gc_statut);
    break;
    case 'VISU_ADHERENT':
@@ -1009,11 +1044,11 @@ switch ($gst_mode) {
       $st_mdp = Adherent::mdp_alea();
       //print("Nouveau MDP=$st_mdp<br>");        
       if ($adherent->change_mdp($st_mdp))
-        print("<div> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
+        print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
       else
-        print("<div class=ERREUR> Echec lors de l'envoi du  message &agrave; l'adh&eacute;rent</div>");
+        print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; l'adh&eacute;rent</div>");
       menu_liste($connexionBD,$gst_ident,$gst_nom_a_chercher,$gc_statut);
    break;       
 }  
-print('</body></html>');
+print('</div></body></html>');
 ?>
