@@ -10,16 +10,18 @@ verifie_privilege(DROIT_CHARGEMENT);
 require_once '../Commun/ConnexionBD.php';
 require_once('../Commun/commun.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<Head>\n");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr">');
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<link href='../Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
 print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../Commun/wEditor/wEditor.js' type='text/javascript'></script>");
-print("<script src='../Commun/menu.js' type='text/javascript'></script>");
 print("<script src='../js/select2.min.js' type='text/javascript'></script>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print("<script type='text/javascript'>");
 ?>
 $(document).ready(function() {
@@ -38,8 +40,8 @@ print("</script>");
 print("<title>Notification des chargements</title>");
 print('</Head>');
 
-print("\n<body>");
-
+print("<body>");
+print('<div class="container">');
 
 /**
  * Affiche le menu de selection de la commune a notifier
@@ -53,23 +55,32 @@ function AfficheSelectionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commu
   global $ga_types_nimegue;
   $a_sources = $pconnexionBD->liste_valeur_par_clef("SELECT idf,nom FROM source order by nom");
   $a_communes = $pconnexionBD->liste_valeur_par_clef("SELECT idf,nom FROM commune_acte order by nom");
+  print('<div class="panel panel-primary">');
+  print('<div class="panel-heading">Notification du chargement des donn&eacute;es d\'une commune/paroisse</div>');
+  print('<div class="panel-body">');
   print("<form action=\"".$_SERVER['PHP_SELF']."\" id=\"notification\" method=\"post\">");
-  print("<div class=TITRE>Notification du chargement des donn&eacute;es d'une commune/paroisse</div>");
-  print("<div align=center><br>");
+
   print("<input type=hidden name=mode value=EDITION_NOTIFICATION>");
-  print('<div align=center>Source: <select name=idf_source id=idf_source class="js-select-avec-recherche">');
-  //$a_sources[0] = 'Toutes';
+  print('<div class="form-row col-md-12">');
+  print('<div class="input-group col-md-offset-4 col-md-4">');
+  print('<label for="idf_source">Source:</label><select name=idf_source id=idf_source class="js-select-avec-recherche form-control">');
+
   print(chaine_select_options($pi_idf_source,$a_sources));
-  print('</select><br></div>');
-  print('<div align=center><br>Commune: <select name=idf_commune id=idf_commune class="js-select-avec-recherche">');
+  print('</select></div></div>');
+  print('<div class="form-row col-md-12">');
+  print('<div class="input-group col-md-offset-4 col-md-4">');
+  print('<label for="idf_commune">Commune:</label><select name=idf_commune id=idf_commune class="js-select-avec-recherche form-control">');
   print(chaine_select_options($pi_idf_commune,$a_communes));
-  print('</select><br></div>');
-  print('<div align=center><br>Type d\'acte: <select name=idf_type_acte id=idf_type_acte class="js-select-avec-recherche">');
+  print('</select></div></div>');
+  print('<div class="form-row col-md-12">');
+  print('<div class="input-group col-md-offset-4 col-md-4">');
+  print('<label for="idf_type_acte">Type d\'acte:</label><select name=idf_type_acte id=idf_type_acte class="js-select-avec-recherche form-control">');
   print(chaine_select_options($pi_idf_type_acte,$ga_types_nimegue));
-  print('</select><br></div>');
-  print('<div><br><input type=submit name=Rechercher value="Notifier un chargement"></div>');
-  print("</div>");
-  print("</form>"); 
+  print('</select></div></div>');
+  print('<div class="form-row">');   
+  print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Notifier un chargement</button>');
+  print('</div>');
+  print("</form></div></div>"); 
 }
 
 /**
@@ -84,7 +95,7 @@ function AfficheSelectionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commu
 function AfficheEditionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commune,$pi_idf_type_acte) {
   global $gst_url_site;
  
-  print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onsubmit=\"validatePost();\">");
+  print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
   $st_texte = "Bonjour,<br /><br />";
   $st_texte .= "Nous vous informons que la base AGC a &eacute;t&eacute; mise &agrave; jour:\n";
   if ($pi_idf_type_acte==IDF_MARIAGE || $pi_idf_type_acte==IDF_NAISSANCE || $pi_idf_type_acte==IDF_DECES)
@@ -121,18 +132,21 @@ function AfficheEditionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commune
   $st_texte .= "Pour rappel, la liste compl&egrave;te des d&eacute;pouillements se trouve &agrave; l'adresse: $gst_url_site/AfficheStatsCommune.php <br /><br />";
   $st_texte .= "Cordialement<br /><br />";
   $st_texte .= "	Les responsables de la base AGC";
-  print("<div align=center><input type=\"hidden\" id=\"texte\" name=\"texte\" value=\"$st_texte\" />");
+  print("<input type=\"hidden\" id=\"texte\" name=\"texte\" value=\"$st_texte\" />");
   print('<div align=center><script language="javascript" type="text/javascript">');
   print('var zone_reponse = new wEditor("zone_reponse", "texte");');
   print('zone_reponse.create()');
-  print('</script></div>');
+  print('</script>');
   print("<input type=hidden name=mode value=ENVOI_NOTIFICATION>");
-  print('<div align=center><input type=submit name=Rechercher value="Envoyer la notification" ></div>');
+  print('<div class="form-row">'); 
+  print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Envoyer la notification</button>');
   print("</div>");
   print ("</form>");
   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-  print("<input type=hidden name=mode value=\"SELECTION_NOTIFICATION\">");  
-  print("<div align=center><input type=submit value=\"Annuler\"></div>");  
+  print("<input type=hidden name=mode value=\"SELECTION_NOTIFICATION\">");
+  print('<div class="form-row">'); 
+  print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Annuler</button>');
+  print("</div>");  
   print('</form>'); 
 }
 
@@ -177,9 +191,9 @@ function EnvoieNotification($pconnexionBD,$pi_idf_commune,$pi_idf_type_acte,$pst
    $st_message .= $pst_msg_html."\n\n";
    $st_message .= '--'.$st_frontiere."--\n"; 
    if (mail(EMAIL_FORUM, $st_sujet, $st_message, $st_entete))    	
-	    print('<div align=center>R&eacute;ponse envoy&eacute;e avec succ&egrave;s sur le forum</div>');
+	    print('<div class=\"alert alert-success\">R&eacute;ponse envoy&eacute;e avec succ&egrave;s sur le forum</div>');
    else
-	    print('<div align=center class=ERREUR>La r&eacute;ponse n\'a pu &ecirc;tre envoy&eacute;e sur le forum</div>');
+	    print('<div class=\"alert alert-danger\">La r&eacute;ponse n\'a pu &ecirc;tre envoy&eacute;e sur le forum</div>');
 }
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
@@ -227,8 +241,10 @@ switch ($gst_mode) {
    {
        // Retour a la page de gestion de donnees
        print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-       print("<input type=hidden name=mode value=SELECTION_NOTIFICATION>");  
-       print('<div align=center><input type=submit name=Rechercher value="Retour a la selection de la notification"></div>');       
+       print("<input type=hidden name=mode value=SELECTION_NOTIFICATION>");
+       print('<div class="form-row">'); 
+       print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Retour a la selection de la notification</button>');
+       print("</div>"); 	       
        EnvoieNotification($connexionBD,$gi_idf_commune,$gi_idf_type_acte,$gst_texte);  
        print("</form>");
        
@@ -237,8 +253,10 @@ switch ($gst_mode) {
    {
        
        print("<form action=\"GestionDonnees.php\" method=\"post\">");
-       print("<input type=hidden name=mode value=FORMULAIRE>");  
-       print('<div align=center><input type=submit name=Rechercher value="Retour au menu chargement/export"></div>');
+       print("<input type=hidden name=mode value=FORMULAIRE>");
+       print('<div class="form-row">'); 
+       print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Retour au menu chargement/export</button>');
+       print("</div>"); 	   
        EnvoieNotification($connexionBD,$gi_idf_commune,$gi_idf_type_acte_nimegue,$gst_texte);  
        print("</form>");
    }
@@ -247,7 +265,7 @@ switch ($gst_mode) {
    default : print("Mode $gst_mode non reconnu");
 }
 
-print("</body></html>");
+print("</div></body></html>");
 
 
 ?>
