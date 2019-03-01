@@ -3,22 +3,21 @@
 <head>
   <title>Statistiques des adhésions</title>
   <meta charset="iso-8859-15">       <!-- ou charset="utf-8" -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="images/favicon.ico">
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <meta http-equiv="content-language" content="fr">
-<script src='Commun/jquery-min.js' type='text/javascript'></script>
-<script src='Commun/menu.js' type='text/javascript'></script>
-    
+<link href='../css/styles.css' type='text/css' rel='stylesheet'>
+<link href='../css/bootstrap.min.css' rel='stylesheet'>
+<script src='../Commun/jquery-min.js' type='text/javascript'></script>
+<script src='../Commun/menu.js' type='text/javascript'></script>
+<script src='../js/bootstrap.min.js' type='text/javascript'></script> 
+ 
 </head>
 
 <body>
+<div class="container">
 <?php
-//http://127.0.0.1:8888/Stats_Adhesion.php
-/*
-Programme d'affichage du nombre d'adhérents d'une année et du montant des adhésions 
-réparti en paiement par internet et chéque
-PL 05/14
-*/
 
 $gst_chemin = "../";
 
@@ -61,7 +60,10 @@ function Affiche_Stats()
   
   $st_requete = "select prix, jeton_paiement, concat(prenom,' ',nom,' (',idf,')') from adherent where annee_cotisation = $annee and prix != 0";
   $date_jour = Mois_Annee();
-  print("<div CLASS=TITRE>Statistiques du nombre et montant des adh&eacute;sions pour l'ann&eacute;e $annee au $date_jour</div>");
+  print('<div class="panel panel-primary">');
+  print('<div class="panel-heading">Statistiques du nombre et montant des adh&eacute;sions pour l\'ann&eacute;e $annee au $date_jour</div>');
+  print('<div class="panel-body">');
+  print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
   $a_adhesions=$connexionBD->sql_select_multiple($st_requete);
   foreach ( $a_adhesions as $a_adh)
   {
@@ -75,16 +77,10 @@ function Affiche_Stats()
         $ga_nb_cartes[$i_prix]++;
     }
     else
-       print("<div class=IMPORTANT>Tarif $i_prix inexistant pour l'adh&eacute;rent $st_adherent</div>");
+       print("<div class=\"alert alert-danger\">Tarif $i_prix inexistant pour l'adh&eacute;rent $st_adherent</div>");
    }
-   print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	 print("<br><br><div align=center>");
-	
    
-   print("</div>");
-	
-	print("<div align=center>");
-	print("<table border=1 cellpadding=5>");
+	print("<table class=\"table table-bordered table-striped\">");
 	print("<tr><th>&nbsp;</th>");
   foreach ($ga_tarifs as $i_tarif)
   {
@@ -92,7 +88,7 @@ function Affiche_Stats()
   }	
 	print("<th>&nbsp;</th></tr>");
 	print("<tr>");
-	print("<td> Paiement par chèque </td>");
+	print("<td> Paiement par ch&eagrave;que </td>");
   $gi_nb_tot_cheques = 0;
   $gi_tot_cheques=0;
   foreach ($ga_nb_cheques as $i_tarif => $i_nb_cheques)
@@ -130,12 +126,10 @@ function Affiche_Stats()
   }
   print(sprintf("<td>Soit %d adh&eacute;sions pour %d euros </td>",$gi_nb_tot_adhesions,$gi_tot_adhesions)); 
 	print("</tr>");
-	print("</table><br>");
-	
-	print("<p><input type=submit value='Retour' name='retour_annee'></p>");  
+	print("</table>");
+	print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Retour</button></div>');   
   print("<input type=hidden name=mode value=\"DEPART\">");
-  print("</div><br>");
-  print("</form>");	
+  print("</form></div></div>");	
 }
 
 /* --- Saisie de l'année à afficher --- */
@@ -145,23 +139,18 @@ function Saisie_annee()
    global $connexionBD;
    $a_annees = $connexionBD->sql_select( $st_requete = "SELECT DISTINCT (`annee_cotisation`) FROM `adherent` ORDER BY `annee_cotisation`"); 
    print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	 print("<br><br><div align=center>");
-   print("<p><h2>Statistiques du nombre et montant des adhésions</h2></p><br>");
-   print("</div><br>");
-   print("<div align=center>");
-   print("<select name=annee>");
-	 print chaine_select_options_simple('',$a_annees);
-	 print("</select>"); 
-	 print("<p><input type=submit value='Valider' name='valide_annee'></p>");  
+   print("<div class=\"h2\">Statistiques du nombre et montant des adh&eacute;sions</div>");
+   print("<label for=\"annee\">Ann&eacute;e</label><select name=annee id=anneee class=\"form-control\">");
+   print chaine_select_options_simple('',$a_annees);
+   print("</select>"); 
+
+   print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Valider</button></div>');   
    print("<input type=hidden name=mode value=\"AFFICHE\">");
-   print("</div><br>");
    print("</form>");
 }
 
 /* --- Début du programme --- */
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../Commun/menu.js' type='text/javascript'></script>");
+
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("$gst_chemin/Commun/menu.php");
 
@@ -178,56 +167,74 @@ switch ($gst_mode)
    break;
 }
 
-
 //=====================================================================================
 // requête SQL qui compte le nombre  d'adhérent par année
 
 $st_requete = "SELECT a.annee_cotisation,count(*),sum(case when jeton_paiement !='' then 1 else 0 end)  FROM `adherent` a where a.statut in ('B','I') group by a.annee_cotisation order by a.annee_cotisation desc";
-echo "<div class=TITRE>Nbrs Adh(B+I) année de cotisation</div><br>"; 
+print('<div class="panel-group">');
+print('<div class="panel">');
+print('<div class="panel-heading">Nbrs Adh(B+I) année de cotisation</div>');
+print('<div class="panel-body">');
+ 
 $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'stats_adhesions',3,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Ann&eacute;e','Nbrs','Adh&eacute;sions<br> en ligne'));
 $pagination->init_param_bd($connexionBD,$st_requete);
 $pagination->init_page_cour($gi_num_page_cour);
 $pagination->affiche_tableau_simple_requete_sql();
+print('</div></div>');
 
 //=================================================================================== 
 // début du tableau Adhésion par mois
 // requête SQL Comptage des demandes par mois
 $st_requete = "SELECT YEAR(date_paiement)as annee, MONTH(date_paiement)as mois, COUNT(*)as nombre FROM adherent WHERE `statut`IN ('B','I') GROUP BY YEAR(date_paiement) desc,MONTH(date_paiement) desc ";
-echo "<br><div class=TITRE>Adh&eacute;sion par mois </div><br>";
+
+print('<div class="panel">');
+print('<div class="panel-heading">Adh&eacute;sion par mois</div>');
+print('<div class="panel-body">');
 $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'stats_adhesions',3,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Ann&eacute;e','Mois','Nbrs'));
 $pagination->init_param_bd($connexionBD,$st_requete);
 $pagination->init_page_cour($gi_num_page_cour);
 $pagination->affiche_tableau_simple_requete_sql();
+print('</div></div>');
  
 //====================================================================================== 
 // Nbrs Adh par statut et année de cotisation
   
 $st_requete = 'SELECT a.annee_cotisation,sa.nom,count(*) FROM `adherent` a  join `statut_adherent` sa on (sa.idf=a.statut) group by a.annee_cotisation,a.statut order by a.annee_cotisation desc,a.statut'; 
-echo "<div class=TITRE>Nbrs Adh par statut et année de cotisation</div><br>";
+
+print('<div class="panel">');
+print('<div class="panel-heading">Nbrs Adh par statut et ann&eacute;e de cotisation</div>');
+print('<div class="panel-body">');
 $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'stats_adhesions',3,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Ann&eacute;e','Statut','Nbrs'));
 $pagination->init_param_bd($connexionBD,$st_requete);
 $pagination->init_page_cour($gi_num_page_cour);
 $pagination->affiche_tableau_simple_requete_sql();
+print('</div></div>');
 
 //Répartition des Adhérents  
 
 // Combien en France
 $st_requete = ("SELECT COUNT( * ) as Nbrs , left( cp, 2 ) as Departement FROM `adherent` WHERE `pays` LIKE 'france' AND `statut` IN ('B', 'I')GROUP BY left( cp, 2 )");
-echo "<div class=TITRE>Adh&eacute;rents par d&eacute;partement</div><br>";
+print('<div class="panel">');
+print('<div class="panel-heading">Adh&eacute;rents par d&eacute;partement</div>');
+print('<div class="panel-body">');
 $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'stats_adhesions',3,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Nbrs','D&eacute;p'));
 $pagination->init_param_bd($connexionBD,$st_requete);
 $pagination->init_page_cour($gi_num_page_cour);
 $pagination->affiche_tableau_simple_requete_sql();
-
+print('</div></div>');
 
 // Combien hors de France
-$st_requete=("SELECT COUNT( * ) as Nbrs ,pays FROM `adherent` WHERE `pays` NOT LIKE 'france' AND `statut` IN ('B', 'I') GROUP BY pays order by pays");	
-echo "<div class=TITRE>Adh&eacute;rents hors de France</div><br>";
+$st_requete=("SELECT COUNT( * ) as Nbrs ,pays FROM `adherent` WHERE `pays` NOT LIKE 'france' AND `statut` IN ('B', 'I') GROUP BY pays order by pays");
+print('<div class="panel">');
+print('<div class="panel-heading">Adh&eacute;rents hors de France</div>');
+print('<div class="panel-body">');	
 $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'stats_adhesions',3,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Nbrs','Pays'));
 $pagination->init_param_bd($connexionBD,$st_requete);
 $pagination->init_page_cour($gi_num_page_cour);
 $pagination->affiche_tableau_simple_requete_sql();
+print('</div></div></div>');
 
 ?>
+</div>
 </body>
 </html>
