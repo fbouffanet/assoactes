@@ -74,7 +74,7 @@ function liste_divers_existant ($pconnexionBD,$pi_idf_source,$pi_idf_commune)
 
 /**
  * Renvoie la liste des naissances pour la source et la commune donn‚es
- * sous la forme d'un table ou chaque ligne est (date,nom ‚poux, pr‚nom ‚poux,nom ‚pouse, pr‚nom ‚pouse) - Premier temps : seuls les CM sont v‚rifi‚s
+ * sous la forme d'un table ou chaque ligne est (date,nom ‚poux, pr‚nom ‚poux,nom ‚pouse, pr‚nom ‚pouse) - Premier temps : seuls les CM sont vérifiés
  * ou acte divers ayant un couple 
  * @param object $pconnexionBD Identifiant de la connexion BD
  * @param integer $pi_idf_source identifiant de la source
