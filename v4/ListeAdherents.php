@@ -277,7 +277,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
    print('<div class="form-group col-md-offset-2 col-md-4">');    
    print("<label for=\"nom_a_chercher\">G&eacute;n&eacute;alogiste:</label><input name=\"nom_a_chercher\" id=\"nom_a_chercher\" value=\"$pst_nom_a_chercher\" size=\"25\" maxlength=\"25\" type=\"Text\" class=\"form-control\" aria-describedby=\"aideAdht\">");
    print('<small id="aideAdht" class="form-text text-muted">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: ber*)</small></div>');
-   print(' <button type=submit class="col-md-4">Chercher</button></div>');
+   print(' <button type=submit class="col-md-4 btn btn-primary">Chercher</button></div>');
    print("</form>");
    
    $a_champs_recherche = array();
@@ -291,7 +291,8 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
    $pconnexionBD->initialise_params($a_champs_recherche);
    $a_initiales_adherents = $pconnexionBD->sql_select($st_requete);
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"liste_adherents\" method=\"post\" class=\"form-inline\">");
-   print("<input type=hidden name=mode id=\"mode_selection\" value=\"LISTE\">"); 
+   print("<input type=hidden name=mode id=\"mode_selection\" value=\"LISTE\">");
+   print('<div class="form-row">'); 
    print('<ul class="pagination justify-content-center">');
    if ($pst_nom_a_chercher=='')
    {
@@ -313,7 +314,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
      else
         print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_adh=$c_initiale\">$c_initiale</a></li>");
    }
-   print("</ul>");
+   print("</ul></div>");
    
    
    $pst_nom_a_chercher = str_replace('*','%',$pst_nom_a_chercher);  
@@ -410,7 +411,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
    
    if (a_droits($pst_ident,DROIT_GESTION_ADHERENT))  
    {     
-      print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+      print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" class=\"form-inline\">");
       $a_statuts_adherents = $pconnexionBD->liste_valeur_par_clef("select idf,nom from statut_adherent order by nom");
     
       $a_statuts_adherents[ADHESION_PARIS] = 'Adh&eacute;rents parisiens';
@@ -418,7 +419,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
       print("<input type=hidden name=mode value=EXPORTER>");
 	  print('<div class="form-row col-md-12">');
 	  print('<button type=submit class="btn btn-primary col-md-4">Exporter les adherents</button>');
-	  print('<div class="form-group col-md-8">');
+	  print('<div class="form-group col-md-4">');
 	  print('<label for="statut_export">dont le statut est:</label><select name="statut_export" id="statut_export" class="form-control">');
       print(chaine_select_options($pc_statut,$a_statuts_adherents));
       print('</select></div>');
