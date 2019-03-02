@@ -54,8 +54,10 @@ function exporte_historique_cantons($pconnexionBD)
  */ 
 function affiche_stats_cumulees($pconnexionBD)
 {
-  print("<div align='center'>");
-  print("<div class=SOUSTITRE>Par canton</div><br>");
+  print('<div class="panel-group">');
+  print('<div class="panel panel-primary">');
+  print('<div class="panel-heading">Par canton</div>');
+  print('<div class="panel-body">');	
   $st_requete = 'select c.nom,count(*) as nombre from stats_gbk s_gbk join commune_acte ca on (s_gbk.idf_commune=ca.idf) join canton c on (ca.idf_canton = c.idf) group by c.nom order by nombre desc'; 
   $a_ddes_canton = $pconnexionBD -> liste_valeur_par_clef($st_requete);
   print('<table class="table table-bordered table-striped">');
@@ -64,9 +66,11 @@ function affiche_stats_cumulees($pconnexionBD)
   {
     print("<tr><td>$st_canton</td><td>$i_ddes</td></tr>\n");
   }
-  print('</table></div>');
-  print("<div align='center'>");
-  print("<div class=SOUSTITRE>Par mois et ann&eacute;e</div><br>");
+  print('</table>');
+  print('</div></div>');
+  print('<div class="panel panel-primary">');
+  print('<div class="panel-heading">Par mois et ann&eacute;e</div>');
+  print('<div class="panel-body">');
   $st_requete = 'select date_format(date_demande , "%m/%y" ) as date_mois, count(*)as nombre from stats_gbk group by date_format(date_demande , "%m/%y" ) order by date_demande desc limit 50' ;
   $a_ddes_mois_annee = $pconnexionBD -> liste_valeur_par_clef($st_requete);
   print('<table class="table table-bordered table-striped">');
@@ -75,9 +79,11 @@ function affiche_stats_cumulees($pconnexionBD)
   {
     print("<tr><td>$st_mois_annee</td><td>$i_ddes</td></tr>\n");
   }
-  print('</table></div>');
-  print("<div align='center'>");
-  print("<div class=SOUSTITRE>Par type d'acte</div><br>");
+  print('</table>');
+  print('</div></div>');
+  print('<div class="panel panel-primary">');
+  print('<div class="panel-heading">Par type d\'acte</div>');
+  print('<div class="panel-body">');
   $st_requete = 'select ta.nom, count(*) as nombre from stats_gbk as s_gbk join type_acte ta on (s_gbk.idf_type_acte = ta.idf)  group by ta.nom  asc order by  nombre desc limit 30' ;
   $a_ddes_types_acte = $pconnexionBD -> liste_valeur_par_clef($st_requete);
   print('<table class="table table-bordered table-striped">');
@@ -86,7 +92,8 @@ function affiche_stats_cumulees($pconnexionBD)
   {
     print("<tr><td>$st_type</td><td>$i_ddes</td></tr>\n");
   }
-  print('</table></div>');
+  print('</table>');
+  print('</div></div>');
   print("<form action=".$_SERVER['PHP_SELF']." method=post>");
   print("<input type=hidden name=mode value=\"FORMULAIRE\">");
   print("<input type=submit value=\"Retour vers les menu\" class=\"btn btn-primary col-md-4 col-md-offset-4\">");
@@ -110,7 +117,7 @@ function affiche_formulaire($pconnexionBD) {
   
   print('<div class="panel-group">');	
   
-  print('<div class="panel">');
+  print('<div class="panel panel-default">');
   print('<div class="panel-heading">Tous les cantons par annn&eacute;e</div>');
   print('<div class="panel-body">');    
   print("<form action=".$_SERVER['PHP_SELF']." method=post>");
@@ -119,7 +126,7 @@ function affiche_formulaire($pconnexionBD) {
   print("</form></div></div>");
   
   print("<form action=".$_SERVER['PHP_SELF']." method=post>");
-  print('<div class="panel">');
+  print('<div class="panel panel-default">');
   print('<div class="panel-heading">Statistiques cumul&eacute;es</div>');
   print('<div class="panel-body">');
   print("<input type=hidden name=mode value=\"STATS_CUMULEES\">");
@@ -127,7 +134,7 @@ function affiche_formulaire($pconnexionBD) {
   print("</form></div></div>");
    
   print("<form id=stats_canton action=".$_SERVER['PHP_SELF']." method=post>");
-  print('<div class="panel">');
+  print('<div class="panel panel-default">');
   print('<div class="panel-heading">par ann&eacute;e et canton</div>');
   print('<div class="panel-body">');
   print('<div class="form-row col-md-12">');
@@ -139,7 +146,9 @@ function affiche_formulaire($pconnexionBD) {
   print(chaine_select_options(null,$a_cantons));
   print('</select></div>');
   print("<input type=hidden name=mode value=\"STATS_PAROISSES\">");
-  print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Afficher les statistiques</button></div>'); 
+  print('<div class="form-row col-md-12">');
+  print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Afficher les statistiques</button></div>'); 
+  print('</div>');
   print("</form></div></div>");
   
   print('<div id="tableau_stats_canton"></div>');
