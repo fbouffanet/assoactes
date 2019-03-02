@@ -10,21 +10,19 @@ require_once('../Commun/PaginationTableau.php');
 
 print('<!DOCTYPE html>');
 print("<head>");
+print('<link rel="shortcut icon" href="images/favicon.ico">');
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr"> ');
-print('<title>Base AGC: Stats consultations adhérent</title>');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
-print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
+print("<link href='../Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='../Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
-print("<script type='text/javascript'>");
-?>
-
-<?php
-print("</script>");
-print('<link rel="shortcut icon" href="images/favicon.ico">');
-
+print('<title>Base AGC: Stats consultations adhérent</title>');
 print("</head>");
 
 /*
@@ -95,6 +93,7 @@ if (isset($gi_idf_adherent ))
       print("<div class=\"panel-heading\">Statistiques des demandes de l'adh&eacute;rent $st_adherent</div>");
       print('<div class="panel-body">');
       print('<div class="panel-group">');
+      
       print('<div class="panel panel-default">');
       print('<div class="panel-heading">Total des demandes</div>');
       print('<div class="panel-body">');	  
@@ -124,6 +123,7 @@ if (isset($gi_idf_adherent ))
         print("<div class=\"alert alert-danger\">Pas de demandes</div>");
       }
 	  print('</div></div>');
+    
       $st_requete = "select  YEAR(date_demande)as annee, MONTH(date_demande) as mois, count(*) total, sum(case when idf_type_acte=".IDF_NAISSANCE."  then 1 else 0 end) nb_naissances,sum(case when idf_type_acte=".IDF_MARIAGE."  then 1 else 0 end) nb_mariages, sum(case when idf_type_acte=".IDF_DECES."  then 1 else 0 end) nb_deces, sum(case when idf_type_acte=".IDF_CM."  then 1 else 0 end) nb_cm from demandes_adherent where idf_adherent=$gi_idf_adherent group by YEAR(date_demande)*100+MONTH(date_demande) order by annee desc, mois desc limit 12";
       $a_ddes_derniere_anneee =$connexionBD->sql_select_multiple($st_requete);
 	  print('<div class="panel panel-default">');
@@ -138,7 +138,7 @@ if (isset($gi_idf_adherent ))
           list($i_annee,$i_mois,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
           print(sprintf("<tr><td>%04d/%02d</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",$i_annee,$i_mois,$i_total,ddes_mois_annee($i_nb_nai,$i_mois,$i_annee,IDF_NAISSANCE),ddes_mois_annee($i_nb_mar,$i_mois,$i_annee,IDF_MARIAGE),ddes_mois_annee($i_nb_dec,$i_mois,$i_annee,IDF_DECES),ddes_mois_annee($i_nb_cm,$i_mois,$i_annee,IDF_CM)));
         }
-        print("</table><br>\n");
+        print("</table>\n");
       }
       else
       {
@@ -160,13 +160,14 @@ if (isset($gi_idf_adherent ))
           list($st_paroisse,$i_idf_paroisse,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
           print(sprintf("<tr><td>%s</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",$st_paroisse,$i_total,ddes_communes($i_nb_nai,$i_idf_paroisse,IDF_NAISSANCE),ddes_communes($i_nb_mar,$i_idf_paroisse,IDF_MARIAGE),ddes_communes($i_nb_dec,$i_idf_paroisse,IDF_DECES),ddes_communes($i_nb_cm,$i_idf_paroisse,IDF_CM)));
         }
-        print("</table><br>\n");
+        print("</table>\n");
       }                                                                         
       else
       {
         print("<div class=\"alert alert-danger\">Pas de demandes</div>");
       }
-print('</div></div>');	  
+      print('</div></div>');	  
+      
       $st_requete = "select  c.nom as canton, count(*) total, sum(case when idf_type_acte=".IDF_NAISSANCE."  then 1 else 0 end) nb_naissances,sum(case when idf_type_acte=".IDF_MARIAGE."  then 1 else 0 end) nb_mariages, sum(case when idf_type_acte=".IDF_DECES."  then 1 else 0 end) nb_deces, sum(case when idf_type_acte=".IDF_CM."  then 1 else 0 end) nb_cm from demandes_adherent da join commune_acte ca on (da.idf_commune=ca.idf) join canton c on (ca.idf_canton=c.idf) where da.idf_adherent=$gi_idf_adherent group  by c.nom order by total desc limit 20";
       $a_ddes_cantons =$connexionBD->sql_select_multiple($st_requete);
 	  print('<div class="panel panel-default">');
@@ -181,13 +182,14 @@ print('</div></div>');
           list($st_canton,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
           print(sprintf("<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td></tr>\n",$st_canton,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
         }
-        print("</table><br>\n");
+        print("</table>\n");
       }
       else
       {
         print("<div class=\"alert alert-danger\">Pas de demandes</div>");
       }
-	print('</div></div></div>');
+	   print('</div></div>');
+     print('</div></div></div>');
     break;
     case 'VUE_DEMANDES_COMMUNE':
        $i_session_idf_commune = isset($_SESSION['idf_commune']) ? $_SESSION['idf_commune'] : null;
