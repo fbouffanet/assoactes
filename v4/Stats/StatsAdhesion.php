@@ -61,7 +61,7 @@ function Affiche_Stats()
   $st_requete = "select prix, jeton_paiement, concat(prenom,' ',nom,' (',idf,')') from adherent where annee_cotisation = $annee and prix != 0";
   $date_jour = Mois_Annee();
   print('<div class="panel panel-primary">');
-  print('<div class="panel-heading">Statistiques du nombre et montant des adh&eacute;sions pour l\'ann&eacute;e $annee au $date_jour</div>');
+  print("<div class=\"panel-heading\">Statistiques du nombre et montant des adh&eacute;sions pour l'ann&eacute;e $annee au $date_jour</div>");
   print('<div class="panel-body">');
   print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
   $a_adhesions=$connexionBD->sql_select_multiple($st_requete);
@@ -88,7 +88,7 @@ function Affiche_Stats()
   }	
 	print("<th>&nbsp;</th></tr>");
 	print("<tr>");
-	print("<td> Paiement par ch&eagrave;que </td>");
+	print("<td> Paiement par ch&egrave;que </td>");
   $gi_nb_tot_cheques = 0;
   $gi_tot_cheques=0;
   foreach ($ga_nb_cheques as $i_tarif => $i_nb_cheques)
@@ -127,7 +127,7 @@ function Affiche_Stats()
   print(sprintf("<td>Soit %d adh&eacute;sions pour %d euros </td>",$gi_nb_tot_adhesions,$gi_tot_adhesions)); 
 	print("</tr>");
 	print("</table>");
-	print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Retour</button></div>');   
+	print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Retour</button></div>');   
   print("<input type=hidden name=mode value=\"DEPART\">");
   print("</form></div></div>");	
 }
@@ -138,15 +138,21 @@ function Saisie_annee()
 {
    global $connexionBD;
    $a_annees = $connexionBD->sql_select( $st_requete = "SELECT DISTINCT (`annee_cotisation`) FROM `adherent` ORDER BY `annee_cotisation`"); 
-   print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-   print("<div class=\"h2\">Statistiques du nombre et montant des adh&eacute;sions</div>");
-   print("<label for=\"annee\">Ann&eacute;e</label><select name=annee id=anneee class=\"form-control\">");
+   
+   print('<div class="panel panel-primary">');
+   print('<div class="panel-heading">Statistiques du nombre et montant des adh&eacute;sions</div>');
+   print('<div class="panel-body">');
+   print("<form action=\"".$_SERVER['PHP_SELF']."\" class=\"form-inline\" method=\"post\">"); 
+   print('<div class="form-row col-md-12">'); 
+   print("<div class=\"form-group col-md-2\"><label for=\"annee\">Ann&eacute;e</label><select name=annee id=anneee class=\"form-control\">");
    print chaine_select_options_simple('',$a_annees);
-   print("</select>"); 
-
-   print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Valider</button></div>');   
+   print("</select></div>"); 
+   print('<button type="submit" class="btn btn-primary col-md-2">Valider</button>');   
+   print('</div>');
    print("<input type=hidden name=mode value=\"AFFICHE\">");
    print("</form>");
+   print("</div></div>");
+   
 }
 
 /* --- Début du programme --- */
@@ -172,7 +178,7 @@ switch ($gst_mode)
 
 $st_requete = "SELECT a.annee_cotisation,count(*),sum(case when jeton_paiement !='' then 1 else 0 end)  FROM `adherent` a where a.statut in ('B','I') group by a.annee_cotisation order by a.annee_cotisation desc";
 print('<div class="panel-group">');
-print('<div class="panel">');
+print('<div class="panel panel-info">');
 print('<div class="panel-heading">Nbrs Adh(B+I) année de cotisation</div>');
 print('<div class="panel-body">');
  
@@ -187,7 +193,7 @@ print('</div></div>');
 // requête SQL Comptage des demandes par mois
 $st_requete = "SELECT YEAR(date_paiement)as annee, MONTH(date_paiement)as mois, COUNT(*)as nombre FROM adherent WHERE `statut`IN ('B','I') GROUP BY YEAR(date_paiement) desc,MONTH(date_paiement) desc ";
 
-print('<div class="panel">');
+print('<div class="panel panel-info">');
 print('<div class="panel-heading">Adh&eacute;sion par mois</div>');
 print('<div class="panel-body">');
 $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'stats_adhesions',3,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Ann&eacute;e','Mois','Nbrs'));
@@ -201,7 +207,7 @@ print('</div></div>');
   
 $st_requete = 'SELECT a.annee_cotisation,sa.nom,count(*) FROM `adherent` a  join `statut_adherent` sa on (sa.idf=a.statut) group by a.annee_cotisation,a.statut order by a.annee_cotisation desc,a.statut'; 
 
-print('<div class="panel">');
+print('<div class="panel panel-info">');
 print('<div class="panel-heading">Nbrs Adh par statut et ann&eacute;e de cotisation</div>');
 print('<div class="panel-body">');
 $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'stats_adhesions',3,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Ann&eacute;e','Statut','Nbrs'));
@@ -214,7 +220,7 @@ print('</div></div>');
 
 // Combien en France
 $st_requete = ("SELECT COUNT( * ) as Nbrs , left( cp, 2 ) as Departement FROM `adherent` WHERE `pays` LIKE 'france' AND `statut` IN ('B', 'I')GROUP BY left( cp, 2 )");
-print('<div class="panel">');
+print('<div class="pane panel-info">');
 print('<div class="panel-heading">Adh&eacute;rents par d&eacute;partement</div>');
 print('<div class="panel-body">');
 $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'stats_adhesions',3,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Nbrs','D&eacute;p'));
@@ -225,7 +231,7 @@ print('</div></div>');
 
 // Combien hors de France
 $st_requete=("SELECT COUNT( * ) as Nbrs ,pays FROM `adherent` WHERE `pays` NOT LIKE 'france' AND `statut` IN ('B', 'I') GROUP BY pays order by pays");
-print('<div class="panel">');
+print('<div class="panel panel-info">');
 print('<div class="panel-heading">Adh&eacute;rents hors de France</div>');
 print('<div class="panel-body">');	
 $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'stats_adhesions',3,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Nbrs','Pays'));
