@@ -92,7 +92,7 @@ if (isset($gi_idf_adherent ))
       list($i_tot_ddes,$i_tot_nai,$i_tot_mar,$i_tot_dec,$i_tot_cm)=$connexionBD->sql_select_liste($st_requete);
       $st_adherent=$connexionBD->sql_select1("select concat(prenom,' ',nom,'(',idf,')') from adherent where idf=$gi_idf_adherent");
       print('<div class="panel panel-primary">');
-      print('<div class="panel-heading">Statistiques des demandes de l\'adh&eacute;rent $st_adherent</div>');
+      print("<div class=\"panel-heading\">Statistiques des demandes de l'adh&eacute;rent $st_adherent</div>");
       print('<div class="panel-body">');
       print('<div class="panel-group">');
       print('<div class="panel panel-default">');
@@ -200,10 +200,10 @@ print('</div></div>');
        $st_adherent=$connexionBD->sql_select1("select concat(prenom,' ',nom,'(',idf,')') from adherent where idf=$gi_idf_adherent");
 
 	   print('<div class="panel panel-primary">');
-       print('<div class="panel-heading">Demandes de l\'adh&eacute;rent $st_adherent</div>');
+       print("<div class=\"panel-heading\">Demandes de l'adh&eacute;rent $st_adherent</div>");
        print('<div class="panel-body">');
 	   print('<div class="panel panel-default">');
-       print('<div class="panel-heading">$st_type_acte &agrave; $st_commune</div>');
+       print("<div class=\"panel-heading\">$st_type_acte &agrave; $st_commune</div>");
        print('<div class="panel-body">');
       $gi_num_page = empty($_POST['num_page_ddes_adht']) ?  $i_session_num_page: (integer) $_POST['num_page_ddes_adht'];
        $_SESSION['mode']=$gst_mode;
@@ -260,7 +260,7 @@ print('</div></div>');
           print("<div class=\"alert alert-danger\">Pas de demandes</div>");
        }
        print("<form name=\"RetourVueStat\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	   print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Retour vers les statistiques</div>');
+	   print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Retour vers les statistiques</div>');
        print("<input type=\"hidden\" name=\"mode\" value=\"VUE_STAT\">");
        print("</form></div></div></div>");       
     break;
@@ -275,7 +275,7 @@ print('</div></div>');
        $st_type_acte=$connexionBD->sql_select1("select nom from type_acte where idf=$i_idf_type_acte");
        $st_adherent=$connexionBD->sql_select1("select concat(prenom,' ',nom,'(',idf,')') from adherent where idf=$gi_idf_adherent");
 	   print('<div class="panel panel-primary">');
-       print('<div class="panel-heading">Demandes de l\'adh&eacute;rent $st_adherent</div>');
+       print("<div class=\"panel-heading\">Demandes de l'adh&eacute;rent $st_adherent</div>");
        print('<div class="panel-body">');
 	   print('<div class="panel panel-default">');
        print(sprintf("<div class=\"panel-heading\">%s en %0.2d/%0.4d</div>",$st_type_acte,$i_mois,$i_annee));
@@ -336,7 +336,7 @@ print('</div></div>');
           print("<div class=\"alert alert-danger\">Pas de demandes</div>");
        }
        print("<form name=\"RetourVueStat\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	   print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Retour vers les statistiques</div>');
+	   print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Retour vers les statistiques</div>');
        print("<input type=\"hidden\" name=\"mode\" value=\"VUE_STAT\">");
        print("</form></div></div></div>");
     break;
