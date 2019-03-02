@@ -58,7 +58,7 @@ function affiche_stats_cumulees($pconnexionBD)
   print("<div class=SOUSTITRE>Par canton</div><br>");
   $st_requete = 'select c.nom,count(*) as nombre from stats_gbk s_gbk join commune_acte ca on (s_gbk.idf_commune=ca.idf) join canton c on (ca.idf_canton = c.idf) group by c.nom order by nombre desc'; 
   $a_ddes_canton = $pconnexionBD -> liste_valeur_par_clef($st_requete);
-  print('<table border=1>');
+  print('<table class="table table-bordered table-striped">');
   print("<tr><th>Canton</th><th>Demandes</th></tr>\n");
   foreach ($a_ddes_canton as $st_canton => $i_ddes)
   {
@@ -69,7 +69,7 @@ function affiche_stats_cumulees($pconnexionBD)
   print("<div class=SOUSTITRE>Par mois et ann&eacute;e</div><br>");
   $st_requete = 'select date_format(date_demande , "%m/%y" ) as date_mois, count(*)as nombre from stats_gbk group by date_format(date_demande , "%m/%y" ) order by date_demande desc limit 50' ;
   $a_ddes_mois_annee = $pconnexionBD -> liste_valeur_par_clef($st_requete);
-  print('<table border=1>');
+  print('<table class="table table-bordered table-striped">');
   print("<tr><th>Date</th><th>Demandes</th></tr>\n");
   foreach ($a_ddes_mois_annee as $st_mois_annee => $i_ddes)
   {
@@ -80,7 +80,7 @@ function affiche_stats_cumulees($pconnexionBD)
   print("<div class=SOUSTITRE>Par type d'acte</div><br>");
   $st_requete = 'select ta.nom, count(*) as nombre from stats_gbk as s_gbk join type_acte ta on (s_gbk.idf_type_acte = ta.idf)  group by ta.nom  asc order by  nombre desc limit 30' ;
   $a_ddes_types_acte = $pconnexionBD -> liste_valeur_par_clef($st_requete);
-  print('<table border=1>');
+  print('<table class="table table-bordered table-striped">');
   print("<tr><th>Types d'acte</th><th>Demandes</th></tr>\n");
   foreach ($a_ddes_types_acte as $st_type => $i_ddes)
   {
@@ -89,7 +89,7 @@ function affiche_stats_cumulees($pconnexionBD)
   print('</table></div>');
   print("<form action=".$_SERVER['PHP_SELF']." method=post>");
   print("<input type=hidden name=mode value=\"FORMULAIRE\">");
-  print("<div align='center'><br><input type=submit value=\"Retour vers les menu\"></div>");
+  print("<input type=submit value=\"Retour vers les menu\" class=\"btn btn-primary col-md-4 col-md-offset-4\">");
   print("</form>");
   print('</div>');
 }
@@ -171,6 +171,7 @@ print("<link href='../Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
 print("<link href='../Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
 print("<link href='../Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
 print("<link href='../Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='../js/select2.min.js' type='text/javascript'></script>");
 print("<script src='../js/Chart.min.js' type='text/javascript'></script>");
@@ -192,7 +193,7 @@ $(document).ready(function() {
 				var labels = donnees["labels"];
 				var ensemble_donnees=donnees["donnees"];
 				// affichage du tableau
-				var tableau = "<table border=1><tr><th><Commune></th>";
+				var tableau = "<table class=\"table table-bordered table-striped\"><tr><th><Commune></th>";
 				jQuery.each( labels, function( i, val ) {
 					tableau+="<th>"+val+"</th>";
 				});
