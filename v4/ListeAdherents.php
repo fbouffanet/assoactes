@@ -57,7 +57,6 @@ print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='styl
 print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
 print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
-print("<script src='Commun/menu.js' type='text/javascript'></script>");
 print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>\n");
 print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>\n");
 print("<link href='Commun/select2.min.css' type='text/css' rel='stylesheet'>");
