@@ -294,7 +294,7 @@ private function nom_photo($pi_idf_commune_acte, $pi_idf_acte, $pi_num_photo, $p
      } 
 
 /**
- * Initialise l'acte depuis une formulaire post
+ * Initialise l'acte depuis un formulaire post
  * 
  * @param integer $pi_idf_acte identifiant de l'acte
  */
@@ -386,8 +386,11 @@ public function initialise_depuis_formulaire($pi_idf_acte)
                  $o_pers -> setSexe($a_sexe_personne[$i]);
              } 
         else
-             $o_pers -> setSexe($a_sexe_personne[$i]);
-         $this -> a_liste_personnes[] = $o_pers;
+		{	
+			if (empty($o_pers -> getSexe()))
+				$o_pers -> setSexe($a_sexe_personne[$i]);
+		}
+		 $this -> a_liste_personnes[] = $o_pers;
          } 
     } 
 
