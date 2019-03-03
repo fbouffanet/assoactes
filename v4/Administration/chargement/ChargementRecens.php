@@ -4,7 +4,7 @@
  * Charge les recensements
  * @param string $pst_fichier localisation du fichier
  * @param integer $pi_idf_commune : identifiant de la commune a charger
- * @param integer $pi_annee: annÃ©e de recensement
+ * @param integer $pi_annee: année de recensement
  * @param integer $pi_idf_source : identifiant de la source 
  * @param integer $pi_idf_releveur : identifiant de l'adherent releveur 
  * @param string $pst_rep_trav : localisation du repertoire de travail   
@@ -78,10 +78,11 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 		 $acte = new Acte($connexionBD,$pi_idf_commune,LIB_RECENSEMENT,'N',$pi_idf_source,sprintf("00/00/%04d",$pi_annee),$releveur->idf_releveur($pi_idf_releveur));
 		 $st_commentaires = sprintf("Nom de la Rue: %s\n",$st_rue_ligne);
 		 $st_commentaires .= sprintf("Quartier: %s\n",$st_quartier_ligne);
-		 $st_commentaires .= sprintf("NÂ° maison: %d\n",$i_maison_ligne);
-		 $st_commentaires .= sprintf("NÂ° mÃ©nage: %d\n",$i_menage_ligne);
-		 $st_commentaires .= sprintf("NÂ° de page: %d",$i_page_ligne);
+		 $st_commentaires .= sprintf("N° maison: %d\n",$i_maison_ligne);
+		 $st_commentaires .= sprintf("N° ménage: %d\n",$i_menage_ligne);
+		 $st_commentaires .= sprintf("N° de page: %d",$i_page_ligne);
 		 $acte->setCommentaires($st_commentaires);
+     $acte->setDetailSupp(1);
 		 $a_liste_actes[] = $acte;
 		 $i_acte_courant = $acte->getIdf();
 		 $i_nb_actes++;
@@ -137,7 +138,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
    } 
    fclose($pf);  
    fclose($pf_actes);
-   // Sauvegarde des types d'acte par sÃ©curitÃ© si 'Naissance' n'a pas Ã©tÃ© dÃ©jÃ  dÃ©fini comme type d'acte
+   // Sauvegarde des types d'acte par sécurité si 'Naissance' n'a pas été déjà défini comme type d'acte
    $type_acte->sauve($pst_rep_trav,$gst_parametres_load_data);
    $union->sauve($pst_rep_trav,$gst_parametres_load_data);
    $stats_patronyme->sauve($pst_rep_trav,$gst_parametres_load_data);
