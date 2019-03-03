@@ -518,15 +518,15 @@ print('</div>');
 
 /* dates de releves */
 
-print('<div class="form-row">');
-print('<div class="input-group col-md-1">');
-print("<label for =\"releve_type_communes\">Actes</label><select id=\"releve_type_communes\" name=\"releve_type_communes\" class=\"form-control\">");
+print('<div class="form-row col-md-12">');
+
+print('<div class="form-group col-md-10">');
+print("<label class=\"sr-only\" for=\"releve_type_communes\">Actes</label><div class=\"input-group\"><span class=\"input-group-addon\">actes</span><select id=\"releve_type_communes\" name=\"releve_type_communes\" class=\"form-control form-control-sm\">");
 $options = array(0=>'publiés', 1=>"modifiés");
 print(chaine_select_options($gst_releve_type,$options));
 print("</select></div>");
 
-print('<div class="input-group col-md-1">');
-print("<label for=\"releve_mois_min_communes\">entre</label><select id=\"releve_mois_min_communes\" name=\"releve_mois_min_communes\" class=\"form-control\">");
+print("<label class=\"sr-only\" for=\"releve_mois_min_communes\">entre</label><div class=\"input-group\"><span class=\"input-group-addon\">entre</span><select id=\"releve_mois_min_communes\" name=\"releve_mois_min_communes\" class=\"form-control form-control-sm\">");
 
 for($i = 1; $i <= 12; $i++){
 	$mois[$i] = str_pad($i, 2, '0', STR_PAD_LEFT);
@@ -535,16 +535,16 @@ $a_mois = array(''=>'Mois')+$mois;
 print(chaine_select_options($gst_releve_mois_min,$a_mois));
 print("</select></div>");
 
-print("<div class=\"input-group col-md-1\"><label for=\"releve_annee_min_communes\" class=\"sr-only\">Ann&eacute;e Min</label><input type=\"text\" name=\"releve_annee_min_communes\" id=\"releve_annee_min_communes\" size=\"4\" maxlength=\"4\" value=\"$gst_releve_annee_min\" class=\"form-control\"></div>");
+print("<label class=\"sr-only\" for=\"releve_annee_min_communes\" class=\"sr-only\">Ann&eacute;e Min</label><div class=\"input-group \"><span class=\"input-group-addon\">Ann&eacute;e Min</span><input type=\"text\" name=\"releve_annee_min_communes\" id=\"releve_annee_min_communes\" size=\"4\" maxlength=\"4\" value=\"$gst_releve_annee_min\" class=\"form-control form-control-sm\"></div>");
 
-print("<div class=\"input-group col-md-1\"><label for=\"releve_mois_max_communes\">et</label><select id=\"releve_mois_max_communes\" name=\"releve_mois_max_communes\" data-max=\"" . date('n') . "\" class=\"form-control\">");
+print("<label class=\"sr-only\" for=\"releve_mois_max_communes\">et</label><div class=\"input-group \"><span class=\"input-group-addon\">et</span><select id=\"releve_mois_max_communes\" name=\"releve_mois_max_communes\" data-max=\"" . date('n') . "\" class=\"form-control form-control-sm\">");
 print(chaine_select_options($gst_releve_mois_max,$a_mois));
 print("</select></div>");
 
-print("<div class=\"input-group col-md-1\"><label for=\"releve_annee_max_communes\" class=\"sr-only\">Ann&eacute;e Max</label><input type=\"text\" name=\"releve_annee_max_communes\" id=\"releve_annee_max_communes\" size=\"4\" maxlength=\"4\" value=\"$gst_releve_annee_max\" data-max=\"" . date('Y') . "\" class=\"form-control\"></div>");
+print("<label class=\"sr-only\" for=\"releve_annee_max_communes\" class=\"sr-only\">Ann&eacute;e Max</label><div class=\"input-group\"><span class=\"input-group-addon\">Ann&eacute;e Max</span><input type=\"text\" name=\"releve_annee_max_communes\" id=\"releve_annee_max_communes\" size=\"4\" maxlength=\"4\" value=\"$gst_releve_annee_max\" data-max=\"" . date('Y') . "\" class=\"form-control form-control-sm\"></div>");
+print('</div>');
 
-
-print('<div class="form-check col-md-4">');
+print('<div class="form-check col-md-2">');
 $checked = ($gst_releve_tous_patronymes)? ' checked="checked" ' : '';
 print("<input type=\"checkbox\" name=\"releve_tous_patronymes\" id=\"releve_tous_patronymes_communes\" ". $checked ." value=\"1\" class=\"form-check-input\" ><label  for=\"releve_tous_patronymes_communes\" class=\"form-check-label\" >Tous patronymes</label>");
 print('</div>');
