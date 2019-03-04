@@ -34,11 +34,13 @@ class ModificationActe extends Acte {
     
      function __autoload($class_name)
     
+    
     {
          require_once $class_name . '.php';
          } 
     
     public function __construct($pconnexionBD, $pi_idf_acte, $pi_idf_modification)
+    
     
     {
          $this -> connexionBD = $pconnexionBD;
@@ -80,6 +82,7 @@ class ModificationActe extends Acte {
     public function getNbPhotos()
     
     
+    
     {
          return self :: $i_nb_photos;
          } 
@@ -88,6 +91,7 @@ class ModificationActe extends Acte {
      * Positionne l'email du demandeur
      */
     public function setEmailDemandeur($pst_email_demandeur)
+    
     
     
     {
@@ -100,6 +104,7 @@ class ModificationActe extends Acte {
      * @param integer $pi_idf_modification identifiant de la modification
      */
     public function charge($pi_idf_modification)
+    
     
     
     {
@@ -160,6 +165,7 @@ class ModificationActe extends Acte {
     public function cree()
     
     
+    
     {
          for ($i = 1;$i <= count($this -> a_photos);$i++)
          {
@@ -184,6 +190,7 @@ class ModificationActe extends Acte {
      * Renvoie le formulaire d'édition d'un acte
      */
     public function formulaire_liste_personnes()
+    
     
     
     {
@@ -252,6 +259,7 @@ class ModificationActe extends Acte {
 private function type_mime_vers_ext($pst_type_mime)
 
 
+
 {
      switch ($pst_type_mime)
      {
@@ -279,6 +287,7 @@ private function type_mime_vers_ext($pst_type_mime)
 private function nom_photo($pi_idf_commune_acte, $pi_idf_acte, $pi_num_photo, $pst_ext)
 
 
+
 {
      global $gst_rep_photos_modifs;
      $st_photo = sprintf("%s/%d_%d_%d.%s", $gst_rep_photos_modifs, $pi_idf_commune_acte, $pi_idf_acte, $pi_num_photo, $pst_ext);
@@ -299,6 +308,7 @@ private function nom_photo($pi_idf_commune_acte, $pi_idf_acte, $pi_num_photo, $p
  * @param integer $pi_idf_acte identifiant de l'acte
  */
 public function initialise_depuis_formulaire($pi_idf_acte)
+
 
 
 {
@@ -381,42 +391,23 @@ public function initialise_depuis_formulaire($pi_idf_acte)
                      break;
                  default: $o_pers -> setSexe('?');
                      } 
-                }
-			else
-				$o_pers -> setSexe($a_sexe_personne[$i]);
-		 }
-		else if ($this -> i_idf_type_acte == IDF_DECES)
-		{
-			if ($o_pers -> getIdfTypePresence() == IDF_PRESENCE_INTV)
-				 $c_sexe_intv = $o_pers -> getSexe(); 
-            else if ($o_pers -> getIdfTypePresence() == IDF_PRESENCE_EXCJT)
-            {
-				switch ($c_sexe_intv)
-				{
-					case 'M': $o_pers -> setSexe('F');
-					break;
-					case 'F': $o_pers -> setSexe('M');
-					break;
-					case '?': $o_pers -> setSexe('?');
-					break;
-					default: $o_pers -> setSexe('?');
                 } 
-            }
-			else
-				$o_pers -> setSexe($a_sexe_personne[$i]);
-		}
-        else	
-			if (empty($o_pers -> getSexe()))
-				$o_pers -> setSexe($a_sexe_personne[$i]);
-		$this -> a_liste_personnes[] = $o_pers;	
-		}
-		  
+            else
+                 $o_pers -> setSexe($a_sexe_personne[$i]);
+             } 
+        else
+         if (empty($o_pers -> getSexe()))
+             $o_pers -> setSexe($a_sexe_personne[$i]);
+         $this -> a_liste_personnes[] = $o_pers;
+         } 
+    
     } 
 
 /**
  * Renvoie la chaine de visualisation des photos
  */
 public function visualisation_photos()
+
 
 
 {
@@ -441,6 +432,7 @@ public function visualisation_photos()
 public function commentaires_demandeur()
 
 
+
 {
      $st_chaine = "<fieldset><legend>Commentaires &agrave destination du valideur:</legend>";
      $st_chaine .= "<div class=\"alignCenter\">Commentaires:<textarea name=cmt_modif rows=4 cols=80>";
@@ -460,14 +452,15 @@ public function commentaires_demandeur()
 public function differences()
 
 
+
 {
      $o_acte = new Acte($this -> connexionBD, null, null, null, null, null, null);
      $o_acte -> charge($this -> i_idf_acte);
      $st_description_acte = $o_acte -> versChaine();
      $st_description_modif = $this -> versChaine();
      setlocale(LC_CTYPE, 'fr_FR.UTF8');
-     //$o_FineDiff = new FineDiff(iconv("cp1252", "UTF-8", $st_description_acte), iconv("cp1252", "UTF-8", $st_description_modif), FineDiff :: $wordGranularity);
-     $o_FineDiff = new FineDiff($st_description_acte, $st_description_modif, FineDiff :: $wordGranularity);
+     // $o_FineDiff = new FineDiff(iconv("cp1252", "UTF-8", $st_description_acte), iconv("cp1252", "UTF-8", $st_description_modif), FineDiff :: $wordGranularity);
+    $o_FineDiff = new FineDiff($st_description_acte, $st_description_modif, FineDiff :: $wordGranularity);
      $st_chaine = "<fieldset>";
      $st_chaine .= "<legend>Diff&eacute;rences</legend>";
      $st_diffs = $o_FineDiff -> renderDiffToHTML();
@@ -480,6 +473,7 @@ public function differences()
  * Renvoie le formulaire de refus
  */
 public function formulaire_refus()
+
 
 
 {
@@ -499,6 +493,7 @@ public function formulaire_refus()
  * Renvoie la chaine de validation du formulaire de refus
  */
 public function validation_formulaire_refus()
+
 
 
 {
@@ -525,6 +520,7 @@ public function validation_formulaire_refus()
  * @param string $pst_motif motif du refus
  */
 public function refuse($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur, $pst_email_valideur, $pst_motif_refus)
+
 
 
 {
@@ -569,6 +565,7 @@ public function refuse($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur
  * @param string $pst_cmt_valideur commentaires du valideur
  */
 public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur, $pst_email_valideur, $pst_cmt_valideur)
+
 
 
 {
@@ -619,6 +616,7 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
  * Renvoie les informations concernant le demandeur
  */
 public function infos_demandeur()
+
 
 
 {
