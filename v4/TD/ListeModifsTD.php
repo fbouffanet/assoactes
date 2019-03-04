@@ -7,20 +7,25 @@ verifie_privilege(DROIT_VALIDATION_TD);
 require_once '../Commun/commun.php';
 require_once('../Commun/ConnexionBD.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr">');
 print("<title>Liste des demandes de modification de TD en attente</title>");
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../Commun/menu.js' type='text/javascript'></script>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print('</head>');
 print('<body>');
+print('<div class="container">');
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("../Commun/menu.php");
-print("<div class=\"TITRE\">Demandes de modification de TD</div>");
+print('<div class="panel panel-primary">');
+print("<div class=\"panel-heading\">Demandes de modification de TD</div>");
+print('<div class="panel-body">');
 
 $i_nb_tds=$connexionBD->sql_select1("select sum( nb_actes ) from `stats_commune` where `idf_type_acte` =".IDF_MARIAGE." and `idf_source` =".IDF_SOURCE_TD);
 print("<div class=\"SOUSTITRE\">$i_nb_tds TDMs en base</div>");
@@ -30,8 +35,10 @@ if (isset($_SESSION['ident']))
   $a_liste_modifs=$connexionBD->sql_select_multiple_par_idf($st_requete);
   if (count($a_liste_modifs)>0)
   {   
-      print("<br><div class=\"SOUSTITRE\">Demandes de modifications</div>");    
-      print("<div><br><table border=1 align=center>");
+      print('<div class="panel panel-default">');
+      print("<div class=\"panel-heading\">Demandes de modifications<</div>");
+      print('<div class="panel-body">');	  
+      print("<table class=\"table table-bordered table-striped\">\n");
       print("<tr>");
       print("<th>Date de l'acte</th>");
       print("<th>Type</th>");
@@ -55,17 +62,19 @@ if (isset($_SESSION['ident']))
           print("<form action=\"../Administration/ValidationModification.php\" method=\"POST\">");
           print("<input type=\"hidden\" name=\"idf_modification\" value=\"$i_idf_modif\">");
           print("<input type=\"hidden\" name=\"adresse_retour\" value=\"".$_SERVER['PHP_SELF']."\">");
-          print("<input type=submit value=\"Voir la modification\">");
+		  print('<button type="submit" class="btn btn-primary">Voir la modification</button>');
           print("</form></td>");
           print("</tr>");
       }
-      print("</table></div>");
+      print("</table>");
+	  print("</div></div>");
   }       
   else
   {
-    print("<div align=center><br>Pas de demandes de TD en attente</div>");
+    print('<div class="alert alert-danger">Pas de demandes de TD en attente</div>');
   }
   
 }
-print("</body></html>");
+print("</div></div>");
+print("</div></body></html>");
 ?>
