@@ -9,9 +9,6 @@ require_once('Commun/commun.php');
 require_once('Commun/Adherent.php');
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-if(!isset($_SESSION['ident']))
-   die("<div class=ERREUR> Identifiant non reconnu</div>");
-$gst_ident = $_SESSION['ident'];
 
 $connexionBD->initialise_params(array(':ident'=>$gst_ident));
 $i_idf_adht_connecte= $connexionBD->sql_select1("select idf from adherent where ident=:ident");
@@ -19,14 +16,15 @@ $i_idf_adht_connecte= $connexionBD->sql_select1("select idf from adherent where 
 $gst_mode = isset($_POST['mode']) ? $_POST['mode'] : 'MENU_MODIFIER';
 $adherent = new Adherent($connexionBD,$i_idf_adht_connecte);
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
 print('<meta http-equiv="content-language" content="fr">');
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>\n");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='Commun/jquery-min.js' type='text/javascript'></script>\n");
-print("<script src='Commun/menu.js' type='text/javascript'></script>\n");
 print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>\n");
 print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>\n");
 print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>\n");
@@ -34,7 +32,8 @@ print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></scri
 print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>\n");
 print("<link href='Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>\n");
-print("<script src='js/select2.min.js' type='text/javascript'></script>"); 
+print("<script src='js/select2.min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");  
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {
@@ -90,33 +89,36 @@ print('</head>');
 function menu_edition_adherent($pconnexionBD,$padherent,$pi_idf_adh)
 {
    global $ga_pays,$gi_max_taille_upload,$gst_rep_trombinoscope,$gst_url_trombinoscope;
-   print("<div class=gauche_adherent>");
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"maj_infos_adherent\" method=\"post\">\n");
+   print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"maj_infos_adherent\" method=\"post\" class=\"form-inline\">\n");
    print("<input type=hidden name=mode value=MODIFIER>\n");
+   print('<div class="row col-md-12">');
+   
+   print('<div class="col-md-6">');
    print($padherent->formulaire_infos_personnelles(false));
    print("</div>");
-   print("<div class=droite_adherent>");
+   
+   print('<div class="col-md-6">');  
    print($padherent->formulaire_aides_possibles());
    print($padherent->formulaire_origine());
    if (file_exists("$gst_rep_trombinoscope/$pi_idf_adh.jpg"))
    {
-      print("<div class=alignCenter>");
-      print("<img src=\"$gst_url_trombinoscope/$pi_idf_adh.jpg\" width=115 height=132 alt=\"MaPhoto\">");
-      print("<br></div>");
-       
+      print("<img src=\"$gst_url_trombinoscope/$pi_idf_adh.jpg\" width=115 height=132 alt=\"MaPhoto\" class=\"rounded mx-auto d-block\">");
    }
-   print("<br><div class=alignCenter><input type=submit value=\"Modifier toutes vos informations\" ><br></div>");
-   print('</form>');
-   print("<form enctype=\"multipart/form-data\" id=\"maj_photo\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<div align=center><input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\" >"); 
-   print('<input type="hidden" name="mode" value="CHARGEMENT_PHOTO">');
-   print('Photo au format JPEG: <input name="MaPhoto" type="file"> ');
-   print('<input type="submit" value="Charger la photo"></div>');
+   print("</div></div>");
+   
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Modifier toutes vos informations</button>');   
    print('</form>');
    
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
-   print('<div align=center><input type="submit" value="Supprimer la photo">');
-   print('<input type="hidden" name="mode" value="SUPPRIMER_PHOTO"><br></div></div>');
+   print("<form enctype=\"multipart/form-data\" id=\"maj_photo\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+   print("<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\" >"); 
+   print('<input type="hidden" name="mode" value="CHARGEMENT_PHOTO">');
+   print('<label for="MaPhoto" class="custom-file-label">Photo au format JPEG</label><input name="MaPhoto" id="MaPhoto" type="file" class="custom-file-input">');
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Charger la photo</button>');  
+   print('</form>');
+   
+   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Supprimer la photo</button>');   
+   print('<input type="hidden" name="mode" value="SUPPRIMER_PHOTO">');
    print('</form>');      
 }
 
@@ -141,7 +143,7 @@ function maj_photo($pi_idf_adh) {
    {
       if (!move_uploaded_file($_FILES['MaPhoto']['tmp_name'],"$gst_rep_trombinoscope/$pi_idf_adh.jpg")) 
       {
-         print("<div CLASS=IMPORTANT>Erreur de téléchargement :</div><br>");
+         print("<div class=\"alert alert-danger\">Erreur de t&eacute;l&eacute;chargement :</div><br>");
          switch($_FILES['Variantes']['error'])
          { 
            case 2 : print("Fichier trop gros par rapport à MAX_FILE_SIZE");break;
@@ -151,16 +153,16 @@ function maj_photo($pi_idf_adh) {
       }   
    }
    else
-      print("<div class=IMPORTANT>Type d'image ".$_FILES['MaPhoto']['type']." non accepté</div>");
+      print("<div class=\"alert alert-danger\">Type d'image ".$_FILES['MaPhoto']['type']." non accept&eacute;</div>");
 }
 /*-----------------------------------------------------------------------------
 * Corps du programme
 -----------------------------------------------------------------------------*/
 print('<body>');
-print('<div>');
+print('<div class="container">');
 
 if(!isset($_SESSION['ident']))
-   die("<div class=ERREUR> Identifiant non reconnu</div>");
+   die("<div class=\"alert alert-danger\">Identifiant non reconnu</div>");
 $gst_ident = $_SESSION['ident'];
 
 require_once("Commun/menu.php");
