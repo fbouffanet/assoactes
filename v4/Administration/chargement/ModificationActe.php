@@ -353,7 +353,7 @@ public function initialise_depuis_formulaire($pi_idf_acte)
         $o_pers = new ModificationPersonne($this -> connexionBD, $this -> i_idf);
          $o_pers -> setNumParam($i);
          $o_pers -> initialise_depuis_formulaire($this -> i_idf, $a_grille[$i]);
-         if ($this -> i_idf_type_acte == IDF_MARIAGE || $this -> i_idf_type_acte == IDF_DECES)
+         if ($this -> i_idf_type_acte == IDF_MARIAGE)
          {
             if ($o_pers -> getIdfTypePresence() == IDF_PRESENCE_INTV)
                  {
@@ -381,17 +381,36 @@ public function initialise_depuis_formulaire($pi_idf_acte)
                      break;
                  default: $o_pers -> setSexe('?');
                      } 
+                }
+			else
+				$o_pers -> setSexe($a_sexe_personne[$i]);
+		 }
+		else if ($this -> i_idf_type_acte == IDF_DECES)
+		{
+			if ($o_pers -> getIdfTypePresence() == IDF_PRESENCE_INTV)
+				 $c_sexe_intv = $o_pers -> getSexe(); 
+            else if ($o_pers -> getIdfTypePresence() == IDF_PRESENCE_EXCJT)
+            {
+				switch ($c_sexe_intv)
+				{
+					case 'M': $o_pers -> setSexe('F');
+					break;
+					case 'F': $o_pers -> setSexe('M');
+					break; 
+					case '?': $o_pers -> setSexe('?');
+					break;
+					default: $o_pers -> setSexe('?');
                 } 
-            else
-                 $o_pers -> setSexe($a_sexe_personne[$i]);
-             } 
-        else
-		{	
-			if (empty($o_pers -> getSexe()))
+            }
+			else
 				$o_pers -> setSexe($a_sexe_personne[$i]);
 		}
-		 $this -> a_liste_personnes[] = $o_pers;
-         } 
+        else	
+			if (empty($o_pers -> getSexe()))
+				$o_pers -> setSexe($a_sexe_personne[$i]);
+		$this -> a_liste_personnes[] = $o_pers;	
+		}
+		  
     } 
 
 /**
