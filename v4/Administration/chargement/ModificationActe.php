@@ -365,6 +365,8 @@ public function initialise_depuis_formulaire($pi_idf_acte)
          $o_pers -> initialise_depuis_formulaire($this -> i_idf, $a_grille[$i]);
          if ($this -> i_idf_type_acte == IDF_MARIAGE)
          {
+            // le sexe de l'intervenant est le maitre pour décider des couples
+            // ceux-ci sont crées dans la fonction maj_liste_personnes de Acte en fonction de la grille  définie pour le type d'acte
             if ($o_pers -> getIdfTypePresence() == IDF_PRESENCE_INTV)
                  {
                 if ($i_nb_intv % 2 == 0)
@@ -377,19 +379,6 @@ public function initialise_depuis_formulaire($pi_idf_acte)
                      {
                     $c_sexe_intv = 'F';
                      $o_pers -> setSexe($c_sexe_intv);
-                     } 
-                } 
-            else if ($o_pers -> getIdfTypePresence() == IDF_PRESENCE_EXCJT)
-                 {
-                switch ($c_sexe_intv)
-                 {
-                case 'M': $o_pers -> setSexe('F');
-                     break;
-                 case 'F': $o_pers -> setSexe('M');                                       
-                     break;
-                 case '?': $o_pers -> setSexe('?');
-                     break;
-                 default: $o_pers -> setSexe('?');
                      } 
                 } 
             else
