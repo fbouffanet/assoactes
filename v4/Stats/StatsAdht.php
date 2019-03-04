@@ -262,7 +262,7 @@ if (isset($gi_idf_adherent ))
           print("<div class=\"alert alert-danger\">Pas de demandes</div>");
        }
        print("<form name=\"RetourVueStat\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	   print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Retour vers les statistiques</div>');
+	   print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Retour vers les statistiques</button></div>');
        print("<input type=\"hidden\" name=\"mode\" value=\"VUE_STAT\">");
        print("</form></div></div></div>");       
     break;
@@ -338,7 +338,7 @@ if (isset($gi_idf_adherent ))
           print("<div class=\"alert alert-danger\">Pas de demandes</div>");
        }
        print("<form name=\"RetourVueStat\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	   print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Retour vers les statistiques</div>');
+	   print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Retour vers les statistiques</button></div>');
        print("<input type=\"hidden\" name=\"mode\" value=\"VUE_STAT\">");
        print("</form></div></div></div>");
     break;
