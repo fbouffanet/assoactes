@@ -776,10 +776,10 @@ public function affichage_image_permalien($pi_hauteur = 800, $pi_largeur = 800)
 
 
 {
-     $st_caveat = "<div class=\"wrapper\" >Si un message indiquant qu'une  licence est  nécessaire, merci de l'accepter en cliquant sur \"J'ai pris connaissance des informations ci-dessus et j'accepte les conditions\" et rafra&icirc;chir la page en appuyant sur la touche F5 du clavier</div>";
+     $st_caveat = "<div class=\"text-center\" >Si un message indiquant qu'une  licence est  nécessaire, merci de l'accepter en cliquant sur \"J'ai pris connaissance des informations ci-dessus et j'accepte les conditions\" et rafra&icirc;chir la page en appuyant sur la touche F5 du clavier</div>";
      if (!empty($this -> st_url))
          {
-        $st_chaine = '<div class="wrapper" align="center">';
+        $st_chaine = '<div class="text-center">';
          $st_chaine .= sprintf('<iframe name="image_permalien" id="image_permalien" scrolling="auto" height="%dpx" width="%dpx" src="%s" ></iframe>', $pi_hauteur, $pi_largeur, $this -> st_url);
          $st_chaine .= '</div>';
          $st_chaine .= "$st_caveat";
