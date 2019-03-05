@@ -471,8 +471,8 @@ public function formulaire_refus()
      $st_chaine .= "<form id=\"modification_refusee\" action=\"" . $_SERVER['PHP_SELF'] . "\" method=post>\n";
      $st_chaine .= "<input type=\"hidden\" name=\"MODE\" value=\"REFUS\">\n";
      $st_chaine .= sprintf("<input type=\"hidden\" name=\"idf_modification\" value=\"%d\">", $this -> i_idf);
-     $st_chaine .= "<div align=center><br>Motif du refus:<br><textarea name=motif_refus rows=10 cols=80></textarea></div>\n";
-     $st_chaine .= "<div align=\"center\"><input type=\"submit\" value=\"Refuser la demande\"></div>\n";
+     $st_chaine .= "<label for=\"motif_refus\">Motif du refus:</Label><textarea name=motif_refus id=motif_refus rows=10 cols=80></textarea></div>\n";
+     $st_chaine .= "<button type=\"submit\" class=\"col-md-4 col-md-offset-4 alert alert-danger\">Refuser la demande</button>\n";
      $st_chaine .= "</form>\n";
      $st_chaine .= "</fieldset>\n";
      return $st_chaine;
@@ -539,7 +539,7 @@ public function refuse($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur
          // print("<pre>Entete=$st_entete\nMsg=$st_message</pre>");
         if (!mail($this -> st_email_demandeur, 'Base AGC: Votre demande de modification', $st_message, $st_entete))
              {
-            print("<div align=center class=\"ERREUR\"><br>Le mail n'a pu &ecirc;tre envoy&eacute;e</div>");
+            print("<div class=\"alert alert-danger\">Le mail n'a pu &ecirc;tre envoy&eacute;e</div>");
              } 
         } 
     } 
@@ -593,11 +593,11 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
      $st_message .= "$pst_prenom_valideur $pst_nom_valideur";
      if (mail($this -> st_email_demandeur, 'Base AGC: Demande de modification de releve de la base AGC', $st_message, $st_entete))
          {
-        print("<div align=center class=\"INFO\"><br>L'email a &eacute;t&eacute; envoy&eacute; avec succ&egrave;s</div>");
+        print("<div class=\"alert alert-success\">L'email a &eacute;t&eacute; envoy&eacute; avec succ&egrave;s</div>");
          } 
     else
          {
-        print("<div align=center class=\"ERREUR\"><br>La modification a &eacute;t&eacute; accept&eacute;e mais l'envoi du mail a &eacute;chou&eacute;</div>");
+        print("<div class=\"alert alert-danger\">La modification a &eacute;t&eacute; accept&eacute;e mais l'envoi du mail a &eacute;chou&eacute;</div>");
          } 
     } 
 
