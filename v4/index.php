@@ -4,16 +4,17 @@ require_once('Commun/Identification.php');
 require_once('Commun/commun.php');
 require_once('Commun/constantes.php');
 require_once('Commun/ConnexionBD.php');
-//require_once('../drupal/vitrine/compteur/counter.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<title>Bienvenue sur la base de l\'AGC !</title>');
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/menu.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 //script Google Analytics -- debut
 /*
@@ -35,64 +36,65 @@ print('</script>');
 print("</head>");
 
 print("<body>");
-//print("Vous etes authentifi&eacute; :-)<br>");
 
-//création d'un nombre aléatoire entre 1 et 10 pour le Bulletin
-$nb_min = 1;
-$nb_max = 23;
-$nombreBulletin = mt_rand($nb_min,$nb_max);//Modif pour le PV
-//$nombreBulletin = 99;// A supprimer plus tard et revalider la ligne precedente
-$ArticleBulletin = "./Articles/ArticleBulletin".$nombreBulletin.".html";
-//$ArticleBulletin = "./Articles/lettre_CG.htm";// en provisoire
-// Nombre pour le Bulletin
+print('<div class="container">');
+require_once("Commun/menu.php");
+
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-require_once("Commun/menu.php");
-print("<div class=accueil_gauche>");
+
+print("<div class='row col-md-12'>");
+print("<div class='col-md-4'>");
 // Combien d'adhérents ?				
 $gi_nb_adherents = $connexionBD->sql_select1("select count(*) from adherent where statut IN ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."')");
-// Heure & Date
-$st_date = date("d-m-Y");
-$st_heure = date("H:i");
+
 // Combien de X ?
 $gi_nb_mar = $connexionBD->sql_select1("select sum(nb_actes) from `stats_commune` where idf_type_acte=".IDF_MARIAGE);
 // Combien de DIV ?
-$gi_nb_cm = $connexionBD->sql_select1("select sum(nb_actes) from `stats_commune` where idf_type_acte=".IDF_CM);		
+$gi_nb_cm = $connexionBD->sql_select1("select sum(nb_actes) from `stats_commune` where idf_type_acte=".IDF_DIVERS);		
 // Combien de ¦ ?
 $gi_nb_nai = $connexionBD->sql_select1("select sum(nb_actes) from `stats_commune`  where idf_type_acte=".IDF_NAISSANCE);
-
 // Combien de + ?
 $gi_nb_dec = $connexionBD->sql_select1("select sum(nb_actes) from `stats_commune` where idf_type_acte=".IDF_DECES);
-	
-// combien au total		
+	// combien au total		
 $gi_nb_actes_total = $connexionBD->sql_select1("select sum(nb_actes) from `stats_commune`");
 
-print("<div class=TITRE>Notre nouvel espace membres</div><br>");
-print("<div class=alignCenter >Aujourd'hui le $st_date &agrave; $st_heure</div><br>");
-print("<div class=alignCenter >$gi_nb_adherents adh&eacute;rents inscrits sur la base de l'AGC.</div><br>");
+print('<div class="panel-group">');
+print('<div class="panel panel-default">');
+print('<div class="panel-heading">Notre espace membres</div>');
+print('<div class="panel-body">');
+// Heure & Date
+$st_date = date("d-m-Y");
+$st_heure = date("H:i");
+print("<div class=\"row text-center\">Aujourd'hui le $st_date &agrave; $st_heure</div>");
+print("<div class=\"row text-center\">$gi_nb_adherents adh&eacute;rents inscrits sur la base de l'AGC.</div>");
+print('</div>/<div>');
 
-print("<div class=TITRE>Info sur la base</div><br>");
-print("<div class=alignCenter>".number_format($gi_nb_actes_total,0,',', ' ') ." actes dont :</div><br>");
-print("<div class=alignCenter>Naissances: ".number_format($gi_nb_nai,0,',', ' ') ." actes</div><br>");
-print("<div class=alignCenter>Mariages: ".number_format($gi_nb_mar,0,',', ' ') ." actes</div><br>");
-print("<div class=alignCenter>D&eacute;c&egrave;s: ".number_format($gi_nb_dec,0,',', ' ') ." actes</div><br>");
-print("<div class=alignCenter>CM: ".number_format($gi_nb_cm,0,',', ' ') ." actes</div><br>");
-print("<div class=alignCenter>et autres...</div><br>");
+print('<div class="panel panel-default">');
+print('<div class="panel-heading">Info sur la base</div>');
+print('<div class="panel-body">');
+print("<div class=\"row text-center\">".number_format($gi_nb_actes_total,0,',', ' ') ." actes dont :</div>");
+print("<div class=\"row text-center\">Naissances: ".number_format($gi_nb_nai,0,',', ' ') ." actes</div>");
+print("<div class=\"row text-center\">Mariages: ".number_format($gi_nb_mar,0,',', ' ') ." actes</div>");
+print("<div class=\"row text-center\">D&eacute;c&egrave;s: ".number_format($gi_nb_dec,0,',', ' ') ." actes</div>");
+print("<div class=\"row text-center\">CM: ".number_format($gi_nb_cm,0,',', ' ') ." actes</div>");
+print("<div class=\"row text-center\">et autres...</div>");
+print('</div>/<div>');
 
 $gi_nbjours = 30;
 
-print("<div class=TITRE>Historique des chargements sur les $gi_nbjours derniers jours</div><br>");
-$a_chargements = $connexionBD->sql_select_multiple("select date_format(c.date_chgt,'%d/%m/%Y'),ca.nom,c.type_acte_nim,c.nb_actes from `chargement` c join commune_acte ca on (c.idf_commune=ca.idf) where datediff(now(),c.date_chgt) <$gi_nbjours and c.publication='O' order by c.date_chgt desc");
+print('<div class="panel panel-default">');
+print("<div class=\"panel-heading\">Historique des chargements sur les $gi_nbjours derniers jours</div>");
+print('<div class="panel-body">');
+$a_chargements = $connexionBD->sql_select_multiple("select date_format(c.date_chgt,'%d/%m/%Y'),ca.nom,c.type_acte_nim,c.nb_actes from `chargement` c join commune_acte ca on (c.idf_commune=ca.idf) where datediff(now(),c.date_chgt)<$gi_nbjours and c.publication='O' order by c.date_chgt desc");
 if (count($a_chargements)==0)
 {
-   print("<div class=alignCenter>Pas de chargements dans les $gi_nbjours derniers jours</div>");
+   print("<div class=\"alert alert-danger\">Pas de chargements dans les $gi_nbjours derniers jours</div>");
 }
 else
 {
-   print("<div align='center'>");
-   print("<table border=1>");
+   print("<table class=\"table table-bordered table-striped\">");
    print("<tr>");
-   //print("<th>Date</th><th>Commune</th><th>Type</th><th>Nbre actes</th>");
    print("<th>Commune</th><th>Type</th><th>Nbre actes</th>");
    print("</tr>");
    foreach ($a_chargements as $a_chargement)
@@ -100,35 +102,34 @@ else
       list($st_date,$st_commune,$st_type_nim,$i_nb_actes) = $a_chargement;
       switch ($st_type_nim) 
       {
-         case 3: $st_type_acte='°';break;
-         case 1: $st_type_acte='X';break;
-         case 4: $st_type_acte='†';break;
-         case 2: $st_type_acte='Divers(CM...)';break;
+         case IDF_NAISSANCE: $st_type_acte='°';break;
+         case IDF_MARIAGE: $st_type_acte='X';break;
+         case IDF_DECES: $st_type_acte='&dagger;';break;
+         case IDF_DIVERS: $st_type_acte='Divers(CM...)';break;
       }
-      print("<tr class=chargement>");
+      print("<tr>");
       print("<td>$st_commune</td><td>$st_type_acte</td><td>$i_nb_actes</td>");
-      //print("<td>".chunk_split($st_commune,10,"<br>")."</td><td>$st_type_acte</td><td>$i_nb_actes</td>");
       print("</tr>");
       
    }
    print("</table>");
-   print("</div>");
 }
+print('</div>/<div></div>');
 print("</div>");
-print("<div class=accueil_droite>");
 
-//AG_2013-16-12.pdf
-/*
-echo '<div class= alignCenter><span style="font-family: arial; font-size: 16pt; color: red;"> AG 2017 la convocation est ici </span></div>  ';
-echo '<p style="text-align: center;"><a href="./Articles/AG.pdf" target="_blank"><img src="./Articles/AG.jpg" style="border-color: rgb(204, 153, 51); border-style: solid; border-width: 2px; width: 113px; height: 160px;" /></a></p>';
-*/
-//AG_2013-16-12.pdf
+print('<div class="col-md-6">');
+// Lit les bulletins dans le répertoire Articles. Ils doivent commencer par ArticleBulletin et avoir l'extension HTML
+$a_bulletins = glob("/Articles/ArticleBulletin*.html");
+// Choisit un numéro au hasard
+$i_bulletin_choisi = mt_rand(1,count($a_bulletins));
+// construit le nom de fichier
+$st_article_bulletin = $a_bulletins[$i_bulletin_choisi];
+//$st_article_bulletin = "./Articles/lettre_CG.htm";// en provisoire
+$st_bulletin_html = file_get_contents($st_article_bulletin);
+if (preg_match('~<body[^>]*>(.*?)</body>~si', $st_bulletin_html, $a_patterns))
+	print(a_patterns[1]); 
+//<IFRAME SRC= "<?php echo $ArticleBulletin ?>" frameborder="0" width="100%" height="100%" scrolling="auto"> </IFRAME>;
 
-
-
-//echo  '<div class=alignCenter><span style="font-family: arial; font-size: 16pt; color: green;"> Visiteurs :'.$c_alltime.'</span></div>  ';
-//echo  '<div class=alignCenter><span style="font-family: arial; font-size: 16pt; color: green;"> Aujourd\'hui :'. $c_today.' </span></div>  ';
-//echo  '<div class=alignCenter><span style="font-family: arial; font-size: 16pt; color: green;"> En ligne :'. $c_online.'</span></div>  ';
 ?>
    <p></p>
     <div style="text-align: center; color: rgb(102, 102, 204);" class="alignCenter"><strong><span
@@ -149,10 +150,6 @@ echo '<p style="text-align: center;"><a href="./Articles/AG.pdf" target="_blank"
       <br>
       <br>
       <br>
-
-
-
-
 
 <div  style="text-align: center; color: rgb(102, 102, 204);" class=alignCenter><strong><span style="font-size: 12pt;">Loi sur les délais de
 communication</span></strong></div>
@@ -322,15 +319,8 @@ ans</span></div>
 
 <?php
 print("</div>");
-print("<div class=accueil_centre>");
-?>
-<IFRAME SRC= "<?php echo $ArticleBulletin ?>" frameborder="0" width="100%" height="100%" scrolling="auto"> </IFRAME>;
-<?php
-//print("<div class=TITRE>A COMPLETER</div><br>");
-// Article
 print("</div>");
-print("</body></html>");
-//print_r($_SESSION);
-//$connexionBD->ferme(); 
+print("</div></body></html>");
+ 
 ?>
 
