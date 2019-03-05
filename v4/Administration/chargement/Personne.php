@@ -701,7 +701,7 @@ class Personne
          } 
     
     /**
-     * Renvoie un formulaire HTML d'‚dition d'une personne
+     * Renvoie un formulaire HTML d'édition d'une personne
      * 
      * @param integer $pi_idf_type_acte identifiant du type d'acte
      * @param string $pst_commune commune de l'acte
@@ -816,7 +816,7 @@ class Personne
                  case IDF_PRESENCE_MARRAINE:
                  case IDF_PRESENCE_TEMOIN:
                     /**
-                     * la structure de personne est la mˆme pour ces 3 types de pr‚sence
+                     * la structure de personne est la mˆme pour ces 3 types de présence
                      */
                      switch ($this -> i_idf_type_presence)
                      {
