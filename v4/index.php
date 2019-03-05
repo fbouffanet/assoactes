@@ -154,9 +154,9 @@ print("</div>");
 communication</span></strong></div>
 <div  style="text-align: center;" class=alignCenter><strong style="color: rgb(102, 102, 204);"><span style="font-size: 12pt;">des archives</span></strong></div>
 <div  style="text-align: center;" class=alignCenter><span style="font-size: 12pt; color: black;">(<em>Journal
-Officiel du 16&nbsp;juillet&nbsp;2008)</em><b style=""></b></span></div>
-<hr>
-<table border="1" cellpadding="0" cellspacing="0" >
+Officiel du 16&nbsp;juillet&nbsp;2008)</em></span></div>
+
+<table border="1" >
         <tbody>
           <tr style="height: 33.55pt;">
             <td  width="151">
