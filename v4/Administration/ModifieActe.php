@@ -89,9 +89,9 @@ if (isset($_REQUEST['idf_acte']))
 <!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >
-<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
-<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='../css/styles.css' type='text/css' rel='stylesheet'>
+<link href='../css/bootstrap.min.css' rel='stylesheet'>;
 <link href='../Commun/jquery-ui.css' type='text/css' rel='stylesheet'>
 <link href='../Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>
 <link href='../Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
