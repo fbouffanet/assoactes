@@ -68,7 +68,7 @@ $st_date = date("d-m-Y");
 $st_heure = date("H:i");
 print("<div class=\"row text-center\">Aujourd'hui le $st_date &agrave; $st_heure</div>");
 print("<div class=\"row text-center\">$gi_nb_adherents adh&eacute;rents inscrits sur la base de l'AGC.</div>");
-print('</div>/<div>');
+print('</div></div>');
 
 print('<div class="panel panel-default">');
 print('<div class="panel-heading">Info sur la base</div>');
@@ -79,7 +79,7 @@ print("<div class=\"row text-center\">Mariages: ".number_format($gi_nb_mar,0,','
 print("<div class=\"row text-center\">D&eacute;c&egrave;s: ".number_format($gi_nb_dec,0,',', ' ') ." actes</div>");
 print("<div class=\"row text-center\">CM: ".number_format($gi_nb_cm,0,',', ' ') ." actes</div>");
 print("<div class=\"row text-center\">et autres...</div>");
-print('</div>/<div>');
+print('</div></div>');
 
 $gi_nbjours = 30;
 
@@ -114,12 +114,12 @@ else
    }
    print("</table>");
 }
-print('</div>/<div></div>');
+print('</div></div></div>');
 print("</div>");
 
 print('<div class="col-md-6">');
 // Lit les bulletins dans le répertoire Articles. Ils doivent commencer par ArticleBulletin et avoir l'extension HTML
-$a_bulletins = glob("/Articles/ArticleBulletin*.html");
+$a_bulletins = glob("Articles/ArticleBulletin*.html");
 // Choisit un numéro au hasard
 $i_bulletin_choisi = mt_rand(1,count($a_bulletins));
 // construit le nom de fichier
@@ -127,9 +127,8 @@ $st_article_bulletin = $a_bulletins[$i_bulletin_choisi];
 //$st_article_bulletin = "./Articles/lettre_CG.htm";// en provisoire
 $st_bulletin_html = file_get_contents($st_article_bulletin);
 if (preg_match('~<body[^>]*>(.*?)</body>~si', $st_bulletin_html, $a_patterns))
-	print(a_patterns[1]); 
-//<IFRAME SRC= "<?php echo $ArticleBulletin ?>" frameborder="0" width="100%" height="100%" scrolling="auto"> </IFRAME>;
-
+	print($a_patterns[1]); 
+print("</div>");
 ?>
    <p></p>
     <div style="text-align: center; color: rgb(102, 102, 204);" class="alignCenter"><strong><span
