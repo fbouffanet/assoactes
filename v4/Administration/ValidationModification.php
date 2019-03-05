@@ -35,7 +35,6 @@ if (!empty($_SESSION['ident']))
     list($gi_idf_demandeur,$gst_email_demandeur)=$connexionBD->sql_select_liste($st_requete);
 }
 
-
 /*
 * Construit la chaine permettant la validation des paramÞtres d'un formulaire
 * @return string rÚgles de validation
@@ -104,13 +103,15 @@ if (isset($_REQUEST['idf_modification']) )
 }
 else
 {
-  die("<div class=\"IMPORTANT\">Pas d'identifiant d'acte sp&eacute;cifi&eacute;</div>");
+  die("<div class=\"alert alert-danger\">Pas d'identifiant d'acte sp&eacute;cifi&eacute;</div>");
 }
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>
+<!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >
-<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 <link href='../Commun/jquery-ui.css' type='text/css' rel='stylesheet'>
 <link href='../Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>
 <link href='../Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
@@ -123,6 +124,7 @@ else
 <script src='../Commun/iviewer/jquery-ui.min.js' type='text/javascript'></script>
 <script src='../Commun/iviewer/jquery.mousewheel.min.js' type='text/javascript'></script>
 <script src='../Commun/iviewer/jquery.iviewer.js' type='text/javascript'></script>
+<script src='../js/bootstrap.min.js' type='text/javascript'></script>
 <link href='../Commun/iviewer/jquery.iviewer.css' type='text/css' rel='stylesheet'>
 <style type="text/css">.diffDeleted span{  border:1px solid rgb(255,192,192);  background:rgb(255,224,224);}.diffInserted span{  border:1px solid rgb(192,255,192);  background:rgb(224,255,224);}del{  border:1px solid rgb(255,192,192);  background:rgb(255,224,224);}ins{  border:1px solid rgb(192,255,192);  background:rgb(224,255,224);}
 
@@ -171,8 +173,12 @@ print("</head>\n");
 /*                     CORPS DE LA PAGE                                   	  */
 /******************************************************************************/
 print("<body>\n");
+print('<div class="container">');
 require_once("../Commun/menu.php");
-print("<div class=\"TITRE\">Validation de modification d'un acte</div>");
+
+print('<div class="panel panel-primary">');
+print("<div class=\"panel-heading\">Validation de modification d'un acte</div>");
+print('<div class="panel-body">');
 
 if (empty($gst_mode))
 {
@@ -181,19 +187,18 @@ if (empty($gst_mode))
   print("<input type=\"hidden\" name=\"idf_modification\" value=\"$gi_idf_modification\">");
   print($go_acte->infos_demandeur());
   print($go_acte->differences());
-  print("<table border=1>");
+  print("<table class=\"table table-bordered table-striped\">");
   print($gst_formulaire);
   print("</table>");
   print $go_acte->visualisation_photos();
   print $go_acte->commentaires_demandeur();
-  print("<div class=\"alignCenter\"><br><input type=\"submit\" id=\"bouton_soum\" value=\"Approuver la demande\"></div>");
+  print('<button type="submit" id=\"bouton_soum\" class="btn btn-primary col-md-4 col-md-offset-4">Approuver la demande</button>');
   print("</form>");
   print($go_acte->formulaire_refus());
   $_SESSION['adresse_retour']=$gst_adresse_retour; 
 }
 else                             
-{
- 
+{ 
    $gi_idf_modification= isset($_REQUEST['idf_modification']) ?(int) $_REQUEST['idf_modification'] :  null;
    $gst_adresse_retour = isset($_SESSION['adresse_retour']) ? $_SESSION['adresse_retour'] : '';
    unset($_SESSION['adresse_retour']);
@@ -228,8 +233,10 @@ else
         die("Mode $gst_mode inconnu");
    }
 }
-print("<form action=\"$gst_url_site/$gst_adresse_retour\" method=\"POST\">");  
-print("<div align=center><br><Input type=submit value=\"Liste des demandes en attente\"></div>");
-print("</form>");  
-print("</body></HTML>\n");
+print("<form action=\"$gst_url_site/$gst_adresse_retour\" method=\"POST\">");
+  
+print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4">Liste des demandes en attente</button>');
+print("</form>"); 
+print("</div></div>"); 
+print("</div></body></html>\n");
 ?>
