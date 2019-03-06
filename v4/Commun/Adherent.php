@@ -55,6 +55,8 @@ class Adherent
       $this->st_ident_modificateur = isset($_SESSION['ident']) ?  $_SESSION['ident'] : '';
       $this->a_filtres_parametres = array();
       $this->a_droits_adherents = array();
+	  define(LIB_ASSO,'Association Genealogique de la Charente');
+	  define(SIGLE_ASSO,'AGC');
       if (empty($pi_idf_adherent))
       {
          $i_idf_dernier_adherent = $this -> connexionBD->sql_select1("select max(idf) from adherent");
@@ -186,7 +188,7 @@ class Adherent
     }
    
    /**
-     * Renvoie la liste des filtres jquery validator … activer par champ de paramŠtre
+     * Renvoie la liste des filtres jquery validator … activer par champ de paramètre
      * 
      * @return array tableau nom du paramŠtre => (type de filtre, message d'erreur … afficher)
      */
@@ -275,46 +277,64 @@ class Adherent
    public function formulaire_infos_personnelles($pb_gestionnaire)
    {
       global $ga_pays;
-      print(sprintf("<input type=\"hidden\" id=\"idf_adht\" name=\"idf_adht\" value=\"%d\">",$this -> i_idf));
-      $st_chaine = '<table border=1>';
+      $st_chaine = sprintf("<input type=\"hidden\" id=\"idf_adht\" name=\"idf_adht\" value=\"%d\">",$this -> i_idf);
       if (a_droits($this->st_ident_modificateur,DROIT_GESTION_ADHERENT))
       {
-        $st_chaine .= sprintf("<tr><th>N° d'adh&eacute;rent :  <input type=\"text\" value=\"%d\" size=5 readonly></th><td><select name=statut_adherent id=statut_adherent>",$this -> i_idf);
+        $st_chaine .= sprintf("<label for=\"no_adht\">N° d'adh&eacute;rent</label><input type=\"text\" value=\"%d\" id=\"no_adht\" size=5 readonly class=\"form-control>",$this -> i_idf);
+		$st_chaine .=  "<label for=\"statut_adherent\" class=\"sr-only\">Statut</label><select name=statut_adherent id=statut_adherent class=\"form-control\">>";
         $a_statuts_adherents = $this -> connexionBD->liste_valeur_par_clef("select idf,nom from statut_adherent order by nom");
         $st_chaine .=chaine_select_options($this->st_statut,$a_statuts_adherents);
-        $st_chaine .= '</select></td></tr>';
+        $st_chaine .= '</select>';
       }
       else 
       {
         $this -> connexionBD->initialise_params(array(':statut'=>$this->st_statut)); 
         $st_statut = $this -> connexionBD->sql_select1("select nom from statut_adherent where idf=:statut");
-        $st_chaine .= sprintf("<tr><th>N° d'adh&eacute;rent : <input type=\"text\" value=\"%d\" size=5 readonly></th><td>%s</td></tr>",$this -> i_idf,$this->st_ident);
-        $st_chaine .= sprintf("<tr><th>Ann&eacute;e de cotisation : </th><td> <input type=\"text\" value=\"%04d\" id=statut_adherent size=5 data-value=\"%s\" readonly> (%s)</td></tr>",$this->i_annee_cotisation,$this->st_statut,$st_statut); 
+        $st_chaine .= sprintf("<label for=\"no_adht\">N° d'adh&eacute;rent</label><input type=\"text\" value=\"%d\" id=\"no_adht\" size=5 readonly placeholder=\"%s\">",$this -> i_idf,$this->st_ident);
+        $st_chaine .= sprintf("<label for=\"statut_adherent\">Ann&eacute;e de cotisation</label><input type=\"text\" value=\"%04d\" id=statut_adherent size=5 data-value=\"%s\" readonly placeholder=\"%s\">",$this->i_annee_cotisation,$this->st_statut,$st_statut); 
       }
       if ($this->st_ident_modificateur==$this->st_ident)
       {
         $st_readonly = $pb_gestionnaire ? 'readonly' : '';
         // L'administrateur n'est pas supposé changer l'identifiant d'un utilisateur
-        $st_chaine .= sprintf("<tr><th>Votre identifiant (base AGC): </th><td><input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adh value=\"%s\" $st_readonly></td></tr>",$this->st_ident);
-        $st_chaine .= sprintf("<tr><th>Votre identifiant G&eacute;n&eacute;bank : </th><td><input type=\"text\" value=\"".PREFIXE_ADH_GBK."%04d\" size=8 readonly></td></tr>",$this -> i_idf);
-      }   
-      $st_chaine .= sprintf("<tr><th>Nom</th><td><input type=\"text\" maxlength=20 size=20 name=nom value=\"%s\" id=\"nom\" class=\"majuscule\"></td></tr>",$this->st_nom);      
-      $st_chaine .= sprintf("<tr><th>Pr&eacute;nom</th><td><input type=\"text\" maxlength=30 size=20 name=prenom value=\"%s\" id=\"prenom\" class=\"capitale\"></td></tr>",$this->st_prenom);      
-      $st_chaine .= sprintf("<tr><th>Adresse 1</th><td><input type=\"text\" maxlength=40 size=40 name=adresse1 id=adresse1 value=\"%s\"></td></tr>",$this->st_adresse1);    
-      $st_chaine .= sprintf("<tr><th>Adresse 2</th><td><input type=\"text\" maxlength=40 size=40 name=adresse2 value=\"%s\"></td></tr>",$this->st_adresse2);
-      $st_chaine .= sprintf("<tr><th>Code Postal</th><td><input type=\"text\" maxlength=12 size=12 name=code_postal id=code_postal value=\"%s\"></td></tr>",$this->st_code_postal);      
-      $st_chaine .= sprintf("<tr><th>Localit&eacute;</th><td><input type=\"text\" maxlength=40 size=20 name=ville id=\"ville\" value=\"%s\"></td></tr>", $this->st_ville);     
-      $st_chaine .= "<tr><th>Pays</th><td><select name=\"pays\" class=\"js-select-avec-recherche\">".chaine_select_options_simple($this->st_pays,$ga_pays)."</select></td></tr>";
-      $st_chaine .= sprintf("<tr><th>Email forum</th><td><input type=\"text\" maxlength=60 size=40 name=email_forum value=\"%s\" id=email_forum></td></tr>",$this->st_email_forum);
+        $st_chaine .= sprintf("<label for=\"ident_adh\">Votre identifiant (base ".SIGLE_ASSO.")</label><input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adh value=\"%s\" $st_readonly>",$this->st_ident);
+		if (!empty($gst_administrateur_gbk))
+			$st_chaine .= sprintf("<label for=\"ident_adh\">Votre identifiant G&eacute;n&eacute;bank</label><input type=\"text\" id=ident_gbk value=\"".PREFIXE_ADH_GBK."%04d\" size=8 readonly>",$this -> i_idf);
+      }
+      $st_chaine .= '<div class="form-row">';
       
-      $st_chaine .= sprintf("<tr><th>Site web</th><td><input type=\"text\" maxlength=60 size=40 name=site_adht id=site_adht value=\"%s\"></td></tr>", $this->st_site);
+	  $st_chaine .= sprintf("<div class=\"col\"><label for=\"nom\">Nom</label><input type=text maxlength=20 size=20 name=nom id=nom value=\"%s\" class=\"form-control text-uppercase\"></div>",$this->st_nom);
+      $st_chaine .= sprintf("<div class=\"col\"><label for=\"prenom\">Pr&eacute;nom</label><input type=text maxlength=30 size=20 name=prenom id=prenom value=\"%s\" class=\"form-control text-capitalize\"></div>",$this->st_prenom);
+      
+	  $st_chaine .='</div>';
+  	  
+      $st_chaine .= sprintf("<label for=\"adr1\">Adresse 1</label><input type=text maxlength=40 size=40 name=adr1 id=adr1 value=\"%s\" class=\"form-control\">",$this->st_adresse1);
+      $st_chaine .= sprintf("<label for=\"adr2\">Adresse 2</label><input type=text maxlength=40 size=40 name=adr2 id=adr2 value=\"%s\" class=\"form-control\">",$this->st_adresse2);
+      
+	  $st_chaine .= '<div class="form-row">';
+      
+	  $st_chaine .= sprintf("<div class=\"col\"><label for=\"cp\">Code Postal</label><input type=text maxlength=12 size=12 name=cp id=cp value=\"%s\" class=\"form-control\"></div>",$this->st_code_postal);
+      $st_chaine .= sprintf("<div class=\"col\"><label for=\"commune\">Localit&eacute;</label><input type=text maxlength=40 size=20 name=commune id=commune value=\"%s\" class=\"form-control\"></div>",$this->st_ville);
+       
+      $st_chaine .= "<div class=\"col\"><label for=\"pays\">Pays</label><select name=pays id=pays class=\"form-control js-select-avec-recherche\">";
+	  $st_chaine .= chaine_select_options_simple($this->st_pays,$ga_pays);
+      $st_chaine .= '</select></div>';
+	  
+      $st_chaine .= '</div>';  	   	  
+	  
+	  $st_checked =$this->b_confidentiel ? "checked": '';
+	  $st_chaine .= sprintf("<input type=checkbox name=confidentiel id=confidentiel value=\"O\" %s class=\"form-check-input\"><label for=\"confidentiel\" class=\"form-check-label\" >Cochez et l'adresse devient invisible aux adh&eacute;rents</label>",$st_checked);
+	  
+	  $st_chaine .= sprintf("<label for=\"email_forum\">Email forum</label><input type=text maxlength=60 size=40 name=email_forum id=email_forum value=\"%s\" class=\"form-control\">",$this->st_email_forum);
+	  
+      $st_chaine .= sprintf("<label for=\"site_adht\">Site web</label><input type=text maxlength=60 size=40 name=site_adht id=site_adht value=\"%s\" class=\"form-control\">",$this->st_site);
+	  
+	  $st_chaine .= sprintf("<label for=\"email_perso\">Email perso</label><input type=text maxlength=60 size=40 name=email_perso id=email_perso value=\"%s\" class=\"form-control\" aria-describedby=\"UsageEmailPerso\">",$this->st_email_perso);
+      $st_chaine .= "<small id=\"UsageEmailPerso\">Donn&eacute;es accessibles uniquement aux gestionnaires de l'association</small>";	  
 
-      $st_checked =$this->b_confidentiel ? "checked": '';
-      $st_chaine .= "<tr><td colspan=2><input type=\"checkbox\" name=confidentiel value=\"O\" $st_checked />(Cochez et l'adresse devient invisible aux adhérents)</td></tr>";
-      $st_chaine .= "<tr><td colspan=2>Donn&eacute;es accessibles uniquement aux gestionnaires de l'AGC</td></tr>";
-      $st_chaine .= sprintf("<tr><th>Email perso (requis si connu)</th><td><input type=\"text\" maxlength=60 size=40 name=email_perso id=email_perso value=\"%s\"></td></tr>",$this->st_email_perso);     
-      $st_chaine .= sprintf("<tr><th>T&eacute;l&eacute;phone</th><td><input type=\"text\" maxlength=15 size=20 name=tel value=\"%s\"></td></tr>",$this->st_tel);
-      $st_chaine .='</table>';
+      $st_chaine .= sprintf("<label for=\"telephone\"><input type=text maxlength=15 size=10 name=tel id=tel value=\"%s\" aria-describedby=\"UsageTelephone\"> class=\"form-control\">",$this->st_tel);
+	  $st_chaine .= "<small id=\"UsageTelephone\">Donn&eacute;es accessibles uniquement aux gestionnaires de l'association</small>";	  
+ 
       return $st_chaine;
    }
      
@@ -381,28 +401,22 @@ class Adherent
       $st_chaine ='';
       if (a_droits($this->st_ident_modificateur,DROIT_GESTION_ADHERENT))
       {
-        $st_chaine = "<div>";
-        $st_chaine .= sprintf("Identifiant: <input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adh value=\"%s\">",$this->st_ident);
+        $st_chaine .= sprintf("<label for=\"ident_adh\">Identifiant<Label><input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adh value=\"%s\" class=\"form-control\">",$this->st_ident);
         $this->a_filtres_parametres["ident_adh"] = array(array("required", "true", "L'identifiant est obligatoire"));
-        $st_chaine .= "</div>";
-        $st_chaine .= "<div>";
-        $st_chaine .= sprintf("Infos AGC :<br><textarea name=\"infos_agc\" cols=\"60\" rows=\"10\" id=\"infos_agc\">%s</textarea><br>",$this->st_infos_agc);
-        $st_chaine .= "</div>";
-        $st_chaine .= "<div>";
-        $st_chaine .= sprintf("Date de premi&egrave;re adh&eacute;sion: <input name=\"date_premiere_adhesion\"  id=\"date_premiere_adhesion\" value=\"%s\" size=\"10\" maxlength=\"10\" type=\"text\" style=\"width:70px\"><br>",$this->st_date_premiere_adhesion);     
-		    $st_chaine .= sprintf("Date de paiement: <input name=\"date_paiement\" id=\"date_paiement\" value=\"%s\" size=\"10\" maxlength=\"10\" type=\"text\" style=\"width:70px\"> ",$this->st_date_paiement);      
-        $st_chaine .= sprintf(" prix: <input name=\"prix\" value=\"%d\" id=\"prix\" size=\"2\" maxlength=\"2\" type=\"text\" style=\"width:25px\">",$this->i_prix);        
-        $st_chaine .= sprintf(" ann&eacute;e de cotisation: <input name=\"annee_cotisation\" id=\"annee_cotisation\" value=\"%d\" size=\"4\" maxlength=\"4\" type=\"text\" style=\"width:40px\">",$this->i_annee_cotisation);         
-        $st_chaine .= " <input type=button value=R  id=readhesion><br>";    
-        $st_chaine .= sprintf("Derni&egrave;re adresse ip de connexion: %s<br>",$this->st_ip_connexion);
-        $st_chaine .= sprintf("IP restreinte: <input type=\"text\" maxlength=15 size=15 name=ip_restreinte id=ip_restreinte value=\"%s\"><br>",$this->st_ip_restreinte);
-        $st_chaine .= sprintf("Quota Naissance: <input type=\"text\" maxlength=4 size=4 name=\"max_nai\" id=\"max_nai\" value=\"%d\"><br>",$this->i_max_nai);
+        $st_chaine .= sprintf("<label for=\"infos_agc\">Infos ".SIGLE_ASSO."</label><textarea name=\"infos_agc\" id=\"infos_agc\" cols=\"60\" rows=\"10\" id=\"infos_agc\" class=\"form-control\">%s</textarea>",$this->st_infos_agc);
+        $st_chaine .= sprintf("<label for=\"date_premiere_adhesion\">Date de premi&egrave;re adh&eacute;sion</label><input name=\"date_premiere_adhesion\"  id=\"date_premiere_adhesion\" value=\"%s\" size=\"10\" maxlength=\"10\" type=\"text\" class=\"form-control\">",$this->st_date_premiere_adhesion);     
+		$st_chaine .= sprintf("<label for=\"date_paiement\">Date de paiement</label><input name=\"date_paiement\" id=\"date_paiement\" value=\"%s\" size=\"10\" maxlength=\"10\" type=\"text\" class=\"form-control\"> ",$this->st_date_paiement);      
+        $st_chaine .= sprintf("<label for=\"prix\">prix:</label><input name=\"prix\" value=\"%d\" id=\"prix\" size=\"2\" maxlength=\"2\" type=\"text\" class=\"form-control\">",$this->i_prix);        
+        $st_chaine .= sprintf("<label for=\"annee_cotisation\">ann&eacute;e de cotisation</label><input name=\"annee_cotisation\" id=\"annee_cotisation\" value=\"%d\" size=\"4\" maxlength=\"4\" type=\"text\" class=\"form-control\">",$this->i_annee_cotisation);         
+        $st_chaine .= " <button type=button class=\"btn btn-primary\" id=readhesion>R<button>";    
+        $st_chaine .= sprintf("<div class=\"text-center\">Derni&egrave;re adresse ip de connexion: %s</div>",$this->st_ip_connexion);
+        $st_chaine .= sprintf("<label for=\"ip_restreinte\">IP restreinte</label><input type=\"text\" maxlength=15 size=15 name=ip_restreinte id=ip_restreinte value=\"%s\" class=\"form-control\">",$this->st_ip_restreinte);
+        $st_chaine .= sprintf("<label for=\"max_nai\">Quota Naissance</label><input type=\"text\" maxlength=4 size=4 name=\"max_nai\" id=\"max_nai\" value=\"%d\" class=\"form-control\">",$this->i_max_nai);
         
-        $st_chaine .= sprintf("Quota Mariage/Divers: <input type=\"text\" maxlength=4 size=4 name=\"max_mar_div\" id=\"max_mar_div\" value=\"%d\"><br>",$this->i_max_mar_div);
+        $st_chaine .= sprintf("<label for=\"max_mar_div\">Quota Mariage/Divers</label><input type=\"text\" maxlength=4 size=4 name=\"max_mar_div\" id=\"max_mar_div\" value=\"%d\" class=\"form-control\">",$this->i_max_mar_div);
           
-        $st_chaine .= sprintf("Quota D&eacute;c&eacute;s: <input type=\"text\" maxlength=4 size=4 name=\"max_dec\" id=\"max_dec\" value=\"%d\"><br>",$this->i_max_dec);
-        $st_chaine .= sprintf("Dernier jeton de paiement (si adh&eacute;sion en ligne): %s<br>",$this->st_jeton_paiement);
-        $st_chaine .= "</div>";
+        $st_chaine .= sprintf("<label for=\"max_dec\">Quota D&eacute;c&eacute;s</label><input type=\"text\" maxlength=4 size=4 name=\"max_dec\" id=\"max_dec\" value=\"%d\" class=\"form-control\">",$this->i_max_dec);
+        $st_chaine .= sprintf("<div class=\"text-center\">Dernier jeton de paiement (si adh&eacute;sion en ligne): %s</div>",$this->st_jeton_paiement);
       }
       return $st_chaine;
    }
@@ -724,16 +738,19 @@ class Adherent
   function envoie_message_adherent() {
     global $gst_url_site;
     $st_message_html  = sprintf("Bonjour <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
-    $st_message_html .= "Vous venez d'&ecirc;tre inscrit(e) sur le site de l'A.G.C et &agrave; G&eacute;n&eacute;abank.\n";
+    $st_message_html .= "Vous venez d'&ecirc;tre inscrit(e) sur le site de l'AGC et &agrave; G&eacute;n&eacute;abank.\n";
     $st_message_html .= sprintf("Votre inscription est valid&eacute;e pour l'ann&eacute;e %d\n",$this->i_annee_cotisation);
     $st_message_html .= "A partir de maintenant, vous pouvez avoir acc&eacute;s &agrave; l'espace membres de notre groupe.\n";
     $st_message_html .= "Afin de mettre &agrave; jour vos informations, il vous suffit, pour cela, de vous rendre &agrave; l'adresse suivante :\n";
     $st_message_html .= "<a href=\"$gst_url_site\">$gst_url_site</a>\n\n";
-    $st_message_html .= "Pour vous connecter &agrave; la base AGC\n";
+    $st_message_html .= "Pour vous connecter &agrave; la base ".SIGLE_ASSO."\n";
     $st_message_html .= sprintf("Votre identifiant est votre num&eacute;ro de membre : <font color=\"#FF0000\"><strong>%s</strong></font>\n",$this->i_idf);
     $st_message_html .= sprintf("Votre mot de passe est : <font color=\"#FF0000\"><strong>%s</strong></font>\n\n",$this->st_mdp);
-    $st_message_html .= "Pour vous connecter &agrave; G&eacute;n&eacute;aBank\n";
-    $st_message_html .= sprintf("Votre nom d'utilisateur : <font color=\"#FF0000\"><strong>".PREFIXE_ADH_GBK."%s</strong></font>\n",$this->i_idf);
+	if (!empty($gst_administrateur_gbk))
+    { 
+		$st_message_html .= "Pour vous connecter &agrave; G&eacute;n&eacute;aBank\n";
+		$st_message_html .= sprintf("Votre nom d'utilisateur : <font color=\"#FF0000\"><strong>".PREFIXE_ADH_GBK."%s</strong></font>\n",$this->i_idf);
+	}	
     $st_message_html .= sprintf("Votre mot de passe est : <font color=\"#FF0000\"><strong>%s</strong></font>\n\n",$this->st_mdp);
     $st_message_html .= "Nous vous demandons de bien noter ces informations que vous pouvez g&eacute;rer &agrave; votre gr&eacute;\n\n";
     $st_message_html .= "Ces informations sont strictement personnelles et confidentielles.\n";
@@ -746,12 +763,12 @@ class Adherent
   
     $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
   
-    $st_entete  = "From: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n>";
-    $st_entete .= "Reply-to: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n";
+    $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
+    $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\n";
     $st_entete .= "Bcc: fbouffanet@yahoo.fr,agc-info@genea16.net\n";
-    $st_entete .= "Reply-to: AGC <".EMAIL_DIRASSO.">\n";
-    $st_entete .= "Disposition-Notification-To: AGC<".EMAIL_DIRASSO.">\n";
+    $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
+    $st_entete .= "Disposition-Notification-To: ".SIGLE_ASSO."<".EMAIL_DIRASSO.">\n";
 	  $st_entete .= 'MIME-Version: 1.0' . "\n"; 
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
     $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n"; 
@@ -764,7 +781,7 @@ class Adherent
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_html."\n\n";
     $st_message .= '--'.$st_frontiere."--\n";
-    $st_sujet = "Inscription a l'A.G.C. - Association Genealogique de la Charente";
+    $st_sujet = "Inscription a l'AGC - ".LIB_ASSO;
     return (mail($this->st_email_perso,$st_sujet,$st_message, $st_entete));
   }
   
@@ -788,16 +805,16 @@ class Adherent
   
     $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
   
-    $st_entete  = "From: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n>";
-    $st_entete .= "Reply-to: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n";
+    $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
+    $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\n";
     $st_entete .= "Bcc: fbouffanet@yahoo.fr\n";
-    $st_entete .= "Reply-to: AGC <".EMAIL_DIRASSO.">\n";
-    $st_entete .= "Disposition-Notification-To: AGC<".EMAIL_DIRASSO.">\n";
+    $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
+    $st_entete .= "Disposition-Notification-To: ".SIGLE_ASSO."<".EMAIL_DIRASSO.">\n";
     $st_entete .= 'MIME-Version: 1.0' . "\n"; 
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
     
-    $st_sujet = "Re-inscription a l'A.G.C. - Association Genealogique de la Charente";
+    $st_sujet = "Re-inscription a l'AGC - ". LIB_ASSO;
 
     $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
     $st_message .= '--'.$st_frontiere."\n";
@@ -821,7 +838,7 @@ class Adherent
     $st_message_html .= "</font>";
     $st_message_html  .= sprintf("Inscription G&eacute;n&eacute;aBank de <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
     $st_message_html .= "Faire un copier de la ligne ci dessous et la coller dans l'interface de gestion de G&eacute;n&eacute;abank.\n\n";
-    $st_message_html .= sprintf("register AGC%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
+    $st_message_html .= sprintf("register ".PREFIXE_ADH_GBK."%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
     $st_message_html .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
     $st_message_html = nl2br($st_message_html);
     $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
@@ -830,11 +847,11 @@ class Adherent
   
     $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
   
-    $st_entete  = "From: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n>";
-    $st_entete .= "Reply-to: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n";
+    $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
+    $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\n";
     $st_entete .= "Bcc: fbouffanet@yahoo.fr\n";
-    $st_entete .= "Reply-to: AGC <".EMAIL_DIRASSO.">\n";
+    $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= 'MIME-Version: 1.0' . "\n"; 
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
     $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n"; 
@@ -863,7 +880,7 @@ class Adherent
     $st_texte .= self::$st_erreur_gbk;
     $st_texte .= "</font>";
     $st_texte .= "Faire un copier de la ligne ci dessous et la coller dans l'interface de gestion de Généabank.\n\n";
-    $st_texte .= sprintf("register AGC%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
+    $st_texte .= sprintf("register ".PREFIXE_ADH_GBK."%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
     $st_texte .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
     $st_sujet = "Changement de mot de passe GeneaBank";
     $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
@@ -884,15 +901,16 @@ class Adherent
   */ 
   function envoie_message_geneabank_changement_mdp() {
     $st_texte = sprintf("Bonjour <strong>%s %s</strong>\n\n",$this->st_prenom,$this->st_nom);
-    $st_texte .= "Voici votre identifiant et mot de passe d'acc&egrave;s &agrave; la base AGC <strong>GENEA16</strong> et &agrave; G&eacute;n&eacute;aBank\n\n";
+    $st_texte .= "Voici votre identifiant et mot de passe d'acc&egrave;s &agrave; la base ".SIGLE_ASSO." <strong>GENEA16</strong> et &agrave; G&eacute;n&eacute;aBank\n\n";
     $st_texte .= "N'oubliez pas! votre adresse e-mail doit-&ecirc;tre la m&ecirc;me sur la base GENEA16 et sur Yahoo\n\n";
     $st_texte .="<table border=1>";
     $st_texte .= sprintf("<tr><td>Votre mot de passe:</td><th>%s</th></tr>",$this->st_mdp);
-    $st_texte .= sprintf("<tr><td>Votre identifiant AGC:</td><th>%s</th></tr>",$this->st_ident);
-    $st_texte .= sprintf("<tr><td>Votre identifiant G&eacute;n&eacute;aBank:</td><th>".PREFIXE_ADH_GBK."%d</th></tr>",$this->i_idf);
+    $st_texte .= sprintf("<tr><td>Votre identifiant ".SIGLE_ASSO.":</td><th>%s</th></tr>",$this->st_ident);
+	if (!empty($gst_administrateur_gbk)) 
+		$st_texte .= sprintf("<tr><td>Votre identifiant G&eacute;n&eacute;aBank:</td><th>".PREFIXE_ADH_GBK."%d</th></tr>",$this->i_idf);
     $st_texte .="</table>\n";
     $st_texte .= "Cordialement,\n\nLes responsables du site";
-    $st_sujet = "Votre nouveau mot de passe du site AGC";
+    $st_sujet = "Votre nouveau mot de passe du site".SIGLE_ASSO;
     $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
     $st_entete .= "Content-type: text/html; charset=cp1252 \r\n";
     $st_entete .= "From: ".EMAIL_DIRASSO."\r\n";
@@ -912,14 +930,14 @@ class Adherent
 
     $st_message_html = nl2br($st_message_html);
     $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
-    $st_sujet = "Nouvelle inscription AGC";
+    $st_sujet = "Nouvelle inscription ".SIGLE_ASSO;
   
     $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
   
-    $st_entete  = "From: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n>";
-    $st_entete .= "Reply-to: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n";
+    $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
+    $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= "Bcc: fbouffanet@yahoo.fr\n";
-    $st_entete .= "Reply-to: AGC <".EMAIL_DIRASSO.">\n";
+    $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= 'MIME-Version: 1.0' . "\n"; 
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
     $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
@@ -1028,13 +1046,13 @@ class Adherent
           $st_message_html = nl2br($st_message_html);
           
           $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
-          $st_sujet = "Demande d'un nouveau mot de passe AGC";
+          $st_sujet = "Demande d'un nouveau mot de passe ".SIGLE_ASSO;
   
           $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
   
-          $st_entete  = "From: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n>";
-          $st_entete .= "Reply-to: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n";
-          $st_entete .= "Reply-to: AGC <".EMAIL_DIRASSO.">\n";
+          $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
+          $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
+          $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
           $st_entete .= 'MIME-Version: 1.0' . "\n"; 
           $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
           $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
@@ -1170,7 +1188,7 @@ class Adherent
    {
       if (!empty(pst_nouveau_mdp))
 		     $this->st_mdp=$pst_nouveau_mdp;
-      $st_cmd_gbk = sprintf("register AGC%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
+      $st_cmd_gbk = sprintf("register ".PREFIXE_ADH_GBK."%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
       $st_cmd_gbk .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
       return self::execute_cmd_gbk($st_cmd_gbk);
    }
