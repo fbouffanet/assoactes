@@ -60,7 +60,7 @@ $gi_nb_dec = $connexionBD->sql_select1("select sum(nb_actes) from `stats_commune
 $gi_nb_actes_total = $connexionBD->sql_select1("select sum(nb_actes) from `stats_commune`");
 
 print('<div class="panel-group">');
-print('<div class="panel panel-default">');
+print('<div class="panel panel-primary">');
 print('<div class="panel-heading">Notre espace membres</div>');
 print('<div class="panel-body">');
 // Heure & Date
@@ -70,7 +70,7 @@ print("<div class=\"row text-center\">Aujourd'hui le $st_date &agrave; $st_heure
 print("<div class=\"row text-center\">$gi_nb_adherents adh&eacute;rents inscrits sur la base de l'AGC.</div>");
 print('</div></div>');
 
-print('<div class="panel panel-default">');
+print('<div class="panel panel-primary">');
 print('<div class="panel-heading">Info sur la base</div>');
 print('<div class="panel-body">');
 print("<div class=\"row text-center\">".number_format($gi_nb_actes_total,0,',', ' ') ." actes dont :</div>");
@@ -83,7 +83,7 @@ print('</div></div>');
 
 $gi_nbjours = 30;
 
-print('<div class="panel panel-default">');
+print('<div class="panel panel-primary">');
 print("<div class=\"panel-heading\">Historique des chargements sur les $gi_nbjours derniers jours</div>");
 print('<div class="panel-body">');
 $a_chargements = $connexionBD->sql_select_multiple("select date_format(c.date_chgt,'%d/%m/%Y'),ca.nom,c.type_acte_nim,c.nb_actes from `chargement` c join commune_acte ca on (c.idf_commune=ca.idf) where datediff(now(),c.date_chgt)<$gi_nbjours and c.publication='O' order by c.date_chgt desc");
@@ -93,10 +93,13 @@ if (count($a_chargements)==0)
 }
 else
 {
-   print("<table class=\"table table-bordered table-striped\">");
+   print("<table class=\"table table-bordered table-striped table-sm\">");
+   print("<thead>");
    print("<tr>");
    print("<th>Commune</th><th>Type</th><th>Nbre actes</th>");
    print("</tr>");
+   print("</thead>");
+   print("<tbody>");
    foreach ($a_chargements as $a_chargement)
    {
       list($st_date,$st_commune,$st_type_nim,$i_nb_actes) = $a_chargement;
@@ -112,6 +115,7 @@ else
       print("</tr>");
       
    }
+   print("</tbody>");
    print("</table>");
 }
 print('</div></div></div>');
@@ -120,15 +124,26 @@ print("</div>");
 print('<div class="col-md-6">');
 // Lit les bulletins dans le répertoire Articles. Ils doivent commencer par ArticleBulletin et avoir l'extension HTML
 $a_bulletins = glob("Articles/ArticleBulletin*.html");
-// Choisit un numéro au hasard
-$i_bulletin_choisi = mt_rand(1,count($a_bulletins));
-// construit le nom de fichier
-$st_article_bulletin = $a_bulletins[$i_bulletin_choisi];
-//$st_article_bulletin = "./Articles/lettre_CG.htm";// en provisoire
-$st_bulletin_html = file_get_contents($st_article_bulletin);
+$st_bulletin_html = '';
+if (count($a_bulletins)>0)
+{
+  // Choisit un numéro au hasard
+  $i_bulletin_choisi = mt_rand(1,count($a_bulletins)-1);
+  // construit le nom de fichier
+  $st_article_bulletin = $a_bulletins[$i_bulletin_choisi];
+  //$st_article_bulletin = "./Articles/lettre_CG.htm";// en provisoire
+}
+else
+  print('<div class="alert alert-danger">Pas d\'article disponible</div>');
+// L'affichage du bulletin est remplacée par celle d'une annonce si celle-ci existe  
+if (file_exists("Articles/Annonce.html"))
+   $st_bulletin_html = file_get_contents("Articles/Annonce.html");
+else
+   $st_bulletin_html = file_get_contents($st_article_bulletin);     
 if (preg_match('~<body[^>]*>(.*?)</body>~si', $st_bulletin_html, $a_patterns))
 	print($a_patterns[1]); 
 print("</div>");
+print('<div class="col-md-2">');
 ?>
    <p></p>
     <div style="text-align: center; color: rgb(102, 102, 204);" class="alignCenter"><strong><span
@@ -156,23 +171,21 @@ communication</span></strong></div>
 <div  style="text-align: center;" class=alignCenter><span style="font-size: 12pt; color: black;">(<em>Journal
 Officiel du 16&nbsp;juillet&nbsp;2008)</em></span></div>
 
-<table border="1" >
-        <tbody>
-          <tr style="height: 33.55pt;">
-            <td  width="151">
-            <div  class=alignCenter align="center"><b ><span style="color: black;"><span style="color: rgb(204, 102, 204);">Nature des documents</span></span></b></div>
-            <div  class=alignCenter align="center"><b ><span style="color: black;">&nbsp;</span></b></div>
-            </td>
-            <td >
-            <div  class=alignCenter align="center"><b ><span style="color: black;"><span style="color: rgb(204, 102, 204);">Délai initial</span></span></b></div>
-
-            <div  class=alignCenter><b ><span style="color: black;">&nbsp;</span></b></div>
-            </td>
-            <td >
-            <div  class=alignCenter align="center"><b ><span style="color: black;"><span style="color: rgb(204, 102, 204);">Nouveau délai</span></span></b></div>
-            <div  class=alignCenter align="center"><b ><span style="color: black;">&nbsp;</span></b></div>
-            </td>
+<table class="table table-bordered table-striped table-sm" >
+          <thead>
+          <tr>
+            <th >
+            Nature des documents
+            </th>
+            <th >
+            D&eacute;lai initial
+            </th>
+            <th>
+            Nouveau d&eacute;lai
+            </th>
           </tr>
+          </thead>
+          <tbody>
           <tr>
 
             <td >
@@ -317,7 +330,6 @@ ans</span></div>
       </table>
 
 <?php
-print("</div>");
 print("</div>");
 print("</div></body></html>");
  
