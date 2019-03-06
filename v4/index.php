@@ -96,7 +96,7 @@ else
    print("<table class=\"table table-bordered table-striped table-sm\">");
    print("<thead>");
    print("<tr>");
-   print("<th>Commune</th><th>Type</th><th>Nbre actes</th>");
+   print("<th scope=\"col\">Commune</th><th scope=\"col\">Type</th><th scope=\"col\">Nbre actes</th>");
    print("</tr>");
    print("</thead>");
    print("<tbody>");
@@ -121,7 +121,7 @@ else
 print('</div></div></div>');
 print("</div>");
 
-print('<div class="col-md-6">');
+print('<div class="col-md-4">');
 // Lit les bulletins dans le répertoire Articles. Ils doivent commencer par ArticleBulletin et avoir l'extension HTML
 $a_bulletins = glob("Articles/ArticleBulletin*.html");
 $st_bulletin_html = '';
@@ -143,169 +143,98 @@ else
 if (preg_match('~<body[^>]*>(.*?)</body>~si', $st_bulletin_html, $a_patterns))
 	print($a_patterns[1]); 
 print("</div>");
-print('<div class="col-md-2">');
+print('<div class="col-md-4">');
 ?>
-    <div class="text-align">Entraide inter-régionale, mariés ailleurs :</div>
-    <div class="text-align">
+  
+<div class="panel panel-primary">
+<div class="panel-heading">Entraide inter-régionale, mariés ailleurs :</div>
+<div class="panel-body">
+<div class="text-justify">
       le Cercle généalogique des Deux-Sèvres nous a communiqué la liste des
       mariages relevés dans les registres des communes (79) dont l'un au moins
-      des époux est originaire de Charente.<br>
-      <br>
+      des époux est originaire de Charente.</div>
+<br>
+<div class="text-justify">
       Nos adhérents, peuvent consulter ces relevés sur les ordinateurs de notre
       local de permanence, ou lors de rencontres ponctuelles ou l'A.G.C est
-      présente.<br>
-      <br>
+      présente.</div>
+<br>      
+<div class="text-justify">
       A noter que nous procédons de même avec l'envoi des mariages de
-      Deux-Sévriens célébrés en Charente.<br>
-      <br>
-      <br>
-    </div>
+      Deux-Sévriens célébrés en Charente.</div>
+</div>
+<br>
+</div>
 
-<div class="text-align h1">Loi sur les d&eacute;lais de communication des archives</div>
-<div class="text-align h1" >(Journal Officiel du 16&nbsp;juillet&nbsp;2008)</div>
+<div class="panel panel-primary">
+<div class="panel-heading ">Loi sur les d&eacute;lais de communication des archives (Journal Officiel du 16&nbsp;juillet&nbsp;2008) </div>
+<div class="panel-body ">
 
-<table class="table table-bordered table-striped table-sm" >
-          <thead>
-          <tr>
-            <th>
-            Nature des documents
-            </th>
-            <th >
-            D&eacute;lai initial
-            </th>
-            <th>
-            Nouveau d&eacute;lai
-            </th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-
-            <td >
-            Vie priv&eacute;e
-            </td>
-            <td >
-            60 ans
-            </td>
-            <td >
-            50 ans
-
-            </td>
-          </tr>
-          <tr>
-            <td >
-            Actes des notaires
-            </td>
-            <td >
-            100 ans
-
-            </td>
-            <td >
-            75 ans
-            </td>
-          </tr>
-          <tr>
-            <td >
-            Archives des juridictions
-
-            </td>
-            <td >
-            100 ans
-            </td>
-            <td >
-            75 ans
-            </td>
-          </tr>
-
-          <tr>
-            <td >
-            Registres de naissance de l’&eacute;tat civil
-            </td>
-            <td >
-            100 ans
-            </td>
-            <td >
-
-            75 ans
-            </td>
-          </tr>
-          <tr>
-            <td >
-            Registres de mariage de l’&eacute;tat civil
-            </td>
-            <td >
-
-            100 ans
-            </td>
-            <td >
-            75 ans
-            </td>
-          </tr>
-          <tr>
-            <td >
-
-            Registres de d&eacute;c&egrave;s de l’&eacute;tat civil
-            </td>
-            <td>
-            -
-            </td>
-            <td >
-            Imm&eacute;diat</
-            </td>
-          </tr>
-          <tr>
-            <td >
-            Tables d&eacute;cennales
-            </td>
-            <td >
-            100 ans
-
-            </td>
-            <td >
-            Imm&eacute;diat
-            </td>
-          </tr>
-          <tr>
-            <td >
-            Questionnaires de recensement de la population
-
-            </td>
-            <td >
-            100 ans
-            </td>
-            <td >
-            75 ans
-            </td>
-
-          </tr>
-          <tr>
-            <td >
-            Dossiers de personnels
-            </td>
-            <td >
-            120 ans
-            </td>
-
-            <td >
-            75 ans
-            </td>
-          </tr>
-          <tr>
-            <td >
-            Secret m&eacute;dical
-            </td>
-
-            <td >
-            150 ans
-            </td>
-            <td >
-            120 ans ou 25 ans &agrave; compter du d&eacute;c&egrave;s
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
-
+<table class="table table-bordered table-striped table-sm" >          
+   <thead>          
+      <tr>            
+         <th scope="col">            Nature des documents             
+         </th>            
+         <th scope="col">            D&eacute;lai initial             
+         </th>            
+         <th scope="col">            Nouveau d&eacute;lai             
+         </th>          
+      </tr>          
+   </thead>          
+   <tbody>          
+      <tr>            
+         <td >            Vie priv&eacute;e             </td>            
+         <td >            60 ans             </td>            
+         <td >            50 ans             </td>          
+      </tr>          
+      <tr>            
+         <td >            Actes des notaires             </td>            
+         <td >            100 ans             </td>            
+         <td >            75 ans             </td>          
+      </tr>          
+      <tr>            
+         <td >            Archives des juridictions             </td>            
+         <td >            100 ans             </td>            
+         <td >            75 ans             </td>          
+      </tr>          
+      <tr>            
+         <td >            Registres de naissance de l’&eacute;tat civil             </td>            
+         <td >            100 ans             </td>            
+         <td >            75 ans             </td>          
+      </tr>          
+      <tr>            
+         <td >            Registres de mariage de l’&eacute;tat civil             </td>            
+         <td >            100 ans             </td>            
+         <td >            75 ans             </td>          
+      </tr>          
+      <tr>            
+         <td >            Registres de d&eacute;c&egrave;s de l’&eacute;tat civil             </td>            <td>            -             </td>            
+         <td >            Imm&eacute;diat            </td>          
+      </tr>          
+      <tr>            
+         <td >            Tables d&eacute;cennales             </td>            
+         <td >            100 ans             </td>            
+         <td >            Imm&eacute;diat             </td>          
+      </tr>          
+      <tr>            
+         <td >            Questionnaires de recensement de la population             </td>            
+         <td >            100 ans             </td>            
+         <td >            75 ans             </td>          
+      </tr>          
+      <tr>            
+         <td >            Dossiers de personnels             </td>            
+         <td >            120 ans             </td>            
+         <td >            75 ans             </td>          
+      </tr>          
+      <tr>            
+         <td >            Secret m&eacute;dical             </td>            
+         <td >            150 ans             </td>            
+         <td >            120 ans ou 25 ans &agrave; compter du d&eacute;c&egrave;s             </td>          
+      </tr>        
+   </tbody>      
+</table>
+</div>
+</div>
 <?php
 print("</div>");
 print("</div></body></html>");
