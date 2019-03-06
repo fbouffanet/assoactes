@@ -408,7 +408,7 @@ class Adherent
 		$st_chaine .= sprintf("<label for=\"date_paiement\">Date de paiement</label><input name=\"date_paiement\" id=\"date_paiement\" value=\"%s\" size=\"10\" maxlength=\"10\" type=\"text\" class=\"form-control\"> ",$this->st_date_paiement);      
         $st_chaine .= sprintf("<label for=\"prix\">prix:</label><input name=\"prix\" value=\"%d\" id=\"prix\" size=\"2\" maxlength=\"2\" type=\"text\" class=\"form-control\">",$this->i_prix);        
         $st_chaine .= sprintf("<label for=\"annee_cotisation\">ann&eacute;e de cotisation</label><input name=\"annee_cotisation\" id=\"annee_cotisation\" value=\"%d\" size=\"4\" maxlength=\"4\" type=\"text\" class=\"form-control\">",$this->i_annee_cotisation);         
-        $st_chaine .= " <button type=button class=\"btn btn-primary\" id=readhesion>R<button>";    
+        $st_chaine .= " <button type=button class=\"btn btn-primary\" id=readhesion>R</button>";    
         $st_chaine .= sprintf("<div class=\"text-center\">Derni&egrave;re adresse ip de connexion: %s</div>",$this->st_ip_connexion);
         $st_chaine .= sprintf("<label for=\"ip_restreinte\">IP restreinte</label><input type=\"text\" maxlength=15 size=15 name=ip_restreinte id=ip_restreinte value=\"%s\" class=\"form-control\">",$this->st_ip_restreinte);
         $st_chaine .= sprintf("<label for=\"max_nai\">Quota Naissance</label><input type=\"text\" maxlength=4 size=4 name=\"max_nai\" id=\"max_nai\" value=\"%d\" class=\"form-control\">",$this->i_max_nai);
