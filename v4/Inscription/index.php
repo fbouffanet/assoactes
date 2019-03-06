@@ -201,7 +201,7 @@ function menu_edition($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_adr
    print('</div>');
 	print("<label for=\"site_web\">Site web</label><input type=text maxlength=60 size=40 name=site_web id=site_web value=\"$pst_ins_site_web\" class=\"form-control\">");
 
-	print("<label for=\"site_web\">Email personnel</label><input type=text maxlength=60 size=40 name=email_perso id=email_perso value=\"$pst_ins_email_perso\" class=\"form-control\">");
+	print("<label for=\"email_perso\">Email personnel</label><input type=text maxlength=60 size=40 name=email_perso id=email_perso value=\"$pst_ins_email_perso\" class=\"form-control\">");
   print("<input type=checkbox name=confidentiel id=confidentiel value=\"$pst_ins_cache\" checked class=\"form-check-input\"><label for=\"confidentiel\" class=\"form-check-label\" >Cochez et l'adresse devient invisible aux adh&eacute;rents</label>");
 
 	print("<label for=\"telephone\"><input type=text maxlength=20 size=14 name=telephone id=telephone value=\"$pst_ins_telephone\" aria-describedby=\"UsageTelephone\"> class=\"form-control\"");
