@@ -145,12 +145,8 @@ if (preg_match('~<body[^>]*>(.*?)</body>~si', $st_bulletin_html, $a_patterns))
 print("</div>");
 print('<div class="col-md-2">');
 ?>
-   <p></p>
-    <div style="text-align: center; color: rgb(102, 102, 204);" class="alignCenter"><strong><span
-
-          style="font-size: 16pt;">Entraide inter-régionale, mariés ailleurs :</span></strong><br>
-      <strong></strong></div>
-    <strong> <br>
+    <div class="text-align">Entraide inter-régionale, mariés ailleurs :</div>
+    <div class="text-align">
       le Cercle généalogique des Deux-Sèvres nous a communiqué la liste des
       mariages relevés dans les registres des communes (79) dont l'un au moins
       des époux est originaire de Charente.<br>
@@ -163,18 +159,15 @@ print('<div class="col-md-2">');
       Deux-Sévriens célébrés en Charente.<br>
       <br>
       <br>
-      <br>
+    </div>
 
-<div  style="text-align: center; color: rgb(102, 102, 204);" class=alignCenter><strong><span style="font-size: 12pt;">Loi sur les délais de
-communication</span></strong></div>
-<div  style="text-align: center;" class=alignCenter><strong style="color: rgb(102, 102, 204);"><span style="font-size: 12pt;">des archives</span></strong></div>
-<div  style="text-align: center;" class=alignCenter><span style="font-size: 12pt; color: black;">(<em>Journal
-Officiel du 16&nbsp;juillet&nbsp;2008)</em></span></div>
+<div class="text-align h1">Loi sur les d&eacute;lais de communication des archives</div>
+<div class="text-align h1" >(Journal Officiel du 16&nbsp;juillet&nbsp;2008)</div>
 
 <table class="table table-bordered table-striped table-sm" >
           <thead>
           <tr>
-            <th >
+            <th>
             Nature des documents
             </th>
             <th >
@@ -189,140 +182,124 @@ Officiel du 16&nbsp;juillet&nbsp;2008)</em></span></div>
           <tr>
 
             <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Vie priv&eacute;e</span></div>
+            Vie priv&eacute;e
             </td>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">60
-ans</span></div>
+            60 ans
             </td>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">50
-ans</span></div>
+            50 ans
 
             </td>
           </tr>
           <tr>
             <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Actes des notaires</span></div>
+            Actes des notaires
             </td>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">100
-ans</span></div>
+            100 ans
 
             </td>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">75
-ans</span></div>
+            75 ans
             </td>
           </tr>
           <tr>
             <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Archives des juridictions</span></div>
+            Archives des juridictions
 
             </td>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">100
-ans</span></div>
+            100 ans
             </td>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">75
-ans</span></div>
+            75 ans
             </td>
           </tr>
 
           <tr>
             <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Registres de naissance de
-l’état civil</span></div>
+            Registres de naissance de l’&eacute;tat civil
             </td>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">100
-ans</span></div>
+            100 ans
             </td>
             <td >
 
-            <div  style="text-align: center;" align="center"><span style="color: black;">75
-ans</span></div>
+            75 ans
             </td>
           </tr>
           <tr>
             <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Registres de mariage de
-l’état civil</span></div>
+            Registres de mariage de l’&eacute;tat civil
             </td>
             <td >
 
-            <div  style="text-align: center;" align="center"><span style="color: black;">100
-ans</span></div>
+            100 ans
             </td>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">75
-ans</span></div>
+            75 ans
             </td>
           </tr>
           <tr>
             <td >
 
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Registres de
-décès de l’état civil</span></div>
+            Registres de d&eacute;c&egrave;s de l’&eacute;tat civil
+            </td>
+            <td>
+            -
             </td>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">-</span></div>
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">Immédiat</span></div>
-
+            Imm&eacute;diat</
             </td>
           </tr>
           <tr>
             <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Tables décennales</span></div>
+            Tables d&eacute;cennales
             </td>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">100
-ans</span></div>
+            100 ans
 
             </td>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">Immédiat</span></div>
+            Imm&eacute;diat
             </td>
           </tr>
           <tr>
             <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Questionnaires de recensement de la population</span></div>
+            Questionnaires de recensement de la population
 
             </td>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">100 ans</span></div>
+            100 ans
             </td>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">75 ans</span></div>
-            <div  style="text-align: center;" align="center"><span style="color: black;">&nbsp;</span></div>
+            75 ans
             </td>
 
           </tr>
           <tr>
             <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Dossiers de personnels</span></div>
+            Dossiers de personnels
             </td>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">120 ans</span></div>
+            120 ans
             </td>
 
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">75 ans</span></div>
+            75 ans
             </td>
           </tr>
           <tr>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">Secret médical</span></div>
+            Secret m&eacute;dical
             </td>
 
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">150 ans</span></div>
+            150 ans
             </td>
             <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">120 ans ou 25 ans à compter du décès</span></div>
+            120 ans ou 25 ans &agrave; compter du d&eacute;c&egrave;s
             </td>
           </tr>
 
