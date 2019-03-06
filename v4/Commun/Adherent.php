@@ -401,7 +401,7 @@ class Adherent
       $st_chaine ='';
       if (a_droits($this->st_ident_modificateur,DROIT_GESTION_ADHERENT))
       {
-        $st_chaine .= sprintf("<label for=\"ident_adh\">Identifiant<Label><input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adh value=\"%s\" class=\"form-control\">",$this->st_ident);
+        $st_chaine .= sprintf("<label for=\"ident_adh\">Identifiant</Label><input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adh value=\"%s\" class=\"form-control\">",$this->st_ident);
         $this->a_filtres_parametres["ident_adh"] = array(array("required", "true", "L'identifiant est obligatoire"));
         $st_chaine .= sprintf("<label for=\"infos_agc\">Infos ".SIGLE_ASSO."</label><textarea name=\"infos_agc\" id=\"infos_agc\" cols=\"60\" rows=\"10\" id=\"infos_agc\" class=\"form-control\">%s</textarea>",$this->st_infos_agc);
         $st_chaine .= sprintf("<label for=\"date_premiere_adhesion\">Date de premi&egrave;re adh&eacute;sion</label><input name=\"date_premiere_adhesion\"  id=\"date_premiere_adhesion\" value=\"%s\" size=\"10\" maxlength=\"10\" type=\"text\" class=\"form-control\">",$this->st_date_premiere_adhesion);     
