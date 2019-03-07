@@ -478,7 +478,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
 function menu_modifier($padherent,$pi_idf_adherent)
 {
 	global $gst_ident,$gst_rep_trombinoscope,$gst_url_trombinoscope;;
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"modification_adherent\" class=\"form-inline\">");
+	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"modification_adherent\" >");
 	print("<input type=hidden name=mode id=mode_modifier value=MODIFIER>");
 	print('<div class="row col-md-12">');
 	print('<div class="col-md-6">');
