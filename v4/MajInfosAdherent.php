@@ -89,7 +89,7 @@ print('</head>');
 function menu_edition_adherent($pconnexionBD,$padherent,$pi_idf_adh)
 {
    global $ga_pays,$gi_max_taille_upload,$gst_rep_trombinoscope,$gst_url_trombinoscope;
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"maj_infos_adherent\" method=\"post\" class=\"form-inline\">\n");
+   print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"maj_infos_adherent\" method=\"post\">\n");
    print("<input type=hidden name=mode value=MODIFIER>\n");
    print('<div class="row col-md-12">');
    
