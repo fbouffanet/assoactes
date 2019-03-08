@@ -55,8 +55,6 @@ class Adherent
       $this->st_ident_modificateur = isset($_SESSION['ident']) ?  $_SESSION['ident'] : '';
       $this->a_filtres_parametres = array();
       $this->a_droits_adherents = array();
-	  define(LIB_ASSO,'Association Genealogique de la Charente');
-	  define(SIGLE_ASSO,'AGC');
       if (empty($pi_idf_adherent))
       {
          $i_idf_dernier_adherent = $this -> connexionBD->sql_select1("select max(idf) from adherent");
