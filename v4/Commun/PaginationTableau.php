@@ -51,7 +51,8 @@ class PaginationTableau {
    public function affiche_entete_liens_navigation() {
      $i_deb = 1;
      $i_fin = $this->i_nb_pages;
-     print('<ul class="pagination justify-content-center">');
+     print('<div class="text-center">');
+     print('<ul class="pagination">');
      if ($i_fin>1)
         print("<li class=\"page-item\"><a href=\"$this->st_nom_script?$this->st_param_numpage=1\" class=\"page-item\">D&eacute;but</a></li> "); 
      if ($i_deb<$i_fin)
@@ -65,7 +66,8 @@ class PaginationTableau {
      }
      if ($i_fin<$this->i_nb_pages)
 		print("<li class=\"page-item\"><a href=\"$this->st_nom_script?$this->st_param_numpage=$this->i_nb_pages\" class=\"page-item\">Fin</a></li>");  
-     print("</ul>");  
+     print("</ul>");
+     print("</div>");  
    }
    
    
