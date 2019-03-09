@@ -5,21 +5,23 @@ require_once('Commun/commun.php');
 require_once('Commun/constantes.php');
 require_once('Commun/ConnexionBD.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr"> ');
 /* ------------------- modif title */
 print('<title>Base AGC: Vos recherches de liasses notariales</title>');
-print("<link href='./Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='./VerifieChampsRechercheLiasse.js' type='text/javascript'></script>\n");
 print("<script src='./Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='./Commun/menu.js' type='text/javascript'></script>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 print("</head>");
 
 print("<body>");
+print('<div class="container">');
 //print("Vous etes authentifi&eacute; :-)<br>");
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
@@ -90,88 +92,122 @@ $a_communes_acte[-9] = 'Commune inconnue';
 
 $a_serie_liasse = $connexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 						 
-print('<form id="recherche" method="post">');
+print('<form id="recherche" method="post" class="form-inline">');
 
-print('<div style="text-align:center">');
-print('   <br>S&eacute;rie liasses: ');
-print('   <select name="idf_serie_liasse" id="idf_serie_liasse">');
-print(    chaine_select_options($gst_idf_serie_liasse,$a_serie_liasse));
-print('   </select>');
-print('   <br>');
+
+print('<div class="form-row col-md-12">');
+print('<div class="form-group col-md-4 col-md-offset-4">');
+print('<label for="idf_serie_liasse" class="form-col-label">S&eacute;rie liasses:</label><select name="idf_serie_liasse" id="idf_serie_liasse" class="js-select-avec-recherche form-control">');
+print(chaine_select_options($gst_idf_serie_liasse,$a_serie_liasse));
+print('</select>');
+print('</div>');
 print('</div>');
 
-print('<div style="text-align:center">');
-print('   <br>D&eacute;partement : ');
-print('   <select name="idf_dept" >');
-print(    chaine_select_options($gi_idf_dept,$a_dept));
-print('   </select>');
-print('   Commune/Paroisse : ');
-print('   <select name="idf_commune_recherche" >');
-print(    chaine_select_options($gi_idf_commune,$a_communes_acte));
-print('   </select>');
-print('   Rayon de recherche : ');
-print("   <input type=text name=rayon size=2 MAXLENGTH=2 value=\"$gi_rayon\"> Km");
-print('   Paroisses rattach&eacute;es: ');
+
+print('<div class="form-row col-md-12">');
+
+print('<div class="form-group col-md-2"><label for="idf_dept">D&eacute;partement:</label><select name="idf_dept" id="idf_dept" class="js-select-avec-recherche form-control">');
+print(chaine_select_options($gi_idf_dept,$a_dept));
+print('</select></div>');
+
+print('<div class="form-group col-md-4"><label for="idf_commune_recherche">Commune/Paroisse:</label><select name="idf_commune_recherche" id="idf_commune_recherche" class="js-select-avec-recherche form-control">');
+$a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
+print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
+print('</select></div>');
+
+print("<div class=\"form-group col-md-4\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");
+
+print('<div class="form-check col-md-2">');
+
 if ($gst_paroisses_rattachees=='')
-   print('   <input type=checkbox name=paroisses_rattachees value=oui >');
+   print('<input type=checkbox name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui class="form-check-input">');
 else
-   print('   <input type=checkbox name=paroisses_rattachees value=oui checked>');
-print('   <br>');
+   print('<input type=checkbox name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui checked class="form-check-input" >');
+print('<label for="paroisses_rattachees_recherches_communes" class="form-check-label">Paroisses rattach&eacute;es</label>');
 print('</div>');
 
-print("<div style=\"text-align:center\">");
-print("   <br>Ann&eacute;es de <input type=text name=annee_min size =4 value=\"$gi_annee_min\">");
-print("   &agrave; <input type=text name=annee_max size =4 value=\"$gi_annee_max\">");
-print('   &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Liasses sans date: ');
+print('</div>');
+
+print('<div class="form-row col-md-12">');
+print('<div class="form-group col-md-2 col-md-offset-2">');
+print('<label for="annee_min" class="col-form-label">Ann&eacute;es de </label>');
+print("<input type=text name=annee_min id=annee_min size=4 value=\"$gi_annee_min\" class=\"form-control\">");
+print('</div>');
+print('<div class="form-group col-md-2 col-md-offset-2">');
+print('<label for="annee_max" class="col-form-label">&agrave;</label>');
+print("<input type=text name=annee_max id=annee_min size =4 value=\"$gi_annee_max\" class=\"form-control\">");
+print('</div>');
+print('<div class="form-check col-md-4">');
+print('<label for="sans_periode" class="form-check-label col-form-label">Liasses sans date:</label>');
 if ($gst_sans_periode=='non')
-   print('   <input type=checkbox name=sans_periode value=oui unchecked >');
+   print('   <input type=checkbox name=sans_periode id=sans_periode value=oui unchecked class="form-control form-check-input">');
 else
-   print('   <input type=checkbox name=sans_periode value=oui checked>');
-print('   <br>');
+   print('   <input type=checkbox name=sans_periode id=sans_periode value=oui checked class="form-control form-check-input">');
+print('</div>');
 print('</div>');
 
-print('<div style="text-align:center">');
-print('   <br>Nom Notaire: ');
-print("   <input type=text name=nom_notaire size=15 MAXLENGTH=30 value=\"$gst_nom_notaire\" onKeyPress=\"SoumissionSimple(0,event)\">");
-print('   Pr&eacute;nom Notaire: ');
-print("   <input type=text name=prenom_notaire size=15 MAXLENGTH=30 value=\"$gst_prenom_notaire\" onKeyPress=\"SoumissionSimple(0,event)\"> ");
-print('   &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;Liasses sans notaire: ');
+
+print('<div class="form-row col-md-12">');
+print('<div class="form-group col-md-2 col-md-offset-2">');
+print('<label for="nom_notaire" class="col-form-label">Nom Notaire:</label>');
+print("<input type=text name=nom_notaire id=nom_notaire size=15 maxlength=30 value=\"$gst_nom_notaire\" class=\"form-control\">");
+print('</div>');
+
+print('<div class="form-group col-md-2 col-md-offset-2">');
+print('<label for="prenom_notaire" class="col-form-label">Pr&eacute;nom Notaire:</label>');
+print("<input type=text name=prenom_notaire id=prenom_notaire size=15 maxlength=30 value=\"$gst_prenom_notaire\" class=\"form-control\">");
+print('</div>');
+
+print('<div class="form-check col-md-4">');
+print('<label for="sans_periode" class="form-check-label col-form-label">Liasses sans notaire:</label>');
 if ($gst_sans_notaire=='non')
-   print('   <input type=checkbox name=sans_notaire value=oui unchecked >');
+   print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui unchecked class="form-control form-check-input">');
 else
-   print('   <input type=checkbox name=sans_notaire value=oui checked>');
-print('   <br>');
-print('</div>');
-print('<br>');
-print('<div style="text-align:center">');
-print('   Premi&egrave;re cote: ');
-print("   <input type=text name=cote_debut size=5 MAXLENGTH=5 value=\"$gst_cote_debut\" onKeyPress=\"SoumissionSimple(0,event)\">");
-print('   Derni&egrave;re cote: ');
-print("   <input type=text name=cote_fin size=5 MAXLENGTH=5 value=\"$gst_cote_fin\" onKeyPress=\"SoumissionSimple(0,event)\"> ");
-print('   <br><br>');
+   print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui checked class="form-control form-check-input">');
 print('</div>');
 
-print('<div style="text-align:center">');
-print('   R&eacute;pertoires: ');
+print('</div>');
+
+print('<div class="form-row col-md-12">');
+print('<div class="form-group col-md-4 col-md-offset-2">');
+print('<label for="cote_debut" class="col-form-label">Premi&egrave;re cote:</label>');
+print("<input type=text name=cote_debut id=cote_debut size=5 maxlength=5 value=\"$gst_cote_debut\" class=\"form-control\">");
+print('</div>');
+
+print('<div class="form-group col-md-4">');
+print('<label for="cote_fin" class="col-form-label">Derni&egrave;re cote:</label>');
+print("<input type=text name=cote_fin id=cote_fin size=15 maxlength=30 value=\"$gst_cote_fin\" class=\"form-control\">");
+print('</div>');
+print('</div>');
+
+print('<div class="form-row col-md-12">');
+print('<div class="form-check col-md-4 col-md-offset-2">');
+print('<label for="repertoire" class="form-check-label">R&eacute;pertoires:</label>');
 if ($gst_repertoire=='non')
-	print('   <input type=checkbox name=repertoire value=oui unchecked >');
+	print('   <input type=checkbox name=repertoire id=repertoire value=oui unchecked class="form-control form-check-input">');
 else
-	print('   <input type=checkbox name=repertoire value=oui checked>');
-print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Liasses relev&eacute;es (CM retranscrits): ');
-if ($gst_liasse_releve=='non')
-	print('   <input type=checkbox name=liasse_releve value=oui unchecked >');
-else
-	print('   <input type=checkbox name=liasse_releve value=oui checked>');
-print('   <br>');
+	print('   <input type=checkbox name=repertoire id=repertoire value=oui checked class="form-control form-check-input">');
 print('</div>');
 
-print('<div style="text-align:center"><br>');
-print('   <input type=button name=Rechercher value="Rechercher" onClick="VerifieChampsRecherche(0,\'RechercheSimple\')">');
-print('   <input type=button value="Effacer tous les Champs"  onClick="RazChamps(0)">');
-print('</div> ');
+print('<div class="form-check col-md-4">');
+print('<label for="liasse_releve" class="form-check-label">Liasses relev&eacute;es (CM retranscrits):</label>');
+if ($gst_repertoire=='non')
+	print('   <input type=checkbox name=liasse_releve id=liasse_releve value=oui unchecked class="form-control form-check-input">');
+else
+	print('   <input type=checkbox name=liasse_releve id=liasse_releve value=oui checked class="form-control form-check-input">');
+print('</div>');
+
+print('</div>');
+
+print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
+print('<button type=submit name=Rechercher class="btn btn-primary">Rechercher</button>');
+print('<button type=button name="raz" class="btn btn-warning raz">Effacer tous les Champs</button>');
+print('</div>');
+
+
 print("</form>");
+print('</div>');
 print("</body>");
 print("</html>");
-//print_r($_SESSION);
-//$connexionBD->ferme(); 
+
 ?>
