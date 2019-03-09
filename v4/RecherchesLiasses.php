@@ -17,12 +17,27 @@ print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='./VerifieChampsRechercheLiasse.js' type='text/javascript'></script>\n");
 print("<script src='./Commun/jquery-min.js' type='text/javascript'></script>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
+print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
+print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>");
+print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
+print("<script src='js/select2.min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
+?>
+<script type='text/javascript'>
+$(document).ready(function() {
+$(".js-select-avec-recherche").select2();
+});
+</script>
+<?php
 print("</head>");
 
 print("<body>");
 print('<div class="container">');
-//print("Vous etes authentifi&eacute; :-)<br>");
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("./Commun/menu.php");
@@ -92,7 +107,7 @@ $a_communes_acte[-9] = 'Commune inconnue';
 
 $a_serie_liasse = $connexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 						 
-print('<form id="recherche" method="post" class="form-inline">');
+print('<form id="recherche" method="post" class="form-inline" target="ReponsesLiasseSimple.php">');
 
 
 print('<div class="form-row col-md-12">');
@@ -118,7 +133,6 @@ print('</select></div>');
 print("<div class=\"form-group col-md-4\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");
 
 print('<div class="form-check col-md-2">');
-
 if ($gst_paroisses_rattachees=='')
    print('<input type=checkbox name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui class="form-check-input">');
 else
