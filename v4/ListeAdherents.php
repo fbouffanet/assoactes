@@ -610,9 +610,9 @@ function menu_ajouter($padherent)
 	print('<div class="col-md-6">');
 	print($padherent->formulaire_infos_agc());
 	print($padherent->formulaire_droits_adherents());
-	print('</div>');
-	   
-	print("</div>\n");      
+	print('</div>');	   
+	print("</div>\n");
+        
 	print('<div class="form-row col-md-12">');
   print('<div class="btn-group col-md-4 col-md-offset-4">');
   print('<button type=submit class="btn btn-primary">Ajouter</button>');
