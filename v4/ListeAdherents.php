@@ -113,7 +113,43 @@ $(document).ready(function() {
     print $adherent->regles_validation();
   ?>
   ,
+  errorElement: "em",
+	errorPlacement: function ( error, element ) {
+		// Add the `help-block` class to the error element
+		error.addClass( "help-block" );
+
+		// Add `has-feedback` class to the parent div.form-group
+		// in order to add icons to inputs
+		element.parents( ".col-sm-5" ).addClass( "has-feedback" );
+
+		if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+		} else {
+				error.insertAfter( element );
+		}
+
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			 $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			 $( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}
+  ,
 	 submitHandler: function(form) {
+    alert('test');
 		var nom =$("#nom").val().toUpperCase();
       $("#nom").val(nom);
 			var prenom=$("#prenom").val();
@@ -130,6 +166,41 @@ $(document).ready(function() {
     print $adherent->regles_validation();
   ?>
   ,
+  errorElement: "em",
+	errorPlacement: function ( error, element ) {
+		// Add the `help-block` class to the error element
+		error.addClass( "help-block" );
+
+		// Add `has-feedback` class to the parent div.form-group
+		// in order to add icons to inputs
+		element.parents( ".col-sm-5" ).addClass( "has-feedback" );
+
+		if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+		} else {
+				error.insertAfter( element );
+		}
+
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			 $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			 $( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}
+   ,   
 	 submitHandler: function(form) {
 		  var nom =$("#nom").val().toUpperCase();
       $("#nom").val(nom);
@@ -186,6 +257,23 @@ $(document).ready(function() {
   });
     
   $("#liste_adherents").validate({
+  errorElement: "em",
+		errorPlacement: function ( error, element ) {
+		// Add the `help-block` class to the error element
+		error.addClass( "help-block" );
+		if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+      } else {
+				error.insertAfter( element );
+  				}
+			},
+			highlight: function ( element, errorClass, validClass ) {
+					$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+			},
+			unhighlight: function (element, errorClass, validClass) {
+					$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+			}
+   , 
   submitHandler: function(form) {
     var adherents='';
     var nb_adherents=0;
@@ -511,7 +599,7 @@ function menu_modifier($padherent,$pi_idf_adherent)
 function menu_ajouter($padherent)
 {
   global $gst_ident; 
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"ajout_adherent\" class=\"form-inline\">");
+	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"ajout_adherent\">");
 	print("<input type=hidden name=mode id=mode_ajouter value=AJOUTER>");
 	print('<div class="row col-md-12">');
 	print('<div class="col-md-6">');
@@ -525,10 +613,6 @@ function menu_ajouter($padherent)
 	print('</div>');
 	   
 	print("</div>\n");      
-	print("</form>");
-   
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<input type=hidden name=mode value=LISTE>");
 	print('<div class="form-row col-md-12">');
   print('<div class="btn-group col-md-4 col-md-offset-4">');
   print('<button type=submit class="btn btn-primary">Ajouter</button>');

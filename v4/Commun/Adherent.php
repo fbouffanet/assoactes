@@ -280,7 +280,7 @@ class Adherent
       if (a_droits($this->st_ident_modificateur,DROIT_GESTION_ADHERENT))
       {
 		$st_chaine .= '<div class="form-group row">';  
-        $st_chaine .= sprintf("<label for=\"no_adht\" class=\"col-md-4 col-form-label\">N° d'adh&eacute;rent</label>");
+        $st_chaine .= sprintf("<label for=\"no_adht\" class=\"col-md-4 col-form-label control-label\">N° d'adh&eacute;rent</label>");
 		$st_chaine .= '<div class="col-md-8">';
 		$st_chaine .= sprintf("<input type=\"text\" value=\"%d\" id=\"no_adht\" size=5 readonly class=\"form-control\">",$this -> i_idf);
 		$st_chaine .=  "<label for=\"statut_adherent\" class=\"sr-only\">Statut</label><select name=statut_adherent id=statut_adherent class=\"form-control\">";
@@ -309,7 +309,7 @@ class Adherent
         $st_readonly = $pb_gestionnaire ? 'readonly' : '';
         // L'administrateur n'est pas supposé changer l'identifiant d'un utilisateur
 		$st_chaine .= '<div class="form-group row">';
-        $st_chaine .= sprintf("<label for=\"ident_adh\" class=\"col-md-4  col-form-label\">Votre identifiant (base ".SIGLE_ASSO.")</label>");
+        $st_chaine .= sprintf("<label for=\"ident_adh\" class=\"col-md-4 col-form-label\">Votre identifiant (base ".SIGLE_ASSO.")</label>");
 		$st_chaine .= '<div class="col-md-8">';
 		$st_chaine .= sprintf("<input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adh value=\"%s\" $st_readonly>",$this->st_ident);
 		if (!empty($gst_administrateur_gbk))
@@ -320,49 +320,49 @@ class Adherent
 	  $st_chaine .= '</div>';
 	  
       $st_chaine .= '<div class="form-group row">';
-	  $st_chaine .= sprintf("<label for=\"nom\" class=\"col-md-4 col-form-label\">Nom</label>");
+	  $st_chaine .= sprintf("<label for=\"nom\" class=\"col-md-4 col-form-label control-label\">Nom</label>");
 	  $st_chaine .= '<div class="col-md-8">';
 	  $st_chaine .= sprintf("<input type=text maxlength=20 size=20 name=nom id=nom value=\"%s\" class=\"form-control text-uppercase \">",$this->st_nom);
 	  $st_chaine .= '</div>';
 	  $st_chaine .= '</div>';
 	  
 	  $st_chaine .=  '<div class="form-group row">';
-      $st_chaine .= sprintf("<label for=\"prenom\" class=\"col-md-4 col-form-label\">Pr&eacute;nom</label>");
+      $st_chaine .= sprintf("<label for=\"prenom\" class=\"col-md-4 col-form-label control-label\">Pr&eacute;nom</label>");
 	  $st_chaine .=  '<div class="col-md-8">';
 	  $st_chaine .= sprintf("<input type=text maxlength=30 size=20 name=prenom id=prenom value=\"%s\" class=\"form-control text-capitalize\">",$this->st_prenom);
       $st_chaine .= '</div>';
 	  $st_chaine .= '</div>';
 
 	  $st_chaine .= '<div class="form-group row">';
-      $st_chaine .= sprintf("<label for=\"adr1\" class=\"col-md-4 col-form-label\">Adresse 1</label>");
+      $st_chaine .= sprintf("<label for=\"adresse1\" class=\"col-md-4 col-form-label control-label\">Adresse 1</label>");
 	  $st_chaine .=  '<div class="col-md-8">';
-	  $st_chaine .= sprintf("<input type=text maxlength=40 size=40 name=adr1 id=adr1 value=\"%s\" class=\"form-control col-md-8\">",$this->st_adresse1);
+	  $st_chaine .= sprintf("<input type=text maxlength=40 size=40 name=adresse1 id=adresse1 value=\"%s\" class=\"form-control col-md-8\">",$this->st_adresse1);
 	  $st_chaine .= '</div>';
 	  $st_chaine .= '</div>';
 	  
 	  $st_chaine .= '<div class="form-group row">';
-      $st_chaine .= sprintf("<label for=\"adr2\" class=\"col-md-4 col-form-label\">Adresse 2</label>");
+      $st_chaine .= sprintf("<label for=\"adresse2\" class=\"col-md-4 col-form-label control-label\">Adresse 2</label>");
 	  $st_chaine .=  '<div class="col-md-8">';
-	  $st_chaine .= sprintf("<input type=text maxlength=40 size=40 name=adr2 id=adr2 value=\"%s\" class=\"form-control col-md-8\">",$this->st_adresse2);
+	  $st_chaine .= sprintf("<input type=text maxlength=40 size=40 name=adresse2 id=adresse2 value=\"%s\" class=\"form-control col-md-8\">",$this->st_adresse2);
 	  $st_chaine .= '</div>';
 	  $st_chaine .= '</div>';
       
 	  $st_chaine .= '<div class="form-group row">';
-	  $st_chaine .= sprintf("<label for=\"cp\" class=\"col-md-4 col-form-label\">Code Postal</label>");
+	  $st_chaine .= sprintf("<label for=\"code_postal\" class=\"col-md-4 col-form-label control-label\">Code Postal</label>");
 	  $st_chaine .=  '<div class="col-md-8">';
-	  $st_chaine .= sprintf("<input type=text maxlength=12 size=12 name=cp id=cp value=\"%s\" class=\"form-control col-md-8\">",$this->st_code_postal);
+	  $st_chaine .= sprintf("<input type=text maxlength=12 size=12 name=code_postal id=code_postal value=\"%s\" class=\"form-control col-md-8\">",$this->st_code_postal);
 	  $st_chaine .= '</div>';
 	  $st_chaine .= '</div>';
 	  
 	  $st_chaine .= '<div class="form-group row">';
-      $st_chaine .= sprintf("<label for=\"commune\" class=\"col-md-4 col-form-label\">Localit&eacute;</label>");
+      $st_chaine .= sprintf("<label for=\"ville\" class=\"col-md-4 col-form-label control-label\">Localit&eacute;</label>");
 	  $st_chaine .=  '<div class="col-md-8">';
-	  $st_chaine .= sprintf("<input type=text maxlength=40 size=20 name=commune id=commune value=\"%s\" class=\"form-control col-md-8\">",$this->st_ville);
+	  $st_chaine .= sprintf("<input type=text maxlength=40 size=20 name=ville id=ville value=\"%s\" class=\"form-control col-md-8\">",$this->st_ville);
 	  $st_chaine .= '</div>';  
 	  $st_chaine .= '</div>';
       
       $st_chaine .=  '<div class="form-group row">';	  
-      $st_chaine .= "<label for=\"pays\" class=\"col-md-4 col-form-label\">Pays</label>";
+      $st_chaine .= "<label for=\"pays\" class=\"col-md-4 col-form-label control-label\">Pays</label>";
 	  $st_chaine .=  '<div class="col-md-8">';
 	  $st_chaine .= "<select name=pays id=pays class=\"form-control col-md-8 js-select-avec-recherche\">";
 	  $st_chaine .= chaine_select_options_simple($this->st_pays,$ga_pays);
@@ -374,26 +374,26 @@ class Adherent
 	  $st_checked =$this->b_confidentiel ? "checked": '';
 	  $st_chaine .= sprintf("<input type=checkbox name=confidentiel id=confidentiel value=\"O\" %s class=\"form-check-input \"col-md-2\">",$st_checked);
 	  $st_chaine .=  '<div class="col-md-10">';
-	  $st_chaine .= "<label for=\"confidentiel\" class=\"form-check-label col-form-label\" >Cochez et l'adresse devient invisible aux adh&eacute;rents</label>";
+	  $st_chaine .= "<label for=\"confidentiel\" class=\"form-check-label col-form-label control-label\" >Cochez et l'adresse devient invisible aux adh&eacute;rents</label>";
 	  $st_chaine .= '</div>';
 	  $st_chaine .= '</div>';
 	  
 	  $st_chaine .=  '<div class="form-group row">';
-	  $st_chaine .= sprintf("<label for=\"email_forum\" class=\"col-md-4 col-form-label\">Email forum</label>");
+	  $st_chaine .= sprintf("<label for=\"email_forum\" class=\"col-md-4 col-form-label control-label\">Email forum</label>");
 	  $st_chaine .=  '<div class="col-md-8">';
 	  $st_chaine .= sprintf("<input type=text maxlength=60 size=40 name=email_forum id=email_forum value=\"%s\" class=\"form-control\">",$this->st_email_forum);
 	  $st_chaine .= '</div>';
       $st_chaine .= '</div>'; 
 	  
 	  $st_chaine .=  '<div class="form-group row">';
-      $st_chaine .= sprintf("<label for=\"site_adht\" class=\"col-md-4 col-form-label\">Site web</label>");
+      $st_chaine .= sprintf("<label for=\"site_adht\" class=\"col-md-4 col-form-label control-label\">Site web</label>");
 	  $st_chaine .=  '<div class="col-md-8">';
 	  $st_chaine .= sprintf("<input type=text maxlength=60 size=40 name=site_adht id=site_adht value=\"%s\" class=\"form-control\">",$this->st_site);
 	  $st_chaine .= '</div>';
       $st_chaine .= '</div>'; 
 
       $st_chaine .= '<div class="form-group row">';	  
-	  $st_chaine .= sprintf("<label for=\"email_perso\" class=\"col-md-4 col-form-label\">Email perso</label>");
+	  $st_chaine .= sprintf("<label for=\"email_perso\" class=\"col-md-4 col-form-label control-label\">Email perso</label>");
 	  $st_chaine .=  '<div class="col-md-8">';
 	  $st_chaine .= sprintf("<input type=text maxlength=60 size=40 name=email_perso id=email_perso value=\"%s\" class=\"form-control\" aria-describedby=\"UsageEmailPerso\">",$this->st_email_perso);
       $st_chaine .= "<small id=\"UsageEmailPerso\">Donn&eacute;es accessibles uniquement aux gestionnaires de l'association</small>";	  
@@ -401,7 +401,7 @@ class Adherent
       $st_chaine .= '</div>'; 	  
 	  
       $st_chaine .= '<div class="form-group row">';	  	  
-      $st_chaine .= sprintf("<label for=\"telephone\" class=\"col-md-4 col-form-label\">T&eacute;l&eacute;phone</label>");
+      $st_chaine .= sprintf("<label for=\"telephone\" class=\"col-md-4 col-form-label control-label\">T&eacute;l&eacute;phone</label>");
 	  $st_chaine .=  '<div class="col-md-8">';
 	  $st_chaine .= sprintf("<input type=text maxlength=15 size=10 name=tel id=tel value=\"%s\" aria-describedby=\"UsageTelephone\" class=\"form-control\">",$this->st_tel);
 	  $st_chaine .= "<small id=\"UsageTelephone\">Donn&eacute;es accessibles uniquement aux gestionnaires de l'association</small>";
@@ -474,39 +474,39 @@ class Adherent
       if (a_droits($this->st_ident_modificateur,DROIT_GESTION_ADHERENT))
       {
 	    $st_chaine .= '<div class="form-group row">';
-        $st_chaine .= sprintf("<label for=\"ident_adht_adm\" class=\"col-md-4 col-form-label\">Identifiant</label>");
+        $st_chaine .= sprintf("<label for=\"ident_adht_adm\" class=\"col-md-4 col-form-label control-label \">Identifiant</label>");
 		$st_chaine .=  '<div class="col-md-8">';
 		$st_chaine .= sprintf("<input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adht_adm value=\"%s\" class=\"form-control\">",$this->st_ident);
         $st_chaine .=  '</div>';
 	    $st_chaine .=  '</div>';
 	     $st_chaine .= '<div class="form-group row">';
         $this->a_filtres_parametres["ident_adh"] = array(array("required", "true", "L'identifiant est obligatoire"));
-        $st_chaine .= sprintf("<label for=\"infos_agc\" class=\"col-md-4 col-form-label\" >Infos ".SIGLE_ASSO."</label>");
+        $st_chaine .= sprintf("<label for=\"infos_agc\" class=\"col-md-4 col-form-label control-label\" >Infos ".SIGLE_ASSO."</label>");
 		$st_chaine .=  '<div class="col-md-8">';
 		$st_chaine .= sprintf("<textarea name=\"infos_agc\" id=\"infos_agc\" cols=\"60\" rows=\"10\" class=\"form-control\">%s</textarea>",$this->st_infos_agc);
         $st_chaine .=  '</div>';
 	    $st_chaine .= '</div>';
 	    $st_chaine .= '<div class="form-group row">';
-        $st_chaine .= sprintf("<label for=\"date_premiere_adhesion\" class=\"col-md-4 col-form-label\">Date de premi&egrave;re adh&eacute;sion</label>");
+        $st_chaine .= sprintf("<label for=\"date_premiere_adhesion\" class=\"col-md-4 col-form-label control-label\">Date de premi&egrave;re adh&eacute;sion</label>");
 		$st_chaine .=  '<div class="col-md-8">';
 		$st_chaine .= sprintf("<input name=\"date_premiere_adhesion\"  id=\"date_premiere_adhesion\" value=\"%s\" size=\"10\" maxlength=\"10\" type=\"text\" class=\"form-control\">",$this->st_date_premiere_adhesion);
         $st_chaine .=  '</div>';
 	    $st_chaine .=  '</div>';     
 	    $st_chaine .= '<div class="form-group row">';
-        $st_chaine .= sprintf("<label for=\"date_paiement\" class=\"col-md-4 col-form-label\">Date de paiement</label>");
+        $st_chaine .= sprintf("<label for=\"date_paiement\" class=\"col-md-4 col-form-label control-label\">Date de paiement</label>");
 		$st_chaine .=  '<div class="col-md-8">';
 		$st_chaine .= sprintf("<input name=\"date_paiement\" id=\"date_paiement\" value=\"%s\" size=\"10\" maxlength=\"10\" type=\"text\" class=\"form-control\"> ",$this->st_date_paiement);
         $st_chaine .=  '</div>';
 	    $st_chaine .=  '</div>';      
 	    $st_chaine .= '<div class="form-group row">';
-        $st_chaine .= sprintf("<label for=\"prix\" class=\"col-md-4 col-form-label\" >prix:</label>");
+        $st_chaine .= sprintf("<label for=\"prix\" class=\"col-md-4 col-form-label control-label\" >prix:</label>");
 		$st_chaine .=  '<div class="col-md-8">';
 		$st_chaine .= sprintf("<input name=\"prix\" value=\"%d\" id=\"prix\" size=\"2\" maxlength=\"2\" type=\"text\" class=\"form-control\">",$this->i_prix);
         $st_chaine .=  '</div>';
 	    $st_chaine .=  '</div>';
 		
 	    $st_chaine .= '<div class="form-group row">';        
-        $st_chaine .= sprintf("<label for=\"annee_cotisation\" class=\"col-md-4 col-form-label\">ann&eacute;e de cotisation</label>");
+        $st_chaine .= sprintf("<label for=\"annee_cotisation\" class=\"col-md-4 col-form-label control-label\">ann&eacute;e de cotisation</label>");
 		$st_chaine .=  '<div class="col-md-6">';
 		$st_chaine .= sprintf("<input name=\"annee_cotisation\" id=\"annee_cotisation\" value=\"%d\" size=\"4\" maxlength=\"4\" type=\"text\" class=\"form-control\">",$this->i_annee_cotisation);
         $st_chaine .= '</div>';		
@@ -518,28 +518,28 @@ class Adherent
         $st_chaine .=  '</div>';
 		
 	    $st_chaine .= '<div class="form-group row">';
-        $st_chaine .= sprintf("<label for=\"ip_restreinte\" class=\"col-md-4 col-form-label\">IP restreinte</label>");
+        $st_chaine .= sprintf("<label for=\"ip_restreinte\" class=\"col-md-4 col-form-label control-label\">IP restreinte</label>");
 		$st_chaine .=  '<div class="col-md-8">';
 		$st_chaine .= sprintf("<input type=\"text\" maxlength=15 size=15 name=ip_restreinte id=ip_restreinte value=\"%s\" class=\"form-control\">",$this->st_ip_restreinte);
         $st_chaine .=  '</div>';
 	    $st_chaine .=  '</div>';
 	    
 		$st_chaine .= '<div class="form-group row">';
-        $st_chaine .= sprintf("<label for=\"max_nai\" class=\"col-md-4 col-form-label\">Quota Naissance</label>");
+        $st_chaine .= sprintf("<label for=\"max_nai\" class=\"col-md-4 col-form-label control-label\">Quota Naissance</label>");
 		$st_chaine .=  '<div class="col-md-8">';
 		$st_chaine .= sprintf("<input type=\"text\" maxlength=4 size=4 name=\"max_nai\" id=\"max_nai\" value=\"%d\" class=\"form-control\">",$this->i_max_nai);
         $st_chaine .=  '</div>';
 	    $st_chaine .=  '</div>';
         
 	    $st_chaine .= '<div class="form-group row">';
-        $st_chaine .= sprintf("<label for=\"max_mar_div\" class=\"col-md-4 col-form-label\">Quota Mariage/Divers</label>");
+        $st_chaine .= sprintf("<label for=\"max_mar_div\" class=\"col-md-4 col-form-label control-label\">Quota Mariage/Divers</label>");
 		$st_chaine .=  '<div class="col-md-8">';
 		$st_chaine .= sprintf("<input type=\"text\" maxlength=4 size=4 name=\"max_mar_div\" id=\"max_mar_div\" value=\"%d\" class=\"form-control\">",$this->i_max_mar_div);
         $st_chaine .=  '</div>';
 	    $st_chaine .=  '</div>';
         
 	    $st_chaine .= '<div class="form-group row">';  
-        $st_chaine .= sprintf("<label for=\"max_dec\" class=\"col-md-4 col-form-label\">Quota D&eacute;c&eacute;s</label>");
+        $st_chaine .= sprintf("<label for=\"max_dec\" class=\"col-md-4 col-form-labelc ontrol-label\">Quota D&eacute;c&eacute;s</label>");
 		$st_chaine .=  '<div class="col-md-8">';
 		$st_chaine .= sprintf("<input type=\"text\" maxlength=4 size=4 name=\"max_dec\" id=\"max_dec\" value=\"%d\" class=\"form-control\">",$this->i_max_dec);
         $st_chaine .=  '</div>';
