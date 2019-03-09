@@ -81,8 +81,8 @@ function affiche_entete_liens_navigation($pi_num_page_cour,$pi_nb_pages)
 {
    $i_deb = ($pi_num_page_cour-DELTA_NAVIGATION)>0 ? ($pi_num_page_cour-DELTA_NAVIGATION) : 1;
    $i_fin = ($pi_num_page_cour+DELTA_NAVIGATION)<=$pi_nb_pages? $pi_num_page_cour + DELTA_NAVIGATION : $pi_nb_pages;
-
-   print('<ul class="pagination justify-content-center">');
+   print('<div class="text-center">');
+   print('<ul class="pagination">');
    if ($i_deb>1)
       print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?num_page_statcom=1\" class=\"page-item\">D&eacute;but</a></li> ");     
    if ($i_deb<$i_fin)
@@ -97,7 +97,8 @@ function affiche_entete_liens_navigation($pi_num_page_cour,$pi_nb_pages)
    }
    if ($i_fin<$pi_nb_pages)
       print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?num_page_statcom=$pi_nb_pages\">Fin</a></li>");
-   print("</ul>");   
+   print("</ul>");
+   print('</div>');   
 }
 
 print("<body>");
@@ -179,7 +180,8 @@ switch ($gst_mode) {
      print('<div class="form-row">');
      if (count($a_initiales_communes)>0)
      {
-		print('<ul class="pagination justify-content-center">'); 
+        print('<div class="text-center">');
+		    print('<ul class="pagination">'); 
         $i_session_initiale = isset($_SESSION['initiale_statcom']) ? $_SESSION['initiale_statcom'] : $a_initiales_communes[0];
         $gc_initiale = empty($_GET['initiale_statcom']) ? $i_session_initiale : $_GET['initiale_statcom'];   
         if (!in_array($gc_initiale,$a_initiales_communes))
@@ -193,6 +195,7 @@ switch ($gst_mode) {
            print("<li class=\"page-item\"><a class=\"page-link\" href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=$c_initiale&amp;idf_source=$gi_idf_source\">$c_initiale</a></li>");
         }
         print("</ul>");
+        print('</div>');
      }
      print('</div>');
      //Calcul de la liste complète des communes commencant par l'initiale
