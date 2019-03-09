@@ -339,7 +339,8 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"liste_adherents\" method=\"post\" class=\"form-inline\">");
    print("<input type=hidden name=mode id=\"mode_selection\" value=\"LISTE\">");
    print('<div class="form-row">'); 
-   print('<ul class="pagination justify-content-center">');
+   print('<div class="text-center">');
+   print('<ul class="pagination">');
    if ($pst_nom_a_chercher=='')
    {
      $i_session_initiale = isset($_SESSION['initiale_adh']) ? $_SESSION['initiale_adh'] : $a_initiales_adherents[0];
@@ -361,6 +362,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
         print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_adh=$c_initiale\">$c_initiale</a></li>");
    }
    print("</ul></div>");
+   print("</div>");
    
    
    $pst_nom_a_chercher = str_replace('*','%',$pst_nom_a_chercher);  
