@@ -64,7 +64,7 @@ function affiche_menu()
    print('<div class="col-md-4 col-md-offset-4">');
    print('<div class="btn-group-vertical " role="group">');
    print('<button type=submit class="btn btn-primary">Demander un nouveau mot de passe</button>');   
-   print('<button type="button" id=ferme class="btn btn-warning raz">Annuler</button>');
+   print('<button type="button" id=ferme class="btn btn-warning">Annuler</button>');
    print("</div></div></div>");
    print("<input type=\"hidden\" name=\"mode\" value=\"DEMANDE\"></div>\n");
    print('</form></div>');
@@ -90,14 +90,13 @@ function verifie_demande($pst_email)
   $st_requete = "SELECT idf FROM adherent where email_perso=:email_perso";
   $i_idf = $connexionBD->sql_select1($st_requete);
   if (!empty($i_idf))
-  {
-    
+  {   
     $adherent = new Adherent($connexionBD,$i_idf);
     if ($adherent-> demande_nouveau_mdp())
     {
        print("<div class=\"text-center alert alert-success\">Un email dont le titre est \"Demande d'un nouveau mot de passe AGC\" a &eacute;t&eacute; envoy&eacute; &agrave; l'adresse $pst_email<br>");
        print("Vous devrez confirmer votre demande en cliquant sur le lien contenu dans ce mail<br>");
-       print("Merci<br></div>");      
+       print("Merci</div>");      
     }	
     else
     {
@@ -114,8 +113,10 @@ function verifie_demande($pst_email)
   {
      print("<div class=\"text-center alert alert-danger\">Votre adresse email n'a pas &eacute;t&eacute; reconnue</div>");
   }
-  print('<div class="form-row">');
-  print('<input type="button" value="Annuler" id=ferme class="btn btn-warning raz col-md-4 col-md-offset-4">');
+  print('</div></div>');
+  print('<div class="row col-md-12">');
+  print('<div class="col-md-4 col-md-offset-4">');
+  print('<button type="button" id=ferme class="btn btn-warning">Annuler</button>');
   print('</div></div>'); 
 } 
 
