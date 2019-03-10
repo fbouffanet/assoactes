@@ -13,7 +13,7 @@ print('<title>Bienvenue sur la base de l\'AGC !</title>');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
+print("<script src='css/jquery-min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 //script Google Analytics -- debut
