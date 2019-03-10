@@ -190,11 +190,11 @@ function affiche_menu_auth($pst_message)
      print("<div class=\"alert alert-danger\">$pst_message</div>");
   }  
   print('<label for="ident" class="col-md-6 col-form-label"> Identifiant:</label>');
-  print('<div class="form-group col-md-6">');
+  print('<div class="col-md-6">');
   print("<input type=\"text\" name=\"ident\" id=\"ident\" size=\"30\" maxlength=\"30\" class=\"js-select-avec-recherche form-control\">\n");
   print('</div>'); 
   print('<label for="mdp" class="col-md-6 col-form-label">Mot de passe:</label>');
-  print('<div class="form-group col-md-6 ">');
+  print('<div class="col-md-6 ">');
   print("<input type=\"password\" name=\"mdp\" id=\"mdp\" size=\"30\" maxlength=\"30\" class=\"js-select-avec-recherche form-control\">\n");
   print("</div>\n");
   print('<div class="form-row">');
