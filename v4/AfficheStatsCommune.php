@@ -15,12 +15,12 @@ print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>");
-print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>");
+print("<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/sjquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
 print('<title>Base AGC: Etat des relevés</title>');
@@ -144,13 +144,19 @@ print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" class=\"form-i
 
 switch ($gst_mode) {
   case 'LISTE' : 
-     print('<div class="form-row col-md-12"><div class="form-group col-md-8"><label for="idf_source" class="form-check-label">Source</label><select name=idf_source id=idf_source class="form-control">');
+     print('<div class="form-row col-md-12">');
+	 print('<label for="idf_source" class="col-form-label col-md-2 col-md-offset-2">Source</label>');
+	 print('<div class="col-md-4">');
+	 print('<select name=idf_source id=idf_source class="form-control">');
      print(chaine_select_options($gi_idf_source,$a_sources));
      print('</select></div></div>');
-     print('<div class="form-row col-md-12"> <div class="form-group col-md-10">');
-     print("<label for=\"commune_a_chercher\" class=\"form-check-label\">Commune</label><input name=\"commune_a_chercher\"  id=\"commune_a_chercher\" value=\"$gst_commune_a_chercher\" size=\"25\" maxlength=\"50\" type=\"Text\" class=\"form-control\" aria-describedby=\"aideCommune\">");
+     print('<div class="form-row col-md-12">');
+	 
+     print("<label for=\"commune_a_chercher\" class=\"col-form-label col-md-2 col-md-offset-2\">Commune</label>");
+	 print('<div class="col-md-8">');
+	 print("<input name=\"commune_a_chercher\"  id=\"commune_a_chercher\" value=\"$gst_commune_a_chercher\" size=\"25\" maxlength=\"50\" type=\"Text\" class=\"form-control\" aria-describedby=\"aideCommune\">");
 	 print('<small id="aideCommune" class="form-text text-muted">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: saint*)</small></div>');
-     print('<div class="form-group col-md-2"><button type=submit class="btn btn-primary">Chercher</button></div>');
+     print('<div class="form-group col-md-2 col-md-offset-5"><button type=submit class="btn btn-primary">Chercher</button></div>');
      print('</div>');
      
 	 // Affichage des initiales
@@ -395,7 +401,8 @@ switch ($gst_mode) {
      {
         print("Pas d'actes");
      }
-     print("<div class=\"row\"><input type=button value=\"Liste des communes\" id=\"liste_communes\"></div>");
+     print("<div class=\"row\">");
+	 print("<button type=button id=\"liste_communes\" class=\"btn btn-primary col-md-4 col-md-offset-4\">Liste des communes</button>");
      print("</div>");
      $pf=@fopen("$gst_rep_logs/requetes_depouillements.log",'a');
      date_default_timezone_set($gst_time_zone);
