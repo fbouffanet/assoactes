@@ -13,13 +13,13 @@ print('<title>Base AGC: Vos recherches</title>');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
-print("<link href='Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>");
-print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>");
+print("<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='js/select2.min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
@@ -476,19 +476,19 @@ print('<div class="panel-body">');
 print('<form id="recherches_communes" class="form-inline">');
 print("<input type=hidden name=recherche value=\"\">");
 print('<div class="form-row col-md-12">');
-print('<div class="form-group form-group col-md-4"><label for="idf_source_recherches_communes">Source:</label><select name="idf_source_recherches_communes" id="idf_source_recherches_communes" class="js-select-avec-recherche form-control">');
+print('<div class="form-group form-group col-md-4"><label for="idf_source_recherches_communes">Source</label><select name="idf_source_recherches_communes" id="idf_source_recherches_communes" class="js-select-avec-recherche form-control">');
 $a_sources[0] = 'Toutes';
 print(chaine_select_options($gi_idf_source,$a_sources));
 print('</select></div>');
 
-print('<div class="form-group col-md-offset-2 col-md-6"><label for="idf_type_acte_recherches_communes">Type d\'acte:</label><select name="idf_type_acte_recherches_communes" id="idf_type_acte_recherches_communes" class="js-select-avec-recherche form-control">');
+print('<div class="form-group col-md-offset-2 col-md-6"><label for="idf_type_acte_recherches_communes">Type d\'acte</label><select name="idf_type_acte_recherches_communes" id="idf_type_acte_recherches_communes" class="js-select-avec-recherche form-control">');
 $a_types_acte[0] = 'Tous';
 print(chaine_select_options($gi_idf_type_acte,$a_types_acte));
 print('</select>');
 print('</div></div>');
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-6"><label for="idf_commune_recherches_communes">Commune/Paroisse:</label><select name="idf_commune_recherches_communes" id="idf_commune_recherches_communes" class="js-select-avec-recherche form-control">');
+print('<div class="form-group col-md-6"><label for="idf_commune_recherches_communes">Commune/Paroisse</label><select name="idf_commune_recherches_communes" id="idf_commune_recherches_communes" class="js-select-avec-recherche form-control">');
 $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
 print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
 print('</select></div>');
@@ -576,12 +576,15 @@ print('<input type="hidden" id="releve_type_couple" name="releve_type">');
 
 print('<div class="form-row col-md-12">');
 
-print('<div class="form-group col-md-4">');
-print("<label for=\"nom_epx\">Nom Epoux:</label><input type=text id=nom_epx name=nom_epx size=15 maxlength=30 value=\"$gst_nom_epx\" class=\"form-control\">");
+
+print("<label for=\"nom_epx\" class=\"col-form-label col-md-2\">Nom Epoux</label>");
+print('<div class="col-md-2">');
+print("<input type=text id=nom_epx name=nom_epx size=15 maxlength=30 value=\"$gst_nom_epx\" class=\"form-control\">");
 print('</div>');
 
-print('<div class="form-group col-md-4">');
-print("<label for=\"prenom_epx\">Pr&eacute;nom Epoux:</label><input type=text name=prenom_epx id=prenom_epx size=15 maxlength=30 value=\"$gst_prenom_epx\" class=\"form-control\">");
+print("<label for=\"prenom_epx\" class=\"col-form-label col-md-2\">Pr&eacute;nom Epoux</label>");
+print('<div class="col-md-2">');
+print("<input type=text name=prenom_epx id=prenom_epx size=15 maxlength=30 value=\"$gst_prenom_epx\" class=\"form-control\">");
 print('</div>');
 
 print('<div class="form-check col-md-4">');
@@ -596,13 +599,17 @@ print('</div>'); //fin ligne
 
 print('<div class="form-row col-md-12">');
 
-print('<div class="form-group col-md-4">');
-print('<img src="./images/swap.png" id="echange_patros" alt="Echange les patronymes">');
-print("<label for=\"nom_epse\">Nom Epouse:</label><input type=text id=nom_epse name=nom_epse size=15 maxlength=30 value=\"$gst_nom_epse\" class=\"form-control\">");
+
+
+print("<label for=\"nom_epse\" class=\"col-form-label col-md-2\"><img src=\"./images/swap.png\" id=\"echange_patros\" alt=\"Echange les patronymes\">Nom Epouse</label>");
+print('<div class="col-md-2">');
+print("<input type=text id=nom_epse name=nom_epse size=15 maxlength=30 value=\"$gst_nom_epse\" class=\"form-control\">");
 print('</div>');
 
-print('<div class="form-group col-md-4">');
-print("<label for=\"prenom_epse\">Pr&eacute;nom Epouse:</label><input type=text name=prenom_epse id=prenom_epse size=15 maxlength=30 value=\"$gst_prenom_epse\" class=\"form-control\">");
+
+print("<label for=\"prenom_epse\" class=\"col-form-label col-md-2\">Pr&eacute;nom Epouse</label>");
+print('<div class="col-md-2">');
+print("<input type=text name=prenom_epse id=prenom_epse size=15 maxlength=30 value=\"$gst_prenom_epse\" class=\"form-control\">");
 print('</div>');
 
 print('<div class="col-md-4">');
@@ -617,7 +624,7 @@ print('</div>'); // fin ligne
 
 print('<div class="form-row">');
 
-print('<div class="btn-group" role="group">');
+print('<div class="btn-group col-md-6 col-md-offset-4" role="group">');
 print('<input class="btn btn-primary" type=submit name=Rechercher value="Rechercher le couple">');
 print('<input class="btn btn-warning raz" type=button value="Effacer tous les Champs" name="raz">');
 print('</div>');
@@ -649,47 +656,51 @@ print('<input type="hidden" id="releve_type_personne" name="releve_type">');
 $ga_sexe[0] = 'Tous';
 print('<div class="form-row">');
 
-print('<div class="form-group col-md-2">');
-print('<label for="sexe">Sexe:</label><select name="sexe" id="sexe" class="form-control">');
+print('<label for="sexe" class="col-form-label col-md-1">Sexe</label>');
+print('<div class="col-md-2">');
+print('<select name="sexe" id="sexe" class="form-control">');
 print(chaine_select_options($gst_sexe,$ga_sexe));
 print('</select>');
 print('</div>');
 
-print('<div class="form-group col-md-3">');
-print("<label for=\"nom\">Nom:</label><input type=text name=nom id=nom size=15 maxlength=30 value=\"$gst_nom\" class=\"form-control\">");
+print("<label for=\"nom\" class=\"col-form-label col-md-1\">Nom</label>");
+print('<div class="col-md-2">');
+print("<input type=text name=nom id=nom size=15 maxlength=30 value=\"$gst_nom\" class=\"form-control\">");
 print('</div>');
 
-print('<div class="form-group col-md-3">');
-print("<label for=\"prenom\">Pr&eacute;nom:</label><input type=text name=prenom id=prenom size=15 maxlength=30 value=\"$gst_prenom\" class=\"form-control\">" );
+print("<label for=\"prenom\" class=\"col-form-label col-md-1\">Pr&eacute;nom</label>");
+print('<div class="col-md-2">');
+print("<input type=text name=prenom id=prenom size=15 maxlength=30 value=\"$gst_prenom\" class=\"form-control\">" );
 print('</div>');
 
-print('<div class="form-group col-md-3">');
-print('<label for="idf_type_presence"> Type de pr&eacute;sence<sup>*</sup>:</label><select name="idf_type_presence" id="idf_type_presence" class="form-control" aria-describedby="aideTP">');
+print('<label for="idf_type_presence" class=\"col-form-label col-md-1\">Type de<br>pr&eacute;sence</label>');
+print('<div class="col-md-2">');
+print('<select name="idf_type_presence" id="idf_type_presence" class="form-control" aria-describedby="aideTP">');
 print(chaine_select_options($gi_idf_type_presence,$a_types_presence));
 print('</select>');
 print('<small id="aideTP" class="form-text text-muted">Nim&egrave;gue ne renseignant pas le sexe d\'un parrain, t&eacute;moin ou marraine, ne pas le sp&eacute;cifier dans une recherche de ce type</small>');
 print('</div>');
+print('</div>'); // fin ligne
 
-print('<div class="form-group col-md-1">');
+print('<div class="form-row col-md-12">');
+print("<label for=\"commentaires\" class=\"col-form-label col-md-3\">Recherche libre dans les commentaires</label>");
+print('<div class="col-md-5">');
+print("<input type=text name=commentaires id=commentaires size=40 maxlength=40 value=\"$gst_commentaires\" class=\"form-control\">");
+print('</div>');
+print('<div class="col-md-1">');
 if ($gst_variantes=='')
    print('<input type=checkbox name=variantes id=variantes value=oui class="form-check-input">');
 else
    print('<input type=checkbox name=variantes id=variantes value=oui checked class="form-check-input">');
-print('<label for="variantes" class="form-check-label">Recherche par variantes connues</label>');    
 print('</div>');
-
-print('</div>'); // fin ligne
-
-print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-8">');
-print("<label for=\"commentaires\">Recherche libre dans les commentaires:</label><input type=text name=commentaires id=commentaires size=40 maxlength=40 value=\"$gst_commentaires\" class=\"form-control\">");
+print('<label for="variantes" class="form-check-label col-md-2">Recherche par variantes connues</label>'); 
 print('</div>'); 
 
 print('</div>'); //fin ligne
 
 print('<div class="form-row">');
 
-print('<div class="btn-group" role="group">');
+print('<div class="btn-group col-md-6 col-md-offset-4" role="group">');
 print('<input type=submit name=Rechercher value="Rechercher la personne" class="btn btn-primary">');
 print('<input type=button value="Effacer tous les Champs" name="raz" class="btn btn-warning raz">');
 print('</div>');
