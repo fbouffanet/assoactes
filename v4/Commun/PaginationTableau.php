@@ -333,7 +333,7 @@ class PaginationTableau {
   public function get_pagination($total, $per_page, $current_page = 0) {
 
   $nb_pages = ceil($total/$per_page);
-  $nav = '<ul class="pagination justify-content-center">';
+  $nav = '<div class="text-center"><ul class="pagination">';
   if($current_page > 0){
     $nav .= '<li class="page-item"> <a href="' . $_SERVER['PHP_SELF'] . '?page=0" aria-label="Premi&eacute;re page"><span aria-hidden="true">&laquo;</span> <span class="sr-only">Premi&eagre;re page </span></a></li>';
     $nav .= '<li class="page-item">  <a href="' . $_SERVER['PHP_SELF'] . '?page='. ($current_page-1) .'" aria-label="Page pr&eacute;c&eacute;dente"> Page pr&eacute;c&eacute;dente</a></li>';
@@ -351,7 +351,7 @@ class PaginationTableau {
             $nav .= '<li class="page-item"> <a href="' . $_SERVER['PHP_SELF'] . '?page='. $i .'">' . ($i+1) . '</a></li>';
        }
   }
-  $nav .= '</ul>';
+  $nav .= '</ul></div>';
   return $nav;
 }
    
