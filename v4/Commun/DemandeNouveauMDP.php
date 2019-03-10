@@ -56,15 +56,16 @@ function affiche_menu()
    print('<div class="panel-body">');	
    print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"demande_nouveau_mdp\" >"); 
    print('<div class="form-row">');
-   print('<div class="form-group col-md-4 col-md-offset-4">');  
-   print("<label for=\"email\">Votre adresse e-mail connue par l'AGC :</label>");
+   print("<label for=\"email\" class=\"col-md-6 col-form-label\">Votre adresse e-mail connue par l'AGC :</label>");
+   print('<div class="col-md-4 col-md-offset-4">'); 
    print("<input type=\"text\" name=\"email\" id=\"email\" size=\"30\" maxlength=\"60\" class=\"form-control\">\n"); 
    print("</div></div>");
    print('<div class="form-row">');
-   print('<div class="btn-group-vertical" role="group">');
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Demander un nouveau mot de passe</button>');   
+   print('<div class="col-md-4 col-md-offset-4">');
+   print('<div class="btn-group-vertical " role="group">');
+   print('<button type=submit class="btn btn-primary">Demander un nouveau mot de passe</button>');   
    print('<button type="button" id=ferme class="btn btn-warning raz">Annuler</button>');
-   print("</div></div>");
+   print("</div></div></div>");
    print("<input type=\"hidden\" name=\"mode\" value=\"DEMANDE\"></div>\n");
    print('</form></div>');
 } 
