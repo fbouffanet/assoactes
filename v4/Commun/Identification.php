@@ -107,12 +107,12 @@ function affiche_menu_auth($pst_message)
   print("<link href='$gst_url_site/css/styles.css' type='text/css' rel='stylesheet'>");
   print("<link href='$gst_url_site/css/bootstrap.min.css' rel='stylesheet'>");
    
-  print("<link href='$gst_url_site/Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
-  print("<link href='$gst_url_site/Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
-  print("<link href='$gst_url_site/Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
-  print("<script src='$gst_url_site/Commun/jquery-min.js' type='text/javascript'></script>");
+  print("<link href='$gst_url_site/css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+  print("<link href='$gst_url_site/css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+  print("<link href='$gst_url_site/css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+  print("<script src='$gst_url_site/js/jquery-min.js' type='text/javascript'></script>");
   print("<script src='$gst_url_site/js/jquery-ui.min.js' type='text/javascript'></script>");
-  print("<script src='$gst_url_site/Commun/jquery.validate.min.js' type='text/javascript'></script>\n");
+  print("<script src='$gst_url_site/js/jquery.validate.min.js' type='text/javascript'></script>\n");
   print("<script src='$gst_url_site/js/bootstrap.min.js' type='text/javascript'></script>");
   print("<link rel=\"shortcut icon\" href=\"$gst_url_site/images/favicon.ico\">");
   print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />');
@@ -137,6 +137,41 @@ function affiche_menu_auth($pst_message)
     mdp: {
       required: \"Le mot de passe est obligatoire\"
 	 }
+  ,
+    errorElement: \"em\",
+	errorPlacement: function ( error, element ) {
+		// Add the `help-block` class to the error element
+		error.addClass( \"help-block\" );
+
+		// Add `has-feedback` class to the parent div.form-group
+		// in order to add icons to inputs
+		element.parents( \".col-sm-5\" ).addClass( \"has-feedback\" );
+
+		if ( element.prop( \"type\" ) === \"checkbox\" ) {
+				error.insertAfter( element.parent( \"label\" ) );
+		} else {
+				error.insertAfter( element );
+		}
+
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( \"span\" )[ 0 ] ) {
+			 $(\"<span class='glyphicon glyphicon-remove form-control-feedback'></span>\" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( \"span\" )[ 0 ] ) {
+			 $( \"<span class='glyphicon glyphicon-ok form-control-feedback'></span>\" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( \".col-sm-5\" ).addClass( \"has-error\" ).removeClass( \"has-success\" );
+			$( element ).next( \"span\" ).addClass( \"glyphicon-remove\" ).removeClass( \"glyphicon-ok\" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( \".col-sm-5\" ).addClass( \"has-success\" ).removeClass( \"has-error\" );
+			$( element ).next( \"span\" ).addClass( \"glyphicon-ok\" ).removeClass( \"glyphicon-remove\" );
+	}  
   }   
   });
 });
@@ -153,16 +188,16 @@ function affiche_menu_auth($pst_message)
   if ($pst_message!= '')
   {
      print("<div class=\"alert alert-danger\">$pst_message</div>");
-  }
-  print('<div class="form-group row">');
-  print('<label for="ident" class="col-sm-6 col-form-label"> Identifiant:</label>');
+  }  
+  print('<label for="ident" class="col-md-6 col-form-label"> Identifiant:</label>');
+  print('<div class="form-group col-md-6">');
   print("<input type=\"text\" name=\"ident\" id=\"ident\" size=\"30\" maxlength=\"30\" class=\"js-select-avec-recherche form-control\">\n");
-  print('</div>');
-  print('<div class="form-group row">');
-  print('<label for="mdp" class="col-sm-6 col-form-label">Mot de passe:</label>');
+  print('</div>'); 
+  print('<label for="mdp" class="col-md-6 col-form-label">Mot de passe:</label>');
+  print('<div class="form-group col-md-6 ">');
   print("<input type=\"password\" name=\"mdp\" id=\"mdp\" size=\"30\" maxlength=\"30\" class=\"js-select-avec-recherche form-control\">\n");
   print("</div>\n");
-  print('<div class="form-row col-md-12">');
+  print('<div class="form-row">');
   print("<input type=\"submit\" value=\"Se connecter\" class=\"form-row col-md-offset-3 col-md-6 btn btn-primary\">\n");  
   print("</div>\n");
 
