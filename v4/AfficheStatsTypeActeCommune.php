@@ -15,8 +15,8 @@ print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
-print("<link href='Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
+print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='js/select2.min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");  
@@ -53,9 +53,11 @@ print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"ret
 $i_get_idf_source=isset($_GET['idf_source']) ? $_GET['idf_source']: 1 ; 
 $gi_idf_source=isset($_POST['idf_source']) ? $_POST['idf_source'] : $i_get_idf_source;
 
-print('<div class="form-row col-md-12"><label for="idf_source">Source:</label><select name=idf_source id=idf_source class="js-select-avec-recherche form-control">');
+print('<div class="form-row col-md-12"><label for="idf_source" class="col-form-label col-md-2">Source:</label>');
+print('<div class="col-md-4 col-md-offset-2">');
+print('<select name=idf_source id=idf_source class="js-select-avec-recherche form-control">');
 print(chaine_select_options($gi_idf_source,$a_sources));
-print('</select></div>');
+print('</select></div></div>');
 
 $a_communes = $connexionBD->liste_valeur_par_clef("select ca.idf,ca.nom from commune_acte ca join `stats_commune` sc on (ca.idf=sc.idf_commune) where sc.idf_source=$gi_idf_source order by ca.nom");
 
@@ -73,9 +75,11 @@ if (count($a_communes)!=0)
    $a_liste_stats = $connexionBD->sql_select_multiple("select nom, annee_min,annee_max,nb_actes from stats_commune join type_acte on (idf_type_acte=idf) where idf_source=$gi_idf_source and idf_commune=$gi_idf_commune order by nom");
 }
 
-print('<div class="form-row col-md-12"><label for=\"idf_commune\">Commune:</label><select name=idf_commune id=idf_commune class="js-select-avec-recherche form-control">');
+print('<div class="form-row col-md-12"><label for=\"idf_commune\" class="col-form-label col-md-2">Commune:</label>');
+print('<div class="col-md-4 col-md-offset-2">');
+print('<select name=idf_commune id=idf_commune class="js-select-avec-recherche form-control">');
 print(chaine_select_options($gi_idf_commune,$a_communes));
-print('</select></div>');
+print('</select></div></div>');
 
 if (count($a_liste_stats)!=0)
 {
