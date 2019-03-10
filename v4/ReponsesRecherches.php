@@ -23,8 +23,8 @@ print('<!DOCTYPE html>');
 print("<head>\n");
 print('<meta http-equiv="content-language" content="fr"> ');
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
 print("<script type='text/javascript'>");
 ?>
 
@@ -600,9 +600,11 @@ else
 
 }
 
+print('<div class="row">');
 print('<div class="btn-group col-md-offset-3 col-md-6" role="group">');
 print('<a class="btn btn-primary" href="Recherches.php" role="button">Revenir &agrave; la page de recherche</a>');  
 print('<a class="btn btn-primary" href="Recherches.php?recherche=nouvelle" role="button">Commencer une nouvelle recherche</a>');
+print("</div>");
 print("</div>");
 
 print("</div>");
