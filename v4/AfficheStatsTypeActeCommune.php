@@ -48,12 +48,12 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 require_once("Commun/menu.php");
 $a_sources = $connexionBD->liste_valeur_par_clef("select idf,nom from source order by nom");
     
-print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
+print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 
 $i_get_idf_source=isset($_GET['idf_source']) ? $_GET['idf_source']: 1 ; 
 $gi_idf_source=isset($_POST['idf_source']) ? $_POST['idf_source'] : $i_get_idf_source;
 
-print('<div class="form-row col-md-12"><label for="idf_source" class="col-form-label col-md-2">Source:</label>');
+print('<div class="form-row col-md-12"><label for="idf_source" class="col-form-label col-md-2">Source</label>');
 print('<div class="col-md-4 col-md-offset-2">');
 print('<select name=idf_source id=idf_source class="js-select-avec-recherche form-control">');
 print(chaine_select_options($gi_idf_source,$a_sources));
