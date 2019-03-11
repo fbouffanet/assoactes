@@ -10,13 +10,17 @@ require_once('Commun/PaginationTableau.php');
 require_once('Commun/Benchmark.inc');
 require_once('Commun/VerificationDroits.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<Head>\n");
 print('<meta http-equiv="content-language" content="fr">');
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print("<link href='./Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<script src='./Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='./Commun/menu.js' type='text/javascript'></script>");
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
+print("<script src='js/select2.min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+
 print('<title>Base AGC: Reponses a une recherche de liasse</title>');
 print('</Head>');
 
@@ -115,6 +119,7 @@ $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$gst_adresse_ip,
 @fclose($pf);
 
 print("<body>");
+print('<div class="container">');
 print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");     
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("./Commun/menu.php");
@@ -335,11 +340,12 @@ else {
 	print("</div>");
 	print("</div>");
 }
-print("<div align=center><br>");
-print("<a href=\"RecherchesLiasses.php\" class=\"RetourReponses\">Revenir &agrave; la page de recherche</a>");
-print("<a href=\"RecherchesLiasses.php?recherche=nouvelle\" class=\"RetourReponses\">Commencer une nouvelle recherche</a>");
-print("</div>");
+
+print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
+print('<a href="RecherchesLiasses.php" name=Rechercher class="btn btn-primary">Revenir &agrave; la page de recherche</button>');
+print('<a href="RecherchesLiasses.php?recherche=nouvelle"  class="btn btn-warning raz">Commencer une nouvelle recherche</button>');
+print('</div>');
 print ("</form>");
-print("</body></html>");
+print("</div></body></html>");
 //$connexionBD->ferme(); 
 ?>
