@@ -41,14 +41,16 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
     print('<div class="panel-body">');
 	print('<div class="form-row col-md-12">');
     print('<div class="form-group col-md-4">');
-	print("<label for=\"idf_commune_notaire\"><Commune:</label><select id=\"idf_commune_notaire\" name=\"idf_commune_notaire\" class=\"js-select-avec-recherche form-control\">");
+	print("<label for=\"idf_commune_notaire\"><Commune:</label>");
+	print("<select id=\"idf_commune_notaire\" name=\"idf_commune_notaire\" class=\"js-select-avec-recherche form-control\">");
 	$a_communes_notaires[0] = 'Toutes';
 	print(chaine_select_options($pi_idf_commune,$a_communes_notaires));
 	print("</select></div>");
 	print("<div class=\"form-group col-md-8\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon\" class=\"sr-only\">Rayon</label><input type=text name=rayon id='rayon' size=2 maxlength=2 value=\"$pi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");	
 	print("</div>"); // fin ligne
 	print('<div class="form-row col-md-12">');
-	print('<div class=\"form-group col-md-4 col-md-offset-4\"><label for="idf_rep">R&eacute;pertoire:</label><select id="idf_rep" name="idf_rep" class="js-select-avec-recherche form-control">');
+	print('<div class=\"form-group col-md-4 col-md-offset-4\"><label for="idf_rep">R&eacute;pertoire:</label>');
+	print('<select id="idf_rep" name="idf_rep" class="js-select-avec-recherche form-control">');
 	print("</select></div>");
 	print('</div>');
 	print('</div></div>'); // fin panel
@@ -58,7 +60,8 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
     print('<div class="panel-body">');
     print('<div class="form-row col-md-12">');
     print('<div class="form-group col-md-4 col-md-offset-4">');	
-	print("<label for\"type_acte\">Type d'acte:</label><input type=\"text\" id=\"type_acte\" name=\"type_acte\" maxlength=40 size=20 value=\"$pst_type_acte\" class=\"form-control\">");
+	print("<label for\"type_acte\">Type d'acte:</label>");
+	print("<input type=\"text\" id=\"type_acte\" name=\"type_acte\" maxlength=40 size=20 value=\"$pst_type_acte\" class=\"form-control\">");
 	print('</div></div>');
 	
 	print('<div class="form-row col-md-12">'); 
@@ -67,21 +70,29 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
     print("<span class=\"input-group-addon\">&agrave;</span><input type=text name=annee_max size=4 id=\"annee_max_recherches_communes\" value=\"$pi_annee_max\" class=\"form-control\">");
     print('</div></div>');
 	
-	print('<div class="form-row col-md-12">');
-	print('<div class="input-group col-md-6">');
-	print("<label for=\"nom1\">Nom1:</label><input type=\"text\" id=\"nom1\" name=\"nom1\" maxlength=40 size=20 value=\"$pst_nom1\" class=\"form-control\">");
+	print('<div class="form-group row col-md-12">');
+	
+	print("<label for=\"nom1\" class=\"col-form-label col-md-2\">Nom1:</label>");
+	print('<div class="col-md-4">');
+	print("<input type=\"text\" id=\"nom1\" name=\"nom1\" maxlength=40 size=20 value=\"$pst_nom1\" class=\"form-control\">");
 	print('</div>');
-	print('<div class="input-group col-md-6">');
-	print("<label for=\"prenom1\">Pr&eacutenom1:</label><input type=\"text\" id=\"prenom1\" name=\"prenom1\" maxlength=30 size=20 value=\"$pst_prenom1\" class=\"form-control\"></span>");
+
+	print("<label for=\"prenom1\" class=\"col-form-label col-md-2\">Pr&eacutenom1:</label>");
+	print('<div class="col-md-4">');
+	print("<input type=\"text\" id=\"prenom1\" name=\"prenom1\" maxlength=30 size=20 value=\"$pst_prenom1\" class=\"form-control\"></span>");
 	print('</div>');
+	
 	print("</div>");
 	
-	print('<div class="form-row col-md-12">');
-	print('<div class="input-group col-md-6">');
-	print("<label for=\"nom2\">Nom2:</label><input type=\"text\" id=\"nom2\" name=\"nom2\" maxlength=40 size=20 value=\"$pst_nom2\" class=\"form-control\">");
+	print('<div class="form-group row col-md-12">');
+	print("<label for=\"nom2\" class=\"col-form-label col-md-2\">Nom2:</label>");
+	print('<div class="col-md-4">');
+	print("<input type=\"text\" id=\"nom2\" name=\"nom2\" maxlength=40 size=20 value=\"$pst_nom2\" class=\"form-control\">");
 	print('</div>');
-	print('<div class="input-group col-md-6">');
-	print("<label for=\"prenom2\">Pr&eacutenom2:</label><input type=\"text\" id=\"prenom2\" name=\"prenom2\" maxlength=30 size=20 value=\"$pst_prenom2\" class=\"form-control\"></span>");
+	
+	print("<label for=\"prenom2\" class=\"col-form-label col-md-2\">Pr&eacutenom2:</label>");
+	print('<div class="col-md-4">');
+	print("<input type=\"text\" id=\"prenom2\" name=\"prenom2\" maxlength=30 size=20 value=\"$pst_prenom2\" class=\"form-control\">");
 	print('</div>');
 	print("</div>");
 	

@@ -14,7 +14,6 @@ print('<title>Base AGC: Vos recherches de liasses notariales</title>');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
-print("<script src='./VerifieChampsRechercheLiasse.js' type='text/javascript'></script>\n");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 print("<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
@@ -106,7 +105,7 @@ $a_communes_acte[-9] = 'Commune inconnue';
 
 $a_serie_liasse = $connexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 						 
-print('<form id="recherche" method="post" class="form-inline" target="ReponsesLiasseSimple.php">');
+print('<form id="recherche" method="post" class="form-inline" action="ReponsesLiasseSimple.php">');
 
 
 print('<div class="form-row col-md-12">');
