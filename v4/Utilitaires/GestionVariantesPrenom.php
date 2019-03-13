@@ -36,15 +36,22 @@ switch ($gst_mode) {
  */ 
 function affiche_menu($pconnexionBD,$pst_infos,$pi_idf_groupe) {
   print('<form id="variantes_prenom" method="post" action="'.$_SERVER['PHP_SELF'].'">');
-  print("<div class=gauche_gestion_prenoms>");
-  print("Variante &agrave; chercher: <input type=text name=\"variante\" id=\"variante\" value=\"\" size=30>");
+  
+  print("<div id=\"infos\" class=\"alert alert-success\">$pst_infos</div>");
+  print("<div class='row col-md-12'>");
+  print("<div class='col-md-4'>");
+  print("<div id=\"cmt_retour\" ></div>");
+  print("<div id=\"erreur_groupe\" class=\"alert alert-danger\"></div>");
+  print("<div id=\"erreur_variantes\" class=\"alert alert-danger\"></div>");
+  print("<label for=\"variante\" class=\"col-form-label col-md-2\">Variante &agrave; chercher:</label>");
+  print("<div class='col-md-10'>");
+  print("<input type=text name=\"variante\" id=\"variante\" value=\"\" class=\"form-control\" size=30>");
+  print("</div>");
   print('<input type="hidden" name="mode" id="mode" value="EXPORT">');
   print("<input type=\"hidden\" name=\"idf_groupe\" id=\"idf_groupe\" value=\"$pi_idf_groupe\">");
-  print("<div id=\"cmt_retour\" ></div>");
-  print("<div id=\"erreur_groupe\" class=\"IMPORTANT\"></div>");
-  print("<div id=\"infos\" class=\"INFO\">$pst_infos</div>");  
-  print("<textarea rows=20 cols=40 id=\"variantes\" name=\"variantes\">");
-  //print("<div id=\"variantes\" >");
+  print("<div class='row col-md-12'>");  
+  print("<textarea rows=20 cols=40 id=\"variantes\" name=\"variantes\" class=\"form-control col-md-8 col-md-offset-2\">");
+
   if (!empty($pi_idf_groupe))
   {
     $a_variantes = $pconnexionBD->sql_select("select libelle from variantes_prenom where idf_groupe=$pi_idf_groupe order by libelle");
@@ -53,40 +60,45 @@ function affiche_menu($pconnexionBD,$pst_infos,$pi_idf_groupe) {
       print("$st_variante\n");
     }
   }
-  //print("</div>");
   print("</textarea>");
-  print("<div id=\"erreur_variantes\" class=\"IMPORTANT\"></div>");
-  print("<div><button type=\"button\" id=\"creer\" class=\"bouton_ombre\">Creer</button></div>");
-  print("<div><button type=\"button\" id=\"modifier\" class=\"bouton_ombre\">Modifier</button></div>");
-  print("<div><button type=\"button\" id=\"completer\" class=\"bouton_ombre\">Compl&eacute;ter</button></div>");
-  print("<div><button type=\"button\" id=\"supprimer\" class=\"bouton_ombre\">Supprimer</button></div>");
-  print("<div><button type=\"button\" id=\"fusionner\" class=\"bouton_ombre\">Fusionner</button></div>");
   print("</div>");
-  print("<div class=droite_gestion_prenoms>");
-  print("Variante &agrave; chercher: <input type=text name=\"variante_a_fusionner\" id=\"variante_a_fusionner\" value=\"\" size=30>");
-  print("<div id=\"cmt_retour_a_fusionner\" ></div>");
-  print("<div id=\"erreur_groupe_a_fusionner\" class=\"IMPORTANT\"></div>");  
-  print("<input type=\"hidden\" name=\"idf_groupe_a_fusionner\" id=\"idf_groupe_a_fusionner\" value=\"\">");
-  print("<div id=\"cmt_retour_a_fusionner\" ></div>");
-  print("<textarea rows=20 cols=40 id=\"variantes_a_fusionner\" name=\"variantes_a_fusionner\"></textarea>");
-  
   print("</div>");
-  print('</form>');
-  print("<div class=\"body\"><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
-  print('<div align=center><br><input type="hidden" name="mode" value="EXPORT" >');
-  print('<input type="submit" value="Exporter les variantes" class="bouton_ombre">');
-  print('</form>');
+  print("<div class='col-md-4'>");
+  print('<div class="btn-group-vertical">');
+  print("<button type=\"button\" id=\"creer\" class=\"btn btn-primary\">Creer</button>");
+  print("<button type=\"button\" id=\"modifier\" class=\"btn btn-primary\">Modifier</button>");
+  print("<button type=\"button\" id=\"completer\" class=\"btn btn-primary\">Compl&eacute;ter</button>");
+  print("<button type=\"button\" id=\"supprimer\" class=\"btn btn-danger\">Supprimer</button>");
+  print("<button type=\"button\" id=\"fusionner\" class=\"btn btn-warning\">Fusionner</button>");
+  print("<button type=\"button\" id=\"exporter\" class=\"btn btn-primary\">Exporter les variantes</button>");
   $a_prenoms = $pconnexionBD->sql_select("select libelle from prenom order by idf desc limit 20");
   if (count($a_prenoms)>0)
   {     
-     print("<div><table border=1>");
-     print("<tr><th> 20 derniers<br>nouveaux pr&eacute;noms</th></tr>");
+     print("<table class=\"table table-bordered table-striped\">");
+     print("<tr><th>20 derniers<br>nouveaux pr&eacute;noms</th></tr>");
      foreach ($a_prenoms as $st_prenom)
      {
        print("<tr><td>$st_prenom</td></tr>");
      }
-     print("</table></div>");
+     print("</table>");
   }
+  print("</div>");
+  
+  print("<div class='col-md-4'>");
+  print('<label for="variante_a_fusionner class="col-form-label col-md-2">Variante &agrave; chercher:</label>');
+  print("<div class='col-md-10'>");
+  print("<input type=text name=\"variante_a_fusionner\" id=\"variante_a_fusionner\" value=\"\" size=30 class=\"form-control\">");
+  print('</div>');
+  print("<div id=\"cmt_retour_a_fusionner\" ></div>");
+  print("<div id=\"erreur_groupe_a_fusionner\" class=\"alert alert-danger\"></div>");
+  print("<div id=\"cmt_retour_a_fusionner\" ></div>");  
+  print("<input type=\"hidden\" name=\"idf_groupe_a_fusionner\" id=\"idf_groupe_a_fusionner\" value=\"\">");
+  print("<div class='row col-md-12'>");  
+  print("<textarea rows=20 cols=40 id=\"variantes_a_fusionner\" name=\"variantes_a_fusionner\" class=\"form-control col-md-8 col-md-offset-2\"></textarea>");
+  print("</div>");
+  print("</div>");
+  print('</form>');
+  
   print("</div>");
 }
 
@@ -126,14 +138,14 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 	$a_prenoms = $pconnexionBD->sql_select($st_requete);
 	if(count($a_prenoms)==0)
   {
-    print('<div id=\"erreur_variantes\" class=\"IMPORTANT\">Pas de variantes trouv&eacute;es</div>');
+    print('<div id=\"erreur_variantes\" class=\"alert alert-danger">Pas de variantes trouv&eacute;es</div>');
   }
   else
 	{
 		print('<form id="menu_completer" method="post" action="'.$_SERVER['PHP_SELF'].'">');
 		print('<input type="hidden" name="mode" id="mode" value="COMPLETER">');
 		print("<input type=\"hidden\" name=\"idf_groupe\" id=\"idf_groupe\" value=\"$pi_idf_groupe\">");
-		print("<label for=\"ERREUR\" id=\"ERREUR\" class=\"IMPORTANT\"></label>");
+		print("<label for=\"ERREUR\" id=\"ERREUR\" class=\"alert alert-danger\"></label>");
 		print('<table border=1>');
 		foreach ($a_prenoms as $st_prenom)
 		{
@@ -150,18 +162,21 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 	print('</form>');
 }	
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<title>Base AGC: Gestion des variantes Prenom</title>');
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<link href='../Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
-print("<link href='../Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='../Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
-print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../Commun/jquery.validate.min.js' type='text/javascript'></script>");
-print("<script src='../Commun/additional-methods.min.js' type='text/javascript'></script>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='../js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>"); 
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 ?>
 <script type='text/javascript'>
@@ -366,13 +381,19 @@ $(document).ready(function() {
 				require_from_group: 'Choisir au moins un prénom'
 			}
 		}		
- }); 
+ });
+
+ $( "#exporter" ).click(function() {
+	 $("#mode").val('EXPORT');
+     $("#variantes_prenom").submit();
+ });	 
   
 });
 </script>
 <?php
 print("</head>");
 print("<body>");
+print('<div class="container">');
 
 require_once("../Commun/menu.php");
 
@@ -433,6 +454,7 @@ switch ($gst_mode) {
  default:
 } 
 
+print("</div>");
 print("</body>");
 print("</html>");
 
