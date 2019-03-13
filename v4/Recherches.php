@@ -201,7 +201,41 @@ $(document).ready(function() {
             rayon: {
                 integer: "Le rayon doit être un entier"
             }
-        }
+        },
+		errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".lib_erreur" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	},
     });
 
     jQuery.validator.addMethod("patro_recherche", function(value, element) {
@@ -231,6 +265,40 @@ $(document).ready(function() {
                 required: "Le nom de l'épouse est obligatoire"
             }
         },
+		errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-2" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-2" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-2" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	},
         submitHandler: function(form) {
             if ($("#recherches_communes").valid()) {
                 $("#idf_source_recherches_couple").val($("#idf_source_recherches_communes").val());
@@ -275,6 +343,40 @@ $(document).ready(function() {
                 required: "Le pr&eacute;nom est obligatoire si aucune commune/paroisse n'est s&eacute;lectionn&eacute;e. Veuillez choisir une commune avec un rayon de recherche"
             }
         },
+		errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-8" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-8" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-8" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	},
         submitHandler: function(form) {
             if ($("#recherches_communes").valid()) {
                 $("#idf_source_recherches_personne").val($("#idf_source_recherches_communes").val());
@@ -503,14 +605,14 @@ print('<label for="paroisses_rattachees_recherches_communes" class="form-check-l
 print('</div>');
 
 
-print("<div class=\"form-group col-md-3\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");
+print("<div class=\"form-group col-md-3 lib_erreur\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");
 
 
 print('</div>');
 
 print('<div class="form-row col-md-12">'); 
-print('<div class="input-group col-md-offset-4 col-md-4">');
-print("<span class=\"input-group-addon\">Ann&eacute;es de</span><input type=text name=annee_min id=\"annee_min_recherches_communes\" size=4 value=\"$gi_annee_min\" class=\"form-control\">");
+print('<div class="input-group col-md-offset-4 col-md-4 lib_erreur">');
+print("<span class=\"input-group-addon\">Ann&eacute;es de</span><input type=text name=annee_min id=\"annee_min_recherches_communes\" size=4 value=\"$gi_annee_min\" class=\"form-control \">");
 print("<span class=\"input-group-addon\">&agrave;</span><input type=text name=annee_max size=4 id=\"annee_max_recherches_communes\" value=\"$gi_annee_max\" class=\"form-control\">");
 print('</div>');
 
@@ -520,7 +622,7 @@ print('</div>');
 
 print('<div class="form-row col-md-12">');
 
-print('<div class="form-group col-md-10">');
+print('<div class="form-group col-md-10 lib_erreur">');
 print("<label class=\"sr-only\" for=\"releve_type_communes\">Actes</label><div class=\"input-group\"><span class=\"input-group-addon\">actes</span><select id=\"releve_type_communes\" name=\"releve_type_communes\" class=\"form-control form-control-sm\">");
 $options = array(0=>'publiés', 1=>"modifiés");
 print(chaine_select_options($gst_releve_type,$options));
@@ -535,7 +637,7 @@ $a_mois = array(''=>'Mois')+$mois;
 print(chaine_select_options($gst_releve_mois_min,$a_mois));
 print("</select></div>");
 
-print("<label class=\"sr-only\" for=\"releve_annee_min_communes\" class=\"sr-only\">Ann&eacute;e Min</label><div class=\"input-group \"><span class=\"input-group-addon\">Ann&eacute;e Min</span><input type=\"text\" name=\"releve_annee_min_communes\" id=\"releve_annee_min_communes\" size=\"4\" maxlength=\"4\" value=\"$gst_releve_annee_min\" class=\"form-control form-control-sm\"></div>");
+print("<label class=\"sr-only\" for=\"releve_annee_min_communes\" class=\"sr-only\">Ann&eacute;e Min</label><div class=\"input-group\"><span class=\"input-group-addon\">Ann&eacute;e Min</span><input type=\"text\" name=\"releve_annee_min_communes\" id=\"releve_annee_min_communes\" size=\"4\" maxlength=\"4\" value=\"$gst_releve_annee_min\" class=\"form-control form-control-sm\"></div>");
 
 print("<label class=\"sr-only\" for=\"releve_mois_max_communes\">et</label><div class=\"input-group \"><span class=\"input-group-addon\">et</span><select id=\"releve_mois_max_communes\" name=\"releve_mois_max_communes\" data-max=\"" . date('n') . "\" class=\"form-control form-control-sm\">");
 print(chaine_select_options($gst_releve_mois_max,$a_mois));
