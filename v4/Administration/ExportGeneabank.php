@@ -181,9 +181,7 @@ print("<Head>\n");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr">');
 print("<title>Gestion des export Geneabank</title>");
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
 print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../Commun/menu.js' type='text/javascript'></script>");
 
 print('</Head>');
 
