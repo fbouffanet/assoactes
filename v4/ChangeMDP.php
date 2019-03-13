@@ -86,7 +86,41 @@ $(document).ready(function() {
 		  maxlength: "Le mot de passe doit contenier au maximum 12 caractères",
       equalTo: "le second mot de passe est différent du premier"
 	 }
-  }   
+  },
+  errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}  
   });
 });
 </script>
@@ -106,19 +140,22 @@ function menu_change_mdp($pconnexionBD,$padherent,$pi_idf_adh)
    print('<div class="panel panel-primary">');
    print('<div class="panel-heading">Modifier votre mot de passe</div>');
    print('<div class="panel-body">');
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"change_mdp\" method=\"post\">\n");
+   print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"change_mdp\" method=\"post\" class=\"form-horizontal\">\n");
    print("<input type=hidden name=mode value=MODIFIER>\n");
-   print('<div class="form-row">');
-   print('<div class="form-group col-md-4 col-md-offset-4">');
-   print("<label for=\"mdp_courant\">Votre mot de passe courant</label><input type=\"password\" id=\"mdp_courant\" name=\"mdp_courant\" maxlength=12 class=\"form-control\"/>");
+   print('<div class="form-group row">');
+   print("<label for=\"mdp_courant\" class=\"form-col-label col-md-4 col-md-offset-2\">Votre mot de passe courant</label>");
+   print('<div class="col-md-4">');
+   print("<input type=\"password\" id=\"mdp_courant\" name=\"mdp_courant\" maxlength=12 class=\"form-control\"/>");
    print('</div></div>');
-   print('<div class="form-row">');
-   print('<div class="form-group col-md-4 col-md-offset-4">');
-   print("<label for=\"nouveau_mdp\">Votre nouveau mot de passe</label><input type=\"password\" id=\"nouveau_mdp\" name=\"nouveau_mdp\" maxlength=12 class=\"form-control\" >");
+   print('<div class="form-group row">');
+   print("<label for=\"nouveau_mdp\" class=\"form-col-label col-md-4 col-md-offset-2\">Votre nouveau mot de passe</label>");
+   print('<div class="col-md-4">');
+   print("<input type=\"password\" id=\"nouveau_mdp\" name=\"nouveau_mdp\" maxlength=12 class=\"form-control\" >");
    print('</div></div>');
-   print('<div class="form-row">');
-   print('<div class="form-group col-md-4 col-md-offset-4">');
-   print("<label for=\"nouveau_mdp2\">Retapez votre nouveau mot de passe</label><input type=\"password\" id=\"nouveau_mdp2\"  name=\"nouveau_mdp2\" maxlength=12 class=\"form-control\"/></td></tr>");
+   print('<div class="form-group row">');
+   print("<label for=\"nouveau_mdp2\" class=\"form-col-label col-md-4 col-md-offset-2\">Retapez votre nouveau mot de passe</label>");
+    print('<div class="col-md-4">');
+   print("<input type=\"password\" id=\"nouveau_mdp2\"  name=\"nouveau_mdp2\" maxlength=12 class=\"form-control\"/></td></tr>");
    print('</div></div>');
    print('<div class="form-row">');
    print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Modifier votre mot de passe</button>');   
