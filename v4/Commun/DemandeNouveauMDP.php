@@ -23,25 +23,59 @@ print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {
-
   $("#demande_nouveau_mdp").validate({
   rules: {
-    email: {
+    email_adht: {
       required: true,
 		email: true,
 	 }
   },
   messages: {
-    email: {
+    email_adht: {
       required: "L'adresse email est obligatoire",
 		email: "Ce n'est pas un email"
 	 }
-  }   
-  });
+  },
+  errorElement: "em",
+				errorPlacement: function ( error, element ) {
+					// Add the `help-block` class to the error element
+					error.addClass( "help-block" );
+
+					// Add `has-feedback` class to the parent div.form-group
+					// in order to add icons to inputs
+					element.parents( ".col-md-4" ).addClass( "has-feedback" );
+
+					if ( element.prop( "type" ) === "checkbox" ) {
+						error.insertAfter( element.parent( "label" ) );
+					} else {
+						error.insertAfter( element );
+					}
+
+					// Add the span element, if doesn't exists, and apply the icon classes to it.
+					if ( !element.next( "span" )[ 0 ] ) {
+						$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+					}
+				},
+				success: function ( label, element ) {
+					// Add the span element, if doesn't exists, and apply the icon classes to it.
+					if ( !$( element ).next( "span" )[ 0 ] ) {
+						$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+					}
+				},
+				highlight: function ( element, errorClass, validClass ) {
+					$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+					$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+				},
+				unhighlight: function ( element, errorClass, validClass ) {
+					$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+					$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+				}
+   
+});   
   
   $("#ferme").click(function(){
     window.close();
-});
+  });
 });
 </script>
 <?php
@@ -54,11 +88,11 @@ function affiche_menu()
    print('<div class="panel panel-primary">');
    print('<div class="panel-heading">Demande d\'un nouveau mot de passe</div>');
    print('<div class="panel-body">');	
-   print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"demande_nouveau_mdp\" >"); 
+   print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"demande_nouveau_mdp\" class=\"form-horizontal\">"); 
    print('<div class="form-row">');
-   print("<label for=\"email\" class=\"col-md-6 col-form-label\">Votre adresse e-mail connue par l'AGC :</label>");
+   print("<label for=\"email_adht\" class=\"col-md-6 col-form-label\">Votre adresse e-mail connue par l'AGC :</label>");
    print('<div class="col-md-4 col-md-offset-4">'); 
-   print("<input type=\"text\" name=\"email\" id=\"email\" size=\"30\" maxlength=\"60\" class=\"form-control\">\n"); 
+   print("<input type=\"text\" name=\"email_adht\" id=\"email_adht\" size=\"30\" maxlength=\"60\" class=\"form-control\">\n"); 
    print("</div></div>");
    print('<div class="form-row">');
    print('<div class="col-md-4 col-md-offset-4">');
@@ -66,7 +100,7 @@ function affiche_menu()
    print('<button type=submit class="btn btn-primary">Demander un nouveau mot de passe</button>');   
    print('<button type="button" id=ferme class="btn btn-warning">Annuler</button>');
    print("</div></div></div>");
-   print("<input type=\"hidden\" name=\"mode\" value=\"DEMANDE\"></div>\n");
+   print("<input type=\"hidden\" name=\"mode\" value=\"DEMANDE\">\n");
    print('</form></div>');
 } 
   
@@ -82,6 +116,7 @@ function verifie_demande($pst_email)
 {
   global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd;
   global $gst_url_inscription;
+  print('<div class="row">');
   print('<div class="panel panel-primary">');
   print('<div class="panel-heading">Demande d\'un nouveau mot de passe</div>');
   print('<div class="panel-body">');
@@ -94,13 +129,13 @@ function verifie_demande($pst_email)
     $adherent = new Adherent($connexionBD,$i_idf);
     if ($adherent-> demande_nouveau_mdp())
     {
-       print("<div class=\"text-center alert alert-success\">Un email dont le titre est \"Demande d'un nouveau mot de passe AGC\" a &eacute;t&eacute; envoy&eacute; &agrave; l'adresse $pst_email<br>");
+       print("<div class=\"alert alert-success\">Un email dont le titre est \"Demande d'un nouveau mot de passe AGC\" a &eacute;t&eacute; envoy&eacute; &agrave; l'adresse $pst_email<br>");
        print("Vous devrez confirmer votre demande en cliquant sur le lien contenu dans ce mail<br>");
        print("Merci</div>");      
     }	
     else
     {
-      print("<div class=\"text-center alert alert-warning\">Vous n'&ecirc;tes pas ou plus adh&eacute;rent de l'AGC</div>");
+      print("<div class=\"alert alert-warning\">Vous n'&ecirc;tes pas ou plus adh&eacute;rent de l'AGC</div>");
       if (isset($gst_url_inscription))
       {
 		  print("<div class=\"text-center\">Veuillez vous r&eacute;inscrire en utilisant l'adresse suivante:<br>");
@@ -111,13 +146,14 @@ function verifie_demande($pst_email)
   }
   else
   {
-     print("<div class=\"text-center alert alert-danger\">Votre adresse email n'a pas &eacute;t&eacute; reconnue</div>");
+     print("<div class=\"alert alert-danger\">Votre adresse email n'a pas &eacute;t&eacute; reconnue</div>");
   }
-  print('</div></div>');
-  print('<div class="row col-md-12">');
+  print('</div></div></div>');
+  print('<div class="row">');
   print('<div class="col-md-4 col-md-offset-4">');
-  print('<button type="button" id=ferme class="btn btn-warning">Annuler</button>');
-  print('</div></div>'); 
+  print('<button type="button" id="ferme" class="btn btn-warning">Annuler</button>');
+  print('</div>'); 
+  print('</div>'); 
 } 
 
 print('</head>');
@@ -131,7 +167,7 @@ switch($gst_mode)
    break;
    case 'DEMANDE':
      // le champ est netttoyé et tronqué à la valeur maximale de la base
-     $st_email = substr(trim($_POST['email']),0,60);
+     $st_email = substr(trim($_POST['email_adht']),0,60);
      verifie_demande($st_email);     
    break;
 }
