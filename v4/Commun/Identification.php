@@ -120,6 +120,12 @@ function affiche_menu_auth($pst_message)
   print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
   print("<script type='text/javascript'>");
   print("$(document).ready(function() {
+  
+  $(\"#DemandeNouveauMDP\").click(function(){
+  window.open('$gst_url_site/Commun/DemandeNouveauMDP.php', 'RecreeMDP','width=400,height=280');
+  return false;
+  });
+
   $(\"#identification\").validate({
   rules: {
     ident: {
@@ -145,7 +151,7 @@ function affiche_menu_auth($pst_message)
 
 		// Add `has-feedback` class to the parent div.form-group
 		// in order to add icons to inputs
-		element.parents( \".col-sm-5\" ).addClass( \"has-feedback\" );
+		element.parents( \".col-md-6\" ).addClass( \"has-feedback\" );
 
 		if ( element.prop( \"type\" ) === \"checkbox\" ) {
 				error.insertAfter( element.parent( \"label\" ) );
@@ -165,11 +171,11 @@ function affiche_menu_auth($pst_message)
 		}
 	},
 	highlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( \".col-sm-5\" ).addClass( \"has-error\" ).removeClass( \"has-success\" );
+			$( element ).parents( \".col-md-6\" ).addClass( \"has-error\" ).removeClass( \"has-success\" );
 			$( element ).next( \"span\" ).addClass( \"glyphicon-remove\" ).removeClass( \"glyphicon-ok\" );
 	},
 	unhighlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( \".col-sm-5\" ).addClass( \"has-success\" ).removeClass( \"has-error\" );
+			$( element ).parents( \".col-md-6\" ).addClass( \"has-success\" ).removeClass( \"has-error\" );
 			$( element ).next( \"span\" ).addClass( \"glyphicon-ok\" ).removeClass( \"glyphicon-remove\" );
 	}  
   }   
@@ -194,7 +200,7 @@ function affiche_menu_auth($pst_message)
   print("<input type=\"text\" name=\"ident\" id=\"ident\" size=\"30\" maxlength=\"30\" class=\"js-select-avec-recherche form-control\">\n");
   print('</div>'); 
   print('<label for="mdp" class="col-md-6 col-form-label">Mot de passe:</label>');
-  print('<div class="col-md-6 ">');
+  print('<div class="col-md-6">');
   print("<input type=\"password\" name=\"mdp\" id=\"mdp\" size=\"30\" maxlength=\"30\" class=\"js-select-avec-recherche form-control\">\n");
   print("</div>\n");
   print('<div class="form-row">');
@@ -204,7 +210,7 @@ function affiche_menu_auth($pst_message)
   print('</form>');
   print('</div>'); // fin panel body
   
-  print("<button class=\"form-row col-md-offset-2 col-md-8 btn btn-primary\" onClick=\"window.open('$gst_url_site/Commun/DemandeNouveauMDP.php','RecreeMDP','width=400,height=280');\">J'ai oubli&eacute; mon mot de passe</button>");
+  print("<button class=\"form-row col-md-offset-2 col-md-8 btn btn-primary\" id=\"DemandeNouveauMDP\">J'ai oubli&eacute; mon mot de passe</button>");
   print("</div>");
   print("</body>");
   print("</html>");
