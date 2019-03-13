@@ -114,40 +114,39 @@ $(document).ready(function() {
   ?>
   ,
   errorElement: "em",
-	errorPlacement: function ( error, element ) {
-		// Add the `help-block` class to the error element
-		error.addClass( "help-block" );
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
 
-		// Add `has-feedback` class to the parent div.form-group
-		// in order to add icons to inputs
-		element.parents( ".col-sm-5" ).addClass( "has-feedback" );
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-8" ).addClass( "has-feedback" );
 
-		if ( element.prop( "type" ) === "checkbox" ) {
-				error.insertAfter( element.parent( "label" ) );
-		} else {
-				error.insertAfter( element );
-		}
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
 
-		// Add the span element, if doesn't exists, and apply the icon classes to it.
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
 		if ( !element.next( "span" )[ 0 ] ) {
-			 $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
 		}
 	},
 	success: function ( label, element ) {
 		// Add the span element, if doesn't exists, and apply the icon classes to it.
 		if ( !$( element ).next( "span" )[ 0 ] ) {
-			 $( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
 		}
 	},
 	highlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+		$( element ).parents( ".col-md-8" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
 	},
 	unhighlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
-	}
-  ,
+		$( element ).parents( ".col-md-8" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	},
 	 submitHandler: function(form) {
 		var nom =$("#nom").val().toUpperCase();
       $("#nom").val(nom);
@@ -165,41 +164,40 @@ $(document).ready(function() {
     print $adherent->regles_validation();
   ?>
   ,
-  errorElement: "em",
-	errorPlacement: function ( error, element ) {
-		// Add the `help-block` class to the error element
-		error.addClass( "help-block" );
+ errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
 
-		// Add `has-feedback` class to the parent div.form-group
-		// in order to add icons to inputs
-		element.parents( ".col-sm-5" ).addClass( "has-feedback" );
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-8" ).addClass( "has-feedback" );
 
-		if ( element.prop( "type" ) === "checkbox" ) {
-				error.insertAfter( element.parent( "label" ) );
-		} else {
-				error.insertAfter( element );
-		}
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
 
-		// Add the span element, if doesn't exists, and apply the icon classes to it.
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
 		if ( !element.next( "span" )[ 0 ] ) {
-			 $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
 		}
 	},
 	success: function ( label, element ) {
 		// Add the span element, if doesn't exists, and apply the icon classes to it.
 		if ( !$( element ).next( "span" )[ 0 ] ) {
-			 $( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
 		}
 	},
 	highlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+		$( element ).parents( ".col-md-8" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
 	},
 	unhighlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
-			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
-	}
-   ,   
+		$( element ).parents( ".col-md-8" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}, 
 	 submitHandler: function(form) {
 		  var nom =$("#nom").val().toUpperCase();
       $("#nom").val(nom);
@@ -615,7 +613,7 @@ function menu_ajouter($padherent)
 	print('<div class="form-row col-md-12">');
   print('<div class="btn-group col-md-4 col-md-offset-4">');
   print('<button type=submit class="btn btn-primary">Ajouter</button>');
-	print('<button type=submit class="btn btn-primary" id="annuler_ajouter_adherent">Annuler</button>');
+	print('<button type=button class="btn btn-primary" id="annuler_ajouter_adherent">Annuler</button>');
 	print("</div>");
   print("</div>");
 	print("</form>");
