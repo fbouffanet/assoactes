@@ -24,14 +24,14 @@ print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
-print("<script src=js/jquery-min.js' type='text/javascript'></script>\n");
 print("<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>\n");
 print("<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>\n");
 print("<link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>\n");
+print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>\n");
+print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>\n");
 print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>\n");
 print("<script src='js/additional-methods.min.js' type='text/javascript'></script>\n");
-print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'> ");
-print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>\n");
 print("<script src='js/select2.min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");  
 ?>
@@ -45,23 +45,23 @@ $(document).ready(function() {
   ?>
    ,
   errorElement: "em",
-	errorPlacement: function ( error, element ) {
-		// Add the `help-block` class to the error element
-		error.addClass( "help-block" );
+  errorPlacement: function ( error, element ) {
+  // Add the `help-block` class to the error element
+  error.addClass( "help-block" );
 
-		// Add `has-feedback` class to the parent div.form-group
-		// in order to add icons to inputs
-		element.parents( ".col-sm-5" ).addClass( "has-feedback" );
+  // Add `has-feedback` class to the parent div.form-group
+  // in order to add icons to inputs
+  element.parents( ".col-md-8" ).addClass( "has-feedback" );
 
-		if ( element.prop( "type" ) === "checkbox" ) {
-				error.insertAfter( element.parent( "label" ) );
-		} else {
-				error.insertAfter( element );
-		}
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
 
-		// Add the span element, if doesn't exists, and apply the icon classes to it.
-		if ( !element.next( "span" )[ 0 ] ) {
-			 $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+	if ( !element.next( "span" )[ 0 ] ) {
+		$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
 		}
 	},
 	success: function ( label, element ) {
@@ -71,16 +71,16 @@ $(document).ready(function() {
 		}
 	},
 	highlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).parents( ".col-md-8" ).addClass( "has-error" ).removeClass( "has-success" );
 			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
 	},
 	unhighlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).parents( ".col-md-8" ).addClass( "has-success" ).removeClass( "has-error" );
 			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 	}
    ,
-	 submitHandler: function(form) {
-			var nom =$("#nom").val().toUpperCase();
+   submitHandler: function(form) {
+	var nom =$("#nom").val().toUpperCase();
       $("#nom").val(nom);
 			var prenom=$("#prenom").val();
       prenom= prenom.replace(/^\s+/g,'').replace(/\s+$/g,'');
@@ -124,7 +124,7 @@ print('</head>');
 function menu_edition_adherent($pconnexionBD,$padherent,$pi_idf_adh)
 {
    global $ga_pays,$gi_max_taille_upload,$gst_rep_trombinoscope,$gst_url_trombinoscope;
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"maj_infos_adherent\" method=\"post\">\n");
+   print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"maj_infos_adherent\" method=\"post\" class=\"form-horizontal\">\n");
    print("<input type=hidden name=mode value=MODIFIER>\n");
    print('<div class="row col-md-12">');
    
@@ -140,19 +140,28 @@ function menu_edition_adherent($pconnexionBD,$padherent,$pi_idf_adh)
       print("<img src=\"$gst_url_trombinoscope/$pi_idf_adh.jpg\" width=115 height=132 alt=\"MaPhoto\" class=\"rounded mx-auto d-block\">");
    }
    print("</div></div>");
-   
+  
+   print('<div class="row">');  
    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Modifier toutes vos informations</button>');   
+   print("</div>");
    print('</form>');
    
-   print("<form enctype=\"multipart/form-data\" id=\"maj_photo\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+   print("<form enctype=\"multipart/form-data\" id=\"maj_photo\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" class=\"form-horizontal\">");
    print("<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\" >"); 
    print('<input type="hidden" name="mode" value="CHARGEMENT_PHOTO">');
-   print('<label for="MaPhoto" class="custom-file-label">Photo au format JPEG</label><input name="MaPhoto" id="MaPhoto" type="file" class="custom-file-input">');
-   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Charger la photo</button>');  
+   print('<div class="row">');
+   print('<label for="MaPhoto" class="custom-file-label col-form-label col-md-2 col-md-offset-2">Photo au format JPEG</label>');
+   print('<div class="col-md-3">');
+   print('<input name="MaPhoto" id="MaPhoto" type="file" class="custom-file-input">');
+   print('</div>');
+   print('<div class="col-md-3">');
+   print('<button type=submit class="btn btn-primary">Charger la photo</button>');
+   print('</div>'); 
+   print('</div>');   
    print('</form>');
    
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Supprimer la photo</button>');   
+   print('<button type=submit class="btn btn-warning col-md-offset-4 col-md-4">Supprimer la photo</button>');   
    print('<input type="hidden" name="mode" value="SUPPRIMER_PHOTO">');
    print('</form>');      
 }
