@@ -372,7 +372,7 @@ class Adherent
 	  
 	  $st_chaine .=  '<div class="form-group row">';
 	  $st_checked =$this->b_confidentiel ? "checked": '';
-	  $st_chaine .= sprintf("<input type=checkbox name=confidentiel id=confidentiel value=\"O\" %s class=\"form-check-input \"col-md-2\">",$st_checked);
+	  $st_chaine .= sprintf("<input type=checkbox name=confidentiel id=confidentiel value=\"O\" %s class=\"form-check-input col-md-2\">",$st_checked);
 	  $st_chaine .=  '<div class="col-md-10">';
 	  $st_chaine .= "<label for=\"confidentiel\" class=\"form-check-label col-form-label control-label\" >Cochez et l'adresse devient invisible aux adh&eacute;rents</label>";
 	  $st_chaine .= '</div>';
