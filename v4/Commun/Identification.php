@@ -143,41 +143,40 @@ function affiche_menu_auth($pst_message)
     mdp: {
       required: \"Le mot de passe est obligatoire\"
 	 }
-  ,
-    errorElement: \"em\",
-	errorPlacement: function ( error, element ) {
-		// Add the `help-block` class to the error element
-		error.addClass( \"help-block\" );
+  },
+  errorElement: \"em\",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass(\"help-block\" );
 
-		// Add `has-feedback` class to the parent div.form-group
-		// in order to add icons to inputs
-		element.parents( \".col-md-6\" ).addClass( \"has-feedback\" );
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( \".col-md-4\" ).addClass( \"has-feedback\" );
 
-		if ( element.prop( \"type\" ) === \"checkbox\" ) {
-				error.insertAfter( element.parent( \"label\" ) );
-		} else {
-				error.insertAfter( element );
-		}
+	if ( element.prop( \"type\" ) === \"checkbox\" ) {
+		error.insertAfter( element.parent( \"label\" ) );
+	} else {
+		error.insertAfter( element );
+	}
 
-		// Add the span element, if doesn't exists, and apply the icon classes to it.
-		if ( !element.next( \"span\" )[ 0 ] ) {
-			 $(\"<span class='glyphicon glyphicon-remove form-control-feedback'></span>\" ).insertAfter( element );
-		}
-	},
-	success: function ( label, element ) {
-		// Add the span element, if doesn't exists, and apply the icon classes to it.
-		if ( !$( element ).next( \"span\" )[ 0 ] ) {
-			 $( \"<span class='glyphicon glyphicon-ok form-control-feedback'></span>\" ).insertAfter( $( element ) );
-		}
-	},
-	highlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( \".col-md-6\" ).addClass( \"has-error\" ).removeClass( \"has-success\" );
-			$( element ).next( \"span\" ).addClass( \"glyphicon-remove\" ).removeClass( \"glyphicon-ok\" );
-	},
-	unhighlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( \".col-md-6\" ).addClass( \"has-success\" ).removeClass( \"has-error\" );
-			$( element ).next( \"span\" ).addClass( \"glyphicon-ok\" ).removeClass( \"glyphicon-remove\" );
-	}  
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+	if ( !element.next( \"span\" )[ 0 ] ) {
+		$( \"<span class='glyphicon glyphicon-remove form-control-feedback'></span>\" ).insertAfter( element );
+	}
+  },
+  success: function ( label, element ) {
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+	if ( !$( element ).next( \"span\" )[ 0 ] ) {
+		$( \"<span class='glyphicon glyphicon-ok form-control-feedback'></span>\" ).insertAfter( $( element ) );
+	}
+  },
+  highlight: function ( element, errorClass, validClass ) {
+	$( element ).parents( \".col-md-4\" ).addClass( \"has-error\" ).removeClass( \"has-success\" );
+	$( element ).next( \"span\" ).addClass( \"glyphicon-remove\" ).removeClass( \"glyphicon-ok\" );
+  },
+  unhighlight: function ( element, errorClass, validClass ) {
+	$( element ).parents( \".col-md-4\" ).addClass( \"has-success\" ).removeClass( \"has-error\" );
+	$( element ).next( \"span\" ).addClass( \"glyphicon-ok\" ).removeClass( \"glyphicon-remove\" );
   }   
   });
 });
@@ -190,18 +189,22 @@ function affiche_menu_auth($pst_message)
   print('<div class="panel panel-primary col-md-offset-4 col-md-4">');
   print('<div class="panel-heading">Authentification requise</div>');
   print('<div class="panel-body">');  
-  print('<form method="post" action='.$_SERVER['PHP_SELF'].' id="identification">');
+  print('<form method="post" action='.$_SERVER['PHP_SELF'].' id="identification" class="form-horizontal">');
   if ($pst_message!= '')
   {
      print("<div class=\"alert alert-danger\">$pst_message</div>");
-  }  
-  print('<label for="ident" class="col-md-6 col-form-label"> Identifiant:</label>');
+  } 
+  print('<div class="form-group">');  
+  print('<label for="ident" class="col-md-4 col-form-label"> Identifiant:</label>');
   print('<div class="col-md-6">');
   print("<input type=\"text\" name=\"ident\" id=\"ident\" size=\"30\" maxlength=\"30\" class=\"js-select-avec-recherche form-control\">\n");
-  print('</div>'); 
-  print('<label for="mdp" class="col-md-6 col-form-label">Mot de passe:</label>');
+  print('</div>');
+  print('</div>');
+  print('<div class="form-group">');   
+  print('<label for="mdp" class="col-md-4 col-form-label">Mot de passe:</label>');
   print('<div class="col-md-6">');
   print("<input type=\"password\" name=\"mdp\" id=\"mdp\" size=\"30\" maxlength=\"30\" class=\"js-select-avec-recherche form-control\">\n");
+  print("</div>\n");
   print("</div>\n");
   print('<div class="form-row">');
   print("<input type=\"submit\" value=\"Se connecter\" class=\"form-row col-md-offset-3 col-md-6 btn btn-primary\">\n");  
