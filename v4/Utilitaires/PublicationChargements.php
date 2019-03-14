@@ -21,31 +21,6 @@ print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
-?>
-<script type='text/javascript'>
-function VerifiePublication(Formulaire,IdfElement)
-{
-  var chaine="";
-  for (var i = 0; i < document.forms[Formulaire].elements[IdfElement].length; i++)
-  {
-      if (document.forms[Formulaire].elements[IdfElement][i].checked)
-      {
-         chaine+=document.forms[Formulaire].elements[IdfElement][i].id+"\n";
-      }
-      
-  }
-  if (chaine=="")
-  {
-     alert("Pas de chargement s‚lectionn‚");
-     return false;
-  }
-  else
-  {
-     document.forms[Formulaire].submit();                                                           
-  }
-}
-</script>
-<?php
 print('</head>');
 print('<body>');
 print('<div class="container">');
