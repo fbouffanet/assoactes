@@ -790,6 +790,7 @@ function montre_aides_adherents($pconnexionBD)
    $st_requete = "select nom,prenom, idf from adherent where aide &".AIDE_RELEVES." and statut in ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."','".ADHESION_HONNEUR."') order by nom, prenom";
    $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);
    print('<div class="panel-group">');
+   print('<div class="panel panel-primary">');
    print('<div class="panel-heading">Aide aux relev&eacute;s</div>'); 
    print('<div class="panel-body">');
    if (count($a_liste_adherents)==0)
@@ -812,9 +813,10 @@ function montre_aides_adherents($pconnexionBD)
      }
      print("</table>\n");
    }
-   print("</div>");
+   print("</div></div>");
    $st_requete = "select nom,prenom, idf from adherent where aide &".AIDE_INFORMATIQUE." and statut in ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."','".ADHESION_HONNEUR."') order by nom, prenom";
    $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);
+   print('<div class="panel panel-primary">');
    print('<div class="panel-heading">Aide &agrave; l\'informatique</div>'); 
    print('<div class="panel-body">');   
    if (count($a_liste_adherents)==0)
@@ -837,9 +839,10 @@ function montre_aides_adherents($pconnexionBD)
      }
      print("</table>\n");
    }
-   print("</div>");
+   print("</div></div>");
    $st_requete = "select nom,prenom, idf from adherent where aide &".AIDE_AD." and statut in ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."','".ADHESION_HONNEUR."') order by nom, prenom";
    $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);       
+   print('<div class="panel panel-primary">');
    print('<div class="panel-heading">Entraide aux AD</div>'); 
    print('<div class="panel-body">');
    if (count($a_liste_adherents)==0)
@@ -862,10 +865,11 @@ function montre_aides_adherents($pconnexionBD)
      }
      print("</table>\n");
    }
-   print("</div>");
+   print("</div></div>");
    $st_requete = "select nom,prenom, idf from adherent where aide &".AIDE_BULLETIN." and statut in ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."','".ADHESION_HONNEUR."') order by nom, prenom";
    $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);
-   print('<div class="panel-heading">Participation au bulletin</div>'); 
+   print('<div class="panel panel-primary">');
+   print('<div class="panel-heading">Participation au bulletin</div>');  
    print('<div class="panel-body">');    
    if (count($a_liste_adherents)==0)
    {
@@ -887,7 +891,7 @@ function montre_aides_adherents($pconnexionBD)
      }
      print("</table>\n");
    }
-   print("</div>");
+   print("</div></div>");
    
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    print("<input type=hidden name=mode value=LISTE>");
