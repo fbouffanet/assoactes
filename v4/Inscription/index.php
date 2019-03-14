@@ -79,7 +79,7 @@ $("#inscription").validate({
 
 		// Add `has-feedback` class to the parent div.form-group
 		// in order to add icons to inputs
-		element.parents( ".col-sm-5" ).addClass( "has-feedback" );
+		element.parents( ".col-md-8" ).addClass( "has-feedback" );
 
 		if ( element.prop( "type" ) === "checkbox" ) {
 				error.insertAfter( element.parent( "label" ) );
@@ -99,11 +99,11 @@ $("#inscription").validate({
 		}
 	},
 	highlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).parents( ".col-md-8" ).addClass( "has-error" ).removeClass( "has-success" );
 			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
 	},
 	unhighlight: function ( element, errorClass, validClass ) {
-			$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).parents( ".col-md-8" ).addClass( "has-success" ).removeClass( "has-error" );
 			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 	}
     ,	
