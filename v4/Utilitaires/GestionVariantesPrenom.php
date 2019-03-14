@@ -38,20 +38,25 @@ function affiche_menu($pconnexionBD,$pst_infos,$pi_idf_groupe) {
   print('<form id="variantes_prenom" method="post" action="'.$_SERVER['PHP_SELF'].'">');
   
   print("<div id=\"infos\" class=\"alert alert-success\">$pst_infos</div>");
-  print("<div class='row col-md-12'>");
-  print("<div class='col-md-4'>");
+  
+  print('<div class="row col-md-12">');
+  
+  print('<div class="col-md-5">');
+  
   print("<div id=\"cmt_retour\" ></div>");
   print("<div id=\"erreur_groupe\" class=\"alert alert-danger\"></div>");
   print("<div id=\"erreur_variantes\" class=\"alert alert-danger\"></div>");
+  
   print("<label for=\"variante\" class=\"col-form-label col-md-2\">Variante &agrave; chercher:</label>");
   print("<div class='col-md-10'>");
   print("<input type=text name=\"variante\" id=\"variante\" value=\"\" class=\"form-control\" size=30>");
   print("</div>");
+  
   print('<input type="hidden" name="mode" id="mode" value="EXPORT">');
   print("<input type=\"hidden\" name=\"idf_groupe\" id=\"idf_groupe\" value=\"$pi_idf_groupe\">");
-  print("<div class='row col-md-12'>");  
-  print("<textarea rows=20 cols=40 id=\"variantes\" name=\"variantes\" class=\"form-control col-md-8 col-md-offset-2\">");
-
+  
+  print('<div class="row col-md-12">');  
+  print("<textarea rows=20 cols=40 id=\"variantes\" name=\"variantes\" class=\"form-control col-md-8\">");
   if (!empty($pi_idf_groupe))
   {
     $a_variantes = $pconnexionBD->sql_select("select libelle from variantes_prenom where idf_groupe=$pi_idf_groupe order by libelle");
@@ -62,8 +67,10 @@ function affiche_menu($pconnexionBD,$pst_infos,$pi_idf_groupe) {
   }
   print("</textarea>");
   print("</div>");
-  print("</div>");
-  print("<div class='col-md-4'>");
+  
+  print("</div>"); // fin premier tiers
+  
+  print('<div class="col-md-2">');
   print('<div class="btn-group-vertical">');
   print("<button type=\"button\" id=\"creer\" class=\"btn btn-primary\">Creer</button>");
   print("<button type=\"button\" id=\"modifier\" class=\"btn btn-primary\">Modifier</button>");
@@ -83,23 +90,27 @@ function affiche_menu($pconnexionBD,$pst_infos,$pi_idf_groupe) {
      print("</table>");
   }
   print("</div>");
+  print("</div>"); // fin second tiers
   
-  print("<div class='col-md-4'>");
-  print('<label for="variante_a_fusionner class="col-form-label col-md-2">Variante &agrave; chercher:</label>');
-  print("<div class='col-md-10'>");
-  print("<input type=text name=\"variante_a_fusionner\" id=\"variante_a_fusionner\" value=\"\" size=30 class=\"form-control\">");
-  print('</div>');
+  print('<div class="col-md-5">');
   print("<div id=\"cmt_retour_a_fusionner\" ></div>");
   print("<div id=\"erreur_groupe_a_fusionner\" class=\"alert alert-danger\"></div>");
-  print("<div id=\"cmt_retour_a_fusionner\" ></div>");  
+  print("<div id=\"cmt_retour_a_fusionner\" ></div>");
+  
+  print('<label for="variante_a_fusionner" class="col-form-label col-md-2">Variante &agrave; chercher:</label>');
+  print('<div class="col-md-10">');
+  print("<input type=text name=\"variante_a_fusionner\" id=\"variante_a_fusionner\" value=\"\" size=30 class=\"form-control\">");
+  print('</div>');
+   
   print("<input type=\"hidden\" name=\"idf_groupe_a_fusionner\" id=\"idf_groupe_a_fusionner\" value=\"\">");
-  print("<div class='row col-md-12'>");  
-  print("<textarea rows=20 cols=40 id=\"variantes_a_fusionner\" name=\"variantes_a_fusionner\" class=\"form-control col-md-8 col-md-offset-2\"></textarea>");
+  print('<div class="row col-md-12">');  
+  print("<textarea rows=20 cols=40 id=\"variantes_a_fusionner\" name=\"variantes_a_fusionner\" class=\"form-control col-md-8\"></textarea>");
   print("</div>");
-  print("</div>");
+  
+  print("</div>");// fin 3ème tiers
+  print("</div>");// fin ligne
   print('</form>');
   
-  print("</div>");
 }
 
 /*
