@@ -78,6 +78,40 @@ $("#edition_commune").validate({
     date_max_controle: {
        dateITA: "Le format doit être de la forme JJ/MM/AAAA"
     }
+	},
+  errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-10" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-10" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-10" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 	}
 });
 
@@ -104,6 +138,21 @@ $("#suppression_communes").validate({
             form.submit();
         }
     }
+});
+
+$("#modifier" ).click(function() {
+    $('#mode').val("MODIFIER");
+    $("form").submit();
+});
+
+$("#ajouter" ).click(function() {
+    $('#mode').val("AJOUTER");
+    $("form").submit();
+});
+
+
+$("#annuler" ).click(function() {
+    window.location.href = 'GestionCommunes.php';
 });
            
 });
@@ -203,25 +252,100 @@ function menu_liste($pconnexionBD)
  */ 
 function menu_edition($pst_nom_commune,$pi_code_insee,$pi_num_paroisse,$pst_latitude,$pst_longitude,$pi_idf_canton,$pa_cantons,$pi_debut_communale,$pi_debut_greffe,$pst_protestants,$pst_sans_rp,$pst_points_svg,$pst_bureau_controle,$pst_date_min_controle,$pst_date_max_controle)
 {
-   print("<table class=\"table table-bordered table-striped\">");
-   print("<tr><th>Nom</th><td><input type=\"text\" maxlength=50 size=30 name=nom_commune value=\"$pst_nom_commune\"></td></tr>");
-   print("<tr><th>Code Insee</th><td><input type=\"text\" maxlength=5 size=5 name=code_insee value=\"$pi_code_insee\"></td></tr>");
-   print("<tr><th>Numéro Paroisse</th><td><input type=\"text\" maxlength=2 size=2 name=num_paroisse value=\"$pi_num_paroisse\"></td></tr>");
-   print("<tr><th>Latitude (radian)</th><td><input type=\"text\" maxlength=30 name=latitude value=\"$pst_latitude\"></td></tr>");
-   print("<tr><th>Longitude (radian)</th><td><input type=\"text\" maxlength=30 name=longitude value=\"$pst_longitude\"></td></tr>");
-   print("<tr><th>Canton</th><td><select name=idf_canton>".chaine_select_options($pi_idf_canton,$pa_cantons)."</select></td></tr>");
-   print("<tr><th>D&eacute;but Communale</th><td><input type=\"text\" maxlength=4 name=debut_communale value=\"$pi_debut_communale\"></td></tr>");
-   print("<tr><th>D&eacute;but Greffe</th><td><input type=\"text\" maxlength=4 name=debut_greffe value=\"$pi_debut_greffe\"></td></tr>");
+   print('<div class="form-group row">'); 
+   print('<label for="nom_commune" class="col-form-label col-md-2">Nom</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=50 size=30 name=nom_commune id=nom_commune value=\"$pst_nom_commune\" class=\"form-control\">");
+   print('</div>');
+   print('</div>');
+   print('<div class="form-group row">'); 
+   print('<label for="code_insee" class="col-form-label col-md-2">Code Insee</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=5 size=5 name=code_insee id=code_insee value=\"$pi_code_insee\" class=\"form-control\">");
+   print('</div>');
+   print('</div>');
+   print('<div class="form-group row">'); 
+   print('<label for="num_paroisse" class="col-form-label col-md-2">Num&eacute;ro Paroisse</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=2 size=2 name=num_paroisse id=num_paroisse value=\"$pi_num_paroisse\" class=\"form-control\">");
+   print('</div>');
+   print('</div>');
+   print('<div class="form-group row">'); 
+   print('<label for="latitude" class="col-form-label col-md-2">Latitude (radian)</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=30 name=latitude id=latitude value=\"$pst_latitude\" class=\"form-control\">");
+   print('</div>');
+   print('</div>');
+   print('<div class="form-group row">'); 
+   print('<label for="longitude" class="col-form-label col-md-2">Longitude (radian)</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=30 name=longitude id=longitude value=\"$pst_longitude\" class=\"form-control\">");
+   print('</div>');
+   print('</div>');
+   print('<div class="form-group row">'); 
+   print('<label for="idf_canton" class="col-form-label col-md-2">Canton</label>');
+   print('<div class="col-md-10">');
+   print("<select name=idf_canton id=idf_canton class=\"form-control\">".chaine_select_options($pi_idf_canton,$pa_cantons)."</select>");
+   print('</div>');
+   print('</div>');
+   print('<div class="form-group row">'); 
+   print('<label for="debut_communale" class="col-form-label col-md-2">D&eacute;but Communale</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=4 name=debut_communale id=debut_communale value=\"$pi_debut_communale\" class=\"form-control\">");
+   print('</div>');
+   print('</div>');
+   print('<div class="form-group row">'); 
+   print('<label for="debut_greffe" class="col-form-label col-md-2">D&eacute;but Greffe</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=4 name=debut_greffe id=debut_greffe value=\"$pi_debut_greffe\" class=\"form-control\">");
+   print('</div>');
+   print('</div>');
+     
    $st_checked = ($pst_protestants=='O') ? "checked": '';
-   print("<tr><th>Protestants</th><td><input type=\"checkbox\" name=protestants value=\"O\" $st_checked /></td></tr>");
+   print('<div class="form-group row">');
+   print('<label for="protestants" class="col-form-label col-md-2">Protestants</label>');   
+   print('<div class="col-md-10">');
+   print('<div class="form-check">');
+   print("<input type=\"checkbox\" class=\"form-check-input\" name=protestants id=protestants value=\"O\" $st_checked>");
+   print('</div>');
+   print('</div>');
+   print('</div>');
    $st_checked = ($pst_sans_rp=='O') ? "checked": '';
-   print("<tr><th>Sans registres paroissiaux</th><td><input type=\"checkbox\" name=sans_rp value=\"O\" $st_checked /></td></tr>");
-   print("<tr><th>Points SVG</th><td><textarea cols=64 rows=16 name=points_svg>$pst_points_svg</textarea></td></tr>");
+   print('<div class="form-group row">');
+   print('<label for="sans_rp" class="col-form-label col-md-2">Sans registres paroissiaux</label>');
+   print('<div class="col-md-10">');
+   print('<div class="form-check">');
+   print("<input type=\"checkbox\" class=\"form-check-input\" name=sans_rp id=sans_rp value=\"O\" $st_checked >");
+   print('</div>');
+   print('</div>');
+   print('</div>');
+   print('<div class="form-group row">');    
+   print('<label for="points_svg" class="col-form-label col-md-2">Points SVG</label>');
+   print('<div class="col-md-10">');
+   print("<textarea class=\"form-control\" cols=64 rows=16 name=points_svg id=points_svg >$pst_points_svg</textarea>");
+   print('</div>');
+   print('</div>');
    $st_checked = ($pst_bureau_controle=='O') ? "checked": '';
-   print("<tr><th>Bureau de contr&ocirc;le</th><td><input type=\"checkbox\" name=bureau_controle value=\"O\" $st_checked /></td></tr>");
-   print("<tr><th>Date minimale du contr&ocirc;le (JJ/MM/AAAA)</th><td><input type=\"text\" maxlength=10 size=10 name=date_min_controle value=\"$pst_date_min_controle\"></td></tr>");
-   print("<tr><th>Date maximale du contr&ocirc;le (JJ/MM/AAAA)</th><td><input type=\"text\" maxlength=10 size=10 name=date_max_controle value=\"$pst_date_max_controle\"></td></tr>");
-   print("</table>");
+   print('<div class="form-group row">');
+   print('<label for="bureau_controle" class="form-check-label col-form-label col-md-2">Bureau de contr&ocirc;le</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"checkbox\" class=\"form-check-input\" name=bureau_controle id=bureau_controle value=\"O\" $st_checked>");
+   print('</div>');
+   print('</div>');
+ 
+   print('<div class="form-group row">');
+   print('<label for="date_min_controle" class="col-form-label col-md-2">Date minimale du contr&ocirc;le (JJ/MM/AAAA)</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=10 size=10 name=date_min_controle id=date_min_controle value=\"$pst_date_min_controle\" class=\"form-control\">");
+   print('</div>');
+   print('</div>');
+   
+   print('<div class="form-group row">');
+   print('<label for="date_max_controle" class="col-form-label col-md-2">Date maximale du contr&ocirc;le (JJ/MM/AAAA)</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=10 size=10 name=date_max_controle id=date_max_controle value=\"$pst_date_max_controle\" class=\"form-control\">");
+   print('</div>');
+   print('</div>');
 }
 
 /** Affiche le ménu de modification d'une commune
@@ -233,15 +357,13 @@ function menu_modifier($pconnexionBD,$pi_idf_commune,$pa_cantons)
 {
    list($st_commune_acte,$st_code_insee,$i_num_paroisse,$st_latitude,$st_longitude,$i_idf_canton,$i_debut_communale,$i_debut_greffe,$st_points_svg,$st_protestants,$st_sans_rp,$st_bureau_controle,$st_date_min_controle,$st_date_max_controle)=$pconnexionBD->sql_select_liste("select nom,code_insee,numero_paroisse,latitude, longitude,idf_canton,debut_communale, debut_greffe,points_svg,protestants,sans_rp,bureau_controle,date_min_controle,date_max_controle from commune_acte where idf=$pi_idf_commune");
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"edition_commune\">");
-   print("<input type=hidden name=mode value=\"MODIFIER\">");
+   print("<input type=hidden name=mode id=mode value=\"MODIFIER\">");
    print("<input type=hidden name=idf_commune value=$pi_idf_commune>");
    menu_edition($st_commune_acte,$st_code_insee,$i_num_paroisse,$st_latitude,$st_longitude,$i_idf_canton,$pa_cantons,$i_debut_communale,$i_debut_greffe,$st_protestants,$st_sans_rp,$st_points_svg,$st_bureau_controle,$st_date_min_controle,$st_date_max_controle);
-   print("</div>");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Modifier</button>');
-   print('</form>');
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
-   print("<input type=hidden name=mode value=\"LISTE\">");
+   print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
+   print('<button type=button class="btn btn-primary" id="modifier">Modifier</button>');
+   print('<button type=button class="btn btn-primary" id="annuler">Annuler</button>');
+   print('</div>');
    print('</form>');
 }
 
@@ -251,13 +373,12 @@ function menu_modifier($pconnexionBD,$pi_idf_commune,$pa_cantons)
 function menu_ajouter($pa_cantons)
 {
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"edition_commune\">");
-   print("<input type=hidden name=mode value=\"AJOUTER\">");
+   print("<input type=hidden name=mode id=mode value=\"AJOUTER\">");
    menu_edition('','','','','',0,$pa_cantons,'','','N','N','','N','','');
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Ajouter</button>');
-   print('</form>');
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<input type=hidden name=mode value=\"LISTE\">");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
+   print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
+   print('<button type=button class="btn btn-primary" id="ajouter">Ajouter</button>');
+   print('<button type=button class="btn btn-primary" id="annuler">Annuler</button>');
+   print('</div>');
    print('</form>');
 }
 
@@ -286,28 +407,25 @@ function distance($pf_lat1, $pf_lon1, $pf_lat2, $pf_lon2)
  * Ajoute dans la table SQL tableau_kilometrique la liste des distances
  * entre chaque commune et la nouvelle commune crée
  * @param object $pconnexionBD Identifiant de la connexion de base
- * @param string Répertoire temporaire  
  * @param array $pa_coordonnees_communes tableau des coordonnées des communes (latitude,longitude) indexées par l'identifiant commune
  * @param double $pf_latitude latitude de la commune ajoutée
  * @param double $pf_longitude longitude de la commune ajoutée 
  */ 
-function calcule_coordonnees_commune($pconnexionBD,$gst_rep_tmp,$pa_coordonnees_communes,$pi_idf_commune,$pf_latitude,$pf_longitude)
+function calcule_coordonnees_commune($pconnexionBD,$pa_coordonnees_communes,$pi_idf_commune,$pf_latitude,$pf_longitude)
 {
-   global $gst_parametres_load_data,$gst_repertoire_chargement_actes;
-   //$st_nomfich_temp = tempnam ($gst_rep_tmp, "coor");
-   $st_nomfich_temp = "$gst_repertoire_chargement_actes/coord.csv";
-   $pf = fopen($st_nomfich_temp, "w");
+
+   $st_requete = 'insert into tableau_kilometrique (idf_commune1,idf_commune2,distance) values ';
+   $a_lignes = array();
    foreach($pa_coordonnees_communes as $i_idf_commune => $a_coord)
    {
       list($f_latitude_cour,$f_longitude_cour) = $a_coord;
       $i_dist=round(distance($pf_latitude,$pf_longitude,$f_latitude_cour,$f_longitude_cour));
-      fwrite($pf,"$i_idf_commune;$pi_idf_commune;$i_dist\n");
       if ($pi_idf_commune!=$i_idf_commune)
-        fwrite($pf,"$pi_idf_commune;$i_idf_commune;$i_dist\n");       
+        $a_lignes[]= "($pi_idf_commune,$i_idf_commune,$i_dist)";     
    }
-   fclose($pf);
-   $pconnexionBD->execute_requete("LOAD DATA $gst_parametres_load_data INFILE '$st_nomfich_temp' INTO TABLE tableau_kilometrique FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n'");
-   unlink($st_nomfich_temp);
+   $st_lignes = join(',',$a_lignes);
+   $st_requete .= $st_lignes;
+   $pconnexionBD->execute_requete($st_requete);
 }
 
 /**
@@ -386,7 +504,7 @@ switch ($gst_mode) {
      if (!empty($f_latitude) && !empty($f_longitude))
      {
         $connexionBD->execute_requete("delete from tableau_kilometrique where idf_commune1=$gi_idf_commune or idf_commune2=$gi_idf_commune");
-        calcule_coordonnees_commune($connexionBD,$gst_repertoire_chargement_actes,$a_coord_communes,$gi_idf_commune,$f_latitude,$f_longitude);
+        calcule_coordonnees_commune($connexionBD,$a_coord_communes,$gi_idf_commune,$f_latitude,$f_longitude);
      }
      menu_liste($connexionBD);  
   break;
@@ -436,7 +554,7 @@ switch ($gst_mode) {
      if (!empty($f_latitude) && !empty($f_longitude))
      {
          $i_idf_commune_ajoutee = $connexionBD->dernier_idf_insere();
-         calcule_coordonnees_commune($connexionBD,$gst_repertoire_chargement_actes,$a_coord_communes,$i_idf_commune_ajoutee,$f_latitude,$f_longitude);
+         calcule_coordonnees_commune($connexionBD,$a_coord_communes,$i_idf_commune_ajoutee,$f_latitude,$f_longitude);
      }
    break;
    case 'SUPPRIMER':
