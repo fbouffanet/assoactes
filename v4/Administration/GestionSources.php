@@ -36,8 +36,42 @@ $(document).ready(function() {
     messages: {
 		nom_source: {
 			required: "Le nom de la source est obligatoire"
-		}
-    }
+      }
+		},
+    errorElement: "em",
+    errorPlacement: function ( error, element ) {
+	    // Add the `help-block` class to the error element
+	    error.addClass( "help-block" );
+
+	    // Add `has-feedback` class to the parent div.form-group
+	    // in order to add icons to inputs
+	    element.parents( ".col-md-10" ).addClass( "has-feedback" );
+
+	    if ( element.prop( "type" ) === "checkbox" ) {
+		    error.insertAfter( element.parent( "label" ) );
+	    } else {
+		    error.insertAfter( element );
+	    }
+
+	    // Add the span element, if doesn't exists, and apply the icon classes to it.
+		  if ( !element.next( "span" )[ 0 ] ) {
+			  $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		  }
+	  },
+	  success: function ( label, element ) {
+		  // Add the span element, if doesn't exists, and apply the icon classes to it.
+		  if ( !$( element ).next( "span" )[ 0 ] ) {
+			  $( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		  }
+	  },
+	  highlight: function ( element, errorClass, validClass ) {
+		  $( element ).parents( ".col-md-10" ).addClass( "has-error" ).removeClass( "has-success" );
+		  $( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	  },
+	  unhighlight: function ( element, errorClass, validClass ) {
+		  $( element ).parents( ".col-md-10" ).addClass( "has-success" ).removeClass( "has-error" );
+		  $( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	   }
   });
     
   $("#suppression_sources").validate({
@@ -63,6 +97,22 @@ $(document).ready(function() {
         }
     }
   });
+  
+  $("#modifier" ).click(function() {
+    $('#mode').val("MODIFIER");
+    $("form").submit();
+ });
+
+ $("#ajouter" ).click(function() {
+    $('#mode').val("AJOUTER");
+    $("form").submit();
+ });
+
+
+ $("#annuler" ).click(function() {
+    window.location.href = 'GestionSources.php';
+ });
+    
   
 });
 </script>
@@ -130,17 +180,57 @@ function menu_liste($pconnexionBD)
 function menu_edition($pst_nom_source,$pi_publication_gbk,$pst_script_demande,$pi_utilise_details,$pst_icone_info,$pst_icone_ninfo,$pst_icone_index)
 {
    global $ga_scripts_demande,$ga_booleen_oui_non,$ga_icones_source;
-   print("<table class=\"table table-bordered table-striped\">");
-   print("<tr><th>Nom</th><td><input type=\"text\" maxlength=50 size=30 name=nom_source value=\"$pst_nom_source\"></td></tr>");
+   
+   print('<div class="form-group row">');   
+   print('<label for="nom_source" class="col-form-label col-md-2">Nom</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=50 size=30 name=nom_source id=nom_source value=\"$pst_nom_source\" class=\"form-control\">");
+   print('</div>');
+   print('</div>');
+   
    $st_checked = $pi_publication_gbk==1? 'checked': '';
-   print("<tr><th>Publication G&eacute;n&eacute;abank</th><td><input type=\"checkbox\" name=publication_geneabank value=1 $st_checked></td></tr>");
-   print("<tr><th>Script de demande</th><td><select name=script_demande>".chaine_select_options_simple($pst_script_demande,$ga_scripts_demande)."</select></td></tr>");
+   print('<div class="form-group row">'); 
+   print('<label for="publication_geneabank" class="col-form-label form-check-label col-md-2">Publication G&eacute;n&eacute;abank</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"checkbox\" class=\"form-check-input\" name=publication_geneabank id=publication_geneabank value=1 $st_checked>");
+   print('</div>');
+   print('</div>');
+   
+   print('<div class="form-group row">'); 
+   print('<label for="script_demande" class="col-form-label col-md-2">Script de demande</label>');
+   print('<div class="col-md-10">');
+   print("<select name=script_demande id=script_demande class=\"form-control\">".chaine_select_options_simple($pst_script_demande,$ga_scripts_demande)."</select>");
+   print('</div>');
+   print('</div>');
+   
    $st_checked = $pi_utilise_details==1? 'checked': '';
-   print("<tr><th>Utilisation des details supplementaires</th><td><input type=\"checkbox\" name=utilise_details value=1 $st_checked></td></tr>");
-   print("<tr><th>Ic&ocirc;ne si information</th><td><select name=icone_info>".chaine_select_options_simple($pst_icone_info,$ga_icones_source)."</select></td></tr>");
-   print("<tr><th>Ic&ocirc;ne si pas d'information</th><td><select name=icone_ninfo>".chaine_select_options_simple($pst_icone_ninfo,$ga_icones_source)."</select></td></tr>");
-    print("<tr><th>Ic&ocirc;ne si indexation</th><td><select name=icone_index>".chaine_select_options_simple($pst_icone_index,$ga_icones_source)."</select></td></tr>");
-   print("</table>");
+   print('<div class="form-group row">'); 
+   print('<label for="utilise_details" class="col-form-label form-check-label col-md-2">Utilisation des d&eacute;tails suppl&eacute;mentaires</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"checkbox\" class=\"form-check-input\" name=utilise_details id=utilise_details value=1 $st_checked>");
+   print('</div>');
+   print('</div>');
+   
+   print('<div class="form-group row">'); 
+   print('<label for="icone_info" class="col-form-label col-md-2">Ic&ocirc;ne si information</label>');
+   print('<div class="col-md-10">');
+   print("<select name=icone_info id=icone_info class=\"form-control\">".chaine_select_options_simple($pst_icone_info,$ga_icones_source)."</select>");
+   print('</div>');
+   print('</div>');
+   
+   print('<div class="form-group row">'); 
+   print('<label for="icone_ninfo" class="col-form-label col-md-2">Ic&ocirc;ne si pas d\'information</label>');
+   print('<div class="col-md-10">');
+   print("<select name=icone_ninfo id=icone_ninfo class=\"form-control\">".chaine_select_options_simple($pst_icone_ninfo,$ga_icones_source)."</select>");
+   print('</div>');
+   print('</div>');
+   
+   print('<div class="form-group row">'); 
+   print('<label for="icone_index" class="col-form-label col-md-2">Ic&ocirc;ne si indexation</label>');
+   print('<div class="col-md-10">');
+   print("<select name=icone_index id=icone_index class=\"form-control\">".chaine_select_options_simple($pst_icone_index,$ga_icones_source)."</select>");
+   print('</div>');
+   print('</div>');
 }
 
 /** Affiche le menu de modification d'une source
@@ -155,11 +245,10 @@ function menu_modifier($pconnexionBD,$pi_idf_source)
    print("<input type=hidden name=mode value=MODIFIER>");
    print("<input type=hidden name=idf_source value=$pi_idf_source>");
    menu_edition($st_nom_source,$i_publication_gbk,$st_script_demande,$i_utilise_details,$st_icone_info,$st_icone_ninfo,$st_icone_index);
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Modifier</button>');
-   print('</form>');
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<div align=center><input type=hidden name=mode value=LISTE>");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
+   print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
+   print('<button type=button class="btn btn-primary" id="modifier">Modifier</button>');
+   print('<button type=button class="btn btn-primary" id="annuler">Annuler</button>');
+   print('</div>');
    print('</form>');
 }
 
@@ -170,11 +259,10 @@ function menu_ajouter()
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"edition_source\">");
    print("<input type=hidden name=mode value=\"AJOUTER\">");
    menu_edition('',0,'',0,'','','');
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Ajouter</button>');
-   print('</form>');
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<input type=hidden name=mode value=LISTE>");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
+   print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
+   print('<button type=button class="btn btn-primary" id="ajouter">Ajouter</button>');
+   print('<button type=button class="btn btn-primary" id="annuler">Annuler</button>');
+   print('</div>');
    print('</form>');
 }
 
