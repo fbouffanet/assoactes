@@ -1071,7 +1071,7 @@ function export_index_AD($pconnexionBD,$pst_fichier)
    $st_requete="select p.patronyme,p.prenom,ca.nom,a.annee,ta.nom from personne p join acte a on (p.idf_acte=a.idf) join commune_acte ca on (a.idf_commune=ca.idf) join type_acte ta on (a.idf_type_acte=ta.idf) where p.idf_type_presence=".IDF_PRESENCE_INTV." and a.idf_source=1 and a.idf_type_acte=".IDF_MARIAGE." or a.idf_type_acte=".IDF_NAISSANCE." or a.idf_type_acte=".IDF_DECES ;
    //print("Requete=$st_requete<br>");
    $pconnexionBD->execute_requete($st_requete);
-   $pf = fopen($pst_fichier, "w") or die("<div class=IMPORTANT>Impossible d'&eacute;crire $pst_fichier</div>");
+   $pf = fopen($pst_fichier, "w") or die("<div class=\"alert alert-danger\">Impossible d'&eacute;crire $pst_fichier</div>");
    while (list($st_patro,$st_prenom,$st_commune,$st_annee,$st_type_acte)=$pconnexionBD->ligne_suivante_resultat())
    {
       //print_r($a_ligne);
@@ -1099,28 +1099,30 @@ function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_i
 {
     global $gi_max_taille_upload,$ga_sources,$ga_communes_acte,$gi_annee_recens,$ga_adherents,$ga_types_nimegue,$ga_versions_nimegue;
     print('<div class="panel-group">');	
-	print('<div class="panel panel-primary">');
+	  print('<div class="panel panel-primary">');
     print('<div class="panel-heading">Chargement/Export des donn&eacute;es d\'une commune/paroisse</div>');
     print('<div class="panel-body">');
-	print('<div class="panel">');
+	  print('<div class="panel panel-info">');
     print('<div class="panel-heading">Chargement BMS/EC/Divers</div>');
     print('<div class="panel-body">');
-	print("<form id=chargement enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+	  print("<form id=chargement enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
     print("<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\" >"); 
     print('<input type="hidden" name="mode" value="CHARGEMENT">');
-	print('<div class="form-row col-md-12">');
-	print('<div class="input-group col-md-offset-4 col-md-4">');
-    print('<label for=\"idf_source\">Source:</label><select name=idf_source id=idf_source class="js-select-avec-recherche form-control">');
+    print('<div class="form-group row">'); 
+    print('<label for="idf_source" class="col-form-label col-md-2 col-md-offset-3">Source:</label>');
+    print('<div class="col-md-4">');
+    print('<select name=idf_source id=idf_source class="js-select-avec-recherche form-control">');
     print(chaine_select_options($pi_idf_source,$ga_sources));
     print('</select>');
-	print('</div></div>');
+	  print('</div></div>');
 	
-    print('<div class="form-row col-md-12">');
-	print('<div class="input-group col-md-offset-4 col-md-4">');	
-    print('<label for="idf_commune_acte">Commune:</label><select name=idf_commune_acte id=idf_commune_acte class="js-select-avec-recherche form-control" >');
+    print('<div class="form-group row">'); 	
+    print('<label for="idf_commune_acte" class="col-form-label col-md-2 col-md-offset-3">Commune:</label>');
+    print('<div class="col-md-4">');
+    print('<select name=idf_commune_acte id=idf_commune_acte class="js-select-avec-recherche form-control" >');
     print(chaine_select_options($pi_idf_commune_acte,$ga_communes_acte));
     print('</select>');
-	print('</div></div>');
+	  print('</div></div>');
 	
     $a_releveurs_select = array();
     foreach ($ga_adherents as $i_idf => $a_champs)
@@ -1129,31 +1131,37 @@ function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_i
       $a_releveurs_select[$i_idf] = "$st_nom $st_prenom";
     }
     $a_releveurs_select[0] = "Aucun releveur";
-	print('<div class="form-row col-md-12">');
-	print('<div class="input-group col-md-offset-4 col-md-4">');
-    print('<label for="idf_releveur">Releveur:</label><select name=idf_releveur id=idf_releveur class="js-select-avec-recherche form-control">');
+	  print('<div class="form-group row">'); 
+    print('<label for="idf_releveur" class="col-form-label col-md-2 col-md-offset-3">Releveur:</label>');
+    print('<div class="col-md-4">');
+    print('<select name=idf_releveur id=idf_releveur class="js-select-avec-recherche form-control">');
     print(chaine_select_options($pi_idf_releveur,$a_releveurs_select));
     print('</select>');
-	print('</div></div>');
+	  print('</div></div>');
 	
-	print('<div class="form-row col-md-12">');
-	print('<div class="input-group col-md-offset-4 col-md-4">');
-    print('<label for="idf_type_acte">Type d\'acte Nimegue:</label><select name=idf_type_acte id="idf_type_acte" class="js-select-avec-recherche form-control">');
+	  print('<div class="form-group row">');
+    print('<label for="idf_type_acte" class="col-form-label col-md-2 col-md-offset-3">Type d\'acte Nimegue:</label>');
+    print('<div class="col-md-4">');
+    print('<select name=idf_type_acte id="idf_type_acte" class="js-select-avec-recherche form-control">');
     print(chaine_select_options($pc_idf_type_acte,$ga_types_nimegue));
     print('</select>');
-	print('</div></div>');
+	  print('</div></div>');
 	
-	print('<div class="form-row col-md-12">');
-	print('<div class="input-group col-md-offset-4 col-md-4">');
-    print('<label for="idf_version_nimegue">Version Nimegue:</label><select name=idf_version_nimegue id=idf_version_nimegue class="form-control">');
+	  print('<div class="form-group row">');
+    print('<label for="idf_version_nimegue" class="col-form-label col-md-2 col-md-offset-3">Version Nimegue:</label>');
+    print('<div class="col-md-4">');
+    print('<select name=idf_version_nimegue id=idf_version_nimegue class="form-control">');
     print(chaine_select_options($pi_idf_version_nimegue,$ga_versions_nimegue));
     print('</select>');
-	print('</div></div>');
+	  print('</div></div>');
 	
     print('<div class="form-row col-md-12">');
-	print('<div class="input-group col-md-offset-4 col-md-4"><div class="custom-file">');	
-    print('<label for="FichNim">Fichier:</label><input name="FichNim" id="FichNim" type="file" class="custom-file-input">');
-    print('</div></div></div>');
+    print('<div class="input-group col-md-offset-4 col-md-4"><div class="custom-file">');	
+    print('<label class="custom-file-label" for="FichNim">Fichier:</label>');
+    print('<input name="FichNim" id="FichNim" type="file" class="custom-file-input">');
+    print('</div>');
+    print('</div>');
+    print('</div>');
 	
     print('<div class="form-row">');   
     print('<input type=submit name=Rechercher value="Charger le fichier" class="btn btn-primary col-md-offset-4 col-md-4">');
@@ -1161,58 +1169,63 @@ function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_i
 	
     print("</form></div></div>");
     
-	print('<div class="panel">');
+	  print('<div class="panel panel-info">');
     print('<div class="panel-heading">Export</div>');
     print('<div class="panel-body">');
-	print("<form id=export  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
+	  print("<form id=export  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
     print("<input type=\"hidden\" id=\"export_idf_source\" name=\"idf_source\" value=\"\">");
     print("<input type=\"hidden\" id=\"export_idf_commune\" name=\"idf_commune_acte\" value=\"\">");
     print("<input type=\"hidden\" id=\"export_idf_type_acte\" name=\"idf_type_acte\" value=\"\">");
     print('<input type="hidden" name="mode" id="mode_export" value="">');
-	print('<div class="form-row">');   
+	  print('<div class="form-row">');   
     print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Exporter la commune au format s&eacute;lectionn&eacute;</button>');
     print('</div>');
     print("</form>");
-	print("<form id=chgt_recens  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
+	  print("<form id=chgt_recens  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
     print('<input type="hidden" name="mode" id=\"mode_export\" value="">');
     print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Exporter les index pour les AD</button>');	
     print("</form>");
-	print("</div></div>");
+	  print("</div></div>");
     
-	print('<div class="panel">');
+	  print('<div class="panel panel-info">');
     print('<div class="panel-heading">Chargement recensement</div>');
     print('<div class="panel-body">');
 	
     print("<form id=chargement_recens enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
     print("<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\" >"); 
     print('<input type="hidden" name="mode" value="CHARGEMENT_RECENS">');
-	print('<div class="form-row col-md-12">');
-	print('<div class="input-group col-md-offset-4 col-md-4">');
-	print('<label for="idf_source_recens">Source:</label><select name=idf_source id=idf_source_recens class="js-select-avec-recherche form-control">');
+	  print('<div class="form-group row">');
+	  print('<label for="idf_source_recens" class="col-form-label col-md-2 col-md-offset-3">Source:</label>');
+    print('<div class="col-md-4">');
+    print('<select name=idf_source id=idf_source_recens class="js-select-avec-recherche form-control">');
     print(chaine_select_options($pi_idf_source,$ga_sources));
     print('</select>');
-	print('</div></div>');
+	  print('</div></div>');
 	
-	print('<div class="form-row col-md-12">');
-	print('<div class="input-group col-md-offset-4 col-md-4">');
-    print('<label for="idf_commune_recens">Commune:</label><select name=idf_commune_acte id=idf_commune_recens class="js-select-avec-recherche form-control" >');
+	  print('<div class="form-group row">');
+    print('<label for="idf_commune_recens" class="col-form-label col-md-2 col-md-offset-3">Commune:</label>');
+    print('<div class="col-md-4">');
+    print('<select name=idf_commune_acte id=idf_commune_recens class="js-select-avec-recherche form-control" >');
     print(chaine_select_options($pi_idf_commune_acte,$ga_communes_acte));
     print('</select>');
-	print('</div></div>');
+	  print('</div></div>');
 	
-	print('<div class="form-row col-md-12">');
-	print('<div class="input-group col-md-offset-4 col-md-4">');
-    print("<label for=\"annee_recens\">Ann&eacute;e:</label><input type=\"text\" name=\"annee_recens\" id=\"annee_recens\" size=\"4\" maxlength=\"4\" value=\"$gi_annee_recens\" class=\"form-control\">");
-	print('</div></div>');
+	  print('<div class="form-group row">');
+    print('<label for="annee_recens" class="col-form-label col-md-2 col-md-offset-3">Ann&eacute;e:</label>');
+    print('<div class="col-md-4">');
+    print("<input type=\"text\" name=\"annee_recens\" id=\"annee_recens\" size=\"4\" maxlength=\"4\" value=\"$gi_annee_recens\" class=\"form-control\">");
+	  print('</div></div>');
 	
-	print('<div class="form-row col-md-12">');
-	print('<div class="input-group col-md-offset-4 col-md-4"><div class="custom-file">');	
-    print('<label for="FichRecens">Fichier:</label><input name="FichRecens" id="FichRecens" type="file" class="custom-file-input">');
+	  print('<div class="form-group row">');
+	  print('<div class="input-group col-md-offset-4 col-md-4"><div class="custom-file">');	
+    print('<label for="FichRecens" class="col-form-label col-md-2 col-md-offset-3">Fichier:</label>');
+    print('<div class="col-md-4">');
+    print('<input name="FichRecens" id="FichRecens" type="file" class="custom-file-input">');
     print('</div></div></div>');
 	
-	print('<input type=submit name=Rechercher value="Charger le recensement" class="btn btn-primary col-md-offset-4 col-md-4">');
+	  print('<input type=submit name=Rechercher value="Charger le recensement" class="btn btn-primary col-md-offset-4 col-md-4">');
     
-	print("</form></div></div></div>");
+	  print("</form></div></div></div>");
 
 }     
 
@@ -1359,7 +1372,42 @@ $(document).ready(function() {
     {
 			 form.submit();
     }
-    }       
+    },
+    errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}
+           
   });
   
    $("#chargement_recens").validate({
@@ -1383,7 +1431,41 @@ $(document).ready(function() {
        required: "L'année doit être spécifiée",
        integer: "L'année doit être un entier",
        minlength: "L'année doit comporter 4 chiffes"
-    }
+    },
+	},
+  errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 	},
   submitHandler: function(form) {
     var annee_recens=$('#annee_recens').val();
