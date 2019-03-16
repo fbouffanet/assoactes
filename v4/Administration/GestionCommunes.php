@@ -189,8 +189,9 @@ function menu_liste($pconnexionBD)
    print('<div class="panel-body">');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"suppression_communes\" method=\"post\">");
    
-   print('<div class="form-row col-md-12">');   
-   print('<ul class="pagination justify-content-center">');
+   print('<div class="form-row col-md-12">');
+   print('<div class="text-center">');   
+   print('<ul class="pagination">');
    $i_session_initiale = isset($_SESSION['initiale']) ? $_SESSION['initiale'] : $a_initiales_communes[0];
    $gc_initiale = empty($_GET['initiale']) ? $i_session_initiale : $_GET['initiale'];
    $_SESSION['initiale'] = $gc_initiale;   
@@ -201,7 +202,7 @@ function menu_liste($pconnexionBD)
      else
         print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale=$c_initiale\">$c_initiale</a></li>");
    }
-   print("</ul></div>");
+   print("</ul></div></div>");
    
    $st_requete = "select idf,nom from commune_acte where nom like '$gc_initiale%' order by nom";
    $a_liste_communes = $pconnexionBD->liste_valeur_par_clef($st_requete);
