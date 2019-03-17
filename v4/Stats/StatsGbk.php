@@ -96,7 +96,7 @@ function affiche_stats_cumulees($pconnexionBD)
   print('</div></div>');
   print("<form action=".$_SERVER['PHP_SELF']." method=post>");
   print("<input type=hidden name=mode value=\"FORMULAIRE\">");
-  print("<input type=submit value=\"Retour vers les menu\" class=\"btn btn-primary col-md-4 col-md-offset-4\">");
+  print("<input type=submit value=\"Retour vers le menu\" class=\"btn btn-primary col-md-4 col-md-offset-4\">");
   print("</form>");
   print('</div>');
 }
