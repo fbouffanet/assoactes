@@ -1103,11 +1103,11 @@ function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_i
     print('<div class="panel-heading">Chargement/Export des donn&eacute;es d\'une commune/paroisse</div>');
     print('<div class="panel-body">');
 	  print('<div class="panel panel-info">');
-    print('<div class="panel-heading">Chargement BMS/EC/Divers</div>');
+    print('<div class="panel-heading">Chargement/Export BMS/EC/Divers</div>');
     print('<div class="panel-body">');
 	  print("<form id=chargement enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
     print("<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\" >"); 
-    print('<input type="hidden" name="mode" value="CHARGEMENT">');
+    print('<input type="hidden" name="mode" id="mode" value="CHARGEMENT">');
     print('<div class="form-group row">'); 
     print('<label for="idf_source" class="col-form-label col-md-2 col-md-offset-3">Source:</label>');
     print('<div class="col-md-4">');
@@ -1154,34 +1154,35 @@ function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_i
     print(chaine_select_options($pi_idf_version_nimegue,$ga_versions_nimegue));
     print('</select>');
 	  print('</div></div>');
-	
-    print('<div class="form-row col-md-12">');
-    print('<div class="input-group col-md-offset-4 col-md-4"><div class="custom-file">');	
-    print('<label class="custom-file-label" for="FichNim">Fichier:</label>');
+	  
+    print('<div class="form-group row"><div class="custom-file">');  
+    print('<label for="FichNim" class="col-form-label col-md-2 col-md-offset-3">Fichier:</label>');
+    print('<div class="col-md-4">');
     print('<input name="FichNim" id="FichNim" type="file" class="custom-file-input">');
     print('</div>');
     print('</div>');
     print('</div>');
 	
-    print('<div class="form-row">');   
-    print('<input type=submit name=Rechercher value="Charger le fichier" class="btn btn-primary col-md-offset-4 col-md-4">');
+    print('<div class="form-row">');
+    print('<div class="col-md-offset-4 col-md-4">');
+    print('<div class="btn-group-vertical">');   
+    print('<button type=submit class="btn btn-primary" >Charger le fichier</button>');
+    print('<button type=button class="btn btn-primary" id=export_bmsv>Exporter la commune au format s&eacute;lectionn&eacute;</button>');
+    print('</div>');
+    print('</div>');
     print('</div>');	
 	
     print("</form></div></div>");
     
 	  print('<div class="panel panel-info">');
-    print('<div class="panel-heading">Export</div>');
+    print('<div class="panel-heading">Export AD</div>');
     print('<div class="panel-body">');
-	  print("<form id=export  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
     print("<input type=\"hidden\" id=\"export_idf_source\" name=\"idf_source\" value=\"\">");
     print("<input type=\"hidden\" id=\"export_idf_commune\" name=\"idf_commune_acte\" value=\"\">");
     print("<input type=\"hidden\" id=\"export_idf_type_acte\" name=\"idf_type_acte\" value=\"\">");
     print('<input type="hidden" name="mode" id="mode_export" value="">');
-	  print('<div class="form-row">');   
-    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Exporter la commune au format s&eacute;lectionn&eacute;</button>');
-    print('</div>');
-    print("</form>");
-	  print("<form id=chgt_recens  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
+      
+	  print("<form id=export_ad  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
     print('<input type="hidden" name="mode" id=\"mode_export\" value="">');
     print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Exporter les index pour les AD</button>');	
     print("</form>");
@@ -1216,8 +1217,7 @@ function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_i
     print("<input type=\"text\" name=\"annee_recens\" id=\"annee_recens\" size=\"4\" maxlength=\"4\" value=\"$gi_annee_recens\" class=\"form-control\">");
 	  print('</div></div>');
 	
-	  print('<div class="form-group row">');
-	  print('<div class="input-group col-md-offset-4 col-md-4"><div class="custom-file">');	
+	  print('<div class="form-group row"><div class="custom-file">'); 
     print('<label for="FichRecens" class="col-form-label col-md-2 col-md-offset-3">Fichier:</label>');
     print('<div class="col-md-4">');
     print('<input name="FichRecens" id="FichRecens" type="file" class="custom-file-input">');
@@ -1368,10 +1368,15 @@ $(document).ready(function() {
     var source=$('#idf_source option:selected').text();
     var type_acte=$('#idf_type_acte option:selected').text();
     var commune=$('#idf_commune_acte option:selected').text();
-    if (confirm('Etes-vous sûr de recharger le fichier de la commune '+commune+' ('+type_acte+')'+' de la source '+source+' ?'))
+    if ($('#mode').val()=="CHARGEMENT")
     {
+      if (confirm('Etes-vous sûr de recharger le fichier de la commune '+commune+' ('+type_acte+')'+' de la source '+source+' ?'))
+      {
 			 form.submit();
+      }
     }
+    else
+       form.submit();    
     },
     errorElement: "em",
   errorPlacement: function ( error, element ) {
@@ -1471,10 +1476,10 @@ $(document).ready(function() {
     var annee_recens=$('#annee_recens').val();
     var commune=$('#idf_commune_recens option:selected').text();
     if (confirm('Etes-vous sûr de charger les recensements de la commune '+commune+' ('+annee_recens+') ?'))
-    {
+      {
 			 form.submit();
-    }
-    }      
+      }
+  }        
   });
 
   //validation rules
@@ -1490,6 +1495,18 @@ $(document).ready(function() {
 		  form.submit();
 	 }      
   });
+  
+  $("#export_bmsv" ).click(function() {
+    if ($('#idf_version_nimegue').val()==2)
+       $('#mode').val("EXPORTV2");
+    if ($('#idf_version_nimegue').val()==3)
+       $('#mode').val("EXPORTV3");
+    $('#FichNim').rules('add', {
+    required: false   // overwrite an existing rule
+    });       
+    $("#chargement").submit();
+  });
+
 });
 <?php
 print("</script>");
