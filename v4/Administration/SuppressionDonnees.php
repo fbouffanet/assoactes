@@ -86,6 +86,40 @@ $(document).ready(function() {
       integer: "l'année maximale doit être un entier"
     }
 	},
+  errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	},
   submitHandler: function(form) {
     var source=$('#idf_source option:selected').text();
     var type_acte=$('#idf_type_acte option:selected').text();
@@ -149,33 +183,38 @@ switch($gst_mode)
      $a_types_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from type_acte order by nom");
      unset($a_types_acte[IDF_UNION]);
      $a_types_acte['DIV']="Tous divers Nimegue";
-	 print('<div class="panel panel-primary">');
+	   print('<div class="panel panel-primary">');
      print('<div class="panel-heading">Suppression des donn&eacute;es d\'une commune/paroisse</div>');
      print('<div class="panel-body">');
      print("<form enctype=\"multipart/form-data\" id=\"formulaire_suppression\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
      print('<input type="hidden" name="mode" value="SUPPRESSION">');
      print('<div class="form-row col-md-12">');
-     print('<div class="input-group col-md-offset-4 col-md-4">');
-	 print('<label for="idf_source">Source:</label><select name=idf_source id=idf_source class="js-select-avec-recherche form-control">');
+	   print('<label for="idf_source" class="col-form-label col-md-2 col-md-offset-3">Source:</label>');
+     print('<div class="col-md-4">');
+     print('<select name=idf_source id=idf_source class="js-select-avec-recherche form-control">');
      print(chaine_select_options($gi_idf_source,$a_sources));
      print('</select></div></div>');
-	 print('<div class="form-row col-md-12">');
-     print('<div class="input-group col-md-offset-4 col-md-4">');
-     print('<label for="idf_commune_acte">Commune: <select name=idf_commune_acte id=idf_commune_acte class="js-select-avec-recherche form-control">');
+	   print('<div class="form-row col-md-12">');
+     print('<label for="idf_commune_acte" class="col-form-label col-md-2 col-md-offset-3">Commune:</label>');
+     print('<div class="col-md-4">');
+     print('<select name=idf_commune_acte id=idf_commune_acte class="js-select-avec-recherche form-control">');
      print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
      print('</select></div></div>');
-	 print('<div class="form-row col-md-12">');
-     print('<div class="input-group col-md-offset-4 col-md-4">');
-     print('<label for="idf_type_acte">Type d\'acte:</label><select name=idf_type_acte id=idf_type_acte class="js-select-avec-recherche form-control">');
+	   print('<div class="form-row col-md-12">');
+     print('<label for="idf_type_acte" class="col-form-label col-md-2 col-md-offset-3">Type d\'acte:</label>');
+     print('<div class="col-md-4">');
+     print('<select name=idf_type_acte id=idf_type_acte class="js-select-avec-recherche form-control">');
      print(chaine_select_options($gc_idf_type_acte,$a_types_acte));
      print('</select></div></div>');
-	 print('<div class="form-row col-md-12">');
-     print('<div class="input-group col-md-offset-4 col-md-4">');
-     print('<label for="annee_min">Annee minimale:</label><input type=text name=annee_min id=annee_min size=4 maxlength=4 class="form-control"></div></div>');
+	   print('<div class="form-row col-md-12">');
+     print('<label for="annee_min" class="col-form-label col-md-2 col-md-offset-3">Annee minimale:</label>');
+     print('<div class="col-md-4">');
+     print('<input type=text name=annee_min id=annee_min size=4 maxlength=4 class="form-control"></div></div>');
      print('<div class="form-row col-md-12">');
-     print('<div class="input-group col-md-offset-4 col-md-4">');
-	 print('<label for="annee_max">Annee maximale:</label><input type=text name=annee_max id=annee_max size=4 maxlength=4 class="form-control"></div></div>');
-    print('<div class="form-row">');   
+	   print('<label for="annee_max" class="col-form-label col-md-2 col-md-offset-3">Annee maximale:</label>');
+     print('<div class="col-md-4">');
+     print('<input type=text name=annee_max id=annee_max size=4 maxlength=4 class="form-control"></div></div>');
+     print('<div class="form-row">');   
      print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Supprimer les actes</button>');
      print('</div>');   
      print('</form></div></div>');
