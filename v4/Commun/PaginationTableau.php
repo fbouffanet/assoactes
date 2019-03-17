@@ -82,7 +82,7 @@ class PaginationTableau {
         $st_nom_select = $this->st_param_numpage."_".$this->i_nb_select_page;
         $i_index_choisi = "document.$pst_nom_formulaire.$st_nom_select.selectedIndex";
         print("<div class=\"form-group row col-md-12\">");
-		print("<label for=\"$st_nom_select\" class=\"col-form-label col-md-2 col-md-offset-4\">Page:</label>");
+		print("<label for=\"$st_nom_select\" class=\"col-form-label col-md-2 col-md-offset-3\">Page:</label>");
 		print('<div class="col-md-2">');
 		print("<select name=$st_nom_select id=\"$st_nom_select\" onChange=\"document.$pst_nom_formulaire.$this->st_param_numpage.value=document.$pst_nom_formulaire.$st_nom_select.options[$i_index_choisi].value;document.$pst_nom_formulaire.submit();\" class=\"form-control\">");        
         for ($i=1;$i<=$this->i_nb_pages;$i++)
