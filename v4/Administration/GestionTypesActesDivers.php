@@ -36,8 +36,46 @@ $(document).ready(function() {
 		nom_type_acte: {
 			required: "Le nom du type est obligatoire"
 		}
-    }
-  });  
+    },
+	errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-10" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-10" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-10" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}
+  });
+
+  $("#annuler" ).click(function() {
+    window.location.href = 'GestionTypesActesDivers.php';
+});  
 });
 
 </script>
@@ -97,7 +135,7 @@ function menu_liste($pconnexionBD)
    print('</form>');
    print("<form id=nettoyage  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
    print('<input type="hidden" name="mode" value="NETTOYAGE_TYPE_ACTE">'); 
-   print("<button type=submit class=\"btn btn-primary col-md-4 col-md-offset-4\">Supprimer les types d\'actes inutilis&eacute;s</button>");      
+   print("<button type=submit class=\"btn btn-primary col-md-4 col-md-offset-4\">Supprimer les types d'actes inutilis&eacute;s</button>");      
    print("</form></div></div>");
 }
 
@@ -109,12 +147,24 @@ function menu_liste($pconnexionBD)
  */ 
 function menu_edition($pst_type_acte,$pst_sigle,$pi_idf_type_acte)
 {
-   print("<table class=\"table table-bordered table-striped\">");  
-   print("<tr><th>Type d'acte</th><td><input type=\"text\" maxlength=50 size=30 name=nom_type_acte value=\"$pst_type_acte\"></td></tr>");
-   print("<tr><th>Sigle</th><td><input type=\"text\" maxlength=5 size=5 name=sigle_type_acte value=\"$pst_sigle\"></td></tr>");
-   print("<input type=hidden name=idf_type_acte value=$pi_idf_type_acte>");
-   print("<tr><th>IDF</th><td>$pi_idf_type_acte</td></tr>");
-   print("</table>");
+   print('<div class="form-group row">');    
+   print('<label for="nom_type_acte" class="col-form-label col-md-2">Type d\'acte</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=50 size=30 name=nom_type_acte id=nom_type_acte value=\"$pst_type_acte\">");
+   print('</div>');
+   print('</div>');
+   print('<div class="form-group row">'); 
+   print('<label for="sigle_type_acte" class="col-form-label col-md-2">Sigle</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=5 size=5 name=sigle_type_acte id=sigle_type_acte value=\"$pst_sigle\">");
+   print('</div>');
+   print('</div>');
+   print('<div class="form-group row">'); 
+   print('<label for="sigle_type_acte" class="col-form-label col-md-2">IDF</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=5 size=5 name=idf_type_acte id=idf_type_acte value=\"$pi_idf_type_acte\" readonly>");
+   print('</div>');
+   print('</div>');
 }
 
 /** Affiche le formulaire de modification d'un type d'acte
@@ -125,17 +175,14 @@ function menu_modifier($pconnexionBD,$pi_idf_type_acte)
 {
 	list($st_nom_type_acte,$st_sigle)=$pconnexionBD->sql_select_liste("select nom, sigle_nimegue from type_acte where idf=$pi_idf_type_acte");
 	print('<div class="panel panel-primary">');
-    print('<div class="panel-heading">Edition d\'un type d\'actes</div>');
+    print('<div class="panel-heading">Edition d\'un type d\'acte</div>');
     print('<div class="panel-body">');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"edition_type_acte\">");
 	print("<input type=hidden name=mode value=MODIFIER>");
 	print("<input type=hidden name=idf_type_acte value=$pi_idf_type_acte>");
 	menu_edition($st_nom_type_acte,$st_sigle,$pi_idf_type_acte);
 	print("<button type=submit class=\"btn btn-primary col-md-4 col-md-offset-4\">Modifier</button>");  
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<input type=hidden name=mode value=LISTE>");
-	print("<button type=submit class=\"btn btn-primary col-md-4 col-md-offset-4\">Annuler</button>");
+	print("<button type=button id=annuler class=\"btn btn-primary col-md-4 col-md-offset-4\">Annuler</button>");
 	print('</form></div></div>');
 }
 
@@ -148,34 +195,46 @@ function menu_remplacer($pconnexionBD,$pi_idf_type_acte)
 	print("\r\n<input type=hidden name=mode value=\"REMPLACER\">");
 
 	list($st_nom_type_acte,$st_sigle)=$pconnexionBD->sql_select_liste("select nom, sigle_nimegue from type_acte where idf=$pi_idf_type_acte");
-	print('<div class=panel">');
+	print('<div class="panel panel-primary">');
     print('<div class="panel-heading">Remplacement d\'un type d\'acte</div>');
     print('<div class="panel-body">');
-	print("\r\n<table class=\"table table-bordered table-striped\">\r\n");
-	 
-	print("<tr><th>IDF</th><td>$pi_idf_type_acte</td></tr>");
-	print("<tr><th>Sigle</th><td>$st_sigle</td></tr>");
-	print("<tr><th>Type d'acte</th><td>$st_nom_type_acte</td></tr>");
-	print("<tr><th>Remplacer par</th><td>\r\n<select name=\"NouveauTypeActe\" class=\"form-control\">\r\n");
+	print('<div class="form-group row">'); 
+    print('<label for="sigle_type_acte" class="col-form-label col-md-2">IDF</label>');
+    print('<div class="col-md-10">');
+    print("<input type=\"text\" maxlength=5 size=5 name=idf_type_acte id=idf_type_acte value=\"$pi_idf_type_acte\" readonly>");
+    print('</div>');
+    print('</div>');
+	print('<div class="form-group row">'); 
+    print('<label for="sigle_type_acte" class="col-form-label col-md-2">Sigle</label>');
+    print('<div class="col-md-10">');
+    print("<input type=\"text\" maxlength=5 size=5 name=sigle_type_acte id=sigle_type_acte value=\"$st_sigle\">");
+    print('</div>');
+    print('</div>');
+	print('<div class="form-group row">');    
+    print('<label for="nom_type_acte" class="col-form-label col-md-2">Type d\'acte</label>');
+    print('<div class="col-md-10">');
+    print("<input type=\"text\" maxlength=50 size=30 name=nom_type_acte id=nom_type_acte value=\"$st_nom_type_acte\">");
+    print('</div>');
+    print('</div>');
+    print('<div class="form-group row">');    
+    print('<label for="NouveauTypeActe" class="col-form-label col-md-2">Remplacer par </label>');
+    print('<div class="col-md-10">');
+    print('<select name="NouveauTypeActe" id="NouveauTypeActe" class="form-control">');
 	$listetypes=$pconnexionBD->liste_valeur_par_clef("select idf, nom from type_acte order by nom");
 	foreach ($listetypes as $idf=>$nom)
 	{
-     if($nom == $st_nom_type_acte)
-     {
-	  PRINT("<option value='".$idf."' selected=\"selected\">".$nom."</option>");
-	 }
-     else
-	  PRINT("<option value='".$idf."'>".$nom."</option>\r\n");
-	} 
-	print("</select></td></tr>\r\n");
-	print("</table>\r\n");
-	print("</div>\r\n");
+		if($nom == $st_nom_type_acte)
+		{
+			print("<option value='".$idf."' selected=\"selected\">".$nom."</option>");
+		}
+		else
+			print("<option value='".$idf."'>".$nom."</option>\r\n");
+	}
+    print("</select>");	
+    print('</div>');
+    print('</div>');
 	print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Remplacer</button>');
-
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><br><input type=hidden name=mode value=LISTE>");
-	print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
+	print('<button type=button id=annuler class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
 	print('</form></div></div>');
 }
 /** Affiche le formulaire d'ajout d'un type d'acte
@@ -186,10 +245,7 @@ function menu_ajouter($pi_idf_type_acte)
 	print("<input type=hidden name=mode value=\"AJOUTER\">");
 	menu_edition('','',$pi_idf_type_acte);
 	print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Ajouter</button>');
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<input type=hidden name=mode value=LISTE>");
-	print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
+	print('<button type=button id=annuler class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
 	print('</form>');
 }
 
@@ -245,7 +301,7 @@ switch ($gst_mode)
   case 'NETTOYAGE_TYPE_ACTE':
       $st_requete = "delete from type_acte where idf not in (select distinct idf_type_acte from acte) and idf!=".IDF_UNION;
       //print("Req=$st_requete");
-      print("<div class=\"alert alert-successfull\"> Nettoyage effectu&eacute;</div>");
+      print("<div class=\"alert alert-success\"> Nettoyage effectu&eacute;</div>");
       $connexionBD->execute_requete($st_requete);
       print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
       print('<input type="hidden" name="mode" value="LISTE"/><br>'); 
