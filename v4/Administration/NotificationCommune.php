@@ -62,19 +62,21 @@ function AfficheSelectionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commu
 
   print("<input type=hidden name=mode value=EDITION_NOTIFICATION>");
   print('<div class="form-row col-md-12">');
-  print('<div class="input-group col-md-offset-4 col-md-4">');
-  print('<label for="idf_source">Source:</label><select name=idf_source id=idf_source class="js-select-avec-recherche form-control">');
-
+  print('<label for="idf_source" class="col-form-label col-md-2 col-md-offset-3">Source:</label>');
+  print('<div class="col-md-4">'); 
+  print('<select name=idf_source id=idf_source class="js-select-avec-recherche form-control">');
   print(chaine_select_options($pi_idf_source,$a_sources));
   print('</select></div></div>');
-  print('<div class="form-row col-md-12">');
-  print('<div class="input-group col-md-offset-4 col-md-4">');
-  print('<label for="idf_commune">Commune:</label><select name=idf_commune id=idf_commune class="js-select-avec-recherche form-control">');
+  print('<div class="form-row col-md-12">');  
+  print('<label for="idf_commune" class="col-form-label col-md-2 col-md-offset-3">Commune:</label>');
+  print('<div class="col-md-4">');
+  print('<select name=idf_commune id=idf_commune class="js-select-avec-recherche form-control">');
   print(chaine_select_options($pi_idf_commune,$a_communes));
   print('</select></div></div>');
   print('<div class="form-row col-md-12">');
-  print('<div class="input-group col-md-offset-4 col-md-4">');
-  print('<label for="idf_type_acte">Type d\'acte:</label><select name=idf_type_acte id=idf_type_acte class="js-select-avec-recherche form-control">');
+  print('<label for="idf_type_acte" class="col-form-label col-md-2 col-md-offset-3">Type d\'acte:</label>');
+  print('<div class="col-md-4">');
+  print('<select name=idf_type_acte id=idf_type_acte class="js-select-avec-recherche form-control">');
   print(chaine_select_options($pi_idf_type_acte,$ga_types_nimegue));
   print('</select></div></div>');
   print('<div class="form-row">');   
@@ -191,9 +193,9 @@ function EnvoieNotification($pconnexionBD,$pi_idf_commune,$pi_idf_type_acte,$pst
    $st_message .= $pst_msg_html."\n\n";
    $st_message .= '--'.$st_frontiere."--\n"; 
    if (mail(EMAIL_FORUM, $st_sujet, $st_message, $st_entete))    	
-	    print('<div class=\"alert alert-success\">R&eacute;ponse envoy&eacute;e avec succ&egrave;s sur le forum</div>');
+	    print('<div class="alert alert-success">R&eacute;ponse envoy&eacute;e avec succ&egrave;s sur le forum</div>');
    else
-	    print('<div class=\"alert alert-danger\">La r&eacute;ponse n\'a pu &ecirc;tre envoy&eacute;e sur le forum</div>');
+	    print('<div class="alert alert-danger">La r&eacute;ponse n\'a pu &ecirc;tre envoy&eacute;e sur le forum</div>');
 }
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
@@ -243,7 +245,7 @@ switch ($gst_mode) {
        print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
        print("<input type=hidden name=mode value=SELECTION_NOTIFICATION>");
        print('<div class="form-row">'); 
-       print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Retour a la selection de la notification</button>');
+       print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Retour au menu de notification</button>');
        print("</div>"); 	       
        EnvoieNotification($connexionBD,$gi_idf_commune,$gi_idf_type_acte,$gst_texte);  
        print("</form>");
