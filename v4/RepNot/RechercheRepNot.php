@@ -33,34 +33,36 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
   $pst_nom2 = utf8_encode($pst_nom2);
   $pst_prenom2 = utf8_encode($pst_prenom2);
 	*/
-    print('<form id="recherche_rep_not" class="form-inline" action="'.$_SERVER['PHP_SELF'].'" method="post">');
+    print('<form id="recherche_rep_not"  action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type="hidden" name="mode" value="RECHERCHES">');
     print('<input type="hidden" name="ancienne_page" value="RECHERCHES">');
-	print('<div class=panel">');
+	print('<div class="panel panel-info">');
     print('<div class="panel-heading">Notaire</div>');
     print('<div class="panel-body">');
-	print('<div class="form-row col-md-12">');
-    print('<div class="form-group col-md-4">');
-	print("<label for=\"idf_commune_notaire\"><Commune:</label>");
+    print('<div class="form-group row">');
+	print('<label for="idf_commune_notaire" class="col-form-label col-md-2">Commune</label>');
+	print('<div class="col-md-2">');
 	print("<select id=\"idf_commune_notaire\" name=\"idf_commune_notaire\" class=\"js-select-avec-recherche form-control\">");
 	$a_communes_notaires[0] = 'Toutes';
 	print(chaine_select_options($pi_idf_commune,$a_communes_notaires));
-	print("</select></div>");
+	print("</select>");
+    print('</div>');
 	print("<div class=\"form-group col-md-8\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon\" class=\"sr-only\">Rayon</label><input type=text name=rayon id='rayon' size=2 maxlength=2 value=\"$pi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");	
 	print("</div>"); // fin ligne
-	print('<div class="form-row col-md-12">');
-	print('<div class=\"form-group col-md-4 col-md-offset-4\"><label for="idf_rep">R&eacute;pertoire:</label>');
+	print('<div class="form-group row">');
+	print('<label for="idf_rep" class="col-form-label col-md-2">R&eacute;pertoire:</label>');
+	print('<div class="col-md-10">');
 	print('<select id="idf_rep" name="idf_rep" class="js-select-avec-recherche form-control">');
-	print("</select></div>");
-	print('</div>');
+	print("</select>");
+	print('</div></div>');
 	print('</div></div>'); // fin panel
 	
-    print('<div class=panel">');
+    print('<div class="panel panel-info">');
     print('<div class="panel-heading">Acte</div>');
     print('<div class="panel-body">');
-    print('<div class="form-row col-md-12">');
-    print('<div class="form-group col-md-4 col-md-offset-4">');	
-	print("<label for\"type_acte\">Type d'acte:</label>");
+    print('<div class="form-group row">');
+	print('<label for="type_acte" class="col-form-label col-md-2">Type d\'acte:</label>');
+	print('<div class="col-md-10">');
 	print("<input type=\"text\" id=\"type_acte\" name=\"type_acte\" maxlength=40 size=20 value=\"$pst_type_acte\" class=\"form-control\">");
 	print('</div></div>');
 	
@@ -94,19 +96,28 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
 	print('<div class="col-md-4">');
 	print("<input type=\"text\" id=\"prenom2\" name=\"prenom2\" maxlength=30 size=20 value=\"$pst_prenom2\" class=\"form-control\">");
 	print('</div>');
-	print("</div>");
-	
-	print('<div class="form-row col-md-12">');
-	print("<label for=\"paroisse\">Paroisse concern&eacute;e par l'acte:</label><input type=\"text\" id=\"paroisse\" name=\"paroisse\" maxlength=40 size=20 value=\"$pst_paroisse\" class=\"form-control\">");
 	print('</div>');
 	
-	print('<div class="form-row col-md-12">');
-    print("<label for=\"commentaires\">Recherche libre dans un commentaire:</label><input type=\"text\" id=\"commentaires\" name=\"commentaires\" maxlength=40 size=20 value=\"$pst_commentaires\" class=\"form-control\"></div>");
+	print('<div class="form-group row col-md-12">');
+	print('<label for="paroisse" class="col-form-label col-md-2">Paroisse concern&eacute;e par l\'acte:</label>');
+	print('<div class="col-md-10">');
+	print("<input type=\"text\" id=\"paroisse\" name=\"paroisse\" maxlength=40 size=20 value=\"$pst_paroisse\" class=\"form-control\">");
+	print('</div>');
 	print('</div>');
 	
-	print('<div class="form-row col-md-12">');
+	print('<div class="form-group row row col-md-12">');
+    print('<label for="commentaires" class="col-form-label col-md-2">Recherche libre dans un commentaire:</label>');
+	print('<div class="col-md-10">');
+	print("<input type=\"text\" id=\"commentaires\" name=\"commentaires\" maxlength=40 size=20 value=\"$pst_commentaires\" class=\"form-control\">");
+	print('</div>');
+	print('</div>');
+	
+	print('<div class="form-group row col-md-12">');
     $st_checked = $pb_rech_phonetique ? 'checked="checked"':'';
-    print("<label for=\"rech_phonetique\">Recherche phon&eacute;tique dans les patronymes:</label><input type=\"checkbox\" id=\"rech_phonetique\" name=\"rech_phonetique\" $st_checked value=\"1\"></div>");
+    print('<label for="rech_phonetique" class="col-form-label col-md-2">Recherche phon&eacute;tique dans les patronymes:</label>');
+	print('<div class="col-md-10">');
+	print("<input type=\"checkbox\" id=\"rech_phonetique\" name=\"rech_phonetique\" $st_checked value=\"1\"");
+	print('</div>');
 	print('</div>');
 	
 	print('<div class="text-center">Le caract&egrave;re * peut &ecirc;tre utilis&eacute; pour remplacer une partie de mot dans les champs Nom, Pr&eacute;nom et Paroisse. <br>Exemple: BAR* va chercher tous les mots commen&ccedil;ant par BAR</div>');
@@ -423,14 +434,14 @@ print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
-print("<link href='../Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
-print("<link href='../Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='../Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
-print("<link href='../Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='../css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='../css/select2.min.css' type='text/css' rel='stylesheet'> ");
 print('<meta http-equiv="content-language" content="fr"> ');
-print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../Commun/jquery.validate.min.js' type='text/javascript'></script>");
-print("<script src='../Commun/additional-methods.min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='../js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='../js/select2.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
