@@ -56,9 +56,9 @@ print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
-print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../Commun/jquery.validate.min.js' type='text/javascript'></script>");
-print("<script src='../Commun/additional-methods.min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='../js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 
 ?>
@@ -74,7 +74,41 @@ $("#modifie_rep_not").validate({
     messages: {
          nom_notaire: "Le nom du notaire est obligatoire",
          cote: "La cote du notaire est obligatoire" 
-       } 
+       },
+    errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-10" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-10" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-10" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}	   
 });
 
 $("#ajoute_rep_not").validate({ 
@@ -85,7 +119,41 @@ $("#ajoute_rep_not").validate({
     messages: {
          nom_notaire: "Le nom du notaire est obligatoire",
          cote: "La cote du notaire est obligatoire" 
-       }
+       },
+	errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-10" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-10" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-10" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}   
 });
 
 $("#import_rep_not").validate({ 
@@ -105,7 +173,41 @@ $("#import_rep_not").validate({
          required: "Choisir un fichier",
          extension: "Un fichier CSV est requis" 
        } 
-    }
+    },
+	errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}
 });
 
 function MajTypeDest (json, textStatus, jqXHR) {
@@ -141,7 +243,41 @@ $("#fusionner_type").validate({
     messages: {
          type_acte_orig: "Choisir un type à remplacer",
          type_acte_dest: "Choisir le type de destination"  
-    }
+    },
+	errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-5" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-5" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-5" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}
 });
 
 $("#suppression_repertoires").validate({
@@ -154,6 +290,40 @@ $("#suppression_repertoires").validate({
   messages: {
      "supp[]": "Merci de choisir au moins un répertoire à supprimer"
   },
+  errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	},
   submitHandler: function(form) {
     var repertoires='';
     $("input:checkbox").each(function(){
@@ -168,6 +338,9 @@ $("#suppression_repertoires").validate({
     }
   });
 
+  $("#annuler" ).click(function() {
+    window.location.href = 'GestionRepNot.php';
+});
 }); 
 </script>
 <?php
@@ -222,46 +395,47 @@ function menu_liste($pconnexionBD)
 	else
 		print("<div class=\"alert alert-danger\">Pas de r&eacute;pertoires</div>\n");
 	print("<input type=hidden name=mode value=\"SUPPRIMER\">");
-	print('<div class="form-row">');   
+	print('<div class="form-group row">');   
     print('<button type=submit class="btn btn-danger col-md-offset-4 col-md-4">Supprimer les r&eacute;pertoires selectionn&eacute;s</button>');
-    print('</div>');
- 
-	print("</form>");  
+	print('</div>');
+	print("</form>");
+
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
 	print("<input type=hidden name=mode value=\"MENU_AJOUTER\">");
-	print('<div class="form-row">');
+	print('<div class="form-group row">');
     print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Ajouter un r&eacute;pertoire </button>');
     print('</div>');	
  	print('</form>');
 	
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print('<div align=center><br><input type="hidden" name="mode" value="CALCUL_VARIANTES" />');
-
-	print('<div class="form-row">');
+	print('<input type="hidden" name="mode" value="CALCUL_VARIANTES">');
+	print('<div class="form-group row">');
     print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">(Re)Calculer les variantes</button>');
     print('</div>');
 	print('</form>');
   
-    print('<div class="panel">');
+    print('<div class="panel panel-info">');
     print('<div class="panel-heading">Export</div>');
     print('<div class="panel-body">');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print('<div class="form-row col-md-12">');
-    print('<div class="form-group col-md-6">');
+    print('<div class="col-md-6">');
 	print("<select name=idf_rep id=idf_rep_export class=\"form-control\">");
 	foreach($a_liste_rep_not as $i_idf_rep => $a_ligne)
 	{
       list($st_notaire,$st_paroisse,$st_cote) = $a_ligne;
       print("<option value=\"$i_idf_rep\">$st_notaire - $st_paroisse ($st_cote)</option>");
 	}
-	print("</div>"); 
+	print("</select></div>"); 
 	print('<input type="hidden" name="mode" value="EXPORT" />');
-	print('<button type="submit" class="col-md-6 btn btn-primary">Exporter le r&eacute;pertoire</button>');
+	print('<div class="col-md-6">');
+	print('<button type="submit" class="btn btn-primary">Exporter le r&eacute;pertoire</button>');
+	print("</div>");
 	print("</div></div>"); 
 	
 	print('</form></div></div>');
   
-    print('<div class="panel">');
+    print('<div class="panel panel-info">');
     print('<div class="panel-heading">Import:</div>');
     print('<div class="panel-body">');
 	print("<form enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"import_rep_not\">");
@@ -282,7 +456,7 @@ function menu_liste($pconnexionBD)
 	print('<button type=submit class="btn btn-primary">Charger le fichier r&eacute;pertoire</button></div></div>');
 	print('</form></div></div>');
 	
-	print('<div class="panel">');
+	print('<div class="panel panel-info">');
     print('<div class="panel-heading">Fusion de types:</div>');
     print('<div class="panel-body">');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"fusionner_type\">");
@@ -291,7 +465,7 @@ function menu_liste($pconnexionBD)
 	$a_types = $pconnexionBD->sql_select($st_requete);
 	print('<div class="form-row col-md-12">');
 	print('<div class="form-group col-md-5">');
-	print("<label for\"type_acte_orig\">Remplacer le type:</label><select name=\"type_acte_orig\" id=\"type_acte_orig\" class=\"form-control\"><option></option>");
+	print("<label for=\"type_acte_orig\">Remplacer le type:</label><select name=\"type_acte_orig\" id=\"type_acte_orig\" class=\"form-control\"><option></option>");
 	foreach ($a_types as $st_type)
 	{
 		print("<option>$st_type</option>\n");
@@ -306,17 +480,17 @@ function menu_liste($pconnexionBD)
    print("</select>\n");
 	print("</div>");
 	print('<div class="form-group col-md-2">');
-	print("<button type=submit>Fusionner</button></div></div>");
+	print("<button type=submit class=\"btn btn-primary\">Fusionner</button></div></div>");
 	print('</form>');
 	print('</div></div>');
   
-    print('<div class="panel">');
+    print('<div class="panel panel-info">');
     print('<div class="panel-heading">Liste des r&eacute;pertoires:</div>');
     print('<div class="panel-body">'); 
     print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"exporter_liste\">");
     print("<input type=hidden name=mode value=\"LISTE_REP\">");
 	print('<div class="form-row col-md-12">');
-    print("<button type=submit class=\"col-md-offset-4 col-md-4\">Exporter la liste des notaires</button>");
+    print("<button type=submit class=\"col-md-offset-4 col-md-4 btn btn-primary\">Exporter la liste des notaires</button>");
     print('</div>');
 	print('</form></div></div>');
   
@@ -336,19 +510,47 @@ function menu_liste($pconnexionBD)
  */ 
 function menu_edition($pa_communes,$pa_releveurs,$pi_idf_repertoire,$pst_nom_notaire,$pst_cote,$pi_idf_commune,$pi_idf_releveur,$pc_publication)
 {
-   print("<table class=\"table table-bordered table-striped\">");
-   print("<tr><th>Identifiant du r&eacute;pertoire</th><td>$pi_idf_repertoire</td></tr>");
-   print("<tr><th>Nom du notaire</th><td><input type=\"text\" maxlength=50 size=30 name=nom_notaire id=nom_notaire value=\"$pst_nom_notaire\"></td></tr>");
-   print("<tr><th>Cote du notaire</th><td><input type=\"text\" maxlength=10 size=10 name=cote id=cote value=\"$pst_cote\"></td></tr>");
-   print("<tr><th>Commune</th><td><select name=\"idf_commune\">");
+   print('<div class="form-group row">');
+   print('<label for="idf_repertoire" class="col-form-label col-md-2">Identifiant du r&eacute;pertoire</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=50 size=30 name=idf_repertoire id=idf_repertoire value=\"$pi_idf_repertoire\">");
+   print('</div>');
+   print('</div>');
+   print('<div class="form-group row">');
+   print('<label for="nom_notaire" class="col-form-label col-md-2">Nom du notaire</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=50 size=30 name=nom_notaire id=nom_notaire value=\"$pst_nom_notaire\">");
+   print('</div>');
+   print('</div>');
+   print('<div class="form-group row">');
+   print('<label for="cote" class="col-form-label col-md-2">Cote du notaire</label>');
+   print('<div class="col-md-10">');
+   print("<input type=\"text\" maxlength=10 size=10 name=cote id=cote value=\"$pst_cote\">");
+   print('</div>');
+   print('</div>');
+   print('<div class="form-group row">');
+   print('<label for="idf_commune" class="col-form-label col-md-2">Commune</label>');
+   print('<div class="col-md-10">');
+   print("<select name=\"idf_commune\" id=\"idf_commune\">");
    print(chaine_select_options($pi_idf_commune,$pa_communes));
-   print("</select></td></tr>");
-   print("<tr><th>Releveur</th><td><select name=\"idf_releveur\">");
+   print("</select>");
+   print('</div>');
+   print('</div>');
+   print('<div class="form-group row">');
+   print('<label for="idf_releveur" class="col-form-label col-md-2">Releveur</label>');
+   print('<div class="col-md-10">');
+   print("<select name=\"idf_releveur\" id=\"idf_releveur\">");
    print(chaine_select_options($pi_idf_releveur,$pa_releveurs));
-   print("</select></td></tr>");
+   print("</select>");
+   print('</div>');
+   print('</div>');
    $st_coche = $pc_publication=='O' ? 'checked' : '';
-   print("<tr><th>Publication</th><td><input type=checkbox value='O' name='publication' $st_coche></td></tr>");
-   print("</table>");
+   print('<div class="form-group row">');
+   print('<label for="publication" class="col-form-label col-md-2">Publication</label>');
+   print('<div class="col-md-10">');
+   print("<input type=checkbox value='O' name='publication' id='publication' $st_coche>");
+   print('</div>');
+   print('</div>');
 }
 
 /** Affiche le menu de modification d'un répertoire
@@ -365,13 +567,10 @@ function menu_modifier($pconnexionBD,$pi_idf_repertoire,$pa_communes,$pa_releveu
    print("<input type=hidden name=idf_repertoire value=$pi_idf_repertoire>");
    menu_edition($pa_communes,$pa_releveurs,$pi_idf_repertoire,$st_nom_notaire,$st_cote,$idf_commune,$idf_releveur,$c_publication);
    print('<div class="form-row col-md-12">');
-   print("<button type=submit class=\"col-md-offset-4 col-md-4\">Modifier</button>");
+   print("<button type=submit class=\"col-md-offset-4 col-md-4 btn btn-primary\">Modifier</button>");
    print('</div>');
-   print('</form>');
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<input type=hidden name=mode value=LISTE>");
    print('<div class="form-row col-md-12">');
-   print("<button type=submit class=\"col-md-offset-4 col-md-4\">Annuler</button>");
+   print("<button type=button id=annuler class=\"col-md-offset-4 col-md-4 btn btn-primary\">Annuler</button>");
    print('</div>');
    print('</form>');
 }
@@ -386,13 +585,10 @@ function menu_ajouter($pa_communes,$pa_releveurs)
    print("<input type=hidden name=mode value=\"AJOUTER\">");
    menu_edition($pa_communes,$pa_releveurs,null,'','',0,0,'N');
    print('<div class="form-row col-md-12">');
-   print("<button type=submit class=\"col-md-offset-4 col-md-4\">Ajouter</button>");
+   print("<button type=submit class=\"col-md-offset-4 col-md-4 btn btn-primary\">Ajouter</button>");
    print('</div>');
-   print('</form>');
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<input type=hidden name=mode value=LISTE>");
    print('<div class="form-row col-md-12">');
-   print("<button type=submit class=\"col-md-offset-4 col-md-4\">Annuler</button>");
+   print("<button type=button id=annuler class=\"col-md-offset-4 col-md-4 btn btn-primary\">Annuler</button>");
    print('</div>');
    print('</form>');
 }
@@ -404,8 +600,6 @@ function menu_ajouter($pa_communes,$pa_releveurs)
  */
 function calcule_variantes($pconnexionBD,$pst_rep_tmp,$pst_parametres_load_data) {
     $ga_patronymes = $pconnexionBD->sql_select("select distinct nom1 as patronyme from rep_not_actes union select distinct nom2 as patronyme from rep_not_actes");
-    //$i_precision = 5; 
-    //$i_precision = 6;
     //$i_precision = 7; 
     $i_precision = 8;     
     $oPhonex = new phonex;
@@ -426,44 +620,42 @@ function calcule_variantes($pconnexionBD,$pst_rep_tmp,$pst_parametres_load_data)
        
     }    
     $i=0;
-    $st_fich_temp = tempnam ($pst_rep_tmp, "variantes_rep_not.csv");
-    $pf=@fopen($st_fich_temp,"w");
-    if ($pf===FALSE)
-       die("Ecriture fichier phonex.csv impossible");
+	$st_requete_insertion = "insert ignore into `rep_not_variantes` (idf_groupe,nom) values ";
+    $a_lignes = array();
+	$a_params = array();
     foreach ($a_groupe_patros as $i_idf_groupe => $a_patros)
     {
        if (count($a_patros)>1)
        {
           foreach ($a_patros as $st_patronyme)
           {
-             fwrite($pf,"$i;$st_patronyme\n");               
+            $a_lignes[] = "($i,:param_$i)";
+            $a_params[":param_$i"] = $st_patronyme; 			 
           }
           $i++;
        }
     }
-    fclose($pf); 
-    usleep(500000);
-    chmod($st_fich_temp,0444);
-    $st_requete="truncate table `rep_not_variantes`";
-    try
-    {
-      $pconnexionBD->execute_requete($st_requete);
-    }
-    catch (Exception $e) {
-       unlink($st_fich_temp);
-       die('<div class=\"alert alert-danger\">Suppression rep_not_variantes impossible: ' . $e->getMessage()).'</div>';
-    }   
-    $st_fich_temp=addslashes($st_fich_temp);
-    $st_requete="LOAD DATA $pst_parametres_load_data INFILE '$st_fich_temp' IGNORE INTO TABLE `rep_not_variantes` FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n' (idf_groupe,nom)";
-     try
-     {
-       $pconnexionBD->execute_requete($st_requete);
-     }
-     catch (Exception $e) {
-       unlink($st_fich_temp);
-       die('<div class=\"alert alert-danger\">Chargement variantes rep_not impossible: ' . $e->getMessage()).'</div>';
-     }   
-     unlink($st_fich_temp);    
+    if (count ($a_lignes)>0)
+	{	
+		$st_requete="truncate table `rep_not_variantes`";
+		try
+		{
+			$pconnexionBD->execute_requete($st_requete);
+		}
+		catch (Exception $e) {
+			die('<div class=\"alert alert-danger\">Suppression rep_not_variantes impossible: ' . $e->getMessage()).'</div>';
+		}
+		$st_lignes = join(',',$a_lignes);
+		$st_requete_insertion .= $st_lignes;
+		try
+		{
+			$pconnexionBD->initialise_params($a_params);
+			$pconnexionBD->execute_requete($st_requete_insertion);
+		}
+		catch (Exception $e) {
+			die('<div class=\"alert alert-danger\">Chargement variantes rep_not impossible: ' . $e->getMessage()).$st_requete_insertion.'</div>';
+		}
+	}	 
 }   
 
 /** Export le contenu du répertoire de notaire spécifié
