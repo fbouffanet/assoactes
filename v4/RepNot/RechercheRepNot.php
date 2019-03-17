@@ -360,10 +360,15 @@ function affiche_resultats_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi
 		print('<input type="hidden" name="mode" value="RECHERCHES">');
 		if ($i_nb_pages>1)
 		{
-			print("<div class=\"form-group col-md-4 col-md-offset-4\"><label for=\"num_page_rep_not\">Page du r&eacute;pertoire:</label><select id=\"num_page_rep_not\" name=\"num_page_rep_not\" class=\"form-control\">");
+			print("<div class=\"form-group row\">");
+			print('<label for="num_page_rep_not" class="col-md-2 col-md-offset-4">Page du r&eacute;pertoire:</label>');
+			print('<div class="col-md-2">');
+			print("<select id=\"num_page_rep_not\" name=\"num_page_rep_not\" class=\"form-control\">");
 			$a_pages=range(1,$i_nb_pages);
 			print(chaine_select_options_simple($pi_num_page,$a_pages));
-			print("</select></div>");
+			print("</select>");
+			print('</div>');
+			print('</div>');
 		}
 		print("<table class=\"table table-bordered table-striped\"");
 		print("<tr>");
