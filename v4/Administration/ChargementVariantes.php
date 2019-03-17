@@ -152,24 +152,27 @@ function affiche_menu() {
    print('<div class="panel-body">');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
    print('<input type="hidden" name="mode" value="EXTRAIT_ACCENTS" />');
-   print('<div class="form-row">'); 
+   print('<div class="form-group row">'); 
    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Calculer les patronymes avec accents</button>');
    print("</div>"); 
    print('</form>');
 
-   print('<div class="panel">');
+   print('<div class="panel panel-info">');
    print('<div class="panel-heading">Chargement</div>');
    print('<div class="panel-body">'); 
-   print("<form enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id='chargement_variantes'>");
+   print("<form enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"chargement_variantes\">");
    print('<input type="hidden" name="MAX_FILE_SIZE" value="$gi_max_taille_upload" >'); 
    print('<input type="hidden" name="mode" value="CHARGEMENT" >');
-   print('Fichier: <input name="Variantes" type="file" class="custom-file-label">');
+   print('<div class="form-group row"><div class="custom-file">'); 
+   print('<label for="Variantes" class="col-form-label col-md-2 col-md-offset-3">Fichier:</label>');
+   print('<input name="Variantes" id="Variantes" type="file" class="custom-file-label">');
+   print("</div></div>");
    print('<div class="form-row">'); 
    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Charger le fichier Nimegue V3</button>');
    print("</div>"); 
    print('</form></div></div>');
    
-   print('<div class="panel">');
+   print('<div class="panel panel-info">');
    print('<div class="panel-heading">Export</div>');
    print('<div class="panel-body">'); 
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
@@ -441,7 +444,7 @@ switch($gst_mode)
        $i_temps_courant = time();
        extrait_patro_accents($connexionBD);
        print("<div class=\"alert alert-info\"><br>Dur&eacute;e: ".(time()-$i_temps_courant)." s</div>");
-       print("<div class=\"alert alert-success\"><br>Calcul termin&eacute;</div>");
+       print("<div class=\"alert alert-success\">Calcul termin&eacute;</div>");
        affiche_menu();       
    break;
    
@@ -453,20 +456,20 @@ switch($gst_mode)
    case 'EXPORT_NIMV3':
        $st_export_nimv3 = "$gst_repertoire_telechargement/ExportNimV3.csv";
        exporte_variantes_nimV3($connexionBD,$st_export_nimv3);
-       print("<div class=\"align-center\"><br>Export cr&eacute;e: <a href=\"./telechargements/ExportNimV3.csv\">Variantes Nimègue V3</a></div>");
+       print("<div class=\"alert alert-success\">Export cr&eacute;e: <a href=\"./telechargements/ExportNimV3.csv\">Variantes Nimègue V3</a></div>");
        affiche_menu();       
    break;
    
    case 'EXPORT_NIMV2':
        $st_export_nimv2 = "$gst_repertoire_telechargement/ExportNimV2.csv";
        exporte_variantes_nimV2($connexionBD,$st_export_nimv2);
-       print("<div class=\"align-center\">Export cr&eacute;e: <a href=\"./telechargements/ExportNimV2.csv\">Variantes Nimègue V2</a></div>");
+       print("<div class=\"alert alert-success\">Export cr&eacute;e: <a href=\"./telechargements/ExportNimV2.csv\">Variantes Nimègue V2</a></div>");
        affiche_menu();       
    break;
    
    case 'SUPPRESSION':
        $connexionBD->execute_requete("truncate variantes_patro");
-       print("<div class=\"alert alert-danger\">Variantes supprim&eacute;es</div>");
+       print("<div class=\"alert alert-success\">Variantes supprim&eacute;es</div>");
        affiche_menu();
    break;
       
@@ -478,13 +481,13 @@ switch($gst_mode)
      $st_chemin_zip="$gst_repertoire_telechargement/VariantesCompleteesNimV3.zip";
      if (file_exists($st_chemin_zip)) unlink($st_chemin_zip);
      if ($zip->open($st_chemin_zip, ZIPARCHIVE::CREATE)!==TRUE) {
-        exit("Impossible d'ecrire <$st_chemin_zip>\n");
+        exit("<div class=\"alert alert-danger\">Impossible d'ecrire <$st_chemin_zip></div>\n");
      }
      $zip->addFile($st_variantes_nimv3,"VariantesNimegue.txt");
      $zip->close();
        
-       print("<div class=\"align-center\">Dur&eacute;e: ".(time()-$i_temps_courant)." s</div>");
-       print("<div class=\"align-center\">Export cr&eacute;e: <a href=\"./telechargements/VariantesCompleteesNimV3.zip\">Variantes Nim&egrave;gue Compl&eacute;t&eacute;es V3</a></div>");
+       print("<div class=\text-center\">Dur&eacute;e: ".(time()-$i_temps_courant)." s</div>");
+       print("<div class=\"text-center\">Export cr&eacute;e: <a href=\"./telechargements/VariantesCompleteesNimV3.zip\">Variantes Nim&egrave;gue Compl&eacute;t&eacute;es V3</a></div>");
        print('</form>');
        print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
        print('<input type="hidden" name="mode" value="FORMULAIRE" />');
