@@ -65,8 +65,8 @@ function affiche_menu($pconnexionBD,$pi_idf_groupe) {
 	print("<button type=\"button\" id=\"completer\" class=\"btn btn-primary\">Compl&eacute;ter</button>");
 	print("<button type=\"button\" id=\"supprimer\" class=\"btn btn-danger\">Supprimer</button>");
 	print("<button type=\"button\" id=\"fusionner\" class=\"btn btn-warning\">Fusionner</button>");
-  
 	print("</div>");
+  print("</div>");
   
 	print("<div class='col-md-5'>");
 	print('<div id="cmt_retour_a_fusionner"></div>');
