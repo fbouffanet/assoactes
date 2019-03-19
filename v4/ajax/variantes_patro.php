@@ -30,12 +30,16 @@ if (isset ($_GET['term']))
 	foreach ($a_patros as  $a_ligne)
 	{
      list($i_idf_groupe,$st_patronyme,$st_majeure)  =  $a_ligne;
-	   $a_variantes_patros[]=utf8_encode($st_patronyme);       
+	   $a_variantes_patros[]=utf8_encode($st_patronyme);
+     if (array_key_exists($i_idf_groupe,$a_resultats))
+         $a_resultats[$i_idf_groupe][]=utf8_encode($st_patronyme);         
+     else
+         $a_resultats[$i_idf_groupe]=array(utf8_encode($st_patronyme));       
 	}
   }  
 }
 $a_retour = array();
-$i_nb_resultats = count($a_variantes_patros);
+$i_nb_resultats = count($a_resultats);
 $a_retour['nb_reponses']= $i_nb_resultats;
 if ($i_nb_resultats==1)
 {
