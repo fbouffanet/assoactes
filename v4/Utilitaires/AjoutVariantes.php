@@ -34,15 +34,19 @@ function affiche_menu($pconnexionBD,$pi_idf_groupe) {
 	print("<div class='col-md-5'>");
     print('<div id="cmt_retour"></div>');
 	
+	print('<div class="form-group row">');
 	print("<label for=\"variante_a_chercher\" class=\"col-form-label col-md-2\">Variante &agrave; chercher:</label>");
 	print("<div class='col-md-10'>");
 	print("<input type=text name=\"variante_a_chercher\" id=\"variante_a_chercher\" value=\"\" class=\"form-control\" size=30>");
 	print("</div>");
+	print('</div>');
   
+	print('<div class="form-group row">');
 	print("<label for=\"majeure\" class=\"col-form-label col-md-2\">Majeure trouv&eacute;e</label>");
 	print("<div class='col-md-10'>");
 	print("<input type=text name=\"majeure\" id=\"majeure\" value=\"\" class=\"form-control\" size=30>");
 	print("</div>");
+	print('</div>');
   
 	print("<div class='row col-md-12'>");  
 	print("<textarea rows=20 cols=40 id=\"variantes\" name=\"variantes\" class=\"form-control col-md-8 col-md-offset-2\">");
@@ -70,15 +74,19 @@ function affiche_menu($pconnexionBD,$pi_idf_groupe) {
   
 	print("<div class='col-md-5'>");
 	print('<div id="cmt_retour_a_fusionner"></div>');
+	print('<div class="form-group row">');
 	print('<label for="variante_a_fusionner" class="col-form-label col-md-2">Variante &agrave; chercher:</label>');
 	print("<div class='col-md-10'>");
 	print("<input type=text name=\"variante_a_fusionner\" id=\"variante_a_fusionner\" value=\"\" size=30 class=\"form-control\">");
 	print('</div>');
+	print('</div>');
 	print("<input type=\"hidden\" name=\"idf_groupe_a_fusionner\" id=\"idf_groupe_a_fusionner\" value=\"\">");
+	print('<div class="form-group row">');
 	print("<label for=\"majeure_a_fusionner\" class=\"col-form-label col-md-2\">Majeure trouv&eacute;e</label>");
 	print("<div class='col-md-10'>");
 	print("<input type=text name=\"majeure_a_fusionner\" id=\"majeure_a_fusionner\" value=\"\" class=\"form-control\" size=30>");
 	print("</div>");
+	print('</div>');
 	print("<div class='row col-md-12'>");  
 	print("<textarea rows=20 cols=40 id=\"variantes_a_fusionner\" name=\"variantes_a_fusionner\" class=\"form-control col-md-8 col-md-offset-2\"></textarea>");
 	print("</div>");
@@ -268,7 +276,7 @@ $(document).ready(function() {
     });
   }
    $('#variante_a_chercher').autocomplete({
-		minLength: 3,
+		minLength: 4,
     source: function( request, response ) {
         $.ajax( {
           url: "../ajax/variantes_patro.php",
@@ -305,7 +313,7 @@ $(document).ready(function() {
   });
   
    $('#variante_a_fusionner').autocomplete({
-        minLength: 3,
+        minLength: 4,
          source: function( request, response ) {
         $.ajax( {
           url: "../ajax/variantes_patro.php",
