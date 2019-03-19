@@ -11,7 +11,7 @@ require_once('../Commun/phonex.cls.php');
 $gst_mode = empty($_POST['mode']) ? 'AFFICHER': $_POST['mode'] ;
 $gi_idf_groupe = empty($_POST['idf_groupe']) ? '': $_POST['idf_groupe'] ;
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-$gst_infos = '':
+$gst_infos = '';
 $gst_erreurs = '';
 
 /**
@@ -152,7 +152,7 @@ function ajoute_variantes($pconnexionBD,$pi_idf_groupe,$pst_majeure,$pa_variante
 */
 function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 {
-	a_patronymes = $connexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme REGEXP '^[A-Z \?\(\)]+$' and patronyme not in (select patronyme from `variantes_patro`)");
+	  $a_patronymes = $pconnexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme REGEXP '^[A-Z \?\(\)]+$' and patronyme not in (select patronyme from `variantes_patro`)");
     $a_groupes_variantes = $connexionBD->liste_valeur_par_clef("select patronyme,majeure from `variantes_patro` where idf_groupe = $pi_idf_groupe");
     $oPhonex = new phonex;
     $a_phonex_variantes = array();
