@@ -26,7 +26,7 @@ if (isset ($_GET['term']))
   $st_majeure= '';
   if (count($a_patros)>0)
   {	
-    list($i_idf_groupe,$st_majeure,$st_majeure) = array_shift($a_patros);  
+    list($i_idf_groupe,$st_patronylme_majeur,$st_majeure) = array_shift($a_patros);  
 	foreach ($a_patros as  $a_ligne)
 	{
      list($i_idf_groupe,$st_patronyme,$st_majeure)  =  $a_ligne;
@@ -44,7 +44,7 @@ $a_retour['nb_reponses']= $i_nb_resultats;
 if ($i_nb_resultats==1)
 {
   $a_retour['idf_groupe']=$i_idf_groupe;
-  $a_retour['majeure']=$st_majeure;
+  $a_retour['majeure']=$st_patronylme_majeur;
   $a_retour['variantes']= $a_variantes_patros;
 }
 else
