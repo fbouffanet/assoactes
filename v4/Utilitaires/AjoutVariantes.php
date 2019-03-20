@@ -161,7 +161,7 @@ function ajoute_variantes($pconnexionBD,$pi_idf_groupe,$pst_majeure,$pa_variante
 function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 {
 	  $a_patronymes = $pconnexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme REGEXP '^[A-Z \?\(\)]+$' and patronyme not in (select patronyme from `variantes_patro`)");
-    $a_groupes_variantes = $connexionBD->liste_valeur_par_clef("select patronyme,majeure from `variantes_patro` where idf_groupe = $pi_idf_groupe");
+    $a_groupes_variantes = $pconnexionBD->liste_valeur_par_clef("select patronyme,majeure from `variantes_patro` where idf_groupe = $pi_idf_groupe");
     $oPhonex = new phonex;
     $a_phonex_variantes = array();
     $a_variantes_connues = array();
@@ -181,7 +181,7 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
     $st_liste_phonex = join(',',$a_code_phonex);
     $st_requete = "select patronyme from phonex_patro where patronyme not in (select patronyme from `variantes_patro`) and phonex in ($st_liste_phonex)";
     //print("Req=$st_requete<br>");
-    $a_variantes_ajouter = $connexionBD->sql_select($st_requete);
+    $a_variantes_ajouter = $oconnexionBD->sql_select($st_requete);
     print("<form  id=\"menu_completer\" action=\"".$_SERVER['PHP_SELF']."\" method=post >");
     print("<input type=hidden name=mode value=COMPLETER>");
     print("<input type=hidden name=idf_groupe value=$pi_idf_groupe>");    
@@ -353,17 +353,14 @@ $(document).ready(function() {
   $( "#modifier" ).click(function() {
     if ($("#idf_groupe").val()=='')
     {
-	 $('#variante_a_chercher').parents(".col-md-10").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" );
-	 error='Aucun groupe s&eacute;lectionn&eacute;';
-	 error.addClass( "help-block" );
-	 error.insertAfter($('#variante_a_chercher'));
+	   $("<div>Aucun groupe s&eacute;lectionn&eacute;</div>").insertAfter($('#variante_a_chercher'));
+      $('#variante_a_chercher').parents(".col-md-10").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" ).addClass( "help-block" );
+	 
     }
     else if ($("#variantes").val()=='')
     {
-	  $('#variantes').parents(".col-md-12").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" );
-	  var error='<div>Pas de variantes d&eacute;finies</div>';
-	  error.addClass( "help-block" );
-	  error.insertAfter($('#variante_a_chercher'));
+      $("<div>Pas de variantes d&eacute;finies</div>").insertAfter($('#variante_a_chercher'));
+	   $('#variantes').parents(".col-md-12").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" ).addClass( "help-block" );	  
     } 
     else
     {
@@ -375,10 +372,8 @@ $(document).ready(function() {
   $( "#completer" ).click(function() {
     if ($("#idf_groupe").val()=='')
     {
-      $('#variante_a_chercher').parents(".col-md-10").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" );
-	  var error='<div>Aucun groupe s&eacute;lectionn&eacute;</div>';
-	  error.addClass( "help-block" );
-	  error.insertAfter($('#variante_a_chercher'));
+      $('#variante_a_chercher').parents(".col-md-10").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" ).addClass( "help-block" );;
+	  $('<div>Aucun groupe s&eacute;lectionn&eacute;</div>').insertAfter($('#variante_a_chercher'));
     }
     else
     {
@@ -390,10 +385,8 @@ $(document).ready(function() {
   $( "#creer" ).click(function() {
       if ($("#variantes").val()=='')
       {
-        $('#variantes').parents(".col-md-12").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" );
-	    var error='<div>Pas de variantes d&eacute;finies</div>';
-	    error.addClass( "help-block" );
-	    error.insertAfter($('#variante_a_chercher'));
+        $('#variantes').parents(".col-md-12").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" ).addClass( "help-block" );
+	    $('<div>Pas de variantes d&eacute;finies</div>').insertAfter($('#variante_a_chercher'));
       } 
       else
       {
@@ -405,10 +398,8 @@ $(document).ready(function() {
   $( "#supprimer" ).click(function() {
     if ($("#idf_groupe").val()=='')
     {
-     $('#variante_a_chercher').parents(".col-md-10").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" );
-	 var error='<div>Aucun groupe s&eacute;lectionn&eacute;</div>';
-	 error.addClass( "help-block" );
-	 error.insertAfter($('#variante_a_chercher'));
+     $('#variante_a_chercher').parents(".col-md-10").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" ).addClass( "help-block" );
+	 $('<div>Aucun groupe s&eacute;lectionn&eacute;</div>').insertAfter($('#variante_a_chercher'));
     } 
     else
     {
@@ -423,17 +414,13 @@ $(document).ready(function() {
   $( "#fusionner" ).click(function() {
     if ($("#idf_groupe").val()=='')
     {
-		$('#variante_a_chercher').parents(".col-md-10").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" );
-		var error='<div>Aucun groupe s&eacute;lectionn&eacute;</div>';
-		error.addClass( "help-block" );
-		error.insertAfter($('#variante_a_chercher'));
+		$('#variante_a_chercher').parents(".col-md-10").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" ).addClass( "help-block" );
+		$('<div>Aucun groupe s&eacute;lectionn&eacute;</div>').insertAfter($('#variante_a_chercher'));
     }
     else if ($("#idf_groupe_a_fusionner").val()=='')
     {
-		$('#variante_a_fusionner').parents(".col-md-10").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" );
-		var error='<div>Aucun groupe s&eacute;lectionn&eacute;</div>';
-		error.addClass( "help-block" );
-		error.insertAfter($('#variante_a_fusionner'));
+		$('#variante_a_fusionner').parents(".col-md-10").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning") .addClass( "help-block" );
+		$('<div>Aucun groupe s&eacute;lectionn&eacute;</div>').insertAfter($('#variante_a_fusionner'));
     } 
     else
     {
