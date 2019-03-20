@@ -235,7 +235,7 @@ $(document).ready(function() {
 	unhighlight: function ( element, errorClass, validClass ) {
 		$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
 		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
-	},
+	}
     });
 
     jQuery.validator.addMethod("patro_recherche", function(value, element) {
