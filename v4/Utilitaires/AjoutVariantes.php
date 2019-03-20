@@ -14,6 +14,47 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 $gst_infos = '';
 $gst_erreurs = '';
 
+switch ($gst_mode) {
+	case 'EXPORT' :
+		header("Content-type: text/csv");
+		header("Expires: 0");
+		header("Pragma: public");
+		header("Content-disposition: attachment; filename=\"VariantesNimegue.txt\"");
+		$fh = @fopen('php://output', 'w' );
+		$ga_patronymes = $pconnexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme REGEXP '^[A-Z \?\(\)]+$' and patronyme not in (select patronyme from `variantes_patro`)");
+		$gh_variantes = array();
+		$oPhonex = new phonex;
+		foreach($ga_patronymes as $st_patronyme)
+		{
+			if (empty($st_patronyme))
+				continue;   
+			$oPhonex -> build ($st_patronyme);
+			$sPhonex = $oPhonex -> sString;
+			if (array_key_exists($sPhonex,$gh_variantes))
+			{
+				$a_variantes = $gh_variantes{$sPhonex};
+				$a_variantes[] = $st_patronyme;
+				$gh_variantes{$sPhonex} = $a_variantes;
+			}
+			else
+			$gh_variantes{$sPhonex} = array($st_patronyme);   
+		}
+		foreach ($gh_variantes as $st_soundex => $a_variantes)
+		{
+			if (count($a_variantes)>1)
+			{
+				$st_majeure = array_shift($a_variantes);
+				foreach ($a_variantes as $st_patro)
+				{
+					fputcsv($fh,array("NIMEGUEV3","H",$st_majeure,$st_patro),SEP_CSV); 
+				}
+			}
+		}
+		fclose($fh);
+		exit();
+	break;
+}
+
 /**
  * Affiche le menu formulaire
  * @param object $pconnexionBD  Connexion à la base
@@ -31,7 +72,7 @@ function affiche_menu($pconnexionBD,$pi_idf_groupe) {
 	if (!empty($gst_infos))
 		print("<div id=\"erreurs\" class=\"alert alert-danger\">$gst_erreurs</div>");
 	print("<div class='row col-md-12'>");
-	print("<div class='col-md-5'>");
+	print('<div class="col-md-4">');
     print('<div id="cmt_retour"></div>');
 	
 	print('<div class="form-group row">');
@@ -62,15 +103,16 @@ function affiche_menu($pconnexionBD,$pi_idf_groupe) {
 	print("</textarea>");
 	print("</div>");
 	print("</div>");
-	print("<div class='col-md-2'>");
+	print('<div class="col-md-3">');
 	print('<div class="btn-group-vertical">');
-	print("<button type=\"button\" id=\"creer\" class=\"btn btn-primary\">Creer</button>");
+	print("<button type=\"button\" id=\"creer\" class=\"btn btn-primary\">Cr&eacute;er</button>");
 	print("<button type=\"button\" id=\"modifier\" class=\"btn btn-primary\">Modifier</button>");
 	print("<button type=\"button\" id=\"completer\" class=\"btn btn-primary\">Compl&eacute;ter</button>");
 	print("<button type=\"button\" id=\"supprimer\" class=\"btn btn-danger\">Supprimer</button>");
 	print("<button type=\"button\" id=\"fusionner\" class=\"btn btn-warning\">Fusionner</button>");
+	print("<button type=\"button\" id=\"exporter\" class=\"btn btn-primary\">Calculer les variantes restantes</button>");
 	print("</div>");
-  print("</div>");
+   print("</div>");
   
 	print("<div class='col-md-5'>");
 	print('<div id="cmt_retour_a_fusionner"></div>');
@@ -96,7 +138,7 @@ function affiche_menu($pconnexionBD,$pi_idf_groupe) {
 }
 
 /*
-* Ajoute les variantes au groupe sélectionnées
+* Ajoute les variantes au groupe sélectionné
 * @param object $pconnexionBD  Connexion à la base
 * @param integer $pi_idf_groupe identifiant du groupe
 * @param string $pst_majeure majeure du groupe
@@ -321,8 +363,7 @@ $(document).ready(function() {
           data: {
             term: request.term
           },
-          success: function( reponse ) {
-           console.log(reponse);				
+          success: function( reponse ) {			
             response( reponse['variantes']);
             if (reponse['nb_reponses']==1)
             {
@@ -350,86 +391,102 @@ $(document).ready(function() {
      maj_variantes($('#variante_a_fusionner').val(),'#idf_groupe_a_fusionner','#majeure_a_fusionner','#variantes_a_fusionner','#cmt_retour_a_fusionner');     
   });
   
+  $( "#variantes_patro" ).validate({
+	  rules: {
+	    majeure: {
+         required: true
+       },
+		variantes: {
+         required: {
+			   depends: function(element) {
+                         return $("#mode").val() != 'SUPPRIMER';
+            }
+         }   
+		},
+      majeure_a_fusionner: {
+         required: {
+			   depends: function(element) {
+                         return $("#mode").val() == 'FUSIONNER';
+            }
+         }
+      },
+     },
+	  messages: {
+		majeure: {
+			required: "Aucune majeure s&eacute;lectionn&eacute;e"
+		},
+		variantes: {
+			required: "Pas de variantes d&eacute;finies" 
+		},
+		majeure_a_fusionner: {
+			required: "Aucune majeure s&eacute;lectionn&eacute;"
+		}	
+	  },
+     errorElement: "em",
+      errorPlacement: function ( error, element ) {
+	   // Add the `help-block` class to the error element
+	   error.addClass( "help-block" );
+
+	   // Add `has-feedback` class to the parent div.form-group
+	   // in order to add icons to inputs
+	  element.parents( ".col-md-10" ).addClass( "has-feedback" );
+
+	  if ( element.prop( "type" ) === "checkbox" ) {
+         error.insertAfter( element.parent( "label" ) );
+	  } else {
+         error.insertAfter( element );
+	  }
+
+	  // Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	  },
+	  success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	  },
+	  highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-10" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	  },
+	  unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-10" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	  }       				
+ });
+  
   $( "#modifier" ).click(function() {
-    if ($("#idf_groupe").val()=='')
-    {
-	   $("<div>Aucun groupe s&eacute;lectionn&eacute;</div>").insertAfter($('#variante_a_chercher'));
-      $('#variante_a_chercher').parents(".col-md-10").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" ).addClass( "help-block" );
-	 
-    }
-    else if ($("#variantes").val()=='')
-    {
-      $("<div>Pas de variantes d&eacute;finies</div>").insertAfter($('#variante_a_chercher'));
-	   $('#variantes').parents(".col-md-12").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" ).addClass( "help-block" );	  
-    } 
-    else
-    {
       $("#mode").val('MODIFIER');
       $("#variantes_patro").submit();
-    }
   });
   
   $( "#completer" ).click(function() {
-    if ($("#idf_groupe").val()=='')
-    {
-      $('#variante_a_chercher').parents(".col-md-10").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" ).addClass( "help-block" );;
-	  $('<div>Aucun groupe s&eacute;lectionn&eacute;</div>').insertAfter($('#variante_a_chercher'));
-    }
-    else
-    {
       $("#mode").val('MENU_COMPLETER');
       $("#variantes_patro").submit();
-    }
   });
   
   $( "#creer" ).click(function() {
-      if ($("#variantes").val()=='')
-      {
-        $('#variantes').parents(".col-md-12").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" ).addClass( "help-block" );
-	    $('<div>Pas de variantes d&eacute;finies</div>').insertAfter($('#variante_a_chercher'));
-      } 
-      else
-      {
-        $("#mode").val('CREER');
-        $("#variantes_patro").submit();
-      }  
+      $("#mode").val('CREER');
+      $("#variantes_patro").submit(); 
   });
   
   $( "#supprimer" ).click(function() {
-    if ($("#idf_groupe").val()=='')
+    if (confirm('Voulez-vous supprimer ce groupe ?'))
     {
-     $('#variante_a_chercher').parents(".col-md-10").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" ).addClass( "help-block" );
-	 $('<div>Aucun groupe s&eacute;lectionn&eacute;</div>').insertAfter($('#variante_a_chercher'));
-    } 
-    else
-    {
-      if (confirm('Voulez-vous supprimer ce groupe ?'))
-      {
-        $("#mode").val('SUPPRIMER');
-        $("#variantes_patro").submit();
-      }
+       $("#mode").val('SUPPRIMER');
+       $("#variantes_patro").submit();
     }
   });
   
   $( "#fusionner" ).click(function() {
-    if ($("#idf_groupe").val()=='')
-    {
-		$('#variante_a_chercher').parents(".col-md-10").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning" ).addClass( "help-block" );
-		$('<div>Aucun groupe s&eacute;lectionn&eacute;</div>').insertAfter($('#variante_a_chercher'));
-    }
-    else if ($("#idf_groupe_a_fusionner").val()=='')
-    {
-		$('#variante_a_fusionner').parents(".col-md-10").addClass( "has-error" ).removeClass( "has-success" ).removeClass( "has-warning") .addClass( "help-block" );
-		$('<div>Aucun groupe s&eacute;lectionn&eacute;</div>').insertAfter($('#variante_a_fusionner'));
-    } 
-    else
-    {
-        if (confirm('Voulez-vous fusionner ces groupes ?'))
-        {
-          $("#mode").val('FUSIONNER');
-          $("#variantes_prenom").submit();
-        }  
-    }
+	if (confirm('Voulez-vous fusionner ces groupes ?'))
+	{
+		$("#mode").val('FUSIONNER');
+		$("#variantes_prenom").submit();
+    }  
   });
   
   $( "#menu_completer" ).validate({
@@ -447,7 +504,7 @@ $(document).ready(function() {
 
  $( "#exporter" ).click(function() {
 	 $("#mode").val('EXPORT');
-     $("#variantes_prenom").submit();
+     $("#variantes_patro").submit();
  });	 
   
 });
