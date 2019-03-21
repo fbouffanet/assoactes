@@ -8,7 +8,8 @@ verifie_privilege(DROIT_VARIANTES);
 require_once('../Commun/ConnexionBD.php');
 require_once('../Commun/phonex.cls.php');
 
-$gst_mode = empty($_POST['mode']) ? 'AFFICHER': $_POST['mode'] ;
+$gst_get_mode = empty($_GET['mode']) ? 'AFFICHER': $_GET['mode'] ;
+$gst_mode = empty($_POST['mode']) ? $gst_get_mode: $_POST['mode'] ;
 $gi_idf_groupe = empty($_POST['idf_groupe']) ? '': $_POST['idf_groupe'] ;
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 $gst_infos = '';
@@ -21,7 +22,7 @@ switch ($gst_mode) {
 		header("Pragma: public");
 		header("Content-disposition: attachment; filename=\"VariantesNimegue.txt\"");
 		$fh = @fopen('php://output', 'w' );
-		$ga_patronymes = $pconnexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme REGEXP '^[A-Z \?\(\)]+$' and patronyme not in (select patronyme from `variantes_patro`)");
+		$ga_patronymes = $connexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme REGEXP '^[A-Z \?\(\)]+$' and patronyme not in (select patronyme from `variantes_patro`)");
 		$gh_variantes = array();
 		$oPhonex = new phonex;
 		foreach($ga_patronymes as $st_patronyme)
@@ -422,6 +423,26 @@ $(document).ready(function() {
 			required: "Aucune majeure s&eacute;lectionn&eacute;"
 		}	
 	  },
+	  submitHandler: function(form) {
+		// do other things for a valid form
+		switch($("#mode").val()) {
+			case "SUPPRIMER":
+				if (confirm('Voulez-vous supprimer ce groupe ?'))
+				{
+					form.submit();
+				}
+			break;
+			case "FUSIONNER":
+				if (confirm('Voulez-vous fusionner ces groupes ?'))
+				{
+					form.submit();
+				}  
+			break;
+			default:
+			form.submit();
+		}
+			
+		},
      errorElement: "em",
       errorPlacement: function ( error, element ) {
 	   // Add the `help-block` class to the error element
@@ -474,19 +495,13 @@ $(document).ready(function() {
   });
   
   $( "#supprimer" ).click(function() {
-    if (confirm('Voulez-vous supprimer ce groupe ?'))
-    {
        $("#mode").val('SUPPRIMER');
        $("#variantes_patro").submit();
-    }
   });
   
   $( "#fusionner" ).click(function() {
-	if (confirm('Voulez-vous fusionner ces groupes ?'))
-	{
-		$("#mode").val('FUSIONNER');
-		$("#variantes_prenom").submit();
-    }  
+	$("#mode").val('FUSIONNER');
+	$("#variantes_patro").submit(); 
   });
   
   $( "#menu_completer" ).validate({
@@ -503,8 +518,7 @@ $(document).ready(function() {
  });
 
  $( "#exporter" ).click(function() {
-	 $("#mode").val('EXPORT');
-     $("#variantes_patro").submit();
+	 window.location.href = 'AJoutVariantes.php?mode=EXPORT';
  });	 
   
 });
