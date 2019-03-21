@@ -218,7 +218,7 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
     
    print('<label for="commune_a_chercher"  class="col-form-label col-md-2">Commune:</label>');
    print('<div class="col-md-10">');
-   print('<input name="commune_a_chercher" id="commune_a_chercher" value="" size="25" maxlength="25" type="Text" class="form-control" aria-describedby="aideCom">');
+   print('<input name="commune_a_chercher" id="commune_a_chercher" value="" size="25" maxlength="25" type="Text" class="form-control col-md-6" aria-describedby="aideCom">');
    print('<small id="aideCom" class="form-text text-muted">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: saint*)</small>');
    print('<button type=submit class="btn btn-primary">Chercher<button>');
    print('</div>');
@@ -247,10 +247,10 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
    print("<form enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
    print('<input type="hidden" name="MAX_FILE_SIZE" value="$gi_max_taille_upload" />'); 
    print('<input type="hidden" name="mode" value="CHARGER" />');
-   print('<div class="form-group row">');  
-   print('<label for="Photos" class="custom-file-label col-form-label col-md-4">Fichier<span class="alert alert-danger">CSV</span>des photos:</label>');
+   print('<div class="form-group row"><div class="custom-file">');  
+   print('<label for="Photos" class="col-form-label col-md-4">Fichier<span class="alert alert-danger">CSV</span>des photos:</label>');
    print('<input name="Photos" id="Photos" type="file" class="custom-file-input">');
-   print('</div>');
+   print('</div></div>');
    print('<div class="form-group row">');  
    print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Charger les photos</button>'); 
    print('</div>');
