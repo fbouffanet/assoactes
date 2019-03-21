@@ -217,11 +217,12 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
    print("<input type=hidden name=mode value=\"LISTE\">");
     
    print('<label for="commune_a_chercher"  class="col-form-label col-md-2">Commune:</label>');
-   print('<div class="col-md-10">');
-   print('<input name="commune_a_chercher" id="commune_a_chercher" value="" size="25" maxlength="25" type="Text" class="form-control col-md-6" aria-describedby="aideCom">');
+   print('<div class="col-md-8">');
+   print('<input name="commune_a_chercher" id="commune_a_chercher" value="" size="25" maxlength="25" type="Text" class="form-control col-md-2" aria-describedby="aideCom">');
    print('<small id="aideCom" class="form-text text-muted">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: saint*)</small>');
-   print('<button type=submit class="btn btn-primary">Chercher<button>');
    print('</div>');
+   print('<button type=submit class="btn btn-primary col-md-2">Chercher</button>');
+   
    print("</form><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"suppression_photos\">"); 
    $a_liste_photos = $pconnexionBD->liste_valeur_par_clef($st_requete);
    $i_nb_photos =count($a_liste_photos); 
