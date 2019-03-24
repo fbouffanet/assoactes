@@ -29,29 +29,41 @@ if($i_liasse_consult == 1)
 else
 	$st_liasse_consult = "Non";
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
-print("<Head>\n");
+print('<!DOCTYPE html>');
+print("<head>\n");
 print('<meta http-equiv="content-language" content="fr">');
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<script language=\"JavaScript\">");
-print("function Sortie()");
-print("{ window.close(); }");
-print("</script>");
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
 print('<title>Base AGC: Reponses a une recherche de liasse - Infos sur la liasse</title>');
-print('</Head>');
+?>
+<script type='text/javascript'>
+$(document).ready(function() {
+
+
+$('#fermer').click(function(){
+    window.close();
+});	
+	
+});
+</script>
+<?php
+print('</head>');
 print("<body>");
-print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return Sortie()\">");
-print('<div align=center>');
-print("<img src= '$gst_url_site/images/LogoAGC.jpg' alt='Logo AGC'/><br><br>"); 
-print("</div><br><br>");
-print('<div align=center>');
-print("Informations sur la liasse $st_cote<br><br>");
-print("<table border=1>");
-print("<tr><th>Liasse déposée aux AD</th><td>".$st_depose_ad."</td></tr>");
+print('<div class="container">');
+print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+print("<img src= '$gst_url_site/images/LogoAGC.jpg' alt='Logo AGC' class=\"img-responsive center-block\">"); 
+print('<div class="panel panel-primary">');
+print("<div class=\"panel-heading\">Informations sur la liasse $st_cote</div>");
+print('<div class="panel-body">');
+print("<table class=\"table table-bordered table-striped\">");
+print("<tr><th>Liasse dépos&eacute;e aux AD</th><td>".$st_depose_ad."</td></tr>");
 print("<tr><th>Département AD</th><td>".$st_dept_depose_ad."</td></tr>");
 print("<tr><th>Liasse consultable</th><td>".$st_liasse_consult."</td></tr>");
 print("<tr><th>Informations complémentaires</th><td>".$st_info_compl."</td></tr>");
 print("</table>");
-print("<br><input type=submit value='Fermer'></div>");
-print('</form>');
+print("</div>");
+print('<button type="button" id="fermer" class="btn btn-primary col-sm-4 col-sm-offset-4">Fermer la fen&ecirc;tre</button>');
+print('</form></div></body></html>');
