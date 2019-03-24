@@ -29,6 +29,92 @@ print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 <script type='text/javascript'>
 $(document).ready(function() {
 $(".js-select-avec-recherche").select2();
+
+
+$("#recherche_liasses").validate({
+  rules: {
+		cote_debut: {
+			integer:true
+		},
+		cote_fin: {
+			integer: true
+		},
+		annee_min: {
+			integer:true
+		},
+		annee_max: {
+			integer:true
+		},
+		sans_notaire: {
+			required: {depends: function(element) {
+                        return  $('#nom_notaire').val()=='';
+                    }
+			}		
+		},
+		sans_periode: {
+			required: {depends: function(element) {
+                        return  $('#annee_min').val()=='' && $('#annee_max').val()=='';
+                    }
+			}		
+		},
+		
+  },
+  messages: {
+	  cote_debut: {
+		  integer: "La cote doit &ecirc;tre un entier"
+	  },
+	  cote_fin: {
+		  integer: "La cote doit &ecirc;tre un entier"
+	  },
+	  annee_min: {
+		  integer: "L'ann&eacute;e doit &ecirc;tre un entier"
+	  },
+	  annee_max: {
+		  integer: "L'ann&eacute;e doit &ecirc;tre un entier"
+	  },
+	  sans_notaire: {
+	      required: "Ne pas cocher 'liasses sans notaire' si vous saisissez un nom de notaire"
+	  },
+	  sans_periode: {
+		  required: "Ne pas cocher 'liasses sans date' si vous saisissez une année"
+	  }
+  },
+  errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}
+});
+
 });
 </script>
 <?php
@@ -105,7 +191,7 @@ $a_communes_acte[-9] = 'Commune inconnue';
 
 $a_serie_liasse = $connexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 						 
-print('<form id="recherche" method="post" class="form-inline" action="ReponsesLiasseSimple.php">');
+print('<form id="recherche_liasses" method="post" class="form-inline" action="ReponsesLiasseSimple.php">');
 
 
 print('<div class="form-row col-md-12">');
@@ -147,7 +233,7 @@ print("<input type=text name=annee_min id=annee_min size=4 value=\"$gi_annee_min
 print('</div>');
 print('<div class="form-group col-md-2 col-md-offset-2">');
 print('<label for="annee_max" class="col-form-label">&agrave;</label>');
-print("<input type=text name=annee_max id=annee_min size =4 value=\"$gi_annee_max\" class=\"form-control\">");
+print("<input type=text name=annee_max id=annee_max size =4 value=\"$gi_annee_max\" class=\"form-control\">");
 print('</div>');
 print('<div class="form-check col-md-4">');
 print('<label for="sans_periode" class="form-check-label col-form-label">Liasses sans date:</label>');
