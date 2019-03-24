@@ -155,9 +155,6 @@ print('<div class="form-row col-md-12">');
 print("<label for=\"patro_patcom\" class=\"col-form-label col-md-2 col-md-offset-3\">Patronyme:</label>");
 print("<div class=\"col-md-4 \"><input type=text id=patro_patcom name=patro_patcom size=15 maxlength=30 value=\"$gst_patronyme\" class=\"form-control\" aria-describedby=\"aideCommune\">");
 print('<small id="aideCommune" class="form-text text-muted">laisser * si aucun patronyme choisi</small></div><button type="submit" class="btn btn-primary">Chercher</button></div>');
-print('<div class="form-row col-md-12">');
-print('<div class="col-md-4 col-md-offset-6"></div>');
-print('</div>'); // fin ligne
 
 if (empty($gi_idf_commune))
 {
