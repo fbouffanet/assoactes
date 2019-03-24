@@ -134,29 +134,29 @@ if (!in_array($gi_idf_type_acte,$a_types_acte_dispo))
    $gi_idf_type_acte=-1;    
 print("<form name=\"PatrosCommune\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 print('<div class="form-row col-md-12">');
-print('<label for="idf_source" class="col-form-label col-md-2">Source:</label>');
-print('<div class="col-md-4 col-md-offset-4"><select name=idf_source id=idf_source class="js-select-avec-recherche form-control" ">');
+print('<label for="idf_source" class="col-form-label col-md-2 col-md-offset-3">Source:</label>');
+print('<div class="col-md-4 "><select name=idf_source id=idf_source class="js-select-avec-recherche form-control" ">');
 print(chaine_select_options($gi_idf_source,$a_sources));
 print('</select></div></div>');
 
 print('<div class="form-row col-md-12">');
-print('<label for="idf_commune" class="col-form-label col-md-2" >Commune:</label>');
-print('<div class="col-md-4 col-md-offset-4"><select name=idf_commune id=idf_commune class="js-select-avec-recherche form-control" >');
+print('<label for="idf_commune" class="col-form-label col-md-2 col-md-offset-3" >Commune:</label>');
+print('<div class="col-md-4 "><select name=idf_commune id=idf_commune class="js-select-avec-recherche form-control" >');
 print(chaine_select_options($gi_idf_commune,$a_communes));
 print('</select></div></div>');
 
 print('<div class="form-row col-md-12">');
-print('<label for="idf_type_acte" class="col-form-label col-md-2">Type d\'acte:</label>');
-print('<div class="col-md-4 col-md-offset-4"><select name=idf_type_acte id=idf_type_acte class="js-select-avec-recherche form-control" >');
+print('<label for="idf_type_acte" class="col-form-label col-md-2 col-md-offset-3">Type d\'acte:</label>');
+print('<div class="col-md-4"><select name=idf_type_acte id=idf_type_acte class="js-select-avec-recherche form-control" >');
 print(chaine_select_options($gi_idf_type_acte,$a_types_acte));
 print('</select></div></div>');
 
 print('<div class="form-row col-md-12">');
-print("<label for=\"patro_patcom\" class=\"col-form-label col-md-2\">Patronyme:</label>");
-print("<div class=\"col-md-4 col-md-offset-4\"><input type=text id=patro_patcom name=patro_patcom size=15 maxlength=30 value=\"$gst_patronyme\" class=\"form-control\" aria-describedby=\"aideCommune\">");
-print('<small id="aideCommune" class="form-text text-muted">laisser * si aucun patronyme choisi</small></div></div>');
+print("<label for=\"patro_patcom\" class=\"col-form-label col-md-2 col-md-offset-3\">Patronyme:</label>");
+print("<div class=\"col-md-4 \"><input type=text id=patro_patcom name=patro_patcom size=15 maxlength=30 value=\"$gst_patronyme\" class=\"form-control\" aria-describedby=\"aideCommune\">");
+print('<small id="aideCommune" class="form-text text-muted">laisser * si aucun patronyme choisi</small></div><button type="submit" class="btn btn-primary">Chercher</button></div>');
 print('<div class="form-row col-md-12">');
-print('<div class="col-md-4 col-md-offset-6"><button type="submit" class="btn btn-primary">Chercher</button></div>');
+print('<div class="col-md-4 col-md-offset-6"></div>');
 print('</div>'); // fin ligne
 
 if (empty($gi_idf_commune))
