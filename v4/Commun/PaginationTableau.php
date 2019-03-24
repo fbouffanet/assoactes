@@ -104,12 +104,13 @@ class PaginationTableau {
       $st_requete = $this->st_requete;
       $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
       $st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
-      print("<div><table class=\"table table-bordered table-striped\">");
-      print("<tr>");
+      print("<table class=\"table table-bordered table-striped\">");
+      print("<thead><tr>");
       foreach ($this->a_entete as $st_cell_entete) {
          print("<th>$st_cell_entete</th>");
       }
-      print("</tr>\n");
+      print("</tr></thead>\n");
+	  print('<tbody>');
       $a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
       $i=0;
       foreach ($a_lignes as $a_ligne) {
@@ -123,10 +124,11 @@ class PaginationTableau {
          }         
          print("</tr>\n");
          $i++;
-      }      
+      }
+      print('</tbody>');      
       print("</table>");
       // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
-      print("<input type=hidden name=$this->st_param_numpage value=\"\"></div>"); 
+      print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
    }   
 
    /**
@@ -135,12 +137,13 @@ class PaginationTableau {
    public function affiche_tableau_simple($pa_tableau) {
       $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
       $pa_tableau=array_slice($pa_tableau,$i_limite_inf,$this->i_nb_lignes_par_page);
-      print("<div><table class=\"table table-bordered table-striped\">");
-      print("<tr>");
+      print("<table class=\"table table-bordered table-striped\">");
+      print("<thead><tr>");
       foreach ($this->a_entete as $st_cell_entete) {
          print("<th>$st_cell_entete</th>");
       }
-      print("</tr>\n");
+      print("</tr></thead>\n");
+	  print('<tbody>');
       $i=0;
       foreach ($pa_tableau as $a_ligne) {
          print("<tr>");
@@ -153,10 +156,11 @@ class PaginationTableau {
          }         
          print("</tr>\n");
          $i++;
-      }      
+      }
+      print('</tbody>');      
       print("</table>");
       // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
-      print("<input type=hidden name=$this->st_param_numpage value=\"\"></div>"); 
+      print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
    }   
 
 
@@ -167,13 +171,14 @@ class PaginationTableau {
       $st_requete = $this->st_requete;
       $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
       $st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
-      print("<div><table class=\"table table-bordered table-striped\">");
-      print("<tr>");
+      print("<table class=\"table table-bordered table-striped\">");
+      print("<thead><tr>");
       foreach ($this->a_entete as $st_cell_entete) {
          print("<th>$st_cell_entete</th>");
       }
-      print("</tr>\n");
-      $a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
+      print("</tr></thead>\n");
+      print('<tbody>');
+	  $a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
       $i=0;
       foreach ($a_lignes as $a_ligne) {
          $idf_element = array_shift($a_ligne);
@@ -191,10 +196,11 @@ class PaginationTableau {
          print("<td><input type=checkbox name=\"supp[]\" id=\"$st_nom_col1\" value=$idf_element class=\"form-check-input\" ></td>"); 
          print("</tr>\n");
          $i++;
-      }      
+      }
+      print('</tbody>');      
       print("</table>");
       // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
-      print("<input type=hidden name=$this->st_param_numpage value=\"\"></div>"); 
+      print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
    }   
     
 /**
@@ -204,12 +210,13 @@ class PaginationTableau {
       $st_requete = $this->st_requete;
       $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
       $st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
-      print("<div><table class=\"table table-bordered table-striped\">");
-      print("<tr>");
+      print("<table class=\"table table-bordered table-striped\">");
+      print("<thead><tr>");
       foreach ($this->a_entete as $st_cell_entete) {
          print("<th>$st_cell_entete</th>");
       }
-      print("</tr>\n");
+      print("</tr></thead>\n");
+	  print('<tbody>');
       $a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
       $i=0;
       foreach ($a_lignes as $a_ligne)
@@ -229,10 +236,11 @@ class PaginationTableau {
          print("<td><input type=button id=\"boutonR$idf_element\" class=\"btn btn-primary btn-block\" value=Fusionner onClick=\"document.location.href='$this->st_nom_script?remp=$idf_element'\"></td>");
          print("</tr>\n");
          $i++;
-      }      
+      }
+      print('</tbody>');       
       print("</table>");
       // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
-      print("<input type=hidden name=$this->st_param_numpage value=\"\"></div>"); 
+      print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
    }   
     
    /**
@@ -243,14 +251,15 @@ class PaginationTableau {
       $st_requete = $this->st_requete;
       $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
       $st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
-      print("<div><table class=\"table table-bordered table-striped\">");
-      print("<tr>");
+      print("<table class=\"table table-bordered table-striped\">");
+      print("<thead><tr>");
       foreach ($this->a_entete as $st_cell_entete) {
          print("<th>$st_cell_entete</th>");
       }
-      print("</tr>\n");
+      print("</tr></thead>\n");
       $a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
       $i=0;
+	  print('<tbody>');
       foreach ($a_lignes as $a_ligne) {
          $idf_element = array_shift($a_ligne);
          print("<tr>");
@@ -266,10 +275,11 @@ class PaginationTableau {
          print("<td><input class=\"btn btn-primary btn-block\" type=button id=\"$idf_element\" value=Réponse onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element&type=$st_type'\"></td>"); 
          print("</tr>\n");
          $i++;
-      }      
+      }
+      print('</tbody>');      
       print("</table>");
       // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
-      print("<input type=hidden name=$this->st_param_numpage value=\"\"><br></div>"); 
+      print("<input type=hidden name=$this->st_param_numpage value=\"\"><br>"); 
    }      
    
    /**
@@ -299,12 +309,13 @@ class PaginationTableau {
 		$st_requete = $this->st_requete;
 		$i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
 		$st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
-		print("<div ><table class=\"table table-bordered table-striped\">");
-		print("<tr>");
+		print("<table class=\"table table-bordered table-striped\">");
+		print("<thead><tr>");
 		foreach ($this->a_entete as $st_cell_entete) {
 			print("<th>$st_cell_entete</th>");
 		}
-		print("</tr>\n");
+		print("</tr></thead>\n");
+		print('<tbody>');
 		$a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
 		$i=0;
 		foreach ($a_lignes as $a_ligne) {
@@ -322,10 +333,11 @@ class PaginationTableau {
 			print("<td><input type=button class=\"btn btn-primary btn-block\" id=\"bouton$idf_element\" value=Sélectionner onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
 			print("</tr>\n");
 			$i++;
-		}      
+		}
+        print('<t/body>');		
 		print("</table>");
 		// paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
-		print("<input type=hidden name=$this->st_param_numpage value=\"\"></div>"); 
+		print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
 	}
   
   /**
