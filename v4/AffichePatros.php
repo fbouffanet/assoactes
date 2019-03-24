@@ -23,14 +23,70 @@ print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'> ");
 print("<script src='js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='js/select2.min.js' type='text/javascript'></script>");
+print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");  
 print("<script type='text/javascript'>");
 ?>
 $(document).ready(function() {
   $(".js-select-avec-recherche").select2();
+
+
+$("#patros").validate({
+  rules: {
+		patronyme: {
+			required:true,
+			minlength: 2
+		},
+		rayon_patro: {
+			integer: true
+		}
+  },
+  messages: {
+	  patronyme: {
+		  required: "Le patronyme est obligatoire",
+		  minlength: "Saisir au moins deux caract&egrave;res"
+      },
+	  rayon_patro: {
+		  integer: "Le rayon doit &ecirc;tre un entier"
+	  }
+  },
+  errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}
+});  
 });
-
-
 
 <?php
 print("</script>");
@@ -42,35 +98,46 @@ print('</Head>');
 function affiche_menu($gi_idf_commune,$gi_rayon,$gi_idf_source,$pst_msg)
 {
   global $connexionBD;
-  print("<form name=\"Patros\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+  print("<form id=\"patros\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
   $a_communes_acte = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM commune_acte order by nom");
   $a_sources = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM source order by nom collate latin1_german1_ci");
   print("<input type=hidden name=mode value=\"LISTE\">");
   print("<input type=hidden name=idf_source value=0>");
-  if (!empty($pst_msg)) print("<div class=\"text-center alert alert-danger\">$pst_msg<div>\n");
+  if (!empty($pst_msg)) print("<div class=\"alert alert-danger\">$pst_msg</div>\n");
   
-  print('<div class="form-row col-md-12"><div class="form-group col-md-4 col-md-offset-4">');
-  print("<label for=\"patronyme\">Patronyme:</label><input type=text name=patronyme id=patronyme size=15 maxlength=30 class=\"form-control\">");
+  print('<div class="form-group row col-md-12">');
+  print('<label for="patronyme" class="col-form-label col-md-2">Patronyme:</label>');
+  print('<div class="col-md-4">');
+  print('<input type=text name=patronyme id=patronyme size=15 maxlength=30 class="form-control">');
   print('</div>');
  
   print('<div class="form-check col-md-4">');
   print('<input type=checkbox name=variantes_pat id=variantes_pat value=oui checked class="form-check-input">');
   print('<label for="variantes_pat" class="form-check-label">Recherche par variantes connues</label>');
-  print('</div></div>'); // fin ligne 
+  print('</div>');
+  print('<button type="submit" class="btn btn-primary col-md-2">Rechercher le patronyme</button>');
+  print('</div>'); // fin ligne 
   
-  print('<div class="form-row col-md-12"><div class="form-group col-md-4 col-md-offset-4">');
-  print('<label for="idf_commune_patro">Commune/Paroisse:</label><select name="idf_commune_patro" id="idf_commune_patro" class="js-select-avec-recherche form-control">');
-  $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
-  print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
-  print('</select></div>');
-  print("<div class=\"form-group col-md-4\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_patro\" class=\"sr-only\">Rayon</label><input type=text name=rayon_patro id='rayon_patro' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");
- 
-  print('<div class="form-row col-md-12"><div class="form-group col-md-4 col-md-offset-4">');
-  print('<label for="idf_source">Source:</label><select name=idf_source id=idf_source class=\"form-control\">');
+  print('<div class="form-group row col-md-12">');
+  print('<label for="idf_source" class="col-form-label col-md-2">Source:</label>');
+  print('<div class="col-md-2">');
+  print('<select name=idf_source id=idf_source class="form-control">');
   $a_sources[0] = 'Toutes';
   print(chaine_select_options($gi_idf_source,$a_sources));
   print('</select></div>');
-  print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Rechercher le patronyme</button></div>');
+  
+  print('<label for="idf_commune_patro" class="col-form-label col-md-2">Commune/Paroisse:</label>');
+  print('<div class="col-md-2">');
+  print('<select name="idf_commune_patro" id="idf_commune_patro" class="js-select-avec-recherche form-control">');
+  $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
+  print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
+  print('</select></div>');
+  print("<div class=\"form-group col-md-4\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_patro\" class=\"sr-only\">Rayon</label><input type=text name=rayon_patro id='rayon_patro' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div>");
+  print("</div>"); // fin ligne 
+ 
+  
+  
+  
   
   print ("</form>");
   unset($_SESSION['variantes_pat']);
