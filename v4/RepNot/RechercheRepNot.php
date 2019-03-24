@@ -39,7 +39,7 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
 	print('<div class="panel panel-info">');
     print('<div class="panel-heading">Notaire</div>');
     print('<div class="panel-body">');
-    print('<div class="form-group row">');
+    print('<div class="form-group row col-md-12">');
 	print('<label for="idf_commune_notaire" class="col-form-label col-md-2">Commune</label>');
 	print('<div class="col-md-2">');
 	print("<select id=\"idf_commune_notaire\" name=\"idf_commune_notaire\" class=\"js-select-avec-recherche form-control\">");
@@ -47,7 +47,9 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
 	print(chaine_select_options($pi_idf_commune,$a_communes_notaires));
 	print("</select>");
     print('</div>');
-	print("<div class=\"form-group col-md-8\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon\" class=\"sr-only\">Rayon</label><input type=text name=rayon id='rayon' size=2 maxlength=2 value=\"$pi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");	
+	print("<div class=\"form-group col-md-8\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon\" class=\"sr-only\">Rayon</label><input type=text name=rayon id=\"rayon\" size=2 maxlength=2 value=\"$pi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");
+
+	
 	print("</div>"); // fin ligne
 	print('<div class="form-group row">');
 	print('<label for="idf_rep" class="col-form-label col-md-2">R&eacute;pertoire:</label>');
@@ -66,7 +68,7 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
 	print("<input type=\"text\" id=\"type_acte\" name=\"type_acte\" maxlength=40 size=20 value=\"$pst_type_acte\" class=\"form-control\">");
 	print('</div></div>');
 	
-	print('<div class="form-row col-md-12">'); 
+	print('<div class="form-group row col-md-12">'); 
     print('<div class="input-group col-md-offset-4 col-md-4">');
     print("<span class=\"input-group-addon\">Ann&eacute;es de</span><input type=text name=annee_min id=\"annee_min_recherches_communes\" size=4 value=\"$pi_annee_min\" class=\"form-control\">");
     print("<span class=\"input-group-addon\">&agrave;</span><input type=text name=annee_max size=4 id=\"annee_max_recherches_communes\" value=\"$pi_annee_max\" class=\"form-control\">");
@@ -79,9 +81,9 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
 	print("<input type=\"text\" id=\"nom1\" name=\"nom1\" maxlength=40 size=20 value=\"$pst_nom1\" class=\"form-control\">");
 	print('</div>');
 
-	print("<label for=\"prenom1\" class=\"col-form-label col-md-2\">Pr&eacutenom1:</label>");
+	print("<label for=\"prenom1\" class=\"col-form-label col-md-2\">Pr&eacute;nom1:</label>");
 	print('<div class="col-md-4">');
-	print("<input type=\"text\" id=\"prenom1\" name=\"prenom1\" maxlength=30 size=20 value=\"$pst_prenom1\" class=\"form-control\"></span>");
+	print("<input type=\"text\" id=\"prenom1\" name=\"prenom1\" maxlength=30 size=20 value=\"$pst_prenom1\" class=\"form-control\">");
 	print('</div>');
 	
 	print("</div>");
@@ -92,7 +94,7 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
 	print("<input type=\"text\" id=\"nom2\" name=\"nom2\" maxlength=40 size=20 value=\"$pst_nom2\" class=\"form-control\">");
 	print('</div>');
 	
-	print("<label for=\"prenom2\" class=\"col-form-label col-md-2\">Pr&eacutenom2:</label>");
+	print("<label for=\"prenom2\" class=\"col-form-label col-md-2\">Pr&eacute;nom2:</label>");
 	print('<div class="col-md-4">');
 	print("<input type=\"text\" id=\"prenom2\" name=\"prenom2\" maxlength=30 size=20 value=\"$pst_prenom2\" class=\"form-control\">");
 	print('</div>');
@@ -116,11 +118,13 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
     $st_checked = $pb_rech_phonetique ? 'checked="checked"':'';
     print('<label for="rech_phonetique" class="col-form-label col-md-2">Recherche phon&eacute;tique dans les patronymes:</label>');
 	print('<div class="col-md-10">');
-	print("<input type=\"checkbox\" id=\"rech_phonetique\" name=\"rech_phonetique\" $st_checked value=\"1\"");
+	print("<input type=\"checkbox\" id=\"rech_phonetique\" name=\"rech_phonetique\" $st_checked value=\"1\">");
 	print('</div>');
 	print('</div>');
 	
+	print('<div class="form-group row col-md-12">');
 	print('<div class="text-center">Le caract&egrave;re * peut &ecirc;tre utilis&eacute; pour remplacer une partie de mot dans les champs Nom, Pr&eacute;nom et Paroisse. <br>Exemple: BAR* va chercher tous les mots commen&ccedil;ant par BAR</div>');
+	print('</div>');
 	
 	print("</div></div>"); // fin panel
 	print('<div class="form-row col-md-12">');
@@ -689,7 +693,7 @@ switch ($gst_mode)
 	default:
 }
 
-print("</div>"); // fin panel body
+print("</div></div>"); // fin panel body
 print("</div>"); // fin container
 
 print("</body>");
