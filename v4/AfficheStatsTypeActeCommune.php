@@ -53,8 +53,8 @@ print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 $i_get_idf_source=isset($_GET['idf_source']) ? $_GET['idf_source']: 1 ; 
 $gi_idf_source=isset($_POST['idf_source']) ? $_POST['idf_source'] : $i_get_idf_source;
 
-print('<div class="form-row col-md-12"><label for="idf_source" class="col-form-label col-md-2">Source</label>');
-print('<div class="col-md-4 col-md-offset-2">');
+print('<div class="form-row col-md-12"><label for="idf_source" class="col-form-label col-md-2 col-md-offset-3">Source</label>');
+print('<div class="col-md-4 ">');
 print('<select name=idf_source id=idf_source class="js-select-avec-recherche form-control">');
 print(chaine_select_options($gi_idf_source,$a_sources));
 print('</select></div></div>');
@@ -75,8 +75,8 @@ if (count($a_communes)!=0)
    $a_liste_stats = $connexionBD->sql_select_multiple("select nom, annee_min,annee_max,nb_actes from stats_commune join type_acte on (idf_type_acte=idf) where idf_source=$gi_idf_source and idf_commune=$gi_idf_commune order by nom");
 }
 
-print('<div class="form-row col-md-12"><label for=\"idf_commune\" class="col-form-label col-md-2">Commune:</label>');
-print('<div class="col-md-4 col-md-offset-2">');
+print('<div class="form-row col-md-12"><label for=\"idf_commune\" class="col-form-label col-md-2 col-md-offset-3">Commune:</label>');
+print('<div class="col-md-4">');
 print('<select name=idf_commune id=idf_commune class="js-select-avec-recherche form-control">');
 print(chaine_select_options($gi_idf_commune,$a_communes));
 print('</select></div></div>');
@@ -84,8 +84,9 @@ print('</select></div></div>');
 if (count($a_liste_stats)!=0)
 {
    print("<table class=\"table table-bordered table-striped\">\n");
-   print("<tr><th>Type d'acte</th><th>Ann&eacute;e minimale</th><th>Ann&eacute;e maximale</th><th>Nombre d'actes</th></tr>\n");
+   print("<thead><tr><th>Type d'acte</th><th>Ann&eacute;e minimale</th><th>Ann&eacute;e maximale</th><th>Nombre d'actes</th></tr></thead>\n");
    $i=0;
+   print('<tbody>');
    foreach ($a_liste_stats as $a_ligne)
    {
       print("<tr>");
@@ -96,11 +97,12 @@ if (count($a_liste_stats)!=0)
       print("</tr>");
       $i++;
    }
+   print('</tbody>');
    print("</table>\n");
 }
 else
 {
-   print("<div class=\"text-center alert alert-danger\">Pas de donn&eacute;es</div>");
+   print("<div class=\"alert alert-danger\">Pas de donn&eacute;es</div>");
 }
 print ("</form>");
 print("</div></body></html>");
