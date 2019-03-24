@@ -283,10 +283,11 @@ switch ($gst_mode) {
       {
          print("<div class=\"row\">La fourchette affich&eacute;e est l'intervalle maximal de couverture. Pour obtenir le d&eacute;tail des p&eacute;riodes relev&eacute;es, cliquer sur le nombre d'actes</div>");
          print("<div class=\"row\"><table class=\"table table-bordered table-striped table-condensed\">\n");
-         print("<tr>");
+         print("<thead><tr>");
          print("<th>Commune/Paroisse</th><th>D&eacute;but Coll.<br>Greffe (AD)</th><th>D&eacute;but Coll.<br>communale</th><th>Naissances</th><th>Mariages</th><th>D&eacute;c&eacute;s</th><th>Contrats de mariage</th>");
-         print("</tr>\n");
+         print("</tr></thead>\n");
          $i=0;
+		 print('<tbody>');
          foreach ($a_liste_communes as $i_idf_commune => $a_info_commune)
          {
             list($st_nom_commune,$i_debut_communale,$i_debut_greffe) = $a_info_commune;
@@ -331,6 +332,7 @@ switch ($gst_mode) {
            print("</tr>\n");
            $i++;
         }
+		print('</tbody>');
         print("</table></div>\n");
         // Affichage de la page courante     
         affiche_entete_liens_navigation($gi_num_page_cour,$i_nb_pages);
