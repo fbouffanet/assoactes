@@ -350,8 +350,10 @@ switch ($gst_mode) {
      print("</div>");
      
      print('<div class="panel-body">');
-     if ($gi_debut_communale!=0) print("<div class=\"row\">D&eacute;but de la collection communale:$gi_debut_communale</div>");
-     if ($gi_debut_greffe!=0) print("<div class=\"row\">D&eacute;but de la collection du greffe:$gi_debut_greffe</div>");
+     print('<blockquote class="blockquote">');
+     if ($gi_debut_communale!=0) print("D&eacute;but de la collection communale: $gi_debut_communale<br>");
+     if ($gi_debut_greffe!=0) print("D&eacute;but de la collection du greffe: $gi_debut_greffe");
+     print('</blockquote>');
      if (empty($gi_idf_source))
        $st_requete = "select distinct annee,count(idf) from acte where idf_commune=$gi_idf_commune and idf_type_acte=$gi_idf_type_acte group by annee order by annee";
      else
@@ -365,7 +367,7 @@ switch ($gst_mode) {
      {
         $i_nb_actes =0;
         print("<table class=\"table table-bordered table-striped table-condensed\">");
-        print("<tr><th>Ann&eacute;es</th><th>Nombre d'actes</th></tr>");
+        print("<thead><tr><th>Ann&eacute;es</th><th>Nombre d'actes</th></tr></thead>");
         foreach ($a_liste_annnees as $i_annee => $i_nb_actes_annee)
         {
           if ($i_annee==9999) continue;
