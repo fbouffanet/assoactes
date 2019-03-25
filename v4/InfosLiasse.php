@@ -65,5 +65,5 @@ print("<tr><th>Liasse consultable</th><td>".$st_liasse_consult."</td></tr>");
 print("<tr><th>Informations complémentaires</th><td>".$st_info_compl."</td></tr>");
 print("</table>");
 print("</div>");
-print('<button type="button" id="fermer" class="btn btn-primary col-sm-4 col-sm-offset-4">Fermer la fen&ecirc;tre</button>');
+print('<button type="button" id="fermer" class="btn btn-primary col-xs-4 col-xs-offset-4">Fermer la fen&ecirc;tre</button>');
 print('</form></div></body></html>');
