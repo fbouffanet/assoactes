@@ -25,6 +25,7 @@ print("<link href='../css/jquery-ui.theme.min.css' type='text/css' rel='styleshe
 print("<link href='../css/select2.min.css' type='text/css' rel='stylesheet'>");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='../js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print("<script src='../js/select2.min.js' type='text/javascript'></script>"); 
@@ -32,6 +33,14 @@ print("<script src='../js/select2.min.js' type='text/javascript'></script>");
 <script type='text/javascript'>
 $(document).ready(function() {
 $(".js-select-avec-recherche").select2();
+
+$('#commune_a_chercher').autocomplete({
+    source : function(request, response) {
+    $.getJSON("../ajax/commune_acte.php", { term: request.term,idf_source: 0 }, response);
+    },
+   minLength: 3
+});
+
 
 $('#annuler').click(function() {
       window.location.href='<?php echo $_SERVER['PHP_SELF'] ?>';
@@ -182,7 +191,7 @@ $gi_num_page_cour = empty($_GET['num_page']) ? $gi_session_num_page_cour : $_GET
  */ 
 function menu_liste($pconnexionBD,$pst_commune_a_chercher)
 {
-   global $gi_num_page_cour;
+   global $gi_num_page_cour,$gi_max_taille_upload;
     $st_requete = "SELECT DISTINCT (left( ca.nom, 1 )) AS init FROM `commune_acte` ca join `photos` p on (p.id_commune=ca.idf) ORDER BY init";
    $a_initiales_communes = $pconnexionBD->sql_select($st_requete);
    
@@ -246,14 +255,16 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
    print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Ajouter une photo</button>');     
    print('</form>');
    print("<form enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
-   print('<input type="hidden" name="MAX_FILE_SIZE" value="$gi_max_taille_upload" />'); 
+   print("<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\">"); 
    print('<input type="hidden" name="mode" value="CHARGER" />');
-   print('<div class="form-group row"><div class="custom-file">');  
-   print('<label for="Photos" class="col-form-label col-md-4">Fichier<span class="alert alert-danger">CSV</span>des photos:</label>');
-   print('<input name="Photos" id="Photos" type="file" class="custom-file-input">');
-   print('</div></div>');
-   print('<div class="form-group row">');  
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Charger les photos</button>'); 
+   print('<div class="row col-md-12">');
+   print('<div class="form-group col-md-10">');
+   print('<div class="custom-file">');  
+   print('<label for="Photos" class="custom-file-label col-md-5">Fichier<span class="alert alert-danger">CSV</span>des photos:</label>');
+   print('<input name="Photos" id="Photos" type="file" class="custom-file-input col-md-5">');
+   print('</div>');
+   print('</div>');    
+   print('<button type=submit class="btn btn-primary col-md-2">Charger les photos</button>'); 
    print('</div>');
    print('</form>');
 }
