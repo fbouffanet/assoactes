@@ -95,7 +95,7 @@ function affiche_menu()
    print("<input type=\"text\" name=\"email_adht\" id=\"email_adht\" size=\"30\" maxlength=\"60\" class=\"form-control\">\n"); 
    print("</div></div>");
    print('<div class="form-row">');
-   print('<div class="col-md-4 col-md-offset-4">');
+   print('<div class="col-xs-3 col-xs-offset-1">');
    print('<div class="btn-group-vertical " role="group">');
    print('<button type=submit class="btn btn-primary">Demander un nouveau mot de passe</button>');   
    print('<button type="button" id=ferme class="btn btn-warning">Annuler</button>');
@@ -150,9 +150,7 @@ function verifie_demande($pst_email)
   }
   print('</div></div></div>');
   print('<div class="row">');
-  print('<div class="col-md-4 col-md-offset-4">');
-  print('<button type="button" id="ferme" class="btn btn-warning">Annuler</button>');
-  print('</div>'); 
+  print('<button type="button" id="ferme" class="btn btn-warning col-xs-4 col-xs-offset-4">Annuler</button>');
   print('</div>'); 
 } 
 
