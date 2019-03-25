@@ -30,6 +30,17 @@ print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 $(document).ready(function() {
 $(".js-select-avec-recherche").select2();
 
+jQuery.validator.addMethod(
+    "vide_si_coche",
+    function(value, element) {
+        if ($(element)).is(':checked')
+		{
+			alert('test');
+			return value!='';
+		} 	
+    },
+    "L'&eacute;lement doit être vide si la case est coch&eacute;e"
+);
 
 $("#recherche_liasses").validate({
   rules: {
