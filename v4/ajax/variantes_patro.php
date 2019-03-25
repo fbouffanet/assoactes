@@ -20,7 +20,7 @@ if (isset ($_GET['term']))
   $st_rech="$st_rech%";
    
   $connexionBD->initialise_params(array(':recherche'=>$st_rech));
-  $st_requete = "select vp1.idf_groupe,vp1.patronyme,vp1.majeure from variantes_patro vp1 join variantes_patro vp2 on (vp1.idf_groupe=vp2.idf_groupe) where vp2. patronyme like :recherche  order by majeure desc";
+  $st_requete = "select distinct vp1.idf_groupe,vp1.patronyme,vp1.majeure from variantes_patro vp1 join variantes_patro vp2 on (vp1.idf_groupe=vp2.idf_groupe) where vp2. patronyme like :recherche  order by majeure desc";
   $a_patros = $connexionBD->sql_select_multiple($st_requete);
   $a_variantes_patros = array();
   $st_majeure= '';
