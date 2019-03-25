@@ -65,7 +65,7 @@ else
    print("<div class=\"alert alert-danger\">Les param&egrave;tres sont manquants</div>");
 }
 print('<div class="form-row">');
-print('<button type="button" id=ferme class="btn btn-warning col-md-4 col-md-offset-4">Fermer la fen&ecirc;tre</button>');
+print('<button type="button" id=ferme class="btn btn-warning col-xs-4 col-xs-offset-4">Fermer la fen&ecirc;tre</button>');
 print('</div>');
 print('</div></body></html>');
 
