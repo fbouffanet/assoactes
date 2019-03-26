@@ -349,7 +349,7 @@ function menu_edition($pi_id_commune,$pst_fourchette,$pi_id_collection,$pi_nbr_p
    print('<div class="form-group row">'); 
    print('<label for="dt_prise" class="col-form-label col-md-2">Date prise de vue (jj/mm/aaaa)</label>');
    print('<div class="col-md-10">');
-   print("<input type=\"text\" maxsize=10 size=10 name=dt_prise id=name=dt_prise value=\"$pdt_prise\" class=\"form-control\">");
+   print("<input type=\"text\" maxsize=10 size=10 name=dt_prise id=dt_prise value=\"$pdt_prise\" class=\"form-control\">");
    print('</div>');
    print('</div>');
 }
