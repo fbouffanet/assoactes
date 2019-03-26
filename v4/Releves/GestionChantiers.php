@@ -24,144 +24,172 @@ switch ($gst_mode) {
    exit();
  break;  
 }
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=cp1252" />');
 print('<meta http-equiv="content-language" content="fr" /> ');
-print("<link href='$gst_chemin/Commun/Styles.css' type='text/css' rel='stylesheet'/>");
-print("<script src='$gst_chemin/Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='$gst_chemin/Commun/menu.js' type='text/javascript'></script>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='../css/select2.min.css' type='text/css' rel='stylesheet'>");
+print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='../js/additional-methods.min.js' type='text/javascript'></script>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
+print("<script src='../js/select2.min.js' type='text/javascript'></script>"); 
 ?>
 <script type='text/javascript'>
-function maj(Formulaire)
-{   
-   document.forms[Formulaire].mode.value='LISTE';
-   document.forms[Formulaire].submit();
-}
-function retour_aujourdhui(Formulaire)
-{
-  var d= new Date();
-  var jour = d.getDate();
-  var mois = d.getMonth()+1;
-  var annee = d.getFullYear();
-  if (jour<10)
-     jour = '0' + jour;
-  if (mois<10)
-     mois = '0' + mois;   
-  document.forms[Formulaire].date_retour.value = jour + '/' + mois + '/' +  annee;
-}
-function VerifieSuppression(Formulaire,IdfElement)
-{
-  var chaine="";
-  if (document.forms[Formulaire].elements[IdfElement].checked)
-	{
-		  chaine=document.forms[Formulaire].elements[IdfElement].id+"\n";
-	}
-  for (var i = 0; i < document.forms[Formulaire].elements[IdfElement].length; i++)
-  {
-      if (document.forms[Formulaire].elements[IdfElement][i].checked)
-      {
-         chaine+=document.forms[Formulaire].elements[IdfElement][i].id+"\n";
-      }     
-  }
-  if (chaine == "")
-  {
-     alert("Pas de chantier sélectionné");
-  }
-  else
-  {
-   	 Message="Etes-vous sûr de supprimer ces chantiers :\n"+chaine+"?";
-   	 if (confirm (Message))                        
-   	 {  
-        document.forms[Formulaire].mode.value= 'SUPPRIMER';                                                                                                                                     
-        document.forms[Formulaire].submit();                                                           
-     }
-  }
-}
-function isBisextile(date_a_verifier) {
-   
-    // On sépare la date en 3 variables pour vérification, parseInt() converti du texte en entier
-    j = parseInt(date_a_verifier.split("/")[0], 10); // jour
-    m = parseInt(date_a_verifier.split("/")[1], 10); // mois
-    a = parseInt(date_a_verifier.split("/")[2], 10); // année
-     
-    // Définition du dernier jour de février
-    // Année bissextile si annnée divisible par 4 et que ce n'est pas un siècle, ou bien si divisible par 400
-    if (a%4 == 0 && a%100 !=0 || a%400 == 0) fev = 29;
-    else fev = 28;
-   
-    // Nombre de jours pour chaque mois
-    nbJours = new Array(31,fev,31,30,31,30,31,31,30,31,30,31);
-   
-    // Enfin, retourne vrai si le jour est bien entre 1 et le bon nombre de jours, idem pour les mois, sinon retourn faux
-    return ( m >= 1 && m <=12 && j >= 1 && j <= nbJours[m-1] );
-}
-function VerifieChamps(Formulaire)
-{
-   var date_ptn = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
-   var convention = document.forms[Formulaire].date_convention.value;
-   var envoi = document.forms[Formulaire].date_envoi.value;
-   var retour = document.forms[Formulaire].date_retour.value;
-   var fin = document.forms[Formulaire].date_fin.value;
-   var ListeErreurs	= "";
-   if (convention == "")
-   {
-      ListeErreurs += "La date de la convention est obligatoire\n";
-   }
-   if (!date_ptn.test (convention))
-   {
-      ListeErreurs += "La date de la convention doit être de la forme : JJ/MM/AAAA\n";
-   }
-	if (!isBisextile (convention))
-   {
-      ListeErreurs += "La date de la convention n'est pas correcte\n";
-   }
-   if (envoi == "")
-   {
-      ListeErreurs += "La date d'envoi est obligatoire\n";
-   }
-   if (!date_ptn.test (envoi))
-   {
-      ListeErreurs += "La date d'envoi doit être de la forme : JJ/MM/AAAA\n";
-   }
-	if (!isBisextile (envoi))
-   {
-      ListeErreurs += "La date d'envoi n'est pas correcte\n";
-   }
-   if (retour != "")
-   {
-      if (!date_ptn.test (retour))
-      {
-         ListeErreurs += "La date de retour doit être de la forme : JJ/MM/AAAA\n";
-      }
-	   if (!isBisextile (retour))
-      {
-         ListeErreurs += "La date de retour n'est pas correcte\n";
-      }
-   }
-    if (fin != "")
-   {
-      if (!date_ptn.test (fin))
-      {
-         ListeErreurs += "La date de fin doit être de la forme : JJ/MM/AAAA\n";
-      }
-	   if (!isBisextile (fin))
-      {
-         ListeErreurs += "La date de fin n'est pas correcte\n";
-      }
-   }
-   if (ListeErreurs != "")
-   {
-      alert (ListeErreurs);
-   }
-   else
-   {
-      document.forms[Formulaire].submit();
-   }   
-}
+$(document).ready(function() {
+	$(".js-select-avec-recherche").select2();
+	
+	$('#idf_statut_visu').change(
+		function(){
+         $(this).closest('form').trigger('submit');
+	});
+
+	$('#annuler').click(function() {
+      window.location.href='<?php echo $_SERVER['PHP_SELF'] ?>';
+	});
+	
+	$('#aujourdhui').click(function() {
+	  var d= new Date();
+	  var jour = d.getDate();
+      var mois = d.getMonth()+1;
+      var annee = d.getFullYear();
+      if (jour<10)
+        jour = '0' + jour;
+      if (mois<10)
+        mois = '0' + mois;
+      $('#date_retour').val(jour + '/' + mois + '/' +  annee);
+	});
+	
+	$("#suppression_chantiers").validate({
+		rules: {
+			"supp[]": { 
+                    required: true, 
+                    minlength: 1 
+            } 
+		},
+		messages: {
+     "supp[]": "Merci de choisir au moins un chantier &agrave; supprimer"
+		},
+		submitHandler: function(form) {
+			var chantiers='';
+			$("input:checkbox").each(function(){
+			var $this = $(this);
+			if($this.is(":checked")){
+				chantiers=chantiers+' '+$this.attr("id");
+			}
+			});
+			if (confirm('Etes-vous sûr de supprimer les chantiers '+chantiers+' ?')) {
+				form.submit();
+			}
+		}
+	});
+	
+	jQuery.validator.addMethod(
+    "dateITA",
+    function(value, element) {
+        var check = false;
+        var re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+        if( re.test(value)){
+            var adata = value.split('/');
+            var gg = parseInt(adata[0],10);
+            var mm = parseInt(adata[1],10);
+            var aaaa = parseInt(adata[2],10);
+            var xdata = new Date(aaaa,mm-1,gg);
+            if ( ( xdata.getFullYear() == aaaa ) 
+                   && ( xdata.getMonth () == mm - 1 ) 
+                   && ( xdata.getDate() == gg ) )
+                check = true;
+            else
+                check = false;
+        } else
+            check = false;
+        return this.optional(element) || check;
+    },
+    "SVP, entrez une date correcte"
+);
+	
+	$("#edition_chantiers").validate({
+		rules: {		
+			date_convention:  {
+				"required": true,
+				"dateITA": true
+			},
+			date_envoi:  {
+				"required": true,
+				"dateITA": true
+			},
+			date_retour:  {
+				"dateITA": true
+			},
+			date_fin:  {
+				"dateITA": true
+			}
+		},
+		messages: {
+			date_convention: {
+				required: "La date de la convention est obligatoire",
+				dateITA: "La date de la convention doit être de la forme : JJ/MM/AAAA"
+			},
+			date_envoi: {
+				required: "La date d'envoi est obligatoire",
+				dateITA: "La date d'envoi doit être de la forme : JJ/MM/AAAA"
+			},
+			date_retour: {
+				dateITA: "La date de retour doit être de la forme : JJ/MM/AAAA"
+			},
+			date_fin: {
+				dateITA: "La date de fin doit être de la forme : JJ/MM/AAAA"
+			}
+		},
+		errorElement: "em",
+		errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
+
+			// Add `has-feedback` class to the parent div.form-group
+			// in order to add icons to inputs
+			element.parents( ".col-md-10" ).addClass( "has-feedback" );
+
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+			}
+
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !element.next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+			}
+		},
+		success: function ( label, element ) {
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !$( element ).next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+			}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".col-md-10" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+		},
+		unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".col-md-10" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+		}	
+	});
+
+});
+	
 </script>
 <?php
 print('</head>');
 print('<body>');
+print('<div class="container">');
 if (isset($_GET['mod']))
 {
    $gst_mode='MENU_MODIFIER';
@@ -183,8 +211,11 @@ $_SESSION['idf_statut_session'] = $gi_idf_statut;
 function menu_liste($rconnexionBD,$pi_idf_statut_visu)
 {
    global $gi_num_page_cour, $ga_tbl_statut;
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
-   print('<div class=alignCenter>Statut : <select name=idf_statut_visu onChange=javascript:maj(0);>');
+   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
+   print('<div class="form-group row">'); 
+   print('<label for=idf_statut_visu class="col-form-label col-md-2 col-md-offset-2">Statut:</label>');
+   print('<div class="col-md-6">');
+   print('<select name=idf_statut_visu id=idf_statut_visu class="form-control">');
    $_SESSION['num_page_chantiers'] = $gi_num_page_cour;
    foreach($ga_tbl_statut as $i_index => $st_valeur)
    {
@@ -194,10 +225,12 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu)
         print("<option value=\"$i_index\">$st_valeur</option>");             
    }
    print('</select>');
+   print('</div>');
+   print('</div>');
    $st_requete = empty($pi_idf_statut_visu) ? "select count(distinct id_releveur ) from `chantiers`": "select count(distinct id_releveur ) from `chantiers` where statut=$pi_idf_statut_visu";
   $i_nb_reveleurs = $rconnexionBD->sql_select1($st_requete);
-   print(" $i_nb_reveleurs Releveurs distincts");
-   print('</div><br>');
+   print("<div class=\"info text-center\">$i_nb_reveleurs Releveurs distincts</div>");
+
    // Affichage des initiales
    $st_requete = empty($pi_idf_statut_visu ) ? "SELECT DISTINCT (left( ca.nom, 1 )) AS init from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) ORDER BY init":"SELECT DISTINCT (left( ca.nom, 1 )) AS init from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) where ch.statut=$pi_idf_statut_visu ORDER BY init";
    $a_initiales_communes = $rconnexionBD->sql_select($st_requete);
@@ -207,15 +240,15 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu)
    if (!in_array($gc_initiale,$a_initiales_communes))
       $gc_initiale=$a_initiales_communes[0];
    $_SESSION['initiale_statcom'] = $gc_initiale;
+   print('<div class="text-center"><ul class="pagination">');
    foreach ($a_initiales_communes as $c_initiale)
    {
       if ($c_initiale==$gc_initiale)
-         print("<span style=\"font-weight: bold;\"
->$c_initiale </span>");
+         print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
       else
-         print("<a href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=$c_initiale&idf_statut_visu=$pi_idf_statut_visu\">$c_initiale</a> ");
+         print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=$c_initiale&idf_statut_visu=$pi_idf_statut_visu\" class=\"page-item\">$c_initiale</a></li>");
    }
-   print("<br></div>");
+   print("</ul></div>");
   
    if (empty($pi_idf_statut_visu))
       $st_requete = "select ch.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relevé papier' end), concat(ad.nom,'  ',ad.prenom,' (',ad.idf,')') from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) join `adherent` ad on (ch.id_releveur = ad.idf) where ca.nom like '$gc_initiale%' order by ca.nom, ad.nom";
@@ -223,6 +256,7 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu)
       $st_requete = "select ch.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relevé papier' end), concat(ad.nom,'  ',ad.prenom,' (',ad.idf,')') from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) join `adherent` ad on (ch.id_releveur = ad.idf) where ch.statut=$pi_idf_statut_visu and ca.nom like '$gc_initiale%' order by ca.nom, ad.nom";
    
    $a_liste_chantiers = $rconnexionBD->liste_valeur_par_clef($st_requete);
+   print("</form><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"suppression_chantiers\">"); 
    $i_nb_chantiers = count($a_liste_chantiers);
    if ($i_nb_chantiers!=0)
    {        
@@ -230,31 +264,31 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu)
       $pagination->init_param_bd($rconnexionBD,$st_requete);
       $pagination->init_page_cour($gi_num_page_cour);
       $pagination->affiche_entete_liens_navigation();
-      print("<br>");
       $pagination->affiche_tableau_edition();
-      print("<br>");
       $pagination->affiche_entete_liens_navigation();      
    }
    else
-      print("<div align=center>Pas de chantiers</div>\n");
+      print('<div class="alert alert-danger">Pas de chantiers</div>');
    print("<input type=hidden name=mode value=SUPPRIMER>");
-   print("<br><div align=center><input type=button value=\"Supprimer les chantiers sélectionnés\" ONCLICK=VerifieSuppression(0,\"supp[]\")></div>");   
-   print("</form>");  
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Supprimer les chantiers s&eacute;lectionn&eacute;es</button>');    
+   print("</form>");
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-   print("<input type=hidden name=mode value=MENU_AJOUTER>");  
-   print("<div align=center><input type=submit value=\"Ajouter un chantier\"></div>");  
+   print("<input type=hidden name=mode value=MENU_AJOUTER>");
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Ajouter un chantier</button>');     
    print('</form>');
+   
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<div class=alignCenter>");
    print("<input type=hidden name=mode value=EXPORT>");
-   print("<input type=submit value=\"Exporter la liste des releves\"> "); 
-   print('avec le statut: <select name=idf_statut_export>');
+   print('<div class="form-group row">');
+   print('<input type=submit value="Exporter la liste des releves" class="btn btn-primary col-md-4 col-md-offset-4">'); 
+   print('avec le statut:');
+   print('<select name=idf_statut_export id=idf_statut_export class="form-control">');
    foreach($ga_tbl_statut as $i_index => $st_valeur)
    {
       print("<option value=\"$i_index\">$st_valeur</option>");             
    }
-   print("</select>");             
-   print("</div>");
+   print("</select>");
+   print('</div>');   
    print("</form>");  
 }
 /*
@@ -289,44 +323,104 @@ function chaine_select_options_chantier($pst_idf_choisi,$pa_tableau)
  */ 
 function menu_edition($pi_id_document,$pi_id_releveur,$pi_type_acte,$pst_convention,$pst_envoi,$pst_retour,$pst_fin,$pst_comment_envoi,$pst_comment_retour,$pi_statut,$pa_documents,$pa_adherents)
 {
-   global $ga_tbl_statut;
-   print("<table border=1>");
-   print("<tr><th>Document</th><td><select name=id_document>".chaine_select_options_chantier($pi_id_document,$pa_documents)."</select></td></tr>");
-   print("<tr><th>Releveur</th><td><select name=id_releveur>".chaine_select_options($pi_id_releveur,$pa_adherents)."</select></td></tr>");
-   $st_checked = $pi_type_acte & 1 ? 'checked' : '';
-   print("<tr><th>Type d'acte</th><td><input type=checkbox name=type_acte[] value=\"B\" $st_checked >Bapteme<br>");
-   $st_checked = $pi_type_acte & 2 ? 'checked' : '';
-   print("<input type=checkbox name=type_acte[] value=\"M\" $st_checked>Mariage<br>");
-   $st_checked = $pi_type_acte & 4 ? 'checked' : '';
-   print("<input type=checkbox name=type_acte[] value=\"S\" $st_checked>Sepulture<br>");
-   $st_checked = $pi_type_acte & 8 ? 'checked' : '';
-   print("<input type=checkbox name=type_acte[] value=\"V\" $st_checked>Divers<br></td></tr>");
-	 $pst_convention = ($pst_convention != '00/00/0000') ? $pst_convention : '';
-   print("<tr><th>Date convention (jj/mm/aaaa)</th><td><input type=\"text\" name=date_convention value=\"$pst_convention\" size=10 maxsize=10></td></tr>");
-   $pst_envoi = ($pst_envoi != '00/00/0000') ? $pst_envoi : '';	
-   print("<tr><th>Date envoi du chantier (jj/mm/aaaa)</th><td><input type=\"text\" name=date_envoi value=\"$pst_envoi\" size=10 maxsize=10></td></tr>");
+	global $ga_tbl_statut;
+	print('<div class="form-group row">');   
+	print('<label for="id_document" class="col-form-label col-md-2">Document</label>');
+	print('<div class="col-md-10">');
+	print("<select name=id_document id=id_document class=\"js-select-avec-recherche form-control\">".chaine_select_options_chantier($pi_id_document,$pa_documents)."</select>");
+	print('</div>');
+	print('</div>');
    
-   /*list($i_sec,$i_min,$i_heures,$i_jourm,$i_mois,$i_annee,$i_jours,$i_joura,$i_hiver)=localtime();
-   $i_mois++;
-   $i_annee+=1900;
-   $st_aujourdhui=sprintf("%02d/%02d/%04d",$i_jourm,$i_mois,$i_annee);*/
-   $pst_retour = ($pst_retour != '00/00/0000') ? $pst_retour : '';	
-   print("<tr><th>Date retour du chantier (jj/mm/aaaa)</th><td><input type=\"text\" name=date_retour value=\"$pst_retour\" size=10 maxsize=10> <input type=\"button\" value=\"Aujourd'hui\" onClick=\"retour_aujourdhui(0)\"</td></tr>");
-	 $pst_fin = ($pst_fin != '00/00/0000') ? $pst_fin : ''; 
-   print("<tr><th>Date fin du chantier (jj/mm/aaaa)</th><td><input type=\"text\" name=date_fin value=\"$pst_fin\" size=10 maxsize=10></td></tr>");
-   print("<tr><th>Commentaires envoi</th><td><textarea name=comment_envoi cols=40 rows=10>".$pst_comment_envoi."</textarea></td></tr>");
-   print("<tr><th>Commentaires retour</th><td><textarea name=comment_retour cols=40 rows=10>".$pst_comment_retour."</textarea></td></tr>");
-   print("<tr><th>Statut du Chantier</th><td><select name=statut>");
-   foreach($ga_tbl_statut as $i_index => $st_valeur)
-   {
+	print('<div class="form-group row">');   
+	print('<label for="id_releveur" class="col-form-label col-md-2">Releveur</label>');
+	print('<div class="col-md-10">');
+	print("<select name=id_releveur id=id_releveur class=\"js-select-avec-recherche form-control\">".chaine_select_options($pi_id_releveur,$pa_adherents)."</select>");
+	print('</div>');
+	print('</div>');
+   
+	print('<div class="form-group row">');   
+	print('<label for="type_acte" class="col-form-label col-md-2">Type d\'acte</label>');
+	print('<div class="col-md-10">');
+	print('<div class="form-check">');
+	$st_checked = $pi_type_acte & 1 ? 'checked' : '';
+	print("<input type=checkbox name=type_acte[] id=type_bapteme value=\"B\" $st_checked class=\"form-check-input\">");
+	print('<label class="form-check-label" for="type_bapteme">Bapt&ecirc;me</label>');
+	$st_checked = $pi_type_acte & 2 ? 'checked' : '';
+	print("<input type=checkbox name=type_acte[] id=type_mariage value=\"M\" $st_checked class=\"form-check-input\">");
+	print('<label class="form-check-label" for="type_mariage">Mariage</label>');
+	$st_checked = $pi_type_acte & 4 ? 'checked' : '';
+	print("<input type=checkbox name=type_acte[] id=type_sepulture value=\"S\" $st_checked class=\"form-check-input\">");
+	print('<label class="form-check-label" for="type_sepulture">S&eacute;pulture</label>');
+	$st_checked = $pi_type_acte & 8 ? 'checked' : '';
+	print("<input type=checkbox name=type_acte[] id=type_divers value=\"V\" $st_checked class=\"form-check-input\">");
+	print('<label class="form-check-label" for="type_divers">Divers</label>');
+	print('</div>');
+	print('</div>');
+	print('</div>');
+    
+	$pst_convention = ($pst_convention != '00/00/0000') ? $pst_convention : '';
+	print('<div class="form-group row">');   
+	print('<label for="date_convention" class="col-form-label col-md-2">Date convention (jj/mm/aaaa)</label>');
+	print('<div class="col-md-10">');
+	print("<input type=\"text\" name=date_convention id=date_convention value=\"$pst_convention\" size=10 maxsize=10 class=\"form-control\">");
+	print('</div>');
+	print('</div>');
+   
+	$pst_envoi = ($pst_envoi != '00/00/0000') ? $pst_envoi : '';
+	print('<div class="form-group row">');   
+	print('<label for="date_envoi" class="col-form-label col-md-2">Date envoi du chantier (jj/mm/aaaa)</label>');
+	print('<div class="col-md-10">');
+	print("<input type=\"text\" name=date_envoi id=date_envoi value=\"$pst_envoi\" size=10 maxsize=10 class=\"form-control\">");
+	print('</div>');
+	print('</div>');
+	
+	$pst_retour = ($pst_retour != '00/00/0000') ? $pst_retour : '';	
+	print('<div class="form-group row">');   
+	print('<label for="date_retour" class="col-form-label col-md-2">Date retour du chantier (jj/mm/aaaa)</label>');
+	print('<div class="col-md-10">');
+	print("<input type=\"text\" name=date_retour  id=date_retour value=\"$pst_retour\" size=10 maxsize=10 class=\"form-control\"><button type=\"button\" id=aujourdhui class=\"btn btn-primary\">Aujourd'hui</button>");
+	print('</div>');
+	print('</div>');
+	
+	
+	$pst_fin = ($pst_fin != '00/00/0000') ? $pst_fin : '';
+	print('<div class="form-group row">');   
+	print('<label for="date_fin" class="col-form-label col-md-2">Date fin du chantier (jj/mm/aaaa)</label>');
+	print('<div class="col-md-10">');	
+	print("<input type=\"text\" name=date_fin value=\"$pst_fin\" size=10 maxsize=10 class=\"form-control\">");
+	print('</div>');
+	print('</div>');
+	
+	print('<div class="form-group row">');   
+	print('<label for="comment_envoi" class="col-form-label col-md-2">Commentaires envoi</label>');
+	print('<div class="col-md-10">');
+	print("<textarea name=comment_envoi id=comment_envoi cols=40 rows=10 class=\"form-control\">".$pst_comment_envoi."</textarea>");
+	print('</div>');
+	print('</div>');
+	
+	print('<div class="form-group row">');   
+	print('<label for="comment_retour" class="col-form-label col-md-2">Commentaires retour</label>');
+	print('<div class="col-md-10">');
+	print("<textarea name=comment_retour id=comment_retour  cols=40 rows=10 class=\"form-control\">".$pst_comment_retour."</textarea>");
+	print('</div>');
+	print('</div>');
+	
+	print('<div class="form-group row">');   
+	print('<label for="statut" class="col-form-label col-md-2">Statut du Chantier</label>');
+	print('<div class="col-md-10">');
+	print("<select name=statut id=statut class=\"form-control\">");
+	foreach($ga_tbl_statut as $i_index => $st_valeur)
+	{
       if ($pi_statut==$i_index)
          print("<option value=\"$i_index\" selected=\"selected\">$st_valeur</option>");
       else
          print("<option value=\"$i_index\">$st_valeur</option>");             
-   }
-   print("</select></td></tr>");
-   print("</table>");
+	}
+	print("</select>");
+	print('</div>');
+	print('</div>');	
 }
+
 /** Affiche le menu de modification des chantiers
  * @param object $rconnexionBD Identifiant de la connexion de base
  * @param integer $pi_idf_chantier Identifiant du chantier
@@ -337,39 +431,34 @@ function menu_modifier($rconnexionBD,$pi_idf_chantier,$pa_documents,$pa_adherent
 {
    $st_requete = "select `id_document`,`id_releveur`,`type_acte`,DATE_FORMAT(`date_convention`,'%d/%m/%Y'),DATE_FORMAT(`date_envoi`,'%d/%m/%Y'),DATE_FORMAT(`date_retour`,'%d/%m/%Y'),DATE_FORMAT(`date_fin`,'%d/%m/%Y'), `comment_envoi`, `comment_retour`, `statut` from `chantiers` where idf=$pi_idf_chantier";
    list($i_id_document,$i_id_releveur,$i_type_acte,$st_convention,$st_envoi,$st_retour,$st_fin,$st_comment_envoi,$st_comment_retour,$i_statut)=$rconnexionBD->sql_select_liste($st_requete);
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
+   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"edition_chantiers\">");
    print("<input type=hidden name=mode value=MODIFIER>");
    print("<input type=hidden name=idf_chantier value=$pi_idf_chantier>");
-   print("<div align=center>");
+
    menu_edition($i_id_document,$i_id_releveur,$i_type_acte,$st_convention,$st_envoi,$st_retour,$st_fin,$st_comment_envoi,$st_comment_retour,$i_statut,$pa_documents,$pa_adherents);   
-   print("</div><br>");
-   print("<div align=center><input type=button value=\"Modifier\" ONCLICK='VerifieChamps(0)'></div>");
-   print('</form>');
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<input type=hidden name=mode value=LISTE>");
-   print("<div align=center>");
-   print("<div align=center><input type=submit value=\"Annuler\"></div>");
+   print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');   
+   print('<button type=submit class="btn btn-primary">Modifier</button>'); 
+   print('<button type=button id=annuler class="btn btn-primary">Annuler</button>');
+   print('</div>');   
    print('</form>');
 }
+
 /** Affiche le menu d'ajout d'un chantier
  * @param array $pa_documents Liste des documents
  * @param array $pa_adherents Liste des adhérents (releveur)
  */ 
 function menu_ajouter($pa_documents,$pa_adherents)
 {
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
+   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"edition_chantiers\">");
    print("<input type=hidden name=mode value=AJOUTER>");
-   print("<div align=center>");
    menu_edition(0,0,0,'','','','','','',1,$pa_documents,$pa_adherents);
-   print("</div><br>");
-   print("<div align=center><input type=button value=\"Ajouter\" ONCLICK='VerifieChamps(0)'></div>");
-   print('</form>');
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<input type=hidden name=mode value=LISTE>");
-   print("<div align=center>");
-   print("<div align=center><input type=submit value=\"Annuler\")></div>");
+   print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
+   print('<button type=submit class="btn btn-primary">Ajouter</button>'); 
+   print('<button type=button id=annuler class="btn btn-primary">Annuler</button>');
+   print('</div>');
    print('</form>');
 }
+
 /** Export la liste des relevés au format donnée
  * @param object $pconnexionBD Identifiant de la connexion de base
  * @param integer $pi_idf_stat_export identifiant du statut de l'export 
@@ -397,16 +486,16 @@ function exporte_liste_releves($pconnexionBD,$pi_idf_stat_export)
         {
           list($st_com,$st_fourchette,$i_nature,$st_releveur,$st_date_retour) = $a_ligne;
           fputcsv($fh, array($st_com,$st_fourchette,$ga_tbl_nature[$i_nature],$st_releveur,$st_date_retour)); 
-        }
- 
+        } 
      }
      fclose($fh);
    }
 }
+
 /*---------------------------------------------------------------------------
   Démarrage du programme
   ---------------------------------------------------------------------------*/
-$ga_tbl_statut = array( 0=>'Tous', 1=>'En cours', 2=>'Terminé',3=>'Abandonné');
+$ga_tbl_statut = array( 0=>'Tous', 1=>'En cours', 2=>'Termin&eacute;',3=>'Abandonn&eacute;');
 require_once("$gst_chemin/Commun/menu.php");
 $ga_documents = $connexionBD->sql_select_multiple_par_idf("select r.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relevé papier' end) from `documents` r  join `commune_acte` ca  on (r.id_commune = ca.idf ) order by ca.nom");
 $ga_communes  = $connexionBD->liste_valeur_par_clef("select idf,nom from `commune_acte` order by nom");
@@ -528,5 +617,5 @@ switch ($gst_mode) {
      menu_liste($connexionBD,$$gi_idf_statut);
    break;        
 }  
-print('</body>');
+print('</div></body>');
 ?>
