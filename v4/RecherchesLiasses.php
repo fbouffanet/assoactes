@@ -31,23 +31,40 @@ $(document).ready(function() {
 $(".js-select-avec-recherche").select2();
 
 jQuery.validator.addMethod(
-    "vide_si_sans_notaire",
+    "notaire_sans_notaire",
     function(value, element) {
-      if ($('#sans_notaire').is(':checked'))
+      var check = false;
+      if ($(element).is(':checked'))
 		{
-			return value=='';
-		} 	
+			check = $('#nom_notaire').val()=='';
+		}
+	   return this.optional(element) || check;
     },
     "L'&eacute;lement doit &ecirc;tre vide si la case est coch&eacute;e"
 );
 
 jQuery.validator.addMethod(
-    "vide_si_sans_periode",
+    "annee_min_sans_periode",
     function(value, element) {
-      if ($('#sans_periode').is(':checked'))
+      var check = false; 
+      if ($(element).is(':checked'))
 		{
-			return value=='';
-		} 	
+			check = $('#annee_min').val()=='';
+		}
+      return this.optional(element) || check; 
+    },
+    "L'&eacute;lement doit &circ;tre vide si la case est coch&eacute;e"
+);
+
+jQuery.validator.addMethod(
+    "annee_max_sans_periode",
+    function(value, element) {
+      var check = false;
+      if ($(element).is(':checked'))
+		{
+			check = $('#annee_max').val()=='';
+		}
+      return this.optional(element) || check; 	
     },
     "L'&eacute;lement doit &circ;tre vide si la case est coch&eacute;e"
 );
@@ -62,15 +79,17 @@ $("#recherche_liasses").validate({
 		},
 		annee_min: {
 			integer:true,
-         vide_si_sans_periode:true
 		},
 		annee_max: {
 			integer:true,
-         vide_si_sans_periode:true
 		},
-		nom_notaire: {
-			vide_si_sans_notaire: true		
+		sans_periode: {
+			annee_min_sans_periode: true,
+			annee_max_sans_periode: true
 		},
+		sans_notaire: {
+			notaire_sans_notaire: true		
+		}
 		
   },
   messages: {
@@ -81,15 +100,18 @@ $("#recherche_liasses").validate({
 		  integer: "La cote doit &ecirc;tre un entier"
 	  },
 	  annee_min: {
-		  integer: "L'ann&eacute;e doit &ecirc;tre un entier",
-        vide_si_sans_periode: "Ne pas cocher 'liasses sans date' si vous saisissez une ann&eacute;e"
+		  integer: "L'ann&eacute;e doit &ecirc;tre un entier",      
 	  },
 	  annee_max: {
 		  integer: "L'ann&eacute;e doit &ecirc;tre un entier",
-        vide_si_sans_periode: "Ne pas cocher 'liasses sans date' si vous saisissez une ann&eacute;e"
+        
 	  },
-	  nom_notaire: {
-	      vide_si_sans_notaire: "Ne pas cocher 'liasses sans notaire' si vous saisissez un nom de notaire"
+	  sans_periode: {
+        annee_min_sans_periode: "Ne pas cocher 'liasses sans date' si vous saisissez une ann&eacute;e",
+		  annee_max_sans_periode: "Ne pas cocher 'liasses sans date' si vous saisissez une ann&eacute;e"
+	  },                                                                                              
+	  sans_notaire: {
+	      notaire_sans_notaire: "Ne pas cocher 'liasses sans notaire' si vous saisissez un nom de notaire"
 	  }
   },
   errorElement: "em",
@@ -239,7 +261,7 @@ print('</div>');
 
 print('</div>');
 
-print('<div class="form-row col-md-12">');
+print('<div class="form-row col-md-12 lib_erreur">');
 print('<div class="form-group col-md-2 col-md-offset-2 ">');
 print('<label for="annee_min" class="col-form-label">Ann&eacute;es de </label>');
 print("<input type=text name=annee_min id=annee_min size=4 value=\"$gi_annee_min\" class=\"form-control\">");
