@@ -66,7 +66,7 @@ jQuery.validator.addMethod(
 		}
       return this.optional(element) || check; 	
     },
-    "L'&eacute;lement doit &circ;tre vide si la case est coch&eacute;e"
+     "L'&eacute;lement doit &circ;tre vide si la case est coch&eacute;e"
 );
 
 $("#recherche_liasses").validate({
@@ -121,7 +121,7 @@ $("#recherche_liasses").validate({
 
 	// Add `has-feedback` class to the parent div.form-group
 	// in order to add icons to inputs
-	element.parents( ".lib_erreur" ).addClass( "has-feedback" );
+	element.parents( ".col-md-4" ).addClass( "has-feedback" );
 
 	if ( element.prop( "type" ) === "checkbox" ) {
 		error.insertAfter( element.parent( "label" ) );
@@ -141,11 +141,11 @@ $("#recherche_liasses").validate({
 		}
 	},
 	highlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
 		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
 	},
 	unhighlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
 		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 	}
 });
@@ -261,8 +261,8 @@ print('</div>');
 
 print('</div>');
 
-print('<div class="form-row col-md-12 lib_erreur">');
-print('<div class="form-group col-md-2 col-md-offset-2 ">');
+print('<div class="form-row col-md-12">');
+print('<div class="form-group col-md-2 col-md-offset-2">');
 print('<label for="annee_min" class="col-form-label">Ann&eacute;es de </label>');
 print("<input type=text name=annee_min id=annee_min size=4 value=\"$gi_annee_min\" class=\"form-control\">");
 print('</div>');
@@ -270,7 +270,7 @@ print('<div class="form-group col-md-2 col-md-offset-2">');
 print('<label for="annee_max" class="col-form-label">&agrave;</label>');
 print("<input type=text name=annee_max id=annee_max size =4 value=\"$gi_annee_max\" class=\"form-control\">");
 print('</div>');
-print('<div class="form-check col-md-4 lib_erreur">');
+print('<div class="form-check col-md-4">');
 print('<label for="sans_periode" class="form-check-label col-form-label">Liasses sans date:</label>');
 if ($gst_sans_periode=='non')
    print('   <input type=checkbox name=sans_periode id=sans_periode value=oui unchecked class="form-control form-check-input">');
@@ -291,7 +291,7 @@ print('<label for="prenom_notaire" class="col-form-label">Pr&eacute;nom Notaire:
 print("<input type=text name=prenom_notaire id=prenom_notaire size=15 maxlength=30 value=\"$gst_prenom_notaire\" class=\"form-control\">");
 print('</div>');
 
-print('<div class="form-check col-md-4 lib_erreur">');
+print('<div class="form-check col-md-4">');
 print('<label for="sans_notaire" class="form-check-label col-form-label">Liasses sans notaire:</label>');
 if ($gst_sans_notaire=='non')
    print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui unchecked class="form-control form-check-input">');
