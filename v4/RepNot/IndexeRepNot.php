@@ -585,7 +585,7 @@ print('<body>');
 print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);  
 require_once("../Commun/menu.php");
-print('<div class="panel panel-info">');
+print('<div class="panel panel-primary">');
 print('<div class="panel-heading">Indexation d\'un r&eacute;pertoire de notaire</div>');
 print('<div class="panel-body">'); 
 print("<div id=erreur></div>");
