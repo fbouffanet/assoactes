@@ -279,15 +279,19 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu)
    
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    print("<input type=hidden name=mode value=EXPORT>");
-   print('<div class="form-group row">');
-   print('<input type=submit value="Exporter la liste des releves" class="btn btn-primary col-md-4 col-md-offset-4">'); 
-   print('avec le statut:');
+   print('<div class="form-group row col-md-12">');
+   print('<div class="input-group col-md-6">');
+   print('<input type=submit value="Exporter la liste des releves" class="btn btn-primary col-md-12">'); 
+   print('<span class="input-group-addon">avec le statut:</span>');
+   print('<label for="idf_statut_export" class="sr-only">Statut export</label>');
    print('<select name=idf_statut_export id=idf_statut_export class="form-control">');
    foreach($ga_tbl_statut as $i_index => $st_valeur)
    {
       print("<option value=\"$i_index\">$st_valeur</option>");             
    }
    print("</select>");
+   print('</div>');
+   print('</div>');
    print('</div>');   
    print("</form>");  
 }
