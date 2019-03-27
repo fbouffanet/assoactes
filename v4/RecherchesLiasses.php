@@ -31,15 +31,25 @@ $(document).ready(function() {
 $(".js-select-avec-recherche").select2();
 
 jQuery.validator.addMethod(
-    "vide_si_coche",
+    "vide_si_sans_notaire",
     function(value, element) {
-        if ($(element)).is(':checked')
+      if ($('#sans_notaire').is(':checked'))
 		{
-			alert('test');
-			return value!='';
+			return value=='';
 		} 	
     },
-    "L'&eacute;lement doit être vide si la case est coch&eacute;e"
+    "L'&eacute;lement doit &ecirc;tre vide si la case est coch&eacute;e"
+);
+
+jQuery.validator.addMethod(
+    "vide_si_sans_periode",
+    function(value, element) {
+      if ($('#sans_periode').is(':checked'))
+		{
+			return value=='';
+		} 	
+    },
+    "L'&eacute;lement doit &circ;tre vide si la case est coch&eacute;e"
 );
 
 $("#recherche_liasses").validate({
@@ -51,22 +61,15 @@ $("#recherche_liasses").validate({
 			integer: true
 		},
 		annee_min: {
-			integer:true
+			integer:true,
+         vide_si_sans_periode:true
 		},
 		annee_max: {
-			integer:true
+			integer:true,
+         vide_si_sans_periode:true
 		},
-		sans_notaire: {
-			required: {depends: function(element) {
-                        return  $('#nom_notaire').val()=='';
-                    }
-			}		
-		},
-		sans_periode: {
-			required: {depends: function(element) {
-                        return  $('#annee_min').val()=='' && $('#annee_max').val()=='';
-                    }
-			}		
+		nom_notaire: {
+			vide_si_sans_notaire: true		
 		},
 		
   },
@@ -78,16 +81,15 @@ $("#recherche_liasses").validate({
 		  integer: "La cote doit &ecirc;tre un entier"
 	  },
 	  annee_min: {
-		  integer: "L'ann&eacute;e doit &ecirc;tre un entier"
+		  integer: "L'ann&eacute;e doit &ecirc;tre un entier",
+        vide_si_sans_periode: "Ne pas cocher 'liasses sans date' si vous saisissez une ann&eacute;e"
 	  },
 	  annee_max: {
-		  integer: "L'ann&eacute;e doit &ecirc;tre un entier"
+		  integer: "L'ann&eacute;e doit &ecirc;tre un entier",
+        vide_si_sans_periode: "Ne pas cocher 'liasses sans date' si vous saisissez une ann&eacute;e"
 	  },
-	  sans_notaire: {
-	      required: "Ne pas cocher 'liasses sans notaire' si vous saisissez un nom de notaire"
-	  },
-	  sans_periode: {
-		  required: "Ne pas cocher 'liasses sans date' si vous saisissez une année"
+	  nom_notaire: {
+	      vide_si_sans_notaire: "Ne pas cocher 'liasses sans notaire' si vous saisissez un nom de notaire"
 	  }
   },
   errorElement: "em",
@@ -97,7 +99,7 @@ $("#recherche_liasses").validate({
 
 	// Add `has-feedback` class to the parent div.form-group
 	// in order to add icons to inputs
-	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+	element.parents( ".lib_erreur" ).addClass( "has-feedback" );
 
 	if ( element.prop( "type" ) === "checkbox" ) {
 		error.insertAfter( element.parent( "label" ) );
@@ -117,11 +119,11 @@ $("#recherche_liasses").validate({
 		}
 	},
 	highlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
 		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
 	},
 	unhighlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
 		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 	}
 });
@@ -238,7 +240,7 @@ print('</div>');
 print('</div>');
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-2 col-md-offset-2">');
+print('<div class="form-group col-md-2 col-md-offset-2 ">');
 print('<label for="annee_min" class="col-form-label">Ann&eacute;es de </label>');
 print("<input type=text name=annee_min id=annee_min size=4 value=\"$gi_annee_min\" class=\"form-control\">");
 print('</div>');
@@ -246,7 +248,7 @@ print('<div class="form-group col-md-2 col-md-offset-2">');
 print('<label for="annee_max" class="col-form-label">&agrave;</label>');
 print("<input type=text name=annee_max id=annee_max size =4 value=\"$gi_annee_max\" class=\"form-control\">");
 print('</div>');
-print('<div class="form-check col-md-4">');
+print('<div class="form-check col-md-4 lib_erreur">');
 print('<label for="sans_periode" class="form-check-label col-form-label">Liasses sans date:</label>');
 if ($gst_sans_periode=='non')
    print('   <input type=checkbox name=sans_periode id=sans_periode value=oui unchecked class="form-control form-check-input">');
@@ -267,8 +269,8 @@ print('<label for="prenom_notaire" class="col-form-label">Pr&eacute;nom Notaire:
 print("<input type=text name=prenom_notaire id=prenom_notaire size=15 maxlength=30 value=\"$gst_prenom_notaire\" class=\"form-control\">");
 print('</div>');
 
-print('<div class="form-check col-md-4">');
-print('<label for="sans_periode" class="form-check-label col-form-label">Liasses sans notaire:</label>');
+print('<div class="form-check col-md-4 lib_erreur">');
+print('<label for="sans_notaire" class="form-check-label col-form-label">Liasses sans notaire:</label>');
 if ($gst_sans_notaire=='non')
    print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui unchecked class="form-control form-check-input">');
 else
