@@ -37,15 +37,14 @@ switch ($gst_mode) {
 function affiche_menu($pconnexionBD,$pst_infos,$pi_idf_groupe) {
   print('<form id="variantes_prenom" method="post" action="'.$_SERVER['PHP_SELF'].'">');
   
-  print("<div id=\"infos\" class=\"alert alert-success\">$pst_infos</div>");
+  if (!empty($pst_infos))
+   print("<div id=\"infos\" class=\"alert alert-success\">$pst_infos</div>");
   
   print('<div class="row col-md-12">');
   
   print('<div class="col-md-5">');
   
   print("<div id=\"cmt_retour\" ></div>");
-  print("<div id=\"erreur_groupe\" class=\"alert alert-danger\"></div>");
-  print("<div id=\"erreur_variantes\" class=\"alert alert-danger\"></div>");
   
   print("<label for=\"variante\" class=\"col-form-label col-md-2\">Variante &agrave; chercher:</label>");
   print("<div class='col-md-10'>");
@@ -72,11 +71,11 @@ function affiche_menu($pconnexionBD,$pst_infos,$pi_idf_groupe) {
   
   print('<div class="col-md-2">');
   print('<div class="btn-group-vertical">');
-  print("<button type=\"button\" id=\"creer\" class=\"btn btn-primary\">Creer</button>");
+  print("<button type=\"button\" id=\"creer\" class=\"btn btn-primary\">Cr&eacute;er</button>");
   print("<button type=\"button\" id=\"modifier\" class=\"btn btn-primary\">Modifier</button>");
   print("<button type=\"button\" id=\"completer\" class=\"btn btn-primary\">Compl&eacute;ter</button>");
   print("<button type=\"button\" id=\"supprimer\" class=\"btn btn-danger\">Supprimer</button>");
-  print("<button type=\"button\" id=\"fusionner\" class=\"btn btn-warning\">Fusionner</button>");
+  print("<button type=\"button\" id=\"fusionner\" class=\"btn btn-warning\">Fusionner</button>");   
   print("<button type=\"button\" id=\"exporter\" class=\"btn btn-primary\">Exporter les variantes</button>");
   $a_prenoms = $pconnexionBD->sql_select("select libelle from prenom order by idf desc limit 20");
   if (count($a_prenoms)>0)
@@ -94,7 +93,6 @@ function affiche_menu($pconnexionBD,$pst_infos,$pi_idf_groupe) {
   
   print('<div class="col-md-5">');
   print("<div id=\"cmt_retour_a_fusionner\" ></div>");
-  print("<div id=\"erreur_groupe_a_fusionner\" class=\"alert alert-danger\"></div>");
   print("<div id=\"cmt_retour_a_fusionner\" ></div>");
   
   print('<label for="variante_a_fusionner" class="col-form-label col-md-2">Variante &agrave; chercher:</label>');
@@ -156,20 +154,21 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 		print('<form id="menu_completer" method="post" action="'.$_SERVER['PHP_SELF'].'">');
 		print('<input type="hidden" name="mode" id="mode" value="COMPLETER">');
 		print("<input type=\"hidden\" name=\"idf_groupe\" id=\"idf_groupe\" value=\"$pi_idf_groupe\">");
-		print("<label for=\"ERREUR\" id=\"ERREUR\" class=\"alert alert-danger\"></label>");
-		print('<table border=1>');
+		print('<table class="table table-bordered table-striped">');
 		foreach ($a_prenoms as $st_prenom)
 		{
 			print("<tr><td>$st_prenom</td><td><input type=checkbox name=\"variantes[]\" class=\"groupe_prenoms\" value=\"$st_prenom\"></td></tr>\n");
 		}
 		print('</table>');
-		print('<input type="submit" value="Completer"></div>');
+		print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4">Compl&eacute;ter</button>');
 		print('</form>');
 	}
-	print('<form id="variantes_prenom" method="post" action="'.$_SERVER['PHP_SELF'].'">');	
+   print('<form id="variantes_prenom" method="post" action="'.$_SERVER['PHP_SELF'].'">');	
 	print("<input type=\"hidden\" name=\"idf_groupe\" id=\"idf_groupe\" value=\"$pi_idf_groupe\">");
 	print('<input type="hidden" name="mode" id="mode" value="AFFICHER">');
-	print('<input type="submit" value="Retourner au menu"></div>');
+	print('<div class="row form-group">'); 
+	print('<button type="button" id="annuler" class="btn btn-primary col-md-4 col-md-offset-4">Retourner au menu</button>');
+	print("</div>");
 	print('</form>');
 }	
 
@@ -200,6 +199,11 @@ $.validator.addMethod('require-one', function(value) {
 }, 'Sélectionner au moins une case');
 
 $(document).ready(function() {
+
+    $('#annuler').click(function() {
+      window.location.href='<?php echo $_SERVER['PHP_SELF'] ?>';
+  });
+
   
   function maj_variantes(term,variantes,idf_groupe,cmt_retour) {
      $.ajax({
@@ -300,87 +304,112 @@ $(document).ready(function() {
      maj_variantes($('#variante_a_fusionner').val(),'#variantes_a_fusionner','#idf_groupe_a_fusionner','#cmt_retour_a_fusionner');     
   });
   
+ $( "#variantes_prenom" ).validate({
+	  rules: {
+		variantes: {
+         required: {
+			   depends: function(element) {
+                         return $("#mode").val() != 'SUPPRIMER';
+            }
+         }   
+		},
+      variante_a_fusionner: {
+         required: {
+			   depends: function(element) {
+                         return $("#mode").val() == 'FUSIONNER';
+            }
+         }
+      },
+     },
+	  messages: {
+		variantes: {
+			required: "Pas de variantes d&eacute;finies" 
+		},
+		variante_a_fusionner: {
+			required: "Aucune variante &agrave; fusionner s&eacute;lectionn&eacute;e"
+		}	
+	  },
+	  submitHandler: function(form) {
+		// do other things for a valid form
+		switch($("#mode").val()) {
+			case "SUPPRIMER":
+				if (confirm('Voulez-vous supprimer ce groupe ?'))
+				{
+					form.submit();
+				}
+			break;
+			case "FUSIONNER":
+				if (confirm('Voulez-vous fusionner ces groupes ?'))
+				{
+					form.submit();
+				}  
+			break;
+			default:
+			form.submit();
+		}
+			
+		},
+     errorElement: "em",
+      errorPlacement: function ( error, element ) {
+	   // Add the `help-block` class to the error element
+	   error.addClass( "help-block" );
+
+	   // Add `has-feedback` class to the parent div.form-group
+	   // in order to add icons to inputs
+	  element.parents( ".col-md-10" ).addClass( "has-feedback" );
+
+	  if ( element.prop( "type" ) === "checkbox" ) {
+         error.insertAfter( element.parent( "label" ) );
+	  } else {
+         error.insertAfter( element );
+	  }
+
+	  // Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	  },
+	  success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	  },
+	  highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-10" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	  },
+	  unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-10" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	  }       				
+ });
+ 
   $( "#modifier" ).click(function() {
-    if ($("#idf_groupe").val()=='')
-    {
-     $("#erreur_groupe").html('');
-     $("#erreur_groupe").append('Aucun groupe s&eacute;lectionn&eacute;');
-    }
-    else if ($("#variantes").val()=='')
-    {
-     $("#erreur_variantes").html('');
-     $("#erreur_variantes").append('Pas de variantes d&eacute;finies');
-    } 
-    else
-    {
       $("#mode").val('MODIFIER');
       $("#variantes_prenom").submit();
-    }
   });
   
   $( "#completer" ).click(function() {
-    if ($("#idf_groupe").val()=='')
-    {
-     $("#erreur_groupe").html('');
-     $("#erreur_groupe").append('Aucun groupe s&eacute;lectionn&eacute;');
-    }
-    else
-    {
       $("#mode").val('MENU_COMPLETER');
       $("#variantes_prenom").submit();
-    }
   });
   
   $( "#creer" ).click(function() {
-      if ($("#variantes").val()=='')
-      {
-        $("#erreur_variantes").html('');                                        
-        $("#erreur_variantes").append('Pas de variantes d&eacute;finies');
-      } 
-      else
-      {
-        $("#mode").val('CREER');
-        $("#variantes_prenom").submit();
-      }  
+      $("#mode").val('CREER');
+      $("#variantes_prenom").submit(); 
   });
   
   $( "#supprimer" ).click(function() {
-    if ($("#idf_groupe").val()=='')
-    {
-     $("#erreur_groupe").html('');
-     $("#erreur_groupe").append('Aucun groupe s&eacute;lectionn&eacute;');
-    } 
-    else
-    {
-      if (confirm('Voulez-vous supprimer ce groupe ?'))
-      {
-        $("#mode").val('SUPPRIMER');
-        $("#variantes_prenom").submit();
-      }
-    }
+       $("#mode").val('SUPPRIMER');
+       $("#variantes_prenom").submit();
   });
   
   $( "#fusionner" ).click(function() {
-    if ($("#idf_groupe").val()=='')
-    {
-     $("#erreur_groupe").html('');
-     $("#erreur_groupe").append('Aucun groupe s&eacute;lectionn&eacute;');
-    }
-    else if ($("#idf_groupe_a_fusionner").val()=='')
-    {
-     $("#erreur_groupe_a_fusionner").html('');
-     $("#erreur_groupe_a_fusionner").append('Aucun groupe s&eacute;lectionn&eacute;');
-    } 
-    else
-    {
-        if (confirm('Voulez-vous fusionner ces groupes ?'))
-        {
-          $("#mode").val('FUSIONNER');
-          $("#variantes_prenom").submit();
-        }  
-    }
+	$("#mode").val('FUSIONNER');
+	$("#variantes_prenom").submit(); 
   });
-  
+ 
   $( "#menu_completer" ).validate({
 	  rules: {
 	    "variantes[]": {
