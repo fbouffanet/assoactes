@@ -52,23 +52,30 @@ function enregistre_modification($pconnexionBD,$pi_idf_acte,$pst_cmt_valideur,$p
 /*                     CORPS DU PROGRAMME                                     */
 /******************************************************************************/
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>\n");
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
 print('<meta http-equiv="content-language" content="fr"> ');
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>");
-print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>");
-print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr"> ');
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
+print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 print('<title>Infos acte</title>');
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {
+
+$("#ferme").click(function(){
+    window.close();
+});
 
 //validation rules
 $("#edition_permalien").validate({
@@ -100,9 +107,13 @@ $("#edition_permalien").validate({
 print('</head>');
 
 print('<body>');
+print('<div class="container">');
 
-print("<div align=center><a href=\"$gst_url_sortie\" target=\"_blank\"><img src=\"./images/LogoAGC.jpg\" style=\"border: 0;\"></a><br></div>");
-print("<div class=\"TITRE\">Ce relev&eacute; est issu d'une table d&eacute;cennale</div>");
+print("<div class=\"text-center\"><a href=\"$gst_url_sortie\" target=\"_blank\"><img src=\"./images/LogoAGC.jpg\" style=\"border: 0;\"></a></div>");
+print('<div class="panel panel-primary">');
+print('<div class="panel-heading">Ce relev&eacute; est issu d\'une table d&eacute;cennale</div>');
+
+print('<div class="panel-body">');
 if (isset($_GET['idf_acte']))
 {
   $gi_idf_acte = (int) $_GET['idf_acte'];
@@ -121,7 +132,6 @@ list($i_idf_type_acte,$i_idf_commune,$i_idf_source,$i_age_acte)=$connexionBD->sq
 $gst_adresse_ip = $_SERVER['REMOTE_ADDR'];
 $gst_mode = isset($_POST['mode']) ? $_POST['mode']: 'EDITION';
 
-print("<div>");
 if ($i_idf_source==IDF_SOURCE_TD)
 {
   if ($gst_mode=='MODIFICATION')
@@ -170,26 +180,26 @@ if ($i_idf_source==IDF_SOURCE_TD)
       {
         $st_reponse = '';
         $st_description_acte = $o_acte -> versChaine();
-        print("<div align=center><textarea rows=2 cols=80 class='center'>");
+        print("<textarea rows=2 cols=80 class=\"form-control\">");
         print($st_description_acte);
-        print("</textarea></div>");
+        print("</textarea>");
         print("<form id=\"edition_permalien\" name=\"edition_permalien\" action=\"".$_SERVER['PHP_SELF']."\" method=post>");
         $st_reponse .= "<fieldset><legend>Permalien</legend>";
-        print("<div align=center><input type=hidden name=idf_acte value=\"$gi_idf_acte\">");
+        print("<input type=hidden name=idf_acte value=\"$gi_idf_acte\">");
         print("<input type=hidden name=mode value=\"MODIFICATION\">");
         $st_reponse .= "<div align=center>Merci d'indiquer le permalien des AD obtenu en cliquant sur l'ic&ocirc;ne  <img src=\"$gst_url_images/logo_permalien.png\" alt=\"permalien\"> <a target=\"_blank\" href=\"Permalien_AD16.html\"> <img src=\"$gst_url_images/point_interrogation.png\" height=24 width=24 alt=\"aide permalien\"></a></div>";
-        $st_reponse .= "<div align=center><input type=\"text\" name=\"permalien\" maxlength=100 size=100 value=\"\"> </div>";
-        $st_reponse .= "<div align=\"center\"></fieldset>";
+        $st_reponse .= "<div align=center><input type=\"text\" name=\"permalien\" maxlength=100 size=100 value=\"\" class=\"form-control\"> ";
+        $st_reponse .= "</fieldset>";
         $st_email ="";
         if (!empty($st_ident))
         {
           $st_requete = "select email_perso from adherent where ident='$st_ident'";
           $st_email=$connexionBD->sql_select1($st_requete);
         }
-        $st_reponse .= "<div align=\"center\">";
+        $st_reponse .= "<div class=\"text-center\">";
         $st_reponse .= "<fieldset><legend>Commentaires &eacute;ventuels &agrave destination du valideur:</legend><div>Votre email: <input type=\"text\" name=\"email_correcteur\" value=\"$st_email\" size=\"30\"> (Non publi&eacute;. Il sert uniquement au valideur &agrave; vous contacter en cas de probl&egrave;me)</div>";
-        $st_reponse.= "<div><br>Commentaires:<textarea name=cmt_valideur rows=4 cols=80></textarea></div></fieldset>";
-        $st_reponse.= "<div align=center><br><input type=\"submit\" id=\"bouton_soum\" value=\"Ajouter uniquement le permalien\"></div>";
+        $st_reponse.= "Commentaires:<textarea name=cmt_valideur rows=4 cols=80 class=\"form-control\"></textarea></fieldset>";
+        $st_reponse.= "<button type=\"submit\" id=\"bouton_soum\" class=\"btn btn-warning col-xs-4 col-xs-offset-4\">Ajouter uniquement le permalien</button>";
         $st_reponse.=  "</div>";
         $st_reponse.="</form>";
         print($st_reponse);
@@ -200,29 +210,31 @@ if ($i_idf_source==IDF_SOURCE_TD)
         $i_nb_lignes = $o_acte ->getNbLignes();
         $st_permalien=  $o_acte->getUrl();
         print("<div width='80%' align=center id='texte_acte'>");
-        print("<textarea rows=$i_nb_lignes cols=80 class='center'>");
+        print("<textarea rows=$i_nb_lignes cols=80 class=\"form-control\">");
         print($st_description_acte);
         print("</textarea><br>");        
         if(!empty($st_permalien))
-        print("<div><a href=\"$st_permalien\" target=\"_blank\">Lien vers les AD<a><br></div>");
+        print("<a href=\"$st_permalien\" target=\"_blank\" class=\"btn btn-primary col-xs-4 col-xs-offset-4\">Lien vers les AD</a></div>");
       }
       print("<form  action=\"PropositionModification.php\" id=\"PropositionModification\" method=\"post\" target=\"_blank\">\n");
       print("<input type=\"hidden\" name=\"idf_acte\" value=\"$gi_idf_acte\">");
-      print("<div class\"alignCenter\"><br><input type=\"submit\" value=\"Completer en d&eacute;tail le relev&eacute;\"></div>");
+      print('<button type="submit" class="btn btn-primary col-xs-8 col-xs-offset-2">Completer en d&eacute;tail le relev&eacute;</button>');	
       print("</form>");        
     }
     else
     {
-      print("Cet acte de moins de 100 ans ne peut &ecirc;tre consult&eacute;");
+      print('<div class="alert alert-danger">Cet acte de moins de 100 ans ne peut &ecirc;tre consult&eacute;</div>');
     }
   }
 }
 else
 {
-  print("Cet acte ne provient pas d'une table d&eacute;cennale");
+  print('<div class="alert alert-danger">Cet acte ne provient pas d\'une table d&eacute;cennale</div>');
 }
-print("<div align=center><br><Input type=button value=\"Fermer la fenêtre\" OnClick=\"javascript:window.close()\"></div>");
-print("<br></div>");
+print('<button type="button" id="ferme" class="btn btn-warning col-xs-4 col-xs-offset-4">Fermer la fen&ecirc;tre</button>');
+print("</div>");
+print("</div>");
+print("</div>");
 print('</body></HTML>');
 
 ?>
