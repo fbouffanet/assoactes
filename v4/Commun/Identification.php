@@ -185,7 +185,7 @@ function affiche_menu_auth($pst_message)
   print("</head><body>");
   
   print('<div class="container">');
-  print("<div class=\"form-row col-md-offset-4 col-md-4\"><img src= '$gst_url_site/images/LogoAGC.jpg' class=\"rounded mx-auto d-block\"  alt='Logo AGC'/></div>");
+  print("<div class=\"text-center\"><img src= '$gst_url_site/images/LogoAGC.jpg' class=\"rounded mx-auto d-block\"  alt='Logo AGC'></div>");
   print('<div class="panel panel-primary col-md-offset-4 col-md-4">');
   print('<div class="panel-heading">Authentification requise</div>');
   print('<div class="panel-body">');  
@@ -197,13 +197,23 @@ function affiche_menu_auth($pst_message)
   print('<div class="form-group">');  
   print('<label for="ident" class="col-md-4 col-form-label"> Identifiant:</label>');
   print('<div class="col-md-6">');
+  print('<div class="input-group">');
+  print('<span class="input-group-addon">');
+  print('<span class="glyphicon glyphicon-user"></span>');
+  print('</span>');
   print("<input type=\"text\" name=\"ident\" id=\"ident\" size=\"30\" maxlength=\"30\" class=\"js-select-avec-recherche form-control\">\n");
+  print('</div>');
   print('</div>');
   print('</div>');
   print('<div class="form-group">');   
   print('<label for="mdp" class="col-md-4 col-form-label">Mot de passe:</label>');
   print('<div class="col-md-6">');
+   print('<div class="input-group">');
+  print('<span class="input-group-addon">');
+  print('<span class="glyphicon glyphicon-lock"></span>');
+  print('</span>');
   print("<input type=\"password\" name=\"mdp\" id=\"mdp\" size=\"30\" maxlength=\"30\" class=\"js-select-avec-recherche form-control\">\n");
+  print("</div>\n");
   print("</div>\n");
   print("</div>\n");
   print('<div class="form-row">');
@@ -214,6 +224,7 @@ function affiche_menu_auth($pst_message)
   print('</div>'); // fin panel body
   
   print("<button class=\"form-row col-md-offset-2 col-md-8 btn btn-primary\" id=\"DemandeNouveauMDP\">J'ai oubli&eacute; mon mot de passe</button>");
+  print("</div>");
   print("</div>");
   print("</body>");
   print("</html>");
