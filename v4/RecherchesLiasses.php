@@ -333,8 +333,8 @@ print('</div>');
 print('</div>');
 
 print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
-print('<button type=submit name=Rechercher class="btn btn-primary">Rechercher</button>');
-print('<button type=button name="raz" class="btn btn-warning raz">Effacer tous les Champs</button>');
+print('<button type=submit name=Rechercher class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Rechercher</button>');
+print('<button type=button name="raz" class="btn btn-warning raz"><span class="glyphicon glyphicon-erase"></span> Effacer tous les Champs</button>');
 print('</div>');
 
 
