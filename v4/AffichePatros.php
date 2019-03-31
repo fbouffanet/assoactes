@@ -107,7 +107,7 @@ function affiche_menu($gi_idf_commune,$gi_rayon,$gi_idf_source,$pst_msg)
   
   print('<div class="form-group row col-md-12">');
   print('<label for="patronyme" class="col-form-label col-md-2">Patronyme:</label>');
-  print('<div class="col-md-4">');
+  print('<div class="col-md-3">');
   print('<input type=text name=patronyme id=patronyme size=15 maxlength=30 class="form-control">');
   print('</div>');
  
@@ -115,7 +115,7 @@ function affiche_menu($gi_idf_commune,$gi_rayon,$gi_idf_source,$pst_msg)
   print('<input type=checkbox name=variantes_pat id=variantes_pat value=oui checked class="form-check-input">');
   print('<label for="variantes_pat" class="form-check-label">Recherche par variantes connues</label>');
   print('</div>');
-  print('<button type="submit" class="btn btn-primary col-md-2">Rechercher le patronyme</button>');
+  print('<button type="submit" class="btn btn-primary col-md-3"><span class="glyphicon glyphicon-search"></span> Rechercher le patronyme</button>');
   print('</div>'); // fin ligne 
   
   print('<div class="form-group row col-md-12">');
