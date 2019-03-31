@@ -344,39 +344,39 @@ $(document).ready(function() {
             }
         },
 		errorElement: "em",
-  errorPlacement: function ( error, element ) {
-	// Add the `help-block` class to the error element
-	error.addClass( "help-block" );
+		errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
 
-	// Add `has-feedback` class to the parent div.form-group
-	// in order to add icons to inputs
-	element.parents( ".col-md-8" ).addClass( "has-feedback" );
+			// Add `has-feedback` class to the parent div.form-group
+			// in order to add icons to inputs
+			element.parents( ".lib_erreur" ).addClass( "has-feedback" );
 
-	if ( element.prop( "type" ) === "checkbox" ) {
-		error.insertAfter( element.parent( "label" ) );
-	} else {
-		error.insertAfter( element );
-	}
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+			}
 
-	// Add the span element, if doesn't exists, and apply the icon classes to it.
-		if ( !element.next( "span" )[ 0 ] ) {
-			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
-		}
-	},
-	success: function ( label, element ) {
-		// Add the span element, if doesn't exists, and apply the icon classes to it.
-		if ( !$( element ).next( "span" )[ 0 ] ) {
-			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
-		}
-	},
-	highlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".col-md-8" ).addClass( "has-error" ).removeClass( "has-success" );
-		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
-	},
-	unhighlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".col-md-8" ).addClass( "has-success" ).removeClass( "has-error" );
-		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
-	},
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !element.next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+			}
+		},
+		success: function ( label, element ) {
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !$( element ).next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+			}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+		},
+		unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+		},
         submitHandler: function(form) {
             if ($("#recherches_communes").valid()) {
                 $("#idf_source_recherches_personne").val($("#idf_source_recherches_communes").val());
@@ -398,6 +398,39 @@ $(document).ready(function() {
     });
 	
 	$("#recherches_tous_patronymes").validate({
+		errorElement: "em",
+		errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
+
+			// Add `has-feedback` class to the parent div.form-group
+			// in order to add icons to inputs
+			element.parents( ".lib_erreur" ).addClass( "has-feedback" );
+
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+			}
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !element.next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+			}
+		},
+		success: function ( label, element ) {
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !$( element ).next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+			}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+		},
+		unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+		},
         submitHandler: function(form) {
             if ($("#recherches_communes").valid()) {
                 $("#idf_source_recherches_tous_patronymes").val($("#idf_source_recherches_communes").val());
@@ -412,7 +445,7 @@ $(document).ready(function() {
                 $("#releve_mois_max_tous_patronymes").val($("#releve_mois_max_communes").val());
                 $("#releve_annee_min_tous_patronymes").val($("#releve_annee_min_communes").val());
                 $("#releve_annee_max_tous_patronymes").val($("#releve_annee_max_communes").val());  
-				        $("#releve_type_tous_patronymes").val($("#releve_type_communes").val()); 
+				$("#releve_type_tous_patronymes").val($("#releve_type_communes").val()); 
                 form.submit();
             }
         }
@@ -605,15 +638,15 @@ print('<label for="paroisses_rattachees_recherches_communes" class="form-check-l
 print('</div>');
 
 
-print("<div class=\"form-group col-md-3 lib_erreur\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");
+print("<div class=\"form-group col-md-3 lib_erreur\"><div class=\"input-group \"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");
 
 
 print('</div>');
 
 print('<div class="form-row col-md-12">'); 
 print('<div class="input-group col-md-offset-4 col-md-4 lib_erreur">');
-print("<span class=\"input-group-addon\">Ann&eacute;es de</span><input type=text name=annee_min id=\"annee_min_recherches_communes\" size=4 value=\"$gi_annee_min\" class=\"form-control \">");
-print("<span class=\"input-group-addon\">&agrave;</span><input type=text name=annee_max size=4 id=\"annee_max_recherches_communes\" value=\"$gi_annee_max\" class=\"form-control\">");
+print("<span class=\"input-group-addon\">Ann&eacute;es de</span><input type=text name=annee_min id=\"annee_min_recherches_communes\" size=4 value=\"$gi_annee_min\" class=\"form-control\">");
+print("<span class=\"input-group-addon\">&agrave;</span><input type=text name=annee_max size=4 id=\"annee_max_recherches_communes\" value=\"$gi_annee_max\" class=\"form-control \">");
 print('</div>');
 
 print('</div>');
@@ -637,13 +670,13 @@ $a_mois = array(''=>'Mois')+$mois;
 print(chaine_select_options($gst_releve_mois_min,$a_mois));
 print("</select></div>");
 
-print("<label class=\"sr-only\" for=\"releve_annee_min_communes\" class=\"sr-only\">Ann&eacute;e Min</label><div class=\"input-group\"><span class=\"input-group-addon\">Ann&eacute;e Min</span><input type=\"text\" name=\"releve_annee_min_communes\" id=\"releve_annee_min_communes\" size=\"4\" maxlength=\"4\" value=\"$gst_releve_annee_min\" class=\"form-control form-control-sm\"></div>");
+print("<label class=\"sr-only\" for=\"releve_annee_min_communes\">Ann&eacute;e Min</label><div class=\"input-group\"><span class=\"input-group-addon\">Ann&eacute;e Min</span><input type=\"text\" name=\"releve_annee_min_communes\" id=\"releve_annee_min_communes\" size=\"4\" maxlength=\"4\" value=\"$gst_releve_annee_min\" class=\"form-control form-control-sm\"></div>");
 
 print("<label class=\"sr-only\" for=\"releve_mois_max_communes\">et</label><div class=\"input-group \"><span class=\"input-group-addon\">et</span><select id=\"releve_mois_max_communes\" name=\"releve_mois_max_communes\" data-max=\"" . date('n') . "\" class=\"form-control form-control-sm\">");
 print(chaine_select_options($gst_releve_mois_max,$a_mois));
 print("</select></div>");
 
-print("<label class=\"sr-only\" for=\"releve_annee_max_communes\" class=\"sr-only\">Ann&eacute;e Max</label><div class=\"input-group\"><span class=\"input-group-addon\">Ann&eacute;e Max</span><input type=\"text\" name=\"releve_annee_max_communes\" id=\"releve_annee_max_communes\" size=\"4\" maxlength=\"4\" value=\"$gst_releve_annee_max\" data-max=\"" . date('Y') . "\" class=\"form-control form-control-sm\"></div>");
+print("<label class=\"sr-only\" for=\"releve_annee_max_communes\">Ann&eacute;e Max</label><div class=\"input-group\"><span class=\"input-group-addon\">Ann&eacute;e Max</span><input type=\"text\" name=\"releve_annee_max_communes\" id=\"releve_annee_max_communes\" size=\"4\" maxlength=\"4\" value=\"$gst_releve_annee_max\" data-max=\"" . date('Y') . "\" class=\"form-control form-control-sm\"></div>");
 print('</div>');
 
 print('<div class="form-check col-md-2">');
@@ -701,11 +734,14 @@ print('</div>'); //fin ligne
 
 print('<div class="form-row col-md-12">');
 
-
-
-print("<label for=\"nom_epse\" class=\"col-form-label col-md-2\"><img src=\"./images/swap.png\" id=\"echange_patros\" alt=\"Echange les patronymes\">Nom Epouse</label>");
+print("<label for=\"nom_epse\" class=\"col-form-label col-md-2\">Nom Epouse</label>");
 print('<div class="col-md-2">');
+print('<div class="input-group">');
+print('<span class="input-group-addon">');
+print('<span class="glyphicon glyphicon-random"  id="echange_patros"></span>');
+print('</span>');
 print("<input type=text id=nom_epse name=nom_epse size=15 maxlength=30 value=\"$gst_nom_epse\" class=\"form-control\">");
+print('</div>');
 print('</div>');
 
 
@@ -727,8 +763,8 @@ print('</div>'); // fin ligne
 print('<div class="form-row">');
 
 print('<div class="btn-group col-md-6 col-md-offset-4" role="group">');
-print('<input class="btn btn-primary" type=submit name=Rechercher value="Rechercher le couple">');
-print('<input class="btn btn-warning raz" type=button value="Effacer tous les Champs" name="raz">');
+print('<button class="btn btn-primary" type=submit name=Rechercher><span class="glyphicon glyphicon-search"></span> Rechercher le couple</button>');
+print('<button class="btn btn-warning raz" type=button name="raz"><span class="glyphicon glyphicon-erase"></span> Effacer tous les Champs</button>');
 print('</div>');
 
 print('</div>');
@@ -760,29 +796,38 @@ print('<div class="form-row">');
 
 print('<label for="sexe" class="col-form-label col-md-1">Sexe</label>');
 print('<div class="col-md-2">');
+print('<div class="input-group">');
+print('<span class="input-group-addon">');
+print('<span class="glyphicon glyphicon-info-sign" data-toggle="collapse" data-target="#aideTP" aria-expanded="false"></span>');
+print('</span>');
 print('<select name="sexe" id="sexe" class="form-control">');
 print(chaine_select_options($gst_sexe,$ga_sexe));
 print('</select>');
 print('</div>');
+print('</div>');
 
 print("<label for=\"nom\" class=\"col-form-label col-md-1\">Nom</label>");
-print('<div class="col-md-2">');
+print('<div class="col-md-2 lib_erreur">');
 print("<input type=text name=nom id=nom size=15 maxlength=30 value=\"$gst_nom\" class=\"form-control\">");
 print('</div>');
 
 print("<label for=\"prenom\" class=\"col-form-label col-md-1\">Pr&eacute;nom</label>");
-print('<div class="col-md-2">');
+print('<div class="col-md-2 lib_erreur">');
 print("<input type=text name=prenom id=prenom size=15 maxlength=30 value=\"$gst_prenom\" class=\"form-control\">" );
 print('</div>');
 
-print('<label for="idf_type_presence" class=\"col-form-label col-md-1\">Type de<br>pr&eacute;sence</label>');
+print('<label for="idf_type_presence" class="col-form-label col-md-1">Type de<br>pr&eacute;sence</label>');
 print('<div class="col-md-2">');
 print('<select name="idf_type_presence" id="idf_type_presence" class="form-control" aria-describedby="aideTP">');
 print(chaine_select_options($gi_idf_type_presence,$a_types_presence));
 print('</select>');
-print('<small id="aideTP" class="form-text text-muted">Nim&egrave;gue ne renseignant pas le sexe d\'un parrain, t&eacute;moin ou marraine, ne pas le sp&eacute;cifier dans une recherche de ce type</small>');
 print('</div>');
+
 print('</div>'); // fin ligne
+
+print('<div class="form-row col-md-12">');
+print('<div id="aideTP" class="collapse alert alert-warning">Nim&egrave;gue ne renseignant pas le sexe d\'un parrain, t&eacute;moin ou marraine, ne pas le sp&eacute;cifier dans une recherche de ce type</div>');
+print('</div>');
 
 print('<div class="form-row col-md-12">');
 print("<label for=\"commentaires\" class=\"col-form-label col-md-3\">Recherche libre dans les commentaires</label>");
@@ -796,15 +841,14 @@ else
    print('<input type=checkbox name=variantes id=variantes value=oui checked class="form-check-input">');
 print('</div>');
 print('<label for="variantes" class="form-check-label col-md-2">Recherche par variantes connues</label>'); 
-print('</div>'); 
 
 print('</div>'); //fin ligne
 
 print('<div class="form-row">');
 
 print('<div class="btn-group col-md-6 col-md-offset-4" role="group">');
-print('<input type=submit name=Rechercher value="Rechercher la personne" class="btn btn-primary">');
-print('<input type=button value="Effacer tous les Champs" name="raz" class="btn btn-warning raz">');
+print('<button type=submit name=Rechercher class="btn btn-primary"><span class="glyphicon glyphicon-search"></span>  Rechercher la personne</button>');
+print('<button type=button name="raz" class="btn btn-warning raz"><span class="glyphicon glyphicon-erase"></span> Effacer tous les Champs</button>');
 print('</div>');
 
 print('</div>'); //fin ligne
@@ -835,8 +879,8 @@ print('<input type="hidden" id="releve_type_tous_patronymes" name="releve_type">
 
 print('<div class="form-row">');
 print('<div class="btn-group" role="group">');   
-print('<input type=submit name=Rechercher value="Rechercher les patronymes" class="btn btn-primary">');
-print('<input type=button value="Effacer tous les Champs" name="raz" class="btn btn-warning raz">');
+print('<button type=submit name=Rechercher class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Rechercher les patronymes</button>');
+print('<button type=button name="raz" class="btn btn-warning raz"><span class="glyphicon glyphicon-erase"></span> Effacer tous les Champs</button>');
 print('</div>');
 print('</div>'); //fin ligne
 
