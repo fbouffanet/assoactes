@@ -128,13 +128,13 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
 	
 	print("</div></div>"); // fin panel
 	print('<div class="form-row col-md-12">');
-	print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Chercher</button>');
+	print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-search"></span> Chercher</button>');
 	print("</div>"); 
 	
 	print("</form>");
     print('<form id="recherche_rep_not" action="'.$_SERVER['PHP_SELF'].'" method="post">');
     print('<input type="hidden" name="recherche" value="nouvelle">');
-	print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Vider les champs</button>');
+	print('<button type=submit class="btn btn-warning col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-erase"></span> Vider les champs</button>');
     print("</form>");
   
 }
@@ -422,13 +422,13 @@ function affiche_resultats_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi
 	print('<form id="recherche_rep_not_retour" action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type="hidden" name="ancienne_page" value="RECHERCHES">');
 	print('<input type="hidden" name="mode" value="MENU">');
-	print('<button type=submit name=Rechercher class="btn btn-primary col-md-4 col-md-offset-4">Rechercher</button>');
+	print('<button type=submit name=Rechercher class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-search"></span> Rechercher</button>');
 	print("</form>");
 	
 	print('<form id="recherche_rep_not_nouveau" action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type="hidden" name="mode" value="MENU">');
 	print('<input type="hidden" name="recherche" value="nouvelle">');
-	print('<button type=submit name=Rechercher class="btn btn-primary col-md-4 col-md-offset-4">Commencer une nouvelle recherche</button>');
+	print('<button type=submit name=Rechercher class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-erase"></span> Commencer une nouvelle recherche</button>');
 	print("</form>");
 }
 
