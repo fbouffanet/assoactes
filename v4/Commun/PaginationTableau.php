@@ -192,7 +192,7 @@ class PaginationTableau {
                print("<td>&nbsp;</td>");   
          }
                   
-         print("<td><input class=\"btn btn-primary btn-block\" type=button id=\"bouton$idf_element\" value=Modifier onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
+         print("<td><button class=\"btn btn-primary btn-block\" type=button id=\"bouton$idf_element\" onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"><span class=\"glyphicon glyphicon-edit\"></span> Modifier</button></td>");
          print("<td><input type=checkbox name=\"supp[]\" id=\"$st_nom_col1\" value=$idf_element class=\"form-check-input\" ></td>"); 
          print("</tr>\n");
          $i++;
