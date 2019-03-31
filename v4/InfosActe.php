@@ -1,6 +1,5 @@
 <?php
 
-
 require_once('Commun/Identification.php');
 require_once('Commun/constantes.php');
 require_once('Commun/ConnexionBD.php');
@@ -14,7 +13,6 @@ require_once('Administration/chargement/TypeActe.php');
 require_once('Administration/chargement/CommunePersonne.php');
 require_once('Administration/chargement/Profession.php');
 
-
 function getRecapitulatifMessage($pst_type, $pi_max, $pi_compteur){
   switch ($pst_type)
   {
@@ -25,7 +23,7 @@ function getRecapitulatifMessage($pst_type, $pi_max, $pi_compteur){
     default:            $pst_type = "mariages et actes divers";
     break;
   }
-  return sprintf("<div align='center'>Il vous reste %d demandes de $pst_type dans ce mois<br></div>", $pi_max-$pi_compteur);
+  return sprintf("<div class=\"alert alert-info\">Il vous reste %d demandes de $pst_type dans ce mois</div>", $pi_max-$pi_compteur);
 }
 
 function getContentBottom($type, $st_email_adht, $pi_idf_acte){
@@ -36,33 +34,37 @@ function getContentBottom($type, $st_email_adht, $pi_idf_acte){
     case IDF_DECES:     $msg = "";
     break;
     default:            $msg = "Vous pouvez mettre vos commentaires dans la cellule ci-dessous qui paraitra sur le forum &agrave; la suite de la r&eacute;ponse de la base</div>\n
-                                <div align='center'>Votre adresse <span class=\"IMPORTANT\">$st_email_adht</span> doit &ecirc;tre inscrite sur le forum Yahoogroupes de l'AGC<div>
-                                <div class=\"IMPORTANT\">Sans cela, votre demande ne pourra &ecirc;tre prise en compte<div><br>
+                                <div class=\"text-center\">Votre adresse <span class=\"alert alert-danger\">$st_email_adht</span> doit &ecirc;tre inscrite sur le forum Yahoogroupes de l'AGC<div>
+                                <div class=\"alert alert-danger\">Sans cela, votre demande ne pourra &ecirc;tre prise en compte</div>
                                 <form id=\"envoi_forum\" method=post action=".$_SERVER['PHP_SELF'].">
                                 <input type=\"hidden\" name=\"mode\" value=\"ENVOI_FORUM\">
                                 <input type=\"hidden\" name=\"idf_acte\" value=\"$pi_idf_acte\">
-                                <div align='center'><textarea cols=\"40\" rows=\"6\" name=\"commentaire\"></textarea></div><br>
-                                <div align='center'><br><input type=\"submit\" value=\"Envoyer une remarque sur le forum\"></div>
+                                <textarea cols=\"40\" rows=\"6\" name=\"commentaire\" class=\"form-control\"></textarea>
+                                <button type=\"submit\" class=\"btn btn-primary col-xs-8 col-xs-offset-2\">Envoyer une remarque sur le forum</button>
                                 </form>";
     break;
   }
 
-  return $msg . '<div align=center><br><input type=button id="bouton_impression"  value="Imprimer"></div>';
+  return $msg . '<button type=button id="bouton_impression" class="btn btn-primary col-xs-4 col-xs-offset-4">Imprimer</button>';
 }
 
 /******************************************************************************/
 /*                     CORPS DU PROGRAMME                                     */
 /******************************************************************************/
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
+print('<html lang="fr">');
 print("<head>\n");
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr"> ');
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>");
-print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>");
-print("<script src='Commun/jQuery.print.js' type='text/javascript'></script>");
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
+print("<script src='js/jQuery.print.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {
@@ -90,8 +92,9 @@ print('<title>Infos acte</title>');
 print('</head>');
 
 print('<body>');
+print('<div class="container">');
 
-print("<div align=center><img src=\"./images/LogoAGC.jpg\"><br></div>");
+print("<div class=\"text-center\"><img src=\"./images/LogoAGC.jpg\"></div>");
 if (isset($_REQUEST['idf_acte']))
 {
   $gi_idf_acte = (int) $_REQUEST['idf_acte'];
@@ -108,7 +111,6 @@ $a_profession=$connexionBD->liste_valeur_par_clef("select idf, nom from professi
 list($i_idf_type_acte,$i_idf_commune)=$connexionBD->sql_select_liste("select idf_type_acte,idf_commune from acte where idf=$gi_idf_acte");
 $gst_adresse_ip = $_SERVER['REMOTE_ADDR'];
 
-print("<div>");
 if (empty($_POST['mode']))
 {
   $result = $connexionBD->sql_select_stats_actes($i_idf_adherent, $gi_idf_acte, $i_idf_type_acte);
@@ -123,7 +125,6 @@ if (empty($_POST['mode']))
     break;
     default:            $i_max = $i_max_mar_div;
     break;
-
   }
   if ($i_max-$i_nb_ddes>0)
   {
@@ -132,12 +133,12 @@ if (empty($_POST['mode']))
     $st_description_acte = $o_acte -> versChaine();
     $i_nb_lignes = $o_acte ->getNbLignes();
     $st_permalien=  $o_acte->getUrl();
-    print("<div id='texte_acte' align='center'>");
-    print("<textarea rows=$i_nb_lignes cols=80 class='center'>");
+    print('<div id="texte_acte" class="text-center">');
+    print("<textarea rows=$i_nb_lignes cols=80 class='form-control'>");
     print($st_description_acte);
     print("</textarea>");
     if(!empty($st_permalien))
-      print("<div><a href=\"$st_permalien\" target=\"_blank\">Lien vers les AD<a><br></div>");
+      print("<a href=\"$st_permalien\" target=\"_blank\" class=\"btn btn-primary col-xs-4 col-xs-offset-4\"><span class=\"glyphicon glyphicon-picture\"></span>Lien vers les AD<a>");
     print("</div>");
 
     if($i_nb_ddes_acte == 0){
@@ -150,10 +151,8 @@ if (empty($_POST['mode']))
   }
   else
   {
-    print('<div class="IMPORTANT">Vous avez atteint votre quota. Merci d\'attendre le prochain mois<br></div>');
+    print('<div class="alert alert-danger">Vous avez atteint votre quota. Merci d\'attendre le prochain mois</div>');
   }
-
-
 }
 else
 {
@@ -200,10 +199,10 @@ else
   $st_message .= $st_message_html."\n\n";
   $st_message .= '--'.$st_frontiere."--\n";
   if (mail(EMAIL_FORUM,"DI: $st_titre", $st_message, $st_entete))
-      print("<div align=center>La demande d'information a &eacute;t&eacute; envoy&eacute;e</div>");
+      print('<div class="alert alert-success">La demande d\'information a &eacute;t&eacute; envoy&eacute;e</div>');
   else
   {
-    print("<div align=center class=\"IMPORTANT\">La demande d'information n'a pas &eacute;t&eacute; envoy&eacute;e</div>");
+    print('<div class="alert alert-danger">La demande d\'information n\'a pas &eacute;t&eacute; envoy&eacute;e</div>');
     $pf=@fopen("$gst_rep_logs/di_non_envoyees.log",'a');
     date_default_timezone_set($gst_time_zone);
     list($i_sec,$i_min,$i_heure,$i_jmois,$i_mois,$i_annee,$i_j_sem,$i_j_an,$b_hiver)=localtime();
@@ -216,8 +215,8 @@ else
   }
 }
 ;
-print("<div align=center><br><Input type=button id=\"bouton_fermeture\" value=\"Fermer la fen&ecirc;tre\"></div>");
-print("<br></div>");
+print('<button type=button id="bouton_fermeture" class="btn btn-primary col-xs-4 col-xs-offset-4">Fermer la fen&ecirc;tre</button>');
+print('</div>');
 print('</body></HTML>');
 
 ?>
