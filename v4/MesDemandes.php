@@ -87,7 +87,7 @@ if (isset($gst_ident ))
       print('<div class="panel-body">');
       print('<div class="panel-group">');
       
-      print('<div class="panel panel-default">');
+      print('<div class="panel panel-info">');
       print('<div class="panel-heading">Total des demandes</div>');
       print('<div class="panel-body">');	  
       print("<table class=\"table table-bordered table-striped\">\n");
@@ -97,7 +97,7 @@ if (isset($gst_ident ))
       $st_requete = "select date_format( date_demande, \"%d / %c \" ) AS date_dde, count(*) total, sum(case when idf_type_acte=".IDF_NAISSANCE."  then 1 else 0 end) nb_naissances,sum(case when idf_type_acte=".IDF_MARIAGE."  then 1 else 0 end) nb_mariages, sum(case when idf_type_acte=".IDF_DECES."  then 1 else 0 end) nb_deces, sum(case when idf_type_acte=".IDF_CM."  then 1 else 0 end) nb_cm from demandes_adherent join adherent on (demandes_adherent.idf_adherent=adherent.idf) where adherent.ident=\"$gst_ident\" and  datediff(now(),date_demande) <= 30 group by date_dde order by date_demande desc limit 0 , 30";
       $a_ddes_dernier_mois =$connexionBD->sql_select_multiple($st_requete);
 	  
-      print('<div class="panel panel-default">');
+      print('<div class="panel panel-info">');
       print('<div class="panel-heading">Demandes des 30 derniers jours</div>');
       print('<div class="panel-body">');
       if (count($a_ddes_dernier_mois)>0)
@@ -120,7 +120,7 @@ if (isset($gst_ident ))
 	  
       $st_requete = "select  YEAR(date_demande)as annee, MONTH(date_demande) as mois, count(*) total, sum(case when idf_type_acte=".IDF_NAISSANCE."  then 1 else 0 end) nb_naissances,sum(case when idf_type_acte=".IDF_MARIAGE."  then 1 else 0 end) nb_mariages, sum(case when idf_type_acte=".IDF_DECES."  then 1 else 0 end) nb_deces, sum(case when idf_type_acte=".IDF_CM."  then 1 else 0 end) nb_cm from demandes_adherent join adherent on (demandes_adherent.idf_adherent=adherent.idf) where adherent.ident=\"$gst_ident\" group by YEAR(date_demande)*100+MONTH(date_demande) order by annee desc, mois desc limit 12";
       $a_ddes_derniere_anneee =$connexionBD->sql_select_multiple($st_requete);
-      print('<div class="panel panel-default">');
+      print('<div class="panel panel-info">');
       print('<div class="panel-heading">Demandes des 12 derniers mois</div>');
       print('<div class="panel-body">');
       if (count($a_ddes_derniere_anneee)>0)
@@ -143,7 +143,7 @@ if (isset($gst_ident ))
 	  
       $st_requete = "select  ca.nom as paroisse, ca.idf,count(*) total, sum(case when idf_type_acte=".IDF_NAISSANCE."  then 1 else 0 end) nb_naissances,sum(case when idf_type_acte=".IDF_MARIAGE."  then 1 else 0 end) nb_mariages, sum(case when idf_type_acte=".IDF_DECES."  then 1 else 0 end) nb_deces, sum(case when idf_type_acte=".IDF_CM."  then 1 else 0 end) nb_cm from demandes_adherent da join commune_acte ca on (da.idf_commune=ca.idf) join adherent on (da.idf_adherent=adherent.idf) where adherent.ident=\"$gst_ident\" group  by ca.idf order by total desc limit 20";
       $a_ddes_paroisses =$connexionBD->sql_select_multiple($st_requete);
-      print('<div class="panel panel-default">');
+      print('<div class="panel panel-info">');
       print('<div class="panel-heading">Demandes des 20 premi&egrave;res paroisses</div>');
       print('<div class="panel-body">');
       if (count($a_ddes_paroisses)>0)
@@ -165,7 +165,7 @@ if (isset($gst_ident ))
 	  
       $st_requete = "select  c.nom as canton, count(*) total, sum(case when idf_type_acte=".IDF_NAISSANCE."  then 1 else 0 end) nb_naissances,sum(case when idf_type_acte=".IDF_MARIAGE."  then 1 else 0 end) nb_mariages, sum(case when idf_type_acte=".IDF_DECES."  then 1 else 0 end) nb_deces, sum(case when idf_type_acte=".IDF_CM."  then 1 else 0 end) nb_cm from demandes_adherent da join commune_acte ca on (da.idf_commune=ca.idf) join canton c on (ca.idf_canton=c.idf) join adherent on (da.idf_adherent=adherent.idf) where adherent.ident=\"$gst_ident\" group  by c.nom order by total desc limit 20";
       $a_ddes_cantons =$connexionBD->sql_select_multiple($st_requete);
-      print('<div class="panel panel-default">');
+      print('<div class="panel panel-info">');
       print('<div class="panel-heading">Demandes des 20 premiers cantons</div>');
       print('<div class="panel-body">');
       if (count($a_ddes_cantons)>0)
@@ -198,7 +198,7 @@ if (isset($gst_ident ))
 	   print('<div class="panel panel-primary">');
        print("<div class=\"panel-heading\">Vos demandes par commune</div>");
        print('<div class="panel-body">');
-	   print('<div class="panel panel-default">');
+	   print('<div class="panel panel-info">');
        print("<div class=\"panel-heading\">$st_type_acte &agrave; $st_commune</div>");
        print('<div class="panel-body">');
        $gi_num_page = empty($_POST['num_page_ddes_adht']) ?  $i_session_num_page: (integer) $_POST['num_page_ddes_adht'];
@@ -272,7 +272,7 @@ if (isset($gst_ident ))
        print('<div class="panel panel-primary">');
        print('<div class="panel-heading">Vos demandes par mois et ann&eacute;e</div>');
        print('<div class="panel-body">');
-	   print('<div class="panel panel-default">');
+	   print('<div class="panel panel-info">');
        print(sprintf("<div class=\"panel-heading\">%s en %0.2d/%0.4d</div>",$st_type_acte,$i_mois,$i_annee));
        print('<div class="panel-body">');
        $gi_num_page = empty($_POST['num_page_ddes_adht']) ?  $i_session_num_page: (integer) $_POST['num_page_ddes_adht'];
