@@ -39,6 +39,10 @@ $('a.popup').click(function(){
   $('#per-page').on('change', function() {
     window.location.href = "<?php print $_SERVER['PHP_SELF'];?>?per_page="+$(this).val();
   });
+  
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
 });
 <?php
 print("</script>");
@@ -106,7 +110,7 @@ function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$
     global $requeteRecherche;
     global $st_criteres;
     $a_params_precedents=$pconnexionBD->params();
-	print("<div class=\"panel panel-default col-md-4\">");
+	print("<div class=\"panel panel-primary col-md-4\">");
 	print("<div class=\"panel-heading\">Vos crit&egrave;res de recherche</div>");
 	print("<div class=\"panel-body\">");
     $st_criteres ="$pst_titre\n";
@@ -217,15 +221,15 @@ switch($gst_type_recherche)
     }
     $st_erreur_nom = '';
     if (($gst_nom_epx!= '*') && ($gst_nom_epx!= '!') && strlen(str_replace('*','',$gst_nom_epx))<2 )
-      $st_erreur_nom ="<div class='IMPORTANT'>Le nom de l'&eacute;poux doit comporter au moins trois caract&egrave;res</div>\n";
+      $st_erreur_nom ="<div class='alert alert-danger'>Le nom de l'&eacute;poux doit comporter au moins trois caract&egrave;res</div>\n";
     if (($gst_nom_epse!= '*' && $gst_nom_epse!= '!') && strlen(str_replace('*','',$gst_nom_epse))<2 )
-      $st_erreur_nom .= "<div class='IMPORTANT'>Le nom de l'&eacute;pouse doit comporter au moins trois caract&egrave;res</div>\n";
+      $st_erreur_nom .= "<div class='alert alert-danger'>Le nom de l'&eacute;pouse doit comporter au moins trois caract&egrave;res</div>\n";
     if (($gst_nom_epx== '*') && ($gst_nom_epse== '*'))
-      $st_erreur_nom .= "<div class='IMPORTANT'>Au moins un des noms ne doit pas correspondre au caract&egrave;re joker \"*\"</div>\n";
+      $st_erreur_nom .= "<div class='alert alert-danger'>Au moins un des noms ne doit pas correspondre au caract&egrave;re joker \"*\"</div>\n";
     if ($st_erreur_nom!='')
     {
       print(nl2br($st_erreur_nom));
-      print("<a href=Recherches.php class=\"RetourReponses\">Nouvelle Recherche</a><br>");
+      print("<a href=Recherches.php class=\"btn btn-primary col-md-4 col-md-offset-4\">Nouvelle Recherche</a><br>");
       exit();
     }
     $_SESSION['type_recherche']     	  = $gst_type_recherche;
@@ -311,7 +315,7 @@ date_default_timezone_set($gst_time_zone);
 
     if (!empty($gst_variantes_epx) || !empty($st_variantes_prenoms_epx))
     {
-      print("<div class=\"panel panel-default col-md-4\">");
+      print("<div class=\"panel panel-primary col-md-4\">");
 	  print("<div class=\"panel-heading\">Variantes connues pour l'&eacute;poux</div>");
       print("<div class=\"panel-body\">");
 	  print('<form>'); 
@@ -334,7 +338,7 @@ date_default_timezone_set($gst_time_zone);
 	print(rappel_recherches_communes($connexionBD,"Recherche du couple: $gst_prenom_epx $gst_nom_epx X $gst_prenom_epse $gst_nom_epse",$gi_idf_type_acte,$gi_annee_min,$gi_annee_max,$gi_idf_commune,$gi_rayon));
     if (!empty($gst_variantes_epse) ||  !empty($st_variantes_prenoms_epse))
     { 
-      print("<div class=\"panel panel-default col-md-4\">");
+      print("<div class=\"panel panel-primary col-md-4\">");
 	  print("<div class=\"panel-heading\">Variantes connues pour l'&eacute;pouse</div>");
       print("<div class=\"panel-body\">");
 	  print('<form>');
@@ -461,7 +465,7 @@ date_default_timezone_set($gst_time_zone);
 
     if (!empty($gst_variantes) || !empty($st_variantes_prenoms))
     {
-       print("<div class=\"panel panel-default col-md-4\">");
+       print("<div class=\"panel panel-primary col-md-4\">");
 	   print("<div class=\"panel-heading\">Variantes connues</div>");
        print("<div class=\"panel-body\">");
 	   print('<form>');
@@ -499,7 +503,7 @@ $ga_sources=$connexionBD->sql_select_multiple_par_idf("select idf,script_demande
 print benchmark("Temps de recherche");
 
 $i_nb_actes = count($a_actes);
-print("<div class=\"row col-md-12\">$a_actes_total occurrence(s) trouv&eacute;e(s). ");
+print("<div class=\"row col-md-12 text-center\">$a_actes_total occurrence(s) trouv&eacute;e(s). ");
 print('<div id="curseur" class="infobulle"></div>');
 print("<div class='form-group col-md-2 col-md-offset-5'>");
 print '<label for=\"per-page\">Nombre de r&eacute;sultats par page</label>';
@@ -529,38 +533,38 @@ if ($i_nb_actes>0)
         {
           case 1:
             $st_icone_td = $st_icone_info;
-            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" class=\"popup\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" title=\"$st_cote - $releve\"></a>";
+            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" data-toggle=\"tooltip\" title=\"$st_cote - $releve\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
           break;
           case 2:
             $st_icone_td = $st_icone_index;
-            $st_detail = "<a href=\"PropositionModification.php?idf_acte=$i_idf_acte\" target=\"_blank\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" title=\"$st_cote - $releve\"></a>";
+            $st_detail = "<a href=\"PropositionModification.php?idf_acte=$i_idf_acte\" target=\"_blank\" data-toggle=\"tooltip\" title=\"$st_cote - $releve\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
           break;
           default:
             $st_icone_td = $st_icone_ninfo;
-            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" target=\"_blank\"  title=\"$releve\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\"></a>";
+            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" target=\"_blank\" data-toggle=\"tooltip\" title=\"$releve\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
         }
       }
       else if ($i_details==1)
-        $st_detail ="<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" class=\"popup\"  title=\"$releve\"><img src=\"./images/$st_icone_info\" border=0 alt=\"infos\"></a>";
+        $st_detail ="<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" data-toggle=\"tooltip\" title=\"$releve\"><img src=\"./images/$st_icone_info\" border=0 alt=\"infos\"></a>";
       else if ($i_details==2)
-        $st_detail ="<img src=\"./images/$st_icone_index\" border=0 alt=\"$st_cote\" title=\"$st_cote - $releve\">";
+        $st_detail ="<img src=\"./images/$st_icone_index\" border=0 alt=\"$st_cote\" data-toggle=\"tooltip\" title=\"$st_cote - $releve\">";
       else
-        $st_detail ="<img src=\"./images/$st_icone_ninfo\" alt=\"pas d'infos\" title=\"$releve\" onmouseover=\"montre('Pas de details supplementaires');\" onmouseout=\"cache();\">";
+        $st_detail ="<img src=\"./images/$st_icone_ninfo\" alt=\"pas d'infos\" data-toggle=\"tooltip\" title=\"Le relev&eacute; ne comporte pas de renseignements suppl&eacute;mentaires que ceux d&eacute;j&agrave; affich&eacute;s\">";
     }
     else
-       $st_detail ="<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" class=\"popup\"   title=\"$releve\"><img src=\"./images/$st_icone_info\" border=0 alt=\"infos\"></a>";
+       $st_detail ="<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" data-toggle=\"tooltip\" title=\"$releve\"><img src=\"./images/$st_icone_info\" border=0 alt=\"infos\"></a>";
 
     if ($gst_type_recherche=='tous_pat')
     {
       if (a_droits($_SESSION['ident'],DROIT_CHARGEMENT))
-        $a_tableau[] =  array($st_type_acte,$st_parties,$st_commune,$st_date,$st_detail,"<a href=\"./Administration/ModifieActe.php?idf_acte=$i_idf_acte\"><img src=\"./images/edit.png\" border=0 alt=\"modification\"></a>");
+        $a_tableau[] =  array($st_type_acte,$st_parties,$st_commune,$st_date,$st_detail,"<a href=\"./Administration/ModifieActe.php?idf_acte=$i_idf_acte\"><span class=\"glyphicon glyphicon-edit\"></a>");
       else
         $a_tableau[] =  array($st_type_acte,$st_parties,$st_commune,$st_date,$st_detail);
     }
     else
     {
       if (a_droits($_SESSION['ident'],DROIT_CHARGEMENT))
-        $a_tableau[] =  array($st_type_acte,$st_parties,$st_commune,$st_date,$st_recherche,$st_detail,"<a href=\"./Administration/ModifieActe.php?idf_acte=$i_idf_acte\"><img src=\"./images/edit.png\" border=0 alt=\"modification\"></a>");
+        $a_tableau[] =  array($st_type_acte,$st_parties,$st_commune,$st_date,$st_recherche,$st_detail,"<a href=\"./Administration/ModifieActe.php?idf_acte=$i_idf_acte\"><span class=\"glyphicon glyphicon-edit\"></span></a>");
       else
         $a_tableau[] =  array($st_type_acte,$st_parties,$st_commune,$st_date,$st_recherche,$st_detail);
     }
