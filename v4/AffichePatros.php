@@ -106,7 +106,7 @@ function affiche_menu($gi_idf_commune,$gi_rayon,$gi_idf_source,$pst_msg)
   if (!empty($pst_msg)) print("<div class=\"alert alert-danger\">$pst_msg</div>\n");
   
   print('<div class="form-group row col-md-12">');
-  print('<label for="patronyme" class="col-form-label col-md-2">Patronyme:</label>');
+  print('<label for="patronyme" class="col-form-label col-md-2">Patronyme</label>');
   print('<div class="col-md-3">');
   print('<input type=text name=patronyme id=patronyme size=15 maxlength=30 class="form-control">');
   print('</div>');
@@ -119,14 +119,14 @@ function affiche_menu($gi_idf_commune,$gi_rayon,$gi_idf_source,$pst_msg)
   print('</div>'); // fin ligne 
   
   print('<div class="form-group row col-md-12">');
-  print('<label for="idf_source" class="col-form-label col-md-2">Source:</label>');
+  print('<label for="idf_source" class="col-form-label col-md-2">Source</label>');
   print('<div class="col-md-2">');
   print('<select name=idf_source id=idf_source class="form-control">');
   $a_sources[0] = 'Toutes';
   print(chaine_select_options($gi_idf_source,$a_sources));
   print('</select></div>');
   
-  print('<label for="idf_commune_patro" class="col-form-label col-md-2">Commune/Paroisse:</label>');
+  print('<label for="idf_commune_patro" class="col-form-label col-md-2">Commune/Paroisse</label>');
   print('<div class="col-md-2">');
   print('<select name="idf_commune_patro" id="idf_commune_patro" class="js-select-avec-recherche form-control">');
   $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
