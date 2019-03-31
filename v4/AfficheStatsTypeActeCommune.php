@@ -75,7 +75,7 @@ if (count($a_communes)!=0)
    $a_liste_stats = $connexionBD->sql_select_multiple("select nom, annee_min,annee_max,nb_actes from stats_commune join type_acte on (idf_type_acte=idf) where idf_source=$gi_idf_source and idf_commune=$gi_idf_commune order by nom");
 }
 
-print('<div class="form-row col-md-12"><label for=\"idf_commune\" class="col-form-label col-md-2 col-md-offset-3">Commune:</label>');
+print('<div class="form-row col-md-12"><label for=\"idf_commune\" class="col-form-label col-md-2 col-md-offset-3">Commune</label>');
 print('<div class="col-md-4">');
 print('<select name=idf_commune id=idf_commune class="js-select-avec-recherche form-control">');
 print(chaine_select_options($gi_idf_commune,$a_communes));
