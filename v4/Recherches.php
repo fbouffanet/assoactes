@@ -203,39 +203,39 @@ $(document).ready(function() {
             }
         },
 		errorElement: "em",
-  errorPlacement: function ( error, element ) {
-	// Add the `help-block` class to the error element
-	error.addClass( "help-block" );
+		errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
 
-	// Add `has-feedback` class to the parent div.form-group
-	// in order to add icons to inputs
-	element.parents( ".lib_erreur" ).addClass( "has-feedback" );
+			// Add `has-feedback` class to the parent div.form-group
+			// in order to add icons to inputs
+			element.parents( ".lib_erreur" ).addClass( "has-feedback" );
 
-	if ( element.prop( "type" ) === "checkbox" ) {
-		error.insertAfter( element.parent( "label" ) );
-	} else {
-		error.insertAfter( element );
-	}
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+			}
 
-	// Add the span element, if doesn't exists, and apply the icon classes to it.
-		if ( !element.next( "span" )[ 0 ] ) {
-			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !element.next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+			}
+		},
+		success: function ( label, element ) {
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !$( element ).next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+			}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+		},
+		unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 		}
-	},
-	success: function ( label, element ) {
-		// Add the span element, if doesn't exists, and apply the icon classes to it.
-		if ( !$( element ).next( "span" )[ 0 ] ) {
-			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
-		}
-	},
-	highlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
-		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
-	},
-	unhighlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
-		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
-	}
     });
 
     jQuery.validator.addMethod("patro_recherche", function(value, element) {
@@ -266,39 +266,39 @@ $(document).ready(function() {
             }
         },
 		errorElement: "em",
-  errorPlacement: function ( error, element ) {
-	// Add the `help-block` class to the error element
-	error.addClass( "help-block" );
+		errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
 
-	// Add `has-feedback` class to the parent div.form-group
-	// in order to add icons to inputs
-	element.parents( ".col-md-2" ).addClass( "has-feedback" );
+			// Add `has-feedback` class to the parent div.form-group
+			// in order to add icons to inputs
+			element.parents( ".col-md-2" ).addClass( "has-feedback" );
 
-	if ( element.prop( "type" ) === "checkbox" ) {
-		error.insertAfter( element.parent( "label" ) );
-	} else {
-		error.insertAfter( element );
-	}
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+			}
 
-	// Add the span element, if doesn't exists, and apply the icon classes to it.
-		if ( !element.next( "span" )[ 0 ] ) {
-			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
-		}
-	},
-	success: function ( label, element ) {
-		// Add the span element, if doesn't exists, and apply the icon classes to it.
-		if ( !$( element ).next( "span" )[ 0 ] ) {
-			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
-		}
-	},
-	highlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".col-md-2" ).addClass( "has-error" ).removeClass( "has-success" );
-		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
-	},
-	unhighlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".col-md-2" ).addClass( "has-success" ).removeClass( "has-error" );
-		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
-	},
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !element.next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+			}
+		},
+		success: function ( label, element ) {
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !$( element ).next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+			}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".col-md-2" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+		},
+		unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".col-md-2" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+		},
         submitHandler: function(form) {
             if ($("#recherches_communes").valid()) {
                 $("#idf_source_recherches_couple").val($("#idf_source_recherches_communes").val());
@@ -623,7 +623,7 @@ print('</select>');
 print('</div></div>');
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-6"><label for="idf_commune_recherches_communes">Commune/Paroisse</label><select name="idf_commune_recherches_communes" id="idf_commune_recherches_communes" class="js-select-avec-recherche form-control">');
+print('<div class="form-group col-md-6 lib_erreur"><label for="idf_commune_recherches_communes">Commune/Paroisse</label><select name="idf_commune_recherches_communes" id="idf_commune_recherches_communes" class="js-select-avec-recherche form-control">');
 $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
 print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
 print('</select></div>');
