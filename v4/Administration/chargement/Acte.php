@@ -535,9 +535,9 @@ class Acte {
          global $ga_mois_revolutionnaires, $ga_annees_revolutionnaires, $ga_mois_revolutionnaires_nimegue, $gst_url_images, $gst_url_site;
          $st_chaine = '';
          $st_chaine .= sprintf("<tr><th>Type d'acte</th><td>%s</td>", $this -> st_type_acte);
-         $st_chaine .= sprintf("<th>Date </th><td><input type=text id=\"date\" name=\"date\" value=\"%s\" maxlength=10></td>", $this -> date_propre($this -> st_date));
-         $st_chaine .= sprintf("<th>Cote</th><td><input type=text name=cote value=\"%s\" maxlength=40></td>", $this -> st_cote);
-         $st_chaine .= sprintf("<th >Libre</th><td><input type=text name=libre value=\"%s\" size=50 maxlength=70></td></tr>\n", $this -> st_libre);
+         $st_chaine .= sprintf("<th>Date </th><td class=\"lib_erreur\"><input type=text id=\"date\" name=\"date\" value=\"%s\" maxlength=10 class=\"form-control\"></td>", $this -> date_propre($this -> st_date));
+         $st_chaine .= sprintf("<th>Cote</th><td><input type=text name=cote value=\"%s\" maxlength=40 class=\"form-control\"></td>", $this -> st_cote);
+         $st_chaine .= sprintf("<th >Libre</th><td><input type=text name=libre value=\"%s\" size=50 maxlength=70 class=\"form-control\"></td></tr>\n", $this -> st_libre);
          $i_jour_rep = null;
          $i_mois_rep = null;
          $i_annee_rep = null;
@@ -548,24 +548,31 @@ class Acte {
              $i_mois_rep = array_key_exists(ucfirst(strtolower($st_mois_rep)), $a_mois_rep_nim_vers_entier) ? $a_mois_rep_nim_vers_entier[ucfirst(strtolower($st_mois_rep))]: null;
              $i_annee_rep = (int) $i_annee_rep;
              } 
-        $st_chaine_date_rep = "<input type=\"text\" name=\"jour_rep\" id=\"jour_rep\"  size=\"2\" maxlength=\"2\" value=\"$i_jour_rep\">";
-         $st_chaine_date_rep .= ' <select name="mois_rep" id="mois_rep">';
+        $st_chaine_date_rep = "<div class=\"row form-group\">";
+		$st_chaine_date_rep .= '<div class="col-xs-2">';
+		$st_chaine_date_rep .= "<input type=\"text\" name=\"jour_rep\" id=\"jour_rep\"  size=\"2\" maxlength=\"2\" value=\"$i_jour_rep\" class=\"form-control\">";
+		$st_chaine_date_rep .= '</div>';
+		$st_chaine_date_rep .= '<div class="col-xs-4">';
+         $st_chaine_date_rep .= ' <select name="mois_rep" id="mois_rep" class="form-control">';
          $st_chaine_date_rep .= '<option value=""></option>';
          $st_chaine_date_rep .= chaine_select_options($i_mois_rep, $ga_mois_revolutionnaires);
          $st_chaine_date_rep .= '</select>';
-         $st_chaine_date_rep .= ' <select name="annee_rep" id="annee_rep">';
-         $st_chaine_date_rep .= '<option value=""></option>';
+		 $st_chaine_date_rep .= '</div>';
+         $st_chaine_date_rep .= '<div class="col-xs-2">';
+		 $st_chaine_date_rep .= ' <select name="annee_rep" id="annee_rep" class="form-control">';
+         $st_chaine_date_rep .= '<option value=""></option>';		 
          $st_chaine_date_rep .= chaine_select_options($i_annee_rep, $ga_annees_revolutionnaires);
          $st_chaine_date_rep .= '</select>';
-         $st_chaine_date_rep .= "<button type=\"button\" class=\"maj_date_rep\" data-jour_rep=\"#jour_rep\" data-mois_rep=\"#mois_rep\" data-annee_rep=\"#annee_rep\" data-date_greg=\"#date\" data-date_rep=\"#date_rep\" data-cmt=\"\" data-id_fenetre=\"#popup_date_rep_acte\">Maj date</button>";
-         $st_chaine .= sprintf("<tr><th>Commune</th><td>%s</td>", $this -> st_commune);
-         // Bouton d'ouverture du popup
-        $st_chaine .= "<th><button type=\"button\" class=\"ouvre_popup\" data-id_fenetre=\"#popup_date_rep_acte\">Saisir une date republicaine</button></th>";
+		 $st_chaine_date_rep .= '</div>';
+         $st_chaine_date_rep .= "<button type=\"button\" class=\"maj_date_rep btn btn-primary col-xs-4\" data-jour_rep=\"#jour_rep\" data-mois_rep=\"#mois_rep\" data-annee_rep=\"#annee_rep\" data-date_greg=\"#date\" data-date_rep=\"#date_rep\" data-cmt=\"\" data-id_fenetre=\"#popup_date_rep_acte\">Maj date</button></div>";
+         $st_chaine .= sprintf("<tr><th>Commune</th><td>%s</td><td>&nbsp;</td>", $this -> st_commune);
          // Champ date républicaine
-        $st_chaine .= sprintf("<td><input type=text name=date_rep id=date_rep value=\"%s\" maxlength=10></td>", $this -> st_date_rep);
+        $st_chaine .= sprintf("<td><input type=text name=date_rep id=date_rep value=\"%s\" maxlength=10 class=\"form-control\"></td>", $this -> st_date_rep);
+		// Bouton d'ouverture du popup
+        $st_chaine .= "<th colspan=3><button type=\"button\" class=\"ouvre_popup btn btn-primary\" data-id_fenetre=\"#popup_date_rep_acte\">Saisir une date r&eacute;publicaine</button></th>";
          // Contenu du popup
-        $st_chaine .= sprintf("<td colspan=2><div class=\"popup_date_rep\" id=\"popup_date_rep_acte\" title=\"Fenetre\">%s</div></td></tr>\n", $st_chaine_date_rep);
-         $st_chaine .= sprintf("<tr><th >Permalien <a target=\"_blank\" href=\"%s/Permalien_AD16.html\"> <img src=\"%s/point_interrogation.png\" height=24 width=24 alt=\"aide permalien\"></a></th><td colspan=7><input type=text name=\"permalien\" id=\"permalien\" value=\"%s\" size=100 maxlength=100></td></tr>\n", $gst_url_site, $gst_url_images, $this -> st_url);
+        $st_chaine .= sprintf("<td ><div class=\"popup_date_rep\" id=\"popup_date_rep_acte\" title=\"Fenetre\">%s</div></td></tr>\n", $st_chaine_date_rep);
+         $st_chaine .= sprintf("<tr><th >Permalien <a target=\"_blank\" href=\"%s/Permalien_AD16.html\"><span class=\"glyphicon glyphicon-link\"></span></a></th><td colspan=7 class=\"lib_erreur\"><input type=text name=\"permalien\" id=\"permalien\" value=\"%s\" size=100 maxlength=100 class=\"form-control\"></td></tr>\n", $gst_url_site, $this -> st_url);
          $this -> a_filtres_parametres["permalien"] = array(array("pattern", "/^https*\:\/\/[\w\.]+\/ark\:\/[\d]+\/[\w]+\/[\w]+$/", "Ce n'est pas un permalien. Merci de lire l'aide en cliquant sur le point d'interrogation"));
          $this -> a_filtres_parametres["date"] = array(array("required", "true", "La date est obligatoire"));
          return $st_chaine;
@@ -717,15 +724,15 @@ class Acte {
                  default:
                      $st_lib = "Intervenant $i_nb_intv";
                      } 
-                $st_chaine .= "<tr><td class=\"ligne_separation\" colspan=8>$st_lib</td></tr>";
+                $st_chaine .= "<tr class=\"bg-primary\"><td colspan=8>$st_lib</td></tr>";
                  break;
              case IDF_PRESENCE_TEMOIN;
                      $i_nb_temoins++;
                      if ($i_nb_temoins == 1)
-                         $st_chaine .= "<tr><td class=\"ligne_separation\" colspan=8>T&eacute;moins</td></tr>";
+                         $st_chaine .= "<tr class=\"bg-primary\"><td colspan=8>T&eacute;moins</td></tr>";
                      break;
                  case IDF_PRESENCE_PARRAIN;
-                     $st_chaine .= "<tr><td class=\"ligne_separation\" colspan=8>Parrain/Marraine</td></tr>";
+                     $st_chaine .= "<tr class=\"bg-primary\"><td colspan=8>Parrain/Marraine</td></tr>";
                      break;
                      } 
                 if (count($a_liste_personnes) > 0 && $a_liste_personnes[0] -> getIdfTypePresence() == $i_idf_type_presence)
@@ -760,7 +767,7 @@ public function formulaire_bas_acte()
 
 
 {
-     $st_chaine = "<tr><td class=\"ligne_separation\" colspan=8>Commentaires g&eacute;n&eacute;raux sur l'acte</td></tr>";
+     $st_chaine = "<tr class=\"bg-primary\"><td colspan=8>Commentaires g&eacute;n&eacute;raux sur l'acte</td></tr>";
      $st_chaine .= sprintf("<tr><td colspan=8><div align=center><textarea name=cmt_acte rows=10 cols=80>%s</textarea></div></td></tr>", str_replace('§', "\n", $this -> st_commentaires));
      return $st_chaine;
      } 
