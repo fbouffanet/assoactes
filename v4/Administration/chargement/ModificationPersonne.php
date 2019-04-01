@@ -238,12 +238,12 @@ class ModificationPersonne extends Personne
              {
             case IDF_NAISSANCE:
                  $st_chaine .= "<tr>";
-                 $st_chaine .= sprintf("<th>Patronyme</th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\" maxlength=30 style=\"text-transform: uppercase;\"></td>", $this -> st_patronyme);
-                 $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text id=\"prn$i_num_parametre\" name=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 style=\"text-transform: capitalize;\"></td>", $this -> st_prenom);
-                 $st_chaine .= "<th>Sexe</th><td><select name=sexe$i_num_parametre>";
+                 $st_chaine .= sprintf("<th>Patronyme</th><td class=\"lib_erreur\"><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control text-uppercase\"></td>", $this -> st_patronyme);
+                 $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text id=\"prn$i_num_parametre\" name=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 class=\"form-control text-capitalize\"></td>", $this -> st_prenom);
+                 $st_chaine .= "<th>Sexe</th><td><select name=sexe$i_num_parametre class=\"form-control\">";
                  $st_chaine .= chaine_select_options($this -> c_sexe, $ga_sexe);
                  $st_chaine .= "</select></td>";
-                 $st_chaine .= sprintf("<th>Commentaires</th><td><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70></td>", $this -> st_commentaire);
+                 $st_chaine .= sprintf("<th>Commentaires</th><td><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control\"></td>", $this -> st_commentaire);
                  $st_chaine .= "</tr>\n";
                  $this -> a_filtres_parametres["patro$i_num_parametre"] = array(array("required", "true", "Le patronyme est obligatoire"));
                  $this -> a_parametres_completion_auto["patro$i_num_parametre"] = array('patronyme.php', 3);
@@ -253,22 +253,22 @@ class ModificationPersonne extends Personne
                  * la structure de personne est la même pour ces 3 types d'acte
                  */
                  $st_chaine .= "<tr>";
-                 $st_chaine .= sprintf("<th>Patronyme</th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\" maxlength=30 style=\"text-transform: uppercase;\"></td>", $this -> st_patronyme);
+                 $st_chaine .= sprintf("<th>Patronyme</th><td class=\"lib_erreur\"><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control text-uppercase\"></td>", $this -> st_patronyme);
                 
-                 $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\"  value=\"%s\" maxlength=35 style=\"text-transform: capitalize;\"></td>", $this -> st_prenom);
+                 $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\"  value=\"%s\" maxlength=35 class=\"form-control text-capitalize\"></td>", $this -> st_prenom);
                 
-                 $st_chaine .= sprintf("<th>Profession</th><td><input type=text name=\"prof$i_num_parametre\" id=\"prof$i_num_parametre\" value=\"%s\" maxlength=30></td>", $this -> st_profession);
-                 $st_chaine_deces = ($pi_idf_type_acte == IDF_DECES) ? "<button type=\"button\" class=\"maj_deces\" data-cible=\"#cmt$i_num_parametre\">&dagger;</button>" : '';
-                 $st_chaine .= sprintf("<th>Commentaires</th><td><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70>%s</td>", $this -> st_commentaire, $st_chaine_deces);
+                 $st_chaine .= sprintf("<th>Profession</th><td><input type=text name=\"prof$i_num_parametre\" id=\"prof$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control\"></td>", $this -> st_profession);
+                 $st_chaine_deces = ($pi_idf_type_acte == IDF_DECES) ? "<button type=\"button\" class=\"maj_deces btn btn-primary\" data-cible=\"#cmt$i_num_parametre\">&dagger;</button>" : '';
+                 $st_chaine .= sprintf("<th>Commentaires</th><td><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control\">%s</td>", $this -> st_commentaire, $st_chaine_deces);
                  $st_chaine .= "</tr><tr>";
-                 $st_chaine .= sprintf("<th><a class=\"recopie_commune\" data-source=\"$pst_commune\" data-cible=\"#orig$i_num_parametre\" style=\"color:blue\">Lieu d'origine</a></th><td><input type=text name=\"orig$i_num_parametre\"  id=\"orig$i_num_parametre\"  value=\"%s\" maxlength=50>", $this -> st_origine);
+                 $st_chaine .= sprintf("<th><a class=\"recopie_commune\" data-source=\"$pst_commune\" data-cible=\"#orig$i_num_parametre\" style=\"color:blue\">Lieu d'origine</a></th><td><input type=text name=\"orig$i_num_parametre\"  id=\"orig$i_num_parametre\"  value=\"%s\" maxlength=50 class=\"form-control\">", $this -> st_origine);
                 
                  $st_chaine .= "</td>";
-                 $st_chaine .= $pi_idf_type_acte == IDF_MARIAGE ? "<th>Sexe</th><td><select name=sexe$i_num_parametre disabled>" : "<th>Sexe</th><td><select name=sexe$i_num_parametre>";
+                 $st_chaine .= $pi_idf_type_acte == IDF_MARIAGE ? "<th>Sexe</th><td><select name=sexe$i_num_parametre disabled>" : "<th>Sexe</th><td><select name=sexe$i_num_parametre class=\"form-control\">";
                  $st_chaine .= chaine_select_options($this -> c_sexe, $ga_sexe);
                  $st_chaine .= "</select></td>";
-                 $st_chaine .= sprintf("<th>Age</th><td><input type=text name=\"age$i_num_parametre\" id=\"age$i_num_parametre\" value=\"%s\" maxlength=15></td>", $this -> st_age);
-                 $st_chaine .= "<th>Date °</th><td>";
+                 $st_chaine .= sprintf("<th>Age</th><td class=\"lib_erreur\"><input type=text name=\"age$i_num_parametre\" id=\"age$i_num_parametre\" value=\"%s\" maxlength=15 class=\"form-control\"></td>", $this -> st_age);
+                 $st_chaine .= "<th>Date °</th><td class=\"lib_erreur\">";
                  $i_jour_rep = null;
                  $i_mois_rep = null;
                  $i_annee_rep = null;
@@ -278,18 +278,26 @@ class ModificationPersonne extends Personne
                      $a_mois_rep_nim_vers_entier = array_flip($ga_mois_revolutionnaires_nimegue);
                      $i_mois_rep = array_key_exists(strtolower($st_mois_rep), $a_mois_rep_nim_vers_entier) ? $a_mois_rep_nim_vers_entier[strtolower($st_mois_rep)]: null;
                      $i_annee_rep = (int) $st_annee_rep;
-                     } 
-                $st_chaine_date_rep = "<input type=\"text\" name=\"jour_rep\" id=\"jour_rep$i_num_parametre\"  size=\"2\" maxlength=\"2\" value=\"$i_jour_rep\">";
-                 $st_chaine_date_rep .= " <select name=\"mois_rep\" id=\"mois_rep$i_num_parametre\">";
+                     }
+                $st_chaine_date_rep = '<div class="row form-group">';
+				$st_chaine_date_rep .= '<div class="col-xs-2">';					 
+                $st_chaine_date_rep .= "<input type=\"text\" name=\"jour_rep\" id=\"jour_rep$i_num_parametre\" size=\"2\" maxlength=\"2\" value=\"$i_jour_rep\" class=\"form-control\">";
+				 $st_chaine_date_rep .= '</div>';
+		         $st_chaine_date_rep .= '<div class="col-xs-4">';
+                 $st_chaine_date_rep .= " <select name=\"mois_rep\" id=\"mois_rep$i_num_parametre\" class=\"form-control\">";
                  $st_chaine_date_rep .= '<option value=""></option>';
                  $st_chaine_date_rep .= chaine_select_options($i_mois_rep, $ga_mois_revolutionnaires);
                  $st_chaine_date_rep .= '</select>';
-                 $st_chaine_date_rep .= " <select name=\"annee_rep\" id=\"annee_rep$i_num_parametre\">";
+				 $st_chaine_date_rep .= '</div>';
+		         $st_chaine_date_rep .= '<div class="col-xs-2">';
+                 $st_chaine_date_rep .= " <select name=\"annee_rep\" id=\"annee_rep$i_num_parametre\" class=\"form-control\">";
                  $st_chaine_date_rep .= '<option value=""></option>';
                  $st_chaine_date_rep .= chaine_select_options($i_annee_rep, $ga_annees_revolutionnaires);
                  $st_chaine_date_rep .= '</select>';
-                 $st_chaine_date_rep .= "<input type=\"button\" class=\"maj_date_rep\" data-jour_rep=\"#jour_rep$i_num_parametre\" data-mois_rep=\"#mois_rep$i_num_parametre\" data-annee_rep=\"#annee_rep$i_num_parametre\" data-date_greg=\"#dnais$i_num_parametre\" data-date_rep=\"\" data-cmt=\"#cmt$i_num_parametre\" data-id_fenetre=\"#popup_dnais$i_num_parametre\" value=\"Maj date naissance\">";
-                 // Contenu du popup
+				 $st_chaine_date_rep .= '</div>';
+                 $st_chaine_date_rep .= "<input type=\"button\" class=\"btn btn-primary maj_date_rep\" data-jour_rep=\"#jour_rep$i_num_parametre\" data-mois_rep=\"#mois_rep$i_num_parametre\" data-annee_rep=\"#annee_rep$i_num_parametre\" data-date_greg=\"#dnais$i_num_parametre\" data-date_rep=\"\" data-cmt=\"#cmt$i_num_parametre\" data-id_fenetre=\"#popup_dnais$i_num_parametre\" value=\"Maj date naissance\">";
+                 $st_chaine_date_rep .= '</div>';
+				 // Contenu du popup
                 $st_chaine .= sprintf("<div class=\"popup_date_rep\" id=\"popup_dnais%d\" title=\"Fenetre\">%s</div>", $i_num_parametre, $st_chaine_date_rep);
                  $st_chaine .= sprintf("<input type=text name=\"dnais%d\" id=\"dnais%d\" value=\"%s\" maxlength=10>", $i_num_parametre, $i_num_parametre, $this -> st_date_naissance);
                  // Bouton d'ouverture du popup
@@ -320,10 +328,10 @@ class ModificationPersonne extends Personne
                      break;
                      } 
                 $st_chaine .= "<tr>";
-                 $st_chaine .= sprintf("<th><a class=\"recopie_patro\" data-source=\"$pi_idf_patro_intv\" data-cible=\"#patro$i_num_parametre\" style=\"color:blue\">Patronyme %s</a></th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\"  maxlength=30 style=\"text-transform: uppercase;\"></td>", $st_lib, $this -> st_patronyme);
-                 $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 style=\"text-transform: capitalize;\"></td>", $this -> st_prenom);
-                 $st_chaine .= sprintf("<th>Profession</th><td><input type=text name=\"prof$i_num_parametre\" id=\"prof$i_num_parametre\" value=\"%s\" maxlength=30></td>", $this -> st_profession);
-                 $st_chaine .= sprintf("<th>Commentaires</th><td><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70><input type=button class=\"maj_deces\" value=\"+\" data-cible=\"#cmt$i_num_parametre\"></td>", $this -> st_commentaire);
+                 $st_chaine .= sprintf("<th><a class=\"recopie_patro\" data-source=\"$pi_idf_patro_intv\" data-cible=\"#patro$i_num_parametre\" style=\"color:blue\">Patronyme %s</a></th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\"  maxlength=30 class=\"form-control text-uppercase\"></td>", $st_lib, $this -> st_patronyme);
+                 $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 class=\"form-control text-capitalize\"></td>", $this -> st_prenom);
+                 $st_chaine .= sprintf("<th>Profession</th><td><input type=text name=\"prof$i_num_parametre\" id=\"prof$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control\"></td>", $this -> st_profession);
+                 $st_chaine .= sprintf("<th>Commentaires</th><td><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control\"><button type=button class=\"maj_deces\" data-cible=\"#cmt$i_num_parametre\">&dagger;</button></td>", $this -> st_commentaire);
                  $st_chaine .= "</tr>\n";
                  $this -> a_parametres_completion_auto["patro$i_num_parametre"] = array('patronyme.php', 3);
                  $this -> a_parametres_completion_auto["prof$i_num_parametre"] = array('profession.php', 4);
@@ -349,9 +357,9 @@ class ModificationPersonne extends Personne
                          $st_lib = '';
                          } 
                     $st_chaine .= "<tr>";
-                     $st_chaine .= sprintf("<th>Patronyme %s</th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\"  maxlength=30 style=\"text-transform: uppercase;\"></td>", $st_lib, $this -> st_patronyme);
-                     $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 style=\"text-transform: capitalize;\"></td>", $this -> st_prenom);
-                     $st_chaine .= sprintf("<th>Commentaires</th><td colspan=5><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" size=70 maxlength=70><input type=button value=\"+\" class=\"maj_deces\" data-cible=\"#cmt$i_num_parametre\"></td>", $this -> st_commentaire);
+                     $st_chaine .= sprintf("<th>Patronyme %s</th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\"  maxlength=30 class=\"form-control text-uppercase\"></td>", $st_lib, $this -> st_patronyme);
+                     $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 class=\"form-control text-capitalize\"></td>", $this -> st_prenom);
+                     $st_chaine .= sprintf("<th>Commentaires</th><td colspan=5><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" size=70 maxlength=70 class=\"form-control\"><button type=button class=\"maj_deces\" data-cible=\"#cmt$i_num_parametre\">&dagger;</button></td>", $this -> st_commentaire);
                      $st_chaine .= "</tr>\n";
                      $this -> a_parametres_completion_auto["patro$i_num_parametre"] = array('patronyme.php', 3);
                      } 
