@@ -140,7 +140,7 @@ else
    $gi_num_page_cour = empty($_GET['num_page_statcom']) ? $i_session_num_page : (int) $_GET['num_page_statcom'];
 }
      
-print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" class=\"form-inline\">");
+print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 
 switch ($gst_mode) {
   case 'LISTE' : 
@@ -149,15 +149,18 @@ switch ($gst_mode) {
 	 print('<div class="col-md-4">');
 	 print('<select name=idf_source id=idf_source class="form-control">');
      print(chaine_select_options($gi_idf_source,$a_sources));
-     print('</select></div></div>');
-     print('<div class="form-row col-md-12">');
-	 
+     print('</select></div>');
+
+	 print('<div class="form-row col-md-12">');	 
      print("<label for=\"commune_a_chercher\" class=\"col-form-label col-md-2 col-md-offset-2\">Commune</label>");
-	 print('<div class="col-md-8">');
+	 print('<div class="col-md-4">');
 	 print("<input name=\"commune_a_chercher\"  id=\"commune_a_chercher\" value=\"$gst_commune_a_chercher\" size=\"25\" maxlength=\"50\" type=\"Text\" class=\"form-control\" aria-describedby=\"aideCommune\">");
-	 print('<small id="aideCommune" class="form-text text-muted">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: saint*)</small></div>');
-     print('<div class="form-group col-md-2 col-md-offset-5"><button type=submit class="btn btn-primary">Chercher</button></div>');
-     print('</div>');
+     print('</div>');	 
+     print('<div class="form-group col-md-2"><button type=submit class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Chercher</button></div>');
+	 print('</div>');
+	 print('<div class="form-row col-md-12 text-center">');
+     print('<small id="aideCommune" class="form-text text-muted">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: saint*)</small></div>');
+	 print('</div>');
      
 	 // Affichage des initiales
      $gst_commune_a_chercher = str_replace('*','%',$gst_commune_a_chercher);
