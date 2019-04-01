@@ -192,22 +192,25 @@ print('<div class="panel-body">');
  
 print("<form id='stats_nmd' action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 print('<input type="hidden" name="mode" value="STATS">');
-print('<div class="form-row">');
-print('<div class="form-group col-md-4 col-md-offset-4">');
-print('<label for="idf_commune_acte">Commune:</label><select name=idf_commune_acte id=idf_commune_acte class="js-select-avec-recherche form-control">');
+print('<div class="form-group row">');
+print('<label for="idf_commune_acte" class="col-form-label col-md-4">Commune:</label>');
+print('<div class="col-md-4">');
+print('<select name=idf_commune_acte id=idf_commune_acte class="js-select-avec-recherche form-control">');
 print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
 print('</select></div>');
 print('</div>');
-print('<div class="form-row">');
-print('<div class="form-group col-md-4 col-md-offset-4">');
-print('<label for="idf_type_acte">Type d\'acte:</label><select name=idf_type_acte id=idf_type_acte class="form-control">');
+print('<div class="form-group row">');
+print('<label for="idf_type_acte" class="col-form-label col-md-4">Type d\'acte:</label>');
+print('<div class="col-md-4">');
+print('<select name=idf_type_acte id=idf_type_acte class="form-control">');
 print(chaine_select_options($gc_idf_type_acte,$a_types_acte));
 print('</select></div>');
 print('</div>');
 
-print('<div class="form-row">');
-print('<div class="form-group col-md-4 col-md-offset-4">');
-print('<label for="rayon">Rayon:</label><select name=rayon id=rayon class="form-control">');
+print('<div class="form-group row">');
+print('<label for="rayon" class="col-form-label col-md-4">Rayon:</label>');
+print('<div class="col-md-4">');
+print('<select name=rayon id=rayon class="form-control">');
 foreach ($ga_rayons as $i_rayon => $st_label)
 {
   if ($gi_rayon==$i_rayon)
@@ -217,17 +220,19 @@ foreach ($ga_rayons as $i_rayon => $st_label)
 }
 print('</select></div></div>');
 
-print('<div class="form-row">');
-print('<div class="form-group col-md-4 col-md-offset-4">');
-print("<label for=\"annee_min\">Annee minimale:</label><input type=text name=annee_min id=annee_min size=4 maxlength=4 value=\"$gi_annee_min\" class=\"form-control\">");
+print('<div class="form-group row">');
+print('<label for="annee_min" class="col-form-label col-md-4">Annee minimale:</label>');
+print('<div class="col-md-4">');
+print("<input type=text name=annee_min id=annee_min size=4 maxlength=4 value=\"$gi_annee_min\" class=\"form-control\">");
 print('</div></div>');
-print('<div class="form-row">');
-print('<div class="form-group col-md-4 col-md-offset-4">');
-print("<label for=\"annee_max\">Annee maximale:</label><input type=text name=annee_max id=annee_max size=4 maxlength=4 value=\"$gi_annee_max\" class=\"form-control\">");
+print('<div class="form-group row">');
+print('<label for="annee_max" class="col-form-label col-md-4">Annee maximale:</label>');
+print('<div class="col-md-4">');
+print("<input type=text name=annee_max id=annee_max size=4 maxlength=4 value=\"$gi_annee_max\" class=\"form-control\">");
 print('</div></div>');
 
 print('<div class="form-row">');
-print('<button type=submit name=Rechercher class="btn btn-primary col-md-4 col-md-offset-4">Afficher les Statistiques</button>');   
+print('<button type=submit name=Rechercher class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-stats"></span> Afficher les Statistiques</button>');   
 print('</div></div></div>');
 print('</form>');
 
