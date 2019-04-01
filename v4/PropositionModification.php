@@ -125,13 +125,13 @@ else
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href='css/styles.css' type='text/css' rel='stylesheet'>
 <link href='css/bootstrap.min.css' rel='stylesheet'>
-<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>
-<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>
-<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
+<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>
+<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>
+<link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
 <meta http-equiv="content-language" content="fr">
-<script src='Commun/jquery-min.js' type='text/javascript'></script>
-<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>
-<script src='Commun/additional-methods.min.js' type='text/javascript'></script>
+<script src='js/jquery-min.js' type='text/javascript'></script>
+<script src='js/jquery.validate.min.js' type='text/javascript'></script>
+<script src='js/additional-methods.min.js' type='text/javascript'></script>
 <script src='js/jquery-ui.min.js' type='text/javascript'></script>
 <script src='js/CalRep.js' type='text/javascript'></script>
 <script src='Commun/iviewer/jquery-ui.min.js' type='text/javascript'></script>
