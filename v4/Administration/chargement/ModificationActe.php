@@ -216,15 +216,15 @@ class ModificationActe extends Acte {
                  default:
                      $st_lib = "Intervenant $i_nb_intv";
                      } 
-                $st_chaine .= "<tr><td class=\"ligne_separation\" colspan=8>$st_lib</td></tr>";
+                $st_chaine .= "<tr><td class=\"table-primary\" colspan=8>$st_lib</td></tr>";
                  break;
              case IDF_PRESENCE_TEMOIN;
                      $i_nb_temoins++;
                      if ($i_nb_temoins == 1)
-                         $st_chaine .= "<tr><td class=\"ligne_separation\" colspan=8>T&eacute;moins</td></tr>";
+                         $st_chaine .= "<tr><td class=\"table-primary\" colspan=8>T&eacute;moins</td></tr>";
                      break;
                  case IDF_PRESENCE_PARRAIN;
-                     $st_chaine .= "<tr><td class=\"ligne_separation\" colspan=8>Parrain/Marraine</td></tr>";
+                     $st_chaine .= "<tr><td class=\"table-primary\" colspan=8>Parrain/Marraine</td></tr>";
                      break;
                      } 
                 if (count($a_liste_personnes) > 0 && $a_liste_personnes[0] -> getIdfTypePresence() == $i_idf_type_presence)
@@ -424,12 +424,12 @@ public function commentaires_demandeur()
 
 {
      $st_chaine = "<fieldset><legend>Commentaires &agrave destination du valideur:</legend>";
-     $st_chaine .= "<div class=\"alignCenter\">Commentaires:<textarea name=cmt_modif rows=4 cols=80>";
+     $st_chaine .= "<div class=\"text-center\">Commentaires:<textarea name=cmt_modif rows=4 cols=80>";
      $st_chaine .= $this -> st_cmt_modif;
      $st_chaine .= "</textarea></div>";
      $st_chaine .= "</fieldset>";
      $st_chaine .= "<fieldset><legend>Commentaires &agrave destination du demandeur:</legend>";
-     $st_chaine .= "<div class=\"alignCenter\">Commentaires:<textarea name=cmt_valideur rows=4 cols=80>";
+     $st_chaine .= "<div class=\"text-center\">Commentaires:<textarea name=cmt_valideur rows=4 cols=80>";
      $st_chaine .= "</textarea></div>";
      $st_chaine .= "</fieldset>";
      return $st_chaine;
@@ -471,7 +471,7 @@ public function formulaire_refus()
      $st_chaine .= "<form id=\"modification_refusee\" action=\"" . $_SERVER['PHP_SELF'] . "\" method=post>\n";
      $st_chaine .= "<input type=\"hidden\" name=\"MODE\" value=\"REFUS\">\n";
      $st_chaine .= sprintf("<input type=\"hidden\" name=\"idf_modification\" value=\"%d\">", $this -> i_idf);
-     $st_chaine .= "<label for=\"motif_refus\">Motif du refus:</Label><textarea name=motif_refus id=motif_refus rows=10 cols=80></textarea></div>\n";
+     $st_chaine .= "<label for=\"motif_refus\">Motif du refus:</Label><textarea name=motif_refus id=motif_refus rows=10 cols=80 class=\"form-control\"></textarea></div>\n";
      $st_chaine .= "<button type=\"submit\" class=\"col-md-4 col-md-offset-4 alert alert-danger\">Refuser la demande</button>\n";
      $st_chaine .= "</form>\n";
      $st_chaine .= "</fieldset>\n";
@@ -516,7 +516,7 @@ public function refuse($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur
      global $gst_url_site;
      $st_requete = sprintf("update modification_acte set idf_valideur=%d,date_validation=now(),statut='R',motif_refus='%s' where idf=%d", $pi_idf_valideur, $pst_motif_refus, $this -> i_idf);
      $this -> connexionBD -> execute_requete($st_requete);
-     print("<div align=center class=\"INFO\"><br>La modification a &eacute;t&eacute; refus&eacute;e</div>");
+     print("<div class=\"alert alert-danger\">La modification a &eacute;t&eacute; refus&eacute;e</div>");
      // print(sprintf("%s %s (%s) =>%s <br>",$pst_prenom_valideur,$pst_nom_valideur,$pst_email_valideur,$this->st_email_demandeur));
     $st_description_acte = $this -> versChaine();
      if (!empty($this -> st_email_demandeur))
