@@ -532,7 +532,7 @@ if ($i_nb_actes>0)
         {
           case 1:
             $st_icone_td = $st_icone_info;
-            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" data-toggle=\"tooltip\" title=\"$st_cote - $releve\" ><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
+            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" data-toggle=\"tooltip\" title=\"$st_cote - $releve\" class=\"popup\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
           break;
           case 2:
             $st_icone_td = $st_icone_index;
