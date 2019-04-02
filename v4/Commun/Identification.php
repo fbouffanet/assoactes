@@ -223,7 +223,7 @@ function affiche_menu_auth($pst_message)
   print('</form>');
   print('</div>'); // fin panel body
   
-  print("<button class=\"form-row col-md-offset-2 col-md-8 btn btn-primary\" id=\"DemandeNouveauMDP\">J'ai oubli&eacute; mon mot de passe</button>");
+  print("<button class=\"form-row col-md-offset-2 col-md-8 btn btn-warning\" id=\"DemandeNouveauMDP\">J'ai oubli&eacute; mon mot de passe</button>");
   print("</div>");
   print("</div>");
   print("</body>");
