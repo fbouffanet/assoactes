@@ -210,7 +210,7 @@ if (empty($gst_mode)||$gst_mode=='ERREUR')
   print("<input type=\"hidden\" name=\"MODE\" value=\"EDITION\">");
   print("<input type=\"hidden\" name=\"idf_acte\" value=\"$gi_idf_acte\">");
   print($gst_permalien);
-  print("<table class=\"table table-bordered table-striped\">");
+  print("<table class=\"table table-bordered\">");
   print($gst_formulaire);
   print("</table>");
   print("<div class=\"text-center\">Si les photos ne sont pas disponibles sur le site des AD, vous pouvez les joindre ci-dessous. Celles-ci doivent peser moins de 2 MO ");
