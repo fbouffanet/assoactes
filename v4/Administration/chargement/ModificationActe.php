@@ -216,15 +216,15 @@ class ModificationActe extends Acte {
                  default:
                      $st_lib = "Intervenant $i_nb_intv";
                      } 
-                $st_chaine .= "<tr><td class=\"table-primary\" colspan=8>$st_lib</td></tr>";
+                $st_chaine .= "<tr class=\"table-primary\"><td  colspan=8>$st_lib</td></tr>";
                  break;
              case IDF_PRESENCE_TEMOIN;
                      $i_nb_temoins++;
                      if ($i_nb_temoins == 1)
-                         $st_chaine .= "<tr><td class=\"table-primary\" colspan=8>T&eacute;moins</td></tr>";
+                         $st_chaine .= "<tr class=\"table-primary\" ><td colspan=8>T&eacute;moins</td></tr>";
                      break;
                  case IDF_PRESENCE_PARRAIN;
-                     $st_chaine .= "<tr><td class=\"table-primary\" colspan=8>Parrain/Marraine</td></tr>";
+                     $st_chaine .= "<tr class=\"table-primary\"><td  colspan=8>Parrain/Marraine</td></tr>";
                      break;
                      } 
                 if (count($a_liste_personnes) > 0 && $a_liste_personnes[0] -> getIdfTypePresence() == $i_idf_type_presence)
@@ -400,7 +400,7 @@ public function visualisation_photos()
 
 
 {
-     $st_chaine = '<div align=center"><div class="wrapper">';
+     $st_chaine = '<div class="text-center"><div class="wrapper">';
      $i = 1;
      foreach ($this -> a_photos as $st_photo)
      {
@@ -424,12 +424,12 @@ public function commentaires_demandeur()
 
 {
      $st_chaine = "<fieldset><legend>Commentaires &agrave destination du valideur:</legend>";
-     $st_chaine .= "<div class=\"text-center\">Commentaires:<textarea name=cmt_modif rows=4 cols=80>";
+     $st_chaine .= "<div class=\"text-center\">Commentaires:<textarea name=cmt_modif rows=4 cols=80 class=\"form-control\">";
      $st_chaine .= $this -> st_cmt_modif;
      $st_chaine .= "</textarea></div>";
      $st_chaine .= "</fieldset>";
      $st_chaine .= "<fieldset><legend>Commentaires &agrave destination du demandeur:</legend>";
-     $st_chaine .= "<div class=\"text-center\">Commentaires:<textarea name=cmt_valideur rows=4 cols=80>";
+     $st_chaine .= "<div class=\"text-center\">Commentaires:<textarea name=cmt_valideur rows=4 cols=80 class=\"form-control\">";
      $st_chaine .= "</textarea></div>";
      $st_chaine .= "</fieldset>";
      return $st_chaine;
@@ -471,8 +471,10 @@ public function formulaire_refus()
      $st_chaine .= "<form id=\"modification_refusee\" action=\"" . $_SERVER['PHP_SELF'] . "\" method=post>\n";
      $st_chaine .= "<input type=\"hidden\" name=\"MODE\" value=\"REFUS\">\n";
      $st_chaine .= sprintf("<input type=\"hidden\" name=\"idf_modification\" value=\"%d\">", $this -> i_idf);
-     $st_chaine .= "<label for=\"motif_refus\">Motif du refus:</Label><textarea name=motif_refus id=motif_refus rows=10 cols=80 class=\"form-control\"></textarea></div>\n";
-     $st_chaine .= "<button type=\"submit\" class=\"col-md-4 col-md-offset-4 alert alert-danger\">Refuser la demande</button>\n";
+	 $st_chaine .= '<div class="lib_erreur">';
+     $st_chaine .= "<label for=\"motif_refus\">Motif du refus:</Label><textarea name=motif_refus id=motif_refus rows=10 cols=80 class=\"form-control \"></textarea>\n";
+	 $st_chaine .= '</div>';
+     $st_chaine .= "<button type=\"submit\" class=\"col-md-4 col-md-offset-4 alert alert-danger\"><span class=\"glyphicon glyphicon-remove\"></span> Refuser la demande</button>\n";
      $st_chaine .= "</form>\n";
      $st_chaine .= "</fieldset>\n";
      return $st_chaine;
@@ -494,7 +496,41 @@ public function validation_formulaire_refus()
      motif_refus: {
         required : "Le motif du refus est obligatoire"
     }
- }
+ },';
+ $st_chaine .='
+ errorElement: "em",
+ errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
+
+			// Add `has-feedback` class to the parent div.form-group
+			// in order to add icons to inputs
+			element.parents( ".lib_erreur" ).addClass( "has-feedback" );
+
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+			}
+			// Add the span element, if doesn\'t exists, and apply the icon classes to it.
+			if ( !element.next( "span" )[ 0 ] ) {
+				$( "<span class=\'glyphicon glyphicon-remove form-control-feedback\'></span>" ).insertAfter( element );
+			}
+		},
+		success: function ( label, element ) {
+			// Add the span element, if doesn\'t exists, and apply the icon classes to it.
+			if ( !$( element ).next( "span" )[ 0 ] ) {
+				$( "<span class=\'glyphicon glyphicon-ok form-control-feedback\'></span>" ).insertAfter( $( element ) );
+			}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+		},
+		unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+		}
 });';
      return "\n$st_chaine\n\n";
      } 
@@ -572,7 +608,7 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
      $stats_patronyme -> maj_stats($go_acte -> getIdfTypeActe());
      $stats_commune -> maj_stats($go_acte -> getIdfTypeActe());
      $this -> connexionBD -> execute_requete("UNLOCK TABLES");
-     print("<div class=\"INFO\"><br>Modification effectu&eacute;e</div><br>\n");
+     print("<div class=\"alert alert-success\">Modification effectu&eacute;e</div>\n");
      $st_requete = sprintf("update modification_acte set idf_valideur=%d,date_validation=now(),statut='A' where idf=%d", $pi_idf_valideur, $this -> i_idf);
      $this -> connexionBD -> execute_requete($st_requete);
      $st_entete = 'MIME-Version: 1.0' . "\r\n";
@@ -614,7 +650,7 @@ public function infos_demandeur()
          {
         $st_chaine = "<fieldset>\n";
          $st_chaine .= "<legend>demandeur</legend>\n";
-         $st_chaine .= sprintf("<div class=\"alignCenter\">%s %s (%s)</div>", $this -> st_nom_demandeur, $this -> st_prenom_demandeur, $this -> st_email_demandeur);
+         $st_chaine .= sprintf("<div class=\"text-center\">%s %s (%s)</div>", $this -> st_nom_demandeur, $this -> st_prenom_demandeur, $this -> st_email_demandeur);
          $st_chaine .= "</fieldset>\n";
          } 
     return $st_chaine;
