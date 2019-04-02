@@ -71,12 +71,13 @@ function affiche_menu($pconnexionBD,$pst_infos,$pi_idf_groupe) {
   
   print('<div class="col-md-2">');
   print('<div class="btn-group-vertical">');
-  print("<button type=\"button\" id=\"creer\" class=\"btn btn-primary\">Cr&eacute;er</button>");
-  print("<button type=\"button\" id=\"modifier\" class=\"btn btn-primary\">Modifier</button>");
-  print("<button type=\"button\" id=\"completer\" class=\"btn btn-primary\">Compl&eacute;ter</button>");
-  print("<button type=\"button\" id=\"supprimer\" class=\"btn btn-danger\">Supprimer</button>");
-  print("<button type=\"button\" id=\"fusionner\" class=\"btn btn-warning\">Fusionner</button>");   
-  print("<button type=\"button\" id=\"exporter\" class=\"btn btn-primary\">Exporter les variantes</button>");
+  print("<button type=\"button\" id=\"creer\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-plus\"></span>  Cr&eacute;er</button>");
+  print("<button type=\"button\" id=\"modifier\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-edit\"></span> Modifier</button>");
+  print("<button type=\"button\" id=\"completer\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-transfer\"></span> Compl&eacute;ter</button>");
+  print("<button type=\"button\" id=\"supprimer\" class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span> Supprimer</button>");
+  print("<button type=\"button\" id=\"fusionner\" class=\"btn btn-warning\"><span class=\"glyphicon glyphicon-arrow-left\"> Fusionner</button>");   
+  print("<button type=\"button\" id=\"vider\" class=\"btn btn-warning\"><span class=\"glyphicon glyphicon-erase\"></span> Vider</button>");
+  print("<button type=\"button\" id=\"exporter\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon glyphicon-download-alt\"> Exporter les variantes</button>");
   $a_prenoms = $pconnexionBD->sql_select("select libelle from prenom order by idf desc limit 20");
   if (count($a_prenoms)>0)
   {     
@@ -217,7 +218,10 @@ $(document).ready(function() {
         success:function(reponse) {
             var nb_reponses=reponse['nb_reponses'];   
             $(cmt_retour).html('');
-            $(cmt_retour).append(nb_reponses+' groupes trouve(s)');
+            if (nb_reponses==1)
+               $(cmt_retour).append('<span class="badge badge-success">'+nb_reponses+'</span> groupes trouve(s)');
+			else
+               $(cmt_retour).append('<span class="badge badge-primary">'+nb_reponses+'</span> groupes trouve(s)');
             if (nb_reponses==1)
             {  
                 var liste_variantes = '';
@@ -422,6 +426,15 @@ $(document).ready(function() {
 			}
 		}		
  });
+ 
+ $( "#vider" ).click(function() {  
+   $('#idf_groupe').val('');
+   $('#variante_a_chercher').val('');
+   $('#variantes').val('');
+   $('#idf_groupe_a_fusionner').val('');
+   $('#variante_a_fusionner').val('');
+   $('#variantes_a_fusionner').val('');
+  });
 
  $( "#exporter" ).click(function() {
 	 $("#mode").val('EXPORT');
