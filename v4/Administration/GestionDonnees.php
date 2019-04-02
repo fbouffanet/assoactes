@@ -1166,8 +1166,8 @@ function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_i
     print('<div class="form-row">');
     print('<div class="col-md-offset-4 col-md-4">');
     print('<div class="btn-group-vertical">');   
-    print('<button type=submit class="btn btn-primary" >Charger le fichier</button>');
-    print('<button type=button class="btn btn-primary" id=export_bmsv>Exporter la commune au format s&eacute;lectionn&eacute;</button>');
+    print('<button type=submit class="btn btn-primary" ><span class="glyphicon glyphicon-upload"> Charger le fichier</button>');
+    print('<button type=button class="btn btn-primary" id=export_bmsv><span class="glyphicon glyphicon-download"> Exporter la commune au format s&eacute;lectionn&eacute;</button>');
     print('</div>');
     print('</div>');
     print('</div>');	
@@ -1184,7 +1184,7 @@ function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_i
       
 	  print("<form id=export_ad  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
     print('<input type="hidden" name="mode" id=\"mode_export\" value="">');
-    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Exporter les index pour les AD</button>');	
+    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-download"> Exporter les index pour les AD</button>');	
     print("</form>");
 	  print("</div></div>");
     
@@ -1223,7 +1223,7 @@ function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_i
     print('<input name="FichRecens" id="FichRecens" type="file" class="custom-file-input">');
     print('</div></div></div>');
 	
-	  print('<input type=submit name=Rechercher value="Charger le recensement" class="btn btn-primary col-md-offset-4 col-md-4">');
+	  print('<button type=submit name=Rechercher class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-upload"> Charger le recensement</button>');
     
 	  print("</form></div></div></div>");
 
