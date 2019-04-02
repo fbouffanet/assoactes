@@ -109,12 +109,13 @@ function affiche_menu($pconnexionBD,$pi_idf_groupe) {
 	print("</div>");
 	print('<div class="col-md-3">');
 	print('<div class="btn-group-vertical">');
-	print("<button type=\"button\" id=\"creer\" class=\"btn btn-primary\">Cr&eacute;er</button>");
-	print("<button type=\"button\" id=\"modifier\" class=\"btn btn-primary\">Modifier</button>");
-	print("<button type=\"button\" id=\"completer\" class=\"btn btn-primary\">Compl&eacute;ter</button>");
-	print("<button type=\"button\" id=\"supprimer\" class=\"btn btn-danger\">Supprimer</button>");
-	print("<button type=\"button\" id=\"fusionner\" class=\"btn btn-warning\">Fusionner</button>");
-	print("<button type=\"button\" id=\"exporter\" class=\"btn btn-primary\">Calculer les variantes restantes</button>");
+	print("<button type=\"button\" id=\"creer\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-plus\"></span> Cr&eacute;er</button>");
+	print("<button type=\"button\" id=\"modifier\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-edit\"></span> Modifier</button>");
+	print("<button type=\"button\" id=\"completer\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-transfer\"></span> Compl&eacute;ter</button>");
+	print("<button type=\"button\" id=\"supprimer\" class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span> Supprimer</button>");
+	print("<button type=\"button\" id=\"fusionner\" class=\"btn btn-warning\"><span class=\"glyphicon glyphicon-arrow-left\"></span> Fusionner</button>");
+   print("<button type=\"button\" id=\"vider\" class=\"btn btn-warning\"><span class=\"glyphicon glyphicon-erase\"></span> Vider</button>");
+	print("<button type=\"button\" id=\"exporter\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon glyphicon-download-alt\"> Calculer les variantes restantes</button>");
 	print("</div>");
    print("</div>");
   
@@ -386,6 +387,7 @@ print('<link rel="shortcut icon" href="images/favicon.ico">');
         return true;
     }
 }, 'Sélectionner au moins une case');
+
   function maj_variantes(term,idf_groupe,majeure,variantes,cmt_retour) {
      $.ajax({
         url:"../ajax/variantes_patro.php",
@@ -398,8 +400,11 @@ print('<link rel="shortcut icon" href="images/favicon.ico">');
         success:function(reponse) {
             var nb_reponses=reponse['nb_reponses'];   
             $(cmt_retour).html('');
-            $(cmt_retour).append(nb_reponses+' groupes trouve(s)');
-			$(cmt_retour).addClass( "has-error" ).removeClass( "has-success" );	
+            if (nb_reponses==1)
+               $(cmt_retour).append('<span class="badge badge-success">'+nb_reponses+'</span> groupes trouve(s)');
+			   else
+               $(cmt_retour).append('<span class="badge badge-primary">'+nb_reponses+'</span> groupes trouve(s)');
+            $(cmt_retour).addClass( "has-error" ).removeClass( "has-success" );	
 				
             if (nb_reponses==1)
             {  
@@ -600,6 +605,17 @@ print('<link rel="shortcut icon" href="images/favicon.ico">');
   $( "#fusionner" ).click(function() {
 	$("#mode").val('FUSIONNER');
 	$("#variantes_patro").submit(); 
+  });
+  
+  $( "#vider" ).click(function() {  
+   $('#idf_groupe').val('');
+   $('#variante_a_chercher').val('');
+   $('#majeure').val('');
+   $('#variantes').val('');
+   $('#idf_groupe_a_fusionner').val('');
+   $('#variante_a_fusionner').val('');
+   $('#majeure_a_fusionner').val('');
+   $('#variantes_a_fusionner').val('');
   });
   
   $( "#menu_completer" ).validate({
