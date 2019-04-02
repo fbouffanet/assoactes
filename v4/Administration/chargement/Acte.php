@@ -772,7 +772,7 @@ public function formulaire_bas_acte()
 
 {
      $st_chaine = "<tr class=\"bg-primary\"><td colspan=8>Commentaires g&eacute;n&eacute;raux sur l'acte</td></tr>";
-     $st_chaine .= sprintf("<tr><td colspan=8><div align=center><textarea name=cmt_acte rows=10 cols=80>%s</textarea></div></td></tr>", str_replace('§', "\n", $this -> st_commentaires));
+     $st_chaine .= sprintf("<tr><td colspan=8><div class=\"text-center\"><textarea name=cmt_acte rows=10 cols=80>%s</textarea></div></td></tr>", str_replace('§', "\n", $this -> st_commentaires));
      return $st_chaine;
      } 
 
