@@ -186,7 +186,7 @@ function affiche_menu_auth($pst_message)
   
   print('<div class="container">');
   print("<div class=\"text-center\"><img src= '$gst_url_site/images/LogoAGC.jpg' class=\"rounded mx-auto d-block\"  alt='Logo AGC'></div>");
-  print('<div class="panel panel-primary col-md-offset-4 col-md-4">');
+  print('<div class="panel panel-primary col-md-offset-2 col-md-8">');
   print('<div class="panel-heading">Authentification requise</div>');
   print('<div class="panel-body">');  
   print('<form method="post" action='.$_SERVER['PHP_SELF'].' id="identification" class="form-horizontal">');
