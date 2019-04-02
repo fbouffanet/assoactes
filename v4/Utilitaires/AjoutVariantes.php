@@ -402,7 +402,7 @@ print('<link rel="shortcut icon" href="images/favicon.ico">');
             $(cmt_retour).html('');
             if (nb_reponses==1)
                $(cmt_retour).append('<span class="badge badge-success">'+nb_reponses+'</span> groupes trouve(s)');
-			   else
+			else
                $(cmt_retour).append('<span class="badge badge-primary">'+nb_reponses+'</span> groupes trouve(s)');
             $(cmt_retour).addClass( "has-error" ).removeClass( "has-success" );	
 				
