@@ -80,7 +80,7 @@ function AfficheSelectionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commu
   print(chaine_select_options($pi_idf_type_acte,$ga_types_nimegue));
   print('</select></div></div>');
   print('<div class="form-row">');   
-  print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Notifier un chargement</button>');
+  print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-send"></span> Notifier un chargement</button>');
   print('</div>');
   print("</form></div></div>"); 
 }
@@ -141,7 +141,7 @@ function AfficheEditionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commune
   print('</script>');
   print("<input type=hidden name=mode value=ENVOI_NOTIFICATION>");
   print('<div class="form-row">'); 
-  print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Envoyer la notification</button>');
+  print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-send"></span> Envoyer la notification</button>');
   print("</div>");
   print ("</form>");
   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
