@@ -117,10 +117,10 @@ if ($i_idf_source==IDF_SOURCE_TD)
         print($st_description_acte);
         print("</textarea>");        
         if(!empty($st_permalien))
-			print("<a href=\"$st_permalien\" target=\"_blank\" class=\"btn btn-primary col-xs-4 col-xs-offset-4\"><span class=\"glyphicon glyphicon-picture\"></span>Lien vers les AD</a></div>");
+			print("<a href=\"$st_permalien\" target=\"_blank\" class=\"btn btn-primary col-xs-4 col-xs-offset-4\"><span class=\"glyphicon glyphicon-picture\"></span> Lien vers les AD</a></div>");
 		print("<form  action=\"PropositionModification.php\" id=\"PropositionModification\" method=\"post\" target=\"_blank\">\n");
 		print("<input type=\"hidden\" name=\"idf_acte\" value=\"$gi_idf_acte\">");
-		print('<button type="submit" class="btn btn-primary col-xs-8 col-xs-offset-2"><span class="glyphicon glyphicon-edit"></span>Compl&eacute;ter en d&eacute;tail le relev&eacute;</button>');	
+		print('<button type="submit" class="btn btn-primary col-xs-8 col-xs-offset-2"><span class="glyphicon glyphicon-edit"></span> Compl&eacute;ter en d&eacute;tail le relev&eacute;</button>');	
       print("</form>");        
     }
     else
@@ -132,7 +132,7 @@ else
 {
   print('<div class="alert alert-danger">Cet acte ne provient pas d\'une table d&eacute;cennale</div>');
 }
-print('<button type="button" id="ferme" class="btn btn-warning col-xs-4 col-xs-offset-4">Fermer la fen&ecirc;tre</button>');
+print('<button type="button" id="ferme" class="btn btn-warning col-xs-4 col-xs-offset-4"><span class="glyphicon glyphicon-remove-sign"></span> Fermer la fen&ecirc;tre</button>');
 print("</div>");
 print("</div>");
 print("</div>");
