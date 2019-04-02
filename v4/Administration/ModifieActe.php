@@ -224,7 +224,7 @@ else
         print("<div class=\"alert alert-success\"><br>Modification effectu&eacute;e</div><br>\n");
         print("<form id=\"export_nimv3\" method=\"POST\" action=\"ExportNimV3.php\">");
         print("<input type=\"hidden\" name=\"idf_acte\" value=\"$gi_idf_acte\">\n");
-		print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4">Export Nimegue V3</button>');
+		print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-download-alt"></span> Export Nimegue V3</button>');
         print("</form>");
         
       break;
@@ -243,6 +243,6 @@ else
   }
 }
 print("</div></div>");  
-print("<a href=\"../Recherches.php\" class=\"btn btn-primary col-md-4 col-md-offset-4\">Retour au menu recherche</a>");
+print("<a href=\"../Recherches.php\" class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-search\"></span> Retour au menu recherche</a>");
 print("</div></body></HTML>\n");
 ?>
