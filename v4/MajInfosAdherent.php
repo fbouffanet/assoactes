@@ -142,7 +142,7 @@ function menu_edition_adherent($pconnexionBD,$padherent,$pi_idf_adh)
    print("</div></div>");
   
    print('<div class="row">');  
-   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Modifier toutes vos informations</button>');   
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-save"></span> Modifier toutes vos informations</button>');   
    print("</div>");
    print('</form>');
    
@@ -155,13 +155,13 @@ function menu_edition_adherent($pconnexionBD,$padherent,$pi_idf_adh)
    print('<input name="MaPhoto" id="MaPhoto" type="file" class="custom-file-input">');
    print('</div>');
    print('<div class="col-md-3">');
-   print('<button type=submit class="btn btn-primary">Charger la photo</button>');
+   print('<button type=submit class="btn btn-primary"><span class="glyphicon glyphicon-upload"> Charger la photo</button>');
    print('</div>'); 
    print('</div>');   
    print('</form>');
    
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print('<button type=submit class="btn btn-warning col-md-offset-4 col-md-4">Supprimer la photo</button>');   
+   print('<button type=submit class="btn btn-warning col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-trash"> Supprimer la photo</button>');   
    print('<input type="hidden" name="mode" value="SUPPRIMER_PHOTO">');
    print('</form>');      
 }
