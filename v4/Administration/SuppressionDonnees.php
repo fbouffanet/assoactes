@@ -215,7 +215,7 @@ switch($gst_mode)
      print('<div class="col-md-4">');
      print('<input type=text name=annee_max id=annee_max size=4 maxlength=4 class="form-control"></div></div>');
      print('<div class="form-row">');   
-     print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Supprimer les actes</button>');
+     print('<button type=submit class="btn btn-danger col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-trash"> Supprimer les actes</button>');
      print('</div>');   
      print('</form></div></div>');
    break;
@@ -234,7 +234,7 @@ switch($gst_mode)
                             print("<input type=\"hidden\" name=\"annee_min\" value=$gi_annee_min >");
                             print("<input type=\"hidden\" name=\"annee_max\" value=$gi_annee_max >");
 							print('<div class="form-row">');   
-                            print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Confirmer la suppression</button>');
+                            print('<button type=submit class="btn btn-danger col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-trash"> Confirmer la suppression</button>');
                             print('</div>');
                             print('</form>');
                             print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
