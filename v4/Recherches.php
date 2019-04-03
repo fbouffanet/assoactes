@@ -623,10 +623,10 @@ print('</select>');
 print('</div></div>');
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-6 lib_erreur"><label for="idf_commune_recherches_communes">Commune/Paroisse</label><select name="idf_commune_recherches_communes" id="idf_commune_recherches_communes" class="js-select-avec-recherche form-control">');
+print('<div class="form-group col-md-6 "><label for="idf_commune_recherches_communes">Commune/Paroisse</label><span class=\"lib_erreur\"><select name="idf_commune_recherches_communes" id="idf_commune_recherches_communes" class="js-select-avec-recherche form-control">');
 $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
 print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
-print('</select></div>');
+print('</select></span></div>');
 
 print('<div class="form-check col-md-3">');
 
@@ -638,15 +638,15 @@ print('<label for="paroisses_rattachees_recherches_communes" class="form-check-l
 print('</div>');
 
 
-print("<div class=\"form-group col-md-3 lib_erreur\"><div class=\"input-group \"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");
+print("<div class=\"form-group col-md-3\"><div class=\"input-group \"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><span class=\"lib_erreur\"><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"></span><span class=\"input-group-addon\">Km</span></div></div>");
 
 
 print('</div>');
 
 print('<div class="form-row col-md-12">'); 
-print('<div class="input-group col-md-offset-4 col-md-4 lib_erreur">');
-print("<span class=\"input-group-addon\">Ann&eacute;es de</span><input type=text name=annee_min id=\"annee_min_recherches_communes\" size=4 value=\"$gi_annee_min\" class=\"form-control\">");
-print("<span class=\"input-group-addon\">&agrave;</span><input type=text name=annee_max size=4 id=\"annee_max_recherches_communes\" value=\"$gi_annee_max\" class=\"form-control \">");
+print('<div class="input-group col-md-offset-4 col-md-4 ">');
+print("<span class=\"input-group-addon\">Ann&eacute;es de</span><div class=\"lib_erreur\"><input type=text name=annee_min id=\"annee_min_recherches_communes\" size=4 value=\"$gi_annee_min\" class=\"form-control\"></div>");
+print("<span class=\"input-group-addon\">&agrave;</span><div class=\"lib_erreur\"><input type=text name=annee_max size=4 id=\"annee_max_recherches_communes\" value=\"$gi_annee_max\" class=\"form-control \"></div>");
 print('</div>');
 
 print('</div>');
