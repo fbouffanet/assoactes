@@ -191,7 +191,7 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
    print('<input name="commune_a_chercher" id="commune_a_chercher" value="" size="25" maxlength="25" type="text" class="form-control col-md-2" aria-describedby="aideCom">');
    print('<small id="aideCom" class="form-text text-muted">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: saint*)</small>'); 
    print('</div>');
-   print('<button type=submit class="btn btn-primary col-md-2">Chercher</button>');
+   print('<button type=submit class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-search"></span> Chercher</button>');
    
    $a_liste_documents = $pconnexionBD->sql_select_multiple($st_requete);
    print("</form><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"suppression_documents\">"); 
@@ -214,11 +214,11 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
    }
    else
      print('<div class="alert alert-danger">Pas de documents</div>');
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Supprimer les documents s&eacute;lectionn&eacute;s</button>');    
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-trash"></span> Supprimer les documents s&eacute;lectionn&eacute;s</button>');    
    print("</form>");  
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
    print("<input type=hidden name=mode value=MENU_AJOUTER>");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Ajouter un document</button>');     
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-plus"></span>  Ajouter un document</button>');     
    print('</form>');
 }
 
@@ -352,8 +352,8 @@ function menu_modifier($pconnexionBD,$pi_idf,$pa_communes)
    print("<input type=hidden name=idf value=$pi_idf>");
    menu_edition($i_id_commune,$i_type_acte,$i_nature_acte,$st_fourchette,$i_support,$i_collection,$i_quantite,$st_auteur,$pa_communes);   
    print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');   
-   print('<button type=submit class="btn btn-primary">Modifier</button>'); 
-   print('<button type=button id=annuler class="btn btn-primary">Annuler</button>');
+   print('<button type=submit class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Modifier</button>'); 
+   print('<button type=button id=annuler class="btn btn-primary"><span class="glyphicon glyphicon-remove"></span> Annuler</button>');
    print('</div>');   
    print('</form>');
 }
@@ -367,8 +367,8 @@ function menu_ajouter($pa_communes)
    print("<input type=hidden name=mode value=AJOUTER>");
    menu_edition(0,0,0,'',0,0,0,'',$pa_communes);
    print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
-   print('<button type=submit class="btn btn-primary">Ajouter</button>'); 
-   print('<button type=button id=annuler class="btn btn-primary">Annuler</button>');
+   print('<button type=submit class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Ajouter</button>'); 
+   print('<button type=button id=annuler class="btn btn-primary"><span class="glyphicon glyphicon-remove"></span> Annuler</button>');
    print('</div>');
    print('</form>');
 }
