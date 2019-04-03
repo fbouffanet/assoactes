@@ -69,7 +69,7 @@ function affiche_menu($pconnexionBD,$pst_infos,$pi_idf_groupe) {
   
   print("</div>"); // fin premier tiers
   
-  print('<div class="col-md-2">');
+  print('<div class="col-md-3">');
   print('<div class="btn-group-vertical">');
   print("<button type=\"button\" id=\"creer\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-plus\"></span>  Cr&eacute;er</button>");
   print("<button type=\"button\" id=\"modifier\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-edit\"></span> Modifier</button>");
@@ -92,11 +92,11 @@ function affiche_menu($pconnexionBD,$pst_infos,$pi_idf_groupe) {
   print("</div>");
   print("</div>"); // fin second tiers
   
-  print('<div class="col-md-5">');
+  print('<div class="col-md-4">');
   print("<div id=\"cmt_retour_a_fusionner\" ></div>");
   print("<div id=\"cmt_retour_a_fusionner\" ></div>");
   
-  print('<label for="variante_a_fusionner" class="col-form-label col-md-2">Variante &agrave; chercher:</label>');
+  print('<label for="variante_a_fusionner" class="col-form-label col-md-2">Variante &agrave; chercher (fusion):</label>');
   print('<div class="col-md-10">');
   print("<input type=text name=\"variante_a_fusionner\" id=\"variante_a_fusionner\" value=\"\" size=30 class=\"form-control\">");
   print('</div>');
