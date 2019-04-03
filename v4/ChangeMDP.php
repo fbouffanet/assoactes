@@ -94,7 +94,7 @@ $(document).ready(function() {
 
 	// Add `has-feedback` class to the parent div.form-group
 	// in order to add icons to inputs
-	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+	element.parents( ".lib_erreur" ).addClass( "has-feedback" );
 
 	if ( element.prop( "type" ) === "checkbox" ) {
 		error.insertAfter( element.parent( "label" ) );
@@ -114,11 +114,11 @@ $(document).ready(function() {
 		}
 	},
 	highlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
 		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
 	},
 	unhighlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
 		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 	}  
   });
@@ -145,20 +145,38 @@ function menu_change_mdp($pconnexionBD,$padherent,$pi_idf_adh)
    print('<div class="form-group row">');
    print("<label for=\"mdp_courant\" class=\"form-col-label col-md-4 col-md-offset-2\">Votre mot de passe courant</label>");
    print('<div class="col-md-4">');
+   print('<div class="col-md-6">');
+   print('<div class="input-group">');
+   print('<span class="input-group-addon">');
+   print('<span class="glyphicon glyphicon-lock"></span>');
+   print('</span>');
+   print('<div class="lib_erreur">');
    print("<input type=\"password\" id=\"mdp_courant\" name=\"mdp_courant\" maxlength=12 class=\"form-control\"/>");
-   print('</div></div>');
+   print('</div></div></div></div>');
    print('<div class="form-group row">');
    print("<label for=\"nouveau_mdp\" class=\"form-col-label col-md-4 col-md-offset-2\">Votre nouveau mot de passe</label>");
    print('<div class="col-md-4">');
+   print('<div class="col-md-6">');
+   print('<div class="input-group">');
+   print('<span class="input-group-addon">');
+   print('<span class="glyphicon glyphicon-lock"></span>');
+   print('</span>');
+   print('<div class="lib_erreur">');
    print("<input type=\"password\" id=\"nouveau_mdp\" name=\"nouveau_mdp\" maxlength=12 class=\"form-control\" >");
-   print('</div></div>');
+   print('</div></div></div></div>');
    print('<div class="form-group row">');
    print("<label for=\"nouveau_mdp2\" class=\"form-col-label col-md-4 col-md-offset-2\">Retapez votre nouveau mot de passe</label>");
-    print('<div class="col-md-4">');
+   print('<div class="col-md-4">');
+   print('<div class="col-md-6">');
+   print('<div class="input-group">');
+   print('<span class="input-group-addon lib_erreur">');
+   print('<span class="glyphicon glyphicon-lock"></span>');
+   print('</span>');
+   print('<div class="lib_erreur">');
    print("<input type=\"password\" id=\"nouveau_mdp2\"  name=\"nouveau_mdp2\" maxlength=12 class=\"form-control\"/></td></tr>");
-   print('</div></div>');
+   print('</div></div></div></div>');
    print('<div class="form-row">');
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Modifier votre mot de passe</button>');   
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-ok"></span> Modifier votre mot de passe</button>');   
    print('</div></div>');   
    print('</form></div>');         
 }
