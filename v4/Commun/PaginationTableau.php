@@ -192,7 +192,7 @@ class PaginationTableau {
                print("<td>&nbsp;</td>");   
          }
                   
-         print("<td><button class=\"btn btn-primary btn-block\" type=button id=\"bouton$idf_element\" onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"><span class=\"glyphicon glyphicon-edit\"></span> Modifier</button></td>");
+		 print(sprintf("<td><a class=\"btn btn-primary btn-block\" type=button id=\"bouton%d\" href=\"%s?mod=%d\" role=\"button\"><span class=\"glyphicon glyphicon-edit\"></span> Modifier</a></td>",$idf_element,$_SERVER['PHP_SELF'],$idf_element));
          print("<td><input type=checkbox name=\"supp[]\" id=\"$st_nom_col1\" value=$idf_element class=\"form-check-input\" ></td>"); 
          print("</tr>\n");
          $i++;
