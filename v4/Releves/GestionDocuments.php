@@ -203,7 +203,7 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
       foreach ($a_liste_documents as $a_document)
       {
          list($i_idf_reg,$st_commune,$st_fourchette,$st_nature,$st_support,$st_collection)= $a_document;
-         $a_lignes[] = array($st_commune,$st_fourchette,$ga_tbl_nature[$st_nature],$ga_tbl_support[$st_support],$ga_tbl_collection[$st_collection],"<input type=button  value=Modifier onClick=\"document.location.href='".$_SERVER['PHP_SELF']."?mod=$i_idf_reg'\" class=\"btn btn-primary\">","<input type=checkbox name=\"supp[]\" id=\"$st_commune-$st_fourchette-$ga_tbl_nature[$st_nature]-$ga_tbl_support[$st_support]-$ga_tbl_collection[$st_collection]\" value=$i_idf_reg>");
+         $a_lignes[] = array($st_commune,$st_fourchette,$ga_tbl_nature[$st_nature],$ga_tbl_support[$st_support],$ga_tbl_collection[$st_collection],sprintf("<a type=button href=\"%s?mod=%d\" class=\"btn btn-primary\" role=\"button\"><span class=\"glyphicon glyphicon-edit\"></span> Modifier</a>",$_SERVER['PHP_SELF'],$i_idf_reg),"<input type=checkbox name=\"supp[]\" id=\"$st_commune-$st_fourchette-$ga_tbl_nature[$st_nature]-$ga_tbl_support[$st_support]-$ga_tbl_collection[$st_collection]\" value=$i_idf_reg>");
       } 
 	  
       $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_documents,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Commune','Fourchette','Nature','Support','Collection','Modifier','Supprimer'));
