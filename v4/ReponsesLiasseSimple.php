@@ -367,8 +367,8 @@ else {
 }
 
 print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
-print('<button type="button" id="retour_recherche" class="btn btn-primary">Revenir &agrave; la page de recherche</button>');
-print('<button type="button" id="nouvelle_recherche" class="btn btn-warning">Commencer une nouvelle recherche</button>');
+print('<button type="button" id="retour_recherche" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Revenir &agrave; la page de recherche</button>');
+print('<button type="button" id="nouvelle_recherche" class="btn btn-warning"><span class="glyphicon glyphicon-erase"></span>  Commencer une nouvelle recherche</button>');
 print('</div>');
 print ("</form>");
 print("</div></body></html>");
