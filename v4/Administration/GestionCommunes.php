@@ -362,8 +362,8 @@ function menu_modifier($pconnexionBD,$pi_idf_commune,$pa_cantons)
    print("<input type=hidden name=idf_commune value=$pi_idf_commune>");
    menu_edition($st_commune_acte,$st_code_insee,$i_num_paroisse,$st_latitude,$st_longitude,$i_idf_canton,$pa_cantons,$i_debut_communale,$i_debut_greffe,$st_protestants,$st_sans_rp,$st_points_svg,$st_bureau_controle,$st_date_min_controle,$st_date_max_controle);
    print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
-   print('<button type=button class="btn btn-primary" id="modifier"><span class="glyphicon glyphicon-ok"> Modifier</button>');
-   print('<button type=button class="btn btn-primary" id="annuler"><span class="glyphicon glyphicon-remove">Annuler</button>');
+   print('<button type=button class="btn btn-primary" id="modifier"><span class="glyphicon glyphicon-ok"></span> Modifier</button>');
+   print('<button type=button class="btn btn-primary" id="annuler"><span class="glyphicon glyphicon-remove"></span> Annuler</button>');
    print('</div>');
    print('</form>');
 }
