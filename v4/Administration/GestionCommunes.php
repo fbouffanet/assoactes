@@ -219,16 +219,16 @@ function menu_liste($pconnexionBD)
    else
    print('<div class="alert alert-danger">Pas de communes</div>');
    print("<input type=hidden name=mode value=\"SUPPRIMER\">");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Supprimer les communes s&eacute;lectionn&eacute;es</button>');   
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-trash"></span> Supprimer les communes s&eacute;lectionn&eacute;es</button>');   
    print("</form>");  
    
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
    print("<input type=hidden name=mode value=\"MENU_AJOUTER\">");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Ajouter une commune</button>');      
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-plus"></span> Ajouter une commune</button>');      
    print('</form>');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
    print("<input type=hidden name=mode value=\"EXPORTER\">");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Exporter les communes</button>');    
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-download-alt"></span> Exporter les communes</button>');    
    print('</form></div></div>');  
 
 }
@@ -362,8 +362,8 @@ function menu_modifier($pconnexionBD,$pi_idf_commune,$pa_cantons)
    print("<input type=hidden name=idf_commune value=$pi_idf_commune>");
    menu_edition($st_commune_acte,$st_code_insee,$i_num_paroisse,$st_latitude,$st_longitude,$i_idf_canton,$pa_cantons,$i_debut_communale,$i_debut_greffe,$st_protestants,$st_sans_rp,$st_points_svg,$st_bureau_controle,$st_date_min_controle,$st_date_max_controle);
    print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
-   print('<button type=button class="btn btn-primary" id="modifier">Modifier</button>');
-   print('<button type=button class="btn btn-primary" id="annuler">Annuler</button>');
+   print('<button type=button class="btn btn-primary" id="modifier"><span class="glyphicon glyphicon-ok"> Modifier</button>');
+   print('<button type=button class="btn btn-primary" id="annuler"><span class="glyphicon glyphicon-remove">Annuler</button>');
    print('</div>');
    print('</form>');
 }
@@ -377,8 +377,8 @@ function menu_ajouter($pa_cantons)
    print("<input type=hidden name=mode id=mode value=\"AJOUTER\">");
    menu_edition('','','','','',0,$pa_cantons,'','','N','N','','N','','');
    print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
-   print('<button type=button class="btn btn-primary" id="ajouter">Ajouter</button>');
-   print('<button type=button class="btn btn-primary" id="annuler">Annuler</button>');
+   print('<button type=button class="btn btn-primary" id="ajouter"><span class="glyphicon glyphicon-ok"> Ajouter</button>');
+   print('<button type=button class="btn btn-primary" id="annuler"><span class="glyphicon glyphicon-remove"> Annuler</button>');
    print('</div>');
    print('</form>');
 }
