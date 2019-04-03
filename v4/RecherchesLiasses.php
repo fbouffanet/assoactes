@@ -30,6 +30,15 @@ print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 $(document).ready(function() {
 $(".js-select-avec-recherche").select2();
 
+$.validator.addMethod('plusGrand', function(value, element, param) {
+        if (this.optional(element)) return true;
+        var annee_max = $(param).val();
+        if (jQuery.trim(annee_max).length == 0) return true;
+        var i = parseInt(value);
+        var j = parseInt(annee_max);
+        return i >= j;
+    }, "l'année maximale doit être plus grande que l'année minimale");
+
 jQuery.validator.addMethod(
     "notaire_sans_notaire",
     function(value, element) {
@@ -79,10 +88,16 @@ $("#recherche_liasses").validate({
 		},
 		annee_min: {
 			integer:true,
+			minlength: 4
 		},
 		annee_max: {
 			integer:true,
+			minlength: 4,
+			plusGrand: '#annee_min'
 		},
+		rayon: {
+			integer:true
+		},	
 		sans_periode: {
 			annee_min_sans_periode: true,
 			annee_max_sans_periode: true
@@ -100,11 +115,16 @@ $("#recherche_liasses").validate({
 		  integer: "La cote doit &ecirc;tre un entier"
 	  },
 	  annee_min: {
-		  integer: "L'ann&eacute;e doit &ecirc;tre un entier",      
+		  integer: "L'ann&eacute;e doit &ecirc;tre un entier",
+          minlength: "L'ann&eacute;e doit comporter 4 chiffes",		  
 	  },
 	  annee_max: {
-		  integer: "L'ann&eacute;e doit &ecirc;tre un entier",
-        
+		  integer: "L'ann&eacute;e doit &ecirc;tre un entier" ,
+		  minlength: "L'ann&eacute;e doit comporter 4 chiffes",
+		  plusGrand: "L'ann&eacute;e max doit &ecirc;tre plus grande que l'ann&eacute;e min"
+	  },
+	  rayon: {
+		  integer: "Le rayon doit &ecirc;tre un entier" 
 	  },
 	  sans_periode: {
         annee_min_sans_periode: "Ne pas cocher 'liasses sans date' si vous saisissez une ann&eacute;e",
@@ -121,7 +141,7 @@ $("#recherche_liasses").validate({
 
 	// Add `has-feedback` class to the parent div.form-group
 	// in order to add icons to inputs
-	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+	element.parents( ".lib_erreur" ).addClass( "has-feedback" );
 
 	if ( element.prop( "type" ) === "checkbox" ) {
 		error.insertAfter( element.parent( "label" ) );
@@ -141,11 +161,11 @@ $("#recherche_liasses").validate({
 		}
 	},
 	highlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
 		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
 	},
 	unhighlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
 		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 	}
 });
@@ -249,7 +269,7 @@ $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
 print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
 print('</select></div>');
 
-print("<div class=\"form-group col-md-4\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");
+print("<div class=\"form-group col-md-4\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><div class=\"lib_erreur\"><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"></div><span class=\"input-group-addon\">Km</span></div></div>");
 
 print('<div class="form-check col-md-2">');
 if ($gst_paroisses_rattachees=='')
@@ -262,11 +282,11 @@ print('</div>');
 print('</div>');
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-2 col-md-offset-2">');
+print('<div class="form-group col-md-2 col-md-offset-2 lib_erreur">');
 print('<label for="annee_min" class="col-form-label">Ann&eacute;es de </label>');
 print("<input type=text name=annee_min id=annee_min size=4 value=\"$gi_annee_min\" class=\"form-control\">");
 print('</div>');
-print('<div class="form-group col-md-2 col-md-offset-2">');
+print('<div class="form-group col-md-2 col-md-offset-2 lib_erreur">');
 print('<label for="annee_max" class="col-form-label">&agrave;</label>');
 print("<input type=text name=annee_max id=annee_max size =4 value=\"$gi_annee_max\" class=\"form-control\">");
 print('</div>');
@@ -302,12 +322,12 @@ print('</div>');
 print('</div>');
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-4 col-md-offset-2">');
+print('<div class="form-group col-md-4 col-md-offset-2 lib_erreur">');
 print('<label for="cote_debut" class="col-form-label">Premi&egrave;re cote:</label>');
 print("<input type=text name=cote_debut id=cote_debut size=5 maxlength=5 value=\"$gst_cote_debut\" class=\"form-control\">");
 print('</div>');
 
-print('<div class="form-group col-md-4">');
+print('<div class="form-group col-md-4 lib_erreur">');
 print('<label for="cote_fin" class="col-form-label">Derni&egrave;re cote:</label>');
 print("<input type=text name=cote_fin id=cote_fin size=15 maxlength=30 value=\"$gst_cote_fin\" class=\"form-control\">");
 print('</div>');
