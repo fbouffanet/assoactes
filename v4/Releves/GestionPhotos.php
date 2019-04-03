@@ -230,7 +230,7 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
    print('<input name="commune_a_chercher" id="commune_a_chercher" value="" size="25" maxlength="25" type="Text" class="form-control col-md-2" aria-describedby="aideCom">');
    print('<small id="aideCom" class="form-text text-muted">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: saint*)</small>');
    print('</div>');
-   print('<button type=submit class="btn btn-primary col-md-2">Chercher</button>');
+   print('<button type=submit class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-search"></span> Chercher</button>');
    
    print("</form><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"suppression_photos\">"); 
    $a_liste_photos = $pconnexionBD->liste_valeur_par_clef($st_requete);
@@ -248,11 +248,11 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
      print('<div class="alert alert-danger">Pas de photos</div>');
     
    print("<input type=hidden name=mode value=SUPPRIMER>");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Supprimer les photos s&eacute;lectionn&eacute;es</button>'); 
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-remove"></span> Supprimer les photos s&eacute;lectionn&eacute;es</button>'); 
    print("</form>");  
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
    print("<input type=hidden name=mode value=MENU_AJOUTER>");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Ajouter une photo</button>');     
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-plus"></span> Ajouter une photo</button>');     
    print('</form>');
    print("<form enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
    print("<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\">"); 
@@ -264,7 +264,7 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
    print('<input name="Photos" id="Photos" type="file" class="custom-file-input col-md-5">');
    print('</div>');
    print('</div>');    
-   print('<button type=submit class="btn btn-primary col-md-2">Charger les photos</button>'); 
+   print('<button type=submit class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-upload"></span> Charger les photos</button>'); 
    print('</div>');
    print('</form>');
 }
@@ -370,8 +370,8 @@ function menu_modifier($pconnexionBD,$pi_idf_photo,$pa_communes,$pa_collections,
    print("<input type=hidden name=idf_photo value=$pi_idf_photo>");
    menu_edition($i_id_commune,$st_fourchette,$i_id_collection,$i_nbr_photos,$i_poids,$id_auteur,$crel_pap,$crel_base,$crel_td,$dt_prise,$pa_communes,$pa_collections,$pa_adherents);
    print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');   
-   print('<button type=submit class="btn btn-primary">Modifier</button>'); 
-   print('<button type=button id=annuler class="btn btn-primary">Annuler</button>');
+   print('<button type=submit class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Modifier</button>'); 
+   print('<button type=button id=annuler class="btn btn-primary"><span class="glyphicon glyphicon-remove"></span> Annuler</button>');
    print('</div>');   
    print('</form>');
 }
@@ -387,8 +387,8 @@ function menu_ajouter($pa_communes,$pa_collections,$pa_adherents)
    print("<input type=hidden name=mode value=AJOUTER>");
    menu_edition(0,'',0,'','',0,'N','N','N','',$pa_communes,$pa_collections,$pa_adherents);
    print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
-   print('<button type=submit class="btn btn-primary">Ajouter</button>'); 
-   print('<button type=button id=annuler class="btn btn-primary">Annuler</button>');
+   print('<button type=submit class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Ajouter</button>'); 
+   print('<button type=button id=annuler class="btn btn-primary"><span class="glyphicon glyphicon-remove"></span> Annuler</button>');
    print('</div>');
    print('</form>');
 }
