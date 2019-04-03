@@ -232,7 +232,7 @@ class PaginationTableau {
                print("<td>&nbsp;</td>");   
          }
                   
-         print("<td><input type=button id=\"bouton$idf_element\" class=\"btn btn-primary btn-block\" value=Modifier onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
+         print("<td><input type=button id=\"bouton$idf_element\" class=\"btn btn-primary btn-block\" value=\"Modifier\" onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
          print("<td><input type=button id=\"boutonR$idf_element\" class=\"btn btn-primary btn-block\" value=Fusionner onClick=\"document.location.href='$this->st_nom_script?remp=$idf_element'\"></td>");
          print("</tr>\n");
          $i++;
@@ -241,46 +241,7 @@ class PaginationTableau {
       print("</table>");
       // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
       print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
-   }   
-    
-   /**
-   * Affiche le contenu du tableau correspondant spéciale pour les sondages
-   * @param string $st_type type de question  
-   */       
-   public function affiche_tableau_edition_sondage($type) {
-      $st_requete = $this->st_requete;
-      $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
-      $st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
-      print("<table class=\"table table-bordered table-striped\">");
-      print("<thead><tr>");
-      foreach ($this->a_entete as $st_cell_entete) {
-         print("<th>$st_cell_entete</th>");
-      }
-      print("</tr></thead>\n");
-      $a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
-      $i=0;
-	  print('<tbody>');
-      foreach ($a_lignes as $a_ligne) {
-         $idf_element = array_shift($a_ligne);
-         print("<tr>");
-         $st_nom_col1 = $a_ligne[0];
-         foreach ($a_ligne as $st_nom_element)
-         {
-            if ($st_nom_element!= '')
-               print("<td>$st_nom_element</td>");
-            else
-               print("<td>&nbsp;</td>");   
-         }
-                  
-         print("<td><input class=\"btn btn-primary btn-block\" type=button id=\"$idf_element\" value=Réponse onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element&type=$st_type'\"></td>"); 
-         print("</tr>\n");
-         $i++;
-      }
-      print('</tbody>');      
-      print("</table>");
-      // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
-      print("<input type=hidden name=$this->st_param_numpage value=\"\"><br>"); 
-   }      
+   }     
    
    /**
     * Met ª jour le num‚ro de page courante   
