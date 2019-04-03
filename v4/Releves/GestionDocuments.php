@@ -199,17 +199,11 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
    $i_nb_documents = count($a_liste_documents);
    if ($i_nb_documents!=0)
    {  
-      // construction du tableau 
-      foreach ($a_liste_documents as $a_document)
-      {
-         list($i_idf_reg,$st_commune,$st_fourchette,$st_nature,$st_support,$st_collection)= $a_document;
-         $a_lignes[] = array($st_commune,$st_fourchette,$ga_tbl_nature[$st_nature],$ga_tbl_support[$st_support],$ga_tbl_collection[$st_collection],sprintf("<a type=button href=\"%s?mod=%d\" class=\"btn btn-primary\" role=\"button\"><span class=\"glyphicon glyphicon-edit\"></span> Modifier</a>",$_SERVER['PHP_SELF'],$i_idf_reg),"<input type=checkbox name=\"supp[]\" id=\"$st_commune-$st_fourchette-$ga_tbl_nature[$st_nature]-$ga_tbl_support[$st_support]-$ga_tbl_collection[$st_collection]\" value=$i_idf_reg>");
-      } 
-	  
       $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_documents,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Commune','Fourchette','Nature','Support','Collection','Modifier','Supprimer'));
+	  $pagination->init_param_bd($pconnexionBD,$st_requete);
       $pagination->init_page_cour($gi_num_page_cour);
       $pagination->affiche_entete_liens_navigation();
-      $pagination->affiche_tableau_simple($a_lignes);
+	  $pagination->affiche_tableau_edition();
       $pagination->affiche_entete_liens_navigation();      
    }
    else
