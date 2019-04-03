@@ -96,7 +96,7 @@ function affiche_stats_cumulees($pconnexionBD)
   print('</div></div>');
   print("<form action=".$_SERVER['PHP_SELF']." method=post>");
   print("<input type=hidden name=mode value=\"FORMULAIRE\">");
-  print("<input type=submit value=\"Retour vers le menu\" class=\"btn btn-primary col-md-4 col-md-offset-4\">");
+  print("<button type=submit class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-home\"></span> Retour vers le menu</button>");
   print("</form>");
   print('</div>');
 }
@@ -122,7 +122,7 @@ function affiche_formulaire($pconnexionBD) {
   print('<div class="panel-body">');    
   print("<form action=".$_SERVER['PHP_SELF']." method=post>");
   print("<input type=hidden name=mode value=\"EXPORT_HISTORIQUE\">");
-  print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Exporter au format CSV l\'historique de tous les cantons</button></div>');
+  print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"></span> Exporter au format CSV l\'historique de tous les cantons</button></div>');
   print("</form></div></div>");
   
   print("<form action=".$_SERVER['PHP_SELF']." method=post>");
@@ -130,7 +130,7 @@ function affiche_formulaire($pconnexionBD) {
   print('<div class="panel-heading">Statistiques cumul&eacute;es</div>');
   print('<div class="panel-body">');
   print("<input type=hidden name=mode value=\"STATS_CUMULEES\">");
-  print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Afficher les statistiques cumul&eacute;es</button></div>');
+  print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-stats"> Afficher les statistiques cumul&eacute;es</button></div>');
   print("</form></div></div>");
    
   print("<form id=stats_canton action=".$_SERVER['PHP_SELF']." method=post>");
@@ -147,7 +147,7 @@ function affiche_formulaire($pconnexionBD) {
   print('</select></div>');
   print("<input type=hidden name=mode value=\"STATS_PAROISSES\">");
   print('<div class="form-row col-md-12">');
-  print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Afficher les statistiques</button></div>'); 
+  print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-picture"></span> Afficher les statistiques</button></div>'); 
   print('</div>');
   print("</form></div></div>");
   
