@@ -126,7 +126,7 @@ function Affiche_Stats()
   print(sprintf("<td>Soit %d adh&eacute;sions pour %d euros </td>",$gi_nb_tot_adhesions,$gi_tot_adhesions)); 
 	print("</tr>");
 	print("</table>");
-	print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Retour</button></div>');   
+	print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-home"></span> Retour</button></div>');   
   print("<input type=hidden name=mode value=\"DEPART\">");
   print("</form></div></div>");	
 }
@@ -141,13 +141,15 @@ function Saisie_annee()
    print('<div class="panel panel-primary">');
    print('<div class="panel-heading">Statistiques du nombre et montant des adh&eacute;sions</div>');
    print('<div class="panel-body">');
-   print("<form action=\"".$_SERVER['PHP_SELF']."\" class=\"form-inline\" method=\"post\">"); 
+   print("<form action=\"".$_SERVER['PHP_SELF']."\"  method=\"post\">"); 
    print('<div class="form-row col-md-12">'); 
-   print("<div class=\"form-group col-md-2\"><label for=\"annee\">Ann&eacute;e</label><select name=annee id=anneee class=\"form-control\">");
+   print("<label for=\"annee\" class=\"col-form-label col-md-2\">Ann&eacute;e</label>");
+   print('<div class="col-md-8">');
+   print('<div class="input-group"><select name=annee id=anneee class="form-control">');
    print chaine_select_options_simple('',$a_annees);
-   print("</select></div>"); 
-   print('<button type="submit" class="btn btn-primary col-md-2">Valider</button>');   
-   print('</div>');
+   print("</select>"); 
+   print('<span class="input-group-btn"><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-stats"></span> Valider</button>');   
+   print('</span></div></div></div>');
    print("<input type=hidden name=mode value=\"AFFICHE\">");
    print("</form>");
    print("</div></div>");
