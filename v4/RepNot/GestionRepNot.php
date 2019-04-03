@@ -396,21 +396,21 @@ function menu_liste($pconnexionBD)
 		print("<div class=\"alert alert-danger\">Pas de r&eacute;pertoires</div>\n");
 	print("<input type=hidden name=mode value=\"SUPPRIMER\">");
 	print('<div class="form-group row">');   
-    print('<button type=submit class="btn btn-danger col-md-offset-4 col-md-4">Supprimer les r&eacute;pertoires selectionn&eacute;s</button>');
+    print('<button type=submit class="btn btn-danger col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-trash"></span> Supprimer les r&eacute;pertoires selectionn&eacute;s</button>');
 	print('</div>');
 	print("</form>");
 
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
 	print("<input type=hidden name=mode value=\"MENU_AJOUTER\">");
 	print('<div class="form-group row">');
-    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Ajouter un r&eacute;pertoire </button>');
+    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-plus"></span> Ajouter un r&eacute;pertoire </button>');
     print('</div>');	
  	print('</form>');
 	
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print('<input type="hidden" name="mode" value="CALCUL_VARIANTES">');
 	print('<div class="form-group row">');
-    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">(Re)Calculer les variantes</button>');
+    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-signal"></span> (Re)Calculer les variantes</button>');
     print('</div>');
 	print('</form>');
   
@@ -429,7 +429,7 @@ function menu_liste($pconnexionBD)
 	print("</select></div>"); 
 	print('<input type="hidden" name="mode" value="EXPORT" />');
 	print('<div class="col-md-6">');
-	print('<button type="submit" class="btn btn-primary">Exporter le r&eacute;pertoire</button>');
+	print('<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"></span> Exporter le r&eacute;pertoire</button>');
 	print("</div>");
 	print("</div></div>"); 
 	
@@ -453,7 +453,7 @@ function menu_liste($pconnexionBD)
 	print('<div class="col-md-4">');
 	print('<label for="RepNotFich" class="custom-file-label">Fichier:</label><input name="RepNotFich" type="file" id="RepNotFich" class="custom-file-input"></div>');
 	print('<div class="col-md-4">');
-	print('<button type=submit class="btn btn-primary">Charger le fichier r&eacute;pertoire</button></div></div>');
+	print('<button type=submit class="btn btn-primary"><span class="glyphicon glyphicon-upload"></span> Charger le fichier r&eacute;pertoire</button></div></div>');
 	print('</form></div></div>');
 	
 	print('<div class="panel panel-info">');
@@ -490,7 +490,7 @@ function menu_liste($pconnexionBD)
     print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"exporter_liste\">");
     print("<input type=hidden name=mode value=\"LISTE_REP\">");
 	print('<div class="form-row col-md-12">');
-    print("<button type=submit class=\"col-md-offset-4 col-md-4 btn btn-primary\">Exporter la liste des notaires</button>");
+    print("<button type=submit class=\"col-md-offset-4 col-md-4 btn btn-primary\"><span class=\"glyphicon glyphicon-download-alt\"></span> Exporter la liste des notaires</button>");
     print('</div>');
 	print('</form></div></div>');
   
@@ -567,10 +567,10 @@ function menu_modifier($pconnexionBD,$pi_idf_repertoire,$pa_communes,$pa_releveu
    print("<input type=hidden name=idf_repertoire value=$pi_idf_repertoire>");
    menu_edition($pa_communes,$pa_releveurs,$pi_idf_repertoire,$st_nom_notaire,$st_cote,$idf_commune,$idf_releveur,$c_publication);
    print('<div class="form-row col-md-12">');
-   print("<button type=submit class=\"col-md-offset-4 col-md-4 btn btn-primary\">Modifier</button>");
+   print("<button type=submit class=\"col-md-offset-4 col-md-4 btn btn-primary\"><span class=\"glyphicon glyphicon-ok\"></span> Modifier</button>");
    print('</div>');
    print('<div class="form-row col-md-12">');
-   print("<button type=button id=annuler class=\"col-md-offset-4 col-md-4 btn btn-primary\">Annuler</button>");
+   print("<button type=button id=annuler class=\"col-md-offset-4 col-md-4 btn btn-primary\"><span class=\"glyphicon glyphicon-remove\"></span> Annuler</button>");
    print('</div>');
    print('</form>');
 }
@@ -585,10 +585,10 @@ function menu_ajouter($pa_communes,$pa_releveurs)
    print("<input type=hidden name=mode value=\"AJOUTER\">");
    menu_edition($pa_communes,$pa_releveurs,null,'','',0,0,'N');
    print('<div class="form-row col-md-12">');
-   print("<button type=submit class=\"col-md-offset-4 col-md-4 btn btn-primary\">Ajouter</button>");
+   print("<button type=submit class=\"col-md-offset-4 col-md-4 btn btn-primary\"><span class=\"glyphicon glyphicon-ok\"></span> Ajouter</button>");
    print('</div>');
    print('<div class="form-row col-md-12">');
-   print("<button type=button id=annuler class=\"col-md-offset-4 col-md-4 btn btn-primary\">Annuler</button>");
+   print("<button type=button id=annuler class=\"col-md-offset-4 col-md-4 btn btn-primary\"><span class=\"glyphicon glyphicon-remove\"></span>Annuler</button>");
    print('</div>');
    print('</form>');
 }
