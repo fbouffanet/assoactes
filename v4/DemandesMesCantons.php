@@ -82,7 +82,7 @@ order by da.date_demande desc";
       print('<div class="panel-body">');	  
       if (count($a_liste_demandes)>0)
       {   
-        print("<table class=\"table table-bordered table-striped\">\n");
+        print("<table class=\"table table-bordered table-striped table-sm\">\n");
         print("<tr>");
         print("<th>Date de l'acte</th>");
         print("<th>Type de l'acte</th>");
@@ -105,10 +105,10 @@ order by da.date_demande desc";
            $o_acte -> charge($i_idf_acte);
            $st_description_acte = $o_acte -> versChaineSansTemoins();
           
-           print("<td><pre>$st_description_acte<pre></td>");
+           print("<td><pre>$st_description_acte</pre></td>");
            print("<td>$st_demandeur</td>");
            
-           print("<td align=\"center\"><a href=\"mailto:$st_email_demandeur?subject=Votre demande AGC: $st_parties a $st_commune\"><img src=\"./images/email_adht.png\" noborder ></a></td>");
+           print("<td align=\"center\"><a href=\"mailto:$st_email_demandeur?subject=Votre demande AGC: $st_parties a $st_commune\"><span class=\"glyphicon glyphicon-send\"></span></a></td>");
            print("<td>$st_date_dem</td>");
            print("</tr>\n");
         }
