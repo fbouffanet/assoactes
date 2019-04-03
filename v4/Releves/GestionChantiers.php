@@ -270,18 +270,18 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu)
    else
       print('<div class="alert alert-danger">Pas de chantiers</div>');
    print("<input type=hidden name=mode value=SUPPRIMER>");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Supprimer les chantiers s&eacute;lectionn&eacute;es</button>');    
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-trash"></span>Supprimer les chantiers s&eacute;lectionn&eacute;es</button>');    
    print("</form>");
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
    print("<input type=hidden name=mode value=MENU_AJOUTER>");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Ajouter un chantier</button>');     
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-plus"></span> Ajouter un chantier</button>');     
    print('</form>');
    
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    print("<input type=hidden name=mode value=EXPORT>");
    print('<div class="form-group row col-md-12">');
    print('<div class="input-group col-md-6">');
-   print('<input type=submit value="Exporter la liste des releves" class="btn btn-primary col-md-12">'); 
+   print('<button type=submit class="btn btn-primary col-md-12"><span class="glyphicon glyphicon-download-alt"></span> Exporter la liste des relev&eacute;s</button>'); 
    print('<span class="input-group-addon">avec le statut:</span>');
    print('<label for="idf_statut_export" class="sr-only">Statut export</label>');
    print('<select name=idf_statut_export id=idf_statut_export class="form-control">');
@@ -382,7 +382,7 @@ function menu_edition($pi_id_document,$pi_id_releveur,$pi_type_acte,$pst_convent
 	print('<div class="form-group row">');   
 	print('<label for="date_retour" class="col-form-label col-md-2">Date retour du chantier (jj/mm/aaaa)</label>');
 	print('<div class="col-md-10">');
-	print("<input type=\"text\" name=date_retour  id=date_retour value=\"$pst_retour\" size=10 maxsize=10 class=\"form-control\"><button type=\"button\" id=aujourdhui class=\"btn btn-primary\">Aujourd'hui</button>");
+	print("<input type=\"text\" name=date_retour  id=date_retour value=\"$pst_retour\" size=10 maxsize=10 class=\"form-control\"><button type=\"button\" id=aujourdhui class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-calendar\"></span> Aujourd'hui</button>");
 	print('</div>');
 	print('</div>');
 	
@@ -441,8 +441,8 @@ function menu_modifier($rconnexionBD,$pi_idf_chantier,$pa_documents,$pa_adherent
 
    menu_edition($i_id_document,$i_id_releveur,$i_type_acte,$st_convention,$st_envoi,$st_retour,$st_fin,$st_comment_envoi,$st_comment_retour,$i_statut,$pa_documents,$pa_adherents);   
    print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');   
-   print('<button type=submit class="btn btn-primary">Modifier</button>'); 
-   print('<button type=button id=annuler class="btn btn-primary">Annuler</button>');
+   print('<button type=submit class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Modifier</button>'); 
+   print('<button type=button id=annuler class="btn btn-primary"><span class="glyphicon glyphicon-remove"> Annuler</button>');
    print('</div>');   
    print('</form>');
 }
@@ -457,8 +457,8 @@ function menu_ajouter($pa_documents,$pa_adherents)
    print("<input type=hidden name=mode value=AJOUTER>");
    menu_edition(0,0,0,'','','','','','',1,$pa_documents,$pa_adherents);
    print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
-   print('<button type=submit class="btn btn-primary">Ajouter</button>'); 
-   print('<button type=button id=annuler class="btn btn-primary">Annuler</button>');
+   print('<button type=submit class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span>  Ajouter</button>'); 
+   print('<button type=button id=annuler class="btn btn-primary"><span class="glyphicon glyphicon-remove"> Annuler</button>');
    print('</div>');
    print('</form>');
 }
