@@ -70,7 +70,10 @@ if (isset($_SESSION['ident']))
       print('<div class="panel-body">');
       print("<form id=\"liste_td\" name=\"liste_td\" action=\"".$_SERVER['PHP_SELF']."\" method=post>");
       print("<input type=\"hidden\" name=\"mode\" value=\"LISTE\">");
-      print ("<div class=\"input-group\"><label for=\"statut\">Statut:</label><select name=statut id=statut class=\"form-control\">");
+      print('<div class="form-group row">');
+	  print('<label for="statut" class="col-form-label col-md-2 col-md-offset-4">Statut</label>');
+	  print('<div class="col-md-2">');
+	  print('<select name=statut id=statut class="form-control">');
       foreach ($ga_statuts as $st_statut => $st_lib_statut)
       {
         if ($st_statut==$gst_statut)
@@ -79,8 +82,11 @@ if (isset($_SESSION['ident']))
           print("<option value=\"$st_statut\">$st_lib_statut</option>");
         
       }
-      print("</select></div>");
-      print ("<div class=\"input-group\"><label for=\"type_acte\">Type:</label><select name=type_acte id=type_acte class=\"form-control\">");      
+      print("</select></div></div>");
+      print('<div class="form-group row">');
+	  print('<label for="type_acte" class="col-form-label col-md-2 col-md-offset-4">Type:</label>');
+	  print('<div class="col-md-2">');
+	  print('<select name=type_acte id=type_acte class="form-control">');      
       foreach ($ga_types as $i_type => $st_lib_type)
       {
          if ($i_type==$gi_type_acte)
@@ -88,7 +94,7 @@ if (isset($_SESSION['ident']))
         else
           print("<option value=\"$i_type\">$st_lib_type</option>");
       }
-      print("</select></div>");    
+      print("</select></div></div>");    
       print("</form>");
            
       switch ($gi_type_acte)
@@ -120,12 +126,12 @@ if (isset($_SESSION['ident']))
           $st_action = "<form action=\"".$_SERVER['PHP_SELF']."\" method=post>";
           $st_action .="<input type=\"hidden\" name=\"idf_modif\" value=\"$i_idf_modif\">";
           $st_action .="<input type=\"hidden\" name=\"mode\" value=\"VISU_MODIF\">";
-		    $st_action .='<button type="submit" class="btn btn-primary">Voir la demande</button>';
+		    $st_action .='<button type="submit" class="btn btn-primary btn-xs">Voir la<br>demande</button>';
           $st_action .= "</form>";
           if ($gst_statut == 'A')
-            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_action,"<a href=\"../InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"btn btn-primary\" role=\"button\">Voir la modification</a>");
+            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_action,"<a href=\"../InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"btn btn-primary btn-xs\" role=\"button\">Voir la<br> modification</a>");
           else
-            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_commentaires,$st_action,"<a href=\"../InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"btn btn-primary\" role=\"button\">Voir la modification</a>");
+            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_commentaires,$st_action,"<a href=\"../InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"btn btn-primary btn-xs\" role=\"button\">Voir la<br>modification</a>");
         }
         $pagination->init_page_cour($gi_num_page_cour);
         $pagination->affiche_entete_liens_navigation();
@@ -146,12 +152,12 @@ if (isset($_SESSION['ident']))
       $i_idf_modification = (int) $_POST['idf_modif'];
       $go_acte = new ModificationActe($connexionBD,null,$i_idf_modification);
       $go_acte->charge($i_idf_modification);
-      print("<textarea rows=15 cols=80>");
+      print('<textarea rows=15 cols=80 class="form-control">');
       print($go_acte->versChaine());
       print("</textarea>");
       print("<form action=\"".$_SERVER['PHP_SELF']."\" method=post>");
       print("<input type=\"hidden\" name=\"mode\" value=\"LISTE\">");
-	  print('<button type="submit" class="btn btn-primary col-md-4 cold-md-offset-4">Liste des demandes</button>');
+	  print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-home"></span> Liste des demandes</button>');
       print("</form>");
     }
     else
