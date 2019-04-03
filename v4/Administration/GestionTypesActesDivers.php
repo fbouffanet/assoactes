@@ -131,11 +131,11 @@ function menu_liste($pconnexionBD)
    print("</form>");
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
    print("<input type=hidden name=mode value=\"MENU_AJOUTER\">");  
-   print("<button type=submit class=\"btn btn-primary col-md-4 col-md-offset-4\">Nouveau type</button>");  
+   print("<button type=submit class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-plus\"></span>Nouveau type</button>");  
    print('</form>');
    print("<form id=nettoyage  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
    print('<input type="hidden" name="mode" value="NETTOYAGE_TYPE_ACTE">'); 
-   print("<button type=submit class=\"btn btn-primary col-md-4 col-md-offset-4\">Supprimer les types d'actes inutilis&eacute;s</button>");      
+   print("<button type=submit class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-trash\"></span> Supprimer les types d'actes inutilis&eacute;s</button>");      
    print("</form></div></div>");
 }
 
@@ -181,8 +181,8 @@ function menu_modifier($pconnexionBD,$pi_idf_type_acte)
 	print("<input type=hidden name=mode value=MODIFIER>");
 	print("<input type=hidden name=idf_type_acte value=$pi_idf_type_acte>");
 	menu_edition($st_nom_type_acte,$st_sigle,$pi_idf_type_acte);
-	print("<button type=submit class=\"btn btn-primary col-md-4 col-md-offset-4\">Modifier</button>");  
-	print("<button type=button id=annuler class=\"btn btn-primary col-md-4 col-md-offset-4\">Annuler</button>");
+	print("<button type=submit class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-ok\"></span> Modifier</button>");  
+	print("<button type=button id=annuler class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-remove\"></span> Annuler</button>");
 	print('</form></div></div>');
 }
 
@@ -233,8 +233,8 @@ function menu_remplacer($pconnexionBD,$pi_idf_type_acte)
     print("</select>");	
     print('</div>');
     print('</div>');
-	print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Remplacer</button>');
-	print('<button type=button id=annuler class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
+	print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class=\"glyphicon glyphicon-ok\"></span> Remplacer</button>');
+	print('<button type=button id=annuler class="btn btn-primary col-md-4 col-md-offset-4"><span class=\"glyphicon glyphicon-remove\"></span> Annuler</button>');
 	print('</form></div></div>');
 }
 /** Affiche le formulaire d'ajout d'un type d'acte
@@ -244,8 +244,8 @@ function menu_ajouter($pi_idf_type_acte)
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"edition_type_acte\" >");
 	print("<input type=hidden name=mode value=\"AJOUTER\">");
 	menu_edition('','',$pi_idf_type_acte);
-	print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Ajouter</button>');
-	print('<button type=button id=annuler class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
+	print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-ok"></span> Ajouter</button>');
+	print('<button type=button id=annuler class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-remove"></span> Annuler</button>');
 	print('</form>');
 }
 
