@@ -382,7 +382,10 @@ function menu_edition($pi_id_document,$pi_id_releveur,$pi_type_acte,$pst_convent
 	print('<div class="form-group row">');   
 	print('<label for="date_retour" class="col-form-label col-md-2">Date retour du chantier (jj/mm/aaaa)</label>');
 	print('<div class="col-md-10">');
-	print("<input type=\"text\" name=date_retour  id=date_retour value=\"$pst_retour\" size=10 maxsize=10 class=\"form-control\"><button type=\"button\" id=aujourdhui class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-calendar\"></span> Aujourd'hui</button>");
+	print('<div class="input-group">');
+	print("<input type=\"text\" name=date_retour  id=date_retour value=\"$pst_retour\" size=10 maxsize=10 class=\"form-control\">");
+	print("<span class=\"input-group-btn\"><button type=\"button\" id=aujourdhui class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-calendar\"></span> Aujourd'hui</button></span>");
+	print('</div>');
 	print('</div>');
 	print('</div>');
 	
