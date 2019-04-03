@@ -158,11 +158,11 @@ function menu_liste($pconnexionBD)
    else
      print('<div class="alert alert-danger">Pas de sources</div>');
    print("<input type=hidden name=mode value=\"SUPPRIMER\">");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Supprimer les sources s&eacute;lectionn&eacute;es</button>'); 
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-trash"></span> Supprimer les sources s&eacute;lectionn&eacute;es</button>'); 
    print("</form>");  
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
    print("<input type=hidden name=mode value=\"MENU_AJOUTER\">");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Ajouter une source</button>');   
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-plus"></span> Ajouter une source</button>');   
    print('</form></div></div>');  
 
 }
@@ -246,8 +246,8 @@ function menu_modifier($pconnexionBD,$pi_idf_source)
    print("<input type=hidden name=idf_source value=$pi_idf_source>");
    menu_edition($st_nom_source,$i_publication_gbk,$st_script_demande,$i_utilise_details,$st_icone_info,$st_icone_ninfo,$st_icone_index);
    print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
-   print('<button type=button class="btn btn-primary" id="modifier">Modifier</button>');
-   print('<button type=button class="btn btn-primary" id="annuler">Annuler</button>');
+   print('<button type=button class="btn btn-primary" id="modifier"><span class="glyphicon glyphicon-ok"></span> Modifier</button>');
+   print('<button type=button class="btn btn-primary" id="annuler"><span class="glyphicon glyphicon-remove"></span> Annuler</button>');
    print('</div>');
    print('</form>');
 }
@@ -260,8 +260,8 @@ function menu_ajouter()
    print("<input type=hidden name=mode value=\"AJOUTER\">");
    menu_edition('',0,'',0,'','','');
    print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
-   print('<button type=button class="btn btn-primary" id="ajouter">Ajouter</button>');
-   print('<button type=button class="btn btn-primary" id="annuler">Annuler</button>');
+   print('<button type=button class="btn btn-primary" id="ajouter"><span class="glyphicon glyphicon-ok"></span> Ajouter</button>');
+   print('<button type=button class="btn btn-primary" id="annuler"><span class="glyphicon glyphicon-remove"></span> Annuler</button>');
    print('</div>');
    print('</form>');
 }
