@@ -237,10 +237,10 @@ print("<script src='../js/additional-methods.min.js' type='text/javascript'></sc
 print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print("<script src='../js/CalRep.js' type='text/javascript'></script>");
-print("<script src='../Commun/iviewer/jquery-ui.min.js' type='text/javascript'></script>");
-print("<script src='../Commun/iviewer/jquery.mousewheel.min.js' type='text/javascript'></script>");
-print("<script src='../Commun/iviewer/jquery.iviewer.js' type='text/javascript'></script>");
-print("<link href='../Commun/iviewer/jquery.iviewer.css' type='text/css' rel='stylesheet'>");
+print("<script src='../js/iviewer/jquery-ui.min.js' type='text/javascript'></script>");
+print("<script src='../js/iviewer/jquery.mousewheel.min.js' type='text/javascript'></script>");
+print("<script src='../js/iviewer/jquery.iviewer.js' type='text/javascript'></script>");
+print("<link href='../js/iviewer/jquery.iviewer.css' type='text/css' rel='stylesheet'>");
 
 ?>
 <script type='text/javascript'>

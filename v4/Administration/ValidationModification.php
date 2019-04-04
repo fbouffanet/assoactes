@@ -120,11 +120,11 @@ else
 <script src='../js/additional-methods.min.js' type='text/javascript'></script>
 <script src='../js/jquery-ui.min.js' type='text/javascript'></script>
 <script src='../js/CalRep.js' type='text/javascript'></script>
-<script src='../Commun/iviewer/jquery-ui.min.js' type='text/javascript'></script>
-<script src='../Commun/iviewer/jquery.mousewheel.min.js' type='text/javascript'></script>
-<script src='../Commun/iviewer/jquery.iviewer.js' type='text/javascript'></script>
+<script src='../js/iviewer/jquery-ui.min.js' type='text/javascript'></script>
+<script src='../js/iviewer/jquery.mousewheel.min.js' type='text/javascript'></script>
+<script src='../js/iviewer/jquery.iviewer.js' type='text/javascript'></script>
 <script src='../js/bootstrap.min.js' type='text/javascript'></script>
-<link href='../Commun/iviewer/jquery.iviewer.css' type='text/css' rel='stylesheet'>
+<link href='../js/iviewer/jquery.iviewer.css' type='text/css' rel='stylesheet'>
 <style type="text/css">.diffDeleted span{  border:1px solid rgb(255,192,192);  background:rgb(255,224,224);}.diffInserted span{  border:1px solid rgb(192,255,192);  background:rgb(224,255,224);}del{  border:1px solid rgb(255,192,192);  background:rgb(255,224,224);}ins{  border:1px solid rgb(192,255,192);  background:rgb(224,255,224);}
 
 .viewer
