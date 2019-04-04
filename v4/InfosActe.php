@@ -23,7 +23,7 @@ function getRecapitulatifMessage($pst_type, $pi_max, $pi_compteur){
     default:            $pst_type = "mariages et actes divers";
     break;
   }
-  return sprintf("<div class=\"alert alert-info\">Il vous reste %d demandes de $pst_type dans ce mois</div>", $pi_max-$pi_compteur);
+  return sprintf("<div class=\"row text-center\"><div class=\"badge badge-warning\">Il vous reste %d demandes de $pst_type dans ce mois</div></div>", $pi_max-$pi_compteur);
 }
 
 function getContentBottom($type, $st_email_adht, $pi_idf_acte){
@@ -33,19 +33,20 @@ function getContentBottom($type, $st_email_adht, $pi_idf_acte){
     break;
     case IDF_DECES:     $msg = "";
     break;
-    default:            $msg = "Vous pouvez mettre vos commentaires dans la cellule ci-dessous qui paraitra sur le forum &agrave; la suite de la r&eacute;ponse de la base</div>\n
-                                <div class=\"text-center\">Votre adresse <span class=\"alert alert-danger\">$st_email_adht</span> doit &ecirc;tre inscrite sur le forum Yahoogroupes de l'AGC<div>
-                                <div class=\"alert alert-danger\">Sans cela, votre demande ne pourra &ecirc;tre prise en compte</div>
+    default:            $msg = "<blockquote  class=\"blockquote\"><div class=\row\">Vous pouvez mettre vos commentaires dans la cellule ci-dessous qui paraitra sur le forum &agrave; la suite de la r&eacute;ponse de la base</div>\n
+                                <div class=\"row text-center\">Votre adresse <span class=\"label label-danger\">$st_email_adht</span> doit &ecirc;tre inscrite sur le forum Yahoogroupes de l'AGC
+                                <span class=\"label label-danger\">Sans cela, votre demande ne pourra &ecirc;tre prise en compte</div>
                                 <form id=\"envoi_forum\" method=post action=".$_SERVER['PHP_SELF'].">
                                 <input type=\"hidden\" name=\"mode\" value=\"ENVOI_FORUM\">
                                 <input type=\"hidden\" name=\"idf_acte\" value=\"$pi_idf_acte\">
+								<div class=\"lib_erreur\">
                                 <textarea cols=\"40\" rows=\"6\" name=\"commentaire\" class=\"form-control\"></textarea>
-                                <button type=\"submit\" class=\"btn btn-primary col-xs-8 col-xs-offset-2\">Envoyer une remarque sur le forum</button>
+								</div></blockquote>
                                 </form>";
     break;
   }
 
-  return $msg . '<button type=button id="bouton_impression" class="btn btn-primary col-xs-4 col-xs-offset-4">Imprimer</button>';
+  return $msg ;
 }
 
 /******************************************************************************/
@@ -68,22 +69,57 @@ print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {
-//validation rules
-$("#envoi_forum").validate({
-   //debug: true,
-   rules: {
-      commentaire: "required"
-   },
-   messages: {
-      commentaire: "Le commentaire est obligatoire"
-   }
+	$("#envoi_forum").validate({
+	rules: {
+		commentaire: "required"
+	},
+	messages: {
+	commentaire: "Le commentaire est obligatoire"
+	},
+	errorElement: "em",
+    errorPlacement: function ( error, element ) {
+		// Add the `help-block` class to the error element
+		error.addClass( "help-block" );
+
+		// Add `has-feedback` class to the parent div.form-group
+		// in order to add icons to inputs
+		element.parents( ".lib_erreur" ).addClass( "has-feedback" );
+
+		if ( element.prop( "type" ) === "checkbox" ) {
+			error.insertAfter( element.parent( "label" ) );
+		} else {
+			error.insertAfter( element );
+		}
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}
 });
+$("#bouton_envoi").click(function(){
+    $('#envoi_forum').submit()();
+});
+
 $("#bouton_fermeture").click(function(){
     window.close();
 });
 
 $("#bouton_impression").click(function(){
-     $("#texte_acte").print({ iframe : false,append : "Relev&eacute; provenant de l'Association G&eacute;n&eacute;alogique de la Charente"});
+     $("#texte_acte").print({ iframe : false,append : "Relev&eacute; provenant de <?php print(LIB_ASSO);?>"});
 });
 });
 </script>
@@ -134,7 +170,7 @@ if (empty($_POST['mode']))
     $i_nb_lignes = $o_acte ->getNbLignes();
     $st_permalien=  $o_acte->getUrl();
     print('<div id="texte_acte" class="text-center">');
-    print("<textarea rows=$i_nb_lignes cols=80 class='form-control'>");
+    print("<textarea rows=$i_nb_lignes cols=80 class=\"form-control\">");
     print($st_description_acte);
     print("</textarea>");
     if(!empty($st_permalien))
@@ -214,8 +250,12 @@ else
     @fclose($pf);
   }
 }
-;
-print('<button type=button id="bouton_fermeture" class="btn btn-primary col-xs-4 col-xs-offset-4">Fermer la fen&ecirc;tre</button>');
+
+print('<div class="btn-group-vertical btn-group-xs col-xs-8 col-xs-offset-2" role="group" aria-label="Groupe de demandes">');
+print('<button type="button" id="bouton_envoi" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span> Envoyer une remarque sur le forum</button>');
+print('<button type=button id="bouton_impression" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Imprimer</button>');
+print('<button type=button id="bouton_fermeture" class="btn btn-warning"><span class="glyphicon glyphicon-remove"></span> Fermer la fen&ecirc;tre</button>');
+print('</div>');
 print('</div>');
 print('</body></HTML>');
 
