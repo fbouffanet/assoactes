@@ -33,15 +33,14 @@ function getContentBottom($type, $st_email_adht, $pi_idf_acte){
     break;
     case IDF_DECES:     $msg = "";
     break;
-    default:            $msg = "<blockquote  class=\"blockquote\"><div class=\row\">Vous pouvez mettre vos commentaires dans la cellule ci-dessous qui paraitra sur le forum &agrave; la suite de la r&eacute;ponse de la base</div>\n
-                                <div class=\"row text-center\">Votre adresse <span class=\"label label-danger\">$st_email_adht</span> doit &ecirc;tre inscrite sur le forum Yahoogroupes de l'AGC
-                                <span class=\"label label-danger\">Sans cela, votre demande ne pourra &ecirc;tre prise en compte</div>
+    default:            $msg = "<blockquote class=\"blockquote\"><p class=\"row text-justify\">Vous pouvez mettre vos commentaires dans la cellule ci-dessous qui paraitra sur le forum &agrave; la suite de la r&eacute;ponse de la base. Votre adresse <span class=\"label label-danger\">$st_email_adht</span> doit &ecirc;tre inscrite sur le forum Yahoogroupes de l'AGC<br>
+                                <span class=\"label label-danger\">Sans cela, votre demande ne pourra &ecirc;tre prise en compte</span></p></blockquote>
                                 <form id=\"envoi_forum\" method=post action=".$_SERVER['PHP_SELF'].">
                                 <input type=\"hidden\" name=\"mode\" value=\"ENVOI_FORUM\">
                                 <input type=\"hidden\" name=\"idf_acte\" value=\"$pi_idf_acte\">
 								<div class=\"lib_erreur\">
                                 <textarea cols=\"40\" rows=\"6\" name=\"commentaire\" class=\"form-control\"></textarea>
-								</div></blockquote>
+								</div>
                                 </form>";
     break;
   }
@@ -119,7 +118,7 @@ $("#bouton_fermeture").click(function(){
 });
 
 $("#bouton_impression").click(function(){
-     $("#texte_acte").print({ iframe : false,append : "Relev&eacute; provenant de <?php print(LIB_ASSO);?>"});
+     $("#texte_acte").print({ iframe : false,append : "Relev&eacute; provenant de: <?php print(LIB_ASSO);?>"});
 });
 });
 </script>
