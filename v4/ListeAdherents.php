@@ -394,21 +394,22 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
    print("<input type=hidden name=mode id=mode_statut value=\"LISTE\">");
    if (a_droits($pst_ident,DROIT_GESTION_ADHERENT))
    {
-	  print('<div class="form-row">');   
-      print('<div class="form-group col-md-offset-4 col-md-4">');      
-	  $a_statuts_adherents = $pconnexionBD->liste_valeur_par_clef("select idf,nom from statut_adherent order by nom");
+	    print('<div class="form-row col-md-12">');              
+	    $a_statuts_adherents = $pconnexionBD->liste_valeur_par_clef("select idf,nom from statut_adherent order by nom");
       $a_statuts_adherents['T'] = 'Tous';
-      print('<label for="statut_listadh">Statut</label><select name="statut_listadh" id="statut_listadh" class="form-control">');
+      print('<label for="statut_listadh" class="col-form-label col-md-2 col-md-offset-3">Statut</label>');
+      print('<div class="form-group">'); 
+      print('<div class="col-md-4"><select name="statut_listadh" id="statut_listadh" class="form-control">');
       print(chaine_select_options($pc_statut,$a_statuts_adherents));
-      print('</select>');
+      print('</select></div>');
       print("</div></div>"); 
    }    
    
-   print('<div class="form-row">');
-   print('<div class="form-group col-md-8">');    
-   print("<label for=\"nom_a_chercher\">G&eacute;n&eacute;alogiste</label><input name=\"nom_a_chercher\" id=\"nom_a_chercher\" value=\"$pst_nom_a_chercher\" size=\"25\" maxlength=\"25\" type=\"Text\" class=\"form-control\" aria-describedby=\"aideAdht\">");
-   print('<small id="aideAdht" class="form-text text-muted">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: ber*)</small></div>');
-   print(' <button type=submit class="col-md-2 btn btn-primary">Chercher</button></div>');
+   print('<div class="form-row col-md-12">');   
+   print("<label for=\"nom_a_chercher\" class=\"col-form-label col-md-2 col-md-offset-3\">G&eacute;n&eacute;alogiste</label>");
+   print("<div class=\"col-md-4\"><input name=\"nom_a_chercher\" id=\"nom_a_chercher\" value=\"$pst_nom_a_chercher\" size=\"25\" maxlength=\"25\" type=\"Text\" class=\"form-control\" aria-describedby=\"aideAdht\">");   
+   print('<button type=submit class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Chercher</button></div><small id="aideAdht" class="form-text text-muted">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: ber*)</small></div>');
+   print('<div class="form-row"></div>');
    print("</form>");
    
    $a_champs_recherche = array();
