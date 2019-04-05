@@ -215,7 +215,8 @@ function affiche_actes_saisis($pconnexionBD,$pi_idf_repertoire,$pi_format,$pi_pa
 				    break;
 				    default:
 			   }
-			   print("<td>$st_paroisse</td><td>$st_commentaires</td><td><img src=\"../images/edit.png\" class=\"elem_edition\" id=\"$i_idf_acte\" /></td><td><img src=\"../images/poubelle.png\" class=\"elem_suppression\" id=\"$i_idf_acte\" /></td></tr>");
+			   print("<td>$st_paroisse</td><td>$st_commentaires</td><td><span class=\"glyphicon glyphicon-edit elem_edition\" id=\"$i_idf_acte\"></span></td><td><span class=\"glyphicon glyphicon-trash elem_suppression\" id=\"$i_idf_acte\"></span>
+			   </td></tr>");
 		    }
 		  print('</tbody></table>');
     }    
@@ -262,8 +263,8 @@ $(document).ready(function() {
 		  var table = $('#actes_saisis').children();
 		  table.append("<thead><tr><th>Date</th><th>DateRep</th><th>Type d'acte</th><th>Nom1</th><th>Prenom1</th><th>Nom2</th><th>Prenom2</th><th>Paroisse</th><th>Commentaires</th><th colspan=2>&nbsp;</th></tr></thead><tbody>");
 		  $.each(json, function(key, val) {
-			 var suppression = '<img src="../images/poubelle.png" class="elem_suppression" id="'+val['idf_acte']+'" />';
-			 var edition = '<img src="../images/edit.png" class="elem_edition" id="'+val['idf_acte']+'" />';
+			 var suppression = '<span class="elem_suppression glyphicon glyphicon-trash" id="'+val['idf_acte']+'"></span>';
+			 var edition = '<span class="elem_edition glyphicon glyphicon-edit" id="'+val['idf_acte']+'"></span>';
              table.append("<tr><td>"+val['date']+"</td><td>"+val['date_rep']+"</td><td>"+val['type']+"</td><td>"+val['nom1']+"</td><td>"+val['prenom1']+"</td><td>"+val['nom2']+"</td><td>"+val['prenom2']+"</td><td>"+val['paroisse']+"</td><td>"+val['commentaires']+"</td><td>"+edition+"</td><td>"+suppression+"</td></tr>");   
 		  });
 		  table.append("</tbody>");
@@ -503,7 +504,7 @@ $(document).ready(function() {
 		minLength: 3
 	});
 	function inialise_actes_saisis ()	{
-		$('img.elem_suppression').click(function(){
+		$('span.elem_suppression').click(function(){
 			var $this = $(this);
 			$.ajax({
 				type: 'GET',
@@ -514,7 +515,7 @@ $(document).ready(function() {
 				}
 			});
 		});
-      $('img.elem_edition').click(function(){
+      $('span.elem_edition').click(function(){
 			var $this = $(this);
 			$.ajax({
 				type: 'GET',
