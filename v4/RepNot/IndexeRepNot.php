@@ -63,7 +63,7 @@ function affiche_barre_navigation($pconnexionBD,$pi_idf_rep,$pi_page_courante,$p
 		{
 			// Affichage de la navigation gauche
 			print('<div class="input-group-btn">');
-			print('<button id="vue_gauche" class="btn btn-primary">&lt</button>');
+			print('<button id="vue_gauche" class="btn btn-primary"><span class="glyphicon glyphicon-triangle-left"></span></button>');
 			print('</div>');
 		}
 		// Affichage de l'accès à la page directement
@@ -78,7 +78,7 @@ function affiche_barre_navigation($pconnexionBD,$pi_idf_rep,$pi_page_courante,$p
 			$i_page_suiv = $pi_page_courante+1;
 			// Affichage de la navigation droite
 			print('<div class="input-group-btn">');
-			print('<button id="vue_droite" class="btn btn-primary">&gt</button>');
+			print('<button id="vue_droite" class="btn btn-primary"><span class="glyphicon glyphicon-triangle-right"></span></button>');
 			print('</div>');
 		}
 		print("</div>");
@@ -142,16 +142,22 @@ function affiche_grille_saisie($pi_format,$pi_idf_repertoire,$pi_page_courante,$
 	print("<input type=\"hidden\" name=\"sid\" value=\"".session_id()."\">");
 	print("<button type=\"submit\" class=\"btn btn-primary\">Ajouter/Modifier</button>");
   print("</td></tr>");
-  $st_chaine_date_rep = "<input type=\"text\" name=\"jour_rep\" id=\"jour_rep\"  size=\"2\" maxlength=\"2\" value=\"\" class=\"form-control\">";
+  $st_chaine_date_rep = '<div class="col-md-2">';
+  $st_chaine_date_rep .= "<input type=\"text\" name=\"jour_rep\" id=\"jour_rep\"  size=\"2\" maxlength=\"2\" value=\"\" class=\"form-control\">";
+  $st_chaine_date_rep .= '</div>';
+  $st_chaine_date_rep .= '<div class="col-md-4">';
   $st_chaine_date_rep.= ' <select name="mois_rep" id="mois_rep" class="form-control">';
   $st_chaine_date_rep.= '<option value=""></option>';
   $st_chaine_date_rep.= chaine_select_options(null,$ga_mois_revolutionnaires);
   $st_chaine_date_rep.= '</select>';
+  $st_chaine_date_rep .= '</div>';
+  $st_chaine_date_rep .= '<div class="col-md-2">';
   $st_chaine_date_rep.= ' <select name="annee_rep" id="annee_rep" class="form-control">';
   $st_chaine_date_rep.= '<option value=""></option>';
   $st_chaine_date_rep.= chaine_select_options(null,$ga_annees_revolutionnaires);
   $st_chaine_date_rep .= '</select>';
-  $st_chaine = "<tr><th>Date r&eacute;publicaine</th><td colspan=4>$st_chaine_date_rep</td><td colspan=3><button type=button id=maj_date class=\"btn btn-primary\">maj de la date</button></td></tr>";
+  $st_chaine_date_rep .= '</div>';
+  $st_chaine = "<tr><th>Date r&eacute;publicaine</th><td colspan=4><div class=\"row form-group\">$st_chaine_date_rep</div></td><td colspan=3><button type=button id=maj_date class=\"btn btn-primary\">maj de la date</button></td></tr>";
   print($st_chaine);
 	print("</table>\n");	
 	print("</form>");
