@@ -254,23 +254,49 @@ $(document).ready(function() {
   });
     
   $("#liste_adherents").validate({
-  errorElement: "em",
+    rules: {
+    "supp[]": { 
+                    required: true, 
+                    minlength: 1 
+            } 
+    },
+    messages: {
+      "supp[]": "Merci de choisir au moins un adhérent à supprimer"
+    },
+    errorElement: "em",
 		errorPlacement: function ( error, element ) {
-		// Add the `help-block` class to the error element
-		error.addClass( "help-block" );
-		if ( element.prop( "type" ) === "checkbox" ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
+
+			// Add `has-feedback` class to the parent div.form-group
+			// in order to add icons to inputs
+			element.parents( ".lib_erreur" ).addClass( "has-feedback" );
+
+			if ( element.prop( "type" ) === "checkbox" ) {
 				error.insertAfter( element.parent( "label" ) );
-      } else {
+			} else {
 				error.insertAfter( element );
-  				}
-			},
-			highlight: function ( element, errorClass, validClass ) {
-					$( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
-			},
-			unhighlight: function (element, errorClass, validClass) {
-					$( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
 			}
-   , 
+
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !element.next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+			}
+		},
+		success: function ( label, element ) {
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !$( element ).next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+			}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+		},
+		unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+		},
   submitHandler: function(form) {
     var adherents='';
     var nb_adherents=0;
@@ -483,9 +509,10 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
          foreach ($a_liste_adherents as $a_adherent)
          {
             list($i_idf_adh,$st_adherent,$st_ident_adh,$st_email_adh,$st_derniere_connexion_adh,$st_statut_adh) = $a_adherent;
-            $a_tableau_modification[] = array($st_adherent,$st_ident_adh,$st_email_adh,$st_derniere_connexion_adh,$st_statut_adh,"<a id=\"$i_idf_adh\" href=\"".$_SERVER['PHP_SELF']."?mod=$i_idf_adh\" type=\"button\" class='btn btn-info'><span class=\"glyphicon glyphicon-edit\"></span> Modifier</a>","<input type=checkbox name=\"supp[]\" id=\"$st_ident_adh\" value=$i_idf_adh>","<a href='Stats/StatsAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info lien_stats'><span class=\"glyphicon glyphicon-stats\"></span> Stats</a>","<a href='Stats/RecherchesAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info lien_stats'><span class=\"glyphicon glyphicon-search\"></span> Recherches</a>");
+            $a_tableau_modification[] = array($st_adherent,$st_ident_adh,$st_email_adh,$st_derniere_connexion_adh,$st_statut_adh,"<a id=\"$i_idf_adh\" href=\"".$_SERVER['PHP_SELF']."?mod=$i_idf_adh\" type=\"button\" class='btn btn-info'><span class=\"glyphicon glyphicon-edit\"></span> Modifier</a>","<div class=\"lib_erreur\"><input type=checkbox name=\"supp[]\" id=\"$st_ident_adh\" value=$i_idf_adh></div>","<a href='Stats/StatsAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info lien_stats'><span class=\"glyphicon glyphicon-stats\"></span> Stats</a>","<a href='Stats/RecherchesAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info lien_stats'><span class=\"glyphicon glyphicon-search\"></span> Recherches</a>");
          }
          $pagination->affiche_tableau_simple($a_tableau_modification);
+         
       }
       else if (a_droits($pst_ident,DROIT_STATS))
       {
