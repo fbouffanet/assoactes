@@ -306,7 +306,9 @@ $(document).ready(function() {
         }
         else
            alert("Merci de sélectionner deux adhérents"); 
-      break;  
+      break;
+      default:
+        form.submit();  
     }
   }  
   });
@@ -338,37 +340,33 @@ $(document).ready(function() {
   
   $("#exporter_adherents").click(function() {
 
-      $('#mode_statut').val("EXPORTER");
-      $("#liste_filtree").submit();
+      $('#mode_selection').val("EXPORTER");
+      $("#liste_adherents").submit();
   });
   
    $("#publipostage").click(function() {
 
-      $('#mode_statut').val("PUBLIPOSTAGE");
-      $("#liste_filtree").submit();
+      $('#mode_selection').val("PUBLIPOSTAGE");
+      $("#liste_adherents").submit();
   });  
   
   $("#export_complet").click(function() {
-
-      $('#mode_statut').val("EXPORT_COMPLET");
-      $("#liste_filtree").submit();
+      $('#mode_selection').val("EXPORT_COMPLET");
+      $("#liste_adherents").submit();
   });
   
   $("#aide_adherents").click(function() {
 
-      $('#mode_statut').val("AIDE_ADHERENTS");
-      $("#liste_filtree").submit();
+      $('#mode_selection').val("AIDE_ADHERENTS");
+      $("#liste_adherents").submit();
   });
   
   $("#annuler_modifier_adherent").click(function() {
-      $('#mode_modifier').val("LISTE");
-      $("#modification_adherent").submit();       
+      window.location.href='<?php echo $_SERVER['PHP_SELF'] ?>';     
   });
   
    $("#annuler_ajouter_adherent").click(function() {
-
-      $('#mode_ajouter').val("LISTE");
-      $("#ajout_adherent").submit();       
+      window.location.href='<?php echo $_SERVER['PHP_SELF'] ?>';    
   });
 
   
@@ -485,7 +483,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
          foreach ($a_liste_adherents as $a_adherent)
          {
             list($i_idf_adh,$st_adherent,$st_ident_adh,$st_email_adh,$st_derniere_connexion_adh,$st_statut_adh) = $a_adherent;
-            $a_tableau_modification[] = array($st_adherent,$st_ident_adh,$st_email_adh,$st_derniere_connexion_adh,$st_statut_adh,"<a id=\"$i_idf_adh\" href=\"".$_SERVER['PHP_SELF']."?mod=$i_idf_adh\" type=\"button\" class='btn btn-info'>Modifier</a>","<input type=checkbox name=\"supp[]\" id=\"$st_ident_adh\" value=$i_idf_adh>","<a href='Stats/StatsAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info lien_stats'>Stats</a>","<a href='Stats/RecherchesAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info lien_stats'>Recherches</a>");
+            $a_tableau_modification[] = array($st_adherent,$st_ident_adh,$st_email_adh,$st_derniere_connexion_adh,$st_statut_adh,"<a id=\"$i_idf_adh\" href=\"".$_SERVER['PHP_SELF']."?mod=$i_idf_adh\" type=\"button\" class='btn btn-info'><span class=\"glyphicon glyphicon-edit\"></span> Modifier</a>","<input type=checkbox name=\"supp[]\" id=\"$st_ident_adh\" value=$i_idf_adh>","<a href='Stats/StatsAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info lien_stats'><span class=\"glyphicon glyphicon-stats\"></span> Stats</a>","<a href='Stats/RecherchesAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info lien_stats'><span class=\"glyphicon glyphicon-search\"></span> Recherches</a>");
          }
          $pagination->affiche_tableau_simple($a_tableau_modification);
       }
@@ -527,11 +525,11 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
    if (a_droits($pst_ident,DROIT_GESTION_ADHERENT))  
    {
       print("<div class=\"form-row col-md-12\">");
-	    print('<div class="btn-group" role="group">');   
-      print("<button type=button id=supprimer_adherents class=\"btn btn-danger\">Supprimer les adh&eacute;rents s&eacute;lectionn&eacute;s</button>");
-      print("<button type=button id=fusionner_adherents class=\"btn btn-warning\">Fusionner les adh&eacute;rents s&eacute;lectionn&eacute;s</button>");
-	    print('<button type="button" class="btn btn-primary" id="ajouter_adherent">Ajouter un adh&eacute;rent</button>');
-	    print('<button type="button" class="btn btn-warning" id="maj_statut_adherents">Mettre &agrave; jour le statut des adh&eacute;rents qui ne sont pas &agrave; jour</button>');
+	    print('<div class="btn-group col-md-10 col-md-offset-1" role="group">');   
+      print("<button type=button id=supprimer_adherents class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span> Supprimer les adh&eacute;rents s&eacute;lectionn&eacute;s</button>");
+      print("<button type=button id=fusionner_adherents class=\"btn btn-warning\"><span class=\"glyphicon glyphicon-arrow-left\"></span> Fusionner les adh&eacute;rents s&eacute;lectionn&eacute;s</button>");
+	    print('<button type="button" class="btn btn-primary" id="ajouter_adherent"><span class="glyphicon glyphicon-plus"></span> Ajouter un adh&eacute;rent</button>');
+	    
       
       print('</div>');
       print('</div>');	    
@@ -539,7 +537,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
       $a_statuts_adherents = $pconnexionBD->liste_valeur_par_clef("select idf,nom from statut_adherent order by nom");
     print("<div class=\"form-row col-md-12\">");
 	  print('<div class="btn-toolbar col-md-6" role="toolbar" aria-label="Toolbar">');  
-	  print('<button type=button id=exporter_adherents class="btn btn-primary col-md-4">Exporter les adherents</button>');
+	  print('<button type=button id=exporter_adherents class="btn btn-primary col-md-4"><span class="glyphicon glyphicon-download-alt"></span> Exporter les adh&eacute;rents</button>');
 	  $a_statuts_adherents[ADHESION_PARIS] = 'Adh&eacute;rents parisiens';
       $a_statuts_adherents[TOUS_ADHERENTS] = 'Adherents &agrave; jour';
 	  print('<div class="input-group-prepend"><div class="input-group-text col-md-2">dont le statut est:</div><select name="statut_export" id="statut_export" class="col-md-2 form-control">');
@@ -547,13 +545,17 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
       print('</select></div>');
      print("</div>");
 	  print('<div class="btn-group col-md-6" role="group">');
-    print('<button type=button id=publipostage class="btn btn-primary">Exporter les @ pour le bulletin (Excel)</button>');
-	  print('<button type=button class="btn btn-primary id=export_complet">Exporter tout (Excel)</button>');	  
+    print('<button type=button id="publipostage" class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"></span> Exporter les @ pour le bulletin (Excel)</button>');
+	  print('<button type=button class="btn btn-primary" id="export_complet"><span class="glyphicon glyphicon-download-alt"></span> Exporter tout (Excel)</button>');	  
 	  print('</div>');
 	  print('</div>');
     print("<div class=\"form-ow col-md-12\">");
-    print('<button type=button id="aide_adherents" class="btn btn-primary col-md-4 col-md-offset-4">Montrer les aides possibles</button>');
-    print('</div>');  
+    print('<div class="btn-group col-md-8 col-md-offset-2" role="group">'); 
+    print('<button type="button" class="btn btn-warning" id="maj_statut_adherents"><span class="glyphicon glyphicon-time"></span> Mettre &agrave; jour le statut des adh&eacute;rents qui ne sont pas &agrave; jour</button>');
+    print('<button type=button id="aide_adherents" class="btn btn-primary "><span class="glyphicon glyphicon-thumbs-up"></span> Montrer les aides possibles</button>');
+    print('</div>');
+    print('</div>');
+    print("</form>");  
    }  
 }
 
@@ -582,10 +584,10 @@ function menu_modifier($padherent,$pi_idf_adherent)
 	print("</div></div>");      
 
   print('<div class="btn-group-vertical col-md-4 col-md-offset-4">'); 
-	print("<button type=submit class=\"btn btn-primary\">Modifier</button>"); 
-  print("<button type=button id=\"notifier_adherent\" class=\"btn btn-primary\">Modifier et notifier une r&eacute;adh&eacute;sion</button>");
-  print("<button type=button id=\"recreer_mdp\" class=\"btn btn-primary\">Cr&eacute;er un nouveau mot de passe</button>");
-	print('<button type=button id="annuler_modifier_adherent" class="btn btn-primary col-md-4 col-md-offset-4">Annuler</button>');
+	print("<button type=submit class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-ok\"></span>Modifier</button>"); 
+  print("<button type=button id=\"notifier_adherent\" class=\"btn btn-warning\"><span class=\"glyphicon glyphicon-envelope\"></span> Modifier et notifier une r&eacute;adh&eacute;sion</button>");
+  print("<button type=button id=\"recreer_mdp\" class=\"btn btn-warning\"><span class=\"glyphicon glyphicon-lock\"></span> Cr&eacute;er un nouveau mot de passe</button>");
+	print('<button type=button id="annuler_modifier_adherent" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-remove"></span> Annuler</button>');
 	print("</div>");
 	print("</form>");
 }
@@ -613,8 +615,8 @@ function menu_ajouter($padherent)
         
 	print('<div class="form-row col-md-12">');
   print('<div class="btn-group col-md-4 col-md-offset-4">');
-  print('<button type=submit class="btn btn-primary">Ajouter</button>');
-	print('<button type=button class="btn btn-primary" id="annuler_ajouter_adherent">Annuler</button>');
+  print('<button type=submit class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span>Ajouter</button>');
+	print('<button type=button class="btn btn-primary" id="annuler_ajouter_adherent"><span class="glyphicon glyphicon-remove"></span> Annuler</button>');
 	print("</div>");
   print("</div>");
 	print("</form>");
@@ -655,7 +657,7 @@ function menu_visualiser($pconnexionBD,$pi_idf_adherent)
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    print("<input type=hidden name=mode value=LISTE>");   
    print('<div class="form-row">');   
-   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Liste des adherents</button>');
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-home"></span> Liste des adh&eacute;rents</button>');
    print('</div>');
    print("</form>");
 
@@ -710,7 +712,7 @@ function exporte_adresses_par_statut($pconnexionBD,$pc_statut)
     print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
     print("<input type=hidden name=mode value=LISTE>");
     print('<div class="form-row">');   
-    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Liste des adherents</button>');
+    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-home"></span> Liste des adh&eacute;rents</button>');
     print('</div>');	
 	print("</form>");
 }
@@ -897,7 +899,7 @@ function montre_aides_adherents($pconnexionBD)
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    print("<input type=hidden name=mode value=LISTE>");
    print('<div class="form-row">');   
-   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Liste des adherents</button>');
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-home"></span> Liste des adh&eacute;rents</button>');
    print('</div>');   
    print("</form></div>");
 }
@@ -1124,7 +1126,7 @@ switch ($gst_mode) {
    menu_visualiser($connexionBD,$gi_idf_adherent);  
    break; 
    case 'EXPORTER':
-   $st_statut=  $_POST['statut_export'];
+   $st_statut=  isset($_POST['statut_export'])? $_POST['statut_export'] : '';
    exporte_adresses_par_statut($connexionBD,$st_statut);
    break;
    case 'MAJ_STATUT':
