@@ -263,7 +263,7 @@ $(document).ready(function() {
     messages: {
       "supp[]": "Merci de choisir au moins un adhérent à supprimer"
     },
-    errorElement: "em",
+    /*errorElement: "em",
 		errorPlacement: function ( error, element ) {
 			// Add the `help-block` class to the error element
 			error.addClass( "help-block" );
@@ -296,7 +296,7 @@ $(document).ready(function() {
 		unhighlight: function ( element, errorClass, validClass ) {
 			$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
 			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
-		},
+		},*/
   submitHandler: function(form) {
     var adherents='';
     var nb_adherents=0;
@@ -509,7 +509,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
          foreach ($a_liste_adherents as $a_adherent)
          {
             list($i_idf_adh,$st_adherent,$st_ident_adh,$st_email_adh,$st_derniere_connexion_adh,$st_statut_adh) = $a_adherent;
-            $a_tableau_modification[] = array($st_adherent,$st_ident_adh,$st_email_adh,$st_derniere_connexion_adh,$st_statut_adh,"<a id=\"$i_idf_adh\" href=\"".$_SERVER['PHP_SELF']."?mod=$i_idf_adh\" type=\"button\" class='btn btn-info'><span class=\"glyphicon glyphicon-edit\"></span> Modifier</a>","<div class=\"lib_erreur\"><input type=checkbox name=\"supp[]\" id=\"$st_ident_adh\" value=$i_idf_adh></div>","<a href='Stats/StatsAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info lien_stats'><span class=\"glyphicon glyphicon-stats\"></span> Stats</a>","<a href='Stats/RecherchesAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info lien_stats'><span class=\"glyphicon glyphicon-search\"></span> Recherches</a>");
+            $a_tableau_modification[] = array($st_adherent,$st_ident_adh,$st_email_adh,$st_derniere_connexion_adh,$st_statut_adh,"<a id=\"$i_idf_adh\" href=\"".$_SERVER['PHP_SELF']."?mod=$i_idf_adh\" type=\"button\" class='btn btn-info'><span class=\"glyphicon glyphicon-edit\"></span> Modifier</a>","<div class=\"lib_erreur\"><input type=checkbox name=\"supp[]\" id=\"$st_ident_adh\" value=$i_idf_adh class=\"form-check-input\" ></div>","<a href='Stats/StatsAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info lien_stats'><span class=\"glyphicon glyphicon-stats\"></span> Stats</a>","<a href='Stats/RecherchesAdht.php?idf_adherent=$i_idf_adh' target='_blank' class='btn btn-info lien_stats'><span class=\"glyphicon glyphicon-search\"></span> Recherches</a>");
          }
          $pagination->affiche_tableau_simple($a_tableau_modification);
          
