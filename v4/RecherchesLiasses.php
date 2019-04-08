@@ -170,6 +170,15 @@ $("#recherche_liasses").validate({
 	}
 });
 
+$("#raz").click(function() {
+	$("#rayon_recherches_communes").val('');
+	$("#annee_min").val('');
+	$("#annee_max").val('');
+	$("#nom_notaire").val('');
+	$("#prenom_notaire").val('');
+	$("#cote_debut").val('');
+	$("#cote_fin").val('') 
+	});
 });
 </script>
 <?php
@@ -356,7 +365,7 @@ print('</div>');
 
 print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
 print('<button type=submit name=Rechercher class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Rechercher</button>');
-print('<button type=button name="raz" class="btn btn-warning raz"><span class="glyphicon glyphicon-erase"></span> Effacer tous les Champs</button>');
+print('<button type=button  id="raz" class="btn btn-warning raz"><span class="glyphicon glyphicon-erase"></span> Effacer tous les Champs</button>');
 print('</div>');
 
 
