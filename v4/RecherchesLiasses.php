@@ -171,13 +171,21 @@ $("#recherche_liasses").validate({
 });
 
 $("#raz").click(function() {
-	$("#rayon_recherches_communes").val('');
+    $("#idf_serie_liasse").val('');
+	$("#idf_dept").val('');
+	$("#idf_commune_recherche").val('');
+	$("#rayon_recherches_communes").prop('selectedIndex',0);
 	$("#annee_min").val('');
 	$("#annee_max").val('');
 	$("#nom_notaire").val('');
 	$("#prenom_notaire").val('');
 	$("#cote_debut").val('');
-	$("#cote_fin").val('') 
+	$("#cote_fin").val('');
+    $('#paroisses_rattachees_recherches_communes').prop('checked', true);
+    $('#sans_notaire').prop('checked', false);
+    $('#sans_periode').prop('checked', false);
+    $('#repertoire').prop('checked', false);
+    $('#liasse_releve ').prop('checked', false);	
 	});
 });
 </script>
