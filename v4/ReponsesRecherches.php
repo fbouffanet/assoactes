@@ -19,15 +19,12 @@ if(isset($_GET['per_page']) && in_array($_GET['per_page'], array_keys($per_page_
   $_SESSION['per_page'] = $_GET['per_page'];
 }
 
-
-
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
-print("<Head>\n");
+print('<!DOCTYPE html>');
+print("<head>\n");
 print('<meta http-equiv="content-language" content="fr"> ');
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/menu.js' type='text/javascript'></script>");
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
 print("<script type='text/javascript'>");
 ?>
 
@@ -42,12 +39,24 @@ $('a.popup').click(function(){
   $('#per-page').on('change', function() {
     window.location.href = "<?php print $_SERVER['PHP_SELF'];?>?per_page="+$(this).val();
   });
+  
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
 });
 <?php
 print("</script>");
 print('<title>Base AGC: Reponses a une recherche</title>');
-print('</Head>');
-
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
+print('<link rel="shortcut icon" href="images/favicon.ico">');
+print('</head>');
+print("<body>");
+print('<div class="container">');
+$connexionBD            = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
+require_once("Commun/menu.php");
 
 /*
 * Renvoie la valeur du paramètre de type entier selon les variables de session et CGI
@@ -101,7 +110,9 @@ function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$
     global $requeteRecherche;
     global $st_criteres;
     $a_params_precedents=$pconnexionBD->params();
-    $st_bloc_rappel = "<div id=col_paroisses class=\"centre\">";
+	print("<div class=\"panel panel-primary col-md-4\">");
+	print("<div class=\"panel-heading\">Vos crit&egrave;res de recherche</div>");
+	print("<div class=\"panel-body\">");
     $st_criteres ="$pst_titre\n";
     if (!empty($pi_idf_type_acte))
     {
@@ -115,26 +126,24 @@ function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$
     else if ($pi_annee_max!='')
       $st_criteres .=" jusqu'en $pi_annee_max";
     $st_criteres .= "\n";
-    if ($pi_idf_commune!=0)
-    {
-      $st_nom_commune = $pconnexionBD->sql_select1("select nom from commune_acte where idf=$pi_idf_commune");
-    }
-    else
-      $st_nom_commune = 'Pas de commune selectionn&eacute;e';
+    $st_nom_commune =  $pi_idf_commune!=0 ? $pconnexionBD->sql_select1("select nom from commune_acte where idf=$pi_idf_commune") : 'Pas de commune selectionn&eacute;e';
+
     $st_criteres .= "Commune s&eacute;lectionn&eacute;e: $st_nom_commune\n";
-    $st_bloc_rappel .= nl2br($st_criteres);
+    $st_bloc_rappel = nl2br($st_criteres);
     $st_communes_voisines=join("\n",array_values($requeteRecherche->communes_voisines()));
     if (count(array_values($requeteRecherche->communes_voisines()))>1)
     {
-      $st_bloc_rappel .="Paroisses voisines ou rattach&eacute;es<br>";
+      $st_bloc_rappel .="<div class=\"form-group\"><label for=\"communes_voisines\">Paroisses voisines ou rattach&eacute;es";
       if (!empty($pi_rayon))
       {
         $st_bloc_rappel .="(avec recherches dans un rayon de $pi_rayon km)\n";
       }
-      $st_bloc_rappel .="<div class=alignLeft><textarea rows=6 cols=40>$st_communes_voisines</textarea></div>";
+	  $st_bloc_rappel .="</label>";
+      $st_bloc_rappel .="<textarea rows=6 cols=40 id=\"communes_voisines\">$st_communes_voisines</textarea></div>";
     }
     $st_bloc_rappel .="</div>";
-    $pconnexionBD->initialise_params($a_params_precedents);
+    $st_bloc_rappel .="</div>";
+	$pconnexionBD->initialise_params($a_params_precedents);
     return $st_bloc_rappel;
 }
 
@@ -184,8 +193,7 @@ $_SESSION['releve_annee_max']      = $gi_releve_annee_max;
 $_SESSION['releve_type']        	= $releve_type;
 
 $gst_adresse_ip         = $_SERVER['REMOTE_ADDR'];
-$connexionBD            = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-require_once("Commun/menu.php");
+
 $st_criteres            = '';
 
 $requeteRecherche = new RequeteRecherche($connexionBD);
@@ -213,15 +221,15 @@ switch($gst_type_recherche)
     }
     $st_erreur_nom = '';
     if (($gst_nom_epx!= '*') && ($gst_nom_epx!= '!') && strlen(str_replace('*','',$gst_nom_epx))<2 )
-      $st_erreur_nom ="<div class='IMPORTANT'>Le nom de l'&eacute;poux doit comporter au moins trois caract&egrave;res</div>\n";
+      $st_erreur_nom ="<div class='alert alert-danger'>Le nom de l'&eacute;poux doit comporter au moins trois caract&egrave;res</div>\n";
     if (($gst_nom_epse!= '*' && $gst_nom_epse!= '!') && strlen(str_replace('*','',$gst_nom_epse))<2 )
-      $st_erreur_nom .= "<div class='IMPORTANT'>Le nom de l'&eacute;pouse doit comporter au moins trois caract&egrave;res</div>\n";
+      $st_erreur_nom .= "<div class='alert alert-danger'>Le nom de l'&eacute;pouse doit comporter au moins trois caract&egrave;res</div>\n";
     if (($gst_nom_epx== '*') && ($gst_nom_epse== '*'))
-      $st_erreur_nom .= "<div class='IMPORTANT'>Au moins un des noms ne doit pas correspondre au caract&egrave;re joker \"*\"</div>\n";
+      $st_erreur_nom .= "<div class='alert alert-danger'>Au moins un des noms ne doit pas correspondre au caract&egrave;re joker \"*\"</div>\n";
     if ($st_erreur_nom!='')
     {
       print(nl2br($st_erreur_nom));
-      print("<a href=Recherches.php class=\"RetourReponses\">Nouvelle Recherche</a><br>");
+      print("<a href=Recherches.php class=\"btn btn-primary col-md-4 col-md-offset-4\">Nouvelle Recherche</a><br>");
       exit();
     }
     $_SESSION['type_recherche']     	  = $gst_type_recherche;
@@ -307,36 +315,49 @@ date_default_timezone_set($gst_time_zone);
 
     if (!empty($gst_variantes_epx) || !empty($st_variantes_prenoms_epx))
     {
-      print("<div id=col_variantes_epoux class=\"gauche\">Variantes connues pour l'&eacute;poux");
-      print("<div class=\"deux_colonnes\">");
-      if ($st_variantes_epx_trouvees!="")
-        print("<div class\"nowrap\">Patronyme:<br><textarea rows=8 cols=20>$st_variantes_epx_trouvees</textarea></div>");
+      print("<div class=\"panel panel-primary col-md-4\">");
+	  print("<div class=\"panel-heading\">Variantes connues pour l'&eacute;poux</div>");
+      print("<div class=\"panel-body\">");
+	  print('<form>'); 
+	  print('<div class="form-row">');
+	  if ($st_variantes_epx_trouvees!="")
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epx\">Patronyme:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_patros_epx\">$st_variantes_epx_trouvees</textarea></div>");
       else
-        print("<div>Pas de variantes patronymiques connues</div>");
+        print("<div class=\"col-md-4\">Pas de variantes patronymiques connues</div>");
       if ($st_variantes_prenoms_epx!="")
-        print("<div class\"nowrap\">Pr&eacute;nom:<br><textarea rows=8 cols=20>$st_variantes_prenoms_epx</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms_epx\">Pr&eacute;nom:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_prenoms_epx\">$st_variantes_prenoms_epx</textarea></div>");
       else
-        print("<div>Pas de variantes de pr&eacute;noms connues</div>");
-      print("</div>");    
-      print("</div>");
+        print("<div class=\"col-md-6\">Pas de variantes de pr&eacute;noms connues</div>");
+      print("</div>"); // fin ligne
+	  print("</form>");    
+      print("</div>");	  
+	  print("</div>");
     }
+	else
+	  print("<div class=\"row col-md-4\"></div>");
+	print(rappel_recherches_communes($connexionBD,"Recherche du couple: $gst_prenom_epx $gst_nom_epx X $gst_prenom_epse $gst_nom_epse",$gi_idf_type_acte,$gi_annee_min,$gi_annee_max,$gi_idf_commune,$gi_rayon));
     if (!empty($gst_variantes_epse) ||  !empty($st_variantes_prenoms_epse))
-    {      
-      print("<div id=col_variantes_epouse class=\"droite\">Variantes connues pour l'&eacute;pouse");
-      print("<div class=\"deux_colonnes\">");
+    { 
+      print("<div class=\"panel panel-primary col-md-4\">");
+	  print("<div class=\"panel-heading\">Variantes connues pour l'&eacute;pouse</div>");
+      print("<div class=\"panel-body\">");
+	  print('<form>');
+	  print('<div class="form-row">');
       if ($st_variantes_epse_trouvees!="")
-        print("<div class\"nowrap\">Patronyme:<br><textarea rows=8 cols=20>$st_variantes_epse_trouvees</textarea></div>"
-      );
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epse\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros_epse\" rows=8 cols=20>$st_variantes_epse_trouvees</textarea></div>");
       else
-        print("<div>Pas de variantes patronymiques connues</div>");
+        print("<div class=\"col-md-6\">Pas de variantes patronymiques connues</div>");
       if ($st_variantes_prenoms_epse!="")
-        print("<div class\"nowrap\">Pr&eacute;nom:<br><textarea rows=8 cols=20>$st_variantes_prenoms_epse</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms_epse\">Pr&eacute;nom:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_prenoms_epse\">$st_variantes_prenoms_epse</textarea></div>");
       else
-        print("<div>Pas de variantes de pr&eacute;noms connues</div>");
-      print("</div>");     
+        print("<div class=\"col-md-6\">Pas de variantes de pr&eacute;noms connues</div>");
+	  print("</div>"); // fin ligne
+      print("</form>");
+      print("</div>");	  
       print("</div>");
     }
-    print(rappel_recherches_communes($connexionBD,"Recherche du couple: $gst_prenom_epx $gst_nom_epx X $gst_prenom_epse $gst_nom_epse",$gi_idf_type_acte,$gi_annee_min,$gi_annee_max,$gi_idf_commune,$gi_rayon));
+	else
+	  print("<div class=\"row col-md-4\"></div>");
   break;
   case 'personne':
   case 'tous_pat':
@@ -412,8 +433,7 @@ date_default_timezone_set($gst_time_zone);
         }
 		  }
     }
-     $gst_requete_nb_actes= "select SQL_CALC_FOUND_ROWS distinct a.idf,ta.nom,ca.nom,if (a.idf_type_acte=".IDF_RECENS.",GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',parties.patronyme) order by parties.idf separator '<br>'),GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',parties.patronyme) order by parties.idf separator ' X ')) as parties,concat(ifnull(prn.libelle,''),' ',p.patronyme,' (',tp.nom,')'),a.date,a.idf_type_acte,a.cote,a.idf_source,a.details_supplementaires,m_a.statut,a.annee,a.mois,a.jour,a.created,a.changed from `personne` p left join `prenom` prn on (p.idf_prenom=prn.idf) $st_tables_prenom left  join `acte` a on (p.idf_acte=a.idf) join `personne` parties on (a.idf=parties.idf_acte and parties.idf_type_presence=".IDF_PRESENCE_INTV.") left join prenom prn_parties on (parties.idf_prenom=prn_parties.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join `type_presence` tp on (p.idf_type_presence=tp.idf) left join modification_acte m_a on (a.idf=m_a.idf_acte and m_a.statut='A') where ";
-    
+   $gst_requete_nb_actes= "select SQL_CALC_FOUND_ROWS distinct a.idf,ta.nom,ca.nom,if (a.idf_type_acte=".IDF_RECENS.",GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',parties.patronyme) order by parties.idf separator '<br>'),GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',parties.patronyme) order by parties.idf separator ' X ')) as parties,concat(ifnull(prn.libelle,''),' ',p.patronyme,' (',tp.nom,')'),a.date,a.idf_type_acte,a.cote,a.idf_source,a.details_supplementaires,m_a.statut,a.annee,a.mois,a.jour,a.created,a.changed from `personne` p left join `prenom` prn on (p.idf_prenom=prn.idf) $st_tables_prenom left  join `acte` a on (p.idf_acte=a.idf) join `personne` parties on (a.idf=parties.idf_acte and parties.idf_type_presence=".IDF_PRESENCE_INTV.") left join prenom prn_parties on (parties.idf_prenom=prn_parties.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join `type_presence` tp on (p.idf_type_presence=tp.idf) left join modification_acte m_a on (a.idf=m_a.idf_acte and m_a.statut='A') where "; 
     if (!empty($gst_sexe)) $a_clauses[] = "p.sexe='$gst_sexe'";
     if ($gi_idf_source !=0) $a_clauses[]="a.idf_source=$gi_idf_source" ;
     if ($gi_idf_type_acte ==IDF_UNION)
@@ -445,25 +465,32 @@ date_default_timezone_set($gst_time_zone);
 
     if (!empty($gst_variantes) || !empty($st_variantes_prenoms))
     {
-    
-       print("<div id=col_variantes_epoux class=\"gauche\">Variantes connues");
-      print("<div class=\"deux_colonnes\">");
+       print("<div class=\"panel panel-primary col-md-4\">");
+	   print("<div class=\"panel-heading\">Variantes connues</div>");
+       print("<div class=\"panel-body\">");
+	   print('<form>');
+	   print('<div class="form-row">');
+        
       if ($st_variantes_trouvees!="")
-        print("<div>Patronyme:<br><textarea rows=8 cols=20>$st_variantes_trouvees</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros\" rows=8 cols=20>$st_variantes_trouvees</textarea></div>");
       else
-        print("<div>Pas de variantes connues</div>");
+        print("<div class=\"col-md-6\">Pas de variantes connues</div>");
       if ($st_variantes_prenoms!="")
-        print("<div>Pr&eacute;nom:<br><textarea rows=8 cols=20>$st_variantes_prenoms</textarea></div>");
+		print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms\">Pr&eacute;nom:</label><textarea class=\"form-control\" id=\"variantes_prenoms\" rows=8 cols=20>$st_variantes_prenoms</textarea></div>");
       else
-        print("<div>Pas de variantes connues</div>");
-      print("</div>");    
+        print("<div class=\"col-md-6\">Pas de variantes connues</div>");
+      print("</div>"); // fin ligne
+      print("</form>");
+      print("</div>");	  
       print("</div>");
     }
     print(rappel_recherches_communes($connexionBD,"Recherche de la personne: $gst_prenom $gst_nom",$gi_idf_type_acte,$gi_annee_min,$gi_annee_max,$gi_idf_commune,$gi_rayon));
+	print("<div class=\"col-md-4\"></div>");
+	
     //FBOprint("Req=$gst_requete_actes<br>");
   break;
   default:
-    print("<div class=\"IMPORTANT\">Erreur: mode $gst_type_recherche inconnu</div>");
+    print("<span class=\"label label-danger\">Erreur: mode $gst_type_recherche inconnu</span>");
 }
 
 $etape_prec = getmicrotime();
@@ -476,20 +503,18 @@ $ga_sources=$connexionBD->sql_select_multiple_par_idf("select idf,script_demande
 print benchmark("Temps de recherche");
 
 $i_nb_actes = count($a_actes);
-print("<div class=alignCenter>$a_actes_total occurrence(s) trouv&eacute;e(s). ");
+print("<div class=\"row col-md-12 text-center\">$a_actes_total occurrence(s) trouv&eacute;e(s). ");
 print('<div id="curseur" class="infobulle"></div>');
-print('<div>');
-
-print '<label>Nombre de r&eacute;sultats par page</label>';
-print '<select id="per-page" name="per_page">';
+print("<div class='form-group col-md-2 col-md-offset-5'>");
+print '<label for=\"per-page\">Nombre de r&eacute;sultats par page</label>';
+print '<select id="per-page" name="per_page" class="form-control">';
 foreach ($per_page_options as $key => $value) {
   $elected = ($value == $_SESSION['per_page'])? ' selected="selected" ' : '';
   print '<option value="' . $key . '" ' . $elected . '>' . $value . '</option>';
 }
 print '</select>';
+print("</div></div>");
 
-
-print("<br></div>");
 if ($i_nb_actes>0)
 {
   foreach ($a_actes as $a_acte)
@@ -497,7 +522,6 @@ if ($i_nb_actes>0)
   
 	list($i_idf_acte,$st_type_acte,$st_commune,$st_parties,$st_recherche,$st_date,$i_idf_type_acte,$st_cote,$i_idf_source,$i_details,$st_tdm,$i_annee,$i_mois,$i_jour,$created,$changed)=$a_acte;
     list($st_script_demande,$i_utilise_detail,$st_icone_info,$st_icone_ninfo,$st_icone_index)=$ga_sources[$i_idf_source];
-
 	$releve = 'Date de publication : '. date('d-m-Y', $created).' - Date de modification : '. date('d-m-Y', $changed);
 	
     if ($i_utilise_detail==1)
@@ -508,39 +532,38 @@ if ($i_nb_actes>0)
         {
           case 1:
             $st_icone_td = $st_icone_info;
-            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" class=\"popup\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" title=\"$st_cote - $releve\"></a>";
+            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" data-toggle=\"tooltip\" title=\"$st_cote - $releve\" class=\"popup\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
           break;
           case 2:
             $st_icone_td = $st_icone_index;
-            $st_detail = "<a href=\"PropositionModification.php?idf_acte=$i_idf_acte\" target=\"_blank\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" title=\"$st_cote - $releve\"></a>";
+            $st_detail = "<a href=\"PropositionModification.php?idf_acte=$i_idf_acte\" target=\"_blank\" data-toggle=\"tooltip\" title=\"$st_cote - $releve\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
           break;
           default:
             $st_icone_td = $st_icone_ninfo;
-            //$st_detail = "<a href=\"PropositionModification.php?idf_acte=$i_idf_acte\" target=\"_blank\"  title=\"$releve\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\"></a>";
-            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" target=\"_blank\"  title=\"$releve\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\"></a>";
+            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" target=\"_blank\" data-toggle=\"tooltip\" title=\"$releve\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
         }
       }
       else if ($i_details==1)
-        $st_detail ="<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" class=\"popup\"  title=\"$releve\"><img src=\"./images/$st_icone_info\" border=0 alt=\"infos\"></a>";
+        $st_detail ="<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" data-toggle=\"tooltip\" title=\"$releve\" class=\"popup\"><img src=\"./images/$st_icone_info\" border=0 alt=\"infos\"></a>";
       else if ($i_details==2)
-        $st_detail ="<img src=\"./images/$st_icone_index\" border=0 alt=\"$st_cote\" title=\"$st_cote - $releve\">";
+        $st_detail ="<img src=\"./images/$st_icone_index\" border=0 alt=\"$st_cote\" data-toggle=\"tooltip\" title=\"$st_cote - $releve\" class=\"popup\">";
       else
-        $st_detail ="<img src=\"./images/$st_icone_ninfo\" alt=\"pas d'infos\" title=\"$releve\" onmouseover=\"montre('Pas de details supplementaires');\" onmouseout=\"cache();\">";
+        $st_detail ="<img src=\"./images/$st_icone_ninfo\" alt=\"pas d'infos\" data-toggle=\"tooltip\" title=\"Le relev&eacute; ne comporte pas de renseignements suppl&eacute;mentaires que ceux d&eacute;j&agrave; affich&eacute;s\">";
     }
     else
-       $st_detail ="<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" class=\"popup\"   title=\"$releve\"><img src=\"./images/$st_icone_info\" border=0 alt=\"infos\"></a>";
+       $st_detail ="<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" data-toggle=\"tooltip\" title=\"$releve\" class=\"popup\"><img src=\"./images/$st_icone_info\" border=0 alt=\"infos\"></a>";
 
     if ($gst_type_recherche=='tous_pat')
     {
       if (a_droits($_SESSION['ident'],DROIT_CHARGEMENT))
-        $a_tableau[] =  array($st_type_acte,$st_parties,$st_commune,$st_date,$st_detail,"<a href=\"./Administration/ModifieActe.php?idf_acte=$i_idf_acte\"><img src=\"./images/edit.png\" border=0 alt=\"modification\"></a>");
+        $a_tableau[] =  array($st_type_acte,$st_parties,$st_commune,$st_date,$st_detail,"<a href=\"./Administration/ModifieActe.php?idf_acte=$i_idf_acte\"><span class=\"glyphicon glyphicon-edit\"></a>");
       else
         $a_tableau[] =  array($st_type_acte,$st_parties,$st_commune,$st_date,$st_detail);
     }
     else
     {
       if (a_droits($_SESSION['ident'],DROIT_CHARGEMENT))
-        $a_tableau[] =  array($st_type_acte,$st_parties,$st_commune,$st_date,$st_recherche,$st_detail,"<a href=\"./Administration/ModifieActe.php?idf_acte=$i_idf_acte\"><img src=\"./images/edit.png\" border=0 alt=\"modification\"></a>");
+        $a_tableau[] =  array($st_type_acte,$st_parties,$st_commune,$st_date,$st_recherche,$st_detail,"<a href=\"./Administration/ModifieActe.php?idf_acte=$i_idf_acte\"><span class=\"glyphicon glyphicon-edit\"></span></a>");
       else
         $a_tableau[] =  array($st_type_acte,$st_parties,$st_commune,$st_date,$st_recherche,$st_detail);
     }
@@ -569,10 +592,10 @@ else
 }
 else
 {
-   print('<div style="text-align:center">');
+   print('<div class="row">');
    print("Aucun r&eacute;sultat<br>");
    print("V&eacute;rifiez que vous n'avez pas mis trop de contraintes (commune,type d'acte,...)<br>");
-   print("<br><div class=IMPORTANT>");
+   print("<br><div class=\"bg-danger\">");
    print("Rappel de vos crit&egrave;res: <br>");
    print(nl2br($st_criteres));
    print("</div>");
@@ -580,11 +603,14 @@ else
 
 }
 
-print('<div align=center><br>');
-print("<a style=\"align:center\" href=\"Recherches.php\" class=\"RetourReponses\">Revenir &agrave; la page de recherche</a>");
-print("<a style=\"align:center\" href=\"Recherches.php?recherche=nouvelle\" class=\"RetourReponses\">Commencer une nouvelle recherche</a>");
+print('<div class="row">');
+print('<div class="btn-group col-md-offset-3 col-md-6" role="group">');
+print('<a class="btn btn-primary" href="Recherches.php" role="button">Revenir &agrave; la page de recherche</a>');  
+print('<a class="btn btn-primary" href="Recherches.php?recherche=nouvelle" role="button">Commencer une nouvelle recherche</a>');
 print("</div>");
-print ("</form>");
+print("</div>");
+
+print("</div>");
 print("</body></html>");
 $connexionBD->ferme();
 ?>
