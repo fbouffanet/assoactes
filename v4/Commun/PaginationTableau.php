@@ -49,27 +49,25 @@ class PaginationTableau {
     * L'entête se presente sous la forme d'une liste d'ancres HTML [pagecourante - delta ... pagecourante ... pagecourante + delta]     
     */       
    public function affiche_entete_liens_navigation() {
-     
-  //   $i_deb = ($this->i_page_cour-$this->i_delta_navig)>0 ? ($this->i_page_cour-$this->i_delta_navig) : 1;
      $i_deb = 1;
      $i_fin = $this->i_nb_pages;
-     print('<div class=alignCenter><br>');
+     print('<div class="text-center">');
+     print('<ul class="pagination">');
      if ($i_fin>1)
-        print "<a href=\"$this->st_nom_script?$this->st_param_numpage=1\">D&eacute;but</a> ";
-     
+        print("<li class=\"page-item\"><a href=\"$this->st_nom_script?$this->st_param_numpage=1\" class=\"page-item\">D&eacute;but</a></li> "); 
      if ($i_deb<$i_fin)
      {  
         for ($i=$i_deb;$i<=$i_fin;$i++) {
           if ($i==$this->i_page_cour)
-             print " <span style=\"font-weight:bold;\"
->- Page $i -</span> "; 
+			  print("<li class=\"page-item active\"><span class=\"page-link\">$i<span class=\"sr-only\">(current)</span></span></li>");
           else
-             print "<a href=\"$this->st_nom_script?$this->st_param_numpage=$i\">$i</a> ";   
+			print("<li class=\"page-item\"><a href=\"$this->st_nom_script?$this->st_param_numpage=$i\" class=\"page-item\">$i</a></li> ");  
         }
      }
      if ($i_fin<$this->i_nb_pages)
-        print " <a href=\"$this->st_nom_script?$this->st_param_numpage=$this->i_nb_pages\">Fin</a>";
-     print("<br></div>"); 
+		print("<li class=\"page-item\"><a href=\"$this->st_nom_script?$this->st_param_numpage=$this->i_nb_pages\" class=\"page-item\">Fin</a></li>");  
+     print("</ul>");
+     print("</div>");  
    }
    
    
@@ -83,7 +81,10 @@ class PaginationTableau {
      {
         $st_nom_select = $this->st_param_numpage."_".$this->i_nb_select_page;
         $i_index_choisi = "document.$pst_nom_formulaire.$st_nom_select.selectedIndex";
-        print("<div class=alignCenter><br>Page: <select name=$st_nom_select onChange=\"document.$pst_nom_formulaire.$this->st_param_numpage.value=document.$pst_nom_formulaire.$st_nom_select.options[$i_index_choisi].value;document.$pst_nom_formulaire.submit();\">");        
+        print("<div class=\"form-group row col-md-12\">");
+		print("<label for=\"$st_nom_select\" class=\"col-form-label col-md-2 col-md-offset-3\">Page:</label>");
+		print('<div class="col-md-2">');
+		print("<select name=$st_nom_select id=\"$st_nom_select\" onChange=\"document.$pst_nom_formulaire.$this->st_param_numpage.value=document.$pst_nom_formulaire.$st_nom_select.options[$i_index_choisi].value;document.$pst_nom_formulaire.submit();\" class=\"form-control\">");        
         for ($i=1;$i<=$this->i_nb_pages;$i++)
         {
            if ($i==$this->i_page_cour)
@@ -91,7 +92,8 @@ class PaginationTableau {
            else
               print("<option value=$i>$i</option>\n");
         }
-        print("</select></div>");
+        print("</select>");
+		print("</div></div>");
      } 
    }
      
@@ -102,30 +104,31 @@ class PaginationTableau {
       $st_requete = $this->st_requete;
       $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
       $st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
-      print("<div align=center><br><table border=1>");
-      print("<tr>");
+      print("<table class=\"table table-bordered table-striped\">");
+      print("<thead><tr>");
       foreach ($this->a_entete as $st_cell_entete) {
          print("<th>$st_cell_entete</th>");
       }
-      print("</tr>\n");
+      print("</tr></thead>\n");
+	  print('<tbody>');
       $a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
       $i=0;
       foreach ($a_lignes as $a_ligne) {
-         $st_class = ($i%2==0) ? 'ligne_paire':  'ligne_impaire';
-         print("<tr class=$st_class>");
+         print("<tr>");
          foreach ($a_ligne as $st_champ)
          {
             if ($st_champ!="")
-              print("<td>$st_champ</td>");
+              print("<td class=\"lib_erreur\">$st_champ</td>");
             else
               print("<td>&nbsp;</td>");
          }         
          print("</tr>\n");
          $i++;
-      }      
+      }
+      print('</tbody>');      
       print("</table>");
       // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
-      print("<input type=hidden name=$this->st_param_numpage value=\"\"><br></div>"); 
+      print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
    }   
 
    /**
@@ -134,16 +137,16 @@ class PaginationTableau {
    public function affiche_tableau_simple($pa_tableau) {
       $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
       $pa_tableau=array_slice($pa_tableau,$i_limite_inf,$this->i_nb_lignes_par_page);
-      print("<div align=center><br><table border=1>");
-      print("<tr>");
+      print("<table class=\"table table-bordered table-striped\">");
+      print("<thead><tr>");
       foreach ($this->a_entete as $st_cell_entete) {
          print("<th>$st_cell_entete</th>");
       }
-      print("</tr>\n");
+      print("</tr></thead>\n");
+	  print('<tbody>');
       $i=0;
       foreach ($pa_tableau as $a_ligne) {
-         $st_class = ($i%2==0) ? 'ligne_paire':  'ligne_impaire';
-         print("<tr class=$st_class>");
+         print("<tr>");
          foreach ($a_ligne as $st_champ)
          {
             if ($st_champ!="")
@@ -153,10 +156,11 @@ class PaginationTableau {
          }         
          print("</tr>\n");
          $i++;
-      }      
+      }
+      print('</tbody>');      
       print("</table>");
       // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
-      print("<input type=hidden name=$this->st_param_numpage value=\"\"><br></div>"); 
+      print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
    }   
 
 
@@ -167,18 +171,18 @@ class PaginationTableau {
       $st_requete = $this->st_requete;
       $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
       $st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
-      print("<div align=center><br><table border=1>");
-      print("<tr>");
+      print("<table class=\"table table-bordered table-striped\">");
+      print("<thead><tr>");
       foreach ($this->a_entete as $st_cell_entete) {
          print("<th>$st_cell_entete</th>");
       }
-      print("</tr>\n");
-      $a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
+      print("</tr></thead>\n");
+      print('<tbody>');
+	  $a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
       $i=0;
       foreach ($a_lignes as $a_ligne) {
          $idf_element = array_shift($a_ligne);
-         $st_class = ($i%2==0) ? 'ligne_paire':  'ligne_impaire';
-         print("<tr class=$st_class>");
+         print("<tr>");
          $st_nom_col1 = preg_replace('/\s/','_',$a_ligne[0]);
          foreach ($a_ligne as $st_nom_element)
          {
@@ -188,14 +192,15 @@ class PaginationTableau {
                print("<td>&nbsp;</td>");   
          }
                   
-         print("<td align=center><input type=button id=\"bouton$idf_element\" value=Modifier onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
-         print("<td align=center><input type=checkbox name=\"supp[]\" id=\"$st_nom_col1\" value=$idf_element></td>"); 
+		 print(sprintf("<td><a class=\"btn btn-primary btn-block\" type=button id=\"bouton%d\" href=\"%s?mod=%d\" role=\"button\"><span class=\"glyphicon glyphicon-edit\"></span> Modifier</a></td>",$idf_element,$_SERVER['PHP_SELF'],$idf_element));
+         print("<td><div class=\"lib_erreur\"><div class=\"checkbox\"><label><input type=checkbox name=\"supp[]\" id=\"$st_nom_col1\" value=$idf_element class=\"form-check-input\"></label></div></div></td>"); 
          print("</tr>\n");
          $i++;
-      }      
+      }
+      print('</tbody>');      
       print("</table>");
       // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
-      print("<input type=hidden name=$this->st_param_numpage value=\"\"><br></div>"); 
+      print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
    }   
     
 /**
@@ -205,19 +210,19 @@ class PaginationTableau {
       $st_requete = $this->st_requete;
       $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
       $st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
-      print("<div align=center><br><table border=1>");
-      print("<tr>");
+      print("<table class=\"table table-bordered table-striped\">");
+      print("<thead><tr>");
       foreach ($this->a_entete as $st_cell_entete) {
          print("<th>$st_cell_entete</th>");
       }
-      print("</tr>\n");
+      print("</tr></thead>\n");
+	  print('<tbody>');
       $a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
       $i=0;
       foreach ($a_lignes as $a_ligne)
 	  {
          $idf_element = array_shift($a_ligne);
-         $st_class = ($i%2==0) ? 'ligne_paire':  'ligne_impaire';
-         print("<tr class=$st_class>");
+         print("<tr>");
          $st_nom_col1 = preg_replace('/\s/','_',$a_ligne[0]);
          foreach ($a_ligne as $st_nom_element)
          {
@@ -227,53 +232,16 @@ class PaginationTableau {
                print("<td>&nbsp;</td>");   
          }
                   
-         print("<td align=center><input type=button id=\"bouton$idf_element\" value=Modifier onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
-         print("<td align=center><input type=button id=\"boutonR$idf_element\" value=Fusionner onClick=\"document.location.href='$this->st_nom_script?remp=$idf_element'\"></td>");
+         print("<td><input type=button id=\"bouton$idf_element\" class=\"btn btn-primary btn-block\" value=\"Modifier\" onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
+         print("<td><input type=button id=\"boutonR$idf_element\" class=\"btn btn-primary btn-block\" value=Fusionner onClick=\"document.location.href='$this->st_nom_script?remp=$idf_element'\"></td>");
          print("</tr>\n");
          $i++;
-      }      
-      print("</table>");
-      // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
-      print("<input type=hidden name=$this->st_param_numpage value=\"\"><br></div>"); 
-   }   
-    
-   /**
-   * Affiche le contenu du tableau correspondant spéciale pour les sondages
-   * @param string $st_type type de question  
-   */       
-   public function affiche_tableau_edition_sondage($type) {
-      $st_requete = $this->st_requete;
-      $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
-      $st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
-      print("<div align=center><table border=1>");
-      print("<tr>");
-      foreach ($this->a_entete as $st_cell_entete) {
-         print("<th>$st_cell_entete</th>");
       }
-      print("</tr>\n");
-      $a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
-      $i=0;
-      foreach ($a_lignes as $a_ligne) {
-         $idf_element = array_shift($a_ligne);
-         $st_class = ($i%2==0) ? 'ligne_paire':  'ligne_impaire';
-         print("<tr class=$st_class>");
-         $st_nom_col1 = $a_ligne[0];
-         foreach ($a_ligne as $st_nom_element)
-         {
-            if ($st_nom_element!= '')
-               print("<td>$st_nom_element</td>");
-            else
-               print("<td>&nbsp;</td>");   
-         }
-                  
-         print("<td align=center><input type=button id=\"$idf_element\" value=Réponse onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element&type=$st_type'\"></td>"); 
-         print("</tr>\n");
-         $i++;
-      }      
+      print('</tbody>');       
       print("</table>");
       // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
-      print("<input type=hidden name=$this->st_param_numpage value=\"\"><br></div>"); 
-   }      
+      print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
+   }     
    
    /**
     * Met ª jour le num‚ro de page courante   
@@ -302,18 +270,18 @@ class PaginationTableau {
 		$st_requete = $this->st_requete;
 		$i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
 		$st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
-		print("<div align=center><br><table border=1>");
-		print("<tr>");
+		print("<table class=\"table table-bordered table-striped\">");
+		print("<thead><tr>");
 		foreach ($this->a_entete as $st_cell_entete) {
 			print("<th>$st_cell_entete</th>");
 		}
-		print("</tr>\n");
+		print("</tr></thead>\n");
+		print('<tbody>');
 		$a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
 		$i=0;
 		foreach ($a_lignes as $a_ligne) {
 			$idf_element = array_shift($a_ligne);
-			$st_class = ($i%2==0) ? 'ligne_paire':  'ligne_impaire';
-			print("<tr class=$st_class>");
+			print("<tr>");
 			$st_nom_col1 = preg_replace('/\s/','_',$a_ligne[0]);
 			foreach ($a_ligne as $st_nom_element)
 			{
@@ -323,13 +291,14 @@ class PaginationTableau {
 				print("<td>&nbsp;</td>");   
 			}
 			
-			print("<td align=center><input type=button id=\"bouton$idf_element\" value=Sélectionner onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
+			print("<td><input type=button class=\"btn btn-primary btn-block\" id=\"bouton$idf_element\" value=Sélectionner onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
 			print("</tr>\n");
 			$i++;
-		}      
+		}
+        print('<t/body>');		
 		print("</table>");
 		// paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
-		print("<input type=hidden name=$this->st_param_numpage value=\"\"><br></div>"); 
+		print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
 	}
   
   /**
@@ -341,30 +310,25 @@ class PaginationTableau {
   public function get_pagination($total, $per_page, $current_page = 0) {
 
   $nb_pages = ceil($total/$per_page);
-  $nav = '<div class="alignCenter" style="width:800px;margin-left:auto;margin-right:auto"><br>';
+  $nav = '<div class="text-center"><ul class="pagination">';
   if($current_page > 0){
-    $nav .= ' <a href="' . $_SERVER['PHP_SELF'] . '?page=0" title="Premi&eacute;re page"> << </a> ';
-    $nav .= ' <a href="' . $_SERVER['PHP_SELF'] . '?page='. ($current_page-1) .'" title="Page pr&eacute;c&eacute;dente"> < Page pr&eacute;c&eacute;dente</a> ';
+    $nav .= '<li class="page-item"> <a href="' . $_SERVER['PHP_SELF'] . '?page=0" aria-label="Premi&eacute;re page"><span aria-hidden="true">&laquo;</span> <span class="sr-only">Premi&eagre;re page </span></a></li>';
+    $nav .= '<li class="page-item">  <a href="' . $_SERVER['PHP_SELF'] . '?page='. ($current_page-1) .'" aria-label="Page pr&eacute;c&eacute;dente"> Page pr&eacute;c&eacute;dente</a></li>';
   }
-    $nav .= ' | ';
   if($current_page + 1 < $nb_pages){
-    $nav .= ' <a href="' . $_SERVER['PHP_SELF'] . '?page='. ($current_page+1) .'" title="Page suivante"> Page suivante > </a> ';
-    $nav .= ' <a href="' . $_SERVER['PHP_SELF'] . '?page='. ($nb_pages - 1) .'" title="Derni&egrave;re page"> >> </a> ';
+    $nav .= '<li class="page-item">  <a href="' . $_SERVER['PHP_SELF'] . '?page='. ($current_page+1) .'" aria-label="Page suivante"> Page suivante > </a> </li>';
+    $nav .= '<li class="page-item"> <a href="' . $_SERVER['PHP_SELF'] . '?page='. ($nb_pages - 1) .'" aria-label="Derni&egrave;re page"> <span aria-hidden="true">&raquo;</span><span class="sr-only">Derni&egrave;re Page</span></a></li>';
   }
-  $nav .= '<br><br>';
-
+  $nav .= '</ul>';
+  $nav .= '<ul class="pagination justify-content-center">'; 
   for($i = 0; $i < $nb_pages; $i++) {
        if($i == $current_page){
-           $nav .= '<span style="font-weight:bold;">- Page '. ($i+1) .' -</span>';
+           $nav .= '<li class="page-item active"> <span class="page-link">'. ($i+1) .'<span class="sr-only">(current)</span></span></li>';
        } else {
-            $nav .= ' <a href="' . $_SERVER['PHP_SELF'] . '?page='. $i .'">' . ($i+1) . '</a> ';
+            $nav .= '<li class="page-item"> <a href="' . $_SERVER['PHP_SELF'] . '?page='. $i .'">' . ($i+1) . '</a></li>';
        }
   }
-
-
-
-  $nav .= '</div>';
-
+  $nav .= '</ul></div>';
   return $nav;
 }
    
