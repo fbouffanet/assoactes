@@ -45,17 +45,20 @@ if (empty($a_retour_prov))   // Pas d'enregistrement
 else
 {
    list($gi_idf_ins,$gst_nom_ins,$gst_prenom_ins,$gst_cp_ins,$gst_pays_ins,$gst_email_ins)= $a_retour_prov;
-   print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+   print('<!DOCTYPE html>');
    print("<head>");
    print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
    print('<meta http-equiv="content-language" content="fr">');
-   print("<link href='$gst_chemin/Commun/Styles.css' type='text/css' rel='stylesheet'>");
-   print("<script src='$gst_chemin/Commun/jquery-min.js' type='text/javascript'></script>");
-   print("<script src='$gst_chemin/Commun/menu.js' type='text/javascript'></script>");
+   print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+   print("<link href='$gst_url_site/css/styles.css' type='text/css' rel='stylesheet'>");
+   print("<link href='$gst_url_site/css/bootstrap.min.css' rel='stylesheet'>");
+   print("<script src='$gst_chemin/js/jquery-min.js' type='text/javascript'></script>");
+   print("<script src='$gst_url_site/js/bootstrap.min.js' type='text/javascript'></script>"); 
 
    print('<title>Validation de votre Inscription en ligne</title>');
    print('</head>');
    print("<body>\n");
+   print('<div class="container">');
    require_once("$gst_chemin/Commun/menu.php");
    
    $mess = "";
@@ -134,16 +137,35 @@ else
 	 }
    // Tout est ok, on poursuit vers le paiement en ligne de l'inscription.
 }
-print("<div class=accueil_centre>");
-print("<div align=center class=TITRE>Validation de votre inscription</div>\n");
-print("<div style=\"text-align: center; font-size: large;\"><br><div>$mess</div><br></div>\n");
+
+print('<div class="panel panel-primary">');
+print('<div class="panel-heading">Validation de votre inscription</div>');
+print('<div class="panel-body">');
+print("<div class=\"alert alert-info\">$mess</div>\n");
 print("<form method=\"post\" action=\"Payement.php\">\n");
-print("<div><table border=1>\n");
-print("<tr><th>Nom</th><td>$gst_nom_ins</td></tr>\n");
-print("<tr><th>Pr&eacute;nom</th><td>$gst_prenom_ins</td></tr>\n");
-print("<tr><th>Code Postal</th><td>$gst_cp_ins</td></tr>\n");
-print("<tr><th>Pays</th><td>$gst_pays_ins</td></tr>\n");
-print("</table><br></div>\n");
+   
+print('<div class="row">');
+print('<div class="form-group col-md-6">');
+print("<label for=\"nom_adht\" class=\"col-md-2 col-form-label\">Nom</label>");
+print("<div class=\"col-md-4\"><input type=\"text\" readonly class=\"form-control-plaintext\" id=\"nom_adht\" value=\"$gst_nom_ins\"></div>");
+print('</div>');
+print('<div class="form-group col-md-6">');
+print("<label for=\"prenom_adht\" class=\"col-md-2 col-form-label\">Pr&eacute;nom</label>");
+print("<div class=\"col-md-4\"><input type=\"text\" readonly class=\"form-control-plaintext\" id=\"prenom_adht\" value=\"$gst_prenom_ins\"></div>");
+print('</div>');
+print('</div>');
+
+print('<div class="row">');
+print('<div class="form-group col-md-6">');
+print("<label for=\"cp_adht\" class=\"col-md-2 col-form-label\">Code Postal</label>");
+print("<div class=\"col-md-4\"><input type=\"text\" readonly class=\"form-control-plaintext\" id=\"cp_adht\" value=\"$gst_cp_ins\"></div>");
+print('</div>');
+print('<div class="form-group col-md-6">');
+print("<label for=\"pays_adht\" class=\"col-md-2 col-form-label\">Pays</label>");
+print("<div class=\"col-md-4\"><input type=\"text\" readonly class=\"form-control-plaintext\" id=\"pays_adht\" value=\"$gst_pays_ins\"></div>");
+print('</div>');
+print('</div>');
+
 print("<input type=hidden name=nom value=\"$gst_nom_ins\">\n");
 print("<input type=hidden name=prenom value=\"$gst_prenom_ins\">\n");
 print("<input type=hidden name=idf_prov value=\"$idf_prov\">\n");
@@ -153,6 +175,7 @@ $adherent = new Adherent($connexionBD,$idf_agc);
 print($adherent->formulaire_type_inscription($gst_pays_ins,$gst_cp_ins));
 print $adherent->formulaire_aides_possibles();
 print $adherent->formulaire_origine();
-print("<div align=center><br><input type=\"submit\" value=\"Procéder au réglement\"></div></form></div>\n");
-print('</body></html>');
+print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Proc&eacute;der au r&egrave;glement</button>');
+print("</div></div>");
+print('</div></body></html>');
 ?>
