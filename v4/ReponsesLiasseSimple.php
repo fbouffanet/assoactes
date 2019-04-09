@@ -10,13 +10,44 @@ require_once('Commun/PaginationTableau.php');
 require_once('Commun/Benchmark.inc');
 require_once('Commun/VerificationDroits.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<Head>\n");
 print('<meta http-equiv="content-language" content="fr">');
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print("<link href='./Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<script src='./Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='./Commun/menu.js' type='text/javascript'></script>");
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
+print("<script src='js/select2.min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
+print("<script type='text/javascript'>");
+?>
+$(document).ready(function() {
+	
+$('a.popup').click(function(){
+   var url = $(this).attr("href");
+   var windowName = "InfosActe";
+   var windowSize = 'width=600,height=600,resizable=yes,scrollbars=yes';
+   window.open(url, windowName, windowSize);
+   return false;
+});
+
+$("#retour_recherche" ).click(function() {
+    window.location.href = 'RecherchesLiasses.php';
+});
+
+$("#nouvelle_recherche" ).click(function() {
+    window.location.href = 'RecherchesLiasses.php?recherche=nouvelle';
+});
+
+$('a.lien_infos_liasse').click(function(){
+	window.open(this.href, 'InfosLiasse', 'width=600, height=500');
+    return false;
+});
+
+});
+<?php
+print("</script>");
 print('<title>Base AGC: Reponses a une recherche de liasse</title>');
 print('</Head>');
 
@@ -115,6 +146,7 @@ $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$gst_adresse_ip,
 @fclose($pf);
 
 print("<body>");
+print('<div class="container">');
 print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");     
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("./Commun/menu.php");
@@ -207,8 +239,9 @@ $st_groupe = "group by l.cote_liasse, l.libelle_annees, f.nom, n.nom_notaire, n.
 $gst_requete_liasses = "$gst_requete_nb_liasses $st_where $st_groupe $st_tri";
 /* ------------------------------------------------------
    affichage des critères de recherche 
-*/   
-print("<div id=col_paroisses class=\"centre_notaire\">");
+*/
+print("<div class=\"row col-md-12\">");   
+print('<div id=col_paroisses class="col-md-4 col-md-offset-4 alert  alert-info">');
 $st_criteres = "Recherche des liasses:\nS&eacute;rie ".$gst_idf_serie_liasse."\n";
 
 if ($gst_nom_notaire != '')
@@ -274,10 +307,10 @@ if (count(array_values($requeteRecherche->communes_voisines()))>1)
       print("(avec recherches dans un rayon de $gi_rayon km)\n");
       $st_criteres .= " (avec recherches dans un rayon de $gi_rayon km)\n";
    }
-   print("<div class=alignLeft><textarea rows=6 cols=40>$st_communes_voisines</textarea></div>");  
+   print("<textarea rows=6 cols=40>$st_communes_voisines</textarea>");  
 }
 print("</div>");  
-
+print("</div>"); 
 $st_clauses = implode(" and ",$a_clauses);
 
 $etape_prec = getmicrotime();
@@ -285,14 +318,14 @@ $a_liasses=$connexionBD->sql_select_multiple($gst_requete_liasses);
 print benchmark("Recherche ");
 
 $i_nb_liasses = count($a_liasses);
-print("<div class=alignCenter>$i_nb_liasses occurrences trouv&eacute;es. ");
+print("<div class=\"text-center\">$i_nb_liasses occurrences trouv&eacute;es.</div>");
 print('<div id="curseur" class="infobulle"></div>');
 if ($i_nb_liasses>$gi_nb_max_reponses)
 {
 	print("Seules les $gi_nb_max_reponses premi&egrave;res sont affich&eacute;es");
 	$a_liasses = array_slice($a_liasses,0,$gi_nb_max_reponses);
 }
-print("<br></div>");
+print("</div>");
 if ($i_nb_liasses>0) {
 	function premier_elem($a_tab) {
 		return $a_tab[0];
@@ -306,8 +339,7 @@ if ($i_nb_liasses>0) {
 		list($st_cote_liasse, $st_nom_notaire, $st_prenom_notaire, $st_commentaire, $st_date_tri, $st_libelle_annees, 
 		     $i_idf_forme_liasse, $i_idf_commune_etude, $st_info_compl, $i_liasse_consultable, $st_liasse_releve) = $a_liasse;
 		if( $st_info_compl != '' || $i_liasse_consultable==0) {
-			$st_detail = "<a href=\"InfosLiasse.php?cote_liasse=$st_cote_liasse\" ".
-			             "        onClick=\"open(this.href,'InfosLiasse','width=600,height=500,resizable=yes,scrollbars=yes');return false;\">".
+			$st_detail = "<a href=\"InfosLiasse.php?cote_liasse=$st_cote_liasse\" class=\"lien_infos_liasse\">".
 						 "<img src=\"./$st_icone_info\" alt=\"info\" ></a>";
 		}
 		else {
@@ -326,20 +358,19 @@ if ($i_nb_liasses>0) {
 	$pagination->affiche_entete_liens_navigation();
 }
 else {
-	print('<div style="text-align:center">');
+	print('<div class="alert alert-danger">');
 	print("Aucun r&eacute;sultat<br>");
-	print("V&eacute;rifiez que vous n'avez pas mis trop de contraintes (commune,type d'acte,...)<br>");
-	print("<div class=IMPORTANT><br>");
-	print("Rappel de vos crit&egrave;res: <br>");
+	print("V&eacute;rifiez que vous n'avez pas mis trop de contraintes (commune,type d'acte,...)");
+	print("Rappel de vos crit&egrave;res:");
 	print(nl2br($st_criteres));
 	print("</div>");
-	print("</div>");
 }
-print("<div align=center><br>");
-print("<a href=\"RecherchesLiasses.php\" class=\"RetourReponses\">Revenir &agrave; la page de recherche</a>");
-print("<a href=\"RecherchesLiasses.php?recherche=nouvelle\" class=\"RetourReponses\">Commencer une nouvelle recherche</a>");
-print("</div>");
+
+print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+print('<button type="button" id="retour_recherche" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Revenir &agrave; la page de recherche</button>');
+print('<button type="button" id="nouvelle_recherche" class="btn btn-warning"><span class="glyphicon glyphicon-erase"></span>  Commencer une nouvelle recherche</button>');
+print('</div>');
 print ("</form>");
-print("</body></html>");
-//$connexionBD->ferme(); 
+print("</div></body></html>");
+
 ?>
