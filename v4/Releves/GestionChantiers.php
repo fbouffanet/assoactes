@@ -76,6 +76,23 @@ $(document).ready(function() {
 		messages: {
      "supp[]": "Merci de choisir au moins un chantier &agrave; supprimer"
 		},
+		errorElement: "em",
+		errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
+
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+				}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+		},
 		submitHandler: function(form) {
 			var chantiers='';
 			$("input:checkbox").each(function(){
