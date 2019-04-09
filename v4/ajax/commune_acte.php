@@ -24,7 +24,7 @@ if (isset ($_GET['term']))
   if (empty($i_idf_source))
     $st_requete = "select nom from commune_acte where nom COLLATE latin1_german1_ci like :recherche order by nom";
   else
-    $st_requete = "select distinct ca.nom from commune_acte ca join stats_commune sc on (ca.idf=sc.idf_commune) where sc.idf_source=$i_idf_source and ca.nom COLLATE latin1_german1_ci like :recherche order by nom";
+    $st_requete = "select distinct ca.nom from commune_acte ca join stats_commune sc on (ca.idf=sc.idf_commune) where sc.idf_source=$i_idf_source and ca.nom COLLATE latin1_german1_ci like :recherche order by nom";  
   $a_patros = $connexionBD->sql_select($st_requete);
   $a_resultats = array();
   foreach ($a_patros as $st_patro)
