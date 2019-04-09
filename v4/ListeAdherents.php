@@ -32,16 +32,11 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 
 switch ($gst_mode) {
  case 'PUBLIPOSTAGE' :
-   header("Content-type: application/vnd.ms-excel");
-   header('Content-disposition: attachment; filename="ListeBulletinAGC.xls"');
    exporte_adresses_publipostage($connexionBD);
-   exit();
  break;
  case 'EXPORT_COMPLET' :
-   header("Content-type: application/vnd.ms-excel");
-   header('Content-disposition: attachment; filename="ListeBulletinAGC.xls"');
    exporte_tout($connexionBD);
-   exit();
+ break;  
 }
 
 print('<!DOCTYPE html>');
@@ -256,7 +251,10 @@ $(document).ready(function() {
   $("#liste_adherents").validate({
     rules: {
     "supp[]": { 
-                    required: true, 
+                    required: {depends: function(element) {
+                        return $('#mode_selection').val()=='SUPPRIMER';
+                      }
+                    }, 
                     minlength: 1 
             } 
     },
@@ -733,34 +731,27 @@ function exporte_adresses_par_statut($pconnexionBD,$pc_statut)
  */ 
 function exporte_adresses_publipostage($pconnexionBD)
 {
-   $st_requete = "select concat(nom,' ',prenom),idf, email_perso,adr1,adr2,cp,ville,upper(pays) from adherent where statut in ('".ADHESION_BULLETIN."','".ADHESION_HONNEUR."','".ADHESION_GRATUIT."') order by nom, prenom";
-   $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);       
-   if (count($a_liste_adherents)==0)
-   {
-     print("<div class=\"alert alert-danger\">");
-     print("Pas d'adh&eacute;rent");
-     print("</div>");
-   }
-   else
-   {
-     print("<table class=\"table table-bordered table-striped\">\n");
-     print("<tr><th>Adh&eacute;rent</th><th>N°</th><th>Email</th><th>Adresse1</th><th>Adresse2</th><th>CP</th><th>Ville</th><th>Pays</th></tr>\n");     
-     foreach ($a_liste_adherents as $a_ligne)
-     {
-        list($st_adherent,$i_numero,$st_email,$st_adr1,$st_adr2,$i_cp,$st_ville,$st_pays) = $a_ligne;
-        if ($i_cp != '') $i_cp="'$i_cp";
-        print("<tr>"); 
-        foreach (array($st_adherent,$i_numero,$st_email,$st_adr1,$st_adr2,$i_cp,$st_ville,$st_pays) as $st_cellule)
-        {
-           if ($st_cellule=='')
-              print("<td>&nbsp;</td>");
-           else
-              print("<td>$st_cellule</td>");   
-        }
-        print("</tr>"); 
-     }
-     print("</table>\n");
-   }
+	$st_requete = "select concat(nom,' ',prenom),idf, email_perso,adr1,adr2,cp,ville,upper(pays) from adherent where statut in ('".ADHESION_BULLETIN."','".ADHESION_HONNEUR."','".ADHESION_GRATUIT."') order by nom, prenom";
+	$a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);       
+	if (count($a_liste_adherents)==0)
+	{
+		print("<div class=\"alert alert-danger\">");
+		print("Pas d'adh&eacute;rent");
+		print("</div>");
+	}
+	else
+	{
+		header("Content-Type: text/csv");
+		header('Content-disposition: attachment; filename="ListeBulletinAGC.csv"');
+		$fichier = fopen('PHP://output', 'w');
+		fputcsv($fichier, array('Adhérent','N°','Email','Adresse1','Adresse2','CP','Ville','Pays'),SEP_CSV);     
+		foreach ($a_liste_adherents as $a_ligne)
+		{
+			fputcsv($fichier,$a_ligne,SEP_CSV);
+		}
+		fclose($fichier);
+		exit();
+	}
 }
 
 /** Exporte tous les adhérents
@@ -768,31 +759,26 @@ function exporte_adresses_publipostage($pconnexionBD)
  */ 
 function exporte_tout($pconnexionBD)
 {
-   $st_requete = "select * from adherent order by nom, prenom";
-   $a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);       
-   if (count($a_liste_adherents)==0)
-   {
-     print("<div class=\"alert alert-danger\">");
-     print("Pas d'adh&eacute;rent");
-     print("</div>");
-   }
-   else
-   {
-     print("<table class=\"table table-bordered table-striped\">\n");
-     foreach ($a_liste_adherents as $a_ligne)
-     {
-        print("<tr>"); 
-        foreach ($a_ligne as $st_cellule)
-        {
-           if ($st_cellule=='')
-              print("<td>&nbsp;</td>");
-           else
-              print("<td>$st_cellule</td>");   
-        }
-        print("</tr>"); 
-     }
-     print("</table>\n");
-   }
+	$st_requete = "select * from adherent order by nom, prenom";
+	$a_liste_adherents =$pconnexionBD->sql_select_multiple($st_requete);       
+	if (count($a_liste_adherents)==0)
+	{
+		print("<div class=\"alert alert-danger\">");
+		print("Pas d'adh&eacute;rent");
+		print("</div>");
+	}
+	else
+	{
+		header("Content-Type: text/csv");
+		header('Content-disposition: attachment; filename="ListeBulletinAGC.csv"');
+		$fichier = fopen('PHP://output', 'w');
+		foreach ($a_liste_adherents as $a_ligne)
+		{
+			fputcsv($fichier,$a_ligne,SEP_CSV);
+		}
+		fclose($fichier);
+		exit();
+	}
 }
 
 /** Exporte tous les adhérents
