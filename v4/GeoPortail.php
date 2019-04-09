@@ -30,13 +30,26 @@ catch (Exception $e) {
     die("ERREUR : $e");
 }
 ?>
-    <!DOCTYPE html>
-<html >
-  <head>
+<!DOCTYPE html>
+
+<head>
+<meta http-equiv="content-language" content="fr">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='css/styles.css' type='text/css' rel='stylesheet'>
+<link href='css/bootstrap.min.css' rel='stylesheet'>
+<script src='js/jquery-min.js' type='text/javascript'></script>
+<script src='js/bootstrap.min.js' type='text/javascript'></script>
+<script type='text/javascript'>
+$(document).ready(function() {
+	$("#ferme").click(function(){
+		window.close();
+	});	
+});
+</script>
+
 <?php  
     print("<title>API Geoportail - $st_commune </title>");
 ?>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css"><!--/*--><![CDATA[/*><!--*/
     div#viewerDiv {
         width:800px;
@@ -61,10 +74,11 @@ catch (Exception $e) {
 
   </head>
   <body>
-<div align=center><img src="./images/LogoAGC.jpg"></div><br>
+  <div class="container">
+<div class="text-center"><img src="./images/LogoAGC.jpg"></div>
 <?php
 
-    print("<div align=center>".htmlentities($st_commune,ENT_COMPAT,'cp1252')."</div><br>\n");
+    print("<div class=\"text-center\">".htmlentities($st_commune,ENT_COMPAT,'cp1252')."</div><br>\n");
 ?> 
 <div align=center>
     <div  id="viewerDiv"></div>
@@ -152,13 +166,15 @@ window.onload= loadAPI;
   <!-- -->
   </script>
 
-
   
-</div><br></div><div align=center><Input type=button value="Fermer la fenetre" OnClick="javascript:window.close()"></div>
+<div class="form-row">
+<button type="button" id=ferme class="btn btn-warning col-xs-4 col-xs-offset-4">Fermer la fen&ecirc;tre</button>
+</div>'
 
 
 <script type="text/javascript" src="http://api.ign.fr/geoportail/api/js/latest/GeoportalExtended.js"></script>  
 <script type="text/javascript" src="js/utils.js"></script>     
- 
-  </body>
+
+</div> 
+</body>
 </html>
