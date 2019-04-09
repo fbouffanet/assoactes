@@ -5,28 +5,17 @@ require_once('Commun/constantes.php');
 require_once('Commun/ConnexionBD.php');
 require_once('Commun/PaginationTableau.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr"> ');
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print('<title>Base AGC: Stats consulations adhérent</title>');
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
-
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/menu.js' type='text/javascript'></script>");
-print("<script type='text/javascript'>");
-?>
-function maj(Formulaire)
-{
-   
-   if (document.forms[Formulaire].num_page_patcom)
-      document.forms[Formulaire].num_page_patcom.value=1;
-   document.forms[Formulaire].submit();
-}
-<?php
-print("</script>");
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");  
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-
 print("</head>");
 
 /*
@@ -79,6 +68,7 @@ if (!empty($gst_mode) && !in_array($gst_mode,array('VUE_STAT','VUE_DEMANDES_COMM
    $gst_mode='VUE_STAT';
 
 print("<body>");
+print('<div class="container">');
 require_once("Commun/menu.php");
 
 if (isset($gst_ident ))
@@ -92,84 +82,109 @@ if (isset($gst_ident ))
       unset($_SESSION['num_page_ddes_adht']);
       $st_requete = "select count(*) total, sum(case when idf_type_acte=".IDF_NAISSANCE."  then 1 else 0 end) nb_naissances,sum(case when idf_type_acte=".IDF_MARIAGE."  then 1 else 0 end) nb_mariages, sum(case when idf_type_acte=".IDF_DECES."  then 1 else 0 end) nb_deces, sum(case when idf_type_acte=".IDF_CM."  then 1 else 0 end) nb_cm from demandes_adherent join adherent on (demandes_adherent.idf_adherent=adherent.idf) where adherent.ident=\"$gst_ident\"";
       list($i_tot_ddes,$i_tot_nai,$i_tot_mar,$i_tot_dec,$i_tot_cm)=$connexionBD->sql_select_liste($st_requete);
-      print("<div class='TITRE'>Statistiques de vos demandes</div>");
-      print("<div class=SOUSTITRE>Total des demandes</div><br>");
-      print("<table border=1 align='center'>\n");
+	  print('<div class="panel panel-primary">');
+      print('<div class="panel-heading">Statistiques de vos demandes</div>');
+      print('<div class="panel-body">');
+      print('<div class="panel-group">');
+      
+      print('<div class="panel panel-info">');
+      print('<div class="panel-heading">Total des demandes</div>');
+      print('<div class="panel-body">');	  
+      print("<table class=\"table table-bordered table-striped\">\n");
       print("<tr><th>Total des ddes</th><th>Total naissances</th><th>Total mariages</th><th>Total d&eacute;c&eacute;s</th><th>Total CM</th></tr>\n");
       print("<tr><td>$i_tot_ddes</td><td>$i_tot_nai</td><td>$i_tot_mar</td><td>$i_tot_dec</td><td>$i_tot_cm</td></tr>\n");
-      print("</table><br>\n");
+      print("</table></div></div>\n");
       $st_requete = "select date_format( date_demande, \"%d / %c \" ) AS date_dde, count(*) total, sum(case when idf_type_acte=".IDF_NAISSANCE."  then 1 else 0 end) nb_naissances,sum(case when idf_type_acte=".IDF_MARIAGE."  then 1 else 0 end) nb_mariages, sum(case when idf_type_acte=".IDF_DECES."  then 1 else 0 end) nb_deces, sum(case when idf_type_acte=".IDF_CM."  then 1 else 0 end) nb_cm from demandes_adherent join adherent on (demandes_adherent.idf_adherent=adherent.idf) where adherent.ident=\"$gst_ident\" and  datediff(now(),date_demande) <= 30 group by date_dde order by date_demande desc limit 0 , 30";
       $a_ddes_dernier_mois =$connexionBD->sql_select_multiple($st_requete);
-      print("<div class=SOUSTITRE>Demandes des 30 derniers jours</div><br>");
+	  
+      print('<div class="panel panel-info">');
+      print('<div class="panel-heading">Demandes des 30 derniers jours</div>');
+      print('<div class="panel-body">');
       if (count($a_ddes_dernier_mois)>0)
       {
-        print("<table border=1 align='center'>\n");
+        print("<table class=\"table table-bordered table-striped\">\n");
         print("<tr><th>Jour</th><th>Total</th><th>Ddes naissances</th><th>Ddes mariages</th><th>Ddes d&eacute;c&eacute;s</th><th>Ddes CM</th></tr>\n");
         foreach ($a_ddes_dernier_mois as $a_ligne)
         {
           list($st_jour,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
           print("<tr><td>$st_jour</td><td>$i_total</td><td>$i_nb_nai</td><td>$i_nb_mar</td><td>$i_nb_dec</td><td>$i_nb_cm</td></tr>\n");
         }
-        print("</table><br>\n");
+        print("</table>\n");
       }
       else
       {
-        print("<div align='center'>Pas de demandes</div>");
+        print("<div class=\"alert alert-danger\">Pas de demandes</div>");
       }
+	  print('</div></div>');
+	  
+	  
       $st_requete = "select  YEAR(date_demande)as annee, MONTH(date_demande) as mois, count(*) total, sum(case when idf_type_acte=".IDF_NAISSANCE."  then 1 else 0 end) nb_naissances,sum(case when idf_type_acte=".IDF_MARIAGE."  then 1 else 0 end) nb_mariages, sum(case when idf_type_acte=".IDF_DECES."  then 1 else 0 end) nb_deces, sum(case when idf_type_acte=".IDF_CM."  then 1 else 0 end) nb_cm from demandes_adherent join adherent on (demandes_adherent.idf_adherent=adherent.idf) where adherent.ident=\"$gst_ident\" group by YEAR(date_demande)*100+MONTH(date_demande) order by annee desc, mois desc limit 12";
       $a_ddes_derniere_anneee =$connexionBD->sql_select_multiple($st_requete);
-      print("<div class=SOUSTITRE>Demandes des 12 derniers mois</div><br>");
+      print('<div class="panel panel-info">');
+      print('<div class="panel-heading">Demandes des 12 derniers mois</div>');
+      print('<div class="panel-body">');
       if (count($a_ddes_derniere_anneee)>0)
       {
-        print("<table border=1 align='center'>\n");
+        print("<table class=\"table table-bordered table-striped\">\n");
         print("<tr><th>Ann&eacute;e/Mois</th><th>Total</th><th>Ddes naissances</th><th>Ddes mariages</th><th>Ddes d&eacute;c&eacute;s</th><th>Ddes CM</th></tr>\n");
         foreach ($a_ddes_derniere_anneee as $a_ligne)
         {
           list($i_annee,$i_mois,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
           print(sprintf("<tr><td>%04d/%02d</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",$i_annee,$i_mois,$i_total,ddes_mois_annee($i_nb_nai,$i_mois,$i_annee,IDF_NAISSANCE),ddes_mois_annee($i_nb_mar,$i_mois,$i_annee,IDF_MARIAGE),ddes_mois_annee($i_nb_dec,$i_mois,$i_annee,IDF_DECES),ddes_mois_annee($i_nb_cm,$i_mois,$i_annee,IDF_CM)));
         }
-        print("</table><br>\n");
+        print("</table>\n");
       }
       else
       {
-        print("<div align='center'>Pas de demandes</div>");
+        print("<div class=\"alert alert-danger\">Pas de demandes</div>");
       }
+	  print('</div></div>');
+	  
+	  
       $st_requete = "select  ca.nom as paroisse, ca.idf,count(*) total, sum(case when idf_type_acte=".IDF_NAISSANCE."  then 1 else 0 end) nb_naissances,sum(case when idf_type_acte=".IDF_MARIAGE."  then 1 else 0 end) nb_mariages, sum(case when idf_type_acte=".IDF_DECES."  then 1 else 0 end) nb_deces, sum(case when idf_type_acte=".IDF_CM."  then 1 else 0 end) nb_cm from demandes_adherent da join commune_acte ca on (da.idf_commune=ca.idf) join adherent on (da.idf_adherent=adherent.idf) where adherent.ident=\"$gst_ident\" group  by ca.idf order by total desc limit 20";
       $a_ddes_paroisses =$connexionBD->sql_select_multiple($st_requete);
-      print("<div class=SOUSTITRE>Demandes des 20 premi&egrave;res paroisses</div><br>");
+      print('<div class="panel panel-info">');
+      print('<div class="panel-heading">Demandes des 20 premi&egrave;res paroisses</div>');
+      print('<div class="panel-body">');
       if (count($a_ddes_paroisses)>0)
       {
-        print("<table border=1 align='center'>\n");
+        print("<table class=\"table table-bordered table-striped\">\n");
         print("<tr><th>Paroisse</th><th>Total</th><th>Ddes naissances</th><th>Ddes mariages</th><th>Ddes d&eacute;c&eacute;s</th><th>Ddes CM</th></tr>\n");
         foreach ($a_ddes_paroisses as $a_ligne)
         {
           list($st_paroisse,$i_idf_paroisse,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
           print(sprintf("<tr><td>%s</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",$st_paroisse,$i_total,ddes_communes($i_nb_nai,$i_idf_paroisse,IDF_NAISSANCE),ddes_communes($i_nb_mar,$i_idf_paroisse,IDF_MARIAGE),ddes_communes($i_nb_dec,$i_idf_paroisse,IDF_DECES),ddes_communes($i_nb_cm,$i_idf_paroisse,IDF_CM)));
         }
-        print("</table><br>\n");
+        print("</table>\n");
       }                                                                         
       else
       {
-        print("<div align='center'>Pas de demandes</div>");
-      }  
+        print("<div class=\"alert alert-danger\">Pas de demandes</div>");
+      }
+	  print('</div></div>');
+	  
       $st_requete = "select  c.nom as canton, count(*) total, sum(case when idf_type_acte=".IDF_NAISSANCE."  then 1 else 0 end) nb_naissances,sum(case when idf_type_acte=".IDF_MARIAGE."  then 1 else 0 end) nb_mariages, sum(case when idf_type_acte=".IDF_DECES."  then 1 else 0 end) nb_deces, sum(case when idf_type_acte=".IDF_CM."  then 1 else 0 end) nb_cm from demandes_adherent da join commune_acte ca on (da.idf_commune=ca.idf) join canton c on (ca.idf_canton=c.idf) join adherent on (da.idf_adherent=adherent.idf) where adherent.ident=\"$gst_ident\" group  by c.nom order by total desc limit 20";
       $a_ddes_cantons =$connexionBD->sql_select_multiple($st_requete);
-      print("<div class=SOUSTITRE>Demandes des 20 premiers cantons</div><br>");
+      print('<div class="panel panel-info">');
+      print('<div class="panel-heading">Demandes des 20 premiers cantons</div>');
+      print('<div class="panel-body">');
       if (count($a_ddes_cantons)>0)
       {
-        print("<table border=1 align='center'>\n");
+        print("<table class=\"table table-bordered table-striped\">\n");
         print("<tr><th>Canton</th><th>Total</th><th>Ddes naissances</th><th>Ddes mariages</th><th>Ddes d&eacute;c&eacute;s</th><th>Ddes CM</th></tr>\n");
         foreach ($a_ddes_cantons as $a_ligne)
         {
           list($st_canton,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
           print(sprintf("<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td></tr>\n",$st_canton,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
         }
-        print("</table><br>\n");
+        print("</table>\n");
       }
       else
       {
-        print("<div align='center'>Pas de demandes</div>");
+        print("<div class=\"alert alert-danger\">Pas de demandes</div>");
       }
+	  print('</div></div>');
+      print('</div></div></div>');
     break;
     case 'VUE_DEMANDES_COMMUNE':
        $i_session_idf_commune = isset($_SESSION['idf_commune']) ? $_SESSION['idf_commune'] : null;
@@ -180,9 +195,13 @@ if (isset($gst_ident ))
        $st_commune= $connexionBD->sql_select1("select nom from commune_acte where idf=$i_idf_commune");
        $st_type_acte=$connexionBD->sql_select1("select nom from type_acte where idf=$i_idf_type_acte");
        
-       print("<div class='TITRE'>Vos demandes par commune</div>");
-       print("<div class='SOUSTITRE'>$st_type_acte &agrave; $st_commune</div>");
-      $gi_num_page = empty($_POST['num_page_ddes_adht']) ?  $i_session_num_page: (integer) $_POST['num_page_ddes_adht'];
+	   print('<div class="panel panel-primary">');
+       print("<div class=\"panel-heading\">Vos demandes par commune</div>");
+       print('<div class="panel-body">');
+	   print('<div class="panel panel-info">');
+       print("<div class=\"panel-heading\">$st_type_acte &agrave; $st_commune</div>");
+       print('<div class="panel-body">');
+       $gi_num_page = empty($_POST['num_page_ddes_adht']) ?  $i_session_num_page: (integer) $_POST['num_page_ddes_adht'];
        $_SESSION['mode']=$gst_mode;
        $_SESSION['idf_commune']=$i_idf_commune;
        $_SESSION['idf_type_acte']=$i_idf_type_acte;
@@ -234,12 +253,12 @@ if (isset($gst_ident ))
        }
        else
        {
-          print("<div align=center>Pas de demandes</div>");
+          print("<div class=\"alert alert-danger\">Pas de demandes</div>");
        }
        print("<form name=\"RetourVueStat\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-       print("<div align='center'><br><input type=submit value=\"Retour vers les statistiques\" ></div>");
+       print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Retour vers les statistiques</button></div>');
        print("<input type=\"hidden\" name=\"mode\" value=\"VUE_STAT\">");
-       print("</form>");       
+       print("</form></div></div></div>");      
     break;
     case 'VUE_DEMANDES_MOIS_ANNNEE':
        $i_session_mois = isset($_SESSION['mois']) ? $_SESSION['mois'] : null;
@@ -250,9 +269,12 @@ if (isset($gst_ident ))
        $i_idf_type_acte = isset($_GET['idf_type_acte'])? (int) $_GET['idf_type_acte'] :$i_session_idf_type_acte;
        $i_session_num_page = isset($_SESSION['num_page_ddes_adht']) ? $_SESSION['num_page_ddes_adht'] : 1;
        $st_type_acte=$connexionBD->sql_select1("select nom from type_acte where idf=$i_idf_type_acte");
-
-       print("<div class='TITRE'>Vos demandes par mois et ann&eacute;e</div>");
-       print(sprintf("<div class='SOUSTITRE'>%s en %0.2d/%0.4d</div>",$st_type_acte,$i_mois,$i_annee));
+       print('<div class="panel panel-primary">');
+       print('<div class="panel-heading">Vos demandes par mois et ann&eacute;e</div>');
+       print('<div class="panel-body">');
+	   print('<div class="panel panel-info">');
+       print(sprintf("<div class=\"panel-heading\">%s en %0.2d/%0.4d</div>",$st_type_acte,$i_mois,$i_annee));
+       print('<div class="panel-body">');
        $gi_num_page = empty($_POST['num_page_ddes_adht']) ?  $i_session_num_page: (integer) $_POST['num_page_ddes_adht'];
        $_SESSION['mode']=$gst_mode;
        $_SESSION['mois']=$i_mois;
@@ -306,20 +328,21 @@ if (isset($gst_ident ))
        }
        else
        {
-          print("<div align=center>Pas de demandes</div>");
+          print("<div class=\"alert alert-danger\">Pas de demandes</div>");
        }
        print("<form name=\"RetourVueStat\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-       print("<div align='center'><br><input type=submit value=\"Retour vers les statistiques\" ></div>");
+       print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Retour vers les statistiques</button></div>');
        print("<input type=\"hidden\" name=\"mode\" value=\"VUE_STAT\">");
-       print("</form>");
+       print("</form></div></div></div>");
     break;
-    default: print("<div class=''IMPORTANT'>Mode $gst_mode inconnu</div>"); 
+    default: print("<div class=\"alert alert-danger\">Mode $gst_mode inconnu</div>");  
     }
 }
 else
 {
-   print("<div class=important>L'identifiant de l'adh&eacute;rent n'est pas d&eacute;fini</div>");
+   print("<div class=\"alert alert-danger\">idf_adherent n'est pas d&eacute;fini</div>");
 }
+print("</div>");
 print("</body>");
 print("</html>");
 
