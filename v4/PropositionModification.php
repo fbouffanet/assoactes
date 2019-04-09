@@ -88,13 +88,13 @@ if (isset($_REQUEST['idf_acte']))
   {
     if (empty($gi_idf_demandeur))
     {
-      die("<div class=\"IMPORTANT\">Cet acte n'est pas issu d'une table d&eacute;cennale</div>");
+      die("<div class=\"alert alert-danger\">Cet acte n'est pas issu d'une table d&eacute;cennale</div>");
     }
     else
     {
       $gi_nb_demandes = $connexionBD->sql_select1("select count(*) from demandes_adherent where idf_adherent=$gi_idf_demandeur and idf_acte=$gi_idf_acte");
       if ($gi_nb_demandes==0)    
-        die("<div class=\"IMPORTANT\">Vous n'avez pas encore consult&eacute; cet acte</div>");
+        die("<div class=\"alert alert-danger\">Vous n'avez pas encore consult&eacute; cet acte</div>");
       
     }  
   }  
@@ -116,26 +116,29 @@ if (isset($_REQUEST['idf_acte']))
 }
 else
 {
-  die("<div class=\"IMPORTANT\">Pas d'identifiant d'acte speacute;cifi&eacute;</div>");
+  die("<div class=\"alert alert-danger\">Pas d'identifiant d'acte speacute;cifi&eacute;</div>");
 }
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>
+<!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >
-<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>
-<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>
-<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>
-<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='css/styles.css' type='text/css' rel='stylesheet'>
+<link href='css/bootstrap.min.css' rel='stylesheet'>
+<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>
+<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>
+<link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
 <meta http-equiv="content-language" content="fr">
-<script src='Commun/jquery-min.js' type='text/javascript'></script>
-<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>
-<script src='Commun/additional-methods.min.js' type='text/javascript'></script>
+<script src='js/jquery-min.js' type='text/javascript'></script>
+<script src='js/jquery.validate.min.js' type='text/javascript'></script>
+<script src='js/additional-methods.min.js' type='text/javascript'></script>
 <script src='js/jquery-ui.min.js' type='text/javascript'></script>
 <script src='js/CalRep.js' type='text/javascript'></script>
-<script src='Commun/iviewer/jquery-ui.min.js' type='text/javascript'></script>
-<script src='Commun/iviewer/jquery.mousewheel.min.js' type='text/javascript'></script>
-<script src='Commun/iviewer/jquery.iviewer.js' type='text/javascript'></script>
-<link href='Commun/iviewer/jquery.iviewer.css' type='text/css' rel='stylesheet'>
+<script src='js/iviewer/jquery-ui.min.js' type='text/javascript'></script>
+<script src='js/iviewer/jquery.mousewheel.min.js' type='text/javascript'></script>
+<script src='js/iviewer/jquery.iviewer.js' type='text/javascript'></script>
+<link href='js/iviewer/jquery.iviewer.css' type='text/css' rel='stylesheet'>
+<script src='js/bootstrap.min.js' type='text/javascript'></script>
 <script type='text/javascript'>
 $(document).ready(function() {
 <?php
@@ -144,25 +147,62 @@ print file_get_contents('js/dateITA.js');
 $("#edition_acte").validate({
 <?php
 print regles_validation();
-?>
+?>,
+		errorElement: "em",
+		errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
+
+			// Add `has-feedback` class to the parent div.form-group
+			// in order to add icons to inputs
+			element.parents( ".lib_erreur" ).addClass( "has-feedback" );
+
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+			}
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !element.next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+			}
+		},
+		success: function ( label, element ) {
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !$( element ).next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+			}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+		},
+		unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+		}
 });
 <?php
 //print parametres_completion_auto();
 print $go_acte->fonctions_jquery_completion();
 print file_get_contents('js/EditionActe.js');
 ?>
- }); 
+ });
 });  
 </script>
 <?php
 print("<title>Proposition de modification d'un acte</title>");
 print("</head>\n");
+
 /******************************************************************************/
 /*                     CORPS DE LA PAGE                                   	  */
 /******************************************************************************/
 print("<body>\n");
+print('<div class="container">');
 require_once("Commun/menu.php");
-print("<div class=\"TITRE\">Modification d'un acte</div>");
+print('<div class="panel panel-primary">');
+print("<div class=\"panel-heading\">Modification d'un acte</div>");
+print('<div class="panel-body">');
 
 if (empty($gst_mode)||$gst_mode=='ERREUR')
 {
@@ -170,37 +210,37 @@ if (empty($gst_mode)||$gst_mode=='ERREUR')
   print("<input type=\"hidden\" name=\"MODE\" value=\"EDITION\">");
   print("<input type=\"hidden\" name=\"idf_acte\" value=\"$gi_idf_acte\">");
   print($gst_permalien);
-  print("<table border=1>");
+  print("<table class=\"table table-bordered\">");
   print($gst_formulaire);
   print("</table>");
-  print("<div class=\"alignCenter\">Si les photos ne sont pas disponibles sur le site des AD, vous pouvez les joindre ci-dessous. Celles-ci doivent peser moins de 2 MO ");
-  print("et ne sont pas publi&eacute;es pour &eacute;viter les probl&egrave;mes de licence<br></div>");
-  print('<table border=1 align="center">');
+  print("<div class=\"text-center\">Si les photos ne sont pas disponibles sur le site des AD, vous pouvez les joindre ci-dessous. Celles-ci doivent peser moins de 2 MO ");
+  print("et ne sont pas publi&eacute;es pour &eacute;viter les probl&egrave;mes de licence</div>");
+  print('<table class="table table-bordered table-striped">');
   for ($i=1;$i<=ModificationActe::getNbPhotos();$i++)
   {
      print("<tr><th>Photo $i (JPEG, GIF ou PNG):</th><td><input type=\"file\" name=\"photo$i\"></td></tr>");
   }
   print('</table>');
   print("<fieldset><legend>Commentaires &eacute;ventuels &agrave destination du valideur:</legend>");
-  print("<div class=\"alignCenter\">Commentaires:<textarea name=cmt_modif rows=4 cols=80></textarea></div>");
+  print("<label for=\"cmt_modif\">Commentaires</label><textarea name=cmt_modif id=cmt_modif rows=4 cols=80 class=\"form-control\"></textarea>");
   
   if (empty($gi_idf_demandeur))
   {
-     print("<div class=\"alignCenter\">Votre email: <input type=\"text\" name=\"email_demandeur\" value=\"$gst_email_demandeur\" size=\"30\"> (Non publi&eacute;. Il sert uniquement au valideur &agrave; vous contacter en cas de probl&egrave;me)</div><div align=\"center\">");
+     print("<label for=\"email_demandeur\">Votre email:</label><input type=\"text\" name=\"email_demandeur\" id=\"email_demandeur\" value=\"$gst_email_demandeur\" size=\"30\" aria-describedby=\"cmt_email_demandeur\"><small id=cmt_email_demandeur class=\"form-text text-muted\">Non publi&eacute;. Il sert uniquement au valideur &agrave; vous contacter en cas de probl&egrave;me</small>>");
+	 print("<div class=\"text-center\"");
      dsp_crypt(0,1);
-    print('Recopier tous les chiffres du code ci-dessus:<br><input type="text" name="code"></div>');
+     print('Recopier tous les chiffres du code ci-dessus:<br><input type="text" name="code"></div>');
   }
   print("</fieldset>");
-  print("<div class=\"alignCenter\"><br><input type=\"submit\" id=\"bouton_soum\" value=\"Soumettre votre demande\"></div>");
+  print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4">Soumettre votre demande</button>');
   print("</form>");
-  print("</div>");
 }
 else                             
 {
   $gi_idf_acte= isset($_REQUEST['idf_acte']) ?(int) $_REQUEST['idf_acte'] :  null;
   if (empty($gi_idf_acte))
   {
-     print("<div class=\"ERREUR\">Pas d'identifiant d'acte d&eacute;fini</div>");
+     print("<div class=\"alert alert-danger\">Pas d'identifiant d'acte d&eacute;fini</div>");
   }
   else
   {
@@ -213,7 +253,7 @@ else
         $go_acte->initialise_depuis_formulaire($gi_idf_acte);            
         $go_acte->cree();
         $go_acte->detruit_variables_sessions();
-        print("<div class=\"INFO\"><br>Modification demand&eacute;e</div><br>\n");
+        print("<div class=\"alert alert-success\">Modification demand&eacute;e</div>\n");
       }
       else
       {
@@ -221,13 +261,12 @@ else
         $go_acte->initialise_depuis_formulaire($gi_idf_acte);
         //print $go_acte->versTableauHTML();
         $go_acte->intialise_variables_sessions();
-        print("<div align=center>Le code n'a pas &eacute;t&eacute; reconnu.");
+        print("<div class=\"alert alert-danger\">Le code n'a pas &eacute;t&eacute; reconnu</div>");
         print("<form METHOD=POST NAME=RETOUR_ERREUR action=\"".$_SERVER['PHP_SELF']."\">");
         print("<input type=hidden name=idf_acte value=$gi_idf_acte>");
         print("<input type=hidden name=\"MODE\" value=\"ERREUR\">");
-        print('<input type=submit value="Retour">');
+		print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4">Retour</button>');
         print('</form>');
-        print('</div>');
       }
     }
     else
@@ -237,11 +276,11 @@ else
       $go_acte->initialise_depuis_formulaire($gi_idf_acte); 
       $go_acte->setEmailDemandeur($gst_email_demandeur);            
       $go_acte->cree();
-      print("<div class=\"INFO\"><br>Modification demand&eacute;e</div><br>\n");
-      print("<div align=center><br><button <button type=\"button\" class=\"fermeture_fenetre\">Fermer la fen&ecirc;tre</button></div>");       
+      print("<div class=\"alert alert-success\">Modification demand&eacute;e</div>\n");
+	  print('<button type="button" class="btn btn-primary col-md-4 col-md-offset-4 fermeture_fenetre">Retour</button>');       
     }
   }
 }  
-// Ajout des photos et des commentaires destinés aux valideurs
-print("</body></HTML>\n");
+print("</div></div>");
+print("</div></body></HTML>\n");
 ?>

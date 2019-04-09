@@ -73,6 +73,8 @@ define('STATUT_ENCOURS','EN_COURS');
 define('STATUT_AVANTPANIER','AVANT_PANIER');
 define('STATUT_TRAITE','TRAITE');
 
+define('LIB_ASSO','Association Genealogique de la Charente');
+define('SIGLE_ASSO','AGC');
 define('EMAIL_INSCRIPTION_FORUM','geneagc16-subscribe@yahoogroupes.fr');
 define('EMAIL_FORUM','geneagc16@yahoogroupes.fr');
 define('EMAIL_DIRASSO','agc-dir@genea16.net');
