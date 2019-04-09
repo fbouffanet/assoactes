@@ -34,11 +34,13 @@ class ModificationActe extends Acte {
     
      function __autoload($class_name)
     
+    
     {
          require_once $class_name . '.php';
          } 
     
     public function __construct($pconnexionBD, $pi_idf_acte, $pi_idf_modification)
+    
     
     {
          $this -> connexionBD = $pconnexionBD;
@@ -80,6 +82,7 @@ class ModificationActe extends Acte {
     public function getNbPhotos()
     
     
+    
     {
          return self :: $i_nb_photos;
          } 
@@ -88,6 +91,7 @@ class ModificationActe extends Acte {
      * Positionne l'email du demandeur
      */
     public function setEmailDemandeur($pst_email_demandeur)
+    
     
     
     {
@@ -100,6 +104,7 @@ class ModificationActe extends Acte {
      * @param integer $pi_idf_modification identifiant de la modification
      */
     public function charge($pi_idf_modification)
+    
     
     
     {
@@ -160,6 +165,7 @@ class ModificationActe extends Acte {
     public function cree()
     
     
+    
     {
          for ($i = 1;$i <= count($this -> a_photos);$i++)
          {
@@ -186,6 +192,7 @@ class ModificationActe extends Acte {
     public function formulaire_liste_personnes()
     
     
+    
     {
          // les actes divers correspondent à une grille de mariage élaborée dans Nimègue
         $a_grille = array_key_exists($this -> i_idf_type_acte, $this -> ga_grille_saisie) ? $this -> ga_grille_saisie[$this -> i_idf_type_acte]: $this -> ga_grille_saisie[IDF_MARIAGE] ;
@@ -209,15 +216,15 @@ class ModificationActe extends Acte {
                  default:
                      $st_lib = "Intervenant $i_nb_intv";
                      } 
-                $st_chaine .= "<tr><td class=\"ligne_separation\" colspan=8>$st_lib</td></tr>";
+                $st_chaine .= "<tr class=\"table-primary\"><td  colspan=8>$st_lib</td></tr>";
                  break;
              case IDF_PRESENCE_TEMOIN;
                      $i_nb_temoins++;
                      if ($i_nb_temoins == 1)
-                         $st_chaine .= "<tr><td class=\"ligne_separation\" colspan=8>T&eacute;moins</td></tr>";
+                         $st_chaine .= "<tr class=\"table-primary\" ><td colspan=8>T&eacute;moins</td></tr>";
                      break;
                  case IDF_PRESENCE_PARRAIN;
-                     $st_chaine .= "<tr><td class=\"ligne_separation\" colspan=8>Parrain/Marraine</td></tr>";
+                     $st_chaine .= "<tr class=\"table-primary\"><td  colspan=8>Parrain/Marraine</td></tr>";
                      break;
                      } 
                 if (count($a_liste_personnes) > 0 && $a_liste_personnes[0] -> getIdfTypePresence() == $i_idf_type_presence)
@@ -252,6 +259,7 @@ class ModificationActe extends Acte {
 private function type_mime_vers_ext($pst_type_mime)
 
 
+
 {
      switch ($pst_type_mime)
      {
@@ -279,6 +287,7 @@ private function type_mime_vers_ext($pst_type_mime)
 private function nom_photo($pi_idf_commune_acte, $pi_idf_acte, $pi_num_photo, $pst_ext)
 
 
+
 {
      global $gst_rep_photos_modifs;
      $st_photo = sprintf("%s/%d_%d_%d.%s", $gst_rep_photos_modifs, $pi_idf_commune_acte, $pi_idf_acte, $pi_num_photo, $pst_ext);
@@ -294,11 +303,12 @@ private function nom_photo($pi_idf_commune_acte, $pi_idf_acte, $pi_num_photo, $p
      } 
 
 /**
- * Initialise l'acte depuis une formulaire post
+ * Initialise l'acte depuis un formulaire post
  * 
  * @param integer $pi_idf_acte identifiant de l'acte
  */
 public function initialise_depuis_formulaire($pi_idf_acte)
+
 
 
 {
@@ -353,8 +363,10 @@ public function initialise_depuis_formulaire($pi_idf_acte)
         $o_pers = new ModificationPersonne($this -> connexionBD, $this -> i_idf);
          $o_pers -> setNumParam($i);
          $o_pers -> initialise_depuis_formulaire($this -> i_idf, $a_grille[$i]);
-         if ($this -> i_idf_type_acte == IDF_MARIAGE || $this -> i_idf_type_acte == IDF_DECES)
+         if ($this -> i_idf_type_acte == IDF_MARIAGE)
          {
+            // le sexe de l'intervenant est le maitre pour décider des couples
+            // ceux-ci sont crées dans la fonction maj_liste_personnes de Acte en fonction de la grille  définie pour le type d'acte
             if ($o_pers -> getIdfTypePresence() == IDF_PRESENCE_INTV)
                  {
                 if ($i_nb_intv % 2 == 0)
@@ -369,26 +381,15 @@ public function initialise_depuis_formulaire($pi_idf_acte)
                      $o_pers -> setSexe($c_sexe_intv);
                      } 
                 } 
-            else if ($o_pers -> getIdfTypePresence() == IDF_PRESENCE_EXCJT)
-                 {
-                switch ($c_sexe_intv)
-                 {
-                case 'M': $o_pers -> setSexe('F');
-                     break;
-                 case 'F': $o_pers -> setSexe('M');
-                     break;
-                 case '?': $o_pers -> setSexe('?');
-                     break;
-                 default: $o_pers -> setSexe('?');
-                     } 
-                } 
             else
                  $o_pers -> setSexe($a_sexe_personne[$i]);
              } 
         else
+         if (empty($o_pers -> getSexe()))
              $o_pers -> setSexe($a_sexe_personne[$i]);
          $this -> a_liste_personnes[] = $o_pers;
          } 
+    
     } 
 
 /**
@@ -397,8 +398,9 @@ public function initialise_depuis_formulaire($pi_idf_acte)
 public function visualisation_photos()
 
 
+
 {
-     $st_chaine = '<div align=center"><div class="wrapper">';
+     $st_chaine = '<div class="text-center"><div class="wrapper">';
      $i = 1;
      foreach ($this -> a_photos as $st_photo)
      {
@@ -419,14 +421,15 @@ public function visualisation_photos()
 public function commentaires_demandeur()
 
 
+
 {
      $st_chaine = "<fieldset><legend>Commentaires &agrave destination du valideur:</legend>";
-     $st_chaine .= "<div class=\"alignCenter\">Commentaires:<textarea name=cmt_modif rows=4 cols=80>";
+     $st_chaine .= "<div class=\"text-center\">Commentaires:<textarea name=cmt_modif rows=4 cols=80 class=\"form-control\">";
      $st_chaine .= $this -> st_cmt_modif;
      $st_chaine .= "</textarea></div>";
      $st_chaine .= "</fieldset>";
      $st_chaine .= "<fieldset><legend>Commentaires &agrave destination du demandeur:</legend>";
-     $st_chaine .= "<div class=\"alignCenter\">Commentaires:<textarea name=cmt_valideur rows=4 cols=80>";
+     $st_chaine .= "<div class=\"text-center\">Commentaires:<textarea name=cmt_valideur rows=4 cols=80 class=\"form-control\">";
      $st_chaine .= "</textarea></div>";
      $st_chaine .= "</fieldset>";
      return $st_chaine;
@@ -438,14 +441,15 @@ public function commentaires_demandeur()
 public function differences()
 
 
+
 {
      $o_acte = new Acte($this -> connexionBD, null, null, null, null, null, null);
      $o_acte -> charge($this -> i_idf_acte);
      $st_description_acte = $o_acte -> versChaine();
      $st_description_modif = $this -> versChaine();
      setlocale(LC_CTYPE, 'fr_FR.UTF8');
-     //$o_FineDiff = new FineDiff(iconv("cp1252", "UTF-8", $st_description_acte), iconv("cp1252", "UTF-8", $st_description_modif), FineDiff :: $wordGranularity);
-     $o_FineDiff = new FineDiff($st_description_acte, $st_description_modif, FineDiff :: $wordGranularity);
+     // $o_FineDiff = new FineDiff(iconv("cp1252", "UTF-8", $st_description_acte), iconv("cp1252", "UTF-8", $st_description_modif), FineDiff :: $wordGranularity);
+    $o_FineDiff = new FineDiff($st_description_acte, $st_description_modif, FineDiff :: $wordGranularity);
      $st_chaine = "<fieldset>";
      $st_chaine .= "<legend>Diff&eacute;rences</legend>";
      $st_diffs = $o_FineDiff -> renderDiffToHTML();
@@ -460,14 +464,17 @@ public function differences()
 public function formulaire_refus()
 
 
+
 {
      $st_chaine = "<fieldset>\n";
      $st_chaine .= "<legend>Refus de la demande</legend>\n";
      $st_chaine .= "<form id=\"modification_refusee\" action=\"" . $_SERVER['PHP_SELF'] . "\" method=post>\n";
      $st_chaine .= "<input type=\"hidden\" name=\"MODE\" value=\"REFUS\">\n";
      $st_chaine .= sprintf("<input type=\"hidden\" name=\"idf_modification\" value=\"%d\">", $this -> i_idf);
-     $st_chaine .= "<div align=center><br>Motif du refus:<br><textarea name=motif_refus rows=10 cols=80></textarea></div>\n";
-     $st_chaine .= "<div align=\"center\"><input type=\"submit\" value=\"Refuser la demande\"></div>\n";
+	 $st_chaine .= '<div class="lib_erreur">';
+     $st_chaine .= "<label for=\"motif_refus\">Motif du refus:</Label><textarea name=motif_refus id=motif_refus rows=10 cols=80 class=\"form-control \"></textarea>\n";
+	 $st_chaine .= '</div>';
+     $st_chaine .= "<button type=\"submit\" class=\"col-md-4 col-md-offset-4 alert alert-danger\"><span class=\"glyphicon glyphicon-remove\"></span> Refuser la demande</button>\n";
      $st_chaine .= "</form>\n";
      $st_chaine .= "</fieldset>\n";
      return $st_chaine;
@@ -479,6 +486,7 @@ public function formulaire_refus()
 public function validation_formulaire_refus()
 
 
+
 {
      $st_chaine = '$("#modification_refusee").validate({
   rules: {
@@ -488,7 +496,41 @@ public function validation_formulaire_refus()
      motif_refus: {
         required : "Le motif du refus est obligatoire"
     }
- }
+ },';
+ $st_chaine .='
+ errorElement: "em",
+ errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
+
+			// Add `has-feedback` class to the parent div.form-group
+			// in order to add icons to inputs
+			element.parents( ".lib_erreur" ).addClass( "has-feedback" );
+
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+			}
+			// Add the span element, if doesn\'t exists, and apply the icon classes to it.
+			if ( !element.next( "span" )[ 0 ] ) {
+				$( "<span class=\'glyphicon glyphicon-remove form-control-feedback\'></span>" ).insertAfter( element );
+			}
+		},
+		success: function ( label, element ) {
+			// Add the span element, if doesn\'t exists, and apply the icon classes to it.
+			if ( !$( element ).next( "span" )[ 0 ] ) {
+				$( "<span class=\'glyphicon glyphicon-ok form-control-feedback\'></span>" ).insertAfter( $( element ) );
+			}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+		},
+		unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+		}
 });';
      return "\n$st_chaine\n\n";
      } 
@@ -505,11 +547,12 @@ public function validation_formulaire_refus()
 public function refuse($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur, $pst_email_valideur, $pst_motif_refus)
 
 
+
 {
      global $gst_url_site;
      $st_requete = sprintf("update modification_acte set idf_valideur=%d,date_validation=now(),statut='R',motif_refus='%s' where idf=%d", $pi_idf_valideur, $pst_motif_refus, $this -> i_idf);
      $this -> connexionBD -> execute_requete($st_requete);
-     print("<div align=center class=\"INFO\"><br>La modification a &eacute;t&eacute; refus&eacute;e</div>");
+     print("<div class=\"alert alert-danger\">La modification a &eacute;t&eacute; refus&eacute;e</div>");
      // print(sprintf("%s %s (%s) =>%s <br>",$pst_prenom_valideur,$pst_nom_valideur,$pst_email_valideur,$this->st_email_demandeur));
     $st_description_acte = $this -> versChaine();
      if (!empty($this -> st_email_demandeur))
@@ -532,7 +575,7 @@ public function refuse($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur
          // print("<pre>Entete=$st_entete\nMsg=$st_message</pre>");
         if (!mail($this -> st_email_demandeur, 'Base AGC: Votre demande de modification', $st_message, $st_entete))
              {
-            print("<div align=center class=\"ERREUR\"><br>Le mail n'a pu &ecirc;tre envoy&eacute;e</div>");
+            print("<div class=\"alert alert-danger\">Le mail n'a pu &ecirc;tre envoy&eacute;e</div>");
              } 
         } 
     } 
@@ -547,6 +590,7 @@ public function refuse($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur
  * @param string $pst_cmt_valideur commentaires du valideur
  */
 public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur, $pst_email_valideur, $pst_cmt_valideur)
+
 
 
 {
@@ -564,7 +608,7 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
      $stats_patronyme -> maj_stats($go_acte -> getIdfTypeActe());
      $stats_commune -> maj_stats($go_acte -> getIdfTypeActe());
      $this -> connexionBD -> execute_requete("UNLOCK TABLES");
-     print("<div class=\"INFO\"><br>Modification effectu&eacute;e</div><br>\n");
+     print("<div class=\"alert alert-success\">Modification effectu&eacute;e</div>\n");
      $st_requete = sprintf("update modification_acte set idf_valideur=%d,date_validation=now(),statut='A' where idf=%d", $pi_idf_valideur, $this -> i_idf);
      $this -> connexionBD -> execute_requete($st_requete);
      $st_entete = 'MIME-Version: 1.0' . "\r\n";
@@ -585,11 +629,11 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
      $st_message .= "$pst_prenom_valideur $pst_nom_valideur";
      if (mail($this -> st_email_demandeur, 'Base AGC: Demande de modification de releve de la base AGC', $st_message, $st_entete))
          {
-        print("<div align=center class=\"INFO\"><br>L'email a &eacute;t&eacute; envoy&eacute; avec succ&egrave;s</div>");
+        print("<div class=\"alert alert-success\">L'email a &eacute;t&eacute; envoy&eacute; avec succ&egrave;s</div>");
          } 
     else
          {
-        print("<div align=center class=\"ERREUR\"><br>La modification a &eacute;t&eacute; accept&eacute;e mais l'envoi du mail a &eacute;chou&eacute;</div>");
+        print("<div class=\"alert alert-danger\">La modification a &eacute;t&eacute; accept&eacute;e mais l'envoi du mail a &eacute;chou&eacute;</div>");
          } 
     } 
 
@@ -599,13 +643,14 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
 public function infos_demandeur()
 
 
+
 {
      $st_chaine = '';
      if (!empty($this -> st_email_demandeur))
          {
         $st_chaine = "<fieldset>\n";
          $st_chaine .= "<legend>demandeur</legend>\n";
-         $st_chaine .= sprintf("<div class=\"alignCenter\">%s %s (%s)</div>", $this -> st_nom_demandeur, $this -> st_prenom_demandeur, $this -> st_email_demandeur);
+         $st_chaine .= sprintf("<div class=\"text-center\">%s %s (%s)</div>", $this -> st_nom_demandeur, $this -> st_prenom_demandeur, $this -> st_email_demandeur);
          $st_chaine .= "</fieldset>\n";
          } 
     return $st_chaine;

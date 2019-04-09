@@ -186,7 +186,7 @@ class Adherent
     }
    
    /**
-     * Renvoie la liste des filtres jquery validator … activer par champ de paramŠtre
+     * Renvoie la liste des filtres jquery validator … activer par champ de paramètre
      * 
      * @return array tableau nom du paramŠtre => (type de filtre, message d'erreur … afficher)
      */
@@ -275,46 +275,139 @@ class Adherent
    public function formulaire_infos_personnelles($pb_gestionnaire)
    {
       global $ga_pays;
-      print(sprintf("<input type=\"hidden\" id=\"idf_adht\" name=\"idf_adht\" value=\"%d\">",$this -> i_idf));
-      $st_chaine = '<table border=1>';
+      $st_chaine = sprintf("<input type=\"hidden\" id=\"idf_adht\" name=\"idf_adht\" value=\"%d\">",$this -> i_idf);
+	  $st_chaine .= '<div class="form-row">';
       if (a_droits($this->st_ident_modificateur,DROIT_GESTION_ADHERENT))
       {
-        $st_chaine .= sprintf("<tr><th>N° d'adh&eacute;rent :  <input type=\"text\" value=\"%d\" size=5 readonly></th><td><select name=statut_adherent id=statut_adherent>",$this -> i_idf);
+		$st_chaine .= '<div class="form-group row">';  
+        $st_chaine .= sprintf("<label for=\"no_adht\" class=\"col-md-4 col-form-label control-label\">N° d'adh&eacute;rent</label>");
+		$st_chaine .= '<div class="col-md-8">';
+		$st_chaine .= sprintf("<input type=\"text\" value=\"%d\" id=\"no_adht\" size=5 readonly class=\"form-control\">",$this -> i_idf);
+		$st_chaine .=  "<label for=\"statut_adherent\" class=\"sr-only\">Statut</label><select name=statut_adherent id=statut_adherent class=\"form-control\">";
         $a_statuts_adherents = $this -> connexionBD->liste_valeur_par_clef("select idf,nom from statut_adherent order by nom");
         $st_chaine .=chaine_select_options($this->st_statut,$a_statuts_adherents);
-        $st_chaine .= '</select></td></tr>';
+        $st_chaine .= '</select>';
+		$st_chaine .= '</div>';
+	    $st_chaine .= '</div>';
       }
       else 
       {
         $this -> connexionBD->initialise_params(array(':statut'=>$this->st_statut)); 
         $st_statut = $this -> connexionBD->sql_select1("select nom from statut_adherent where idf=:statut");
-        $st_chaine .= sprintf("<tr><th>N° d'adh&eacute;rent : <input type=\"text\" value=\"%d\" size=5 readonly></th><td>%s</td></tr>",$this -> i_idf,$this->st_ident);
-        $st_chaine .= sprintf("<tr><th>Ann&eacute;e de cotisation : </th><td> <input type=\"text\" value=\"%04d\" id=statut_adherent size=5 data-value=\"%s\" readonly> (%s)</td></tr>",$this->i_annee_cotisation,$this->st_statut,$st_statut); 
-      }
+		$st_chaine .= '<div class="form-group row">';
+        $st_chaine .= sprintf("<label for=\"no_adht\" class=\" col-md-4 col-form-label\">N° d'adh&eacute;rent</label>");
+		$st_chaine .= '<div class="col-md-4">';
+		$st_chaine .= sprintf("<input type=\"text\" value=\"%d\" id=\"no_adht\" size=5 readonly placeholder=\"%s\">",$this -> i_idf,$this->st_ident);
+        $st_chaine .= sprintf("<label for=\"statut_adherent\" class=\" col-md-4 col-form-label\">Ann&eacute;e de cotisation</label>");
+		$st_chaine .= '<div class="col-md-4">';
+		$st_chaine .= sprintf("<input type=\"text\" value=\"%04d\" id=statut_adherent size=5 data-value=\"%s\" readonly placeholder=\"%s\">",$this->i_annee_cotisation,$this->st_statut,$st_statut); 
+        $st_chaine .= '</div>';
+	    $st_chaine .= '</div>';
+	  }
       if ($this->st_ident_modificateur==$this->st_ident)
       {
         $st_readonly = $pb_gestionnaire ? 'readonly' : '';
         // L'administrateur n'est pas supposé changer l'identifiant d'un utilisateur
-        $st_chaine .= sprintf("<tr><th>Votre identifiant (base AGC): </th><td><input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adh value=\"%s\" $st_readonly></td></tr>",$this->st_ident);
-        $st_chaine .= sprintf("<tr><th>Votre identifiant G&eacute;n&eacute;bank : </th><td><input type=\"text\" value=\"".PREFIXE_ADH_GBK."%04d\" size=8 readonly></td></tr>",$this -> i_idf);
-      }   
-      $st_chaine .= sprintf("<tr><th>Nom</th><td><input type=\"text\" maxlength=20 size=20 name=nom value=\"%s\" id=\"nom\" class=\"majuscule\"></td></tr>",$this->st_nom);      
-      $st_chaine .= sprintf("<tr><th>Pr&eacute;nom</th><td><input type=\"text\" maxlength=30 size=20 name=prenom value=\"%s\" id=\"prenom\" class=\"capitale\"></td></tr>",$this->st_prenom);      
-      $st_chaine .= sprintf("<tr><th>Adresse 1</th><td><input type=\"text\" maxlength=40 size=40 name=adresse1 id=adresse1 value=\"%s\"></td></tr>",$this->st_adresse1);    
-      $st_chaine .= sprintf("<tr><th>Adresse 2</th><td><input type=\"text\" maxlength=40 size=40 name=adresse2 value=\"%s\"></td></tr>",$this->st_adresse2);
-      $st_chaine .= sprintf("<tr><th>Code Postal</th><td><input type=\"text\" maxlength=12 size=12 name=code_postal id=code_postal value=\"%s\"></td></tr>",$this->st_code_postal);      
-      $st_chaine .= sprintf("<tr><th>Localit&eacute;</th><td><input type=\"text\" maxlength=40 size=20 name=ville id=\"ville\" value=\"%s\"></td></tr>", $this->st_ville);     
-      $st_chaine .= "<tr><th>Pays</th><td><select name=\"pays\" class=\"js-select-avec-recherche\">".chaine_select_options_simple($this->st_pays,$ga_pays)."</select></td></tr>";
-      $st_chaine .= sprintf("<tr><th>Email forum</th><td><input type=\"text\" maxlength=60 size=40 name=email_forum value=\"%s\" id=email_forum></td></tr>",$this->st_email_forum);
-      
-      $st_chaine .= sprintf("<tr><th>Site web</th><td><input type=\"text\" maxlength=60 size=40 name=site_adht id=site_adht value=\"%s\"></td></tr>", $this->st_site);
+		$st_chaine .= '<div class="form-group row">';
+        $st_chaine .= sprintf("<label for=\"ident_adh\" class=\"col-md-4 col-form-label\">Votre identifiant (base ".SIGLE_ASSO.")</label>");
+		$st_chaine .= '<div class="col-md-8">';
+		$st_chaine .= sprintf("<input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adh value=\"%s\" $st_readonly>",$this->st_ident);
+		if (!empty($gst_administrateur_gbk))
+			$st_chaine .= sprintf("<label for=\"ident_adh\">Votre identifiant G&eacute;n&eacute;bank</label><input type=\"text\" id=ident_gbk value=\"".PREFIXE_ADH_GBK."%04d\" size=8 readonly>",$this -> i_idf);
+		$st_chaine .= '</div>';
+	  $st_chaine .= '</div>';
+      }
+	  $st_chaine .= '</div>';
+	  
+      $st_chaine .= '<div class="form-group row">';
+	  $st_chaine .= sprintf("<label for=\"nom\" class=\"col-md-4 col-form-label control-label\">Nom</label>");
+	  $st_chaine .= '<div class="col-md-8">';
+	  $st_chaine .= sprintf("<input type=text maxlength=20 size=20 name=nom id=nom value=\"%s\" class=\"form-control text-uppercase \">",$this->st_nom);
+	  $st_chaine .= '</div>';
+	  $st_chaine .= '</div>';
+	  
+	  $st_chaine .=  '<div class="form-group row">';
+      $st_chaine .= sprintf("<label for=\"prenom\" class=\"col-md-4 col-form-label control-label\">Pr&eacute;nom</label>");
+	  $st_chaine .=  '<div class="col-md-8">';
+	  $st_chaine .= sprintf("<input type=text maxlength=30 size=20 name=prenom id=prenom value=\"%s\" class=\"form-control text-capitalize\">",$this->st_prenom);
+      $st_chaine .= '</div>';
+	  $st_chaine .= '</div>';
 
-      $st_checked =$this->b_confidentiel ? "checked": '';
-      $st_chaine .= "<tr><td colspan=2><input type=\"checkbox\" name=confidentiel value=\"O\" $st_checked />(Cochez et l'adresse devient invisible aux adhérents)</td></tr>";
-      $st_chaine .= "<tr><td colspan=2>Donn&eacute;es accessibles uniquement aux gestionnaires de l'AGC</td></tr>";
-      $st_chaine .= sprintf("<tr><th>Email perso (requis si connu)</th><td><input type=\"text\" maxlength=60 size=40 name=email_perso id=email_perso value=\"%s\"></td></tr>",$this->st_email_perso);     
-      $st_chaine .= sprintf("<tr><th>T&eacute;l&eacute;phone</th><td><input type=\"text\" maxlength=15 size=20 name=tel value=\"%s\"></td></tr>",$this->st_tel);
-      $st_chaine .='</table>';
+	  $st_chaine .= '<div class="form-group row">';
+      $st_chaine .= sprintf("<label for=\"adresse1\" class=\"col-md-4 col-form-label control-label\">Adresse 1</label>");
+	  $st_chaine .=  '<div class="col-md-8">';
+	  $st_chaine .= sprintf("<input type=text maxlength=40 size=40 name=adresse1 id=adresse1 value=\"%s\" class=\"form-control col-md-8\">",$this->st_adresse1);
+	  $st_chaine .= '</div>';
+	  $st_chaine .= '</div>';
+	  
+	  $st_chaine .= '<div class="form-group row">';
+      $st_chaine .= sprintf("<label for=\"adresse2\" class=\"col-md-4 col-form-label control-label\">Adresse 2</label>");
+	  $st_chaine .=  '<div class="col-md-8">';
+	  $st_chaine .= sprintf("<input type=text maxlength=40 size=40 name=adresse2 id=adresse2 value=\"%s\" class=\"form-control col-md-8\">",$this->st_adresse2);
+	  $st_chaine .= '</div>';
+	  $st_chaine .= '</div>';
+      
+	  $st_chaine .= '<div class="form-group row">';
+	  $st_chaine .= sprintf("<label for=\"code_postal\" class=\"col-md-4 col-form-label control-label\">Code Postal</label>");
+	  $st_chaine .=  '<div class="col-md-8">';
+	  $st_chaine .= sprintf("<input type=text maxlength=12 size=12 name=code_postal id=code_postal value=\"%s\" class=\"form-control col-md-8\">",$this->st_code_postal);
+	  $st_chaine .= '</div>';
+	  $st_chaine .= '</div>';
+	  
+	  $st_chaine .= '<div class="form-group row">';
+      $st_chaine .= sprintf("<label for=\"ville\" class=\"col-md-4 col-form-label control-label\">Localit&eacute;</label>");
+	  $st_chaine .=  '<div class="col-md-8">';
+	  $st_chaine .= sprintf("<input type=text maxlength=40 size=20 name=ville id=ville value=\"%s\" class=\"form-control col-md-8\">",$this->st_ville);
+	  $st_chaine .= '</div>';  
+	  $st_chaine .= '</div>';
+      
+      $st_chaine .=  '<div class="form-group row">';	  
+      $st_chaine .= "<label for=\"pays\" class=\"col-md-4 col-form-label control-label\">Pays</label>";
+	  $st_chaine .=  '<div class="col-md-8">';
+	  $st_chaine .= "<select name=pays id=pays class=\"form-control col-md-8 js-select-avec-recherche\">";
+	  $st_chaine .= chaine_select_options_simple($this->st_pays,$ga_pays);
+      $st_chaine .= '</select>';
+      $st_chaine .= '</div>';
+      $st_chaine .= '</div>'; 	  
+	  
+	  $st_chaine .=  '<div class="form-group row">';
+	  $st_checked =$this->b_confidentiel ? "checked": '';
+	  $st_chaine .= sprintf("<input type=checkbox name=confidentiel id=confidentiel value=\"O\" %s class=\"form-check-input col-md-2\">",$st_checked);
+	  $st_chaine .=  '<div class="col-md-10">';
+	  $st_chaine .= "<label for=\"confidentiel\" class=\"form-check-label col-form-label control-label\" >Cochez et l'adresse devient invisible aux adh&eacute;rents</label>";
+	  $st_chaine .= '</div>';
+	  $st_chaine .= '</div>';
+	  
+	  $st_chaine .=  '<div class="form-group row">';
+	  $st_chaine .= sprintf("<label for=\"email_forum\" class=\"col-md-4 col-form-label control-label\">Email forum</label>");
+	  $st_chaine .=  '<div class="col-md-8">';
+	  $st_chaine .= sprintf("<input type=text maxlength=60 size=40 name=email_forum id=email_forum value=\"%s\" class=\"form-control\">",$this->st_email_forum);
+	  $st_chaine .= '</div>';
+      $st_chaine .= '</div>'; 
+	  
+	  $st_chaine .=  '<div class="form-group row">';
+      $st_chaine .= sprintf("<label for=\"site_adht\" class=\"col-md-4 col-form-label control-label\">Site web</label>");
+	  $st_chaine .=  '<div class="col-md-8">';
+	  $st_chaine .= sprintf("<input type=text maxlength=60 size=40 name=site_adht id=site_adht value=\"%s\" class=\"form-control\">",$this->st_site);
+	  $st_chaine .= '</div>';
+      $st_chaine .= '</div>'; 
+
+      $st_chaine .= '<div class="form-group row">';	  
+	  $st_chaine .= sprintf("<label for=\"email_perso\" class=\"col-md-4 col-form-label control-label\">Email perso</label>");
+	  $st_chaine .=  '<div class="col-md-8">';
+	  $st_chaine .= sprintf("<input type=text maxlength=60 size=40 name=email_perso id=email_perso value=\"%s\" class=\"form-control\" aria-describedby=\"UsageEmailPerso\">",$this->st_email_perso);
+      $st_chaine .= "<small id=\"UsageEmailPerso\">Donn&eacute;es accessibles uniquement aux gestionnaires de l'association</small>";	  
+	  $st_chaine .= '</div>';
+      $st_chaine .= '</div>'; 	  
+	  
+      $st_chaine .= '<div class="form-group row">';	  	  
+      $st_chaine .= sprintf("<label for=\"telephone\" class=\"col-md-4 col-form-label control-label\">T&eacute;l&eacute;phone</label>");
+	  $st_chaine .=  '<div class="col-md-8">';
+	  $st_chaine .= sprintf("<input type=text maxlength=15 size=10 name=tel id=tel value=\"%s\" aria-describedby=\"UsageTelephone\" class=\"form-control\">",$this->st_tel);
+	  $st_chaine .= "<small id=\"UsageTelephone\">Donn&eacute;es accessibles uniquement aux gestionnaires de l'association</small>";
+      $st_chaine .= '</div>'; 
+      $st_chaine .= '</div>'; 	  
+ 
       return $st_chaine;
    }
      
@@ -323,17 +416,18 @@ class Adherent
    */
    public function formulaire_aides_possibles() 
    {
-      $st_chaine ="<div><br>Je souhaite m’impliquer dans le fonctionnement de l’association en:<br></div><div align=left>";
+      $st_chaine ="<label for=\"aides\">Je souhaite m’impliquer dans le fonctionnement de l’association en:</label>";
+	  $st_chaine .= '<div class="form-group" id="aides">';
       $st_coche = ($this->i_aide & AIDE_RELEVES) ? 'checked' : '';
-      $st_chaine .= "<input type=checkbox name=\"aide[]\" value=".AIDE_RELEVES." $st_coche> Effectuant des relev&eacute;s<br>\n";
+      $st_chaine .= "<div class=\"form-check\"><input type=checkbox name=\"aide[]\" value=".AIDE_RELEVES." id=\"".AIDE_RELEVES."\" class=\"form-check-input\" $st_coche><label for=\"".AIDE_RELEVES."\" class=\"form-check-label\">Effectuant des relev&eacute;s</label></div>\n";
       $st_coche = ($this->i_aide & AIDE_INFORMATIQUE) ? 'checked' : '';
-      $st_chaine .= "<input type=checkbox name=\"aide[]\" value=".AIDE_INFORMATIQUE." $st_coche> Participant &agrave; l’informatique<br>\n";
+      $st_chaine .= "<div class=\"form-check\"><input type=checkbox name=\"aide[]\" value=".AIDE_INFORMATIQUE." id=\"".AIDE_INFORMATIQUE."\" class=\"form-check-input\" $st_coche><label for=\"".AIDE_INFORMATIQUE."\" class=\"form-check-label\">Participant &agrave; l’informatique</label></div>\n";
       $st_coche = ($this->i_aide & AIDE_AD) ? 'checked' : '';
-      $st_chaine .= "<input type=checkbox name=\"aide[]\" value=".AIDE_AD." $st_coche> Faisant de l’entraide aux AD<br>\n";
+      $st_chaine .= "<div class=\"form-check\"><input type=checkbox name=\"aide[]\" value=".AIDE_AD." id=\"".AIDE_AD."\" class=\"form-check-input\" $st_coche><label for=\"".AIDE_AD."\" class=\"form-check-label\">Faisant de l’entraide aux AD</label></div>\n";
       $st_coche = ($this->i_aide & AIDE_BULLETIN) ? 'checked' : '';
-      $st_chaine .="<input type=checkbox name=\"aide[]\" value=".AIDE_BULLETIN." $st_coche> Participant au Bulletin<br>\n";
-      $st_chaine .= "<div>Merci de cocher la case correspondante:<br>\n</div>";
-      $st_chaine .="</div>";
+      $st_chaine .="<div class=\"form-check\"><input type=checkbox name=\"aide[]\" value=".AIDE_BULLETIN." id=\"".AIDE_BULLETIN."\" class=\"form-check-input\" $st_coche><label for=\"".AIDE_BULLETIN."\" class=\"form-check-label\">Participant au Bulletin</label></div>\n";
+      $st_chaine .= "<div class=\"form-row text-center\">Merci de cocher la case correspondante:</div>";
+	  $st_chaine .="</div>";
       return $st_chaine;
    }
    
@@ -342,29 +436,32 @@ class Adherent
    */
    public function formulaire_origine()
    {
-      $st_chaine = "<div>Comment nous avez-vous connu ?<br>";
+      $st_chaine = "<label for=\"origines\">Comment nous avez-vous connu ?</label>";
+	  $st_chaine .= '<div class="form-group row" id="origines">';
       $st_coche  = ($this->i_origine==ORIGINE_INTERNET) ? 'checked' : '';
-      $st_chaine .= "<div><input type=\"radio\" id=\"OrigineInternet\" name=\"type_origine\" value=\"".ORIGINE_INTERNET."\" $st_coche>";
-      $st_chaine .= "<label for=\"OrigineInternet\">Site Internet</label><br>\n";
+      $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" id=\"OrigineInternet\" name=\"type_origine\" value=\"".ORIGINE_INTERNET."\" class=\"form-check-input\" $st_coche>";
+      $st_chaine .= "<label for=\"OrigineInternet\" class=\"form-check-label\">Site Internet</label></div>\n";
       $st_coche  = ($this->i_origine==ORIGINE_FORUM) ? 'checked' : '';
-      $st_chaine .= "<input type=\"radio\" id=\"OrigineForum\" name=\"type_origine\" value=\"".ORIGINE_FORUM."\" $st_coche>";
-      $st_chaine .= "<label for=\"OrigineForum\">Forum de discussion</label><br>\n";
+      $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" id=\"OrigineForum\" name=\"type_origine\" value=\"".ORIGINE_FORUM."\" class=\"form-check-input\" $st_coche>";
+      $st_chaine .= "<label for=\"OrigineForum\" class=\"form-check-label\">Forum de discussion</label></div>\n";
       $st_coche  = ($this->i_origine==ORIGINE_PRESSE) ? 'checked' : '';
-      $st_chaine .= "<input type=\"radio\" id=\"OriginePresse\" name=\"type_origine\" value=\"".ORIGINE_PRESSE."\" $st_coche>";
-      $st_chaine .= "<label for=\"OriginePresse\">Article de presse</label><br>\n";
+      $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" id=\"OriginePresse\" name=\"type_origine\" value=\"".ORIGINE_PRESSE."\" class=\"form-check-input\" $st_coche>";
+      $st_chaine .= "<label for=\"OriginePresse\" class=\"form-check-label\">Article de presse</label></div>\n";
       $st_coche  = ($this->i_origine==ORIGINE_MANIFESTATION) ? 'checked' : '';
-      $st_chaine .= "<input type=\"radio\" id=\"OrigineManifestation\" name=\"type_origine\" value=\"".ORIGINE_MANIFESTATION."\" $st_coche>";
-      $st_chaine .= "<label for=\"OrigineManifestation\">Manifestation spécifique</label><br>\n";
+      $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" id=\"OrigineManifestation\" name=\"type_origine\" value=\"".ORIGINE_MANIFESTATION."\" class=\"form-check-input\" $st_coche>";
+      $st_chaine .= "<label for=\"OrigineManifestation\" class=\"form-check-label\">Manifestation sp&eacute;cifique</label></div>\n";
       $st_coche  = ($this->i_origine==ORIGINE_AD) ? 'checked' : '';
-      $st_chaine .= "<input type=\"radio\" id=\"OrigineAD\" name=\"type_origine\" value=\"".ORIGINE_AD."\" $st_coche>";
-      $st_chaine .= "<label for=\"OrigineAD\">Visite aux AD</label><br>\n";
+      $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" id=\"OrigineAD\" name=\"type_origine\" value=\"".ORIGINE_AD."\" class=\"form-check-input\" $st_coche>";
+      $st_chaine .= "<label for=\"OrigineAD\" class=\"form-check-label\">Visite aux AD</label></div>\n";
       $st_coche  = ($this->i_origine==ORIGINE_CONNAISSANCE) ? 'checked' : '';
-      $st_chaine .= "<input type=\"radio\" id=\"OrigineConnaissance\" name=\"type_origine\" value=\"".ORIGINE_CONNAISSANCE."\" $st_coche>";
-      $st_chaine .= "<label for=\"OrigineConnaissance\">Bouche &agrave; oreille</label><br>\n";
+      $st_chaine .= "<div class=\"form-check\"> <input type=\"radio\" id=\"OrigineConnaissance\" name=\"type_origine\" value=\"".ORIGINE_CONNAISSANCE."\" class=\"form-check-input\" $st_coche>";
+      $st_chaine .= "<label for=\"OrigineConnaissance\" class=\"form-check-label\">Bouche &agrave; oreille</label></div>\n";
       $st_coche  = ($this->i_origine==ORIGINE_AUTRE) ? 'checked' : '';
-      $st_chaine .= "<input type=\"radio\" id=\"OrigineAutre\" name=\"type_origine\" value=\"".ORIGINE_AUTRE."\" $st_coche>";
-      $st_chaine .= "<label for=\"OrigineConnaissance\">Autre</label><br>\n</div>";
-      $st_chaine .= sprintf("Veuillez pr&eacute;ciser SVP dans tous les cas: <input type=\"text\" maxlength=80 size=20 name=\"description_origine\" id=description_origine value=\"%s\"><br></div>",$this->st_origine); 
+      $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" id=\"OrigineAutre\" name=\"type_origine\" value=\"".ORIGINE_AUTRE."\" class=\"form-check-input\" $st_coche>";
+      $st_chaine .= "<label for=\"OrigineConnaissance\" class=\"form-check-label\">Autre</label></div>";
+	  
+      $st_chaine .= sprintf("<div class=\"row\"><label for=\"description_origine\">Veuillez pr&eacute;ciser SVP dans tous les cas:</label><input type=\"text\" maxlength=80 size=20 name=\"description_origine\" id=description_origine value=\"%s\" class=\"form-control\"></div>",$this->st_origine);
+      $st_chaine .="</div>";	  
       return $st_chaine;
    } 
    
@@ -376,28 +473,79 @@ class Adherent
       $st_chaine ='';
       if (a_droits($this->st_ident_modificateur,DROIT_GESTION_ADHERENT))
       {
-        $st_chaine = "<div>";
-        $st_chaine .= sprintf("Identifiant: <input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adh value=\"%s\">",$this->st_ident);
+	    $st_chaine .= '<div class="form-group row">';
+        $st_chaine .= sprintf("<label for=\"ident_adht_adm\" class=\"col-md-4 col-form-label control-label \">Identifiant</label>");
+		$st_chaine .=  '<div class="col-md-8">';
+		$st_chaine .= sprintf("<input type=\"text\" maxlength=12 size=8 name=ident_adh id=ident_adht_adm value=\"%s\" class=\"form-control\">",$this->st_ident);
+        $st_chaine .=  '</div>';
+	    $st_chaine .=  '</div>';
+	     $st_chaine .= '<div class="form-group row">';
         $this->a_filtres_parametres["ident_adh"] = array(array("required", "true", "L'identifiant est obligatoire"));
-        $st_chaine .= "</div>";
-        $st_chaine .= "<div>";
-        $st_chaine .= sprintf("Infos AGC :<br><textarea name=\"infos_agc\" cols=\"60\" rows=\"10\" id=\"infos_agc\">%s</textarea><br>",$this->st_infos_agc);
-        $st_chaine .= "</div>";
-        $st_chaine .= "<div>";
-        $st_chaine .= sprintf("Date de premi&egrave;re adh&eacute;sion: <input name=\"date_premiere_adhesion\"  id=\"date_premiere_adhesion\" value=\"%s\" size=\"10\" maxlength=\"10\" type=\"text\" style=\"width:70px\"><br>",$this->st_date_premiere_adhesion);     
-		    $st_chaine .= sprintf("Date de paiement: <input name=\"date_paiement\" id=\"date_paiement\" value=\"%s\" size=\"10\" maxlength=\"10\" type=\"text\" style=\"width:70px\"> ",$this->st_date_paiement);      
-        $st_chaine .= sprintf(" prix: <input name=\"prix\" value=\"%d\" id=\"prix\" size=\"2\" maxlength=\"2\" type=\"text\" style=\"width:25px\">",$this->i_prix);        
-        $st_chaine .= sprintf(" ann&eacute;e de cotisation: <input name=\"annee_cotisation\" id=\"annee_cotisation\" value=\"%d\" size=\"4\" maxlength=\"4\" type=\"text\" style=\"width:40px\">",$this->i_annee_cotisation);         
-        $st_chaine .= " <input type=button value=R  id=readhesion><br>";    
-        $st_chaine .= sprintf("Derni&egrave;re adresse ip de connexion: %s<br>",$this->st_ip_connexion);
-        $st_chaine .= sprintf("IP restreinte: <input type=\"text\" maxlength=15 size=15 name=ip_restreinte id=ip_restreinte value=\"%s\"><br>",$this->st_ip_restreinte);
-        $st_chaine .= sprintf("Quota Naissance: <input type=\"text\" maxlength=4 size=4 name=\"max_nai\" id=\"max_nai\" value=\"%d\"><br>",$this->i_max_nai);
+        $st_chaine .= sprintf("<label for=\"infos_agc\" class=\"col-md-4 col-form-label control-label\" >Infos ".SIGLE_ASSO."</label>");
+		$st_chaine .=  '<div class="col-md-8">';
+		$st_chaine .= sprintf("<textarea name=\"infos_agc\" id=\"infos_agc\" cols=\"60\" rows=\"10\" class=\"form-control\">%s</textarea>",$this->st_infos_agc);
+        $st_chaine .=  '</div>';
+	    $st_chaine .= '</div>';
+	    $st_chaine .= '<div class="form-group row">';
+        $st_chaine .= sprintf("<label for=\"date_premiere_adhesion\" class=\"col-md-4 col-form-label control-label\">Date de premi&egrave;re adh&eacute;sion</label>");
+		$st_chaine .=  '<div class="col-md-8">';
+		$st_chaine .= sprintf("<input name=\"date_premiere_adhesion\"  id=\"date_premiere_adhesion\" value=\"%s\" size=\"10\" maxlength=\"10\" type=\"text\" class=\"form-control\">",$this->st_date_premiere_adhesion);
+        $st_chaine .=  '</div>';
+	    $st_chaine .=  '</div>';     
+	    $st_chaine .= '<div class="form-group row">';
+        $st_chaine .= sprintf("<label for=\"date_paiement\" class=\"col-md-4 col-form-label control-label\">Date de paiement</label>");
+		$st_chaine .=  '<div class="col-md-8">';
+		$st_chaine .= sprintf("<input name=\"date_paiement\" id=\"date_paiement\" value=\"%s\" size=\"10\" maxlength=\"10\" type=\"text\" class=\"form-control\"> ",$this->st_date_paiement);
+        $st_chaine .=  '</div>';
+	    $st_chaine .=  '</div>';      
+	    $st_chaine .= '<div class="form-group row">';
+        $st_chaine .= sprintf("<label for=\"prix\" class=\"col-md-4 col-form-label control-label\" >prix:</label>");
+		$st_chaine .=  '<div class="col-md-8">';
+		$st_chaine .= sprintf("<input name=\"prix\" value=\"%d\" id=\"prix\" size=\"2\" maxlength=\"2\" type=\"text\" class=\"form-control\">",$this->i_prix);
+        $st_chaine .=  '</div>';
+	    $st_chaine .=  '</div>';
+		
+	    $st_chaine .= '<div class="form-group row">';        
+        $st_chaine .= sprintf("<label for=\"annee_cotisation\" class=\"col-md-4 col-form-label control-label\">ann&eacute;e de cotisation</label>");
+		$st_chaine .=  '<div class="col-md-6">';
+		$st_chaine .= sprintf("<input name=\"annee_cotisation\" id=\"annee_cotisation\" value=\"%d\" size=\"4\" maxlength=\"4\" type=\"text\" class=\"form-control\">",$this->i_annee_cotisation);
+        $st_chaine .= '</div>';		
+        $st_chaine .= " <button type=button class=\"btn btn-primary col-md-2\" id=readhesion>R</button>";
+		$st_chaine .=  '</div>';
+		
+	    $st_chaine .= '<div class="form-group row">';    
+        $st_chaine .= sprintf("<div class=\"text-center\">Derni&egrave;re adresse ip de connexion: %s</div>",$this->st_ip_connexion);
+        $st_chaine .=  '</div>';
+		
+	    $st_chaine .= '<div class="form-group row">';
+        $st_chaine .= sprintf("<label for=\"ip_restreinte\" class=\"col-md-4 col-form-label control-label\">IP restreinte</label>");
+		$st_chaine .=  '<div class="col-md-8">';
+		$st_chaine .= sprintf("<input type=\"text\" maxlength=15 size=15 name=ip_restreinte id=ip_restreinte value=\"%s\" class=\"form-control\">",$this->st_ip_restreinte);
+        $st_chaine .=  '</div>';
+	    $st_chaine .=  '</div>';
+	    
+		$st_chaine .= '<div class="form-group row">';
+        $st_chaine .= sprintf("<label for=\"max_nai\" class=\"col-md-4 col-form-label control-label\">Quota Naissance</label>");
+		$st_chaine .=  '<div class="col-md-8">';
+		$st_chaine .= sprintf("<input type=\"text\" maxlength=4 size=4 name=\"max_nai\" id=\"max_nai\" value=\"%d\" class=\"form-control\">",$this->i_max_nai);
+        $st_chaine .=  '</div>';
+	    $st_chaine .=  '</div>';
         
-        $st_chaine .= sprintf("Quota Mariage/Divers: <input type=\"text\" maxlength=4 size=4 name=\"max_mar_div\" id=\"max_mar_div\" value=\"%d\"><br>",$this->i_max_mar_div);
-          
-        $st_chaine .= sprintf("Quota D&eacute;c&eacute;s: <input type=\"text\" maxlength=4 size=4 name=\"max_dec\" id=\"max_dec\" value=\"%d\"><br>",$this->i_max_dec);
-        $st_chaine .= sprintf("Dernier jeton de paiement (si adh&eacute;sion en ligne): %s<br>",$this->st_jeton_paiement);
-        $st_chaine .= "</div>";
+	    $st_chaine .= '<div class="form-group row">';
+        $st_chaine .= sprintf("<label for=\"max_mar_div\" class=\"col-md-4 col-form-label control-label\">Quota Mariage/Divers</label>");
+		$st_chaine .=  '<div class="col-md-8">';
+		$st_chaine .= sprintf("<input type=\"text\" maxlength=4 size=4 name=\"max_mar_div\" id=\"max_mar_div\" value=\"%d\" class=\"form-control\">",$this->i_max_mar_div);
+        $st_chaine .=  '</div>';
+	    $st_chaine .=  '</div>';
+        
+	    $st_chaine .= '<div class="form-group row">';  
+        $st_chaine .= sprintf("<label for=\"max_dec\" class=\"col-md-4 col-form-labelc ontrol-label\">Quota D&eacute;c&eacute;s</label>");
+		$st_chaine .=  '<div class="col-md-8">';
+		$st_chaine .= sprintf("<input type=\"text\" maxlength=4 size=4 name=\"max_dec\" id=\"max_dec\" value=\"%d\" class=\"form-control\">",$this->i_max_dec);
+        $st_chaine .=  '</div>';
+	    $st_chaine .=  '</div>';
+        
+        $st_chaine .= sprintf("<div class=\"text-center\">Dernier jeton de paiement (si adh&eacute;sion en ligne): %s</div>",$this->st_jeton_paiement);
       }
       return $st_chaine;
    }
@@ -411,23 +559,24 @@ class Adherent
     function  formulaire_type_inscription($pst_pays,$pst_cp)
     {
       global  $ga_tarifs;
-      $st_chaine = "<div>Choisissez votre type d'inscription:<br>";
+      $st_chaine = '<label for="type_inscription">Choisissez votre type d\'inscription:</label>';
       $i_tarif = $ga_tarifs['internet'];
-      $st_chaine .= "<input type=\"radio\" name=\"statut\" value=\"".ADHESION_INTERNET."\" checked> Uniquement internet: $i_tarif euros";
+	  $st_chaine .= '<div class="form-group id="type_inscription">';
+      $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" name=\"statut\" value=\"".ADHESION_INTERNET."\" id=\"".ADHESION_INTERNET."\" checked class=\"form-check-input\"><label for=\"".ADHESION_INTERNET."\" class=\"form-check-label\">Uniquement internet: $i_tarif euros</label></div>";
       if (strtoupper($pst_pays)=='FRANCE' &&  preg_match('/^\d+$/',$pst_cp) && substr($pst_cp,0,2)<96 )
       {
         // Les départements métroppolitains ont un code postal inférieur à 96
         // Les DOM s'étendent de 971 à 976
         // les TOM de 984 à 988
         $i_tarif = $ga_tarifs['bulletin_metro'];
-        $st_chaine .= "<br><input type=\"radio\" name=\"statut\" value=\"".ADHESION_BULLETIN."\"> Internet + bulletins : $i_tarif euros (France M&eacute;tropolitaine)<br>";
+        $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" name=\"statut\" value=\"".ADHESION_BULLETIN."\" id=\"".ADHESION_BULLETIN."\" class=\"form-check-input\"><label for=\"".ADHESION_BULLETIN."\" class=\"form-check-label\">Internet + bulletins: $i_tarif euros (France M&eacute;tropolitaine)</label></div>";
       }
       else
       {
         $i_tarif = $ga_tarifs['bulletin_etranger'];
-        $st_chaine .= "<input type=\"radio\" name=\"statut\" value=\"".ADHESION_BULLETIN."\"> Internet + bulletins: $i_tarif euros (Etranger)<br>";
+        $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" name=\"statut\" value=\"".ADHESION_BULLETIN."\" id=\"".ADHESION_BULLETIN."\" class=\"form-check-input\"><label for=\"".ADHESION_BULLETIN."\" class=\"form-check-label\" >Internet + bulletins: $i_tarif euros (Etranger)</label></div>";
       }
-      $st_chaine .= "<br></div>";
+      $st_chaine .= "</div>";
       return  $st_chaine;
     }
    
@@ -440,17 +589,20 @@ class Adherent
       $st_chaine ='';
       if (a_droits($this->st_ident_modificateur,DROIT_GESTION_ADHERENT))
       {
-        $st_chaine = "<blockquote><div class=\"alignLeft\">Droits:<br>";      
+        $st_chaine = '<label for="droits_adherent">Droits:</label>';
+        $i=0;
+        $st_chaine .= '<div id="droits_adherent" class="form-group">';		
         foreach ($ga_droits as $st_droit => $st_label_droit)
         {
-          $st_chaine .= "<div class=\"alignLeft\">";
+          $st_chaine .= '<div class="form-check">';
           if (in_array($st_droit,$this->a_droits_adherents))
-            $st_chaine .=sprintf("<label><input type=checkbox name=\"droits[]\" value=\"%s\" checked />%s</label><br>",$st_droit,$st_label_droit);
+            $st_chaine .=sprintf("<input type=checkbox name=\"droits[]\" value=\"%s\" id=\"droit_%d\" checked class=\"form-check-input\"><label for=\"droit_%d\" class=\"form-check-label\">%s</label>",$st_droit,$i,$i,$st_label_droit);
           else
-            $st_chaine .=sprintf("<label><input type=checkbox name=\"droits[]\" value=\"%s\"/>%s</label><br>",$st_droit,$st_label_droit);     
+            $st_chaine .=sprintf("<input type=checkbox name=\"droits[]\" value=\"%s\" id=\"droit_%d\" class=\"form-check-input\"><label for=\"%d\" class=\"form-check-label\">%s</label>",$st_droit,$i,$i,$st_label_droit);     
           $st_chaine .= "</div>";
-        }      
-        $st_chaine .= "</div></blockquote>";
+          $i++;
+		}      
+        $st_chaine .= "</div>";
       }  
       return $st_chaine;
    }
@@ -600,13 +752,13 @@ class Adherent
       }
       
 		  if ($this->envoie_message_adherent())
-			  print("<div> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
+			  print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
 		  else
-			  print("<div class=ERREUR> Echec lors de l'envoi du  message &agrave; l'adh&eacute;rent</div>");
+			  print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; l'adh&eacute;rent</div>");
 		  if ($this->envoie_message_direction())
-			   print("<div> Message envoy&eacute; &agrave; la direction de l'association</div>");
+			   print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; la direction de l'association</div>");
 		  else
-			 print("<div class=ERREUR> Echec lors de l'envoi du  message &agrave; la direction de l'association</div>");
+			 print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; la direction de l'association</div>");
    }
    
    /*
@@ -715,16 +867,19 @@ class Adherent
   function envoie_message_adherent() {
     global $gst_url_site;
     $st_message_html  = sprintf("Bonjour <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
-    $st_message_html .= "Vous venez d'&ecirc;tre inscrit(e) sur le site de l'A.G.C et &agrave; G&eacute;n&eacute;abank.\n";
+    $st_message_html .= "Vous venez d'&ecirc;tre inscrit(e) sur le site de l'AGC et &agrave; G&eacute;n&eacute;abank.\n";
     $st_message_html .= sprintf("Votre inscription est valid&eacute;e pour l'ann&eacute;e %d\n",$this->i_annee_cotisation);
     $st_message_html .= "A partir de maintenant, vous pouvez avoir acc&eacute;s &agrave; l'espace membres de notre groupe.\n";
     $st_message_html .= "Afin de mettre &agrave; jour vos informations, il vous suffit, pour cela, de vous rendre &agrave; l'adresse suivante :\n";
     $st_message_html .= "<a href=\"$gst_url_site\">$gst_url_site</a>\n\n";
-    $st_message_html .= "Pour vous connecter &agrave; la base AGC\n";
+    $st_message_html .= "Pour vous connecter &agrave; la base ".SIGLE_ASSO."\n";
     $st_message_html .= sprintf("Votre identifiant est votre num&eacute;ro de membre : <font color=\"#FF0000\"><strong>%s</strong></font>\n",$this->i_idf);
     $st_message_html .= sprintf("Votre mot de passe est : <font color=\"#FF0000\"><strong>%s</strong></font>\n\n",$this->st_mdp);
-    $st_message_html .= "Pour vous connecter &agrave; G&eacute;n&eacute;aBank\n";
-    $st_message_html .= sprintf("Votre nom d'utilisateur : <font color=\"#FF0000\"><strong>".PREFIXE_ADH_GBK."%s</strong></font>\n",$this->i_idf);
+	if (!empty($gst_administrateur_gbk))
+    { 
+		$st_message_html .= "Pour vous connecter &agrave; G&eacute;n&eacute;aBank\n";
+		$st_message_html .= sprintf("Votre nom d'utilisateur : <font color=\"#FF0000\"><strong>".PREFIXE_ADH_GBK."%s</strong></font>\n",$this->i_idf);
+	}	
     $st_message_html .= sprintf("Votre mot de passe est : <font color=\"#FF0000\"><strong>%s</strong></font>\n\n",$this->st_mdp);
     $st_message_html .= "Nous vous demandons de bien noter ces informations que vous pouvez g&eacute;rer &agrave; votre gr&eacute;\n\n";
     $st_message_html .= "Ces informations sont strictement personnelles et confidentielles.\n";
@@ -737,12 +892,12 @@ class Adherent
   
     $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
   
-    $st_entete  = "From: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n>";
-    $st_entete .= "Reply-to: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n";
+    $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
+    $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\n";
     $st_entete .= "Bcc: fbouffanet@yahoo.fr,agc-info@genea16.net\n";
-    $st_entete .= "Reply-to: AGC <".EMAIL_DIRASSO.">\n";
-    $st_entete .= "Disposition-Notification-To: AGC<".EMAIL_DIRASSO.">\n";
+    $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
+    $st_entete .= "Disposition-Notification-To: ".SIGLE_ASSO."<".EMAIL_DIRASSO.">\n";
 	  $st_entete .= 'MIME-Version: 1.0' . "\n"; 
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
     $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n"; 
@@ -755,7 +910,7 @@ class Adherent
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_html."\n\n";
     $st_message .= '--'.$st_frontiere."--\n";
-    $st_sujet = "Inscription a l'A.G.C. - Association Genealogique de la Charente";
+    $st_sujet = "Inscription a l'AGC - ".LIB_ASSO;
     return (mail($this->st_email_perso,$st_sujet,$st_message, $st_entete));
   }
   
@@ -779,16 +934,16 @@ class Adherent
   
     $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
   
-    $st_entete  = "From: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n>";
-    $st_entete .= "Reply-to: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n";
+    $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
+    $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\n";
     $st_entete .= "Bcc: fbouffanet@yahoo.fr\n";
-    $st_entete .= "Reply-to: AGC <".EMAIL_DIRASSO.">\n";
-    $st_entete .= "Disposition-Notification-To: AGC<".EMAIL_DIRASSO.">\n";
+    $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
+    $st_entete .= "Disposition-Notification-To: ".SIGLE_ASSO."<".EMAIL_DIRASSO.">\n";
     $st_entete .= 'MIME-Version: 1.0' . "\n"; 
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
     
-    $st_sujet = "Re-inscription a l'A.G.C. - Association Genealogique de la Charente";
+    $st_sujet = "Re-inscription a l'AGC - ". LIB_ASSO;
 
     $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
     $st_message .= '--'.$st_frontiere."\n";
@@ -812,7 +967,7 @@ class Adherent
     $st_message_html .= "</font>";
     $st_message_html  .= sprintf("Inscription G&eacute;n&eacute;aBank de <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
     $st_message_html .= "Faire un copier de la ligne ci dessous et la coller dans l'interface de gestion de G&eacute;n&eacute;abank.\n\n";
-    $st_message_html .= sprintf("register AGC%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
+    $st_message_html .= sprintf("register ".PREFIXE_ADH_GBK."%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
     $st_message_html .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
     $st_message_html = nl2br($st_message_html);
     $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
@@ -821,11 +976,11 @@ class Adherent
   
     $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
   
-    $st_entete  = "From: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n>";
-    $st_entete .= "Reply-to: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n";
+    $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
+    $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\n";
     $st_entete .= "Bcc: fbouffanet@yahoo.fr\n";
-    $st_entete .= "Reply-to: AGC <".EMAIL_DIRASSO.">\n";
+    $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= 'MIME-Version: 1.0' . "\n"; 
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
     $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n"; 
@@ -854,7 +1009,7 @@ class Adherent
     $st_texte .= self::$st_erreur_gbk;
     $st_texte .= "</font>";
     $st_texte .= "Faire un copier de la ligne ci dessous et la coller dans l'interface de gestion de Généabank.\n\n";
-    $st_texte .= sprintf("register AGC%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
+    $st_texte .= sprintf("register ".PREFIXE_ADH_GBK."%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
     $st_texte .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
     $st_sujet = "Changement de mot de passe GeneaBank";
     $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
@@ -875,15 +1030,16 @@ class Adherent
   */ 
   function envoie_message_geneabank_changement_mdp() {
     $st_texte = sprintf("Bonjour <strong>%s %s</strong>\n\n",$this->st_prenom,$this->st_nom);
-    $st_texte .= "Voici votre identifiant et mot de passe d'acc&egrave;s &agrave; la base AGC <strong>GENEA16</strong> et &agrave; G&eacute;n&eacute;aBank\n\n";
+    $st_texte .= "Voici votre identifiant et mot de passe d'acc&egrave;s &agrave; la base ".SIGLE_ASSO." <strong>GENEA16</strong> et &agrave; G&eacute;n&eacute;aBank\n\n";
     $st_texte .= "N'oubliez pas! votre adresse e-mail doit-&ecirc;tre la m&ecirc;me sur la base GENEA16 et sur Yahoo\n\n";
     $st_texte .="<table border=1>";
     $st_texte .= sprintf("<tr><td>Votre mot de passe:</td><th>%s</th></tr>",$this->st_mdp);
-    $st_texte .= sprintf("<tr><td>Votre identifiant AGC:</td><th>%s</th></tr>",$this->st_ident);
-    $st_texte .= sprintf("<tr><td>Votre identifiant G&eacute;n&eacute;aBank:</td><th>".PREFIXE_ADH_GBK."%d</th></tr>",$this->i_idf);
+    $st_texte .= sprintf("<tr><td>Votre identifiant ".SIGLE_ASSO.":</td><th>%s</th></tr>",$this->st_ident);
+	if (!empty($gst_administrateur_gbk)) 
+		$st_texte .= sprintf("<tr><td>Votre identifiant G&eacute;n&eacute;aBank:</td><th>".PREFIXE_ADH_GBK."%d</th></tr>",$this->i_idf);
     $st_texte .="</table>\n";
     $st_texte .= "Cordialement,\n\nLes responsables du site";
-    $st_sujet = "Votre nouveau mot de passe du site AGC";
+    $st_sujet = "Votre nouveau mot de passe du site".SIGLE_ASSO;
     $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
     $st_entete .= "Content-type: text/html; charset=cp1252 \r\n";
     $st_entete .= "From: ".EMAIL_DIRASSO."\r\n";
@@ -903,14 +1059,14 @@ class Adherent
 
     $st_message_html = nl2br($st_message_html);
     $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
-    $st_sujet = "Nouvelle inscription AGC";
+    $st_sujet = "Nouvelle inscription ".SIGLE_ASSO;
   
     $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
   
-    $st_entete  = "From: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n>";
-    $st_entete .= "Reply-to: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n";
+    $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
+    $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= "Bcc: fbouffanet@yahoo.fr\n";
-    $st_entete .= "Reply-to: AGC <".EMAIL_DIRASSO.">\n";
+    $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= 'MIME-Version: 1.0' . "\n"; 
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
     $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
@@ -1019,13 +1175,13 @@ class Adherent
           $st_message_html = nl2br($st_message_html);
           
           $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
-          $st_sujet = "Demande d'un nouveau mot de passe AGC";
+          $st_sujet = "Demande d'un nouveau mot de passe ".SIGLE_ASSO;
   
           $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
   
-          $st_entete  = "From: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n>";
-          $st_entete .= "Reply-to: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n";
-          $st_entete .= "Reply-to: AGC <".EMAIL_DIRASSO.">\n";
+          $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
+          $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
+          $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
           $st_entete .= 'MIME-Version: 1.0' . "\n"; 
           $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
           $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
@@ -1161,7 +1317,7 @@ class Adherent
    {
       if (!empty(pst_nouveau_mdp))
 		     $this->st_mdp=$pst_nouveau_mdp;
-      $st_cmd_gbk = sprintf("register AGC%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
+      $st_cmd_gbk = sprintf("register ".PREFIXE_ADH_GBK."%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
       $st_cmd_gbk .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
       return self::execute_cmd_gbk($st_cmd_gbk);
    }
