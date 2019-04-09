@@ -9,17 +9,19 @@ verifie_privilege(DROIT_UTILITAIRES);
 
 require_once '../Commun/ConnexionBD.php';
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr">');
 print("<title>Utilisation des tables</title>");
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../Commun/menu.js' type='text/javascript'></script>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print('</head>');
 print('<body>');
-
+print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("../Commun/menu.php");
 
@@ -45,7 +47,7 @@ function taille_formatee($pi_taille)
      return sprintf("%d octets",$pi_taille);  
 } 
 
-print("<div align=\"center\"><table border=1>");
+print("<table class=\"table table-bordered table-striped\">");
 print("<tr>");
 print("<th>Table</th>");
 print("<th>Nbre de lignes</th>");
@@ -101,9 +103,9 @@ foreach ($a_stats_table_sql as $st_table => $a_lignes)
      print("<td>N/A</td><td>N/A</td><td>N/A</td>");
    print("</tr>");
 }
-print("</table></div>"); 
+print("</table>"); 
  
-print('</body></html>');
+print('</div></body></html>');
 
 
 ?>

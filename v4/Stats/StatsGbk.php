@@ -54,42 +54,49 @@ function exporte_historique_cantons($pconnexionBD)
  */ 
 function affiche_stats_cumulees($pconnexionBD)
 {
-  print("<div align='center'>");
-  print("<div class=SOUSTITRE>Par canton</div><br>");
+  print('<div class="panel-group">');
+  print('<div class="panel panel-primary">');
+  print('<div class="panel-heading">Par canton</div>');
+  print('<div class="panel-body">');	
   $st_requete = 'select c.nom,count(*) as nombre from stats_gbk s_gbk join commune_acte ca on (s_gbk.idf_commune=ca.idf) join canton c on (ca.idf_canton = c.idf) group by c.nom order by nombre desc'; 
   $a_ddes_canton = $pconnexionBD -> liste_valeur_par_clef($st_requete);
-  print('<table border=1>');
+  print('<table class="table table-bordered table-striped">');
   print("<tr><th>Canton</th><th>Demandes</th></tr>\n");
   foreach ($a_ddes_canton as $st_canton => $i_ddes)
   {
     print("<tr><td>$st_canton</td><td>$i_ddes</td></tr>\n");
   }
-  print('</table></div>');
-  print("<div align='center'>");
-  print("<div class=SOUSTITRE>Par mois et ann&eacute;e</div><br>");
+  print('</table>');
+  print('</div></div>');
+  print('<div class="panel panel-primary">');
+  print('<div class="panel-heading">Par mois et ann&eacute;e</div>');
+  print('<div class="panel-body">');
   $st_requete = 'select date_format(date_demande , "%m/%y" ) as date_mois, count(*)as nombre from stats_gbk group by date_format(date_demande , "%m/%y" ) order by date_demande desc limit 50' ;
   $a_ddes_mois_annee = $pconnexionBD -> liste_valeur_par_clef($st_requete);
-  print('<table border=1>');
+  print('<table class="table table-bordered table-striped">');
   print("<tr><th>Date</th><th>Demandes</th></tr>\n");
   foreach ($a_ddes_mois_annee as $st_mois_annee => $i_ddes)
   {
     print("<tr><td>$st_mois_annee</td><td>$i_ddes</td></tr>\n");
   }
-  print('</table></div>');
-  print("<div align='center'>");
-  print("<div class=SOUSTITRE>Par type d'acte</div><br>");
+  print('</table>');
+  print('</div></div>');
+  print('<div class="panel panel-primary">');
+  print('<div class="panel-heading">Par type d\'acte</div>');
+  print('<div class="panel-body">');
   $st_requete = 'select ta.nom, count(*) as nombre from stats_gbk as s_gbk join type_acte ta on (s_gbk.idf_type_acte = ta.idf)  group by ta.nom  asc order by  nombre desc limit 30' ;
   $a_ddes_types_acte = $pconnexionBD -> liste_valeur_par_clef($st_requete);
-  print('<table border=1>');
+  print('<table class="table table-bordered table-striped">');
   print("<tr><th>Types d'acte</th><th>Demandes</th></tr>\n");
   foreach ($a_ddes_types_acte as $st_type => $i_ddes)
   {
     print("<tr><td>$st_type</td><td>$i_ddes</td></tr>\n");
   }
-  print('</table></div>');
+  print('</table>');
+  print('</div></div>');
   print("<form action=".$_SERVER['PHP_SELF']." method=post>");
   print("<input type=hidden name=mode value=\"FORMULAIRE\">");
-  print("<div align='center'><br><input type=submit value=\"Retour vers les menu\"></div>");
+  print("<button type=submit class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-home\"></span> Retour vers le menu</button>");
   print("</form>");
   print('</div>');
 }
@@ -103,38 +110,50 @@ function affiche_formulaire($pconnexionBD) {
   
   list($i_sec,$i_min,$i_heure,$i_jour,$i_mois,$i_annee,$i_jsem,$i_jan,$b_hiv)=   localtime();
   $a_annees=range(1900+$i_annee,2010,-1);
+ 	
+  print('<div class="panel panel-primary">');
+  print('<div class="panel-heading">Statistiques G&eacute;n&eacute;bank</div>');
+  print('<div class="panel-body">');
   
-  print("<div align=center>"); 
-  print("<div class=TITRE>Statistiques G&eacute;n&eacute;bank</div><br>");
-  print('<div>');
+  print('<div class="panel-group">');	
   
+  print('<div class="panel panel-default">');
+  print('<div class="panel-heading">Tous les cantons par annn&eacute;e</div>');
+  print('<div class="panel-body">');    
   print("<form action=".$_SERVER['PHP_SELF']." method=post>");
-  print("<div class=SOUSTITRE>Tous les cantons par annn&eacute;e</div><br>");
   print("<input type=hidden name=mode value=\"EXPORT_HISTORIQUE\">");
-  print("<input type=submit value=\"Exporter au format CSV l'historique de tous les cantons\">");
-  print("</form>");
+  print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"></span> Exporter au format CSV l\'historique de tous les cantons</button></div>');
+  print("</form></div></div>");
   
   print("<form action=".$_SERVER['PHP_SELF']." method=post>");
-  print("<div class=SOUSTITRE>Statistiques cumul&eacute;es</div><br>");
+  print('<div class="panel panel-default">');
+  print('<div class="panel-heading">Statistiques cumul&eacute;es</div>');
+  print('<div class="panel-body">');
   print("<input type=hidden name=mode value=\"STATS_CUMULEES\">");
-  print("<input type=submit value=\"Afficher les statistiques cumulees\">");
-  print("</form>");
+  print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-stats"> Afficher les statistiques cumul&eacute;es</button></div>');
+  print("</form></div></div>");
    
   print("<form id=stats_canton action=".$_SERVER['PHP_SELF']." method=post>");
-  print("<div class=SOUSTITRE>par ann&eacute;e et canton</div><br>");
-  print('<div> Ann&eacute;e: <select name="annee" id="annee"> ');
+  print('<div class="panel panel-default">');
+  print('<div class="panel-heading">par ann&eacute;e et canton</div>');
+  print('<div class="panel-body">');
+  print('<div class="form-row col-md-12">');
+  print('<label for="annee">Ann&eacute;e:</label><select name="annee" id="annee" class="form-control"> ');
   print(chaine_select_options_simple(null,$a_annees));
-  print('</select></div><br />');
-  print('<div>Canton: <select name="idf_canton" id="idf_canton" class="js-select-avec-recherche">');
+  print('</select></div>');
+  print('<div class="form-row col-md-12">');
+  print('<div><label for="idf_canton">Canton:</label><select name="idf_canton" id="idf_canton" class="form-control js-select-avec-recherche">');
   print(chaine_select_options(null,$a_cantons));
-  print('</select></div><br />');
+  print('</select></div>');
   print("<input type=hidden name=mode value=\"STATS_PAROISSES\">");
-  print("<p style=\"font-size:8pt;\"><input type=submit value=\"Afficher les statistiques\"></p>");   
-  print("</form>");
+  print('<div class="form-row col-md-12">');
+  print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-picture"></span> Afficher les statistiques</button></div>'); 
+  print('</div>');
+  print("</form></div></div>");
+  
   print('<div id="tableau_stats_canton"></div>');
   print('<canvas id="MonGraphe" width="600" height="500"></canvas>');
-  print("</div>");
-  print("</div>");
+  print("</div></div>");
 }
 
 /******************************************************************************/
@@ -150,19 +169,23 @@ if ($gst_mode=='EXPORT_HISTORIQUE')
    exit();
 }
 
+print('<!DOCTYPE html>');
+print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=cp1252" />');
 print('<meta http-equiv="content-language" content="fr" /> ');
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'/>");
-print("<link href='../Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
-print("<link href='../Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='../Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
-print("<link href='../Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
-print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='../css/select2.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='../js/select2.min.js' type='text/javascript'></script>");
 print("<script src='../js/Chart.min.js' type='text/javascript'></script>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 ?>
-
 <script type='text/javascript'>
 $(document).ready(function() {
 	
@@ -179,7 +202,7 @@ $(document).ready(function() {
 				var labels = donnees["labels"];
 				var ensemble_donnees=donnees["donnees"];
 				// affichage du tableau
-				var tableau = "<table border=1><tr><th><Commune></th>";
+				var tableau = "<table class=\"table table-bordered table-striped\"><tr><th><Commune></th>";
 				jQuery.each( labels, function( i, val ) {
 					tableau+="<th>"+val+"</th>";
 				});
@@ -243,9 +266,11 @@ $(document).ready(function() {
     });
 });	
 </script>
-<?php	
+<?php
+print("</script>");
+print('</head>');	
 print("<body>");
-
+print('<div class="container">');
 require_once("../Commun/menu.php");
 
 switch ($gst_mode)
@@ -257,5 +282,5 @@ switch ($gst_mode)
     affiche_stats_cumulees($connexionBD);
   break; 
 }
-print("</body>");
+print("</div></body></html>");
 ?>
