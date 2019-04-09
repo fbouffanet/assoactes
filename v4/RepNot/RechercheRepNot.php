@@ -33,39 +33,109 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
   $pst_nom2 = utf8_encode($pst_nom2);
   $pst_prenom2 = utf8_encode($pst_prenom2);
 	*/
-  print('<form id="recherche_rep_not" action="'.$_SERVER['PHP_SELF'].'" method="post">');
+    print('<form id="recherche_rep_not"  action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type="hidden" name="mode" value="RECHERCHES">');
-  print('<input type="hidden" name="ancienne_page" value="RECHERCHES">');
-	print("<fieldset><legend>Notaire</legend><div class=\"align-center\">Commune: <select id=\"idf_commune_notaire\" name=\"idf_commune_notaire\" class=\"js-select-avec-recherche\">");
+    print('<input type="hidden" name="ancienne_page" value="RECHERCHES">');
+	print('<div class="panel panel-info">');
+    print('<div class="panel-heading">Notaire</div>');
+    print('<div class="panel-body">');
+    print('<div class="form-group row col-md-12">');
+	print('<label for="idf_commune_notaire" class="col-form-label col-md-2">Commune</label>');
+	print('<div class="col-md-2">');
+	print("<select id=\"idf_commune_notaire\" name=\"idf_commune_notaire\" class=\"js-select-avec-recherche form-control\">");
 	$a_communes_notaires[0] = 'Toutes';
 	print(chaine_select_options($pi_idf_commune,$a_communes_notaires));
-	print("</select></div>");	
-	print("<div class=\"align-center\">Rayon de recherche : <input type=text name=rayon size=2 maxlength=2 value=\"$pi_rayon\"> Km</div>");
-	print('<div class="align-center">R&eacute;pertoire: <select id="idf_rep" name="idf_rep" class="js-select-avec-recherche">');
-	print("</select></div></fieldset>");
-	print("<fieldset><legend>Acte</legend><div>Type d'acte:<input type=\"text\" id=\"type_acte\" name=\"type_acte\" maxlength=40 size=20 value=\"$pst_type_acte\"></div>");
-	print("<div class=\"align-center\">Ann&eacute;es de <input type=text name=annee_min size =4 value=\"$pi_annee_min\"> &agrave; <input type=text name=annee_max size =4 value=\"$pi_annee_max\"></div>");
-	print("<div>");
-	print("<span>Nom1: <input type=\"text\" id=\"nom1\" name=\"nom1\" maxlength=40 size=20 value=\"$pst_nom1\"></span>");
-	print(" <span>Pr&eacutenom1: <input type=\"text\" id=\"prenom1\" name=\"prenom1\" maxlength=30 size=20 value=\"$pst_prenom1\"></span>");
+	print("</select>");
+    print('</div>');
+	print("<div class=\"form-group col-md-8\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon\" class=\"sr-only\">Rayon</label><input type=text name=rayon id=\"rayon\" size=2 maxlength=2 value=\"$pi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div></div>");
+
+	
+	print("</div>"); // fin ligne
+	print('<div class="form-group row">');
+	print('<label for="idf_rep" class="col-form-label col-md-2">R&eacute;pertoire:</label>');
+	print('<div class="col-md-10">');
+	print('<select id="idf_rep" name="idf_rep" class="js-select-avec-recherche form-control">');
+	print("</select>");
+	print('</div></div>');
+	print('</div></div>'); // fin panel
+	
+    print('<div class="panel panel-info">');
+    print('<div class="panel-heading">Acte</div>');
+    print('<div class="panel-body">');
+    print('<div class="form-group row">');
+	print('<label for="type_acte" class="col-form-label col-md-2">Type d\'acte:</label>');
+	print('<div class="col-md-10">');
+	print("<input type=\"text\" id=\"type_acte\" name=\"type_acte\" maxlength=40 size=20 value=\"$pst_type_acte\" class=\"form-control\">");
+	print('</div></div>');
+	
+	print('<div class="form-group row col-md-12">'); 
+    print('<div class="input-group col-md-offset-4 col-md-4">');
+    print("<span class=\"input-group-addon\">Ann&eacute;es de</span><input type=text name=annee_min id=\"annee_min_recherches_communes\" size=4 value=\"$pi_annee_min\" class=\"form-control\">");
+    print("<span class=\"input-group-addon\">&agrave;</span><input type=text name=annee_max size=4 id=\"annee_max_recherches_communes\" value=\"$pi_annee_max\" class=\"form-control\">");
+    print('</div></div>');
+	
+	print('<div class="form-group row col-md-12">');
+	
+	print("<label for=\"nom1\" class=\"col-form-label col-md-2\">Nom1:</label>");
+	print('<div class="col-md-4">');
+	print("<input type=\"text\" id=\"nom1\" name=\"nom1\" maxlength=40 size=20 value=\"$pst_nom1\" class=\"form-control\">");
+	print('</div>');
+
+	print("<label for=\"prenom1\" class=\"col-form-label col-md-2\">Pr&eacute;nom1:</label>");
+	print('<div class="col-md-4">');
+	print("<input type=\"text\" id=\"prenom1\" name=\"prenom1\" maxlength=30 size=20 value=\"$pst_prenom1\" class=\"form-control\">");
+	print('</div>');
+	
 	print("</div>");
-	print("<div>");
-	print("<span>Nom2: <input type=\"text\" id=\"nom2\" name=\"nom2\" maxlength=40 size=20 value=\"$pst_nom2\"></span>");
-	print(" <span>Pr&eacutenom2: <input type=\"text\" id=\"prenom2\" name=\"prenom2\" maxlength=30 size=20 value=\"$pst_prenom2\"></span>");
-	print("</div>");
-	print("<div>Paroisse concern&eacute;e par l'acte: <input type=\"text\" id=\"paroisse\" name=\"paroisse\" maxlength=40 size=20 value=\"$pst_paroisse\"></div>");
-  print("<div>Recherche libre dans un commentaire: <input type=\"text\" id=\"commentaires\" name=\"commentaires\" maxlength=40 size=20 value=\"$pst_commentaires\"></div>");
-  $st_checked = $pb_rech_phonetique ? 'checked="checked"':'';
-  print("<div>Recherche phon&eacute;tique dans les patronymes: <input type=\"checkbox\" id=\"rech_phonetique\" name=\"rech_phonetique\" $st_checked value=\"1\"></div>");
-	print('<div class=div_centre>Le caract&egrave;re * peut &ecirc;tre utilis&eacute; pour remplacer une partie de mot dans les champs Nom, Pr&eacute;nom et Paroisse. <br>Exemple: BAR* va chercher tous les mots commen&ccedil;ant par BAR</div>');
-	print("</fieldset>");
-	print("<input type=\"submit\" value=\"Chercher\" class=\"bouton_centre\">");
-	//print("<div><input type=\"reset\" value=\"Remise a zero des champs\" class=\"bouton_centre\"></div>");
+	
+	print('<div class="form-group row col-md-12">');
+	print("<label for=\"nom2\" class=\"col-form-label col-md-2\">Nom2:</label>");
+	print('<div class="col-md-4">');
+	print("<input type=\"text\" id=\"nom2\" name=\"nom2\" maxlength=40 size=20 value=\"$pst_nom2\" class=\"form-control\">");
+	print('</div>');
+	
+	print("<label for=\"prenom2\" class=\"col-form-label col-md-2\">Pr&eacute;nom2:</label>");
+	print('<div class="col-md-4">');
+	print("<input type=\"text\" id=\"prenom2\" name=\"prenom2\" maxlength=30 size=20 value=\"$pst_prenom2\" class=\"form-control\">");
+	print('</div>');
+	print('</div>');
+	
+	print('<div class="form-group row col-md-12">');
+	print('<label for="paroisse" class="col-form-label col-md-2">Paroisse concern&eacute;e par l\'acte:</label>');
+	print('<div class="col-md-10">');
+	print("<input type=\"text\" id=\"paroisse\" name=\"paroisse\" maxlength=40 size=20 value=\"$pst_paroisse\" class=\"form-control\">");
+	print('</div>');
+	print('</div>');
+	
+	print('<div class="form-group row row col-md-12">');
+    print('<label for="commentaires" class="col-form-label col-md-2">Recherche libre dans un commentaire:</label>');
+	print('<div class="col-md-10">');
+	print("<input type=\"text\" id=\"commentaires\" name=\"commentaires\" maxlength=40 size=20 value=\"$pst_commentaires\" class=\"form-control\">");
+	print('</div>');
+	print('</div>');
+	
+	print('<div class="form-group row col-md-12">');
+    $st_checked = $pb_rech_phonetique ? 'checked="checked"':'';
+    print('<label for="rech_phonetique" class="col-form-label col-md-2">Recherche phon&eacute;tique dans les patronymes:</label>');
+	print('<div class="col-md-10">');
+	print("<input type=\"checkbox\" id=\"rech_phonetique\" name=\"rech_phonetique\" $st_checked value=\"1\">");
+	print('</div>');
+	print('</div>');
+	
+	print('<div class="form-group row col-md-12">');
+	print('<div class="text-center">Le caract&egrave;re * peut &ecirc;tre utilis&eacute; pour remplacer une partie de mot dans les champs Nom, Pr&eacute;nom et Paroisse. <br>Exemple: BAR* va chercher tous les mots commen&ccedil;ant par BAR</div>');
+	print('</div>');
+	
+	print("</div></div>"); // fin panel
+	print('<div class="form-row col-md-12">');
+	print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-search"></span> Chercher</button>');
+	print("</div>"); 
+	
 	print("</form>");
-  print('<form id="recherche_rep_not" action="'.$_SERVER['PHP_SELF'].'" method="post">');
-  print('<input type="hidden" name="recherche" value="nouvelle">');
-  print("<input type=\"submit\" value=\"Vider les champs\" class=\"bouton_centre\">");
-  print("</form>");
+    print('<form id="recherche_rep_not" action="'.$_SERVER['PHP_SELF'].'" method="post">');
+    print('<input type="hidden" name="recherche" value="nouvelle">');
+	print('<button type=submit class="btn btn-warning col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-erase"></span> Vider les champs</button>');
+    print("</form>");
   
 }
 
@@ -286,20 +356,25 @@ function affiche_resultats_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi
 		if ($i_nb_total_lignes>$gi_max_actes)
 		{
 			$i_nb_pages= ceil($gi_max_actes/NB_LIGNES_PAR_PAGE);
-			print("<div class=INFO>$i_nb_total_lignes actes trouv&eacute;s. Recherche limit&eacute;e aux $gi_max_actes premiers</div>");
+			print("<div class=\"alert alert-info\">$i_nb_total_lignes actes trouv&eacute;s. Recherche limit&eacute;e aux $gi_max_actes premiers</div>");
 		}
     else
-      print("<div class=INFO>$i_nb_total_lignes actes trouv&eacute;s</div>");	
+      print("<div class=\"alert alert-info\">$i_nb_total_lignes actes trouv&eacute;s</div>");	
 		print('<form id="recherche_rep_not" action="'.$_SERVER['PHP_SELF'].'" method="post">');
 		print('<input type="hidden" name="mode" value="RECHERCHES">');
 		if ($i_nb_pages>1)
 		{
-			print("<div class=\"div_centre\">Page du r&eacute;pertoire: <select id=\"num_page_rep_not\" name=\"num_page_rep_not\">");
+			print("<div class=\"form-group row\">");
+			print('<label for="num_page_rep_not" class="col-md-2 col-md-offset-4">Page du r&eacute;pertoire:</label>');
+			print('<div class="col-md-2">');
+			print("<select id=\"num_page_rep_not\" name=\"num_page_rep_not\" class=\"form-control\">");
 			$a_pages=range(1,$i_nb_pages);
 			print(chaine_select_options_simple($pi_num_page,$a_pages));
-			print("</select></div>");
+			print("</select>");
+			print('</div>');
+			print('</div>');
 		}
-		print("<br><table border=1 align=center>");
+		print("<table class=\"table table-bordered table-striped\"");
 		print("<tr>");
 		$a_entetes = array('Date','Type','Intervenant1','Intervenant2','Paroisse','Commentaires','Notaire - Commune (Cote)','Page','DateRep');
 		foreach ($a_entetes as $st_cell_entete) {
@@ -311,8 +386,8 @@ function affiche_resultats_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi
     $i=0;		
 		foreach ($a_liste_actes as $a_acte)
 		{
-			$st_class = ($i%2==0) ? 'ligne_paire':  'ligne_impaire';
-			print("<tr class=$st_class>");
+
+			print("<tr>");
 			list($i_annee,$i_mois,$i_jour,$st_date_rep,$st_type,$st_nom1,$st_prenom1,$st_nom2,$st_prenom2,$st_paroisse,$st_commentaires,$i_page,$st_notaire,$st_com_notaire,$st_cote) = $a_acte;
       if ($i_annee==9999)
          $st_date="Sans date";
@@ -340,18 +415,20 @@ function affiche_resultats_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi
 	}
 	else
 	{
-		print("<div>Pas de r&eacute;sultats avec les contraintes d&eacute;finies</div>");
+		print("<div class=\"text-center alert alert-danger\">Pas de r&eacute;sultats avec les contraintes d&eacute;finies</div>");
 	}
-	print('<div class=div_centre>La cote fait r&eacute;f&eacute;rence &agrave; celle du r&eacute;pertoire et non celle de la liasse o&ugrave; se trouve l\'acte</div>');
+	print('<div class="text-align">La cote fait r&eacute;f&eacute;rence &agrave; celle du r&eacute;pertoire et non celle de la liasse o&ugrave; se trouve l\'acte</div>');
+	
 	print('<form id="recherche_rep_not_retour" action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	print('<input type="hidden" name="ancienne_page" value="RECHERCHES">');
 	print('<input type="hidden" name="mode" value="MENU">');
-	print("<div class=align-center><input type=\"submit\" value=\"Retour\" class=\"bouton_centre\"></div>");
-  print('<input type="hidden" name="ancienne_page" value="RECHERCHES">');
+	print('<button type=submit name=Rechercher class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-search"></span> Rechercher</button>');
 	print("</form>");
+	
 	print('<form id="recherche_rep_not_nouveau" action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type="hidden" name="mode" value="MENU">');
 	print('<input type="hidden" name="recherche" value="nouvelle">');
-	print("<div ><input type=\"submit\" value=\"Commencer une nouvelle recherche\" class=\"bouton_centre\"></div>");
+	print('<button type=submit name=Rechercher class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-erase"></span> Commencer une nouvelle recherche</button>');
 	print("</form>");
 }
 
@@ -360,20 +437,23 @@ function affiche_resultats_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi
 /******************************************************************************/        
 $gst_mode = empty($_REQUEST['mode']) ? 'MENU' : $_REQUEST['mode'];
       
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>\n");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<link href='../Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
-print("<link href='../Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='../Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
-print("<link href='../Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='../css/select2.min.css' type='text/css' rel='stylesheet'> ");
 print('<meta http-equiv="content-language" content="fr"> ');
-print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../Commun/jquery.validate.min.js' type='text/javascript'></script>");
-print("<script src='../Commun/additional-methods.min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='../js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='../js/select2.min.js' type='text/javascript'></script>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 
 ?>
 <script type='text/javascript'>
@@ -491,11 +571,14 @@ div.div_centre {
 print("<title>Recherche dans les r&eacute;pertoires de notaire</title>");
 print('</head>');
 print('<body>');
+print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);  
 require_once("../Commun/menu.php");
-print("<div class=\"TITRE\">Recherche dans les r&eacute;pertoires de notaire</div>");
-print("<div class=\"ERREUR\" id=erreur></div>");
-print("<div class=\"INFO\" id=info></div>");
+
+print('<div class="panel panel-primary">');
+print('<div class="panel-heading">Recherche dans les r&eacute;pertoires de notaire</div>');
+
+print('<div class="panel-body">');
 $gst_type_recherche         = isset($_REQUEST['recherche']) ? $_REQUEST['recherche'] : '';
 $gi_max_actes = 200;	
 
@@ -610,4 +693,9 @@ switch ($gst_mode)
 	default:
 }
 
+print("</div></div>"); // fin panel body
+print("</div>"); // fin container
+
+print("</body>");
+print("</html>");
 ?>
