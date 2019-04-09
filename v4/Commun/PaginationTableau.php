@@ -118,7 +118,7 @@ class PaginationTableau {
          foreach ($a_ligne as $st_champ)
          {
             if ($st_champ!="")
-              print("<td>$st_champ</td>");
+              print("<td class=\"lib_erreur\">$st_champ</td>");
             else
               print("<td>&nbsp;</td>");
          }         
