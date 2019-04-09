@@ -86,23 +86,26 @@ if (isset($_REQUEST['idf_acte']))
   }
 }
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>
+<!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >
-<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>
-<link href='../Commun/jquery-ui.css' type='text/css' rel='stylesheet'>
-<link href='../Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>
-<link href='../Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='../css/styles.css' type='text/css' rel='stylesheet'>
+<link href='../css/bootstrap.min.css' rel='stylesheet'>;
+<link href='../css/jquery-ui.css' type='text/css' rel='stylesheet'>
+<link href='../css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>
+<link href='../css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
 <meta http-equiv="content-language" content="fr">
-<script src='../Commun/jquery-min.js' type='text/javascript'></script>
-<script src='../Commun/jquery.validate.min.js' type='text/javascript'></script>
-<script src='../Commun/additional-methods.min.js' type='text/javascript'></script>
+<script src='../js/jquery-min.js' type='text/javascript'></script>
+<script src='../js/jquery.validate.min.js' type='text/javascript'></script>
+<script src='../js/additional-methods.min.js' type='text/javascript'></script>
 <script src='../js/jquery-ui.min.js' type='text/javascript'></script>
 <script src='../js/CalRep.js' type='text/javascript'></script>
-<script src='../Commun/iviewer/jquery-ui.min.js' type='text/javascript'></script>
-<script src='../Commun/iviewer/jquery.mousewheel.min.js' type='text/javascript'></script>
-<script src='../Commun/iviewer/jquery.iviewer.js' type='text/javascript'></script>
-<link href='../Commun/iviewer/jquery.iviewer.css' type='text/css' rel='stylesheet'>
+<script src='../js/iviewer/jquery-ui.min.js' type='text/javascript'></script>
+<script src='../js/iviewer/jquery.mousewheel.min.js' type='text/javascript'></script>
+<script src='../js/iviewer/jquery.iviewer.js' type='text/javascript'></script>
+<link href='../js/iviewer/jquery.iviewer.css' type='text/css' rel='stylesheet'>
+<script src='../js/bootstrap.min.js' type='text/javascript'></script>
 <script type='text/javascript'>
 $(document).ready(function() {
 <?php
@@ -111,7 +114,40 @@ print file_get_contents('../js/dateITA.js');
 $("#edition_acte").validate({
 <?php
 print regles_validation();
-?>
+?>,
+errorElement: "em",
+		errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
+
+			// Add `has-feedback` class to the parent div.form-group
+			// in order to add icons to inputs
+			element.parents( ".lib_erreur" ).addClass( "has-feedback" );
+
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+			}
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !element.next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+			}
+		},
+		success: function ( label, element ) {
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !$( element ).next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+			}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+		},
+		unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+		}
 });
 $(function() {
    $("#bouton_supprimer").click(function(){
@@ -135,23 +171,28 @@ print("</head>\n");
 /*                     CORPS DE LA PAGE                                   	  */
 /******************************************************************************/
 print("<body>\n");
+print('<div class="container">');
 require_once("../Commun/menu.php");
-print("<div class=\"TITRE\">Modification d'un acte</div>");
+
+print('<div class="panel panel-primary">');
+print("<div class=\"panel-heading\">Modification d'un acte</div>");
+print('<div class="panel-body">');
 
 if (empty($gst_mode))
 {
   print("<form id=\"edition_acte\" method=\"POST\" action=\"".$_SERVER['PHP_SELF']."\">");
   print("<input type=\"hidden\" name=\"MODE\" value=\"EDITION\">");
   print("<input type=\"hidden\" name=\"idf_acte\" value=\"$gi_idf_acte\">");
-  print("<table border=1>");
+  print("<table class=\"table table-bordered\">");
   print($gst_formulaire);
   print("</table>");
-  print("<div align=center><br><input type=\"submit\" id=\"bouton_soum\" value=\"Soumettre votre demande\"></div>");
+  print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-edit"></span> Modifier l\'acte</button>');
   print("</form>");
   print("<form id=\"suppression_acte\" name=\"suppression_acte\" method=\"POST\" action=\"".$_SERVER['PHP_SELF']."\">");
   print("<input type=\"hidden\" name=\"idf_acte\" value=\"$gi_idf_acte\">\n");
   print("<input type=\"hidden\" name=\"MODE\" value=\"SUPPRESSION\">");
-  print("<div align=center><input type=\"button\" id=\"bouton_supprimer\" value=\"Supprimer l'acte\" /></div>\n");
+  print('<button type="submit" class="btn btn-danger col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-trash"></span> Supprimer l\'acte</button>');
+
   print("</form>");
 }
 else                             
@@ -159,7 +200,7 @@ else
   $gi_idf_acte= isset($_REQUEST['idf_acte']) ?(int) $_REQUEST['idf_acte'] :  null;
   if (empty($gi_idf_acte))
   {
-     print("<div class=\"ERREUR\">Pas d'identifiant d'acte d&eacute;fini</div>");
+     print("<div class=\"alert alert-danger\">Pas d'identifiant d'acte d&eacute;fini</div>");
   }
   else
   {
@@ -177,13 +218,13 @@ else
         $stats_patronyme->maj_stats($go_acte->getIdfTypeActe());
         $stats_commune->maj_stats($go_acte->getIdfTypeActe());
         $connexionBD->execute_requete("UNLOCK TABLES");
-        print("<div align=center><textarea rows=40 cols=80>\n");
+        print("<div class=\"text-center\"><textarea rows=40 cols=80>\n");
         print($go_acte->versChaine());
         print("</textarea></div>\n");  
-        print("<div class=\"INFO\"><br>Modification effectu&eacute;e</div><br>\n");
+        print("<div class=\"alert alert-success\"><br>Modification effectu&eacute;e</div><br>\n");
         print("<form id=\"export_nimv3\" method=\"POST\" action=\"ExportNimV3.php\">");
         print("<input type=\"hidden\" name=\"idf_acte\" value=\"$gi_idf_acte\">\n");
-        print("<div align=center><input type=\"submit\" value=\"Export Nimegue V3\"></div>\n");
+		print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-download-alt"></span> Export Nimegue V3</button>');
         print("</form>");
         
       break;
@@ -196,11 +237,12 @@ else
         $stats_patronyme->maj_stats($go_acte->getIdfTypeActe());
         $stats_commune->maj_stats($go_acte->getIdfTypeActe());        
         $connexionBD->execute_requete("UNLOCK TABLES");
-        print("<div class=\"INFO\"><br>Acte supprim&eacute;</div><br>");
+        print("<div class=\"alert alert-success\">Acte supprim&eacute;</div>");
       break;
     }  
   }
-}  
-print("<div align=center><br><a href=\"../Recherches.php\">Retour au menu recherche</a></div>");
-print("</body></HTML>\n");
+}
+print("</div></div>");  
+print("<a href=\"../Recherches.php\" class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-search\"></span> Retour au menu recherche</a>");
+print("</div></body></HTML>\n");
 ?>
