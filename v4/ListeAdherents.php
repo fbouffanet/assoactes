@@ -252,7 +252,7 @@ $(document).ready(function() {
     rules: {
     "supp[]": { 
                     required: {depends: function(element) {
-                        return $('#mode_selection').val()=='SUPPRIMER';
+                        return $('#mode_selection').val()=='SUPPRIMER' || $('#mode_selection').val()=='FUSIONNER';
                       }
                     }, 
                     minlength: 1 
