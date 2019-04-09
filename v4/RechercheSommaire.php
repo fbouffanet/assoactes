@@ -120,27 +120,7 @@ function Affiche_noms($type, $sconnexionBD)
    print('</form>');  
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    print("<button type=\"submit\" class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-home\"></span>  Retour &agrave; la recherche</button>");
-   switch ($type) 
-   {
-      case 'RUB' :
-         print("<input type=hidden name=mode value=\"RUBRIQUE\">"); 
-      break;
-      case 'ART' :
-         print("<input type=hidden name=mode value=\"ARTICLE\">"); 
-      break;
-      case 'FAM' :
-         print("<input type=hidden name=mode value=\"FAMILLE\">"); 
-      break;
-      case 'ASC' :
-         print("<input type=hidden name=mode value=\"ASCEND\">"); 
-      break;
-      case 'DES' :
-         print("<input type=hidden name=mode value=\"DESCEND\">"); 
-      break;
-      case 'COU' :
-         print("<input type=hidden name=mode value=\"COUSIN\">"); 
-      break;
-   }
+   print('<input type=hidden name=mode value="DEPART">');
    print('</form>');
    print('</div></div>');
 }
@@ -279,8 +259,7 @@ require_once("Commun/menu.php");
 
 $st_session_mode = empty($_SESSION['mode']) ? 'DEPART' : $_SESSION['mode']; 
 $gst_mode = isset($_POST['mode']) ? $_POST['mode'] : $st_session_mode;
-$_SESSION['mode']=$gst_mode; 
-if (isset($_POST['retour'])) $gst_mode = 'DEPART';  
+$_SESSION['mode']=$gst_mode;  
 
 switch ($gst_mode) 
 {
