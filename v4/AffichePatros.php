@@ -8,26 +8,86 @@ require_once('Commun/commun.php');
 require_once('RequeteRecherche.php');
 require_once('Commun/PaginationTableau.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<Head>\n");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
 print('<meta http-equiv="content-language" content="fr">');
-
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
-print("<link href='Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/menu.js' type='text/javascript'></script>");
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
-print("<script src='js/select2.min.js' type='text/javascript'></script>"); 
+print("<script src='js/select2.min.js' type='text/javascript'></script>");
+print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");  
 print("<script type='text/javascript'>");
 ?>
 $(document).ready(function() {
   $(".js-select-avec-recherche").select2();
+
+
+$("#patros").validate({
+  rules: {
+		patronyme: {
+			required:true,
+			minlength: 2
+		},
+		rayon_patro: {
+			integer: true
+		}
+  },
+  messages: {
+	  patronyme: {
+		  required: "Le patronyme est obligatoire",
+		  minlength: "Saisir au moins deux caract&egrave;res"
+      },
+	  rayon_patro: {
+		  integer: "Le rayon doit &ecirc;tre un entier"
+	  }
+  },
+  errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}
+});  
 });
+
 <?php
 print("</script>");
 print("<title>Base AGC: Recherche d'un patronyme</title>");
@@ -38,28 +98,47 @@ print('</Head>');
 function affiche_menu($gi_idf_commune,$gi_rayon,$gi_idf_source,$pst_msg)
 {
   global $connexionBD;
-  print("<form name=\"Patros\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+  print("<form id=\"patros\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
   $a_communes_acte = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM commune_acte order by nom");
   $a_sources = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM source order by nom collate latin1_german1_ci");
-  print("<div align=center>");
   print("<input type=hidden name=mode value=\"LISTE\">");
   print("<input type=hidden name=idf_source value=0>");
-  if (!empty($pst_msg)) print("<div align=center class=IMPORTANT>$pst_msg<div><br>\n");
-  print("<div>Patronyme: <input type=text name=patronyme size=15 maxlength=30><br></div>");
-  print('<div>Recherche par variantes connues:');
-  print('<input type=checkbox name=variantes_pat value=oui checked><br></div>');
-  print('<span style="text-align:center"><br>');
-  print('Commune/Paroisse : <select name="idf_commune_patro" id="idf_commune_patro" class="js-select-avec-recherche">');
-  $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
-  print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
-  print('</select>');
-  print(" Rayon de recherche : <input type=text name=rayon_patro id='rayon_patro' size=2 MAXLENGTH=2 value=\"$gi_rayon\"> Km<br>");
-  print('Source: <select name=idf_source id=idf_source>');
+  if (!empty($pst_msg)) print("<div class=\"alert alert-danger\">$pst_msg</div>\n");
+  
+  print('<div class="form-group row col-md-12">');
+  print('<label for="patronyme" class="col-form-label col-md-2">Patronyme</label>');
+  print('<div class="col-md-3">');
+  print('<input type=text name=patronyme id=patronyme size=15 maxlength=30 class="form-control">');
+  print('</div>');
+ 
+  print('<div class="form-check col-md-4">');
+  print('<input type=checkbox name=variantes_pat id=variantes_pat value=oui checked class="form-check-input">');
+  print('<label for="variantes_pat" class="form-check-label">Recherche par variantes connues</label>');
+  print('</div>');
+  print('<button type="submit" class="btn btn-primary col-md-3"><span class="glyphicon glyphicon-search"></span> Rechercher le patronyme</button>');
+  print('</div>'); // fin ligne 
+  
+  print('<div class="form-group row col-md-12">');
+  print('<label for="idf_source" class="col-form-label col-md-2">Source</label>');
+  print('<div class="col-md-2">');
+  print('<select name=idf_source id=idf_source class="form-control">');
   $a_sources[0] = 'Toutes';
   print(chaine_select_options($gi_idf_source,$a_sources));
-  print('</select>');
-  print('<div><br><input type=submit name=Rechercher value="Rechercher le patronyme"><br></div>'); 
-  print("</div>");
+  print('</select></div>');
+  
+  print('<label for="idf_commune_patro" class="col-form-label col-md-2">Commune/Paroisse</label>');
+  print('<div class="col-md-2">');
+  print('<select name="idf_commune_patro" id="idf_commune_patro" class="js-select-avec-recherche form-control">');
+  $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
+  print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
+  print('</select></div>');
+  print("<div class=\"form-group col-md-4\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_patro\" class=\"sr-only\">Rayon</label><input type=text name=rayon_patro id='rayon_patro' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div>");
+  print("</div>"); // fin ligne 
+ 
+  
+  
+  
+  
   print ("</form>");
   unset($_SESSION['variantes_pat']);
   unset($_SESSION['patronyme']);
@@ -70,7 +149,8 @@ function affiche_menu($gi_idf_commune,$gi_rayon,$gi_idf_source,$pst_msg)
   unset($_SESSION['rayon_patro']); 
 }
 
-print("\n<body>");
+print("<body>");
+print('<div class="container">');
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("Commun/menu.php");
@@ -149,6 +229,7 @@ switch ($gst_mode)
 		$i_nb_stats =count($a_liste_stats); 
 		if ($i_nb_stats!=0)
 		{ 
+            print("<form name=\"Patros\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 			$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page_pat',$i_nb_stats,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array("<a href=\"".$_SERVER['PHP_SELF']."?tri_pat=patronyme\">Patronyme</a>","<a href=\"".$_SERVER['PHP_SELF']."?tri_pat=commune\">Commune</a>","<a href=\"".$_SERVER['PHP_SELF']."?tri_pat=type_acte\">Type d'acte</a>",'Ann&eacute;e minimale','Ann&eacute;e maximale',"<a href=\"".$_SERVER['PHP_SELF']."?tri_pat=nb_actes\">Nombre de personnes</a>"));
 			$a_tableau_affichage = array();
 			foreach ($a_liste_stats as $a_stat_patro)
@@ -163,21 +244,22 @@ switch ($gst_mode)
 			$pagination->init_page_cour($gi_num_page);
 			$pagination->affiche_entete_liste_select('Patros');
 			$pagination->affiche_tableau_simple($a_tableau_affichage);
-			$pagination->affiche_entete_liste_select('Patros');        
+			$pagination->affiche_entete_liste_select('Patros');
+            print ("</form>");        
 		}
 		else
-			print("<div align=center><br>Pas de donn&eacute;es</div>\n");
+			print("<div class=\"text-center alert alert-danger\">Pas de donn&eacute;es</div>\n");
 		
 		print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-		print("<div align=center><br><input type=hidden name=mode value=\"DEMANDE\">");     
-		print('<input type=submit name=Rechercher value="Rechercher un autre patronyme"></div>');
+		print("<input type=hidden name=mode value=\"DEMANDE\">");
+        print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Rechercher un autre patronyme</button></div>');		
 		print ("</form>");
 	}
 	break;
    default:
      affiche_menu($gi_idf_commune,$gi_rayon,'');  
 }
-print("</body></html>");
+print("</div></body></html>");
 
 
 ?>
