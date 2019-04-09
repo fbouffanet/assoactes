@@ -16,24 +16,27 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 $a_communes_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from commune_acte order by nom");
 $a_types_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from type_acte where idf in (".IDF_MARIAGE.','.IDF_NAISSANCE.','.IDF_DECES.") order by nom");
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
 print('<meta http-equiv="content-language" content="fr">');
-print("<link href='./Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 
-print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
-print("<link href='Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>");
-print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>");
+print("<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
 
 print("<script src='js/select2.min.js' type='text/javascript'></script>");
 print("<script src='js/Chart.min.js' type='text/javascript'></script>");
-print("<script src='./Commun/menu.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
+
 ?>
 
 <script type='text/javascript'>
@@ -111,6 +114,40 @@ $("#stats_nmd").validate({
 			minlength: "L'année doit comporter 4 chiffes"
 		}
 	},
+	errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	},
 	submitHandler: function(form) {
 	$.ajax({
 				type: "GET",
@@ -143,21 +180,37 @@ $("#stats_nmd").validate({
 print("<title>Stats NMD</title>");
 print("</head>");
 print("<body>");
+print('<div class="container">');
 
 ?>
 <?php  
 require_once("./Commun/menu.php");
   
-print("<div class=TITRE>Statistiques NMD d'une commune/paroisse<br></div>"); 
+print('<div class="panel panel-primary">');
+print('<div class="panel-heading">Statistiques NMD d\'une commune/paroisse</div>');
+print('<div class="panel-body">');
+ 
 print("<form id='stats_nmd' action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-print('<div align=center><input type="hidden" name="mode" value="STATS">');
-print('<br>Commune: <select name=idf_commune_acte id=idf_commune_acte class="js-select-avec-recherche">');
+print('<input type="hidden" name="mode" value="STATS">');
+print('<div class="form-group row">');
+print('<label for="idf_commune_acte" class="col-form-label col-md-4">Commune:</label>');
+print('<div class="col-md-4">');
+print('<select name=idf_commune_acte id=idf_commune_acte class="js-select-avec-recherche form-control">');
 print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
-print('</select><br></div>');
-print('<div align=center><br>Type d\'acte : <select name=idf_type_acte id=idf_type_acte>');
+print('</select></div>');
+print('</div>');
+print('<div class="form-group row">');
+print('<label for="idf_type_acte" class="col-form-label col-md-4">Type d\'acte:</label>');
+print('<div class="col-md-4">');
+print('<select name=idf_type_acte id=idf_type_acte class="form-control">');
 print(chaine_select_options($gc_idf_type_acte,$a_types_acte));
-print('</select><br></div>');
-print('<div align=center><br>Rayon : <select name=rayon id=rayon>');
+print('</select></div>');
+print('</div>');
+
+print('<div class="form-group row">');
+print('<label for="rayon" class="col-form-label col-md-4">Rayon:</label>');
+print('<div class="col-md-4">');
+print('<select name=rayon id=rayon class="form-control">');
 foreach ($ga_rayons as $i_rayon => $st_label)
 {
   if ($gi_rayon==$i_rayon)
@@ -165,14 +218,27 @@ foreach ($ga_rayons as $i_rayon => $st_label)
   else
      print("<option value=$i_rayon>$st_label</option>");
 }
-print('</select><br></div>');
-print("<div align=center><br>Annee minimale : <input type=text name=annee_min id=annee_min size=4 MAXLENGTH=4 value=\"$gi_annee_min\"><br></div>");
-print("<div align=center><br>Annee maximale : <input type=text name=annee_max id=annee_max size=4 MAXLENGTH=4 value=\"$gi_annee_max\"><br></div>");   
-print('<div align=center><br><input type="submit" value="Afficher les Statistiques" /></div>');
+print('</select></div></div>');
+
+print('<div class="form-group row">');
+print('<label for="annee_min" class="col-form-label col-md-4">Annee minimale:</label>');
+print('<div class="col-md-4">');
+print("<input type=text name=annee_min id=annee_min size=4 maxlength=4 value=\"$gi_annee_min\" class=\"form-control\">");
+print('</div></div>');
+print('<div class="form-group row">');
+print('<label for="annee_max" class="col-form-label col-md-4">Annee maximale:</label>');
+print('<div class="col-md-4">');
+print("<input type=text name=annee_max id=annee_max size=4 maxlength=4 value=\"$gi_annee_max\" class=\"form-control\">");
+print('</div></div>');
+
+print('<div class="form-row">');
+print('<button type=submit name=Rechercher class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-stats"></span> Afficher les Statistiques</button>');   
+print('</div></div></div>');
 print('</form>');
 
 print('<div>');
 print('<canvas id="MonGraphe" width="900" height="500"></canvas>');
 print('</div>');
-print("</body></html>");
+print('</div>'); // fin panel body
+print("</div></body></html>");
 ?>
