@@ -12,14 +12,16 @@ require_once('../Administration/chargement/Personne.php');
 require_once('../Administration/chargement/ModificationPersonne.php');
 require_once('../Administration/chargement/ModificationActe.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr">');
 print("<title>Liste des demandes de modification de TD validées ou refusées</title>");
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../Commun/menu.js' type='text/javascript'></script>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {
@@ -36,7 +38,7 @@ $('#type_acte').change(function() {
 <?php
 print('</head>');
 print('<body>');
-
+print('<div class="container">');
 $ga_statuts = array ('A'=> 'Accepte','R' => 'Refuse');
 $ga_types=array(0=>"Tous")+$ga_types_nimegue;
 
@@ -63,10 +65,15 @@ if (isset($_SESSION['ident']))
   switch ($gst_mode) 
   {
     case 'LISTE':
-      print("<div class=\"TITRE\">Liste des demandes de modification de TD trait&eacute;es</div>");
+	  print('<div class="panel panel-primary">');
+      print("<div class=\"panel-heading\">Liste des demandes de modification de TD trait&eacute;es</div>");
+      print('<div class="panel-body">');
       print("<form id=\"liste_td\" name=\"liste_td\" action=\"".$_SERVER['PHP_SELF']."\" method=post>");
       print("<input type=\"hidden\" name=\"mode\" value=\"LISTE\">");
-      print ("<div align=center><br>Statut: <select name=statut id=statut>");
+      print('<div class="form-group row">');
+	  print('<label for="statut" class="col-form-label col-md-2 col-md-offset-4">Statut</label>');
+	  print('<div class="col-md-2">');
+	  print('<select name=statut id=statut class="form-control">');
       foreach ($ga_statuts as $st_statut => $st_lib_statut)
       {
         if ($st_statut==$gst_statut)
@@ -75,8 +82,11 @@ if (isset($_SESSION['ident']))
           print("<option value=\"$st_statut\">$st_lib_statut</option>");
         
       }
-      print("</select></div>");
-      print ("<div align=center><br>Type: <select name=type_acte id=type_acte>");      
+      print("</select></div></div>");
+      print('<div class="form-group row">');
+	  print('<label for="type_acte" class="col-form-label col-md-2 col-md-offset-4">Type:</label>');
+	  print('<div class="col-md-2">');
+	  print('<select name=type_acte id=type_acte class="form-control">');      
       foreach ($ga_types as $i_type => $st_lib_type)
       {
          if ($i_type==$gi_type_acte)
@@ -84,7 +94,7 @@ if (isset($_SESSION['ident']))
         else
           print("<option value=\"$i_type\">$st_lib_type</option>");
       }
-      print("</select></div>");    
+      print("</select></div></div>");    
       print("</form>");
            
       switch ($gi_type_acte)
@@ -116,12 +126,12 @@ if (isset($_SESSION['ident']))
           $st_action = "<form action=\"".$_SERVER['PHP_SELF']."\" method=post>";
           $st_action .="<input type=\"hidden\" name=\"idf_modif\" value=\"$i_idf_modif\">";
           $st_action .="<input type=\"hidden\" name=\"mode\" value=\"VISU_MODIF\">";
-          $st_action .= "<input type=submit value=\"Voir la demande\">";
+		    $st_action .='<button type="submit" class="btn btn-primary btn-xs">Voir la<br>demande</button>';
           $st_action .= "</form>";
           if ($gst_statut == 'A')
-            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_action,"<a href=\"../InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"lien_bouton\">Voir la modification</a>");
+            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_action,"<a href=\"../InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"btn btn-primary btn-xs\" role=\"button\">Voir la<br> modification</a>");
           else
-            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_commentaires,$st_action,"<a href=\"../InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"lien_bouton\">Voir la modification</a>");
+            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_commentaires,$st_action,"<a href=\"../InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"btn btn-primary btn-xs\" role=\"button\">Voir la<br>modification</a>");
         }
         $pagination->init_page_cour($gi_num_page_cour);
         $pagination->affiche_entete_liens_navigation();
@@ -129,32 +139,35 @@ if (isset($_SESSION['ident']))
       }       
       else
       {
-        print("<div align=center><br>Pas de demandes enregistr&eacute;es</div>");
+        print("<div class=\"alert alert-danger\">Pas de demandes enregistr&eacute;es</div>");
       }
-      print("<br>");
+      print("</div></div>");
    break;
    case 'VISU_MODIF':
-   print("<div class=\"TITRE\">Visualisation d'une modification de relev&eacute; de TD</div>");
+	print('<div class="panel panel-primary">');
+    print("<div class=\"panel-heading\">Visualisation d'une modification de relev&eacute; de TD</div>");
+    print('<div class="panel-body">');
     if (isset ($_POST['idf_modif']))
     {
       $i_idf_modification = (int) $_POST['idf_modif'];
       $go_acte = new ModificationActe($connexionBD,null,$i_idf_modification);
       $go_acte->charge($i_idf_modification);
-      print("<div align=center><br><textarea rows=15 cols=80>");
+      print('<textarea rows=15 cols=80 class="form-control">');
       print($go_acte->versChaine());
-      print("</textarea></div>");
+      print("</textarea>");
       print("<form action=\"".$_SERVER['PHP_SELF']."\" method=post>");
       print("<input type=\"hidden\" name=\"mode\" value=\"LISTE\">");
-      print("<div align=center><br><input type=submit value=\"Liste des demandes\"></div>");
+	  print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-home"></span> Liste des demandes</button>');
       print("</form>");
     }
     else
     {
-      print("L'identifiant de modification est manquant !");
+      print("<div class=\"alert alert-danger\">L'identifiant de modification est manquant !</div>");
       $_SESSION['mode']='LISTE';  
    }
+   print("</div></div>");
    break; 
   }  
 }
-print("</body></html>");
+print("</div></body></html>");
 ?>

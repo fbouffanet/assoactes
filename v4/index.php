@@ -4,16 +4,17 @@ require_once('Commun/Identification.php');
 require_once('Commun/commun.php');
 require_once('Commun/constantes.php');
 require_once('Commun/ConnexionBD.php');
-//require_once('../drupal/vitrine/compteur/counter.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<title>Bienvenue sur la base de l\'AGC !</title>');
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/menu.js' type='text/javascript'></script>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 //script Google Analytics -- debut
 /*
@@ -35,303 +36,208 @@ print('</script>');
 print("</head>");
 
 print("<body>");
-//print("Vous etes authentifi&eacute; :-)<br>");
 
-//création d'un nombre aléatoire entre 1 et 10 pour le Bulletin
-$nb_min = 1;
-$nb_max = 23;
-$nombreBulletin = mt_rand($nb_min,$nb_max);//Modif pour le PV
-//$nombreBulletin = 99;// A supprimer plus tard et revalider la ligne precedente
-$ArticleBulletin = "./Articles/ArticleBulletin".$nombreBulletin.".html";
-//$ArticleBulletin = "./Articles/lettre_CG.htm";// en provisoire
-// Nombre pour le Bulletin
+print('<div class="container">');
+require_once("Commun/menu.php");
+
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-require_once("Commun/menu.php");
-print("<div class=accueil_gauche>");
+
+print("<div class='row col-md-12'>");
+print("<div class='col-md-4'>");
 // Combien d'adhérents ?				
 $gi_nb_adherents = $connexionBD->sql_select1("select count(*) from adherent where statut IN ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."')");
-// Heure & Date
-$st_date = date("d-m-Y");
-$st_heure = date("H:i");
+
 // Combien de X ?
 $gi_nb_mar = $connexionBD->sql_select1("select sum(nb_actes) from `stats_commune` where idf_type_acte=".IDF_MARIAGE);
 // Combien de DIV ?
-$gi_nb_cm = $connexionBD->sql_select1("select sum(nb_actes) from `stats_commune` where idf_type_acte=".IDF_CM);		
+$gi_nb_cm = $connexionBD->sql_select1("select sum(nb_actes) from `stats_commune` where idf_type_acte=".IDF_DIVERS);		
 // Combien de ¦ ?
 $gi_nb_nai = $connexionBD->sql_select1("select sum(nb_actes) from `stats_commune`  where idf_type_acte=".IDF_NAISSANCE);
-
 // Combien de + ?
 $gi_nb_dec = $connexionBD->sql_select1("select sum(nb_actes) from `stats_commune` where idf_type_acte=".IDF_DECES);
-	
-// combien au total		
+	// combien au total		
 $gi_nb_actes_total = $connexionBD->sql_select1("select sum(nb_actes) from `stats_commune`");
 
-print("<div class=TITRE>Notre nouvel espace membres</div><br>");
-print("<div class=alignCenter >Aujourd'hui le $st_date &agrave; $st_heure</div><br>");
-print("<div class=alignCenter >$gi_nb_adherents adh&eacute;rents inscrits sur la base de l'AGC.</div><br>");
+print('<div class="panel-group">');
+print('<div class="panel panel-primary">');
+print('<div class="panel-heading">Notre espace membres</div>');
+print('<div class="panel-body">');
+// Heure & Date
+$st_date = date("d-m-Y");
+$st_heure = date("H:i");
+print("<div class=\"row text-center\">Aujourd'hui le $st_date &agrave; $st_heure</div>");
+print("<div class=\"row text-center\">$gi_nb_adherents adh&eacute;rents inscrits sur la base de l'AGC.</div>");
+print('</div></div>');
 
-print("<div class=TITRE>Info sur la base</div><br>");
-print("<div class=alignCenter>".number_format($gi_nb_actes_total,0,',', ' ') ." actes dont :</div><br>");
-print("<div class=alignCenter>Naissances: ".number_format($gi_nb_nai,0,',', ' ') ." actes</div><br>");
-print("<div class=alignCenter>Mariages: ".number_format($gi_nb_mar,0,',', ' ') ." actes</div><br>");
-print("<div class=alignCenter>D&eacute;c&egrave;s: ".number_format($gi_nb_dec,0,',', ' ') ." actes</div><br>");
-print("<div class=alignCenter>CM: ".number_format($gi_nb_cm,0,',', ' ') ." actes</div><br>");
-print("<div class=alignCenter>et autres...</div><br>");
+print('<div class="panel panel-primary">');
+print('<div class="panel-heading">Info sur la base</div>');
+print('<div class="panel-body">');
+print("<div class=\"row text-center\">".number_format($gi_nb_actes_total,0,',', ' ') ." actes dont :</div>");
+print("<div class=\"row text-center\">Naissances: ".number_format($gi_nb_nai,0,',', ' ') ." actes</div>");
+print("<div class=\"row text-center\">Mariages: ".number_format($gi_nb_mar,0,',', ' ') ." actes</div>");
+print("<div class=\"row text-center\">D&eacute;c&egrave;s: ".number_format($gi_nb_dec,0,',', ' ') ." actes</div>");
+print("<div class=\"row text-center\">CM: ".number_format($gi_nb_cm,0,',', ' ') ." actes</div>");
+print("<div class=\"row text-center\">et autres...</div>");
+print('</div></div>');
 
 $gi_nbjours = 30;
 
-print("<div class=TITRE>Historique des chargements sur les $gi_nbjours derniers jours</div><br>");
-$a_chargements = $connexionBD->sql_select_multiple("select date_format(c.date_chgt,'%d/%m/%Y'),ca.nom,c.type_acte_nim,c.nb_actes from `chargement` c join commune_acte ca on (c.idf_commune=ca.idf) where datediff(now(),c.date_chgt) <$gi_nbjours and c.publication='O' order by c.date_chgt desc");
+print('<div class="panel panel-primary">');
+print("<div class=\"panel-heading\">Historique des chargements sur les $gi_nbjours derniers jours</div>");
+print('<div class="panel-body">');
+$a_chargements = $connexionBD->sql_select_multiple("select date_format(c.date_chgt,'%d/%m/%Y'),ca.nom,c.type_acte_nim,c.nb_actes from `chargement` c join commune_acte ca on (c.idf_commune=ca.idf) where datediff(now(),c.date_chgt)<$gi_nbjours and c.publication='O' order by c.date_chgt desc");
 if (count($a_chargements)==0)
 {
-   print("<div class=alignCenter>Pas de chargements dans les $gi_nbjours derniers jours</div>");
+   print("<div class=\"alert alert-danger\">Pas de chargements dans les $gi_nbjours derniers jours</div>");
 }
 else
 {
-   print("<div align='center'>");
-   print("<table border=1>");
+   print("<table class=\"table table-bordered table-striped table-sm\">");
+   print("<thead>");
    print("<tr>");
-   //print("<th>Date</th><th>Commune</th><th>Type</th><th>Nbre actes</th>");
-   print("<th>Commune</th><th>Type</th><th>Nbre actes</th>");
+   print("<th scope=\"col\">Commune</th><th scope=\"col\">Type</th><th scope=\"col\">Nbre actes</th>");
    print("</tr>");
+   print("</thead>");
+   print("<tbody>");
    foreach ($a_chargements as $a_chargement)
    {
       list($st_date,$st_commune,$st_type_nim,$i_nb_actes) = $a_chargement;
       switch ($st_type_nim) 
       {
-         case 3: $st_type_acte='°';break;
-         case 1: $st_type_acte='X';break;
-         case 4: $st_type_acte='†';break;
-         case 2: $st_type_acte='Divers(CM...)';break;
-         case 147: $st_type_acte='Recensement';break;
+         case IDF_NAISSANCE: $st_type_acte='°';break;
+         case IDF_MARIAGE: $st_type_acte='X';break;
+         case IDF_DECES: $st_type_acte='&dagger;';break;
+         case IDF_DIVERS: $st_type_acte='Divers(CM...)';break;
       }
-      print("<tr class=chargement>");
+      print("<tr>");
       print("<td>$st_commune</td><td>$st_type_acte</td><td>$i_nb_actes</td>");
-      //print("<td>".chunk_split($st_commune,10,"<br>")."</td><td>$st_type_acte</td><td>$i_nb_actes</td>");
       print("</tr>");
       
    }
+   print("</tbody>");
    print("</table>");
-   print("</div>");
 }
+print('</div></div></div>');
 print("</div>");
-print("<div class=accueil_droite>");
 
-//AG_2013-16-12.pdf
-/*
-echo '<div class= alignCenter><span style="font-family: arial; font-size: 16pt; color: red;"> AG 2017 la convocation est ici </span></div>  ';
-echo '<p style="text-align: center;"><a href="./Articles/AG.pdf" target="_blank"><img src="./Articles/AG.jpg" style="border-color: rgb(204, 153, 51); border-style: solid; border-width: 2px; width: 113px; height: 160px;" /></a></p>';
-*/
-//AG_2013-16-12.pdf
-
-
-
-//echo  '<div class=alignCenter><span style="font-family: arial; font-size: 16pt; color: green;"> Visiteurs :'.$c_alltime.'</span></div>  ';
-//echo  '<div class=alignCenter><span style="font-family: arial; font-size: 16pt; color: green;"> Aujourd\'hui :'. $c_today.' </span></div>  ';
-//echo  '<div class=alignCenter><span style="font-family: arial; font-size: 16pt; color: green;"> En ligne :'. $c_online.'</span></div>  ';
+print('<div class="col-md-4">');
+// Lit les bulletins dans le répertoire Articles. Ils doivent commencer par ArticleBulletin et avoir l'extension HTML
+$a_bulletins = glob("Articles/ArticleBulletin*.html");
+$st_bulletin_html = '';
+if (count($a_bulletins)>0)
+{
+  // Choisit un numéro au hasard
+  $i_bulletin_choisi = mt_rand(1,count($a_bulletins)-1);
+  // construit le nom de fichier
+  $st_article_bulletin = $a_bulletins[$i_bulletin_choisi];
+  //$st_article_bulletin = "./Articles/lettre_CG.htm";// en provisoire
+}
+else
+  print('<div class="alert alert-danger">Pas d\'article disponible</div>');
+// L'affichage du bulletin est remplacée par celle d'une annonce si celle-ci existe  
+if (file_exists("Articles/Annonce.html"))
+   $st_bulletin_html = file_get_contents("Articles/Annonce.html");
+else
+   $st_bulletin_html = file_get_contents($st_article_bulletin);     
+if (preg_match('~<body[^>]*>(.*?)</body>~si', $st_bulletin_html, $a_patterns))
+	print($a_patterns[1]); 
+print("</div>");
+print('<div class="col-md-4">');
 ?>
-   <p></p>
-    <div style="text-align: center; color: rgb(102, 102, 204);" class="alignCenter"><strong><span
-
-          style="font-size: 16pt;">Entraide inter-régionale, mariés ailleurs :</span></strong><br>
-      <strong></strong></div>
-    <strong> <br>
+  
+<div class="panel panel-primary">
+<div class="panel-heading">Entraide inter-régionale, mariés ailleurs :</div>
+<div class="panel-body">
+<div class="text-justify">
       le Cercle généalogique des Deux-Sèvres nous a communiqué la liste des
       mariages relevés dans les registres des communes (79) dont l'un au moins
-      des époux est originaire de Charente.<br>
-      <br>
+      des époux est originaire de Charente.</div>
+<br>
+<div class="text-justify">
       Nos adhérents, peuvent consulter ces relevés sur les ordinateurs de notre
       local de permanence, ou lors de rencontres ponctuelles ou l'A.G.C est
-      présente.<br>
-      <br>
+      présente.</div>
+<br>      
+<div class="text-justify">
       A noter que nous procédons de même avec l'envoi des mariages de
-      Deux-Sévriens célébrés en Charente.<br>
-      <br>
-      <br>
-      <br>
+      Deux-Sévriens célébrés en Charente.</div>
+</div>
+<br>
+</div>
 
+<div class="panel panel-primary">
+<div class="panel-heading ">Loi sur les d&eacute;lais de communication des archives (Journal Officiel du 16&nbsp;juillet&nbsp;2008) </div>
+<div class="panel-body ">
 
-
-
-
-<div  style="text-align: center; color: rgb(102, 102, 204);" class=alignCenter><strong><span style="font-size: 12pt;">Loi sur les délais de
-communication</span></strong></div>
-<div  style="text-align: center;" class=alignCenter><strong style="color: rgb(102, 102, 204);"><span style="font-size: 12pt;">des archives</span></strong></div>
-<div  style="text-align: center;" class=alignCenter><span style="font-size: 12pt; color: black;">(<em>Journal
-Officiel du 16&nbsp;juillet&nbsp;2008)</em><b style=""></b></span></div>
-<hr>
-<table border="1" cellpadding="0" cellspacing="0" >
-        <tbody>
-          <tr style="height: 33.55pt;">
-            <td  width="151">
-            <div  class=alignCenter align="center"><b ><span style="color: black;"><span style="color: rgb(204, 102, 204);">Nature des documents</span></span></b></div>
-            <div  class=alignCenter align="center"><b ><span style="color: black;">&nbsp;</span></b></div>
-            </td>
-            <td >
-            <div  class=alignCenter align="center"><b ><span style="color: black;"><span style="color: rgb(204, 102, 204);">Délai initial</span></span></b></div>
-
-            <div  class=alignCenter><b ><span style="color: black;">&nbsp;</span></b></div>
-            </td>
-            <td >
-            <div  class=alignCenter align="center"><b ><span style="color: black;"><span style="color: rgb(204, 102, 204);">Nouveau délai</span></span></b></div>
-            <div  class=alignCenter align="center"><b ><span style="color: black;">&nbsp;</span></b></div>
-            </td>
-          </tr>
-          <tr>
-
-            <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Vie priv&eacute;e</span></div>
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">60
-ans</span></div>
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">50
-ans</span></div>
-
-            </td>
-          </tr>
-          <tr>
-            <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Actes des notaires</span></div>
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">100
-ans</span></div>
-
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">75
-ans</span></div>
-            </td>
-          </tr>
-          <tr>
-            <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Archives des juridictions</span></div>
-
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">100
-ans</span></div>
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">75
-ans</span></div>
-            </td>
-          </tr>
-
-          <tr>
-            <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Registres de naissance de
-l’état civil</span></div>
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">100
-ans</span></div>
-            </td>
-            <td >
-
-            <div  style="text-align: center;" align="center"><span style="color: black;">75
-ans</span></div>
-            </td>
-          </tr>
-          <tr>
-            <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Registres de mariage de
-l’état civil</span></div>
-            </td>
-            <td >
-
-            <div  style="text-align: center;" align="center"><span style="color: black;">100
-ans</span></div>
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">75
-ans</span></div>
-            </td>
-          </tr>
-          <tr>
-            <td >
-
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Registres de
-décès de l’état civil</span></div>
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">-</span></div>
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">Immédiat</span></div>
-
-            </td>
-          </tr>
-          <tr>
-            <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Tables décennales</span></div>
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">100
-ans</span></div>
-
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">Immédiat</span></div>
-            </td>
-          </tr>
-          <tr>
-            <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Questionnaires de recensement de la population</span></div>
-
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">100 ans</span></div>
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">75 ans</span></div>
-            <div  style="text-align: center;" align="center"><span style="color: black;">&nbsp;</span></div>
-            </td>
-
-          </tr>
-          <tr>
-            <td >
-            <div  style="text-align: center; line-height: 150%;" align="center"><span style="color: black;">Dossiers de personnels</span></div>
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">120 ans</span></div>
-            </td>
-
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">75 ans</span></div>
-            </td>
-          </tr>
-          <tr>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">Secret médical</span></div>
-            </td>
-
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">150 ans</span></div>
-            </td>
-            <td >
-            <div  style="text-align: center;" align="center"><span style="color: black;">120 ans ou 25 ans à compter du décès</span></div>
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
-
+<table class="table table-bordered table-striped table-sm" >          
+   <thead>          
+      <tr>            
+         <th scope="col">            Nature des documents             
+         </th>            
+         <th scope="col">            D&eacute;lai initial             
+         </th>            
+         <th scope="col">            Nouveau d&eacute;lai             
+         </th>          
+      </tr>          
+   </thead>          
+   <tbody>          
+      <tr>            
+         <td >            Vie priv&eacute;e             </td>            
+         <td >            60 ans             </td>            
+         <td >            50 ans             </td>          
+      </tr>          
+      <tr>            
+         <td >            Actes des notaires             </td>            
+         <td >            100 ans             </td>            
+         <td >            75 ans             </td>          
+      </tr>          
+      <tr>            
+         <td >            Archives des juridictions             </td>            
+         <td >            100 ans             </td>            
+         <td >            75 ans             </td>          
+      </tr>          
+      <tr>            
+         <td >            Registres de naissance de l’&eacute;tat civil             </td>            
+         <td >            100 ans             </td>            
+         <td >            75 ans             </td>          
+      </tr>          
+      <tr>            
+         <td >            Registres de mariage de l’&eacute;tat civil             </td>            
+         <td >            100 ans             </td>            
+         <td >            75 ans             </td>          
+      </tr>          
+      <tr>            
+         <td >            Registres de d&eacute;c&egrave;s de l’&eacute;tat civil             </td>            <td>            -             </td>            
+         <td >            Imm&eacute;diat            </td>          
+      </tr>          
+      <tr>            
+         <td >            Tables d&eacute;cennales             </td>            
+         <td >            100 ans             </td>            
+         <td >            Imm&eacute;diat             </td>          
+      </tr>          
+      <tr>            
+         <td >            Questionnaires de recensement de la population             </td>            
+         <td >            100 ans             </td>            
+         <td >            75 ans             </td>          
+      </tr>          
+      <tr>            
+         <td >            Dossiers de personnels             </td>            
+         <td >            120 ans             </td>            
+         <td >            75 ans             </td>          
+      </tr>          
+      <tr>            
+         <td >            Secret m&eacute;dical             </td>            
+         <td >            150 ans             </td>            
+         <td >            120 ans ou 25 ans &agrave; compter du d&eacute;c&egrave;s             </td>          
+      </tr>        
+   </tbody>      
+</table>
+</div>
+</div>
 <?php
 print("</div>");
-print("<div class=accueil_centre>");
-?>
-<IFRAME SRC= "<?php echo $ArticleBulletin ?>" frameborder="0" width="100%" height="100%" scrolling="auto"> </IFRAME>;
-<?php
-//print("<div class=TITRE>A COMPLETER</div><br>");
-// Article
-print("</div>");
-print("</body></html>");
-//print_r($_SESSION);
-//$connexionBD->ferme(); 
+print("</div></body></html>");
+ 
 ?>
 
