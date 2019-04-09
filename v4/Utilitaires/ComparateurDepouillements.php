@@ -483,28 +483,37 @@ function tableau_comparaison($pa_insee)
  */
 function affiche_menu() {
    global $gi_max_taille_upload;
-   print('<div class=TITRE>Chargement de l\'inventaire du CGCP</div>');
+   print('<div class="panel panel-primary">');
+   print('<div class="panel-heading">Chargement de l\'inventaire du CGCP</div>');
+   print('<div class="panel-body">');
    print("<form enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
-   print("<div align=center><input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\">"); 
+   print("<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\">"); 
    print('<input type="hidden" name="mode" value="COMPARAISON" >');
-   print('<br>Fichier <span class=IMPORTANT>CSV</span> des relev&eacute;s CGCP: <input name="IndexCGCP" type="file" /><br></div>');
-   print('<div align=center><br><input type="submit" value="Compare les depouillements"/></div>');
+   print('<div class="custom-file">');
+   print('<label for="IndexCGCP" class="custom-file-label">Fichier <span class="alert alert-danger">CSV</span> des relev&eacute;s CGCP:</label>');
+   print('<input name="IndexCGCP" id="IndexCGCP" type="file" class="custom-file-input">');
+   print('</div>');
+   print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Compare les d&eacute;pouillements</button></div>'); 
    print('</form>');
+   print('</div></div>');
 } 
 
 /******************************************************************************/
 /*                         Corps du programme                                 */
 /******************************************************************************/
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr">');
 print("<title>Comparaison des depouillements en Charente</title>");
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../Commun/menu.js' type='text/javascript'></script>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print('</head>');
-print('<body bgcolor="gainsboro">');
+print('<body>');
+print('<div class="container">');
 require_once("../Commun/menu.php");
 switch($gst_mode)
 {
@@ -526,9 +535,9 @@ switch($gst_mode)
       fwrite($fh,'</body>');
       fwrite($fh,'</html>');
       fclose($fh);
-      print("<a href=\"./Comparatif_releves_AGC_CGCP.htm\">Fichier &agrave; t&eacute;l&eacute;charger</a>");        
+      print("<div class=\"text-center\"><a href=\"./Comparatif_releves_AGC_CGCP.htm\">Fichier &agrave; t&eacute;l&eacute;charger</a></div>");        
 }
 
-print('</body>');
+print('</div></body>');
 print('</html>');
 ?>
