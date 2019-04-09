@@ -25,8 +25,7 @@ function affiche_cantons_choisis($pconnexionBD,$pi_idf_adherent)
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    $st_requete = "select distinct c.idf,ca.idf_canton,c.nom from canton c left join cantons_adherent ca on (c.idf=ca.idf_canton and ca.idf_adherent=$pi_idf_adherent) order by c.nom";
    $a_liste_cantons = $pconnexionBD->sql_select_multiple_par_idf($st_requete);
-   print ("<div><br><table border=1 align='center'>\n");
-   //print("<tr><th><input type=\"button\" id=\"tous_rien\" value=\"Tous\"/></th><th>Canton</th></tr>");
+   print("<table class=\"table table-bordered table-striped\">\n");
    print("<tr><th>&nbsp;</th><th>Canton</th></tr>");
    foreach ($a_liste_cantons as $i_idf_canton => $a_info)
    {
@@ -34,17 +33,17 @@ function affiche_cantons_choisis($pconnexionBD,$pi_idf_adherent)
       print("<tr><td>");
       if ($i_idf_canton==$i_idf_canton_selectionne)
       {
-          print("<input type=checkbox name='cantons_choisis[]' id='canton_$i_idf_canton' value='$i_idf_canton' checked='checked'>");
+          print("<input type=checkbox name='cantons_choisis[]' id='canton_$i_idf_canton' value='$i_idf_canton' checked='checked' class=\"form-check-input\">");
       }
       else
       {
-          print("<input type=checkbox name='cantons_choisis[]' id='canton_$i_idf_canton' value='$i_idf_canton'>");
+          print("<input type=checkbox name='cantons_choisis[]' id='canton_$i_idf_canton' value='$i_idf_canton' class=\"form-check-input\">");
       } 
       print("</td><td>$st_canton</td></tr>\n");
    }
-   print ("</table></div>\n");
-   print("<input type=hidden name='mode' value='MODIFICATION_CANTONS'>"); 
-   print("<br><div align=\"center\"><input type=submit value=\"Mette a jour les cantons\"></div>");       
+   print ("</table>\n");
+   print("<input type=hidden name='mode' value='MODIFICATION_CANTONS'>");
+   print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Mette &agrave; jour les cantons</button></div>');        
    print('</form>');  
 }
 
@@ -67,24 +66,23 @@ function affiche_dernieres_demandes($pconnexionBD,$pi_idf_adherent,$pst_info)
 order by da.date_demande desc";
       //print("Req=$st_requete<br>");
       $a_liste_demandes=$pconnexionBD->sql_select_multiple_par_idf($st_requete);
-
-      print("<div class=\"TITRE\">Demandes des sept derniers jours<br>selon vos cantons de pr&eacute;f&eacute;rence</div>");
-      print("<br>");
-      print("<div class=\"SOUSTITRE\">Liste des demandes de mariage/actes divers des autres adh&eacute;rents</div>");
-      print("<br>");
+	  print('<div class="panel panel-primary">');
+      print("<div class=\"panel-heading\">Demandes des sept derniers jours selon vos cantons de pr&eacute;f&eacute;rence</div>");
+      print('<div class="panel-body">');
       if(!empty($pst_info))
       {
-        print("<br>");
-        print("<div class=\"INFO\">$pst_info</div>");
-        print("<br>");
+        print("<div class=\"alert alert-info\">$pst_info</div>");
       }
       print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
       print("<input type=hidden name='mode' value='AFFICHAGE_CANTONS'>");
-      print("<br><div align=\"center\"><input type=submit value=\"Modifier les cantons de preferences\"></div>");
-      print('</form>'); 
+	  print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Modifier les cantons de pr&eacute;f&eacute;rence</button></div>');
+      print('</form>');
+	  print('<div class="panel panel-default">');
+      print('<div class="panel-heading">Liste des demandes de mariage/actes divers des autres adh&eacute;rents</div>');
+      print('<div class="panel-body">');	  
       if (count($a_liste_demandes)>0)
       {   
-        print("<table border=1 align=center>");
+        print("<table class=\"table table-bordered table-striped table-sm\">\n");
         print("<tr>");
         print("<th>Date de l'acte</th>");
         print("<th>Type de l'acte</th>");
@@ -106,12 +104,11 @@ order by da.date_demande desc";
            $o_acte = new Acte($pconnexionBD, null, null, null, null, null, null);
            $o_acte -> charge($i_idf_acte);
            $st_description_acte = $o_acte -> versChaineSansTemoins();
-
-           
-           print("<td><pre>$st_description_acte<pre></td>");
+          
+           print("<td><pre>$st_description_acte</pre></td>");
            print("<td>$st_demandeur</td>");
            
-           print("<td align=\"center\"><a href=\"mailto:$st_email_demandeur?subject=Votre demande AGC: $st_parties a $st_commune\"><img src=\"./images/email_adht.png\" noborder ></a></td>");
+           print("<td align=\"center\"><a href=\"mailto:$st_email_demandeur?subject=Votre demande AGC: $st_parties a $st_commune\"><span class=\"glyphicon glyphicon-send\"></span></a></td>");
            print("<td>$st_date_dem</td>");
            print("</tr>\n");
         }
@@ -119,32 +116,36 @@ order by da.date_demande desc";
       }       
       else
       {
-        print("<div align=center>Pas de demandes durant les 7 derniers jours</div>");
+        print("<div class=\"alert alert-danger\">Pas de demandes durant les 7 derniers jours</div>");
       }
+	  print("</div></div>");
+	  print("</div></div>"); 
    }
    else
    {
-      print("<div class=\"IMPORTANT\">Aucun canton de pr&eacute;f&eacute;rence d&eacute;fini. Merci de les pr&eacute;ciser</div>");
+      print("<div class=\"alert alert-danger\">Aucun canton de pr&eacute;f&eacute;rence d&eacute;fini. Merci de les pr&eacute;ciser</div>");
       print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
       print("<input type=hidden name='mode' value='AFFICHAGE_CANTONS'>");
-      print("<br><div align=\"center\"><input type=submit value=\"Modifier les cantons de preferences\"></div>");
+	  print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Modifier les cantons de pr&eacute;f&eacute;rences</button></div>');
       print('</form>'); 
-   }
-   print("<br>");
-    
-   
+   }      
 }
 
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=cp1252" />');
 print('<meta http-equiv="content-language" content="fr" /> ');
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'/>");
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/menu.js' type='text/javascript'></script>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 print('<title>Base AGC: Dernières Demandes</title>');
 print("</head>");
 
 print("<body>");
+print('<div class="container">');
+
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("Commun/menu.php");
 
@@ -156,8 +157,7 @@ if (isset($_SESSION['ident']))
   //print("Req=$st_requete<br>");
   $gi_idf_adherent= $connexionBD->sql_select1($st_requete);
   switch ($gst_mode) {
-    case 'AFFICHAGE_CANTONS' : 
-      require_once("Commun/menu.php");      
+    case 'AFFICHAGE_CANTONS' :     
       affiche_cantons_choisis($connexionBD,$gi_idf_adherent); 
     break;
     case 'MODIFICATION_CANTONS' :
@@ -184,7 +184,8 @@ if (isset($_SESSION['ident']))
 }
 else
 {
-   print("<div class=ERREUR>Ad&eacute;r&eacute;rent pas identifi&eacute;</div>");
+   print("<div class=\"alert alert-danger\">Ad&eacute;r&eacute;rent pas identifi&eacute;</div>");
 }
-
+print("</div></body>");
+print("</html>");
 ?>
