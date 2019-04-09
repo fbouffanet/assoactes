@@ -3,7 +3,55 @@
 <head>
   <title>Saisie du sommaire des bulletins</title>
   <meta charset="iso-8859-15" />       <!-- ou charset="utf-8" -->
-  <link rel="stylesheet" href="SaisieSommaire.css" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="SaisieSommaire.css" />
+  <link href='css/styles.css' type='text/css' rel='stylesheet'>
+  <link href='css/bootstrap.min.css' rel='stylesheet'> 
+  <link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>  
+  <link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>
+  <link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>
+  <script src='js/jquery-min.js' type='text/javascript'></script>
+  <script src='js/jquery.validate.min.js' type='text/javascript'></script>
+  <script src='js/additional-methods.min.js' type='text/javascript'></script>
+  <script src='js/jquery-ui.min.js' type='text/javascript'></script>
+  <script src='js/bootstrap.min.js' type='text/javascript'></script>
+  <script type='text/javascript'>
+$(document).ready(function() {
+$("#annuler" ).click(function() {
+    window.location.href = 'SaisieSommaire.php';
+});
+
+$("#saisie_rubrique").validate({
+		rules:{
+				num: {
+					required: true,
+					number: true
+				},
+				moisaa: {
+					required: true,
+				},
+				nompre: {
+					required: true,
+				}
+				
+			},	
+		messages:{
+				num: {
+					required: "Le numéro est obligatoire",
+					number: "Le numéro doit être un entier"
+				},
+				moisaa: {
+					required: "Le mois et l'année sont obligatoires",
+				},
+				nompre: {
+					required: "Le nom et le prénom sont obligatoires",
+				}
+			}
+	});
+           
+});
+
+</script>
 </head>
 
 <body>
@@ -16,8 +64,6 @@ PL 06/17
 
 //$gst_chemin = "../";
 $gst_chemin = ".";
-
-print("<script src='$gst_chemin/Commun/menu.js' type='text/javascript'></script>");
 
 require_once("$gst_chemin/Commun/config.php");
 require_once("$gst_chemin/Commun/constantes.php");
@@ -62,10 +108,9 @@ if (empty($_POST))
 }
 else
 {
-
 	if (isset($_POST['valide_rub'])) {                  
-		$gst_mode = "NUMERO";
-   } 
+	$gst_mode = "NUMERO";
+	} 
 	elseif (isset($_POST['valid'])) {                  
 		$gst_mode = "ENREGISTRE";
    } 
@@ -101,124 +146,115 @@ function Select_rubrique()
   return $chaine_options;
 }
 
-/* --- Affiche le titre --- */
-function Affiche_titre()
-{
-   print("<div class='cadre_titre'>");	
-	print("<h2><b>Mise à jour du sommaire des bulletins </b></h2>");  
-	print("</div>");
-}
-
 /* --- Affiche les boutons du départ --- */
 function Affiche_depart()
 {   
-   Affiche_titre();
-   print("<div class='cadre_depart'>");	
-	 print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
-   print("<p><input type='submit' class='creat' value='Création du bulletin' name='creat' /></p>");
-   print("<input type=\"hidden\" name=\"mode\" value=\"CREATION\"> ");
-   print('</form>');
-   print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	 print("<p><input type='submit' class='maj' value='Mise à jour du bulletin' name='maj' /></p>");
-   print("<input type=\"hidden\" name=\"mode\" value=\"RUBRIQUE\"> "); 
-   print('</form>'); 
-	 print("</div>");	
+    print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+    print("<button type=\"submit\" class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-plus\"></span>  Cr&eacute;ation du bulletin</button>");
+	print("<input type=\"hidden\" name=\"mode\" value=\"CREATION\"> ");
+	print('</form>');
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+	print("<button type=\"submit\" class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-edit\"></span>  Mise &agrave; jour du bulletin</button>");
+	print("<input type=\"hidden\" name=\"mode\" value=\"RUBRIQUE\"> "); 
+	print('</form>'); 
 }
 
 /* --- Affiche le bulletin à modifier --- */
 function Affiche_bulletin()
 {
-   print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-   Affiche_titre();
-   print("<div class='cadre_depart'>");	
-   print("<p><label for='rub'>&nbsp;Choisir un numéro de bulletin à mettre à jour &nbsp;&nbsp;&nbsp;</label>");
-   print("<select id='rub' name=rubrique>".Select_rubrique()."</select></p><br><br>");
-	print("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+    print('<div class="row form-group">');  	
+	print('<label for="rub" class="col-form-label col-md-4">Choisir un numéro de bulletin à mettre à jour</label>');
+	print('<div class="col-md-4">');
+	print("<select id='rub' name=rubrique>".Select_rubrique()."</select>");
+	print('</div>');
 	print("<input type=\"hidden\" name=\"mode\" value=\"NUMERO\"> ");
-  print("<input type=submit value='Validation numéro' name='valide_rub'>");  
-	print("</div>");
+	print("<button type=\"submit\" class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-ok\"></span>  Validation num&eacute;ro</button>");
+    print('</div>');	
 	print('</form>');
 }
 
 /* --- Récupération de l'enregistrement choisi --- */
 function Recupere_sommaire()
 {
-   global $connexionBD,$gi_num_page_cour;
-   $numero = (int) $_POST['rubrique'];
-//echo "Numéro choisi : ".$numero;
-   print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-   Affiche_titre();
-   $st_requete = "select idf,numero,moisannee,rubrique,auteur,type from sommaire where numero = $numero";
-   $a_liste_sommaires = $connexionBD->liste_valeur_par_clef($st_requete);
-   $i_nb_sommaires = count($a_liste_sommaires);
-   if ($i_nb_sommaires!=0)
-   {  
-      print("<div class='cadre_table'>");      
-      $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_sommaires,NB_LIGNES_PAR_PAGE,1,array('Bulletin','Mois Année','Désignation de la rubrique','Auteur du texte','Type','Modifier','Supprimer'));
-      $pagination->init_param_bd($connexionBD,$st_requete);
-      $pagination->init_page_cour($gi_num_page_cour);
-      $pagination->affiche_entete_liens_navigation();
-      $pagination->affiche_tableau_edition();
-      print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER\">");
-      print("</div>");
-   }
-   else
-     print("<div align=center>Pas de sommaires</div>\n");	
+	global $connexionBD,$gi_num_page_cour;
+	$numero = (int) $_POST['rubrique'];
+	//echo "Numéro choisi : ".$numero;
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
+    
+	$st_requete = "select idf,numero,moisannee,rubrique,auteur,type from sommaire where numero = $numero";
+	$a_liste_sommaires = $connexionBD->liste_valeur_par_clef($st_requete);
+	$i_nb_sommaires = count($a_liste_sommaires);
+	if ($i_nb_sommaires!=0)
+	{     
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_sommaires,NB_LIGNES_PAR_PAGE,1,array('Bulletin','Mois Année','Désignation de la rubrique','Auteur du texte','Type','Modifier','Supprimer'));
+		$pagination->init_param_bd($connexionBD,$st_requete);
+		$pagination->init_page_cour($gi_num_page_cour);
+		$pagination->affiche_entete_liens_navigation();
+		$pagination->affiche_tableau_edition();
+		print("<input type=hidden name=mode value=\"SUPPRIMER\">");
+	}
+	else
+		print('<div class="alert alert-danger">Pas de sommaire</div>');	
 	print('</form>');
 }
 
 /* --- Recherche l'enregistrement choisi et appelle la saisie --- */
 function Recherche_enreg($idrub)
 {
-   global $connexionBD;
-
-   $st_requete = "select numero,moisannee,rubrique,auteur,type from sommaire where idf = $idrub";
-   list($num,$moisaa,$rubrique,$auteur,$typrub)=$connexionBD->sql_select_liste($st_requete);
- 	 Affiche_saisie($num, $moisaa, $rubrique, $auteur, $typrub, $idrub);
+	global $connexionBD;
+    $st_requete = "select numero,moisannee,rubrique,auteur,type from sommaire where idf = $idrub";
+	list($num,$moisaa,$rubrique,$auteur,$typrub)=$connexionBD->sql_select_liste($st_requete);
+ 	Affiche_saisie($num, $moisaa, $rubrique, $auteur, $typrub, $idrub);
 }
 
 /* --- Affiche les éléments à saisir --- */
 function Affiche_saisie($num, $moisaa, $rubrique, $auteur, $typrub, $idrub)
 {
-   print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-   Affiche_titre();
-   print("<div class='cadre_saisie'>");	
-	print("<table>");
-	print("<tr><td width='300'>Numéro du bulletin</td>");
-	print("<td width='210'><input type=text value=$num name=num></td></tr>");
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" id=saisie_rubrique method=\"post\">");  
+    
+	print('<div class="row form-group">');
+    print('<label for="num" class="col-form-label col-md-4">Numéro du bulletin</label>');
+	print('<div class="col-md-4">');	
+	print("<input type=text value=$num name=num id=num class=\"form-control\">");
+	print('</div></div>');
 	
-	print("<tr><td width='300'></td><td width='210'></td></tr>");
-	print("<tr><td width='300'>Mois et Année</td>");
-	print("<td width='210'><input type=text value='$moisaa' name=moisaa></td></tr>");
+	print('<div class="row form-group">');
+    print('<label for="moisaa" class="col-form-label col-md-4">Mois et Année</label>');
+	print('<div class="col-md-4">');	
+	print("<input type=text value='$moisaa' name=moisaa id=moisaa class=\"form-control\">");
+	print('</div></div>');
 	
-	print("<tr><td width='300'></td><td width='210'></td></tr>");
-	print("<tr><td width='300'>Type rubrique (Article, Famille, Ascendance, Descendance)</td>");
-	print("<td width='210'><select name=typrub>");
+	print('<div class="row form-group">');
+    print('<label for="typrub" class="col-form-label col-md-4">Type rubrique (Article, Famille, Ascendance, Descendance)</label>');
+	print('<div class="col-md-4">');	
+	print("<select name=typrub id=typrub class=\"form-control\">");
 	if (($idrub != 0) and ($typrub == "ART"))
 	   print("<option value=ART selected>Article</option>");
 	else
 	   print("<option value=ART>Article</option>");
 	if (($idrub != 0) and ($typrub == "FAM"))
-   	print("<option value=FAM selected>Famille</option>");
-   else		
-   	print("<option value=FAM>Famille</option>");
+		print("<option value=FAM selected>Famille</option>");
+	else		
+		print("<option value=FAM>Famille</option>");
 	if (($idrub != 0) and ($typrub == "COU"))
-   	print("<option value=COU selected>Cousinage</option>");
-   else		
-   	print("<option value=COU>Cousinage</option>");
+		print("<option value=COU selected>Cousinage</option>");
+	else		
+		print("<option value=COU>Cousinage</option>");
 	if (($idrub != 0) and ($typrub == "ASC"))
-	   print("<option value=ASC selected>Ascendance</option>");
-   else		
+		print("<option value=ASC selected>Ascendance</option>");
+	else		
 	   print("<option value=ASC>Ascendance</option>");
 	if (($idrub != 0) and ($typrub == "DES"))
 	   print("<option value=DES selected>Descendance</option>");
 	else
 		print("<option value=DES>Descendance</option>");
-	print("</select></td></tr>");
-
+	print("</select>");
+	print('</div></div>');	
 	
-	print("<tr><td width='300'></td><td width='210'></td></tr>");
-	print("<tr><td width='300'>Prénom et nom de l'auteur</td>");
+	print('<div class="row form-group">');
+    print('<label for="nompre" class="col-form-label col-md-4">Pr&eacute;nom et nom de l\'auteur</label>');
+	print('<div class="col-md-4">');
 	$nompre = "";
 	if ($idrub != 0) // Mise à jour
 	{
@@ -236,14 +272,18 @@ function Affiche_saisie($num, $moisaa, $rubrique, $auteur, $typrub, $idrub)
 			}
 		}	
 	}
-	print("<td width='210'><input type=text value='$nompre' name=nompre></td></tr>");
+	print("<input type=text value='$nompre' name=nompre id =nompre class=\"form-control\">");
+	print('</div></div>');
 	
-	print("<tr><td width='300'></td><td width='210'></td></tr>");
-	print("<tr><td width='300'>Code Auteur</td>");
-	print("<td width='210'><input type=text value='$auteur' name=auteur></td></tr>");
+	print('<div class="row form-group">');
+    print('<label for="auteur" class="col-form-label col-md-4">Code Auteur</label>');
+	print('<div class="col-md-4">');
+	print("<input type=text value='$auteur' name=auteur id=auteur>");
+	print('</div></div>');
 	
-	print("<tr><td width='300'></td><td width='210'></td></tr>");
-	print("<tr><td width='300'>Texte de la rubrique</td>");
+	print('<div class="row form-group">');
+    print('<label for="txtrub" class="col-form-label col-md-4">Texte de la rubrique</label>');
+	print('<div class="col-md-4">');
 	$txtrub = "";
 	if ($idrub != 0) // Mise à jour
 	{
@@ -258,57 +298,49 @@ function Affiche_saisie($num, $moisaa, $rubrique, $auteur, $typrub, $idrub)
 		   $txtrub = $rubrique;
 		}
 	}
-	print("<td width='210'><input type=text size=70 value='$txtrub' name=txtrub></td></tr>");
+	print("<input type=text size=70 value='$txtrub' name=txtrub id=txtrub>");
+	print('</div></div>');
 
-	print("<tr><td width='300'></td><td width='210'></td></tr>");
-	print("<tr><td width='300'></td><td width='210'></td></tr>");
-	print("<tr><td width='300'></td><td width='210'></td></tr>");
-	print("<tr><td width='300'></td><td width='210'></td></tr>");
-	print("<tr><td width='300'></td><td width='210'></td></tr>");
-	print("<tr><td width='300'></td><td width='210'></td></tr>");
-	print("<tr><td width='300'></td><td width='210'></td></tr>");
 	print("<input type=hidden name=idrub value=$idrub>");
-	print("<tr><td width='300'></td>");
-	print("<td width='210'><input type=submit value=Validation de l'entregistrement name=valid>");
-	print("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=submit value=Annuler name=retour></td></tr>");
-		
-	print("</table>");
+	print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
+	print('<button type=submit class="btn btn-primary" id="modifier"><span class="glyphicon glyphicon-ok"></span> Validation de l\'enregistrement</button>');
+	print('<button type=button class="btn btn-primary" id="annuler"><span class="glyphicon glyphicon-remove"></span> Annuler</button>');
 	print('</div>');
-  print("<input type=\"hidden\" name=\"mode\" value=\"ENREGISTRE\"> ");
+		
+	print("<input type=\"hidden\" name=\"mode\" value=\"ENREGISTRE\"> ");
 	print('</form>');
 }
 
 /* --- Enregistrement --- */
 function Enregistrement()
 {
-   global $connexionBD;
+	global $connexionBD;
 	
-   $idrub = $_POST['idrub'];
-   $numero = $_POST['num'];
-   $moisannee = $_POST['moisaa'];
-   $type = $_POST['typrub'];
+	$idrub = $_POST['idrub'];
+	$numero = $_POST['num'];
+	$moisannee = $_POST['moisaa'];
+	$type = $_POST['typrub'];
 	if (($type == "ASC") or ($type == "DES"))
-      $rubrique = $_POST['nompre'];
-   else		
-      $rubrique = $_POST['nompre']." - ".$_POST['txtrub'];
-   $rubrique = strtr ($rubrique, "'", " ");
-   $auteur = $_POST['auteur'];
-   $flag = "N";
-   if ($idrub == 0)               // création d'un enregistrement
+		$rubrique = $_POST['nompre'];
+	else		
+		$rubrique = $_POST['nompre']." - ".$_POST['txtrub'];
+	$rubrique = strtr ($rubrique, "'", " ");
+	$auteur = $_POST['auteur'];
+	$flag = "N";
+	if ($idrub == 0)               // création d'un enregistrement
 	{
-
-     $connexionBD->initialise_params(array(':numero'=>$numero,':moisannee'=>$moisannee,":rubrique"=>$rubrique,":auteur"=>$auteur,":type"=>$type,":flag"=>$flag));
-	   $sqlins = "insert into sommaire (numero, moisannee, rubrique, auteur, type, flag)
+		$connexionBD->initialise_params(array(':numero'=>$numero,':moisannee'=>$moisannee,":rubrique"=>$rubrique,":auteur"=>$auteur,":type"=>$type,":flag"=>$flag));
+		$sqlins = "insert into sommaire (numero, moisannee, rubrique, auteur, type, flag)
                  values (:numero, :moisannee, :rubrique, :auteur, :type, :flag)";
-     $connexionBD->execute_requete($sqlins);	
+		$connexionBD->execute_requete($sqlins);	
 		if (($type == "ASC") or ($type == "DES"))   // Ascendance ou descendance, création d'un enregistrement
 		{
-       $connexionBD->initialise_params(array(':numero'=>$numero,":auteur"=>$auteur,":type"=>$type));
-		   $sqlins = "insert into detail_nom (det_numero, det_type, det_auteur, id_bulletin)
+			$connexionBD->initialise_params(array(':numero'=>$numero,":auteur"=>$auteur,":type"=>$type));
+			$sqlins = "insert into detail_nom (det_numero, det_type, det_auteur, id_bulletin)
                                     values (:numero, :type, :auteur, 0)";
-         $connexionBD->execute_requete($sqlins);	
+			$connexionBD->execute_requete($sqlins);	
 		}
-		echo "<script>alert(\"Création rubrique enregistrée\")</script>"; 
+		print("<div class=\"alert alert-success\">Création rubrique enregistrée</div>"); 
 	}
 	else                           // modification d'un enregistrement
 	{
@@ -316,27 +348,29 @@ function Enregistrement()
       $sqlmaj = "update sommaire set numero = :numero, moisannee = :moisannee, rubrique = :rubrique, 
 		                               auteur = :auteur where idf = $idrub";  
 	    $connexionBD->execute_requete($sqlmaj);
-	   echo "<script>alert(\"Modification rubrique effectuée\")</script>"; 
+	    print("<div class=\"alert alert-success\">Modification rubrique effectuée</div>"); 
 	}
 }
 
 /* --- Confirmation suppression --- */
 function Confirmation()
 {
-   global $connexionBD;
-		
-   print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
-   Affiche_titre();
+	global $connexionBD;		
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
 	$idrub = $_GET['idrub']; 
 	$st_requete = "select * from sommaire where idf = $idrub";
-  $st_requete = "select numero,moisannee,rubrique from sommaire where idf = $idrub";
-  list($num,$moisaa,$rubrique)=$connexionBD->sql_select_liste($st_requete);
-  print("<div class='cadre_table'>");	
-	print("Confirmation suppression de la rubrique $rubrique, du bulletin $num<br><br><br>");
-	print("<p><input type='submit' value='Validation' name=valid_sup /></p>"); 
-	print("<p><input type='submit' value='Annuler' name=retour /></p>"); 
+	$st_requete = "select numero,moisannee,rubrique from sommaire where idf = $idrub";
+	list($num,$moisaa,$rubrique)=$connexionBD->sql_select_liste($st_requete);
+	print('<div class="panel panel-danger">');
+	print("<div class=\"panel-heading\">Confirmation suppression de la rubrique $rubrique, du bulletin $num</div>");
+	print('<div class="panel-body">');
 	print("<input type=hidden name=idrub value=$idrub>");
-	print("</div>");
+	print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
+	print('<button type=button class="btn btn-primary" id="modifier"><span class="glyphicon glyphicon-ok"></span> Validation</button>');
+	print('<button type=button class="btn btn-primary" id="annuler"><span class="glyphicon glyphicon-remove"></span> Annuler</button>');
+	print('</div>'); 
+	print("<input type=hidden name=idrub value=$idrub>");
+	print('</div></div>');
 	print('</form>');
 }
 
@@ -353,6 +387,10 @@ if (isset($_GET['mod']))
    $gst_mode='LIGNE';
 }
 $gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
+
+print('<div class="panel panel-primary">');
+print('<div class="panel-heading">Mise &agrave; jour du sommaire des bulletins</div>');
+print('<div class="panel-body">'); 
 	
 switch ($gst_mode) 
 {
@@ -379,7 +417,7 @@ switch ($gst_mode)
       $idrub = $_POST['idrub']; 
       $sqlmaj = "delete from sommaire where idf = $idrub";
       $connexionBD->execute_requete($sqlmaj); 
-	   echo "<script>alert(\"Suppression rubrique effectuée\")</script>"; 
+	   print('<div class="alert alert-success">Suppression rubrique effectuée</div>'); 
 	   Affiche_depart(); 
    break;
   case 'ENREGISTRE' : 
@@ -389,8 +427,9 @@ switch ($gst_mode)
   case 'CREATION' : 
 		Affiche_saisie(0, "", "", "", "", 0); 
    break;
-   default: print("Mode inconnu $gst_mode<br>");
+   default: print("<div class=\"alert alert-danger\">Mode inconnu $gst_mode</div>");
 }
+print('</div></div>');
 ?>	
 
 </body>
