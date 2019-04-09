@@ -9,19 +9,21 @@ require_once("$gst_chemin/Commun/commun.php");
 $cryptinstall="crypt/cryptographp.fct.php";
 include $cryptinstall;
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
 print('<meta http-equiv="content-language" content="fr">');
-print("<link href='$gst_url_site/Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<script src='$gst_url_site/Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='$gst_url_site/Commun/menu.js' type='text/javascript'></script>");
-print("<link href='$gst_url_site/Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
-print("<link href='$gst_url_site/Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='$gst_url_site/Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
-print("<script src='$gst_url_site/Commun/jquery.validate.min.js' type='text/javascript'></script>");
-print("<script src='$gst_url_site/Commun/additional-methods.min.js' type='text/javascript'></script>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='$gst_url_site/css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='$gst_url_site/css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='$gst_url_site/js/jquery-min.js' type='text/javascript'></script>");
+print("<link href='$gst_url_site/css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='$gst_url_site/css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='$gst_url_site/css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='$gst_url_site/js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='$gst_url_site/js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='$gst_url_site/js/jquery-ui.min.js' type='text/javascript'></script>");
+print("<script src='$gst_url_site/js/bootstrap.min.js' type='text/javascript'></script>");
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {
@@ -69,7 +71,42 @@ $("#inscription").validate({
     code: {
 			required: "Le code est obligatoire"
 		}
-	},  
+	},
+    errorElement: "em",
+	errorPlacement: function ( error, element ) {
+		// Add the `help-block` class to the error element
+		error.addClass( "help-block" );
+
+		// Add `has-feedback` class to the parent div.form-group
+		// in order to add icons to inputs
+		element.parents( ".col-md-8" ).addClass( "has-feedback" );
+
+		if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+		} else {
+				error.insertAfter( element );
+		}
+
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			 $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			 $( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".col-md-8" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".col-md-8" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}
+    ,	
 	submitHandler: function(form) {
 			var nom =$("#nom").val().toUpperCase();
       $("#nom").val(nom);
@@ -87,6 +124,7 @@ $("#inscription").validate({
 print('<title>Inscription en ligne</title>');
 print('</head>');
 print('<body>');
+print('<div class="container">');
 
 $gst_mode = empty($_POST['mode']) ? 'GRILLE': $_POST['mode'] ;
 if (get_magic_quotes_gpc())
@@ -97,12 +135,10 @@ if (get_magic_quotes_gpc())
 else 
     $st_erreur = isset( $_GET['erreur']) ? $_GET['erreur'] : ''; 
 
-
-
 if ($st_erreur!="")
 {
   // traitement d'une erreur en provenance de valideInscription
-  print("<div align=center style=\"color: red;font-size: 16px;\">$st_erreur</div>");
+  print("<div class=\"alert alert-danger\">$st_erreur</div>");
 }
 
 /*
@@ -114,16 +150,14 @@ if ($st_erreur!="")
 * @param string $pst_ins_alea alea
 * @param string $int_idf_prov Identifiant provisoire
 * @global string $gst_url_validation URL de validation
+* @return retour de l'envoi de mail
 */
 function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_email_perso, $pst_ins_idf_agc, $pst_ins_alea, $int_idf_prov)
 {
   global $_SERVER,$gst_url_validation;
-  //$gst_serveur = $_SERVER['SERVER_NAME'];
-  //$gst_url_rel = dirname($_SERVER['REQUEST_URI']);
   
   $gst_url = basename($_SERVER['PHP_SELF']);
   $jour = sprintf ("%02s/%02s/%4s", substr($dt_ins_date,8,2), substr($dt_ins_date,5,2), substr($dt_ins_date,0,4));
-
   
   $frontiere = '-----=' . md5(uniqid(mt_rand()));  
   $headers  = "From: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n>";
@@ -139,7 +173,7 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   $a_time = localtime();
   if ($a_time[4]>5)
   {
-      $st_message_html .= "\n\n <div class=IMPORTANT>Toute nouvelle adh&eacute;sion &agrave; l'AGC enregistr&eacute;e (par courrier ou en ligne) apr&egrave;s le 1er octobre comptera pour l'ann&eacute;e suivante. Le temps entre la date d'adh&eacute;sion et la fin de l'ann&eacute;e en cours est donc gracieusement offert par l'Association.</div>\n\n";
+      $st_message_html .= "\n\n <font color=\"red\">Toute nouvelle adh&eacute;sion &agrave; l'AGC enregistr&eacute;e (par courrier ou en ligne) apr&egrave;s le 1er octobre comptera pour l'ann&eacute;e suivante. Le temps entre la date d'adh&eacute;sion et la fin de l'ann&eacute;e en cours est donc gracieusement offert par l'Association.</div>\n\n";
   }
   $st_message_html .= "\n\n Les responsables de l'AGC";
   $st_message_html = nl2br($st_message_html);
@@ -154,10 +188,7 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
   $st_message .= $st_message_html."\r\n";
   $st_message .= '--'.$frontiere."--\r\n"; 
-  if (mail($pst_ins_email_perso, $sujet, $st_message, $headers))
-	   echo "<script>alert(\"Un message vient de vous etre envoye sur votre mail \")</script>"; 
-	else
-	   echo "<script>alert(\"Probleme d'envoi sur votre mail \")</script>"; 	
+  return mail($pst_ins_email_perso, $sujet, $st_message, $headers);
 }
 
 /**
@@ -182,16 +213,45 @@ function menu_edition($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_adr
                       $pst_ins_email_perso, $pst_ins_site_web, $pst_ins_telephone, $pst_ins_cache, $pst_ins_idf_agc)
 {
    global $ga_pays,$ga_tarifs;
-
-   print("<div class=gauche_adherent>");
-   print("<table border=1><tr><th>Nom</th><td><input type=text maxlength=20 size=20 name=nom id=nom value=\"$pst_ins_nom\"></td></tr>");
-   print("<tr><th>Pr&eacute;nom</th><td><input type=text maxlength=30 size=20 name=prenom id=prenom value=\"$pst_ins_prenom\"></td></tr>");
-	 print("<tr><th>Num&eacute;ro AGC (si déjà adhérent)</th><td><input type=text maxlength=10 size=10 name=idf_agc value=\"$pst_ins_idf_agc\"></td></tr>");
-   print("<tr><th>Adresse 1</th><td><input type=text maxlength=40 size=40 name=adr1 value=\"$pst_ins_adr1\"></td></tr>");
-   print("<tr><th>Adresse 2</th><td><input type=text maxlength=40 size=40 name=adr2 value=\"$pst_ins_adr2\"></td></tr>");
-   print("<tr><th>Code Postal</th><td><input type=text maxlength=12 size=12 name=cp value=\"$pst_ins_cp\"></td></tr>");
-   print("<tr><th>Localit&eacute;</th><td><input type=text maxlength=40 size=20 name=commune value=\"$pst_ins_commune\"></td></tr>");
-   print("<tr><th>Pays</th><td><select name=pays>");
+   print('<div class="form-group row">');
+   print("<label for=\"nom\" class=\"col-md-4 col-form-label control-label\">Nom</label>");
+   print('<div class="col-md-8">');
+   print("<input type=text maxlength=20 size=20 name=nom id=nom value=\"$pst_ins_nom\" class=\"form-control\">");
+   print('</div></div>');
+   print('<div class="form-group row">');
+   print("<label for=\"prenom\" class=\"col-md-4 col-form-label control-label\">Pr&eacute;nom</label>");
+   print('<div class="col-md-8">');
+   print("<input type=text maxlength=30 size=20 name=prenom id=prenom value=\"$pst_ins_prenom\" class=\"form-control\">");
+   print('</div></div>');
+   print('<div class="form-group row">');
+   print("<label for=\"idf_agc\" class=\"col-md-4 col-form-label control-label\">Num&eacute;ro AGC (si déj&agrave; adh&eacute;rent)</label>");
+   print('<div class="col-md-8">');
+   print("<input type=text maxlength=10 size=10 name=idf_agc value=\"$pst_ins_idf_agc\" class=\"form-control\">");
+   print('</div></div>');
+   print('<div class="form-group row">');
+   print("<label for=\"adr1\" class=\"col-md-4 col-form-label control-label\">Adresse 1</label>");
+   print('<div class="col-md-8">');
+   print("<input type=text maxlength=40 size=40 name=adr1 id=adr1 value=\"$pst_ins_adr1\" class=\"form-control\">");
+   print('</div></div>');
+   print('<div class="form-group row">');
+   print("<label for=\"adr2\" class=\"col-md-4 col-form-label\">Adresse 2</label>");
+   print('<div class="col-md-8">');
+   print("<input type=text maxlength=40 size=40 name=adr2 id=adr2 value=\"$pst_ins_adr2\" class=\"form-control\">");
+   print('</div></div>');
+   print('<div class="form-group row">');
+   print("<label for=\"cp\" class=\"col-md-4 col-form-label control-label\">Code Postal</label>");
+   print('<div class="col-md-8">');
+   print("<input type=text maxlength=12 size=12 name=cp id=cp value=\"$pst_ins_cp\" class=\"form-control\">");
+   print('</div></div>');
+   print('<div class="form-group row">');
+   print("<label for=\"commune\" class=\"col-md-4 col-form-label control-label\">Localit&eacute;</label>");
+   print('<div class="col-md-8">');
+   print("<input type=text maxlength=40 size=20 name=commune id=commune value=\"$pst_ins_commune\" class=\"form-control\">");
+   print('</div></div>');
+   print('<div class="form-group row">');
+   print("<label for=\"pays\" class=\"col-md-4 col-form-label control-label\">Pays</label>");
+   print('<div class="col-md-8">');
+   print("<select name=pays id=pays class=\"form-control\">");
    for($i=0; $i<sizeof($ga_pays); $i++) 
    {
 	   if ($ga_pays[$i] == "France")
@@ -199,34 +259,46 @@ function menu_edition($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_adr
       else
          print("<option  value=\"$ga_pays[$i]\">$ga_pays[$i]</option>");  	
    }
-   print("</select></td></tr>");
-	print("<tr><th>Site web</th><td><input type=text maxlength=60 size=40 name=site_web value=\"$pst_ins_site_web\"></td></tr>");
-
-	print("<tr><th>Email personnel</th><td><input type=text maxlength=60 size=40 name=email_perso value=\"$pst_ins_email_perso\"></td></tr>");
-  print("<tr><td colspan=2><input type=checkbox name=confidentiel value=\"$pst_ins_cache\" checked /> (Cochez et l'adresse devient invisible aux adhérents)</td></tr></table></div>");
-	
-	print("<div class=droite_adherent>");
-	print("<table border=1><tr><td colspan=2>Donn&eacute;es accessibles uniquement aux gestionnaires de l'AGC</td></tr>");
-	print("<tr><th>T&eacute;l&eacute;phone</th><td><input type=text maxlength=20 size=14 name=telephone value=\"$pst_ins_telephone\"></td></tr></table></div>");
-
-	print("<BR><BR><BR><BR><BR><div class=droite_adherent>");
-	print("<table border=1><tr><td colspan=2>Veuillez recopier le code qui suit </td></tr>");
-
-  print('<tr><th>Recopiez le code (4 caract&egrave;res uniquement)</th> <td><input type="text" size="4" name="code"></td></tr>');
-	print("<tr><th>Code </th><td>");
-  dsp_crypt(0,1);
-  print("</td></tr>");
+   print("</select></div>");
+   print('</div>');
+   print('<div class="form-group row">');
+   print("<input type=checkbox name=confidentiel id=confidentiel value=\"$pst_ins_cache\" checked class=\"form-check-input col-md-2\">");
+   print('<div class="col-md-10">');
+   print("<label for=\"confidentiel\" class=\"form-check-label\">Cochez et l'adresse devient invisible aux adh&eacute;rents</label>");
+   print('</div></div>');
+   print('<div class="form-group row">');
+   print("<label for=\"site_web\" class=\"col-md-4 col-form-label control-label\">Site web</label>");
+   print('<div class="col-md-8">');
+   print("<input type=text maxlength=60 size=40 name=site_web id=site_web value=\"$pst_ins_site_web\" class=\"form-control\">");
+   print('</div></div>');
+   
+   print('<div class="form-group row">');
+   print("<label for=\"email_perso\" class=\"col-md-4 col-form-label control-label\">Email personnel</label>");
+   print('<div class="col-md-8">');
+   print("<input type=text maxlength=60 size=40 name=email_perso id=email_perso value=\"$pst_ins_email_perso\" class=\"form-control\">");
+   print('</div></div>');
+   
+   print('<div class="form-group row">');
+   print("<label for=\"telephone\" class=\"col-md-4 col-form-label control-label\">T&eacute;l&eacute;phone</label>");
+    print('<div class="col-md-8">');
+   print("<input type=text maxlength=20 size=14 name=telephone id=telephone value=\"$pst_ins_telephone\" aria-describedby=\"UsageTelephone\" class=\"form-control\">");
+   print("<small id=\"UsageTelephone\">Donn&eacute;es accessibles uniquement aux gestionnaires de l'AGC</small>");
+   print('</div></div>');
+   print('<div class="form-group row">');
     
-	print("</table>");
-	//print("<div style=\"position: absolute; top:70px; left:560px; width:300px; height:50\">");
-	print("<br><br><br><br>");
-	print("Votre cotisation :<br><ul>");
+   print('<label for="code" class="col-md-4 col-form-label control-label">Veuillez recopier le code qui suit (4 caract&egrave;res uniquement)</label>');
+   print('<div class="col-md-8">');
+   print('<input type="text" size="4" name="code" id="code" class="form-control">');
+   dsp_crypt(0,1);
+   print('</div></div>');
+   print("<label for=\"type_adhesion\">Votre cotisation</label>");
+   print("<ul class=\"list-group\" id=\"type_adhesion\">");
 	
-	print("<li>Cotisation d'adh&eacute;sion minimale: ".$ga_tarifs['internet']." euros<br>");
-	print("<li>Avec le bulletin: <br>");
-  print($ga_tarifs['bulletin_metro']." euros pour la France,<br>");
-  print($ga_tarifs['bulletin_etranger']." euros pour les autres pays (DOM/TOM inclus)");
-	print("</ul></div>");
+   print("<li class=\"list-group-item\">Cotisation d'adh&eacute;sion minimale: ".$ga_tarifs['internet']." euros</li>");
+   print("<li class=\"list-group-item\">Avec le bulletin: <br>");
+   print($ga_tarifs['bulletin_metro']." euros pour la France,<br>");
+   print($ga_tarifs['bulletin_etranger']." euros pour les autres pays (DOM/TOM inclus)</li>");
+   print("</ul>");
 }
 
 
@@ -236,24 +308,21 @@ function saisie_adherent($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_
                       $pst_ins_email_perso, $pst_ins_site_web, $pst_ins_telephone, $pst_ins_cache, $pst_ins_idf_agc)
 {
    global $gst_url_readhesion;
-   print("<div  class=TITRE>INSCRIPTION EN LIGNE</div>");
-   print("<div class=IMPORTANT><br><br>Si vous &ecirc;tes d&eacute;j&agrave; adh&eacute;rent cette ann&eacute;e, merci d'utiliser le formulaire de re-adh&eacute;sion depuis l'onglet \"Compte Personnel\" en lieu et place de celui-ci.<br /> Vous pouvez y acc&eacute;der directement en cliquant sur le lien ci-dessous:<br /> <a href=\"$gst_url_readhesion\">$gst_url_readhesion</a><br></div>");
+   print('<div class="panel panel-primary">');
+   print("<div class=\"panel-heading\">INSCRIPTION EN LIGNE</div>");
+   print('<div class="panel-body">');
+   print("<div class=\"alert alert-warning\">Si vous &ecirc;tes d&eacute;j&agrave; adh&eacute;rent cette ann&eacute;e, merci d'utiliser le formulaire de re-adh&eacute;sion depuis l'onglet \"Compte Personnel\" en lieu et place de celui-ci.<br /> Vous pouvez y acc&eacute;der directement en cliquant sur le lien ci-dessous:<br /> <a href=\"$gst_url_readhesion\">$gst_url_readhesion</a></div>");
    $a_time = localtime();
    if ($a_time[4]>5)
    {
-      print("<div class=IMPORTANT>Toute nouvelle adh&eacute;sion &agrave; l'AGC enregistr&eacute;e (par courrier ou en ligne) apr&egrave;s le 1er octobre comptera pour l'ann&eacute;e suivante. Le temps entre la date d'adh&eacute;sion et la fin de l'ann&eacute;e en cours est donc gracieusement offert par l'Association.<br><br></div>");
+      print("<div class=\"alert alert-danger\">Toute nouvelle adh&eacute;sion &agrave; l'AGC enregistr&eacute;e (par courrier ou en ligne) apr&egrave;s le 1er octobre comptera pour l'ann&eacute;e suivante. Le temps entre la date d'adh&eacute;sion et la fin de l'ann&eacute;e en cours est donc gracieusement offert par l'Association.<br><br></div>");
    }
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"inscription\">");
-   
-   print("<div align=center>");
    print("<input type=hidden name=mode value=\"INSCRIPTION\">");
    menu_edition($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_adr2, $pst_ins_cp, $pst_ins_commune, $pst_ins_pays,
                       $pst_ins_email_perso, $pst_ins_site_web, $pst_ins_telephone, $pst_ins_cache, $pst_ins_idf_agc);
-   print("<br></div>");
-  
-   print("<div style=\"position: absolute; top:380px; right:510px; widtch:50px; height:50\"><br>");
-   print("<input type=submit value=\"Valider l'inscription\" ></div>");
-   print('</form>');
+   print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Valider l\'inscription</button></div>');
+   print('</form></div></div>');
 }
 
 /**
@@ -356,15 +425,17 @@ switch ($gst_mode) {
      if (chk_crypt($_POST['code']))
      {
         preinscrit_adherent($dt_ins_date,$pst_ins_nom,$pst_ins_prenom,$pst_ins_adr1,$pst_ins_adr2,$pst_ins_cp,$pst_ins_commune,$pst_ins_commune,$pst_ins_pays,$pst_ins_email_perso,$pst_ins_site_web,$pst_ins_telephone,$pst_ins_cache,$pst_ins_idf_agc,$pst_ins_alea);
-        envoie_mail($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_email_perso, $pst_ins_idf_agc, $pst_ins_alea, $connexionBD->dernier_idf_insere());
-        print("<div class=TITRE>Veuillez consulter votre messagerie et suivre les indications du mail qui vous a &eacute;t&eacute; adress&eacute;</div>");
+        if (envoie_mail($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_email_perso, $pst_ins_idf_agc, $pst_ins_alea, $connexionBD->dernier_idf_insere()))
+			print("<div class=\"alert alert-success\">Veuillez consulter votre messagerie et suivre les indications du mail qui vous a &eacute;t&eacute; adress&eacute;</div>");
+		else
+			print("<div class=\"alert alert-danger\">Probleme d'envoi sur votre mail</div>"); 			
      }
      else
      {
-        print("<div class=IMPORTANT>Mauvais code !!!</div>");
+        print("<div class=\"alert alert-danger\">Mauvais code !!!</div>");
         saisie_adherent($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_adr2, $pst_ins_cp, $pst_ins_commune, $pst_ins_pays,$pst_ins_email_perso, $pst_ins_site_web, $pst_ins_telephone, $pst_ins_cache, $pst_ins_idf_agc);
      } 
   break;
 }  
-print('</body></html>');
+print('</div></body></html>');
 ?>

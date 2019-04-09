@@ -37,7 +37,6 @@ require_once 'chargement/Releveur.php';
  **/
 function liste_mariages_existant ($pconnexionBD,$pi_idf_source,$pi_idf_commune)
 {
-    //$st_requete = "SELECT a.date,p_epx.patronyme,p_epx.prenom,p_epse.patronyme,p_epse.prenom FROM `union`, personne p_epx, personne p_epse, acte a where `union`.idf_type_acte=".IDF_MARIAGE." and `union`.idf_source=$pi_idf_source and `union`.idf_commune=$pi_idf_commune and `union`.idf_epoux=p_epx.idf and p_epx.idf_type_presence=".IDF_PRESENCE_INTV." and `union`.idf_epouse=p_epse.idf and p_epx.idf_acte=a.idf";
     $st_requete = "SELECT a.date,p_epx.patronyme,prenom_epx.libelle,p_epse.patronyme,prenom_epse.libelle FROM `union`, personne p_epx, prenom prenom_epx, personne p_epse, prenom prenom_epse,acte a where `union`.idf_type_acte=".IDF_MARIAGE." and `union`.idf_source=$pi_idf_source and `union`.idf_commune=$pi_idf_commune and `union`.idf_epoux=p_epx.idf and p_epx.idf_type_presence=".IDF_PRESENCE_INTV." and `union`.idf_epouse=p_epse.idf and p_epx.idf_acte=a.idf and p_epx.idf_prenom=prenom_epx.idf and p_epse.idf_prenom=prenom_epse.idf";
     
     $a_lignes_unions = $pconnexionBD->sql_select_multiple($st_requete);
@@ -75,7 +74,7 @@ function liste_divers_existant ($pconnexionBD,$pi_idf_source,$pi_idf_commune)
 
 /**
  * Renvoie la liste des naissances pour la source et la commune donn‚es
- * sous la forme d'un table ou chaque ligne est (date,nom ‚poux, pr‚nom ‚poux,nom ‚pouse, pr‚nom ‚pouse) - Premier temps : seuls les CM sont v‚rifi‚s
+ * sous la forme d'un table ou chaque ligne est (date,nom ‚poux, pr‚nom ‚poux,nom ‚pouse, pr‚nom ‚pouse) - Premier temps : seuls les CM sont vérifiés
  * ou acte divers ayant un couple 
  * @param object $pconnexionBD Identifiant de la connexion BD
  * @param integer $pi_idf_source identifiant de la source
@@ -97,7 +96,7 @@ function liste_naissances_existant ($pconnexionBD,$pi_idf_source,$pi_idf_commune
 
 /**
  * Renvoie la liste des deces pour la source et la commune donn‚es
- * sous la forme d'un table ou chaque ligne est (date,nom ‚poux, pr‚nom ‚poux,nom ‚pouse, pr‚nom ‚pouse) - Premier temps : seuls les CM sont v‚rifi‚s
+ * sous la forme d'un table ou chaque ligne est (date,nom ‚poux, pr‚nom ‚poux,nom ‚pouse, pr‚nom ‚pouse) - Premier temps : seuls les CM sont vérifiés
  * ou acte divers ayant un couple 
  * @param object $pconnexionBD Identifiant de la connexion BD
  * @param integer $pi_idf_source identifiant de la source
@@ -1072,7 +1071,7 @@ function export_index_AD($pconnexionBD,$pst_fichier)
    $st_requete="select p.patronyme,p.prenom,ca.nom,a.annee,ta.nom from personne p join acte a on (p.idf_acte=a.idf) join commune_acte ca on (a.idf_commune=ca.idf) join type_acte ta on (a.idf_type_acte=ta.idf) where p.idf_type_presence=".IDF_PRESENCE_INTV." and a.idf_source=1 and a.idf_type_acte=".IDF_MARIAGE." or a.idf_type_acte=".IDF_NAISSANCE." or a.idf_type_acte=".IDF_DECES ;
    //print("Requete=$st_requete<br>");
    $pconnexionBD->execute_requete($st_requete);
-   $pf = fopen($pst_fichier, "w") or die("<div class=IMPORTANT>Impossible d'&eacute;crire $pst_fichier</div>");
+   $pf = fopen($pst_fichier, "w") or die("<div class=\"alert alert-danger\">Impossible d'&eacute;crire $pst_fichier</div>");
    while (list($st_patro,$st_prenom,$st_commune,$st_annee,$st_type_acte)=$pconnexionBD->ligne_suivante_resultat())
    {
       //print_r($a_ligne);
@@ -1098,60 +1097,135 @@ function export_index_AD($pconnexionBD,$pst_fichier)
  */
 function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_idf_type_acte,$pi_idf_version_nimegue)
 {
-    global $gi_max_taille_upload,$ga_sources,$ga_communes_acte,$gi_annee_recens,$ga_adherents,$ga_types_nimegue,$ga_versions_nimegue; 
-    print("<form id=chargement enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-     print("<div class=TITRE>Chargement/Export des donn&eacute;es d'une commune/paroisse<br></div>"); 
-     print("<div align=center><input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\" >"); 
-     print('<input type="hidden" name="mode" value="CHARGEMENT">');
-     print('<br>Source: <select name=idf_source id=idf_source class="js-select-avec-recherche">');
-     print(chaine_select_options($pi_idf_source,$ga_sources));
-     print('</select><br></div>');
-     print('<div align=center><br>Commune: <select name=idf_commune_acte id=idf_commune_acte class="js-select-avec-recherche" >');
-     print(chaine_select_options($pi_idf_commune_acte,$ga_communes_acte));
-     print('</select><br></div>');
-     $a_releveurs_select = array();
-     foreach ($ga_adherents as $i_idf => $a_champs)
-     {
-        list($st_prenom,$st_nom) = $a_champs;
-        $a_releveurs_select[$i_idf] = "$st_nom $st_prenom";
-     }
-     $a_releveurs_select[0] = "Aucun releveur";
-     print('<div align=center><br>Releveur: <select name=idf_releveur class="js-select-avec-recherche">');
-     print(chaine_select_options($pi_idf_releveur,$a_releveurs_select));
-     print('</select><br></div>');
-     print('<div align=center><br>Type d\'acte Nimegue : <select name=idf_type_acte id="idf_type_acte" class="js-select-avec-recherche">');
-     print(chaine_select_options($pc_idf_type_acte,$ga_types_nimegue));
-     print('</select><br></div>');
-     print('<div align=center><br>Version Nimegue : <select name=idf_version_nimegue id=idf_version_nimegue>');
-     print(chaine_select_options($pi_idf_version_nimegue,$ga_versions_nimegue));
-     print('</select><br></div>');
-     print('<div align=center><br>Fichier: <input name="FichNim" type="file" /><br></div>');
-     print('<div align=center><br><input type="submit" value="Charger le fichier"/><br></div>');
-     print("</form>");
-     print("<form id=export  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
-     print("<input type=\"hidden\" id=\"export_idf_source\" name=\"idf_source\" value=\"\">");
-     print("<input type=\"hidden\" id=\"export_idf_commune\" name=\"idf_commune_acte\" value=\"\">");
-     print("<input type=\"hidden\" id=\"export_idf_type_acte\" name=\"idf_type_acte\" value=\"\">");
-     print('<input type="hidden" name="mode" id="mode_export" value="">'); 
-     print('<div align=center><br><input type="submit" value="Exporter la commune au format sélectionné"/><br></div>');
-     print("</form>");
-     print("<form id=chgt_recens  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
-     print('<input type="hidden" name="mode" id=\"mode_export\" value="">'); 
-     print('<div align=center><br><input type="submit" value="Exporter les index pour les AD""/><br></div>');
-     print("</form>");
-     print("<form id=chargement_recens enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-     print("<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\" >"); 
-     print('<input type="hidden" name="mode" value="CHARGEMENT_RECENS">');
-	 print('<div align=center><br>Source: <select name=idf_source id=idf_source_recense class="js-select-avec-recherche">');
-     print(chaine_select_options($pi_idf_source,$ga_sources));
-     print('</select><br></div>');
-     print('<div align=center><br>Commune: <select name=idf_commune_acte id=idf_commune_recens class="js-select-avec-recherche" >');
-     print(chaine_select_options($pi_idf_commune_acte,$ga_communes_acte));
-     print('</select><br></div>');
-     print("<div align=center><br>Ann&eacute;e:<input type=\"text\" name=\"annee_recens\" id=\"annee_recens\" size=\"4\" maxlength=\"4\" value=\"$gi_annee_recens\" ></div>");
-     print('<div align=center><br>Fichier: <input name="FichRecens" type="file" /><br></div>');
-     print('<div align=center><br><input type="submit" value="Charger le recensement"/><br></div>');
-     print("</form>");
+    global $gi_max_taille_upload,$ga_sources,$ga_communes_acte,$gi_annee_recens,$ga_adherents,$ga_types_nimegue,$ga_versions_nimegue;
+    print('<div class="panel-group">');	
+	  print('<div class="panel panel-primary">');
+    print('<div class="panel-heading">Chargement/Export des donn&eacute;es d\'une commune/paroisse</div>');
+    print('<div class="panel-body">');
+	  print('<div class="panel panel-info">');
+    print('<div class="panel-heading">Chargement/Export BMS/EC/Divers</div>');
+    print('<div class="panel-body">');
+	  print("<form id=chargement enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+    print("<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\" >"); 
+    print('<input type="hidden" name="mode" id="mode" value="CHARGEMENT">');
+    print('<div class="form-group row">'); 
+    print('<label for="idf_source" class="col-form-label col-md-2 col-md-offset-3">Source:</label>');
+    print('<div class="col-md-4">');
+    print('<select name=idf_source id=idf_source class="js-select-avec-recherche form-control">');
+    print(chaine_select_options($pi_idf_source,$ga_sources));
+    print('</select>');
+	  print('</div></div>');
+	
+    print('<div class="form-group row">'); 	
+    print('<label for="idf_commune_acte" class="col-form-label col-md-2 col-md-offset-3">Commune:</label>');
+    print('<div class="col-md-4">');
+    print('<select name=idf_commune_acte id=idf_commune_acte class="js-select-avec-recherche form-control" >');
+    print(chaine_select_options($pi_idf_commune_acte,$ga_communes_acte));
+    print('</select>');
+	  print('</div></div>');
+	
+    $a_releveurs_select = array();
+    foreach ($ga_adherents as $i_idf => $a_champs)
+    {
+      list($st_prenom,$st_nom) = $a_champs;
+      $a_releveurs_select[$i_idf] = "$st_nom $st_prenom";
+    }
+    $a_releveurs_select[0] = "Aucun releveur";
+	  print('<div class="form-group row">'); 
+    print('<label for="idf_releveur" class="col-form-label col-md-2 col-md-offset-3">Releveur:</label>');
+    print('<div class="col-md-4">');
+    print('<select name=idf_releveur id=idf_releveur class="js-select-avec-recherche form-control">');
+    print(chaine_select_options($pi_idf_releveur,$a_releveurs_select));
+    print('</select>');
+	  print('</div></div>');
+	
+	  print('<div class="form-group row">');
+    print('<label for="idf_type_acte" class="col-form-label col-md-2 col-md-offset-3">Type d\'acte Nimegue:</label>');
+    print('<div class="col-md-4">');
+    print('<select name=idf_type_acte id="idf_type_acte" class="js-select-avec-recherche form-control">');
+    print(chaine_select_options($pc_idf_type_acte,$ga_types_nimegue));
+    print('</select>');
+	  print('</div></div>');
+	
+	  print('<div class="form-group row">');
+    print('<label for="idf_version_nimegue" class="col-form-label col-md-2 col-md-offset-3">Version Nimegue:</label>');
+    print('<div class="col-md-4">');
+    print('<select name=idf_version_nimegue id=idf_version_nimegue class="form-control">');
+    print(chaine_select_options($pi_idf_version_nimegue,$ga_versions_nimegue));
+    print('</select>');
+	  print('</div></div>');
+	  
+    print('<div class="form-group row"><div class="custom-file">');  
+    print('<label for="FichNim" class="col-form-label col-md-2 col-md-offset-3">Fichier:</label>');
+    print('<div class="col-md-4">');
+    print('<input name="FichNim" id="FichNim" type="file" class="custom-file-input">');
+    print('</div>');
+    print('</div>');
+    print('</div>');
+	
+    print('<div class="form-row">');
+    print('<div class="col-md-offset-4 col-md-4">');
+    print('<div class="btn-group-vertical">');   
+    print('<button type=submit class="btn btn-primary" ><span class="glyphicon glyphicon-upload"> Charger le fichier</button>');
+    print('<button type=button class="btn btn-primary" id=export_bmsv><span class="glyphicon glyphicon-download"> Exporter la commune au format s&eacute;lectionn&eacute;</button>');
+    print('</div>');
+    print('</div>');
+    print('</div>');	
+	
+    print("</form></div></div>");
+    
+	  print('<div class="panel panel-info">');
+    print('<div class="panel-heading">Export AD</div>');
+    print('<div class="panel-body">');
+    print("<input type=\"hidden\" id=\"export_idf_source\" name=\"idf_source\" value=\"\">");
+    print("<input type=\"hidden\" id=\"export_idf_commune\" name=\"idf_commune_acte\" value=\"\">");
+    print("<input type=\"hidden\" id=\"export_idf_type_acte\" name=\"idf_type_acte\" value=\"\">");
+    print('<input type="hidden" name="mode" id="mode_export" value="">');
+      
+	  print("<form id=export_ad  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
+    print('<input type="hidden" name="mode" id=\"mode_export\" value="">');
+    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-download"> Exporter les index pour les AD</button>');	
+    print("</form>");
+	  print("</div></div>");
+    
+	  print('<div class="panel panel-info">');
+    print('<div class="panel-heading">Chargement recensement</div>');
+    print('<div class="panel-body">');
+	
+    print("<form id=chargement_recens enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+    print("<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"$gi_max_taille_upload\" >"); 
+    print('<input type="hidden" name="mode" value="CHARGEMENT_RECENS">');
+	  print('<div class="form-group row">');
+	  print('<label for="idf_source_recens" class="col-form-label col-md-2 col-md-offset-3">Source:</label>');
+    print('<div class="col-md-4">');
+    print('<select name=idf_source id=idf_source_recens class="js-select-avec-recherche form-control">');
+    print(chaine_select_options($pi_idf_source,$ga_sources));
+    print('</select>');
+	  print('</div></div>');
+	
+	  print('<div class="form-group row">');
+    print('<label for="idf_commune_recens" class="col-form-label col-md-2 col-md-offset-3">Commune:</label>');
+    print('<div class="col-md-4">');
+    print('<select name=idf_commune_acte id=idf_commune_recens class="js-select-avec-recherche form-control" >');
+    print(chaine_select_options($pi_idf_commune_acte,$ga_communes_acte));
+    print('</select>');
+	  print('</div></div>');
+	
+	  print('<div class="form-group row">');
+    print('<label for="annee_recens" class="col-form-label col-md-2 col-md-offset-3">Ann&eacute;e:</label>');
+    print('<div class="col-md-4">');
+    print("<input type=\"text\" name=\"annee_recens\" id=\"annee_recens\" size=\"4\" maxlength=\"4\" value=\"$gi_annee_recens\" class=\"form-control\">");
+	  print('</div></div>');
+	
+	  print('<div class="form-group row"><div class="custom-file">'); 
+    print('<label for="FichRecens" class="col-form-label col-md-2 col-md-offset-3">Fichier:</label>');
+    print('<div class="col-md-4">');
+    print('<input name="FichRecens" id="FichRecens" type="file" class="custom-file-input">');
+    print('</div></div></div>');
+	
+	  print('<button type=submit name=Rechercher class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-upload"> Charger le recensement</button>');
+    
+	  print("</form></div></div></div>");
 
 }     
 
@@ -1254,21 +1328,23 @@ switch($gst_mode)
    break;
 }
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr">');
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<link href='../Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
-print("<link href='../Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='../Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
-print("<link href='../Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
-print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../Commun/menu.js' type='text/javascript'></script>");
-print("<script src='../Commun/jquery.validate.min.js' type='text/javascript'></script>");
-print("<script src='../Commun/additional-methods.min.js' type='text/javascript'></script>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='../css/select2.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='../js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='../js/select2.min.js' type='text/javascript'></script>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>"); 
 print("<script type='text/javascript'>");
 ?>
 $(document).ready(function() {
@@ -1292,11 +1368,51 @@ $(document).ready(function() {
     var source=$('#idf_source option:selected').text();
     var type_acte=$('#idf_type_acte option:selected').text();
     var commune=$('#idf_commune_acte option:selected').text();
-    if (confirm('Etes-vous sûr de recharger le fichier de la commune '+commune+' ('+type_acte+')'+' de la source '+source+' ?'))
+    if ($('#mode').val()=="CHARGEMENT")
     {
+      if (confirm('Etes-vous sûr de recharger le fichier de la commune '+commune+' ('+type_acte+')'+' de la source '+source+' ?'))
+      {
 			 form.submit();
+      }
     }
-    }       
+    else
+       form.submit();    
+    },
+    errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}
+           
   });
   
    $("#chargement_recens").validate({
@@ -1320,16 +1436,50 @@ $(document).ready(function() {
        required: "L'année doit être spécifiée",
        integer: "L'année doit être un entier",
        minlength: "L'année doit comporter 4 chiffes"
-    }
+    },
+	},
+  errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 	},
   submitHandler: function(form) {
     var annee_recens=$('#annee_recens').val();
     var commune=$('#idf_commune_recens option:selected').text();
     if (confirm('Etes-vous sûr de charger les recensements de la commune '+commune+' ('+annee_recens+') ?'))
-    {
+      {
 			 form.submit();
-    }
-    }      
+      }
+  }        
   });
 
   //validation rules
@@ -1345,12 +1495,25 @@ $(document).ready(function() {
 		  form.submit();
 	 }      
   });
+  
+  $("#export_bmsv" ).click(function() {
+    if ($('#idf_version_nimegue').val()==2)
+       $('#mode').val("EXPORTV2");
+    if ($('#idf_version_nimegue').val()==3)
+       $('#mode').val("EXPORTV3");
+    $('#FichNim').rules('add', {
+    required: false   // overwrite an existing rule
+    });       
+    $("#chargement").submit();
+  });
+
 });
 <?php
 print("</script>");
 print("<title>Chargement/Export des donnees</title>");
 print('</head>');
 print('<body>');
+print('<div class="container">');
 require_once("../Commun/menu.php");
 
 switch($gst_mode)
@@ -1456,32 +1619,34 @@ switch($gst_mode)
                   $a_liste_deja_existants = array();
                   $i_nb_actes_charges = 0;
      }
-     print("<div align=center> Temps de traitement : ".(time()-$i_epoch_deb)." s<br></div>");
+     print("<div class=\"text-center\"> Temps de traitement : ".(time()-$i_epoch_deb)." s</div>");
      if ($b_ret)
      {      
-        print("<div align=center>Actes d&eacute;j&agrave; existants :<br><textarea rows=20 cols=80>");
+        print("<label for=\"actes_existants\" class=\"alert alert-warning\">Actes d&eacute;j&agrave; existants:</div><textarea rows=20 cols=80 id=\"actes_existants\">");
         foreach ($a_liste_deja_existants as $st_acte)
           print("$st_acte\n");
         print("</textarea>");
-        print("<br><div align=center>$i_nb_actes_charges actes charg&eacute;s<br>");
+        print("<div class=\"alert alert-success\">$i_nb_actes_charges actes charg&eacute;s<div>");
         ;
      }
      $st_requete = "select distinct count(*) from `union` u  where u.idf_commune = $gi_idf_commune_acte and idf_type_acte=1 and (u.idf_epoux not in (select idf from personne p where p.idf_acte=u.idf_acte) or u.idf_epouse not in (select idf from personne p2 where p2.idf_acte=u.idf_acte))";
      $i_nb_unions_sans_pers = $connexionBD->sql_select1($st_requete);
      if ($i_nb_unions_sans_pers >0)
      {
-        print("<br><div class=\"IMPORTANT\">ERREUR: $i_nb_unions_sans_pers unions avec des personnes inexistantes. Recharger le fichier !<br>"); 
+        print("<div class=\"alert alert-danger\">ERREUR: $i_nb_unions_sans_pers unions avec des personnes inexistantes. Recharger le fichier !</div>"); 
      }
      print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
      print('<input type="hidden" name="mode" value="FORMULAIRE" >');
-     print("<div align=center><input type=submit value=\"Menu Chargement\"></div></div>");
+	 print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Menu chargement</button></div>');
      print("</form>");
+	 
+	 
      print("<form action=\"NotificationCommune.php\" method=\"post\">");     
      print('<input type="hidden" name="mode" value="EDITION_NOTIFICATION" >');
      print("<input type=\"hidden\" name=\"idf_source\" value=$gi_idf_source >");    
      print("<input type=\"hidden\" name=\"idf_commune\" value=$gi_idf_commune_acte >");
-     print("<input type=\"hidden\" name=\"idf_type_acte_nimegue\" value=$gc_idf_type_acte><br>");
-     print("<input type=submit value=\"Notification sur le forum\"></div>");
+     print("<input type=\"hidden\" name=\"idf_type_acte_nimegue\" value=$gc_idf_type_acte>");
+	 print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Notification sur le forum</button></div>');
      print("</form>");
    break;
      
@@ -1497,11 +1662,11 @@ switch($gst_mode)
    $zip->addFile("$gst_repertoire_indexes_AD/index.csv","index_agc.csv");
    $zip->close();
    unlink("$gst_repertoire_indexes_AD/index.csv"); 
-   print("<a href=\"$gst_url_indexes_AD/index.zip\">Export</a><br>");
+   print("<p class=\"text-align\"><a href=\"$gst_url_indexes_AD/index.zip\">Export</a></p>");
    print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
    print('<input type="hidden" name="mode" value="FORMULAIRE"/><br>');   
-   print("<input type=submit value=\"Menu Chargement\"></div>");
-    print("</form>");   
+   print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Menu Chargement/button></div>');
+   print("</form>");   
    break;
    
    case 'CHARGEMENT_RECENS' :
@@ -1536,16 +1701,16 @@ switch($gst_mode)
      chmod($st_fich_dest,0444);
      $i_nb_actes_charges =charge_recensement($st_fich_dest,$gi_idf_commune_acte,$gi_annee_recens,$gi_idf_source,null,$gst_repertoire_chargement_actes);
      $connexionBD->execute_requete("insert into chargement(date_chgt,idf_commune,type_acte_nim,nb_actes) values(now(),$gi_idf_commune_acte,".IDF_RECENS.",$i_nb_actes_charges)");
-     print("<br><div align=center>$i_nb_actes_charges actes charg&eacute;s<br>");
+     print("<div class=\"alert alert-success\">$i_nb_actes_charges actes charg&eacute;s</div>");
      print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
      print('<input type="hidden" name="mode" value="FORMULAIRE" >');
-     print("<div align=center><input type=submit value=\"Menu Chargement\"></div></div>");
+     print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Menu Chargement</button></div>'); 
      print("</form>");
    break; 
    
-   default : print("mode $gst_mode inconnu");   
+   default : print("<div class=\"alert alert-danger\">mode $gst_mode inconnu</div>");   
 }
 print('</form>');
-print('</body></html>');
+print('</div></body></html>');
 
 ?>
