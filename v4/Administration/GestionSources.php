@@ -175,7 +175,7 @@ function menu_liste($pconnexionBD)
    else
      print('<div class="alert alert-danger">Pas de sources</div>');
    print("<input type=hidden name=mode value=\"SUPPRIMER\">");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-trash"></span> Supprimer les sources s&eacute;lectionn&eacute;es</button>'); 
+   print('<button type=submit class="btn btn-danger col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-trash"></span> Supprimer les sources s&eacute;lectionn&eacute;es</button>'); 
    print("</form>");  
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
    print("<input type=hidden name=mode value=\"MENU_AJOUTER\">");
