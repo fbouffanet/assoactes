@@ -11,6 +11,11 @@ require_once '../Commun/ConnexionBD.php';
 require_once('../Commun/PaginationTableau.php');
 require_once('../Commun/commun.php');
 
+$gst_mode = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;
+
+if ($gst_mode=='EXPORTER')
+    exporte_communes_Nim($connexionBD);
+
 print('<!DOCTYPE html>');
 print("<head>");
 print("<title>Gestion des communes</title>");
@@ -180,7 +185,7 @@ print('</head>');
 print('<body>');
 print('<div class="container">');
 
-$gst_mode = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;
+
 if (isset($_GET['mod']))
 {
    $gst_mode='MENU_MODIFIER';
@@ -236,7 +241,7 @@ function menu_liste($pconnexionBD)
    else
    print('<div class="alert alert-danger">Pas de communes</div>');
    print("<input type=hidden name=mode value=\"SUPPRIMER\">");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-trash"></span> Supprimer les communes s&eacute;lectionn&eacute;es</button>');   
+   print('<button type=submit class="btn btn-danger col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-trash"></span> Supprimer les communes s&eacute;lectionn&eacute;es</button>');   
    print("</form>");  
    
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
@@ -449,25 +454,28 @@ function calcule_coordonnees_commune($pconnexionBD,$pa_coordonnees_communes,$pi_
 /**
  * Exporte les communes au format Nimègue
  * @param object $pconnexionBD Connexion à la base
- * @param string $pst_fichier Chemin du fichier à exporter  
+  
  */ 
-function exporte_communes_Nim($pconnexionBD,$pst_fichier) {
+function exporte_communes_Nim($pconnexionBD) {
     $a_communes = $pconnexionBD->sql_select_multiple("select nom, code_insee, numero_paroisse from commune_acte order by nom");
-    $pf = fopen($pst_fichier, "w");
     $a_depts = array('16' => 'Charente',
                      '79' => 'Deux-Sèvres',
                      '86' => 'Vienne',
                      '24' => 'Dordogne',
                      '87' => 'Haute-Vienne'
                );
+	header("Content-Type: text/csv");
+	header('Content-disposition: attachment; filename="Communes.csv"');
+	$fichier = fopen('PHP://output', 'w');		   
     foreach ($a_communes as $a_commune)
     {
        list($st_nom,$i_code_insee,$i_num_paroisse) = $a_commune;
        $i_dept = substr($i_code_insee,0,2);
        $st_dept = array_key_exists($i_dept,$a_depts) ? $a_depts[$i_dept] : 'Inconnu';
-       fwrite($pf,sprintf("NIMEGUEV3;C;%05d-%02d;%s;;%02d;%s\r\n",$i_code_insee,$i_num_paroisse,$st_nom,$i_dept,$st_dept));
+	   fputcsv($fichier,array("NIMEGUEV3","C",sprintf("%05d-%02d",$i_code_insee,$i_num_paroisse),$st_nom,'',sprintf("%02d",$i_dept),$st_dept),SEP_CSV);
     }
-    fclose($pf);
+    fclose($fichier);
+	exit();
 }
 
 
@@ -602,12 +610,7 @@ switch ($gst_mode) {
      }
      menu_liste($connexionBD);
    break;
-   case 'EXPORTER':
-     $st_export_nimv2 = "$gst_repertoire_telechargement/CommunesNim.csv";
-     exporte_communes_Nim($connexionBD,$st_export_nimv2);
-     print("<div class=\"text-center\">Export cr&eacute;&eacute;: <a href=\"./telechargements/CommunesNim.csv\">Communes Nim&egrave;gue</a><br></div>");
-     menu_liste($connexionBD);
-   break;
+   
       
 }  
 
