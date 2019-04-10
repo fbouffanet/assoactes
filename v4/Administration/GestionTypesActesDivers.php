@@ -135,7 +135,7 @@ function menu_liste($pconnexionBD)
    print('</form>');
    print("<form id=nettoyage  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
    print('<input type="hidden" name="mode" value="NETTOYAGE_TYPE_ACTE">'); 
-   print("<button type=submit class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-trash\"></span> Supprimer les types d'actes inutilis&eacute;s</button>");      
+   print("<button type=submit class=\"btn btn-danger col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-trash\"></span> Supprimer les types d'actes inutilis&eacute;s</button>");      
    print("</form></div></div>");
 }
 
