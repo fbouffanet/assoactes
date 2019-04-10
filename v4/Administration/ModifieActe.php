@@ -191,7 +191,7 @@ if (empty($gst_mode))
   print("<form id=\"suppression_acte\" name=\"suppression_acte\" method=\"POST\" action=\"".$_SERVER['PHP_SELF']."\">");
   print("<input type=\"hidden\" name=\"idf_acte\" value=\"$gi_idf_acte\">\n");
   print("<input type=\"hidden\" name=\"MODE\" value=\"SUPPRESSION\">");
-  print('<button type="submit" class="btn btn-danger col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-trash"></span> Supprimer l\'acte</button>');
+  print('<button type="button" class="btn btn-danger col-md-4 col-md-offset-4" id="bouton_supprimer"><span class="glyphicon glyphicon-trash"></span> Supprimer l\'acte</button>');
 
   print("</form>");
 }
