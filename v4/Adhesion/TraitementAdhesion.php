@@ -53,17 +53,14 @@ if ($response['result']['code'] == '00000' )
   }
   else
   {
-	   // le compte génébank doit être recréé
+	   // le compte généabank doit être recréé
 	   $adherent = new Adherent($connexionBD,$i_idf_agc);
-	   if ($st_ancien_statut==ADHESION_SUSPENDU)
-	   {
-		    $adherent->cree_utilisateur_gbk();
-	   }
-	   // c'est forcément une réadhésion
+     if ($st_ancien_statut==ADHESION_SUSPENDU)
+		   $adherent->reactive();
 	   $adherent->initialise_readhesion_en_ligne($st_token);
 	   $adherent->modifie();
-     $adherent->modifie_adhesion();
-     $adherent->envoie_message_readhesion(); 
+	   $adherent->modifie_adhesion();
+	   $adherent->envoie_message_readhesion();
   }
   $st_chaine_log = sprintf("%s;%s;%s;%d;%s",$st_date_log,$_SERVER['REQUEST_URI'],$st_token,$i_idf_agc,$st_type_adhesion);
   $st_requete = "delete from `inscription_prov` where ins_token='$st_token'";
