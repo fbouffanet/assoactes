@@ -503,7 +503,7 @@ $ga_sources=$connexionBD->sql_select_multiple_par_idf("select idf,script_demande
 print benchmark("Temps de recherche");
 
 $i_nb_actes = count($a_actes);
-print("<div class=\"row col-md-12 text-center\">$a_actes_total occurrence(s) trouv&eacute;e(s). ");
+print("<div class=\"row col-md-12 text-center\"><span class=\"badge\">$a_actes_total</span> occurrence(s) trouv&eacute;e(s). ");
 print('<div id="curseur" class="infobulle"></div>');
 print("<div class='form-group col-md-2 col-md-offset-5'>");
 print '<label for=\"per-page\">Nombre de r&eacute;sultats par page</label>';
