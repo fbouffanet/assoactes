@@ -540,7 +540,7 @@ if ($i_nb_actes>0)
           break;
           default:
             $st_icone_td = $st_icone_ninfo;
-            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" target=\"_blank\" data-toggle=\"tooltip\" title=\"$releve\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
+            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" target=\"_blank\" data-toggle=\"tooltip\" title=\"$releve\" class=\"popup\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
         }
       }
       else if ($i_details==1)
@@ -605,8 +605,8 @@ else
 
 print('<div class="row">');
 print('<div class="btn-group col-md-offset-3 col-md-6" role="group">');
-print('<a class="btn btn-primary" href="Recherches.php" role="button">Revenir &agrave; la page de recherche</a>');  
-print('<a class="btn btn-primary" href="Recherches.php?recherche=nouvelle" role="button">Commencer une nouvelle recherche</a>');
+print('<a class="btn btn-primary" href="Recherches.php" role="button"><span class="glyphicon glyphicon-search"></span>  Revenir &agrave; la page de recherche</a>');  
+print('<a class="btn btn-warning" href="Recherches.php?recherche=nouvelle" role="button"><span class="glyphicon glyphicon-erase"></span> Commencer une nouvelle recherche</a>');
 print("</div>");
 print("</div>");
 
