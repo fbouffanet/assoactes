@@ -33,7 +33,7 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
   $pst_nom2 = utf8_encode($pst_nom2);
   $pst_prenom2 = utf8_encode($pst_prenom2);
 	*/
-    print('<form id="recherche_rep_not"  action="'.$_SERVER['PHP_SELF'].'" method="post">');
+    print('<form id="recherche_rep_not"  action="'.$_SERVER['PHP_SELF'].'" method="post" class="form-inline">');
 	print('<input type="hidden" name="mode" value="RECHERCHES">');
     print('<input type="hidden" name="ancienne_page" value="RECHERCHES">');
 	print('<div class="panel panel-info">');
@@ -51,7 +51,7 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
 
 	
 	print("</div>"); // fin ligne
-	print('<div class="form-group row">');
+	print('<div class="form-group row col-md-12">');
 	print('<label for="idf_rep" class="col-form-label col-md-2">R&eacute;pertoire:</label>');
 	print('<div class="col-md-10">');
 	print('<select id="idf_rep" name="idf_rep" class="js-select-avec-recherche form-control">');
@@ -127,16 +127,14 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
 	print('</div>');
 	
 	print("</div></div>"); // fin panel
-	print('<div class="form-row col-md-12">');
-	print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-search"></span> Chercher</button>');
-	print("</div>"); 
 	
+	print('<div class="form-row">');
+    print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');   
+    print('<button type=submit name=Rechercher class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Chercher</button>');
+    print('<button type=button  class="btn btn-warning raz"><span class="glyphicon glyphicon-erase"></span> Effacer tous les Champs</button>');
+    print('</div>');
+    print('</div>'); //fin ligne
 	print("</form>");
-    print('<form id="recherche_rep_not" action="'.$_SERVER['PHP_SELF'].'" method="post">');
-    print('<input type="hidden" name="recherche" value="nouvelle">');
-	print('<button type=submit class="btn btn-warning col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-erase"></span> Vider les champs</button>');
-    print("</form>");
-  
 }
 
   /**
@@ -418,18 +416,13 @@ function affiche_resultats_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi
 		print("<div class=\"text-center alert alert-danger\">Pas de r&eacute;sultats avec les contraintes d&eacute;finies</div>");
 	}
 	print('<div class="text-align">La cote fait r&eacute;f&eacute;rence &agrave; celle du r&eacute;pertoire et non celle de la liasse o&ugrave; se trouve l\'acte</div>');
+	print('<div class="row">');
+    print('<div class="btn-group col-md-offset-3 col-md-6" role="group">');
+    print('<a class="btn btn-primary" href="RechercheRepNot.php" role="button"><span class="glyphicon glyphicon-search"></span>  Rechercher</a>');  
+    print('<a class="btn btn-warning" href="RechercheRepNot.php?recherche=nouvelle" role="button"><span class="glyphicon glyphicon-erase"></span> Commencer une nouvelle recherche</a>');
+    print("</div>");
+    print("</div>");
 	
-	print('<form id="recherche_rep_not_retour" action="'.$_SERVER['PHP_SELF'].'" method="post">');
-	print('<input type="hidden" name="ancienne_page" value="RECHERCHES">');
-	print('<input type="hidden" name="mode" value="MENU">');
-	print('<button type=submit name=Rechercher class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-search"></span> Rechercher</button>');
-	print("</form>");
-	
-	print('<form id="recherche_rep_not_nouveau" action="'.$_SERVER['PHP_SELF'].'" method="post">');
-	print('<input type="hidden" name="mode" value="MENU">');
-	print('<input type="hidden" name="recherche" value="nouvelle">');
-	print('<button type=submit name=Rechercher class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-erase"></span> Commencer une nouvelle recherche</button>');
-	print("</form>");
 }
 
 /******************************************************************************/
@@ -521,52 +514,25 @@ $(document).ready(function() {
   });
 	
   $(".js-select-avec-recherche").select2({ width: '100%' });
+  
+  $('.raz').click(function() {
+        $("#idf_commune_notaire").val('');
+        $("#rayon").val('');
+        $("#idf_rep").val('');
+        $("#type_acte").val('');
+        $("#annee_min").val('');
+		$("#annee_max").val('');
+		$("#nom1").val('');
+		$("#prenom1").val('');
+		$("#nom2").val('');
+		$("#prenom2").val('');
+		$("#paroisse").val('');
+		$("#commentaires").val('');		
+        $('#rech_phonetique').prop('checked', true);        
+    });
 });
 
 </script>
-<style>
-input {
-	padding-left: 2px;
-	padding-right: 2px;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
-input.bouton_centre {
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	display: block;
-    position: relative;
-}
-
-fieldset {
-	margin-left: 20%;
-	margin-right: 20%;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	display: block;
-    position: relative;
-}
-
-input.select_centre {
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	display: block;
-    position: relative;
-}
-div.div_centre {
-	margin-top: 5px;
-	margin-bottom: 5px;
-	text-align: center;
-}
-</style>
 <?php
 print("<title>Recherche dans les r&eacute;pertoires de notaire</title>");
 print('</head>');
