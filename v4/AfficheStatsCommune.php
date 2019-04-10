@@ -409,7 +409,7 @@ switch ($gst_mode) {
         print("Pas d'actes");
      }
      print("<div class=\"row\">");
-	 print("<button type=button id=\"liste_communes\" class=\"btn btn-primary col-md-4 col-md-offset-4\">Liste des communes</button>");
+	 print("<button type=button id=\"liste_communes\" class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-home\"></span> Liste des communes</button>");
      print("</div>");
      $pf=@fopen("$gst_rep_logs/requetes_depouillements.log",'a');
      date_default_timezone_set($gst_time_zone);
