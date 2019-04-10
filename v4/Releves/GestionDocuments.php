@@ -225,7 +225,7 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
    }
    else
      print('<div class="alert alert-danger">Pas de documents</div>');
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-trash"></span> Supprimer les documents s&eacute;lectionn&eacute;s</button>');    
+   print('<button type=submit class="btn btn-danger col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-trash"></span> Supprimer les documents s&eacute;lectionn&eacute;s</button>');    
    print("</form>");  
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
    print("<input type=hidden name=mode value=MENU_AJOUTER>");
