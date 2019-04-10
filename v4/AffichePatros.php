@@ -252,7 +252,7 @@ switch ($gst_mode)
 		
 		print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 		print("<input type=hidden name=mode value=\"DEMANDE\">");
-        print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Rechercher un autre patronyme</button></div>');		
+        print('<div class="form-group row"><button type="submit" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-erase"></span> Rechercher un autre patronyme</button></div>');		
 		print ("</form>");
 	}
 	break;
