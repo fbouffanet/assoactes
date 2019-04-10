@@ -342,7 +342,7 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
        print("</table>");
 	   print("</div>");
 	   print("</div>");
-	   print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4">Compl&eacute;ter</button>');
+	   print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-ok"></span> Compl&eacute;ter</button>');
     }  
     print("</form>");
 	
@@ -350,7 +350,7 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 	print("<input type=\"hidden\" name=\"idf_groupe\" id=\"idf_groupe\" value=\"$pi_idf_groupe\">");
 	print('<input type="hidden" name="mode" id="mode" value="AFFICHER">');
 	print('<div class="row form-group">'); 
-	print('<button type="button" id="annuler" class="btn btn-primary col-md-4 col-md-offset-4">Retourner au menu</button>');
+	print('<button type="button" id="annuler" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-home"></span> Retourner au menu</button>');
 	print("</div>");
 	print('</form>');
 }	
@@ -632,7 +632,7 @@ print('<link rel="shortcut icon" href="images/favicon.ico">');
  });
 
  $( "#exporter" ).click(function() {
-	 window.location.href = 'AJoutVariantes.php?mode=EXPORT';
+	 window.location.href = 'AjoutVariantes.php?mode=EXPORT';
  });	 
   
 });
