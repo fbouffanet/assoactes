@@ -265,7 +265,7 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
      print('<div class="alert alert-danger">Pas de photos</div>');
     
    print("<input type=hidden name=mode value=SUPPRIMER>");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-remove"></span> Supprimer les photos s&eacute;lectionn&eacute;es</button>'); 
+   print('<button type=submit class="btn btn-danger col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-remove"></span> Supprimer les photos s&eacute;lectionn&eacute;es</button>'); 
    print("</form>");  
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
    print("<input type=hidden name=mode value=MENU_AJOUTER>");
