@@ -19,7 +19,7 @@ print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<link href='../css/select2.min.css' type='text/css' rel='stylesheet'> ");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../Commun/wEditor/wEditor.js' type='text/javascript'></script>");
+print("<script src='../js/wEditor/wEditor.js' type='text/javascript'></script>");
 print("<script src='../js/select2.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print("<script type='text/javascript'>");
