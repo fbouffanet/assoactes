@@ -1,0 +1,78 @@
+
+ INTRODUCTION :
+°°°°°°°°°°°°°°°
+
+Renoa wEditor est un logiciel libre distribué sous licence 'GNU General Public
+License'. Cet éditeur permet de générer du texte formaté en HTML tout en étant
+multi-instanciable. Une version de démonstration est à votre disposition à
+l'adresse suivante 'http://santx.free.fr/demo/wEditor/' (voir le code source).
+
+Auteur(s)..: Vincent BATOUFFLET (FRANCE)
+Contact....: santaurus@gmail.com
+
+
+ COMMENT L'UTILISER :
+°°°°°°°°°°°°°°°°°°°°°
+
+Afin d'utiliser cet éditeur, il est nécessaire d'ajouter quelques lignes de code
+à vos pages HTML.
+
+1. CHARGEMENT DU SCRIPT
+
+Ajoutez une nouvelle ligne entre les balises <HEAD> et </HEAD> qui aura pour but
+de charger les différents scripts requis.
+
+<script language="javascript" type="text/javascript" src="./wEditor.js">
+</script>
+
+
+2. CREER UN CHAMP CACHE
+
+Désormais, afin de récupérer le code généré en variable POST ou GET, vous devez
+créer un champ de formulaire masqué (INPUT) et également spécifier son nom en
+temps que second paramètre lors de la création de l'instance de l'éditeur.
+
+<input type="hidden" id="html_field" name="html_field" value="" />
+
+--NOTE--------------------------------------------------------------------------
+ Le champ caché doit OBLIGATOIREMENT précéder la création d'une nouvelle
+ instance de l'éditeur
+ ------------------------------------------------------------------------------
+ Si l'attribut 'value' est renseigné, sa valeur sera utilisée comme texte par
+ défaut de l'éditeur.
+--------------------------------------------------------------------------------
+
+
+3. NOUVELLE INSTANCE
+
+Créez une instance de Renoa wEditor entre les balises <BODY> et </BODY>.
+
+<script language="javascript" type="text/javascript">
+var votre_instance = new wEditor("votre_instance", "nom_champ_caché");
+votre_instance.create();
+</script>
+
+--NOTE--------------------------------------------------------------------------
+ Si cet éditeur est placé dans un conteneur avec une propriété CSS 'float', il
+ ne fonctionnera pas correctement sous les navigateurs utilisant les moteurs
+ Gecko 1.7.x (fonctionne correctement avec le moteur 1.8b2).
+ ------------------------------------------------------------------------------
+ Vous devez spécifier le même nom pour la variable et le nom de l'instance, dans
+ le cas contraire l'éditeur ne fonctionnera pas correctement.
+--------------------------------------------------------------------------------
+
+
+4. AJOUT DE L'EVENEMENT ONSUBMIT SUR LE FORMULAIRE
+
+Afin de pouvoir récupérer et transmettre le texte généré par l'éditeur comme
+une variable GET ou POST, il est nécessaire d'appliquer la fonction
+'validatePost' à l'envoi du formulaire.
+
+<form [...] onsubmit="validatePost();">
+
+
+5. URI (ou URL) ABSOLUE
+
+Pour terminer la configuration vous devez renseigner la variable
+editorAbsoluteUri présente dans le fichier 'wEditor.js' (spécifiez l'endroit ou
+l'éditeur est stocké sur votre serveur).
