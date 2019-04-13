@@ -102,7 +102,7 @@ function menu_liste($pconnexionBD)
 function affiche_statut($pst_jeton)
 {  
    print('<div class="panel panel-primary>');
-   print('<div class="panel-heading">Statut de la transaction identifi&eacute;e par le jeton $pst_jeton</div>'); 
+   print('<div class="panel-heading">Statut de la transaction identifi&eacute;e par le jeton '.$pst_jeton.'</div>'); 
    print('<div class="panel-body">');
    print("<div align=center>");
    $payline = new paylineSDK(); 
