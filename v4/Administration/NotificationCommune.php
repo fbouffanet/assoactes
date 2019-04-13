@@ -251,24 +251,23 @@ switch ($gst_mode) {
    {
        // Retour a la page de gestion de donnees
        print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-       print("<input type=hidden name=mode value=SELECTION_NOTIFICATION>");
+       print("<input type=hidden name=mode value=SELECTION_NOTIFICATION>");       	       
+       EnvoieNotification($connexionBD,$gi_idf_commune,$gi_idf_type_acte,$gst_texte);  
        print('<div class="form-row">'); 
        print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Retour au menu de notification</button>');
-       print("</div>"); 	       
-       EnvoieNotification($connexionBD,$gi_idf_commune,$gi_idf_type_acte,$gst_texte);  
-       print("</form>");
-       
+       print("</div>"); 
+	   print("</form>");       
    }
    else
    {
        
        print("<form action=\"GestionDonnees.php\" method=\"post\">");
-       print("<input type=hidden name=mode value=FORMULAIRE>");
+       print("<input type=hidden name=mode value=FORMULAIRE>"); 	   
+       EnvoieNotification($connexionBD,$gi_idf_commune,$gi_idf_type_acte_nimegue,$gst_texte);  
        print('<div class="form-row">'); 
        print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Retour au menu chargement/export</button>');
-       print("</div>"); 	   
-       EnvoieNotification($connexionBD,$gi_idf_commune,$gi_idf_type_acte_nimegue,$gst_texte);  
-       print("</form>");
+       print("</div>");
+	   print("</form>");
    }
    unset($_SESSION['idf_type_acte_nimegue']);
    break;
