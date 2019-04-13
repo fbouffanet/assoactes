@@ -1068,7 +1068,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
 function export_index_AD($pconnexionBD,$pst_fichier)
 {
    $a_ligne = array();
-   $st_requete="select p.patronyme,p.prenom,ca.nom,a.annee,ta.nom from personne p join acte a on (p.idf_acte=a.idf) join commune_acte ca on (a.idf_commune=ca.idf) join type_acte ta on (a.idf_type_acte=ta.idf) where p.idf_type_presence=".IDF_PRESENCE_INTV." and a.idf_source=1 and a.idf_type_acte=".IDF_MARIAGE." or a.idf_type_acte=".IDF_NAISSANCE." or a.idf_type_acte=".IDF_DECES ;
+   $st_requete="select p.patronyme,prn.libelle,ca.nom,a.annee,ta.nom from personne p join prenom prn on (p.idf_prenom=prn.idf) join acte a on (p.idf_acte=a.idf) join commune_acte ca on (a.idf_commune=ca.idf) join type_acte ta on (a.idf_type_acte=ta.idf) where p.idf_type_presence=".IDF_PRESENCE_INTV." and a.idf_source=1 and a.idf_type_acte=".IDF_MARIAGE." or a.idf_type_acte=".IDF_NAISSANCE." or a.idf_type_acte=".IDF_DECES ;
    //print("Requete=$st_requete<br>");
    $pconnexionBD->execute_requete($st_requete);
    $pf = fopen($pst_fichier, "w") or die("<div class=\"alert alert-danger\">Impossible d'&eacute;crire $pst_fichier</div>");
@@ -1180,10 +1180,9 @@ function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_i
     print("<input type=\"hidden\" id=\"export_idf_source\" name=\"idf_source\" value=\"\">");
     print("<input type=\"hidden\" id=\"export_idf_commune\" name=\"idf_commune_acte\" value=\"\">");
     print("<input type=\"hidden\" id=\"export_idf_type_acte\" name=\"idf_type_acte\" value=\"\">");
-    print('<input type="hidden" name="mode" id="mode_export" value="">');
       
 	  print("<form id=export_ad  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
-    print('<input type="hidden" name="mode" id=\"mode_export\" value="">');
+    print('<input type="hidden" name="mode" id=\"mode_export\" value="EXPORT_INDEX_AD">');
     print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-download"> Exporter les index pour les AD</button>');	
     print("</form>");
 	  print("</div></div>");
@@ -1651,7 +1650,7 @@ switch($gst_mode)
    break;
      
    case 'EXPORT_INDEX_AD':
-   print("<div align=center>");                                        
+   print('<div class="text-center">');   
    export_index_AD($connexionBD,"$gst_repertoire_indexes_AD/index.csv");
    $zip = new ZipArchive();
    $st_chemin_zip="$gst_repertoire_indexes_AD/index.zip";
@@ -1662,7 +1661,7 @@ switch($gst_mode)
    $zip->addFile("$gst_repertoire_indexes_AD/index.csv","index_agc.csv");
    $zip->close();
    unlink("$gst_repertoire_indexes_AD/index.csv"); 
-   print("<p class=\"text-align\"><a href=\"$gst_url_indexes_AD/index.zip\">Export</a></p>");
+   print("<p class=\"text-center\"><a href=\"$gst_url_indexes_AD/index.zip\" class=\"btn btn-primary\">Export</a></p>");
    print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
    print('<input type="hidden" name="mode" value="FORMULAIRE"/><br>');   
    print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Menu Chargement/button></div>');
