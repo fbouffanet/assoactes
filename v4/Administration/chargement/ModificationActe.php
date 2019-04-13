@@ -424,12 +424,12 @@ public function commentaires_demandeur()
 
 {
      $st_chaine = "<fieldset><legend>Commentaires &agrave destination du valideur:</legend>";
-     $st_chaine .= "<div class=\"text-center\">Commentaires:<textarea name=cmt_modif rows=4 cols=80 class=\"form-control\">";
+     $st_chaine .= "<div class=\"text-center\">Commentaires:<textarea name=cmt_modif rows=4 cols=80 class=\"form-control jqte_edit\">";
      $st_chaine .= $this -> st_cmt_modif;
      $st_chaine .= "</textarea></div>";
      $st_chaine .= "</fieldset>";
      $st_chaine .= "<fieldset><legend>Commentaires &agrave destination du demandeur:</legend>";
-     $st_chaine .= "<div class=\"text-center\">Commentaires:<textarea name=cmt_valideur rows=4 cols=80 class=\"form-control\">";
+     $st_chaine .= "<div class=\"text-center\">Commentaires:<textarea name=cmt_valideur rows=4 cols=80 class=\"form-control jqte_edit\">";
      $st_chaine .= "</textarea></div>";
      $st_chaine .= "</fieldset>";
      return $st_chaine;
@@ -472,7 +472,7 @@ public function formulaire_refus()
      $st_chaine .= "<input type=\"hidden\" name=\"MODE\" value=\"REFUS\">\n";
      $st_chaine .= sprintf("<input type=\"hidden\" name=\"idf_modification\" value=\"%d\">", $this -> i_idf);
 	 $st_chaine .= '<div class="lib_erreur">';
-     $st_chaine .= "<label for=\"motif_refus\">Motif du refus:</Label><textarea name=motif_refus id=motif_refus rows=10 cols=80 class=\"form-control \"></textarea>\n";
+     $st_chaine .= "<label for=\"motif_refus\">Motif du refus:</Label><textarea name=motif_refus id=motif_refus rows=10 cols=80 class=\"form-control jqte_edit\"></textarea>\n";
 	 $st_chaine .= '</div>';
      $st_chaine .= "<button type=\"submit\" class=\"col-md-4 col-md-offset-4 alert alert-danger\"><span class=\"glyphicon glyphicon-remove\"></span> Refuser la demande</button>\n";
      $st_chaine .= "</form>\n";
