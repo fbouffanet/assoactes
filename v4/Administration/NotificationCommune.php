@@ -16,12 +16,13 @@ print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-te-1.4.0.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<link href='../css/select2.min.css' type='text/css' rel='stylesheet'> ");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../js/wEditor/wEditor.js' type='text/javascript'></script>");
 print("<script src='../js/select2.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery-te-1.4.0.min.js' type='text/javascript'></script>");
 print("<script type='text/javascript'>");
 ?>
 $(document).ready(function() {
@@ -34,6 +35,17 @@ $(document).ready(function() {
     var c = confirm("Etes-vous sûr de notifier le chargement des actes de "+type_acte+" de la commune "+commune+" (source "+source+") ?");
     return c; 
   });
+  
+  $("textarea.jqte_edit").jqte();
+
+  
+	// settings of status
+	var jqteStatus = true;
+	$(".status").click(function()
+	{
+		jqteStatus = jqteStatus ? false : true;
+		$('textarea.jqte_edit').jqte({"status" : jqteStatus})
+	});  
 });
 <?php
 print("</script>");
@@ -80,7 +92,7 @@ function AfficheSelectionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commu
   print(chaine_select_options($pi_idf_type_acte,$ga_types_nimegue));
   print('</select></div></div>');
   print('<div class="form-row">');   
-  print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-send"></span> Notifier un chargement</button>');
+  print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-envelope"></span> Notifier un chargement</button>');
   print('</div>');
   print("</form></div></div>"); 
 }
@@ -134,14 +146,10 @@ function AfficheEditionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commune
   $st_texte .= "Pour rappel, la liste compl&egrave;te des d&eacute;pouillements se trouve &agrave; l'adresse: $gst_url_site/AfficheStatsCommune.php <br /><br />";
   $st_texte .= "Cordialement<br /><br />";
   $st_texte .= "	Les responsables de la base AGC";
-  print("<input type=\"hidden\" id=\"texte\" name=\"texte\" value=\"$st_texte\" />");
-  print('<div align=center><script language="javascript" type="text/javascript">');
-  print('var zone_reponse = new wEditor("zone_reponse", "texte");');
-  print('zone_reponse.create()');
-  print('</script>');
+  print('<textarea name="texte" id="texte" class="jqte_edit form-control" rows=20 cols=80>'.$st_texte.'</textarea>');
   print("<input type=hidden name=mode value=ENVOI_NOTIFICATION>");
   print('<div class="form-row">'); 
-  print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-send"></span> Envoyer la notification</button>');
+  print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-envelope"></span> Envoyer la notification</button>');
   print("</div>");
   print ("</form>");
   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
@@ -157,7 +165,7 @@ function AfficheEditionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commune
  * @param object $pconnexionBD object connexion BD
  * @param integer $pi_idf_commune identifiant de la commune 
  * @param integer $pi_idf_type_acte identifiant du type d'acte
- * @param string $pst_msg_html message html … envoyer 
+ * @param string $pst_msg_html message html à envoyer 
  * @global string $gst_url_site adresse du site  
  */
 function EnvoieNotification($pconnexionBD,$pi_idf_commune,$pi_idf_type_acte,$pst_msg_html) {
