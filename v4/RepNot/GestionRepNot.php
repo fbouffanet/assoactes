@@ -56,10 +56,12 @@ print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<link href='../css/select2.min.css' type='text/css' rel='stylesheet'> ");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/jquery.validate.min.js' type='text/javascript'></script>");
 print("<script src='../js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
+print("<script src='../js/select2.min.js' type='text/javascript'></script>");
 
 ?>
 <script type='text/javascript'>
@@ -324,6 +326,8 @@ $("#suppression_repertoires").validate({
   $("#annuler" ).click(function() {
     window.location.href = 'GestionRepNot.php';
 });
+
+  $(".js-select-avec-recherche").select2();
 }); 
 </script>
 <?php
@@ -448,14 +452,14 @@ function menu_liste($pconnexionBD)
 	$a_types = $pconnexionBD->sql_select($st_requete);
 	print('<div class="form-row col-md-12">');
 	print('<div class="form-group col-md-5">');
-	print("<label for=\"type_acte_orig\">Remplacer le type:</label><select name=\"type_acte_orig\" id=\"type_acte_orig\" class=\"form-control\"><option></option>");
+	print("<label for=\"type_acte_orig\">Remplacer le type:</label><select name=\"type_acte_orig\" id=\"type_acte_orig\" class=\"form-control js-select-avec-recherche\"><option></option>");
 	foreach ($a_types as $st_type)
 	{
 		print("<option>$st_type</option>\n");
 	}
 	print("</select></div>");
 	print('<div class="form-group col-md-5">');
-	print("<label for\"type_acte_dest\">par le type:</label><select name=\"type_acte_dest\" id=\"type_acte_dest\" class=\"form-control\"><option></option>");	
+	print("<label for\"type_acte_dest\">par le type:</label><select name=\"type_acte_dest\" id=\"type_acte_dest\" class=\"form-control js-select-avec-recherche\"><option></option>");	
 	foreach ($a_types as $st_type)
    {
 		print("<option>$st_type</option>\n");
@@ -805,12 +809,11 @@ switch ($gst_mode) {
   break;
   case 'FUSIONNER_TYPE':
      $st_type_acte_orig = trim($_POST['type_acte_orig']);
-		 $st_type_acte_orig = substr($st_type_acte_orig,0,40);
-		 $st_type_acte_orig= mysql_real_escape_string($st_type_acte_orig);
+	 $st_type_acte_orig = substr($st_type_acte_orig,0,40);
      $st_type_acte_dest = trim($_POST['type_acte_dest']);
-		 $st_type_acte_dest = substr($st_type_acte_dest,0,40);
-		 $st_type_acte_dest= mysql_real_escape_string($st_type_acte_dest);
-     $st_requete = "update `rep_not_actes` set `type`='$st_type_acte_dest' where `type`='$st_type_acte_orig'";
+	 $st_type_acte_dest = substr($st_type_acte_dest,0,40);
+	 $connexionBD->initialise_params(array(':type_orig'=>$st_type_acte_orig,':type_dest'=>$st_type_acte_dest));
+	 $st_requete = "update `rep_not_actes` set `type`=:type_dest where `type`=:type_orig";
      try
      {
         $connexionBD->execute_requete($st_requete);
