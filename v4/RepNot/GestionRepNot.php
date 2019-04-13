@@ -467,7 +467,7 @@ function menu_liste($pconnexionBD)
    print("</select>\n");
 	print("</div>");
 	print('<div class="form-group col-md-2">');
-	print("<button type=submit class=\"btn btn-primary\">Fusionner</button></div></div>");
+	print("<button type=submit class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-arrow-left\"></span> Fusionner</button></div></div>");
 	print('</form>');
 	print('</div></div>');
   
