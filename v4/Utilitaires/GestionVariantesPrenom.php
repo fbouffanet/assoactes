@@ -124,9 +124,10 @@ function ajoute_variantes($pconnexionBD,$pi_idf_groupe,$pa_variantes)
 {
    $a_valeurs = array();
    $a_params = array();
+   $a_variantes = array_unique(array_map('trim',$pa_variantes));
    $i=0;
    $st_requete = "insert variantes_prenom(idf_groupe,libelle) values ";
-   foreach($pa_variantes as $st_variante)
+   foreach($a_variantes as $st_variante)
    {
       $a_params[":prenom$i"] = $st_variante;
       $a_valeurs[]=sprintf("(%d,:prenom%d)",$pi_idf_groupe,$i);
@@ -431,7 +432,7 @@ $(document).ready(function() {
  
  $( "#vider" ).click(function() {  
    $('#idf_groupe').val('');
-   $('#variante_a_chercher').val('');
+   $('#variante').val('');
    $('#variantes').val('');
    $('#idf_groupe_a_fusionner').val('');
    $('#variante_a_fusionner').val('');
