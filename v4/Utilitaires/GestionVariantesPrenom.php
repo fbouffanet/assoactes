@@ -300,7 +300,7 @@ $(document).ready(function() {
         })        
       },
       select: function (event, ui) {
-            $('#variante').val(ui.item.value);
+            $('#variante_a_fusionner').val(ui.item.value);
             maj_variantes($('#variante_a_fusionner').val(),'#variantes_a_fusionner','#idf_groupe_a_fusionner','#cmt_retour_a_fusionner');
             return false;
  
