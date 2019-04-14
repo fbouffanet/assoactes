@@ -300,7 +300,7 @@ $(document).ready(function() {
         })        
       },
       select: function (event, ui) {
-            $('#variante').val(ui.item.value);
+            $('#variante_a_fusionner').val(ui.item.value);
             maj_variantes($('#variante_a_fusionner').val(),'#variantes_a_fusionner','#idf_groupe_a_fusionner','#cmt_retour_a_fusionner');
             return false;
  
@@ -432,7 +432,7 @@ $(document).ready(function() {
  
  $( "#vider" ).click(function() {  
    $('#idf_groupe').val('');
-   $('#variante_a_chercher').val('');
+   $('#variante').val('');
    $('#variantes').html('');
    $('#idf_groupe_a_fusionner').val('');
    $('#variante_a_fusionner').val('');
