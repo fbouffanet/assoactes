@@ -433,10 +433,10 @@ $(document).ready(function() {
  $( "#vider" ).click(function() {  
    $('#idf_groupe').val('');
    $('#variante').val('');
-   $('#variantes').val('');
+   $('#variantes').html('');
    $('#idf_groupe_a_fusionner').val('');
    $('#variante_a_fusionner').val('');
-   $('#variantes_a_fusionner').val('');
+   $('#variantes_a_fusionner').html('');
   });
 
  $( "#exporter" ).click(function() {
