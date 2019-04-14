@@ -7,12 +7,14 @@ require_once('../Commun/VerificationDroits.php');
 verifie_privilege(DROIT_VARIANTES);
 require_once('../Commun/ConnexionBD.php');
 
-$gst_mode = empty($_POST['mode']) ? 'AFFICHER': $_POST['mode'] ;
+$gst_get_mode = empty($_GET['mode']) ? 'AFFICHER': $_GET['mode'] ;
+$gst_mode = empty($_POST['mode']) ? $gst_get_mode: $_POST['mode'] ;
 $gi_idf_groupe = empty($_POST['idf_groupe']) ? '': $_POST['idf_groupe'] ;
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 switch ($gst_mode) {
  case 'EXPORT' :
+   
    header("Content-type: text/csv");
    header("Expires: 0");
    header("Pragma: public");
@@ -75,9 +77,9 @@ function affiche_menu($pconnexionBD,$pst_infos,$pi_idf_groupe) {
   print("<button type=\"button\" id=\"modifier\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-edit\"></span> Modifier</button>");
   print("<button type=\"button\" id=\"completer\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-transfer\"></span> Compl&eacute;ter</button>");
   print("<button type=\"button\" id=\"supprimer\" class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span> Supprimer</button>");
-  print("<button type=\"button\" id=\"fusionner\" class=\"btn btn-warning\"><span class=\"glyphicon glyphicon-arrow-left\"> Fusionner</button>");   
+  print("<button type=\"button\" id=\"fusionner\" class=\"btn btn-warning\"><span class=\"glyphicon glyphicon-arrow-left\"></span>  Fusionner</button>");   
   print("<button type=\"button\" id=\"vider\" class=\"btn btn-warning\"><span class=\"glyphicon glyphicon-erase\"></span> Vider</button>");
-  print("<button type=\"button\" id=\"exporter\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon glyphicon-download-alt\"> Exporter les variantes</button>");
+  print("<button type=\"button\" id=\"exporter\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon glyphicon-download-alt\"></span> Exporter les variantes</button>");
   $a_prenoms = $pconnexionBD->sql_select("select libelle from prenom order by idf desc limit 20");
   if (count($a_prenoms)>0)
   {     
@@ -437,8 +439,7 @@ $(document).ready(function() {
   });
 
  $( "#exporter" ).click(function() {
-	 $("#mode").val('EXPORT');
-     $("#variantes_prenom").submit();
+	 window.location.href = 'GestionVariantesPrenom.php?mode=EXPORT';
  });	 
   
 });
