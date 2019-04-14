@@ -1618,14 +1618,15 @@ switch($gst_mode)
                   $a_liste_deja_existants = array();
                   $i_nb_actes_charges = 0;
      }
-     print("<div class=\"text-center\"> Temps de traitement : ".(time()-$i_epoch_deb)." s</div>");
+     print('<div class="text-center"> Temps de traitement : '.(time()-$i_epoch_deb).' s</div>');
      if ($b_ret)
      {      
-        print("<label for=\"actes_existants\" class=\"alert alert-warning\">Actes d&eacute;j&agrave; existants:</div><textarea rows=20 cols=80 id=\"actes_existants\">");
+        print('<label for="actes_existants" class="alert alert-warning">Actes d&eacute;j&agrave; existants:</label>');
+		print('<div class="text-center"><textarea rows=20 cols=80 id="actes_existants">');
         foreach ($a_liste_deja_existants as $st_acte)
           print("$st_acte\n");
-        print("</textarea>");
-        print("<div class=\"alert alert-success\">$i_nb_actes_charges actes charg&eacute;s<div>");
+        print("</textarea></div>");
+        print("<div class=\"alert alert-success\" role=\"alert\">$i_nb_actes_charges actes charg&eacute;s</div>");
         ;
      }
      $st_requete = "select distinct count(*) from `union` u  where u.idf_commune = $gi_idf_commune_acte and idf_type_acte=1 and (u.idf_epoux not in (select idf from personne p where p.idf_acte=u.idf_acte) or u.idf_epouse not in (select idf from personne p2 where p2.idf_acte=u.idf_acte))";
@@ -1636,7 +1637,7 @@ switch($gst_mode)
      }
      print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
      print('<input type="hidden" name="mode" value="FORMULAIRE" >');
-	 print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Menu chargement</button></div>');
+	 print('<div class="form-group row"><button type="submit" class="btn btn-primary col-md-4 col-md-offset-4">Menu chargement</button></div>');
      print("</form>");
 	 
 	 
@@ -1645,7 +1646,7 @@ switch($gst_mode)
      print("<input type=\"hidden\" name=\"idf_source\" value=$gi_idf_source >");    
      print("<input type=\"hidden\" name=\"idf_commune\" value=$gi_idf_commune_acte >");
      print("<input type=\"hidden\" name=\"idf_type_acte_nimegue\" value=$gc_idf_type_acte>");
-	 print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Notification sur le forum</button></div>');
+	 print('<div class="form-group row"><button type="submit" class="btn btn-primary col-md-4 col-md-offset-4">Notification sur le forum</button></div>');
      print("</form>");
    break;
      
@@ -1709,7 +1710,6 @@ switch($gst_mode)
    
    default : print("<div class=\"alert alert-danger\">mode $gst_mode inconnu</div>");   
 }
-print('</form>');
 print('</div></body></html>');
 
 ?>
