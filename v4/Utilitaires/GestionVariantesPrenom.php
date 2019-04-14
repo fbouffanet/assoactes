@@ -258,6 +258,7 @@ $(document).ready(function() {
                 $('#variantes').append(variantes);
                 $('#idf_groupe').val(reponse['idf_groupe']);
             }
+
           }
         })        
       },
@@ -432,10 +433,10 @@ $(document).ready(function() {
  $( "#vider" ).click(function() {  
    $('#idf_groupe').val('');
    $('#variante_a_chercher').val('');
-   $('#variantes').val('');
+   $('#variantes').html('');
    $('#idf_groupe_a_fusionner').val('');
    $('#variante_a_fusionner').val('');
-   $('#variantes_a_fusionner').val('');
+   $('#variantes_a_fusionner').html('');
   });
 
  $( "#exporter" ).click(function() {
