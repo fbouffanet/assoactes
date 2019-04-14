@@ -611,11 +611,11 @@ print('<link rel="shortcut icon" href="images/favicon.ico">');
    $('#idf_groupe').val('');
    $('#variante_a_chercher').val('');
    $('#majeure').val('');
-   $('#variantes').val('');
+   $('#variantes').html('');
    $('#idf_groupe_a_fusionner').val('');
    $('#variante_a_fusionner').val('');
    $('#majeure_a_fusionner').val('');
-   $('#variantes_a_fusionner').val('');
+   $('#variantes_a_fusionner').html('');
   });
   
   $( "#menu_completer" ).validate({
