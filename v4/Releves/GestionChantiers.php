@@ -360,18 +360,24 @@ function menu_edition($pi_id_document,$pi_id_releveur,$pi_type_acte,$pst_convent
 	print('</div>');
    
 	print('<div class="form-group row">');   
-	print('<label for="type_acte" class="col-form-label col-md-2">Type d\'acte</label>');
+	print('<label for="type_acte[]" class="col-form-label col-md-2">Type d\'acte</label>');
 	print('<div class="col-md-10">');
 	print('<div class="form-check">');
 	$st_checked = $pi_type_acte & 1 ? 'checked' : '';
 	print("<input type=checkbox name=type_acte[] id=type_bapteme value=\"B\" $st_checked class=\"form-check-input\">");
 	print('<label class="form-check-label" for="type_bapteme">Bapt&ecirc;me</label>');
+	print('</div>');
+    print('<div class="form-check">');
 	$st_checked = $pi_type_acte & 2 ? 'checked' : '';
 	print("<input type=checkbox name=type_acte[] id=type_mariage value=\"M\" $st_checked class=\"form-check-input\">");
 	print('<label class="form-check-label" for="type_mariage">Mariage</label>');
+	print('</div>');
+    print('<div class="form-check">');
 	$st_checked = $pi_type_acte & 4 ? 'checked' : '';
 	print("<input type=checkbox name=type_acte[] id=type_sepulture value=\"S\" $st_checked class=\"form-check-input\">");
 	print('<label class="form-check-label" for="type_sepulture">S&eacute;pulture</label>');
+	print('</div>');
+    print('<div class="form-check">');
 	$st_checked = $pi_type_acte & 8 ? 'checked' : '';
 	print("<input type=checkbox name=type_acte[] id=type_divers value=\"V\" $st_checked class=\"form-check-input\">");
 	print('<label class="form-check-label" for="type_divers">Divers</label>');
