@@ -328,7 +328,10 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
     print('</div>');
 	print('</div>');
     if (count($a_variantes_ajouter)==0)
+	{	
 		print('<div class="alert alert-danger">Pas de variantes trouv&eacute;es qui ne sont pas d&eacute;j&agrave; connues</div>');
+		print('<button type="button" id="annuler" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-home"></span> Retourner au menu</button>');
+	}
 	else
     {
 	   print('<div class="row form-group">'); 	 
@@ -337,22 +340,17 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 	   print('<table class="table table-bordered table-striped">');
        foreach ($a_variantes_ajouter as $st_patronyme)
        {
-         print("<tr><td>$st_patronyme</td><td> <input type=checkbox class=\"groupe_patros\" name=\"variantes[]\"  value=\"$st_patronyme\"></td></tr>");
+         print("<tr><td>$st_patronyme</td><td><div class=\"lib_erreur\"><div class=\"checkbox\"><label><input type=checkbox class=\"groupe_patros form-check-input\" name=\"variantes[]\" id=\"$st_patronyme\"></label></div></div></td></tr>");
        }
        print("</table>");
 	   print("</div>");
 	   print("</div>");
+	   print('<div class="btn-group col-md-8 col-md-offset-2" role="group">');
 	   print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-ok"></span> Compl&eacute;ter</button>');
-    }  
+       print('<button type="button" id="annuler" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-home"></span> Retourner au menu</button>');
+	   print("</div>");
+	}  
     print("</form>");
-	
-	print('<form id="variantes_prenom" method="post" action="'.$_SERVER['PHP_SELF'].'">');	
-	print("<input type=\"hidden\" name=\"idf_groupe\" id=\"idf_groupe\" value=\"$pi_idf_groupe\">");
-	print('<input type="hidden" name="mode" id="mode" value="AFFICHER">');
-	print('<div class="row form-group">'); 
-	print('<button type="button" id="annuler" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-home"></span> Retourner au menu</button>');
-	print("</div>");
-	print('</form>');
 }	
 
 print('<!DOCTYPE html>');
@@ -628,12 +626,16 @@ print('<link rel="shortcut icon" href="images/favicon.ico">');
 			'variantes[]': {
 				require_from_group: 'Choisir au moins un patronyme'
 			}
-		}		
+		}
  });
 
  $( "#exporter" ).click(function() {
 	 window.location.href = 'AjoutVariantes.php?mode=EXPORT';
- });	 
+ });
+
+$('#annuler').click(function() {
+      window.location.href='<?php echo $_SERVER['PHP_SELF'] ?>';
+	});  
   
 });
 </script>
