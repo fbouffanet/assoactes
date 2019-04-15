@@ -33,14 +33,16 @@ switch ($gst_mode) {
 /**
  * Affiche le menu formulaire
 * @param object $pconnexionBD  Connexion à la base
-* @param string $pst_infos Infos à afficher
 * @param integer $pi_idf_groupe Identifiant du groupe à ajouter 
  */ 
-function affiche_menu($pconnexionBD,$pst_infos,$pi_idf_groupe) {
+function affiche_menu($pconnexionBD,$pi_idf_groupe) {
+  global $gst_infos,$gst_erreurs;	
   print('<form id="variantes_prenom" method="post" action="'.$_SERVER['PHP_SELF'].'">');
   
-  if (!empty($pst_infos))
-   print("<div id=\"infos\" class=\"alert alert-success\">$pst_infos</div>");
+  if (!empty($gst_infos))
+      print("<div id=\"infos\" class=\"alert alert-success\">$gst_infos</div>");
+  if (!empty($gst_erreurs))
+		print("<div id=\"erreurs\" class=\"alert alert-danger\">$gst_erreurs</div>");
   
   print('<div class="row col-md-12">');
   
@@ -122,21 +124,37 @@ function affiche_menu($pconnexionBD,$pst_infos,$pi_idf_groupe) {
 */
 function ajoute_variantes($pconnexionBD,$pi_idf_groupe,$pa_variantes)
 {
+   global $gst_infos,$gst_erreurs;
    $a_valeurs = array();
    $a_params = array();
-   $a_variantes = array_unique(array_map('trim',$pa_variantes));
-   $i=0;
-   $st_requete = "insert variantes_prenom(idf_groupe,libelle) values ";
-   foreach($a_variantes as $st_variante)
+   $i=0;   
+   foreach($pa_variantes as $st_variante)
    {
-      $a_params[":prenom$i"] = $st_variante;
-      $a_valeurs[]=sprintf("(%d,:prenom%d)",$pi_idf_groupe,$i);
-      $i++;
+	  $st_variante=ucfirst(strtolower(trim($st_variante)));
+	  if ($st_variante=="") continue;
+	  $a_params_precedents=$pconnexionBD->params();
+	  $pconnexionBD->initialise_params(array(':variante'=>$st_variante));
+	  $i_nb_variantes =$pconnexionBD->sql_select1("select count(idf_groupe) from variantes_prenom where libelle = :variante collate latin1_general_ci");
+	  $pconnexionBD->initialise_params($a_params_precedents);
+	  if ($i_nb_variantes>0) 
+		  $gst_erreurs.= "Variante $st_variante d&eacute;j&agrave; r&eacute;f&eacute;renc&eacute;e. Elle ne sera pas ajout&eacute;e<br>"; 
+	  else
+      {
+        $a_params[":prenom$i"] = $st_variante;
+        $a_valeurs[]=sprintf("(%d,:prenom%d)",$pi_idf_groupe,$i);
+        $i++;
+	  }
    }
-   $st_valeurs=join(',',$a_valeurs);
-   $st_requete .= $st_valeurs;
-   $pconnexionBD->ajoute_params($a_params);
-   $pconnexionBD->execute_requete($st_requete);
+   if (count($a_valeurs)>0)
+   {
+      $st_requete = "insert variantes_prenom(idf_groupe,libelle) values ";	   
+	  $st_valeurs=join(',',$a_valeurs);
+      $st_requete .= $st_valeurs;
+      $pconnexionBD->ajoute_params($a_params);
+      $pconnexionBD->execute_requete($st_requete);
+   }
+   else
+	  $gst_erreurs.= "Aucune variante cr&eacute;e<br>";
 }
 
 /*
@@ -151,7 +169,8 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 	$a_prenoms = $pconnexionBD->sql_select($st_requete);
 	if(count($a_prenoms)==0)
   {
-    print('<div id=\"erreur_variantes\" class=\"alert alert-danger">Pas de variantes trouv&eacute;es</div>');
+    print('<div id="erreur_variantes" class="alert alert-danger">Pas de variantes trouv&eacute;es</div>');
+	print('<button type="button" id="annuler" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-home"></span> Retourner au menu</button>');
   }
   else
 	{
@@ -161,19 +180,15 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 		print('<table class="table table-bordered table-striped">');
 		foreach ($a_prenoms as $st_prenom)
 		{
-			print("<tr><td>$st_prenom</td><td><input type=checkbox name=\"variantes[]\" class=\"groupe_prenoms\" value=\"$st_prenom\"></td></tr>\n");
+			print("<tr><td>$st_prenom</td><td><div class=\"lib_erreur\"><div class=\"checkbox\"><label><input type=checkbox id==\"st_prenom\" name=\"variantes[]\" class=\"groupe_prenoms\" value=\"$st_prenom\"></label></div></div></td></tr>\n");
 		}
 		print('</table>');
-		print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4">Compl&eacute;ter</button>');
+		print('<div class="btn-group col-md-8 col-md-offset-2" role="group">');
+		print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-ok"></span> Compl&eacute;ter</button>');
+		print('<button type="button" id="annuler" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-home"></span> Retourner au menu</button>');
+		print('</div>');
 		print('</form>');
 	}
-   print('<form id="variantes_prenom" method="post" action="'.$_SERVER['PHP_SELF'].'">');	
-	print("<input type=\"hidden\" name=\"idf_groupe\" id=\"idf_groupe\" value=\"$pi_idf_groupe\">");
-	print('<input type="hidden" name="mode" id="mode" value="AFFICHER">');
-	print('<div class="row form-group">'); 
-	print('<button type="button" id="annuler" class="btn btn-primary col-md-4 col-md-offset-4">Retourner au menu</button>');
-	print("</div>");
-	print('</form>');
 }	
 
 print('<!DOCTYPE html>');
@@ -259,6 +274,7 @@ $(document).ready(function() {
                 $('#variantes').append(variantes);
                 $('#idf_groupe').val(reponse['idf_groupe']);
             }
+
           }
         })        
       },
@@ -425,9 +441,10 @@ $(document).ready(function() {
 	  },
 	  messages: {
 			'variantes[]': {
-				require_from_group: 'Choisir au moins un prénom'
+				require_from_group: 'Choisir au moins un pr&eacute;nom'
 			}
-		}		
+		}
+		
  });
  
  $( "#vider" ).click(function() {  
@@ -440,9 +457,12 @@ $(document).ready(function() {
   });
 
  $( "#exporter" ).click(function() {
-	 window.location.href = 'GestionVariantesPrenom.php?mode=EXPORT';
+	 window.location.href = '<?php echo $_SERVER['PHP_SELF']?>?mode=EXPORT';
  });	 
-  
+ 
+$('#annuler').click(function() {
+      window.location.href='<?php echo $_SERVER['PHP_SELF'] ?>';
+	}); 
 });
 </script>
 <?php
@@ -455,7 +475,7 @@ require_once("../Commun/menu.php");
 
 switch ($gst_mode) {
  case 'AFFICHER' :
-  affiche_menu($connexionBD,'',$gi_idf_groupe);
+  affiche_menu($connexionBD,$gi_idf_groupe);
  break;
  case 'CREER':
    $st_variantes = isset($_POST['variantes']) ? trim($_POST['variantes']) : '';
@@ -463,7 +483,8 @@ switch ($gst_mode) {
    $i_idf_groupe = $connexionBD->sql_select1("select max(idf_groupe) from variantes_prenom");
    $i_idf_groupe++;  
    ajoute_variantes($connexionBD,$i_idf_groupe,$a_variantes);
-   affiche_menu($connexionBD,"Variante cr&eacute;e",$i_idf_groupe);
+   if (empty($gst_erreurs)) $gst_infos = "Variante ajout&eacute;e";   
+   affiche_menu($connexionBD,$i_idf_groupe);
  break;
  case 'MODIFIER':
    $st_variantes = isset($_POST['variantes']) ? trim($_POST['variantes']) : '';
@@ -472,8 +493,9 @@ switch ($gst_mode) {
    if (!empty($i_idf_groupe))
    {
       $connexionBD->execute_requete("delete from variantes_prenom where idf_groupe=$i_idf_groupe");
-      ajoute_variantes($connexionBD,$i_idf_groupe,$a_variantes);
-      affiche_menu($connexionBD,"Variante modifi&eacute;e",$i_idf_groupe);
+	  $gst_infos = "Variante modifi&eacute;e";
+      if (empty($gst_erreurs)) ajoute_variantes($connexionBD,$i_idf_groupe,$a_variantes);
+      affiche_menu($connexionBD,$i_idf_groupe);
    }
  break;
  case 'MENU_COMPLETER':
@@ -483,13 +505,12 @@ switch ($gst_mode) {
  break;
  case 'COMPLETER':
 	$i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : '';
-	$a_variantes = isset($_POST['variantes']) ? $_POST['variantes'] : '';
-  //print("idf grp=$i_idf_groupe<br>\n");
-  //print_r($a_variantes); 
+	$a_variantes = isset($_POST['variantes']) ? $_POST['variantes'] : ''; 
 	if (!empty($i_idf_groupe) && count($a_variantes)>0)
 	{	
 		ajoute_variantes($connexionBD,$i_idf_groupe,$a_variantes);
-		affiche_menu($connexionBD,"Variante compl&eacute;t&eacute;e",$i_idf_groupe);
+		if (empty($gst_erreurs)) $gst_infos = "Variante compl&eacute;t&eacute;e";
+		affiche_menu($connexionBD,$i_idf_groupe);
 	}
  break;
  case 'SUPPRIMER':
@@ -497,14 +518,16 @@ switch ($gst_mode) {
    if (!empty($i_idf_groupe))
    {
       $connexionBD->execute_requete("delete from variantes_prenom where idf_groupe=$i_idf_groupe");
-      affiche_menu($connexionBD,"Variante supprim&eacute;e",$i_idf_groupe);
+	  if (empty($gst_erreurs)) $gst_infos ="Variante supprim&eacute;e";
+      affiche_menu($connexionBD,$i_idf_groupe);
    }
  break;
  case 'FUSIONNER':
    $i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : '';
    $i_idf_groupe_a_fusionner = isset($_POST['idf_groupe_a_fusionner']) ? (int) $_POST['idf_groupe_a_fusionner'] : '';
    $connexionBD->execute_requete("update variantes_prenom set idf_groupe=$i_idf_groupe where idf_groupe=$i_idf_groupe_a_fusionner");
-   affiche_menu($connexionBD,"Variante fusionn&eacute;e",$i_idf_groupe); 
+   if (empty($gst_erreurs)) $gst_infos ="Variantes fusionn&eacute;es";
+   affiche_menu($connexionBD,$i_idf_groupe); 
  break;
  default:
 } 
