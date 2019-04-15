@@ -20,7 +20,7 @@ if (isset ($_GET['term']))
   //$st_rech="$st_rech%";
    
   $connexionBD->initialise_params(array(':recherche'=>$st_rech));
-  $st_requete = "select vp1.idf_groupe,vp1.libelle from variantes_prenom vp1 join variantes_prenom vp2 on (vp1.idf_groupe=vp2.idf_groupe) where vp2.`libelle` like :recherche  collate latin1_general_ci order by libelle";
+  $st_requete = "select distinct vp1.idf_groupe,vp1.libelle from variantes_prenom vp1 join variantes_prenom vp2 on (vp1.idf_groupe=vp2.idf_groupe) where vp2.`libelle` like :recherche  collate latin1_general_ci order by libelle";
   $a_prenoms = $connexionBD->sql_select_multiple($st_requete);
   $a_variantes_prenom = array();
   foreach ($a_prenoms as  $a_ligne)
