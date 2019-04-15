@@ -17,7 +17,7 @@ if (isset ($_GET['term']))
     $st_rech = substr(trim($_GET['term']),0,35);  
   $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
   $st_rech=utf8_decode($st_rech); 
-  $st_rech="$st_rech%";
+  //$st_rech="$st_rech%";
    
   $connexionBD->initialise_params(array(':recherche'=>$st_rech));
   $st_requete = "select distinct vp1.idf_groupe,vp1.patronyme,vp1.majeure from variantes_patro vp1 join variantes_patro vp2 on (vp1.idf_groupe=vp2.idf_groupe) where vp2. patronyme like :recherche  order by majeure desc";
