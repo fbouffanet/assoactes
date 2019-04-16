@@ -168,17 +168,6 @@ function menu_edition_adherent($pconnexionBD,$padherent,$pi_idf_adh)
    print('</form>');      
 }
 
-/** Affiche le menu de modification d'une commune
- * @param object $pconnexionBD Identifiant de la connexion de base 
- * @param string $pst_ident identifiant de l'utilisateur courant   
- */ 
-function menu_modifier($pconnexionBD,$pst_ident)
-{
-   list($i_idf_adh,$st_statut,$pi_annee,$st_nom,$st_prenom,$st_adr1,$st_adr2,$st_pays,$st_cp,$st_ville,$st_tel,$st_email_forum,$st_email_perso,$st_site,$st_confidentiel,$st_ident_adh,$st_mdp_adh,$st_aide)=$pconnexionBD->sql_select_liste("select adherent.idf,adherent.statut,adherent.annee_cotisation,adherent.nom,prenom, adr1, adr2, pays, cp, ville,tel,email_forum,email_perso,site,confidentiel,ident,mdp,aide from adherent where adherent.ident='$pst_ident'");   
-   menu_edition_adherent($pconnexionBD,$pst_ident,$i_idf_adh,$st_statut,$pi_annee,$st_nom,$st_prenom,$st_adr1,$st_adr2,$st_pays,$st_cp,$st_ville,$st_tel,$st_email_forum,$st_email_perso,$st_site,$st_confidentiel,$st_ident_adh,$st_mdp_adh,$st_aide);           
-}
-
-
 /**
  * Charge la photo de l'adhérent sur le site
  * @param integer $pi_idf_adh identifiant de l'adhérent 
@@ -230,14 +219,12 @@ switch ($gst_mode) {
      menu_edition_adherent($connexionBD,$adherent,$i_idf_adht_connecte);
   break;
   case 'CHARGEMENT_PHOTO':
-  $i_idf_adh=$connexionBD->sql_select1("select idf from adherent where ident='$gst_ident'");
-  maj_photo($i_idf_adh);
-  menu_modifier($connexionBD,$gst_ident);
+  maj_photo($i_idf_adht_connecte);
+  menu_edition_adherent($connexionBD,$adherent,$i_idf_adht_connecte);
   break;
   case 'SUPPRIMER_PHOTO':
-  $i_idf_adh=$connexionBD->sql_select1("select idf from adherent where ident='$gst_ident'");
-  unlink("$gst_rep_trombinoscope/$i_idf_adh.jpg");
-  menu_modifier($connexionBD,$gst_ident); 
+  unlink("$gst_rep_trombinoscope/$i_idf_adht_connecte.jpg");
+  menu_edition_adherent($connexionBD,$adherent,$i_idf_adht_connecte);
   break;         
 }  
 
