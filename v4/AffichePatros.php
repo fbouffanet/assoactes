@@ -58,7 +58,7 @@ $("#patros").validate({
 
 	// Add `has-feedback` class to the parent div.form-group
 	// in order to add icons to inputs
-	element.parents( ".col-md-4" ).addClass( "has-feedback" );
+	element.parents( ".lib_erreur" ).addClass( "has-feedback" );
 
 	if ( element.prop( "type" ) === "checkbox" ) {
 		error.insertAfter( element.parent( "label" ) );
@@ -78,11 +78,11 @@ $("#patros").validate({
 		}
 	},
 	highlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".col-md-4" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
 		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
 	},
 	unhighlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".col-md-4" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
 		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 	}
 });  
@@ -107,7 +107,7 @@ function affiche_menu($gi_idf_commune,$gi_rayon,$gi_idf_source,$pst_msg)
   
   print('<div class="form-group row col-md-12">');
   print('<label for="patronyme" class="col-form-label col-md-2">Patronyme</label>');
-  print('<div class="col-md-3">');
+  print('<div class="col-md-3 lib_erreur">');
   print('<input type=text name=patronyme id=patronyme size=15 maxlength=30 class="form-control">');
   print('</div>');
  
@@ -132,7 +132,7 @@ function affiche_menu($gi_idf_commune,$gi_rayon,$gi_idf_source,$pst_msg)
   $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
   print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
   print('</select></div>');
-  print("<div class=\"form-group col-md-4\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_patro\" class=\"sr-only\">Rayon</label><input type=text name=rayon_patro id='rayon_patro' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"><span class=\"input-group-addon\">Km</span></div>");
+  print("<div class=\"form-group col-md-4\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_patro\" class=\"sr-only\">Rayon</label><div class=\"lib_erreur\"><input type=text name=rayon_patro id='rayon_patro' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"></div><span class=\"input-group-addon\">Km</span></div>");
   print("</div>"); // fin ligne 
  
   
