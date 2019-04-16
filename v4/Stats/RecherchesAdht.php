@@ -8,15 +8,16 @@ verifie_privilege(DROIT_STATS);
 require_once('../Commun/ConnexionBD.php');
 require_once('../Commun/PaginationTableau.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr"> ');
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print('<title>Base AGC: Stats consulations adhérent</title>');
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
-
-print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../Commun/menu.js' type='text/javascript'></script>");
+print('<link href="../css/styles.css" type="text/css" rel="stylesheet">');
+print('<link href="../css/bootstrap.min.css" rel="stylesheet">');
+print('<script src="../js/jquery-min.js" type="text/javascript"></script>');
+print('<script src="../js/bootstrap.min.js" type="text/javascript"></script>'); 
 print("<script type='text/javascript'>");
 ?>
 function maj(Formulaire)
@@ -37,30 +38,32 @@ print("</head>");
  */ 
 function affiche_formulaire() {
   ;
-  print("<div align=center>");
+  print('<div class="text-center">');
   print("<form action=".$_SERVER['PHP_SELF']." method=post>");
-  
-	print("Selection du fichier pour la recherche  ");   
-	print('<select name="idf_journal">');
-	print('<option value=1>Requête recherche sur une personne </OPTION>');
-	print('<option value=2>Requête recherche sur un couple </OPTION>');
-	print('<option value=3>Requête recherche sur les dépouillements </OPTION>');
-	print('<option value=4>Requête recherche sur les liasses</OPTION>');
+  print('<div class="row form-group">');
+  print('<label for="idf_journal" class="form-form-label col-md-2">S&eacute;lection du fichier pour la recherche</label>');  
+  print('<div class="col-md-6">');
+  print('<select name="idf_journal" id="idf_journal" class="form-control">');
+  print('<option value=1>Requête recherche sur une personne </OPTION>');
+  print('<option value=2>Requête recherche sur un couple </OPTION>');
+  print('<option value=3>Requête recherche sur les dépouillements </OPTION>');
+  print('<option value=4>Requête recherche sur les liasses</OPTION>');
   print('<option value=5>Requête recherche sur les r&eacute;pertoires</OPTION>');
   print('<option value=6>Requête recherche sur les TD de mariage</OPTION>');
   print('<option value=7>Requête recherche sur les TD de naissance</OPTION>');
   print('<option value=8>Requête recherche sur les TD de d&eacute;c&eacute;s</OPTION>');
   print("</select>");
-  print("<br/><br/>");
-   
-  print("<div>");
-  print('<label>Recherche libre dans un des champs: </label>');
-  print('<input type="text" name="libre" />');
-		 
+  print('</div>');
+  print('</div>');  
+  
+  print('<div class="row form-group">');
+  print('<label for="libre" class="form-form-label col-md-2">Recherche libre dans un des champs: </label>');
+  print('<div class="col-md-6">');
+  print('<input type="text" name="libre" id="text" class="form-control">');
+  print('</div>');		 
   print("</div>"); 
-  print("<br/><br/>");
   print('<input type="hidden" value="AFFICHE_JOURNAL" name="mode"/>');
-  print('<input type="submit" value="valider" name="valider"/>');
+  print('<button type="submit" value="valider" name="valider" class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-search"></span> Valider</button>');
   print("</form>");
   print("</div>");
 }
@@ -78,6 +81,7 @@ if (!empty($gst_mode) && !in_array($gst_mode,array('FORMULAIRE','AFFICHE_JOURNAL
    $gst_mode='FORMULAIRE';
 
 print("<body>");
+print('<div class="container">');
 require_once("../Commun/menu.php");
 
 $ga_fichiers_logs = array(
@@ -94,9 +98,9 @@ $ga_fichiers_logs = array(
 list($gst_adherent,$gst_ident)=$connexionBD->sql_select_liste("select concat(prenom,' ',nom,' (',idf,')'),ident from adherent where idf=$gi_idf_adherent");
 $a_communes_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from commune_acte");
 
-print("<div class=TITRE>Affichage des recherches de l'adh&eacute;rent $gst_adherent</div><br>");
-
-
+print('<div class="panel panel-primary">');
+print("<div class=\"panel-heading\">Affichage des recherches de l'adh&eacute;rent $gst_adherent</div>");
+print('<div class="panel-body">');
 if (isset($gi_idf_adherent ))
 {
   switch ($gst_mode)
@@ -154,7 +158,7 @@ if (isset($gi_idf_adherent ))
            if ($nb > 0)
            {  
               if (!empty ($gst_libre))    
-                print("<div class='SOUSTITRE'>Recherche filtr&eacute;e sur le champ '$gst_libre'</div>");     
+                print("<div class='alert alet-warning'>Recherche filtr&eacute;e sur le champ '$gst_libre'</div>");     
               print("<form name=\"RecherchesAdherents\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
               
               $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page_recherches_adht',$nb,100,DELTA_NAVIGATION,$ga_fichiers_logs[$gi_idf_journal][2]);          
@@ -168,26 +172,29 @@ if (isset($gi_idf_adherent ))
             else
             {
               if (empty ($st_libre))
-		            print("<div align=center>L'adh&eacute;rent n'a pas fait de recherche !</div>");
+		            print("<div class=\"alert alert-danger\">L'adh&eacute;rent n'a pas fait de recherche !</div>");
               else
-                print("<div align=center>Pas de r&eacute;sultat</div>");
+                print('<div class="alert alert-danger">Pas de r&eacute;sultat</div>');
             }   
         }
         else
         {
-           print("<div CLASS=IMPORTANT>Erreur: Ce fichier journal n'est pas configur&eacute;</div>\n");
+           print('<div class="alert alert-danger">Erreur: Ce fichier journal n\'est pas configur&eacute;</div>');
         }
         print("<form action=".$_SERVER['PHP_SELF']." method=post>");
-	      print("<input type=hidden name=mode value=FORMULAIRE>");
-	      print("<div align=center><br><input type=submit value=\"Retour\"></div>");   
-	      print("</form>");
+	    print("<input type=hidden name=mode value=FORMULAIRE>");
+	    print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-home"></span> Retour</button>');   
+	    print("</form>");
      break;
   }
 }
 else
 {
-   print("<div class=important>idf_adherent n'est pas d&eacute;fini</div>");
+   print('<div class="alert alert-danger">idf_adherent n\'est pas d&eacute;fini</div>');
 }
+print('</div>');
+print('</div>');
+print('</div>');
 print("</body>");
 print("</html>");  
 
