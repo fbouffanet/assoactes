@@ -126,12 +126,12 @@ if (isset($_SESSION['ident']))
           $st_action = "<form action=\"".$_SERVER['PHP_SELF']."\" method=post>";
           $st_action .="<input type=\"hidden\" name=\"idf_modif\" value=\"$i_idf_modif\">";
           $st_action .="<input type=\"hidden\" name=\"mode\" value=\"VISU_MODIF\">";
-		    $st_action .='<button type="submit" class="btn btn-primary btn-xs">Voir la<br>demande</button>';
+		    $st_action .='<button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-eye-open"></span> Voir la<br>demande</button>';
           $st_action .= "</form>";
           if ($gst_statut == 'A')
-            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_action,"<a href=\"../InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"btn btn-primary btn-xs\" role=\"button\">Voir la<br> modification</a>");
+            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_action,"<a href=\"../InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"btn btn-primary btn-xs\" role=\"button\"><span class=\"glyphicon glyphicon-eye-open\"></span> Voir la<br> modification</a>");
           else
-            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_commentaires,$st_action,"<a href=\"../InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"btn btn-primary btn-xs\" role=\"button\">Voir la<br>modification</a>");
+            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_commentaires,$st_action,"<a href=\"../InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"btn btn-primary btn-xs\" role=\"button\"><span class=\"glyphicon glyphicon-eye-open\"></span> Voir la<br>modification</a>");
         }
         $pagination->init_page_cour($gi_num_page_cour);
         $pagination->affiche_entete_liens_navigation();
