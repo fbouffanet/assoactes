@@ -62,7 +62,7 @@ if (isset($_SESSION['ident']))
           print("<form action=\"../Administration/ValidationModification.php\" method=\"POST\">");
           print("<input type=\"hidden\" name=\"idf_modification\" value=\"$i_idf_modif\">");
           print("<input type=\"hidden\" name=\"adresse_retour\" value=\"".$_SERVER['PHP_SELF']."\">");
-		  print('<button type="submit" class="btn btn-primary">Voir la modification</button>');
+		  print('<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span> Voir la modification</button>');
           print("</form></td>");
           print("</tr>");
       }
