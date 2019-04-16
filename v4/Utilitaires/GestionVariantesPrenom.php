@@ -180,7 +180,7 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 		print('<table class="table table-bordered table-striped">');
 		foreach ($a_prenoms as $st_prenom)
 		{
-			print("<tr><td>$st_prenom</td><td><div class=\"lib_erreur\"><div class=\"checkbox\"><label><input type=checkbox id==\"st_prenom\" name=\"variantes[]\" class=\"groupe_prenoms\" value=\"$st_prenom\"></label></div></div></td></tr>\n");
+			print("<tr><td>$st_prenom</td><td><div class=\"lib_erreur\"><div class=\"checkbox\"><label><input type=checkbox id=\"st_prenom\" name=\"variantes[]\" class=\"form-check-input\" value=\"$st_prenom\"></label></div></div></td></tr>\n");
 		}
 		print('</table>');
 		print('<div class="btn-group col-md-8 col-md-offset-2" role="group">');
@@ -436,13 +436,29 @@ $(document).ready(function() {
   $( "#menu_completer" ).validate({
 	  rules: {
 	    "variantes[]": {
-      	require_from_group: [1, ".groupe_prenoms"]
+			required: true, 
+            minlength: 1
     	}
 	  },
 	  messages: {
-			'variantes[]': {
-				require_from_group: 'Choisir au moins un pr&eacute;nom'
-			}
+			'variantes[]':  'Choisir au moins un pr&eacute;nom'
+	  },
+	  errorElement: "em",
+	  errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
+
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+				}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
 		}
 		
  });
