@@ -269,8 +269,8 @@ function complete_variantes($pconnexionBD,$pi_idf_groupe,$pa_variantes)
    global $gst_infos,$gst_erreurs;
    $a_variantes_a_ajouter = array();
    $i=0;
-   foreach ($pa_variantes as $st_variante)
-   {
+   foreach ($pa_variantes as $st_variante)   
+   { 
       $st_variante=strtoupper(stripslashes($st_variante));
       $pconnexionBD->ajoute_params(array(":variante$i"=>$st_variante));
       $a_variantes_a_ajouter[] = "(:variante$i,$pi_idf_groupe,0)";
@@ -340,7 +340,8 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 	   print('<table class="table table-bordered table-striped">');
        foreach ($a_variantes_ajouter as $st_patronyme)
        {
-         print("<tr><td>$st_patronyme</td><td><div class=\"lib_erreur\"><div class=\"checkbox\"><label><input type=checkbox class=\"groupe_patros form-check-input\" name=\"variantes[]\" id=\"$st_patronyme\"></label></div></div></td></tr>");
+		   
+         print("<tr><td>$st_patronyme</td><td><div class=\"lib_erreur\"><div class=\"checkbox\"><label><input type=checkbox class=\"form-check-input\" name=\"variantes[]\" id=\"$st_patronyme\" value=\"$st_patronyme\"></label></div></div></td></tr>");
        }
        print("</table>");
 	   print("</div>");
@@ -619,14 +620,30 @@ print('<link rel="shortcut icon" href="images/favicon.ico">');
   $( "#menu_completer" ).validate({
 	  rules: {
 	    "variantes[]": {
-      	require_from_group: [1, ".groupe_patros"]
+			required: true, 
+            minlength: 1 
     	}
 	  },
 	  messages: {
-			'variantes[]': {
-				require_from_group: 'Choisir au moins un patronyme'
-			}
-		}
+			'variantes[]':  'Choisir au moins un patronyme'
+		},
+	  errorElement: "em",
+		errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
+
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+				}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+		},
+		unhighlight: function (element, errorClass, validClass) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+		}	
  });
 
  $( "#exporter" ).click(function() {
