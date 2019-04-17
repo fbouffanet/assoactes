@@ -76,6 +76,8 @@ verifie_privilege(DROIT_UTILITAIRES);
 require_once("$gst_chemin/Commun/ConnexionBD.php");
 require_once("$gst_chemin/Commun/commun.php");
 require_once("$gst_chemin/Commun/PaginationTableau.php");
+
+require_once("Commun/menu.php");
 /*
    $gst_serveur_bd  = 'localhost';
 	$gst_serveur_bd  = '127.0.0.1';
