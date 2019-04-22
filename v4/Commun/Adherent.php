@@ -419,15 +419,15 @@ class Adherent
       $st_chaine ="<label for=\"aides\">Je souhaite m’impliquer dans le fonctionnement de l’association en:</label>";
 	  $st_chaine .= '<div class="form-group" id="aides">';
       $st_coche = ($this->i_aide & AIDE_RELEVES) ? 'checked' : '';
-      $st_chaine .= "<div class=\"form-check\"><input type=checkbox name=\"aide[]\" value=".AIDE_RELEVES." id=\"".AIDE_RELEVES."\" class=\"form-check-input\" $st_coche><label for=\"".AIDE_RELEVES."\" class=\"form-check-label\">Effectuant des relev&eacute;s</label></div>\n";
+      $st_chaine .= "<div class=\"checkbox\"><label><input type=checkbox name=\"aide[]\" value=".AIDE_RELEVES." id=\"".AIDE_RELEVES."\" class=\"form-check-input\" $st_coche>Effectuant des relev&eacute;s</label></div>\n";
       $st_coche = ($this->i_aide & AIDE_INFORMATIQUE) ? 'checked' : '';
-      $st_chaine .= "<div class=\"form-check\"><input type=checkbox name=\"aide[]\" value=".AIDE_INFORMATIQUE." id=\"".AIDE_INFORMATIQUE."\" class=\"form-check-input\" $st_coche><label for=\"".AIDE_INFORMATIQUE."\" class=\"form-check-label\">Participant &agrave; l’informatique</label></div>\n";
+      $st_chaine .= "<div class=\"checkbox\"><label><input type=checkbox name=\"aide[]\" value=".AIDE_INFORMATIQUE." id=\"".AIDE_INFORMATIQUE."\" class=\"form-check-input\" $st_coche>Participant &agrave; l’informatique</label></div>\n";
       $st_coche = ($this->i_aide & AIDE_AD) ? 'checked' : '';
-      $st_chaine .= "<div class=\"form-check\"><input type=checkbox name=\"aide[]\" value=".AIDE_AD." id=\"".AIDE_AD."\" class=\"form-check-input\" $st_coche><label for=\"".AIDE_AD."\" class=\"form-check-label\">Faisant de l’entraide aux AD</label></div>\n";
+      $st_chaine .= "<div class=\"checkbox\"><label><input type=checkbox name=\"aide[]\" value=".AIDE_AD." id=\"".AIDE_AD."\" class=\"form-check-input\" $st_coche>Faisant de l’entraide aux AD</label></div>\n";
       $st_coche = ($this->i_aide & AIDE_BULLETIN) ? 'checked' : '';
-      $st_chaine .="<div class=\"form-check\"><input type=checkbox name=\"aide[]\" value=".AIDE_BULLETIN." id=\"".AIDE_BULLETIN."\" class=\"form-check-input\" $st_coche><label for=\"".AIDE_BULLETIN."\" class=\"form-check-label\">Participant au Bulletin</label></div>\n";
-      $st_chaine .= "<div class=\"form-row text-center\">Merci de cocher la case correspondante:</div>";
-	  $st_chaine .="</div>";
+      $st_chaine .="<div class=\"checkbox\"><label><input type=checkbox name=\"aide[]\" value=".AIDE_BULLETIN." id=\"".AIDE_BULLETIN."\" class=\"form-check-input\" $st_coche>Participant au Bulletin</label></div>\n";
+      $st_chaine .="</div>";
+	  $st_chaine .= "<div class=\"form-row text-center\">Merci de cocher la case correspondante:</div>";
       return $st_chaine;
    }
    
@@ -437,31 +437,30 @@ class Adherent
    public function formulaire_origine()
    {
       $st_chaine = "<label for=\"origines\">Comment nous avez-vous connu ?</label>";
-	  $st_chaine .= '<div class="form-group row" id="origines">';
+	  $st_chaine .= '<div class="form-group" id="origines">';
       $st_coche  = ($this->i_origine==ORIGINE_INTERNET) ? 'checked' : '';
-      $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" id=\"OrigineInternet\" name=\"type_origine\" value=\"".ORIGINE_INTERNET."\" class=\"form-check-input\" $st_coche>";
-      $st_chaine .= "<label for=\"OrigineInternet\" class=\"form-check-label\">Site Internet</label></div>\n";
+      $st_chaine .= "<div class=\"radio\"><label><input type=\"radio\" id=\"OrigineInternet\" name=\"type_origine\" value=\"".ORIGINE_INTERNET."\" class=\"form-check-input\" $st_coche>";
+      $st_chaine .= "Site Internet</label></div>\n";
       $st_coche  = ($this->i_origine==ORIGINE_FORUM) ? 'checked' : '';
-      $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" id=\"OrigineForum\" name=\"type_origine\" value=\"".ORIGINE_FORUM."\" class=\"form-check-input\" $st_coche>";
-      $st_chaine .= "<label for=\"OrigineForum\" class=\"form-check-label\">Forum de discussion</label></div>\n";
+      $st_chaine .= "<div class=\"radio\"><label><input type=\"radio\" id=\"OrigineForum\" name=\"type_origine\" value=\"".ORIGINE_FORUM."\" class=\"form-check-input\" $st_coche>";
+      $st_chaine .= "Forum de discussion</label></div>\n";
       $st_coche  = ($this->i_origine==ORIGINE_PRESSE) ? 'checked' : '';
-      $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" id=\"OriginePresse\" name=\"type_origine\" value=\"".ORIGINE_PRESSE."\" class=\"form-check-input\" $st_coche>";
-      $st_chaine .= "<label for=\"OriginePresse\" class=\"form-check-label\">Article de presse</label></div>\n";
+      $st_chaine .= "<div class=\"radio\"><label><input type=\"radio\" id=\"OriginePresse\" name=\"type_origine\" value=\"".ORIGINE_PRESSE."\" class=\"form-check-input\" $st_coche>";
+      $st_chaine .= "Article de presse</label></div>\n";
       $st_coche  = ($this->i_origine==ORIGINE_MANIFESTATION) ? 'checked' : '';
-      $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" id=\"OrigineManifestation\" name=\"type_origine\" value=\"".ORIGINE_MANIFESTATION."\" class=\"form-check-input\" $st_coche>";
-      $st_chaine .= "<label for=\"OrigineManifestation\" class=\"form-check-label\">Manifestation sp&eacute;cifique</label></div>\n";
+      $st_chaine .= "<div class=\"radio\"><label><input type=\"radio\" id=\"OrigineManifestation\" name=\"type_origine\" value=\"".ORIGINE_MANIFESTATION."\" class=\"form-check-input\" $st_coche>";
+      $st_chaine .= "Manifestation sp&eacute;cifique</label></div>\n";
       $st_coche  = ($this->i_origine==ORIGINE_AD) ? 'checked' : '';
-      $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" id=\"OrigineAD\" name=\"type_origine\" value=\"".ORIGINE_AD."\" class=\"form-check-input\" $st_coche>";
-      $st_chaine .= "<label for=\"OrigineAD\" class=\"form-check-label\">Visite aux AD</label></div>\n";
+      $st_chaine .= "<div class=\"radio\"><label><input type=\"radio\" id=\"OrigineAD\" name=\"type_origine\" value=\"".ORIGINE_AD."\" class=\"form-check-input\" $st_coche>";
+      $st_chaine .= "Visite aux AD</label></div>\n";
       $st_coche  = ($this->i_origine==ORIGINE_CONNAISSANCE) ? 'checked' : '';
-      $st_chaine .= "<div class=\"form-check\"> <input type=\"radio\" id=\"OrigineConnaissance\" name=\"type_origine\" value=\"".ORIGINE_CONNAISSANCE."\" class=\"form-check-input\" $st_coche>";
-      $st_chaine .= "<label for=\"OrigineConnaissance\" class=\"form-check-label\">Bouche &agrave; oreille</label></div>\n";
+      $st_chaine .= "<div class=\"radio\"><label><input type=\"radio\" id=\"OrigineConnaissance\" name=\"type_origine\" value=\"".ORIGINE_CONNAISSANCE."\" class=\"form-check-input\" $st_coche>";
+      $st_chaine .= "Bouche &agrave; oreille</label></div>\n";
       $st_coche  = ($this->i_origine==ORIGINE_AUTRE) ? 'checked' : '';
-      $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" id=\"OrigineAutre\" name=\"type_origine\" value=\"".ORIGINE_AUTRE."\" class=\"form-check-input\" $st_coche>";
-      $st_chaine .= "<label for=\"OrigineConnaissance\" class=\"form-check-label\">Autre</label></div>";
+      $st_chaine .= "<div class=\"radio\"><label><input type=\"radio\" id=\"OrigineAutre\" name=\"type_origine\" value=\"".ORIGINE_AUTRE."\" class=\"form-check-input\" $st_coche>";
+      $st_chaine .= "Autre</label></div></div>";
 	  
-      $st_chaine .= sprintf("<div class=\"row\"><label for=\"description_origine\">Veuillez pr&eacute;ciser SVP dans tous les cas:</label><input type=\"text\" maxlength=80 size=20 name=\"description_origine\" id=description_origine value=\"%s\" class=\"form-control\"></div>",$this->st_origine);
-      $st_chaine .="</div>";	  
+      $st_chaine .= sprintf("<div class=\"form-group\"><label for=\"description_origine\">Veuillez pr&eacute;ciser SVP dans tous les cas:</label><input type=\"text\" maxlength=80 size=20 name=\"description_origine\" id=description_origine value=\"%s\" class=\"form-control\"></div>",$this->st_origine);	  
       return $st_chaine;
    } 
    
@@ -561,20 +560,20 @@ class Adherent
       global  $ga_tarifs;
       $st_chaine = '<label for="type_inscription">Choisissez votre type d\'inscription:</label>';
       $i_tarif = $ga_tarifs['internet'];
-	  $st_chaine .= '<div class="form-group id="type_inscription">';
-      $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" name=\"statut\" value=\"".ADHESION_INTERNET."\" id=\"".ADHESION_INTERNET."\" checked class=\"form-check-input\"><label for=\"".ADHESION_INTERNET."\" class=\"form-check-label\">Uniquement internet: $i_tarif euros</label></div>";
+	  $st_chaine .= '<div class="form-group" id="type_inscription">';
+      $st_chaine .= "<div class=\"radio\"><label><input type=\"radio\" name=\"statut\" value=\"".ADHESION_INTERNET."\" id=\"".ADHESION_INTERNET."\" checked class=\"form-check-input\">Uniquement internet: $i_tarif euros</label></div>";
       if (strtoupper($pst_pays)=='FRANCE' &&  preg_match('/^\d+$/',$pst_cp) && substr($pst_cp,0,2)<96 )
       {
         // Les départements métroppolitains ont un code postal inférieur à 96
         // Les DOM s'étendent de 971 à 976
         // les TOM de 984 à 988
         $i_tarif = $ga_tarifs['bulletin_metro'];
-        $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" name=\"statut\" value=\"".ADHESION_BULLETIN."\" id=\"".ADHESION_BULLETIN."\" class=\"form-check-input\"><label for=\"".ADHESION_BULLETIN."\" class=\"form-check-label\">Internet + bulletins: $i_tarif euros (France M&eacute;tropolitaine)</label></div>";
+        $st_chaine .= "<div class=\"radio\"><label><input type=\"radio\" name=\"statut\" value=\"".ADHESION_BULLETIN."\" id=\"".ADHESION_BULLETIN."\" class=\"form-check-input\">Internet + bulletins: $i_tarif euros (France M&eacute;tropolitaine)</label></div>";
       }
       else
       {
         $i_tarif = $ga_tarifs['bulletin_etranger'];
-        $st_chaine .= "<div class=\"form-check\"><input type=\"radio\" name=\"statut\" value=\"".ADHESION_BULLETIN."\" id=\"".ADHESION_BULLETIN."\" class=\"form-check-input\"><label for=\"".ADHESION_BULLETIN."\" class=\"form-check-label\" >Internet + bulletins: $i_tarif euros (Etranger)</label></div>";
+        $st_chaine .= "<div class=\"radio\"><label><input type=\"radio\" name=\"statut\" value=\"".ADHESION_BULLETIN."\" id=\"".ADHESION_BULLETIN."\" class=\"form-check-input\">Internet + bulletins: $i_tarif euros (Etranger)</label></div>";
       }
       $st_chaine .= "</div>";
       return  $st_chaine;
@@ -594,11 +593,11 @@ class Adherent
         $st_chaine .= '<div id="droits_adherent" class="form-group">';		
         foreach ($ga_droits as $st_droit => $st_label_droit)
         {
-          $st_chaine .= '<div class="form-check">';
+          $st_chaine .= '<div class="checkbox"><label>';
           if (in_array($st_droit,$this->a_droits_adherents))
-            $st_chaine .=sprintf("<input type=checkbox name=\"droits[]\" value=\"%s\" id=\"droit_%d\" checked class=\"form-check-input\"><label for=\"droit_%d\" class=\"form-check-label\">%s</label>",$st_droit,$i,$i,$st_label_droit);
+            $st_chaine .=sprintf("<input type=checkbox name=\"droits[]\" value=\"%s\" id=\"droit_%d\" checked class=\"form-check-input\">%s</label>",$st_droit,$i,$st_label_droit);
           else
-            $st_chaine .=sprintf("<input type=checkbox name=\"droits[]\" value=\"%s\" id=\"droit_%d\" class=\"form-check-input\"><label for=\"%d\" class=\"form-check-label\">%s</label>",$st_droit,$i,$i,$st_label_droit);     
+            $st_chaine .=sprintf("<input type=checkbox name=\"droits[]\" value=\"%s\" id=\"droit_%d\" class=\"form-check-input\">%s</label>",$st_droit,$i,$st_label_droit);     
           $st_chaine .= "</div>";
           $i++;
 		}      
