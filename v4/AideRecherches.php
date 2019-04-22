@@ -22,7 +22,7 @@ require_once("Commun/menu.php");
 ?>
 <p style="text-align: center;" class="MsoNormal">
   <span>
-    <img alt="MenuRecherches" style="width: 698px; height: 282px;" src="images/aideV4.JPG">
+    <img alt="MenuRecherches" style="width: 698px; height: 282px;" src="images/MenuV4.png">
   </span>
 </p>
 <div>Cet écran comporte 3 pavés&nbsp;: 
@@ -201,13 +201,13 @@ require_once("Commun/menu.php");
     <br>Pour consulter le relevé des autres actes, cliquez sur le i en face de l'acte qui vous intéresse comme indiqué dans l'image ci-dessous.
     <br>
     <br>
-    <img style="width: 768px; height: 402px;" alt="Résultat de recherche" src="images/ResultatRecherchesCouple.jpg">
+    <img style="width: 768px; height: 402px;" alt="Résultat de recherche" src="images/ReponseV4.png">
     
     <br>Une nouvelle fenêtre apparaît. Si ce n'est pas le cas, vérifiez que votre navigateur n'a pas interdit l'ouverture de la fenêtre.
     <br>Celle-ci se présente ainsi:
     <br>
     <br>
-    <img style="width: 600px; height: 626px;" alt="Ajout dans le panier" src="images/details_releve.png">
+    <img style="width: 600px; height: 626px;" alt="Ajout dans le panier" src="images/DetailV4.png">
     <br>
     <br> Par mois, vous disposez de 500 demandes de naissances, 500 demandes de d&eacute;c&eacute;s et 50 demandes d'actes divers (mariage, CM, Testament...)
     <br>
