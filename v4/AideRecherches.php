@@ -3,23 +3,26 @@ require_once('Commun/Identification.php');
 require_once('Commun/commun.php');
 require_once('Commun/constantes.php');
 require_once('Commun/ConnexionBD.php');
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/menu.js' type='text/javascript'></script>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 print('<title>Base AGC: Aide sur les recherches</title>');
 print("</head>");
-print('<body style="color: rgb(0, 0, 0); background-color: rgb(247, 247, 240);" >');
+print('<body>');
+print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("Commun/menu.php");
 ?>
 <p style="text-align: center;" class="MsoNormal">
   <span>
-    <img alt="MenuRecherches" style="width: 698px; height: 282px;" src="images/aideV4.JPG">
+    <img alt="MenuRecherches" style="width: 698px; height: 282px;" src="images/MenuV4.png">
   </span>
 </p>
 <div>Cet écran comporte 3 pavés&nbsp;: 
@@ -198,18 +201,19 @@ require_once("Commun/menu.php");
     <br>Pour consulter le relevé des autres actes, cliquez sur le i en face de l'acte qui vous intéresse comme indiqué dans l'image ci-dessous.
     <br>
     <br>
-    <img style="width: 768px; height: 402px;" alt="Résultat de recherche" src="images/ResultatRecherchesCouple.jpg">
+    <img style="width: 768px; height: 402px;" alt="Résultat de recherche" src="images/ReponseV4.png">
     
     <br>Une nouvelle fenêtre apparaît. Si ce n'est pas le cas, vérifiez que votre navigateur n'a pas interdit l'ouverture de la fenêtre.
     <br>Celle-ci se présente ainsi:
     <br>
     <br>
-    <img style="width: 600px; height: 626px;" alt="Ajout dans le panier" src="images/details_releve.png">
+    <img style="width: 600px; height: 626px;" alt="Ajout dans le panier" src="images/DetailV4.png">
     <br>
     <br> Par mois, vous disposez de 500 demandes de naissances, 500 demandes de d&eacute;c&eacute;s et 50 demandes d'actes divers (mariage, CM, Testament...)
     <br>
    
   </span>
+</div>
 </div>
 </body>
 </html>
