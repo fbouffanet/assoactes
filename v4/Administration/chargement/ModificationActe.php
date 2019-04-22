@@ -423,12 +423,12 @@ public function commentaires_demandeur()
 
 
 {
-     $st_chaine = "<fieldset><legend>Commentaires &agrave destination du valideur:</legend>";
+     $st_chaine = "<fieldset><legend>Commentaires &agrave; destination du valideur:</legend>";
      $st_chaine .= "<div class=\"text-center\">Commentaires:<textarea name=cmt_modif rows=4 cols=80 class=\"form-control jqte_edit\">";
      $st_chaine .= $this -> st_cmt_modif;
      $st_chaine .= "</textarea></div>";
      $st_chaine .= "</fieldset>";
-     $st_chaine .= "<fieldset><legend>Commentaires &agrave destination du demandeur:</legend>";
+     $st_chaine .= "<fieldset><legend>Commentaires &agrave; destination du demandeur:</legend>";
      $st_chaine .= "<div class=\"text-center\">Commentaires:<textarea name=cmt_valideur rows=4 cols=80 class=\"form-control jqte_edit\">";
      $st_chaine .= "</textarea></div>";
      $st_chaine .= "</fieldset>";
