@@ -30,8 +30,9 @@ print('<div class="container">');
 require_once("Commun/menu.php");
 
 
-echo("<img src=\"images/MenuMembre.JPG\">"); 
-echo("<img src=\"images/reinscription.JPG\">"); 
+echo("<img src=\"images/MenuMembre.png\">"); 
+echo("<img src=\"images/Reinscription.png\">");
+echo("<img src=\"images/NotifierReinscription.png\">");  
 
 print("</div></body>");
 ?>
