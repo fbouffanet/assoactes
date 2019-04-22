@@ -783,9 +783,9 @@ class Personne
 				 $st_chaine_date_rep .= '</div>';
                  // Contenu du popup
                 $st_chaine .= sprintf("<div class=\"popup_date_rep\" id=\"popup_dnais%d\" title=\"Fenetre\">%s</div>", $i_num_parametre, $st_chaine_date_rep);
-                 $st_chaine .= sprintf("<div class=\"input-group\"><input type=text name=\"dnais%d\" id=\"dnais%d\" value=\"%s\" maxlength=10 class=\"form-control form-control-xs\">", $i_num_parametre, $i_num_parametre, $this -> st_date_naissance);
+                 $st_chaine .= sprintf("<div class=\"btn-group-vertical\"><input type=text name=\"dnais%d\" id=\"dnais%d\" value=\"%s\" maxlength=10 class=\"form-control form-control-xs\">", $i_num_parametre, $i_num_parametre, $this -> st_date_naissance);
                  // Bouton d'ouverture du popup
-                $st_chaine .= sprintf("<span class=\"input-group-btn\"><button type=\"button\" class=\"ouvre_popup btn btn-primary btn-xs\" data-id_fenetre=\"#popup_dnais%d\"><span class=\"glyphicon glyphicon-calendar\"></span>  Saisir une date r&eacute;publicaine</button></span>", $i_num_parametre);
+                $st_chaine .= sprintf("<button type=\"button\" class=\"ouvre_popup btn btn-primary btn-xs\" data-id_fenetre=\"#popup_dnais%d\"><span class=\"glyphicon glyphicon-calendar\"></span>  Saisir une date r&eacute;publicaine</button>", $i_num_parametre);
                  $st_chaine .= "</div></td></tr>\n";
                  $this -> a_filtres_parametres["patro$i_num_parametre"] = array(array("required", "true", "Le patronyme est obligatoire"));
                  if ($pi_idf_type_acte != IDF_DECES)
