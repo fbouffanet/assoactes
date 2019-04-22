@@ -565,9 +565,9 @@ class Acte {
              $i_annee_rep = (int) $i_annee_rep;
              } 
 		// Champ date républicaine
-        $st_chaine .= sprintf("<td colspan=3><div class=\"input-group\"><input type=text name=date_rep id=date_rep value=\"%s\" maxlength=10 class=\"form-control form-control-xs\">", $this -> st_date_rep);
+        $st_chaine .= sprintf("<td colspan=3><div class=\"btn-group-vertical\"><input type=text name=date_rep id=date_rep value=\"%s\" maxlength=10 class=\"form-control form-control-xs\">", $this -> st_date_rep);
 		// Bouton d'ouverture du popup
-        $st_chaine .= "<span class=\"input-group-btn\"><button type=\"button\" class=\"ouvre_popup btn btn-primary btn-xs\" data-id_fenetre=\"#popup_date_rep_acte\"><span class=\"glyphicon glyphicon-calendar\"></span>  Saisir une date r&eacute;publicaine</button></span></div>";
+        $st_chaine .= "<button type=\"button\" class=\"ouvre_popup btn btn-primary btn-xs\" data-id_fenetre=\"#popup_date_rep_acte\"><span class=\"glyphicon glyphicon-calendar\"></span>  Saisir une date r&eacute;publicaine</button></div>";
          // Contenu du popup
         $st_chaine .= sprintf("<div class=\"popup_date_rep\" id=\"popup_date_rep_acte\" title=\"Fenetre\">%s</div></td></tr>\n", $st_chaine_date_rep);	 
         
