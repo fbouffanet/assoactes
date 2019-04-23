@@ -56,7 +56,8 @@ print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
-print("<link href='../css/select2.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='../css/select2.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/select2-bootstrap.min.css' type='text/css' rel='stylesheet'>");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/jquery.validate.min.js' type='text/javascript'></script>");
 print("<script src='../js/additional-methods.min.js' type='text/javascript'></script>");
@@ -327,6 +328,8 @@ $("#suppression_repertoires").validate({
     window.location.href = 'GestionRepNot.php';
 });
 
+  $.fn.select2.defaults.set( "theme", "bootstrap" );
+  
   $(".js-select-avec-recherche").select2();
 }); 
 </script>
@@ -500,25 +503,25 @@ function menu_edition($pa_communes,$pa_releveurs,$pi_idf_repertoire,$pst_nom_not
    print('<div class="form-group row">');
    print('<label for="idf_repertoire" class="col-form-label col-md-2">Identifiant du r&eacute;pertoire</label>');
    print('<div class="col-md-10">');
-   print("<input type=\"text\" maxlength=50 size=30 name=idf_repertoire id=idf_repertoire value=\"$pi_idf_repertoire\">");
+   print("<input type=\"text\" maxlength=50 size=30 name=idf_repertoire id=idf_repertoire value=\"$pi_idf_repertoire\" class=\"form-control\">");
    print('</div>');
    print('</div>');
    print('<div class="form-group row">');
    print('<label for="nom_notaire" class="col-form-label col-md-2">Nom du notaire</label>');
    print('<div class="col-md-10">');
-   print("<input type=\"text\" maxlength=50 size=30 name=nom_notaire id=nom_notaire value=\"$pst_nom_notaire\">");
+   print("<input type=\"text\" maxlength=50 size=30 name=nom_notaire id=nom_notaire value=\"$pst_nom_notaire\" class=\"form-control\">");
    print('</div>');
    print('</div>');
    print('<div class="form-group row">');
    print('<label for="cote" class="col-form-label col-md-2">Cote du notaire</label>');
    print('<div class="col-md-10">');
-   print("<input type=\"text\" maxlength=10 size=10 name=cote id=cote value=\"$pst_cote\">");
+   print("<input type=\"text\" maxlength=10 size=10 name=cote id=cote value=\"$pst_cote\" class=\"form-control\">");
    print('</div>');
    print('</div>');
    print('<div class="form-group row">');
    print('<label for="idf_commune" class="col-form-label col-md-2">Commune</label>');
    print('<div class="col-md-10">');
-   print("<select name=\"idf_commune\" id=\"idf_commune\">");
+   print("<select name=\"idf_commune\" id=\"idf_commune\" class=\"form-control js-select-avec-recherche\">");
    print(chaine_select_options($pi_idf_commune,$pa_communes));
    print("</select>");
    print('</div>');
@@ -526,7 +529,7 @@ function menu_edition($pa_communes,$pa_releveurs,$pi_idf_repertoire,$pst_nom_not
    print('<div class="form-group row">');
    print('<label for="idf_releveur" class="col-form-label col-md-2">Releveur</label>');
    print('<div class="col-md-10">');
-   print("<select name=\"idf_releveur\" id=\"idf_releveur\">");
+   print("<select name=\"idf_releveur\" id=\"idf_releveur\" class=\"form-control js-select-avec-recherche\">");
    print(chaine_select_options($pi_idf_releveur,$pa_releveurs));
    print("</select>");
    print('</div>');
@@ -535,7 +538,7 @@ function menu_edition($pa_communes,$pa_releveurs,$pi_idf_repertoire,$pst_nom_not
    print('<div class="form-group row">');
    print('<label for="publication" class="col-form-label col-md-2">Publication</label>');
    print('<div class="col-md-10">');
-   print("<input type=checkbox value='O' name='publication' id='publication' $st_coche>");
+   print("<input type=checkbox value='O' name='publication' id='publication' $st_coche class=\"form-control\">");
    print('</div>');
    print('</div>');
 }
