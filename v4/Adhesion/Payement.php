@@ -1,10 +1,6 @@
 <?php
 
-print("<pre>");
-print_r($_POST);
-print("</pre>");
 session_start();
-
 
 $gst_chemin = "../";
 //$gst_chemin = "";
@@ -28,7 +24,6 @@ $gst_origine = isset($_POST['description_origine']) ? trim($_POST['description_o
 $gst_aides = array_sum($ga_aides);
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-print("Type=$gst_type<br>Type post=".$_POST['type']."\n");
 switch ($gst_type)
 {
   case TYPE_INSCRIPTION:
@@ -64,11 +59,11 @@ switch ($gst_type)
          require_once('../Commun/Identification.php');
       }
       if(!isset($_SESSION['ident']))
-         die("<div class=ERREUR> Identifiant non reconnu</div>");
+         die("<div class=\"alert alert-danger\"> Identifiant non reconnu</div>");
       $gst_ident = $_SESSION['ident'];
       $a_adh_agc= $connexionBD->sql_select_liste("select idf,nom,prenom,email_perso,cp,pays,annee_cotisation,jeton_paiement from adherent where ident='$gst_ident'");
       if (empty($a_adh_agc))
-         die("<div class=ERREUR> Identifiant AGC non retrouv&eacute;</div>");
+         die("<div class=\"alert alert-danger\"> Identifiant AGC non retrouv&eacute;</div>");
       list($i_idf_agc,$st_nom_adh,$st_prenom_adh,$st_email_adh,$st_cp_adh,$st_pays_adh,$i_annee_cotisation_adh)= $a_adh_agc;
       setlocale(LC_CTYPE, 'fr_FR.UTF8');
       $st_nom_adh = trim(strip_tags(iconv("cp1252", "ASCII//TRANSLIT", $st_nom_adh)));
@@ -84,7 +79,7 @@ switch ($gst_type)
       $gst_ref = implode('_',array('READHESION',$st_nom_adh,$st_prenom_adh,$i_idf_agc,$st_temps));
   break;
   default:
-    die("Type d'inscription inconnu");      
+    die("<div class=\"alert alert-danger\">Type d'inscription inconnu</div>");      
 }
 
 // calcul du tarif
@@ -101,10 +96,9 @@ switch ($gst_statut)
        $i_tarif = $ga_tarifs['bulletin_etranger'];   
   break;
   default:
-    die("Statut $st_statut invalide<br>");
+    die("<div class=\"alert alert-danger\"> Statut $st_statut invalide</div>");
 }
 
-/*
 // INITIALISATION
 require_once("include.php");
 
@@ -128,9 +122,9 @@ $array['buyer']['email'] = $st_email_adh;
                                               
 // EXECUTION
 $result = $payline->do_webpayment($array);
-*/
-//if(isset($result) && $result['result']['code'] == '00000' )
-if (true)
+
+if(isset($result) && $result['result']['code'] == '00000' )
+//if (true)
 {
     $st_token = $result['token'];
     // mise à jour des statuts, prix et aides possibles
@@ -150,14 +144,14 @@ if (true)
         $connexionBD->execute_requete($st_requete);
       break;
       default:
-        die("Type d'inscription inconnu");      
+        die("<div class=\"alert alert-danger\"> Type d'inscription inconnu</div>");      
     }
 		header("location:".$result['redirectURL']);
 		exit();
 }
 elseif(isset($result))
 {
-	echo 'ERROR : '.$result['result']['code']. ' '.$result['result']['longMessage'].' <BR/>';
+	echo '<div class="alert alert-danger"> ERROR : '.$result['result']['code']. ' '.$result['result']['longMessage'].' </div>';
 }
 	
 ?>
