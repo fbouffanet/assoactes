@@ -97,8 +97,8 @@ function affiche_menu()
    print('<div class="form-row">');
    print('<div class="col-xs-3 col-xs-offset-1">');
    print('<div class="btn-group-vertical " role="group">');
-   print('<button type=submit class="btn btn-primary">Demander un nouveau mot de passe</button>');   
-   print('<button type="button" id=ferme class="btn btn-warning">Annuler</button>');
+   print('<button type=submit class="btn btn-primary"><span class="glyphicon glyphicon-lock"></span> Demander un nouveau mot de passe</button>');   
+   print('<button type="button" id=ferme class="btn btn-warning"><span class="glyphicon glyphicon-remove"></span> Annuler</button>');
    print("</div></div></div>");
    print("<input type=\"hidden\" name=\"mode\" value=\"DEMANDE\">\n");
    print('</form></div>');
@@ -150,7 +150,7 @@ function verifie_demande($pst_email)
   }
   print('</div></div></div>');
   print('<div class="row">');
-  print('<button type="button" id="ferme" class="btn btn-warning col-xs-4 col-xs-offset-4">Annuler</button>');
+  print('<button type="button" id="ferme" class="btn btn-warning col-xs-4 col-xs-offset-4"><span class="glyphicon glyphicon-remove"></span> Annuler</button>');
   print('</div>'); 
 } 
 
