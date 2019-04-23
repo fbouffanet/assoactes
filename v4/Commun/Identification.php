@@ -205,10 +205,11 @@ function affiche_menu_auth($pst_message)
   print('</div>');
   print('</div>');
   print('</div>');
+  
   print('<div class="form-group">');   
   print('<label for="mdp" class="col-md-4 col-form-label">Mot de passe:</label>');
   print('<div class="col-md-6">');
-   print('<div class="input-group">');
+  print('<div class="input-group">');
   print('<span class="input-group-addon">');
   print('<span class="glyphicon glyphicon-lock"></span>');
   print('</span>');
@@ -216,17 +217,17 @@ function affiche_menu_auth($pst_message)
   print("</div>\n");
   print("</div>\n");
   print("</div>\n");
-  print('<div class="form-row">');
-  print("<input type=\"submit\" value=\"Se connecter\" class=\"form-row col-md-offset-3 col-md-6 btn btn-primary\">\n");  
+  
+  print('<div class="btn-group-vertical col-md-offset-3 col-md-6" role="group" >');
+  print('<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Se connecter</button>');  
+  print("<button class=\"form-row col-md-offset-2 col-md-8 btn btn-warning\" id=\"DemandeNouveauMDP\"><span class=\"glyphicon glyphicon-warning-sign\"></span> J'ai oubli&eacute; mon mot de passe</button>");
   print("</div>\n");
 
   print('</form>');
-  print('</div>'); // fin panel body
+  print('</div></div>'); // fin panel body
   
-  print("<button class=\"form-row col-md-offset-2 col-md-8 btn btn-warning\" id=\"DemandeNouveauMDP\">J'ai oubli&eacute; mon mot de passe</button>");
-  print("</div>");
-  print("</div>");
-  print("</body>");
+  
+  print("</div></body>");
   print("</html>");
 }
 
