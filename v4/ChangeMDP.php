@@ -42,7 +42,6 @@ print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {
-  $(".js-select-avec-recherche").select2();
 
   $("#change_mdp").validate({
   rules: {
