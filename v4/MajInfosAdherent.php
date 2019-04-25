@@ -132,13 +132,13 @@ function menu_edition_adherent($pconnexionBD,$padherent,$pi_idf_adh)
    print("<input type=hidden name=mode value=MODIFIER>\n");
    print('<div class="row col-md-12">');
    
-   print('<div class="col-md-5">');
+   print('<div class="col-md-6">');
    print($padherent->formulaire_infos_personnelles(false));
    print("</div>");
    
-   print('<div class="col-md-2"></div>');
+   //print('<div class="col-md-2"></div>');
    
-   print('<div class="col-md-5">');  
+   print('<div class="col-md-6">');  
    print($padherent->formulaire_aides_possibles());
    print($padherent->formulaire_origine());
    if (file_exists("$gst_rep_trombinoscope/$pi_idf_adh.jpg"))
