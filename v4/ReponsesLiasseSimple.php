@@ -318,14 +318,13 @@ $a_liasses=$connexionBD->sql_select_multiple($gst_requete_liasses);
 print benchmark("Recherche ");
 
 $i_nb_liasses = count($a_liasses);
-print("<div class=\"text-center\"><span class=\"badge\">$i_nb_liasses</span> occurrences trouv&eacute;es.</div>");
+print("<div class=\"row text-center col-md-12\"><span class=\"badge\">$i_nb_liasses</span> occurrences trouv&eacute;es.</div>");
 print('<div id="curseur" class="infobulle"></div>');
 if ($i_nb_liasses>$gi_nb_max_reponses)
 {
-	print("<div class=\"text-center\">Seules les $gi_nb_max_reponses premi&egrave;res sont affich&eacute;es</div>");
+	print("<div class=\"row text-center col-md-12\">Seules les $gi_nb_max_reponses premi&egrave;res sont affich&eacute;es</div>");
 	$a_liasses = array_slice($a_liasses,0,$gi_nb_max_reponses);
 }
-print("</div>");
 if ($i_nb_liasses>0) {
 	function premier_elem($a_tab) {
 		return $a_tab[0];
