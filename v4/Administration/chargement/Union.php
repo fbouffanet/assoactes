@@ -43,7 +43,7 @@ class Union {
 	 $a_unions_a_creer = array();
      $a_colonnes = array();
 	 $i=0;
-     foreach ($this->a_union as $a_ligne )
+     foreach ($this->a_union as $a_ligne)
      {
         list($i_idf_source,$i_idf_commune,$i_idf_acte,$st_type_acte,$i_idf_epoux,$st_nom_epoux,$i_idf_epouse,$st_nom_epouse) = $a_ligne;		
 		$a_colonnes[] = "(:idf_source$i,:idf_commune$i,:idf_acte$i,:type_acte$i,:idf_epoux$i,:nom_epoux$i,:idf_epouse$i,:nom_epouse$i)";
@@ -57,17 +57,20 @@ class Union {
 		$a_unions_a_creer[":nom_epouse$i"]=$st_nom_epouse;
         $i++;
      }
-	 $st_colonnes = join(',',$a_colonnes);
-	 $st_requete .= $st_colonnes;
-     try
-     {
-       $this->connexionBD->initialise_params($a_unions_a_creer);  
-	   $this->connexionBD->execute_requete($st_requete);
-	   $this->connexionBD->initialise_params($a_params_precs);
-     }
-     catch (Exception $e) {
-       die('Sauvegarde union impossible: ' . $e->getMessage());
-     }  
+	 if (count($this->a_union)>0)
+	 {	 
+		$st_colonnes = join(',',$a_colonnes);
+		$st_requete .= $st_colonnes;
+		try
+		{
+			$this->connexionBD->initialise_params($a_unions_a_creer);  
+			$this->connexionBD->execute_requete($st_requete);
+			$this->connexionBD->initialise_params($a_params_precs);
+		}
+		catch (Exception $e) {
+		die('Sauvegarde union impossible: ' . $e->getMessage());
+		}
+	 }		
    }
    
    /*
