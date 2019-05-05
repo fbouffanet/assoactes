@@ -515,8 +515,9 @@ print("<form enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\"
 switch($gst_mode)
 {
    case 'FORMULAIRE' :
-      print("<div class=TITRE>Création des publications</div><br>"); 
-     //print('<input type="hidden" name="MAX_FILE_SIZE" value="$gi_max_taille_upload" />'); 
+   	 print('<div class="panel panel-primary">');
+     print('<div class="panel-heading">Création des publications</div>');
+	 print('<div class="panel-body">');
      print('<input type="hidden" name="mode" value="CHARGEMENT" />');
      print('<div align=center>Source: <select name=idf_source>');
      print(chaine_select_options($gi_idf_source,$a_sources));
