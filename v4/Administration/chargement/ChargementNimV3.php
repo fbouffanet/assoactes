@@ -492,21 +492,30 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
    } 
    fclose($pf);   
    
-   $type_acte->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $union->sauve($pst_rep_trav,$this->st_parametres_load_data);   
-   $stats_patronyme->sauve($pst_rep_trav,$this->st_parametres_load_data);
+   $type_acte->sauve();
+   $union->sauve();   
+   $stats_patronyme->sauve();
    $stats_commune->sauve();
-   $prenom->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $commune_personne->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $profession->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $st_fich_personnes = addslashes($pst_rep_trav.'/personnes.csv');  
-   $pf_personnes=fopen($st_fich_personnes,"w") or die("Impossible d'ecrire le fichier $st_fich_personnes");
-   foreach ($a_liste_personnes as $personne)
+   $prenom->sauve();
+   $commune_personne->sauve();
+   $profession->sauve();   
+   if (count($a_liste_personnes)>0)
    {
-      fwrite($pf_personnes,$personne->vers_csv()."\n");
+	  $st_personnes = '';
+	  $connexionBD->initialise_params(array()); 
+      foreach ($a_liste_personnes as $personne)
+      {
+         list($st_ligne,$a_personnes_a_creer)=$personne->ligne_sql_a_inserer();
+		 print("L=$st_ligne<br><pre>\n");
+		 print_r($a_personnes_a_creer);
+		 print("</pre>");
+		 $st_personnes.=$st_ligne;
+         $connexionBD->ajoute_params($a_personnes_a_creer); 
+	  }
+	  $st_requete = Personne::requete_base().$st_personnes;
+      $connexionBD->execute_requete($st_requete);	  
    }
-   fclose($pf_personnes);   
-   $connexionBD->execute_requete(Personne::requete_chargement_massif($st_fich_personnes,"\n",$this->st_parametres_load_data));
+   
    $st_fich_actes = addslashes($pst_rep_trav.'/actes.csv');
    $pf_actes=fopen($st_fich_actes,"w") or die("Impossible d'ecrire le fichier $st_fich_actes");
    foreach ($a_liste_actes as $acte)
