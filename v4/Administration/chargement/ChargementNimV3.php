@@ -502,17 +502,17 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
    if (count($a_liste_personnes)>0)
    {
 	  $st_personnes = '';
-	  $connexionBD->initialise_params(array()); 
+	  $connexionBD->initialise_params(array());
+	  $a_personnes_a_creer=array();
+	  $a_lignes_personnes = array();
       foreach ($a_liste_personnes as $personne)
       {
-         list($st_ligne,$a_personnes_a_creer)=$personne->ligne_sql_a_inserer();
-		 print("L=$st_ligne<br><pre>\n");
-		 print_r($a_personnes_a_creer);
-		 print("</pre>");
-		 $st_personnes.=$st_ligne;
-         $connexionBD->ajoute_params($a_personnes_a_creer); 
+         list($st_ligne,$a_personnes)=$personne->ligne_sql_a_inserer();
+		 $a_lignes_personnes[]=$st_ligne;
+		 $a_personnes_a_creer=$a_personnes_a_creer+$a_personnes;
 	  }
-	  $st_requete = Personne::requete_base().$st_personnes;
+	  $connexionBD->initialise_params($a_personnes_a_creer);
+	  $st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
       $connexionBD->execute_requete($st_requete);	  
    }
    
