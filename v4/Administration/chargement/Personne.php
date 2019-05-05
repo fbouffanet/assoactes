@@ -433,18 +433,7 @@ class Personne
          // return addslashes($pst_commentaires);
         return $pst_commentaires;
          } 
-    
-    /**
-     * 
-     * @param string $pst_valeur valeur … convertir
-     * @return string champ CSV
-     */
-    static function champ_csv($pst_valeur)
-    
-    {
-         return is_null($pst_valeur) ? '\N' : "\"$pst_valeur\"";
-         } 
-    
+        
     /**
      * Renvoie le contenu de la personne sous la forme d'une ligne SQL à insérer
      * @return string personne sous forme CSV 
