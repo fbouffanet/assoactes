@@ -446,47 +446,41 @@ class Personne
          } 
     
     /**
-     * Renvoie le contenu de la personne sous la forme d'une chaine CSV
-     * 
-     * @return string personne sous forme CSV (s‚parateur=;)
+     * Renvoie le contenu de la personne sous la forme d'une ligne SQL à insérer
+     * @return string personne sous forme CSV 
      */
-    public function vers_csv()
-    
+    public function ligne_sql_a_inserer()    
     {
-         $a_champs = array();
-         $a_champs[] = $this -> i_idf;
-         $a_champs[] = $this -> i_idf_acte;
-         $a_champs[] = $this -> i_idf_type_presence;
-         $a_champs[] = $this -> c_sexe;
-         $a_champs[] = $this -> st_patronyme;
-         $a_champs[] = $this -> prenom -> vers_idf($this -> st_prenom);
-         $a_champs[] = $this -> st_surnom;
-         $a_champs[] = $this -> communePersonne -> vers_idf($this -> st_origine);
-         $a_champs[] = $this -> communePersonne -> vers_idf($this -> st_residence);
-         $a_champs[] = $this -> st_date_naissance;
-         $a_champs[] = $this -> st_age;
-         $a_champs[] = $this -> profession -> vers_idf($this -> st_profession);
-         $a_champs[] = $this -> st_commentaire;
-         $a_champs[] = $this -> i_est_decede;
-         $a_champs[] = $this -> i_idf_pere;
-         $a_champs[] = $this -> i_idf_mere;
-         return join(';', array_map("Personne::champ_csv", $a_champs));
+		 $a_personnes_a_creer[":idf$this->i_idf"]=$this -> i_idf;
+		 $a_personnes_a_creer[":idf_acte$this->i_idf"]=$this -> i_idf_acte;
+		 $a_personnes_a_creer[":idf_type_presence$this->i_idf"]=$this -> i_idf_type_presence;
+		 $a_personnes_a_creer[":sexe$this->i_idf"]=$this -> c_sexe;
+		 $a_personnes_a_creer[":patronyme$this->i_idf"]=$this -> st_patronyme;
+		 $a_personnes_a_creer[":idf_prenom$this->i_idf"]=$this -> prenom -> vers_idf($this -> st_prenom);
+		 $a_personnes_a_creer[":surnom$this->i_idf"]=$this -> st_surnom;
+		 $a_personnes_a_creer[":idf_origine$this->i_idf"]=$this -> communePersonne -> vers_idf($this -> st_origine);
+		 $a_personnes_a_creer[":idf_residence$this->i_idf"]=$this -> communePersonne -> vers_idf($this -> st_residence);
+		 $a_personnes_a_creer[":date_naissance$this->i_idf"]=$this -> st_date_naissance;
+		 $a_personnes_a_creer[":age$this->i_idf"]=$this -> st_age;
+		 $a_personnes_a_creer[":idf_profession$this->i_idf"]=$this -> profession -> vers_idf($this -> st_profession);
+		 $a_personnes_a_creer[":commentaire$this->i_idf"]=$this -> st_commentaire;
+		 $a_personnes_a_creer[":est_decede$this->i_idf"]=$this -> i_est_decede;
+		 $a_personnes_a_creer[":idf_pere$this->i_idf"]=$this -> i_idf_pere;
+		 $a_personnes_a_creer[":idf_mere$this->i_idf"]=$this -> i_idf_mere;
+		 $this ->connexionBD->ajoute_params($a_personnes_a_creer);
+		 return array("(:idf$this->i_idf,:idf_acte$this->i_idf,:idf_type_presence$this->i_idf,:sexe$this->i_idf,:patronyme$this->i_idf,:idf_prenom$this->i_idf,:surnom$this->i_idf,:idf_origine$this->i_idf,:idf_residence$this->i_idf,:date_naissance$this->i_idf,:age$this->i_idf,:idf_profession$this->i_idf,:commentaire$this->i_idf,:est_decede$this->i_idf,:idf_pere$this->i_idf,:idf_mere$this->i_idf)",$a_personnes_a_creer);
+		 
          } 
     
     /**
-     * Renvoie la requête de chargement massif nécessaire pour charger un fichier CSV produit à l'aide de la fonction vers_csv(load data)
+     * Renvoie la requête de base pour un chargement de personne
      * 
-     * @param string $pst_fichier fichier CSV à charger (délimiteur de champ=;)
-     * @param string $pst_separateur_ligne séparateur de ligne
-     * @param sting $pst_parametres_load_data options du load data
-     * @global string $gst_jeu_de_caracteres_par_defaut jeu de caractères par défaut
      */
-    public static function requete_chargement_massif($pst_fichier, $pst_separateur_ligne, $pst_parametres_load_data = '')
+    public static function requete_base()
     {
-         global $gst_jeu_de_caracteres_par_defaut;
-         $pst_fichier = addslashes($pst_fichier);
-         return $st_requete = "load data $pst_parametres_load_data infile '$pst_fichier' into table `personne` CHARACTER SET $gst_jeu_de_caracteres_par_defaut fields terminated by '\;' OPTIONALLY enclosed by '\"' escaped by '\\\\' lines terminated by '$pst_separateur_ligne' (idf,idf_acte,idf_type_presence,sexe,patronyme,idf_prenom,surnom,idf_origine,idf_residence,date_naissance,age,idf_profession,commentaires,est_decede,idf_pere,idf_mere)";
-         } 
+
+		return "insert INTO `personne` (idf,idf_acte,idf_type_presence,sexe,patronyme,idf_prenom,surnom,idf_origine,idf_residence,date_naissance,age,idf_profession,commentaires,est_decede,idf_pere,idf_mere) values ";
+    } 
     
     /**
      * Renvoie la liste des filtres jquery validator … activer par champ de paramŠtre
