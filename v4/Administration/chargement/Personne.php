@@ -455,19 +455,19 @@ class Personne
 		 $a_personnes_a_creer[":idf_acte$this->i_idf"]=$this -> i_idf_acte;
 		 $a_personnes_a_creer[":idf_type_presence$this->i_idf"]=$this -> i_idf_type_presence;
 		 $a_personnes_a_creer[":sexe$this->i_idf"]=$this -> c_sexe;
-		 $a_personnes_a_creer[":patronyme$this->i_idf"]=$this -> st_patronyme;
-		 $a_personnes_a_creer[":idf_prenom$this->i_idf"]=$this -> prenom -> vers_idf($this -> st_prenom);
-		 $a_personnes_a_creer[":surnom$this->i_idf"]=$this -> st_surnom;
-		 $a_personnes_a_creer[":idf_origine$this->i_idf"]=$this -> communePersonne -> vers_idf($this -> st_origine);
-		 $a_personnes_a_creer[":idf_residence$this->i_idf"]=$this -> communePersonne -> vers_idf($this -> st_residence);
-		 $a_personnes_a_creer[":date_naissance$this->i_idf"]=$this -> st_date_naissance;
-		 $a_personnes_a_creer[":age$this->i_idf"]=$this -> st_age;
-		 $a_personnes_a_creer[":idf_profession$this->i_idf"]=$this -> profession -> vers_idf($this -> st_profession);
-		 $a_personnes_a_creer[":commentaire$this->i_idf"]=$this -> st_commentaire;
-		 $a_personnes_a_creer[":est_decede$this->i_idf"]=$this -> i_est_decede;
-		 $a_personnes_a_creer[":idf_pere$this->i_idf"]=$this -> i_idf_pere;
-		 $a_personnes_a_creer[":idf_mere$this->i_idf"]=$this -> i_idf_mere;
-		 $this ->connexionBD->ajoute_params($a_personnes_a_creer);
+		 $a_personnes_a_creer[":patronyme$this->i_idf"]=empty($this -> st_patronyme) ? '' : $this -> st_patronyme;
+		 $a_personnes_a_creer[":idf_prenom$this->i_idf"]=empty($this -> st_prenom) ? null : $this -> prenom -> vers_idf($this -> st_prenom);
+		 $a_personnes_a_creer[":surnom$this->i_idf"]=empty($this -> st_surnom) ? null : $this -> st_surnom;
+		 $a_personnes_a_creer[":idf_origine$this->i_idf"]=empty($this -> st_origine) ? null :$this -> communePersonne -> vers_idf($this -> st_origine);
+		 $a_personnes_a_creer[":idf_residence$this->i_idf"]=empty($this -> st_residence) ? null :$this -> communePersonne -> vers_idf($this -> st_residence);
+		 $a_personnes_a_creer[":date_naissance$this->i_idf"]=empty($this -> st_date_naissance) ? null : $this -> st_date_naissance;
+		 $a_personnes_a_creer[":age$this->i_idf"]=empty($this -> st_age) ? null : $this -> st_age ;
+		 $a_personnes_a_creer[":idf_profession$this->i_idf"]=empty($this -> st_profession) ? null : $this -> profession -> vers_idf($this -> st_profession);
+		 $a_personnes_a_creer[":commentaire$this->i_idf"]=empty($this -> st_commentaire) ? null : $this -> st_commentaire;
+		 $a_personnes_a_creer[":est_decede$this->i_idf"]=empty($this -> i_est_decede) ? null : $this -> i_est_decede;
+		 $a_personnes_a_creer[":idf_pere$this->i_idf"]=empty($this -> i_idf_pere) ? null : $this -> i_idf_pere;
+		 $a_personnes_a_creer[":idf_mere$this->i_idf"]=empty($this -> i_idf_mere) ? null : $this -> i_idf_mere;
+		 
 		 return array("(:idf$this->i_idf,:idf_acte$this->i_idf,:idf_type_presence$this->i_idf,:sexe$this->i_idf,:patronyme$this->i_idf,:idf_prenom$this->i_idf,:surnom$this->i_idf,:idf_origine$this->i_idf,:idf_residence$this->i_idf,:date_naissance$this->i_idf,:age$this->i_idf,:idf_profession$this->i_idf,:commentaire$this->i_idf,:est_decede$this->i_idf,:idf_pere$this->i_idf,:idf_mere$this->i_idf)",$a_personnes_a_creer);
 		 
          } 
