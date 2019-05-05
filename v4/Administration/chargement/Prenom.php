@@ -113,7 +113,6 @@ class Prenom {
            }
            $st_colonnes = join(',',$a_colonnes);
 	       $st_requete .= $st_colonnes; 
-		   print("R=$st_requete<br>");
            $this->connexionBD->initialise_params($a_prenoms_simples_a_creer);  
            $this->connexionBD->execute_requete($st_requete);
 		   $this->connexionBD->initialise_params($a_params_precs);
