@@ -573,8 +573,6 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
    // Empeche le chargement de la table le temps de la mise a jour
    $connexionBD->execute_requete("LOCK TABLES `personne` write , `prenom` write ,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write, `acte` as a read, `personne` as p read,`personne` as pers_pere read,`personne` as pers_mere read,`type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");
    // les redondances de donnees seront traitees par sql load data et la contrainte sur l'index nom
-   $st_fich_actes = addslashes($pst_rep_trav.'/actes.csv');
-   $pf_actes=fopen($st_fich_actes,"w") or die("Impossible d'ecrire le fichier $st_fich_actes");
    $i_nb_actes =0 ;
    while (!feof($pf))
    {      
@@ -667,7 +665,6 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
       } 
    } 
    fclose($pf);  
-   fclose($pf_actes);
    // Sauvegarde des types d'acte par sécurité si 'Naissance' n'a pas été déjà défini comme type d'acte
    
 	$type_acte->sauve();
@@ -743,7 +740,6 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
    $connexionBD->execute_requete("LOCK TABLES `personne` write , `prenom` write,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write,`acte` as a read, `personne` as p read,`personne` as pers_pere read,`personne` as pers_mere read,`type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");
    // les redondances de donnees seront traitees par sql load data et la contrainte sur l'index nom
    $st_fich_actes = addslashes($pst_rep_trav.'/actes.csv');
-   $pf_actes=fopen($st_fich_actes,"w") or die("Impossible d'ecrire le fichier $st_fich_actes");
    $i_nb_actes =0 ;
    while (!feof($pf))
    {      
@@ -854,7 +850,6 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
       } 
    } 
    fclose($pf);  
-   fclose($pf_actes);
 
 	$type_acte->sauve();
 	$union->sauve();   
