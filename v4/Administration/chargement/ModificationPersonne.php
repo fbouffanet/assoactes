@@ -122,7 +122,7 @@ class ModificationPersonne extends Personne
          if (!empty($this -> st_profession))
              {
             $this -> profession -> ajoute($this -> st_profession);
-             $this -> profession -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+             $this -> profession -> sauve();
              $i_idf_profession = $this -> profession -> vers_idf($this -> st_profession);
              } 
         else
@@ -130,7 +130,7 @@ class ModificationPersonne extends Personne
          if (!empty($this -> st_origine))
              {
             $this -> communePersonne -> ajoute($this -> st_origine);
-             $this -> communePersonne -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+             $this -> communePersonne -> sauve();
              $i_idf_origine = $this -> communePersonne -> vers_idf($this -> st_origine);
              } 
         else
@@ -138,7 +138,7 @@ class ModificationPersonne extends Personne
          if (!empty($this -> st_residence))
              {
             $this -> communePersonne -> ajoute($this -> st_residence);
-             $this -> communePersonne -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+             $this -> communePersonne -> sauve();
              $i_idf_residence = $this -> communePersonne -> vers_idf($this -> st_residence);
              } 
         else
