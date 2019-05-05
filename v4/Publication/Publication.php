@@ -517,7 +517,7 @@ switch($gst_mode)
 {
    case 'FORMULAIRE' :
    	 print('<div class="panel panel-primary">');
-     print('<div class="panel-heading">Création des publications</div>');
+     print('<div class="panel-heading">Création des publications !</div>');
 	 print('<div class="panel-body">');
      print('<input type="hidden" name="mode" value="CHARGEMENT" />');
      print('<div align=center>Source: <select name=idf_source>');
