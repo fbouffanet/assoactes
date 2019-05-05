@@ -5,6 +5,7 @@ require_once('../Commun/Identification.php');
 require_once('../Commun/VerificationDroits.php');
 verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
+require_once('../Commun/PaginationTableau.php');
 require_once '../Commun/commun.php';
 
 $gst_repertoire_publication = $_SERVER['DOCUMENT_ROOT'].'/v4/Publication/telechargements';
@@ -21,7 +22,7 @@ print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print("<script type='text/javascript'>");
 print("</script>");
-print('<title>Gestion des publications</title>');
+print('<title>Gestion des publications !</title>');
 print('</head>');
 
 print("\n<body>");
