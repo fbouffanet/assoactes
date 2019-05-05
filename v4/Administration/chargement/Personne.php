@@ -166,20 +166,17 @@ class Personne
 		 
 	public function sauveCommunePersonne()
 	{
-		global $gst_parametres_load_data, $gst_repertoire_chargement_actes;
-		$this -> communePersonne -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+		$this -> communePersonne -> sauve();
 	}
 	
 	public function sauveProfession()
 	{
-		global $gst_parametres_load_data, $gst_repertoire_chargement_actes;
-		$this -> profession -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+		$this -> profession -> sauve();
 	}
 	
 	public function sauvePrenom()
 	{
-		global $gst_parametres_load_data, $gst_repertoire_chargement_actes;
-		$this -> prenom -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+		$this -> prenom -> sauve();
 	}
 	
     public function importeMarNimV2($pst_origine, $pst_date_naissance, $pst_age, $pst_profession)
@@ -462,8 +459,7 @@ class Personne
          } 
     
     /**
-     * Renvoie la requête de base pour un chargement de personne
-     * 
+     * Renvoie la requête de base pour un chargement de personne 
      */
     public static function requete_base()
     {
@@ -529,7 +525,6 @@ class Personne
     public function cree()
     
     {
-         global $gst_parametres_load_data, $gst_repertoire_chargement_actes;
          $i_idf = $this -> i_idf;
          $i_idf_acte = $this -> i_idf_acte;
          $i_idf_type_presence = $this -> i_idf_type_presence;
@@ -575,7 +570,7 @@ class Personne
           if (!empty($this -> st_prenom))
           {
              $this -> prenom -> ajoute($this -> st_prenom);
-             $this -> prenom -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+             $this -> prenom -> sauve();
              $i_idf_prenom = $this -> profession -> vers_idf($this -> st_prenom);
           } 
           else
@@ -583,7 +578,7 @@ class Personne
          if (!empty($this -> st_profession))
              {
             $this -> profession -> ajoute($this -> st_profession);
-             $this -> profession -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+             $this -> profession -> sauve();
              $i_idf_profession = $this -> profession -> vers_idf($this -> st_profession);
              } 
         else
@@ -591,7 +586,7 @@ class Personne
          if (!empty($this -> st_origine))
              {
             $this -> communePersonne -> ajoute($this -> st_origine);
-             $this -> communePersonne -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+             $this -> communePersonne -> sauve();
              $i_idf_origine = $this -> communePersonne -> vers_idf($this -> st_origine);
              } 
         else
@@ -599,7 +594,7 @@ class Personne
          if (!empty($this -> st_residence))
              {
             $this -> communePersonne -> ajoute($this -> st_residence);
-             $this -> communePersonne -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+             $this -> communePersonne -> sauve();
              $i_idf_residence = $this -> communePersonne -> vers_idf($this -> st_residence);
              } 
         else

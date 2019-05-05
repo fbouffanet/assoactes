@@ -1595,22 +1595,22 @@ switch($gst_mode)
                    $a_liste_deja_existants = $chargementNimV2->liste_deja_existants();
                     
                    break;
-        case '3' : $chargementNimV3 = new ChargementNimV3($connexionBD,$gst_parametres_load_data);
+        case '3' : $chargementNimV3 = new ChargementNimV3($connexionBD);
                    switch($gc_idf_type_acte)
                    {
-                      case IDF_NAISSANCE : $b_ret = $chargementNimV3->charge_naissances($st_fich_dest,$gi_idf_commune_acte,$gi_idf_source,$gi_idf_releveur,$gst_repertoire_chargement_actes,liste_naissances_existant($connexionBD,$gi_idf_source,$gi_idf_commune_acte));
+                      case IDF_NAISSANCE : $b_ret = $chargementNimV3->charge_naissances($st_fich_dest,$gi_idf_commune_acte,$gi_idf_source,$gi_idf_releveur,liste_naissances_existant($connexionBD,$gi_idf_source,$gi_idf_commune_acte));
                       $i_nb_actes_charges = $chargementNimV3->nb_actes_charges();
                       $connexionBD->execute_requete("insert into chargement(date_chgt,idf_commune,type_acte_nim,nb_actes) values(now(),$gi_idf_commune_acte,".IDF_NAISSANCE.",$i_nb_actes_charges)");                       
                       break;
-                      case IDF_MARIAGE : $b_ret = $chargementNimV3->charge_mariages($st_fich_dest,$gi_idf_commune_acte,$gi_idf_source,$gi_idf_releveur,$gst_repertoire_chargement_actes,liste_mariages_existant($connexionBD,$gi_idf_source,$gi_idf_commune_acte));
+                      case IDF_MARIAGE : $b_ret = $chargementNimV3->charge_mariages($st_fich_dest,$gi_idf_commune_acte,$gi_idf_source,$gi_idf_releveur,liste_mariages_existant($connexionBD,$gi_idf_source,$gi_idf_commune_acte));
                       $i_nb_actes_charges = $chargementNimV3->nb_actes_charges();
                       $connexionBD->execute_requete("insert into chargement(date_chgt,idf_commune,type_acte_nim,nb_actes) values(now(),$gi_idf_commune_acte,".IDF_MARIAGE.",$i_nb_actes_charges)"); 
                       break;
-                      case IDF_DECES : $b_ret = $chargementNimV3->charge_deces($st_fich_dest,$gi_idf_commune_acte,$gi_idf_source,$gi_idf_releveur,$gst_repertoire_chargement_actes,liste_deces_existant($connexionBD,$gi_idf_source,$gi_idf_commune_acte)); 
+                      case IDF_DECES : $b_ret = $chargementNimV3->charge_deces($st_fich_dest,$gi_idf_commune_acte,$gi_idf_source,$gi_idf_releveur,liste_deces_existant($connexionBD,$gi_idf_source,$gi_idf_commune_acte)); 
                       $i_nb_actes_charges = $chargementNimV3->nb_actes_charges();
                       $connexionBD->execute_requete("insert into chargement(date_chgt,idf_commune,type_acte_nim,nb_actes) values(now(),$gi_idf_commune_acte,".IDF_DECES.",$i_nb_actes_charges)");
                       break;
-                      case IDF_DIVERS : $b_ret = $chargementNimV3->charge_divers($st_fich_dest,$gi_idf_commune_acte,$gi_idf_source,$gi_idf_releveur,$gst_repertoire_chargement_actes,liste_divers_existant($connexionBD,$gi_idf_source,$gi_idf_commune_acte));
+                      case IDF_DIVERS : $b_ret = $chargementNimV3->charge_divers($st_fich_dest,$gi_idf_commune_acte,$gi_idf_source,$gi_idf_releveur,liste_divers_existant($connexionBD,$gi_idf_source,$gi_idf_commune_acte));
                       $i_nb_actes_charges = $chargementNimV3->nb_actes_charges();
                       $connexionBD->execute_requete("insert into chargement(date_chgt,idf_commune,type_acte_nim,nb_actes) values(now(),$gi_idf_commune_acte,".IDF_DIVERS.",$i_nb_actes_charges)"); 
                       break;
@@ -1625,7 +1625,7 @@ switch($gst_mode)
      print('<div class="text-center"> Temps de traitement : '.(time()-$i_epoch_deb).' s</div>');
      if ($b_ret)
      {      
-        print('<label for="actes_existants" class="alert alert-warning">Actes d&eacute;j&agrave; existants:</label>');
+        print('<label for="actes_existants" class="alert alert-warning text-center">Actes d&eacute;j&agrave; existants:</label>');
 		print('<div class="text-center"><textarea rows=20 cols=80 id="actes_existants">');
         foreach ($a_liste_deja_existants as $st_acte)
           print("$st_acte\n");
