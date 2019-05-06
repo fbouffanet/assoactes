@@ -1705,7 +1705,7 @@ switch($gst_mode)
         exit;
      }
      chmod($st_fich_dest,0444);
-     $i_nb_actes_charges =charge_recensement($st_fich_dest,$gi_idf_commune_acte,$gi_annee_recens,$gi_idf_source,null,$gst_repertoire_chargement_actes);
+     $i_nb_actes_charges =charge_recensement($st_fich_dest,$gi_idf_commune_acte,$gi_annee_recens,$gi_idf_source,null);
      $connexionBD->execute_requete("insert into chargement(date_chgt,idf_commune,type_acte_nim,nb_actes) values(now(),$gi_idf_commune_acte,".IDF_RECENS.",$i_nb_actes_charges)");
      print("<div class=\"alert alert-success\">$i_nb_actes_charges actes charg&eacute;s</div>");
      print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
