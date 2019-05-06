@@ -4,7 +4,6 @@ class ChargementNimV2 {
    
    protected $i_nb_actes;
    protected $a_deja_existants;
-   protected $st_parametres_load_data;
    
    public function __construct ($pconnexionBD) {
       $this->i_nb_actes = 0;
