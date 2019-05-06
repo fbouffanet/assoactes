@@ -260,6 +260,7 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp,$pst_parametre_load_d
       $a_groupes_patros[$st_variante]=array($i_idf_groupe,0);
       $a_patros_courants[] = $st_variante;
    }
+   
    while (!feof($pf))
    {      
       $st_ligne           = fgets($pf);
@@ -290,35 +291,43 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp,$pst_parametre_load_d
    }   
    fclose($pf);
    // calcul des variantes pour les patronymes en cours
+   
    if (count($a_patros_courants)>0)
    {
-      $st_variantes=join(',',array_map("entre_quotes",$a_patros_courants)); 
-      $st_requete = "select nom from `patro_accent` where nom COLLATE latin1_swedish_ci in ($st_variantes)";
-      $a_patros_accent = $pconnexionBD->sql_select($st_requete);         
-      foreach ($a_patros_accent as $st_patro_accent)
-      {
-         $a_groupes_patros[$st_patro_accent]=array($i_idf_groupe,0);                  
-      }
-      $a_patros_courants=array();
+
+		$st_variantes=join(',',array_map("entre_quotes",$a_patros_courants)); 
+		$st_requete = "select nom from `patro_accent` where nom COLLATE latin1_swedish_ci in ($st_variantes)";
+		$a_patros_accent = $pconnexionBD->sql_select($st_requete);         
+		foreach ($a_patros_accent as $st_patro_accent)
+		{
+			$a_groupes_patros[$st_patro_accent]=array($i_idf_groupe,0);                  
+		}
+		$a_patros_courants=array();
    }
-   $st_fich_chargement = tempnam($pst_rep_tmp,"var_chgt");
-   $pf=fopen($st_fich_chargement,"w") or die("Impossible d'ecrire $st_fich_chargement\n");
-   foreach ($a_groupes_patros as $st_patronyme  => $a_valeurs)
-   {
-      list($i_idf_groupe,$b_majeure) = $a_valeurs;
-      fwrite($pf,"$i_idf_groupe;$st_patronyme;$b_majeure\n");
+   
+   if (count ($a_groupes_patros)>0)
+   {   
+		$st_requete = "into table `variantes_patro` (idf_groupe,patronyme,majeure) values";
+		$a_colonnes= array();
+		$a_variantes_a_creer=array();
+		$i=0;
+		foreach ($a_groupes_patros as $st_patronyme  => $a_valeurs)
+		{
+			list($i_idf_groupe,$b_majeure) = $a_valeurs;
+			$a_colonnes[]="(:idf_groupe$i,:patronyme$i;:majeure$i)";
+			$a_variantes_a_creer[":idf_groupe$i"]=$i_idf_groupe;
+		    $a_variantes_a_creer[":patronyme$i"]=$st_patronyme;
+			$a_variantes_a_creer[":majeure$i"]=$b_majeure;
+			$i++;
+		}
+		$st_colonnes = join(',',$a_colonnes);
+	    $st_requete .= $st_colonnes;
+		$pconnexionBD->initialise_params($a_variantes_a_creer);
+        $pconnexionBD->execute_requete($st_requete);
    }
    fclose($pf);
-
-   $st_fich_chargement=addslashes($st_fich_chargement);
-   usleep(500000);
-   chmod($st_fich_chargement,0444);
-   usleep(500000);
-   $st_requete = "load data $pst_parametre_load_data infile '$st_fich_chargement' into table variantes_patro fields terminated by ';' lines terminated by '\n' (idf_groupe,patronyme,majeure)";
-   $pconnexionBD->execute_requete($st_requete);
+   
    print("<div class=\"alert alert-info\">Dur&eacute;e: ".(time()-$i_temps_courant)." s</div>");
-   unlink($st_fich_chargement); 
-   unlink($st_fich_dest); 
    print('<div class="alert alert-success">Chargement effectu&eacute;</div>');
    print('<div align=center></div><br>');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
@@ -338,42 +347,44 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp,$pst_parametre_load_d
 function calcule_phonex($pconnexionBD,$pst_rep_tmp,$pst_parametres_load_data) {
     global $gst_jeu_de_caracteres_par_defaut;
     $ga_patronymes = $pconnexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme not in (select patronyme from `variantes_patro`)");    
-    $st_fich_temp = tempnam ($pst_rep_tmp, "phonex.csv");
-    $pf=@fopen($st_fich_temp,"w");
-    if ($pf===FALSE)
-       die("Ecriture fichier phonex.csv impossible");
-    $oPhonex = new phonex;
-    foreach($ga_patronymes as $st_patronyme)
-    {
-       if (empty($st_patronyme))
-          continue;   
-       $oPhonex -> build ($st_patronyme);
-       $sPhonex = trim($oPhonex -> sString);
-       fwrite($pf,"$st_patronyme;$sPhonex\n");
-    }
-    fclose($pf);
-    usleep(500000);
-    chmod($st_fich_temp,0444);
     $st_requete="truncate table `phonex_patro`";
     try
     {
       $pconnexionBD->execute_requete($st_requete);
     }
     catch (Exception $e) {
-       unlink($st_fich_temp);
        die('Suppression phonex impossible: ' . $e->getMessage());
-    }   
-    $st_fich_temp=addslashes($st_fich_temp);
-    $st_requete="LOAD DATA $pst_parametres_load_data INFILE '$st_fich_temp' IGNORE INTO TABLE `phonex_patro` CHARACTER SET $gst_jeu_de_caracteres_par_defaut FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n' (patronyme,phonex)";
-     try
-     {
-       $pconnexionBD->execute_requete($st_requete);
-     }
-     catch (Exception $e) {
-       unlink($st_fich_temp);
-       die('Calcul phonex impossible: ' . $e->getMessage());
-     }   
-     unlink($st_fich_temp);    
+    }  
+	$oPhonex = new phonex;
+	if (count($ga_patronymes)>0)
+	{
+		$st_requete = "insert ignore INTO `phonex_patro` (patronyme,phonex) values ";
+		$a_colonnes = array();
+		$a_phonex_a_creer = array();
+		$i=0;
+		foreach($ga_patronymes as $st_patronyme)
+		{
+			if (empty($st_patronyme))
+				continue;   
+			$oPhonex -> build ($st_patronyme);
+			$sPhonex = trim($oPhonex -> sString);
+			$a_colonnes[] = "(:st_patronyme$i,:phonex$i)";
+			$a_phonex_a_creer[":st_patronyme$i"]=$st_patronyme;
+			$a_phonex_a_creer[":phonex$i"]=$sPhonex;
+			$i++;
+		}
+		$st_colonnes = join(',',$a_colonnes);
+	    $st_requete .= $st_colonnes;
+		try
+		{
+			$pconnexionBD->initialise_params($a_phonex_a_creer);  
+			$pconnexionBD->execute_requete($st_requete);
+		}
+		catch (Exception $e) {
+			die('Calcul phonex impossible: ' . $e->getMessage());
+		}
+    }
+
 }    
 
 //------------------------------------------------------------------------------
