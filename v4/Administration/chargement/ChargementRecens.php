@@ -11,7 +11,7 @@
  */ 
 function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_source,$pi_idf_releveur)
 {
-   global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_parametres_load_data;
+   global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd;
    $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
    $type_acte = TypeActe::singleton($connexionBD);
    $union = Union::singleton($connexionBD);
