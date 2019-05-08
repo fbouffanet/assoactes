@@ -228,9 +228,8 @@ function extrait_patro_accents($pconnexionBD)
  * Charge les variantes de Nimègue V3 issues du fichier téléchargé
  * @param object $pconnexionBD Connexion à la base 
  * @param string $pst_rep_tmp répertoire temporaire où est stocké le fichier avant chargement en base
- * @param string $pst_parametre_load_data Paramètres du Load Data 
  */ 
-function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp,$pst_parametre_load_data)
+function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp)
 {
    $st_fich_dest = tempnam($pst_rep_tmp,"var_dest");
    if (!move_uploaded_file($_FILES['Variantes']['tmp_name'],$st_fich_dest)) 
@@ -341,10 +340,8 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp,$pst_parametre_load_d
  * Calcule les phonex de tous les patronymes commençant par une lettre ou une parenthese
  * @param object $pconnexionBD Connexion à la base 
  * @param string $pst_rep_tmp répertoire temporaire où est stocké le fichier avant chargement en base
-  * @global string $gst_jeu_de_caracteres_par_defaut jeu de caractères par défaut
  */
-function calcule_phonex($pconnexionBD,$pst_rep_tmp,$pst_parametres_load_data) {
-    global $gst_jeu_de_caracteres_par_defaut;
+function calcule_phonex($pconnexionBD,$pst_rep_tmp) {
     $ga_patronymes = $pconnexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme not in (select patronyme from `variantes_patro`)");    
     $st_requete="truncate table `phonex_patro`";
     try
@@ -459,7 +456,7 @@ switch($gst_mode)
    break;
    
    case 'CHARGEMENT' :
-       charge_variantes_NimV3($connexionBD,$gst_repertoire_chargement_actes,$gst_parametres_load_data);
+       charge_variantes_NimV3($connexionBD,$gst_repertoire_chargement_actes);
   
    break;
    
@@ -508,7 +505,7 @@ switch($gst_mode)
    break;
    
    case 'CALCUL_PHONEX':
-       calcule_phonex($connexionBD,$gst_repertoire_chargement_actes,$gst_parametres_load_data);
+       calcule_phonex($connexionBD,$gst_repertoire_chargement_actes);
        print("<div class=\"alert alert-success\">Phonex calcul&eacute;s</div>");
        affiche_menu();
    break;
