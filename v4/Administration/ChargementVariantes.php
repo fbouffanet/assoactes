@@ -254,7 +254,7 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp,$pst_parametre_load_d
    if (!feof($pf))
    {
       $st_ligne           = fgets($pf);
-      list($st_nimv3,$st_homon,$st_majeure,$st_variante,$st_ajeter) = split(';',$st_ligne);
+      list($st_nimv3,$st_homon,$st_majeure,$st_variante,$st_ajeter) = preg_split('/\;/',$st_ligne);
       $st_prev_majeure=$st_majeure;
       $a_groupes_patros[$st_majeure]=array($i_idf_groupe,1);
       $a_groupes_patros[$st_variante]=array($i_idf_groupe,0);
@@ -265,7 +265,7 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp,$pst_parametre_load_d
    {      
       $st_ligne           = fgets($pf);
       if (preg_match("/^[ ]*$/",$st_ligne)) continue;
-      list($st_nimv3,$st_homon,$st_majeure,$st_variante,$st_ajeter) = split(';',$st_ligne);
+      list($st_nimv3,$st_homon,$st_majeure,$st_variante,$st_ajeter) = preg_split('/\;/',$st_ligne);
       if ($st_prev_majeure!=$st_majeure)
       {
          if (count($a_patros_courants)>0)
@@ -307,14 +307,14 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp,$pst_parametre_load_d
    
    if (count ($a_groupes_patros)>0)
    {   
-		$st_requete = "into table `variantes_patro` (idf_groupe,patronyme,majeure) values";
+		$st_requete = "insert into `variantes_patro` (idf_groupe,patronyme,majeure) values";
 		$a_colonnes= array();
 		$a_variantes_a_creer=array();
 		$i=0;
 		foreach ($a_groupes_patros as $st_patronyme  => $a_valeurs)
 		{
 			list($i_idf_groupe,$b_majeure) = $a_valeurs;
-			$a_colonnes[]="(:idf_groupe$i,:patronyme$i;:majeure$i)";
+			$a_colonnes[]="(:idf_groupe$i,:patronyme$i,:majeure$i)";
 			$a_variantes_a_creer[":idf_groupe$i"]=$i_idf_groupe;
 		    $a_variantes_a_creer[":patronyme$i"]=$st_patronyme;
 			$a_variantes_a_creer[":majeure$i"]=$b_majeure;
@@ -322,6 +322,7 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp,$pst_parametre_load_d
 		}
 		$st_colonnes = join(',',$a_colonnes);
 	    $st_requete .= $st_colonnes;
+		print("$st_requete<br>");
 		$pconnexionBD->initialise_params($a_variantes_a_creer);
         $pconnexionBD->execute_requete($st_requete);
    }
