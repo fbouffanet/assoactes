@@ -678,7 +678,8 @@ function exporte_rep_not($pconnexionBD,$pi_idf_rep)
  */
 function importe_rep_not($pconnexionBD,$pi_idf_rep)
 {
-    $st_nom_fich_dest = sprintf("rep_not_%d.txt",$pi_idf_rep);     
+    global $gst_repertoire_telechargement;
+	$st_nom_fich_dest = sprintf("rep_not_%d.txt",$pi_idf_rep);     
     $st_fich_dest = "$gst_repertoire_telechargement/$st_nom_fich_dest";
     if (!move_uploaded_file($_FILES['RepNotFich']['tmp_name'],$st_fich_dest)) 
     {
@@ -727,8 +728,8 @@ function importe_rep_not($pconnexionBD,$pi_idf_rep)
 	   $a_champs_a_ajouter[":nom2_$i"]=$st_nom2;
 	   $a_champs_a_ajouter[":prenom2_$i"]=$st_prenom2;
 	   $a_champs_a_ajouter[":paroisse$i"]=$st_paroisse;
+	   $a_champs_a_ajouter[":cmt$i"]=$st_cmt;
 	   $a_champs_a_ajouter[":page$i"]=$i_page;
-	   $a_champs_a_ajouter[":idf_rep$i"]=$pi_idf_rep;
 	   $i++;
     }
     fclose($fp);
@@ -736,7 +737,7 @@ function importe_rep_not($pconnexionBD,$pi_idf_rep)
     $pconnexionBD->execute_requete($st_requete);
     if (count($a_colonnes)>0)
 	{
-		$st_requete = " insert `into rep_not_actes` (idf_repertoire,jour,mois,annee,date_rep,type,nom1,prenom1,nom2,prenom2,paroisse,commentaires,page) values";$st_requete = $st_requete .join(',',$a_colonnes);
+		$st_requete = " insert into `rep_not_actes` (idf_repertoire,jour,mois,annee,date_rep,type,nom1,prenom1,nom2,prenom2,paroisse,commentaires,page) values";$st_requete = $st_requete .join(',',$a_colonnes);
 		$pconnexionBD->initialise_params($a_champs_a_ajouter);
 		 $pconnexionBD->execute_requete($st_requete);
 		
