@@ -322,11 +322,9 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp,$pst_parametre_load_d
 		}
 		$st_colonnes = join(',',$a_colonnes);
 	    $st_requete .= $st_colonnes;
-		print("$st_requete<br>");
 		$pconnexionBD->initialise_params($a_variantes_a_creer);
         $pconnexionBD->execute_requete($st_requete);
    }
-   fclose($pf);
    
    print("<div class=\"alert alert-info\">Dur&eacute;e: ".(time()-$i_temps_courant)." s</div>");
    print('<div class="alert alert-success">Chargement effectu&eacute;</div>');
