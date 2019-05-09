@@ -354,7 +354,7 @@ function calcule_phonex($pconnexionBD,$pst_rep_tmp) {
 	$oPhonex = new phonex;
 	if (count($ga_patronymes)>0)
 	{
-		$st_requete = "insert ignore INTO `phonex_patro` (patronyme,phonex) values ";
+		$st_requete = "insert INTO `phonex_patro` (patronyme,phonex) values ";
 		$a_colonnes = array();
 		$a_phonex_a_creer = array();
 		$i=0;
@@ -371,6 +371,11 @@ function calcule_phonex($pconnexionBD,$pst_rep_tmp) {
 		}
 		$st_colonnes = join(',',$a_colonnes);
 	    $st_requete .= $st_colonnes;
+		/*print("R=$st_requete<br>");
+		print("<pre>");
+		print_r($a_phonex_a_creer);
+		print("</pre>");
+		*/
 		try
 		{
 			$pconnexionBD->initialise_params($a_phonex_a_creer);  
