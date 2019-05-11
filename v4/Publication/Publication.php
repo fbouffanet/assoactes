@@ -538,7 +538,8 @@ print('<div align=center>Année début <input type=text size=4 name=pl_date_debu
 print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 //*********************************************************
 
-     print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
+     //print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
+	 print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Création de la Publication</button></div>');
    break;
 
 
@@ -690,7 +691,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 	print "<br><b>Info sur la publication expl=> Relev? par:</b></br>";
     print ('<textarea name="message" rows="8" cols="45"></textarea><br>');
     //print ('<input type="submit" value="Exportation du PDF" />');
-	print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Valider</button></div>');
+	print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Exportation du PDF</button></div>');
 	print ('</p>');
 	print ('</form>');
 
