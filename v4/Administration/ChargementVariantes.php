@@ -342,15 +342,7 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp)
  * @param string $pst_rep_tmp répertoire temporaire où est stocké le fichier avant chargement en base
  */
 function calcule_phonex($pconnexionBD,$pst_rep_tmp) {
-    $ga_patronymes = $pconnexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme not in (select patronyme from `variantes_patro`)");    
-    $st_requete="truncate table `phonex_patro`";
-    try
-    {
-      $pconnexionBD->execute_requete($st_requete);
-    }
-    catch (Exception $e) {
-       die('Suppression phonex impossible: ' . $e->getMessage());
-    }  
+    $ga_patronymes = $pconnexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme not in (select patronyme from `phonex_patro`)");    
 	$oPhonex = new phonex;
 	if (count($ga_patronymes)>0)
 	{
