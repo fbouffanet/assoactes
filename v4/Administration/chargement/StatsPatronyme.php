@@ -78,51 +78,54 @@ class StatsPatronyme {
   }
   
   /*
-  * Met … jour le contenu de la table stats_patronyme … partir de la variable $a_stat
-  * @param string $pst_rep_tmp r‚pertoire temporaire … utiliser  
-  * @param string $pst_parametres_load_data options du load data    
+  * Met à jour le contenu de la table stats_patronyme à partir de la variable $a_stat  
   */
-  public function sauve($pst_rep_tmp,$pst_parametres_load_data) {
-     global $gst_jeu_de_caracteres_par_defaut;
-     // Construction du fichier statistique
-     $st_fich_temp = tempnam ($pst_rep_tmp, "stats_patronyme.csv");
-     $pf=@fopen($st_fich_temp,"w");
-     if ($pf===FALSE)
-        throw new Exception("Ecriture fichier stats_patronyme.csv impossible");
+  public function sauve() {
+
+	 $a_params_precs=$this->connexionBD->params();
+	 $a_stats_a_creer = array();
+     $a_colonnes = array();
+	 $i=0;
      foreach ($this->a_stat as  $st_patronyme => $a_champs)
      {
         foreach ($a_champs as $st_type_acte => $a_champs2)
         {
            list($i_annee_min,$i_annee_max,$i_nb_occ) = $a_champs2;
-           $st_ligne = implode(';',array_map("StatsPatronyme::champ_csv",array($st_patronyme,$this->i_idf_commune,$this->type_acte->vers_idf(strval($st_type_acte)),$this->i_idf_source,$i_annee_min,$i_annee_max,$i_nb_occ)));
-           fwrite($pf,"$st_ligne\n");
+		   $a_colonnes[] = "(:patronyme$i,:idf_commune$i,:idf_type_acte$i,:idf_source$i,:annee_min$i,:annee_max$i,:nb_occ$i)";
+		   $a_stats_a_creer[":patronyme$i"]=$st_patronyme;
+		   $a_stats_a_creer[":idf_commune$i"]=$this->i_idf_commune;
+		   $a_stats_a_creer[":idf_type_acte$i"]=$this->type_acte->vers_idf(strval($st_type_acte));
+		   $a_stats_a_creer[":idf_source$i"]=$this->i_idf_source;
+		   $a_stats_a_creer[":annee_min$i"]=$i_annee_min;
+		   $a_stats_a_creer[":annee_max$i"]=$i_annee_max;
+		   $a_stats_a_creer[":nb_occ$i"]=$i_nb_occ;
+		   $i++;
         }
      }
-     fclose($pf);
-     usleep(500000);
-     chmod($st_fich_temp,0444);
      $st_requete="delete from `stats_patronyme` where idf_commune=$this->i_idf_commune and idf_source=$this->i_idf_source";
      try
      {
+		$this->connexionBD->initialise_params(array()); 
         $this->connexionBD->execute_requete($st_requete);
      }
      catch (Exception $e) {
        die("Suppression stats_patronyme impossible (COM=$this->idf_type_commune,SRC=$this->i_idf_source): " . $e->getMessage());
      }
-     
-     // Chargement du fichier statistique
-     $st_fich_temp=addslashes($st_fich_temp);
-     $st_requete="LOAD DATA $pst_parametres_load_data INFILE '$st_fich_temp' IGNORE INTO TABLE `stats_patronyme` CHARACTER SET $gst_jeu_de_caracteres_par_defaut FIELDS TERMINATED BY '\;' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\n' (patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes)";
-     try
-     {
-       $this->connexionBD->execute_requete($st_requete);
-     }
-     catch (Exception $e) {
-       unlink($st_fich_temp);
-       die('Sauvegarde stats_patronyme impossible: ' . $e->getMessage());
-     }
-
-     unlink($st_fich_temp);
+     if (count($this->a_stat)>0)
+	 {	 
+		$st_requete = "insert ignore INTO `stats_patronyme` (patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes) values ";
+		$st_colonnes = join(',',$a_colonnes);
+		$st_requete .= $st_colonnes;
+		try
+		{
+			$this->connexionBD->initialise_params($a_stats_a_creer);  
+            $this->connexionBD->execute_requete($st_requete);
+		    $this->connexionBD->initialise_params($a_params_precs);
+		}
+		catch (Exception $e) {
+			die('Sauvegarde stats_patronyme impossible: ' . $e->getMessage());
+		}
+	 }	
    }
 
    function types_acte() {
