@@ -513,6 +513,7 @@ $a_communes_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from comm
 $a_versions_nimegue = array('2'=>'Version 2','3'=>'Version 3');
 print("<form enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
 switch($gst_mode)
+
 {
    case 'FORMULAIRE' :
    	 print('<div class="panel panel-primary">');
