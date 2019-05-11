@@ -30,19 +30,19 @@ print('<div class="container">');
 
 
 /**
- * Exporte les naissances au format Nim�gue V3
+ * Exporte les naissances au format Nim?gue V3
  * @param object $pconnexionBD lien connexion BD
  * @param integer $pi_idf_source identifiant de la source
- * @param integer $pi_idf_commune_acte identifiant de la commune � exporter
- * @param character $pc_idf_type_acte identifiant du type d'acte � exporter (type de naissance)
- * @param array $pa_liste_personnes liste des personnes � exporter (calcul�es par une requ�te SQL pr�c�dente)
- * @param array $pa_liste_actes liste des actes � exporter (calcul�es par une requ�te SQL pr�c�dente)
+ * @param integer $pi_idf_commune_acte identifiant de la commune ? exporter
+ * @param character $pc_idf_type_acte identifiant du type d'acte ? exporter (type de naissance)
+ * @param array $pa_liste_personnes liste des personnes ? exporter (calcul?es par une requ?te SQL pr?c?dente)
+ * @param array $pa_liste_actes liste des actes ? exporter (calcul?es par une requ?te SQL pr?c?dente)
  * @param object $pf pointeur sur le fichier de sortie
  */
 
 function export_nai_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-// � adapter pour prendre le champ code insee
+// ? adapter pour prendre le champ code insee
    list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
    $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
    foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
@@ -103,16 +103,16 @@ function export_nai_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
       }
       list($idf_commune_acte,$idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre,$st_commentaires) = $pa_liste_actes[$i_idf_acte];
       array_unshift($a_champs,'N',$st_date,$st_date_rep,$st_cote,$st_libre);
-      array_unshift($a_champs,""); // nom d�partement  => � am�liorer
-      array_unshift($a_champs,""); // code d�partement  => � am�liorer
+      array_unshift($a_champs,""); // nom d?partement  => ? am?liorer
+      array_unshift($a_champs,""); // code d?partement  => ? am?liorer
       array_unshift($a_champs,"NIMEGUEV3",$i_code_insee,$st_nom_commune);
-      // Cr�e les t�moins manquants
+      // Cr?e les t?moins manquants
       for ($i=$i_nb_temoins;$i<2;$i++)
       {
          array_push($a_champs,"","","");
       }
       $a_champs[]=$st_commentaires;
-      $a_champs[]=''; // Num�ro d'enregistrement
+      $a_champs[]=''; // Num?ro d'enregistrement
 
       fwrite($pf,(implode(';',$a_champs)));
       fwrite($pf,"\r\n");
@@ -127,7 +127,7 @@ function export_nai_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 	$dateminifp = $data['annee_min'];
 	$datemaxifp = $data['annee_max'];
 	$nbactesfp = $data['nb_actes'];
-	print "Publication des naissances de la commune <b>". $st_nom_commune." ann�e  ".$dateminifp. " - ".$datemaxifp."  ".$nbactesfp."  actes</b> <br>";
+	print "Publication des naissances de la commune <b>". $st_nom_commune." ann?e  ".$dateminifp. " - ".$datemaxifp."  ".$nbactesfp."  actes</b> <br>";
 	*/
 
 
@@ -137,19 +137,19 @@ function export_nai_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 }
 
 /**
- * Exporte les deces au format Nim�gue V3
+ * Exporte les deces au format Nim?gue V3
  * @param object $pconnexionBD lien connexion BD
  * @param integer $pi_idf_source identifiant de la source
- * @param integer $pi_idf_commune_acte identifiant de la commune � exporter
- * @param character $pc_idf_type_acte identifiant du type d'acte � exporter (type : d�c�s)
- * @param array $pa_liste_personnes liste des personnes � exporter (calcul�es par une requ�te SQL pr�c�dente)
- * @param array $pa_liste_actes liste des actes � exporter (calcul�es par une requ�te SQL pr�c�dente)
+ * @param integer $pi_idf_commune_acte identifiant de la commune ? exporter
+ * @param character $pc_idf_type_acte identifiant du type d'acte ? exporter (type : d?c?s)
+ * @param array $pa_liste_personnes liste des personnes ? exporter (calcul?es par une requ?te SQL pr?c?dente)
+ * @param array $pa_liste_actes liste des actes ? exporter (calcul?es par une requ?te SQL pr?c?dente)
  * @param object $pf pointeur sur le fichier de sortie
  */
 
 function export_dec_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-   // � adapter pour prendre le champ code insee
+   // ? adapter pour prendre le champ code insee
    list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
    $a_commune_personne=$pconnexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
    $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
@@ -228,36 +228,36 @@ function export_dec_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
       }
       list($idf_commune_acte,$idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre,$st_commentaires) = $pa_liste_actes[$i_idf_acte];
       array_unshift($a_champs,'D',$st_date,$st_date_rep,$st_cote,$st_libre);
-      array_unshift($a_champs,""); // nom d�partement  => � am�liorer
-      array_unshift($a_champs,""); // code d�partement  => � am�liorer
+      array_unshift($a_champs,""); // nom d?partement  => ? am?liorer
+      array_unshift($a_champs,""); // code d?partement  => ? am?liorer
       array_unshift($a_champs,"NIMEGUEV3",$i_code_insee,$st_nom_commune);
-      // Cr�e les t�moins manquants
+      // Cr?e les t?moins manquants
       for ($i=$i_nb_temoins;$i<2;$i++)
       {
          array_push($a_champs,"","","");
       }
       $a_champs[]=$st_commentaires;
-      $a_champs[]=''; // Num�ro d'enregistrement
+      $a_champs[]=''; // Num?ro d'enregistrement
       fwrite($pf,(implode(';',$a_champs)));
       fwrite($pf,"\r\n");
    }
-    print "Publication des d�c�s de la commune $st_nom_commune<br> <br>";
+    print "Publication des d?c?s de la commune $st_nom_commune<br> <br>";
 }
 
 /**
- * Exporte les mariages au format Nim�gue V3
+ * Exporte les mariages au format Nim?gue V3
  * @param object $pconnexionBD lien connexion BD
  * @param integer $pi_idf_source identifiant de la source
- * @param integer $pi_idf_commune_acte identifiant de la commune � exporter
- * @param character $pc_idf_type_acte identifiant du type d'acte � exporter (type : mariage)
- * @param array $pa_liste_personnes liste des personnes � exporter (calcul�es par une requ�te SQL pr�c�dente)
- * @param array $pa_liste_actes liste des actes � exporter (calcul�es par une requ�te SQL pr�c�dente)
+ * @param integer $pi_idf_commune_acte identifiant de la commune ? exporter
+ * @param character $pc_idf_type_acte identifiant du type d'acte ? exporter (type : mariage)
+ * @param array $pa_liste_personnes liste des personnes ? exporter (calcul?es par une requ?te SQL pr?c?dente)
+ * @param array $pa_liste_actes liste des actes ? exporter (calcul?es par une requ?te SQL pr?c?dente)
  * @param object $pf pointeur sur le fichier de sortie
  */
 
 function export_mar_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-  // � adapter pour prendre le champ code insee
+  // ? adapter pour prendre le champ code insee
   list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
   $a_commune_personne=$pconnexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
@@ -342,16 +342,16 @@ function export_mar_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
   }
   list($idf_commune_acte,$idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre,$st_commentaires) = $pa_liste_actes[$i_idf_acte];
   array_unshift($a_champs,'M',$st_date,$st_date_rep,$st_cote,$st_libre);
-  array_unshift($a_champs,""); // nom d�partement  => � am�liorer
-  array_unshift($a_champs,""); // code d�partement  => � am�liorer
+  array_unshift($a_champs,""); // nom d?partement  => ? am?liorer
+  array_unshift($a_champs,""); // code d?partement  => ? am?liorer
   array_unshift($a_champs,"NIMEGUEV3",$i_code_insee,$st_nom_commune);
-  // Cr�e les t�moins manquants
+  // Cr?e les t?moins manquants
   for ($i=$i_nb_temoins;$i<4;$i++)
   {
      array_push($a_champs,"","","");
   }
   $a_champs[]=$st_commentaires;
-  $a_champs[]=''; // Num�ro d'enregistrement
+  $a_champs[]=''; // Num?ro d'enregistrement
   fwrite($pf,(implode(';',$a_champs)));
   fwrite($pf,"\r\n");
   }
@@ -360,12 +360,12 @@ function export_mar_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 
 
 /**
- * Exporte les actes divers au format Nim�gue V3
+ * Exporte les actes divers au format Nim?gue V3
  * @param object $pconnexionBD lien connexion BD
  * @param integer $pi_idf_source identifiant de la source
- * @param integer $pi_idf_commune_acte identifiant de la commune � exporter
- * @param array $pa_liste_personnes liste des personnes � exporter (calcul�es par une requ�te SQL pr�c�dente)
- * @param array $pa_liste_actes liste des actes � exporter (calcul�es par une requ�te SQL pr�c�dente)
+ * @param integer $pi_idf_commune_acte identifiant de la commune ? exporter
+ * @param array $pa_liste_personnes liste des personnes ? exporter (calcul?es par une requ?te SQL pr?c?dente)
+ * @param array $pa_liste_actes liste des actes ? exporter (calcul?es par une requ?te SQL pr?c?dente)
  * @param object $pf pointeur sur le fichier de sortie
  */
 
@@ -451,8 +451,8 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
       case IDF_PRESENCE_TEMOIN:
         if ($i_nb_personnes==1)
         {
-            // Si le premier t�moin en seconde position, le second intervenant n'a pas �t� saisi
-            // ses champs doivent donc �tre compl�t�s
+            // Si le premier t?moin en seconde position, le second intervenant n'a pas ?t? saisi
+            // ses champs doivent donc ?tre compl?t?s
             array_push($a_champs,"","","","","","","","","","","","","","","","","","","");
         }
         $a_champs[] = $st_patronyme;
@@ -467,16 +467,16 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   list($st_type_acte,$st_sigle_acte) = $a_type_acte[$idf_type_acte];
   array_unshift($a_champs,$st_sigle_acte,$st_type_acte);
   array_unshift($a_champs,'V',$st_date,$st_date_rep,$st_cote,$st_libre);
-  array_unshift($a_champs,""); // nom d�partement  => � am�liorer
-  array_unshift($a_champs,""); // code d�partement  => � am�liorer
+  array_unshift($a_champs,""); // nom d?partement  => ? am?liorer
+  array_unshift($a_champs,""); // code d?partement  => ? am?liorer
   array_unshift($a_champs,"NIMEGUEV3",$i_code_insee,$st_nom_commune);
-  // Cr�e les t�moins manquants
+  // Cr?e les t?moins manquants
   for ($i=$i_nb_temoins;$i<4;$i++)
   {
      array_push($a_champs,"","","");
   }
   $a_champs[]=$st_commentaires;
-  $a_champs[]=''; // Num�ro d'enregistrement
+  $a_champs[]=''; // Num?ro d'enregistrement
   fwrite($pf,(implode(';',$a_champs)));
   fwrite($pf,"\r\n");
   }
@@ -500,7 +500,7 @@ $gi_idf_commune_acte = empty($_POST['idf_commune_acte']) ? '0': $_POST['idf_comm
 $gc_idf_type_acte = empty($_POST['idf_type_acte']) ? '0': $_POST['idf_type_acte'];
 $gi_idf_version_nimegue = empty($_POST['idf_version_nimegue']) ? '' : $_POST['idf_version_nimegue'];
 
-// Rajout PL dates d�but et fin *************************
+// Rajout PL dates d?but et fin *************************
 $g_pl_date_debut = empty($_POST['pl_date_debut']) ? '': $_POST['pl_date_debut'];
 $g_pl_date_fin = empty($_POST['pl_date_fin']) ? '': $_POST['pl_date_fin'];
 //*********************************************************
@@ -516,7 +516,7 @@ switch($gst_mode)
 {
    case 'FORMULAIRE' :
    	 print('<div class="panel panel-primary">');
-     print('<div class="panel-heading">Cr�ation des publications !</div>');
+     print('<div class="panel-heading">Création des publications !</div>');
 	 print('<div class="panel-body">');
      print('<input type="hidden" name="mode" value="CHARGEMENT" />');
      print('<div align=center>Source: <select name=idf_source>');
@@ -533,12 +533,12 @@ switch($gst_mode)
 
      print('</select></div><br>');
 
-// Rajout PL dates d�but et fin *****************************
-print('<div align=center>Ann�e d�but <input type=text size=4 name=pl_date_debut>');
-print(' Ann�e fin <input type=text size=4 name=pl_date_fin></div><br><br>');
+// Rajout PL dates d?but et fin *****************************
+print('<div align=center>Année début <input type=text size=4 name=pl_date_debut>');
+print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 //*********************************************************
 
-     print('<div align=center><input type="button" value="Cr�ation de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
+     print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
    break;
 
 
@@ -557,18 +557,18 @@ $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, comm
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
 if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
 $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sqltmp);
-// Nombre de lignes s�lect�es
+// Nombre de lignes s?lect?es
 $results= $connexionBD->liste_valeur_par_clef($sqltmp);
 $nb_rows = count($results);
-// pour r�cup�rer l'ann�e mini et maxi
+// pour r?cup?rer l'ann?e mini et maxi
 $sqltmp = "select min(annee) as annee_deb, max(annee) as annee_fin from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
 if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= $g_pl_date_fin";
-// pour r�cup�rer les ann�es s�lectionn�es
+// pour r?cup?rer les ann?es s?lectionn?es
 $row = $connexionBD-> sql_select_liste($sqltmp);
 $date_deb = $row[0];
 $date_fin = $row[1];
-// rajout test si date � 0
+// rajout test si date ? 0
 if ($date_deb < 1500)
 {
    $sqltmp = "select annee from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte order by annee";
@@ -600,10 +600,10 @@ $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, comm
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
 if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= $g_pl_date_fin";
 $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sqltmp);
-// Nombre de lignes s�lect�es
+// Nombre de lignes s?lect?es
 $results= $connexionBD->liste_valeur_par_clef($sqltmp);
 $nb_rows = count($results);
-// pour r�cup�rer l'ann�e mini et maxi
+// pour r?cup?rer l'ann?e mini et maxi
 // PL 23/04/2014  pour n'avoir que les CM, remplacement de
 $sqltmp = "select min(annee) as annee_deb, max(annee) as annee_fin from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.")";
 //  par
@@ -611,11 +611,11 @@ $sqltmp = "select min(annee) as annee_deb, max(annee) as annee_fin from acte whe
 
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
 if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= $g_pl_date_fin";
-// pour r�cup�rer les ann�es s�lectionn�es
+// pour r?cup?rer les ann?es s?lectionn?es
 $row = $connexionBD-> sql_select_liste($sqltmp);
 $date_deb = $row[0];
 $date_fin = $row[1];
-// rajout test si date � 0
+// rajout test si date ? 0
 if ($date_deb < 1500)
 {
    //$sqltmp = "select annee from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte = 2 order by annee";		// CM --> 2
@@ -675,7 +675,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
    fclose($pf);
 
    if (filesize($st_export_nimv3) == 0) {
-   print "<br><b>pas de donn�es</b></br>";
+   print "<br><b>pas de donn?es</b></br>";
    } else {
    print "</br>";
 //-------------------
@@ -684,10 +684,10 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 	print ('<p>');
 	if ($menuDIV == "O")
 	{
-	print "<br><b>Compl�ment du type acte pour les actes divers expl=> Actes Notari�s</b></br>";
+	print "<br><b>Compl?ment du type acte pour les actes divers expl=> Actes Notari?s</b></br>";
 	print ('<textarea name="TypeActe" rows="1" cols="45"></textarea><br><br>');
 	}
-	print "<br><b>Info sur la publication expl=> Relev� par:</b></br>";
+	print "<br><b>Info sur la publication expl=> Relev? par:</b></br>";
     print ('<textarea name="message" rows="8" cols="45"></textarea><br>');
     //print ('<input type="submit" value="Exportation du PDF" />');
 	print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Valider</button></div>');
