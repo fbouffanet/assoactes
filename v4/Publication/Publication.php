@@ -689,7 +689,8 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 	}
 	print "<br><b>Info sur la publication expl=> Relev� par:</b></br>";
     print ('<textarea name="message" rows="8" cols="45"></textarea><br>');
-    print ('<input type="submit" value="Exportation du PDF" />');
+    //print ('<input type="submit" value="Exportation du PDF" />');
+	print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Valider</button></div>');
 	print ('</p>');
 	print ('</form>');
 
