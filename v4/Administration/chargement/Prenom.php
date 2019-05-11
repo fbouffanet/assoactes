@@ -28,30 +28,32 @@ class Prenom {
      }
   }
   
-  public function sauve($pst_rep_tmp,$pst_parametres_load_data) {
-     global $gst_jeu_de_caracteres_par_defaut;
-     $st_fich_temp = tempnam ($pst_rep_tmp, "prenom.csv");
-     $pf=@fopen($st_fich_temp,"w");
-     if ($pf===FALSE)
-        throw new Exception("Ecriture fichier prenom.csv impossible");
-     foreach ($this->a_prenom as $st_prenom)
+  public function sauve() {
+	 $a_params_precs=$this->connexionBD->params();
+	 $a_prenoms_a_creer = array();
+	 if (count($this->a_prenom)>0)
      {
-       fwrite($pf,"$st_prenom\n");
-     }
-     fclose($pf);
-     usleep(500000);
-     chmod($st_fich_temp,0444);
-     $st_fich_temp=addslashes($st_fich_temp);
-     $st_requete="LOAD DATA $pst_parametres_load_data INFILE '$st_fich_temp' IGNORE INTO TABLE `prenom` CHARACTER SET $gst_jeu_de_caracteres_par_defaut fields terminated by '\;' LINES TERMINATED BY '\n' (libelle)";
-     try
-     {
-       $this->connexionBD->execute_requete($st_requete);
-     }
-     catch (Exception $e) {
-       unlink($st_fich_temp);
-       die('Sauvegarde prenom impossible: ' . $e->getMessage());
-     }   
-     unlink($st_fich_temp);
+	   $st_requete = "insert ignore INTO `prenom` (libelle) values ";
+       $a_colonnes = array();
+	   $i=0;
+	   foreach ($this->a_prenom as $st_prenom)
+       {
+         $a_colonnes[] = "(:prenom$i)";
+		 $a_prenoms_a_creer[":prenom$i"]=$st_prenom;
+         $i++; 
+	   }
+	   $st_colonnes = join(',',$a_colonnes);
+	   $st_requete .= $st_colonnes;
+	   try
+	   {
+		 $this->connexionBD->initialise_params($a_prenoms_a_creer);  
+         $this->connexionBD->execute_requete($st_requete);
+		 $this->connexionBD->initialise_params($a_params_precs);
+       }
+       catch (Exception $e) {
+         die('Sauvegarde Prenom impossible: ' . $e->getMessage().": $st_requete");
+      }
+	 }
      $st_requete = "select idf,libelle from prenom left join groupe_prenoms on (idf=idf_prenom) where idf_prenom is null and libelle regexp('[ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜİàáâãäåçèéêëìíîïğòóôõöùúûüıÿA-Za-z]+')"; 
      $a_prenoms= $this->connexionBD->liste_valeur_par_clef($st_requete);
      $a_prenoms=array_unique($a_prenoms);
@@ -85,14 +87,14 @@ class Prenom {
         }
         if (count($a_groupe_prenoms_sans_idf)>0)
         {
-           $st_fich_temp = tempnam ($pst_rep_tmp, "prenoms_simples.csv");
-           $pf=@fopen($st_fich_temp,"w");
-           if ($pf===FALSE)
-              throw new Exception("Ecriture fichier prenoms_simples.csv impossible");
            $oPhonex = new phonex;
            // Masque les erreurs Notice d'offset de la classe Phonex
            error_reporting(E_ERROR | E_WARNING | E_PARSE);
-           foreach($a_groupe_prenoms_sans_idf as $i_idf => $a_prenoms)
+           $a_prenoms_simples_a_creer = array();
+		   $i=0;
+		   $st_requete = "insert ignore INTO `prenom_simple` (libelle,phonex) values ";
+           $a_colonnes = array();
+		   foreach($a_groupe_prenoms_sans_idf as $i_idf => $a_prenoms)
            {
               $oPhonex = new phonex;
               foreach ($a_prenoms as $st_prenom)
@@ -101,19 +103,20 @@ class Prenom {
                  {           
                     $oPhonex -> build ($st_prenom);
                     $sPhonex = $oPhonex -> sString;
-                    fwrite($pf,"$st_prenom;$sPhonex\n");
-                 }
+				    $a_prenoms_simples_a_creer[":prenom$i"]=$st_prenom;
+					$a_prenoms_simples_a_creer[":phonex$i"]=$sPhonex;
+					$a_colonnes[] = "(:prenom$i,:phonex$i)";
+                    $i++;
+				 }
               }
+			  
            }
-           fclose($pf);
-           usleep(500000);
-           chmod($st_fich_temp,0444);
-           $st_fich_temp=addslashes($st_fich_temp);
-
-           //$st_requete = "LOAD $pst_parametres_load_data DATA INFILE '$st_nom_fich' IGNORE INTO TABLE prenom_simple CHARACTER SET latin1 FIELDS TERMINATED BY ';' LINES TERMINATED BY '\\n' (idf,libelle,phonex) ";
-           $st_requete = "LOAD $pst_parametres_load_data DATA INFILE '$st_fich_temp' IGNORE INTO TABLE prenom_simple CHARACTER SET $gst_jeu_de_caracteres_par_defaut FIELDS TERMINATED BY ';' LINES TERMINATED BY '\\n' (libelle,phonex) ";
+           $st_colonnes = join(',',$a_colonnes);
+	       $st_requete .= $st_colonnes; 
+           $this->connexionBD->initialise_params($a_prenoms_simples_a_creer);  
            $this->connexionBD->execute_requete($st_requete);
-
+		   $this->connexionBD->initialise_params($a_params_precs);
+		   
            $st_requete = "select idf,libelle from prenom_simple";
            $a_prenom_simples= $this->connexionBD->liste_clef_par_valeur($st_requete);
 
@@ -131,24 +134,25 @@ class Prenom {
               }
            }
        }
-       $st_fich_temp = tempnam ($pst_rep_tmp, "groupe_prenoms.csv");
-       $pf=@fopen($st_fich_temp,"w");
-       if ($pf===FALSE)
-          throw new Exception("Ecriture fichier groupe_prenoms.csv impossible");
-               
+       $a_groupes_a_creer = array();
+	   $i=0;
+	   $st_requete = "insert ignore INTO `groupe_prenoms` (idf_prenom,idf_prenom_simple) values ";
+       $a_colonnes = array();	   
        foreach($a_groupe_prenoms_avec_idf as $i_idf_groupe => $a_idf_prenoms)
        {
           foreach ($a_idf_prenoms as $i_idf_prenom)
           {
-             fwrite($pf,"$i_idf_groupe;$i_idf_prenom\n");
+			  $a_groupes_a_creer[":idf_groupe$i"]=$i_idf_groupe;
+			  $a_groupes_a_creer[":idf_prenom$i"]=$i_idf_prenom;
+			  $a_colonnes[] = "(:idf_groupe$i,:idf_prenom$i)";
+			  $i++;
           }
        }
-       fclose($pf);
-       usleep(500000);
-       chmod($st_fich_temp,0444);
-       $st_fich_temp=addslashes($st_fich_temp);
-       $st_requete = "LOAD $pst_parametres_load_data DATA  INFILE '$st_fich_temp' IGNORE INTO TABLE groupe_prenoms CHARACTER SET $gst_jeu_de_caracteres_par_defaut FIELDS TERMINATED BY ';' LINES TERMINATED BY '\\n' (idf_prenom,idf_prenom_simple) ";
+	   $st_colonnes = join(',',$a_colonnes);
+	   $st_requete .= $st_colonnes; 
+       $this->connexionBD->initialise_params($a_groupes_a_creer);  
        $this->connexionBD->execute_requete($st_requete);
+	   $this->connexionBD->initialise_params($a_params_precs);
      }
    }
    
