@@ -539,13 +539,9 @@ print('<div align=center>Année début <input type=text size=4 name=pl_date_debu
 print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 //*********************************************************
 
-     //print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
+     print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
 	 //print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Création de la Publication</button></div>');
-	 print('<div class="form-group col-md-4 col-md-offset-4">
-	 <input type="button" class="btn btn-primary">
-	 Création de la Publication
-	 </button>
-	 </div><br>');
+	
    break;
 
 
