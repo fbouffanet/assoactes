@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once '../Commun/config.php';
 require_once '../Commun/constantes.php';
 require_once('../Commun/Identification.php');
@@ -13,7 +13,7 @@ $gst_repertoire_publication = $_SERVER['DOCUMENT_ROOT'].'/v4/Publication/telecha
 print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=utf-8">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -494,9 +494,7 @@ require_once("../Commun/menu.php");
 
 $gst_mode = empty($_POST['mode']) ? 'FORMULAIRE': $_POST['mode'] ;
 $gi_idf_source = empty($_POST['idf_source']) ? '1': $_POST['idf_source'];
-//$gi_idf_commune_acte = empty($_POST['idf_commune_acte']) ? $_SESSION['idf_commune_acte']: $_POST['idf_commune_acte'];
 $gi_idf_commune_acte = empty($_POST['idf_commune_acte']) ? '0': $_POST['idf_commune_acte'];
-//$gi_idf_releveur = empty($_POST['idf_releveur']) ? '0': $_POST['idf_releveur'];
 $gc_idf_type_acte = empty($_POST['idf_type_acte']) ? '0': $_POST['idf_type_acte'];
 $gi_idf_version_nimegue = empty($_POST['idf_version_nimegue']) ? '' : $_POST['idf_version_nimegue'];
 
@@ -507,8 +505,7 @@ $g_pl_date_fin = empty($_POST['pl_date_fin']) ? '': $_POST['pl_date_fin'];
 
 $a_sources = $connexionBD->liste_valeur_par_clef("select idf,nom from source order by nom");
 $a_communes_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from commune_acte order by nom");
-//$a_adherents = $connexionBD->sql_select_multiple_par_idf("select idf,prenom,nom from adherent where annee_cotisation=year(now()) order by nom,prenom");
-// Attention, la valeur des types doit correspondre aux constantes qui servent au chargement
+
 
 $a_versions_nimegue = array('2'=>'Version 2','3'=>'Version 3');
 print("<form enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
@@ -517,7 +514,7 @@ switch($gst_mode)
 {
    case 'FORMULAIRE' :
    	 print('<div class="panel panel-primary">');
-     print('<div class="panel-heading">Création des publications !</div>');
+     print('<div class="panel-heading">Cr?ation des publications !</div>');
 	 print('<div class="panel-body">');
      print('<input type="hidden" name="mode" value="CHARGEMENT" />');
      print('<div align=center>Source: <select name=idf_source>');
@@ -535,15 +532,14 @@ switch($gst_mode)
      print('</select></div><br>');
 
 // Rajout PL dates d?but et fin *****************************
-print('<div align=center>Année début <input type=text size=4 name=pl_date_debut>');
-print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
+print('<div align=center>Ann?d?t <input type=text size=4 name=pl_date_debut>');
+print(' Ann?fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 //*********************************************************
 
-     print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
-	 //print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Création de la Publication</button></div>');
+     print('<div align=center><input type="button" value="Cr?ation de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
+	 //print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Cr?ion de la Publication</button></div>');
 	
    break;
-
 
    case 'EXPORTV3' :
    $_SESSION['idf_commune_acte'] = $gi_idf_commune_acte;
