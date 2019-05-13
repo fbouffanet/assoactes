@@ -514,7 +514,7 @@ switch($gst_mode)
 {
    case 'FORMULAIRE' :
    	 print('<div class="panel panel-primary">');
-     print('<div class="panel-heading">Cr?ation des publications !</div>');
+     print('<div class="panel-heading">Création des publications !</div>');
 	 print('<div class="panel-body">');
      print('<input type="hidden" name="mode" value="CHARGEMENT" />');
      print('<div align=center>Source: <select name=idf_source>');
@@ -536,7 +536,7 @@ print('<div align=center>Ann?d?t <input type=text size=4 name=pl_date_debut>');
 print(' Ann?fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 //*********************************************************
 
-     print('<div align=center><input type="button" value="Cr?ationion de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
+     print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
 	 //print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Cr?ion de la Publication</button></div>');
 	
    break;
@@ -683,10 +683,10 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 	print ('<p>');
 	if ($menuDIV == "O")
 	{
-	print "<br><b>Compl?ment du type acte pour les actes divers expl=> Actes Notari?s</b></br>";
+	print "<br><b>Complément du type acte pour les actes divers expl=> Actes Notari?s</b></br>";
 	print ('<textarea name="TypeActe" rows="1" cols="45"></textarea><br><br>');
 	}
-	print "<br><b>Info sur la publication expl=> Relev? par:</b></br>";
+	print "<br><b>Info sur la publication expl=> Relevé par:</b></br>";
     print ('<textarea name="message" rows="8" cols="45"></textarea><br>');
     //print ('<input type="submit" value="Exportation du PDF" />');
 	print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Exportation du PDF</button></div>');
