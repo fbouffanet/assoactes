@@ -536,7 +536,7 @@ print('<div align=center>Ann?d?t <input type=text size=4 name=pl_date_debut>');
 print(' Ann?fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 //*********************************************************
 
-     print('<div align=center><input type="button" value="Cr?ation de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
+     print('<div align=center><input type="button" value="Cr?ationion de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
 	 //print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Cr?ion de la Publication</button></div>');
 	
    break;
