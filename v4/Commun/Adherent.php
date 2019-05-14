@@ -822,7 +822,7 @@ class Adherent
     */
   public function regles_validation()
   {
-    $a_messages ='';
+    $a_messages = array();
     $st_chaine='';
     foreach ($this->a_filtres_parametres as $st_param => $a_liste_tests)
     {
