@@ -518,10 +518,21 @@ switch($gst_mode)
      print('<div class="panel-heading">Création des publications !</div>');
 	 print('<div class="panel-body">');
      print('<input type="hidden" name="mode" value="CHARGEMENT" />');
-     print('<div align=center>Source: <select name=idf_source>');
-     print(chaine_select_options($gi_idf_source,$a_sources));
-     print('</select></div><br>');
-     print('<div align=center>Commune: <select name=idf_commune_acte>');
+     
+	 //print('<div align=center>Source: <select name=idf_source>');
+     //print(chaine_select_options($gi_idf_source,$a_sources));
+     //print('</select></div><br>');
+        
+print('<label for="idf_source" class="col-form-label col-md-1">Type de<br>Source</label>');
+print('<div class="col-md-2">');
+print('<select name="idf_source" id="idf_source" class="form-control" aria-describedby="aideTP">');
+print(chaine_select_options($gi_idf_type_presence,$a_types_presence));
+print('</select>');
+print('</div>');
+
+
+
+	print('<div align=center>Commune: <select name=idf_commune_acte>');
      print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
      print('</select></div><br>');
 
