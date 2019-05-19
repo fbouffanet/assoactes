@@ -556,10 +556,10 @@ print('</div>');
      print('</select></div><br>');
 
 // Rajout PL dates d?but et fin *****************************
-//print('<div align=center>Année début <input type=text size=4 name=pl_date_debut>');
-//print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
+print('<div align=center>Année début <input type=text size=4 name=pl_date_debut>');
+print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 //*********************************************************
-
+/*
 	print ('<form>');
 	print ('<div class="container">');
 	  print ('<div class="form-group col-md-6">');
@@ -572,7 +572,9 @@ print('</div>');
        print ('<input  type=text size=4 class="form-control" id="pl_date_fin" >');
       print ('</div>');
     print ('</div>');
-
+	
+	Ne fonctionne pas !!!!
+*/
 
      print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
 	 //print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Cr?ion de la Publication</button></div>');
