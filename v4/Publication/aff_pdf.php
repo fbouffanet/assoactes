@@ -11,6 +11,11 @@ require_once '../Publication/fpdf/fpdf.php';
 
 ob_start();// Enclenche la temporisation de sortie
 
+print("<head>");
+print('<meta http-equiv="Content-Type" content="text/html; charset=cp1252" />');
+print('<meta http-equiv="content-language" content="fr" /> ');
+print('</head>');
+
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 
