@@ -21,7 +21,7 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 require_once("../Commun/menu.php");
 $soundex2 = new soundex2;
 
-$ga_patronymes = $connexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme not in (select patronyme from `variantes_patro`)");
+$ga_patronymes = $connexionBD->sql_select("select distinct p.libelle from `stats_patronyme` sp join patronyme p on (sp.idf_patronyme=p.idf) where p.libelle not in (select patronyme from `variantes_patro`)");
 
 $gh_variantes = array();
 foreach($ga_patronymes as $st_patronyme)
