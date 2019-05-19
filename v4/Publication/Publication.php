@@ -561,17 +561,17 @@ switch($gst_mode)
 //*********************************************************
 
 	print ('<form>');
-	 print '(<div class="form-row">');
-	  print '(<div class="form-group col-md-6">');
-	  print '( <label for="pl_date_debut">Année début</label>');
-      print '( <input  type=text size=4 class="form-control" id="pl_date_debut" >');
-     print '(</div>');
+	print ('<div class="form-row">');
+	  print ('<div class="form-group col-md-6">');
+	   print ('<label for="pl_date_debut">Année début</label>');
+       print ('<input  type=text size=4 class="form-control" id="pl_date_debut" >');
+      print ('</div>');
 	
-     print '(<div class="form-group col-md-6">');
-      print '( <label for="pl_date_fin">Année fin</label>');
-      print '( <input  type=text size=4 class="form-control" id="pl_date_fin" >');
-     print '(</div>');
-    print '(</div>');
+      print ('<div class="form-group col-md-6">');
+       print ('<label for="pl_date_fin">Année fin</label>');
+       print ('<input  type=text size=4 class="form-control" id="pl_date_fin" >');
+      print ('</div>');
+    print ('</div>');
 
 
      print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
