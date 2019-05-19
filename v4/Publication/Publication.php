@@ -545,10 +545,18 @@ print('</div>');
 	 
 	 
 
-     print('</select></div><br>');
-     print('<div align=center>Type d\'acte Nimegue : <select name=idf_type_acte>');
-     print(chaine_select_options($gc_idf_type_acte,$ga_types_nimegue));
-     print('</select></div><br>');
+     //print('</select></div><br>');
+     //print('<div align=center>Type d\'acte Nimegue : <select name=idf_type_acte>');
+     //print(chaine_select_options($gc_idf_type_acte,$ga_types_nimegue));
+     //print('</select></div><br>');
+	 
+print('<label for="idf_type_acte" class="col-form-label col-md-1">Type de<br>Type d\'acte Nimegue</label>');
+print('<div class="col-md-2">');
+print('<select name="idf_type_acte" id="idf_type_acte" class="form-control" aria-describedby="aideTP">');
+print(chaine_select_options($gc_idf_type_acte,$ga_types_nimegue));
+print('</select>');
+print('</div>');	 
+	 
 
      print('</select></div><br>');
 
