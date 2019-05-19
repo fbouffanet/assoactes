@@ -532,9 +532,18 @@ print('</div>');
 
 
 
-	print('<div align=center>Commune: <select name=idf_commune_acte>');
-     print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
-     print('</select></div><br>');
+	 //print('<div align=center>Commune: <select name=idf_commune_acte>');
+     //print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
+     //print('</select></div><br>');
+	 
+print('<label for="idf_commune_acte" class="col-form-label col-md-1">Type de<br>Commune</label>');
+print('<div class="col-md-2">');
+print('<select name="idf_commune_acte" id="idf_commune_acte" class="form-control" aria-describedby="aideTP">');
+print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
+print('</select>');
+print('</div>');	 
+	 
+	 
 
      print('</select></div><br>');
      print('<div align=center>Type d\'acte Nimegue : <select name=idf_type_acte>');
