@@ -552,7 +552,7 @@ switch($gst_mode)
 	  print('</div>');	 
      print('</div>');	
     print('</div>');	 
-
+print('</div>');
      print('</select></div><br>');
 
 // Rajout PL dates d?but et fin *****************************
