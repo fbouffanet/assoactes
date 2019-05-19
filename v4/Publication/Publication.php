@@ -22,6 +22,7 @@ print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print("<script type='text/javascript'>");
 print("</script>");
+print("<script src='VerifieGestionDonnees.js' type='text/javascript'></script>");
 print('<title>Gestion des publications !</title>');
 print('</head>');
 
@@ -683,7 +684,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 	print ('<p>');
 	if ($menuDIV == "O")
 	{
-	print "<br><b>Complément du type acte pour les actes divers expl=> Actes Notari?s</b></br>";
+	print "<br><b>Complément du type acte pour les actes divers expl=> Actes Notariés</b></br>";
 	print ('<textarea name="TypeActe" rows="1" cols="45"></textarea><br><br>');
 	}
 	print "<br><b>Info sur la publication expl=> Relevé par:</b></br>";
