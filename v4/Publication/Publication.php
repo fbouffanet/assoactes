@@ -676,7 +676,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 
    if (filesize($st_export_nimv3) == 0) {
    //print "<br><b>pas de données</b></br>";
-   print "<div class="alert alert-danger" role="alert">  Pas de données</div>";
+   print ('<div class="alert alert-danger" role="alert">  Pas de données</div>');
    
    
    
