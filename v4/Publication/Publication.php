@@ -690,7 +690,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 	print "<br><b>Info sur la publication expl=> Relevé par:</b></br>";
     print ('<textarea name="message" rows="8" cols="45"></textarea><br>');
     //print ('<input type="submit" value="Exportation du PDF" />');
-	print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Exportation du PDF</button></div>');
+	print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-success">Exportation du PDF</button></div>');
 	print ('</p>');
 	print ('</form>');
 
@@ -698,7 +698,8 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
    //print("<a href=\"aff_pdf.php\"><b>Exportation du PDF</a><br>");
    }
    print('<input type="hidden" name="mode" value="FORMULAIRE"/><br>');
-   print("<input type=submit value=\"Retour\"></div>");
+   //print("<input type=submit value=\"Retour\"></div>");
+   print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-secondary">Retour</button></div>');
 
    break;
 
