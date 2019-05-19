@@ -523,7 +523,7 @@ switch($gst_mode)
      //print(chaine_select_options($gi_idf_source,$a_sources));
      //print('</select></div><br>');
         
-print('<label for="idf_source" class="col-form-label col-md-1">Type de<br>Source</label>');
+print('<label for="idf_source" class="col-form-label col-md-1">Type de Source</label>');
 print('<div class="col-md-2">');
 print('<select name="idf_source" id="idf_source" class="form-control" aria-describedby="aideTP">');
 print(chaine_select_options($gi_idf_source,$a_sources));
@@ -536,7 +536,7 @@ print('</div>');
      //print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
      //print('</select></div><br>');
 	 
-print('<label for="idf_commune_acte" class="col-form-label col-md-1">Type de<br>Commune</label>');
+print('<label for="idf_commune_acte" class="col-form-label col-md-1">Type de Commune</label>');
 print('<div class="col-md-2">');
 print('<select name="idf_commune_acte" id="idf_commune_acte" class="form-control" aria-describedby="aideTP">');
 print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
@@ -550,7 +550,7 @@ print('</div>');
      //print(chaine_select_options($gc_idf_type_acte,$ga_types_nimegue));
      //print('</select></div><br>');
 	 
-print('<label for="idf_type_acte" class="col-form-label col-md-1">Type de<br>Type d\'acte Nimegue</label>');
+print('<label for="idf_type_acte" class="col-form-label col-md-1">Type d\'acte Nimegue</label>');
 print('<div class="col-md-2">');
 print('<select name="idf_type_acte" id="idf_type_acte" class="form-control" aria-describedby="aideTP">');
 print(chaine_select_options($gc_idf_type_acte,$ga_types_nimegue));
