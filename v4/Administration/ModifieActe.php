@@ -34,7 +34,7 @@ function regles_validation()
   global $go_acte;
 	$a_filtres = $go_acte->getFiltresParametres();
   $ga_liste_personnes = $go_acte->getListePersonnes();
-	$a_messages ='';
+	$a_messages =array();
 	$st_chaine='';
 	foreach ($ga_liste_personnes as $o_pers)
 	{
