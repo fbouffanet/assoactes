@@ -526,7 +526,7 @@ switch($gst_mode)
 print('<label for="idf_source" class="col-form-label col-md-1">Type de<br>Source</label>');
 print('<div class="col-md-2">');
 print('<select name="idf_source" id="idf_source" class="form-control" aria-describedby="aideTP">');
-print(chaine_select_options($gi_idf_type_presence,$a_types_presence));
+print(chaine_select_options($gi_idf_source,$a_sources));
 print('</select>');
 print('</div>');
 
