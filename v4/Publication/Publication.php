@@ -514,56 +514,65 @@ switch($gst_mode)
 
 {
    case 'FORMULAIRE' :
-   	 print('<div class="panel panel-primary">');
-     print('<div class="panel-heading">Création des publications !</div>');
-	 print('<div class="panel-body">');
-     print('<input type="hidden" name="mode" value="CHARGEMENT" />');
+   	print('<div class="panel panel-primary">');
+    print('<div class="panel-heading">Création des publications !</div>');
+	print('<div class="panel-body">');
+    print('<input type="hidden" name="mode" value="CHARGEMENT" />');
      
-	 //print('<div align=center>Source: <select name=idf_source>');
-     //print(chaine_select_options($gi_idf_source,$a_sources));
-     //print('</select></div><br>');
-        
-print('<label for="idf_source" class="col-form-label col-md-1">Type de Source</label>');
-print('<div class="col-md-2">');
-print('<select name="idf_source" id="idf_source" class="form-control" aria-describedby="aideTP">');
-print(chaine_select_options($gi_idf_source,$a_sources));
-print('</select>');
-print('</div>');
-
-
-
-	 //print('<div align=center>Commune: <select name=idf_commune_acte>');
-     //print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
-     //print('</select></div><br>');
+	print ('<div class="container">');
+     print ('<div class="row justify-content-md-center">');
+	  print('<label for="idf_source" class="col-form-label col-md-1">Type de Source</label>');
+	  print('<div class="col-md-2">');
+	   print('<select name="idf_source" id="idf_source" class="form-control" aria-describedby="aideTP">');
+	   print(chaine_select_options($gi_idf_source,$a_sources));
+	   print('</select>');
+	  print('</div>');
+     print('</div>');	
+    print('</div>');	   
+	   
 	 
-print('<label for="idf_commune_acte" class="col-form-label col-md-1">Type de Commune</label>');
-print('<div class="col-md-2">');
-print('<select name="idf_commune_acte" id="idf_commune_acte" class="form-control" aria-describedby="aideTP">');
-print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
-print('</select>');
-print('</div>');	 
+	print ('<div class="container">');
+     print ('<div class="row justify-content-md-center">');
+	  print('<label for="idf_commune_acte" class="col-form-label col-md-1">Type de Commune</label>');
+	   print('<div class="col-md-2">');
+	   print('<select name="idf_commune_acte" id="idf_commune_acte" class="form-control" aria-describedby="aideTP">');
+	   print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
+	   print('</select>');
+	  print('</div>');
+     print('</div>');	
+    print('</div>');		  
 	 
-	 
-
-     //print('</select></div><br>');
-     //print('<div align=center>Type d\'acte Nimegue : <select name=idf_type_acte>');
-     //print(chaine_select_options($gc_idf_type_acte,$ga_types_nimegue));
-     //print('</select></div><br>');
-	 
-print('<label for="idf_type_acte" class="col-form-label col-md-1">Type d\'acte Nimegue</label>');
-print('<div class="col-md-2">');
-print('<select name="idf_type_acte" id="idf_type_acte" class="form-control" aria-describedby="aideTP">');
-print(chaine_select_options($gc_idf_type_acte,$ga_types_nimegue));
-print('</select>');
-print('</div>');	 
-	 
+	print ('<div class="container">');
+     print ('<div class="row justify-content-md-center">');	
+	  print('<label for="idf_type_acte" class="col-form-label col-md-1">Type d\'acte Nimegue</label>');
+	  print('<div class="col-md-2">');
+	   print('<select name="idf_type_acte" id="idf_type_acte" class="form-control" aria-describedby="aideTP">');
+	   print(chaine_select_options($gc_idf_type_acte,$ga_types_nimegue));
+	   print('</select>');
+	  print('</div>');	 
+     print('</div>');	
+    print('</div>');	 
 
      print('</select></div><br>');
 
 // Rajout PL dates d?but et fin *****************************
-print('<div align=center>Année début <input type=text size=4 name=pl_date_debut>');
-print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
+//print('<div align=center>Année début <input type=text size=4 name=pl_date_debut>');
+//print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 //*********************************************************
+
+	print ('<form>');
+	 print '(<div class="form-row">');
+	  print '(<div class="form-group col-md-6">');
+	  print '( <label for="pl_date_debut">Année début</label>');
+      print '( <input  type=text size=4 class="form-control" id="pl_date_debut" >');
+     print '(</div>');
+	
+     print '(<div class="form-group col-md-6">');
+      print '( <label for="pl_date_fin">Année fin</label>');
+      print '( <input  type=text size=4 class="form-control" id="pl_date_fin" >');
+     print '(</div>');
+    print '(</div>');
+
 
      print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
 	 //print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Cr?ion de la Publication</button></div>');
