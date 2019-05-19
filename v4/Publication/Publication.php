@@ -560,7 +560,7 @@ print('</div>');
 //print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 //*********************************************************
 
-	//print ('<form>');
+	print ('<form>');
 	print ('<div class="container">');
 	  print ('<div class="form-group col-md-6">');
 	   print ('<label for="pl_date_debut">Année début</label>');
