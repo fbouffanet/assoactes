@@ -560,14 +560,14 @@ switch($gst_mode)
 //print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 //*********************************************************
 
-	print ('<form>');
-	print ('<div class="form-row">');
+	//print ('<form>');
+	print ('<div class="container">');
 	  print ('<div class="form-group col-md-6">');
 	   print ('<label for="pl_date_debut">Année début</label>');
        print ('<input  type=text size=4 class="form-control" id="pl_date_debut" >');
       print ('</div>');
 	
-      print ('<div class="form-group col-md-6">');
+      print ('<div class="container col-md-6">');
        print ('<label for="pl_date_fin">Année fin</label>');
        print ('<input  type=text size=4 class="form-control" id="pl_date_fin" >');
       print ('</div>');
