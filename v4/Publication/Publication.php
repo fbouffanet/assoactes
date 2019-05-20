@@ -553,28 +553,19 @@ print('<div align=center>Année début <input type=text size=4 name=pl_date_debut>
 print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 //*********************************************************
 
-	//print ('<form>');
-	print ('<div class="row">');
-	  //print ('<div class="form-group col-md-2">');
-	   print ('<label for="pl_date_debut">Année début</label>');
-       print ('<input  type=text size=4 class="form-control" id="pl_date_debut" >');
-      print ('</div>');
-	 
-      //print ('<div class="container col-md-2">');
-       print ('<label for="pl_date_fin">Année fin</label>');
-       print ('<input  type=text size=4 class="form-control" id="pl_date_fin" >');
-      print ('</div>');
-    print ('</div>');
+	//
+
 	//Ne fonctionne pas !!!!
-*/	
+*/
+	 print ('<form>');
      print('<div class="form-row">');
       print('<div class="form-group col-md-2">');
        print('<label for="pl_date_debut">Année début</label>');
-       print(' <input type="text" class="form-control" id="pl_date_debut">');
+       print(' <input type="text" id="pl_date_debut" class="form-control">');
       print('</div>');
       print('<div class="form-group col-md-2">');
        print(' <label for="pl_date_fin">Année fin</label>');
-       print('<input type="text" class="form-control" id="pl_date_fin">');
+       print('<input type="text" id="pl_date_fin" class="form-control">');
       print('</div>');
      print('</div>');
 	
