@@ -547,16 +547,13 @@ switch($gst_mode)
       print('</div>');	 
      print('</div>');
    
-/*
+
 // Rajout PL dates d?but et fin *****************************
 print('<div align=center>Année début <input type=text size=4 name=pl_date_debut>');
 print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 //*********************************************************
-
-	//
-
-	//Ne fonctionne pas !!!!
-*/
+/*
+	 //Ne fonctionne pas !!!!
 	 
      //print('<div class="form-row">');
       print('<div class="form-group col-md-2">');
@@ -569,7 +566,7 @@ print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
       print('</div>');
      //print('</div>');
 	
-	
+*/	
 
 print('</select></div><br>');
      print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
