@@ -554,7 +554,7 @@ switch($gst_mode)
 //*********************************************************
 
 	//print ('<form>');
-	print ('<div class="rox">');
+	print ('<div class="row">');
 	  //print ('<div class="form-group col-md-6">');
 	   print ('<label for="pl_date_debut">Année début</label>');
        print ('<input  type=text size=4 class="form-control" id="pl_date_debut" >');
