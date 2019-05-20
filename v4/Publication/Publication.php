@@ -539,7 +539,7 @@ switch($gst_mode)
 	   print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
 	   print('</select>');
 	  print('</div>');
-     print('</div>');	
+     //print('</div>');	
     //print('</div>');		  
 	 
 	//print ('<div class="container">');
