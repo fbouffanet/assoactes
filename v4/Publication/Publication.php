@@ -547,30 +547,39 @@ switch($gst_mode)
       print('</div>');	 
      print('</div>');
    
-
+/*
 // Rajout PL dates d?but et fin *****************************
 print('<div align=center>Année début <input type=text size=4 name=pl_date_debut>');
 print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 //*********************************************************
-/*
+
 	//print ('<form>');
 	print ('<div class="row">');
-	  //print ('<div class="form-group col-md-6">');
+	  //print ('<div class="form-group col-md-2">');
 	   print ('<label for="pl_date_debut">Année début</label>');
        print ('<input  type=text size=4 class="form-control" id="pl_date_debut" >');
       print ('</div>');
 	 
-      //print ('<div class="container col-md-6">');
+      //print ('<div class="container col-md-2">');
        print ('<label for="pl_date_fin">Année fin</label>');
        print ('<input  type=text size=4 class="form-control" id="pl_date_fin" >');
       print ('</div>');
     print ('</div>');
+	//Ne fonctionne pas !!!!
+*/	
+     print('<div class="form-row">');
+      print('<div class="form-group col-md-6">');
+       print('<label for="pl_date_debut">Année début</label>');
+       print(' <input type="text" class="form-control" id="pl_date_debut">');
+      print('</div>');
+      print('<div class="form-group col-md-6">');
+       print(' <label for="pl_date_fin">Année fin</label>');
+       print('<input type="text" class="form-control" id="pl_date_fin">');
+      print('</div>');
+     print('</div>');
+	
 	
 
-	
-	
-	//Ne fonctionne pas !!!!
-*/
 print('</select></div><br>');
      print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
 	 //print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Création de la Publication</button></div>');
