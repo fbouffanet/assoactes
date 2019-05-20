@@ -549,10 +549,10 @@ switch($gst_mode)
     print('</select></div><br>');
 
 // Rajout PL dates d?but et fin *****************************
-//print('<div align=center>Année début <input type=text size=4 name=pl_date_debut>');
-//print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
+print('<div align=center>Année début <input type=text size=4 name=pl_date_debut>');
+print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 //*********************************************************
-
+/*
 	//print ('<form>');
 	print ('<div class="row">');
 	  //print ('<div class="form-group col-md-6">');
