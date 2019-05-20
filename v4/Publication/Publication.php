@@ -557,9 +557,9 @@ print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 
 	//Ne fonctionne pas !!!!
 */
-	 print ('<form>');
+	 
      print('<div class="form-row">');
-      print('<div class="form-group col-md-2">');
+      print('<div class="form-group col-md-2"align=center >');
        print('<label for="pl_date_debut">Année début</label>');
        print(' <input type="text" id="pl_date_debut" class="form-control">');
       print('</div>');
