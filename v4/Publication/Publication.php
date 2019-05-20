@@ -528,10 +528,10 @@ switch($gst_mode)
 	   print('</select>');
 	  print('</div>');
      print('</div>');	
-    print('</div>');	   
+    //print('</div>');	   
 	   
 	 
-	print ('<div class="container">');
+	//print ('<div class="container">');
      print ('<div class="row justify-content-md-center">');
 	  print('<label for="idf_commune_acte" class="col-form-label col-md-1">Type de Commune</label>');
 	   print('<div class="col-md-2">');
@@ -540,9 +540,9 @@ switch($gst_mode)
 	   print('</select>');
 	  print('</div>');
      print('</div>');	
-    print('</div>');		  
+    //print('</div>');		  
 	 
-	print ('<div class="container">');
+	//print ('<div class="container">');
      print ('<div class="row justify-content-md-center">');	
 	  print('<label for="idf_type_acte" class="col-form-label col-md-1">Type d\'acte Nimegue</label>');
 	  print('<div class="col-md-2">');
