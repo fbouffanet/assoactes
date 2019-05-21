@@ -712,21 +712,17 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
    fclose($pf);
 
    if (filesize($st_export_nimv3) == 0) {
-   //print "<br><b>pas de données</b></br>";
-  // print ('<div class="alert alert-danger" role="alert">  Pas de données</div>');
-   print ('<span class="badge badge-pill badge-warning"> Pas de données</span><br>');
-   //<span class="badge badge-pill badge-warning">Warning</span>
-   
-   
-   } else {
-   print "</br>";
-//-------------------
+    print "</br>";
+    print ('<span class="badge badge-pill badge-danger"> Pas de données</span><br>');
+										} else {
+    print "</br>";
     print ('</form>');
 	print ('<form action="aff_pdf.php" method="post">');
 	print ('<p>');
 	if ($menuDIV == "O")
 	{
-	print "<br><b>Complément du type acte pour les actes divers expl=> Actes Notariés</b></br>";
+	//print "<br><b>Complément du type acte pour les actes divers expl=> Actes Notariés</b></br>";
+	print('<br><p class="text-center">Complément du type acte pour les actes divers expl=> Actes Notariés</p></br>');
 	print ('<textarea name="TypeActe" rows="1" cols="45"></textarea><br><br>');
 	}
 	print "<br><b>Info sur la publication expl=> Relevé par:</b></br>";
