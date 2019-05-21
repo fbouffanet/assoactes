@@ -573,8 +573,9 @@ print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 
 
   //print('</select></div><br>');
-     print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
-	 //print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Création de la Publication</button></div>');
+     //print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
+	 print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" onClick="Exporte(0,\'EXPORTV3\')" class="btn btn-primary">Création de la Publication</button></div>');
+	
 	
    break;
 
@@ -713,7 +714,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
    if (filesize($st_export_nimv3) == 0) {
    //print "<br><b>pas de données</b></br>";
   // print ('<div class="alert alert-danger" role="alert">  Pas de données</div>');
-   print ('<span class="badge badge-pill badge-warning"> Pas de données</span>');
+   print ('<span class="badge badge-pill badge-warning"> Pas de données</span><br>');
    //<span class="badge badge-pill badge-warning">Warning</span>
    
    
