@@ -565,7 +565,8 @@ print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
        print('<input type="number" id="pl_date_fin" class="form-control">');
       print('</div>');
      print('</div>');
-	
+	 
+	print('</div><br>');
 
 
   //print('</select></div><br>');
