@@ -523,7 +523,7 @@ switch($gst_mode)
      print ('<div class="row justify-content-md-center">');
 	  print('<label for="idf_source" class="col-form-label col-md-1">Type de Source</label>');
 	  print('<div class="col-md-2">');
-	   print('<select name="idf_source" id="idf_source" class="form-control" aria-describedby="aideTP">');
+	   print('<select name="idf_source" id="idf_source" class="form-control">');
 	   print(chaine_select_options($gi_idf_source,$a_sources));
 	   print('</select>');
 	  print('</div>');
@@ -531,7 +531,7 @@ switch($gst_mode)
       print ('<div class="row justify-content-md-center">');
 	   print('<label for="idf_commune_acte" class="col-form-label col-md-1">Type de Commune</label>');
 	   print('<div class="col-md-2">');
-	    print('<select name="idf_commune_acte" id="idf_commune_acte" class="form-control" aria-describedby="aideTP">');
+	    print('<select name="idf_commune_acte" id="idf_commune_acte" class="form-control">');
 	    print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
 	    print('</select>');
 	   print('</div>');
@@ -539,13 +539,13 @@ switch($gst_mode)
        print ('<div class="row justify-content-md-center">');	
 	    print('<label for="idf_type_acte" class="col-form-label col-md-1">Type d\'acte</label>');
 	    print('<div class="col-md-2">');
-	     print('<select name="idf_type_acte" id="idf_type_acte" class="form-control" aria-describedby="aideTP">');
+	     print('<select name="idf_type_acte" id="idf_type_acte" class="form-control">');
 	     print(chaine_select_options($gc_idf_type_acte,$ga_types_nimegue));
 	     print('</select>');
 	    print('</div>');	 
        print('</div>');	
       print('</div>');	 
-     print('</div>');
+    // print('</div>');
    
 /*
 // Rajout PL dates d?but et fin *****************************
@@ -558,11 +558,11 @@ print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
      print('<div class="form-row">');
       print('<div class="form-group col-md-2">');
        print('<label for="pl_date_debut">Année début</label>');
-       print(' <input type="text" id="pl_date_debut" class="form-control" aria-describedby="aideTP">');
+       print(' <input type="number" id="pl_date_debut" class="form-control">');
       print('</div>');
       print('<div class="form-group col-md-2">');
        print(' <label for="pl_date_fin">Année fin</label>');
-       print('<input type="text" id="pl_date_fin" class="form-control" aria-describedby="aideTP">');
+       print('<input type="number" id="pl_date_fin" class="form-control">');
       print('</div>');
      print('</div>');
 	
