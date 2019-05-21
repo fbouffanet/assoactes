@@ -527,7 +527,7 @@ switch($gst_mode)
         print(chaine_select_options($gi_idf_source,$a_sources)); 
 	    print('</select>');
 	   print('</div>');
- print('</div>');///////////////////////////////////////
+ 
        print ('<div class="row justify-content-md-center">');
 	    print('<label for="idf_commune_acte" class="col-form-label col-md-1">Type de Commune</label>');
 	    print('<div class="col-md-2">');
@@ -535,7 +535,7 @@ switch($gst_mode)
 	     print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
 	     print('</select>');
 	    print('</div>');
-print('</div>');//////////////////////
+
         print ('<div class="row justify-content-md-center">');	
 	     print('<label for="idf_type_acte" class="col-form-label col-md-1">Type d\'acte</label>');
 	     print('<div class="col-md-2">');
@@ -544,8 +544,8 @@ print('</div>');//////////////////////
 	      print('</select>');
 	     print('</div>');	 
         print('</div>');	
- //      print('</div>');	 
- //     print('</div>');
+       print('</div>');	 
+      print('</div>');
    
 /*
 // Rajout PL dates d?but et fin *****************************
