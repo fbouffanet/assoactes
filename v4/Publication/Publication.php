@@ -516,36 +516,36 @@ switch($gst_mode)
    case 'FORMULAIRE' :
    	print('<div class="panel panel-primary">');
     print('<div class="panel-heading">Création des publications !</div>');
-	print('<div class="panel-body">');
-    print('<input type="hidden" name="mode" value="CHARGEMENT" />');
+	 print('<div class="panel-body">');
+     print('<input type="hidden" name="mode" value="CHARGEMENT" />');
      
-	print ('<div class="container">');
-     print ('<div class="row justify-content-md-center">');
-	  print('<label for="idf_source" class="col-form-label col-md-1">Type de Source</label>');
-	  print('<div class="col-md-2">');
-	   print('<select name="idf_source" id="idf_source" class="form-control">');
-	   print(chaine_select_options($gi_idf_source,$a_sources));
-	   print('</select>');
-	  print('</div>');
- 
+	 print ('<div class="container">');
       print ('<div class="row justify-content-md-center">');
-	   print('<label for="idf_commune_acte" class="col-form-label col-md-1">Type de Commune</label>');
+	   print('<label for="idf_source" class="col-form-label col-md-1">Type de Source</label>');
 	   print('<div class="col-md-2">');
-	    print('<select name="idf_commune_acte" id="idf_commune_acte" class="form-control">');
-	    print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
+	    print('<select name="idf_source" id="idf_source" class="form-control">');
+        print(chaine_select_options($gi_idf_source,$a_sources)); 
 	    print('</select>');
 	   print('</div>');
-
-       print ('<div class="row justify-content-md-center">');	
-	    print('<label for="idf_type_acte" class="col-form-label col-md-1">Type d\'acte</label>');
+ print('</div>');///////////////////////////////////////
+       print ('<div class="row justify-content-md-center">');
+	    print('<label for="idf_commune_acte" class="col-form-label col-md-1">Type de Commune</label>');
 	    print('<div class="col-md-2">');
-	     print('<select name="idf_type_acte" id="idf_type_acte" class="form-control">');
-	     print(chaine_select_options($gc_idf_type_acte,$ga_types_nimegue));
+	     print('<select name="idf_commune_acte" id="idf_commune_acte" class="form-control">');
+	     print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
 	     print('</select>');
-	    print('</div>');	 
-       print('</div>');	
-      //print('</div>');	 
-    // print('</div>');
+	    print('</div>');
+print('</div>');//////////////////////
+        print ('<div class="row justify-content-md-center">');	
+	     print('<label for="idf_type_acte" class="col-form-label col-md-1">Type d\'acte</label>');
+	     print('<div class="col-md-2">');
+	      print('<select name="idf_type_acte" id="idf_type_acte" class="form-control">');
+	      print(chaine_select_options($gc_idf_type_acte,$ga_types_nimegue));
+	      print('</select>');
+	     print('</div>');	 
+        print('</div>');	
+ //      print('</div>');	 
+ //     print('</div>');
    
 /*
 // Rajout PL dates d?but et fin *****************************
@@ -558,17 +558,17 @@ print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
      print('<div class="form-row">');
       print('<div class="form-group col-md-2">');
        print('<label for="pl_date_debut">Année début</label>');
-       print(' <input type="number" id="pl_date_debut" class="form-control">');
+       print('<input type="number" id="pl_date_debut" class="form-control">');
       print('</div>');
       print('<div class="form-group col-md-2">');
-       print(' <label for="pl_date_fin">Année fin</label>');
+       print('<label for="pl_date_fin">Année fin</label>');
        print('<input type="number" id="pl_date_fin" class="form-control">');
       print('</div>');
      print('</div>');
 	
 
 
-print('</select></div><br>');
+  //print('</select></div><br>');
      print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
 	 //print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Création de la Publication</button></div>');
 	
