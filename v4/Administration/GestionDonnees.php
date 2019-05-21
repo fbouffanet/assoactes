@@ -14,6 +14,7 @@ require_once 'chargement/chargement.php';
 require_once 'chargement/CompteurPersonne.php';
 require_once 'chargement/Personne.php';
 require_once 'chargement/CommunePersonne.php';
+require_once 'chargement/Patronyme.php';
 require_once 'chargement/Prenom.php';
 require_once 'chargement/Profession.php';
 require_once 'chargement/CompteurActe.php';
