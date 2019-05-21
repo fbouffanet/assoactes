@@ -132,8 +132,8 @@ function export_nai_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 	*/
 
 
-	print ('<p class="text-center">Publication des naissances de la commune <b> $st_nom_commune</b></p><br>');
-   // print "Publication des naissances de la commune <b> $st_nom_commune</b> <br>";
+
+   print "Publication des naissances de la commune <b> $st_nom_commune</b> <br>";
 
 }
 
@@ -242,8 +242,7 @@ function export_dec_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
       fwrite($pf,(implode(';',$a_champs)));
       fwrite($pf,"\r\n");
    }
-    //print "Publication des d?c?s de la commune $st_nom_commune<br> <br>";
-	print ('<p class="text-center">Publication des décès de la commune <b> $st_nom_commune</b></p><br>');
+    print "Publication des d?c?s de la commune $st_nom_commune<br> <br>";
 }
 
 /**
@@ -357,8 +356,7 @@ function export_mar_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
   fwrite($pf,(implode(';',$a_champs)));
   fwrite($pf,"\r\n");
   }
-  //print "Publication des mariages de la commune $st_nom_commune<br> <br>";
-  print ('<p class="text-center">Publication des mariages de la commune <b> $st_nom_commune</b></p><br>');
+  print "Publication des mariages de la commune $st_nom_commune<br> <br>";
 }
 
 
@@ -723,8 +721,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 	print ('<p>');
 	if ($menuDIV == "O")
 	{
-	//print "<br><b>Complément du type acte pour les actes divers expl=> Actes Notariés</b></br>";
-	print('<p class="text-center">Complément du type acte pour les actes divers expl=> Actes Notariés</p>');
+	print "<br><b>Complément du type acte pour les actes divers expl=> Actes Notariés</b></br>";
 	print ('<textarea name="TypeActe" rows="1" cols="45"></textarea><br><br>');
 	}
 	print "<br><b>Info sur la publication expl=> Relevé par:</b></br>";
