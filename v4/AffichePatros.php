@@ -221,9 +221,9 @@ switch ($gst_mode)
 			break;
 		} 
 		if (!empty($gi_idf_source))
-			$st_requete = "select sp.patronyme,sp.idf_commune,ca.nom,sp.idf_type_acte,ta.nom,sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join commune_acte ca on (sp.idf_commune=ca.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where idf_source=$gi_idf_source and sp.idf_type_acte in (".IDF_MARIAGE.",".IDF_CM.",".IDF_NAISSANCE.",".IDF_DECES.") and sp.patronyme ".$requeteRecherche->clause_droite_patronyme($gst_patronyme,$st_variantes,1);
+			$st_requete = "select p.libelle,sp.idf_commune,ca.nom,sp.idf_type_acte,ta.nom,sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join patronyme p on (sp.idf_patronyme=p.idf) join commune_acte ca on (sp.idf_commune=ca.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where idf_source=$gi_idf_source and sp.idf_type_acte in (".IDF_MARIAGE.",".IDF_CM.",".IDF_NAISSANCE.",".IDF_DECES.") and p.libelle ".$requeteRecherche->clause_droite_patronyme($gst_patronyme,$st_variantes,1);
 		else
-			$st_requete = "select sp.patronyme,sp.idf_commune,ca.nom,sp.idf_type_acte,ta.nom,sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join commune_acte ca on (sp.idf_commune=ca.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where sp.idf_type_acte in (".IDF_MARIAGE.",".IDF_CM.",".IDF_NAISSANCE.",".IDF_DECES.") and sp.patronyme ".$requeteRecherche->clause_droite_patronyme($gst_patronyme,$st_variantes,1);
+			$st_requete = "select p.libelle,,sp.idf_commune,ca.nom,sp.idf_type_acte,ta.nom,sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join patronyme p on (sp.idf_patronyme=p.idf) join commune_acte ca on (sp.idf_commune=ca.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where sp.idf_type_acte in (".IDF_MARIAGE.",".IDF_CM.",".IDF_NAISSANCE.",".IDF_DECES.") and p.libelle ".$requeteRecherche->clause_droite_patronyme($gst_patronyme,$st_variantes,1);
 		if (!empty($gi_idf_commune)) 
 			$st_requete .=  " and sp.idf_commune ".$requeteRecherche->clause_droite_commune($gi_idf_commune,$gi_rayon,'oui');
 		$st_requete.=$st_tri_sql; 
