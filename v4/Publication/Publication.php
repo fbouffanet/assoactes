@@ -544,7 +544,7 @@ switch($gst_mode)
 	     print('</select>');
 	    print('</div>');	 
        print('</div>');	
-      print('</div>');	 
+      //print('</div>');	 
     // print('</div>');
    
 /*
