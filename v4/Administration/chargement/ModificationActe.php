@@ -602,7 +602,7 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
      $stats_patronyme = new StatsPatronyme($this -> connexionBD, $go_acte -> getIdfCommune(), $go_acte -> getIdfSource());
      $stats_commune = new StatsCommune($this -> connexionBD, $go_acte -> getIdfCommune(), $go_acte -> getIdfSource());
      $unions = Union :: singleton($this -> connexionBD);
-     $st_requete = "LOCK TABLES `personne` write , `patronyme` write ,`prenom` write ,`acte` write, `profession` write, `commune_personne` write, `union` write, `stats_patronyme` write,`stats_commune` write,`acte` as a read,`personne` as p read, `type_acte` read, `type_acte` as ta read,`prenom_simple` write, `groupe_prenoms` write";
+     $st_requete = "LOCK TABLES `personne` write , `patronyme` write , `patronyme` as pat write ,`prenom` write ,`acte` write, `profession` write, `commune_personne` write, `union` write, `stats_patronyme` write,`stats_commune` write,`acte` as a read,`personne` as p read, `type_acte` read, `type_acte` as ta read,`prenom_simple` write, `groupe_prenoms` write";
      $this -> connexionBD -> execute_requete($st_requete);
      $go_acte -> maj_liste_personnes($go_acte -> getIdfSource(), $go_acte -> getIdfCommune(), $unions);
      $go_acte -> sauve();
