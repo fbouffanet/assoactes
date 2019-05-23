@@ -15,7 +15,7 @@ class StatsPatronyme {
        $this->patronyme = Patronyme::singleton($pconnexionBD);
 	   $this->type_acte = TypeActe::singleton($pconnexionBD);
        $this->a_type_acte = array();
-       $this->a_stat=$this->connexionBD->liste_valeur_par_doubles_clefs("select p.libelle,ta.nom,annee_min,annee_max,nb_personnes from `stats_patronyme` sp join `patronyme` on (sp.idf_patronyme=p.idf) join `type_acte` as ta on (sp.idf_type_acte=ta.idf) where sp.idf_commune=$pi_idf_commune and sp.idf_source=$pi_idf_source");
+       $this->a_stat=$this->connexionBD->liste_valeur_par_doubles_clefs("select p.libelle,ta.nom,annee_min,annee_max,nb_personnes from `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf) join `type_acte` as ta on (sp.idf_type_acte=ta.idf) where sp.idf_commune=$pi_idf_commune and sp.idf_source=$pi_idf_source");
   }
    
   /**
@@ -55,7 +55,7 @@ class StatsPatronyme {
   function maj_patro($pst_patro,$pst_type_acte,$pi_annee)
   {
      //$pst_patro = addslashes($pst_patro);
-     
+     $this->patronyme->ajoute($pst_patro);
      if ((count($this->a_stat)!=0) && (isset($this->a_stat[strval($pst_patro)][strval($pst_type_acte)])))
      {  
         // Un patronyme existe déjà pour le patronyme et le type d'acte défini dans les statistiques
@@ -94,6 +94,9 @@ class StatsPatronyme {
 		   $i++;
         }
      }
+	 print("<pre>");
+	 print_r($a_stats_a_creer);
+	 print("</pre>");
      $st_requete="delete from `stats_patronyme` where idf_commune=$this->i_idf_commune and idf_source=$this->i_idf_source";
      try
      {
