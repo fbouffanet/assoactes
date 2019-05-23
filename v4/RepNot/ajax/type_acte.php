@@ -1,0 +1,40 @@
+<?php
+
+require_once('../../Commun/config.php');
+require_once('../../Commun/constantes.php');
+require_once('../../Commun/ConnexionBD.php');
+
+$a_resultats = array();
+if (isset ($_GET['term']))
+{
+  $st_rech = substr(trim($_GET['term']),0,30);
+  $st_rech=utf8_decode($st_rech);
+  $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
+  $st_requete = "select distinct `type` from rep_not_actes where `type` COLLATE latin1_german1_ci like '%$st_rech%' order by `type`";
+  $a_types = $connexionBD->sql_select($st_requete);
+  $a_resultats = array();
+  foreach ($a_types as $st_type)
+  {
+     $a_val =array();
+     $a_val['label'] = sprintf("%s",utf8_encode($st_type));
+     $a_val['value'] = sprintf("%s",utf8_encode($st_type));      
+     $a_resultats[] = $a_val;     
+  }
+}
+else if (isset ($_GET['type_excl']))
+{
+  $st_type_excl = substr(trim($_GET['type_excl']),0,30);
+  $st_type_excl = utf8_decode($st_type_excl);
+  $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
+  $st_requete = "select distinct `type` from rep_not_actes where `type`!=\"$st_type_excl\" order by `type`";
+  $a_types = $connexionBD->sql_select($st_requete);
+  $a_resultats = array();
+  foreach ($a_types as $st_type)
+  {
+     $a_resultats[]= sprintf("%s",utf8_encode($st_type));   
+  }
+  
+}
+echo json_encode($a_resultats); 
+
+?>
