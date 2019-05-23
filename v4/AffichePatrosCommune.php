@@ -169,9 +169,9 @@ else if ($gi_idf_type_acte==-1)
   
    // Calcul de la liste des initiales
    if ($gst_patronyme=='')
-      $st_requete = "SELECT DISTINCT (left( patronyme, 1 )) AS init FROM `stats_patronyme` where idf_source=$gi_idf_source and idf_commune=$gi_idf_commune  having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z') ORDER BY init";
+      $st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf) where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune  having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z') ORDER BY init";
    else
-      $st_requete = "SELECT DISTINCT (left( patronyme, 1 )) AS init FROM `stats_patronyme` where idf_source=$gi_idf_source and idf_commune=$gi_idf_commune  and patronyme $gst_clause_patronyme having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')  ORDER BY init";
+      $st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune  and p.libelle $gst_clause_patronyme having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')  ORDER BY init";
    $connexionBD->initialise_params(array(":patro"=>$gst_patronyme));   
    //print("Req=$st_requete< br>");
    $a_initiales_patronymes = $connexionBD->sql_select($st_requete);
@@ -202,10 +202,10 @@ else if ($gi_idf_type_acte==-1)
    }
    print("</ul></div>");
    if ($gst_patronyme=='')
-     $st_requete="select sp.patronyme,sp.idf_type_acte,ta.nom, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join type_acte ta on (sp.idf_type_acte=ta.idf) where idf_source=$gi_idf_source and idf_commune=$gi_idf_commune and sp.patronyme like '$gc_initiale%' order by sp.patronyme,ta.nom";
+     $st_requete="select p.libelle,sp.idf_type_acte,ta.nom, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and p.libelle like '$gc_initiale%' order by p.libelle,ta.nom";
     else
     {
-      $st_requete="select sp.patronyme,sp.idf_type_acte,ta.nom, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join type_acte ta on (sp.idf_type_acte=ta.idf) where idf_source=$gi_idf_source and idf_commune=$gi_idf_commune and sp.patronyme like '$gc_initiale%'  and sp.patronyme $gst_clause_patronyme order by sp.patronyme,ta.nom";
+      $st_requete="select p.libelle,sp.idf_type_acte,ta.nom, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and p.libelle like '$gc_initiale%'  and p.libelle $gst_clause_patronyme order by p.libelle,ta.nom";
       $connexionBD->initialise_params(array(":patro"=>$gst_patronyme)); 
    }
    $a_liste_stats = $connexionBD->sql_select_multiple($st_requete);
@@ -233,10 +233,10 @@ else
 {
    // Calcul de la liste des initiales
    if ($gst_patronyme=='')
-     $st_requete = "SELECT DISTINCT (left( patronyme, 1 )) AS init FROM `stats_patronyme` where idf_source=$gi_idf_source and idf_commune=$gi_idf_commune and idf_type_acte=$gi_idf_type_acte having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')  ORDER BY init";
+     $st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')  ORDER BY init";
    else
    {
-     $st_requete = "SELECT DISTINCT (left( patronyme, 1 )) AS init FROM `stats_patronyme` where idf_source=$gi_idf_source and idf_commune=$gi_idf_commune and idf_type_acte=$gi_idf_type_acte and patronyme $gst_clause_patronyme having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')  ORDER BY init";
+     $st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle $gst_clause_patronyme having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')  ORDER BY init";
      $connexionBD->initialise_params(array(":patro"=>$gst_patronyme)); 
    }
    $a_initiales_patronymes = $connexionBD->sql_select($st_requete);
@@ -261,17 +261,17 @@ else
    foreach ($a_initiales_patronymes as $c_initiale)
    {
       if ($c_initiale==$gc_initiale)
-        print("<li class=\"page-item active\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
+        print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
       else
-        print("<li class=\"page-item\"><a href=".$_SERVER['PHP_SELF']."?initiale_patcom=$c_initiale>$c_initiale</a></li>");
+        print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_patcom=$c_initiale\">$c_initiale</a></li>");
    }
    print("</ul></div>");
    
    if ($gst_patronyme=='')
-      $st_requete="select sp.patronyme, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp where idf_source=$gi_idf_source and idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and sp.patronyme like '$gc_initiale%' order by sp.patronyme";
+      $st_requete="select p.libelle, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle like '$gc_initiale%' order by p.libelle";
    else
    {
-      $st_requete="select sp.patronyme, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp where idf_source=$gi_idf_source and idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and sp.patronyme like '$gc_initiale%' and sp.patronyme $gst_clause_patronyme order by sp.patronyme";   
+      $st_requete="select p.libelle, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle like '$gc_initiale%' and p.libelle $gst_clause_patronyme order by p.libelle";   
       $connexionBD->initialise_params(array(":patro"=>$gst_patronyme)); 
    }
    $a_liste_stats = $connexionBD->sql_select_multiple($st_requete);
