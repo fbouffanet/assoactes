@@ -1,0 +1,261 @@
+<?php
+
+require_once '../Commun/config.php';
+require_once('../Commun/Identification.php');
+require_once('../Commun/constantes.php');
+require_once('../Commun/VerificationDroits.php');
+verifie_privilege(DROIT_STATS);
+require_once '../Commun/commun.php';
+require_once('../Commun/ConnexionBD.php');
+
+/**
+ * Exporte l'historique des demandes GBK
+ * @param object $pconnexionBD Connexion à la BD 
+ */
+function exporte_historique_cantons($pconnexionBD)
+{
+   $st_requete =  "select c.nom as canton,year(s_gbk.date_demande) as annee,count(*) as nb from stats_gbk s_gbk join commune_acte ca on (s_gbk.idf_commune=ca.idf) join canton c on (ca.idf_canton=c.idf) group by c.nom,year(s_gbk.date_demande) order by annee asc, canton collate latin1_german1_ci asc";
+   $a_ddes_annee_cantons = $pconnexionBD->liste_valeur_par_doubles_clefs($st_requete);
+   list($i_sec,$i_min,$i_heure,$i_jour,$i_mois,$i_annee,$i_jsem,$i_jan,$b_hiv)=   localtime();
+   $a_annees=range(2010,1900+$i_annee,+1);
+   header("Content-type: text/csv");
+   header("Expires: 0");
+   header("Pragma: public");
+   header("Content-disposition: attachment; filename=\"histo_canton_gbk.csv\"");
+   $fh = @fopen('php://output', 'w' );
+   $a_entete = array('Canton/Annees');
+   foreach  ($a_annees as $i_annee)
+   {
+      $a_entete[]= $i_annee;
+   }
+   fputcsv($fh,$a_entete,SEP_CSV); 
+   foreach ($a_ddes_annee_cantons as $st_canton => $a_ddes_annnee)
+   {
+      $a_ligne=array($st_canton);
+      foreach($a_annees as $i_annee)
+      {
+         if (array_key_exists($i_annee,$a_ddes_annnee))
+         {
+            $a_ligne[] = $a_ddes_annnee[$i_annee][0];
+         }
+         else
+         {
+            $a_ligne[]= '';
+         }
+      }
+      fputcsv($fh,$a_ligne,SEP_CSV); 
+   } 
+   fclose($fh);   
+}
+
+/**
+ * Affiche les statistiques cumulees
+ * @param object $pconnexionBD Connexion à la BD 
+ */ 
+function affiche_stats_cumulees($pconnexionBD)
+{
+  print("<div align='center'>");
+  print("<div class=SOUSTITRE>Par canton</div><br>");
+  $st_requete = 'select c.nom,count(*) as nombre from stats_gbk s_gbk join commune_acte ca on (s_gbk.idf_commune=ca.idf) join canton c on (ca.idf_canton = c.idf) group by c.nom order by nombre desc'; 
+  $a_ddes_canton = $pconnexionBD -> liste_valeur_par_clef($st_requete);
+  print('<table border=1>');
+  print("<tr><th>Canton</th><th>Demandes</th></tr>\n");
+  foreach ($a_ddes_canton as $st_canton => $i_ddes)
+  {
+    print("<tr><td>$st_canton</td><td>$i_ddes</td></tr>\n");
+  }
+  print('</table></div>');
+  print("<div align='center'>");
+  print("<div class=SOUSTITRE>Par mois et ann&eacute;e</div><br>");
+  $st_requete = 'select date_format(date_demande , "%m/%y" ) as date_mois, count(*)as nombre from stats_gbk group by date_format(date_demande , "%m/%y" ) order by date_demande desc limit 50' ;
+  $a_ddes_mois_annee = $pconnexionBD -> liste_valeur_par_clef($st_requete);
+  print('<table border=1>');
+  print("<tr><th>Date</th><th>Demandes</th></tr>\n");
+  foreach ($a_ddes_mois_annee as $st_mois_annee => $i_ddes)
+  {
+    print("<tr><td>$st_mois_annee</td><td>$i_ddes</td></tr>\n");
+  }
+  print('</table></div>');
+  print("<div align='center'>");
+  print("<div class=SOUSTITRE>Par type d'acte</div><br>");
+  $st_requete = 'select ta.nom, count(*) as nombre from stats_gbk as s_gbk join type_acte ta on (s_gbk.idf_type_acte = ta.idf)  group by ta.nom  asc order by  nombre desc limit 30' ;
+  $a_ddes_types_acte = $pconnexionBD -> liste_valeur_par_clef($st_requete);
+  print('<table border=1>');
+  print("<tr><th>Types d'acte</th><th>Demandes</th></tr>\n");
+  foreach ($a_ddes_types_acte as $st_type => $i_ddes)
+  {
+    print("<tr><td>$st_type</td><td>$i_ddes</td></tr>\n");
+  }
+  print('</table></div>');
+  print("<form action=".$_SERVER['PHP_SELF']." method=post>");
+  print("<input type=hidden name=mode value=\"FORMULAIRE\">");
+  print("<div align='center'><br><input type=submit value=\"Retour vers les menu\"></div>");
+  print("</form>");
+  print('</div>');
+}
+
+/**
+ * Affiche le menu formulaire
+ * @param object $pconnexionBD Connexionà la BD 
+ */ 
+function affiche_formulaire($pconnexionBD) {
+  $a_cantons=$pconnexionBD->liste_valeur_par_clef("select idf,nom from canton order by nom");
+  
+  list($i_sec,$i_min,$i_heure,$i_jour,$i_mois,$i_annee,$i_jsem,$i_jan,$b_hiv)=   localtime();
+  $a_annees=range(1900+$i_annee,2010,-1);
+  
+  print("<div align=center>"); 
+  print("<div class=TITRE>Statistiques G&eacute;n&eacute;bank</div><br>");
+  print('<div>');
+  
+  print("<form action=".$_SERVER['PHP_SELF']." method=post>");
+  print("<div class=SOUSTITRE>Tous les cantons par annn&eacute;e</div><br>");
+  print("<input type=hidden name=mode value=\"EXPORT_HISTORIQUE\">");
+  print("<input type=submit value=\"Exporter au format CSV l'historique de tous les cantons\">");
+  print("</form>");
+  
+  print("<form action=".$_SERVER['PHP_SELF']." method=post>");
+  print("<div class=SOUSTITRE>Statistiques cumul&eacute;es</div><br>");
+  print("<input type=hidden name=mode value=\"STATS_CUMULEES\">");
+  print("<input type=submit value=\"Afficher les statistiques cumulees\">");
+  print("</form>");
+   
+  print("<form id=stats_canton action=".$_SERVER['PHP_SELF']." method=post>");
+  print("<div class=SOUSTITRE>par ann&eacute;e et canton</div><br>");
+  print('<div> Ann&eacute;e: <select name="annee" id="annee"> ');
+  print(chaine_select_options_simple(null,$a_annees));
+  print('</select></div><br />');
+  print('<div>Canton: <select name="idf_canton" id="idf_canton" class="js-select-avec-recherche">');
+  print(chaine_select_options(null,$a_cantons));
+  print('</select></div><br />');
+  print("<input type=hidden name=mode value=\"STATS_PAROISSES\">");
+  print("<p style=\"font-size:8pt;\"><input type=submit value=\"Afficher les statistiques\"></p>");   
+  print("</form>");
+  print('<div id="tableau_stats_canton"></div>');
+  print('<canvas id="MonGraphe" width="600" height="500"></canvas>');
+  print("</div>");
+  print("</div>");
+}
+
+/******************************************************************************/
+/*                         Corps du programme                                 */
+/******************************************************************************/
+
+$connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
+$gst_mode=empty($_POST['mode']) ? 'FORMULAIRE' : $_POST['mode'];
+
+if ($gst_mode=='EXPORT_HISTORIQUE')
+{
+   exporte_historique_cantons($connexionBD);
+   exit();
+}
+
+print('<meta http-equiv="Content-Type" content="text/html; charset=cp1252" />');
+print('<meta http-equiv="content-language" content="fr" /> ');
+print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'/>");
+print("<link href='../Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='../Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='../Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
+print("<script src='../js/select2.min.js' type='text/javascript'></script>");
+print("<script src='../js/Chart.min.js' type='text/javascript'></script>");
+?>
+
+<script type='text/javascript'>
+$(document).ready(function() {
+	
+	$(".js-select-avec-recherche").select2();
+	
+    $('#stats_canton').submit(function(event) {
+        $.ajax({
+            type        : 'GET', 
+            url         : '../ajax/stats_gbk.php', 
+            data        : 'annee='+$('#annee').val()+'&idf_canton='+$('#idf_canton').val(),
+            dataType    : 'json'
+        })
+            .done(function(donnees) {
+				var labels = donnees["labels"];
+				var ensemble_donnees=donnees["donnees"];
+				// affichage du tableau
+				var tableau = "<table border=1><tr><th><Commune></th>";
+				jQuery.each( labels, function( i, val ) {
+					tableau+="<th>"+val+"</th>";
+				});
+				tableau+="</tr>";
+				var cumul=[0,0,0,0,0,0,0,0,0,0,0,0];
+				jQuery.each( ensemble_donnees, function( i, obj ) {
+					tableau+="<tr><td>"+obj["label"]+"</td>";
+					consultations=obj["data"];
+					jQuery.each(consultations,function( i, val ) {
+						if (val!=0) {
+              tableau+="<td>"+val+"</td>";
+            } else {
+              tableau+="<td>&nbsp;</td>";
+            }
+						cumul[i]+=val;
+					});
+					tableau+="</tr>";
+				});
+        tableau+="<tr><th>Total</th>";
+				jQuery.each(cumul,function( i, val ) {
+        	if (val!=0) {
+						tableau+="<th>"+val+"</th>";
+          } else {
+              tableau+="<th>&nbsp;</th>";
+            }  
+				});
+				tableau+="</tr></table>";
+        //console.log(tableau);
+        $('#tableau_stats_canton').html('');
+				$('#tableau_stats_canton').append(tableau);
+				// affichage du graphe
+				var ctx = document.getElementById('MonGraphe').getContext('2d');
+				var myChart = new Chart(ctx, {
+					title: 'stats_gbk',
+					type: 'line',
+					data: {
+						labels: labels,
+						datasets: ensemble_donnees
+					},
+					options: {
+						scales: {
+							xAxes: [{
+								display: true,
+								scaleLabel: {
+									display: true,
+									labelString: 'Mois'
+								}
+							}],
+							yAxes: [{
+								display: true,
+								scaleLabel: {
+									display: true,
+									labelString: 'Nombre'
+								}
+							}]
+						}
+					}  
+				});
+            });
+        event.preventDefault();
+    });
+});	
+</script>
+<?php	
+print("<body>");
+
+require_once("../Commun/menu.php");
+
+switch ($gst_mode)
+{ 
+  case 'FORMULAIRE':
+    affiche_formulaire($connexionBD);
+  break;  
+  case 'STATS_CUMULEES':
+    affiche_stats_cumulees($connexionBD);
+  break; 
+}
+print("</body>");
+?>
