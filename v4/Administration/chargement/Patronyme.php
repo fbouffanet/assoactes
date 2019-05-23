@@ -39,13 +39,16 @@ class Patronyme {
 		 if (!empty($st_elem))
 		 {	 
 			$a_colonnes[] = "(:patronyme$i,:phonex$i)";
-			$a_patronymes_a_creer[":prof$i"]=$st_elem;
+			$a_patronymes_a_creer[":patronyme$i"]=$st_elem;
 			$oPhonex -> build ($st_elem);
             $sPhonex = $oPhonex -> sString;
 			$a_patronymes_a_creer[":phonex$i"]=$sPhonex;
 			$i++;
 		 }
 	   }
+	   print("<pre>");
+	   print_r($a_patronymes_a_creer);
+	   print("</pre>");
 	   $st_colonnes = join(',',$a_colonnes);
 	   $st_requete .= $st_colonnes;
 	   try
@@ -63,11 +66,10 @@ class Patronyme {
    
    public function charge_liste_idf_par_nom() {
      if (is_null($this->a_idf_par_patronyme))
-        $this->a_idf_par_patronyme = $this->connexionBD->liste_clef_par_valeur("select idf,nom from `patronyme`");
+        $this->a_idf_par_patronyme = $this->connexionBD->liste_clef_par_valeur("select idf,libelle from `patronyme`");
    }
    
    public function vers_idf($pst_nom) {
-     $pst_nom = ucfirst(strtolower(trim($pst_nom)));
      if (empty($pst_nom)) return 0;
      if (is_null($this->a_idf_par_patronyme)) $this->charge_liste_idf_par_nom();
      if (array_key_exists(strval($pst_nom),$this->a_idf_par_patronyme))
