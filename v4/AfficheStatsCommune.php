@@ -1,0 +1,404 @@
+<?php
+
+session_start();
+
+require_once('./Commun/config.php');
+require_once('./Commun/constantes.php');
+require_once('./Commun/commun.php');
+require_once('./Commun/ConnexionBD.php');
+
+print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print("<head>");
+print('<link rel="shortcut icon" href="images/favicon.ico">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="content-language" content="fr">');
+print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
+print("<script src='Commun/menu.js' type='text/javascript'></script>");
+print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>");
+print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
+print('<title>Base AGC: Etat des relevés</title>');
+?>
+<SCRIPT type="text/javascript">
+$(document).ready(function() {
+$('#commune_a_chercher').autocomplete({
+    source : function(request, response) {
+    $.getJSON("./ajax/commune_acte.php", { term: request.term,idf_source: $('#idf_source').val() }, 
+              response);
+    },
+   minLength: 3
+});
+});
+
+
+function ouvre_plan(num_com) {
+    window.open('./GeoPortail.php?idf_commune='+num_com);
+}
+</script>
+<?php
+print('</head>');
+
+/*
+ * Renvoie une chaine intervalle d'années ou une seule année si l'intervalle est vide
+ * @param integer $pi_deb : Année de début
+ * @param integer $pi_fin : Année de fin 
+ * @return string Chaine représentant l'intervalle   
+*/
+function chaine_intervalle($pi_deb,$pi_fin)
+{
+   if ($pi_deb==$pi_fin)
+      return "$pi_deb";
+   else
+      return "$pi_deb-$pi_fin";
+}
+
+function cellule_stat($pi_idf_commune,$pi_idf_type_acte,$pi_annee_min,$pi_annee_max,$pi_nb_actes)
+{
+   return "<td><a href=\"".$_SERVER['PHP_SELF']."?idf_commune=$pi_idf_commune&amp;idf_type_acte=$pi_idf_type_acte\">".chaine_intervalle($pi_annee_min,$pi_annee_max,$pi_nb_actes)."<br>$pi_nb_actes actes</a></td>";
+}
+
+/**
+    * Affiche l'entête de navigation liens
+    * L'entête se presente sous la forme d'une liste d'ancres HTML [pagecourante - delta ... pagecourante ... pagecourante + delta]     
+*/
+function affiche_entete_liens_navigation($pi_num_page_cour,$pi_nb_pages)
+{
+   $i_deb = ($pi_num_page_cour-DELTA_NAVIGATION)>0 ? ($pi_num_page_cour-DELTA_NAVIGATION) : 1;
+   $i_fin = ($pi_num_page_cour+DELTA_NAVIGATION)<=$pi_nb_pages? $pi_num_page_cour + DELTA_NAVIGATION : $pi_nb_pages;
+
+   print("<div class=alignCenter><br>");
+   if ($i_deb>1)
+      print("<a href=\"".$_SERVER['PHP_SELF']."?num_page_statcom=1\">D&eacute;but</a> ");     
+   if ($i_deb<$i_fin)
+   {  
+      for ($i=$i_deb;$i<=$i_fin;$i++)
+      {
+        if ($i==$pi_num_page_cour)
+          print("<span style=\"font-weight:bold;\"
+>- Page $i - </span> "); 
+        else
+          print("<a href=\"".$_SERVER['PHP_SELF']."?num_page_statcom=$i\">$i</a> ");   
+      }
+   }
+   if ($i_fin<$pi_nb_pages)
+      print(" <a href=\"".$_SERVER['PHP_SELF']."?num_page_statcom=$pi_nb_pages\">Fin</a>");
+   print("<br></div>");   
+}
+
+print("<body>");
+$connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
+require_once("Commun/menu.php");
+$a_sources = $connexionBD->liste_valeur_par_clef("select idf,nom from source order by nom");
+$a_sources[0] = 'Toutes';
+
+$i_session_idf_source = isset($_SESSION['idf_source']) ? $_SESSION['idf_source'] : 1;
+$i_get_idf_source=isset($_GET['idf_source']) ? $_GET['idf_source'] : $i_session_idf_source;  
+$gi_idf_source=isset($_POST['idf_source']) ?  (int) $_POST['idf_source'] : (int) $i_get_idf_source;
+
+$_SESSION['idf_source']=$gi_idf_source;
+
+if (empty($_POST['commune_a_chercher']))
+{
+    $gst_commune_a_chercher = '';   
+}
+else
+{
+   $gst_commune_a_chercher = substr(trim($_POST['commune_a_chercher']),0,50) ;
+   $i_session_num_page=1;
+}
+
+$gst_mode = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;
+
+if (!empty($_GET['idf_commune']))
+{
+   $gst_mode = 'DETAIL';
+   $gi_idf_commune = (int) $_GET['idf_commune'];
+   $gi_idf_type_acte = (int) $_GET['idf_type_acte'];
+   list($gst_nom_commune,$gst_canton,$gi_debut_communale,$gi_debut_greffe)=$connexionBD->sql_select_liste("select ca.nom,c.nom,ca.debut_communale,ca.debut_greffe from commune_acte ca left join canton c on (ca.idf_canton=c.idf) where ca.idf=$gi_idf_commune");
+   $gst_type_acte =$connexionBD->sql_select1("select nom from type_acte where idf=$gi_idf_type_acte");
+}
+else
+{
+   $i_session_num_page = isset($_SESSION['num_page_statcom']) ? $_SESSION['num_page_statcom'] : 1;
+   $gi_num_page_cour = empty($_GET['num_page_statcom']) ? $i_session_num_page : (int) $_GET['num_page_statcom'];
+}
+     
+print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
+
+
+switch ($gst_mode) {
+  case 'LISTE' : 
+     print('<div class=alignCenter>Source: <select name=idf_source id=idf_source onChange="javascript:submit();">');
+     print(chaine_select_options($gi_idf_source,$a_sources));
+     print('</select><br></div>');
+     print('<div class=alignCenter><br>');
+     print("Commune : <input name=\"commune_a_chercher\"  id=\"commune_a_chercher\" value=\"$gst_commune_a_chercher\" size=\"25\" maxlength=\"50\" type=\"Text\">");
+     print(' <input type=submit value=Chercher><br>');
+     print('<div>Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: saint*)<br></div></div>');
+         
+     // Affichage des initiales
+     $gst_commune_a_chercher = str_replace('*','%',$gst_commune_a_chercher);
+     if (empty($gi_idf_source))
+     {
+        $st_requete = "SELECT DISTINCT (left( ca.nom, 1 )) AS init FROM `commune_acte` ca ";
+        if (!empty($gst_commune_a_chercher))
+        {
+            $st_requete .= " where ca.nom like :recherche";
+            $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher));       
+        }
+     }
+     else
+     {
+        $st_requete = "SELECT DISTINCT (left( ca.nom, 1 )) AS init FROM `commune_acte` ca join `stats_commune` sc on (ca.idf=sc.idf_commune) where sc.idf_source=$gi_idf_source ";
+        if (!empty($gst_commune_a_chercher))
+        {
+            $st_requete .= " and ca.nom like :recherche";
+            $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher)); 
+        }
+     }
+     $st_requete .= " ORDER BY init";
+     //FBOprint("Req=$st_requete<br>"); 
+     $a_initiales_communes = $connexionBD->sql_select($st_requete);
+     
+     print("<div align=center>");
+     if (count($a_initiales_communes)>0)
+     {
+        $i_session_initiale = isset($_SESSION['initiale_statcom']) ? $_SESSION['initiale_statcom'] : $a_initiales_communes[0];
+        $gc_initiale = empty($_GET['initiale_statcom']) ? $i_session_initiale : $_GET['initiale_statcom'];   
+        if (!in_array($gc_initiale,$a_initiales_communes))
+          $gc_initiale=$a_initiales_communes[0];
+        $_SESSION['initiale_statcom'] = $gc_initiale;
+        foreach ($a_initiales_communes as $c_initiale)
+        {
+          if ($c_initiale==$gc_initiale)
+            print("<span style=\"font-weight: bold;\">$c_initiale </span>");
+          else
+           print("<a href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=$c_initiale&amp;idf_source=$gi_idf_source\">$c_initiale</a> ");
+        }
+        print("<br></div>");
+     }
+     
+     //Calcul de la liste complète des communes commencant par l'initiale
+     if (empty($gi_idf_source))
+     {
+       if (empty($gst_commune_a_chercher))
+          $st_requete="select ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca  where ca.nom like '$gc_initiale%' order by ca.nom";
+       else
+       {
+          $st_requete="select ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca  where ca.nom like :recherche order by ca.nom";
+          $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher));    
+       }
+     }
+     else
+       if (empty($gst_commune_a_chercher))
+          $st_requete="select distinct ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca join `stats_commune` sc on (ca.idf=sc.idf_commune) where sc.idf_source=$gi_idf_source and ca.nom like '$gc_initiale%' order by ca.nom";     
+       else
+       {
+          $st_requete ="select distinct ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca join `stats_commune` sc on (ca.idf=sc.idf_commune) where sc.idf_source=$gi_idf_source and ca.nom like :recherche order by ca.nom";
+          $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher)); 
+       } 
+     $a_liste_communes= $connexionBD->sql_select_multiple_par_idf($st_requete);    
+     $i_nb_lignes =  count($a_liste_communes);
+     $i_nb_pages= empty($gst_commune_a_chercher) ? ceil($i_nb_lignes/NB_LIGNES_PAR_PAGE): 1;
+     
+     if ($gi_num_page_cour>$i_nb_pages ) $gi_num_page_cour=$i_nb_pages;
+     if ($gi_num_page_cour<1) $gi_num_page_cour=1;
+     $_SESSION['num_page_statcom'] = $gi_num_page_cour;
+     
+     // Affichage de la page courante
+     $i_limite_inf = ($gi_num_page_cour-1)*NB_LIGNES_PAR_PAGE;
+     
+     if (empty($gi_idf_source))
+     {
+        if (empty($gst_commune_a_chercher))
+           $st_requete = "select ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca where ca.nom like '$gc_initiale%' order by ca.nom limit $i_limite_inf,".NB_LIGNES_PAR_PAGE;
+        else
+        {
+          $st_requete = "select ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca where ca.nom like :recherche order by ca.nom";
+          $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher));
+        }   
+     }
+     else
+     {
+       if (empty($gst_commune_a_chercher))
+          $st_requete = "select distinct ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca join `stats_commune` sc on (ca.idf=sc.idf_commune) where sc.idf_source=$gi_idf_source and ca.nom like '$gc_initiale%' order by ca.nom limit $i_limite_inf,".NB_LIGNES_PAR_PAGE;
+       else
+       {
+          $st_requete ="select distinct ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca join `stats_commune` sc on (ca.idf=sc.idf_commune) where sc.idf_source=$gi_idf_source and ca.nom like :recherche order by ca.nom";
+          $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher));
+        }
+     }
+     $a_liste_communes = $connexionBD->sql_select_multiple_par_idf($st_requete);
+     // Affichage de la page courante     
+     affiche_entete_liens_navigation($gi_num_page_cour,$i_nb_pages);           
+     
+     if (empty($gi_idf_source))
+     {
+       if (empty($gst_commune_a_chercher))
+        $st_requete = "select stats_commune.idf_commune,stats_commune.idf_type_acte,min(stats_commune.annee_min),max(stats_commune.annee_max),sum(stats_commune.nb_actes) from stats_commune join commune_acte on (stats_commune.idf_commune=commune_acte.idf) where commune_acte.nom like '$gc_initiale%' group by stats_commune.idf_commune,stats_commune.idf_type_acte";
+       else
+       {
+        $st_requete = "select stats_commune.idf_commune,stats_commune.idf_type_acte,min(stats_commune.annee_min),max(stats_commune.annee_max),sum(stats_commune.nb_actes) from stats_commune join commune_acte on (stats_commune.idf_commune=commune_acte.idf) where commune_acte.nom like :recherche group by stats_commune.idf_commune,stats_commune.idf_type_acte";
+         $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher));
+       }
+     }
+     else
+     {
+        if (empty($gst_commune_a_chercher))
+         $st_requete = "select stats_commune.idf_commune,stats_commune.idf_type_acte,stats_commune.annee_min,stats_commune.annee_max,stats_commune.nb_actes from stats_commune join commune_acte on (stats_commune.idf_commune=commune_acte.idf and commune_acte.nom like '$gc_initiale%' and stats_commune.idf_source=$gi_idf_source) ";
+         else
+         {
+          $st_requete = "select stats_commune.idf_commune,stats_commune.idf_type_acte,stats_commune.annee_min,stats_commune.annee_max,stats_commune.nb_actes from stats_commune join commune_acte on (stats_commune.idf_commune=commune_acte.idf and commune_acte.nom like :recherche and stats_commune.idf_source=$gi_idf_source) ";
+           $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher));
+          }
+      }
+      $a_stats_communes=$connexionBD->liste_valeur_par_doubles_clefs($st_requete);
+      if (count($a_liste_communes)!=0)
+      {
+         print("<div align=center><br>");
+         print("<div>La fourchette affich&eacute;e est l'intervalle maximal de couverture. Pour obtenir le d&eacute;tail des p&eacute;riodes relev&eacute;es, cliquer sur le nombre d'actes<br></div>");
+         print("<br><table border=1>\n");
+         print("<tr>");
+         print("<th>Commune/Paroisse</th><th>D&eacute;but Coll.<br>Greffe (AD)</th><th>D&eacute;but Coll.<br>communale</th><th>Naissances</th><th>Mariages</th><th>D&eacute;c&eacute;s</th><th>Contrats de mariage</th>");
+         print("</tr>\n");
+         $i=0;
+         foreach ($a_liste_communes as $i_idf_commune => $a_info_commune)
+         {
+            list($st_nom_commune,$i_debut_communale,$i_debut_greffe) = $a_info_commune;
+            $st_class = ($i%2==0) ? 'ligne_paire':  'ligne_impaire';
+            print("<tr class=$st_class>");
+            print("<td><a href=\"javascript:ouvre_plan($i_idf_commune);\">$st_nom_commune</a></td>");
+            if (empty($i_debut_greffe))
+              print("<td>&nbsp;</td>");
+            else
+              print("<td>$i_debut_greffe</td>");
+            if (empty($i_debut_communale))
+              print("<td>&nbsp;</td>");
+            else
+              print("<td>$i_debut_communale</td>");
+            if (isset($a_stats_communes[$i_idf_commune][IDF_NAISSANCE]))
+            {
+              list ($i_annee_min,$i_annee_max,$i_nb_actes) = $a_stats_communes[$i_idf_commune][IDF_NAISSANCE];
+              print cellule_stat($i_idf_commune,IDF_NAISSANCE,$i_annee_min,$i_annee_max,$i_nb_actes);
+            }
+            else
+               print("<td>&nbsp;</td>");
+            if (isset($a_stats_communes[$i_idf_commune][IDF_MARIAGE]))
+            {
+              list ($i_annee_min,$i_annee_max,$i_nb_actes) = $a_stats_communes[$i_idf_commune][IDF_MARIAGE];
+              print cellule_stat($i_idf_commune,IDF_MARIAGE,$i_annee_min,$i_annee_max,$i_nb_actes);
+            }
+            else
+               print("<td>&nbsp;</td>");
+            if (isset($a_stats_communes[$i_idf_commune][IDF_DECES]))
+            {
+              list ($i_annee_min,$i_annee_max,$i_nb_actes) = $a_stats_communes[$i_idf_commune][IDF_DECES];
+              print cellule_stat($i_idf_commune,IDF_DECES,$i_annee_min,$i_annee_max,$i_nb_actes);
+            }
+            else
+              print("<td>&nbsp;</td>");
+            if (isset($a_stats_communes[$i_idf_commune][IDF_CM]))
+            {
+              list ($i_annee_min,$i_annee_max,$i_nb_actes) = $a_stats_communes[$i_idf_commune][IDF_CM];
+              print cellule_stat($i_idf_commune,IDF_CM,$i_annee_min,$i_annee_max,$i_nb_actes);
+            }
+            else
+              print("<td>&nbsp;</td>");       
+           print("</tr>\n");
+           $i++;
+        }
+        print("</table><br></div>\n");
+        // Affichage de la page courante     
+        affiche_entete_liens_navigation($gi_num_page_cour,$i_nb_pages);
+     }
+     else
+     {
+        print("<div class=alignCenter>Pas de relev&eacute;s</div>");
+     }
+     break;
+  case 'DETAIL' :  
+     print("<div CLASS=TITRE>");
+     print("Liste des ann&eacute;es disponibles de: $gst_nom_commune ($gst_type_acte)");
+     if  ($gst_canton!='')
+        print("<br> Canton de $gst_canton");
+     print("<br>Source: $a_sources[$gi_idf_source]");   
+     print("<br></div>");
+     
+     print("<div align=center>");
+     print("<div><br>");
+     if ($gi_debut_communale!=0) print("D&eacute;but de la collection communale:$gi_debut_communale<br>");
+     if ($gi_debut_greffe!=0) print("D&eacute;but de la collection du greffe:$gi_debut_greffe<br>");
+     print("<br></div>");
+     if (empty($gi_idf_source))
+       $st_requete = "select distinct annee,count(idf) from acte where idf_commune=$gi_idf_commune and idf_type_acte=$gi_idf_type_acte group by annee order by annee";
+     else
+       $st_requete = "select distinct annee,count(idf) from acte where idf_commune=$gi_idf_commune and idf_type_acte=$gi_idf_type_acte and idf_source=$gi_idf_source group by annee order by annee";
+     //print("Req=$st_requete<br>");
+     $a_liste_annnees = $connexionBD->liste_valeur_par_clef($st_requete);
+     $i_annee_binf = -1;
+     $i_annee_cour = -1;
+     $i_cpt=0;
+     if (count($a_liste_annnees)>0)
+     {
+        $i_nb_actes =0;
+        print("<table border=1>");
+        print("<tr><th>Ann&eacute;es</th><th>Nombre d'actes</th></tr>");
+        foreach ($a_liste_annnees as $i_annee => $i_nb_actes_annee)
+        {
+          if ($i_annee==9999) continue;
+          if ($i_annee==0) continue;
+          if ($i_annee_binf==-1)
+          {
+            $i_annee_binf = $i_annee;
+            $i_annee_cour = $i_annee;
+            $i_nb_actes = $i_nb_actes_annee;
+            continue;
+          }
+          if ($i_annee==$i_annee_cour+1)
+          {
+            $i_annee_cour++;
+            $i_nb_actes+=$i_nb_actes_annee;
+          }
+          else
+          {
+             $st_class = ($i_cpt%2==0) ? 'ligne_paire':  'ligne_impaire';
+             print("<tr class=$st_class>");
+             print("<td align=center>".chaine_intervalle($i_annee_binf,$i_annee_cour)."</td><td align=center>$i_nb_actes</td></tr>\n");
+             $i_annee_binf = $i_annee;
+             $i_annee_cour = $i_annee;
+             $i_nb_actes   = $i_nb_actes_annee;
+             $i_cpt++;
+          }      
+        }
+        $st_class = ($i_cpt%2==0) ? 'ligne_paire':  'ligne_impaire';
+        print("<tr class=$st_class>");
+        print("<td align=center>".chaine_intervalle($i_annee_binf,$i_annee_cour)."</td><td align=center>$i_nb_actes</td></tr>\n");
+        print("</table>");
+     }
+     else
+     {
+        print("Pas d'actes");
+     }
+     print("<br><div class=alignCenter><input type=button value=\"Liste des communes\" onClick=\"submit()\"></div>");
+     print("</div>");
+     $pf=@fopen("$gst_rep_logs/requetes_depouillements.log",'a');
+     date_default_timezone_set($gst_time_zone);
+     list($i_sec,$i_min,$i_heure,$i_jmois,$i_mois,$i_annee,$i_j_sem,$i_j_an,$b_hiver)=localtime();
+     $i_mois++;
+     $i_annee+=1900;
+     $st_date_log = sprintf("%02d/%02d/%04d %02d:%02d:%02d",$i_jmois,$i_mois,$i_annee,$i_heure,$i_min,$i_sec);
+     $gst_adresse_ip = $_SERVER['REMOTE_ADDR'];
+     $st_ident = isset($_SESSION['ident']) ? $_SESSION['ident'] : '';
+     $st_chaine_log = join(';',array($st_date_log,$st_ident,$gst_adresse_ip,$gst_nom_commune,$gst_type_acte));
+     @fwrite($pf,"$st_chaine_log\n"); 
+     @fclose($pf);
+     break; 
+  default : print("mode $gst_mode inconnu");
+  }
+print ("</form>");
+print('</body></html>');
+?>
