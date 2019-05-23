@@ -22,6 +22,7 @@ print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print("<script type='text/javascript'>");
 print("</script>");
+print("<script src='VerifieGestionDonnees.js' type='text/javascript'></script>");
 print('<title>Gestion des publications !</title>');
 print('</head>');
 
@@ -513,31 +514,68 @@ switch($gst_mode)
 
 {
    case 'FORMULAIRE' :
-   	 print('<div class="panel panel-primary">');
-     print('<div class="panel-heading">Création des publications !</div>');
+   	print('<div class="panel panel-primary">');
+    print('<div class="panel-heading">Création des publications !</div>');
 	 print('<div class="panel-body">');
      print('<input type="hidden" name="mode" value="CHARGEMENT" />');
-     print('<div align=center>Source: <select name=idf_source>');
-     print(chaine_select_options($gi_idf_source,$a_sources));
-     print('</select></div><br>');
-     print('<div align=center>Commune: <select name=idf_commune_acte>');
-     print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
-     print('</select></div><br>');
+     
+	 print ('<div class="container">');
+      print ('<div class="row justify-content-md-center">');
+	   print('<label for="idf_source" class="col-form-label col-md-1">Type de Source</label>');
+	   print('<div class="col-md-2">');
+	    print('<select name="idf_source" id="idf_source" class="form-control">');
+        print(chaine_select_options($gi_idf_source,$a_sources)); 
+	    print('</select>');
+	   print('</div>');
+ 
+       print ('<div class="row justify-content-md-center">');
+	    print('<label for="idf_commune_acte" class="col-form-label col-md-1">Type de Commune</label>');
+	    print('<div class="col-md-2">');
+	     print('<select name="idf_commune_acte" id="idf_commune_acte" class="form-control">');
+	     print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
+	     print('</select>');
+	    print('</div>');
 
-     print('</select></div><br>');
-     print('<div align=center>Type d\'acte Nimegue : <select name=idf_type_acte>');
-     print(chaine_select_options($gc_idf_type_acte,$ga_types_nimegue));
-     print('</select></div><br>');
-
-     print('</select></div><br>');
-
+        print ('<div class="row justify-content-md-center">');	
+	     print('<label for="idf_type_acte" class="col-form-label col-md-1">Type d\'acte</label>');
+	     print('<div class="col-md-2">');
+	      print('<select name="idf_type_acte" id="idf_type_acte" class="form-control">');
+	      print(chaine_select_options($gc_idf_type_acte,$ga_types_nimegue));
+	      print('</select>');
+	     print('</div>');	 
+        print('</div>');	
+       print('</div>');	 
+      print('</div>');
+   
+/*
 // Rajout PL dates d?but et fin *****************************
 print('<div align=center>Année début <input type=text size=4 name=pl_date_debut>');
 print(' Année fin <input type=text size=4 name=pl_date_fin></div><br><br>');
 //*********************************************************
+*/	
+	 //Ne fonctionne pas !!!!
+	 
+     print('<div class="form-row">');
+      print('<div class="form-group col-md-2">');
+       print('<label for="pl_date_debut">Année début</label>');
+       print('<input type="text" size="4" maxlength="4" name=pl_date_debut id="pl_date_debut" class="form-control">');
+      print('</div>');
+      print('<div class="form-group col-md-2">');
+       print('<label for="pl_date_fin">Année fin</label>');
+       print('<input type="text" size="4" maxlength="4" name=pl_date_fin id="pl_date_fin" class="form-control">');
+      print('</div>');
+     print('</div>');
+	 
 
-     print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
-	 //print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Cr?ion de la Publication</button></div>');
+	 
+	 
+	print('</div><br>');
+
+
+  //print('</select></div><br>');
+     //print('<div align=center><input type="button" value="Création de la Publication" onClick="Exporte(0,\'EXPORTV3\')"/></div><br>');
+	 print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" onClick="Exporte(0,\'EXPORTV3\')" class="btn btn-primary">Création de la Publication</button></div>');
+	
 	
    break;
 
@@ -674,22 +712,22 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
    fclose($pf);
 
    if (filesize($st_export_nimv3) == 0) {
-   print "<br><b>pas de donn?es</b></br>";
-   } else {
-   print "</br>";
-//-------------------
+    print "</br>";
+    print ('<span class="badge badge-pill badge-danger"> Pas de données</span><br>');
+										} else {
+    print "</br>";
     print ('</form>');
 	print ('<form action="aff_pdf.php" method="post">');
 	print ('<p>');
 	if ($menuDIV == "O")
 	{
-	print "<br><b>Complément du type acte pour les actes divers expl=> Actes Notari?s</b></br>";
+	print "<br><b>Complément du type acte pour les actes divers expl=> Actes Notariés</b></br>";
 	print ('<textarea name="TypeActe" rows="1" cols="45"></textarea><br><br>');
 	}
 	print "<br><b>Info sur la publication expl=> Relevé par:</b></br>";
     print ('<textarea name="message" rows="8" cols="45"></textarea><br>');
     //print ('<input type="submit" value="Exportation du PDF" />');
-	print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Exportation du PDF</button></div>');
+	print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-success">Exportation du PDF</button></div>');
 	print ('</p>');
 	print ('</form>');
 
@@ -697,7 +735,8 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
    //print("<a href=\"aff_pdf.php\"><b>Exportation du PDF</a><br>");
    }
    print('<input type="hidden" name="mode" value="FORMULAIRE"/><br>');
-   print("<input type=submit value=\"Retour\"></div>");
+   //print("<input type=submit value=\"Retour\"></div>");
+   print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-secondary">Retour</button></div>');
 
    break;
 
