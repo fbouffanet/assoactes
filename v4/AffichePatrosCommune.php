@@ -261,9 +261,9 @@ else
    foreach ($a_initiales_patronymes as $c_initiale)
    {
       if ($c_initiale==$gc_initiale)
-        print("<li class=\"page-item active\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
+        print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
       else
-        print("<li class=\"page-item\"><a href=".$_SERVER['PHP_SELF']."?initiale_patcom=$c_initiale>$c_initiale</a></li>");
+        print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_patcom=$c_initiale\">$c_initiale</a></li>");
    }
    print("</ul></div>");
    
