@@ -15,7 +15,7 @@ class StatsPatronyme {
        $this->patronyme = Patronyme::singleton($pconnexionBD);
 	   $this->type_acte = TypeActe::singleton($pconnexionBD);
        $this->a_type_acte = array();
-       $this->a_stat=$this->connexionBD->liste_valeur_par_doubles_clefs("select p.libelle,ta.nom,annee_min,annee_max,nb_personnes from `stats_patronyme` sp join `patronyme` on (sp.idf_patronyme=p.idf) join `type_acte` as ta on (sp.idf_type_acte=ta.idf) where sp.idf_commune=$pi_idf_commune and sp.idf_source=$pi_idf_source");
+       $this->a_stat=$this->connexionBD->liste_valeur_par_doubles_clefs("select p.libelle,ta.nom,annee_min,annee_max,nb_personnes from `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf) join `type_acte` as ta on (sp.idf_type_acte=ta.idf) where sp.idf_commune=$pi_idf_commune and sp.idf_source=$pi_idf_source");
   }
    
   /**
@@ -54,8 +54,7 @@ class StatsPatronyme {
   */ 
   function maj_patro($pst_patro,$pst_type_acte,$pi_annee)
   {
-     //$pst_patro = addslashes($pst_patro);
-     
+     $this->patronyme->ajoute($pst_patro);
      if ((count($this->a_stat)!=0) && (isset($this->a_stat[strval($pst_patro)][strval($pst_type_acte)])))
      {  
         // Un patronyme existe déjà pour le patronyme et le type d'acte défini dans les statistiques
@@ -131,7 +130,15 @@ class StatsPatronyme {
    function maj_stats($pi_idf_type_acte) {
       $st_requete = sprintf("delete from `stats_patronyme` where idf_commune=%d and idf_type_acte=%d and idf_source=%d",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source);
       $this->connexionBD->execute_requete($st_requete);
-      $st_requete = sprintf("insert into `stats_patronyme` (idf_patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes) select pat.idf_patronyme,%d,%d,%d,min(a.annee),max(a.annee),count(p.patronyme) from personne p join patronyme pat on (p.patronyme=pat.libelle) join acte a on (p.idf_acte=a.idf) where a.idf_commune=%d and a.idf_type_acte=%d and a.idf_source=%d and a.annee!=0 and a.annee!=9999 group by p.patronyme,a.idf_commune,a.idf_type_acte,a.idf_source",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source,$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source);
+	  // crée le éventuels nouveaux patronymes
+	  $st_requete = sprintf("select patronyme from personne p join acte a on (p.idf_acte=a.idf) where a.idf_commune=%d and a.idf_type_acte=%d and a.idf_source=%d and a.annee!=0 and a.annee!=9999 and patronyme not in (select libelle from patronyme)",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source);
+	  $a_nouveaux_patronymes=$this->connexionBD->sql_select($st_requete);
+	  foreach  ($a_nouveaux_patronymes as $st_patronyme)
+	  {
+		  $this->patronyme->ajoute($st_patronyme);
+	  }
+	  $this->patronyme->sauve();
+      $st_requete = sprintf("insert into `stats_patronyme` (idf_patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes) select pat.idf,%d,%d,%d,min(a.annee),max(a.annee),count(p.patronyme) from personne p join patronyme pat on (p.patronyme=pat.libelle) join acte a on (p.idf_acte=a.idf) where a.idf_commune=%d and a.idf_type_acte=%d and a.idf_source=%d and a.annee!=0 and a.annee!=9999 group by p.patronyme,a.idf_commune,a.idf_type_acte,a.idf_source",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source,$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source);
       $this->connexionBD->execute_requete($st_requete);   
    }
 }
