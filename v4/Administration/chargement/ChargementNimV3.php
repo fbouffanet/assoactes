@@ -215,7 +215,7 @@ class ChargementNimV3 {
         }
         else
         {
-           $this->a_deja_existants[] = "Le mariage $st_prn_epx $st_nom_epx X $st_prn_epse $st_nom_epse du $st_date existe deja";
+           $this->a_deja_existants[] = "Le mariage $st_prn_epx $st_nom_epx X $st_prn_epse $st_nom_epse du $st_date existe déjà";
         } 
       }   
       fclose($pf);   
@@ -501,7 +501,7 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
       }
       else
       {
-         $this->a_deja_existants[] ="L\'acte divers $st_prn_intv1 $st_nom_intv1 X $st_prn_intv2 $st_nom_intv2 du $st_date existe deja";
+         $this->a_deja_existants[] ="L'acte divers $st_prn_intv1 $st_nom_intv1 X $st_prn_intv2 $st_nom_intv2 du $st_date existe déjà";
       } 
    } 
    fclose($pf);   
@@ -666,7 +666,7 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
       }
       else
       {
-         $this->a_deja_existants[] = "La naissance de $st_prn $st_nom du $st_date existe deja";
+         $this->a_deja_existants[] = "La naissance de $st_prn $st_nom du $st_date existe déjà";
       } 
    } 
    fclose($pf);  
@@ -852,7 +852,7 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
       }
       else
       {
-         $this->a_deja_existants[] = "Le deces de $st_prn $st_nom du $st_date existe deja";
+         $this->a_deja_existants[] = "Le décès de $st_prn $st_nom du $st_date existe déjà";
       } 
    } 
    fclose($pf);  
