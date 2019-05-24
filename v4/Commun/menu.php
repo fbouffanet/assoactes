@@ -8,7 +8,7 @@ if (isset($_SESSION['ident']))
 else
   $a_privileges_utilisateur = array();
 
-$gst_racine_site = $gst_url_site;
+$gst_url_site;
 
 print("<nav class=\"navbar navbar-default navbar-static-top\">\n");
 print("<ul class=\"nav navbar-nav\">\n");
@@ -33,7 +33,7 @@ foreach ($a_categories_menu as $a_categorie)
               else if (preg_match('/^http\:\/\//',$st_script))
                  print("<a href=\"$st_script\" target=\"_blank\">$st_libelle</a>");   
               else
-                 print("<a href=\"$gst_racine_site/$st_script\">$st_libelle</a>");
+                 print("<a href=\"$gst_url_site/$st_script\">$st_libelle</a>");
               print("</li>\n");   
            }
          }
@@ -47,7 +47,7 @@ foreach ($a_categories_menu as $a_categorie)
         else if (preg_match('/^http\:\/\//',$st_script))
           print("<a href=\"$st_script\" target=\"_blank\">$st_categorie</a>"); 
         else 
-          print("<a href=\"$st_script\">$st_categorie</a>");
+          print("<a href=\"$gst_url_site/$st_script\">$st_categorie</a>");
         print("</li>\n");   
       }  
    }   
