@@ -583,8 +583,8 @@ function menu_modifier($padherent,$pi_idf_adherent)
 	print("<input type=hidden name=mode id=mode_modifier value=MODIFIER>");
 	print('<div class="row col-md-12">');
 	print('<div class="col-md-6">');
-  if (!empty($pi_idf_adh) && file_exists("$gst_rep_trombinoscope/$pi_idf_adh.jpg"))      
-		print("<img src=\"$gst_url_trombinoscope/$pi_idf_adh.jpg\" width=115 height=132 alt=\"MaPhoto\">");
+  if (!empty($pi_idf_adherent) && file_exists("$gst_rep_trombinoscope/$pi_idf_adherent.jpg"))      
+		print("<img src=\"$gst_url_trombinoscope/$pi_idf_adherent.jpg\" width=115 height=132 alt=\"MaPhoto\" id=\"photo_adht\">");
 	print($padherent->formulaire_infos_personnelles(a_droits($gst_ident,DROIT_GESTION_ADHERENT)));
 	print($padherent->formulaire_aides_possibles());
 	print($padherent->formulaire_origine());
@@ -648,7 +648,7 @@ function menu_visualiser($pconnexionBD,$pi_idf_adherent)
    if (file_exists("$gst_rep_trombinoscope/$pi_idf_adherent.jpg"))
    {
       print("<tr><th>Photo</th>");
-      print("<td><img src=\"$gst_url_trombinoscope/$pi_idf_adherent.jpg\" width=115 height=132></td>");
+      print("<td><img src=\"$gst_url_trombinoscope/$pi_idf_adherent.jpg\" width=115 height=132 id=\"photo_adht\"></td>");
       print("</tr>");       
    }
    print("<tr><th>Nom</th><td>$st_prenom $st_nom (Num&eacute;ro d'adh&eacute;rent: $i_idf)</td></tr>");
