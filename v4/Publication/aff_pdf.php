@@ -18,7 +18,6 @@ $copy="L’achat des tables ne donne pas droit à copie ou reproduction.
 Toute reproduction ou représentation intégrale, ou partielle, par quelque procédé que ce soit, des pages publiées dans la présente
 publication, faite sans le consentement de l’A.G. C. 16, est illicite et constitue une contrefaçon.
 Art. L. 122-4 et 5 L. 335-2 & s. du Code de la propriété intellectuelle.";
-//$copy = utf8_decode($copy);
 $today = date("M-y"); 
 $message =  isset($_POST['message']) ? $_POST['message']: '';
 $TypeActe =  isset($_POST['TypeActe']) ? $_POST['TypeActe'] : '' ;
@@ -167,7 +166,6 @@ function Footer()
 //	$today = date("M-y");
    $today = Mois_Annee();
     $titreBP = "©".$today." Association Généalogique de la Charente  - Page ";
-    //$titreBP = utf8_decode($titreBP);
     $this->Cell(0,10,$titreBP.$this->PageNo().'/{nb}',0,0,'C');// Numero de page
     }
   }//Footer()
@@ -218,26 +216,22 @@ if ($type_actes_nimegue == "V")
 {
     case "N": //selection sur les naissances
 	$titre = "Baptêmes Naissances";
-	//$titre = utf8_decode($titre);
 	$titreHP = $titre." de ".$commune;
 	$pdf->titrehp = $titreHP;
 	break;
 
 	case "D"://selection sur les décès
 	$titre = "Décès Sépulture";
-	//$titre = utf8_decode($titre);
 	$titreHP = $titre." de ".$commune;
 	break;
 
 	case "M"://selection sur les mariagees
 	$titre = "Mariages";
-	//$titre = utf8_decode($titre);
 	$titreHP = $titre." de ".$commune;
 	break;
 
 	case "V"://selection sur les divers
 	$titre = $TypeActe;
-	//$titre = utf8_decode($titre);
 	$titreHP = $titre." de ".$commune;
 	break;
 }
@@ -262,14 +256,10 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
 	       $pdf->Cell(0,10,$titre,0,1,'C');
 	      //$pdf->Ln(10);// Saut de ligne
     	   $titre2 = 'Années '.$datemini.' à '.$datemaxi.'  soit '.$nbractes.' actes';
-    	   //$titre2 = utf8_decode($titre2);
-		   $pdf->Cell(0,10,$titre2,0,1,'C');// Date
-		   //$titreN = "Par ordre alphabétique";// N°de paroisse
-		   //$titreN = utf8_decode($titreN);// N°de paroisse
+    	   $pdf->Cell(0,10,$titre2,0,1,'C');// Date
 		   $pdf->SetFont('Times','',18);// Police Times gras 12// N°de paroisse
 		   $pdf->Cell(0,10,$titreN,0,1,'C');// N°de paroisse
 		   $titre3 = "Par ordre alphabétique";
-		   //$titre3 = utf8_decode($titre3);
 		   $pdf->SetFont('Times','',16);// Police Times gras 12
 		   $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
     	   $pdf->SetFont('Times','',8);
@@ -300,8 +290,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
  	if (empty($data[22])){} else {$l1= $l1."  - "."Par/Tém1   ".$data[22]."   ".$data[23]."   ".$data[24]."\n";}
   	if (empty($data[25])){} else {$l1= $l1."  - "."Par/Tém2   ".$data[25]."   ".$data[26]."   ".$data[27]."\n";}
   	if (empty($data[28])){} else {$l1= $l1. $data[28]."\n";}
-   //$l1 = utf8_decode($l1);
-  	$pdf->write(3,$l1);
+   /$pdf->write(3,$l1);
   	$sep = "-------------------------------------------------------------------------------------------------------------------------------------------------\n";
   	$pdf->write(3,$sep);
       break;
@@ -325,7 +314,6 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
 	if (empty($data[30])){} else {$l1= $l1."  - "."Tèm1   ".$data[30]."   ".$data[31]."   ".$data[32]."\n";}
 	if (empty($data[33])){} else {$l1= $l1."  - "."Tèm2   ".$data[33]."   ".$data[34]."   ".$data[35]."\n";}
 	if (empty($data[36])){} else {$l1= $l1. $data[36]."\n";}
-  	//$l1 = utf8_decode($l1);
   	$pdf->write(3,$l1);
   	$sep = "------------------------------------------------------------------------------------------------------------------------------------------------\n";
   	$pdf->write(3,$sep);
@@ -371,8 +359,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
   	if (empty($data[52])){} else {$l1= $l1."    - "."Témoin 3  : ".$data[52]." ".$data[53]." ".$data[54]."\n ";}  
 	if (empty($data[55])){} else {$l1= $l1."    - "."Témoin 4  : ".$data[55]." ".$data[56]." ".$data[57]."\n ";} 
 	if (empty($data[58])){} else {$l1= $l1."    - ".$data[58]."\n";}
-	//$l1 = utf8_decode($l1); 
-  	$pdf->write(3,$l1);
+	$pdf->write(3,$l1);
   	$sep = "-------------------------------------------------------------------------------------------------------------------------------------------------\n";
   	$pdf->write(3,$sep);
 
@@ -431,7 +418,6 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
   	if (empty($data[59])){} else {$l1= $l1."  - "."Témoin 4  : ".$data[59]." ".$data[60]."  ".$data[61]."\n";}  
 	$com = str_replace("§"," - ",$data[62]);
 	if (empty($data[62])){} else {$l1= $l1."  - ".$com."\n";}
-	//$l1 = utf8_decode($l1); 
   	$pdf->write(3,$l1);
   	$sep = "-----------------------------------------------------------------------------------------------------------------------------------------------\n";
   	$pdf->write(3,$sep);
@@ -444,7 +430,6 @@ switch ($type_actes_nimegue) { //Ajout du repertoire par Epouses ou Interv2
    case "M":
 	$pdf->AddPage();
 	$titre3 = "Par ordre alphabétique sur l'épouse";
-	//$titre3 = utf8_decode($titre3);
 	$pdf->SetFont('Times','',16);// Police Times gras 12
 	$pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
     $pdf->SetFont('Times','',8);
@@ -470,7 +455,6 @@ switch ($type_actes_nimegue) { //Ajout du repertoire par Epouses ou Interv2
 	case "V":
 	 $pdf->AddPage();
 	 $titre3 = "Par ordre alphabétique sur l'intervenant 2";
-	 //$titre3 = utf8_decode($titre3);
 	 $pdf->SetFont('Times','',16);// Police Times gras 12
 	 $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
      $pdf->SetFont('Times','',8);
