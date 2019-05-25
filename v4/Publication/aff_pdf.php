@@ -290,7 +290,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
  	if (empty($data[22])){} else {$l1= $l1."  - "."Par/Tém1   ".$data[22]."   ".$data[23]."   ".$data[24]."\n";}
   	if (empty($data[25])){} else {$l1= $l1."  - "."Par/Tém2   ".$data[25]."   ".$data[26]."   ".$data[27]."\n";}
   	if (empty($data[28])){} else {$l1= $l1. $data[28]."\n";}
-   /$pdf->write(3,$l1);
+    $pdf->write(3,$l1);
   	$sep = "-------------------------------------------------------------------------------------------------------------------------------------------------\n";
   	$pdf->write(3,$sep);
       break;
