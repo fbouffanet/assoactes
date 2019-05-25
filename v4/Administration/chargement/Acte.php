@@ -389,7 +389,7 @@ class Acte {
              {
             $this -> st_url = $st_url;
              $this -> st_commentaires = $st_commentaires;
-             } 
+             }			 
         $this -> i_details_supplementaires = $i_details_supplementaires;
          $this -> a_liste_personnes = array();
          $st_requete = "select idf from personne where idf_acte=$pi_idf_acte order by idf";
