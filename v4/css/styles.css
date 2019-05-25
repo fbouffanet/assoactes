@@ -26,7 +26,7 @@ div.panel-wizard {
   background-color: #3a87ad;
 }
 
-div>img#photo_adht {
+td>img#photo_adht,div>img#photo_adht {
 	position: relative;
 }	
 img#photo_adht {
