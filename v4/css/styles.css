@@ -26,7 +26,13 @@ div.panel-wizard {
   background-color: #3a87ad;
 }
 
+div>img#photo_adht {
+	position: relative;
+}	
 img#photo_adht {
 	border-radius: 6px;
 	box-shadow: 3px 3px 3px 3px;
+	position: absolute;
+	margin-left: 25vh;
+	margin-right: 25vh;
 }	
