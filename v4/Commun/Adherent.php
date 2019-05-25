@@ -67,6 +67,7 @@ class Adherent
          $this->i_annee_cotisation = ($aujourdhui['mon']>9) ? $aujourdhui['year'] +1 : $aujourdhui['year'];
          $this->st_mdp=self::mdp_alea();
          $this->st_pays='France';
+		 $this->st_site='';
          $this->b_confidentiel=true; 
          $this->i_max_nai=$this -> connexionBD->sql_select1("select Column_Default from Information_Schema.Columns WHERE Table_Schema = '".$gst_nom_bd."' AND Table_Name = 'adherent' AND Column_Name = 'max_nai'");
          $this->i_max_mar_div=$this -> connexionBD->sql_select1("select Column_Default from Information_Schema.Columns WHERE Table_Schema = '".$gst_nom_bd."' AND Table_Name = 'adherent' AND Column_Name = 'max_mar_div'");
