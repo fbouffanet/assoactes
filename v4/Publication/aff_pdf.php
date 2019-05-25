@@ -14,11 +14,11 @@ ob_start();// Enclenche la temporisation de sortie
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 
-$copy="L?achat des tables ne donne pas droit à copie ou reproduction.
-Toute reproduction ou représentation intégrale, ou partielle, par quelque procédé que ce soit, des pages publiées dans la présente publication, faite sans le consentement de l?A.G. C. 16,   est illicite et constitue une contrefaçon.
+$copy="Lachat des tables ne donne pas droit à copie ou reproduction.
+Toute reproduction ou représentation intégrale, ou partielle, par quelque procédé que ce soit, des pages publiées dans la présente publication, faite sans le consentement de lA.G. C. 16,   est illicite et constitue une contrefaçon.
 Art. L. 122-4 et 5  L. 335-2 & s. du Code de la propriété intellectuelle.";
-//$copy = utf8_decode($copy);
-$today = date("M-y");
+$copy = utf8_decode($copy);
+$today = date("M-y"); 
 $message =  isset($_POST['message']) ? $_POST['message']: '';
 $TypeActe =  isset($_POST['TypeActe']) ? $_POST['TypeActe'] : '' ;
 
@@ -166,7 +166,7 @@ function Footer()
 //	$today = date("M-y");
    $today = Mois_Annee();
     $titreBP = "©".$today." Association Généalogique de la Charente  - Page ";
-   // $titreBP = utf8_decode($titreBP);
+    $titreBP = utf8_decode($titreBP);
     $this->Cell(0,10,$titreBP.$this->PageNo().'/{nb}',0,0,'C');// Numero de page
     }
   }//Footer()
@@ -217,26 +217,26 @@ if ($type_actes_nimegue == "V")
 {
     case "N": //selection sur les naissances
 	$titre = "Baptêmes Naissances";
-	//$titre = utf8_decode($titre);
+	$titre = utf8_decode($titre);
 	$titreHP = $titre." de ".$commune;
 	$pdf->titrehp = $titreHP;
 	break;
 
 	case "D"://selection sur les décès
 	$titre = "Décès Sépulture";
-	//$titre = utf8_decode($titre);
+	$titre = utf8_decode($titre);
 	$titreHP = $titre." de ".$commune;
 	break;
 
 	case "M"://selection sur les mariagees
 	$titre = "Mariages";
-	//$titre = utf8_decode($titre);
+	$titre = utf8_decode($titre);
 	$titreHP = $titre." de ".$commune;
 	break;
 
 	case "V"://selection sur les divers
 	$titre = $TypeActe;
-	//$titre = utf8_decode($titre);
+	$titre = utf8_decode($titre);
 	$titreHP = $titre." de ".$commune;
 	break;
 }
@@ -261,14 +261,14 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
 	       $pdf->Cell(0,10,$titre,0,1,'C');
 	      //$pdf->Ln(10);// Saut de ligne
     	   $titre2 = 'Années '.$datemini.' à '.$datemaxi.'  soit '.$nbractes.' actes';
-    	  // $titre2 = utf8_decode($titre2);
+    	   $titre2 = utf8_decode($titre2);
 		   $pdf->Cell(0,10,$titre2,0,1,'C');// Date
 		   //$titreN = "Par ordre alphabétique";// N°de paroisse
-//		   $titreN = utf8_decode($titreN);// N°de paroisse
+		   $titreN = utf8_decode($titreN);// N°de paroisse
 		   $pdf->SetFont('Times','',18);// Police Times gras 12// N°de paroisse
 		   $pdf->Cell(0,10,$titreN,0,1,'C');// N°de paroisse
 		   $titre3 = "Par ordre alphabétique";
-//		   $titre3 = utf8_decode($titre3);
+		   $titre3 = utf8_decode($titre3);
 		   $pdf->SetFont('Times','',16);// Police Times gras 12
 		   $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
     	   $pdf->SetFont('Times','',8);
@@ -294,10 +294,10 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
   	$pdf->Cell(20,3,'Sexe : '.$data[12],0,0,L);
 	$pdf->Cell(10,3,$data[6].'  '.$data[7],0,1);
 	$l1='';
-  	if (empty($data[14])){} else {$l1= $l1."  - "."Père   ".$data[14]."   ".$data[15]."   ".$data[16]."   ".$data[17]."\n";}
-  	if (empty($data[18])){} else {$l1= $l1."  - "."Mère   ".$data[18]."   ".$data[19]."   ".$data[20]."   ".$data[21]."\n";}
- 	if (empty($data[22])){} else {$l1= $l1."  - "."Par/Tém1   ".$data[22]."   ".$data[23]."   ".$data[24]."\n";}
-  	if (empty($data[25])){} else {$l1= $l1."  - "."Mar/Tém2   ".$data[25]."   ".$data[26]."   ".$data[27]."\n";}
+  	if (empty($data[14])){} else {$l1= $l1."  - ".utf8_decode("Père   ").$data[14]."   ".$data[15]."   ".$data[16]."   ".$data[17]."\n";}
+  	if (empty($data[18])){} else {$l1= $l1."  - ".utf8_decode("Mère   ").$data[18]."   ".$data[19]."   ".$data[20]."   ".$data[21]."\n";}
+ 	if (empty($data[22])){} else {$l1= $l1."  - ".utf8_decode("Par/Tém1   ").$data[22]."   ".$data[23]."   ".$data[24]."\n";}
+  	if (empty($data[25])){} else {$l1= $l1."  - ".utf8_decode("Mar/Tém2   ").$data[25]."   ".$data[26]."   ".$data[27]."\n";}
   	if (empty($data[28])){} else {$l1= $l1. $data[28]."\n";}
    //$l1 = utf8_decode($l1);
   	$pdf->write(3,$l1);
@@ -305,10 +305,10 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
   	$pdf->write(3,$sep);
       break;
 
-   case "D":// $type_actes_nimegue = D
+  case "D":// $type_actes_nimegue = D
 	//affichage de chaque champ de la ligne en question
 	if (empty($data[2])) {$lieuorigine = "";} else {$lieuorigine = "lieu d origine ".$data[12];}  //$lieuorigine = $data[data12]
-	if ($data[13] !== "") {$datenaiss ="né(e) le : ".$data[13];} else {$datenaiss = "";}//$datenaiss = $data[data13]
+	if ($data[13] !== "") {$datenaiss =utf8_decode("né(e) le : ").$data[13];} else {$datenaiss = "";}//$datenaiss = $data[data13]
 	if (empty($data[15])) {$ages = "";} else {$ages =" Age : ".$data[15]."";}//$ages = $data[data15]
 	$commdef = $data[16];
 	$prof = $data[17];
@@ -319,10 +319,10 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
 	$infod= $lieuorigine." ".$ages."  ".$data[16]." ".$data[17];
 	if (empty($infod)){} else {$l1= $infod."\n";}
 	if (empty($data[18])){} else {$l1= $l1."  - "."Conjoint   ".$data[18]."   ".$data[19]."   ".$data[20]."   ".$data[21]."\n";}
-	if (empty($data[22])){} else {$l1= $l1."  - "."Père   ".$data[22]."   ".$data[23]."   ".$data[24]."   ".$data[25]."\n";}
-	if (empty($data[26])){} else {$l1= $l1."  - "."Mère   ".$data[26]."   ".$data[27]."   ".$data[28]."   ".$data[29]."\n";}
-	if (empty($data[30])){} else {$l1= $l1."  - "."Tèm1   ".$data[30]."   ".$data[31]."   ".$data[32]."\n";}
-	if (empty($data[33])){} else {$l1= $l1."  - "."Tèm2   ".$data[33]."   ".$data[34]."   ".$data[35]."\n";}
+	if (empty($data[22])){} else {$l1= $l1."  - ".utf8_decode("Père   ").$data[22]."   ".$data[23]."   ".$data[24]."   ".$data[25]."\n";}
+	if (empty($data[26])){} else {$l1= $l1."  - ".utf8_decode("Mère   ").$data[26]."   ".$data[27]."   ".$data[28]."   ".$data[29]."\n";}
+	if (empty($data[30])){} else {$l1= $l1."  - ".utf8_decode("Tèm1   ").$data[30]."   ".$data[31]."   ".$data[32]."\n";}
+	if (empty($data[33])){} else {$l1= $l1."  - ".utf8_decode("Tèm2   ").$data[33]."   ".$data[34]."   ".$data[35]."\n";}
 	if (empty($data[36])){} else {$l1= $l1. $data[36]."\n";}
   	//$l1 = utf8_decode($l1);
   	$pdf->write(3,$l1);
@@ -333,44 +333,44 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
   case "M":// $type_actes_nimegue = M
    //affichage de chaque champ de la ligne en question
    // info epoux
-	if (empty($data[12])) {$lieuorigine1 = "";} else {$lieuorigine1 = " Originaire de ".$data[12]." ";}  //$lieuorigine
-	//if ($data[data13]!=''or 0) {$datenaiss1 = "";} else {$datenaiss1 = " né le : ".$data[data13]." ";}
-	if ($data[13]!=''or empty($data[13])) {$datenaiss1 = "";} else {$datenaiss1 = " né le : ".$data[13]." ";}//$datenaiss
-	if (empty($data[14])) {$ages1 = "";} else {$ages1 =" Age : ".$data[14]." ans ";}//$ages
+	if (empty($data[12])) {$lieuorigine1 = "";} else {$lieuorigine1 = " Originaire de ".$data[12]." ";}  //$lieuorigine 
+	//if ($data[data13]!=''or 0) {$datenaiss1 = "";} else {$datenaiss1 = utf8_decode(" né le : ").$data[data13]." ";}
+	if ($data[13]!=''or empty($data[13])) {$datenaiss1 = "";} else {$datenaiss1 = utf8_decode(" né le : ").$data[13]." ";}//$datenaiss
+	if (empty($data[14])) {$ages1 = "";} else {$ages1 =" Age : ".$data[14]." ans ";}//$ages 
 	$info1= $lieuorigine1.$datenaiss1.$ages1;//Lieu origine + date naiss + age
 	if (empty($data[16])) {$prof = "";} else {$prof = " Profession ".$data[16]." ";}  //Profession
 	if (empty($data[15])) {$commentaire1 = "";} else {$commentaire1 = " ".$data[15]." ";}  //commentaire1
-	$commentaireEpx = $prof.$commentaire;
+	$commentaireEpx = $prof.$commentaire;   
 	$pdf->Cell(80,3,$data[10].'  '.$data[11],0,0,L);
 	$pdf->Cell(10,3,$data[6].'  '.$data[7],0,1);
 	$l1='';
 	if (empty($info1)){} else {$l1= $l1."   - ".$info1."\n";}
-	if (empty($commentaireEpx)){} else {$l1= $l1."   - ".$commentaireEpx."\n";}
-	if (empty($data[17])){} else {$l1= $l1."   - "."Veuf de : ".$data[17]." ".$data[18]." ".$data[19]."\n";}
-	if (empty($data[20])){} else {$l1= $l1."   - "."Père  : ".$data[20]." ".$data[21]." ".$data[22]." ".$data[23]."\n ";}
-	if (empty($data[24])){} else {$l1= $l1."   - "."Mère  : ".$data[24]." ".$data[25]." ".$data[26]." ".$data[27]." \n";}
-
+	if (empty($commentaireEpx)){} else {$l1= $l1."   - ".$commentaireEpx."\n";}  
+	if (empty($data[17])){} else {$l1= $l1."   - "."Veuf de : ".$data[17]." ".$data[18]." ".$data[19]."\n";}  
+	if (empty($data[20])){} else {$l1= $l1."   - ".utf8_decode("Père  : ").$data[20]." ".$data[21]." ".$data[22]." ".$data[23]."\n ";}  
+	if (empty($data[24])){} else {$l1= $l1."   - ".utf8_decode("Mère  : ").$data[24]." ".$data[25]." ".$data[26]." ".$data[27]." \n";} 
+	
 	//Info Epouse
 	if (empty($data[30])) {$lieuorigine2 = "";} else {$lieuorigine2 = " Originaire de ".$data[30]." ";}  //$lieuorigine
-	if ($data[31]!=''or empty($data[31])) {$datenaiss2 = "";} else {$datenaiss2 =" née le : ".$data[31]." ";}//$datenaiss
-	if (empty($data[32])) {$ages2 = "";} else {$ages2 =" Age : ".$data[32]." ans ";}//$ages
+	if ($data[31]!=''or empty($data[31])) {$datenaiss2 = "";} else {$datenaiss2 =utf8_decode(" née le : ").$data[31]." ";}//$datenaiss 
+	if (empty($data[32])) {$ages2 = "";} else {$ages2 =" Age : ".$data[32]." ans ";}//$ages 
 	$info2= $lieuorigine2.$datenaiss2.$ages2;//Lieu origine + date naiss + age
 	if (empty($data[34])) {$prof2 = "";} else {$prof = " Profession ".$data[34]." ";}  //Profession
 	if (empty($data[33])) {$commentaire2 = "";} else {$commentaire2 = " ".$data[33]." ";}  //commentaire2
-	$commentaireEp = $prof2.$commentaire2;
+	$commentaireEp = $prof2.$commentaire2;   
 	$l1 =$l1.$data[28]."   ".$data[29]."\n";
 	if (empty($info2)){} else {$l1= $l1."   - ".$info2."\n";}
-	if (empty($commentaireEp)){} else {$l1= $l1."   - ".$commentaireEp."\n";}
-	if (empty($data[35])){} else {$l1= $l1."   - "."Veuve de : ".$data[35]." ".$data[36]." ".$data[37]."\n";}
-	if (empty($data[38])){} else {$l1= $l1."   - "."Père  : ".$data[38]." ".$data[39]." ".$data[40]." ".$data[41]."\n";}
-	if (empty($data[42])){} else {$l1= $l1."   - "."Mère  : ".$data[42]." ".$data[43]." ".$data[44]." ".$data[45]."\n";}
+	if (empty($commentaireEp)){} else {$l1= $l1."   - ".$commentaireEp."\n";}  
+	if (empty($data[35])){} else {$l1= $l1."   - "."Veuve de : ".$data[35]." ".$data[36]." ".$data[37]."\n";}  
+	if (empty($data[38])){} else {$l1= $l1."   - ".utf8_decode("Père  : ").$data[38]." ".$data[39]." ".$data[40]." ".$data[41]."\n";}  
+	if (empty($data[42])){} else {$l1= $l1."   - ".utf8_decode("Mère  : ").$data[42]." ".$data[43]." ".$data[44]." ".$data[45]."\n";} 
   	// Témoins
-  	if (empty($data[46])){} else {$l1= $l1."    - "."Témoin 1  : ".$data[46]." ".$data[47]." ".$data[48]."\n ";}
-	if (empty($data[49])){} else {$l1= $l1."    - "."Témoin 2  : ".$data[49]." ".$data[50]." ".$data[51]."\n ";}
-  	if (empty($data[52])){} else {$l1= $l1."    - "."Témoin 3  : ".$data[52]." ".$data[53]." ".$data[54]."\n ";}
-	if (empty($data[55])){} else {$l1= $l1."    - "."Témoin 4  : ".$data[55]." ".$data[56]." ".$data[57]."\n ";}
+  	if (empty($data[46])){} else {$l1= $l1."    - ".utf8_decode("Témoin 1  : ").$data[46]." ".$data[47]." ".$data[48]."\n ";}  
+	if (empty($data[49])){} else {$l1= $l1."    - ".utf8_decode("Témoin 2  : ").$data[49]." ".$data[50]." ".$data[51]."\n ";} 
+  	if (empty($data[52])){} else {$l1= $l1."    - ".utf8_decode("Témoin 3  : ").$data[52]." ".$data[53]." ".$data[54]."\n ";}  
+	if (empty($data[55])){} else {$l1= $l1."    - ".utf8_decode("Témoin 4  : ").$data[55]." ".$data[56]." ".$data[57]."\n ";} 
 	if (empty($data[58])){} else {$l1= $l1."    - ".$data[58]."\n";}
-	//$l1 = utf8_decode($l1);
+	//$l1 = utf8_decode($l1); 
   	$pdf->write(3,$l1);
   	$sep = "-------------------------------------------------------------------------------------------------------------------------------------------------\n";
   	$pdf->write(3,$sep);
@@ -390,47 +390,47 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
 	$pdf->Cell(80,3,$Notaire.'  '.$cote.'   '.$Type_Acte,0,1);
 
 
-   // info Intervenant1
-	if (empty($data[15])) {$lieuorigine1 = "";} else {$lieuorigine1 = "Originaire de ".$data[15]." ";}  //$lieuorigine
-	if ($data[16]!=''or empty($data[16])) {$datenaiss1 = "";} else {$datenaiss1 ="né le : ".$data[16]." ";}//$datenaiss
-	if (empty($data[17])) {$ages1 = "";} else {$ages1 ="Age : ".$data[17]." ans ";}//$ages
+  // info Intervenant1
+	if (empty($data[15])) {$lieuorigine1 = "";} else {$lieuorigine1 = "Originaire de ".$data[15]." ";}  //$lieuorigine 
+	if ($data[16]!=''or empty($data[16])) {$datenaiss1 = "";} else {$datenaiss1 =utf8_decode("né le : ").$data[16]." ";}//$datenaiss 
+	if (empty($data[17])) {$ages1 = "";} else {$ages1 ="Age : ".$data[17]." ans ";}//$ages 
 	$info1= $lieuorigine1.$datenaiss1.$ages1;//Lieu origine + date naiss + age
 	if (empty($data[19])) {$prof = "";} else {$prof = "Profession ".$data[19]." ";}  //Profession
 	if (empty($data[18])) {$commentaire1 = "";} else {$commentaire1 = " ".$data[18]." ";}  //commentaire1
-	$commentaireEpx = $prof.$commentaire;
+	$commentaireEpx = $prof.$commentaire;   
 	/*$l1 ="\n".$data[data12]."   ".$data[data13]."  ".$data[data11]."                 		Le ".$data[data6]." ".$data[data7]."";*/
 	$pdf->Cell(80,3,$data[12].'  '.$data[13],0,0,L);
 	$pdf->Cell(10,3,$data[6].'  '.$data[7],0,1);
 	$l1='';
 	if (empty($info1)){} else {$l1= $l1."  - ".$info1."\n";}
-	if (empty($commentaireEpx)){} else {$l1= $l1."  - ".$commentaireEpx."\n";}
-	if (empty($data[20])){} else {$l1= $l1."  - "."Ex épouse : ".$data[20]." ".$data[21]." ".$data[22]."\n";}
-	if (empty($data[23])){} else {$l1= $l1."  - "."Père  : ".$data[23]." ".$data[24]." ".$data[25]." ".$data[26]."\n";}
-	if (empty($data[27])){} else {$l1= $l1."  - "."Mère  : ".$data[27]." ".$data[28]." ".$data[29]." ".$data[30]."\n";}
-
+	if (empty($commentaireEpx)){} else {$l1= $l1."  - ".$commentaireEpx."\n";}  
+	if (empty($data[20])){} else {$l1= $l1."  - ".utf8_decode("Ex épouse : ").$data[20]." ".$data[21]." ".$data[22]."\n";}  
+	if (empty($data[23])){} else {$l1= $l1."  - ".utf8_decode("Père  : ").$data[23]." ".$data[24]." ".$data[25]." ".$data[26]."\n";}  
+	if (empty($data[27])){} else {$l1= $l1."  - ".utf8_decode("Mère  : ").$data[27]." ".$data[28]." ".$data[29]." ".$data[30]."\n";} 
+	
 	//Info Intervenant2
 	if (empty($data[34])) {$lieuorigine2 = "";} else {$lieuorigine2 = "Originaire de ".$data[34]." ";}  //$lieuorigine
-	if ($data[35]!=''or empty($data[35])) {$datenaiss2 = "";} else {$datenaiss2 ="née le : ".$data[35]." ";}//$datenaiss
-	if (empty($data[36])) {$ages2 = "";} else {$ages2 ="Age : ".$data[36]." ans ";}//$ages
+	if ($data[35]!=''or empty($data[35])) {$datenaiss2 = "";} else {$datenaiss2 =utf8_decode("née le : ").$data[35]." ";}//$datenaiss 
+	if (empty($data[36])) {$ages2 = "";} else {$ages2 ="Age : ".$data[36]." ans ";}//$ages 
 	$info2= $lieuorigine2.$datenaiss2.$ages2;//Lieu origine + date naiss + age
 	if (empty($data[38])) {$prof2 = "";} else {$prof = "Profession ".$data[38]." ";}  //Profession
 	if (empty($data[37])) {$commentaire2 = "";} else {$commentaire2 = " ".$data[37]." ";}  //commentaire2
-	$commentaireEp = $prof2.$commentaire2;
+	$commentaireEp = $prof2.$commentaire2;   
 	$l1 =$l1.$data[31]."   ".$data[32]."\n";
 	if (empty($info12)){} else {$l1= $l1."  - ".$info1."\n";}
-	if (empty($commentaireEp)){} else {$l1= $l1."  - ".$commentaireEp."\n";}
-	if (empty($data[39])){} else {$l1= $l1."  - "."Ex époux : ".$data[39]." ".$data[40]." ".$data[41]."\n";}
-	if (empty($data[42])){} else {$l1= $l1."  - "."Père  : ".$data[42]." ".$data[43]." ".$data[45]." ".$data[44]."\n";}
-	if (empty($data[46])){} else {$l1= $l1."  - "."Mère  : ".$data[46]." ".$data[47]." ".$data[49]." ".$data[48]."\n";}
-
+	if (empty($commentaireEp)){} else {$l1= $l1."  - ".$commentaireEp."\n";}  
+	if (empty($data[39])){} else {$l1= $l1."  - ".utf8_decode("Ex époux : ").$data[39]." ".$data[40]." ".$data[41]."\n";}  
+	if (empty($data[42])){} else {$l1= $l1."  - ".utf8_decode("Père  : ").$data[42]." ".$data[43]." ".$data[45]." ".$data[44]."\n";}  
+	if (empty($data[46])){} else {$l1= $l1."  - ".utf8_decode("Mère  : ").$data[46]." ".$data[47]." ".$data[49]." ".$data[48]."\n";} 
+  	
   	// Témoins
-  	if (empty($data[50])){} else {$l1= $l1."\n"."  - "."Témoin 1  : ".$data[50]." ".$data[51]."  ".$data[52]."\n";}
-	if (empty($data[53])){} else {$l1= $l1."  - "."Témoin 2  : ".$data[53]." ".$data[54]."  ".$data[55]."\n";}
-	if (empty($data[56])){} else {$l1= $l1."  - "."Témoin 3  : ".$data[56]." ".$data[57]."  ".$data[58]."\n";}
-  	if (empty($data[59])){} else {$l1= $l1."  - "."Témoin 4  : ".$data[59]." ".$data[60]."  ".$data[61]."\n";}
+  	if (empty($data[50])){} else {$l1= $l1."\n"."  - ".utf8_decode("Témoin 1  : ").$data[50]." ".$data[51]."  ".$data[52]."\n";} 
+	if (empty($data[53])){} else {$l1= $l1."  - ".utf8_decode("Témoin 2  : ").$data[53]." ".$data[54]."  ".$data[55]."\n";}  
+	if (empty($data[56])){} else {$l1= $l1."  - ".utf8_decode("Témoin 3  : ").$data[56]." ".$data[57]."  ".$data[58]."\n";} 
+  	if (empty($data[59])){} else {$l1= $l1."  - ".utf8_decode("Témoin 4  : ").$data[59]." ".$data[60]."  ".$data[61]."\n";}  
 	$com = str_replace("§"," - ",$data[62]);
 	if (empty($data[62])){} else {$l1= $l1."  - ".$com."\n";}
-	//$l1 = utf8_decode($l1);
+	//$l1 = utf8_decode($l1); 
   	$pdf->write(3,$l1);
   	$sep = "-----------------------------------------------------------------------------------------------------------------------------------------------\n";
   	$pdf->write(3,$sep);
@@ -443,7 +443,7 @@ switch ($type_actes_nimegue) { //Ajout du repertoire par Epouses ou Interv2
    case "M":
 	$pdf->AddPage();
 	$titre3 = "Par ordre alphabétique sur l'épouse";
-	//$titre3 = utf8_decode($titre3);
+	$titre3 = utf8_decode($titre3);
 	$pdf->SetFont('Times','',16);// Police Times gras 12
 	$pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
     $pdf->SetFont('Times','',8);
@@ -469,7 +469,7 @@ switch ($type_actes_nimegue) { //Ajout du repertoire par Epouses ou Interv2
 	case "V":
 	 $pdf->AddPage();
 	 $titre3 = "Par ordre alphabétique sur l'intervenant 2";
-	 //$titre3 = utf8_decode($titre3);
+	 $titre3 = utf8_decode($titre3);
 	 $pdf->SetFont('Times','',16);// Police Times gras 12
 	 $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
      $pdf->SetFont('Times','',8);
