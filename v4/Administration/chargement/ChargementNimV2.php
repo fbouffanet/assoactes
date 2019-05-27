@@ -25,6 +25,7 @@ class ChargementNimV2 {
       $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
       $type_acte = TypeActe::singleton($connexionBD);
       $union = Union::singleton($connexionBD);
+	  $patronyme = Patronyme::singleton($connexionBD);
       $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
       $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
       $prenom = Prenom::singleton($connexionBD);
@@ -35,7 +36,7 @@ class ChargementNimV2 {
       $a_liste_actes = array();  
       $pf=fopen($pst_fichier,"r") or die("Impossible de lire le fichier $pst_fichier");
       // Empeche le chargement de la table le temps de la mise a jour
-      $connexionBD->execute_requete("LOCK TABLES `personne` write , `prenom` write,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write,`acte` as a read,`personne` as p1 read,`personne` as p2 read,`union` as u read, `type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write"); 
+      $connexionBD->execute_requete("LOCK TABLES `personne` write , `patronyme` write , `prenom` write,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write,`acte` as a read,`personne` as p1 read,`personne` as p2 read,`union` as u read, `type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write"); 
       // les redondances de donnees seront traitees par sql load data et la contrainte sur l'index nom
       
       $i_nb_actes =0 ;
@@ -215,14 +216,15 @@ class ChargementNimV2 {
         }
         else
         {
-           $this->a_deja_existants[] = "Le mariage $st_prn_epx $st_nom_epx X $st_prn_epse $st_nom_epse du $st_date existe deja";
+           $this->a_deja_existants[] = "Le mariage $st_prn_epx $st_nom_epx X $st_prn_epse $st_nom_epse du $st_date existe déjà";
         } 
       }   
       fclose($pf);   
       // Sauvegarde des types d'acte par sécurité si 'Mariage' n'a pas été déjà défini comme type d'acte
 	
 	$type_acte->sauve();
-	$union->sauve();   
+	$union->sauve();
+    $patronyme->sauve();	
 	$stats_patronyme->sauve();
 	$stats_commune->sauve();
 	$commune_personne->sauve();
@@ -281,6 +283,7 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
    $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
    $type_acte = TypeActe::singleton($connexionBD);
    $union = Union::singleton($connexionBD);
+   $patronyme = Patronyme::singleton($connexionBD);
    $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
    $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
    $prenom = Prenom::singleton($connexionBD);
@@ -292,7 +295,7 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
    $a_liste_actes = array();  
    $pf=fopen($pst_fichier,"r") or die("Impossible de lire le fichier $pst_fichier");
    // Empeche le chargement de la table le temps de la mise a jour
-   $connexionBD->execute_requete("LOCK TABLES `personne` write, `prenom` write ,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write,`personne` as p1 read,`personne` as p2 read,`union` as u read,`type_acte` as ta read,`type_acte` write, `acte` as a read,`releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write"); 
+   $connexionBD->execute_requete("LOCK TABLES `personne` write, `patronyme` write, `prenom` write ,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write,`personne` as p1 read,`personne` as p2 read,`union` as u read,`type_acte` as ta read,`type_acte` write, `acte` as a read,`releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write"); 
    // les redondances de donnees seront traitees par sql load data et la contrainte sur l'index nom
 
    
@@ -493,13 +496,14 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
       }
       else
       {
-         $this->a_deja_existants[] ="L\'acte divers $st_prn_intv1 $st_nom_intv1 X $st_prn_intv2 $st_nom_intv2 du $st_date existe deja";
+         $this->a_deja_existants[] ="L'acte divers $st_prn_intv1 $st_nom_intv1 X $st_prn_intv2 $st_nom_intv2 du $st_date existe déjà";
       } 
    } 
    fclose($pf);   
    
 	$type_acte->sauve();
-	$union->sauve();   
+	$union->sauve();
+    $patronyme->sauve();	
 	$stats_patronyme->sauve();
 	$stats_commune->sauve();
 	$commune_personne->sauve();
@@ -557,6 +561,7 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
    $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
    $type_acte = TypeActe::singleton($connexionBD);
    $union = Union::singleton($connexionBD);
+   $patronyme = Patronyme::singleton($connexionBD);
    $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
    $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
    $prenom = Prenom::singleton($connexionBD);
@@ -567,7 +572,7 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
    $a_liste_actes = array();      
    $pf=fopen($pst_fichier,"r") or die("Impossible de lire $pst_fichier");
    // Empeche le chargement de la table le temps de la mise a jour
-   $connexionBD->execute_requete("LOCK TABLES `personne` write , `prenom` write,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write, `acte` as a read, `personne` as p read,`personne` as pers_pere read,`personne` as pers_mere read,`type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");
+   $connexionBD->execute_requete("LOCK TABLES `personne` write , `patronyme` write ,`prenom` write,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write, `acte` as a read, `personne` as p read,`personne` as pers_pere read,`personne` as pers_mere read,`type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");
    $i_nb_actes =0 ;
    while (!feof($pf))
    {      
@@ -651,13 +656,14 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
       }
       else
       {
-         $this->a_deja_existants[] = "La naissance de $st_prn $st_nom du $st_date existe deja";
+         $this->a_deja_existants[] = "La naissance de $st_prn $st_nom du $st_date existe déjà";
       } 
    } 
    fclose($pf);  
    // Sauvegarde des types d'acte par sécurité si 'Naissance' n'a pas été déjà défini comme type d'acte   
 	$type_acte->sauve();
-	$union->sauve();   
+	$union->sauve();
+    $patronyme->sauve();	
 	$stats_patronyme->sauve();
 	$stats_commune->sauve();
 	$commune_personne->sauve();
@@ -715,6 +721,7 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
    $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
    $type_acte = TypeActe::singleton($connexionBD);
    $union = Union::singleton($connexionBD);
+   $patronyme = Patronyme::singleton($connexionBD);
    $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
    $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
    $prenom = Prenom::singleton($connexionBD);
@@ -725,7 +732,7 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
    $a_liste_actes = array(); 
    $pf=fopen($pst_fichier,"r") or die("Impossible de lire $pst_fichier");
    // Empeche le chargement de la table le temps de la mise a jour
-   $connexionBD->execute_requete("LOCK TABLES `personne` write , `prenom` write,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write,`acte` as a read, `personne` as p read,`personne` as pers_pere read,`personne` as pers_mere read,`type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");
+   $connexionBD->execute_requete("LOCK TABLES `personne` write , `patronyme` write ,`prenom` write,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write,`acte` as a read, `personne` as p read,`personne` as pers_pere read,`personne` as pers_mere read,`type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");
    $i_nb_actes =0 ;
    while (!feof($pf))
    {      
@@ -825,13 +832,14 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
       }
       else
       {
-         $this->a_deja_existants[] = "Le deces de $st_prn $st_nom du $st_date existe deja";
+         $this->a_deja_existants[] = "Le décès de $st_prn $st_nom du $st_date existe déjà";
       } 
    } 
    fclose($pf);  
    // Sauvegarde des types d'acte par sécurité si 'Décès' n'a pas été déjà défini comme type d'acte
 	$type_acte->sauve();
-	$union->sauve();   
+	$union->sauve();
+    $patronyme->sauve();	
 	$stats_patronyme->sauve();
 	$stats_commune->sauve();
 	$commune_personne->sauve();
