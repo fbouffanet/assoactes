@@ -1,3 +1,8 @@
+body {
+background-color:#F7F7F0;
+font-family:"verdana",comic, sans-serif;
+}
+
 div.flexbox {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -19,4 +24,17 @@ div.panel-wizard {
 }
 .badge-info {
   background-color: #3a87ad;
-} 
+}
+
+td>img#photo_adht,div>img#photo_adht {
+	position: relative;
+}	
+img#photo_adht {
+	border-radius: 6px;
+	box-shadow: 3px 3px 3px 3px;
+	position: absolute;
+	margin-left: 25vh;
+	margin-right: 25vh;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}	
