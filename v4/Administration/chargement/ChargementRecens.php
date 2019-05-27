@@ -15,6 +15,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
    $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
    $type_acte = TypeActe::singleton($connexionBD);
    $union = Union::singleton($connexionBD);
+   $patronyme = Patronyme::singleton($connexionBD);
    $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
    $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
    $prenom = Prenom::singleton($connexionBD);
@@ -25,7 +26,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
    $a_liste_actes = array();      
    $pf=fopen($pst_fichier,"r") or die("Impossible de lire $pst_fichier");
    // Empeche le chargement de la table le temps de la mise a jour
-   $connexionBD->execute_requete("LOCK TABLES `personne` write , `prenom` write ,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write, `acte` as a read, `personne` as p read,`personne` as pers_pere read,`personne` as pers_mere read,`type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");
+   $connexionBD->execute_requete("LOCK TABLES `personne` write , `patronyme` write ,`prenom` write ,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write, `acte` as a read, `personne` as p read,`personne` as pers_pere read,`personne` as pers_mere read,`type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");
    
    $i_nb_actes =0 ;
    $st_rue_courante=null;
@@ -144,7 +145,8 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
    
    // Sauvegarde des types d'acte par sécurité si 'Naissance' n'a pas été déjà défini comme type d'acte
 	$type_acte->sauve();
-	$union->sauve();   
+	$union->sauve();
+    $patronyme->sauve();	
 	$stats_patronyme->sauve();
 	$stats_commune->sauve();
 	$commune_personne->sauve();
