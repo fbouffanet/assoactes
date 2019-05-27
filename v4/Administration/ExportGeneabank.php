@@ -85,7 +85,7 @@ function  ExporteIndexPatros($pconnexionBD,$pst_idf_geneabank,$pst_repertoire_ex
    global $gst_code_region_geneabank;
    global $gst_code_pays_geneabank;
    global $gst_code_type_geneabank;
-   $st_requete =  "select sp.patronyme,ta.nom,sp.annee_min,sp.annee_max,sp.nb_personnes,ca.nom from stats_patronyme sp join commune_acte ca on (sp.idf_commune=ca.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) join source s on (sp.idf_source=s.idf) where s.publication_geneabank=1 and sp.patronyme REGEXP '^[A-Za-z ()]+$' ";
+   $st_requete =  "select p.libelle,ta.nom,sp.annee_min,sp.annee_max,sp.nb_personnes,ca.nom from stats_patronyme sp join patronyme p on (sp.idf_patronyme=p.idf) join commune_acte ca on (sp.idf_commune=ca.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) join source s on (sp.idf_source=s.idf) where s.publication_geneabank=1 and p.libelle REGEXP '^[A-Za-z ()]+$' ";
    $pconnexionBD->desactive_cache();
    $pconnexionBD->execute_requete($st_requete);
    $st_fichier = "$pst_repertoire_export/gbk.txt";
