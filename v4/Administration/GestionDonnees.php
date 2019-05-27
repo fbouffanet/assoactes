@@ -14,6 +14,7 @@ require_once 'chargement/chargement.php';
 require_once 'chargement/CompteurPersonne.php';
 require_once 'chargement/Personne.php';
 require_once 'chargement/CommunePersonne.php';
+require_once 'chargement/Patronyme.php';
 require_once 'chargement/Prenom.php';
 require_once 'chargement/Profession.php';
 require_once 'chargement/CompteurActe.php';
@@ -1561,9 +1562,8 @@ switch($gst_mode)
         
         exit;
      }
-     chmod($st_fich_dest,0444);
-     $i_epoch_deb = time(); 
-     
+
+     $i_epoch_deb = time();    
      switch($gi_idf_version_nimegue)
      {
         case '2' : $chargementNimV2 = new ChargementNimV2($connexionBD);
@@ -1622,6 +1622,7 @@ switch($gst_mode)
                   $a_liste_deja_existants = array();
                   $i_nb_actes_charges = 0;
      }
+	 unlink($st_fich_dest);
      print('<div class="text-center"> Temps de traitement : '.(time()-$i_epoch_deb).' s</div>');
      if ($b_ret)
      {      
@@ -1704,10 +1705,10 @@ switch($gst_mode)
         
         exit;
      }
-     chmod($st_fich_dest,0444);
      $i_nb_actes_charges =charge_recensement($st_fich_dest,$gi_idf_commune_acte,$gi_annee_recens,$gi_idf_source,null);
      $connexionBD->execute_requete("insert into chargement(date_chgt,idf_commune,type_acte_nim,nb_actes) values(now(),$gi_idf_commune_acte,".IDF_RECENS.",$i_nb_actes_charges)");
-     print("<div class=\"alert alert-success\">$i_nb_actes_charges actes charg&eacute;s</div>");
+     unlink($st_fich_dest);
+	 print("<div class=\"alert alert-success\">$i_nb_actes_charges actes charg&eacute;s</div>");
      print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
      print('<input type="hidden" name="mode" value="FORMULAIRE" >');
      print('<div class="form-group col-md-4"><button type="submit" class="btn btn-primary">Menu Chargement</button></div>'); 
