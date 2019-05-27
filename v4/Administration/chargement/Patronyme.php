@@ -46,6 +46,9 @@ class Patronyme {
 			$i++;
 		 }
 	   }
+	   print("<pre>");
+	   print_r($a_patronymes_a_creer);
+	   print("</pre>");
 	   $st_colonnes = join(',',$a_colonnes);
 	   $st_requete .= $st_colonnes;
 	   try
