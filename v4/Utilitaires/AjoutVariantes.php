@@ -22,7 +22,7 @@ switch ($gst_mode) {
 		header("Pragma: public");
 		header("Content-disposition: attachment; filename=\"VariantesNimegue.txt\"");
 		$fh = @fopen('php://output', 'w' );
-		$ga_patronymes = $connexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme REGEXP '^[A-Z \?\(\)]+$' and patronyme not in (select patronyme from `variantes_patro`)");
+		$ga_patronymes = $connexionBD->sql_select("select distinct p.libelle from `stats_patronyme` sp join patronyme p on (sp.idf_patronyme=p.idf) where p.libelle REGEXP '^[A-Z \?\(\)]+$' and p.libelle not in (select patronyme from `variantes_patro`)");
 		$gh_variantes = array();
 		$oPhonex = new phonex;
 		foreach($ga_patronymes as $st_patronyme)
@@ -290,7 +290,7 @@ function complete_variantes($pconnexionBD,$pi_idf_groupe,$pa_variantes)
 */
 function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 {
-	  $a_patronymes = $pconnexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme REGEXP '^[A-Z \?\(\)]+$' and patronyme not in (select patronyme from `variantes_patro`)");
+	  $a_patronymes = $pconnexionBD->sql_select("select distinct p.libelle from `stats_patronyme` sp join patronyme p on (sp.idf_patronyme=p.idf) where p.libelle REGEXP '^[A-Z \?\(\)]+$' and p.libelle not in (select patronyme from `variantes_patro`)");
     $a_groupes_variantes = $pconnexionBD->liste_valeur_par_clef("select patronyme,majeure from `variantes_patro` where idf_groupe = $pi_idf_groupe");
     $oPhonex = new phonex;
     $a_phonex_variantes = array();
@@ -309,7 +309,7 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
           $st_variantes_courantes .= "$st_patronyme\n";   
     }
     $st_liste_phonex = join(',',$a_code_phonex);
-    $st_requete = "select patronyme from phonex_patro where patronyme not in (select patronyme from `variantes_patro`) and phonex in ($st_liste_phonex)";
+    $st_requete = "select libelle from patronyme where libelle not in (select patronyme from `variantes_patro`) and phonex in ($st_liste_phonex)";
     //print("Req=$st_requete<br>");
     $a_variantes_ajouter = $pconnexionBD->sql_select($st_requete);
     print("<form  id=\"menu_completer\" action=\"".$_SERVER['PHP_SELF']."\" method=post >");

@@ -20,7 +20,7 @@ require_once('../Commun/commun.php');
 $st_delimiteur = ';';
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);   
-$connexionBD->execute_requete("select sp.patronyme,sp.annee_min,sp.annee_max,sp.nb_personnes,ca.nom from stats_patronyme sp join commune_acte ca on (sp.idf_commune=ca.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) join source s on (sp.idf_source=s.idf) where s.idf=".IDF_SOURCE_TD." and sp.idf_type_acte=".IDF_MARIAGE." and sp.patronyme  REGEXP '^[A-Za-z ()]+$' ");
+$connexionBD->execute_requete("select p.libelle,sp.annee_min,sp.annee_max,sp.nb_personnes,ca.nom from stats_patronyme sp join patronyme p on (sp.idf_patronyme=p.idf) join commune_acte ca on (sp.idf_commune=ca.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) join source s on (sp.idf_source=s.idf) where s.idf=".IDF_SOURCE_TD." and sp.idf_type_acte=".IDF_MARIAGE." and p.libelle REGEXP '^[A-Za-z ()]+$' ");
 header('Content-Type: text/csv; charset=utf-8');
 header('Content-Disposition: attachment; filename=le_tdm.csv');
 
