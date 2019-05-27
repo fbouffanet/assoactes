@@ -61,7 +61,7 @@ print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("../Commun/menu.php");
 
-$ga_tables = array('acte','chargement','commune_personne','personne','profession','stats_commune','stats_patronyme','tableau_kilometrique','type_acte','union','variantes_patro');
+$ga_tables = array('acte','chargement','commune_personne','patronyme','personne','prenom','profession','stats_commune','stats_patronyme','tableau_kilometrique','type_acte','union','variantes_patro');
 $gst_mode = empty($_POST['mode']) ? 'FORMULAIRE': $_POST['mode'] ;
 print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 switch($gst_mode)
