@@ -41,7 +41,7 @@ function entre_quotes($pst_nom) {
  */ 
 function complete_variantes_connues($pconnexionBD,$pst_fichier) {
        
-    $a_patronymes = $pconnexionBD->sql_select("select distinct p.libelle from `stats_patronyme` sp join patronyme p on (sp.idf_patronyme=p.idf) where p.libelle REGEXP '^[A-Z \?\(\)]+$' and p.libelle not in (select patronyme from `variantes_patro`)");
+    $a_patronymes = $pconnexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme REGEXP '^[A-Z \?\(\)]+$' and patronyme not in (select patronyme from `variantes_patro`)");
     $a_groupes_variantes = $pconnexionBD->liste_valeur_par_clef("select patronyme,idf_groupe from `variantes_patro` order by idf_groupe, majeure desc");
     $oPhonex = new phonex;
     $a_phonex_variantes = array();
@@ -203,6 +203,13 @@ function affiche_menu() {
    print("</div>"); 
    print('</form>');
    
+   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+   print('<input type="hidden" name="mode" value="CALCUL_PHONEX" />');
+   print('<div class="form-row">'); 
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">(Re)Calculer les Phonex</button>');
+   print("</div>"); 
+   print('</form>');
+   
    print('</div></div>');
 }  
 
@@ -213,8 +220,8 @@ function affiche_menu() {
 function extrait_patro_accents($pconnexionBD)
 {
    $pconnexionBD->execute_requete("truncate table patro_accent");
-   $pconnexionBD->execute_requete("insert into `patro_accent` SELECT DISTINCT p.libelle FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf ) WHERE p.libelle NOT REGEXP '^[A-Z ]+$' AND left( p.libelle, 1 ) IN (
-'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P','Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z') and  p.libelle not like '%\.%'and p.libelle not like '%?%'");
+   $pconnexionBD->execute_requete("insert into `patro_accent` SELECT DISTINCT patronyme FROM `stats_patronyme` WHERE patronyme NOT REGEXP '^[A-Z ]+$' AND left( patronyme, 1 ) IN (
+'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P','Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z') and  patronyme not like '%\.%'and patronyme not like '%?%'");
 }
 
 /**
@@ -329,6 +336,50 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp)
    print('</form>');   
  }
  
+/**
+ * Calcule les phonex de tous les patronymes commençant par une lettre ou une parenthese
+ * @param object $pconnexionBD Connexion à la base 
+ * @param string $pst_rep_tmp répertoire temporaire où est stocké le fichier avant chargement en base
+ */
+function calcule_phonex($pconnexionBD,$pst_rep_tmp) {
+    $ga_patronymes = $pconnexionBD->sql_select("select distinct patronyme from `stats_patronyme` where patronyme not in (select patronyme from `phonex_patro`)");    
+	$oPhonex = new phonex;
+	if (count($ga_patronymes)>0)
+	{
+		$st_requete = "insert INTO `phonex_patro` (patronyme,phonex) values ";
+		$a_colonnes = array();
+		$a_phonex_a_creer = array();
+		$i=0;
+		foreach($ga_patronymes as $st_patronyme)
+		{
+			if (empty($st_patronyme))
+				continue;   
+			$oPhonex -> build ($st_patronyme);
+			$sPhonex = trim($oPhonex -> sString);
+			$a_colonnes[] = "(:st_patronyme$i,:phonex$i)";
+			$a_phonex_a_creer[":st_patronyme$i"]=$st_patronyme;
+			$a_phonex_a_creer[":phonex$i"]=$sPhonex;
+			$i++;
+		}
+		$st_colonnes = join(',',$a_colonnes);
+	    $st_requete .= $st_colonnes;
+		/*print("R=$st_requete<br>");
+		print("<pre>");
+		print_r($a_phonex_a_creer);
+		print("</pre>");
+		*/
+		try
+		{
+			$pconnexionBD->initialise_params($a_phonex_a_creer);  
+			$pconnexionBD->execute_requete($st_requete);
+		}
+		catch (Exception $e) {
+			die('Calcul phonex impossible: ' . $e->getMessage());
+		}
+    }
+
+}    
+
 //------------------------------------------------------------------------------
 // Corps du programme
 //------------------------------------------------------------------------------
@@ -450,6 +501,11 @@ switch($gst_mode)
        
    break;
    
+   case 'CALCUL_PHONEX':
+       calcule_phonex($connexionBD,$gst_repertoire_chargement_actes);
+       print("<div class=\"alert alert-success\">Phonex calcul&eacute;s</div>");
+       affiche_menu();
+   break;
         
 }
 print('</div></body></html>');
