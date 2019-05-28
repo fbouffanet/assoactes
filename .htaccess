@@ -1,0 +1,6 @@
+## Default .htaccess file
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^genea16\.net$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.genea16\.net$
+RewriteCond %{REQUEST_URI} !^/drupal/
+RewriteRule (.*) /drupal/$1
