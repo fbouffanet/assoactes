@@ -2,11 +2,11 @@
 
 session_start();
 
-require_once('../Commun/constantes.php');
-require_once('../Commun/ConnexionBD.php');
-require_once('../Commun/config.php');
+require_once('../v4/Commun/constantes.php');
+require_once('../v4/Commun/ConnexionBD.php');
+require_once('../v4/Commun/config.php');
 require_once('RequeteRecherche.php');
-require_once('../Commun/Benchmark.inc');
+require_once('../v4/Commun/Benchmark.inc');
 
 print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
 print("<Head>\n");
