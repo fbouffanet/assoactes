@@ -1,5 +1,6 @@
 <?php
 
+
 require_once('Commun/Identification.php');
 require_once('Commun/constantes.php');
 require_once('Commun/ConnexionBD.php');
@@ -13,112 +14,74 @@ require_once('Administration/chargement/TypeActe.php');
 require_once('Administration/chargement/CommunePersonne.php');
 require_once('Administration/chargement/Profession.php');
 
-function getRecapitulatifMessage($pst_type, $pi_max, $pi_compteur){
-  switch ($pst_type)
+
+function getRecapitulatifMessage($type, $max, $counter){
+  switch ($type)
   {
-    case IDF_NAISSANCE: $pst_type = "naissance";
+    case IDF_NAISSANCE: $type = "naissance";
     break;
-    case IDF_DECES:     $pst_type = "d&eacute;c&eacute;s";
+    case IDF_DECES:     $type = "d&eacute;c&eacute;s";
     break;
-    default:            $pst_type = "mariages et actes divers";
+    default:            $type = "mariages et actes divers";
     break;
   }
-  return sprintf("<div class=\"row text-center\">Il vous reste <div class=\"badge badge-warning\">%d</div> demandes de $pst_type dans ce mois</div>", $pi_max-$pi_compteur);
+  return sprintf("<div align='center'>Il vous reste %d demandes de $type dans ce mois<br></div>", $max-$counter);
 }
 
-function getContentBottom($type, $st_email_adht, $pi_idf_acte){
+function getContentBottom($type, $st_email_adht, $gi_idf_acte){
   switch ($type)
   {
     case IDF_NAISSANCE: $msg = "";
     break;
     case IDF_DECES:     $msg = "";
     break;
-    default:            $msg = "<blockquote class=\"blockquote\"><p class=\"row text-justify\">Vous pouvez mettre vos commentaires dans la cellule ci-dessous qui paraitra sur le forum &agrave; la suite de la r&eacute;ponse de la base. Votre adresse <span class=\"label label-danger\">$st_email_adht</span> doit &ecirc;tre inscrite sur le forum Yahoogroupes de l'AGC<br>
-                                <span class=\"label label-danger\">Sans cela, votre demande ne pourra &ecirc;tre prise en compte</span></p></blockquote>
+    default:            $msg = "Vous pouvez mettre vos commentaires dans la cellule ci-dessous qui paraitra sur le forum &agrave; la suite de la r&eacute;ponse de la base</div>\n
+                                <div align='center'>Votre adresse <span class=\"IMPORTANT\">$st_email_adht</span> doit &ecirc;tre inscrite sur le forum Yahoogroupes de l'AGC<div>
+                                <div class=\"IMPORTANT\">Sans cela, votre demande ne pourra &ecirc;tre prise en compte<div><br>
                                 <form id=\"envoi_forum\" method=post action=".$_SERVER['PHP_SELF'].">
                                 <input type=\"hidden\" name=\"mode\" value=\"ENVOI_FORUM\">
-                                <input type=\"hidden\" name=\"idf_acte\" value=\"$pi_idf_acte\">
-								<div class=\"lib_erreur\">
-                                <textarea cols=\"40\" rows=\"6\" name=\"commentaire\" class=\"form-control\"></textarea>
-								</div>
+                                <input type=\"hidden\" name=\"idf_acte\" value=\"$gi_idf_acte\">
+                                <div align='center'><textarea cols=\"40\" rows=\"6\" name=\"commentaire\"></textarea></div><br>
+                                <div align='center'><br><input type=\"submit\" value=\"Envoyer une remarque sur le forum\"></div>
                                 </form>";
     break;
   }
 
-  return $msg ;
+  return $msg . '<div align=center><br><input type=button id="bouton_impression"  value="Imprimer"></div>';
 }
 
 /******************************************************************************/
 /*                     CORPS DU PROGRAMME                                     */
 /******************************************************************************/
 
-print('<!DOCTYPE html>');
-print('<html lang="fr">');
+print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
 print("<head>\n");
-print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr"> ');
-print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
-print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
-print("<script src='js/jquery-min.js' type='text/javascript'></script>");
-print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>");
-print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
-print("<script src='js/jQuery.print.js' type='text/javascript'></script>");
-print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
+print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
+print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>");
+print("<script src='Commun/jQuery.print.js' type='text/javascript'></script>");
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {
-	$("#envoi_forum").validate({
-	rules: {
-		commentaire: "required"
-	},
-	messages: {
-	commentaire: "Le commentaire est obligatoire"
-	},
-	errorElement: "em",
-    errorPlacement: function ( error, element ) {
-		// Add the `help-block` class to the error element
-		error.addClass( "help-block" );
-
-		// Add `has-feedback` class to the parent div.form-group
-		// in order to add icons to inputs
-		element.parents( ".lib_erreur" ).addClass( "has-feedback" );
-
-		if ( element.prop( "type" ) === "checkbox" ) {
-			error.insertAfter( element.parent( "label" ) );
-		} else {
-			error.insertAfter( element );
-		}
-		// Add the span element, if doesn't exists, and apply the icon classes to it.
-		if ( !element.next( "span" )[ 0 ] ) {
-			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
-		}
-	},
-	success: function ( label, element ) {
-		// Add the span element, if doesn't exists, and apply the icon classes to it.
-		if ( !$( element ).next( "span" )[ 0 ] ) {
-			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
-		}
-	},
-	highlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
-		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
-	},
-	unhighlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
-		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
-	}
+//validation rules
+$("#envoi_forum").validate({
+   //debug: true,
+   rules: {
+      commentaire: "required"
+   },
+   messages: {
+      commentaire: "Le commentaire est obligatoire"
+   }
 });
-$("#bouton_envoi").click(function(){
-    $('#envoi_forum').submit()();
-});
-
 $("#bouton_fermeture").click(function(){
     window.close();
 });
 
 $("#bouton_impression").click(function(){
-     $("#texte_acte").print({ iframe : false,append : "Relev&eacute; provenant de: <?php print(LIB_ASSO);?>"});
+     $("#texte_acte").print({ iframe : false,append : "Relev&eacute; provenant de l'Association G&eacute;n&eacute;alogique de la Charente"});
 });
 });
 </script>
@@ -127,9 +90,8 @@ print('<title>Infos acte</title>');
 print('</head>');
 
 print('<body>');
-print('<div class="container">');
 
-print("<div class=\"text-center\"><img src=\"./images/LogoAGC.jpg\"></div>");
+print("<div align=center><img src=\"./images/LogoAGC.jpg\"><br></div>");
 if (isset($_REQUEST['idf_acte']))
 {
   $gi_idf_acte = (int) $_REQUEST['idf_acte'];
@@ -146,6 +108,7 @@ $a_profession=$connexionBD->liste_valeur_par_clef("select idf, nom from professi
 list($i_idf_type_acte,$i_idf_commune)=$connexionBD->sql_select_liste("select idf_type_acte,idf_commune from acte where idf=$gi_idf_acte");
 $gst_adresse_ip = $_SERVER['REMOTE_ADDR'];
 
+print("<div>");
 if (empty($_POST['mode']))
 {
   $result = $connexionBD->sql_select_stats_actes($i_idf_adherent, $gi_idf_acte, $i_idf_type_acte);
@@ -160,6 +123,7 @@ if (empty($_POST['mode']))
     break;
     default:            $i_max = $i_max_mar_div;
     break;
+
   }
   if ($i_max-$i_nb_ddes>0)
   {
@@ -168,12 +132,12 @@ if (empty($_POST['mode']))
     $st_description_acte = $o_acte -> versChaine();
     $i_nb_lignes = $o_acte ->getNbLignes();
     $st_permalien=  $o_acte->getUrl();
-    print('<div id="texte_acte" class="text-center">');
-    print("<textarea rows=$i_nb_lignes cols=80 class=\"form-control\">");
+    print("<div id='texte_acte' align='center'>");
+    print("<textarea rows=$i_nb_lignes cols=80 class='center'>");
     print($st_description_acte);
     print("</textarea>");
     if(!empty($st_permalien))
-      print("<a href=\"$st_permalien\" target=\"_blank\" class=\"btn btn-primary col-xs-4 col-xs-offset-4\"><span class=\"glyphicon glyphicon-picture\"></span>Lien vers les AD<a>");
+      print("<div><a href=\"$st_permalien\" target=\"_blank\">Lien vers les AD<a><br></div>");
     print("</div>");
 
     if($i_nb_ddes_acte == 0){
@@ -186,8 +150,10 @@ if (empty($_POST['mode']))
   }
   else
   {
-    print('<div class="alert alert-danger">Vous avez atteint votre quota. Merci d\'attendre le prochain mois</div>');
+    print('<div class="IMPORTANT">Vous avez atteint votre quota. Merci d\'attendre le prochain mois<br></div>');
   }
+
+
 }
 else
 {
@@ -234,10 +200,10 @@ else
   $st_message .= $st_message_html."\n\n";
   $st_message .= '--'.$st_frontiere."--\n";
   if (mail(EMAIL_FORUM,"DI: $st_titre", $st_message, $st_entete))
-      print('<div class="alert alert-success">La demande d\'information a &eacute;t&eacute; envoy&eacute;e</div>');
+      print("<div align=center>La demande d'information a &eacute;t&eacute; envoy&eacute;e</div>");
   else
   {
-    print('<div class="alert alert-danger">La demande d\'information n\'a pas &eacute;t&eacute; envoy&eacute;e</div>');
+    print("<div align=center class=\"IMPORTANT\">La demande d'information n'a pas &eacute;t&eacute; envoy&eacute;e</div>");
     $pf=@fopen("$gst_rep_logs/di_non_envoyees.log",'a');
     date_default_timezone_set($gst_time_zone);
     list($i_sec,$i_min,$i_heure,$i_jmois,$i_mois,$i_annee,$i_j_sem,$i_j_an,$b_hiver)=localtime();
@@ -249,13 +215,9 @@ else
     @fclose($pf);
   }
 }
-
-print('<div class="btn-group-vertical btn-group-xs col-xs-8 col-xs-offset-2" role="group" aria-label="Groupe de demandes">');
-print('<button type="button" id="bouton_envoi" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span> Envoyer une remarque sur le forum</button>');
-print('<button type=button id="bouton_impression" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Imprimer</button>');
-print('<button type=button id="bouton_fermeture" class="btn btn-warning"><span class="glyphicon glyphicon-remove"></span> Fermer la fen&ecirc;tre</button>');
-print('</div>');
-print('</div>');
+;
+print("<div align=center><br><Input type=button id=\"bouton_fermeture\" value=\"Fermer la fen&ecirc;tre\"></div>");
+print("<br></div>");
 print('</body></HTML>');
 
 ?>
