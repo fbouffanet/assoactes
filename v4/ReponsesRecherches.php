@@ -506,7 +506,7 @@ $i_nb_actes = count($a_actes);
 print("<div class=\"row col-md-12 text-center\"><span class=\"badge\">$a_actes_total</span> occurrence(s) trouv&eacute;e(s). ");
 print('<div id="curseur" class="infobulle"></div>');
 print("<div class='form-group col-md-2 col-md-offset-5'>");
-print '<label for=\"per-page\">Nombre de r&eacute;sultats par page</label>';
+print '<label for="per-page">Nombre de r&eacute;sultats par page</label>';
 print '<select id="per-page" name="per_page" class="form-control">';
 foreach ($per_page_options as $key => $value) {
   $elected = ($value == $_SESSION['per_page'])? ' selected="selected" ' : '';
@@ -592,14 +592,15 @@ else
 }
 else
 {
-   print('<div class="row">');
+   print('<div class="row col-md-12 alert alert-danger">');
    print("Aucun r&eacute;sultat<br>");
    print("V&eacute;rifiez que vous n'avez pas mis trop de contraintes (commune,type d'acte,...)<br>");
-   print("<div class=\"alert alert-danger\">");
+   print("</div>");
+   print("<div class=\"row col-md-12 alert alert-info\">");
    print("Rappel de vos crit&egrave;res: <br>");
    print(nl2br($st_criteres));
    print("</div>");
-   print("</div>");
+   
 
 }
 
