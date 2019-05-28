@@ -595,7 +595,7 @@ else
    print('<div class="row">');
    print("Aucun r&eacute;sultat<br>");
    print("V&eacute;rifiez que vous n'avez pas mis trop de contraintes (commune,type d'acte,...)<br>");
-   print("<br><div class=\"bg-danger\">");
+   print("<div class=\"alert alert-danger\">");
    print("Rappel de vos crit&egrave;res: <br>");
    print(nl2br($st_criteres));
    print("</div>");
