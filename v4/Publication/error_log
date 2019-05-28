@@ -1,1 +1,0 @@
-[30-Jul-2011 21:25:52] PHP Warning:  getimagesize(logo1.jpg) [<a href='function.getimagesize'>function.getimagesize</a>]: failed to open stream: No such file or directory in /home/genea/public_html/v4/Publication/fpdf/fpdf.php on line 1213
