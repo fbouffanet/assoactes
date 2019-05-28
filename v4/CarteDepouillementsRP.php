@@ -31,9 +31,7 @@
    version="1.1"
    id="svg2"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="Blank_Map_of_Charente_Department,_France,_with_Communes.svg"
-   >
-   
+   sodipodi:docname="Blank_Map_of_Charente_Department,_France,_with_Communes.svg">
   <metadata
      id="metadata418">
     <rdf:RDF>
@@ -69,8 +67,17 @@
      inkscape:current-layer="g8" />
   <style
      type="text/css"
-     id="style4">.communes {fill:#b9b9b9;fill-opacity:1;stroke:white;stroke-opacity:1;stroke-width:0.002;}
-  </style>
+     id="style4">
+
+.communes { 
+	fill           : #b9b9b9;
+	fill-opacity   : 1;
+	stroke         : white;
+	stroke-opacity : 1;
+	stroke-width   : 0.002;
+}
+
+</style>>
 
 <g transform="translate(0,46.13896469) scale(1,-1) translate(0,-45.19163256)">
     <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
