@@ -23,7 +23,7 @@ function getRecapitulatifMessage($pst_type, $pi_max, $pi_compteur){
     default:            $pst_type = "mariages et actes divers";
     break;
   }
-  return sprintf("<div class=\"row text-center\"><div class=\"badge badge-warning\">Il vous reste %d demandes de $pst_type dans ce mois</div></div>", $pi_max-$pi_compteur);
+  return sprintf("<div class=\"row text-center\">Il vous reste <div class=\"badge badge-warning\">%d</div> demandes de $pst_type dans ce mois</div>", $pi_max-$pi_compteur);
 }
 
 function getContentBottom($type, $st_email_adht, $pi_idf_acte){
