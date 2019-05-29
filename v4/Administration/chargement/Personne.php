@@ -166,20 +166,17 @@ class Personne
 		 
 	public function sauveCommunePersonne()
 	{
-		global $gst_parametres_load_data, $gst_repertoire_chargement_actes;
-		$this -> communePersonne -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+		$this -> communePersonne -> sauve();
 	}
 	
 	public function sauveProfession()
 	{
-		global $gst_parametres_load_data, $gst_repertoire_chargement_actes;
-		$this -> profession -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+		$this -> profession -> sauve();
 	}
 	
 	public function sauvePrenom()
 	{
-		global $gst_parametres_load_data, $gst_repertoire_chargement_actes;
-		$this -> prenom -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+		$this -> prenom -> sauve();
 	}
 	
     public function importeMarNimV2($pst_origine, $pst_date_naissance, $pst_age, $pst_profession)
@@ -433,60 +430,42 @@ class Personne
          // return addslashes($pst_commentaires);
         return $pst_commentaires;
          } 
-    
+        
     /**
-     * 
-     * @param string $pst_valeur valeur … convertir
-     * @return string champ CSV
+     * Renvoie le contenu de la personne sous la forme d'une ligne SQL à insérer
+     * @return string personne sous forme CSV 
      */
-    static function champ_csv($pst_valeur)
-    
+    public function ligne_sql_a_inserer()    
     {
-         return is_null($pst_valeur) ? '\N' : "\"$pst_valeur\"";
+		 $a_personnes_a_creer[":idf$this->i_idf"]=$this -> i_idf;
+		 $a_personnes_a_creer[":idf_acte$this->i_idf"]=$this -> i_idf_acte;
+		 $a_personnes_a_creer[":idf_type_presence$this->i_idf"]=$this -> i_idf_type_presence;
+		 $a_personnes_a_creer[":sexe$this->i_idf"]=$this -> c_sexe;
+		 $a_personnes_a_creer[":patronyme$this->i_idf"]=empty($this -> st_patronyme) ? '' : $this -> st_patronyme;
+		 $a_personnes_a_creer[":idf_prenom$this->i_idf"]=empty($this -> st_prenom) ? null : $this -> prenom -> vers_idf($this -> st_prenom);
+		 $a_personnes_a_creer[":surnom$this->i_idf"]=empty($this -> st_surnom) ? null : $this -> st_surnom;
+		 $a_personnes_a_creer[":idf_origine$this->i_idf"]=empty($this -> st_origine) ? null :$this -> communePersonne -> vers_idf($this -> st_origine);
+		 $a_personnes_a_creer[":idf_residence$this->i_idf"]=empty($this -> st_residence) ? null :$this -> communePersonne -> vers_idf($this -> st_residence);
+		 $a_personnes_a_creer[":date_naissance$this->i_idf"]=empty($this -> st_date_naissance) ? null : $this -> st_date_naissance;
+		 $a_personnes_a_creer[":age$this->i_idf"]=empty($this -> st_age) ? null : $this -> st_age ;
+		 $a_personnes_a_creer[":idf_profession$this->i_idf"]=empty($this -> st_profession) ? null : $this -> profession -> vers_idf($this -> st_profession);
+		 $a_personnes_a_creer[":commentaire$this->i_idf"]=empty($this -> st_commentaire) ? null : $this -> st_commentaire;
+		 $a_personnes_a_creer[":est_decede$this->i_idf"]=empty($this -> i_est_decede) ? null : $this -> i_est_decede;
+		 $a_personnes_a_creer[":idf_pere$this->i_idf"]=empty($this -> i_idf_pere) ? null : $this -> i_idf_pere;
+		 $a_personnes_a_creer[":idf_mere$this->i_idf"]=empty($this -> i_idf_mere) ? null : $this -> i_idf_mere;
+		 
+		 return array("(:idf$this->i_idf,:idf_acte$this->i_idf,:idf_type_presence$this->i_idf,:sexe$this->i_idf,:patronyme$this->i_idf,:idf_prenom$this->i_idf,:surnom$this->i_idf,:idf_origine$this->i_idf,:idf_residence$this->i_idf,:date_naissance$this->i_idf,:age$this->i_idf,:idf_profession$this->i_idf,:commentaire$this->i_idf,:est_decede$this->i_idf,:idf_pere$this->i_idf,:idf_mere$this->i_idf)",$a_personnes_a_creer);
+		 
          } 
     
     /**
-     * Renvoie le contenu de la personne sous la forme d'une chaine CSV
-     * 
-     * @return string personne sous forme CSV (s‚parateur=;)
+     * Renvoie la requête de base pour un chargement de personne 
      */
-    public function vers_csv()
-    
+    public static function requete_base()
     {
-         $a_champs = array();
-         $a_champs[] = $this -> i_idf;
-         $a_champs[] = $this -> i_idf_acte;
-         $a_champs[] = $this -> i_idf_type_presence;
-         $a_champs[] = $this -> c_sexe;
-         $a_champs[] = $this -> st_patronyme;
-         $a_champs[] = $this -> prenom -> vers_idf($this -> st_prenom);
-         $a_champs[] = $this -> st_surnom;
-         $a_champs[] = $this -> communePersonne -> vers_idf($this -> st_origine);
-         $a_champs[] = $this -> communePersonne -> vers_idf($this -> st_residence);
-         $a_champs[] = $this -> st_date_naissance;
-         $a_champs[] = $this -> st_age;
-         $a_champs[] = $this -> profession -> vers_idf($this -> st_profession);
-         $a_champs[] = $this -> st_commentaire;
-         $a_champs[] = $this -> i_est_decede;
-         $a_champs[] = $this -> i_idf_pere;
-         $a_champs[] = $this -> i_idf_mere;
-         return join(';', array_map("Personne::champ_csv", $a_champs));
-         } 
-    
-    /**
-     * Renvoie la requête de chargement massif nécessaire pour charger un fichier CSV produit à l'aide de la fonction vers_csv(load data)
-     * 
-     * @param string $pst_fichier fichier CSV à charger (délimiteur de champ=;)
-     * @param string $pst_separateur_ligne séparateur de ligne
-     * @param sting $pst_parametres_load_data options du load data
-     * @global string $gst_jeu_de_caracteres_par_defaut jeu de caractères par défaut
-     */
-    public static function requete_chargement_massif($pst_fichier, $pst_separateur_ligne, $pst_parametres_load_data = '')
-    {
-         global $gst_jeu_de_caracteres_par_defaut;
-         $pst_fichier = addslashes($pst_fichier);
-         return $st_requete = "load data $pst_parametres_load_data infile '$pst_fichier' into table `personne` CHARACTER SET $gst_jeu_de_caracteres_par_defaut fields terminated by '\;' OPTIONALLY enclosed by '\"' escaped by '\\\\' lines terminated by '$pst_separateur_ligne' (idf,idf_acte,idf_type_presence,sexe,patronyme,idf_prenom,surnom,idf_origine,idf_residence,date_naissance,age,idf_profession,commentaires,est_decede,idf_pere,idf_mere)";
-         } 
+
+		return "insert INTO `personne` (idf,idf_acte,idf_type_presence,sexe,patronyme,idf_prenom,surnom,idf_origine,idf_residence,date_naissance,age,idf_profession,commentaires,est_decede,idf_pere,idf_mere) values ";
+    } 
     
     /**
      * Renvoie la liste des filtres jquery validator … activer par champ de paramŠtre
@@ -546,7 +525,6 @@ class Personne
     public function cree()
     
     {
-         global $gst_parametres_load_data, $gst_repertoire_chargement_actes;
          $i_idf = $this -> i_idf;
          $i_idf_acte = $this -> i_idf_acte;
          $i_idf_type_presence = $this -> i_idf_type_presence;
@@ -592,7 +570,7 @@ class Personne
           if (!empty($this -> st_prenom))
           {
              $this -> prenom -> ajoute($this -> st_prenom);
-             $this -> prenom -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+             $this -> prenom -> sauve();
              $i_idf_prenom = $this -> profession -> vers_idf($this -> st_prenom);
           } 
           else
@@ -600,7 +578,7 @@ class Personne
          if (!empty($this -> st_profession))
              {
             $this -> profession -> ajoute($this -> st_profession);
-             $this -> profession -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+             $this -> profession -> sauve();
              $i_idf_profession = $this -> profession -> vers_idf($this -> st_profession);
              } 
         else
@@ -608,7 +586,7 @@ class Personne
          if (!empty($this -> st_origine))
              {
             $this -> communePersonne -> ajoute($this -> st_origine);
-             $this -> communePersonne -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+             $this -> communePersonne -> sauve();
              $i_idf_origine = $this -> communePersonne -> vers_idf($this -> st_origine);
              } 
         else
@@ -616,7 +594,7 @@ class Personne
          if (!empty($this -> st_residence))
              {
             $this -> communePersonne -> ajoute($this -> st_residence);
-             $this -> communePersonne -> sauve($gst_repertoire_chargement_actes, $gst_parametres_load_data);
+             $this -> communePersonne -> sauve();
              $i_idf_residence = $this -> communePersonne -> vers_idf($this -> st_residence);
              } 
         else
