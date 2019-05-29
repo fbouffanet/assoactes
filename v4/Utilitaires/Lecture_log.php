@@ -91,7 +91,7 @@ require_once("../Commun/menu.php");
 
 $ga_adherents=$connexionBD->liste_valeur_par_clef("select idf,concat(nom,'  ',prenom,' (',idf,')') from adherent order by nom,prenom");
 
-if (!isset($_POST['valider']))
+if (!isset($_POST['idf_adherent']))
 {
 	$i_session_idf_adherent = isset($_SESSION['idf_adherent']) ? $_SESSION['idf_adherent'] : null;  
 	affiche_formulaire($ga_adherents,$i_session_idf_adherent);
