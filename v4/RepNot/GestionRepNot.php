@@ -588,7 +588,7 @@ function menu_ajouter($pa_communes,$pa_releveurs)
  * @param object $pconnexionBD Connexion à la base 
  * @param string $pst_rep_tmp répertoire temporaire où est stocké le fichier avant chargement en base
  */
-function calcule_variantes($pconnexionBD,$pst_rep_tmp,$pst_parametres_load_data) {
+function calcule_variantes($pconnexionBD,$pst_rep_tmp) {
     $ga_patronymes = $pconnexionBD->sql_select("select distinct nom1 as patronyme from rep_not_actes union select distinct nom2 as patronyme from rep_not_actes");
     //$i_precision = 7; 
     $i_precision = 8;     
@@ -676,10 +676,10 @@ function exporte_rep_not($pconnexionBD,$pi_idf_rep)
  * @param integer $pi_idf_rep Identifiant du répertoire
  * @param string $pst_parametre_load_data Paramètres du Load Data
  */
-function importe_rep_not($pconnexionBD,$pi_idf_rep,$pst_parametre_load_data)
+function importe_rep_not($pconnexionBD,$pi_idf_rep)
 {
     global $gst_repertoire_telechargement;
-    $st_nom_fich_dest = sprintf("rep_not_%d.txt",$pi_idf_rep);     
+	$st_nom_fich_dest = sprintf("rep_not_%d.txt",$pi_idf_rep);     
     $st_fich_dest = "$gst_repertoire_telechargement/$st_nom_fich_dest";
     if (!move_uploaded_file($_FILES['RepNotFich']['tmp_name'],$st_fich_dest)) 
     {
@@ -691,10 +691,11 @@ function importe_rep_not($pconnexionBD,$pi_idf_rep,$pst_parametre_load_data)
        }        
        exit;
     }
-    chmod($st_fich_dest,0644);
     $fp=fopen($st_fich_dest,"r") or die("Impossible de lire le fichier $st_fich_dest");
-    $st_fich_chgt = "$gst_repertoire_telechargement/rep_not_chgt.csv";
-    $fp_chgt=fopen($st_fich_chgt,"w") or die("Impossible d'ecrire le fichier $st_fich_chgt");
+    
+	$a_champs_a_ajouter=array();
+	$a_colonnes=array();
+	$i=0;
     while (($a_champs = fgetcsv($fp, 4096, SEP_CSV)) !== FALSE)
     {   
        $i_nb_champs=count($a_champs);
@@ -715,19 +716,35 @@ function importe_rep_not($pconnexionBD,$pi_idf_rep,$pst_parametre_load_data)
        }
        if (preg_match('/^Date/',$st_date)) continue;   
        list($i_jour,$i_mois,$i_annee)=explode('/',$st_date);
-       fputcsv($fp_chgt,array($pi_idf_rep,$i_jour,$i_mois,$i_annee,$st_date_rep,$st_type,$st_nom1,$st_prenom1,$st_nom2,$st_prenom2,$st_paroisse,$st_cmt,$i_page),SEP_CSV);
+	   $a_colonnes[]="(:idf_rep$i,:jour$i,:mois$i,:annee$i,:date_rep$i,:type$i,:nom1_$i,:prenom1_$i,:nom2_$i,:prenom2_$i,:paroisse$i,:cmt$i,:page$i)";
+	   $a_champs_a_ajouter[":idf_rep$i"]=$pi_idf_rep;
+	   $a_champs_a_ajouter[":jour$i"]=$i_jour;
+	   $a_champs_a_ajouter[":mois$i"]=$i_mois;
+	   $a_champs_a_ajouter[":annee$i"]=$i_annee;
+	   $a_champs_a_ajouter[":date_rep$i"]=$st_date_rep;
+	   $a_champs_a_ajouter[":type$i"]=$st_type;
+	   $a_champs_a_ajouter[":nom1_$i"]=$st_nom1;
+	   $a_champs_a_ajouter[":prenom1_$i"]=$st_prenom1;
+	   $a_champs_a_ajouter[":nom2_$i"]=$st_nom2;
+	   $a_champs_a_ajouter[":prenom2_$i"]=$st_prenom2;
+	   $a_champs_a_ajouter[":paroisse$i"]=$st_paroisse;
+	   $a_champs_a_ajouter[":cmt$i"]=$st_cmt;
+	   $a_champs_a_ajouter[":page$i"]=$i_page;
+	   $i++;
     }
     fclose($fp);
-    fclose($fp_chgt);
-    chmod($st_fich_chgt,0644);
     $st_requete = "delete from rep_not_actes  where idf_repertoire=$pi_idf_rep";
-    $pconnexionBD->execute_requete($st_requete); 
-    $st_requete = "load data $pst_parametre_load_data infile '$st_fich_chgt' into table rep_not_actes fields terminated by '".SEP_CSV."' OPTIONALLY ENCLOSED BY '\"' lines terminated by '\n' (idf_repertoire,jour,mois,annee,date_rep,type,nom1,prenom1,nom2,prenom2,paroisse,commentaires,page)"; 
     $pconnexionBD->execute_requete($st_requete);
-    print('<div align=center class="INFO">Chargement effectu&eacute;</div><br>');
-    sleep(1);
+    if (count($a_colonnes)>0)
+	{
+		$st_requete = " insert into `rep_not_actes` (idf_repertoire,jour,mois,annee,date_rep,type,nom1,prenom1,nom2,prenom2,paroisse,commentaires,page) values";$st_requete = $st_requete .join(',',$a_colonnes);
+		$pconnexionBD->initialise_params($a_champs_a_ajouter);
+		 $pconnexionBD->execute_requete($st_requete);
+		
+    }		   
+    print('<div class="row text-center alert alert-success">Chargement effectu&eacute;</div>');
     unlink($st_fich_dest); 
-    unlink($st_fich_chgt);
+
 }
 
 require_once("../Commun/menu.php");
@@ -801,13 +818,13 @@ switch ($gst_mode) {
 		menu_liste($connexionBD);
 	break;
   case 'CALCUL_VARIANTES':
-     calcule_variantes($connexionBD,$gst_repertoire_chargement_actes,$gst_parametres_load_data);
+     calcule_variantes($connexionBD,$gst_repertoire_chargement_actes);
      print("<div class=\"alert alert-success\">Variantes calcul&eacute;es</div>");
      menu_liste($connexionBD);  
   break;
   case 'IMPORT':
      $i_idf_rep =  isset($_POST['idf_rep']) ? (int) $_POST['idf_rep']: 0;
-     importe_rep_not($connexionBD,$i_idf_rep,$gst_parametres_load_data);
+     importe_rep_not($connexionBD,$i_idf_rep);
      menu_liste($connexionBD);
   break;
   case 'FUSIONNER_TYPE':
