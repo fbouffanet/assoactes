@@ -4,30 +4,28 @@ class ChargementNimV3 {
    
    protected $i_nb_actes;
    protected $a_deja_existants;
-   protected $st_parametres_load_data;
    
-   public function __construct ($pconnexionBD,$pst_parametres_load_data) {
+   public function __construct ($pconnexionBD) {
       $this->i_nb_actes = 0;
       $this->a_deja_existants = array();
-      $this->st_parametres_load_data=$pst_parametres_load_data;
    }
    
    /**
-   * Charge les mariages d'un fichier au format Nimegue v2 dans la base
+   * Charge les mariages d'un fichier au format Nimegue v3 dans la base
    * @param string $pst_fichier localisation du fichier
    * @param integer $pi_idf_commune : identifiant de la commune a charger
    * @param integer $pi_idf_source : identifiant de la source 
    * @param integer $pi_idf_releveur : identifiant de l'adherent releveur 
-   * @param string $pst_rep_trav : localisation du repertoire de travail
    * @param array $pa_liste_mariages_existants : Liste des mariages existants indexés par date, nom époux, prénom époux, nom épouse, prénom épouse (valeur=true))        
    * @return boolean : a reussi ou pas  
    */ 
-   function charge_mariages($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releveur,$pst_rep_trav,$pa_liste_mariages_existants)
+   function charge_mariages($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releveur,$pa_liste_mariages_existants)
    {
       global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd;
       $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
       $type_acte = TypeActe::singleton($connexionBD);
       $union = Union::singleton($connexionBD);
+	  $patronyme = Patronyme::singleton($connexionBD);
       $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
       $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
       $prenom = Prenom::singleton($connexionBD);
@@ -38,7 +36,7 @@ class ChargementNimV3 {
       $a_liste_actes = array();  
       $pf=fopen($pst_fichier,"r") or die("Impossible de lire le fichier $pst_fichier");
       //Empeche le chargement de la table le temps de la mise a jour
-      $connexionBD->execute_requete("LOCK TABLES `personne` write , `prenom` write,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write,`acte` as a read,`personne` as p1 read,`personne` as p2 read,`union` as u read, `type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");  
+      $connexionBD->execute_requete("LOCK TABLES `personne` write , `patronyme` write,`prenom` write,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write,`acte` as a read,`personne` as p1 read,`personne` as p2 read,`union` as u read, `type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");  
       // les redondances de donnees seront traitees par sql load data et la contrainte sur l'index nom
       $i_nb_actes =0 ;
       while (!feof($pf))
@@ -217,56 +215,72 @@ class ChargementNimV3 {
         }
         else
         {
-           $this->a_deja_existants[] = "Le mariage $st_prn_epx $st_nom_epx X $st_prn_epse $st_nom_epse du $st_date existe deja";
+           $this->a_deja_existants[] = "Le mariage $st_prn_epx $st_nom_epx X $st_prn_epse $st_nom_epse du $st_date existe déjà";
         } 
       }   
       fclose($pf);   
-      // Sauvegarde des types d'acte par sécurité si 'Mariage' n'a pas été déjà défini comme type d'acte
-      $type_acte->sauve($pst_rep_trav,$this->st_parametres_load_data);
-      $union->sauve($pst_rep_trav,$this->st_parametres_load_data);
-      $stats_patronyme->sauve($pst_rep_trav,$this->st_parametres_load_data);
-      $stats_commune->sauve();
-      
-      $commune_personne->sauve($pst_rep_trav,$this->st_parametres_load_data);
-      $profession->sauve($pst_rep_trav,$this->st_parametres_load_data);
-      $prenom->sauve($pst_rep_trav,$this->st_parametres_load_data);
-      $st_fich_personnes = addslashes($pst_rep_trav.'/personnes.csv');  
-      $pf_personnes=fopen($st_fich_personnes,"w") or die("Impossible d'ecrire le fichier $st_fich_personnes");
-      foreach ($a_liste_personnes as $personne)
-      {
-         fwrite($pf_personnes,$personne->vers_csv()."\n");
-      }
-      fclose($pf_personnes);
-      $st_fich_actes = addslashes($pst_rep_trav.'/actes.csv');
-      $pf_actes=fopen($st_fich_actes,"w") or die("Impossible d'ecrire le fichier $st_fich_actes");
-      foreach ($a_liste_actes as $acte)
-      {
-        fwrite($pf_actes,$acte->vers_csv()."\n");
-      }
-      fclose($pf_actes);
-      $connexionBD->execute_requete(Personne::requete_chargement_massif($st_fich_personnes,"\n",$this->st_parametres_load_data));
-      $connexionBD->execute_requete(Acte::requete_chargement_massif($st_fich_actes,"\n",$this->st_parametres_load_data));
-      $connexionBD->execute_requete("UNLOCK TABLES");  
-      $this->i_nb_actes = $i_nb_actes;
-      return true;
-   }
+      // Sauvegarde des types d'acte par sécurité si 'Mariage' n'a pas été déjà défini comme type d'acte		
+	$type_acte->sauve();
+	$union->sauve();
+    $patronyme->sauve();	
+	$stats_patronyme->sauve();
+	$stats_commune->sauve();
+	$commune_personne->sauve();
+	$profession->sauve();   
+	$prenom->sauve();
+	
+	if (count($a_liste_personnes)>0)
+	{
+		$st_personnes = '';
+		$a_personnes_a_creer=array();
+		$a_lignes_personnes = array();
+		foreach ($a_liste_personnes as $personne)
+		{
+			list($st_ligne,$a_personnes)=$personne->ligne_sql_a_inserer();
+			$a_lignes_personnes[]=$st_ligne;
+			$a_personnes_a_creer=$a_personnes_a_creer+$a_personnes;
+		}
+		$connexionBD->initialise_params($a_personnes_a_creer);
+		$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
+		$connexionBD->execute_requete($st_requete);	  
+	}
+   
+    if (count($a_liste_actes)>0)
+	{
+		$st_actes = '';
+		$a_actes_a_creer=array();
+		$a_lignes_actes = array();
+		foreach ($a_liste_actes as $acte)
+		{
+			list($st_ligne,$a_actes)=$acte->ligne_sql_a_inserer();
+			$a_lignes_actes[]=$st_ligne;
+			$a_actes_a_creer=$a_actes_a_creer+$a_actes;
+		}
+		$connexionBD->initialise_params($a_actes_a_creer);
+		$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
+		$connexionBD->execute_requete($st_requete);	  
+	}
+	$connexionBD->execute_requete("UNLOCK TABLES");  
+	$this->i_nb_actes = $i_nb_actes;
+    return true;
+}
    
 /**
- * Charge les mariages d'un fichier au format Nimegue v2 dans la base
+ * Charge les actes divers d'un fichier au format Nimegue v3 dans la base
  * @param string $pst_fichier localisation du fichier
  * @param integer $pi_idf_commune : identifiant de la commune a charger
  * @param integer $pi_idf_source : identifiant de la source 
  * @param integer $pi_idf_releveur : identifiant de l'adherent releveur 
- * @param string $pst_rep_trav : localisation du repertoire de travail
  * @param array $pa_liste_divers_existants : Liste des divers existants indexés par date, nom époux, prénom époux, nom épouse, prénom épouse (valeur=true))  
  * @return boolean : a reussi ou pas  
  */ 
-function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releveur,$pst_rep_trav,$pa_liste_divers_existants)
+function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releveur,$pa_liste_divers_existants)
 {
    global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd;
    $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
    $type_acte = TypeActe::singleton($connexionBD);
    $union = Union::singleton($connexionBD);
+   $patronyme = Patronyme::singleton($connexionBD);
    $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
    $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
    $prenom = Prenom::singleton($connexionBD);
@@ -278,7 +292,7 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
    $a_liste_actes = array();  
    $pf=fopen($pst_fichier,"r") or die("Impossible de lire le fichier $pst_fichier");
    // Empeche le chargement de la table le temps de la mise a jour
-   $connexionBD->execute_requete("LOCK TABLES `personne` write, `prenom` write ,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write,`personne` as p1 read,`personne` as p2 read,`union` as u read,`type_acte` as ta read,`type_acte` write, `acte` as a read,`releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write"); 
+   $connexionBD->execute_requete("LOCK TABLES `personne` write, `patronyme` write, `prenom` write ,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write,`personne` as p1 read,`personne` as p2 read,`union` as u read,`type_acte` as ta read,`type_acte` write, `acte` as a read,`releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write"); 
    // les redondances de donnees seront traitees par sql load data et la contrainte sur l'index nom   
    $i_nb_actes =0 ;
    while (!feof($pf))
@@ -487,55 +501,71 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
       }
       else
       {
-         $this->a_deja_existants[] ="L\'acte divers $st_prn_intv1 $st_nom_intv1 X $st_prn_intv2 $st_nom_intv2 du $st_date existe deja";
+         $this->a_deja_existants[] ="L'acte divers $st_prn_intv1 $st_nom_intv1 X $st_prn_intv2 $st_nom_intv2 du $st_date existe déjà";
       } 
    } 
    fclose($pf);   
    
-   $type_acte->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $union->sauve($pst_rep_trav,$this->st_parametres_load_data);   
-   $stats_patronyme->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $stats_commune->sauve();
-   $prenom->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $commune_personne->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $profession->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $st_fich_personnes = addslashes($pst_rep_trav.'/personnes.csv');  
-   $pf_personnes=fopen($st_fich_personnes,"w") or die("Impossible d'ecrire le fichier $st_fich_personnes");
-   foreach ($a_liste_personnes as $personne)
-   {
-      fwrite($pf_personnes,$personne->vers_csv()."\n");
-   }
-   fclose($pf_personnes);   
-   $connexionBD->execute_requete(Personne::requete_chargement_massif($st_fich_personnes,"\n",$this->st_parametres_load_data));
-   $st_fich_actes = addslashes($pst_rep_trav.'/actes.csv');
-   $pf_actes=fopen($st_fich_actes,"w") or die("Impossible d'ecrire le fichier $st_fich_actes");
-   foreach ($a_liste_actes as $acte)
-   {
-      fwrite($pf_actes,$acte->vers_csv()."\n");
-   }
-   fclose($pf_actes);
-   $connexionBD->execute_requete(Acte::requete_chargement_massif($st_fich_actes,"\n",$this->st_parametres_load_data));
-   $connexionBD->execute_requete("UNLOCK TABLES");  
-   $this->i_nb_actes = $i_nb_actes;   
-   return true;
+	$type_acte->sauve();
+	$union->sauve();
+    $patronyme->sauve();	
+	$stats_patronyme->sauve();
+	$stats_commune->sauve();
+	$prenom->sauve();
+	$commune_personne->sauve();
+	$profession->sauve();   
+	if (count($a_liste_personnes)>0)
+	{
+		$st_personnes = '';
+		$a_personnes_a_creer=array();
+		$a_lignes_personnes = array();
+		foreach ($a_liste_personnes as $personne)
+		{
+			list($st_ligne,$a_personnes)=$personne->ligne_sql_a_inserer();
+			$a_lignes_personnes[]=$st_ligne;
+			$a_personnes_a_creer=$a_personnes_a_creer+$a_personnes;
+		}
+		$connexionBD->initialise_params($a_personnes_a_creer);
+		$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
+		$connexionBD->execute_requete($st_requete);	  
+	}
+   
+    if (count($a_liste_actes)>0)
+	{
+		$st_actes = '';
+		$a_actes_a_creer=array();
+		$a_lignes_actes = array();
+		foreach ($a_liste_actes as $acte)
+		{
+			list($st_ligne,$a_actes)=$acte->ligne_sql_a_inserer();
+			$a_lignes_actes[]=$st_ligne;
+			$a_actes_a_creer=$a_actes_a_creer+$a_actes;
+		}
+		$connexionBD->initialise_params($a_actes_a_creer);
+		$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
+		$connexionBD->execute_requete($st_requete);	  
+	}
+	$connexionBD->execute_requete("UNLOCK TABLES");  
+	$this->i_nb_actes = $i_nb_actes;   
+	return true;
 } 
 
 /**
- * Charge les naissances d'un fichier au format Nimegue v2 dans la base
+ * Charge les naissances d'un fichier au format Nimegue v3 dans la base
  * @param string $pst_fichier localisation du fichier
  * @param integer $pi_idf_commune : identifiant de la commune a charger
  * @param integer $pi_idf_source : identifiant de la source 
  * @param integer $pi_idf_releveur : identifiant de l'adherent releveur 
- * @param string $pst_rep_trav : localisation du repertoire de travail
  * @param array $pa_liste_naissances_existantes : Liste des naissances existantes indexées par date, nom , prénom,(valeur=true))    
  * @return boolean : a reussi ou pas  
  */ 
-function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releveur,$pst_rep_trav,$pa_liste_naissances_existantes)
+function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releveur,$pa_liste_naissances_existantes)
 {
    global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd;
    $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
    $type_acte = TypeActe::singleton($connexionBD);
    $union = Union::singleton($connexionBD);
+   $patronyme = Patronyme::singleton($connexionBD);
    $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
    $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
    $prenom = Prenom::singleton($connexionBD);
@@ -546,10 +576,8 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
    $a_liste_actes = array();      
    $pf=fopen($pst_fichier,"r") or die("Impossible de lire $pst_fichier");
    // Empeche le chargement de la table le temps de la mise a jour
-   $connexionBD->execute_requete("LOCK TABLES `personne` write , `prenom` write ,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write, `acte` as a read, `personne` as p read,`personne` as pers_pere read,`personne` as pers_mere read,`type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");
+   $connexionBD->execute_requete("LOCK TABLES `personne` write, `patronyme` write , `prenom` write ,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write, `acte` as a read, `personne` as p read,`personne` as pers_pere read,`personne` as pers_mere read,`type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");
    // les redondances de donnees seront traitees par sql load data et la contrainte sur l'index nom
-   $st_fich_actes = addslashes($pst_rep_trav.'/actes.csv');
-   $pf_actes=fopen($st_fich_actes,"w") or die("Impossible d'ecrire le fichier $st_fich_actes");
    $i_nb_actes =0 ;
    while (!feof($pf))
    {      
@@ -638,34 +666,53 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
       }
       else
       {
-         $this->a_deja_existants[] = "La naissance de $st_prn $st_nom du $st_date existe deja";
+         $this->a_deja_existants[] = "La naissance de $st_prn $st_nom du $st_date existe déjà";
       } 
    } 
    fclose($pf);  
-   fclose($pf_actes);
    // Sauvegarde des types d'acte par sécurité si 'Naissance' n'a pas été déjà défini comme type d'acte
-   $type_acte->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $union->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $stats_patronyme->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $stats_commune->sauve();
-   $prenom->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $profession->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $st_fich_personnes = addslashes($pst_rep_trav.'/personnes.csv');  
-   $pf_personnes=fopen($st_fich_personnes,"w") or die("Impossible d'ecrire le fichier $st_fich_personnes");
-   foreach ($a_liste_personnes as $personne)
-   {
-      fwrite($pf_personnes,$personne->vers_csv()."\n");
-   }
-   fclose($pf_personnes);
-   $st_fich_actes = addslashes($pst_rep_trav.'/actes.csv');
-   $pf_actes=fopen($st_fich_actes,"w") or die("Impossible d'ecrire le fichier $st_fich_actes");
-   foreach ($a_liste_actes as $acte)
-   {
-      fwrite($pf_actes,$acte->vers_csv()."\n");
-   }
-   fclose($pf_actes);
-   $connexionBD->execute_requete(Personne::requete_chargement_massif($st_fich_personnes,"\n",$this->st_parametres_load_data));
-   $connexionBD->execute_requete(Acte::requete_chargement_massif($st_fich_actes,"\n",$this->st_parametres_load_data));
+   
+	$type_acte->sauve();
+	$union->sauve();
+    $patronyme->sauve();	
+	$stats_patronyme->sauve();
+	$stats_commune->sauve();
+	$prenom->sauve();
+	$commune_personne->sauve();
+	$profession->sauve();   
+		
+	if (count($a_liste_personnes)>0)
+	{
+		$st_personnes = '';
+		$a_personnes_a_creer=array();
+		$a_lignes_personnes = array();
+		foreach ($a_liste_personnes as $personne)
+		{
+			list($st_ligne,$a_personnes)=$personne->ligne_sql_a_inserer();
+			$a_lignes_personnes[]=$st_ligne;
+			$a_personnes_a_creer=$a_personnes_a_creer+$a_personnes;
+		}
+		$connexionBD->initialise_params($a_personnes_a_creer);
+		$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
+		$connexionBD->execute_requete($st_requete);	  
+	}
+   
+    if (count($a_liste_actes)>0)
+	{
+		$st_actes = '';
+		$a_actes_a_creer=array();
+		$a_lignes_actes = array();
+		foreach ($a_liste_actes as $acte)
+		{
+			list($st_ligne,$a_actes)=$acte->ligne_sql_a_inserer();
+			$a_lignes_actes[]=$st_ligne;
+			$a_actes_a_creer=$a_actes_a_creer+$a_actes;
+		}
+		$connexionBD->initialise_params($a_actes_a_creer);
+		$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
+		$connexionBD->execute_requete($st_requete);	  
+	}
+   
    $connexionBD->execute_requete("UNLOCK TABLES");  
    $this->i_nb_actes = $i_nb_actes;   
    return true;
@@ -677,16 +724,16 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
  * @param integer $pi_idf_commune : identifiant de la commune a charger
  * @param integer $pi_idf_source : identifiant de la source 
  * @param integer $pi_idf_releveur : identifiant de l'adherent releveur 
- * @param string $pst_rep_trav : localisation du repertoire de travail
  * @param array $pa_liste_deces_existants : Liste des deces existants indexées par date, nom , prénom,(valeur=true))  
  * @return boolean : a reussi ou pas  
  */ 
-function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releveur,$pst_rep_trav,$pa_liste_deces_existants)
+function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releveur,$pa_liste_deces_existants)
 {
    global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd;
    $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
    $type_acte = TypeActe::singleton($connexionBD);
    $union = Union::singleton($connexionBD);
+   $patronyme = Patronyme::singleton($connexionBD);
    $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
    $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
    $prenom = Prenom::singleton($connexionBD);
@@ -697,10 +744,8 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
    $a_liste_actes = array();  
    $pf=fopen($pst_fichier,"r") or die("Impossible de lire $pst_fichier");
    // Empeche le chargement de la table le temps de la mise a jour
-   $connexionBD->execute_requete("LOCK TABLES `personne` write , `prenom` write,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write,`acte` as a read, `personne` as p read,`personne` as pers_pere read,`personne` as pers_mere read,`type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");
+   $connexionBD->execute_requete("LOCK TABLES `personne` write , `patronyme` write ,`prenom` write,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write,`acte` as a read, `personne` as p read,`personne` as pers_pere read,`personne` as pers_mere read,`type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");
    // les redondances de donnees seront traitees par sql load data et la contrainte sur l'index nom
-   $st_fich_actes = addslashes($pst_rep_trav.'/actes.csv');
-   $pf_actes=fopen($st_fich_actes,"w") or die("Impossible d'ecrire le fichier $st_fich_actes");
    $i_nb_actes =0 ;
    while (!feof($pf))
    {      
@@ -807,38 +852,54 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
       }
       else
       {
-         $this->a_deja_existants[] = "Le deces de $st_prn $st_nom du $st_date existe deja";
+         $this->a_deja_existants[] = "Le décès de $st_prn $st_nom du $st_date existe déjà";
       } 
    } 
    fclose($pf);  
-   fclose($pf_actes);
-   // Sauvegarde des types d'acte par sécurité si 'Décès' n'a pas été déjà défini comme type d'acte
-   $type_acte->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $union->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $stats_patronyme->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $stats_commune->sauve();
-   $prenom->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $commune_personne->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $profession->sauve($pst_rep_trav,$this->st_parametres_load_data);
-   $st_fich_personnes = addslashes($pst_rep_trav.'/personnes.csv');  
-   $pf_personnes=fopen($st_fich_personnes,"w") or die("Impossible d'ecrire le fichier $st_fich_personnes");
-   foreach ($a_liste_personnes as $personne)
-   {
-      fwrite($pf_personnes,$personne->vers_csv()."\n");
-   }
-   fclose($pf_personnes);
-   $st_fich_actes = addslashes($pst_rep_trav.'/actes.csv');
-   $pf_actes=fopen($st_fich_actes,"w") or die("Impossible d'ecrire le fichier $st_fich_actes");
-   foreach ($a_liste_actes as $acte)
-   {
-      fwrite($pf_actes,$acte->vers_csv()."\n");
-   }
-   fclose($pf_actes);
-   $connexionBD->execute_requete(Personne::requete_chargement_massif($st_fich_personnes,"\n",$this->st_parametres_load_data));
-   $connexionBD->execute_requete(Acte::requete_chargement_massif($st_fich_actes,"\n",$this->st_parametres_load_data));
-   $connexionBD->execute_requete("UNLOCK TABLES");  
-   $this->i_nb_actes = $i_nb_actes;   
-   return true;
+
+	$type_acte->sauve();
+	$union->sauve();
+    $patronyme->sauve();	
+	$stats_patronyme->sauve();
+	$stats_commune->sauve();
+	$prenom->sauve();
+	$commune_personne->sauve();
+	$profession->sauve();   
+		
+	if (count($a_liste_personnes)>0)
+	{
+		$st_personnes = '';
+		$a_personnes_a_creer=array();
+		$a_lignes_personnes = array();
+		foreach ($a_liste_personnes as $personne)
+		{
+			list($st_ligne,$a_personnes)=$personne->ligne_sql_a_inserer();
+			$a_lignes_personnes[]=$st_ligne;
+			$a_personnes_a_creer=$a_personnes_a_creer+$a_personnes;
+		}
+		$connexionBD->initialise_params($a_personnes_a_creer);
+		$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
+		$connexionBD->execute_requete($st_requete);	  
+	}
+   
+    if (count($a_liste_actes)>0)
+	{
+		$st_actes = '';
+		$a_actes_a_creer=array();
+		$a_lignes_actes = array();
+		foreach ($a_liste_actes as $acte)
+		{
+			list($st_ligne,$a_actes)=$acte->ligne_sql_a_inserer();
+			$a_lignes_actes[]=$st_ligne;
+			$a_actes_a_creer=$a_actes_a_creer+$a_actes;
+		}
+		$connexionBD->initialise_params($a_actes_a_creer);
+		$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
+		$connexionBD->execute_requete($st_requete);	  
+	}
+	$connexionBD->execute_requete("UNLOCK TABLES");	
+	$this->i_nb_actes = $i_nb_actes;   
+	return true;
 } 
    
    function nb_actes_charges()
