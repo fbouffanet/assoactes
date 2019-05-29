@@ -30,11 +30,11 @@ if (isset ($_GET['term']))
   $st_rech="$st_rech%";
   $connexionBD->initialise_params(array(':recherche'=>$st_rech)); 
   if (count($a_clauses)==0)
-    $st_requete = "select distinct patronyme from stats_patronyme where patronyme COLLATE latin1_german1_ci like :recherche order by patronyme";
+    $st_requete = "select distinct p.libelle from stats_patronyme sp join patronyme p on (sp.idf_patronyme=p.idf) where p.libelle COLLATE latin1_german1_ci like :recherche order by p.libelle ";
   else
   {
     $st_clauses = implode(' and ',$a_clauses);
-    $st_requete = "select distinct patronyme from stats_patronyme where  patronyme COLLATE latin1_german1_ci like :recherche and $st_clauses order by patronyme";
+    $st_requete = "select distinct p.libelle from stats_patronyme sp join patronyme p on (sp.idf_patronyme=p.idf) where  p.libelle COLLATE latin1_german1_ci like :recherche and $st_clauses order by p.libelle";
   }
   //print("Req=$st_requete<br>");
   $a_patros = $connexionBD->sql_select($st_requete);

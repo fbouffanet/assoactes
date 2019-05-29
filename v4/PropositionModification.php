@@ -43,7 +43,7 @@ function regles_validation()
   if (empty($gst_email_demandeur))
       $a_filtres["code"]= array(array("required",'true',"Le code est requis"));
   $ga_liste_personnes = $go_acte->getListePersonnes();
-	$a_messages ='';
+	$a_messages =array();
 	$st_chaine='';
 	foreach ($ga_liste_personnes as $o_pers)
 	{
