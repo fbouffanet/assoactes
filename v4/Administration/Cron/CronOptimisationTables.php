@@ -6,7 +6,7 @@ require_once '/var/www/clients/client1/web12/web/v4/Commun/ConnexionBD.php';
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
-$ga_tables = array('acte','chargement','commune_personne','personne','prenom','profession','stats_commune','stats_patronyme','tableau_kilometrique','type_acte','union','variantes_patro');
+$ga_tables = array('acte','chargement','commune_personne','personne','patronyme','prenom','profession','stats_commune','stats_patronyme','tableau_kilometrique','type_acte','union','variantes_patro');
 
 
 $st_texte = '';
