@@ -248,12 +248,6 @@ class Acte {
          return $this -> a_filtres_parametres;
          } 
     
-    static function champ_csv($pst_valeur)
-    
-    {
-         return is_null($pst_valeur) ? '\N' : "\"$pst_valeur\"";
-         } 
-    
     /**
      * Renvoie les paramètres d'autocomplétion
      */
@@ -279,46 +273,38 @@ class Acte {
      * 
      * @return string acte sous forme CSV (séparateur=;)
      */
-    public function vers_csv()
+    public function ligne_sql_a_inserer()
     
     
     {
-         $a_champs = array();
-         $a_champs[] = $this -> i_idf;
-         $a_champs[] = $this -> i_idf_commune;
-         $a_champs[] = $this -> typeActe -> vers_idf($this -> st_type_acte);
-         $a_champs[] = $this -> i_idf_source;
-         $a_champs[] = $this -> i_idf_releveur;
-         $a_champs[] = $this -> st_date;
-         $a_champs[] = $this -> i_jour;
-         $a_champs[] = $this -> i_mois;
-         $a_champs[] = $this -> i_annee;
-         $a_champs[] = $this -> st_date_rep;
-         $a_champs[] = $this -> st_cote;
-         $a_champs[] = $this -> st_libre;
-         $a_champs[] = $this -> st_commentaires;
-         $a_champs[] = $this -> st_url;
-         $a_champs[] = $this -> i_details_supplementaires;
-         $a_champs[] = time(); // champ created
-         $a_champs[] = time(); // champ changed
-         return join(';', array_map("Acte::champ_csv", $a_champs));
+		 $a_actes_a_creer[":idf$this->i_idf"]=$this -> i_idf;
+		 $a_actes_a_creer[":idf_commune$this->i_idf"]=$this -> i_idf_commune;
+		 $a_actes_a_creer[":idf_type_acte$this->i_idf"]=empty($this -> st_type_acte) ? null : $this -> typeActe -> vers_idf($this -> st_type_acte);
+		 $a_actes_a_creer[":idf_source$this->i_idf"]=$this -> i_idf_source;
+		 $a_actes_a_creer[":idf_releveur$this->i_idf"]=$this -> i_idf_releveur;
+		 $a_actes_a_creer[":date$this->i_idf"]=$this -> st_date;
+		 $a_actes_a_creer[":jour$this->i_idf"]=$this -> i_jour;
+		 $a_actes_a_creer[":mois$this->i_idf"]=$this -> i_mois;
+		 $a_actes_a_creer[":annee$this->i_idf"]=$this -> i_annee;
+		 $a_actes_a_creer[":date_rep$this->i_idf"]=$this -> st_date_rep;
+		 $a_actes_a_creer[":cote$this->i_idf"]=$this -> st_cote;
+		 $a_actes_a_creer[":libre$this->i_idf"]=$this -> st_libre;
+		 $a_actes_a_creer[":commentaires$this->i_idf"]=$this -> st_commentaires;
+		 $a_actes_a_creer[":url$this->i_idf"]=$this -> st_url;
+		 $a_actes_a_creer[":details_supplementaires$this->i_idf"]=$this -> i_details_supplementaires;
+		 $a_actes_a_creer[":creation$this->i_idf"]=time(); 
+		 $a_actes_a_creer[":modification$this->i_idf"]=time(); 
+          return array("(:idf$this->i_idf,:idf_commune$this->i_idf,:idf_type_acte$this->i_idf,:idf_source$this->i_idf,:idf_releveur$this->i_idf,:date$this->i_idf,:jour$this->i_idf,:mois$this->i_idf,:annee$this->i_idf,:date_rep$this->i_idf,:cote$this->i_idf,:libre$this->i_idf,:commentaires$this->i_idf,:url$this->i_idf,:details_supplementaires$this->i_idf,:creation$this->i_idf,:modification$this->i_idf)",$a_actes_a_creer);
          } 
     
     /**
-     * Renvoie la requête de chargement massif nécessaire pour charger un fichier CSV produit à l'aide de la fonction vers_csv(load data)
-     * 
-     * @param string $pst_fichier fichier CSV à charger (délimiteur de champ=;)
-     * @param string $pst_separateur_ligne séparateur de ligne
-     * @param sting $pst_parametres_load_data options du load data
-     * @global string $gst_jeu_de_caracteres_par_defaut jeu de caractères par défaut
+     * Renvoie la requête de base pour un chargement d'acte
      */
-    public static function requete_chargement_massif($pst_fichier, $pst_separateur_ligne, $pst_parametres_load_data = '')
+    public static function requete_base()
     
     {
-         global $gst_jeu_de_caracteres_par_defaut;
-         $pst_fichier = addslashes($pst_fichier);
          
-         return $st_requete = "LOAD DATA $pst_parametres_load_data INFILE '$pst_fichier' INTO TABLE `acte` CHARACTER SET $gst_jeu_de_caracteres_par_defaut FIELDS TERMINATED BY '\;' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\\\\' LINES TERMINATED BY '$pst_separateur_ligne' (idf,idf_commune,idf_type_acte,idf_source,idf_releveur,date,jour,mois,annee,date_rep,cote,libre,commentaires,url,details_supplementaires,created,changed)";
+         return "insert INTO `acte` (idf,idf_commune,idf_type_acte,idf_source,idf_releveur,date,jour,mois,annee,date_rep,cote,libre,commentaires,url,details_supplementaires,created,changed) values ";
          } 
     
     /**
@@ -403,7 +389,7 @@ class Acte {
              {
             $this -> st_url = $st_url;
              $this -> st_commentaires = $st_commentaires;
-             } 
+             }			 
         $this -> i_details_supplementaires = $i_details_supplementaires;
          $this -> a_liste_personnes = array();
          $st_requete = "select idf from personne where idf_acte=$pi_idf_acte order by idf";
