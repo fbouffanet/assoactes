@@ -14,6 +14,7 @@ require_once('chargement/CompteurActe.php');
 require_once('chargement/Acte.php');	
 require_once('chargement/CompteurPersonne.php');
 require_once('chargement/Personne.php');
+require_once('chargement/Patronyme.php');
 require_once('chargement/Prenom.php');
 require_once('chargement/CommunePersonne.php');
 require_once('chargement/Profession.php');
@@ -44,7 +45,7 @@ function regles_validation()
   global $go_acte,$gst_email_demandeur;
 	$a_filtres = $go_acte->getFiltresParametres();
   $ga_liste_personnes = $go_acte->getListePersonnes();
-	$a_messages ='';
+	$a_messages =array();
 	$st_chaine='';
 	foreach ($ga_liste_personnes as $o_pers)
 	{

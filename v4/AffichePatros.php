@@ -214,16 +214,17 @@ switch ($gst_mode)
 			print("<div class=alignCenter><input type=hidden name=mode value=LISTE>");   
 			$requeteRecherche = new RequeteRecherche($connexionBD);
 			switch ($gst_tri) {
-				case 'patronyme': $st_tri_sql = ' order by sp.patronyme,ca.nom,ta.nom';break;
-				case 'commune': $st_tri_sql = ' order by ca.nom,sp.patronyme,ta.nom';break;
-				case 'type_acte': $st_tri_sql = ' order by ta.nom,sp.patronyme,ca.nom';break;
-				case 'nb_actes': $st_tri_sql = ' order by sp.nb_personnes desc,ca.nom,sp.patronyme';
+				case 'patronyme': $st_tri_sql = ' order by p.libelle,ca.nom,ta.nom';break;
+				case 'commune': $st_tri_sql = ' order by ca.nom,p.libelle,ta.nom';break;
+				case 'type_acte': $st_tri_sql = ' order by ta.nom,p.libelle,ca.nom';break;
+				case 'nb_actes': $st_tri_sql = ' order by sp.nb_personnes desc,ca.nom,p.libelle';
 			break;
 		} 
 		if (!empty($gi_idf_source))
-			$st_requete = "select sp.patronyme,sp.idf_commune,ca.nom,sp.idf_type_acte,ta.nom,sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join commune_acte ca on (sp.idf_commune=ca.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where idf_source=$gi_idf_source and sp.idf_type_acte in (".IDF_MARIAGE.",".IDF_CM.",".IDF_NAISSANCE.",".IDF_DECES.") and sp.patronyme ".$requeteRecherche->clause_droite_patronyme($gst_patronyme,$st_variantes,1);
+			$st_requete = "select p.libelle,sp.idf_commune,ca.nom,sp.idf_type_acte,ta.nom,sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join patronyme p on (sp.idf_patronyme
+		=p.idf) join commune_acte ca on (sp.idf_commune=ca.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where idf_source=$gi_idf_source and sp.idf_type_acte in (".IDF_MARIAGE.",".IDF_CM.",".IDF_NAISSANCE.",".IDF_DECES.") and p.libelle ".$requeteRecherche->clause_droite_patronyme($gst_patronyme,$st_variantes,1);
 		else
-			$st_requete = "select sp.patronyme,sp.idf_commune,ca.nom,sp.idf_type_acte,ta.nom,sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join commune_acte ca on (sp.idf_commune=ca.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where sp.idf_type_acte in (".IDF_MARIAGE.",".IDF_CM.",".IDF_NAISSANCE.",".IDF_DECES.") and sp.patronyme ".$requeteRecherche->clause_droite_patronyme($gst_patronyme,$st_variantes,1);
+			$st_requete = "select p.libelle,sp.idf_commune,ca.nom,sp.idf_type_acte,ta.nom,sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join patronyme p on (sp.idf_patronyme=p.idf) join commune_acte ca on (sp.idf_commune=ca.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where sp.idf_type_acte in (".IDF_MARIAGE.",".IDF_CM.",".IDF_NAISSANCE.",".IDF_DECES.") and p.libelle ".$requeteRecherche->clause_droite_patronyme($gst_patronyme,$st_variantes,1);
 		if (!empty($gi_idf_commune)) 
 			$st_requete .=  " and sp.idf_commune ".$requeteRecherche->clause_droite_commune($gi_idf_commune,$gi_rayon,'oui');
 		$st_requete.=$st_tri_sql; 
