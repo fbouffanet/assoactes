@@ -42,6 +42,7 @@ $ga_nom_commune_cgcp_vers_insee_agc =array(
 							 'Chambon'=>163371,
 							 'Chantrezac'=>162881,
                       'Chavenat'=>160920,
+					  'Chasseneuil-sur-Bonnieure'=>160850,
                       'Chenommet'=>160940,
 							 'Cherves-de-Cognac'=>160971,
 							 'Confolens-Saint-Barthelemy'=>161061,
@@ -50,9 +51,11 @@ $ga_nom_commune_cgcp_vers_insee_agc =array(
                       'Cressac-Saint-Genis' => 161151,
                       'Crouin'=>161022,
                       'Ebréon'=>161220,
+					  'Ébréon'=>161220,
 							 'Embourie'=>162531,
                       'Eraville'=>161290,
                       'Fleurignac' =>163791,
+					  'Forêt-de-Tessé-La'=> 161420,
 							 'Grand-Madieu-Le'=>161570,
                       'Graves' => 162971,
                       'Juillaguet'=>161720,
@@ -63,6 +66,7 @@ $ga_nom_commune_cgcp_vers_insee_agc =array(
                       'Louzac-Saint-André' =>161931,
 							 'Loubert'=>162883,
                       'Magdeleine'=>161162,
+					  'Magdeleine-La'=> 161970,
                       'Magnac'=>161981,
                       'Mainfonds'=>162010,
 							 'Messeux'=>162422,
@@ -74,6 +78,7 @@ $ga_nom_commune_cgcp_vers_insee_agc =array(
                       'Nonaville'=>162470,
 							 'Pallue'=>161502,
 							 'Petit-Madieu'=>162884,
+					  'Paizay-Naudouin' => 162532,
                       'Péreuil'=>162570,
                       'Peudry'=>163341,
                       'Plaizac'=>162620,
@@ -83,11 +88,13 @@ $ga_nom_commune_cgcp_vers_insee_agc =array(
 							 'Richemont'=>160972,
                       'Roullet'=> 162871,
 							 'Roumazières'=>162885,
+					  'Roumazières-Loubert'=>162883,	 
                       'Saint-Amant'=>162940,
                       'Saint-Amant-de-Bonnieure'=>162960,
                       'Saint-André'=>161931,
                       'Saint-Aulais' => 163011,
                       'Saint-Christophe' => 160733,
+					  //'Saint-Christophe (Chalais)'=>160733,
                       'Saint-Constant' => 163441,
                       'Saint-Cybard'=>160474,
                       'Saint-Estèphe' => 162872,
@@ -114,31 +121,9 @@ $ga_nom_commune_cgcp_vers_insee_agc =array(
                       'Temple'=>162861,
                       'Touzac'=>163860,
                       'Villars'=>161982,
+					  'Villiers-le-Roux'=>164130,
                       'Viville'=>164170										   
 );
-
-/*
-$a_insee_vers_codeagc = array(
-						 
-						 16175 => 160210, # Aubeville
-                         161750 => 162010, # Mainfonds
-                         16150 => 161502, # Pallue (La) (Gensac)
-                         16286 => 162620, #  Plaizac
-                         16263 => 162631, # Plassac
-                         16046 => 160462, # Porcheresse
-                         16097 => 160972, # Richemont
-                         16224 => 161790, # Lamérac
-                         160970 => 160972, # Richemont
-                         16097 => 160971, # Cherves de Cognac
-                         16148 => 160430, # Bignac
-                         162862 => 163710, # Sonneville
-                         160820 => 160920, # Chavenat
-                         160821 => 161720, # Juillaguet
-                         161751 => 162010, # Mainfonds
-                         161752 => 162570,  # Péreuil
-);
-*/
-
 
 
 $ga_nb_actes_cgcp=array();
@@ -211,7 +196,7 @@ if ($gst_mode=='COMPARAISON')
           $st_fich_dest = tempnam($gst_repertoire_chargement_actes,"index_CGCP");
        if (!move_uploaded_file($_FILES['IndexCGCP']['tmp_name'],$st_fich_dest)) 
        {
-          print("<div CLASS=IMPORTANT>Erreur de t&eacute;l&eacute;chargement :</div><br>");
+          print("<div class=\"alert alert-danger\">Erreur de t&eacute;l&eacute;chargement :</div>");
           switch($_FILES['IndexCGCP']['error'])
           { 
               case 2 : print("Fichier trop gros par rapport &agrave; MAX_FILE_SIZE");break;
@@ -369,10 +354,13 @@ function extrait_donnes_cgcp($pst_fichier)
    if (($pf = fopen($pst_fichier, "r")) !== FALSE)
    {
       while ((list($i_insee,$st_commune,$st_type,$st_filiatif,$i_debut,$i_fin,$i_nb_actes) = fgetcsv($pf, 1000, ";")) !== FALSE) {
+		  
          $ga_nb_actes_cgcp[$i_insee][$st_commune] = isset($ga_nb_actes_cgcp[$i_insee][$st_commune]) ? $ga_nb_actes_cgcp[$i_insee][$st_commune] + $i_nb_actes : $i_nb_actes;
-         if ($st_filiatif=='O' || $st_filiatif=='o')
+         if (strtoupper($st_filiatif)!='N')
          {
-            if ($st_type=='N')
+			if ($i_debut==0 || $i_fin==0 )
+				continue;
+		    if ($st_type=='N')
             {
               if (isset($ga_nai_cgcp[$i_insee][$st_commune]))
                 $ga_nai_cgcp[$i_insee][$st_commune].="<br>$i_debut-$i_fin";
@@ -443,15 +431,15 @@ function tableau_comparaison($pa_insee)
 				$st_commune_agc = array_key_exists($i_insee_agc,$ga_stats_mar_agc) ? $ga_stats_mar_agc[$i_insee_agc][0]: '';
 				$st_tableau .= '<tr>';
 				$st_tableau .= sprintf("<td>%05d</td>",$i_insee);
-				if ($st_commune_agc!=$st_commune_cgcp)
+				if (strtoupper($st_commune_agc)!=strtoupper($st_commune_cgcp))
 					$st_tableau .= sprintf("<td>%s<br>ou %s</td>",$st_commune_agc,$st_commune_cgcp);
 				else
 					$st_tableau .= sprintf("<td>%s</td>",$st_commune_cgcp);
-				$i_nai_agc = array_key_exists($i_insee_agc,$ga_stats_nai_agc) ? $ga_stats_nai_agc[$i_insee_agc][1] : '';
-				$i_mar_agc = array_key_exists($i_insee_agc,$ga_stats_mar_agc) ? $ga_stats_mar_agc[$i_insee_agc][1] : '';
-				$i_dec_agc = array_key_exists($i_insee_agc,$ga_stats_dec_agc) ? $ga_stats_dec_agc[$i_insee_agc][1] : '';
-				$i_div_agc= array_key_exists($i_insee_agc,$ga_stats_div_agc) ? $ga_stats_div_agc[$i_insee_agc][1] : '';
-				$i_nb_actes_agc= array_key_exists($i_insee_agc,$ga_nb_actes_agc) ? $ga_nb_actes_agc[$i_insee_agc][1] : '';
+				$i_nai_agc = array_key_exists($i_insee_agc,$ga_stats_nai_agc) ? $ga_stats_nai_agc[$i_insee_agc][1] : 0;
+				$i_mar_agc = array_key_exists($i_insee_agc,$ga_stats_mar_agc) ? $ga_stats_mar_agc[$i_insee_agc][1] : 0;
+				$i_dec_agc = array_key_exists($i_insee_agc,$ga_stats_dec_agc) ? $ga_stats_dec_agc[$i_insee_agc][1] : 0;
+				$i_div_agc= array_key_exists($i_insee_agc,$ga_stats_div_agc) ? $ga_stats_div_agc[$i_insee_agc][1] : 0;
+				$i_nb_actes_agc= array_key_exists($i_insee_agc,$ga_nb_actes_agc) ? $ga_nb_actes_agc[$i_insee_agc][1] : 0;
 				$i_tot_canton_agc+=$i_nb_actes_agc;
 				$i_nb_cm_agc= array_key_exists($i_insee_agc,$ga_stats_cm_agc) ? $ga_stats_cm_agc[$i_insee_agc][1] : '';
         
