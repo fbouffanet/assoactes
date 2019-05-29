@@ -25,30 +25,32 @@ class CommunePersonne {
          $this->a_commune[]=trim($pst_commune);
    }
    
-   public function sauve($pst_rep_tmp,$pst_parametres_load_data) {
-     global $gst_jeu_de_caracteres_par_defaut;
-     $st_fich_temp = tempnam ($pst_rep_tmp, "commune_personne.csv");
-     $pf=@fopen($st_fich_temp,"w");
-     if ($pf===FALSE)
-        throw new Exception("Ecriture fichier commune_personne.csv impossible");
-     foreach ($this->a_commune as $st_elem)
+   public function sauve() {
+     $a_params_precs=$this->connexionBD->params();
+	 $a_commune_a_creer = array();
+	 if (count($this->a_commune)>0)
      {
-       fwrite($pf,"$st_elem\n");
-     }
-     fclose($pf);
-     usleep(500000);
-     chmod($st_fich_temp,0444);
-     $st_fich_temp=addslashes($st_fich_temp);
-     $st_requete="LOAD DATA $pst_parametres_load_data INFILE '$st_fich_temp' IGNORE INTO TABLE `commune_personne` CHARACTER SET $gst_jeu_de_caracteres_par_defaut LINES TERMINATED BY '\n' (nom)";
-     try
-     {
-       $this->connexionBD->execute_requete($st_requete);
-     }
-     catch (Exception $e) {
-       unlink($st_fich_temp);
-       die('Sauvegarde commune_personne impossible: ' . $e->getMessage().": $st_requete");
-     }   
-     unlink($st_fich_temp);
+	   $st_requete = "insert ignore INTO `commune_personne` (nom) values ";
+       $a_colonnes = array();
+	   $i=0;
+	   foreach ($this->a_commune as $st_elem)
+       {
+         $a_colonnes[] = "(:commune$i)";
+		 $a_commune_a_creer[":commune$i"]=$st_elem;
+         $i++; 
+	   }
+	   $st_colonnes = join(',',$a_colonnes);
+	   $st_requete .= $st_colonnes;
+	   try
+	   {
+		 $this->connexionBD->initialise_params($a_commune_a_creer);  
+         $this->connexionBD->execute_requete($st_requete);
+		 $this->connexionBD->initialise_params($a_params_precs);
+       }
+       catch (Exception $e) {
+         die('Sauvegarde CommunePersonne impossible: ' . $e->getMessage().": $st_requete");
+      }
+	 }  
    }
    
    public function charge_liste_idf_par_nom() {
