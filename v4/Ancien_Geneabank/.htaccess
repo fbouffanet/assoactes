@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "geneabank"
-AuthUserFile "/home4/genea/.htpasswds/public_html/Geneabank_v4/passwd"
-require valid-user
