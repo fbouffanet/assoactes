@@ -35,7 +35,6 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 
 $requeteRecherche = new RequeteRecherche($connexionBD);    
 
-require_once('../Commun/menu.php');
 
 /* ------------------------------------------------------
    constitution des requêtes
@@ -181,6 +180,7 @@ $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],'statistiques', 
 */   
 print("<body>");
 print('<div class="container">');
+require_once('../Commun/menu.php');
 
 print("<div class='TITRE'>Statistiques sur les liasses</div><br>");
 print("<table border='1' cellpadding='0' cellspacing='0' align='center' width='720'><caption class='TITRE'>AD16 - 2E</caption>");
