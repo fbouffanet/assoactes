@@ -5,11 +5,10 @@ require_once('../Commun/Identification.php');
 
 // La page est reservee uniquement aux gens ayant les droits d'import/export
 require_once('../Commun/VerificationDroits.php');
-//**---------------------------pour test PC-------------------**//   verifie_privilege(DROIT_NOTAIRES);
+verifie_privilege(DROIT_NOTAIRES);
 require_once '../Commun/ConnexionBD.php';
 require_once('../Commun/PaginationTableau.php');
 require_once('../Commun/commun.php');
-
 
 print('<!DOCTYPE html>');
 print("<head>");
@@ -55,7 +54,7 @@ if( empty($gst_cote_liasse) ){
 $gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-//**---------------------------pour test PC-------------------**//   require_once("../Commun/menu.php");
+require_once("../Commun/menu.php");
 $a_depts_depose_ad = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM departement order by nom");
 $a_depts_depose_ad[''] = '';
 $a_formes_liasses = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM forme_liasse order by nom");

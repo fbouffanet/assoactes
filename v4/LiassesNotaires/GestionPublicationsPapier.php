@@ -29,6 +29,7 @@ print("<body>");
 print('<div class="container">');
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
+require_once("../Commun/menu.php");
 
 if (isset($_GET['initpub'])) {
 	$gst_m1 = 'MENU_GERER_PUBLI';
@@ -54,7 +55,6 @@ $pa_publication = $connexionBD->liste_valeur_par_clef("SELECT idf, concat(nom, '
 													  "FROM publication_papier order by nom");
 $pa_publication[0] = '';
 
-//**---------------------------pour test PC-------------------**//   require_once("../Commun/menu.php");
 require_once('GestionPublicationsPapierFc.php');
 switch ($gst_mode) {
 	/** -------------------- publication papier --------------------- **/
