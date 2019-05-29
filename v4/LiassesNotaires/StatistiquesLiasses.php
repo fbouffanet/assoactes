@@ -10,11 +10,15 @@ require_once('../Commun/PaginationTableau.php');
 require_once('../Commun/Benchmark.inc');
 require_once('../Commun/VerificationDroits.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<Head>\n");
-print('<meta http-equiv="content-language" content="fr">');
-print('<link rel="shortcut icon" href="../images/favicon.ico">');
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
+//print('<meta http-equiv="content-language" content="fr">');
+//print('<link rel="shortcut icon" href="../images/favicon.ico">');
+//print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
 print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
 print('<script type="text/javascript">');
 print('		function forcedPopUp(urlSelf, urlBlank){');
@@ -176,6 +180,8 @@ $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],'statistiques', 
    affichage de l'entête 
 */   
 print("<body>");
+print('<div class="container">');
+
 print("<div class='TITRE'>Statistiques sur les liasses</div><br>");
 print("<table border='1' cellpadding='0' cellspacing='0' align='center' width='720'><caption class='TITRE'>AD16 - 2E</caption>");
 print('<tr class="SOUSTITRE">'.
@@ -323,5 +329,5 @@ foreach ($a_liasses as $a_liasse) {
 	}
 print('</table >');
 print('<br><div align="center" style="font-size:11px;color:#4f6b72"><i>Liasses relevées : liasses dont les CM ont été retranscrits</i></div>');
-print("</body></html>");
+print("</div></body></html>");
 ?>
