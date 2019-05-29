@@ -136,14 +136,12 @@ function menu_edition_adherent($pconnexionBD,$padherent,$pi_idf_adh)
    print($padherent->formulaire_infos_personnelles(false));
    print("</div>");
    
-   //print('<div class="col-md-2"></div>');
-   
    print('<div class="col-md-6">');  
    print($padherent->formulaire_aides_possibles());
    print($padherent->formulaire_origine());
    if (file_exists("$gst_rep_trombinoscope/$pi_idf_adh.jpg"))
    {
-      print("<img src=\"$gst_url_trombinoscope/$pi_idf_adh.jpg\" width=115 height=132 alt=\"MaPhoto\" class=\"rounded mx-auto d-block\">");
+      print("<img src=\"$gst_url_trombinoscope/$pi_idf_adh.jpg\" width=115 height=132 alt=\"MaPhoto\" id=\"photo_adht\">");
    }
    print("</div></div>");
   
