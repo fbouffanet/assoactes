@@ -26,30 +26,33 @@ class Profession {
          $this->a_profession[]=strval($pst_profession);
   }
   
-  public function sauve($pst_rep_tmp,$pst_parametres_load_data) {
-     global $gst_jeu_de_caracteres_par_defaut;
-     $st_fich_temp = tempnam ($pst_rep_tmp, "profession.csv");
-     $pf=@fopen($st_fich_temp,"w");
-     if ($pf===FALSE)
-        throw new Exception("Ecriture fichier profession.csv impossible");
-     foreach ($this->a_profession as $st_elem)
+  public function sauve($pst_rep_tmp='') {
+     $a_params_precs=$this->connexionBD->params();
+	 $a_professions_a_creer = array();
+	 if (count($this->a_profession)>0)
      {
-       fwrite($pf,"$st_elem\n");
-     }
-     fclose($pf);
-     usleep(500000);
-     chmod($st_fich_temp,0444);
-     $st_fich_temp=addslashes($st_fich_temp);
-     $st_requete="LOAD DATA $pst_parametres_load_data INFILE '$st_fich_temp' IGNORE INTO TABLE `profession` CHARACTER SET $gst_jeu_de_caracteres_par_defaut LINES TERMINATED BY '\n' (nom)";
-     try
-     {
-       $this->connexionBD->execute_requete($st_requete);
-     }
-     catch (Exception $e) {
-       unlink($st_fich_temp);
-       die('Sauvegarde profession impossible: ' . $e->getMessage());
-     }   
-     unlink($st_fich_temp);
+	   $st_requete = "insert ignore INTO `profession` (nom) values ";
+       $a_colonnes = array();
+	   $i=0;
+	   foreach ($this->a_profession as $st_elem)
+       {
+         $a_colonnes[] = "(:prof$i)";
+		 $a_professions_a_creer[":prof$i"]=$st_elem;
+         $i++; 
+	   }
+	   $st_colonnes = join(',',$a_colonnes);
+	   $st_requete .= $st_colonnes;
+	   try
+	   {
+		 $this->connexionBD->initialise_params($a_professions_a_creer);  
+         $this->connexionBD->execute_requete($st_requete);
+		 $this->connexionBD->initialise_params($a_params_precs);
+       }
+       catch (Exception $e) {
+         die('Sauvegarde profession impossible: ' . $e->getMessage().": $st_requete");
+      }      	  
+    }
+
    }
    
    public function charge_liste_idf_par_nom() {
