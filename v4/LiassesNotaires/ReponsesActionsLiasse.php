@@ -10,11 +10,15 @@ require_once('../Commun/PaginationTableau.php');
 require_once('../Commun/Benchmark.inc');
 require_once('../Commun/VerificationDroits.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<Head>\n");
-print('<meta http-equiv="content-language" content="fr">');
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
+//print('<meta http-equiv="content-language" content="fr">');
 print('<link rel="shortcut icon" href="../images/favicon.ico">');
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
+//print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
 print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
 print('<script type="text/javascript">');
 print('		function forcedPopUp(urlSelf, urlBlank){');
@@ -666,12 +670,14 @@ $_SESSION['pdf']['pourc_liste'] = $i_pourc_liste;
 $_SESSION['pdf']['pourc_tot'] = $i_pourc_tot;
 //$_SESSION['pdf']['liasses'] = $a_liasses;
 
-require_once('../Commun/menu.php');
+//**---------------------------pour test PC-------------------**//   require_once('../Commun/menu.php');
 
 /* ------------------------------------------------------
    affichage de l'entête 
 */   
 print("<body>");
+print('<div class="container">');
+
 print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");     
 
 print("<div class='TITRE'>".$st_titre."<br>".$st_sous_titre."</div>");
@@ -811,6 +817,6 @@ else {
 }
 print("<div align=center><br><a href=\"RecherchesActionsLiasses.php\" class=\"RetourReponses\">nouvelle liste - SORTIE</a></div>");
 print ("</form>");
-print("</body></html>");
+print("</div></body></html>");
 //$connexionBD->ferme(); 
 ?>
