@@ -35,37 +35,42 @@ class Union {
 
    /**
    * sauve la liste des unions en base   
-   * @param string $pst_rep_tmp r‚pertoire temporaire à utiliser
-   * @param string $pst_parametres_load_data options du load data
-   * @global string $gst_jeu_de_caracteres_par_defaut jeu de caractères par défaut
    */              
-   public function sauve($pst_rep_tmp,$pst_parametres_load_data)
+   public function sauve()
    {
-     global $gst_jeu_de_caracteres_par_defaut;
-     $st_fich_temp = tempnam ($pst_rep_tmp, "union.csv");
-     $pf=@fopen($st_fich_temp,"w");
-     if ($pf===FALSE)
-        throw new Exception("Ecriture fichier union.csv impossible");
-     foreach ($this->a_union as $a_ligne )
+	 $st_requete = "insert ignore INTO `union` (idf_source,idf_commune,idf_acte,idf_type_acte,idf_epoux,patronyme_epoux,idf_epouse,patronyme_epouse) values ";
+	 $a_params_precs=$this->connexionBD->params();
+	 $a_unions_a_creer = array();
+     $a_colonnes = array();
+	 $i=0;
+     foreach ($this->a_union as $a_ligne)
      {
-        list($i_idf_source,$i_idf_commune,$i_idf_acte,$st_type_acte,$i_idf_epoux,$st_nom_epoux,$i_idf_epouse,$st_nom_epouse) = $a_ligne;
-        $st_ligne = join(';',array_map("Union::champ_csv",array($i_idf_source,$i_idf_commune,$i_idf_acte,$this->type_acte->vers_idf($st_type_acte),$i_idf_epoux,$st_nom_epoux,$i_idf_epouse,$st_nom_epouse)));
-        fwrite($pf,"$st_ligne\n");
+        list($i_idf_source,$i_idf_commune,$i_idf_acte,$st_type_acte,$i_idf_epoux,$st_nom_epoux,$i_idf_epouse,$st_nom_epouse) = $a_ligne;		
+		$a_colonnes[] = "(:idf_source$i,:idf_commune$i,:idf_acte$i,:type_acte$i,:idf_epoux$i,:nom_epoux$i,:idf_epouse$i,:nom_epouse$i)";
+		$a_unions_a_creer[":idf_source$i"]=$i_idf_source;
+		$a_unions_a_creer[":idf_commune$i"]=$i_idf_commune;
+		$a_unions_a_creer[":idf_acte$i"]=$i_idf_acte;
+		$a_unions_a_creer[":type_acte$i"]=$this->type_acte->vers_idf($st_type_acte);
+		$a_unions_a_creer[":idf_epoux$i"]=$i_idf_epoux;
+		$a_unions_a_creer[":nom_epoux$i"]=$st_nom_epoux;
+		$a_unions_a_creer[":idf_epouse$i"]=$i_idf_epouse;
+		$a_unions_a_creer[":nom_epouse$i"]=$st_nom_epouse;
+        $i++;
      }
-     fclose($pf);
-     usleep(500000);
-     chmod($st_fich_temp,0444);
-     $st_fich_temp=addslashes($st_fich_temp);
-     $st_requete="LOAD DATA $pst_parametres_load_data INFILE '$st_fich_temp' INTO TABLE `union` CHARACTER SET $gst_jeu_de_caracteres_par_defaut FIELDS TERMINATED BY '\;' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\n' (idf_source,idf_commune,idf_acte,idf_type_acte,idf_epoux,patronyme_epoux,idf_epouse,patronyme_epouse)";
-     try
-     {
-       $this->connexionBD->execute_requete($st_requete);
-     }
-     catch (Exception $e) {
-       unlink($st_fich_temp);
-       die('Sauvegarde union impossible: ' . $e->getMessage());
-     }  
-     unlink($st_fich_temp);
+	 if (count($this->a_union)>0)
+	 {	 
+		$st_colonnes = join(',',$a_colonnes);
+		$st_requete .= $st_colonnes;
+		try
+		{
+			$this->connexionBD->initialise_params($a_unions_a_creer);  
+			$this->connexionBD->execute_requete($st_requete);
+			$this->connexionBD->initialise_params($a_params_precs);
+		}
+		catch (Exception $e) {
+		die('Sauvegarde union impossible: ' . $e->getMessage());
+		}
+	 }		
    }
    
    /*

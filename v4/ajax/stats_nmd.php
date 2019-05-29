@@ -44,7 +44,7 @@ if (!empty ($gi_idf_commune_acte) && !empty ($gc_idf_type_acte) && !empty ($gi_a
 		}
 		$a_serie_courante['data']=$a_donnees;
 		$a_resultats['donnees'][]=$a_serie_courante;
-		$i=$i<count($ga_couleurs)?$i+1:0;
+		$i=$i<count($ga_couleurs)-1?$i+1:0;
 	}
 }
 echo json_encode($a_resultats);

@@ -6,16 +6,16 @@
  * @param integer $pi_idf_commune : identifiant de la commune a charger
  * @param integer $pi_annee: année de recensement
  * @param integer $pi_idf_source : identifiant de la source 
- * @param integer $pi_idf_releveur : identifiant de l'adherent releveur 
- * @param string $pst_rep_trav : localisation du repertoire de travail   
+ * @param integer $pi_idf_releveur : identifiant de l'adherent releveur   
  * @return boolean : a reussi ou pas  
  */ 
-function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_source,$pi_idf_releveur,$pst_rep_trav)
+function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_source,$pi_idf_releveur)
 {
-   global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_parametres_load_data;
+   global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd;
    $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
    $type_acte = TypeActe::singleton($connexionBD);
    $union = Union::singleton($connexionBD);
+   $patronyme = Patronyme::singleton($connexionBD);
    $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
    $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
    $prenom = Prenom::singleton($connexionBD);
@@ -26,10 +26,8 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
    $a_liste_actes = array();      
    $pf=fopen($pst_fichier,"r") or die("Impossible de lire $pst_fichier");
    // Empeche le chargement de la table le temps de la mise a jour
-   $connexionBD->execute_requete("LOCK TABLES `personne` write , `prenom` write ,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write, `acte` as a read, `personne` as p read,`personne` as pers_pere read,`personne` as pers_mere read,`type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");
-   // les redondances de donnees seront traitees par sql load data et la contrainte sur l'index nom
-   $st_fich_actes = addslashes($pst_rep_trav.'/menages_recens.csv');
-   $pf_actes=fopen($st_fich_actes,"w") or die("Impossible d'ecrire le fichier $st_fich_actes");
+   $connexionBD->execute_requete("LOCK TABLES `personne` write , `patronyme` write ,`prenom` write ,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write, `acte` as a read, `personne` as p read,`personne` as pers_pere read,`personne` as pers_mere read,`type_acte` as ta read,`type_acte` write, `releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write");
+   
    $i_nb_actes =0 ;
    $st_rue_courante=null;
    $st_quartier_courant=null;
@@ -38,7 +36,8 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
    $i_acte_courant = null;
    $i_page_courante = null;
    $i_idf_derniere_personne = null;
-   $stats_commune->compte_acte(LIB_RECENSEMENT,$pi_annee); 
+   $stats_commune->compte_acte(LIB_RECENSEMENT,$pi_annee);
+   $i=0;   
    while (!feof($pf))
    {      
       $st_ligne       = fgets($pf);
@@ -49,7 +48,8 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 	  
       $a_champs       = explode(SEP_CSV,$st_ligne);
       // Saute les lignes dont le nombre de champs n'est pas valide
-      switch (count($a_champs))
+      $i_nb_champs = count($a_champs);
+      switch ($i_nb_champs)
       {
          case 11:
            list($st_rue_ligne,$st_quartier_ligne,$i_page_ligne,$i_maison_ligne,$i_menage_ligne) = array_splice($a_champs,0,5);
@@ -59,6 +59,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 	         $i_menage_ligne = empty($i_menage_ligne) ? $i_menage_courant: $i_menage_ligne;
 	         $i_page_ligne = empty($i_page_ligne) ? $i_page_courante: $i_page_ligne;
            list($st_nom,$st_prenom,$st_profession,$st_fonction,$st_observations,$st_age) = array_splice($a_champs,0,6);
+		 break;  
          case 10:
            list($st_rue_ligne,$st_quartier_ligne,$i_page_ligne,$i_maison_ligne,$i_menage_ligne) = array_splice($a_champs,0,5);
 	         $st_rue_ligne = empty($st_rue_ligne) ? $st_rue_courante: $st_rue_ligne;
@@ -68,8 +69,11 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 	         $i_page_ligne = empty($i_page_ligne) ? $i_page_courante: $i_page_ligne;
            list($st_nom,$st_prenom,$st_profession,$st_fonction,$st_observations) = array_splice($a_champs,0,5);
            $st_age='';
-          default:
-            continue;   
+          break;
+		  default:
+		   print("<div class=\"row alert alert-warning\">Ligne $i ignor&eacute;e ($i_nb_champs champs)</div>");
+		   print("<div class=\"row alert alert-warning\">$st_ligne</div>");
+            continue 2;   
       }      
       nettoie_nom($st_nom);    
       nettoie_prenom($st_prenom);   
@@ -135,32 +139,51 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
       $i_maison_courante=$i_maison_ligne;
       $i_menage_courant=$i_menage_ligne;
       $i_page_courante = $i_page_ligne;
+	  $i++;
    } 
    fclose($pf);  
-   fclose($pf_actes);
+   
    // Sauvegarde des types d'acte par sécurité si 'Naissance' n'a pas été déjà défini comme type d'acte
-   $type_acte->sauve($pst_rep_trav,$gst_parametres_load_data);
-   $union->sauve($pst_rep_trav,$gst_parametres_load_data);
-   $stats_patronyme->sauve($pst_rep_trav,$gst_parametres_load_data);
-   $stats_commune->sauve();
-   $prenom->sauve($pst_rep_trav,$gst_parametres_load_data);
-   $profession->sauve($pst_rep_trav,$gst_parametres_load_data);
-   $st_fich_personnes = addslashes($pst_rep_trav.'/personnes.csv');  
-   $pf_personnes=fopen($st_fich_personnes,"w") or die("Impossible d'ecrire le fichier $st_fich_personnes");
-   foreach ($a_liste_personnes as $personne)
-   {
-      fwrite($pf_personnes,$personne->vers_csv()."\n");
-   }
-   fclose($pf_personnes);
-   $st_fich_actes = addslashes($pst_rep_trav.'/actes.csv');
-   $pf_actes=fopen($st_fich_actes,"w") or die("Impossible d'ecrire le fichier $st_fich_actes");
-   foreach ($a_liste_actes as $acte)
-   {
-      fwrite($pf_actes,$acte->vers_csv()."\n");
-   }
-   fclose($pf_actes);
-   $connexionBD->execute_requete(Personne::requete_chargement_massif($st_fich_personnes,"\n",$gst_parametres_load_data));
-   $connexionBD->execute_requete(Acte::requete_chargement_massif($st_fich_actes,"\n",$gst_parametres_load_data));
+	$type_acte->sauve();
+	$union->sauve();
+    $patronyme->sauve();	
+	$stats_patronyme->sauve();
+	$stats_commune->sauve();
+	$commune_personne->sauve();
+	$profession->sauve();   
+	$prenom->sauve();
+	
+	if (count($a_liste_personnes)>0)
+	{
+		$st_personnes = '';
+		$a_personnes_a_creer=array();
+		$a_lignes_personnes = array();
+		foreach ($a_liste_personnes as $personne)
+		{
+			list($st_ligne,$a_personnes)=$personne->ligne_sql_a_inserer();
+			$a_lignes_personnes[]=$st_ligne;
+			$a_personnes_a_creer=$a_personnes_a_creer+$a_personnes;
+		}
+		$connexionBD->initialise_params($a_personnes_a_creer);
+		$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
+		$connexionBD->execute_requete($st_requete);	  
+	}
+   
+    if (count($a_liste_actes)>0)
+	{
+		$st_actes = '';
+		$a_actes_a_creer=array();
+		$a_lignes_actes = array();
+		foreach ($a_liste_actes as $acte)
+		{
+			list($st_ligne,$a_actes)=$acte->ligne_sql_a_inserer();
+			$a_lignes_actes[]=$st_ligne;
+			$a_actes_a_creer=$a_actes_a_creer+$a_actes;
+		}
+		$connexionBD->initialise_params($a_actes_a_creer);
+		$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
+		$connexionBD->execute_requete($st_requete);	  
+	}
    $connexionBD->execute_requete("UNLOCK TABLES");     
    return $i_nb_actes;
 }
