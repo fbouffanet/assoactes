@@ -5,23 +5,28 @@ require_once('../Commun/Identification.php');
 
 // La page est reservee uniquement aux gens ayant les droits d'import/export
 require_once('../Commun/VerificationDroits.php');
-verifie_privilege(DROIT_NOTAIRES);
+//**---------------------------pour test PC-------------------**//   verifie_privilege(DROIT_NOTAIRES);
 require_once '../Commun/ConnexionBD.php';
 require_once('../Commun/PaginationTableau.php');
 require_once('../Commun/commun.php');
 
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print("<title>Gestion des actions sur les liasses notariales</title>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
-print('<meta http-equiv="content-language" content="fr">');
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
+//print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+//print('<meta http-equiv="content-language" content="fr">');
+//,;:print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
 print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
 print("<script src='./VerifieChampsGestionLiasseNot.js' type='text/javascript'></script>");
 print("<script src='../Commun/menu.js' type='text/javascript'></script>");
 print('</head>');
-print('<body>');
+print("<body>");
+print('<div class="container">');
 
 $gst_m1 = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;
 $gst_mode = isset($_REQUEST['smode']) ? $_REQUEST['smode'] : $gst_m1 ;
@@ -50,7 +55,7 @@ if( empty($gst_cote_liasse) ){
 $gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-require_once("../Commun/menu.php");
+//**---------------------------pour test PC-------------------**//   require_once("../Commun/menu.php");
 $a_depts_depose_ad = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM departement order by nom");
 $a_depts_depose_ad[''] = '';
 $a_formes_liasses = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM forme_liasse order by nom");
@@ -257,5 +262,5 @@ switch ($gst_mode) {
 		menu_liste_notaire($connexionBD, $st_cote_liasse, $a_communes);  
 		break;
 }  
-print('</body></html>');
+print('</div></body></html>');
 ?>
