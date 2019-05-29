@@ -12,9 +12,10 @@ class StatsPatronyme {
        $this->connexionBD = $pconnexionBD;
        $this->i_idf_commune=$pi_idf_commune;
        $this->i_idf_source=$pi_idf_source;
-       $this->type_acte = TypeActe::singleton($pconnexionBD);
+       $this->patronyme = Patronyme::singleton($pconnexionBD);
+	   $this->type_acte = TypeActe::singleton($pconnexionBD);
        $this->a_type_acte = array();
-       $this->a_stat=$this->connexionBD->liste_valeur_par_doubles_clefs("select  patronyme,ta.nom,annee_min,annee_max,nb_personnes from `stats_patronyme` join `type_acte` as ta on (stats_patronyme.idf_type_acte=ta.idf)  where idf_commune=$pi_idf_commune and idf_source=$pi_idf_source");
+       $this->a_stat=$this->connexionBD->liste_valeur_par_doubles_clefs("select p.libelle,ta.nom,annee_min,annee_max,nb_personnes from `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf) join `type_acte` as ta on (sp.idf_type_acte=ta.idf) where sp.idf_commune=$pi_idf_commune and sp.idf_source=$pi_idf_source");
   }
    
   /**
@@ -54,7 +55,7 @@ class StatsPatronyme {
   function maj_patro($pst_patro,$pst_type_acte,$pi_annee)
   {
      //$pst_patro = addslashes($pst_patro);
-     
+     $this->patronyme->ajoute($pst_patro);
      if ((count($this->a_stat)!=0) && (isset($this->a_stat[strval($pst_patro)][strval($pst_type_acte)])))
      {  
         // Un patronyme existe déjà pour le patronyme et le type d'acte défini dans les statistiques
@@ -67,62 +68,56 @@ class StatsPatronyme {
      else
         $this->a_stat[strval($pst_patro)][strval($pst_type_acte)] = array($pi_annee,$pi_annee,1);
   }
-  
-  /**
-   * @param string $pst_valeur valeur … convertir
-   * @return string champ CSV  
-   */     
-  static function champ_csv($pst_valeur)
-  {
-     return is_null($pst_valeur) ? '\N' : "\"$pst_valeur\"";
-  }
-  
+    
   /*
-  * Met … jour le contenu de la table stats_patronyme … partir de la variable $a_stat
-  * @param string $pst_rep_tmp r‚pertoire temporaire … utiliser  
-  * @param string $pst_parametres_load_data options du load data    
+  * Met à jour le contenu de la table stats_patronyme à partir de la variable $a_stat  
   */
-  public function sauve($pst_rep_tmp,$pst_parametres_load_data) {
-     global $gst_jeu_de_caracteres_par_defaut;
-     // Construction du fichier statistique
-     $st_fich_temp = tempnam ($pst_rep_tmp, "stats_patronyme.csv");
-     $pf=@fopen($st_fich_temp,"w");
-     if ($pf===FALSE)
-        throw new Exception("Ecriture fichier stats_patronyme.csv impossible");
+  public function sauve() {
+
+	 $a_params_precs=$this->connexionBD->params();
+	 $a_stats_a_creer = array();
+     $a_colonnes = array();
+	 $i=0;
      foreach ($this->a_stat as  $st_patronyme => $a_champs)
      {
         foreach ($a_champs as $st_type_acte => $a_champs2)
         {
            list($i_annee_min,$i_annee_max,$i_nb_occ) = $a_champs2;
-           $st_ligne = implode(';',array_map("StatsPatronyme::champ_csv",array($st_patronyme,$this->i_idf_commune,$this->type_acte->vers_idf(strval($st_type_acte)),$this->i_idf_source,$i_annee_min,$i_annee_max,$i_nb_occ)));
-           fwrite($pf,"$st_ligne\n");
+		   $a_colonnes[] = "(:idf_patronyme$i,:idf_commune$i,:idf_type_acte$i,:idf_source$i,:annee_min$i,:annee_max$i,:nb_occ$i)";
+		   $a_stats_a_creer[":idf_patronyme$i"]=$this->patronyme->vers_idf(strval($st_patronyme));
+		   $a_stats_a_creer[":idf_commune$i"]=$this->i_idf_commune;
+		   $a_stats_a_creer[":idf_type_acte$i"]=$this->type_acte->vers_idf(strval($st_type_acte));
+		   $a_stats_a_creer[":idf_source$i"]=$this->i_idf_source;
+		   $a_stats_a_creer[":annee_min$i"]=$i_annee_min;
+		   $a_stats_a_creer[":annee_max$i"]=$i_annee_max;
+		   $a_stats_a_creer[":nb_occ$i"]=$i_nb_occ;
+		   $i++;
         }
      }
-     fclose($pf);
-     usleep(500000);
-     chmod($st_fich_temp,0444);
      $st_requete="delete from `stats_patronyme` where idf_commune=$this->i_idf_commune and idf_source=$this->i_idf_source";
      try
      {
+		$this->connexionBD->initialise_params(array()); 
         $this->connexionBD->execute_requete($st_requete);
      }
      catch (Exception $e) {
        die("Suppression stats_patronyme impossible (COM=$this->idf_type_commune,SRC=$this->i_idf_source): " . $e->getMessage());
      }
-     
-     // Chargement du fichier statistique
-     $st_fich_temp=addslashes($st_fich_temp);
-     $st_requete="LOAD DATA $pst_parametres_load_data INFILE '$st_fich_temp' IGNORE INTO TABLE `stats_patronyme` CHARACTER SET $gst_jeu_de_caracteres_par_defaut FIELDS TERMINATED BY '\;' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\n' (patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes)";
-     try
-     {
-       $this->connexionBD->execute_requete($st_requete);
-     }
-     catch (Exception $e) {
-       unlink($st_fich_temp);
-       die('Sauvegarde stats_patronyme impossible: ' . $e->getMessage());
-     }
-
-     unlink($st_fich_temp);
+     if (count($this->a_stat)>0)
+	 {	 
+		$st_requete = "insert ignore into `stats_patronyme` (idf_patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes) values ";
+		$st_colonnes = join(',',$a_colonnes);
+		$st_requete .= $st_colonnes;
+		try
+		{
+			$this->connexionBD->initialise_params($a_stats_a_creer);  
+            $this->connexionBD->execute_requete($st_requete);
+		    $this->connexionBD->initialise_params($a_params_precs);
+		}
+		catch (Exception $e) {
+			die('Sauvegarde stats_patronyme impossible: ' . $e->getMessage());
+		}
+	 }	
    }
 
    function types_acte() {
@@ -136,7 +131,18 @@ class StatsPatronyme {
    function maj_stats($pi_idf_type_acte) {
       $st_requete = sprintf("delete from `stats_patronyme` where idf_commune=%d and idf_type_acte=%d and idf_source=%d",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source);
       $this->connexionBD->execute_requete($st_requete);
-      $st_requete = sprintf("insert into `stats_patronyme` (patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes) select p.patronyme,%d,%d,%d,min(a.annee),max(a.annee),count(p.patronyme) from personne p join acte a on (p.idf_acte=a.idf) where a.idf_commune=%d and a.idf_type_acte=%d and a.idf_source=%d and a.annee!=0 and a.annee!=9999 group by p.patronyme,a.idf_commune,a.idf_type_acte,a.idf_source",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source,$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source);
+	  // Création des éventuels nouveaux patronymes
+	  $st_requete = sprintf("select p.patronyme from personne p join acte a on (p.idf_acte=a.idf) where a.idf_commune=%d and a.idf_type_acte=%d and a.idf_source=%d and a.annee!=0 and a.annee!=9999 and p.patronyme not in (select libelle from patronyme)",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source,$this->i_idf_commune);
+	  $a_nouveaux_patronymes = $this->connexionBD->sql_select($st_requete);
+	  if (count($a_nouveaux_patronymes)>0)
+	  {
+		  foreach($a_nouveaux_patronymes as $st_patronyme)
+		  {
+			  $this->patronyme->ajoute($st_patronyme);			  
+		  }
+		  $this->patronyme->sauve();
+	  }
+      $st_requete = sprintf("insert into `stats_patronyme` (idf_patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes) select pat.idf,%d,%d,%d,min(a.annee),max(a.annee),count(p.patronyme) from personne p join patronyme pat on (p.patronyme=pat.libelle) join acte a on (p.idf_acte=a.idf) where a.idf_commune=%d and a.idf_type_acte=%d and a.idf_source=%d and a.annee!=0 and a.annee!=9999 group by p.patronyme,a.idf_commune,a.idf_type_acte,a.idf_source",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source,$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source);
       $this->connexionBD->execute_requete($st_requete);   
    }
 }
