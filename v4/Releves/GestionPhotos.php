@@ -415,9 +415,8 @@ function menu_ajouter($pa_communes,$pa_collections,$pa_adherents)
 /**
  * Charge les photos dans la base
  * @param object $pconnexionBD Connexion à la base
- * @param string $pst_parametres_load_data parametres du load data ('local'|'')  
  */ 
-function charge_photos($pconnexionBD,$pst_parametres_load_data)
+function charge_photos($pconnexionBD)
 {
    print('<div class="panel panel-primary">');
    print('<div class="panel-heading">>Chargement des photos</div>');
@@ -503,8 +502,6 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 require_once("../Commun/menu.php");
 $gst_commune_a_chercher = isset($_POST['commune_a_chercher']) ? trim($_POST['commune_a_chercher']): '' ;
 
-$gst_parametres_load_data = 'LOCAL';
-
 $ga_communes    =    $connexionBD->liste_valeur_par_clef("select idf,nom from `commune_acte` order by nom");
 $ga_collections =    $connexionBD->liste_valeur_par_clef("select idf,libelle from `collection_acte` order by libelle");
 $ga_auteurs     =   $connexionBD->liste_valeur_par_clef("select idf,concat(nom,'  ',prenom,' (',idf,')') from adherent order by nom,prenom");
@@ -578,7 +575,7 @@ switch ($gst_mode) {
      menu_liste($connexionBD);
    break;
    case 'CHARGER':
-      charge_photos($connexionBD,$gst_parametres_load_data);
+      charge_photos($connexionBD);
       menu_liste($connexionBD);
    break;  
       
