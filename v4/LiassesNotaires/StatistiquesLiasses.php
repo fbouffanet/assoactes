@@ -15,19 +15,16 @@ print("<Head>\n");
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 //print('<meta http-equiv="content-language" content="fr">');
 //print('<link rel="shortcut icon" href="../images/favicon.ico">');
-//print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
 print('<script type="text/javascript">');
 print('		function forcedPopUp(urlSelf, urlBlank){');
 print('			window.open(urlBlank);');
 print('			window.location.href = urlSelf;');
 print('		}');
 print('</script>');
-
-print("<script src='../Commun/menu.js' type='text/javascript'></script>");
 print("<title>Base AGC: Statistiques sur les liasses notariales</title>");
 print('</Head>');
 
