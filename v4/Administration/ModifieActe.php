@@ -16,6 +16,7 @@ require_once '../Administration/chargement/Acte.php';
 require_once '../Administration/chargement/CompteurPersonne.php';
 require_once '../Administration/chargement/Personne.php';
 require_once '../Administration/chargement/CommunePersonne.php';
+require_once '../Administration/chargement/Patronyme.php';
 require_once '../Administration/chargement/Prenom.php';
 require_once '../Administration/chargement/Profession.php';
 require_once '../Administration/chargement/TypeActe.php';
@@ -34,7 +35,7 @@ function regles_validation()
   global $go_acte;
 	$a_filtres = $go_acte->getFiltresParametres();
   $ga_liste_personnes = $go_acte->getListePersonnes();
-	$a_messages ='';
+	$a_messages =array();
 	$st_chaine='';
 	foreach ($ga_liste_personnes as $o_pers)
 	{
@@ -204,6 +205,7 @@ else
   }
   else
   {
+	$patronyme = Patronyme::singleton($connexionBD);  
     $stats_patronyme = new StatsPatronyme($connexionBD,$go_acte->getIdfCommune(),$go_acte->getIdfSource());
     $stats_commune = new StatsCommune($connexionBD,$go_acte->getIdfCommune(),$go_acte->getIdfSource());
     $unions = Union::singleton($connexionBD);
@@ -211,10 +213,11 @@ else
     {
       case 'EDITION':        
         $go_acte->initialise_depuis_formulaire($gi_idf_acte);
-        $st_requete = "LOCK TABLES `personne` write, `prenom` write  ,`acte` write, `profession` write, `commune_personne` write, `union` write, `stats_patronyme` write,`stats_commune` write,`acte` as a read,`personne` as p read, `type_acte` read, `type_acte` as ta read,`prenom_simple` write, `groupe_prenoms` write";
+        $st_requete = "LOCK TABLES `personne` write, `patronyme` as pat write, `patronyme` write, `prenom` write  ,`acte` write, `profession` write, `commune_personne` write, `union` write, `stats_patronyme` write,`stats_commune` write,`acte` as a read,`personne` as p read, `type_acte` read, `type_acte` as ta read,`prenom_simple` write, `groupe_prenoms` write";
         $connexionBD->execute_requete($st_requete);
         $go_acte->maj_liste_personnes($go_acte->getIdfSource(),$go_acte->getIdfCommune(),$unions);
         $go_acte->sauve();
+		$patronyme->sauve();
         $stats_patronyme->maj_stats($go_acte->getIdfTypeActe());
         $stats_commune->maj_stats($go_acte->getIdfTypeActe());
         $connexionBD->execute_requete("UNLOCK TABLES");
@@ -229,11 +232,12 @@ else
         
       break;
       case 'SUPPRESSION':
-        $st_requete = "LOCK TABLES `personne` write ,`acte` write, `profession` write, `commune_personne` write, `union` write, `stats_patronyme` write,`stats_commune` write,`acte` as a read,`personne` as p read, `type_acte` read, `type_acte` as ta read";
+        $st_requete = "LOCK TABLES `personne` write, `patronyme` as pat write,`acte` write, `profession` write, `commune_personne` write, `union` write, `stats_patronyme` write,`stats_commune` write,`acte` as a read,`personne` as p read, `type_acte` read, `type_acte` as ta read";
         $connexionBD->execute_requete($st_requete); 
         $connexionBD->execute_requete("DELETE FROM `personne` where idf_acte=$gi_idf_acte");
         $connexionBD->execute_requete("DELETE FROM `union` where idf_acte=$gi_idf_acte");
         $connexionBD->execute_requete("DELETE FROM `acte` where idf=$gi_idf_acte");
+		$patronyme->sauve();
         $stats_patronyme->maj_stats($go_acte->getIdfTypeActe());
         $stats_commune->maj_stats($go_acte->getIdfTypeActe());        
         $connexionBD->execute_requete("UNLOCK TABLES");
