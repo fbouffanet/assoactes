@@ -67,6 +67,7 @@ class Adherent
          $this->i_annee_cotisation = ($aujourdhui['mon']>9) ? $aujourdhui['year'] +1 : $aujourdhui['year'];
          $this->st_mdp=self::mdp_alea();
          $this->st_pays='France';
+		 $this->st_site='';
          $this->b_confidentiel=true; 
          $this->i_max_nai=$this -> connexionBD->sql_select1("select Column_Default from Information_Schema.Columns WHERE Table_Schema = '".$gst_nom_bd."' AND Table_Name = 'adherent' AND Column_Name = 'max_nai'");
          $this->i_max_mar_div=$this -> connexionBD->sql_select1("select Column_Default from Information_Schema.Columns WHERE Table_Schema = '".$gst_nom_bd."' AND Table_Name = 'adherent' AND Column_Name = 'max_mar_div'");
@@ -822,7 +823,7 @@ class Adherent
     */
   public function regles_validation()
   {
-    $a_messages ='';
+    $a_messages = array();
     $st_chaine='';
     foreach ($this->a_filtres_parametres as $st_param => $a_liste_tests)
     {
@@ -1314,7 +1315,7 @@ class Adherent
    */
    public function cree_utilisateur_gbk($pst_nouveau_mdp='')
    {
-      if (!empty(pst_nouveau_mdp))
+      if (!empty($pst_nouveau_mdp))
 		     $this->st_mdp=$pst_nouveau_mdp;
       $st_cmd_gbk = sprintf("register ".PREFIXE_ADH_GBK."%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
       $st_cmd_gbk .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
