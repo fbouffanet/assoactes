@@ -11,17 +11,20 @@ require_once('../Commun/PaginationTableau.php');
 require_once('../Commun/commun.php');
 
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
-print("<title>Gestion des actions sur les liasses notariales</title>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
-print('<meta http-equiv="content-language" content="fr">');
-print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
+// ancienne version  print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+// ancienne version  print('<meta http-equiv="content-language" content="fr">');
 print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
 print("<script src='./VerifieChampsGestionActionsLiasse.js' type='text/javascript'></script>");
-//**pc**//print("<script src='Commun/menu.js' type='text/javascript'></script>");
+print("<script src='Commun/menu.js' type='text/javascript'></script>");
+print("<title>Gestion des actions sur les liasses notariales</title>");
 print('</head>');
-print('<body>');
+print('<body> <div class="container">');
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
@@ -79,9 +82,8 @@ $pa_publication = $connexionBD->liste_valeur_par_clef("SELECT idf, concat(nom, '
 													  "FROM publication_papier order by nom");
 $pa_publication[0] = '';
 
-require_once("../Commun/menu.php");
+//**---------------------------pour test PC-------------------**//  require_once("../Commun/menu.php");
 require_once('GestionActionsLiassesFc.php');
-//print('mode :'.$gst_mode);
 switch ($gst_mode) {
 	case 'LISTE' : 
 		if(isset($_SESSION['cote_liasse_gal'])) {
@@ -320,6 +322,6 @@ switch ($gst_mode) {
 		break;
 
 }  
-print('</body></html>');
+print('</div></body></html>');
 //$connexionBD->ferme(); 
 ?>
