@@ -49,7 +49,7 @@ function menu_gerer_publication($pconnexionBD)
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition();
+		$pagination->affiche_tableau_edition(2);
 		$pagination->affiche_entete_liens_navigation();    
 		print("<div align=center><br><input type=hidden name=mode value=\"SUPPRIMER_PUBLI\">");
 		print("<input type=button value=\"Supprimer les publications s&eacute;lectionn&eacute;s\" ONCLICK=\"VerifieSuppressionPublis(0,'supp[]')\"></div>");   
