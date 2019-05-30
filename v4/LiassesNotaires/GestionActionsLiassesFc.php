@@ -153,7 +153,7 @@ function menu_liste_releve($pconnexionBD)
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition();
+		$pagination->affiche_tableau_edition(2);
 		$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_RELEVE\">");
 		print("<input type=button value=\"Supprimer les relev&eacute;s s&eacute;lectionn&eacute;s\" ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\"></div>");   
@@ -196,7 +196,7 @@ function menu_liste_publication($pconnexionBD)
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition();
+		$pagination->affiche_tableau_edition(2);
 		$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_LIEN_PUBLI\">");
 		print("<input type=button value=\"Supprimer les liens publications s&eacute;lectionn&eacute;s\" ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\"></div>");   
@@ -242,7 +242,7 @@ function menu_liste_photo($pconnexionBD)
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition();
+		$pagination->affiche_tableau_edition(2);
 		$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_PHOTO\">");
 		print("<input type=button value=\"Supprimer les photos s&eacute;lectionn&eacute;es\" ONCLICK=\"VerifieSuppressionPhotos(0,'supp[]')\"></div>");   
@@ -289,7 +289,7 @@ function menu_liste_program($pconnexionBD)
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition();
+		$pagination->affiche_tableau_edition(2);
 		$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_PROGRAM\">");
 		print("<input type=button value=\"Supprimer les programmations s&eacute;lectionn&eacute;es\" ONCLICK=\"VerifieSuppressionPrograms(0,'supp[]')\"></div>");   
@@ -528,7 +528,7 @@ function menu_gerer_publication($pconnexionBD)
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition();
+		$pagination->affiche_tableau_edition(2);
 		$pagination->affiche_entete_liens_navigation();    
 		//print("<input type=hidden name=mode value=\"MENU_GERER_PUBLI\">");
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_PUBLI\">");
