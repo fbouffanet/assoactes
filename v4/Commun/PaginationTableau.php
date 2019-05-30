@@ -165,9 +165,10 @@ class PaginationTableau {
 
 
  /**
-    * Affiche le contenu du tableau correspondant ª $i_nb_lignes_par_page lignes de la page courante  
+    * Affiche le contenu du tableau correspondant ª $i_nb_lignes_par_page lignes de la page courante
+    * @param integer $pi_type_identifiant type d'identifiant utilisé (1: entier (défaut)| 2: chaine)  	
     */       
-   public function affiche_tableau_edition() {
+   public function affiche_tableau_edition($pi_type_identifiant=1) {
       $st_requete = $this->st_requete;
       $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
       $st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
@@ -191,8 +192,16 @@ class PaginationTableau {
             else
                print("<td>&nbsp;</td>");   
          }
-                  
-		 print(sprintf("<td><a class=\"btn btn-primary btn-block\" type=button id=\"bouton%d\" href=\"%s?mod=%d\" role=\"button\"><span class=\"glyphicon glyphicon-edit\"></span> Modifier</a></td>",$idf_element,$_SERVER['PHP_SELF'],$idf_element));
+         switch ($pi_type_identifiant)
+         {
+			 case 1: print(sprintf("<td><a class=\"btn btn-primary btn-block\" type=button id=\"bouton%d\" href=\"%s?mod=%d\" role=\"button\"><span class=\"glyphicon glyphicon-edit\"></span> Modifier</a></td>",$idf_element,$_SERVER['PHP_SELF'],$idf_element));
+			 break;
+			 case 2: print(sprintf("<td><a class=\"btn btn-primary btn-block\" type=button id=\"bouton%d\" href=\"%s?mod=%s\" role=\"button\"><span class=\"glyphicon glyphicon-edit\"></span> Modifier</a></td>",$idf_element,$_SERVER['PHP_SELF'],$idf_element));
+			 break;
+			 default:
+				die("<div class=\"alert alert-danger\">Type d'identifiant $ pi_type_identifiant inconnu</div>");
+		 }
+		 
          print("<td><div class=\"lib_erreur\"><div class=\"checkbox\"><label><input type=checkbox name=\"supp[]\" id=\"$st_nom_col1\" value=$idf_element class=\"form-check-input\"></label></div></div></td>"); 
          print("</tr>\n");
          $i++;
