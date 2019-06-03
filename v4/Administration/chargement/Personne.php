@@ -96,13 +96,13 @@ class Personne
          $this -> st_age = $pst_age;
          }
 		 
-	public function setAnneeNaissance($pi_annee_naissance);
+	public function setAnneeNaissance($pi_annee_naissance)
     {
 		if (!empty($pi_annee_naissance))
 			$this -> st_date_naissance = sprintf("__/__/%d",$pi_annee_naissance);
          }
 	
-	public function setOrigine($pst_origine);
+	public function setOrigine($pst_origine)
 		{
          if (!empty($pi_annee_naissance))
 		 {			 		 
