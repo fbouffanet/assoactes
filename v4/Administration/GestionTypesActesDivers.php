@@ -119,8 +119,9 @@ function menu_liste($pconnexionBD)
    $a_liste_type_acte = $pconnexionBD->sql_select_liste($st_requete);
    $i_nb_types_acte=count($a_liste_type_acte);
    if ($i_nb_types_acte!=0)
-   {        
-      $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_types_acte,NB_LIGNES_PAR_PAGE,(int)($i_nb_types_acte/NB_LIGNES_PAR_PAGE),array('ID[A]-TA', 'Type_Acte','Sigle','Nb actes', 'Modifier','Convertir'));
+   {  
+	  $i_nb_lignes_par_page = 200;
+      $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_types_acte,$i_nb_lignes_par_page,(int)($i_nb_types_acte/$i_nb_lignes_par_page),array('ID[A]-TA', 'Type_Acte','Sigle','Nb actes', 'Modifier','Convertir'));
       $pagination->init_param_bd($pconnexionBD,$st_requete);
       $pagination->init_page_cour($gi_num_page_cour);
       $pagination->affiche_entete_liens_navigation();
