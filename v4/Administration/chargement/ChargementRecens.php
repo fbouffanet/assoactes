@@ -49,8 +49,29 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
       $a_champs       = explode(SEP_CSV,$st_ligne);
       // Saute les lignes dont le nombre de champs n'est pas valide
       $i_nb_champs = count($a_champs);
+	  $i_annee_naissance = '';
+	  $st_lieu_naissance = '';
+	  $st_age='';
       switch ($i_nb_champs)
       {
+		 case 13:
+           list($st_rue_ligne,$st_quartier_ligne,$i_page_ligne,$i_maison_ligne,$i_menage_ligne) = array_splice($a_champs,0,5);
+	         $st_rue_ligne = empty($st_rue_ligne) ? $st_rue_courante: $st_rue_ligne;
+	         $st_quartier_ligne = empty($st_quartier_ligne) ? $st_quartier_courant: $st_quartier_ligne;
+	         $i_maison_ligne = empty($i_maison_ligne) ? $i_maison_courante: $i_maison_ligne;
+	         $i_menage_ligne = empty($i_menage_ligne) ? $i_menage_courant: $i_menage_ligne;
+	         $i_page_ligne = empty($i_page_ligne) ? $i_page_courante: $i_page_ligne;
+           list($st_nom,$st_prenom,$st_profession,$st_fonction,$st_observations,$st_age,$i_annee_naissance,$st_lieu_naissance) = array_splice($a_champs,0,7);
+		 break;
+		 case 12:
+           list($st_rue_ligne,$st_quartier_ligne,$i_page_ligne,$i_maison_ligne,$i_menage_ligne) = array_splice($a_champs,0,5);
+	         $st_rue_ligne = empty($st_rue_ligne) ? $st_rue_courante: $st_rue_ligne;
+	         $st_quartier_ligne = empty($st_quartier_ligne) ? $st_quartier_courant: $st_quartier_ligne;
+	         $i_maison_ligne = empty($i_maison_ligne) ? $i_maison_courante: $i_maison_ligne;
+	         $i_menage_ligne = empty($i_menage_ligne) ? $i_menage_courant: $i_menage_ligne;
+	         $i_page_ligne = empty($i_page_ligne) ? $i_page_courante: $i_page_ligne;
+           list($st_nom,$st_prenom,$st_profession,$st_fonction,$st_observations,$st_age,$i_annee_naissance) = array_splice($a_champs,0,6);
+		 break;   
          case 11:
            list($st_rue_ligne,$st_quartier_ligne,$i_page_ligne,$i_maison_ligne,$i_menage_ligne) = array_splice($a_champs,0,5);
 	         $st_rue_ligne = empty($st_rue_ligne) ? $st_rue_courante: $st_rue_ligne;
@@ -67,8 +88,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 	         $i_maison_ligne = empty($i_maison_ligne) ? $i_maison_courante: $i_maison_ligne;
 	         $i_menage_ligne = empty($i_menage_ligne) ? $i_menage_courant: $i_menage_ligne;
 	         $i_page_ligne = empty($i_page_ligne) ? $i_page_courante: $i_page_ligne;
-           list($st_nom,$st_prenom,$st_profession,$st_fonction,$st_observations) = array_splice($a_champs,0,5);
-           $st_age='';
+           list($st_nom,$st_prenom,$st_profession,$st_fonction,$st_observations) = array_splice($a_champs,0,5);          
           break;
 		  default:
 		   print("<div class=\"row alert alert-warning\">Ligne $i ignor&eacute;e ($i_nb_champs champs)</div>");
@@ -118,6 +138,13 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 				$personne->setCommentaires("$st_fonction. $st_observations");
         if (!empty($st_age))
 				  $personne->setAge($st_age);
+			  
+		if (!empty($i_annee_naissance))
+					$personne->setAnneeNaissance($i_annee_naissance);
+				
+		if (!empty($st_lieu_naissance))
+					$personne->setOrigine($st_lieu_naissance);
+				
 				$i_idf_personne_courante = $personne->getIdf();
 				$a_liste_personnes[]=$personne;
 				
