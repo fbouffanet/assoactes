@@ -95,6 +95,18 @@ class Personne
     {
          $this -> st_age = $pst_age;
          }
+		 
+	public function setAnneeNaissance($pi_annee_naissance);
+    {
+		$this -> st_date_naissance = sprintf("__/__/%d",$pi_annee_naissance);
+         }
+	
+	public function setOrigine($pst_origine);
+		{
+        
+         $this -> communePersonne = $pst_origine;
+         $this -> communePersonne -> ajoute($pst_origine);
+         }
     
     public function getAge($pst_age)
     {
@@ -152,7 +164,9 @@ class Personne
         
          $this -> st_profession = $pst_profession;
          $this -> profession -> ajoute($pst_profession);
-         } 
+         }
+
+			
     
     public function setIdf($pi_idf)
     {
