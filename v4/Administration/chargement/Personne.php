@@ -98,14 +98,17 @@ class Personne
 		 
 	public function setAnneeNaissance($pi_annee_naissance);
     {
-		$this -> st_date_naissance = sprintf("__/__/%d",$pi_annee_naissance);
+		if (!empty($pi_annee_naissance))
+			$this -> st_date_naissance = sprintf("__/__/%d",$pi_annee_naissance);
          }
 	
 	public function setOrigine($pst_origine);
 		{
-        
-         $this -> communePersonne = $pst_origine;
-         $this -> communePersonne -> ajoute($pst_origine);
+         if (!empty($pi_annee_naissance))
+		 {			 		 
+			$this -> communePersonne = $pst_origine;
+			$this -> communePersonne -> ajoute($pst_origine);
+	     }		
          }
     
     public function getAge($pst_age)
