@@ -54,6 +54,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 	  $st_age='';
       switch ($i_nb_champs)
       {
+		 // Ajout de deux colonnes: année et lieu de naissance après l'âge 
 		 case 13: 
            list($st_rue_ligne,$st_quartier_ligne,$i_page_ligne,$i_maison_ligne,$i_menage_ligne) = array_splice($a_champs,0,5);
 	         $st_rue_ligne = empty($st_rue_ligne) ? $st_rue_courante: $st_rue_ligne;
@@ -63,6 +64,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 	         $i_page_ligne = empty($i_page_ligne) ? $i_page_courante: $i_page_ligne;
            list($st_nom,$st_prenom,$st_profession,$st_fonction,$st_observations,$st_age,$i_annee_naissance,$st_lieu_naissance) = array_splice($a_champs,0,7);
 		 break;
+		 // Ajout d'une colonne: année de naissance après l'âge 
 		 case 12:
            list($st_rue_ligne,$st_quartier_ligne,$i_page_ligne,$i_maison_ligne,$i_menage_ligne) = array_splice($a_champs,0,5);
 	         $st_rue_ligne = empty($st_rue_ligne) ? $st_rue_courante: $st_rue_ligne;
