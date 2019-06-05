@@ -33,8 +33,7 @@ print('</head>');
 print("\n<body>");
 print('<div class="container">');
 
-//$i_session_num_page = isset($_SESSION['num_page_som']) ? $_SESSION['num_page_som'] : 1;
-$i_session_num_page = isset($_SESSION['num_page']) ? $_SESSION['num_page'] : 1;
+$i_session_num_page = isset($_SESSION['num_page_som']) ? $_SESSION['num_page_som'] : 1;
 $gi_num_page_cour = empty($_GET['num_page']) ? $i_session_num_page : $_GET['num_page'];
 
 /*
@@ -103,8 +102,7 @@ function Affiche_noms($type, $sconnexionBD)
       $st_requete = "select numero, moisannee, rubrique from `sommaire` where auteur like '%$auteur%' and type = '$type'";
 
      print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-  // $_SESSION['num_page_som'] = $gi_num_page_cour; 
-   $_SESSION['num_page'] = $gi_num_page_cour; 
+   $_SESSION['num_page_som'] = $gi_num_page_cour; 
    $a_liste_sommaire = $sconnexionBD->liste_valeur_par_clef($st_requete);
    print('<div class="panel panel-primary">');
    print("<div class=\"panel-heading\">$titre</div>");
