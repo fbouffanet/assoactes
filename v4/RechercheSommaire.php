@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 
 //http://127.0.0.1:8888/Recherche_Sommaire.php
 /*
@@ -33,9 +33,9 @@ print('</head>');
 print("\n<body>");
 print('<div class="container">');
 
-//$i_session_num_page = isset($_SESSION['num_page_som']) ? $_SESSION['num_page_som'] : 1;
-//$gi_num_page_cour = empty($_GET['num_page']) ? $i_session_num_page : $_GET['num_page'];
-$gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
+$i_session_num_page = isset($_SESSION['num_page_som']) ? $_SESSION['num_page_som'] : 1;
+$gi_num_page_cour = empty($_GET['num_page']) ? $i_session_num_page : $_GET['num_page'];
+//$gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 /*
 CREATE TABLE IF NOT EXISTS `sommaire`
 ( 
@@ -107,12 +107,10 @@ function Affiche_noms($type, $sconnexionBD)
    print('<div class="panel panel-primary">');
    print("<div class=\"panel-heading\">$titre</div>");
    print('<div class="panel-body">');
-   //$i_nb_sommaires = count($a_liste_sommaire);
-   //if ($i_nb_sommaires!=0)
-	 if (count($a_liste_sommaire)!=0)  
+   $i_nb_sommaires = count($a_liste_sommaire);
+   if ($i_nb_sommaires!=0)
    {        
-      //$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_sommaires,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Bulletin','Paru en','Sommaire'));
-     $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$sconnexionBD->nb_lignes(),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Bulletin','Paru en','Sommaire'));
+      $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_sommaires,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Bulletin','Paru en','Sommaire'));
       $pagination->init_param_bd($sconnexionBD,$st_requete);
       $pagination->init_page_cour($gi_num_page_cour);
       $pagination->affiche_entete_liens_navigation();
