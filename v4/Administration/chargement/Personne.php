@@ -441,9 +441,17 @@ class Personne
 																																 $st_ligne .= " ans";
 																												 } 
 																								if ( !empty( $this -> st_profession ) )
-																												 $st_ligne .= sprintf( " Profession de %s", $this -> st_profession );
+																												 $st_ligne .= sprintf( " Profession de %s\n", $this -> st_profession );
 																								if ( !empty( $this -> st_origine ) )
-																												 $st_ligne .= sprintf( " Originaire de %s", $this -> st_origine );			 
+																												 $st_ligne .= sprintf( " Originaire de %s\n", $this -> st_origine );
+																								if ( !empty($this -> st_date_naissance))
+																								{
+																									$st_lib = $this -> c_sexe != 'F'? 'Né':'Née';
+																									preg_match('/00/00/(\d{4})/', $this -> st_date_naissance, $a_correspondances);
+																									if (count($a_correspondances)>0)
+																										$st_ligne .= sprintf( " $st_lib en %s", $a_correspondances[1]);
+																								}
+																									
 																								 if ( $st_ligne != '' )
 																												 $st_chaine .= "$st_ligne\n";
 																								 $i_nb_lignes++;
