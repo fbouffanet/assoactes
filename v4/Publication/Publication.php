@@ -721,13 +721,8 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 	print ('<p>');
 	if ($menuDIV == "O")
 	{
-	print ('<div class="form-group purple-boder">');
-    print ('<label for="TypeActe">Complément du type acte pour les actes divers expl=> Actes Notariés</label>');
-    print ('<textarea class="form-control rounded-0" id="TypeActe" rows="1"></textarea>');
-    print ('</div>');	
-
-	//print "<br><b>Complément du type acte pour les actes divers expl=> Actes Notariés</b></br>";
-	//print ('<textarea name="TypeActe" rows="1" cols="45"></textarea><br><br>');
+	print "<br><b>Complément du type acte pour les actes divers expl=> Actes Notariés</b></br>";
+	print ('<textarea name="TypeActe" rows="1" cols="45"></textarea><br><br>');
 	}
 	print "<br><b>Info sur la publication expl=> Relevé par:</b></br>";
     print ('<textarea name="message" rows="8" cols="45"></textarea><br>');
