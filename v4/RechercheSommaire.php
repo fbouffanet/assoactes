@@ -34,9 +34,9 @@ print('</head>');
 print("\n<body>");
 print('<div class="container">');
 
-$i_session_num_page = isset($_SESSION['num_page_som']) ? $_SESSION['num_page_som'] : 1;
-$gi_num_page_cour = empty($_GET['num_page']) ? $i_session_num_page : $_GET['num_page'];
-
+//$i_session_num_page = isset($_SESSION['num_page_som']) ? $_SESSION['num_page_som'] : 1;
+//$gi_num_page_cour = empty($_GET['num_page']) ? $i_session_num_page : $_GET['num_page'];
+$gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 /*
 CREATE TABLE IF NOT EXISTS `sommaire`
 ( 
