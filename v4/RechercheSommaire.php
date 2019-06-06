@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 //http://127.0.0.1:8888/Recherche_Sommaire.php
@@ -16,7 +15,7 @@ require_once('Commun/ConnexionBD.php');
 require_once('Commun/PaginationTableau.php');
 
 print('<!DOCTYPE html>');
-print("<head>");
+print("<head>");   
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
 print('<meta http-equiv="content-language" content="fr">');
@@ -27,6 +26,7 @@ print("<script src='js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 print("<script type='text/javascript'>");
 print("</script>");
+print('<meta name = "Description" content = " Recherche des sommaires des bulletins" >');  
 print('<title>Recherche du sommaire des bulletins</title>');
 print('</head>');
 
@@ -35,7 +35,7 @@ print('<div class="container">');
 
 $i_session_num_page = isset($_SESSION['num_page_som']) ? $_SESSION['num_page_som'] : 1;
 $gi_num_page_cour = empty($_GET['num_page']) ? $i_session_num_page : $_GET['num_page'];
-
+//$gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 /*
 CREATE TABLE IF NOT EXISTS `sommaire`
 ( 
