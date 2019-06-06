@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 //http://127.0.0.1:8888/Recherche_Sommaire.php
 /*
