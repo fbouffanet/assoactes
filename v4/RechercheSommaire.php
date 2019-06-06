@@ -247,7 +247,7 @@ function Saisie_recherche($connexionBD)
 	print("<input type=hidden name=mode value=\"COUSIN\">");
 	print('</div>');
 	print('</div>');
-	 print('</div>');//ajout
+	 
 	print('</form>');
 	print("</div>");
 }
