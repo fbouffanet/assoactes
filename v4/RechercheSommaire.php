@@ -27,6 +27,7 @@ print("<script src='js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 print("<script type='text/javascript'>");
 print("</script>");
+print('<meta name = "Description" content = " Recherche des sommaires des bulletins" >');  
 print('<title>Recherche du sommaire des bulletins</title>');
 print('</head>');
 
@@ -246,7 +247,7 @@ function Saisie_recherche($connexionBD)
 	print("<input type=hidden name=mode value=\"COUSIN\">");
 	print('</div>');
 	print('</div>');
-	 
+	 print('</div>');//ajout
 	print('</form>');
 	print("</div>");
 }
