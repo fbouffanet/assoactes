@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+//http://127.0.0.1:8888/Recherche_Sommaire.php
 /*
 Programme de recherche des éléments du sommaire des bulletins AGC
 PL 06/13
@@ -32,8 +35,7 @@ print('<div class="container">');
 
 $i_session_num_page = isset($_SESSION['num_page_som']) ? $_SESSION['num_page_som'] : 1;
 $gi_num_page_cour = empty($_GET['num_page']) ? $i_session_num_page : $_GET['num_page'];
-
-
+//$gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 /*
 CREATE TABLE IF NOT EXISTS `sommaire`
 ( 
@@ -119,31 +121,8 @@ function Affiche_noms($type, $sconnexionBD)
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    print("<button type=\"submit\" class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-home\"></span>  Retour &agrave; la recherche</button>");
    print('<input type=hidden name=mode value="DEPART">');
-      switch ($type) 
-   {
-      case 'RUB' :
-         print("<input type=hidden name=mode value=\"RUBRIQUE\">"); 
-      break;
-      case 'ART' :
-         print("<input type=hidden name=mode value=\"ARTICLE\">"); 
-      break;
-      case 'FAM' :
-         print("<input type=hidden name=mode value=\"FAMILLE\">"); 
-      break;
-      case 'ASC' :
-         print("<input type=hidden name=mode value=\"ASCEND\">"); 
-      break;
-      case 'DES' :
-         print("<input type=hidden name=mode value=\"DESCEND\">"); 
-      break;
-      case 'COU' :
-         print("<input type=hidden name=mode value=\"COUSIN\">"); 
-      break;
-   }
- 
-   
    print('</form>');
-   //print('</div></div>');
+   print('</div></div>');
 }
 
 /* --- Remplit un select des rubriques --- */
@@ -306,10 +285,11 @@ switch ($gst_mode)
       Affiche_noms('COU', $connexionBD); 
    break;
 }
-//unset($_SESSION['mode']);
+//
+unset($_SESSION['mode']);
 
 $connexionBD->ferme();
-//print ("</form>");
+print ("</form>");
 print("</div></body></html>");
 
 ?>	
