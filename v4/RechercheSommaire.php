@@ -143,7 +143,7 @@ function Affiche_noms($type, $sconnexionBD)
  
    
    print('</form>');
-   print('</div></div>');
+   //print('</div></div>');
 }
 
 /* --- Remplit un select des rubriques --- */
