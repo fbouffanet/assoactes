@@ -306,11 +306,10 @@ switch ($gst_mode)
       Affiche_noms('COU', $connexionBD); 
    break;
 }
-//
-unset($_SESSION['mode']);
+//unset($_SESSION['mode']);
 
 $connexionBD->ferme();
-print ("</form>");
+//print ("</form>");
 print("</div></body></html>");
 
 ?>	
