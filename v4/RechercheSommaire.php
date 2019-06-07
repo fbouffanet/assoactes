@@ -285,10 +285,9 @@ switch ($gst_mode)
 }
 
 
-//
-unset($_SESSION['mode']);
+//unset($_SESSION['mode']);
 
-$connexionBD->ferme();
+//$connexionBD->ferme();
 //print ("</form>");
 print ("</body>");
 print ("</html>");
