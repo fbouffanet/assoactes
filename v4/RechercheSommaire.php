@@ -288,7 +288,7 @@ switch ($gst_mode)
 //unset($_SESSION['mode']);
 
 //$connexionBD->ferme();
-//print ("</form>");
+print ("</form>");
 print ("</body>");
 print ("</html>");
 
