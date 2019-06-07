@@ -290,7 +290,7 @@ unset($_SESSION['mode']);
 
 $connexionBD->ferme();
 //print ("</form>");
-print ("</body>);
+print ("</body>");
 print ("</html>");
 
 ?>	
