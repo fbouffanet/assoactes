@@ -1,38 +1,37 @@
-<!DOCTYPE html> 
-<html lang="fr">
-<head>
-  <title>Recherche du sommaire des bulletins</title>
-  <meta charset="iso-8859-15">       <!-- ou charset="utf-8" -->
-  <link rel="stylesheet" href="Recherche_sommaire.css">
-  <link rel="shortcut icon" href="images/favicon.ico">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<meta http-equiv="content-language" content="fr">
-<script src='Commun/jquery-min.js' type='text/javascript'></script>
-<script src='Commun/menu.js' type='text/javascript'></script>
-    
-</head>
-
-<body>
 <?php
+
+session_start();
+
 //http://127.0.0.1:8888/Recherche_Sommaire.php
 /*
 Programme de recherche des éléments du sommaire des bulletins AGC
 PL 06/13
 */
 
-//$gst_chemin = "../";
-$gst_chemin = ".";
 
-require_once("$gst_chemin/Commun/config.php");
-require_once("$gst_chemin/Commun/constantes.php");
-require_once("$gst_chemin/Commun/Identification.php");
+require_once 'Commun/config.php';
+require_once('Commun/constantes.php');
+require_once 'Commun/commun.php';
+require_once('Commun/ConnexionBD.php');
+require_once('Commun/PaginationTableau.php');
 
-// La page est reservee uniquement aux gens ayant les droits utilitaires
-//require_once("$gst_chemin/Commun/VerificationDroits.php");
-//verifie_privilege(DROIT_UTILITAIRES);
-require_once("$gst_chemin/Commun/ConnexionBD.php");
-require_once("$gst_chemin/Commun/PaginationTableau.php");
-require_once("$gst_chemin/Commun/commun.php");
+print('<!DOCTYPE html>');
+print("<head>");
+print('<link rel="shortcut icon" href="images/favicon.ico">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="content-language" content="fr">');
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
+print("<script type='text/javascript'>");
+print("</script>");
+print('<title>Recherche du sommaire des bulletins</title>');
+print('</head>');
+
+print("\n<body>");
+//print('<div class="container">');
 
 $gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 
