@@ -1,3 +1,5 @@
+<?php
+/*
 <!DOCTYPE html> 
 <html lang="fr">
 <head>
@@ -7,12 +9,13 @@
   <link rel="shortcut icon" href="images/favicon.ico">
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <meta http-equiv="content-language" content="fr">
-<script src='Commun/jquery-min.js' type='text/javascript'></script>
-<script src='Commun/menu.js' type='text/javascript'></script>
+print ("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
+print ("<script src='Commun/menu.js' type='text/javascript'></script>");
     
 </head>
 
 <body>
+
 <?php
 //http://127.0.0.1:8888/Recherche_Sommaire.php
 /*
@@ -20,19 +23,29 @@ Programme de recherche des éléments du sommaire des bulletins AGC
 PL 06/13, revu 16/04/2018
 */
 
-//$gst_chemin = "../";
-$gst_chemin = ".";
+require_once 'Commun/config.php';
+require_once('Commun/constantes.php');
+require_once 'Commun/commun.php';
+require_once('Commun/ConnexionBD.php');
+require_once('Commun/PaginationTableau.php');
+require_once('Commun/Identification.php');
 
-require_once("$gst_chemin/Commun/config.php");
-require_once("$gst_chemin/Commun/constantes.php");
-require_once("$gst_chemin/Commun/Identification.php");
+print('<!DOCTYPE html>');
+print("<head>");
+print('<link rel="shortcut icon" href="images/favicon.ico">');
+print('<link rel="stylesheet" href="RechercheSommaire.css">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="content-language" content="fr">');
 
-// La page est reservee uniquement aux gens ayant les droits utilitaires
-//require_once("$gst_chemin/Commun/VerificationDroits.php");
-//verifie_privilege(DROIT_UTILITAIRES);
-require_once("$gst_chemin/Commun/ConnexionBD.php");
-require_once("$gst_chemin/Commun/PaginationTableau.php");
-require_once("$gst_chemin/Commun/commun.php");
+
+
+print ("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
+print ("<script src='Commun/menu.js' type='text/javascript'></script>");
+
+print('<title>Recherche du sommaire des bulletins</title>');
+print('</head>');
+
+print("\n<body>");
 
 $i_session_num_page = isset($_SESSION['num_page_som']) ? $_SESSION['num_page_som'] : 1;
 $gi_num_page_cour = empty($_GET['num_page']) ? $i_session_num_page : $_GET['num_page'];
@@ -287,7 +300,8 @@ switch ($gst_mode)
    break;
 }
 //unset($_SESSION['mode']);
+
+print("</body>");
+print("</html>");
 ?>	
 
-</body>
-</html>
