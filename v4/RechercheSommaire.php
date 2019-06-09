@@ -42,6 +42,15 @@ print('<meta http-equiv="content-language" content="fr">');
 print ("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
 print ("<script src='Commun/menu.js' type='text/javascript'></script>");
 
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
+print("<script type='text/javascript'>");
+print("</script>");
+
+
 print('<title>Recherche du sommaire des bulletins</title>');
 print('</head>');
 
