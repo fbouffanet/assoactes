@@ -3,7 +3,7 @@
 <head>
   <title>Recherche du sommaire des bulletins</title>
   <meta charset="iso-8859-15">       <!-- ou charset="utf-8" -->
-  <link rel="stylesheet" href="Recherche_sommaire.css">
+  <link rel="stylesheet" href="RechercheSommaire.css">
   <link rel="shortcut icon" href="images/favicon.ico">
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <meta http-equiv="content-language" content="fr">
@@ -17,7 +17,7 @@
 //http://127.0.0.1:8888/Recherche_Sommaire.php
 /*
 Programme de recherche des éléments du sommaire des bulletins AGC
-PL 06/13
+PL 06/13, revu 16/04/2018
 */
 
 //$gst_chemin = "../";
@@ -34,7 +34,8 @@ require_once("$gst_chemin/Commun/ConnexionBD.php");
 require_once("$gst_chemin/Commun/PaginationTableau.php");
 require_once("$gst_chemin/Commun/commun.php");
 
-$gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
+$i_session_num_page = isset($_SESSION['num_page_som']) ? $_SESSION['num_page_som'] : 1;
+$gi_num_page_cour = empty($_GET['num_page']) ? $i_session_num_page : $_GET['num_page'];
 
 /*
 CREATE TABLE IF NOT EXISTS `sommaire`
@@ -49,6 +50,7 @@ CREATE TABLE IF NOT EXISTS `sommaire`
    PRIMARY KEY (`idf`)
 );
 */
+
 
 /* --- Affiche la liste des rubriques, noms articles, familles, ascendances, descendances et cousinage --- */
 function Affiche_noms($type, $sconnexionBD)
@@ -101,11 +103,13 @@ function Affiche_noms($type, $sconnexionBD)
       $st_requete = "select numero, moisannee, rubrique from `sommaire` where auteur like '%$auteur%' and type = '$type'";
 
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+   $_SESSION['num_page_som'] = $gi_num_page_cour; 
    $a_liste_sommaire = $sconnexionBD->liste_valeur_par_clef($st_requete);
 	print("<div align=center><p><h2>$titre</h2></p></div>");
-   if (count($a_liste_sommaire)!=0)
+   $i_nb_sommaires = count($a_liste_sommaire);
+   if ($i_nb_sommaires!=0)
    {        
-      $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$sconnexionBD->nb_lignes(),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Bulletin','Paru en','Sommaire'));
+      $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_sommaires,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Bulletin','Paru en','Sommaire'));
       $pagination->init_param_bd($sconnexionBD,$st_requete);
       $pagination->init_page_cour($gi_num_page_cour);
       print("<div align=center>");
@@ -121,35 +125,55 @@ function Affiche_noms($type, $sconnexionBD)
    print('</form>');  
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    print("<br><div align=center><input type=submit value='Retour à la recherche' name='retour'></div>");
-   print("<input type=hidden name=mode value=\"DEPART\">"); 
+   switch ($type) 
+   {
+      case 'RUB' :
+         print("<input type=hidden name=mode value=\"RUBRIQUE\">"); 
+      break;
+      case 'ART' :
+         print("<input type=hidden name=mode value=\"ARTICLE\">"); 
+      break;
+      case 'FAM' :
+         print("<input type=hidden name=mode value=\"FAMILLE\">"); 
+      break;
+      case 'ASC' :
+         print("<input type=hidden name=mode value=\"ASCEND\">"); 
+      break;
+      case 'DES' :
+         print("<input type=hidden name=mode value=\"DESCEND\">"); 
+      break;
+      case 'COU' :
+         print("<input type=hidden name=mode value=\"COUSIN\">"); 
+      break;
+   }
+   //print("<input type=hidden name=mode value=\"DEPART\">"); 
    print('</form>');
 }
 
 /* --- Remplit un select des rubriques --- */
-function Select_rubrique()
-{
+function Select_rubrique($connexionBD)
+{ 
    $chaine_options = "";
-	$result = mysql_query("select distinct numero FROM sommaire order by numero");
-   while (list($numero) = mysql_fetch_row($result))
+   $st_requete = "select distinct numero FROM sommaire order by numero";
+   $a_numeros=$connexionBD->sql_select($st_requete);
+   foreach ($a_numeros as $i_numero)
    {
-	   $chaine_options .= "<option >$numero</option>\n";
+	   $chaine_options .= "<option >$i_numero</option>\n";
    }
    return $chaine_options;
 }
 
 /* --- Remplit un select des noms --- */
-function Select_nom($type)
+function Select_nom($type,$connexionBD)
 {
    $chaine_options = "";
-//	$result = mysql_query("   select distinct auteur FROM sommaire where type = '$type' order by upper(trim(auteur))");
 	if ($type == "ART")
-	   $result = mysql_query("select distinct auteur FROM sommaire where type = '$type' order by upper(trim(auteur))");
+	    $a_auteurs=$connexionBD->sql_select("select distinct auteur FROM sommaire where type = '$type' order by upper(trim(auteur))");
    else		// FAM, ASC, DES, COU
-	   $result = mysql_query("select distinct det_auteur FROM detail_nom where det_type = '$type' order by det_auteur");		
-
-   while (list($auteur) = mysql_fetch_row($result))
+	   $a_auteurs=$connexionBD->sql_select("select distinct det_auteur FROM detail_nom where det_type = '$type' order by det_auteur");		
+  foreach ($a_auteurs as $st_auteur)
    {
-	   $chaine_options .= "<option >$auteur</option>\n";
+	   $chaine_options .= "<option >$st_auteur</option>\n";
    }
    return $chaine_options;
 }
@@ -170,7 +194,7 @@ function Select_nom($type)
 |   Cousinage des adhérents      =========    valider  |
 +------------------------------------------------------+
 */
-function Saisie_recherche()
+function Saisie_recherche($connexionBD)
 {
    
    print("<br><br><div id='sommaire'>");
@@ -181,7 +205,7 @@ function Saisie_recherche()
 		print("<div class='cadre_rech'>");
 			print("<p><input class='droite' type=submit value='Recherche' name='valide_rub'></p>");  
          print("<p><label for='rub'>Les rubriques d'un numéro</label>");
-         print("<select id='rub' name=rubrique>".Select_rubrique()."</select></p>");
+         print("<select id='rub' name=rubrique>".Select_rubrique($connexionBD)."</select></p>");
          print("<input type=hidden name=mode value=\"RUBRIQUE\">");
       print("</div>");
       print("</form>");
@@ -189,7 +213,7 @@ function Saisie_recherche()
 		print("<div class='cadre_rech'>");
 			print("<p><input class='droite' type=submit value='Recherche' name='valide_art'></p>");  
          print("<p><label for='art'>Chaque article d'un auteur</label>");
-         print("<select id='art' name=article>".Select_nom('ART')."</select></p>");
+         print("<select id='art' name=article>".Select_nom('ART',$connexionBD)."</select></p>");
          print("<input type=hidden name=mode value=\"ARTICLE\">");
       print("</div>");
       print("</form>");
@@ -197,7 +221,7 @@ function Saisie_recherche()
 		print("<div class='cadre_rech'>");
 			print("<p><input class='droite' type=submit value='Recherche' name='valide_fam'></p>");  
          print("<p><label for='fam'>Familles étudiées</label>");
-         print("<select id='fam' name=famille>".Select_nom('FAM')."</select></p>");
+         print("<select id='fam' name=famille>".Select_nom('FAM',$connexionBD)."</select></p>");
          print("<input type=hidden name=mode value=\"FAMILLE\">");
       print("</div>");
       print("</form>");
@@ -205,7 +229,7 @@ function Saisie_recherche()
 		print("<div class='cadre_rech'>");
 			print("<p><input class='droite' type=submit value='Recherche' name='valide_asc'></p>");  
          print("<p><label for='asc'>Ascendance d'un adhérent</label>");
-         print("<select id='asc' name=ascendance>".Select_nom('ASC')."</select></p>");
+         print("<select id='asc' name=ascendance>".Select_nom('ASC',$connexionBD)."</select></p>");
          print("<input type=hidden name=mode value=\"ASCEND\">");
       print("</div>");
       print("</form>");
@@ -213,7 +237,7 @@ function Saisie_recherche()
 		print("<div class='cadre_rech'>");
 			print("<p><input class='droite' type=submit value='Recherche' name='valide_des'></p>");  
          print("<p><label for='des'>Descendance d'un adhérent</label>");
-         print("<select id='des' name=descendance>".Select_nom('DES')."</select></p>");
+         print("<select id='des' name=descendance>".Select_nom('DES',$connexionBD)."</select></p>");
          print("<input type=hidden name=mode value=\"DESCEND\">");
       print("</div>");
       print("</form>");
@@ -221,7 +245,7 @@ function Saisie_recherche()
 		print("<div class='cadre_rech'>");
 			print("<p><input class='droite' type=submit value='Recherche' name='valide_cou'></p>");  
          print("<p><label for='cou'>Cousinage des adhérents</label>");
-         print("<select id='cou' name=cousinage>".Select_nom('COU')."</select></p>");
+         print("<select id='cou' name=cousinage>".Select_nom('COU',$connexionBD)."</select></p>");
          print("<input type=hidden name=mode value=\"COUSIN\">");
       print("</div>");
    print("</div>");
@@ -236,11 +260,12 @@ require_once("$gst_chemin/Commun/menu.php");
 $st_session_mode = empty($_SESSION['mode']) ? 'DEPART' : $_SESSION['mode']; 
 $gst_mode = isset($_POST['mode']) ? $_POST['mode'] : $st_session_mode;
 $_SESSION['mode']=$gst_mode; 
+if (isset($_POST['retour'])) $gst_mode = 'DEPART';  
 
 switch ($gst_mode) 
 {
    case 'DEPART' : 
-      Saisie_recherche(); 
+      Saisie_recherche($connexionBD); 
    break;
    case 'RUBRIQUE' : 
 		Affiche_noms('RUB', $connexionBD); 
@@ -261,6 +286,7 @@ switch ($gst_mode)
       Affiche_noms('COU', $connexionBD); 
    break;
 }
+//unset($_SESSION['mode']);
 ?>	
 
 </body>
