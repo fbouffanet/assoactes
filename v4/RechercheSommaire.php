@@ -103,7 +103,8 @@ function Affiche_noms($type, $sconnexionBD)
 
      print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    $_SESSION['num_page_som'] = $gi_num_page_cour; 
-   $a_liste_sommaire = $sconnexionBD->liste_valeur_par_clef($st_requete);
+   //$a_liste_sommaire = $sconnexionBD->liste_valeur_par_clef($st_requete);
+   $a_liste_sommaire = $sconnexionBD->sql_select_multiple($st_requete);
    print('<div class="panel panel-primary">');
    print("<div class=\"panel-heading\">$titre</div>");
    print('<div class="panel-body">');
