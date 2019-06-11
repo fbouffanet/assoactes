@@ -216,7 +216,8 @@ if ($type_actes_nimegue == "V")
 {
     case "N": //selection sur les naissances
 	$titre = "Baptêmes Naissances";
-	$titreHP = $titre." de ".utf8_encode($commune);
+	//$titreHP = $titre." de ".utf8_encode($commune);
+    $titreHP = $titre." de ".$commune;
 	$pdf->titrehp = $titreHP;
 	break;
 
