@@ -56,9 +56,9 @@ function affiche_barre_navigation($pconnexionBD,$pi_idf_rep,$pi_page_courante,$p
 	$i_nb_photos = count($pa_photos);
 	if ($pi_page_courante>0 && $pi_page_courante<=$i_nb_photos)
 	{
-		print('<div class="text-center"> <ul class="pagination input-group">');
+		print('<div class="form-row col-md-12"><div class="text-center"> <ul class="pagination input-group">');
 		print("<form id=\"barre_navigation\" name=\"barre_navigation\" method=\"POST\" action=\"".$_SERVER['PHP_SELF']."\">");
-        print('<div class="input-group">');		
+        print('<div class="input-group text-center">');		
 		if ($pi_page_courante>1)
 		{
 			// Affichage de la navigation gauche
@@ -82,7 +82,7 @@ function affiche_barre_navigation($pconnexionBD,$pi_idf_rep,$pi_page_courante,$p
 			print('</div>');
 		}
 		print("</div>");
-		print("</form></ul></div>");
+		print("</form></ul></div></div>");
 		// Met à jour la bd avec la page sélectionnée
 		$st_requete = "update rep_not_desc set page_courante=$pi_page_courante where idf_repertoire=$pi_idf_rep";
 		$pconnexionBD->execute_requete($st_requete);		
