@@ -285,7 +285,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
   	$pdf->SetFont('Times','B',8);
 	$pdf->Cell(50,3,$data[10].'  ',0,0,L);
 	$pdf->SetFont('Times','',8);
-	$pdf->Cell(30,3,$data[11],0,0,L);
+	$pdf->Cell(1,3,$data[11],0,0,L);
   	$pdf->Cell(20,3,'Sexe : '.$data[12],0,0,L);
 	$pdf->Cell(10,3,$data[6].'  '.$data[7],0,1);
 	$l1='';
