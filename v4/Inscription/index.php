@@ -1,6 +1,6 @@
 <?php
 
-$gst_chemin = "../";
+$gst_chemin = "$gst_rep_site";
 
 require_once("$gst_chemin/Commun/config.php");
 require_once("$gst_chemin/Commun/constantes.php");
