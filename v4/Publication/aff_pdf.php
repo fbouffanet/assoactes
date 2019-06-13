@@ -282,7 +282,10 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
    case "N":// $type_actes_nimegue = N
     //affichage de chaque champ de la ligne en question
   	//$l1 ="\n".$data[data10]."   ".$data[data11]."   sexe :  ".$data[data12]."   Le ".$data[data6]." ".$data[data7]."       ".$data[data13]."";
-  	$pdf->Cell(80,3,$data[10].'  '.$data[11],0,0,L);
+  	$pdf->SetFont('Times','B',8);
+	$pdf->Cell(50,3,$data[10].'  ',0,0,R);
+	$pdf->SetFont('Times','',8);
+	$pdf->Cell(30,3,$data[11],0,0,L);
   	$pdf->Cell(20,3,'Sexe : '.$data[12],0,0,L);
 	$pdf->Cell(10,3,$data[6].'  '.$data[7],0,1);
 	$l1='';
