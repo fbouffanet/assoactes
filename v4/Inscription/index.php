@@ -6,7 +6,7 @@ require_once("$gst_chemin/Commun/config.php");
 require_once("$gst_chemin/Commun/constantes.php");
 require_once("$gst_chemin/Commun/ConnexionBD.php");
 require_once("$gst_chemin/Commun/commun.php");
-$cryptinstall="$gst_url_site/Commun/crypt/cryptographp.fct.php";
+$cryptinstall="$gst_chemin/Commun/crypt/cryptographp.fct.php";
 include $cryptinstall;
 
 print('<!DOCTYPE html>');
