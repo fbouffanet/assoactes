@@ -1,6 +1,6 @@
 <?php
 
-$gst_chemin = "http://adherents.genea16.net";
+$gst_chemin = "..";
 
 require_once("$gst_chemin/Commun/config.php");
 require_once("$gst_chemin/Commun/constantes.php");
