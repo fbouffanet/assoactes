@@ -303,15 +303,6 @@ print("<body>");
 print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 $i_nb_tdms=$connexionBD->sql_select1("select sum( nb_actes ) from `stats_commune` where `idf_type_acte` =".IDF_MARIAGE." and `idf_source` =".IDF_SOURCE_TD);
-//$i_nb_mar=$connexionBD->sql_select1("select count(*) from `acte` where annee>=1793 and idf_type_acte` =".IDF_MARIAGE."and  idf_source IN (".IDF_SOURCE_TD.','.IDF_SOURCE_RELEVES_AGC.')');
-
-?>
-<div>L'Association G&eacute;n&eacute;alogique de la Charente laisse en acc&egrave;s libre la consultation de ses <?php print ($i_nb_tdms); ?> relev&eacute;s de mariage issus des tables d&eacute;cennales.</div>
-<div>Ces relev&eacute;s non filiatifs vous permettront de localiser au XIX&egrave;me si&egrave;cle les mariages en Charente.</div>
-<div><br>Si par cet interm&eacute;diaire, vous avez r&eacute;ussi &agrave; obtenir des renseignements compl&eacute;mentaires sur un mariage qui vous int&eacute;resse, vous pouvez le compl&eacute;ter gr&acirc;ce &agrave; notre interface de saisie.</div>
-<div>L'acte compl&eacute;t&eacute; sera consultable librement par tout un chacun et vous faciliterez ainsi la recherche d'autres g&eacute;n&eacute;alogistes.</div>
-<div><br>Merci de respecter cet esprit d'entraide et de participer &agrave; votre tour.</div>
-<?php
 
 $st_session_mode = empty($_SESSION['mode']) ? 'DEMANDE' : $_SESSION['mode'];   
 $gst_mode = empty($_POST['mode']) ? $st_session_mode: $_POST['mode'] ;
