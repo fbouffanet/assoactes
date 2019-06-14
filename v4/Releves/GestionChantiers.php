@@ -52,6 +52,11 @@ $(document).ready(function() {
 		function(){
          $(this).closest('form').trigger('submit');
 	});
+	
+	$('#idf_releveur').change(
+		function(){
+         $(this).closest('form').trigger('submit');
+	});
 
 	$('#annuler').click(function() {
       window.location.href='<?php echo $_SERVER['PHP_SELF'] ?>';
@@ -222,13 +227,18 @@ $gi_num_page_cour = empty($_GET['num_page']) ? $i_session_num_page : $_GET['num_
 $i_session_idf_statut = isset($_SESSION['idf_statut_session']) ? $_SESSION['idf_statut_session'] : 1;
 $i_get_idf_statut=isset($_GET['idf_statut_visu']) ? (integer) $_GET['idf_statut_visu']: $i_session_idf_statut; 
 $gi_idf_statut=isset($_POST['idf_statut_visu']) ?  (integer) $_POST['idf_statut_visu'] : $i_get_idf_statut;
+$i_session_idf_releveur = isset($_SESSION['idf_releveur_session']) ? $_SESSION['idf_releveur_session'] : 0;
+$gi_idf_releveur=isset($_POST['idf_releveur']) ?  (integer) $_POST['idf_releveur'] : $i_session_idf_releveur;
+print("Releveur = $gi_idf_releveur<br>");
 $_SESSION['idf_statut_session'] = $gi_idf_statut;
+$_SESSION['idf_releveur_session'] = $gi_idf_releveur;
 /**
  * Affiche la liste des communes
  * @param object $rconnexionBD
- * @param integer $pi_idf_statut identifiant du statut à visualiser 
+ * @param integer $pi_idf_statut identifiant du statut à visualiser
+ * @param integer $pi_idf_releveur_visu identifiant du releveur à visualiser 
  */ 
-function menu_liste($rconnexionBD,$pi_idf_statut_visu)
+function menu_liste($rconnexionBD,$pi_idf_statut_visu,$pi_idf_releveur_visu)
 {
    global $gi_num_page_cour, $ga_tbl_statut;
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
@@ -248,11 +258,38 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu)
    print('</div>');
    print('</div>');
    $st_requete = empty($pi_idf_statut_visu) ? "select count(distinct id_releveur ) from `chantiers`": "select count(distinct id_releveur ) from `chantiers` where statut=$pi_idf_statut_visu";
-  $i_nb_reveleurs = $rconnexionBD->sql_select1($st_requete);
-   print("<div class=\"info text-center\">$i_nb_reveleurs Releveurs distincts</div>");
+   $i_nb_reveleurs = $rconnexionBD->sql_select1($st_requete);
+   print("<div class=\"row col-md-12\"><div class=\"info text-center\"><div class=\"badge\">$i_nb_reveleurs</div> Releveurs distincts</div></div>");
+  
+   $st_requete = empty($pi_idf_statut_visu) ? "select adht.idf,concat(adht.prenom,' ',adht.nom,' (',adht.idf,')') from adherent adht join chantiers c on (adht.idf=c.id_releveur) order by adht.prenom,adht.nom" : "select adht.idf,concat(adht.prenom,' ',adht.nom,' (',adht.idf,')') from adherent adht join chantiers c on (adht.idf=c.id_releveur) where c.statut=$pi_idf_statut_visu order by adht.prenom,adht.nom" ;  
+   $a_releveurs = $rconnexionBD->liste_valeur_par_clef($st_requete);   
+   print('<label for=idf_releveur class="col-form-label col-md-2 col-md-offset-2">Releveur:</label>');
+   print('<div class="col-md-6">');
+   print('<select name=idf_releveur id=idf_releveur class="form-control js-select-avec-recherche"><option value=\"0\" selected>Tous</option>');
+   foreach($a_releveurs as $i_idf_releveur => $st_releveur)
+   {
+      if ($i_idf_releveur==$pi_idf_releveur_visu)
+        print("<option value=\"$i_idf_releveur\" selected>$st_releveur</option>");
+      else  
+        print("<option value=\"$i_idf_releveur\">$st_releveur</option>");             
+   }
+   print('</select>');
+   print('</div>');
+   print('</div>');
 
    // Affichage des initiales
-   $st_requete = empty($pi_idf_statut_visu ) ? "SELECT DISTINCT (left( ca.nom, 1 )) AS init from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) ORDER BY init":"SELECT DISTINCT (left( ca.nom, 1 )) AS init from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) where ch.statut=$pi_idf_statut_visu ORDER BY init";
+   $a_clauses =array();
+   if (!empty($pi_idf_statut_visu))
+	   $a_clauses[] = "ch.statut=$pi_idf_statut_visu";
+   if (!empty($pi_idf_releveur_visu))
+	   $a_clauses[] = "ch.id_releveur=$pi_idf_releveur_visu";
+   $st_requete =  "SELECT DISTINCT (left( ca.nom, 1 )) AS init from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf )";
+   if (count($a_clauses)>0)
+   {
+	   $st_clauses = join(' and ',$a_clauses);
+	   $st_requete .= " where $st_clauses";
+   }
+   $st_requete .= " ORDER BY init";
    $a_initiales_communes = $rconnexionBD->sql_select($st_requete);
    print("<div align=center>");
    $i_session_initiale = isset($_SESSION['initiale_statcom']) ? $_SESSION['initiale_statcom'] : $a_initiales_communes[0];
@@ -270,10 +307,18 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu)
    }
    print("</ul></div>");
   
-   if (empty($pi_idf_statut_visu))
-      $st_requete = "select ch.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relevé papier' end), concat(ad.nom,'  ',ad.prenom,' (',ad.idf,')') from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) join `adherent` ad on (ch.id_releveur = ad.idf) where ca.nom like '$gc_initiale%' order by ca.nom, ad.nom";
-   else
-      $st_requete = "select ch.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relevé papier' end), concat(ad.nom,'  ',ad.prenom,' (',ad.idf,')') from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) join `adherent` ad on (ch.id_releveur = ad.idf) where ch.statut=$pi_idf_statut_visu and ca.nom like '$gc_initiale%' order by ca.nom, ad.nom";
+   $st_requete = "select ch.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relevé papier' end), concat(ad.nom,'  ',ad.prenom,' (',ad.idf,')') from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) join `adherent` ad on (ch.id_releveur = ad.idf) where ca.nom like '$gc_initiale%'";
+   $a_clauses =array();
+   if (!empty($pi_idf_statut_visu))
+	   $a_clauses[] = "ch.statut=$pi_idf_statut_visu";
+   if (!empty($pi_idf_releveur_visu))
+	   $a_clauses[] = "ch.id_releveur=$pi_idf_releveur_visu";
+   if (count($a_clauses)>0)
+   {
+	   $st_clauses = join(' and ',$a_clauses);
+	   $st_requete .= " and  $st_clauses";
+   } 
+   $st_requete.= " order by ca.nom, ad.nom";
    
    $a_liste_chantiers = $rconnexionBD->liste_valeur_par_clef($st_requete);
    print("</form><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"suppression_chantiers\">"); 
@@ -535,7 +580,7 @@ $ga_communes  = $connexionBD->liste_valeur_par_clef("select idf,nom from `commun
 $ga_adherent  = $connexionBD->liste_valeur_par_clef("select idf,concat(nom,'  ',prenom,' (',idf,')') from adherent where statut in ('".ADHESION_INTERNET."','".ADHESION_BULLETIN."','".ADHESION_SUSPENDU."') order by nom,prenom");
 switch ($gst_mode) {
   case 'LISTE' : 
-  menu_liste($connexionBD,$gi_idf_statut); 
+  menu_liste($connexionBD,$gi_idf_statut,$gi_idf_releveur); 
   break;
   case 'MENU_MODIFIER' :
      menu_modifier($connexionBD,$gi_idf_chantier,$ga_documents,$ga_adherent);
@@ -590,7 +635,7 @@ switch ($gst_mode) {
      menu_liste($connexionBD,$gi_idf_statut);  
   break;
   case 'MENU_AJOUTER' : 
-     menu_ajouter($ga_documents,$ga_adherent);
+     menu_ajouter($ga_documents,$ga_adherent,$gi_idf_releveur);
   break;
   case 'AJOUTER':
      $i_id_document = (int) $_POST['id_document'];
@@ -647,7 +692,7 @@ switch ($gst_mode) {
      {	 
           $connexionBD->execute_requete("delete from `chantiers` where idf = $i_idf_chantier");
      }
-     menu_liste($connexionBD,$$gi_idf_statut);
+     menu_liste($connexionBD,$$gi_idf_statut,$gi_idf_releveur);
    break;        
 }  
 print('</div></body>');
