@@ -64,7 +64,7 @@ function affiche_page_recherche($pconnexionBD,$pst_type_recherche)
   print("<input type=hidden name=mode value=\"RESULTATS\">");
   
   print('<div class="form-row col-md-12">');
-  print('<div class="form-group col-md-6"><label for="idf_commune_recherches_communes">Commune/Paroisse:</label><select name="idf_commune_recherche" class="js-select-avec-recherche">');
+  print('<div class="form-group col-md-6"><label for="idf_commune_recherches_communes">Commune/Paroisse</label><select name="idf_commune_recherche" class="js-select-avec-recherche">');
   $a_communes_acte[0] = 'Toutes';
   print(chaine_select_options($gi_idf_commune,$a_communes_acte));
   print('</select></div>');
@@ -73,8 +73,8 @@ function affiche_page_recherche($pconnexionBD,$pst_type_recherche)
   
   print('<div class="form-row col-md-12">'); 
   print('<div class="input-group col-md-offset-4 col-md-4 ">');
-  print("<span class=\"input-group-addon\">Ann&eacute;es de</span><div class=\"lib_erreur\"><input type=text name=annee_min id=\"annee_min\" size=4 value=\"$gi_annee_min\" class=\"form-control\"></div>");
-  print("<span class=\"input-group-addon\">&agrave;</span><div class=\"lib_erreur\"><input type=text name=annee_max size=4 id=\"annee_max\" value=\"$gi_annee_max\" class=\"form-control \"></div>");
+  print("<span class=\"input-group-addon\">Ann&eacute;es de</span><div><input type=text name=annee_min id=\"annee_min\" size=4 value=\"$gi_annee_min\" class=\"form-control\"></div>");
+  print("<span class=\"input-group-addon\">&agrave;</span><div><input type=text name=annee_max size=4 id=\"annee_max\" value=\"$gi_annee_max\" class=\"form-control \"></div>");
   print('</div>');
   
   print('<div class="form-row col-md-12">');
