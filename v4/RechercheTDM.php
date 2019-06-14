@@ -71,8 +71,6 @@ function affiche_page_recherche($pconnexionBD,$pst_type_recherche)
   print("<div class=\"form-group col-md-6\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon\" class=\"sr-only\">Rayon</label><span><input type=text id=rayon name=rayon size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"></span><span class=\"input-group-addon\">Km</span></div></div>");
   print('</div>');
   
-  //print("<div class=\"form-group col-md-3\"><div class=\"input-group \"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><span class=\"lib_erreur\"><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"></span><span class=\"input-group-addon\">Km</span></div></div>");
-  
   print('<div class="form-row col-md-12">'); 
   print('<div class="input-group col-md-offset-4 col-md-4 ">');
   print("<span class=\"input-group-addon\">Ann&eacute;es de</span><div class=\"lib_erreur\"><input type=text name=annee_min id=\"annee_min\" size=4 value=\"$gi_annee_min\" class=\"form-control\"></div>");
