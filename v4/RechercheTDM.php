@@ -229,20 +229,22 @@ function affiche_page_resultats($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_anne
   print("</div>");
 }
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr"> ');
 print("<title>TDM de l'AGC</title>");
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
-print("<link href='Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>");
-print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>");
+print("<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='js/select2.min.js' type='text/javascript'></script>");
 ?>
@@ -259,7 +261,7 @@ $(".popup").hover(function() {
 <?php
 print("</head>");
 print("<body>");
-
+print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 $i_nb_tdms=$connexionBD->sql_select1("select sum( nb_actes ) from `stats_commune` where `idf_type_acte` =".IDF_MARIAGE." and `idf_source` =".IDF_SOURCE_TD);
 //$i_nb_mar=$connexionBD->sql_select1("select count(*) from `acte` where annee>=1793 and idf_type_acte` =".IDF_MARIAGE."and  idf_source IN (".IDF_SOURCE_TD.','.IDF_SOURCE_RELEVES_AGC.')');
@@ -393,7 +395,7 @@ switch ($gst_mode)
   default:
     unset($_SESSION['mode']);
 }
-print("</body>");
+print("</div></body>");
 print("</html>");
 $connexionBD->ferme();
 ?>
