@@ -63,7 +63,7 @@ function affiche_page_recherche($pconnexionBD,$pst_type_recherche)
   print("<input type=hidden name=recherche value=\"\">");
   print("<input type=hidden name=mode value=\"RESULTATS\">");
   print('<div style="text-align:center"><br>');
-  print('Commune/Paroisse : <select name="idf_commune_recherche" >');
+  print('Commune/Paroisse : <select name="idf_commune_recherche" class="js-select-avec-recherche">');
   $a_communes_acte[0] = 'Toutes';
   print(chaine_select_options($gi_idf_commune,$a_communes_acte));
   print('</select>');
@@ -257,7 +257,10 @@ $(".popup").hover(function() {
     }, function() {
         $(this).css('cursor','auto');
     });
- 
+
+$.fn.select2.defaults.set( "theme", "bootstrap" );	
+
+$(".js-select-avec-recherche").select2(); 
 });
 </script>
 <?php
