@@ -59,18 +59,19 @@ function affiche_page_recherche($pconnexionBD,$pst_type_recherche)
   $st_requete = "SELECT ca.idf,ca.nom FROM commune_acte ca join `stats_commune` sc on (ca.idf = sc.idf_commune) where `idf_type_acte` =".IDF_MARIAGE." and `idf_source` =".IDF_SOURCE_TD. " order by nom";
   $a_communes_acte = $pconnexionBD->liste_valeur_par_clef($st_requete);
   print('<form id="recherche_tdm" method="post" action='.$_SERVER['PHP_SELF'].'>');
-  print('<div style="text-align:center">');
+  print('<div>');
   print("<input type=hidden name=recherche value=\"\">");
   print("<input type=hidden name=mode value=\"RESULTATS\">");
-  print('<div style="text-align:center"><br>');
-  print('Commune/Paroisse : <select name="idf_commune_recherche" class="js-select-avec-recherche">');
+  
+  print('<div class="form-row col-md-12">');
+  print('<div class="form-group col-md-6"><label for="idf_commune_recherches_communes">Commune/Paroisse:</label><select name="idf_commune_recherche" class="js-select-avec-recherche">');
   $a_communes_acte[0] = 'Toutes';
   print(chaine_select_options($gi_idf_commune,$a_communes_acte));
-  print('</select>');
-  print(" Rayon de recherche : <input type=text name=rayon size=2 maxlength=2 value=\"$gi_rayon\"> Km");
-  print('<br></div>');
+  print('</select></div>');
+  print("<div class=\"form-group col-md-6\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon\" class=\"sr-only\">Rayon</label><span><input type=text id=rayon name=rayon size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"></span><span class=\"input-group-addon\">Km</span></div></div>");
+  print('</div>');
   
-  //print("<div style=\"text-align:center\"><br>Ann&eacute;es de <input type=text name=annee_min size =4 value=\"$gi_annee_min\"> &agrave; <input type=text name=annee_max size =4 value=\"$gi_annee_max\"><br><br></div>");
+  //print("<div class=\"form-group col-md-3\"><div class=\"input-group \"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><span class=\"lib_erreur\"><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"></span><span class=\"input-group-addon\">Km</span></div></div>");
   
   print('<div class="form-row col-md-12">'); 
   print('<div class="input-group col-md-offset-4 col-md-4 ">');
