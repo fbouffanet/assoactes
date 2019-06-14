@@ -71,7 +71,7 @@ function affiche_page_recherche($pconnexionBD,$pst_type_recherche)
   print('<br></div>');
   print("<div style=\"text-align:center\"><br>Ann&eacute;es de <input type=text name=annee_min size =4 value=\"$gi_annee_min\"> &agrave; <input type=text name=annee_max size =4 value=\"$gi_annee_max\"><br><br></div>");
   print('<div style="text-align:center"><br>');
-  print("Nom Epoux: <input type=text name=nom_epx size=15 maxlength=30 value=\"$gst_nom_epx\" onKeyPress=\"SoumissionCouple(0,event)\"> Pr&eacute;nom Epoux: <input type=text name=prenom_epx size=15 maxlength=30 value=\"$gst_prenom_epx\" onKeyPress=\"SoumissionCouple(0,event)\"> ");
+  print("Nom Epoux: <input type=text name=nom_epx size=15 maxlength=30 value=\"$gst_nom_epx\" > Pr&eacute;nom Epoux: <input type=text name=prenom_epx size=15 maxlength=30 value=\"$gst_prenom_epx\" > ");
   print(' Recherche par variantes connues:');
   if ($gst_variantes_epx=='')
     print('<input type=checkbox name=variantes_epx value=oui >');
@@ -79,14 +79,14 @@ function affiche_page_recherche($pconnexionBD,$pst_type_recherche)
     print('<input type=checkbox name=variantes_epx value=oui checked>');   
   print('<br></div>');
   print('<div style="text-align:center">');
-  print("Nom Epouse: <input type=text name=nom_epse size=15 maxlength=30 value=\"$gst_nom_epse\" onKeyPress=\"SoumissionCouple(0,event)\"> Pr&eacute;nom Epouse: <input type=text name=prenom_epse size=15 maxlength=30 value=\"$gst_prenom_epse\" onKeyPress=\"SoumissionCouple(0,event)\"> ");
+  print("Nom Epouse: <input type=text name=nom_epse size=15 maxlength=30 value=\"$gst_nom_epse\"> Pr&eacute;nom Epouse: <input type=text name=prenom_epse size=15 maxlength=30 value=\"$gst_prenom_epse\" > ");
   print(' Recherche par variantes connues:');
   if ($gst_variantes_epse=='')
     print('<input type=checkbox name=variantes_epse value=oui >');
   else
     print('<input type=checkbox name=variantes_epse value=oui checked>'); 
   print('<br></div>');
-  print('<div style="text-align:center"><br><input type=submit name=Rechercher value="Lancer la recherche" > <br><br></div>');
+  print('<button class="btn btn-primary col-md-4 col-md-offset-4" type=submit name=Rechercher>Lancer la recherche</button>');
   print("</form>");  
 }
 
@@ -115,6 +115,7 @@ function affiche_page_resultats($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_anne
   $a_types_presence = $pconnexionBD->liste_valeur_par_clef("SELECT idf,nom FROM type_presence");
   $i_nb_prenoms_epx= 1;
   $st_variantes_prenoms_epx ='';
+  $st_tables_prenom_epx ='';
   if (!empty($pst_prenom_epx))
   {
     $pst_prenom_epx  = str_replace('*','%', $pst_prenom_epx);
@@ -166,7 +167,7 @@ function affiche_page_resultats($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_anne
   if ($i_nb_actes>0)
   {
     $_SESSION['mode'] = 'RESULTATS';
-    print("<div class=alignCenter>$i_nb_actes occurrences trouv&eacute;es. ");
+    print("<div class=\"text-center\"><div class=\"badge\">$i_nb_actes</div> occurrences trouv&eacute;es. ");
     print('<div id="curseur" class="infobulle"></div>');
     print('<div>');
     function premier_elem($a_tab) {
@@ -221,12 +222,13 @@ function affiche_page_resultats($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_anne
   }
   else
   {
-     print("Aucun r&eacute;sultat<br>");
+     print("<div class=\"alert alert-danger\">Aucun r&eacute;sultat</div>");
   }
   print('<div align=center><br>');
-  print("<a style=\"align:center\" href=\"".$_SERVER['PHP_SELF']."?recherche=retour\" class=\"RetourReponses\">Revenir &agrave; la page de recherche</a>");
-  print("<a style=\"align:center\" href=\"".$_SERVER['PHP_SELF']."?recherche=nouvelle\" class=\"RetourReponses\">Commencer une nouvelle recherche</a>");
-  print("</div>");
+  print('<div class="btn-group col-md-offset-3 col-md-6" role="group">');
+  print("<a class=\"btn btn-info\" href=\"".$_SERVER['PHP_SELF']."?recherche=retour\" role=\"button\">Revenir &agrave; la page de recherche</a>");
+  print("<a class=\"btn btn-warning\" href=\"".$_SERVER['PHP_SELF']."?recherche=nouvelle\" role=\"button\">Commencer une nouvelle recherche</a>");
+  print("</div></div>");
 }
 
 print('<!DOCTYPE html>');
