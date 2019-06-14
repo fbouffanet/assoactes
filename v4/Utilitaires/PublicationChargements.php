@@ -72,7 +72,6 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 
 $gi_num_page_cour = empty($_POST['num_page']) ? 1 : $_POST['num_page'];
 
-print("Page cour= $gi_num_page_cour");
 require_once("../Commun/menu.php");
 
 switch ($gst_mode) {
