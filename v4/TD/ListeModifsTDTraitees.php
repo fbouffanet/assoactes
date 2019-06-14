@@ -45,7 +45,7 @@ $ga_types=array(0=>"Tous")+$ga_types_nimegue;
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("../Commun/menu.php");
 
-$gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
+$gi_num_page_cour = empty($_POST['num_page']) ? 1 : $_POST['num_page'];
 $st_sess_statut = isset($_SESSION['statut']) && array_key_exists($_SESSION['statut'],$ga_statuts)? $_SESSION['statut'] : 'A';
 $gst_statut = isset($_POST['statut']) ? $_POST['statut'] : $st_sess_statut;
 $i_sess_type_acte = isset($_SESSION['type_acte']) && array_key_exists($_SESSION['type_acte'],$ga_types)? $_SESSION['type_acte'] : 0;
@@ -95,7 +95,8 @@ if (isset($_SESSION['ident']))
           print("<option value=\"$i_type\">$st_lib_type</option>");
       }
       print("</select></div></div>");    
-      print("</form>");
+      print("<input type=hidden name=num_page value=\"\">");
+       
            
       switch ($gi_type_acte)
       {
@@ -123,7 +124,7 @@ if (isset($_SESSION['ident']))
             list($i_idf_acte,$st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur) = $a_groupe;
           else
              list($i_idf_acte,$st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_commentaires) = $a_groupe;
-          $st_action = "<form action=\"".$_SERVER['PHP_SELF']."\" method=post>";
+          $st_action = "<form action=\"".$_SERVER['PHP_SELF']."\"  method=post>";
           $st_action .="<input type=\"hidden\" name=\"idf_modif\" value=\"$i_idf_modif\">";
           $st_action .="<input type=\"hidden\" name=\"mode\" value=\"VISU_MODIF\">";
 		    $st_action .='<button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-eye-open"></span> Voir la<br>demande</button>';
@@ -134,7 +135,8 @@ if (isset($_SESSION['ident']))
             $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_commentaires,$st_action,"<a href=\"../InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"btn btn-primary btn-xs\" role=\"button\"><span class=\"glyphicon glyphicon-eye-open\"></span> Voir la<br>modification</a>");
         }
         $pagination->init_page_cour($gi_num_page_cour);
-        $pagination->affiche_entete_liens_navigation();
+        $pagination->affiche_entete_liste_select("liste_td");
+		print("</form>");	 
         $pagination->affiche_tableau_simple($a_tableau_a_afficher);
       }       
       else
