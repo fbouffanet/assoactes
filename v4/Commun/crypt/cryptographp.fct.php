@@ -15,7 +15,6 @@
  
  $_SESSION['cryptdir']= dirname($cryptinstall);
  
- 
  function dsp_crypt($cfg=0,$reload=1) {
  // Affiche le cryptogramme
  echo "<table><tr><td><img id='cryptogram' src='".$_SESSION['cryptdir']."/cryptographp.php?cfg=".$cfg."&".SID."'></td>";
