@@ -31,7 +31,7 @@ print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("../Commun/menu.php");
 
-$gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
+$gi_num_page_cour = empty($_POST['num_page']) ? 1 : $_POST['num_page'];
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 
@@ -68,7 +68,7 @@ print("<div class=\"alert alert-info\">$i_nbadh_connectes_aujourdhui adh&eacute;
 
 $st_requete = "SELECT date_format(date,'%d/%m'),nbre from `stats_cnx` order by date desc limit 7";
 $a_nb_dernieres_cnx = $connexionBD->liste_valeur_par_clef($st_requete);
-if (count($a_nb_dernieres_cnx>0))
+if (count($a_nb_dernieres_cnx)>0)
 {
    print("<table class=\"table table-bordered table-striped\">");
    print("<tr>");
@@ -114,9 +114,10 @@ foreach ($ga_cnx as $a_ligne)
    $ga_tableau[] = array($st_nom,$st_prenom,"<a href=\"../ListeAdherents.php?mod=$i_idf\">$i_idf</a>",$st_email_perso,$st_cp,$st_ville,$st_statut,$i_annee_cotisation,$st_der_cnx);
 }
 
+print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" name=\"DerniersConnectes\">");
 $pagination->init_page_cour($gi_num_page_cour);
-$pagination->affiche_entete_liens_navigation();
+$pagination->affiche_entete_liste_select("DerniersConnectes");
 $pagination->affiche_tableau_simple($ga_tableau);
-print("</div></div>");
+print("</form></div></div>");
 print("</div></body></html>");
 ?>
