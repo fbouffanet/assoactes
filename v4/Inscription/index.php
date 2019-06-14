@@ -5,7 +5,7 @@ require_once("../Commun/constantes.php");
 require_once("../Commun/ConnexionBD.php");
 require_once("../Commun/commun.php");
 
-$gst_chemin = ($_SERVER['HTTP_HOST']=='inscription.genea16.net')? $gst_url_site: '..';
+$gst_chemin = ($_SERVER['HTTP_HOST']=='inscription.genea16.net')? "$gst_url_site": '..';
 $cryptinstall="$gst_chemin/Commun/crypt/cryptographp.fct.php";
 
 include $cryptinstall;
@@ -359,7 +359,7 @@ function preinscrit_adherent($pst_ins_date,$pst_ins_nom,$pst_ins_prenom,$pst_ins
   ---------------------------------------------------------------------------*/
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-require_once("$gst_chemin/Commun/menu.php");
+//require_once("$gst_chemin/Commun/menu.php");
 
 switch ($gst_mode) {
   case 'GRILLE' : 
