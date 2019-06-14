@@ -37,7 +37,7 @@ function menu_liste($pconnexionBD)
    print('<div class="panel panel-primary">');
    print('<div class="panel-heading">Publication des chargements</div>');
    print('<div class="panel-body">');
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" name=\"PubliChargements\">");
    $st_requete = "select c.idf,date_format(c.date_chgt,'%d/%m/%Y %H:%i'),ca.nom,c.type_acte_nim,c.nb_actes,c.publication from `chargement` c join `commune_acte` ca on (c.idf_commune=ca.idf) order by c.date_chgt desc";
    $a_liste_chgt = $pconnexionBD->sql_select_multiple_par_idf($st_requete);
    $a_liste_ids = array();
@@ -45,7 +45,7 @@ function menu_liste($pconnexionBD)
    {        
       $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_liste_chgt),NB_LIGNES_PAR_PAGE,1,array('Date','Commune','Type','Nbre actes','Publier'));
       $pagination->init_page_cour($gi_num_page_cour);
-      $pagination->affiche_entete_liens_navigation();
+      $pagination->affiche_entete_liste_select("PubliChargements");
       $a_tableau_affichage=array();
       foreach ($a_liste_chgt as $i_idf_chgt => $a_chgt)
       {
