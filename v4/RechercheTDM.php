@@ -63,32 +63,32 @@ function affiche_page_recherche($pconnexionBD,$pst_type_recherche)
   print("<input type=hidden name=recherche value=\"\">");
   print("<input type=hidden name=mode value=\"RESULTATS\">");
   
-  print('<div class="form-row col-md-12">');
-  print('<div class="form-group col-md-6"><label for="idf_commune_recherches_communes">Commune/Paroisse</label><select name="idf_commune_recherche" class="js-select-avec-recherche">');
+  print('<div class="form-row col-sm-12">');
+  print('<div class="form-group col-sm-6"><label for="idf_commune_recherches_communes">Commune/Paroisse</label><select name="idf_commune_recherche" class="js-select-avec-recherche">');
   $a_communes_acte[0] = 'Toutes';
   print(chaine_select_options($gi_idf_commune,$a_communes_acte));
   print('</select></div>');
-  print("<div class=\"form-group col-md-6\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon\" class=\"sr-only\">Rayon</label><span><input type=text id=rayon name=rayon size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"></span><span class=\"input-group-addon\">Km</span></div></div>");
+  print("<div class=\"form-group col-sm-6\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon\" class=\"sr-only\">Rayon</label><span><input type=text id=rayon name=rayon size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"></span><span class=\"input-group-addon\">Km</span></div></div>");
   print('</div>');
   
-  print('<div class="form-row col-md-12">'); 
-  print('<div class="input-group col-md-offset-4 col-md-4 ">');
+  print('<div class="form-row col-sm-12">'); 
+  print('<div class="input-group col-sm-offset-4 col-sm-4 ">');
   print("<span class=\"input-group-addon\">Ann&eacute;es de</span><div><input type=text name=annee_min id=\"annee_min\" size=4 value=\"$gi_annee_min\" class=\"form-control\"></div>");
   print("<span class=\"input-group-addon\">&agrave;</span><div><input type=text name=annee_max size=4 id=\"annee_max\" value=\"$gi_annee_max\" class=\"form-control \"></div>");
   print('</div>');
   
-  print('<div class="form-row col-md-12">');
-  print("<label for=\"nom_epx\" class=\"col-form-label col-md-2\">Nom Epoux</label>");
-  print('<div class="col-md-2">');
+  print('<div class="form-row col-sm-12">');
+  print("<label for=\"nom_epx\" class=\"col-form-label col-sm-2\">Nom Epoux</label>");
+  print('<div class="col-sm-2">');
   print("<input type=text id=nom_epx name=nom_epx size=15 maxlength=30 value=\"$gst_nom_epx\" class=\"form-control\">");
   print('</div>');
 
-  print("<label for=\"prenom_epx\" class=\"col-form-label col-md-2\">Pr&eacute;nom Epoux</label>");
-  print('<div class="col-md-2">');
+  print("<label for=\"prenom_epx\" class=\"col-form-label col-sm-2\">Pr&eacute;nom Epoux</label>");
+  print('<div class="col-sm-2">');
   print("<input type=text name=prenom_epx id=prenom_epx size=15 maxlength=30 value=\"$gst_prenom_epx\" class=\"form-control\">");
   print('</div>');
   
-  print('<div class="form-check col-md-4">');
+  print('<div class="form-check col-sm-4">');
   if ($gst_variantes_epx=='')
     print('<input type=checkbox name=variantes_epx id=variantes_epx value="oui" class="form-check-input">');
   else
@@ -97,19 +97,19 @@ function affiche_page_recherche($pconnexionBD,$pst_type_recherche)
   print('</div>');
    
   print('</div>');
-  print('<div class="form-row col-md-12">');
+  print('<div class="form-row col-sm-12">');
   
-  print("<label for=\"nom_epse\" class=\"col-form-label col-md-2\">Nom Epouse</label>");
-  print('<div class="col-md-2">');
+  print("<label for=\"nom_epse\" class=\"col-form-label col-sm-2\">Nom Epouse</label>");
+  print('<div class="col-sm-2">');
   print("<input type=text id=nom_epse name=nom_epse size=15 maxlength=30 value=\"$gst_nom_epse\" class=\"form-control\">");
   print('</div>');
 
-  print("<label for=\"prenom_epse\" class=\"col-form-label col-md-2\">Pr&eacute;nom Epouse</label>");
-  print('<div class="col-md-2">');
+  print("<label for=\"prenom_epse\" class=\"col-form-label col-sm-2\">Pr&eacute;nom Epouse</label>");
+  print('<div class="col-sm-2">');
   print("<input type=text name=prenom_epse id=prenom_epse size=15 maxlength=30 value=\"$gst_prenom_epse\" class=\"form-control\">");
   print('</div>');
 
-  print('<div class="col-md-4">');
+  print('<div class="col-sm-4">');
   if ($gst_variantes_epse=='')
     print('<input type=checkbox name=variantes_epse id=variantes_epse value="oui class="form-check-input">');
   else
@@ -118,8 +118,8 @@ function affiche_page_recherche($pconnexionBD,$pst_type_recherche)
   print('</div>');
    
   print('</div>');
-  print('<div class="form-row col-md-12">');
-  print('<button class="btn btn-primary col-md-4 col-md-offset-4" type=submit name=Rechercher>Lancer la recherche</button>');
+  print('<div class="form-row col-sm-12">');
+  print('<button class="btn btn-primary col-sm-4 col-sm-offset-4" type=submit name=Rechercher>Lancer la recherche</button>');
   print('</div>');
   print("</form>");  
 }
@@ -259,7 +259,7 @@ function affiche_page_resultats($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_anne
      print("<div class=\"alert alert-danger\">Aucun r&eacute;sultat</div>");
   }
   print('<div align=center><br>');
-  print('<div class="btn-group col-md-offset-3 col-md-6" role="group">');
+  print('<div class="btn-group col-sm-offset-3 col-sm-6" role="group">');
   print("<a class=\"btn btn-info\" href=\"".$_SERVER['PHP_SELF']."?recherche=retour\" role=\"button\">Revenir &agrave; la page de recherche</a>");
   print("<a class=\"btn btn-warning\" href=\"".$_SERVER['PHP_SELF']."?recherche=nouvelle\" role=\"button\">Commencer une nouvelle recherche</a>");
   print("</div></div>");
