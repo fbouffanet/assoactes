@@ -230,21 +230,21 @@ function affiche_page_resultats($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_anne
          {
             case 1:
                $st_icone_td = 'tdv.png';
-               $st_detail = "<a href=\"$gst_url_site/InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\"></a>";
+               $st_detail = "<a href=\"$gst_url_site/InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" data-toggle=\"tooltip\" title=\"Acte relev&eacute;\" class=\"popup\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\"></a>";
             break;
             case 2:
                $st_icone_td = 'tdi.png';             
-               $st_detail = "<a href=\"$gst_url_site/PropositionModification.php?idf_acte=$i_idf_acte\" target=\"_blank\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
+               $st_detail = "<a href=\"$gst_url_site/PropositionModification.php?idf_acte=$i_idf_acte\" target=\"_blank\" data-toggle=\"tooltip\" title=\"Acte index&eacute;\" class=\"popup\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
             break;
             default:
                $st_icone_td = 'td.png';
-               $st_detail = "<a href=\"$gst_url_site/PropositionModification.php?idf_acte=$i_idf_acte\" target=\"_blank\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\"></a>";                      
+               $st_detail = "<a href=\"$gst_url_site/PropositionModification.php?idf_acte=$i_idf_acte\" target=\"_blank\" data-toggle=\"tooltip\" title=\"Acte non filiatif. Vous pouvez le compl&eacute;ter\" class=\"popup\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\"></a>";                      
          }
        }
        else
        {
           $st_icone = 'ninfos.png';
-          $st_detail = "<img src=\"./images/$st_icone\" border=0 alt=\"infos\" class=\"popup\">";
+          $st_detail = "<a class=\"popup\" data-toggle=\"tooltip\" title=\"Ce mariage est d&eacute;j&agrave; relev&eacute; filiativement dans la base de l'AGC\" class=\"popup\"><img src=\"./images/$st_icone\" border=0 alt=\"infos\"></a>";
        }      
       $a_tableau[] =  array($a_parties[$i_idf_acte],$a_communes_acte[$i_idf_commune],$st_date,"$st_prenom_epoux $st_patro_epoux ($a_types_presence[$i_idf_type_presence_epoux]) X $st_prenom_epouse $st_patro_epouse ($a_types_presence[$i_idf_type_presence_epouse])",$st_detail);
     }
@@ -286,15 +286,15 @@ print("<script src='js/select2.min.js' type='text/javascript'></script>");
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {
-$(".popup").hover(function() {
-        $(this).css('cursor','pointer').attr('title', "Ce mariage est d\u00e9j\u00e0 relev\u00e9 filiativement dans la base de l'AGC");
-    }, function() {
-        $(this).css('cursor','auto');
-    });
 
 $.fn.select2.defaults.set( "theme", "bootstrap" );	
 
-$(".js-select-avec-recherche").select2(); 
+$(".js-select-avec-recherche").select2();
+
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+  
 });
 </script>
 <?php
