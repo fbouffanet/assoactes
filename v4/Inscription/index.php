@@ -1,13 +1,15 @@
 <?php
 
-$gst_chemin = "../";
+require_once("../Commun/config.php");
+require_once("../Commun/constantes.php");
+require_once("../Commun/ConnexionBD.php");
+require_once("../Commun/commun.php");
 
-require_once("$gst_chemin/Commun/config.php");
-require_once("$gst_chemin/Commun/constantes.php");
-require_once("$gst_chemin/Commun/ConnexionBD.php");
-require_once("$gst_chemin/Commun/commun.php");
+$gst_chemin = ($_SERVER['HTTP_HOST']=='inscription.genea16.net')? $gst_url_site: '..';
 $cryptinstall="$gst_chemin/Commun/crypt/cryptographp.fct.php";
+
 include $cryptinstall;
+//print(dirname($cryptinstall));
 
 print('<!DOCTYPE html>');
 print("<head>");
