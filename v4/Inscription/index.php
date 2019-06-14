@@ -5,7 +5,7 @@ require_once("../Commun/constantes.php");
 require_once("../Commun/ConnexionBD.php");
 require_once("../Commun/commun.php");
 
-$gst_chemin = ($_SERVER['HTTP_HOST']=='inscription.genea16.net')? $gst_url_site: '..';
+$gst_chemin = ($_SERVER['HTTP_HOST']=='inscription.genea16.net')? "$gst_url_site": '..';
 $cryptinstall="$gst_chemin/Commun/crypt/cryptographp.fct.php";
 
 include $cryptinstall;
@@ -288,7 +288,7 @@ function menu_edition($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_adr
    print('</div></div>');
    print('<div class="form-group row">');
     
-   print('<label for="code" class="col-md-4 col-form-label control-label">Veuillez recopier le code qui suit (4 caract&egrave;res uniquement)</label>');
+   print('<label for="code" class="col-md-4 col-form-label control-label">Veuillez recopier tous les chiffres du code qui suit:</label>');
    print('<div class="col-md-8">');
    print('<input type="text" size="4" name="code" id="code" class="form-control">');
    dsp_crypt(0,1);
@@ -359,7 +359,8 @@ function preinscrit_adherent($pst_ins_date,$pst_ins_nom,$pst_ins_prenom,$pst_ins
   ---------------------------------------------------------------------------*/
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-require_once("$gst_chemin/Commun/menu.php");
+if ($_SERVER['HTTP_HOST']=='inscription.genea16.net')
+	print("<div class=\"alert  alert-danger\">Merdi d'utiliser l'adresse <a href=\"$gst_url_site/Inscription/index.php\">$gst_url_site/Inscription/index.php</a> &agrave; la place de cette page</div>");
 
 switch ($gst_mode) {
   case 'GRILLE' : 
