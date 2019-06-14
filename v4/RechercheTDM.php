@@ -59,34 +59,68 @@ function affiche_page_recherche($pconnexionBD,$pst_type_recherche)
   $st_requete = "SELECT ca.idf,ca.nom FROM commune_acte ca join `stats_commune` sc on (ca.idf = sc.idf_commune) where `idf_type_acte` =".IDF_MARIAGE." and `idf_source` =".IDF_SOURCE_TD. " order by nom";
   $a_communes_acte = $pconnexionBD->liste_valeur_par_clef($st_requete);
   print('<form id="recherche_tdm" method="post" action='.$_SERVER['PHP_SELF'].'>');
-  print('<div style="text-align:center">');
+  print('<div>');
   print("<input type=hidden name=recherche value=\"\">");
   print("<input type=hidden name=mode value=\"RESULTATS\">");
-  print('<div style="text-align:center"><br>');
-  print('Commune/Paroisse : <select name="idf_commune_recherche" >');
+  
+  print('<div class="form-row col-sm-12">');
+  print('<div class="form-group col-sm-6"><label for="idf_commune_recherches_communes">Commune/Paroisse</label><select name="idf_commune_recherche" class="js-select-avec-recherche">');
   $a_communes_acte[0] = 'Toutes';
   print(chaine_select_options($gi_idf_commune,$a_communes_acte));
-  print('</select>');
-  print(" Rayon de recherche : <input type=text name=rayon size=2 maxlength=2 value=\"$gi_rayon\"> Km");
-  print('<br></div>');
-  print("<div style=\"text-align:center\"><br>Ann&eacute;es de <input type=text name=annee_min size =4 value=\"$gi_annee_min\"> &agrave; <input type=text name=annee_max size =4 value=\"$gi_annee_max\"><br><br></div>");
-  print('<div style="text-align:center"><br>');
-  print("Nom Epoux: <input type=text name=nom_epx size=15 maxlength=30 value=\"$gst_nom_epx\" onKeyPress=\"SoumissionCouple(0,event)\"> Pr&eacute;nom Epoux: <input type=text name=prenom_epx size=15 maxlength=30 value=\"$gst_prenom_epx\" onKeyPress=\"SoumissionCouple(0,event)\"> ");
-  print(' Recherche par variantes connues:');
+  print('</select></div>');
+  print("<div class=\"form-group col-sm-6\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon\" class=\"sr-only\">Rayon</label><span><input type=text id=rayon name=rayon size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"></span><span class=\"input-group-addon\">Km</span></div></div>");
+  print('</div>');
+  
+  print('<div class="form-row col-sm-12">'); 
+  print('<div class="input-group col-sm-offset-4 col-sm-4 ">');
+  print("<span class=\"input-group-addon\">Ann&eacute;es de</span><div><input type=text name=annee_min id=\"annee_min\" size=4 value=\"$gi_annee_min\" class=\"form-control\"></div>");
+  print("<span class=\"input-group-addon\">&agrave;</span><div><input type=text name=annee_max size=4 id=\"annee_max\" value=\"$gi_annee_max\" class=\"form-control \"></div>");
+  print('</div>');
+  
+  print('<div class="form-row col-sm-12">');
+  print("<label for=\"nom_epx\" class=\"col-form-label col-sm-2\">Nom Epoux</label>");
+  print('<div class="col-sm-2">');
+  print("<input type=text id=nom_epx name=nom_epx size=15 maxlength=30 value=\"$gst_nom_epx\" class=\"form-control\">");
+  print('</div>');
+
+  print("<label for=\"prenom_epx\" class=\"col-form-label col-sm-2\">Pr&eacute;nom Epoux</label>");
+  print('<div class="col-sm-2">');
+  print("<input type=text name=prenom_epx id=prenom_epx size=15 maxlength=30 value=\"$gst_prenom_epx\" class=\"form-control\">");
+  print('</div>');
+  
+  print('<div class="form-check col-sm-4">');
   if ($gst_variantes_epx=='')
-    print('<input type=checkbox name=variantes_epx value=oui >');
+    print('<input type=checkbox name=variantes_epx id=variantes_epx value="oui" class="form-check-input">');
   else
-    print('<input type=checkbox name=variantes_epx value=oui checked>');   
-  print('<br></div>');
-  print('<div style="text-align:center">');
-  print("Nom Epouse: <input type=text name=nom_epse size=15 maxlength=30 value=\"$gst_nom_epse\" onKeyPress=\"SoumissionCouple(0,event)\"> Pr&eacute;nom Epouse: <input type=text name=prenom_epse size=15 maxlength=30 value=\"$gst_prenom_epse\" onKeyPress=\"SoumissionCouple(0,event)\"> ");
-  print(' Recherche par variantes connues:');
+    print('<input type=checkbox name=variantes_epx id=variantes_epx value="oui" checked class="form-check-input">');   
+  print('<label for="variantes_epx" class="form-check-label">Recherche par variantes connues</label>');
+  print('</div>');
+   
+  print('</div>');
+  print('<div class="form-row col-sm-12">');
+  
+  print("<label for=\"nom_epse\" class=\"col-form-label col-sm-2\">Nom Epouse</label>");
+  print('<div class="col-sm-2">');
+  print("<input type=text id=nom_epse name=nom_epse size=15 maxlength=30 value=\"$gst_nom_epse\" class=\"form-control\">");
+  print('</div>');
+
+  print("<label for=\"prenom_epse\" class=\"col-form-label col-sm-2\">Pr&eacute;nom Epouse</label>");
+  print('<div class="col-sm-2">');
+  print("<input type=text name=prenom_epse id=prenom_epse size=15 maxlength=30 value=\"$gst_prenom_epse\" class=\"form-control\">");
+  print('</div>');
+
+  print('<div class="col-sm-4">');
   if ($gst_variantes_epse=='')
-    print('<input type=checkbox name=variantes_epse value=oui >');
+    print('<input type=checkbox name=variantes_epse id=variantes_epse value="oui class="form-check-input">');
   else
-    print('<input type=checkbox name=variantes_epse value=oui checked>'); 
-  print('<br></div>');
-  print('<div style="text-align:center"><br><input type=submit name=Rechercher value="Lancer la recherche" > <br><br></div>');
+   print('<input type=checkbox name=variantes_epse id=variantes_epse value="oui"  checked class="form-check-input">'); 
+  print('<label for="variantes_epse" class="form-check-label">Recherche par variantes connues</label>');
+  print('</div>');
+   
+  print('</div>');
+  print('<div class="form-row col-sm-12">');
+  print('<button class="btn btn-primary col-sm-4 col-sm-offset-4" type=submit name=Rechercher>Lancer la recherche</button>');
+  print('</div>');
   print("</form>");  
 }
 
@@ -115,6 +149,7 @@ function affiche_page_resultats($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_anne
   $a_types_presence = $pconnexionBD->liste_valeur_par_clef("SELECT idf,nom FROM type_presence");
   $i_nb_prenoms_epx= 1;
   $st_variantes_prenoms_epx ='';
+  $st_tables_prenom_epx ='';
   if (!empty($pst_prenom_epx))
   {
     $pst_prenom_epx  = str_replace('*','%', $pst_prenom_epx);
@@ -166,7 +201,7 @@ function affiche_page_resultats($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_anne
   if ($i_nb_actes>0)
   {
     $_SESSION['mode'] = 'RESULTATS';
-    print("<div class=alignCenter>$i_nb_actes occurrences trouv&eacute;es. ");
+    print("<div class=\"text-center\"><div class=\"badge\">$i_nb_actes</div> occurrences trouv&eacute;es. ");
     print('<div id="curseur" class="infobulle"></div>');
     print('<div>');
     function premier_elem($a_tab) {
@@ -221,28 +256,31 @@ function affiche_page_resultats($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_anne
   }
   else
   {
-     print("Aucun r&eacute;sultat<br>");
+     print("<div class=\"alert alert-danger\">Aucun r&eacute;sultat</div>");
   }
   print('<div align=center><br>');
-  print("<a style=\"align:center\" href=\"".$_SERVER['PHP_SELF']."?recherche=retour\" class=\"RetourReponses\">Revenir &agrave; la page de recherche</a>");
-  print("<a style=\"align:center\" href=\"".$_SERVER['PHP_SELF']."?recherche=nouvelle\" class=\"RetourReponses\">Commencer une nouvelle recherche</a>");
-  print("</div>");
+  print('<div class="btn-group col-sm-offset-3 col-sm-6" role="group">');
+  print("<a class=\"btn btn-info\" href=\"".$_SERVER['PHP_SELF']."?recherche=retour\" role=\"button\">Revenir &agrave; la page de recherche</a>");
+  print("<a class=\"btn btn-warning\" href=\"".$_SERVER['PHP_SELF']."?recherche=nouvelle\" role=\"button\">Commencer une nouvelle recherche</a>");
+  print("</div></div>");
 }
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr"> ');
 print("<title>TDM de l'AGC</title>");
-print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print("<link href='Commun/jquery-ui.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='Commun/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
-print("<link href='Commun/select2.min.css' type='text/css' rel='stylesheet'> ");
-print("<script src='Commun/jquery-min.js' type='text/javascript'></script>");
-print("<script src='Commun/jquery.validate.min.js' type='text/javascript'></script>");
-print("<script src='Commun/additional-methods.min.js' type='text/javascript'></script>");
+print("<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'> ");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='js/select2.min.js' type='text/javascript'></script>");
 ?>
@@ -253,24 +291,18 @@ $(".popup").hover(function() {
     }, function() {
         $(this).css('cursor','auto');
     });
- 
+
+$.fn.select2.defaults.set( "theme", "bootstrap" );	
+
+$(".js-select-avec-recherche").select2(); 
 });
 </script>
 <?php
 print("</head>");
 print("<body>");
-
+print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 $i_nb_tdms=$connexionBD->sql_select1("select sum( nb_actes ) from `stats_commune` where `idf_type_acte` =".IDF_MARIAGE." and `idf_source` =".IDF_SOURCE_TD);
-//$i_nb_mar=$connexionBD->sql_select1("select count(*) from `acte` where annee>=1793 and idf_type_acte` =".IDF_MARIAGE."and  idf_source IN (".IDF_SOURCE_TD.','.IDF_SOURCE_RELEVES_AGC.')');
-
-?>
-<div>L'Association G&eacute;n&eacute;alogique de la Charente laisse en acc&egrave;s libre la consultation de ses <?php print ($i_nb_tdms); ?> relev&eacute;s de mariage issus des tables d&eacute;cennales.</div>
-<div>Ces relev&eacute;s non filiatifs vous permettront de localiser au XIX&egrave;me si&egrave;cle les mariages en Charente.</div>
-<div><br>Si par cet interm&eacute;diaire, vous avez r&eacute;ussi &agrave; obtenir des renseignements compl&eacute;mentaires sur un mariage qui vous int&eacute;resse, vous pouvez le compl&eacute;ter gr&acirc;ce &agrave; notre interface de saisie.</div>
-<div>L'acte compl&eacute;t&eacute; sera consultable librement par tout un chacun et vous faciliterez ainsi la recherche d'autres g&eacute;n&eacute;alogistes.</div>
-<div><br>Merci de respecter cet esprit d'entraide et de participer &agrave; votre tour.</div>
-<?php
 
 $st_session_mode = empty($_SESSION['mode']) ? 'DEMANDE' : $_SESSION['mode'];   
 $gst_mode = empty($_POST['mode']) ? $st_session_mode: $_POST['mode'] ;
@@ -360,19 +392,19 @@ switch ($gst_mode)
       $b_pers2_def = true;
     if (!($b_pers1_def || $b_pers2_def))
     {
-        print("<div>Au moins un patronyme doit &ecirc;tre d&eacute;fini</div>"); 
-        print("<a href=\"".$_SERVER['PHP_SELF']."?recherche=nouvelle\">Nouvelle Recherche</a><br>");
+        print("<div class=\"alert alert-danger\">Au moins un patronyme doit &ecirc;tre d&eacute;fini</div>"); 
+        print("<a href=\"".$_SERVER['PHP_SELF']."?recherche=nouvelle\" class=\"btn btn-warning col-sm-4 col-sm-offset-4\">Nouvelle Recherche</a>");
         exit();     
     }
   
     if ($b_pers1_def && (($gst_nom_epx== '*') || strlen($gst_nom_epx)<3))
-      $st_erreur_nom ="<div>Le nom de l'&eacute;poux doit comporter au moins trois caract&egrave;res</div>\n"; 
+      $st_erreur_nom ="<div class=\"alert alert-danger\">Le nom de l'&eacute;poux doit comporter au moins trois caract&egrave;res</div>\n"; 
     if ($b_pers2_def && ($gst_nom_epse== '*' || strlen($gst_nom_epse)<3))
-      $st_erreur_nom .= "<div>Le nom de l'&eacute;pouse doit comporter au moins trois caract&egrave;res</div>\n";
+      $st_erreur_nom .= "<div class=\"alert alert-danger\">Le nom de l'&eacute;pouse doit comporter au moins trois caract&egrave;res</div>\n";
     if ($st_erreur_nom!='')
     {
         print(nl2br($st_erreur_nom));
-        print("<a href=\"".$_SERVER['PHP_SELF']."?recherche=nouvelle\"><class=\"RetourReponses\">Nouvelle Recherche</a><br>");
+        print("<a href=\"".$_SERVER['PHP_SELF']."?recherche=nouvelle\" class=\"btn btn-warning col-sm-4 col-sm-offset-4\">Nouvelle Recherche</a>");
         exit();
     }
     $i_nb_cnx=$connexionBD->sql_select1("select count(*) from `connexions_tdm` where adresse_ip='$gst_adresse_ip' and `date`>=date_sub(now(),INTERVAL 5 MINUTE)");
@@ -393,7 +425,7 @@ switch ($gst_mode)
   default:
     unset($_SESSION['mode']);
 }
-print("</body>");
+print("</div></body>");
 print("</html>");
 $connexionBD->ferme();
 ?>
