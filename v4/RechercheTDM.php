@@ -69,7 +69,15 @@ function affiche_page_recherche($pconnexionBD,$pst_type_recherche)
   print('</select>');
   print(" Rayon de recherche : <input type=text name=rayon size=2 maxlength=2 value=\"$gi_rayon\"> Km");
   print('<br></div>');
-  print("<div style=\"text-align:center\"><br>Ann&eacute;es de <input type=text name=annee_min size =4 value=\"$gi_annee_min\"> &agrave; <input type=text name=annee_max size =4 value=\"$gi_annee_max\"><br><br></div>");
+  
+  //print("<div style=\"text-align:center\"><br>Ann&eacute;es de <input type=text name=annee_min size =4 value=\"$gi_annee_min\"> &agrave; <input type=text name=annee_max size =4 value=\"$gi_annee_max\"><br><br></div>");
+  
+  print('<div class="form-row col-md-12">'); 
+  print('<div class="input-group col-md-offset-4 col-md-4 ">');
+  print("<span class=\"input-group-addon\">Ann&eacute;es de</span><div class=\"lib_erreur\"><input type=text name=annee_min id=\"annee_min\" size=4 value=\"$gi_annee_min\" class=\"form-control\"></div>");
+  print("<span class=\"input-group-addon\">&agrave;</span><div class=\"lib_erreur\"><input type=text name=annee_max size=4 id=\"annee_max\" value=\"$gi_annee_max\" class=\"form-control \"></div>");
+  print('</div>');
+  
   print('<div class="form-row col-md-12">');
   print("<label for=\"nom_epx\" class=\"col-form-label col-md-2\">Nom Epoux</label>");
   print('<div class="col-md-2">');
