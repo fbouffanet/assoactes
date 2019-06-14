@@ -70,23 +70,50 @@ function affiche_page_recherche($pconnexionBD,$pst_type_recherche)
   print(" Rayon de recherche : <input type=text name=rayon size=2 maxlength=2 value=\"$gi_rayon\"> Km");
   print('<br></div>');
   print("<div style=\"text-align:center\"><br>Ann&eacute;es de <input type=text name=annee_min size =4 value=\"$gi_annee_min\"> &agrave; <input type=text name=annee_max size =4 value=\"$gi_annee_max\"><br><br></div>");
-  print('<div style="text-align:center"><br>');
-  print("Nom Epoux: <input type=text name=nom_epx size=15 maxlength=30 value=\"$gst_nom_epx\" > Pr&eacute;nom Epoux: <input type=text name=prenom_epx size=15 maxlength=30 value=\"$gst_prenom_epx\" > ");
-  print(' Recherche par variantes connues:');
+  print('<div class="form-row col-md-12">');
+  print("<label for=\"nom_epx\" class=\"col-form-label col-md-2\">Nom Epoux</label>");
+  print('<div class="col-md-2">');
+  print("<input type=text id=nom_epx name=nom_epx size=15 maxlength=30 value=\"$gst_nom_epx\" class=\"form-control\">");
+  print('</div>');
+
+  print("<label for=\"prenom_epx\" class=\"col-form-label col-md-2\">Pr&eacute;nom Epoux</label>");
+  print('<div class="col-md-2">');
+  print("<input type=text name=prenom_epx id=prenom_epx size=15 maxlength=30 value=\"$gst_prenom_epx\" class=\"form-control\">");
+  print('</div>');
+  
+  print('<div class="form-check col-md-4">');
   if ($gst_variantes_epx=='')
-    print('<input type=checkbox name=variantes_epx value=oui >');
+    print('<input type=checkbox name=variantes_epx id=variantes_epx value="oui" class="form-check-input">');
   else
-    print('<input type=checkbox name=variantes_epx value=oui checked>');   
-  print('<br></div>');
-  print('<div style="text-align:center">');
-  print("Nom Epouse: <input type=text name=nom_epse size=15 maxlength=30 value=\"$gst_nom_epse\"> Pr&eacute;nom Epouse: <input type=text name=prenom_epse size=15 maxlength=30 value=\"$gst_prenom_epse\" > ");
-  print(' Recherche par variantes connues:');
+    print('<input type=checkbox name=variantes_epx id=variantes_epx value="oui" checked class="form-check-input">');   
+  print('<label for="variantes_epx" class="form-check-label">Recherche par variantes connues</label>');
+  print('</div>');
+   
+  print('</div>');
+  print('<div class="form-row col-md-12">');
+  
+  print("<label for=\"nom_epse\" class=\"col-form-label col-md-2\">Nom Epouse</label>");
+  print('<div class="col-md-2">');
+  print("<input type=text id=nom_epse name=nom_epse size=15 maxlength=30 value=\"$gst_nom_epse\" class=\"form-control\">");
+  print('</div>');
+
+  print("<label for=\"prenom_epse\" class=\"col-form-label col-md-2\">Pr&eacute;nom Epouse</label>");
+  print('<div class="col-md-2">');
+  print("<input type=text name=prenom_epse id=prenom_epse size=15 maxlength=30 value=\"$gst_prenom_epse\" class=\"form-control\">");
+  print('</div>');
+
+  print('<div class="col-md-4">');
   if ($gst_variantes_epse=='')
-    print('<input type=checkbox name=variantes_epse value=oui >');
+    print('<input type=checkbox name=variantes_epse id=variantes_epse value="oui class="form-check-input">');
   else
-    print('<input type=checkbox name=variantes_epse value=oui checked>'); 
-  print('<br></div>');
+   print('<input type=checkbox name=variantes_epse id=variantes_epse value="oui"  checked class="form-check-input">'); 
+  print('<label for="variantes_epse" class="form-check-label">Recherche par variantes connues</label>');
+  print('</div>');
+   
+  print('</div>');
+  print('<div class="form-row col-md-12">');
   print('<button class="btn btn-primary col-md-4 col-md-offset-4" type=submit name=Rechercher>Lancer la recherche</button>');
+  print('</div>');
   print("</form>");  
 }
 
