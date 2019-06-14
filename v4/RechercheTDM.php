@@ -392,19 +392,19 @@ switch ($gst_mode)
       $b_pers2_def = true;
     if (!($b_pers1_def || $b_pers2_def))
     {
-        print("<div>Au moins un patronyme doit &ecirc;tre d&eacute;fini</div>"); 
-        print("<a href=\"".$_SERVER['PHP_SELF']."?recherche=nouvelle\">Nouvelle Recherche</a><br>");
+        print("<div class=\"alert alert-danger\">Au moins un patronyme doit &ecirc;tre d&eacute;fini</div>"); 
+        print("<a href=\"".$_SERVER['PHP_SELF']."?recherche=nouvelle\" class=\"btn btn-warning col-sm-4 col-sm-offset-4\">Nouvelle Recherche</a>");
         exit();     
     }
   
     if ($b_pers1_def && (($gst_nom_epx== '*') || strlen($gst_nom_epx)<3))
-      $st_erreur_nom ="<div>Le nom de l'&eacute;poux doit comporter au moins trois caract&egrave;res</div>\n"; 
+      $st_erreur_nom ="<div class=\"alert alert-danger\">Le nom de l'&eacute;poux doit comporter au moins trois caract&egrave;res</div>\n"; 
     if ($b_pers2_def && ($gst_nom_epse== '*' || strlen($gst_nom_epse)<3))
-      $st_erreur_nom .= "<div>Le nom de l'&eacute;pouse doit comporter au moins trois caract&egrave;res</div>\n";
+      $st_erreur_nom .= "<div class=\"alert alert-danger\">Le nom de l'&eacute;pouse doit comporter au moins trois caract&egrave;res</div>\n";
     if ($st_erreur_nom!='')
     {
         print(nl2br($st_erreur_nom));
-        print("<a href=\"".$_SERVER['PHP_SELF']."?recherche=nouvelle\"><class=\"RetourReponses\">Nouvelle Recherche</a><br>");
+        print("<a href=\"".$_SERVER['PHP_SELF']."?recherche=nouvelle\" class=\"btn btn-warning col-sm-4 col-sm-offset-4\">Nouvelle Recherche</a>");
         exit();
     }
     $i_nb_cnx=$connexionBD->sql_select1("select count(*) from `connexions_tdm` where adresse_ip='$gst_adresse_ip' and `date`>=date_sub(now(),INTERVAL 5 MINUTE)");
