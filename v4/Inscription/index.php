@@ -288,7 +288,7 @@ function menu_edition($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_adr
    print('</div></div>');
    print('<div class="form-group row">');
     
-   print('<label for="code" class="col-md-4 col-form-label control-label">Veuillez recopier le code qui suit (4 caract&egrave;res uniquement)</label>');
+   print('<label for="code" class="col-md-4 col-form-label control-label">Veuillez recopier tous les chiffres du code qui suit:</label>');
    print('<div class="col-md-8">');
    print('<input type="text" size="4" name="code" id="code" class="form-control">');
    dsp_crypt(0,1);
