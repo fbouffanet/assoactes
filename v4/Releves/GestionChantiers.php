@@ -5,7 +5,7 @@ $gst_chemin = "../";
 require_once("$gst_chemin/Commun/Identification.php");
 require_once("$gst_chemin/Commun/config.php");
 require_once("$gst_chemin/Commun/constantes.php");
-// La page est reservee uniquement aux gens ayant les droits utilitaires
+// La page est reservee uniquement aux gens ayant les droits relevés
 require_once("$gst_chemin/Commun/VerificationDroits.php");
 verifie_privilege(DROIT_RELEVES);
 require_once("$gst_chemin/Commun/ConnexionBD.php");
@@ -229,7 +229,6 @@ $i_get_idf_statut=isset($_GET['idf_statut_visu']) ? (integer) $_GET['idf_statut_
 $gi_idf_statut=isset($_POST['idf_statut_visu']) ?  (integer) $_POST['idf_statut_visu'] : $i_get_idf_statut;
 $i_session_idf_releveur = isset($_SESSION['idf_releveur_session']) ? $_SESSION['idf_releveur_session'] : 0;
 $gi_idf_releveur=isset($_POST['idf_releveur']) ?  (integer) $_POST['idf_releveur'] : $i_session_idf_releveur;
-print("Releveur = $gi_idf_releveur<br>");
 $_SESSION['idf_statut_session'] = $gi_idf_statut;
 $_SESSION['idf_releveur_session'] = $gi_idf_releveur;
 /**
@@ -242,9 +241,9 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu,$pi_idf_releveur_visu)
 {
    global $gi_num_page_cour, $ga_tbl_statut;
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
-   print('<div class="form-group row">'); 
+   print('<div class="form-group row col-md-12">'); 
    print('<label for=idf_statut_visu class="col-form-label col-md-2 col-md-offset-2">Statut:</label>');
-   print('<div class="col-md-6">');
+   print('<div class="col-md-4">');
    print('<select name=idf_statut_visu id=idf_statut_visu class="form-control">');
    $_SESSION['num_page_chantiers'] = $gi_num_page_cour;
    foreach($ga_tbl_statut as $i_index => $st_valeur)
@@ -256,16 +255,15 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu,$pi_idf_releveur_visu)
    }
    print('</select>');
    print('</div>');
-   print('</div>');
-   $st_requete = empty($pi_idf_statut_visu) ? "select count(distinct id_releveur ) from `chantiers`": "select count(distinct id_releveur ) from `chantiers` where statut=$pi_idf_statut_visu";
-   $i_nb_reveleurs = $rconnexionBD->sql_select1($st_requete);
-   print("<div class=\"row col-md-12\"><div class=\"info text-center\"><div class=\"badge\">$i_nb_reveleurs</div> Releveurs distincts</div></div>");
-  
+   print('</div>'); // fin ligne
+   
    $st_requete = empty($pi_idf_statut_visu) ? "select adht.idf,concat(adht.prenom,' ',adht.nom,' (',adht.idf,')') from adherent adht join chantiers c on (adht.idf=c.id_releveur) order by adht.prenom,adht.nom" : "select adht.idf,concat(adht.prenom,' ',adht.nom,' (',adht.idf,')') from adherent adht join chantiers c on (adht.idf=c.id_releveur) where c.statut=$pi_idf_statut_visu order by adht.prenom,adht.nom" ;  
-   $a_releveurs = $rconnexionBD->liste_valeur_par_clef($st_requete);   
+   $a_releveurs = $rconnexionBD->liste_valeur_par_clef($st_requete);
+   
+   print('<div class="form-group row col-md-12">');    
    print('<label for=idf_releveur class="col-form-label col-md-2 col-md-offset-2">Releveur:</label>');
-   print('<div class="col-md-6">');
-   print('<select name=idf_releveur id=idf_releveur class="form-control js-select-avec-recherche"><option value=\"0\" selected>Tous</option>');
+   print('<div class="col-md-4">');
+   print('<select name=idf_releveur id=idf_releveur class="form-control js-select-avec-recherche"><option value="0" selected>Tous</option>');
    foreach($a_releveurs as $i_idf_releveur => $st_releveur)
    {
       if ($i_idf_releveur==$pi_idf_releveur_visu)
@@ -274,9 +272,22 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu,$pi_idf_releveur_visu)
         print("<option value=\"$i_idf_releveur\">$st_releveur</option>");             
    }
    print('</select>');
-   print('</div>');
-   print('</div>');
+   print('</div></div>'); //fin ligne
 
+   $st_requete =  "select count(distinct id_releveur ) from `chantiers` ch";
+   $a_clauses =array();
+   if (!empty($pi_idf_statut_visu))
+	   $a_clauses[] = "ch.statut=$pi_idf_statut_visu";
+   if (!empty($pi_idf_releveur_visu))
+	   $a_clauses[] = "ch.id_releveur=$pi_idf_releveur_visu";
+   if (count($a_clauses)>0)
+   {
+	   $st_clauses = join(' and ',$a_clauses);
+	   $st_requete .= " where $st_clauses";
+   }
+   $i_nb_reveleurs = $rconnexionBD->sql_select1($st_requete);
+   print("<div class=\"form form-group col-md-12\"><div class=\"info text-center\"><div class=\"badge\">$i_nb_reveleurs</div> Releveurs distincts</div></div>");
+   
    // Affichage des initiales
    $a_clauses =array();
    if (!empty($pi_idf_statut_visu))
@@ -291,40 +302,38 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu,$pi_idf_releveur_visu)
    }
    $st_requete .= " ORDER BY init";
    $a_initiales_communes = $rconnexionBD->sql_select($st_requete);
-   print("<div align=center>");
-   $i_session_initiale = isset($_SESSION['initiale_statcom']) ? $_SESSION['initiale_statcom'] : $a_initiales_communes[0];
-   $gc_initiale = empty($_GET['initiale_statcom']) ? $i_session_initiale : $_GET['initiale_statcom'];   
-   if (!in_array($gc_initiale,$a_initiales_communes))
-      $gc_initiale=$a_initiales_communes[0];
-   $_SESSION['initiale_statcom'] = $gc_initiale;
-   print('<div class="text-center"><ul class="pagination">');
-   foreach ($a_initiales_communes as $c_initiale)
+   if (count($a_initiales_communes)>0)
    {
-      if ($c_initiale==$gc_initiale)
-         print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
-      else
-         print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=$c_initiale&idf_statut_visu=$pi_idf_statut_visu\" class=\"page-item\">$c_initiale</a></li>");
-   }
-   print("</ul></div>");
-  
-   $st_requete = "select ch.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relevé papier' end), concat(ad.nom,'  ',ad.prenom,' (',ad.idf,')') from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) join `adherent` ad on (ch.id_releveur = ad.idf) where ca.nom like '$gc_initiale%'";
-   $a_clauses =array();
-   if (!empty($pi_idf_statut_visu))
-	   $a_clauses[] = "ch.statut=$pi_idf_statut_visu";
-   if (!empty($pi_idf_releveur_visu))
-	   $a_clauses[] = "ch.id_releveur=$pi_idf_releveur_visu";
-   if (count($a_clauses)>0)
-   {
-	   $st_clauses = join(' and ',$a_clauses);
-	   $st_requete .= " and  $st_clauses";
-   } 
-   $st_requete.= " order by ca.nom, ad.nom";
-   
-   $a_liste_chantiers = $rconnexionBD->liste_valeur_par_clef($st_requete);
-   print("</form><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"suppression_chantiers\">"); 
-   $i_nb_chantiers = count($a_liste_chantiers);
-   if ($i_nb_chantiers!=0)
-   {        
+      $i_session_initiale = isset($_SESSION['initiale_statcom']) ? $_SESSION['initiale_statcom'] : $a_initiales_communes[0];
+      $gc_initiale = empty($_GET['initiale_statcom']) ? $i_session_initiale : $_GET['initiale_statcom'];   
+      if (!in_array($gc_initiale,$a_initiales_communes))
+        $gc_initiale=$a_initiales_communes[0];
+      $_SESSION['initiale_statcom'] = $gc_initiale;
+      print('<div class="text-center"><ul class="pagination">');
+      foreach ($a_initiales_communes as $c_initiale)
+      {
+        if ($c_initiale==$gc_initiale)
+           print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
+        else
+           print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=$c_initiale&idf_statut_visu=$pi_idf_statut_visu\" class=\"page-item\">$c_initiale</a></li>");
+      }
+      print("</ul></div>");
+      $st_requete = "select ch.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relevé papier' end), concat(ad.nom,'  ',ad.prenom,' (',ad.idf,')') from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) join `adherent` ad on (ch.id_releveur = ad.idf) where ca.nom like '$gc_initiale%'";
+      $a_clauses =array();
+      if (!empty($pi_idf_statut_visu))
+	     $a_clauses[] = "ch.statut=$pi_idf_statut_visu";
+      if (!empty($pi_idf_releveur_visu))
+	     $a_clauses[] = "ch.id_releveur=$pi_idf_releveur_visu";
+      if (count($a_clauses)>0)
+      {
+	     $st_clauses = join(' and ',$a_clauses);
+	     $st_requete .= " and  $st_clauses";
+      } 
+      $st_requete.= " order by ca.nom, ad.nom";   
+      $a_liste_chantiers = $rconnexionBD->liste_valeur_par_clef($st_requete);
+      print("</form><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"suppression_chantiers\">"); 
+      $i_nb_chantiers = count($a_liste_chantiers);
+       
       $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_chantiers,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Commune','Fourchette','Support','Releveur','Modifier','Supprimer'));
       $pagination->init_param_bd($rconnexionBD,$st_requete);
       $pagination->init_page_cour($gi_num_page_cour);
@@ -333,7 +342,7 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu,$pi_idf_releveur_visu)
       $pagination->affiche_entete_liens_navigation();      
    }
    else
-      print('<div class="alert alert-danger">Pas de chantiers</div>');
+      print('<div class="row col-md-12"><div class="alert alert-danger">Pas de chantiers</div></div>');
    print("<input type=hidden name=mode value=SUPPRIMER>");
    print('<button type=submit class="btn btn-danger col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-trash"></span> Supprimer les chantiers s&eacute;lectionn&eacute;es</button>');    
    print("</form>");
@@ -356,8 +365,7 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu,$pi_idf_releveur_visu)
    }
    print("</select>");
    print('</div>');
-   print('</div>');
-   print('</div>');   
+   print('</div>'); 
    print("</form>");  
 }
 /*
@@ -687,7 +695,7 @@ switch ($gst_mode) {
    menu_liste($connexionBD,$gi_idf_statut);
    break;
    case 'SUPPRIMER':
-      $a_liste_supprime = $_POST['supp'];
+      $a_liste_supprime = isset($_POST['supp']) ? $_POST['supp'] :  array();
      foreach ($a_liste_supprime as $i_idf_chantier)
      {	 
           $connexionBD->execute_requete("delete from `chantiers` where idf = $i_idf_chantier");
