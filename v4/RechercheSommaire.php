@@ -1,38 +1,37 @@
-<!DOCTYPE html> 
-<html lang="fr">
-<head>
-  <title>Recherche du sommaire des bulletins</title>
-  <meta charset="iso-8859-15">       <!-- ou charset="utf-8" -->
-  <link rel="stylesheet" href="RechercheSommaire.css">
-  <link rel="shortcut icon" href="images/favicon.ico">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<meta http-equiv="content-language" content="fr">
-<script src='Commun/jquery-min.js' type='text/javascript'></script>
-<script src='Commun/menu.js' type='text/javascript'></script>
-    
-</head>
-
-<body>
 <?php
+
+session_start();
+
 //http://127.0.0.1:8888/Recherche_Sommaire.php
 /*
 Programme de recherche des éléments du sommaire des bulletins AGC
-PL 06/13, revu 16/04/2018
+PL 06/13
 */
 
-//$gst_chemin = "../";
-$gst_chemin = ".";
 
-require_once("$gst_chemin/Commun/config.php");
-require_once("$gst_chemin/Commun/constantes.php");
-require_once("$gst_chemin/Commun/Identification.php");
+require_once 'Commun/config.php';
+require_once('Commun/constantes.php');
+require_once 'Commun/commun.php';
+require_once('Commun/ConnexionBD.php');
+require_once('Commun/PaginationTableau.php');
 
-// La page est reservee uniquement aux gens ayant les droits utilitaires
-//require_once("$gst_chemin/Commun/VerificationDroits.php");
-//verifie_privilege(DROIT_UTILITAIRES);
-require_once("$gst_chemin/Commun/ConnexionBD.php");
-require_once("$gst_chemin/Commun/PaginationTableau.php");
-require_once("$gst_chemin/Commun/commun.php");
+print('<!DOCTYPE html>');
+print("<head>");
+print('<link rel="shortcut icon" href="images/favicon.ico">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="content-language" content="fr">');
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
+print("<script type='text/javascript'>");
+print("</script>");
+print('<title>Recherche du sommaire des bulletins</title>');
+print('</head>');
+
+print("\n<body>");
+print('<div class="container">');
 
 $i_session_num_page = isset($_SESSION['num_page_som']) ? $_SESSION['num_page_som'] : 1;
 $gi_num_page_cour = empty($_GET['num_page']) ? $i_session_num_page : $_GET['num_page'];
@@ -99,55 +98,30 @@ function Affiche_noms($type, $sconnexionBD)
    if ($type == "RUB")
 	   $st_requete = "select numero, moisannee, rubrique from `sommaire` where numero = $numero";
 	else
-//      $st_requete = "select numero, moisannee, rubrique from `sommaire` where auteur = '$auteur' and type = '$type'";
       $st_requete = "select numero, moisannee, rubrique from `sommaire` where auteur like '%$auteur%' and type = '$type'";
 
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+     print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    $_SESSION['num_page_som'] = $gi_num_page_cour; 
-   $a_liste_sommaire = $sconnexionBD->liste_valeur_par_clef($st_requete);
-	print("<div align=center><p><h2>$titre</h2></p></div>");
+   $a_liste_sommaire = $sconnexionBD->sql_select_multiple($st_requete);
+   print('<div class="panel panel-primary">');
+   print("<div class=\"panel-heading\">$titre</div>");
+   print('<div class="panel-body">');
    $i_nb_sommaires = count($a_liste_sommaire);
    if ($i_nb_sommaires!=0)
    {        
       $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_sommaires,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Bulletin','Paru en','Sommaire'));
       $pagination->init_param_bd($sconnexionBD,$st_requete);
       $pagination->init_page_cour($gi_num_page_cour);
-      print("<div align=center>");
       $pagination->affiche_entete_liens_navigation();
-      print("<br>");
-      print("</div>");
-		$pagination->affiche_tableau_simple_requete_sql();
-      print("<br>");
-      print("<div align=center>");
-      $pagination->affiche_entete_liens_navigation();
-      print("</div>");     
+	  $pagination->affiche_tableau_simple_requete_sql();
+      $pagination->affiche_entete_liens_navigation();     
    }
    print('</form>');  
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   print("<br><div align=center><input type=submit value='Retour à la recherche' name='retour'></div>");
-   switch ($type) 
-   {
-      case 'RUB' :
-         print("<input type=hidden name=mode value=\"RUBRIQUE\">"); 
-      break;
-      case 'ART' :
-         print("<input type=hidden name=mode value=\"ARTICLE\">"); 
-      break;
-      case 'FAM' :
-         print("<input type=hidden name=mode value=\"FAMILLE\">"); 
-      break;
-      case 'ASC' :
-         print("<input type=hidden name=mode value=\"ASCEND\">"); 
-      break;
-      case 'DES' :
-         print("<input type=hidden name=mode value=\"DESCEND\">"); 
-      break;
-      case 'COU' :
-         print("<input type=hidden name=mode value=\"COUSIN\">"); 
-      break;
-   }
-   //print("<input type=hidden name=mode value=\"DEPART\">"); 
+   print("<button type=\"submit\" class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-home\"></span>  Retour &agrave; la recherche</button>");
+   print('<input type=hidden name=mode value="DEPART">');
    print('</form>');
+   print('</div></div>');
 }
 
 /* --- Remplit un select des rubriques --- */
@@ -196,71 +170,95 @@ function Select_nom($type,$connexionBD)
 */
 function Saisie_recherche($connexionBD)
 {
-   
-   print("<br><br><div id='sommaire'>");
-	   print("<div class='cadre_rech'>");
-         print("<p><h2>Recherche sur le sommaire des bulletins</h2></p>");
-      print("</div>");
-      print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-		print("<div class='cadre_rech'>");
-			print("<p><input class='droite' type=submit value='Recherche' name='valide_rub'></p>");  
-         print("<p><label for='rub'>Les rubriques d'un numéro</label>");
-         print("<select id='rub' name=rubrique>".Select_rubrique($connexionBD)."</select></p>");
-         print("<input type=hidden name=mode value=\"RUBRIQUE\">");
-      print("</div>");
-      print("</form>");
-      print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
-		print("<div class='cadre_rech'>");
-			print("<p><input class='droite' type=submit value='Recherche' name='valide_art'></p>");  
-         print("<p><label for='art'>Chaque article d'un auteur</label>");
-         print("<select id='art' name=article>".Select_nom('ART',$connexionBD)."</select></p>");
-         print("<input type=hidden name=mode value=\"ARTICLE\">");
-      print("</div>");
-      print("</form>");
-      print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
-		print("<div class='cadre_rech'>");
-			print("<p><input class='droite' type=submit value='Recherche' name='valide_fam'></p>");  
-         print("<p><label for='fam'>Familles étudiées</label>");
-         print("<select id='fam' name=famille>".Select_nom('FAM',$connexionBD)."</select></p>");
-         print("<input type=hidden name=mode value=\"FAMILLE\">");
-      print("</div>");
-      print("</form>");
-      print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
-		print("<div class='cadre_rech'>");
-			print("<p><input class='droite' type=submit value='Recherche' name='valide_asc'></p>");  
-         print("<p><label for='asc'>Ascendance d'un adhérent</label>");
-         print("<select id='asc' name=ascendance>".Select_nom('ASC',$connexionBD)."</select></p>");
-         print("<input type=hidden name=mode value=\"ASCEND\">");
-      print("</div>");
-      print("</form>");
-      print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
-		print("<div class='cadre_rech'>");
-			print("<p><input class='droite' type=submit value='Recherche' name='valide_des'></p>");  
-         print("<p><label for='des'>Descendance d'un adhérent</label>");
-         print("<select id='des' name=descendance>".Select_nom('DES',$connexionBD)."</select></p>");
-         print("<input type=hidden name=mode value=\"DESCEND\">");
-      print("</div>");
-      print("</form>");
-      print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-		print("<div class='cadre_rech'>");
-			print("<p><input class='droite' type=submit value='Recherche' name='valide_cou'></p>");  
-         print("<p><label for='cou'>Cousinage des adhérents</label>");
-         print("<select id='cou' name=cousinage>".Select_nom('COU',$connexionBD)."</select></p>");
-         print("<input type=hidden name=mode value=\"COUSIN\">");
-      print("</div>");
-   print("</div>");
+	print('<div class="panel panel-primary">');
+    print('<div class="panel-heading">Recherche sur le sommaire des bulletins</div>');
+	print('<div class="panel-body">');
+    print("<div id='sommaire'>");
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
+	print('<div class="form-group row">');
+	print('<div class="col-md-4">');
+	print('<button class="btn btn-primary" type=submit id="rub_recherche" name="valide_rub"><span class="glyphicon glyphicon-search"></span> Recherche</button>');
+    print('</div>');	
+	print('<label for="rub" class="col-form-label col-md-4">Les rubriques d\'un numéro</label>');
+    print('<div class="col-md-4">');
+	print('<select id="rub" name="rubrique" class="form-control">'.Select_rubrique($connexionBD).'</select>');
+    print("<input type=hidden name=mode value=\"RUBRIQUE\">");
+	print('</div>');
+	print('</div>');
+	print("</form>");
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
+	print('<div class="form-group row">');
+	print('<div class="col-md-4">');
+	print('<button class="btn btn-primary"  type=submit name="valide_art"><span class="glyphicon glyphicon-search"></span> Recherche</button>');  
+	print('</div>');
+	print('<label for="art" class="col-form-label col-md-4">Chaque article d\'un auteur</label>');
+	print('<div class="col-md-4">');
+	print('<select id="art" name=article class="form-control">'.Select_nom('ART',$connexionBD).'</select>');
+	print("<input type=hidden name=mode value=\"ARTICLE\">");
+	print('</div>');
+	print('</div>');
+	print("</form>");
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
+	print('<div class="form-group row">');
+	print('<div class="col-md-4">');
+	print('<button class="btn btn-primary" type=submit  name="valide_fam"><span class="glyphicon glyphicon-search"></span> Recherche</button>');
+    print('</div>');	
+    print('<label for="fam" class="col-form-label col-md-4">Familles étudiées</label>');
+	print('<div class="col-md-4">');
+	print('<select id="fam" name=famille class="form-control">'.Select_nom('FAM',$connexionBD).'</select>');
+	print("<input type=hidden name=mode value=\"FAMILLE\">");
+	print('</div>');
+	print('</div>');
+	print("</form>");
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
+	print('<div class="form-group row">');
+	print('<div class="col-md-4">');
+	print('<button class="btn btn-primary" type=submit name="valide_asc"><span class="glyphicon glyphicon-search"></span>  Recherche</button>');
+    print('</div>');	
+	print('<label for="asc" class="col-form-label col-md-4">Ascendance d\'un adhérent</label>');
+	print('<div class="col-md-4">');
+	print('<select id="asc" name=ascendance class="form-control">'.Select_nom('ASC',$connexionBD).'</select>');
+    print("<input type=hidden name=mode value=\"ASCEND\">");
+    print('</div>');
+    print('</div>');	
+	print("</form>");	
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
+	print('<div class="form-group row">');
+	print('<div class="col-md-4">');
+	print('<button class="btn btn-primary" type=submit name="valide_des"><span class="glyphicon glyphicon-search"></span>  Recherche</button>');
+    print('</div>');	
+	print('<label for="des" class="col-form-label col-md-4">Descendance d\'un adhérent</label>');
+	print('<div class="col-md-4">');
+	print('<select id="des" name=descendance class="form-control">'.Select_nom('DES',$connexionBD).'</select>');
+	print("<input type=hidden name=mode value=\"DESCEND\">");
+	print('</div>');
+	print('</div>');
+	print("</form>");	  
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+	print('<div class="form-group row">');
+	print('<div class="col-md-4">');
+	print('<button class="btn btn-primary" type=submit name="valide_cou"><span class="glyphicon glyphicon-search"></span> Recherche</button>');
+    print('</div>');	
+	print('<label for="cou" class="col-form-label col-md-4">Cousinage des adhérents</label>');
+	print('<div class="col-md-4">');
+	print('<select id="cou" name=cousinage class="form-control">'.Select_nom('COU',$connexionBD).'</select>');
+	print("<input type=hidden name=mode value=\"COUSIN\">");
+	print('</div>');
+	print('</div>');
+	 
 	print('</form>');
+	print("</div>");
 }
 
 /* --- Début du programme --- */
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-require_once("$gst_chemin/Commun/menu.php");
+require_once("Commun/menu.php");
+
 
 $st_session_mode = empty($_SESSION['mode']) ? 'DEPART' : $_SESSION['mode']; 
 $gst_mode = isset($_POST['mode']) ? $_POST['mode'] : $st_session_mode;
-$_SESSION['mode']=$gst_mode; 
-if (isset($_POST['retour'])) $gst_mode = 'DEPART';  
+$_SESSION['mode']=$gst_mode;  
 
 switch ($gst_mode) 
 {
@@ -287,7 +285,10 @@ switch ($gst_mode)
    break;
 }
 //unset($_SESSION['mode']);
+
+$connexionBD->ferme();
+print ("</form>");
+print("</div></body></html>");
+
 ?>	
 
-</body>
-</html>
