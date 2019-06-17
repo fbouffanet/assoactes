@@ -242,7 +242,7 @@ function export_dec_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
       fwrite($pf,(implode(';',$a_champs)));
       fwrite($pf,"\r\n");
    }
-    print "Publication des d?c?s de la commune $st_nom_commune<br> <br>";
+    print "Publication des d&egrave;c&eacute;s de la commune $st_nom_commune<br> <br>";
 }
 
 /**
@@ -515,7 +515,7 @@ switch($gst_mode)
 {
    case 'FORMULAIRE' :
    	print ('<div class="panel panel-primary">');
-     print ('<div class="panel-heading">Cr�ation des publications !</div>');
+     print ('<div class="panel-heading">Cr&egrave;ation des publications !</div>');
 	   print ('<div class="panel-body">');
       print ('<input type="hidden" name="mode" value="CHARGEMENT" />');
 	    print ('<div class="container">');
@@ -548,7 +548,7 @@ switch($gst_mode)
 
       print ('<div class="form-row">');
        print ('<div class="form-group col-md-2">');
-        print ('<label for="pl_date_debut">Ann�e d�but</label>');
+        print ('<label for="pl_date_debut">Ann&egrave;e d&egrave;but</label>');
         print ('<input type="text" size="4" maxlength="4" name=pl_date_debut id="pl_date_debut" class="form-control">');
        print ('</div>');
        print ('<div class="form-group col-md-2">');
@@ -557,7 +557,7 @@ switch($gst_mode)
        print ('</div>');
       print ('</div>');
      print ('</div><br>');
-  	 print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" onClick="Exporte(0,\'EXPORTV3\')" class="btn btn-primary">Cr�ation de la Publication</button></div>');
+  	 print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" onClick="Exporte(0,\'EXPORTV3\')" class="btn btn-primary">Cr&egrave;ation de la Publication</button></div>');
 
    break;
 
@@ -695,17 +695,17 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 
    if (filesize($st_export_nimv3) == 0) {
     print "</br>";
-    print ('<span class="badge badge-pill badge-danger"> Pas de donn�es</span><br>');
+    print ('<span class="badge badge-pill badge-danger"> Pas de donn&egrave;es</span><br>');
 										} else {
     print "</br>";
     print ('</form>');
 	print ('<form action="aff_pdf.php" method="post">');
 	print ('<p>');
 	if ($menuDIV == "O")	{
-	print "<br><b>Compl�ment du type acte pour les actes divers expl=> Actes Notari�s</b></br>";
+	print "<br><b>Compl&egrave;ment du type acte pour les actes divers expl=> Actes Notari&egrave;s</b></br>";
 	print ('<textarea name="TypeActe" rows="1" cols="45"></textarea><br><br>');
 	}
-	print "<br><b>Info sur la publication expl=> Relev� par:</b></br>";
+	print "<br><b>Info sur la publication expl=> Relev&egrave; par:</b></br>";
     print ('<textarea name="message" rows="8" cols="45"></textarea><br>');
     //print ('<input type="submit" value="Exportation du PDF" />');
 	print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-success">Exportation du PDF</button></div>');
