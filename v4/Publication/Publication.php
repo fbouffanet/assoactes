@@ -552,7 +552,7 @@ switch($gst_mode)
         print ('<input type="text" size="4" maxlength="4" name=pl_date_debut id="pl_date_debut" class="form-control">');
        print ('</div>');
        print ('<div class="form-group col-md-2">');
-        print ('<label for="pl_date_fin">Ann�e fin</label>');
+        print ('<label for="pl_date_fin">Ann&egrave;e fin</label>');
         print ('<input type="text" size="4" maxlength="4" name=pl_date_fin id="pl_date_fin" class="form-control">');
        print ('</div>');
       print ('</div>');
