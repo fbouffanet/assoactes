@@ -17,7 +17,7 @@ print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
-print('<title>Base AGC: Dernières connexions</title>');
+print('<title>Base '.SIGLE_ASSO.': Dernières connexions</title>');
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print('</head>');
 
