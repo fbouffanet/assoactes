@@ -22,7 +22,7 @@ print("<link href='../css/jquery-ui.theme.min.css' type='text/css' rel='styleshe
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
-print('<title>Base AGC: Stats consultations adhérent</title>');
+print('<title>Base '.SIGLE_ASSO.': Stats consultations adhérent</title>');
 print("</head>");
 
 /*
