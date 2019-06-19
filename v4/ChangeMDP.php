@@ -10,7 +10,7 @@ require_once('Commun/Adherent.php');
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 if(!isset($_SESSION['ident']))
-   die("<div class=ERREUR> Identifiant non reconnu</div>");
+   die("<div class=\"alert aler-danger\" Identifiant non reconnu</div>");
 $gst_ident = $_SESSION['ident'];
 
 $connexionBD->initialise_params(array(':ident'=>$gst_ident));
@@ -124,7 +124,7 @@ $(document).ready(function() {
 });
 </script>
 <?php
-print("<title>Base AGC: Changer votre mot de passe</title>\n");
+print("<title>Base ".SIGLE_ASSO.": Changer votre mot de passe</title>\n");
 print('</head>');
 
 /**

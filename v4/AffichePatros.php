@@ -93,7 +93,7 @@ $("#patros").validate({
 
 <?php
 print("</script>");
-print("<title>Base AGC: Recherche d'un patronyme</title>");
+print("<title>Base ".SIGLE_ASSO.": Recherche d'un patronyme</title>");
 print('</Head>');
 /**
  *  Affiche le menu de demande

@@ -46,7 +46,7 @@ $('a.popup').click(function(){
 });
 <?php
 print("</script>");
-print('<title>Base AGC: Reponses a une recherche</title>');
+print('<title>Base '.SIGLE_ASSO.': Reponses a une recherche</title>');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
