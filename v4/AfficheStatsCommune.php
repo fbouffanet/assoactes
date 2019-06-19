@@ -23,7 +23,7 @@ print("<script src='js/sjquery.validate.min.js' type='text/javascript'></script>
 print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
-print('<title>Base AGC: Etat des relevés</title>');
+print('<title>Base '.SIGLE_ASSO.': Etat des relevés</title>');
 ?>
 <SCRIPT type="text/javascript">
 $(document).ready(function() {

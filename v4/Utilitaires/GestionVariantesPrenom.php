@@ -194,7 +194,7 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
-print('<title>Base AGC: Gestion des variantes Prenom</title>');
+print('<title>Base '.SIGLE_ASSO.': Gestion des variantes Prenom</title>');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");

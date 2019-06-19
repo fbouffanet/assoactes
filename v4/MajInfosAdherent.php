@@ -111,7 +111,7 @@ $(document).ready(function() {
 });
 </script>
 <?php
-print("<title>Base AGC: Vos informations personnelles</title>\n");
+print("<title>Base ".SIGLE_ASSO.": Vos informations personnelles</title>\n");
 print('</head>');
 
 /**
