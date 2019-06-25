@@ -573,8 +573,7 @@ public function refuse($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur
          $st_message .= "<br>Cordialement<br>";
          $st_message .= "$pst_prenom_valideur $pst_nom_valideur";
          // print("<pre>Entete=$st_entete\nMsg=$st_message</pre>");
-        if (!mail($this -> st_email_demandeur, 'Base '.SIGLE_ASSO.': Patronymes par communes</title>');
-print("</head>\n");.': Votre demande de modification', $st_message, $st_entete))
+        if (!mail($this -> st_email_demandeur, 'Base '.SIGLE_ASSO.': Votre demande de modification', $st_message, $st_entete))
              {
             print("<div class=\"alert alert-danger\">Le mail n'a pu &ecirc;tre envoy&eacute;e</div>");
              } 
@@ -615,7 +614,7 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
      $st_requete = sprintf("update modification_acte set idf_valideur=%d,date_validation=now(),statut='A' where idf=%d", $pi_idf_valideur, $this -> i_idf);
      $this -> connexionBD -> execute_requete($st_requete);
      $st_entete = 'MIME-Version: 1.0' . "\r\n";
-     $st_entete .= 'Content-type: text/html; charset=cp1252' . "\r\n";
+     $st_entete .= 'Content-type: text/html; charset=cp1252' . "\r\n"; 
      $st_entete .= "From: $pst_prenom_valideur $pst_nom_valideur <$pst_email_valideur>\n";
      $st_entete .= "Bcc: $pst_prenom_valideur $pst_nom_valideur <$pst_email_valideur>\n";
      $st_entete .= "Return-Path: $pst_email_valideur\n";
@@ -630,9 +629,7 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
     $st_message .= "<br>Merci de votre contribution<br>";
      $st_message .= "<br>Cordialement<br>";
      $st_message .= "$pst_prenom_valideur $pst_nom_valideur";
-     if (mail($this -> st_email_demandeur, 'Base '.SIGLE_ASSO.': Patronymes par communes</title>');
-print("</head>\n");.': Demande de modification de releve de la base '.SIGLE_ASSO.': Patronymes par communes</title>');
-print("</head>\n");, $st_message, $st_entete))
+     if (mail($this -> st_email_demandeur, 'Base '.SIGLE_ASSO.': Demande de modification de releve de la base '.SIGLE_ASSO, $st_message, $st_entete))
          {
         print("<div class=\"alert alert-success\">L'email a &eacute;t&eacute; envoy&eacute; avec succ&egrave;s</div>");
          } 
