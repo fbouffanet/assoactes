@@ -573,7 +573,8 @@ public function refuse($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur
          $st_message .= "<br>Cordialement<br>";
          $st_message .= "$pst_prenom_valideur $pst_nom_valideur";
          // print("<pre>Entete=$st_entete\nMsg=$st_message</pre>");
-        if (!mail($this -> st_email_demandeur, 'Base AGC: Votre demande de modification', $st_message, $st_entete))
+        if (!mail($this -> st_email_demandeur, 'Base '.SIGLE_ASSO.': Patronymes par communes</title>');
+print("</head>\n");.': Votre demande de modification', $st_message, $st_entete))
              {
             print("<div class=\"alert alert-danger\">Le mail n'a pu &ecirc;tre envoy&eacute;e</div>");
              } 
@@ -629,7 +630,9 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
     $st_message .= "<br>Merci de votre contribution<br>";
      $st_message .= "<br>Cordialement<br>";
      $st_message .= "$pst_prenom_valideur $pst_nom_valideur";
-     if (mail($this -> st_email_demandeur, 'Base AGC: Demande de modification de releve de la base AGC', $st_message, $st_entete))
+     if (mail($this -> st_email_demandeur, 'Base '.SIGLE_ASSO.': Patronymes par communes</title>');
+print("</head>\n");.': Demande de modification de releve de la base '.SIGLE_ASSO.': Patronymes par communes</title>');
+print("</head>\n");, $st_message, $st_entete))
          {
         print("<div class=\"alert alert-success\">L'email a &eacute;t&eacute; envoy&eacute; avec succ&egrave;s</div>");
          } 

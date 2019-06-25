@@ -115,7 +115,7 @@ function AfficheEditionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commune
  
   print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
   $st_texte = "Bonjour,<br /><br />";
-  $st_texte .= "Nous vous informons que la base AGC a &eacute;t&eacute; mise &agrave; jour:\n";
+  $st_texte .= "Nous vous informons que la base ".SIGLE_ASSO." a &eacute;t&eacute; mise &agrave; jour:\n";
   if ($pi_idf_type_acte==IDF_MARIAGE || $pi_idf_type_acte==IDF_NAISSANCE || $pi_idf_type_acte==IDF_DECES)
   {
     $st_requete ="select s.nom,ca.nom,c.nom,ta.nom, sc.annee_min,sc.annee_max,sc.nb_actes from stats_commune sc join commune_acte ca on (sc.idf_commune=ca.idf) join type_acte ta on (sc.idf_type_acte=ta.idf) join source s on (sc.idf_source=s.idf) left join canton c on (ca.idf_canton=c.idf) where sc.idf_source=$pi_idf_source and sc.idf_commune=$pi_idf_commune and sc.idf_type_acte=$pi_idf_type_acte";
@@ -149,7 +149,7 @@ function AfficheEditionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commune
   }
   $st_texte .= "Pour rappel, la liste compl&egrave;te des d&eacute;pouillements se trouve &agrave; l'adresse: $gst_url_site/AfficheStatsCommune.php <br /><br />";
   $st_texte .= "Cordialement<br /><br />";
-  $st_texte .= "	Les responsables de la base AGC";
+  $st_texte .= "	Les responsables de la base ".SIGLE_ASSO;
   print('<textarea name="texte" id="texte" class="jqte_edit form-control" rows=20 cols=80>'.$st_texte.'</textarea>');
   print("<input type=hidden name=mode value=ENVOI_NOTIFICATION>");
   print('<div class="form-row">'); 
@@ -180,8 +180,8 @@ function EnvoieNotification($pconnexionBD,$pi_idf_commune,$pi_idf_type_acte,$pst
      // meme sujet pour les naissances, mariages et deces
      case IDF_MARIAGE:
      case IDF_NAISSANCE:
-     case IDF_DECES: $st_sujet = "MAJ Base AGC: $st_type_acte de la commune de $st_commune"; break;
-     default: $st_sujet = "MAJ Base AGC: Actes divers de la commune de $st_commune";
+     case IDF_DECES: $st_sujet = "MAJ Base ".SIGLE_ASSO.": $st_type_acte de la commune de $st_commune"; break;
+     default: $st_sujet = "MAJ Base ".SIGLE_ASSO.": Actes divers de la commune de $st_commune";
    }        
    
    list($gst_nom,$gst_prenom,$gst_email) =$pconnexionBD->sql_select_liste("select nom,prenom,email_forum from adherent where ident='".$_SESSION['ident']."'");
