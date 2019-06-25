@@ -37,7 +37,7 @@ function getContentBottom($type, $st_email_adht, $gi_idf_acte){
     break;
     default:            $msg = "Vous pouvez mettre vos commentaires dans la cellule ci-dessous qui paraitra sur le forum &agrave; la suite de la r&eacute;ponse de la base</div>\n
                                 <div align='center'>Votre adresse <span class=\"IMPORTANT\">$st_email_adht</span> doit &ecirc;tre inscrite sur le forum Yahoogroupes de l'AGC<div>
-                                <div class=\"IMPORTANT\">Sans cela, votre demande ne pourra &ecirc;tre prise en compte<div><br>
+                                <div class=\"alert alert-danger\">Sans cela, votre demande ne pourra &ecirc;tre prise en compte<div><br>
                                 <form id=\"envoi_forum\" method=post action=".$_SERVER['PHP_SELF'].">
                                 <input type=\"hidden\" name=\"mode\" value=\"ENVOI_FORUM\">
                                 <input type=\"hidden\" name=\"idf_acte\" value=\"$gi_idf_acte\">
