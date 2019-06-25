@@ -619,7 +619,7 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
      $st_entete .= "Bcc: $pst_prenom_valideur $pst_nom_valideur <$pst_email_valideur>\n";
      $st_entete .= "Return-Path: $pst_email_valideur\n";
      $st_message = 'Bonjour,<br><br>';
-     $st_message .= "Votre proposition de modification d'un acte de la base AGC vient d'&ecirc;tre accept&eacute;e<br>";
+     $st_message .= "Votre proposition de modification d'un acte de la base ".SIGLE_ASSO." vient d'&ecirc;tre accept&eacute;e<br>";
      $st_message .= "Vous pouvez consulter l'acte &agrave l'adresse suivante:<br>";
      $st_message .= sprintf("<a href=\"%s/InfosTD.php?idf_acte=%d\">$gst_url_site/InfosTD.php?idf_acte=%d</a><br>", $gst_url_site, $this -> i_idf_acte, $this -> i_idf_acte);
      if (! empty($pst_cmt_valideur))
