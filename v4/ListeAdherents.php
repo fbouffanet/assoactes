@@ -384,7 +384,7 @@ $(document).ready(function() {
 
 <?php
 print("</script>");
-print('<title>Base AGC: Les Adherents</title>');
+print('<title>Base '.SIGLE_ASSO.': Les Adherents</title>');
 print('</head>');
 
 /**
@@ -745,7 +745,7 @@ function exporte_adresses_publipostage($pconnexionBD)
 	else
 	{
 		header("Content-Type: text/csv");
-		header('Content-disposition: attachment; filename="ListeBulletinAGC.csv"');
+		header('Content-disposition: attachment; filename="ListeBulletin'.SIGLE_ASSO.'.csv"');
 		$fichier = fopen('PHP://output', 'w');
 		fputcsv($fichier, array('Adhérent','N°','Email','Adresse1','Adresse2','CP','Ville','Pays'),SEP_CSV);     
 		foreach ($a_liste_adherents as $a_ligne)
@@ -773,7 +773,7 @@ function exporte_tout($pconnexionBD)
 	else
 	{
 		header("Content-Type: text/csv");
-		header('Content-disposition: attachment; filename="ListeBulletinAGC.csv"');
+		header('Content-disposition: attachment; filename="ListeBulletin'.SIGLE_ASSO.'.csv"');
 		$fichier = fopen('PHP://output', 'w');
 		foreach ($a_liste_adherents as $a_ligne)
 		{
@@ -960,7 +960,7 @@ function maj_statut_adherents($pconnexionBD)
        $st_entete  = "From: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n>";
        $st_entete .= "Reply-to: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n";
        $st_entete .= "Bcc: fbouffanet@yahoo.fr\n";
-       $st_entete .= "Reply-to: AGC <".EMAIL_DIRASSO.">\n";
+       $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
        $st_entete .= 'MIME-Version: 1.0' . "\n"; 
        $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
        $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
