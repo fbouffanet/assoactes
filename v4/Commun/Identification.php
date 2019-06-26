@@ -100,7 +100,7 @@ function verifie_utilisateur($pst_ident,$pst_mdp)
 */
 function affiche_menu_auth($pst_message)
 {
-  global $gst_url_site;
+  global $gst_url_site,$gst_logo_association;
   print("<!DOCTYPE html>");
   print("<head>\n");
 
@@ -185,7 +185,7 @@ function affiche_menu_auth($pst_message)
   print("</head><body>");
   
   print('<div class="container">');
-  print("<div class=\"text-center\"><img src= '$gst_url_site/images/LogoAGC.jpg' class=\"rounded mx-auto d-block\"  alt='Logo AGC'></div>");
+  print("<div class=\"text-center\"><img src= '$gst_logo_association' class=\"rounded mx-auto d-block\"  alt='Logo ".SIGLE_ASSO."'></div>");
   print('<div class="panel panel-primary col-md-offset-2 col-md-8">');
   print('<div class="panel-heading">Authentification requise</div>');
   print('<div class="panel-body">');  

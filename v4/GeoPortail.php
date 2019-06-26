@@ -75,7 +75,7 @@ $(document).ready(function() {
   </head>
   <body>
   <div class="container">
-<div class="text-center"><img src="./images/LogoAGC.jpg"></div>
+<div class="text-center"><img src="<?php print($gst_logo_association); ?>"></div>
 <?php
 
     print("<div class=\"text-center\">".htmlentities($st_commune,ENT_COMPAT,'cp1252')."</div><br>\n");
