@@ -127,7 +127,7 @@ print('</head>');
 print('<body>');
 print('<div class="container">');
 
-print("<div class=\"text-center\"><img src=\"./images/LogoAGC.jpg\"></div>");
+print("<div class=\"text-center\"><img src=\"$gst_logo_association\" alt='Logo ".SIGLE_ASSO."'></div>");
 if (isset($_REQUEST['idf_acte']))
 {
   $gi_idf_acte = (int) $_REQUEST['idf_acte'];
