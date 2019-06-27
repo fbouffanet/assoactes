@@ -20,11 +20,11 @@ if (!Adherent::execute_cmd_gbk($st_cmd_gbk))
     $st_message_erreur = Adherent::erreur_gbk();
     $st_requete = "select email_perso from adherent adht join privilege p on (adht.idf=p.idf_adherent) where p.droit='".DROIT_GENEABANK."' order by email_perso";
     $a_adresses = $connexionBD->sql_select($st_requete);
-    $st_entete  = "From: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n>";
-    $st_entete .= "Reply-to: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n";
+    $st_entete  = "From: ".LIB_ASSO."<".EMAIL_DIRASSO.">\n>";
+    $st_entete .= "Reply-to: ".LIB_ASSO."<".EMAIL_DIRASSO.">\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\n";
     $st_entete .= "Bcc: fbouffanet@yahoo.fr\n";
-    $st_entete .= "Reply-to: AGC <".EMAIL_DIRASSO.">\n";
+    $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= 'MIME-Version: 1.0' . "\n"; 
     $st_sujet = "Test Comptes GBK";
     $st_sujet = "Erreur lors de la maj des comptes GBK";

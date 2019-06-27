@@ -862,13 +862,18 @@ class Adherent
   }
   
   /** Envoie une message d'inscription à l'adhérent
- * @global string $gst_url_site Adresse du site    
+ * @global string $gst_url_site Adresse du site
+ * @global string $gst_administrateur_gbk Administrateur Geneabank 
  */ 
   function envoie_message_adherent() {
-    global $gst_url_site;
+    global $gst_url_site,$gst_administrateur_gbk;
+     
     $st_message_html  = sprintf("Bonjour <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
-    $st_message_html .= "Vous venez d'&ecirc;tre inscrit(e) sur le site de l'AGC et &agrave; G&eacute;n&eacute;abank.\n";
-    $st_message_html .= sprintf("Votre inscription est valid&eacute;e pour l'ann&eacute;e %d\n",$this->i_annee_cotisation);
+	if (!empty($gst_administrateur_gbk))
+		$st_message_html .= "Vous venez d'&ecirc;tre inscrit(e) sur le site de l'AGC et &agrave; G&eacute;n&eacute;abank.\n";
+    else
+		$st_message_html .= "Vous venez d'&ecirc;tre inscrit(e) sur le site de l'AGC\n";
+	$st_message_html .= sprintf("Votre inscription est valid&eacute;e pour l'ann&eacute;e %d\n",$this->i_annee_cotisation);
     $st_message_html .= "A partir de maintenant, vous pouvez avoir acc&eacute;s &agrave; l'espace membres de notre groupe.\n";
     $st_message_html .= "Afin de mettre &agrave; jour vos informations, il vous suffit, pour cela, de vous rendre &agrave; l'adresse suivante :\n";
     $st_message_html .= "<a href=\"$gst_url_site\">$gst_url_site</a>\n\n";
