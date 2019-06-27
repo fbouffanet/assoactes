@@ -162,8 +162,8 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   $jour = sprintf ("%02s/%02s/%4s", substr($dt_ins_date,8,2), substr($dt_ins_date,5,2), substr($dt_ins_date,0,4));
   
   $frontiere = '-----=' . md5(uniqid(mt_rand()));  
-  $headers  = "From: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n>";
-  $headers .= "Reply-to: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n";
+  $headers  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
+  $headers .= "Reply-to: ".LIB_ASSO."<".EMAIL_DIRASSO.">\n";
 	$headers .= 'MIME-Version: 1.0' . "\n"; 
   $headers .= 'Content-Type: multipart/alternative; boundary="'.$frontiere.'"';      
    
