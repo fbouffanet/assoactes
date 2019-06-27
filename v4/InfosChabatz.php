@@ -1,4 +1,6 @@
 <?php
+require_once('Commun/config.php');
+require_once('Commun/constantes.php');
 print('<!DOCTYPE html>');
 print("<head>\n");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
@@ -21,7 +23,7 @@ print('</head>');
 
 print("<body>");
 print('<div class="container">');
-print("<div class=\"text-center\"><img src=\"./images/LogoAGC.jpg\"></div>");
+print("<div class=\"text-center\"><img src=\"$gst_logo_association\" alt='Logo ".SIGLE_ASSO."'></div>");
 print("<div>Ce relev&eacute; de mariage a été depos&eacute; par une autre association:<br></div");
 print("<div><br>L'association Chabatz d'entrar avec laquelle l'AGC a un accord de partenariat par le biais des AGL (Amiti&eacute;s G&eacute;n&eacute;alogiques du Limousin).<br></div>");
 print("<div><br>Le relev&eacute; est un relev&eacute; de Table D&eacute;cennale, il ne comporte donc pas de filiation.<br></div>");

@@ -1,4 +1,6 @@
 <?php
+require_once('Commun/config.php');
+require_once('Commun/constantes.php');
 print('<!DOCTYPE html>');
 print("<head>\n");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
@@ -21,7 +23,7 @@ print('</head>');
 
 print("<body>");
 print('<div class="container">');
-print("<div class=\"text-center\"><img src=\"./images/LogoAGC.jpg\"></div>");
+print("<div class=\"text-center\"><img src=\"$gst_logo_association\" alt='Logo ".SIGLE_ASSO."'></div>");
 
 require_once('Commun/constantes.php');
 

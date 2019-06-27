@@ -213,8 +213,8 @@ function affiche_menu() {
 function extrait_patro_accents($pconnexionBD)
 {
    $pconnexionBD->execute_requete("truncate table patro_accent");
-   $pconnexionBD->execute_requete("insert into `patro_accent` SELECT DISTINCT patronyme FROM `stats_patronyme` WHERE patronyme NOT REGEXP '^[A-Z ]+$' AND left( patronyme, 1 ) IN (
-'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P','Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z') and  patronyme not like '%\.%'and patronyme not like '%?%'");
+   $pconnexionBD->execute_requete("insert into `patro_accent` SELECT DISTINCT libelle FROM `patronyme` WHERE libelle NOT REGEXP '^[A-Z ]+$' AND left( libelle, 1 ) IN (
+'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P','Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z') and  libelle not like '%\.%'and libelle not like '%?%'");
 }
 
 /**
