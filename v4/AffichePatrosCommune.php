@@ -60,7 +60,7 @@ $("#idf_type_acte").change(function() {
 
 <?php
 print("</script>");
-print('<title>Base AGC: Patronymes par communes</title>');
+print('<title>Base '.SIGLE_ASSO.': Patronymes par communes</title>');
 print("</head>\n");
 
 print("<body>");

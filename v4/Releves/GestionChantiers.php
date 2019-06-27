@@ -18,7 +18,7 @@ switch ($gst_mode) {
    header("Content-type: text/csv");
    header("Expires: 0");
    header("Pragma: public");
-   header('Content-disposition: attachment; filename="RelevesAGC.csv"');
+   header('Content-disposition: attachment; filename="Releves'.SIGLE_ASSO.'.csv"');
    $i_idf_statut_export =  isset($_POST['idf_statut_export']) ? $_POST['idf_statut_export']: 0; 
    exporte_liste_releves($connexionBD,$i_idf_statut_export);
    exit();

@@ -69,7 +69,7 @@ print('</head>');
 print('<body>');
 print('<div class="container">');
 
-print("<div class=\"text-center\"><a href=\"$gst_url_sortie\" target=\"_blank\"><img src=\"./images/LogoAGC.jpg\" style=\"border: 0;\"></a></div>");
+print("<div class=\"text-center\"><a href=\"$gst_url_sortie\" target=\"_blank\"><img src=\"$gst_logo_association\" style=\"border: 0;\" alt='Logo ".SIGLE_ASSO."'></a></div>");
 print('<div class="panel panel-primary">');
 print('<div class="panel-heading">Ce relev&eacute; est issu d\'une table d&eacute;cennale</div>');
 

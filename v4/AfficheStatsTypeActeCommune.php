@@ -21,7 +21,7 @@ print("<script src='js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='js/select2.min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");  
-print('<title>Base AGC: Statistiques par commune</title>');
+print('<title>Base '.SIGLE_ASSO.': Statistiques par commune</title>');
 print("<script type='text/javascript'>");
 ?>
 

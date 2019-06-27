@@ -12,7 +12,7 @@ print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr"> ');
-print('<title>Base AGC: Stats consulations adhérent</title>');
+print('<title>Base '.SIGLE_ASSO.': Stats consulations adhérent</title>');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
