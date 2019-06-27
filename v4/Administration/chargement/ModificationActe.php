@@ -573,7 +573,7 @@ public function refuse($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur
          $st_message .= "<br>Cordialement<br>";
          $st_message .= "$pst_prenom_valideur $pst_nom_valideur";
          // print("<pre>Entete=$st_entete\nMsg=$st_message</pre>");
-        if (!mail($this -> st_email_demandeur, 'Base AGC: Votre demande de modification', $st_message, $st_entete))
+        if (!mail($this -> st_email_demandeur, 'Base '.SIGLE_ASSO.': Votre demande de modification', $st_message, $st_entete))
              {
             print("<div class=\"alert alert-danger\">Le mail n'a pu &ecirc;tre envoy&eacute;e</div>");
              } 
@@ -614,12 +614,12 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
      $st_requete = sprintf("update modification_acte set idf_valideur=%d,date_validation=now(),statut='A' where idf=%d", $pi_idf_valideur, $this -> i_idf);
      $this -> connexionBD -> execute_requete($st_requete);
      $st_entete = 'MIME-Version: 1.0' . "\r\n";
-     $st_entete .= 'Content-type: text/html; charset=cp1252' . "\r\n";
+     $st_entete .= 'Content-type: text/html; charset=cp1252' . "\r\n"; 
      $st_entete .= "From: $pst_prenom_valideur $pst_nom_valideur <$pst_email_valideur>\n";
      $st_entete .= "Bcc: $pst_prenom_valideur $pst_nom_valideur <$pst_email_valideur>\n";
      $st_entete .= "Return-Path: $pst_email_valideur\n";
      $st_message = 'Bonjour,<br><br>';
-     $st_message .= "Votre proposition de modification d'un acte de la base AGC vient d'&ecirc;tre accept&eacute;e<br>";
+     $st_message .= "Votre proposition de modification d'un acte de la base ".SIGLE_ASSO." vient d'&ecirc;tre accept&eacute;e<br>";
      $st_message .= "Vous pouvez consulter l'acte &agrave l'adresse suivante:<br>";
      $st_message .= sprintf("<a href=\"%s/InfosTD.php?idf_acte=%d\">$gst_url_site/InfosTD.php?idf_acte=%d</a><br>", $gst_url_site, $this -> i_idf_acte, $this -> i_idf_acte);
      if (! empty($pst_cmt_valideur))
@@ -629,7 +629,7 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
     $st_message .= "<br>Merci de votre contribution<br>";
      $st_message .= "<br>Cordialement<br>";
      $st_message .= "$pst_prenom_valideur $pst_nom_valideur";
-     if (mail($this -> st_email_demandeur, 'Base AGC: Demande de modification de releve de la base AGC', $st_message, $st_entete))
+     if (mail($this -> st_email_demandeur, 'Base '.SIGLE_ASSO.': Demande de modification de releve de la base '.SIGLE_ASSO, $st_message, $st_entete))
          {
         print("<div class=\"alert alert-success\">L'email a &eacute;t&eacute; envoy&eacute; avec succ&egrave;s</div>");
          } 
