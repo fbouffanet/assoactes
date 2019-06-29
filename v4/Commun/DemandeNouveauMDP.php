@@ -137,7 +137,8 @@ function verifie_demande($pst_email)
     }	
     else
     {
-      print("<div class=\"alert alert-warning\">Vous n'&ecirc;tes pas ou plus adh&eacute;rent de l'AGC</div>");
+	  $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ;	
+      print("<div class=\"alert alert-warning\">Vous n'&ecirc;tes pas ou plus adh&eacute;rent $st_prefixe_asso".SIGLE_ASSO."</div>");
       if (isset($gst_url_inscription))
       {
 		  print("<div class=\"text-center\">Veuillez vous r&eacute;inscrire en utilisant l'adresse suivante:<br>");
