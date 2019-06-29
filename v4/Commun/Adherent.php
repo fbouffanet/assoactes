@@ -1037,6 +1037,7 @@ class Adherent
   * @return boolean Le message a été envoyé ou pas  
   */ 
   function envoie_message_geneabank_changement_mdp() {
+	global $gst_administrateur_gbk;
     $st_texte = sprintf("Bonjour <strong>%s %s</strong>\n\n",$this->st_prenom,$this->st_nom);
     $st_texte .= "Voici votre identifiant et mot de passe d'acc&egrave;s &agrave; la base ".SIGLE_ASSO." <strong>GENEA16</strong> et &agrave; G&eacute;n&eacute;aBank\n\n";
     $st_texte .= "N'oubliez pas! votre adresse e-mail doit-&ecirc;tre la m&ecirc;me sur la base GENEA16 et sur Yahoo\n\n";
