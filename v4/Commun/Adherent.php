@@ -884,8 +884,9 @@ class Adherent
     { 
 		$st_message_html .= "Pour vous connecter &agrave; G&eacute;n&eacute;aBank\n";
 		$st_message_html .= sprintf("Votre nom d'utilisateur : <font color=\"#FF0000\"><strong>".PREFIXE_ADH_GBK."%s</strong></font>\n",$this->i_idf);
+		$st_message_html .= sprintf("Votre mot de passe est : <font color=\"#FF0000\"><strong>%s</strong></font>\n\n",$this->st_mdp);
 	}	
-    $st_message_html .= sprintf("Votre mot de passe est : <font color=\"#FF0000\"><strong>%s</strong></font>\n\n",$this->st_mdp);
+    
     $st_message_html .= "Nous vous demandons de bien noter ces informations que vous pouvez g&eacute;rer &agrave; votre gr&eacute;\n\n";
     $st_message_html .= "Ces informations sont strictement personnelles et confidentielles.\n";
     $st_message_html .= "La divulgation de ces codes &agrave; un non adh&eacute;rent entrainera la suspension du compte.\n\n";
