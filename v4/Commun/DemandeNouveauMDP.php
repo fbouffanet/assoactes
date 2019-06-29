@@ -3,6 +3,7 @@
 require_once 'config.php';
 require_once 'constantes.php';
 require_once 'ConnexionBD.php';
+require_once 'Commun.php';
 require_once 'Adherent.php';
 
 $gst_mode = empty($_POST['mode']) ? 'FORMULAIRE': $_POST['mode'] ;
@@ -90,7 +91,8 @@ function affiche_menu()
    print('<div class="panel-body">');	
    print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"demande_nouveau_mdp\" class=\"form-horizontal\">"); 
    print('<div class="form-row">');
-   print("<label for=\"email_adht\" class=\"col-md-6 col-form-label\">Votre adresse e-mail connue par l'AGC :</label>");
+   $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "l'": "le " ; 
+   print("<label for=\"email_adht\" class=\"col-md-6 col-form-label\">Votre adresse e-mail connue par $st_prefixe_asso".SIGLE_ASSO.":</label>");
    print('<div class="col-md-4 col-md-offset-4">'); 
    print("<input type=\"text\" name=\"email_adht\" id=\"email_adht\" size=\"30\" maxlength=\"60\" class=\"form-control\">\n"); 
    print("</div></div>");
