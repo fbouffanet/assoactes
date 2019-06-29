@@ -3,7 +3,7 @@
 require_once 'config.php';
 require_once 'constantes.php';
 require_once 'ConnexionBD.php';
-require_once 'Commun.php';
+require_once 'commun.php';
 require_once 'Adherent.php';
 
 $gst_mode = empty($_POST['mode']) ? 'FORMULAIRE': $_POST['mode'] ;
