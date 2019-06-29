@@ -867,12 +867,12 @@ class Adherent
  */ 
   function envoie_message_adherent() {
     global $gst_url_site,$gst_administrateur_gbk;
-     
+    $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ; 
     $st_message_html  = sprintf("Bonjour <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
 	if (!empty($gst_administrateur_gbk))
-		$st_message_html .= "Vous venez d'&ecirc;tre inscrit(e) sur le site de l'AGC et &agrave; G&eacute;n&eacute;abank.\n";
+		$st_message_html .= "Vous venez d'&ecirc;tre inscrit(e) sur le site $st_prefixe_asso".SIGLE_ASSO." et &agrave; G&eacute;n&eacute;abank.\n";
     else
-		$st_message_html .= "Vous venez d'&ecirc;tre inscrit(e) sur le site de l'AGC\n";
+		$st_message_html .= "Vous venez d'&ecirc;tre inscrit(e) sur le site $st_prefixe_asso".SIGLE_ASSO."\n";
 	$st_message_html .= sprintf("Votre inscription est valid&eacute;e pour l'ann&eacute;e %d\n",$this->i_annee_cotisation);
     $st_message_html .= "A partir de maintenant, vous pouvez avoir acc&eacute;s &agrave; l'espace membres de notre groupe.\n";
     $st_message_html .= "Afin de mettre &agrave; jour vos informations, il vous suffit, pour cela, de vous rendre &agrave; l'adresse suivante :\n";
@@ -888,8 +888,9 @@ class Adherent
     $st_message_html .= sprintf("Votre mot de passe est : <font color=\"#FF0000\"><strong>%s</strong></font>\n\n",$this->st_mdp);
     $st_message_html .= "Nous vous demandons de bien noter ces informations que vous pouvez g&eacute;rer &agrave; votre gr&eacute;\n\n";
     $st_message_html .= "Ces informations sont strictement personnelles et confidentielles.\n";
-    $st_message_html .= "La divulgation de ces codes &agrave; un non adh&eacute;rent entrainera la suspension du compte.\n\n";  
-    $st_message_html .= "N'oubliez pas de vous inscrire sur le forum de l'AGC pour &eacute;changer avec les autres adh&eacute;rents en envoyant un mail vide &agrave; ".EMAIL_INSCRIPTION_FORUM.".\n\n";
+    $st_message_html .= "La divulgation de ces codes &agrave; un non adh&eacute;rent entrainera la suspension du compte.\n\n";
+    if (!empty(EMAIL_INSCRIPTION_FORUM))	
+		$st_message_html .= "N'oubliez pas de vous inscrire sur le forum $st_prefixe_asso".SIGLE_ASSO." pour &eacute;changer avec les autres adh&eacute;rents en envoyant un mail vide &agrave; ".EMAIL_INSCRIPTION_FORUM.".\n\n";
     $st_message_html .= "Nous vous souhaitons de fructueuses recherches et d'agr&eacute;ables &eacute;changes avec nos adh&eacute;rents.\n\n";
     $st_message_html .= "Les gestionnaires du site\n";
     $st_message_html = nl2br($st_message_html);
@@ -915,7 +916,8 @@ class Adherent
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_html."\n\n";
     $st_message .= '--'.$st_frontiere."--\n";
-    $st_sujet = "Inscription a l'AGC - ".LIB_ASSO;
+	$st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "a l'": "au " ;
+    $st_sujet = "Inscription $st_prefixe_asso".SIGLE_ASSO." - ".LIB_ASSO;
     return (mail($this->st_email_perso,$st_sujet,$st_message, $st_entete));
   }
   
@@ -947,8 +949,8 @@ class Adherent
     $st_entete .= "Disposition-Notification-To: ".SIGLE_ASSO."<".EMAIL_DIRASSO.">\n";
     $st_entete .= 'MIME-Version: 1.0' . "\n"; 
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
-    
-    $st_sujet = "Re-inscription a l'AGC - ". LIB_ASSO;
+    $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "l'": "au " ;
+    $st_sujet = "Re-inscription a $st_prefixe_asso".SIGLE_ASSO." - ". LIB_ASSO;
 
     $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
     $st_message .= '--'.$st_frontiere."\n";
@@ -1173,7 +1175,8 @@ class Adherent
           $this->connexionBD->execute_requete($st_requete);
           
           $st_message_html  = sprintf("Bonjour <strong>%s %s</strong>\n\n",$this->st_prenom,$this->st_nom);
-          $st_message_html .= "Vous venez de demander un nouveau mot de passe &agrave; la base de l'AGC\n";
+		  $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ;
+          $st_message_html .= "Vous venez de demander un nouveau mot de passe &agrave; la base $st_prefixe_asso".SIGLE_ASSO."\n";
           $st_message_html .= "Afin de confirmer ce changement, merci de cliquer sur le lien ci-dessous ou de le copier/coller dans la barre de navigation de votre navigateur:\n";
           $st_message_html .= sprintf("<a href=\"%s/EnvoieNouveauMDP.php?idf_adht=%d&clef=%d\">%s/EnvoieNouveauMDP.php?idf_adht=%d&clef=%d</a>\n\n",$gst_url_site,$this->i_idf,$i_clef,$gst_url_site,$this->i_idf,$i_clef);
           $st_message_html .= "Cordialement,\n\nLes responsables du site";
