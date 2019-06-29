@@ -129,7 +129,7 @@ function verifie_demande($pst_email)
     $adherent = new Adherent($connexionBD,$i_idf);
     if ($adherent-> demande_nouveau_mdp())
     {
-       print("<div class=\"alert alert-success\">Un email dont le titre est \"Demande d'un nouveau mot de passe AGC\" a &eacute;t&eacute; envoy&eacute; &agrave; l'adresse $pst_email<br>");
+       print("<div class=\"alert alert-success\">Un email dont le titre est \"Demande d'un nouveau mot de passe ".SIGLE_ASSO."\" a &eacute;t&eacute; envoy&eacute; &agrave; l'adresse $pst_email<br>");
        print("Vous devrez confirmer votre demande en cliquant sur le lien contenu dans ce mail<br>");
        print("Merci</div>");      
     }	

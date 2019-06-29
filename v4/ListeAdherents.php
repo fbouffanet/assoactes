@@ -957,8 +957,8 @@ function maj_statut_adherents($pconnexionBD)
        $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
        $st_sujet = "Adherents supprimes";  
        $st_frontiere = '-----=' . md5(uniqid(mt_rand()));
-       $st_entete  = "From: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n>";
-       $st_entete .= "Reply-to: Association Genealogique de la Charente <".EMAIL_DIRASSO.">\n";
+       $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
+       $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
        $st_entete .= "Bcc: fbouffanet@yahoo.fr\n";
        $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
        $st_entete .= 'MIME-Version: 1.0' . "\n"; 
