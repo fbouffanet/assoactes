@@ -54,4 +54,26 @@ function chaine_select_options_multiple($pa_selection,$pa_tableau)
     return $st_chaine_options;
 }
 
+/*
+* Vérifie que la chaine commence par une voyelle ou non
+* @param string $pst_chaine chaine à tester
+* @return boolean (vrai si la chaine commence par une voyelle, faux sinon)
+*/
+function commence_par_une_voyelle($pst_chaine)
+{
+	switch (mb_strtoupper($pst_chaine[0]))
+	{
+		case 'A':
+		case 'E':
+		case 'I':
+		case 'O':
+		case 'U':
+		case 'Y':
+			return true;
+		break;
+		default:
+			return false;
+	}
+}	
+
 ?>
