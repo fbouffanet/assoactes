@@ -2,6 +2,7 @@
 
 require_once('Commun/Identification.php');
 require_once('Commun/constantes.php');
+require_once('Commun/commun.php');
 require_once('Commun/ConnexionBD.php');
 require_once('Commun/phonex.cls.php');
 require_once('Administration/chargement/Acte.php');
@@ -26,12 +27,16 @@ function getRecapitulatifMessage($pst_type, $pi_max, $pi_compteur){
   return sprintf("<div class=\"row text-center\">Il vous reste <div class=\"badge badge-warning\">%d</div> demandes de $pst_type dans ce mois</div>", $pi_max-$pi_compteur);
 }
 
-function getContentBottom($type, $st_email_adht, $pi_idf_acte){
-  switch ($type)
-  {
-    case IDF_NAISSANCE: $msg = "";
-    case IDF_DECES:     $msg = "";
-    default:            $msg = "<blockquote class=\"blockquote\"><p class=\"row text-justify\">Vous pouvez mettre vos commentaires dans la cellule ci-dessous qui paraitra sur le forum &agrave; la suite de la r&eacute;ponse de la base. Votre adresse <span class=\"label label-danger\">$st_email_adht</span> doit &ecirc;tre inscrite sur le forum Yahoogroupes de l'AGC<br>
+function getContentBottom($pst_type, $pst_email_adht, $pi_idf_acte){
+   $st_msg ='';
+   if (!empty(EMAIL_FORUM))
+   {
+      $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ;
+      switch ($pst_type)
+      {
+        case IDF_NAISSANCE: $st_msg = "";
+        case IDF_DECES:     $st_msg = "";
+        default:            $st_msg = "<blockquote class=\"blockquote\"><p class=\"row text-justify\">Vous pouvez mettre vos commentaires dans la cellule ci-dessous qui paraitra sur le forum &agrave; la suite de la r&eacute;ponse de la base. Votre adresse <span class=\"label label-danger\">$pst_email_adht</span> doit &ecirc;tre inscrite sur le forum Yahoogroupes $st_prefixe_asso".SIGLE_ASSO."<br>
                                 <span class=\"label label-danger\">Sans cela, votre demande ne pourra &ecirc;tre prise en compte</span></p></blockquote>
                                 <form id=\"envoi_forum\" method=post action=".$_SERVER['PHP_SELF'].">
                                 <input type=\"hidden\" name=\"mode\" value=\"ENVOI_FORUM\">
@@ -40,10 +45,10 @@ function getContentBottom($type, $st_email_adht, $pi_idf_acte){
                                 <textarea cols=\"40\" rows=\"6\" name=\"commentaire\" class=\"form-control\"></textarea>
 								</div>
                                 </form>";
-    break;
-  }
-
-  return $msg ;
+        break;
+      }
+   }
+   return $st_msg ;
 }
 
 /******************************************************************************/
@@ -249,7 +254,8 @@ else
 }
 
 print('<div class="btn-group-vertical btn-group-xs col-xs-8 col-xs-offset-2" role="group" aria-label="Groupe de demandes">');
-print('<button type="button" id="bouton_envoi" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span> Envoyer une remarque sur le forum</button>');
+if (!empty(EMAIL_FORUM))
+   print('<button type="button" id="bouton_envoi" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span> Envoyer une remarque sur le forum</button>');
 print('<button type=button id="bouton_impression" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Imprimer</button>');
 print('<button type=button id="bouton_fermeture" class="btn btn-warning"><span class="glyphicon glyphicon-remove"></span> Fermer la fen&ecirc;tre</button>');
 print('</div>');

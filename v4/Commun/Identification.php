@@ -5,6 +5,7 @@ session_start();
 require_once 'config.php';
 require_once 'constantes.php';
 require_once 'ConnexionBD.php';
+require_once 'commun.php';
 
 $gst_url_retour = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
 $gst_adresse_ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
@@ -247,8 +248,9 @@ function affiche_menu_refus()
   print("</head><body>");
   print('<div class="panel panel-primary col-md-offset-4 col-md-4">');
   print('<div class="panel-heading">Refus de connexion</div>');
-  print('<div class="panel-body">');  
-  print("<div class=\"alert alert-danger\">L'acc&egrave;s &agrave la base de l'AGC est limit&eacute; &agrave; ses adh&eacute;rents &agrave; jour<br>Les intrus ne sont pas autoris&eacute;s</div>");
+  print('<div class="panel-body">');
+  $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "l'": "le " ;  
+  print("<div class=\"alert alert-danger\">L'acc&egrave;s &agrave la base $st_prefixe_asso".SIGLE_ASSO." est limit&eacute; &agrave; ses adh&eacute;rents &agrave; jour<br>Les intrus ne sont pas autoris&eacute;s</div>");
   print('</div>');
   print("</body>");
   print("</html>");
