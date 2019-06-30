@@ -9,37 +9,20 @@ print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
 print('<meta http-equiv="content-language" content="fr">');
-print('<title>Bienvenue sur la base de l\'AGC !</title>');
+$st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ;	
+print("<title>Bienvenue sur la base $st_prefixe_asso".SIGLE_ASSO."!</title>");
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-//script Google Analytics -- debut
-/*
-print('<script type="text/javascript">');
-
-  print("var _gaq = _gaq || [];");
-  print("_gaq.push(['_setAccount', 'UA-9306738-3']);");
-  print("_gaq.push(['_trackPageview']);");
-
-  print("(function() {");
-    print("var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;");
-    print("ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';");
-    print("var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);");
-  print("})();");
-
-print('</script>');
-*/
-//script Google Analytics -- fin
 print("</head>");
 
 print("<body>");
 
 print('<div class="container">');
 require_once("Commun/menu.php");
-
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
@@ -67,7 +50,7 @@ print('<div class="panel-body">');
 $st_date = date("d-m-Y");
 $st_heure = date("H:i");
 print("<div class=\"row text-center\">Aujourd'hui le $st_date &agrave; $st_heure</div>");
-print("<div class=\"row text-center\">$gi_nb_adherents adh&eacute;rents inscrits sur la base de l'AGC.</div>");
+print("<div class=\"row text-center\">$gi_nb_adherents adh&eacute;rents inscrits sur la base de $st_prefixe_asso".SIGLE_ASSO."</div>");
 print('</div></div>');
 
 print('<div class="panel panel-primary">');
@@ -109,6 +92,7 @@ else
          case IDF_MARIAGE: $st_type_acte='X';break;
          case IDF_DECES: $st_type_acte='&dagger;';break;
          case IDF_DIVERS: $st_type_acte='Divers(CM...)';break;
+		 case IDF_RECENS: $st_type_acte='Recensement';break;
       }
       print("<tr>");
       print("<td>$st_commune</td><td>$st_type_acte</td><td>$i_nb_actes</td>");
@@ -131,17 +115,18 @@ if (count($a_bulletins)>0)
   $i_bulletin_choisi = mt_rand(1,count($a_bulletins)-1);
   // construit le nom de fichier
   $st_article_bulletin = $a_bulletins[$i_bulletin_choisi];
-  //$st_article_bulletin = "./Articles/lettre_CG.htm";// en provisoire
+  // L'affichage du bulletin est remplacée par celle d'une annonce si celle-ci existe 
+  if (file_exists("Articles/Annonce.html"))
+	$st_bulletin_html = file_get_contents("Articles/Annonce.html");
+	else
+  $st_bulletin_html = file_get_contents($st_article_bulletin);     
+  if (preg_match('~<body[^>]*>(.*?)</body>~si', $st_bulletin_html, $a_patterns))
+  print($a_patterns[1]); 
 }
 else
   print('<div class="alert alert-danger">Pas d\'article disponible</div>');
-// L'affichage du bulletin est remplacée par celle d'une annonce si celle-ci existe  
-if (file_exists("Articles/Annonce.html"))
-   $st_bulletin_html = file_get_contents("Articles/Annonce.html");
-else
-   $st_bulletin_html = file_get_contents($st_article_bulletin);     
-if (preg_match('~<body[^>]*>(.*?)</body>~si', $st_bulletin_html, $a_patterns))
-	print($a_patterns[1]); 
+ 
+
 print("</div>");
 print('<div class="col-md-4">');
 ?>
