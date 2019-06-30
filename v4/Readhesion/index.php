@@ -41,7 +41,7 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 
 $a_adh_agc= $connexionBD->sql_select_liste("select idf,nom, prenom,cp,pays, annee_cotisation from adherent where ident='$gst_ident'");
 if (empty($a_adh_agc))
-   die("<div class=\"alert alert-danger\"> Identifiant AGC non retrouv&eacute;</div>");
+   die("<div class=\"alert alert-danger\"> Identifiant ".SIGLE_ASSO." non retrouv&eacute;</div>");
 list($i_idf_agc,$st_nom_adh,$st_prenom_adh,$st_cp,$st_pays,$i_annee_cotisation)= $a_adh_agc;
 
 list($i_sec,$i_min,$i_heure,$i_jour,$i_mois,$i_annee,$i_jsem,$i_jan,$b_hiv)= localtime();
