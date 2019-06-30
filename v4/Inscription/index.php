@@ -166,18 +166,19 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   $headers .= "Reply-to: ".LIB_ASSO."<".EMAIL_DIRASSO.">\n";
 	$headers .= 'MIME-Version: 1.0' . "\n"; 
   $headers .= 'Content-Type: multipart/alternative; boundary="'.$frontiere.'"';      
-   
-	$sujet    = "Pre-inscription a l'AGC";
+    $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "a l'": "au " ;
+	$sujet    = "Pre-inscription $st_prefixe_asso".SIGLE_ASSO;
 	$st_message_html  = "Bonjour ". $pst_ins_prenom. " " . $pst_ins_nom . ", \n\n";
-	$st_message_html .= "Vous vous &ecirc;tes pr&eacute;-inscrit ce jour, le " .$jour. " &agrave; l'AGC\n";
+	$st_message_html .= "Vous vous &ecirc;tes pr&eacute;-inscrit ce jour, le " .$jour. " $st_prefixe_asso".SIGLE_ASSO."\n";
 	$st_message_html .= "Nous vous remercions et vous demandons de nous confirmer votre inscription en cliquant sur ce lien suivant: \n\n";
 	$st_message_html .= "<a href=\"$gst_url_validation?alea=$pst_ins_alea&amp;idf_agc=$pst_ins_idf_agc&amp;idf_prov=$int_idf_prov\">$gst_url_validation?alea=$pst_ins_alea&amp;idf_agc=$pst_ins_idf_agc&amp;idf_prov=$int_idf_prov</a>";
   $a_time = localtime();
   if ($a_time[4]>5)
   {
-      $st_message_html .= "\n\n <font color=\"red\">Toute nouvelle adh&eacute;sion &agrave; l'AGC enregistr&eacute;e (par courrier ou en ligne) apr&egrave;s le 1er octobre comptera pour l'ann&eacute;e suivante. Le temps entre la date d'adh&eacute;sion et la fin de l'ann&eacute;e en cours est donc gracieusement offert par l'Association.</div>\n\n";
+      $st_message_html .= "\n\n <font color=\"red\">Toute nouvelle adh&eacute;sion $st_prefixe_asso".SIGLE_ASSO." enregistr&eacute;e (par courrier ou en ligne) apr&egrave;s le 1er octobre comptera pour l'ann&eacute;e suivante. Le temps entre la date d'adh&eacute;sion et la fin de l'ann&eacute;e en cours est donc gracieusement offert par l'Association.</div>\n\n";
   }
-  $st_message_html .= "\n\n Les responsables de l'AGC";
+  $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ;
+  $st_message_html .= "\n\n Les responsables $st_prefixe_asso".SIGLE_ASSO;
   $st_message_html = nl2br($st_message_html);
   $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
 	$st_message = 'This is a multi-part message in MIME format.'."\n\n"; 
@@ -226,7 +227,7 @@ function menu_edition($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_adr
    print("<input type=text maxlength=30 size=20 name=prenom id=prenom value=\"$pst_ins_prenom\" class=\"form-control\">");
    print('</div></div>');
    print('<div class="form-group row">');
-   print("<label for=\"idf_agc\" class=\"col-md-4 col-form-label control-label\">Num&eacute;ro AGC (si déj&agrave; adh&eacute;rent)</label>");
+   print("<label for=\"idf_agc\" class=\"col-md-4 col-form-label control-label\">Num&eacute;ro ".SIGLE_ASSO." (si déj&agrave; adh&eacute;rent)</label>");
    print('<div class="col-md-8">');
    print("<input type=text maxlength=10 size=10 name=idf_agc value=\"$pst_ins_idf_agc\" class=\"form-control\">");
    print('</div></div>');
@@ -284,7 +285,8 @@ function menu_edition($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_adr
    print("<label for=\"telephone\" class=\"col-md-4 col-form-label control-label\">T&eacute;l&eacute;phone</label>");
     print('<div class="col-md-8">');
    print("<input type=text maxlength=20 size=14 name=telephone id=telephone value=\"$pst_ins_telephone\" aria-describedby=\"UsageTelephone\" class=\"form-control\">");
-   print("<small id=\"UsageTelephone\">Donn&eacute;es accessibles uniquement aux gestionnaires de l'AGC</small>");
+   $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ; 
+   print("<small id=\"UsageTelephone\">Donn&eacute;es accessibles uniquement aux gestionnaires $st_prefixe_asso".SIGLE_ASSO."</small>");
    print('</div></div>');
    print('<div class="form-group row">');
     
@@ -317,7 +319,8 @@ function saisie_adherent($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_
    $a_time = localtime();
    if ($a_time[4]>5)
    {
-      print("<div class=\"alert alert-danger\">Toute nouvelle adh&eacute;sion &agrave; l'AGC enregistr&eacute;e (par courrier ou en ligne) apr&egrave;s le 1er octobre comptera pour l'ann&eacute;e suivante. Le temps entre la date d'adh&eacute;sion et la fin de l'ann&eacute;e en cours est donc gracieusement offert par l'Association.<br><br></div>");
+      $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "l'": "le " ; 
+	  print("<div class=\"alert alert-danger\">Toute nouvelle adh&eacute;sion &agrave; $st_prefixe_asso".SIGLE_ASSO." enregistr&eacute;e (par courrier ou en ligne) apr&egrave;s le 1er octobre comptera pour l'ann&eacute;e suivante. Le temps entre la date d'adh&eacute;sion et la fin de l'ann&eacute;e en cours est donc gracieusement offert par l'Association.<br><br></div>");
    }
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"inscription\">");
    print("<input type=hidden name=mode value=\"INSCRIPTION\">");

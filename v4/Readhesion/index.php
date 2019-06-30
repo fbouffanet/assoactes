@@ -3,10 +3,6 @@
 $gst_chemin = "../";
 //$gst_chemin = ($_SERVER['HTTP_HOST']=='adherents.genea16.net')? dirname($_SERVER['DOCUMENT_ROOT'])."/v4/Site": dirname($_SERVER['DOCUMENT_ROOT'])."/Site";
 //$gst_chemin = "";
-//print_r($_SERVER);
-//print($gst_chemin);
-//require_once("$gst_chemin/Commun/config.php");
-//require_once("$gst_chemin/Commun/constantes.php");
 require_once("$gst_chemin/Commun/Identification.php");
 require_once("$gst_chemin/Commun/commun.php");
 require_once("$gst_chemin/Commun/constantes.php");
@@ -25,8 +21,8 @@ print("<link href='$gst_url_site/css/styles.css' type='text/css' rel='stylesheet
 print("<link href='$gst_url_site/css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='$gst_url_site/js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='$gst_url_site/js/bootstrap.min.js' type='text/javascript'></script>"); 
-
-print("<title>Re-Adhesion a l'AGC</title>");
+$st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "a l'": "au " ;
+print("<title>Re-Adhesion $st_prefixe_asso".SIGLE_ASSO."</title>");
 print('</head>');
 
 /*-----------------------------------------------------------------------------

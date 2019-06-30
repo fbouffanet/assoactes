@@ -63,7 +63,7 @@ switch ($gst_type)
       $gst_ident = $_SESSION['ident'];
       $a_adh_agc= $connexionBD->sql_select_liste("select idf,nom,prenom,email_perso,cp,pays,annee_cotisation,jeton_paiement from adherent where ident='$gst_ident'");
       if (empty($a_adh_agc))
-         die("<div class=\"alert alert-danger\"> Identifiant AGC non retrouv&eacute;</div>");
+         die("<div class=\"alert alert-danger\"> Identifiant ".SIGLE_ASSO." non retrouv&eacute;</div>");
       list($i_idf_agc,$st_nom_adh,$st_prenom_adh,$st_email_adh,$st_cp_adh,$st_pays_adh,$i_annee_cotisation_adh)= $a_adh_agc;
       setlocale(LC_CTYPE, 'fr_FR.UTF8');
       $st_nom_adh = trim(strip_tags(iconv("cp1252", "ASCII//TRANSLIT", $st_nom_adh)));
