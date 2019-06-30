@@ -48,7 +48,7 @@ $('a.lien_infos_liasse').click(function(){
 });
 <?php
 print("</script>");
-print('<title>Base AGC: Reponses a une recherche de liasse</title>');
+print("<title>Base ".SIGLE_ASSO.": Reponses a une recherche de liasse</title>");
 print('</Head>');
 
 $a_clauses = array();
