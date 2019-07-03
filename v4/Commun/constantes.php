@@ -74,7 +74,9 @@ define('STATUT_AVANTPANIER','AVANT_PANIER');
 define('STATUT_TRAITE','TRAITE');
 
 define('LIB_ASSO','Association Genealogique de la Charente');
-define('SIGLE_ASSO','AGC');
+define('LIB_ASSO_AVEC_','Association Genealogique de la Charente');
+//define('SIGLE_ASSO','AGC');
+define('SIGLE_ASSO','TUTU');
 define('EMAIL_INSCRIPTION_FORUM','geneagc16-subscribe@yahoogroupes.fr');
 define('EMAIL_FORUM','geneagc16@yahoogroupes.fr');
 define('EMAIL_DIRASSO','agc-dir@genea16.net');
@@ -433,4 +435,6 @@ $ga_annees_revolutionnaires      = array(
 define('IDF_SOURCE_RELEVES_AGC',1); 
 define('IDF_SOURCE_TD',4);
 define('SEUIL_RETENTION_ADHTS',5);                   
+define('NB_PERSONNES_BLOC_CHGMT',1000);
+define('NB_ACTES_BLOC_CHGMT',2000);
 ?>
