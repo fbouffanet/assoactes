@@ -1,15 +1,13 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="Commun/tooltipster.bundle.min.css"/>
-<link rel="stylesheet" type="text/css" href="Commun/tooltipster-sideTip-light.min"/>
-<script type="text/javascript" src="Commun/jquery-min.js"></script>
-<script type="text/javascript" src="js/tooltipster.bundle.min.js"></script>
+<link href='css/bootstrap.min.css' type="text/css"  rel='stylesheet'>
+<script type="text/javascript" src="js/jquery-min.js"></script>
+<script src='js/bootstrap.min.js' type='text/javascript'></script>
 <script>
     $(document).ready(function() {
-        $('.tooltip').tooltipster({
-        theme: 'tooltipster-light',
-        contentAsHTML: true
-        });
+        $(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
     });
 </script>
  
@@ -207,20 +205,20 @@ foreach ($a_communes as $i_insee => $a_infos)
   }
   if (!empty($i_statut) && $i_statut==1)
   {
-     print("<polygon id=\"$i_insee\" points=\"$st_points\" fill=\"chartreuse\" class=\"tooltip\" title=\"$st_info_bulle\"></polygon>\n");
+     print("<polygon id=\"$i_insee\" points=\"$st_points\" fill=\"chartreuse\" data-toggle=\"tooltip\"  title=\"$st_info_bulle\"></polygon>\n");
   }
   else
   {
     if ($b_depouillement_complet)
-      print("<polygon id=\"$i_insee\" points=\"$st_points\" fill=\"midnightblue\" class=\"tooltip\" title=\"$st_info_bulle\"></polygon>\n");
+      print("<polygon id=\"$i_insee\" points=\"$st_points\" fill=\"midnightblue\" data-toggle=\"tooltip\"  title=\"$st_info_bulle\"></polygon>\n");
     else
       if ($b_depouillement_divers)
-        print("<polygon id=\"$i_insee\" points=\"$st_points\" fill=\"darkturquoise\" class=\"tooltip\" title=\"$st_info_bulle\"></polygon>\n");
+        print("<polygon id=\"$i_insee\" points=\"$st_points\" fill=\"darkturquoise\" data-toggle=\"tooltip\"  title=\"$st_info_bulle\"></polygon>\n");
       else
         if ($b_depouillement_mariage)
-          print("<polygon id=\"$i_insee\" points=\"$st_points\" fill=\"lightskyblue\" class=\"tooltip\" title=\"$st_info_bulle\"></polygon>\n");      
+          print("<polygon id=\"$i_insee\" points=\"$st_points\" fill=\"lightskyblue\" data-toggle=\"tooltip\"  title=\"$st_info_bulle\"></polygon>\n");      
         else
-          print("<polygon id=\"$i_insee\" points=\"$st_points\" class=\"tooltip\" title=\"$st_info_bulle\"></polygon>\n");  
+          print("<polygon id=\"$i_insee\" points=\"$st_points\" data-toggle=\"tooltip\"  title=\"$st_info_bulle\"></polygon>\n");  
    }
 }
 fclose($fp);	
