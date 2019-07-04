@@ -686,26 +686,26 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
 		$st_personnes = '';
 		$a_personnes_a_creer=array();
 		$a_lignes_personnes = array();
-		$i_nb_personnes =1;
+		$i_nb_personnes_courant  =1;
 		reset($a_liste_personnes);
 		while($personne=current($a_liste_personnes))
 		{
 			list($st_ligne,$a_personnes)=$personne->ligne_sql_a_inserer();
 			$a_lignes_personnes[]=$st_ligne;
 			$a_personnes_a_creer=$a_personnes_a_creer+$a_personnes;
-			if ($i_nb_personnes==NB_PERSONNES_BLOC_CHGMT)
+			if ($i_nb_personnes_courant==NB_PERSONNES_BLOC_CHGMT)
 			{ 
 		        print(memory_get_peak_usage()."octets au bloc personnes<br>");
 				$connexionBD->initialise_params($a_personnes_a_creer);
 				$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
 				$connexionBD->execute_requete($st_requete);
-				$i_nb_personnes=1;
+				$i_nb_personnes_courant=1;
 				$st_personnes = '';
 				$a_personnes_a_creer=array();
 				$a_lignes_personnes = array();
 			}
 			next($a_liste_personnes);
-			$i_nb_personnes++;
+			$i_nb_personnes_courant++;
 		}
 		if (count($a_personnes_a_creer)>0)
 		{
@@ -721,26 +721,26 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
 		$st_actes = '';
 		$a_actes_a_creer=array();
 		$a_lignes_actes = array();
-		$i_nb_actes =1;
+		$i_nb_actes_courant =1;
 		reset($a_liste_actes);
 		while($acte=current($a_liste_actes))
 		{
 			list($st_ligne,$a_actes)=$acte->ligne_sql_a_inserer();
 			$a_lignes_actes[]=$st_ligne;
 			$a_actes_a_creer=$a_actes_a_creer+$a_actes;
-			if ($i_nb_actes==NB_ACTES_BLOC_CHGMT)
+			if ($i_nb_actes_courant==NB_ACTES_BLOC_CHGMT)
 			{
                 print(memory_get_peak_usage()."octets au bloc actes<br>");				
 				$connexionBD->initialise_params($a_actes_a_creer);
 				$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
 				$connexionBD->execute_requete($st_requete);
-				$i_nb_personnes=1;
+				$i_nb_actes_courant=1;
 				$st_actes = '';
 				$a_actes_a_creer=array();
 				$a_lignes_actes = array();
 			}
 			next($a_liste_actes);
-			$i_nb_actes++;
+			$i_nb_actes_courant++;
 		}
 		if (count($a_actes_a_creer)>0)
 		{
