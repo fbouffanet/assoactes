@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <head>
 <link href='css/bootstrap.min.css' type="text/css"  rel='stylesheet'>
 <script type="text/javascript" src="js/jquery-min.js"></script>
@@ -10,9 +10,10 @@
 		})
     });
 </script>
- 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 </head> 
 <body>
+<div class="container">
 <?php print('<?xml version="1.0" encoding="windows-1252"?>'); ?>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -228,5 +229,6 @@ fclose($fp);
 </g>
 
 </svg>
+</div>
 </body>
 </html>
