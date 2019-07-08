@@ -1,21 +1,21 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="Commun/tooltipster.bundle.min.css"/>
-<link rel="stylesheet" type="text/css" href="Commun/tooltipster-sideTip-light.min"/>
-<script type="text/javascript" src="Commun/jquery-min.js"></script>
-<script type="text/javascript" src="js/tooltipster.bundle.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<script type="text/javascript" src="js/jquery-min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('.tooltip').tooltipster({
-        theme: 'tooltipster-light',
-        contentAsHTML: true
-        });
-    });
+        $(function () {
+			$('[data-toggle="tooltip"]').tooltip({
+			'container': 'body'
+			})
+		});
+	});	
 </script>
- 
 </head> 
 <body>
-<div>Les libell&eacute;s sont correctement positionn&eacute;s uniquement sous Chrome</div>
+<div class="container">
 <div>Les bureaux de Burie, Chaux, Chevanceau, Montauziers, Saint-Aigulin et La Barde situ&eacute;s dans l'actuel d&eacute;partement de la Charente Maritime ne figurent pas sur cette carte</div>
 <?php print('<?xml version="1.0" encoding="windows-1252"?>'); ?>
 <svg
@@ -79,7 +79,7 @@
 	stroke-width   : 0.002;
 }
 
-</style>>
+</style>
 
 <g transform="translate(0,46.13896469) scale(1,-1) translate(0,-45.19163256)">
     <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
@@ -122,9 +122,9 @@ foreach ($a_communes as $i_idf_commune => $a_infos)
        $st_info_bulle .= "$st_commune - Pas de bureau de contrôle<br>\n"; 
   }
   if ($st_est_bureau)
-    print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"coral\" class=\"tooltip\" title=\"$st_info_bulle\"></polygon>\n");
+    print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"coral\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
   else
-    print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"lightgrey\" class=\"tooltip\" title=\"$st_info_bulle\"></polygon>\n");  
+    print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"lightgrey\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");  
 }
 fclose($fp);		
 ?>
@@ -133,6 +133,6 @@ fclose($fp);
 </g>
 
 </svg>
-
+</div>
 </body>
 </html>
