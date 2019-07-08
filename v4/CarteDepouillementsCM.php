@@ -1,20 +1,21 @@
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="Commun/tooltipster.bundle.min.css"/>
-<link rel="stylesheet" type="text/css" href="Commun/tooltipster-sideTip-light.min"/>
-<script type="text/javascript" src="Commun/jquery-min.js"></script>
-<script type="text/javascript" src="js/tooltipster.bundle.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<script type="text/javascript" src="js/jquery-min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('.tooltip').tooltipster({
-        theme: 'tooltipster-light',
-        contentAsHTML: true
-        });
-    });
+        $(function () {
+			$('[data-toggle="tooltip"]').tooltip({
+			'container': 'body'
+			})
+		});
+	});	
 </script>
- 
 </head> 
 <body>
+<div class="container">
 <table border=1>
 <tr><th>Nombre de liasses</th></tr>
 <tr><td bgcolor="lightgrey">Pas de liasses</td></tr>
@@ -154,17 +155,17 @@ foreach ($a_communes as $i_idf_commune => $a_infos)
      {
         $f_perc = $i_nb_tot_liasses_cm/$i_nb_tot_liasses*100;
         if ($f_perc<=5)  
-          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"LemonChiffon\" class=\"tooltip\" title=\"$st_info_bulle\"></polygon>\n");
+          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"LemonChiffon\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
         else if ($f_perc<=10)
-          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"yellow\" class=\"tooltip\" title=\"$st_info_bulle\"></polygon>\n");
+          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"yellow\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
         else if ($f_perc<=30)
-          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"Tomato\" class=\"tooltip\" title=\"$st_info_bulle\"></polygon>\n");
+          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"Tomato\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
         else if ($f_perc<=60)
-          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"coral\" class=\"tooltip\" title=\"$st_info_bulle\"></polygon>\n");
+          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"coral\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
         else if ($f_perc<=80)
-          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"brown\" class=\"tooltip\" title=\"$st_info_bulle\"></polygon>\n");   
+          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"brown\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");   
         else 
-          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"maroon\" class=\"tooltip\" title=\"$st_info_bulle\"></polygon>\n");
+          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"maroon\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
      }        
   }  
 }
@@ -175,5 +176,6 @@ foreach ($a_communes as $i_idf_commune => $a_infos)
 </g>
 
 </svg>
+</div>
 </body>
 </html>
