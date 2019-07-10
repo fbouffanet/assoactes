@@ -218,7 +218,7 @@ class Acte {
          } 
 		 
 	public function sauveTypeActe() {
-								 $this -> type_acte -> sauve();
+								 $this -> typeActe -> sauve();
 	} 	 
     
     /**
