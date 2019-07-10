@@ -562,6 +562,7 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
 	}   
     if (count($a_liste_actes)>0)
 	{
+		$a_liste_actes[0]->sauveTypeActe();
 		$st_actes = '';
 		$a_actes_a_creer=array();
 		$a_lignes_actes = array();
