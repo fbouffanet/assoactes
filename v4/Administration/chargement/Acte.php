@@ -216,6 +216,10 @@ class Acte {
     {
          return $this -> a_liste_personnes;
          } 
+		 
+	public function sauveTypeActe() {
+								 $this -> type_acte -> sauve();
+	} 	 
     
     /**
      * Positionne la liste des filtres jquery validator à activer par champ de paramètre
