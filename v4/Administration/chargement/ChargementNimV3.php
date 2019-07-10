@@ -23,14 +23,9 @@ class ChargementNimV3 {
 	{
 		global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd;
 		$connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-		$type_acte = TypeActe::singleton($connexionBD);
 		$union = Union::singleton($connexionBD);
-		$patronyme = Patronyme::singleton($connexionBD);
 		$stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
 		$stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
-		$prenom = Prenom::singleton($connexionBD);
-		$commune_personne = CommunePersonne::singleton($connexionBD);
-		$profession = Profession::singleton($connexionBD);
 		$releveur =  new Releveur($connexionBD);
 		$a_liste_personnes = array();
 		$a_liste_actes = array();  
@@ -215,17 +210,17 @@ class ChargementNimV3 {
 		}   
 		fclose($pf);   
 		// Sauvegarde des types d'acte par sécurité si 'Mariage' n'a pas été déjà défini comme type d'acte		
-		$type_acte->sauve();
-		$union->sauve();
-		$patronyme->sauve();	
+		$stats_patronyme->sauvePatronyme();	
+		$stats_patronyme->sauveTypeActe();	
 		$stats_patronyme->sauve();
 		$stats_commune->sauve();
-		$commune_personne->sauve();
-		$profession->sauve();   
-		$prenom->sauve();
+		$union->sauve();
 	
 		if (count($a_liste_personnes)>0)
 		{
+			$a_liste_personnes[0]->sauveCommunePersonne();
+			$a_liste_personnes[0]->sauveProfession();
+			$a_liste_personnes[0]->sauvePrenom();
 			$st_personnes = '';
 			$a_personnes_a_creer=array();
 			$a_lignes_personnes = array();
@@ -307,14 +302,9 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
 {
    global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd;
    $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-   $type_acte = TypeActe::singleton($connexionBD);
    $union = Union::singleton($connexionBD);
-   $patronyme = Patronyme::singleton($connexionBD);
    $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
    $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
-   $prenom = Prenom::singleton($connexionBD);
-   $commune_personne = CommunePersonne::singleton($connexionBD);
-   $profession = Profession::singleton($connexionBD);
    $releveur =  new Releveur($connexionBD);   
    $a_types_acte_par_idf = $connexionBD->liste_clef_par_valeur("select idf,nom from type_acte");
    $a_liste_personnes = array();
@@ -528,18 +518,18 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
 		} 
 	} 
 	fclose($pf);   
-   
-	$type_acte->sauve();
-	$union->sauve();
-    $patronyme->sauve();	
+   	
+    $stats_patronyme->sauvePatronyme();	
+	$stats_patronyme->sauveTypeActe();		
 	$stats_patronyme->sauve();
 	$stats_commune->sauve();
-	$prenom->sauve();
-	$commune_personne->sauve();
-	$profession->sauve();
+	$union->sauve();
 	
 	if (count($a_liste_personnes)>0)
 	{
+		//$a_liste_personnes[0]->sauveCommunePersonne();
+		$a_liste_personnes[0]->sauveProfession();
+		$a_liste_personnes[0]->sauvePrenom();
 		$st_personnes = '';
 		$a_personnes_a_creer=array();
 		$a_lignes_personnes = array();
@@ -620,14 +610,9 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
 {
 	global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd;
 	$connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-	$type_acte = TypeActe::singleton($connexionBD);
 	$union = Union::singleton($connexionBD);
-	$patronyme = Patronyme::singleton($connexionBD);
 	$stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
 	$stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
-	$prenom = Prenom::singleton($connexionBD);
-	$commune_personne = CommunePersonne::singleton($connexionBD);
-	$profession = Profession::singleton($connexionBD);
 	$releveur =  new Releveur($connexionBD);
 	$a_liste_personnes = array();
 	$a_liste_actes = array();      
@@ -726,18 +711,18 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
 	} 
 	fclose($pf);  
 	// Sauvegarde des types d'acte par sécurité si 'Naissance' n'a pas été déjà défini comme type d'acte
-   
-	$type_acte->sauve();
-	$union->sauve();
-    $patronyme->sauve();	
+   	
+    $stats_patronyme->sauvePatronyme();	
+	$stats_patronyme->sauveTypeActe();		
 	$stats_patronyme->sauve();
 	$stats_commune->sauve();
-	$prenom->sauve();
-	$commune_personne->sauve();
-	$profession->sauve();   
+    $union->sauve();	
 		
 	if (count($a_liste_personnes)>0)
 	{
+		$a_liste_personnes[0]->sauveCommunePersonne();
+		$a_liste_personnes[0]->sauveProfession();
+		$a_liste_personnes[0]->sauvePrenom();
 		$st_personnes = '';
 		$a_personnes_a_creer=array();
 		$a_lignes_personnes = array();
@@ -819,14 +804,9 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
 {
    global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd;
    $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-   $type_acte = TypeActe::singleton($connexionBD);
    $union = Union::singleton($connexionBD);
-   $patronyme = Patronyme::singleton($connexionBD);
    $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
    $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
-   $prenom = Prenom::singleton($connexionBD);
-   $commune_personne = CommunePersonne::singleton($connexionBD);
-   $profession = Profession::singleton($connexionBD);
    $releveur =  new Releveur($connexionBD);
    $a_liste_personnes = array();
    $a_liste_actes = array();  
@@ -942,18 +922,18 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
 		} 
 	} 
 	fclose($pf);  
-
-	$type_acte->sauve();
-	$union->sauve();
-    $patronyme->sauve();	
+	
+    $stats_patronyme->sauvePatronyme();	
+	$stats_patronyme->sauveTypeActe();		
 	$stats_patronyme->sauve();
 	$stats_commune->sauve();
-	$prenom->sauve();
-	$commune_personne->sauve();
-	$profession->sauve();   
+	$union->sauve();	
 		
 	if (count($a_liste_personnes)>0)
 	{
+		$a_liste_personnes[0]->sauveCommunePersonne();
+		$a_liste_personnes[0]->sauveProfession();
+		$a_liste_personnes[0]->sauvePrenom();
 		$st_personnes = '';
 		$a_personnes_a_creer=array();
 		$a_lignes_personnes = array();

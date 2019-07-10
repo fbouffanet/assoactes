@@ -17,6 +17,14 @@ class StatsPatronyme {
        $this->a_type_acte = array();
        $this->a_stat=$this->connexionBD->liste_valeur_par_doubles_clefs("select p.libelle,ta.nom,annee_min,annee_max,nb_personnes from `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf) join `type_acte` as ta on (sp.idf_type_acte=ta.idf) where sp.idf_commune=$pi_idf_commune and sp.idf_source=$pi_idf_source");
   }
+  
+  public function sauvePatronyme() {
+								 $this -> patronyme -> sauve();
+  }
+  
+  public function sauveTypeActe() {
+								 $this -> type_acte -> sauve();
+	} 
    
   /**
   * Met à jour les date minimale et maximale en fonction de l'annee courante $pi_annee
@@ -145,5 +153,7 @@ class StatsPatronyme {
       $st_requete = sprintf("insert into `stats_patronyme` (idf_patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes) select pat.idf,%d,%d,%d,min(a.annee),max(a.annee),count(p.patronyme) from personne p join patronyme pat on (p.patronyme=pat.libelle) join acte a on (p.idf_acte=a.idf) where a.idf_commune=%d and a.idf_type_acte=%d and a.idf_source=%d and a.annee!=0 and a.annee!=9999 group by p.patronyme,a.idf_commune,a.idf_type_acte,a.idf_source",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source,$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source);
       $this->connexionBD->execute_requete($st_requete);   
    }
+   
+   
 }
 ?>
