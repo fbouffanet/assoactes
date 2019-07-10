@@ -527,7 +527,7 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
 	
 	if (count($a_liste_personnes)>0)
 	{
-		//$a_liste_personnes[0]->sauveCommunePersonne();
+		$a_liste_personnes[0]->sauveCommunePersonne();
 		$a_liste_personnes[0]->sauveProfession();
 		$a_liste_personnes[0]->sauvePrenom();
 		$st_personnes = '';
@@ -720,7 +720,7 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
 		
 	if (count($a_liste_personnes)>0)
 	{
-		$a_liste_personnes[0]->sauveCommunePersonne();
+		//$a_liste_personnes[0]->sauveCommunePersonne();
 		$a_liste_personnes[0]->sauveProfession();
 		$a_liste_personnes[0]->sauvePrenom();
 		$st_personnes = '';
