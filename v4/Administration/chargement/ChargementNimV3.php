@@ -209,12 +209,6 @@ class ChargementNimV3 {
 			} 
 		}   
 		fclose($pf);   
-		// Sauvegarde des types d'acte par sécurité si 'Mariage' n'a pas été déjà défini comme type d'acte		
-		$stats_patronyme->sauvePatronyme();	
-		$stats_patronyme->sauveTypeActe();	
-		$stats_patronyme->sauve();
-		$stats_commune->sauve();
-		$union->sauve();
 	
 		if (count($a_liste_personnes)>0)
 		{
@@ -284,6 +278,12 @@ class ChargementNimV3 {
 				$connexionBD->execute_requete($st_requete);	  
 			}
 		}
+		
+		$union->sauve();
+		$stats_patronyme->sauvePatronyme();	
+		$stats_patronyme->sauveTypeActe();	
+		$stats_patronyme->sauve();
+		$stats_commune->sauve();
 		$connexionBD->execute_requete("UNLOCK TABLES");  
 		$this->i_nb_actes = $i_nb_actes;
 		return true;
@@ -517,13 +517,7 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
 			$this->a_deja_existants[] ="L'acte divers $st_prn_intv1 $st_nom_intv1 X $st_prn_intv2 $st_nom_intv2 du $st_date existe déjà";
 		} 
 	} 
-	fclose($pf);   
-   	
-    $stats_patronyme->sauvePatronyme();	
-	$stats_patronyme->sauveTypeActe();		
-	$stats_patronyme->sauve();
-	$stats_commune->sauve();
-	$union->sauve();
+	fclose($pf);      
 	
 	if (count($a_liste_personnes)>0)
 	{
@@ -593,6 +587,13 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
 			$connexionBD->execute_requete($st_requete);	  
 		}
 	}
+	$union->sauve();
+	$stats_patronyme->sauvePatronyme();	
+	$stats_patronyme->sauveTypeActe();		
+	$stats_patronyme->sauve();
+	$stats_commune->sauve();
+	
+	
 	$connexionBD->execute_requete("UNLOCK TABLES");  
 	$this->i_nb_actes = $i_nb_actes;   
 	return true;
@@ -711,14 +712,7 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
 		} 
 	} 
 	fclose($pf);  
-	// Sauvegarde des types d'acte par sécurité si 'Naissance' n'a pas été déjà défini comme type d'acte
    	
-    $stats_patronyme->sauvePatronyme();	
-	$stats_patronyme->sauveTypeActe();		
-	$stats_patronyme->sauve();
-	$stats_commune->sauve();
-    $union->sauve();	
-		
 	if (count($a_liste_personnes)>0)
 	{
 		//$a_liste_personnes[0]->sauveCommunePersonne();
@@ -786,7 +780,13 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
 			$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
 			$connexionBD->execute_requete($st_requete);	  
 		}
-	}   
+	}
+	$union->sauve();
+	$stats_patronyme->sauvePatronyme();	
+	$stats_patronyme->sauveTypeActe();		
+	$stats_patronyme->sauve();
+	$stats_commune->sauve();
+    	
 	$connexionBD->execute_requete("UNLOCK TABLES");  
 	$this->i_nb_actes = $i_nb_actes;   
 	return true;
@@ -922,13 +922,7 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
 			$this->a_deja_existants[] = "Le décès de $st_prn $st_nom du $st_date existe déjà";
 		} 
 	} 
-	fclose($pf);  
-	
-    $stats_patronyme->sauvePatronyme();	
-	$stats_patronyme->sauveTypeActe();		
-	$stats_patronyme->sauve();
-	$stats_commune->sauve();
-	$union->sauve();	
+	fclose($pf);  	
 		
 	if (count($a_liste_personnes)>0)
 	{
@@ -998,6 +992,11 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
 			$connexionBD->execute_requete($st_requete);	  
 		}
 	}
+	$union->sauve();
+	$stats_patronyme->sauvePatronyme();	
+	$stats_patronyme->sauveTypeActe();		
+	$stats_patronyme->sauve();
+	$stats_commune->sauve();	
 	$connexionBD->execute_requete("UNLOCK TABLES");	
 	$this->i_nb_actes = $i_nb_actes;   
 	return true;
