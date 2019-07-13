@@ -145,7 +145,7 @@ print('</select></div></div>');
 
 print('<div class="form-row col-md-12">');
 print('<label for="idf_commune" class="col-form-label col-md-2 col-md-offset-3" >Commune:</label>');
-print('<div class="col-md-4 "><select name=idf_commune id=idf_commune class="js-select-avec-recherche form-control" >');
+print('<div class="col-md-4"><select name=idf_commune id=idf_commune class="js-select-avec-recherche form-control" >');
 print(chaine_select_options($gi_idf_commune,$a_communes));
 print('</select></div></div>');
 
@@ -157,77 +157,81 @@ print('</select></div></div>');
 
 print('<div class="form-row col-md-12">');
 print("<label for=\"patro_patcom\" class=\"col-form-label col-md-2 col-md-offset-3\">Patronyme:</label>");
-print("<div class=\"col-md-4 \"><input type=text id=patro_patcom name=patro_patcom size=15 maxlength=30 value=\"$gst_patronyme\" class=\"form-control\" aria-describedby=\"aideCommune\">");
+print("<div class=\"col-md-4\"><input type=text id=patro_patcom name=patro_patcom size=15 maxlength=30 value=\"$gst_patronyme\" class=\"form-control\" aria-describedby=\"aideCommune\">");
 print('<small id="aideCommune" class="form-text text-muted">laisser * si aucun patronyme choisi</small></div><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Chercher</button></div>');
 
 if (empty($gi_idf_commune))
 {
-   print("<div class=\"text-center alert alert-danger\">Pas de donn&eacute;es</div>");
+   print("<div class=\"form-row col-md-12\"><div class=\"text-center alert alert-danger\">Pas de donn&eacute;es</div></div>");
 }
 else if ($gi_idf_type_acte==-1)
-{
-  
-   // Calcul de la liste des initiales
-   if ($gst_patronyme=='')
-      $st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf) where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune  having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z') ORDER BY init";
-   else
-      $st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune  and p.libelle $gst_clause_patronyme having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')  ORDER BY init";
-   $connexionBD->initialise_params(array(":patro"=>$gst_patronyme));   
-   //print("Req=$st_requete< br>");
-   $a_initiales_patronymes = $connexionBD->sql_select($st_requete);
-   print('<div class="text-center"><ul class="pagination">');
-   $st_patro = isset($a_initiales_patronymes[0]) ? $a_initiales_patronymes[0] : '';
-   $i_session_initiale = isset($_SESSION['initiale_patcom']) ? $_SESSION['initiale_patcom'] : $st_patro;
-   if (empty($_GET['initiale_patcom']) )
-     $gc_initiale = $i_session_initiale;
-   else
-   {
-     $gc_initiale = $_GET['initiale_patcom'];
-     $gi_num_page=1;
-   }
-   if (!in_array($gc_initiale,$a_initiales_patronymes)) 
-   {
-     $gc_initiale=array_key_exists(0,$a_initiales_patronymes) ? $a_initiales_patronymes[0]:'A';
-     $gi_num_page=1;
-   }
-   $_SESSION['initiale_patcom'] = $gc_initiale;
-   $_SESSION['num_page_patcom'] = $gi_num_page;
-   // Affichage de la liste des initiales des patronymes  
-   foreach ($a_initiales_patronymes as $c_initiale)
-   {
-      if ($c_initiale==$gc_initiale)
-        print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
-      else
-        print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_patcom=$c_initiale\">$c_initiale</a></li>");
-   }
-   print("</ul></div>");
-   if ($gst_patronyme=='')
-     $st_requete="select p.libelle,sp.idf_type_acte,ta.nom, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and p.libelle like '$gc_initiale%' order by p.libelle,ta.nom";
+{  
+	// Calcul de la liste des initiales
+	if ($gst_patronyme=='')
+		$st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf) where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune  having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z') ORDER BY init";
+	else
+		$st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune  and p.libelle $gst_clause_patronyme having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')  ORDER BY init";
+	$connexionBD->initialise_params(array(":patro"=>$gst_patronyme));   
+	//print("Req=$st_requete< br>");
+	$a_initiales_patronymes = $connexionBD->sql_select($st_requete);
+	if (count($a_initiales_patronymes)>0)
+	{   
+		print('<div class="text-center"><ul class="pagination">');
+		$st_patro = isset($a_initiales_patronymes[0]) ? $a_initiales_patronymes[0] : '';
+		$i_session_initiale = isset($_SESSION['initiale_patcom']) ? $_SESSION['initiale_patcom'] : $st_patro;
+		if (empty($_GET['initiale_patcom']) )
+			$gc_initiale = $i_session_initiale;
+		else
+		{
+			$gc_initiale = $_GET['initiale_patcom'];
+			$gi_num_page=1;
+		}		
+		if (!in_array($gc_initiale,$a_initiales_patronymes)) 
+		{
+			$gc_initiale=array_key_exists(0,$a_initiales_patronymes) ? $a_initiales_patronymes[0]:'A';
+			$gi_num_page=1;
+		}
+		$_SESSION['initiale_patcom'] = $gc_initiale;
+		$_SESSION['num_page_patcom'] = $gi_num_page;
+		// Affichage de la liste des initiales des patronymes  
+		foreach ($a_initiales_patronymes as $c_initiale)
+		{
+			if ($c_initiale==$gc_initiale)
+				print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
+			else
+				print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_patcom=$c_initiale\">$c_initiale</a></li>");
+		}
+		print("</ul></div>");
+	}
+	else 
+		$gc_initiale="\%";
+	if ($gst_patronyme=='')
+		$st_requete="select p.libelle,sp.idf_type_acte,ta.nom, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and p.libelle like '$gc_initiale%' order by p.libelle,ta.nom";
     else
     {
       $st_requete="select p.libelle,sp.idf_type_acte,ta.nom, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and p.libelle like '$gc_initiale%'  and p.libelle $gst_clause_patronyme order by p.libelle,ta.nom";
       $connexionBD->initialise_params(array(":patro"=>$gst_patronyme)); 
-   }
-   $a_liste_stats = $connexionBD->sql_select_multiple($st_requete);
+	}
+	$a_liste_stats = $connexionBD->sql_select_multiple($st_requete);
    
-   // Affichage des patronymes correspondants
-   $i_nb_stats=count($a_liste_stats);
-   if ($i_nb_stats!=0)
-   {     
-      $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page_patcom',$i_nb_stats,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Patronyme','Type d\'acte','Ann&eacute;e minimale','Ann&eacute;e maximale','Nombre d\'occurrences'));
-      $a_tableau_affichage = array();
-      foreach ($a_liste_stats as $a_stat_patro)
-      {
-         list($st_patronyme,$i_idf_type_acte,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_pers) = $a_stat_patro;
-         $a_tableau_affichage[] = array("<a href=\"Recherches.php?recherche=nouvelle&amp;idf_src=$gi_idf_source&amp;idf_ca=$gi_idf_commune&amp;idf_ta=$i_idf_type_acte&amp;a_min=$i_annee_min&amp;a_max=$i_annee_max&amp;var=N&amp;nom=$st_patronyme\">$st_patronyme</a>",$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_pers);
-      } 
-      $pagination->init_page_cour($gi_num_page);
-      $pagination->affiche_entete_liste_select('PatrosCommune');
-      $pagination->affiche_tableau_simple($a_tableau_affichage);
-      $pagination->affiche_entete_liste_select('PatrosCommune');
-   }
-   else
-      print("<div class=\"text-center alert alert-danger\">Pas de donn&eacute;es</div>\n");
+	// Affichage des patronymes correspondants
+	$i_nb_stats=count($a_liste_stats);
+	if ($i_nb_stats!=0)
+	{     
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page_patcom',$i_nb_stats,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Patronyme','Type d\'acte','Ann&eacute;e minimale','Ann&eacute;e maximale','Nombre d\'occurrences'));
+		$a_tableau_affichage = array();
+		foreach ($a_liste_stats as $a_stat_patro)
+		{
+			list($st_patronyme,$i_idf_type_acte,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_pers) = $a_stat_patro;
+			$a_tableau_affichage[] = array("<a href=\"Recherches.php?recherche=nouvelle&amp;idf_src=$gi_idf_source&amp;idf_ca=$gi_idf_commune&amp;idf_ta=$i_idf_type_acte&amp;a_min=$i_annee_min&amp;a_max=$i_annee_max&amp;var=N&amp;nom=$st_patronyme\">$st_patronyme</a>",$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_pers);
+		} 
+		$pagination->init_page_cour($gi_num_page);
+		$pagination->affiche_entete_liste_select('PatrosCommune');
+		$pagination->affiche_tableau_simple($a_tableau_affichage);
+		$pagination->affiche_entete_liste_select('PatrosCommune');
+	}
+	else
+		print("<div class=\"form-row col-md-12\"><div class=\"text-center alert alert-danger\">Pas de donn&eacute;es</div></div>\n");
 }
 else
 {
@@ -239,59 +243,63 @@ else
      $st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle $gst_clause_patronyme having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')  ORDER BY init";
      $connexionBD->initialise_params(array(":patro"=>$gst_patronyme)); 
    }
-   $a_initiales_patronymes = $connexionBD->sql_select($st_requete);
-   print('<div class="text-center"><ul class="pagination">');
-   $i_session_initiale = isset($_SESSION['initiale_patcom']) ? $_SESSION['initiale_patcom'] : $a_initiales_patronymes[0];
-   if (empty($_GET['initiale_patcom']))
-     $gc_initiale = $i_session_initiale;
-   else
-   {
-     $gc_initiale =$_GET['initiale_patcom'];
-     $gi_num_page=1;
-   }
-   if (!in_array($gc_initiale,$a_initiales_patronymes))
-   {
-     $gc_initiale=$a_initiales_patronymes[0];
-     $gi_num_page=1;
-   }
-   $_SESSION['initiale_patcom'] = $gc_initiale;
-   $_SESSION['num_page_patcom'] = $gi_num_page;
+	$a_initiales_patronymes = $connexionBD->sql_select($st_requete);
+	if (count($a_initiales_patronymes)>0)
+	{   
+		print('<div class="text-center"><ul class="pagination">');
+		$i_session_initiale = isset($_SESSION['initiale_patcom']) ? $_SESSION['initiale_patcom'] : $a_initiales_patronymes[0];
+		if (empty($_GET['initiale_patcom']))
+			$gc_initiale = $i_session_initiale;
+		else
+		{
+			$gc_initiale =$_GET['initiale_patcom'];
+			$gi_num_page=1;
+		}
+		if (!in_array($gc_initiale,$a_initiales_patronymes))
+		{
+			$gc_initiale=$a_initiales_patronymes[0];
+			$gi_num_page=1;
+		}
+		$_SESSION['initiale_patcom'] = $gc_initiale;
+		$_SESSION['num_page_patcom'] = $gi_num_page;
    
-   // Affichage de la liste des initiales des patronymes  
-   foreach ($a_initiales_patronymes as $c_initiale)
-   {
-      if ($c_initiale==$gc_initiale)
-        print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
-      else
-        print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_patcom=$c_initiale\">$c_initiale</a></li>");
-   }
-   print("</ul></div>");
-   
-   if ($gst_patronyme=='')
-      $st_requete="select p.libelle, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle like '$gc_initiale%' order by p.libelle";
-   else
-   {
-      $st_requete="select p.libelle, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle like '$gc_initiale%' and p.libelle $gst_clause_patronyme order by p.libelle";   
-      $connexionBD->initialise_params(array(":patro"=>$gst_patronyme)); 
-   }
-   $a_liste_stats = $connexionBD->sql_select_multiple($st_requete);
-   $i_nb_stats= count($a_liste_stats);
-   if ($i_nb_stats!=0)
-   {
-      $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page_patcom',$i_nb_stats,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Patronyme','Ann&eacute;e minimale','Ann&eacute;e maximale','Nombre d\'occurrences'));
-      $a_tableau_affichage = array();
-      foreach ($a_liste_stats as $a_stat_patro)
-      {
-         list($st_patronyme,$i_annee_min,$i_annee_max,$i_nb_pers) = $a_stat_patro;
-         $a_tableau_affichage[] = array("<a href=\"Recherches.php?recherche=nouvelle&idf_src=$gi_idf_source&idf_ca=$gi_idf_commune&idf_ta=$gi_idf_type_acte&a_min=$i_annee_min&a_max=$i_annee_max&var=N&nom=$st_patronyme\">$st_patronyme</a>",$i_annee_min,$i_annee_max,$i_nb_pers);
-      }
-      $pagination->init_page_cour($gi_num_page);
-      $pagination->affiche_entete_liste_select('PatrosCommune');
-      $pagination->affiche_tableau_simple($a_tableau_affichage);
-      $pagination->affiche_entete_liste_select('PatrosCommune');      
-   }
-   else
-      print("<div class=\"text-center alert alert-danger\">Pas de donn&eacute;es</div>\n");
+		// Affichage de la liste des initiales des patronymes  
+		foreach ($a_initiales_patronymes as $c_initiale)
+		{
+			if ($c_initiale==$gc_initiale)
+				print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
+			else
+				print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_patcom=$c_initiale\">$c_initiale</a></li>");
+		}
+		print("</ul></div>");
+	}
+	else
+		$gc_initiale="\%";
+	if ($gst_patronyme=='')
+		$st_requete="select p.libelle, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle like '$gc_initiale%' order by p.libelle";
+	else
+	{
+		$st_requete="select p.libelle, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle like '$gc_initiale%' and p.libelle $gst_clause_patronyme order by p.libelle";   
+		$connexionBD->initialise_params(array(":patro"=>$gst_patronyme)); 
+	}
+	$a_liste_stats = $connexionBD->sql_select_multiple($st_requete);
+	$i_nb_stats= count($a_liste_stats);
+	if ($i_nb_stats!=0)
+	{
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page_patcom',$i_nb_stats,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Patronyme','Ann&eacute;e minimale','Ann&eacute;e maximale','Nombre d\'occurrences'));
+		$a_tableau_affichage = array();
+		foreach ($a_liste_stats as $a_stat_patro)
+		{
+			list($st_patronyme,$i_annee_min,$i_annee_max,$i_nb_pers) = $a_stat_patro;
+         $a_tableau_affichage[] = array("<a href=\"Recherches.php?recherche=nouvelle&idf_src=$gi_idf_source&idf_ca=$gi_idf_commune&idf_ta=	$gi_idf_type_acte&a_min=$i_annee_min&a_max=$i_annee_max&var=N&nom=$st_patronyme\">$st_patronyme</a>",$i_annee_min,$i_annee_max,$i_nb_pers);
+		}
+		$pagination->init_page_cour($gi_num_page);
+		$pagination->affiche_entete_liste_select('PatrosCommune');
+		$pagination->affiche_tableau_simple($a_tableau_affichage);
+		$pagination->affiche_entete_liste_select('PatrosCommune');      
+	}
+	else
+		print("<div class=\"form-row col-md-12\"><div class=\"text-center alert alert-danger\">Pas de donn&eacute;es</div></div>\n");
 }
 print ("</form>");
 print("</div></body></html>");
