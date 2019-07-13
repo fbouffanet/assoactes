@@ -607,7 +607,7 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
      $go_acte -> maj_liste_personnes($go_acte -> getIdfSource(), $go_acte -> getIdfCommune(), $unions);
      $go_acte -> sauve();
 	 $patronyme -> sauve();
-     $stats_patronyme -> maj_stats($go_acte -> getIdfTypeActe());
+     $stats_patronyme -> maj_stats($go_acte -> getIdfTypeActe(),$this -> i_idf_acte);
      $stats_commune -> maj_stats($go_acte -> getIdfTypeActe());
      $this -> connexionBD -> execute_requete("UNLOCK TABLES");
      print("<div class=\"alert alert-success\">Modification effectu&eacute;e</div>\n");
