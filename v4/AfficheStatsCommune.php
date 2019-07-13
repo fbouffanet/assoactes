@@ -342,7 +342,7 @@ switch ($gst_mode) {
      }
      else
      {
-        print("<div class=\"row\">Pas de relev&eacute;s</div>");
+        print("<div class=\"form-row col-md-12\"><div class=\"text-center alert alert-danger\">Pas de relev&eacute;s</div></div>");
      }
      break;
   case 'DETAIL' :  
