@@ -23,14 +23,9 @@ class ChargementNimV2 {
    {
       global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd;
       $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-      $type_acte = TypeActe::singleton($connexionBD);
       $union = Union::singleton($connexionBD);
-	  $patronyme = Patronyme::singleton($connexionBD);
       $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
       $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
-      $prenom = Prenom::singleton($connexionBD);
-      $commune_personne = CommunePersonne::singleton($connexionBD);
-      $profession = Profession::singleton($connexionBD);
       $releveur =  new Releveur($connexionBD);
       $a_liste_personnes = array();
       $a_liste_actes = array();  
@@ -220,48 +215,79 @@ class ChargementNimV2 {
         } 
       }   
       fclose($pf);   
-      // Sauvegarde des types d'acte par sécurité si 'Mariage' n'a pas été déjà défini comme type d'acte
-	
-	$type_acte->sauve();
-	$union->sauve();
-    $patronyme->sauve();	
-	$stats_patronyme->sauve();
-	$stats_commune->sauve();
-	$commune_personne->sauve();
-	$profession->sauve();   
-	$prenom->sauve();
 	
 	if (count($a_liste_personnes)>0)
 	{
+		$a_liste_personnes[0]->sauveCommunePersonne();
+		$a_liste_personnes[0]->sauveProfession();
+		$a_liste_personnes[0]->sauvePrenom();
 		$st_personnes = '';
 		$a_personnes_a_creer=array();
 		$a_lignes_personnes = array();
-		foreach ($a_liste_personnes as $personne)
+		$i_nb_personnes_courant  =1;
+		reset($a_liste_personnes);
+		while($personne=current($a_liste_personnes))
 		{
 			list($st_ligne,$a_personnes)=$personne->ligne_sql_a_inserer();
 			$a_lignes_personnes[]=$st_ligne;
 			$a_personnes_a_creer=$a_personnes_a_creer+$a_personnes;
+			if ($i_nb_personnes_courant==NB_PERSONNES_BLOC_CHGMT)
+			{ 
+				$connexionBD->initialise_params($a_personnes_a_creer);
+				$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
+				$connexionBD->execute_requete($st_requete);
+				$i_nb_personnes_courant=1;
+				$st_personnes = '';
+				$a_personnes_a_creer=array();
+				$a_lignes_personnes = array();
+			}
+			next($a_liste_personnes);
+			$i_nb_personnes_courant++;
 		}
-		$connexionBD->initialise_params($a_personnes_a_creer);
-		$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
-		$connexionBD->execute_requete($st_requete);	  
+		if (count($a_personnes_a_creer)>0)
+		{
+			$connexionBD->initialise_params($a_personnes_a_creer);
+			$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
+			$connexionBD->execute_requete($st_requete);
+		}  
 	}
-   
-    if (count($a_liste_actes)>0)
+	if (count($a_liste_actes)>0)
 	{
 		$st_actes = '';
 		$a_actes_a_creer=array();
 		$a_lignes_actes = array();
-		foreach ($a_liste_actes as $acte)
+		$i_nb_actes_courant =1;
+		reset($a_liste_actes);
+		while($acte=current($a_liste_actes))
 		{
 			list($st_ligne,$a_actes)=$acte->ligne_sql_a_inserer();
 			$a_lignes_actes[]=$st_ligne;
 			$a_actes_a_creer=$a_actes_a_creer+$a_actes;
+			if ($i_nb_actes_courant==NB_ACTES_BLOC_CHGMT)
+			{			
+				$connexionBD->initialise_params($a_actes_a_creer);
+				$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
+				$connexionBD->execute_requete($st_requete);
+				$i_nb_actes_courant=1;
+				$st_actes = '';
+				$a_actes_a_creer=array();
+				$a_lignes_actes = array();
+			}
+			next($a_liste_actes);
+			$i_nb_actes_courant++;
 		}
-		$connexionBD->initialise_params($a_actes_a_creer);
-		$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
-		$connexionBD->execute_requete($st_requete);	  
+		if (count($a_actes_a_creer)>0)
+		{
+			$connexionBD->initialise_params($a_actes_a_creer);
+			$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
+			$connexionBD->execute_requete($st_requete);	  
+		}
 	}
+	$union->sauve();
+	$stats_patronyme->sauvePatronyme();	
+	$stats_patronyme->sauveTypeActe();	
+	$stats_patronyme->sauve();
+	$stats_commune->sauve();
 	$connexionBD->execute_requete("UNLOCK TABLES");  
     $this->i_nb_actes = $i_nb_actes;   
     return true;
@@ -281,14 +307,9 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
 {
    global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd;
    $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-   $type_acte = TypeActe::singleton($connexionBD);
    $union = Union::singleton($connexionBD);
-   $patronyme = Patronyme::singleton($connexionBD);
    $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
    $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
-   $prenom = Prenom::singleton($connexionBD);
-   $commune_personne = CommunePersonne::singleton($connexionBD);
-   $profession = Profession::singleton($connexionBD);
    $releveur =  new Releveur($connexionBD);   
    $a_types_acte_par_idf = $connexionBD->liste_clef_par_valeur("select idf,nom from type_acte");
    $a_liste_personnes = array();
@@ -501,49 +522,85 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
    } 
    fclose($pf);   
    
-	$type_acte->sauve();
-	$union->sauve();
-    $patronyme->sauve();	
-	$stats_patronyme->sauve();
-	$stats_commune->sauve();
-	$commune_personne->sauve();
-	$profession->sauve();   
-	$prenom->sauve();
+
+	
 	
 	if (count($a_liste_personnes)>0)
 	{
+		$a_liste_personnes[0]->sauveCommunePersonne();
+		$a_liste_personnes[0]->sauveProfession();
+		$a_liste_personnes[0]->sauvePrenom();
 		$st_personnes = '';
 		$a_personnes_a_creer=array();
 		$a_lignes_personnes = array();
-		foreach ($a_liste_personnes as $personne)
+		$i_nb_personnes_courant  =1;
+		reset($a_liste_personnes);
+		while($personne=current($a_liste_personnes))
 		{
 			list($st_ligne,$a_personnes)=$personne->ligne_sql_a_inserer();
 			$a_lignes_personnes[]=$st_ligne;
 			$a_personnes_a_creer=$a_personnes_a_creer+$a_personnes;
+			if ($i_nb_personnes_courant==NB_PERSONNES_BLOC_CHGMT)
+			{ 
+				$connexionBD->initialise_params($a_personnes_a_creer);
+				$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
+				$connexionBD->execute_requete($st_requete);
+				$i_nb_personnes_courant=1;
+				$st_personnes = '';
+				$a_personnes_a_creer=array();
+				$a_lignes_personnes = array();
+			}
+			next($a_liste_personnes);
+			$i_nb_personnes_courant++;
 		}
-		$connexionBD->initialise_params($a_personnes_a_creer);
-		$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
-		$connexionBD->execute_requete($st_requete);	  
-	}
-   
+		if (count($a_personnes_a_creer)>0)
+		{
+			$connexionBD->initialise_params($a_personnes_a_creer);
+			$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
+			$connexionBD->execute_requete($st_requete);
+		}  
+	}   
     if (count($a_liste_actes)>0)
 	{
+		$a_liste_actes[0]->sauveTypeActe();
 		$st_actes = '';
 		$a_actes_a_creer=array();
 		$a_lignes_actes = array();
-		foreach ($a_liste_actes as $acte)
+		$i_nb_actes_courant =1;
+		reset($a_liste_actes);
+		while($acte=current($a_liste_actes))
 		{
 			list($st_ligne,$a_actes)=$acte->ligne_sql_a_inserer();
 			$a_lignes_actes[]=$st_ligne;
 			$a_actes_a_creer=$a_actes_a_creer+$a_actes;
+			if ($i_nb_actes_courant==NB_ACTES_BLOC_CHGMT)
+			{			
+				$connexionBD->initialise_params($a_actes_a_creer);
+				$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
+				$connexionBD->execute_requete($st_requete);
+				$i_nb_actes_courant=1;
+				$st_actes = '';
+				$a_actes_a_creer=array();
+				$a_lignes_actes = array();
+			}
+			next($a_liste_actes);
+			$i_nb_actes_courant++;
 		}
-		$connexionBD->initialise_params($a_actes_a_creer);
-		$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
-		$connexionBD->execute_requete($st_requete);	  
+		if (count($a_actes_a_creer)>0)
+		{		
+			$connexionBD->initialise_params($a_actes_a_creer);
+			$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
+			$connexionBD->execute_requete($st_requete);	  
+		}
 	}
-   $connexionBD->execute_requete("UNLOCK TABLES");  
-   $this->i_nb_actes = $i_nb_actes;   
-   return true;
+	$union->sauve();
+	$stats_patronyme->sauvePatronyme();	
+	$stats_patronyme->sauveTypeActe();		
+	$stats_patronyme->sauve();
+	$stats_commune->sauve();
+	$connexionBD->execute_requete("UNLOCK TABLES");  
+	$this->i_nb_actes = $i_nb_actes;   
+	return true;
 } 
 
 /**
@@ -559,14 +616,10 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
 {
    global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd;
    $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-   $type_acte = TypeActe::singleton($connexionBD);
    $union = Union::singleton($connexionBD);
-   $patronyme = Patronyme::singleton($connexionBD);
    $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
    $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
-   $prenom = Prenom::singleton($connexionBD);
-   $commune_personne = CommunePersonne::singleton($connexionBD);
-   $profession = Profession::singleton($connexionBD);
+   
    $releveur =  new Releveur($connexionBD);
    $a_liste_personnes = array();
    $a_liste_actes = array();      
@@ -660,30 +713,42 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
       } 
    } 
    fclose($pf);  
-   // Sauvegarde des types d'acte par sécurité si 'Naissance' n'a pas été déjà défini comme type d'acte   
-	$type_acte->sauve();
-	$union->sauve();
-    $patronyme->sauve();	
-	$stats_patronyme->sauve();
-	$stats_commune->sauve();
-	$commune_personne->sauve();
-	$profession->sauve();   
-	$prenom->sauve();
+
 	
 	if (count($a_liste_personnes)>0)
 	{
+		//$a_liste_personnes[0]->sauveCommunePersonne();
+		$a_liste_personnes[0]->sauveProfession();
+		$a_liste_personnes[0]->sauvePrenom();
 		$st_personnes = '';
 		$a_personnes_a_creer=array();
 		$a_lignes_personnes = array();
-		foreach ($a_liste_personnes as $personne)
+		$i_nb_personnes_courant  =1;
+		reset($a_liste_personnes);
+		while($personne=current($a_liste_personnes))
 		{
 			list($st_ligne,$a_personnes)=$personne->ligne_sql_a_inserer();
 			$a_lignes_personnes[]=$st_ligne;
 			$a_personnes_a_creer=$a_personnes_a_creer+$a_personnes;
+			if ($i_nb_personnes_courant==NB_PERSONNES_BLOC_CHGMT)
+			{ 
+				$connexionBD->initialise_params($a_personnes_a_creer);
+				$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
+				$connexionBD->execute_requete($st_requete);
+				$i_nb_personnes_courant=1;
+				$st_personnes = '';
+				$a_personnes_a_creer=array();
+				$a_lignes_personnes = array();
+			}
+			next($a_liste_personnes);
+			$i_nb_personnes_courant++;
 		}
-		$connexionBD->initialise_params($a_personnes_a_creer);
-		$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
-		$connexionBD->execute_requete($st_requete);	  
+		if (count($a_personnes_a_creer)>0)
+		{
+			$connexionBD->initialise_params($a_personnes_a_creer);
+			$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
+			$connexionBD->execute_requete($st_requete);
+		}  
 	}
    
     if (count($a_liste_actes)>0)
@@ -691,16 +756,38 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
 		$st_actes = '';
 		$a_actes_a_creer=array();
 		$a_lignes_actes = array();
-		foreach ($a_liste_actes as $acte)
+		$i_nb_actes_courant =1;
+		reset($a_liste_actes);
+		while($acte=current($a_liste_actes))
 		{
 			list($st_ligne,$a_actes)=$acte->ligne_sql_a_inserer();
 			$a_lignes_actes[]=$st_ligne;
 			$a_actes_a_creer=$a_actes_a_creer+$a_actes;
+			if ($i_nb_actes_courant==NB_ACTES_BLOC_CHGMT)
+			{			
+				$connexionBD->initialise_params($a_actes_a_creer);
+				$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
+				$connexionBD->execute_requete($st_requete);
+				$i_nb_actes_courant=1;
+				$st_actes = '';
+				$a_actes_a_creer=array();
+				$a_lignes_actes = array();
+			}
+			next($a_liste_actes);
+			$i_nb_actes_courant++;
 		}
-		$connexionBD->initialise_params($a_actes_a_creer);
-		$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
-		$connexionBD->execute_requete($st_requete);	  
+		if (count($a_actes_a_creer)>0)
+		{	
+			$connexionBD->initialise_params($a_actes_a_creer);
+			$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
+			$connexionBD->execute_requete($st_requete);	  
+		}
 	}
+	$union->sauve();
+	$stats_patronyme->sauvePatronyme();	
+	$stats_patronyme->sauveTypeActe();		
+	$stats_patronyme->sauve();
+	$stats_commune->sauve();
    $connexionBD->execute_requete("UNLOCK TABLES");  
    $this->i_nb_actes = $i_nb_actes;   
    return true;
@@ -719,14 +806,10 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
 {
    global $gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd;
    $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-   $type_acte = TypeActe::singleton($connexionBD);
    $union = Union::singleton($connexionBD);
-   $patronyme = Patronyme::singleton($connexionBD);
    $stats_patronyme = new StatsPatronyme($connexionBD,$pi_idf_commune,$pi_idf_source);
    $stats_commune = new StatsCommune($connexionBD,$pi_idf_commune,$pi_idf_source);
-   $prenom = Prenom::singleton($connexionBD);
-   $commune_personne = CommunePersonne::singleton($connexionBD);
-   $profession = Profession::singleton($connexionBD);
+
    $releveur =  new Releveur($connexionBD);
    $a_liste_personnes = array();      
    $a_liste_actes = array(); 
@@ -836,30 +919,42 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
       } 
    } 
    fclose($pf);  
-   // Sauvegarde des types d'acte par sécurité si 'Décès' n'a pas été déjà défini comme type d'acte
-	$type_acte->sauve();
-	$union->sauve();
-    $patronyme->sauve();	
-	$stats_patronyme->sauve();
-	$stats_commune->sauve();
-	$commune_personne->sauve();
-	$profession->sauve();   
-	$prenom->sauve();
+   
 	
 	if (count($a_liste_personnes)>0)
 	{
+		$a_liste_personnes[0]->sauveCommunePersonne();
+		$a_liste_personnes[0]->sauveProfession();
+		$a_liste_personnes[0]->sauvePrenom();
 		$st_personnes = '';
 		$a_personnes_a_creer=array();
 		$a_lignes_personnes = array();
-		foreach ($a_liste_personnes as $personne)
+		$i_nb_personnes_courant  =1;
+		reset($a_liste_personnes);
+		while($personne=current($a_liste_personnes))
 		{
 			list($st_ligne,$a_personnes)=$personne->ligne_sql_a_inserer();
 			$a_lignes_personnes[]=$st_ligne;
 			$a_personnes_a_creer=$a_personnes_a_creer+$a_personnes;
+			if ($i_nb_personnes_courant==NB_PERSONNES_BLOC_CHGMT)
+			{ 
+				$connexionBD->initialise_params($a_personnes_a_creer);
+				$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
+				$connexionBD->execute_requete($st_requete);
+				$i_nb_personnes_courant=1;
+				$st_personnes = '';
+				$a_personnes_a_creer=array();
+				$a_lignes_personnes = array();
+			}
+			next($a_liste_personnes);
+			$i_nb_personnes_courant++;
 		}
-		$connexionBD->initialise_params($a_personnes_a_creer);
-		$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
-		$connexionBD->execute_requete($st_requete);	  
+		if (count($a_personnes_a_creer)>0)
+		{
+			$connexionBD->initialise_params($a_personnes_a_creer);
+			$st_requete = Personne::requete_base().join(',',$a_lignes_personnes);
+			$connexionBD->execute_requete($st_requete);
+		}  
 	}
    
     if (count($a_liste_actes)>0)
@@ -867,16 +962,38 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
 		$st_actes = '';
 		$a_actes_a_creer=array();
 		$a_lignes_actes = array();
-		foreach ($a_liste_actes as $acte)
+		$i_nb_actes_courant =1;
+		reset($a_liste_actes);
+		while($acte=current($a_liste_actes))
 		{
 			list($st_ligne,$a_actes)=$acte->ligne_sql_a_inserer();
 			$a_lignes_actes[]=$st_ligne;
 			$a_actes_a_creer=$a_actes_a_creer+$a_actes;
+			if ($i_nb_actes_courant==NB_ACTES_BLOC_CHGMT)
+			{			
+				$connexionBD->initialise_params($a_actes_a_creer);
+				$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
+				$connexionBD->execute_requete($st_requete);
+				$i_nb_actes_courant=1;
+				$st_actes = '';
+				$a_actes_a_creer=array();
+				$a_lignes_actes = array();
+			}
+			next($a_liste_actes);
+			$i_nb_actes_courant++;
 		}
-		$connexionBD->initialise_params($a_actes_a_creer);
-		$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
-		$connexionBD->execute_requete($st_requete);	  
+		if (count($a_actes_a_creer)>0)
+		{			
+			$connexionBD->initialise_params($a_actes_a_creer);
+			$st_requete = Acte::requete_base().join(',',$a_lignes_actes);
+			$connexionBD->execute_requete($st_requete);	  
+		}
 	}
+	$union->sauve();
+	$stats_patronyme->sauvePatronyme();	
+	$stats_patronyme->sauveTypeActe();		
+	$stats_patronyme->sauve();
+	$stats_commune->sauve();
    $connexionBD->execute_requete("UNLOCK TABLES");  
    $this->i_nb_actes = $i_nb_actes;   
    return true;
