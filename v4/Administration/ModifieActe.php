@@ -6,6 +6,7 @@ require_once('../Commun/constantes.php');
 require_once('../Commun/ConnexionBD.php');
 require_once('../Commun/VerificationDroits.php');
 require_once('../Commun/phonex.cls.php');
+require_once('../Commun/Benchmark.inc');
 
 verifie_privilege(DROIT_CHARGEMENT);
 	
@@ -204,8 +205,7 @@ else
      print("<div class=\"alert alert-danger\">Pas d'identifiant d'acte d&eacute;fini</div>");
   }
   else
-  {
-	$patronyme = Patronyme::singleton($connexionBD);  
+  {  
     $stats_patronyme = new StatsPatronyme($connexionBD,$go_acte->getIdfCommune(),$go_acte->getIdfSource());
     $stats_commune = new StatsCommune($connexionBD,$go_acte->getIdfCommune(),$go_acte->getIdfSource());
     $unions = Union::singleton($connexionBD);
@@ -216,9 +216,8 @@ else
         $st_requete = "LOCK TABLES `personne` write, `patronyme` as pat write, `patronyme` write, `prenom` write  ,`acte` write, `profession` write, `commune_personne` write, `union` write, `stats_patronyme` write,`stats_commune` write,`acte` as a read,`personne` as p read, `type_acte` read, `type_acte` as ta read,`prenom_simple` write, `groupe_prenoms` write";
         $connexionBD->execute_requete($st_requete);
         $go_acte->maj_liste_personnes($go_acte->getIdfSource(),$go_acte->getIdfCommune(),$unions);
-        $go_acte->sauve();
-		$patronyme->sauve();
-        $stats_patronyme->maj_stats($go_acte->getIdfTypeActe());
+		$go_acte->sauve();
+        $stats_patronyme->maj_stats($go_acte->getIdfTypeActe(),$gi_idf_acte);
         $stats_commune->maj_stats($go_acte->getIdfTypeActe());
         $connexionBD->execute_requete("UNLOCK TABLES");
         print("<div class=\"text-center\"><textarea rows=40 cols=80>\n");
@@ -233,13 +232,12 @@ else
       break;
       case 'SUPPRESSION':
         $st_requete = "LOCK TABLES `personne` write, `patronyme` as pat write,`acte` write, `profession` write, `commune_personne` write, `union` write, `stats_patronyme` write,`stats_commune` write,`acte` as a read,`personne` as p read, `type_acte` read, `type_acte` as ta read";
-        $connexionBD->execute_requete($st_requete); 
+        $connexionBD->execute_requete($st_requete);
         $connexionBD->execute_requete("DELETE FROM `personne` where idf_acte=$gi_idf_acte");
-        $connexionBD->execute_requete("DELETE FROM `union` where idf_acte=$gi_idf_acte");
+		$connexionBD->execute_requete("DELETE FROM `union` where idf_acte=$gi_idf_acte");
         $connexionBD->execute_requete("DELETE FROM `acte` where idf=$gi_idf_acte");
-		$patronyme->sauve();
-        $stats_patronyme->maj_stats($go_acte->getIdfTypeActe());
-        $stats_commune->maj_stats($go_acte->getIdfTypeActe());        
+        $stats_patronyme->maj_stats($go_acte->getIdfTypeActe(),null);
+        $stats_commune->maj_stats($go_acte->getIdfTypeActe());
         $connexionBD->execute_requete("UNLOCK TABLES");
         print("<div class=\"alert alert-success\">Acte supprim&eacute;</div>");
       break;
