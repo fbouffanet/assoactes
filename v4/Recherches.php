@@ -73,7 +73,7 @@ $(document).ready(function() {
 
 	$.fn.select2.defaults.set( "theme", "bootstrap" );
 	
-    $(".js-select-avec-recherche").select2();
+    $(".js-select-avec-recherche").select2({allowClear: true,placeholder: "Tous/Toutes"});
 
     $.validator.addMethod('plusGrand', function(value, element, param) {
         if (this.optional(element)) return true;
@@ -628,6 +628,7 @@ print('</div></div>');
 print('<div class="form-row col-md-12">');
 print('<div class="form-group col-md-6 "><label for="idf_commune_recherches_communes">Commune/Paroisse</label><span class=\"lib_erreur\"><select name="idf_commune_recherches_communes" id="idf_commune_recherches_communes" class="js-select-avec-recherche form-control">');
 $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
+$a_toutes_communes[0] = 'Toutes';
 print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
 print('</select></span></div>');
 
