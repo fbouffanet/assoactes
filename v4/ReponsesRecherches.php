@@ -99,13 +99,14 @@ function param_chaine($pst_param,$pi_longueur)
 * @param integer $pi_idf_type_acte identifiant du type d'acte recherché
 * @param integer $pi_annee_min année minimale de la recherche
 * @param integer $pi_annee_max année maximale de la recherche
+* @param integer $pi_idf_source source utilisée
 * @param integer $pi_idf_commune identifiant de la commune recherchée
 * @param integer $pi_rayon rayon de recherche
 * @global object $requeteRecherche objet requête recherche
 * @global string $st_criteres critères utilisés pour la recherche
 */
 
-function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$pi_annee_min,$pi_annee_max,$pi_idf_commune,$pi_rayon)
+function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$pi_annee_min,$pi_annee_max,$pi_idf_source,$pi_idf_commune,$pi_rayon)
 {
     global $requeteRecherche;
     global $st_criteres;
@@ -117,7 +118,7 @@ function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$
     if (!empty($pi_idf_type_acte))
     {
       $st_type_acte = $pconnexionBD->sql_select1("select nom from type_acte where idf=$pi_idf_type_acte");
-      $st_criteres .= "Type d'acte: $st_type_acte";
+      $st_criteres .= "Type d'acte: $st_type_acte\n";
     }
     if ($pi_annee_min!='' && $pi_annee_max!='')
       $st_criteres .= " de $pi_annee_min &agrave; $pi_annee_max";
@@ -127,7 +128,12 @@ function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$
       $st_criteres .=" jusqu'en $pi_annee_max";
     $st_criteres .= "\n";
     $st_nom_commune =  $pi_idf_commune!=0 ? $pconnexionBD->sql_select1("select nom from commune_acte where idf=$pi_idf_commune") : 'Pas de commune selectionn&eacute;e';
-
+	
+	if (!empty($pi_idf_source))
+    {
+      $st_type_acte = $pconnexionBD->sql_select1("select nom from source where idf=$pi_idf_source");
+      $st_criteres .= "Source s&eacute;lectionn&eacute;e: $st_type_acte\n";
+    }
     $st_criteres .= "Commune s&eacute;lectionn&eacute;e: $st_nom_commune\n";
     $st_bloc_rappel = nl2br($st_criteres);
     $st_communes_voisines=join("\n",array_values($requeteRecherche->communes_voisines()));
@@ -335,7 +341,7 @@ date_default_timezone_set($gst_time_zone);
     }
 	else
 	  print("<div class=\"row col-md-4\"></div>");
-	print(rappel_recherches_communes($connexionBD,"Recherche du couple: $gst_prenom_epx $gst_nom_epx X $gst_prenom_epse $gst_nom_epse",$gi_idf_type_acte,$gi_annee_min,$gi_annee_max,$gi_idf_commune,$gi_rayon));
+	print(rappel_recherches_communes($connexionBD,"Recherche du couple: $gst_prenom_epx $gst_nom_epx X $gst_prenom_epse $gst_nom_epse",$gi_idf_type_acte,$gi_annee_min,$gi_annee_max,$gi_idf_source,$gi_idf_commune,$gi_rayon));
     if (!empty($gst_variantes_epse) ||  !empty($st_variantes_prenoms_epse))
     { 
       print("<div class=\"panel panel-primary col-md-4\">");
@@ -427,7 +433,6 @@ date_default_timezone_set($gst_time_zone);
         {
            $a_clauses[] = "prn_simple$i_nb_prenoms.libelle ".$requeteRecherche->clause_droite_prenom($st_prenom,$gst_variantes,$i_nb_prenoms);
            $st_variantes_prenoms.=join("\n",$requeteRecherche->variantes_prenoms());
-           //$st_tables_prenom_epx .= " join `groupe_prenoms` gp$i_nb_prenoms_epx on (prn_p1.idf=gp$i_nb_prenoms_epx.idf_prenom)  join `prenom_simple` prn_simple_epx$i_nb_prenoms_epx on (gp$i_nb_prenoms_epx.idf_prenom_simple =prn_simple_epx$i_nb_prenoms_epx.idf) ";
            $st_tables_prenom .= " join `groupe_prenoms` gp$i_nb_prenoms on (prn.idf=gp$i_nb_prenoms.idf_prenom) join `prenom_simple` prn_simple$i_nb_prenoms on (gp$i_nb_prenoms.idf_prenom_simple=prn_simple$i_nb_prenoms.idf) ";
            $i_nb_prenoms++; 
         }
@@ -484,7 +489,7 @@ date_default_timezone_set($gst_time_zone);
       print("</div>");	  
       print("</div>");
     }
-    print(rappel_recherches_communes($connexionBD,"Recherche de la personne: $gst_prenom $gst_nom",$gi_idf_type_acte,$gi_annee_min,$gi_annee_max,$gi_idf_commune,$gi_rayon));
+    print(rappel_recherches_communes($connexionBD,"Recherche de la personne: $gst_prenom $gst_nom",$gi_idf_type_acte,$gi_annee_min,$gi_annee_max,$gi_idf_source,$gi_idf_commune,$gi_rayon));
 	print("<div class=\"col-md-4\"></div>");
 	
     //FBOprint("Req=$gst_requete_actes<br>");
