@@ -128,6 +128,7 @@ function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$
       $st_criteres .=" jusqu'en $pi_annee_max";
     $st_criteres .= "\n";
     $st_nom_commune =  $pi_idf_commune!=0 ? $pconnexionBD->sql_select1("select nom from commune_acte where idf=$pi_idf_commune") : 'Pas de commune selectionn&eacute;e';
+    $st_nom_commune =  $pi_idf_commune!=0 ? $pconnexionBD->sql_select1("select nom from commune_acte where idf=$pi_idf_commune") : 'Pas de commune selectionn&eacute;e';
 	
 	if (!empty($pi_idf_source))
     {
@@ -528,7 +529,7 @@ if ($i_nb_actes>0)
 	list($i_idf_acte,$st_type_acte,$st_commune,$st_parties,$st_recherche,$st_date,$i_idf_type_acte,$st_cote,$i_idf_source,$i_details,$st_tdm,$i_annee,$i_mois,$i_jour,$date_creation,$date_modification)=$a_acte;
     list($st_script_demande,$i_utilise_detail,$st_icone_info,$st_icone_ninfo,$st_icone_index)=$ga_sources[$i_idf_source];
 	if (!empty($date_creation) && !empty($date_modification))
-		$releve = 'Date de publication: '. date('d-m-Y', $date_creation).'<br>Date de modification: '. date('d-m-Y', $date_modification);
+		$releve = 'Date de publication: '. date('d/m/Y', $date_creation).'<br>Date de modification: '. date('d/m/Y', $date_modification);
 	else
 		$releve='';
     if ($i_utilise_detail==1)
