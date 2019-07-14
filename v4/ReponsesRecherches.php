@@ -520,10 +520,12 @@ if ($i_nb_actes>0)
   foreach ($a_actes as $a_acte)
   {
   
-	list($i_idf_acte,$st_type_acte,$st_commune,$st_parties,$st_recherche,$st_date,$i_idf_type_acte,$st_cote,$i_idf_source,$i_details,$st_tdm,$i_annee,$i_mois,$i_jour,$created,$changed)=$a_acte;
+	list($i_idf_acte,$st_type_acte,$st_commune,$st_parties,$st_recherche,$st_date,$i_idf_type_acte,$st_cote,$i_idf_source,$i_details,$st_tdm,$i_annee,$i_mois,$i_jour,$date_creation,$date_modification)=$a_acte;
     list($st_script_demande,$i_utilise_detail,$st_icone_info,$st_icone_ninfo,$st_icone_index)=$ga_sources[$i_idf_source];
-	$releve = 'Date de publication : '. date('d-m-Y', $created).' - Date de modification : '. date('d-m-Y', $changed);
-	
+	if (!empty($date_creation) && !empty($date_modification))
+		$releve = 'Date de publication: '. date('d-m-Y', $date_creation).'<br>Date de modification: '. date('d-m-Y', $date_modification);
+	else
+		$releve='';
     if ($i_utilise_detail==1)
     {
       if ($i_idf_source==IDF_SOURCE_TD)
@@ -532,26 +534,26 @@ if ($i_nb_actes>0)
         {
           case 1:
             $st_icone_td = $st_icone_info;
-            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" data-toggle=\"tooltip\" title=\"$st_cote - $releve\" class=\"popup\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
+            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" data-toggle=\"tooltip\" data-html=\"true\" title=\"$st_cote<br>$releve\" class=\"popup\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
           break;
           case 2:
             $st_icone_td = $st_icone_index;
-            $st_detail = "<a href=\"PropositionModification.php?idf_acte=$i_idf_acte\" target=\"_blank\" data-toggle=\"tooltip\" title=\"$st_cote - $releve\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
+            $st_detail = "<a href=\"PropositionModification.php?idf_acte=$i_idf_acte\" target=\"_blank\" data-toggle=\"tooltip\" data-html=\"true\"  title=\"$st_cote<br>$releve\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
           break;
           default:
             $st_icone_td = $st_icone_ninfo;
-            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" target=\"_blank\" data-toggle=\"tooltip\" title=\"$releve\" class=\"popup\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
+            $st_detail = "<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" target=\"_blank\" data-toggle=\"tooltip\" data-html=\"true\"  title=\"$releve\" class=\"popup\"><img src=\"./images/$st_icone_td\" border=0 alt=\"infos\" ></a>";
         }
       }
       else if ($i_details==1)
-        $st_detail ="<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" data-toggle=\"tooltip\" title=\"$releve\" class=\"popup\"><img src=\"./images/$st_icone_info\" border=0 alt=\"infos\"></a>";
+        $st_detail ="<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" data-toggle=\"tooltip\" data-html=\"true\"  title=\"$releve\" class=\"popup\"><img src=\"./images/$st_icone_info\" border=0 alt=\"infos\"></a>";
       else if ($i_details==2)
-        $st_detail ="<img src=\"./images/$st_icone_index\" border=0 alt=\"$st_cote\" data-toggle=\"tooltip\" title=\"$st_cote - $releve\" class=\"popup\">";
+        $st_detail ="<img src=\"./images/$st_icone_index\" border=0 alt=\"$st_cote\" data-toggle=\"tooltip\" data-html=\"true\"  title=\"$st_cote<br> $releve\" class=\"popup\">";
       else
-        $st_detail ="<img src=\"./images/$st_icone_ninfo\" alt=\"pas d'infos\" data-toggle=\"tooltip\" title=\"Le relev&eacute; ne comporte pas de renseignements suppl&eacute;mentaires que ceux d&eacute;j&agrave; affich&eacute;s\">";
+        $st_detail ="<img src=\"./images/$st_icone_ninfo\" alt=\"pas d'infos\" data-toggle=\"tooltip\" data-html=\"true\" title=\"Le relev&eacute; ne comporte pas de renseignements suppl&eacute;mentaires que ceux d&eacute;j&agrave; affich&eacute;s\">";
     }
     else
-       $st_detail ="<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" data-toggle=\"tooltip\" title=\"$releve\" class=\"popup\"><img src=\"./images/$st_icone_info\" border=0 alt=\"infos\"></a>";
+       $st_detail ="<a href=\"$st_script_demande?idf_acte=$i_idf_acte\" data-toggle=\"tooltip\"  data-html=\"true\" title=\"$releve\" class=\"popup\"><img src=\"./images/$st_icone_info\" border=0 alt=\"infos\"></a>";
 
     if ($gst_type_recherche=='tous_pat')
     {
