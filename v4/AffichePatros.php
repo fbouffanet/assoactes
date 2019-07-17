@@ -240,9 +240,9 @@ switch ($gst_mode)
 			{
 				list($st_patronyme,$i_idf_commune,$st_commune,$i_idf_type_acte,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_pers) = $a_stat_patro;
 				if ($gi_idf_source!=0)
-					$st_lien_patronyme = "<a href=\"Recherches.php?recherche=nouvelle&amp;idf_src=$gi_idf_source&amp;idf_ca=$i_idf_commune&amp;idf_ta=$i_idf_type_acte&amp;var=N&amp;nom=$st_patronyme\">$st_patronyme</a>";
+					$st_lien_patronyme = "<a href=\"".PAGE_RECHERCHE."?recherche=nouvelle&amp;idf_src=$gi_idf_source&amp;idf_ca=$i_idf_commune&amp;idf_ta=$i_idf_type_acte&amp;var=N&amp;nom=$st_patronyme\">$st_patronyme</a>";
 				else
-					$st_lien_patronyme ="<a href=\"Recherches.php?recherche=nouvelle&amp;idf_ca=$i_idf_commune&amp;idf_ta=$i_idf_type_acte&amp;a_min=$i_annee_min&amp;a_max=$i_annee_max&amp;var=N&amp;nom=$st_patronyme\">$st_patronyme</a>" ;    
+					$st_lien_patronyme ="<a href=\"".PAGE_RECHERCHE."?recherche=nouvelle&amp;idf_ca=$i_idf_commune&amp;idf_ta=$i_idf_type_acte&amp;a_min=$i_annee_min&amp;a_max=$i_annee_max&amp;var=N&amp;nom=$st_patronyme\">$st_patronyme</a>" ;    
 				$a_tableau_affichage[] = array($st_lien_patronyme,$st_commune,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_pers);
 			}
 			$pagination->init_page_cour($gi_num_page);
