@@ -295,15 +295,16 @@ class Adherent
       {
         $this -> connexionBD->initialise_params(array(':statut'=>$this->st_statut)); 
         $st_statut = $this -> connexionBD->sql_select1("select nom from statut_adherent where idf=:statut");
-		$st_chaine .= '<div class="form-group row">';
-        $st_chaine .= sprintf("<label for=\"no_adht\" class=\" col-md-4 col-form-label\">N° d'adh&eacute;rent</label>");
-		$st_chaine .= '<div class="col-md-4">';
+		$st_chaine .= '<div class="form-group row col-md-12">';
+        $st_chaine .= sprintf("<label for=\"no_adht\" class=\"col-md-4 col-form-label\">N° d'adh&eacute;rent</label>");
+		$st_chaine .= '<div class="col-md-2">';
 		$st_chaine .= sprintf("<input type=\"text\" value=\"%d\" id=\"no_adht\" size=5 readonly placeholder=\"%s\">",$this -> i_idf,$this->st_ident);
-        $st_chaine .= sprintf("<label for=\"statut_adherent\" class=\" col-md-4 col-form-label\">Ann&eacute;e de cotisation</label>");
-		$st_chaine .= '<div class="col-md-4">';
+		$st_chaine .= '</div>';
+        $st_chaine .= sprintf("<label for=\"statut_adherent\" class=\"col-form-label col-md-4\">Ann&eacute;e de cotisation</label>");
+		$st_chaine .= '<div class="col-md-2">';
 		$st_chaine .= sprintf("<input type=\"text\" value=\"%04d\" id=statut_adherent size=5 data-value=\"%s\" readonly placeholder=\"%s\">",$this->i_annee_cotisation,$this->st_statut,$st_statut); 
         $st_chaine .= '</div>';
-	    $st_chaine .= '</div>';
+		$st_chaine .= '</div>';
 	  }
       if ($this->st_ident_modificateur==$this->st_ident)
       {
@@ -316,7 +317,7 @@ class Adherent
 		if (!empty($gst_administrateur_gbk))
 			$st_chaine .= sprintf("<label for=\"ident_adh\">Votre identifiant G&eacute;n&eacute;bank</label><input type=\"text\" id=ident_gbk value=\"".PREFIXE_ADH_GBK."%04d\" size=8 readonly>",$this -> i_idf);
 		$st_chaine .= '</div>';
-	  $st_chaine .= '</div>';
+	    $st_chaine .= '</div>';
       }
 	  $st_chaine .= '</div>';
 	  
