@@ -223,7 +223,7 @@ switch($gst_type_recherche)
     if ((($gst_nom_epx=='*' && empty($gst_prenom_epx))  || ($gst_nom_epse=='*' && empty($gst_prenom_epse ))) && empty($gi_idf_commune))
     {
       print(nl2br("La recherche par joker * seul n'est autoris&eacute;e que si une paroisse est choisie<br>"));
-      print("<a href=Recherches.php class=\"RetourReponses\">Nouvelle Recherche</a><br>");
+      print("<a href=".PAGE_RECHERCHE." class=\"RetourReponses\">Nouvelle Recherche</a><br>");
       exit();
     }
     $st_erreur_nom = '';
@@ -236,7 +236,7 @@ switch($gst_type_recherche)
     if ($st_erreur_nom!='')
     {
       print(nl2br($st_erreur_nom));
-      print("<a href=Recherches.php class=\"btn btn-primary col-md-4 col-md-offset-4\">Nouvelle Recherche</a><br>");
+      print("<a href=".PAGE_RECHERCHE." class=\"btn btn-primary col-md-4 col-md-offset-4\">Nouvelle Recherche</a><br>");
       exit();
     }
     $_SESSION['type_recherche']     	  = $gst_type_recherche;
@@ -381,13 +381,13 @@ date_default_timezone_set($gst_time_zone);
 		if ($gst_nom=='*' && empty($gi_idf_commune))
 		{
 		  print(nl2br("La recherche par joker * seul n'est autoris&eacute;e que si une paroisse est choisie<br>"));
-		  print("<a href=Recherches.php class=\"RetourReponses\">Nouvelle Recherche</a><br>");
+		  print("<a href=".PAGE_RECHERCHE." class=\"RetourReponses\">Nouvelle Recherche</a><br>");
 		  exit();
 		}
 		if (($gst_nom!= '*') && ($gst_nom!= '!') && strlen($gst_nom)<3 )
 		{
 		  print("<div>Le nom $gst_nom doit comporter au moins trois caract&egrave;res</div>\n");
-		  print("<div><a href=Recherches.php?recherche=nouvelle class=\"RetourReponses\">Commencer une nouvelle recherche</a><br></div>");
+		  print("<div><a href=".PAGE_RECHERCHE."?recherche=nouvelle class=\"RetourReponses\">Commencer une nouvelle recherche</a><br></div>");
 		  exit();
 		}
 	}
@@ -614,8 +614,8 @@ else
 
 print('<div class="row">');
 print('<div class="btn-group col-md-offset-3 col-md-6" role="group">');
-print('<a class="btn btn-primary" href="Recherches.php" role="button"><span class="glyphicon glyphicon-search"></span>  Revenir &agrave; la page de recherche</a>');  
-print('<a class="btn btn-warning" href="Recherches.php?recherche=nouvelle" role="button"><span class="glyphicon glyphicon-erase"></span> Commencer une nouvelle recherche</a>');
+print('<a class="btn btn-primary" href="'.PAGE_RECHERCHE.'" role="button"><span class="glyphicon glyphicon-search"></span>  Revenir &agrave; la page de recherche</a>');  
+print('<a class="btn btn-warning" href="'.PAGE_RECHERCHE.'?recherche=nouvelle" role="button"><span class="glyphicon glyphicon-erase"></span> Commencer une nouvelle recherche</a>');
 print("</div>");
 print("</div>");
 

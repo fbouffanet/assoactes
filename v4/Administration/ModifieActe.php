@@ -245,6 +245,6 @@ else
   }
 }
 print("</div></div>");  
-print("<a href=\"../Recherches.php\" class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-search\"></span> Retour au menu recherche</a>");
+print("<a href=\"../".PAGE_RECHERCHE."\" class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-search\"></span> Retour au menu recherche</a>");
 print("</div></body></HTML>\n");
 ?>
