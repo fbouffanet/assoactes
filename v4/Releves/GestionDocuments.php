@@ -173,67 +173,73 @@ $gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
  */ 
 function menu_liste($pconnexionBD,$pst_commune_a_chercher)
 {
-   global $gi_num_page_cour;
-   global $ga_tbl_support,$ga_tbl_nature,$ga_tbl_collection;
+	global $gi_num_page_cour;
+	global $ga_tbl_support,$ga_tbl_nature,$ga_tbl_collection;
     $st_requete = "SELECT DISTINCT (left( ca.nom, 1 )) AS init FROM `commune_acte` ca join `documents` p on (p.id_commune=ca.idf) ORDER BY init";
-   $a_initiales_communes = $pconnexionBD->sql_select($st_requete);
+	$a_initiales_communes = $pconnexionBD->sql_select($st_requete);
   
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   if ($pst_commune_a_chercher=='')
-   {
-     $i_session_initiale = isset($_SESSION['initiale_com']) ? $_SESSION['initiale_com'] : $a_initiales_communes[0];
-     $gc_initiale = empty($_GET['initiale_com']) ? $i_session_initiale : $_GET['initiale_com'];
-   }
-   else
-   {
-      $gc_initiale = strtoupper(substr($pst_commune_a_chercher,0,1));
-      if ($gc_initiale=='*') $gc_initiale = $a_initiales_communes[0];
-   }
-   if (!in_array($gc_initiale,$a_initiales_communes))
-      $gc_initiale = $a_initiales_communes[0];
-   $_SESSION['initiale_com'] = $gc_initiale;   
-   print('<div class="text-center"><ul class="pagination">');
-   foreach ($a_initiales_communes as $c_initiale)
-   {
-     if ($c_initiale==$gc_initiale)
-        print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
-     else
-        print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_com=$c_initiale\" class=\"page-item\">$c_initiale</a></li>");
-   }
-   print("</ul></div>");
+	if (count($a_initiales_communes)>0)
+	{
+		if ($pst_commune_a_chercher=='')
+		{
+			$i_session_initiale = isset($_SESSION['initiale_com']) ? $_SESSION['initiale_com'] : $a_initiales_communes[0];
+			$gc_initiale = empty($_GET['initiale_com']) ? $i_session_initiale : $_GET['initiale_com'];
+		}
+		else
+		{
+			$gc_initiale = strtoupper(substr($pst_commune_a_chercher,0,1));
+			if ($gc_initiale=='*') $gc_initiale = $a_initiales_communes[0];
+		}
+		if (!in_array($gc_initiale,$a_initiales_communes))
+		$gc_initiale = $a_initiales_communes[0];
+		$_SESSION['initiale_com'] = $gc_initiale;   
+		print('<div class="text-center"><ul class="pagination">');
+		foreach ($a_initiales_communes as $c_initiale)
+		{
+			if ($c_initiale==$gc_initiale)
+				print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
+			else
+				print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_com=$c_initiale\" class=\"page-item\">$c_initiale</a></li>");
+		}
+		print("</ul></div>");
+	}
+	else
+		$gc_initiale='%';
    
-   $pst_commune_a_chercher = str_replace('*','%',$pst_commune_a_chercher);  
-   $st_requete = ($pst_commune_a_chercher=='') ? "select p.idf,ca.nom,p.fourchette, p.nature_acte, p.support, p.collection from `documents` p join `commune_acte` ca on (p.id_commune=ca.idf ) where ca.nom like '$gc_initiale%' order by ca.nom,p.fourchette,p.support" : " select p.idf,ca.nom,p.fourchette, p.nature_acte, p.support, p.collection  from `documents` p join `commune_acte` ca on (p.id_commune=ca.idf ) where ca.nom like '$pst_commune_a_chercher' order by ca.nom,p.fourchette,p.support";
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
-   print("<input type=hidden name=mode value=\"LISTE\">"); 
-   print('<label for="commune_a_chercher"  class="col-form-label col-md-2">Commune:</label>');
-   print('<div class="col-md-8">');   
-   print('<input name="commune_a_chercher" id="commune_a_chercher" value="" size="25" maxlength="25" type="text" class="form-control col-md-2" aria-describedby="aideCom">');
-   print('<small id="aideCom" class="form-text text-muted">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: saint*)</small>'); 
-   print('</div>');
-   print('<button type=submit class="btn btn-primary col-md-2"><span class="glyphicon glyphicon-search"></span> Chercher</button>');
-   
-   $a_liste_documents = $pconnexionBD->sql_select_multiple($st_requete);
-   print("</form><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"suppression_documents\">"); 
-   $a_lignes = array();
-   $i_nb_documents = count($a_liste_documents);
-   if ($i_nb_documents!=0)
-   {  
+	$pst_commune_a_chercher = str_replace('*','%',$pst_commune_a_chercher);  
+	$st_requete = ($pst_commune_a_chercher=='') ? "select p.idf,ca.nom,p.fourchette, p.nature_acte, p.support, p.collection from `documents` p join `commune_acte` ca on (p.id_commune=ca.idf ) where ca.nom like '$gc_initiale%' order by ca.nom,p.fourchette,p.support" : " select p.idf,ca.nom,p.fourchette, p.nature_acte, p.support, p.collection  from `documents` p join `commune_acte` ca on (p.id_commune=ca.idf ) where ca.nom like '$pst_commune_a_chercher' order by ca.nom,p.fourchette,p.support";
+	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
+	print("<input type=hidden name=mode value=\"LISTE\">");
+    print('<div class="form-row col-md-12">');	
+	print('<label for="commune_a_chercher"  class="col-form-label col-md-2">Commune:</label>');
+	print('<div class="col-md-8">');   
+	print('<input name="commune_a_chercher" id="commune_a_chercher" value="" size="25" maxlength="25" type="text" class="form-control" aria-describedby="aideCom">');
+	print('<small id="aideCom" class="form-text text-muted">Vous pouvez mettre le caract&egrave;re "*" pour chercher sur une racine (ex.: saint*)</small>'); 
+	print('</div>');
+	print('<button type=submit class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Chercher</button>');
+    print('</div>');
+	
+	$a_liste_documents = $pconnexionBD->sql_select_multiple($st_requete);
+	print("</form><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"suppression_documents\">"); 
+	$a_lignes = array();
+	$i_nb_documents = count($a_liste_documents);
+	if ($i_nb_documents!=0)
+	{  
       $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_documents,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Commune','Fourchette','Nature','Support','Collection','Modifier','Supprimer'));
 	  $pagination->init_param_bd($pconnexionBD,$st_requete);
       $pagination->init_page_cour($gi_num_page_cour);
       $pagination->affiche_entete_liens_navigation();
 	  $pagination->affiche_tableau_edition();
       $pagination->affiche_entete_liens_navigation();      
-   }
-   else
-     print('<div class="alert alert-danger">Pas de documents</div>');
-   print('<button type=submit class="btn btn-danger col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-trash"></span> Supprimer les documents s&eacute;lectionn&eacute;s</button>');    
-   print("</form>");  
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-   print("<input type=hidden name=mode value=MENU_AJOUTER>");
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-plus"></span>  Ajouter un document</button>');     
-   print('</form>');
+	}
+	else
+		print('<div class="row col-md-12 alert alert-danger">Pas de documents</div>');
+	print('<button type=submit class="btn btn-danger col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-trash"></span> Supprimer les documents s&eacute;lectionn&eacute;s</button>');    
+	print("</form>");  
+	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
+	print("<input type=hidden name=mode value=MENU_AJOUTER>");
+	print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-plus"></span>  Ajouter un document</button>');     
+	print('</form>');
 }
 
 /**
