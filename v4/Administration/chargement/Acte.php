@@ -576,7 +576,8 @@ class Acte {
     
     {
          $st_chaine = '';
-         $st_chaine .= sprintf("%s à %s le %s", $this -> st_type_acte, $this -> st_commune, $this -> st_date);
+         $st_chaine .= sprintf("%s à %s", $this -> st_type_acte, $this -> st_commune);
+		 $st_chaine .= (empty($this -> i_jour) || ($this -> i_jour=='00'))  && (empty($this -> i_mois) || $this -> i_mois=='00') && !empty($this -> i_annee) ? sprintf(" en %s", $this -> i_annee) : sprintf(" le %s", $this -> st_date);
          if ($this -> st_date_rep != '')
              $st_chaine .= sprintf(" (%s)", $this -> st_date_rep);
          $i_nb_lignes = 1;
@@ -627,7 +628,8 @@ class Acte {
     
     {
          $st_chaine = '';
-         $st_chaine .= sprintf("%s à %s le %s", $this -> st_type_acte, $this -> st_commune, $this -> st_date);
+         $st_chaine .= sprintf("%s à %s", $this -> st_type_acte, $this -> st_commune);
+		 $st_chaine .= emtpy($this -> i_jour) && empty($this -> i_mois) && !empty($this -> i_annee) ? sprintf(" en %s", $this -> i_annee) : sprintf(" le %s", $this -> st_date);
          if ($this -> st_date_rep != '')
              $st_chaine .= sprintf(" (%s)", $this -> st_date_rep);
          $i_nb_lignes = 1;
