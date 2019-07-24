@@ -193,7 +193,7 @@ $gst_mode = empty($_POST['mode']) ? 'FORMULAIRE': $_POST['mode'] ;
 
 if ($gst_mode=='COMPARAISON')
 {
-          $st_fich_dest = tempnam($gst_repertoire_chargement_actes,"index_CGCP");
+          $st_fich_dest = tempnam($gst_repertoire_telechargement,"index_CGCP");
        if (!move_uploaded_file($_FILES['IndexCGCP']['tmp_name'],$st_fich_dest)) 
        {
           print("<div class=\"alert alert-danger\">Erreur de t&eacute;l&eacute;chargement :</div>");
