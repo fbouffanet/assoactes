@@ -818,7 +818,7 @@ switch ($gst_mode) {
 		menu_liste($connexionBD);
 	break;
   case 'CALCUL_VARIANTES':
-     calcule_variantes($connexionBD,$gst_repertoire_chargement_actes);
+     calcule_variantes($connexionBD,$gst_repertoire_telechargement);
      print("<div class=\"alert alert-success\">Variantes calcul&eacute;es</div>");
      menu_liste($connexionBD);  
   break;
