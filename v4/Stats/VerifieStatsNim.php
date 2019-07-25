@@ -198,7 +198,7 @@ switch($gst_mode)
    break;
    
    case 'VERIFICATION' :      
-       Verifie_StatsNim($connexionBD,$gst_repertoire_chargement_actes);   
+       Verifie_StatsNim($connexionBD,$gst_repertoire_telechargement);   
    break;
         
 }

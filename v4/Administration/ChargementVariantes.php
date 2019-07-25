@@ -403,7 +403,7 @@ switch($gst_mode)
    break;
    
    case 'CHARGEMENT' :
-       charge_variantes_NimV3($connexionBD,$gst_repertoire_chargement_actes);
+       charge_variantes_NimV3($connexionBD,$gst_repertoire_telechargement);
   
    break;
    
