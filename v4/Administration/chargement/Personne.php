@@ -435,10 +435,10 @@ class Personne
 																								$st_ligne = '';
 																								 if ( !preg_match( '/^\s*$/', $this -> st_date_naissance ) )
 																												 {
-																													 if (preg_match( '/^__\__\/(\d+)$/', $this -> st_date_naissance,$a_correspondances ))
+																													 if (preg_match( '/^__\/__\/(\d+)$/', $this -> st_date_naissance,$a_correspondances ) || preg_match( '/^\?\?\/\?\?\/(\d+)$/', $this -> st_date_naissance,$a_correspondances ))
 																													 {
 																														 $st_lib = $this -> c_sexe != 'F'? 'Né':'Née';
-																													 $st_ligne .= sprintf( " $st_lib en %s", $this -> a_correspondances[1] );
+																													 $st_ligne .= sprintf( " $st_lib en %s", $a_correspondances[1] );
 																													 }
 																													 else
 																													 {
@@ -478,10 +478,10 @@ class Personne
 																								 $this -> st_date_naissance = preg_replace( '/^\s+$/', '', $this -> st_date_naissance );
 																								 if ( !preg_match( '/^\s*$/', $this -> st_date_naissance ) )
 																												 {
-																													 if (preg_match( '/^__\__\/(\d+)$/', $this -> st_date_naissance,$a_correspondances ))
+																													 if (preg_match( '/^__\/__\/(\d+)$/', $this -> st_date_naissance,$a_correspondances )|| preg_match( '/^\?\?\/\?\?\/(\d+)$/', $this -> st_date_naissance,$a_correspondances ))
 																													 {
 																														 $st_lib = $this -> c_sexe != 'F'? 'Né':'Née';
-																													 $st_ligne .= sprintf( " $st_lib en %s", $this -> a_correspondances[1] );
+																													 $st_ligne .= sprintf( " $st_lib en %s", $a_correspondances[1] );
 																													 }
 																													 else
 																													 {
