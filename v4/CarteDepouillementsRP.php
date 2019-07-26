@@ -28,15 +28,15 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="1000"
-   height="963"
-   viewBox="-0.463154086 45.19163256 1.406483136 0.947332129999999"
+   height="1170"
+   viewBox="-1.562732963 45.08924843 1.568599406 1.28168695"
    preserveAspectRatio="none"
    version="1.1"
    id="svg2"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="Blank_Map_of_Charente_Department,_France,_with_Communes.svg">
+   sodipodi:docname="Blank_Map_of_Charente-Maritime_Department,_France,_with_Communes.svg">
   <metadata
-     id="metadata418">
+     id="metadata486">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -47,7 +47,8 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs416" />
+     id="defs484" />
+ 
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -59,18 +60,18 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1863"
      inkscape:window-height="1056"
-     id="namedview414"
+     id="namedview482"
      showgrid="false"
-     inkscape:zoom="0.66627953"
-     inkscape:cx="885.14972"
-     inkscape:cy="473.05589"
+     inkscape:zoom="0.57052034"
+     inkscape:cx="696.25899"
+     inkscape:cy="513.30375"
      inkscape:window-x="57"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
      inkscape:current-layer="g8" />
   <style
      type="text/css"
-     id="style4">
+     id="style4">	 
 
 .communes { 
 	fill           : #b9b9b9;
