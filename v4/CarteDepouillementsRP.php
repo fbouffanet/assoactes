@@ -147,7 +147,7 @@ function chaine_intervalle($pst_type,$pi_annnee_min,$pi_annee_max)
 $a_communes = array();
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 $fp = fopen("journal_carte.txt","w");
-$st_requete = "select distinct ca.code_insee,ca.numero_paroisse,nom,debut_communale,debut_greffe,points_svg,s_nai.annee_min as min_nai,s_nai.annee_max as max_nai,s_nai.nb_actes as nb_nai,s_mar.annee_min as min_mar,s_mar.annee_max as max_mar,s_mar.nb_actes as nb_mar,s_dec.annee_min as min_dec,s_dec.annee_max as max_dec,s_dec.nb_actes as nb_dec,chtiers.statut from commune_acte ca left join stats_commune s_nai on (ca.idf=s_nai.idf_commune and s_nai.idf_type_acte=".IDF_NAISSANCE." and s_nai.idf_source=1) left join stats_commune s_mar on (ca.idf=s_mar.idf_commune and s_mar.idf_type_acte=".IDF_MARIAGE." and s_mar.idf_source=1) left join stats_commune s_dec on (ca.idf=s_dec.idf_commune and s_dec.idf_type_acte=".IDF_DECES." and s_dec.idf_source=1) left join documents doc on (ca.idf=doc.id_commune and doc.fourchette like '1%' and left(doc.fourchette,4)<1789 and (doc.type_acte&1!=0 or doc.type_acte&2!=0 or doc.type_acte&4!=0)) left join chantiers chtiers on (doc.idf=chtiers.id_document and chtiers.statut=1) where protestants='N' and points_svg is not null and ca.sans_rp='N'and code_insee like '16%' order by ca.nom,chtiers.statut ";
+$st_requete = "select distinct ca.code_insee,ca.numero_paroisse,nom,debut_communale,debut_greffe,points_svg,s_nai.annee_min as min_nai,s_nai.annee_max as max_nai,s_nai.nb_actes as nb_nai,s_mar.annee_min as min_mar,s_mar.annee_max as max_mar,s_mar.nb_actes as nb_mar,s_dec.annee_min as min_dec,s_dec.annee_max as max_dec,s_dec.nb_actes as nb_dec,chtiers.statut from commune_acte ca left join stats_commune s_nai on (ca.idf=s_nai.idf_commune and s_nai.idf_type_acte=".IDF_NAISSANCE." and s_nai.idf_source=1) left join stats_commune s_mar on (ca.idf=s_mar.idf_commune and s_mar.idf_type_acte=".IDF_MARIAGE." and s_mar.idf_source=1) left join stats_commune s_dec on (ca.idf=s_dec.idf_commune and s_dec.idf_type_acte=".IDF_DECES." and s_dec.idf_source=1) left join documents doc on (ca.idf=doc.id_commune and doc.fourchette like '1%' and left(doc.fourchette,4)<1789 and (doc.type_acte&1!=0 or doc.type_acte&2!=0 or doc.type_acte&4!=0)) left join chantiers chtiers on (doc.idf=chtiers.id_document and chtiers.statut=1) where protestants='N' and points_svg is not null and ca.sans_rp='N'and code_insee like '17%' order by ca.nom,chtiers.statut ";
 fwrite($fp,"$st_requete\n");
 $a_communes=  $connexionBD->liste_valeur_par_doubles_clefs($st_requete);
 
@@ -233,7 +233,6 @@ fclose($fp);
 
 </g>
 
-</svg>
 </div>
 </body>
 </html>
