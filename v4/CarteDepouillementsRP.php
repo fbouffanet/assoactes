@@ -28,15 +28,15 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="1000"
-   height="963"
-   viewBox="-0.463154086 45.19163256 1.406483136 0.947332129999999"
+   height="1170"
+   viewBox="-1.562732963 45.08924843 1.568599406 1.28168695"
    preserveAspectRatio="none"
    version="1.1"
    id="svg2"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="Blank_Map_of_Charente_Department,_France,_with_Communes.svg">
+   sodipodi:docname="Blank_Map_of_Charente-Maritime_Department,_France,_with_Communes.svg">
   <metadata
-     id="metadata418">
+     id="metadata486">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -47,7 +47,8 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs416" />
+     id="defs484" />
+ 
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -59,18 +60,18 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1863"
      inkscape:window-height="1056"
-     id="namedview414"
+     id="namedview482"
      showgrid="false"
-     inkscape:zoom="0.66627953"
-     inkscape:cx="885.14972"
-     inkscape:cy="473.05589"
+     inkscape:zoom="0.57052034"
+     inkscape:cx="696.25899"
+     inkscape:cy="513.30375"
      inkscape:window-x="57"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
      inkscape:current-layer="g8" />
   <style
      type="text/css"
-     id="style4">
+     id="style4">	 
 
 .communes { 
 	fill           : #b9b9b9;
@@ -146,7 +147,7 @@ function chaine_intervalle($pst_type,$pi_annnee_min,$pi_annee_max)
 $a_communes = array();
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 $fp = fopen("journal_carte.txt","w");
-$st_requete = "select distinct ca.code_insee,ca.numero_paroisse,nom,debut_communale,debut_greffe,points_svg,s_nai.annee_min as min_nai,s_nai.annee_max as max_nai,s_nai.nb_actes as nb_nai,s_mar.annee_min as min_mar,s_mar.annee_max as max_mar,s_mar.nb_actes as nb_mar,s_dec.annee_min as min_dec,s_dec.annee_max as max_dec,s_dec.nb_actes as nb_dec,chtiers.statut from commune_acte ca left join stats_commune s_nai on (ca.idf=s_nai.idf_commune and s_nai.idf_type_acte=".IDF_NAISSANCE." and s_nai.idf_source=1) left join stats_commune s_mar on (ca.idf=s_mar.idf_commune and s_mar.idf_type_acte=".IDF_MARIAGE." and s_mar.idf_source=1) left join stats_commune s_dec on (ca.idf=s_dec.idf_commune and s_dec.idf_type_acte=".IDF_DECES." and s_dec.idf_source=1) left join documents doc on (ca.idf=doc.id_commune and doc.fourchette like '1%' and left(doc.fourchette,4)<1789 and (doc.type_acte&1!=0 or doc.type_acte&2!=0 or doc.type_acte&4!=0)) left join chantiers chtiers on (doc.idf=chtiers.id_document and chtiers.statut=1) where protestants='N' and points_svg is not null and ca.sans_rp='N'and code_insee like '16%' order by ca.nom,chtiers.statut ";
+$st_requete = "select distinct ca.code_insee,ca.numero_paroisse,nom,debut_communale,debut_greffe,points_svg,s_nai.annee_min as min_nai,s_nai.annee_max as max_nai,s_nai.nb_actes as nb_nai,s_mar.annee_min as min_mar,s_mar.annee_max as max_mar,s_mar.nb_actes as nb_mar,s_dec.annee_min as min_dec,s_dec.annee_max as max_dec,s_dec.nb_actes as nb_dec,chtiers.statut from commune_acte ca left join stats_commune s_nai on (ca.idf=s_nai.idf_commune and s_nai.idf_type_acte=".IDF_NAISSANCE." and s_nai.idf_source=1) left join stats_commune s_mar on (ca.idf=s_mar.idf_commune and s_mar.idf_type_acte=".IDF_MARIAGE." and s_mar.idf_source=1) left join stats_commune s_dec on (ca.idf=s_dec.idf_commune and s_dec.idf_type_acte=".IDF_DECES." and s_dec.idf_source=1) left join documents doc on (ca.idf=doc.id_commune and doc.fourchette like '1%' and left(doc.fourchette,4)<1789 and (doc.type_acte&1!=0 or doc.type_acte&2!=0 or doc.type_acte&4!=0)) left join chantiers chtiers on (doc.idf=chtiers.id_document and chtiers.statut=1) where protestants='N' and points_svg is not null and ca.sans_rp='N'and code_insee like '17%' order by ca.nom,chtiers.statut ";
 fwrite($fp,"$st_requete\n");
 $a_communes=  $connexionBD->liste_valeur_par_doubles_clefs($st_requete);
 
@@ -232,7 +233,6 @@ fclose($fp);
 
 </g>
 
-</svg>
 </div>
 </body>
 </html>
