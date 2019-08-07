@@ -1045,7 +1045,7 @@ class Adherent
 	else
 		$st_texte .= "Voici votre identifiant et mot de passe d'acc&egrave;s &agrave; la base <strong>".SIGLE_ASSO."</strong> et &agrave; G&eacute;n&eacute;aBank\n\n";
 	if (!empty(EMAIL_FORUM))
-		$st_texte .= "N'oubliez pas! votre adresse e-mail doit-&ecirc;tre la m&ecirc;me sur la base GENEA16 et sur Yahoo\n\n";
+		$st_texte .= "N'oubliez pas! votre adresse e-mail doit-&ecirc;tre la m&ecirc;me sur la base ".SIGLE_ASSO." et sur Yahoo\n\n";
     $st_texte .="<table border=1>";
     $st_texte .= sprintf("<tr><td bgcolor=\"lightblue\">Votre identifiant ".SIGLE_ASSO.":</td><th>%s</th></tr>",$this->st_ident);
 	$st_texte .= sprintf("<tr><td bgcolor=\"lightblue\">Votre mot de passe:</td><th>%s</th></tr>",$this->st_mdp);    
