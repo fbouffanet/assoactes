@@ -109,7 +109,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 			{
 				$st_nom_epoux = $a_correspondances[1];
 				$i_idf_veuve=$personne->getIdf(); 
-				$personne = new Personne($connexionBD,$i_acte_courant,IDF_PRESENCE_INTV,'M',$st_nom_epoux,'');
+				$personne = new Personne($connexionBD,$i_acte_courant,IDF_PRESENCE_EXCJT,'M',$st_nom_epoux,'');
 				$a_liste_personnes[]=$personne;
 				$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte_courant,LIB_RECENSEMENT,$personne->getIdf(),$st_nom_epoux,$i_idf_veuve,$st_nom);
 			}
@@ -152,7 +152,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 				{
 					$st_nom_epoux = $a_correspondances[1];
 					$i_idf_veuve=$personne->getIdf(); 
-					$personne = new Personne($connexionBD,$i_acte_courant,IDF_PRESENCE_INTV,'M',$st_nom_epoux,'');
+					$personne = new Personne($connexionBD,$i_acte_courant,IDF_PRESENCE_EXCJT,'M',$st_nom_epoux,'');
 					$a_liste_personnes[]=$personne;
 					$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte_courant,LIB_RECENSEMENT,$personne->getIdf(),$st_nom_epoux,$i_idf_veuve,$st_nom);
 				}
