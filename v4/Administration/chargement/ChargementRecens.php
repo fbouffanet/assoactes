@@ -50,21 +50,19 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
       // Saute les lignes dont le nombre de champs n'est pas valide
       $i_nb_champs = count($a_champs);
 	  $st_age='';
-	  $i_annee_naissance = '';
+	  $st_annee_ou_date_naissance = '';
 	  $st_lieu_naissance = '';
+	  //$st_rue,$st_quartier,$i_page,$i_maison,$i_menage,$st_nom,$st_prenom,$st_age,$i_annee_ou_date_de_naissance,$st_lieu_naissance,$st_profession,$st_observations,$st_permalien
       switch ($i_nb_champs)
       {
 		 case 13:
-		   //Néant;Le bourg;2;1;1;MERZEAU;André;Propriétaire;;Chef-ménage;;1892;Rouffiac
-           //;;;;;MERZEAU;Anne Marie;Sans profession;sa fille;fille;;1931;Gimeux
-		   //
            list($st_rue_ligne,$st_quartier_ligne,$i_page_ligne,$i_maison_ligne,$i_menage_ligne) = array_splice($a_champs,0,5);
 	         $st_rue_ligne = empty($st_rue_ligne) ? $st_rue_courante: $st_rue_ligne;
 	         $st_quartier_ligne = empty($st_quartier_ligne) ? $st_quartier_courant: $st_quartier_ligne;
 	         $i_maison_ligne = empty($i_maison_ligne) ? $i_maison_courante: $i_maison_ligne;
 	         $i_menage_ligne = empty($i_menage_ligne) ? $i_menage_courant: $i_menage_ligne;
 	         $i_page_ligne = empty($i_page_ligne) ? $i_page_courante: $i_page_ligne;
-           list($st_nom,$st_prenom,$st_profession,$st_fonction,$st_observations,$st_age,$i_annee_naissance,$st_lieu_naissance) = array_splice($a_champs,0,8);
+           list($st_nom,$st_prenom,$st_age,$st_annee_ou_date_naissance,$st_lieu_naissance,$st_profession,$st_observations,$st_permalien) = array_splice($a_champs,0,8);
 		 break;
 		 case 12:
            list($st_rue_ligne,$st_quartier_ligne,$i_page_ligne,$i_maison_ligne,$i_menage_ligne) = array_splice($a_champs,0,5);
@@ -73,26 +71,9 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 	         $i_maison_ligne = empty($i_maison_ligne) ? $i_maison_courante: $i_maison_ligne;
 	         $i_menage_ligne = empty($i_menage_ligne) ? $i_menage_courant: $i_menage_ligne;
 	         $i_page_ligne = empty($i_page_ligne) ? $i_page_courante: $i_page_ligne;
-           list($st_nom,$st_prenom,$st_profession,$st_fonction,$st_observations,$st_age,$i_annee_naissance) = array_splice($a_champs,0,7);
+           list($st_nom,$st_prenom,$st_age,$st_annee_ou_date_naissance,$st_lieu_naissance,$st_profession,$st_observations) = array_splice($a_champs,0,7);
+		     $st_permalien='';
 		 break;
-         case 11:
-           list($st_rue_ligne,$st_quartier_ligne,$i_page_ligne,$i_maison_ligne,$i_menage_ligne) = array_splice($a_champs,0,5);
-	         $st_rue_ligne = empty($st_rue_ligne) ? $st_rue_courante: $st_rue_ligne;
-	         $st_quartier_ligne = empty($st_quartier_ligne) ? $st_quartier_courant: $st_quartier_ligne;
-	         $i_maison_ligne = empty($i_maison_ligne) ? $i_maison_courante: $i_maison_ligne;
-	         $i_menage_ligne = empty($i_menage_ligne) ? $i_menage_courant: $i_menage_ligne;
-	         $i_page_ligne = empty($i_page_ligne) ? $i_page_courante: $i_page_ligne;
-           list($st_nom,$st_prenom,$st_profession,$st_fonction,$st_observations,$st_age) = array_splice($a_champs,0,6);
-		 break;  
-         case 10:
-           list($st_rue_ligne,$st_quartier_ligne,$i_page_ligne,$i_maison_ligne,$i_menage_ligne) = array_splice($a_champs,0,5);
-	         $st_rue_ligne = empty($st_rue_ligne) ? $st_rue_courante: $st_rue_ligne;
-	         $st_quartier_ligne = empty($st_quartier_ligne) ? $st_quartier_courant: $st_quartier_ligne;
-	         $i_maison_ligne = empty($i_maison_ligne) ? $i_maison_courante: $i_maison_ligne;
-	         $i_menage_ligne = empty($i_menage_ligne) ? $i_menage_courant: $i_menage_ligne;
-	         $i_page_ligne = empty($i_page_ligne) ? $i_page_courante: $i_page_ligne;
-           list($st_nom,$st_prenom,$st_profession,$st_fonction,$st_observations) = array_splice($a_champs,0,5);
-          break;
 		  default:
 		   print("<div class=\"row alert alert-warning\">Ligne $i ignor&eacute;e ($i_nb_champs champs)</div>");
 		   print("<div class=\"row alert alert-warning\">$st_ligne</div>");
@@ -110,6 +91,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 		 $st_commentaires .= sprintf("N° de page: %d",$i_page_ligne);
 		 $acte->setCommentaires($st_commentaires);
          $acte->setDetailSupp(1);
+		 $acte->setUrl($st_permalien);
 		 $a_liste_actes[] = $acte;
 		 $i_acte_courant = $acte->getIdf();
 		 $i_nb_actes++;
@@ -118,11 +100,19 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 			$personne = new Personne($connexionBD,$i_acte_courant,IDF_PRESENCE_INTV,'?',$st_nom,$st_prenom);
 			$stats_patronyme->maj_patro($st_nom,LIB_RECENSEMENT,$pi_annee);
 			$personne->setProfession($st_profession);
-			$personne->setCommentaires("$st_fonction. $st_observations");
+			$personne->setCommentaires($st_observations);
 			$personne->setAge($st_age);
-			$personne->setAnneeNaissance($i_annee_naissance);
+			$personne->setDateNaissance($st_annee_ou_date_naissance);
 			$personne->setOrigine($st_lieu_naissance);
 			$a_liste_personnes[]=$personne;
+			if (preg_match('/veuve\s+([\w-]+)/i',$st_observations,$a_correspondances))
+			{
+				$st_nom_epoux = $a_correspondances[1];
+				$i_idf_veuve=$personne->getIdf(); 
+				$personne = new Personne($connexionBD,$i_acte_courant,IDF_PRESENCE_INTV,'M',$st_nom_epoux,'');
+				$a_liste_personnes[]=$personne;
+				$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte_courant,LIB_RECENSEMENT,$personne->getIdf(),$st_nom_epoux,$i_idf_veuve,$st_nom);
+			}
 		 }
       }
 	  else
@@ -130,7 +120,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 		 $stats_patronyme->maj_patro($st_nom,LIB_RECENSEMENT,$pi_annee);
 		 if (!empty($st_nom))
 		 {
-			if (preg_match('/sa femme/i',$st_fonction))
+			if (preg_match('/sa femme/i',$st_observations))
 			{
 				$derniere_personne = array_pop($a_liste_personnes);
 				$derniere_personne->setSexe('M');
@@ -140,9 +130,9 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 				
 				$personne = new Personne($connexionBD,$i_acte_courant,IDF_PRESENCE_INTV,'F',$st_nom,$st_prenom);
 				$personne->setProfession($st_profession);
-				$personne->setCommentaires("$st_fonction. $st_observations");
+				$personne->setCommentaires($st_observations);
 				$personne->setAge($st_age);
-			    $personne->setAnneeNaissance($i_annee_naissance);
+			    $personne->setDateNaissance($st_annee_ou_date_naissance);
 			    $personne->setOrigine($st_lieu_naissance); 
 				$i_idf_personne_courante = $personne->getIdf();
 				$a_liste_personnes[]=$personne;
@@ -153,11 +143,19 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 			{
 				$personne = new Personne($connexionBD,$i_acte_courant,IDF_PRESENCE_INTV,'?',$st_nom,$st_prenom);
 				$personne->setProfession($st_profession);
-				$personne->setCommentaires("$st_fonction $st_observations");
+				$personne->setCommentaires($st_observations);
 				$personne->setAge($st_age);
-				$personne->setAnneeNaissance($i_annee_naissance);
+				$personne->setDateNaissance($st_annee_ou_date_naissance);
 			    $personne->setOrigine($st_lieu_naissance);
-				$a_liste_personnes[]=$personne; 
+				$a_liste_personnes[]=$personne;
+				if (preg_match('/veuve\s+([\w-]+)/i',$st_observations,$a_correspondances))
+				{
+					$st_nom_epoux = $a_correspondances[1];
+					$i_idf_veuve=$personne->getIdf(); 
+					$personne = new Personne($connexionBD,$i_acte_courant,IDF_PRESENCE_INTV,'M',$st_nom_epoux,'');
+					$a_liste_personnes[]=$personne;
+					$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte_courant,LIB_RECENSEMENT,$personne->getIdf(),$st_nom_epoux,$i_idf_veuve,$st_nom);
+				}
 			}
 		}		
 	  }
