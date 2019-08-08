@@ -150,6 +150,20 @@ class Personne
 												 $this -> st_date_naissance = sprintf( "__/__/%d", $pi_annee_naissance );
 								 } 
 				
+
+			public function setDateNaissance($pst_date_naissance)
+			{
+				if (!empty($pst_date_naissance))
+				{ 
+					if (preg_match('/^\d+$/',$pst_date_naissance))
+					// la date de naissance ne comporte qu'une année
+						$this -> st_date_naissance = sprintf("__/__/%04d",$pst_date_naissance);
+					else 
+						$this -> st_date_naissance = $pst_date_naissance;
+				}
+			}
+
+				
 				public function setOrigine( $pst_origine )
 				
 				
