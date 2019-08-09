@@ -49,8 +49,6 @@ define('DROIT_GENEABANK','GENEABANK');
 
 
 $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
-                   //DROIT_CREATION_ADHERENT => 'Creation Adherent',
-                   //DROIT_MODIFICATION_ADHERENT => 'Modification Adherent',
                    DROIT_GESTION_ADHERENT => 'Gestion Adherent',
                    DROIT_MODIFICATION_DROITS => 'Modification Droits Adherent',
                    DROIT_UTILITAIRES => 'Acces aux utilitaires',
@@ -61,17 +59,11 @@ $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
                    DROIT_VALIDATION_TD => 'Validation des modifications de TD',
                    DROIT_STATS => 'Acces aux statistiques',
                    DROIT_VALIDATION_PERMALIEN => 'Validation des modifications de permalien',
-				           DROIT_GENEABANK => 'Gestion des points GeneaBank'
+				   DROIT_GENEABANK => 'Gestion des points GeneaBank'
                   );
 define('NB_LIGNES_PAR_PAGE',25);
-//define('NB_LIGNES_PAR_PAGE',15);
 define('DELTA_NAVIGATION',5);
-//define('MAX_PANIER',20);
-define('MAX_PANIER',10);
-define('MAX_DEMANDES',20);
-define('STATUT_ENCOURS','EN_COURS');
-define('STATUT_AVANTPANIER','AVANT_PANIER');
-define('STATUT_TRAITE','TRAITE');
+
 
 define('LIB_ASSO','Association Genealogique de la Charente');
 define('LIB_ASSO_AVEC_','Association Genealogique de la Charente');
@@ -79,6 +71,7 @@ define('SIGLE_ASSO','AGC');
 define('EMAIL_INSCRIPTION_FORUM','geneagc16-subscribe@yahoogroupes.fr');
 define('EMAIL_FORUM','geneagc16@yahoogroupes.fr');
 define('EMAIL_DIRASSO','agc-dir@genea16.net');
+define('EMAIL_INFOASSO','agc-info@genea16.net');
 define('EMAIL_GBKADMIN','agc-geneabank@genea16.net');
 define('EMAIL_PRESASSO','agc-dir@genea16.net');
 define('IDF_ASSO_GBK','gbkagcharente');
