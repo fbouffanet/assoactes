@@ -903,7 +903,6 @@ class Adherent
     $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
     $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\n";
-    $st_entete .= "Bcc: fbouffanet@yahoo.fr,agc-info@genea16.net\n";
     $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= "Disposition-Notification-To: ".SIGLE_ASSO."<".EMAIL_DIRASSO.">\n";
 	  $st_entete .= 'MIME-Version: 1.0' . "\n"; 
@@ -946,7 +945,6 @@ class Adherent
     $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
     $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\n";
-    $st_entete .= "Bcc: fbouffanet@yahoo.fr\n";
     $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= "Disposition-Notification-To: ".SIGLE_ASSO."<".EMAIL_DIRASSO.">\n";
     $st_entete .= 'MIME-Version: 1.0' . "\n"; 
@@ -988,7 +986,6 @@ class Adherent
     $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
     $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\n";
-    $st_entete .= "Bcc: fbouffanet@yahoo.fr\n";
     $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= 'MIME-Version: 1.0' . "\n"; 
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
@@ -1024,7 +1021,6 @@ class Adherent
     $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
     $st_entete .= "Content-type: text/html; charset=cp1252 \r\n";
     $st_entete .= "From: ".EMAIL_DIRASSO."\r\n";
-    $st_entete .= "Cc: fbouffanet@yahoo.fr\r\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\r\n";
     $st_entete .= "Reply-to: ".EMAIL_DIRASSO."\r\n";
     return (mail(EMAIL_GBKADMIN,$st_sujet, nl2br(stripslashes($st_texte)), $st_entete));
@@ -1040,12 +1036,12 @@ class Adherent
   function envoie_message_geneabank_changement_mdp() {
 	global $gst_administrateur_gbk;
     $st_texte = sprintf("Bonjour <strong>%s %s</strong>\n\n",$this->st_prenom,$this->st_nom);
-    if (empty($gst_administrateur_gbk))
+	if (empty($gst_administrateur_gbk))
 		$st_texte .= "Voici votre identifiant et mot de passe d'acc&egrave;s &agrave; la base <strong>".SIGLE_ASSO."</strong>\n\n";
 	else
 		$st_texte .= "Voici votre identifiant et mot de passe d'acc&egrave;s &agrave; la base <strong>".SIGLE_ASSO."</strong> et &agrave; G&eacute;n&eacute;aBank\n\n";
 	if (!empty(EMAIL_FORUM))
-		$st_texte .= "N'oubliez pas! votre adresse e-mail doit-&ecirc;tre la m&ecirc;me sur la base ".SIGLE_ASSO." et sur Yahoo\n\n";
+		$st_texte .= "N'oubliez pas! votre adresse e-mail doit-&ecirc;tre la m&ecirc;me sur la base GENEA16 et sur Yahoo\n\n";
     $st_texte .="<table border=1>";
     $st_texte .= sprintf("<tr><td bgcolor=\"lightblue\">Votre identifiant ".SIGLE_ASSO.":</td><th>%s</th></tr>",$this->st_ident);
 	$st_texte .= sprintf("<tr><td bgcolor=\"lightblue\">Votre mot de passe:</td><th>%s</th></tr>",$this->st_mdp);    
@@ -1082,7 +1078,6 @@ class Adherent
   
     $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
     $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
-    $st_entete .= "Bcc: fbouffanet@yahoo.fr\n";
     $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= 'MIME-Version: 1.0' . "\n"; 
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
