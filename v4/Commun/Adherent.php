@@ -467,6 +467,37 @@ class Adherent
    } 
    
    /*
+   * Renvoie le formulaire des quotas de consultation
+   * @param string $pi_max_nai quota des naissances
+   * @param string $pi_max_mar_div quota des mariages et divers
+   * @param string $pi_max_dec quota des décès
+   */
+   public static function formulaire_quotas_consultation($pi_max_nai,$pi_max_mar_div,$pi_max_dec)
+   {
+	    $st_chaine  = '<div class="form-group row">';
+        $st_chaine .= sprintf("<label for=\"max_nai\" class=\"col-md-4 col-form-label control-label\">Quota Naissance</label>");
+		$st_chaine .=  '<div class="col-md-8">';
+		$st_chaine .= sprintf("<input type=\"text\" maxlength=4 size=4 name=\"max_nai\" id=\"max_nai\" value=\"%d\" class=\"form-control\">",$pi_max_nai);
+        $st_chaine .=  '</div>';
+	    $st_chaine .=  '</div>';
+        
+	    $st_chaine .= '<div class="form-group row">';
+        $st_chaine .= sprintf("<label for=\"max_mar_div\" class=\"col-md-4 col-form-label control-label\">Quota Mariage/Divers</label>");
+		$st_chaine .=  '<div class="col-md-8">';
+		$st_chaine .= sprintf("<input type=\"text\" maxlength=4 size=4 name=\"max_mar_div\" id=\"max_mar_div\" value=\"%d\" class=\"form-control\">",$pi_max_mar_div);
+        $st_chaine .=  '</div>';
+	    $st_chaine .=  '</div>';
+        
+	    $st_chaine .= '<div class="form-group row">';  
+        $st_chaine .= sprintf("<label for=\"max_dec\" class=\"col-md-4 col-form-labelc ontrol-label\">Quota D&eacute;c&eacute;s</label>");
+		$st_chaine .=  '<div class="col-md-8">';
+		$st_chaine .= sprintf("<input type=\"text\" maxlength=4 size=4 name=\"max_dec\" id=\"max_dec\" value=\"%d\" class=\"form-control\">",$pi_max_dec);
+        $st_chaine .=  '</div>';
+	    $st_chaine .=  '</div>';
+		return $st_chaine;
+   }
+   
+   /*
    * Affiche le formulaire de gestion AGC
    */
    public function formulaire_infos_agc()
@@ -525,26 +556,7 @@ class Adherent
         $st_chaine .=  '</div>';
 	    $st_chaine .=  '</div>';
 	    
-		$st_chaine .= '<div class="form-group row">';
-        $st_chaine .= sprintf("<label for=\"max_nai\" class=\"col-md-4 col-form-label control-label\">Quota Naissance</label>");
-		$st_chaine .=  '<div class="col-md-8">';
-		$st_chaine .= sprintf("<input type=\"text\" maxlength=4 size=4 name=\"max_nai\" id=\"max_nai\" value=\"%d\" class=\"form-control\">",$this->i_max_nai);
-        $st_chaine .=  '</div>';
-	    $st_chaine .=  '</div>';
-        
-	    $st_chaine .= '<div class="form-group row">';
-        $st_chaine .= sprintf("<label for=\"max_mar_div\" class=\"col-md-4 col-form-label control-label\">Quota Mariage/Divers</label>");
-		$st_chaine .=  '<div class="col-md-8">';
-		$st_chaine .= sprintf("<input type=\"text\" maxlength=4 size=4 name=\"max_mar_div\" id=\"max_mar_div\" value=\"%d\" class=\"form-control\">",$this->i_max_mar_div);
-        $st_chaine .=  '</div>';
-	    $st_chaine .=  '</div>';
-        
-	    $st_chaine .= '<div class="form-group row">';  
-        $st_chaine .= sprintf("<label for=\"max_dec\" class=\"col-md-4 col-form-labelc ontrol-label\">Quota D&eacute;c&eacute;s</label>");
-		$st_chaine .=  '<div class="col-md-8">';
-		$st_chaine .= sprintf("<input type=\"text\" maxlength=4 size=4 name=\"max_dec\" id=\"max_dec\" value=\"%d\" class=\"form-control\">",$this->i_max_dec);
-        $st_chaine .=  '</div>';
-	    $st_chaine .=  '</div>';
+		$st_chaine .= self::formulaire_quotas_consultation($this->i_max_nai,$this->i_max_mar_div,$this->i_max_dec);
         
         $st_chaine .= sprintf("<div class=\"text-center\">Dernier jeton de paiement (si adh&eacute;sion en ligne): %s</div>",$this->st_jeton_paiement);
       }

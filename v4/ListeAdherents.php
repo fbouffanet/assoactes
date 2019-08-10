@@ -208,6 +208,78 @@ $(document).ready(function() {
 	 }     
   });
   
+  $("#quotas_globaux").validate({
+	 rules: {
+     max_nai: {
+      required:true,
+      integer: true
+     },
+     max_mar_div: {
+      required:true,
+      integer: true
+     },
+	 max_dec: {
+      required:true,
+      integer: true
+     }
+  },  
+  messages: {
+	max_nai: {
+      required: "Le quota de naissance est obligatoire",
+      integer: "Le quota de naissance doit être entier"
+     },
+     max_mar_div: {
+      required: "Le quota de mariage/divers est obligatoire",
+      integer: "Le quota de mariage/divers doit être entier"
+     },
+	 max_dec: {
+      required: "Le quota de décès est obligatoire",
+      integer: "Le quota de décès doit être entier"
+     }
+   
+	},
+	errorElement: "em",
+	errorPlacement: function ( error, element ) {
+		// Add the `help-block` class to the error element
+		error.addClass( "help-block" );
+
+		// Add `has-feedback` class to the parent div.form-group
+		// in order to add icons to inputs
+		element.parents( ".col-md-8" ).addClass( "has-feedback" );
+
+		if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+		} else {
+				error.insertAfter( element );
+		}
+
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !element.next( "span" )[ 0 ] ) {
+			 $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			 $( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-8" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".col-md-8" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	},
+	 submitHandler: function(form) {
+		if (confirm('Etes-vous sûr de mettre à jour les quotas globaux ?'))
+        {
+            form.submit();
+        }         
+	 }
+  });
+  
   $("#supprimer_adherents" ).click(function() {
     $('#mode_selection').val("SUPPRIMER");
     $("#liste_adherents").submit();
@@ -368,6 +440,12 @@ $(document).ready(function() {
   $("#aide_adherents").click(function() {
 
       $('#mode_selection').val("AIDE_ADHERENTS");
+      $("#liste_adherents").submit();
+  });
+  
+  $("#quotas_adherents").click(function() {
+
+      $('#mode_selection').val("MENU_QUOTAS_ADHERENTS");
       $("#liste_adherents").submit();
   });
   
@@ -561,8 +639,9 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
 	  print('</div>');
 	  print('</div>');
     print("<div class=\"form-ow col-md-12\">");
-    print('<div class="btn-group col-md-8 col-md-offset-2" role="group">'); 
+    print('<div class="btn-group col-md-12" role="group">'); 
     print('<button type="button" class="btn btn-warning" id="maj_statut_adherents"><span class="glyphicon glyphicon-time"></span> Mettre &agrave; jour le statut des adh&eacute;rents qui ne sont pas &agrave; jour</button>');
+	print('<button type=button id="quotas_adherents" class="btn btn-primary "><span class="glyphicon glyphicon-wrench"></span> Montrer les quotas globaux</button>');
     print('<button type=button id="aide_adherents" class="btn btn-primary "><span class="glyphicon glyphicon-thumbs-up"></span> Montrer les aides possibles</button>');
     print('</div>');
     print('</div>');
@@ -784,7 +863,7 @@ function exporte_tout($pconnexionBD)
 	}
 }
 
-/** Exporte tous les adhérents
+/** Montre les aides possibles des adhérents
  * @param object $pconnexionBD Identifiant de la connexion de base
  */ 
 function montre_aides_adherents($pconnexionBD)
@@ -903,6 +982,50 @@ function montre_aides_adherents($pconnexionBD)
    print("</form></div>");
 }
 
+
+/** montre les quotas de tous les adhérents
+ * @param object $pconnexionBD Identifiant de la connexion de base
+ */ 
+function montre_quotas_adherents($pconnexionBD)
+{
+   $st_requete = "select distinct default(max_nai),default(max_mar_div),default(max_dec) from adherent";
+   list($i_max_nai,$max_mar_div,$i_max_dec) =$pconnexionBD->sql_select_liste($st_requete);
+   print('<div class="panel-group">');
+   print('<div class="panel panel-primary">');
+   print('<div class="panel-heading">Quotas globaux de consultation</div>'); 
+   print('<div class="panel-body">');
+   print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"quotas_globaux\" method=\"post\">");
+   print("<input type=hidden name=mode value=MAJ_QUOTAS_ADHERENTS>");
+   print Adherent::formulaire_quotas_consultation($i_max_nai,$max_mar_div,$i_max_dec);
+   print('<div class="form-row">');   
+   print('<button type=submit class="btn btn-warning col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-alert"></span> Modifier</button>');
+   print('</div>');   
+   print("</form>");
+   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+   print("<input type=hidden name=mode value=LISTE>");
+   print('<div class="form-row">');   
+   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-home"></span> Liste des adh&eacute;rents</button>');
+   print('</div>');   
+   print("</form></div>");
+}
+
+/** maj les quotas de tous les adhérents
+ * @param object $pconnexionBD Identifiant de la connexion de base
+ */ 
+function maj_quotas_adherents($pconnexionBD)
+{
+	$i_max_nai=(int) $_POST['max_nai'];
+	$i_max_mar_div=(int) $_POST['max_mar_div'];
+	$i_max_dec=(int) $_POST['max_dec'];
+    $st_requete = "Alter table adherent modify column `max_nai` smallint(11) unsigned NOT NULL DEFAULT '$i_max_nai',modify  column `max_mar_div` smallint(10) unsigned NOT NULL DEFAULT '$i_max_mar_div' COMMENT 'Quota Mariage/Divers',modify  column `max_dec` smallint(11) unsigned NOT NULL DEFAULT '$i_max_dec'";
+	try
+	{
+		$pconnexionBD->execute_requete($st_requete);
+	}
+	catch (Exception $e) {
+	    print("<div class=\"alert alert-danger\">Mise &agrave jour impossible</div>");
+	}	
+}	
 
 /** Effectue la bascule des adhérents. Les adhérents plus à jour de leur cotisations sont suspendus
  * Ceux de plus de 5 ans sont supprimés
@@ -1134,6 +1257,13 @@ switch ($gst_mode) {
    break;
    case 'AIDE_ADHERENTS':
         montre_aides_adherents($connexionBD);
+   break;
+   case 'MENU_QUOTAS_ADHERENTS':
+        montre_quotas_adherents($connexionBD);
+   break;
+   case 'MAJ_QUOTAS_ADHERENTS':
+      maj_quotas_adherents($connexionBD);
+      menu_liste($connexionBD,$gst_ident,$gst_nom_a_chercher,$gc_statut);
    break;
    case 'RECREER_MDP':
       $adherent = new Adherent($connexionBD,$gi_idf_adherent);
