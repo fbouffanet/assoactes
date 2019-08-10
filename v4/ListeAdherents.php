@@ -641,7 +641,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
     print("<div class=\"form-ow col-md-12\">");
     print('<div class="btn-group col-md-12" role="group">'); 
     print('<button type="button" class="btn btn-warning" id="maj_statut_adherents"><span class="glyphicon glyphicon-time"></span> Mettre &agrave; jour le statut des adh&eacute;rents qui ne sont pas &agrave; jour</button>');
-	print('<button type=button id="quotas_adherents" class="btn btn-primary "><span class="glyphicon glyphicon-wrench"></span> Montrer les quotas globaux</button>');
+	print('<button type=button id="quotas_adherents" class="btn btn-primary "><span class="glyphicon glyphicon-wrench"></span> Modifier les quotas globaux</button>');
     print('<button type=button id="aide_adherents" class="btn btn-primary "><span class="glyphicon glyphicon-thumbs-up"></span> Montrer les aides possibles</button>');
     print('</div>');
     print('</div>');
