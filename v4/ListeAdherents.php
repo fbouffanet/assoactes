@@ -988,15 +988,27 @@ function montre_aides_adherents($pconnexionBD)
  */ 
 function montre_quotas_adherents($pconnexionBD)
 {
-   $st_requete = "select distinct default(max_nai),default(max_mar_div),default(max_dec) from adherent";
-   list($i_max_nai,$max_mar_div,$i_max_dec) =$pconnexionBD->sql_select_liste($st_requete);
+   $st_requete = "show columns from adherent";
+   $a_colonnes=$pconnexionBD->sql_select_liste1($st_requete);
+   foreach($a_colonnes as $a_table)
+   {
+		switch ($a_table[0])
+		{
+			case 'max_nai': $i_max_nai=$a_table['Default'];
+			break;
+			case 'max_mar_div': $i_max_mar_div=$a_table['Default'];
+			break;
+			case 'max_dec': $i_max_dec=$a_table['Default'];
+			break;
+		}
+   }
    print('<div class="panel-group">');
    print('<div class="panel panel-primary">');
    print('<div class="panel-heading">Quotas globaux de consultation</div>'); 
    print('<div class="panel-body">');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" id=\"quotas_globaux\" method=\"post\">");
    print("<input type=hidden name=mode value=MAJ_QUOTAS_ADHERENTS>");
-   print Adherent::formulaire_quotas_consultation($i_max_nai,$max_mar_div,$i_max_dec);
+   print Adherent::formulaire_quotas_consultation($i_max_nai,$i_max_mar_div,$i_max_dec);
    print('<div class="form-row">');   
    print('<button type=submit class="btn btn-warning col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-alert"></span> Modifier</button>');
    print('</div>');   
