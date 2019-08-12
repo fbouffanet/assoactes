@@ -19,6 +19,9 @@ if(isset($_GET['per_page']) && in_array($_GET['per_page'], array_keys($per_page_
   $_SESSION['per_page'] = $_GET['per_page'];
 }
 
+list($i_largeur_logo, $i_hauteur_logo, $st_type_logo, $st_attributs_logo) = getimagesize($gst_logo_association);
+$gi_largeur_page=(int) round($i_largeur_logo/100)*150;
+
 print('<!DOCTYPE html>');
 print("<head>\n");
 print('<meta http-equiv="content-language" content="fr"> ');
@@ -32,7 +35,7 @@ $(document).ready(function() {
 $('a.popup').click(function(){
    var url = $(this).attr("href");
    var windowName = "InfosActe";
-   var windowSize = 'width=600,height=600,resizable=yes,scrollbars=yes';
+   var windowSize = 'width=<?php print($gi_largeur_page);?>,height=600,resizable=yes,scrollbars=yes';
    window.open(url, windowName, windowSize);
    return false;
 });
@@ -146,7 +149,7 @@ function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$
         $st_bloc_rappel .="(avec recherches dans un rayon de $pi_rayon km)\n";
       }
 	  $st_bloc_rappel .="</label>";
-      $st_bloc_rappel .="<textarea rows=6 cols=40 id=\"communes_voisines\">$st_communes_voisines</textarea></div>";
+      $st_bloc_rappel .="<textarea rows=6 cols=40 id=\"communes_voisines\" class=\"form-control\">$st_communes_voisines</textarea></div>";
     }
     $st_bloc_rappel .="</div>";
     $st_bloc_rappel .="</div>";
