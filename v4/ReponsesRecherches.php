@@ -19,8 +19,16 @@ if(isset($_GET['per_page']) && in_array($_GET['per_page'], array_keys($per_page_
   $_SESSION['per_page'] = $_GET['per_page'];
 }
 
-list($i_largeur_logo, $i_hauteur_logo, $st_type_logo, $st_attributs_logo) = getimagesize($gst_logo_association);
-$gi_largeur_page=(int) round($i_largeur_logo/100)*150;
+if(empty($gst_logo_association))	
+	$gi_largeur_page=600;
+else
+{	
+	list($i_largeur_logo, $i_hauteur_logo, $st_type_logo, $st_attributs_logo) = getimagesize($gst_logo_association);
+	if ($i_largeur_logo<=400)
+	   $gi_largeur_page=(int) round($i_largeur_logo/100)*200;
+	else	
+	   $gi_largeur_page=(int) round($i_largeur_logo/100)*150;
+}
 
 print('<!DOCTYPE html>');
 print("<head>\n");
