@@ -27,7 +27,7 @@ else
 	if ($i_largeur_logo<=400)
 	   $gi_largeur_page=(int) round($i_largeur_logo/100)*200;
 	else	
-	   $gi_largeur_page=(int) round($i_largeur_logo/100)*150;
+	   $gi_largeur_page=(int) round($i_largeur_logo/100)*120;
 }
 
 print('<!DOCTYPE html>');
