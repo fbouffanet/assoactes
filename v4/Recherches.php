@@ -504,6 +504,10 @@ $(document).ready(function() {
 	
 	$('#releve_tous_patronymes_communes').trigger('change');
 	
+	$('#idf_commune_recherches_communes').on('select2:unselecting', function (e) {
+		$("#rayon_recherches_communes").val('');
+	});
+	
 });
 </script>
 <?php
