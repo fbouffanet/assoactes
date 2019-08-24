@@ -8,6 +8,8 @@ require_once("../Commun/commun.php");
 $gst_chemin = ($_SERVER['HTTP_HOST']=='inscription.genea16.net')? "https://adherents.genea16.net": '..';
 $cryptinstall="$gst_chemin/Commun/crypt/cryptographp.fct.php";
 
+$gst_url_site = ($_SERVER['HTTP_HOST']=='inscription.genea16.net')? "https://adherents.genea16.net": '..';
+
 include $cryptinstall;
 //print(dirname($cryptinstall));
 
