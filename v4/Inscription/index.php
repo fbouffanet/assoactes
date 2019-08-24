@@ -5,7 +5,7 @@ require_once("../Commun/constantes.php");
 require_once("../Commun/ConnexionBD.php");
 require_once("../Commun/commun.php");
 
-$gst_chemin = ($_SERVER['HTTP_HOST']=='inscription.genea16.net')? "http://adherents.genea16.net": '..';
+$gst_chemin = ($_SERVER['HTTP_HOST']=='inscription.genea16.net')? "https://adherents.genea16.net": '..';
 $cryptinstall="$gst_chemin/Commun/crypt/cryptographp.fct.php";
 
 include $cryptinstall;
