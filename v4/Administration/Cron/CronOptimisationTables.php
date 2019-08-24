@@ -1,8 +1,8 @@
 <?php
 
-require_once '/var/www/clients/client1/web12/web/v4/Commun/config.php';
-require_once '/var/www/clients/client1/web12/web/v4/Commun/constantes.php';
-require_once '/var/www/clients/client1/web12/web/v4/Commun/ConnexionBD.php';
+require_once '/var/www/clients/client1/web3/web/v4/Commun/config.php';
+require_once '/var/www/clients/client1/web3/web/v4/Commun/constantes.php';
+require_once '/var/www/clients/client1/web3/web/v4/Commun/ConnexionBD.php';
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
