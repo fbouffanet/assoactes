@@ -1,5 +1,5 @@
 #!/bin/bash
-rep_svgde="/var/www/clients/client1/web12/backup/SvgdBD"
+rep_svgde="/var/www/clients/client1/web3/backup/SvgdBD"
 date=`date +%Y%m%d_%H%M%S`
 nom_bd="admin_basev4"
 fich_svgde="${rep_svgde}/${nom_bd}_${date}.sql.gz"
