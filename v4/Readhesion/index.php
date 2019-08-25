@@ -1,8 +1,7 @@
 <?php
 
-$gst_chemin = "../";
-//$gst_chemin = ($_SERVER['HTTP_HOST']=='adherents.genea16.net')? dirname($_SERVER['DOCUMENT_ROOT'])."/v4/Site": dirname($_SERVER['DOCUMENT_ROOT'])."/Site";
-//$gst_chemin = "";
+$gst_chemin = ($_SERVER['HTTP_HOST']=='readhesion.genea16.net')? "https://adherents.genea16.net": '..';
+$gst_url_site = ($_SERVER['HTTP_HOST']=='readhesion.genea16.net')? "https://adherents.genea16.net": '..';
 require_once("$gst_chemin/Commun/Identification.php");
 require_once("$gst_chemin/Commun/commun.php");
 require_once("$gst_chemin/Commun/constantes.php");
