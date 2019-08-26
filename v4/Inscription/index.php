@@ -365,7 +365,7 @@ function preinscrit_adherent($pst_ins_date,$pst_ins_nom,$pst_ins_prenom,$pst_ins
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 if ($_SERVER['HTTP_HOST']=='inscription.genea16.net')
-	print("<div class=\"alert  alert-danger\">Merdi d'utiliser l'adresse <a href=\"$gst_url_site/Inscription/index.php\">$gst_url_site/Inscription/index.php</a> &agrave; la place de cette page</div>");
+	print("<div class=\"alert  alert-danger\">Merci d'utiliser l'adresse <a href=\"$gst_url_site/Inscription/index.php\">$gst_url_site/Inscription/index.php</a> &agrave; la place de cette page</div>");
 
 switch ($gst_mode) {
   case 'GRILLE' : 
