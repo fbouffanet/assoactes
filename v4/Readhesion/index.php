@@ -1,11 +1,12 @@
 <?php
 
-$gst_url_site = ($_SERVER['HTTP_HOST']=='readhesion.genea16.net')? "https://adherents.genea16.net": '..';
 require_once("../Commun/Identification.php");
 require_once("../Commun/commun.php");
 require_once("../Commun/constantes.php");
 require_once("../Commun/ConnexionBD.php");
-require_once("../Commun/Adherent.php");                      
+require_once("../Commun/Adherent.php");
+
+$gst_url_site = ($_SERVER['HTTP_HOST']=='readhesion.genea16.net')? "https://adherents.genea16.net": '..';                     
 
 /*---------------------------------------------------------------------------
   Démarrage du programme
@@ -29,7 +30,7 @@ print('</head>');
 print('<body>');
 print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-require_once("$gst_chemin/Commun/menu.php");
+require_once("../Commun/menu.php");
 
 if(!isset($_SESSION['ident']))
    die("<div class=\"alert alert-danger\"> Identifiant non reconnu</div>");
