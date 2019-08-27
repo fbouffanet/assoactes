@@ -1,12 +1,11 @@
 <?php
 
-$gst_chemin = ($_SERVER['HTTP_HOST']=='readhesion.genea16.net')? "https://adherents.genea16.net": '..';
 $gst_url_site = ($_SERVER['HTTP_HOST']=='readhesion.genea16.net')? "https://adherents.genea16.net": '..';
-require_once("$gst_chemin/Commun/Identification.php");
-require_once("$gst_chemin/Commun/commun.php");
-require_once("$gst_chemin/Commun/constantes.php");
-require_once("$gst_chemin/Commun/ConnexionBD.php");
-require_once("$gst_chemin/Commun/Adherent.php");                      
+require_once("../Commun/Identification.php");
+require_once("../Commun/commun.php");
+require_once("../Commun/constantes.php");
+require_once("../Commun/ConnexionBD.php");
+require_once("../Commun/Adherent.php");                      
 
 /*---------------------------------------------------------------------------
   Démarrage du programme
