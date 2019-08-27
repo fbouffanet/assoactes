@@ -6,7 +6,7 @@ require_once("../Commun/constantes.php");
 require_once("../Commun/ConnexionBD.php");
 require_once("../Commun/Adherent.php");
 
-print("host=".$_SERVER['HTTP_HOST']."<br>");
+
 $gst_url_site = ($_SERVER['HTTP_HOST']=='readhesion.genea16.net')? "https://adherents.genea16.net": '..';                     
 
 /*---------------------------------------------------------------------------
