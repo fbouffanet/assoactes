@@ -8,6 +8,7 @@ verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
 require_once '../Commun/commun.php';
 require_once '../Publication/fpdf/fpdf.php';
+require_once '../Publication/fpdf/tfpdf/tfpdf.php';
 
 ob_start();// Enclenche la temporisation de sortie
 
@@ -111,7 +112,7 @@ function charge_csv(){
   data68 text COLLATE latin1_general_ci NOT NULL,
   data69 text COLLATE latin1_general_ci NOT NULL,
   data70 text COLLATE latin1_general_ci NOT NULL
-) ENGINE=CSV DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci";
+) ENGINE=CSV DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci";
 global $connexionBD; //$connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 $connexionBD->execute_requete($sqlcsv);
 
@@ -237,7 +238,9 @@ if ($type_actes_nimegue == "V")
 	break;
 }
 
-$pdf = new PDF();
+//$pdf = new PDF();
+
+$pdf = new tFPDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',8);
