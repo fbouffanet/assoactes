@@ -111,7 +111,7 @@ function charge_csv(){
   data68 text NOT NULL,
   data69 text NOT NULL,
   data70 text NOT NULL
-) ENGINE=CSV DEFAULT ";
+) ENGINE=CSV ";
 global $connexionBD; //$connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 $connexionBD->execute_requete($sqlcsv);
 
