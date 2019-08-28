@@ -9,7 +9,7 @@ require_once 'commun.php';
 
 $gst_url_retour = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
 $gst_adresse_ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
-$gst_url_site = ($_SERVER['HTTP_HOST']=='readhesion.genea16.net')? "https://adherents.genea16.net": '..';  
+//$gst_url_site = ($_SERVER['HTTP_HOST']=='readhesion.genea16.net')? "https://adherents.genea16.net": '..';  
 $gst_ip_restreinte = null;
 	
 $connexionBD            = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);	
