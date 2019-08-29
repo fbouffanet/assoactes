@@ -8,6 +8,17 @@ require_once '../Commun/ConnexionBD.php';
 require_once '../Commun/commun.php';
 require_once '../Publication/fpdf/fpdf.php';
 
+print('<!DOCTYPE html>');
+print("<head>");
+print('<link rel="shortcut icon" href="images/favicon.ico">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="content-language" content="fr">');
+print('<title>Gestion des publications !</title>');
+print('</head>');
+
+print("\n<body>");
+
+
 ob_start();// Enclenche la temporisation de sortie
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
