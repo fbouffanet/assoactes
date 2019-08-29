@@ -7,6 +7,7 @@ verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
 require_once '../Commun/commun.php';
 require_once '../Publication/fpdf/fpdf.php';
+require_once '../Publication/fpdf/tfpdf/tfpdf.php';
 
 ob_start();// Enclenche la temporisation de sortie
 
@@ -235,7 +236,10 @@ if ($type_actes_nimegue == "V")
 	break;
 }
 
-$pdf = new PDF();
+$pdf = new tFPDF();
+// Ajoute une police Unicode (utilise UTF-8)
+$pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
+$pdf->SetFont('DejaVu','',14);
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',8);
