@@ -1,23 +1,12 @@
 <?php
 require_once '../Commun/config.php';
 require_once '../Commun/constantes.php';
-require_once('../Commun/Identification.php');
-require_once('../Commun/VerificationDroits.php');
+require_once '../Commun/Identification.php';
+require_once '../Commun/VerificationDroits.php';
 verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
 require_once '../Commun/commun.php';
 require_once '../Publication/fpdf/fpdf.php';
-
-print('<!DOCTYPE html>');
-print("<head>");
-print('<link rel="shortcut icon" href="images/favicon.ico">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
-print('<meta http-equiv="content-language" content="fr">');
-print('<title>Gestion des publications !</title>');
-print('</head>');
-
-print("\n<body>");
-
 
 ob_start();// Enclenche la temporisation de sortie
 
@@ -193,11 +182,10 @@ charge_csv();//charge le fichier en table
 	list ($datemini,$datemaxi,$nbractes) = explode(";", $buffer);
 	fclose($pa);
 //echo $datemini."-".$datemaxi."-".$nbractes;
+
+
 //************************************************************
 //Analyse du fichier
-
-
-
 
 $data = array();
 $sql = "SELECT * FROM tmp_publication LIMIT 0, 1";//Lecture de la premiere ligne
