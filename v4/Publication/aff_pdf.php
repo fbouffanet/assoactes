@@ -145,7 +145,7 @@ function Header()
         global $titreHP;
         $this->SetFillColor(220,220,220);
         $this->SetFont('Times','I',8);// Police Times italique 8
-		$this->Cell(0,5,$titreHP,0,1,'C',true);// Titre de la publication
+		$this->Cell(0,5,utf8_encode ($titreHP),0,1,'C',true;// Titre de la publication
     }
 
 
