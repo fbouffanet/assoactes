@@ -194,7 +194,7 @@ $data=$connexionBD->ligne_suivante_resultat($req);
 
 
 //=============================================================================
-$commune = utf8_encode($data[2]);// nom de la commune
+$commune = utf8_decode($data[2]);// nom de la commune
 echo $commune ;
 $chaine = $data[1];// N° de la commune
 $titreN = substr ($chaine, strlen ($chaine) - 3);// N° de la commune
