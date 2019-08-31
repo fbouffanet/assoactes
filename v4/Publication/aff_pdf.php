@@ -239,7 +239,7 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',8);
 $pdf->SetMargins(20,5);
-$pdf->set_charset("utf8");
+//$pdf->set_charset("utf8");
 
 $req=$connexionBD->execute_requete($sql);
 $ligne = 1; // compteur de ligne
