@@ -233,13 +233,11 @@ if ($type_actes_nimegue == "V")
 	break;
 }
 
-header( 'content-type: text/html; charset=utf-8' );
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',8);
 $pdf->SetMargins(20,5);
-//$pdf->set_charset("utf8");
 
 $req=$connexionBD->execute_requete($sql);
 $ligne = 1; // compteur de ligne
@@ -282,12 +280,12 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
   	//$l1 ="\n".$data[data10]."   ".$data[data11]."   sexe :  ".$data[data12]."   Le ".$data[data6]." ".$data[data7]."       ".$data[data13]."";
   	//$pdf->SetFont('Times','B',8 );//Passage en gras
 	$pdf->Cell(50,3,$data[10].'  '.$data[11],0,0,L);
-  	$pdf->Cell(20,3,'Sexe : '.$data[12],0,0,L);
+  $pdf->Cell(20,3,'Sexe : '.$data[12],0,0,L);
 	$pdf->Cell(10,3,$data[6].'  '.$data[7],0,1);
 	$l1='';
-  	if (empty($data[14])){} else {$l1= $l1."  - "."Père   ".$data[14]."   ".$data[15]."   ".$data[16]."   ".$data[17]."\n";}
-  	if (empty($data[18])){} else {$l1= $l1."  - "."Mère   ".$data[18]."   ".$data[19]."   ".$data[20]."   ".$data[21]."\n";}
- 	if (empty($data[22])){} else {$l1= $l1."  - "."Par/Tém1   ".$data[22]."   ".$data[23]."   ".$data[24]."\n";}
+  	if (empty($data[14])){} else {$l1= $l1."  - "."Père   ".$data[14]."   ".$data[15] = utf8_encode ($data[15])."   ".$data[16]."   ".$data[17]."\n";}
+  	if (empty($data[18])){} else {$l1= $l1."  - "."Mère   ".$data[18]."   ".$data[19]= utf8_encode ($data[19])."   ".$data[20]."   ".$data[21]."\n";}
+ 	  if (empty($data[22])){} else {$l1= $l1."  - "."Par/Tém1   ".$data[22]."   ".$data[23]."   ".$data[24]."\n";}
   	if (empty($data[25])){} else {$l1= $l1."  - "."Par/Tém2   ".$data[25]."   ".$data[26]."   ".$data[27]."\n";}
   	if (empty($data[28])){} else {$l1= $l1. $data[28]."\n";}
     $pdf->write(3,$l1);
