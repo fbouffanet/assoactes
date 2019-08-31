@@ -233,11 +233,13 @@ if ($type_actes_nimegue == "V")
 	break;
 }
 
+header( 'content-type: text/html; charset=utf-8' );
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',8);
 $pdf->SetMargins(20,5);
+$pdf->set_charset("utf8");
 
 $req=$connexionBD->execute_requete($sql);
 $ligne = 1; // compteur de ligne
