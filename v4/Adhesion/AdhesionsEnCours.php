@@ -34,10 +34,10 @@ $('a.lien_edition').click(function(){
     return false;
   });
 
-$("#creer_adherent").click(function() {
+$("#bouton_creer_adherent").click(function() {
 	if (confirm("Voulez-vous réellement créer cet adhérent ?"))   
     {
-      form.submit();
+      $("#creer_adherent").submit();
     }
   }); 
 });  
@@ -119,10 +119,10 @@ function affiche_statut($pst_jeton)
    print("</table>");
    if ($st_code=='00000')
    {
-      print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
+      print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"creer_adherent\">");
       print("<input type=\"hidden\" name=\"mode\" value=\"CREATION\">");
       print("<input type=\"hidden\" name=\"jeton\" value=\"$pst_jeton\">");
-      print("<button type=\"button\" id=\"creer_adherent\" class=\"btn btn-primary col-md-offset-4 col-md-4\">Cr&eacute;er cet adh&eacute;rent</button>");
+      print("<button type=\"button\" id=\"bouton_creer_adherent\" class=\"btn btn-primary col-md-offset-4 col-md-4\">Cr&eacute;er cet adh&eacute;rent</button>");
       print("</form>");
    }
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
