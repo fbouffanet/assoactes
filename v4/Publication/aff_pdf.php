@@ -197,6 +197,7 @@ $data=$connexionBD->ligne_suivante_resultat($req);
  //echo $data[5]["commune"];
 
 //=============================================================================
+header('Content-Type: text/html; charset=UTF-8'); 
 $commune = $data[2];// nom de la commune
 $chaine = $data[1];// N° de la commune
 $titreN = substr ($chaine, strlen ($chaine) - 3);// N° de la commune
