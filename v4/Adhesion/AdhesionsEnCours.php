@@ -122,7 +122,7 @@ function affiche_statut($pst_jeton)
       print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
       print("<input type=\"hidden\" name=\"mode\" value=\"CREATION\">");
       print("<input type=\"hidden\" name=\"jeton\" value=\"$pst_jeton\">");
-      print("<button type=\"button\" id=\"creer_adherent\" class=\"btn btn-primary col-md-offset-4 col-md-4\">Cr&eacute;er cet adh&eacute;rent</button>\">");
+      print("<button type=\"button\" id=\"creer_adherent\" class=\"btn btn-primary col-md-offset-4 col-md-4\">Cr&eacute;er cet adh&eacute;rent</button>");
       print("</form>");
    }
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
