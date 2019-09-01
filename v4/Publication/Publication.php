@@ -5,9 +5,9 @@ require_once('../Commun/Identification.php');
 require_once('../Commun/VerificationDroits.php');
 verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
-require_once('../Commun/PaginationTableau.php');
+require_once '../Commun/PaginationTableau.php';
 require_once '../Commun/commun.php';
-
+ 
 $gst_repertoire_publication = $_SERVER['DOCUMENT_ROOT'].'/v4/Publication/telechargements';
 
 print('<!DOCTYPE html>');
