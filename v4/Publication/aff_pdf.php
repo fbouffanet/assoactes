@@ -10,11 +10,8 @@ require_once '../Commun/commun.php';
 require_once '../Publication/fpdf/fpdf.php';
 
 ob_start();// Enclenche la temporisation de sortie
-header('Content-Type: text/html; charset=UTF-8'); 
-echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-
 
 $copy="L’achat des tables ne donne pas droit à copie ou reproduction.
 Toute reproduction ou représentation intégrale, ou partielle, par quelque procédé que ce soit, des pages publiées dans la présente
@@ -114,6 +111,7 @@ function charge_csv(){
   data69 text COLLATE latin1_general_ci NOT NULL,
   data70 text COLLATE latin1_general_ci NOT NULL
 ) ENGINE=CSV DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci";
+
 global $connexionBD; //$connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 $connexionBD->execute_requete($sqlcsv);
 
@@ -199,7 +197,7 @@ $data=$connexionBD->ligne_suivante_resultat($req);
  //echo $data[5]["commune"];
 
 //=============================================================================
-header('Content-Type: text/html; charset=UTF-8'); 
+
 $commune = $data[2];// nom de la commune
 $chaine = $data[1];// N° de la commune
 $titreN = substr ($chaine, strlen ($chaine) - 3);// N° de la commune
@@ -253,30 +251,30 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
       $ligne ++;
       if ($ligne == 2)
        {
-         $pdf->SetFont('Times','B',36);// Police Times gras 20
+           $pdf->SetFont('Times','B',36);// Police Times gras 20
            $pdf->Cell(0,10,"   ".$commune,0,1,'C');//Nom de la commune
            $pdf->SetFont('Times','B',16);// Police Times gras 12
            $pdf->Ln(5);// saut de ligne de 50 mn
-         $pdf->Cell(0,10,$titre,0,1,'C');
-        //$pdf->Ln(10);// Saut de ligne
-         $titre2 = 'Années '.$datemini.' à '.$datemaxi.'  soit '.$nbractes.' actes';
-         $pdf->Cell(0,10,$titre2,0,1,'C');// Date
-       $pdf->SetFont('Times','',18);// Police Times gras 12// N°de paroisse
-       $pdf->Cell(0,10,$titreN,0,1,'C');// N°de paroisse
-       $titre3 = "Par ordre alphabétique";
-       $pdf->SetFont('Times','',16);// Police Times gras 12
-       $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
-         $pdf->SetFont('Times','',8);
-       $pdf->Ln(10);// Saut de ligne
-         $pdf->Image( $image1,60,120,100,80);// Logo
-       $pdf->Ln(100);
-         $pdf->Cell(20);
-         $pdf->MultiCell(150,4,$message,0,C);
-         //$pdf->Ln(40);
-       $pdf->SetY(-45);// Positionnement à 1,5 cm du bas
-         $pdf->Cell(20);
-         $pdf->MultiCell(150,4,$copy,1,C);
-         $pdf->AddPage();
+           $pdf->Cell(0,10,$titre,0,1,'C');
+           //$pdf->Ln(10);// Saut de ligne
+           $titre2 = 'Années '.$datemini.' à '.$datemaxi.'  soit '.$nbractes.' actes';
+           $pdf->Cell(0,10,$titre2,0,1,'C');// Date
+           $pdf->SetFont('Times','',18);// Police Times gras 12// N°de paroisse
+           $pdf->Cell(0,10,$titreN,0,1,'C');// N°de paroisse
+           $titre3 = "Par ordre alphabétique";
+           $pdf->SetFont('Times','',16);// Police Times gras 12
+           $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
+           $pdf->SetFont('Times','',8);
+           $pdf->Ln(10);// Saut de ligne
+           $pdf->Image( $image1,60,120,100,80);// Logo
+           $pdf->Ln(100);
+           $pdf->Cell(20);
+           $pdf->MultiCell(150,4,$message,0,C);
+           //$pdf->Ln(40);
+           $pdf->SetY(-45);// Positionnement à 1,5 cm du bas
+           $pdf->Cell(20);
+           $pdf->MultiCell(150,4,$copy,1,C);
+           $pdf->AddPage();
       }
 
    switch ($type_actes_nimegue)
@@ -286,13 +284,13 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
     //affichage de chaque champ de la ligne en question
     //$l1 ="\n".$data[data10]."   ".$data[data11]."   sexe :  ".$data[data12]."   Le ".$data[data6]." ".$data[data7]."       ".$data[data13]."";
     //$pdf->SetFont('Times','B',8 );//Passage en gras
-  $pdf->Cell(50,3,$data[10].'  '.$data[11],0,0,L);
+    $pdf->Cell(50,3,$data[10].'  '.$data[11],0,0,L);
     $pdf->Cell(20,3,'Sexe : '.$data[12],0,0,L);
-  $pdf->Cell(10,3,$data[6].'  '.$data[7],0,1);
-  $l1='';
+    $pdf->Cell(10,3,$data[6].'  '.$data[7],0,1);
+    $l1='';
     if (empty($data[14])){} else {$l1= $l1."  - "."Père   ".$data[14]."   ".$data[15]."   ".$data[16]."   ".$data[17]."\n";}
     if (empty($data[18])){} else {$l1= $l1."  - "."Mère   ".$data[18]."   ".$data[19]."   ".$data[20]."   ".$data[21]."\n";}
-  if (empty($data[22])){} else {$l1= $l1."  - "."Par/Tém1   ".$data[22]."   ".$data[23]."   ".$data[24]."\n";}
+    if (empty($data[22])){} else {$l1= $l1."  - "."Par/Tém1   ".$data[22]."   ".$data[23]."   ".$data[24]."\n";}
     if (empty($data[25])){} else {$l1= $l1."  - "."Par/Tém2   ".$data[25]."   ".$data[26]."   ".$data[27]."\n";}
     if (empty($data[28])){} else {$l1= $l1. $data[28]."\n";}
     $pdf->write(3,$l1);
@@ -319,9 +317,9 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
   if (empty($data[30])){} else {$l1= $l1."  - "."Tèm1   ".$data[30]."   ".$data[31]."   ".$data[32]."\n";}
   if (empty($data[33])){} else {$l1= $l1."  - "."Tèm2   ".$data[33]."   ".$data[34]."   ".$data[35]."\n";}
   if (empty($data[36])){} else {$l1= $l1. $data[36]."\n";}
-    $pdf->write(3,$l1);
-    $sep = "------------------------------------------------------------------------------------------------------------------------------------------------\n";
-    $pdf->write(3,$sep);
+  $pdf->write(3,$l1);
+  $sep = "------------------------------------------------------------------------------------------------------------------------------------------------\n";
+  $pdf->write(3,$sep);
   break;
 
   case "M":// $type_actes_nimegue = M
@@ -361,7 +359,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
     // Témoins
     if (empty($data[46])){} else {$l1= $l1."    - "."Témoin 1  : ".$data[46]." ".$data[47]." ".$data[48]."\n ";}  
   if (empty($data[49])){} else {$l1= $l1."    - "."Témoin 2  : ".$data[49]." ".$data[50]." ".$data[51]."\n ";} 
-    if (empty($data[52])){} else {$l1= $l1."    - "."Témoin 3  : ".$data[52]." ".$data[53]." ".$data[54]."\n ";}  
+  if (empty($data[52])){} else {$l1= $l1."    - "."Témoin 3  : ".$data[52]." ".$data[53]." ".$data[54]."\n ";}  
   if (empty($data[55])){} else {$l1= $l1."    - "."Témoin 4  : ".$data[55]." ".$data[56]." ".$data[57]."\n ";} 
   if (empty($data[58])){} else {$l1= $l1."    - ".$data[58]."\n";}
   $pdf->write(3,$l1);
@@ -374,16 +372,16 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
   case "V":// $type_actes_nimegue = V
     //affichage de chaque champ de la ligne en question
     // info type Acte & Notaire
-  //if (empty($data[data9])) {$Notaire = "";} else {$Notaire = "               Notaire : ".$data[data9]." ";}  //$Notaire
-  //if (empty($data[data11])) {$Type_Acte  = "";} else {$Type_Acte  ="     Acte de : ".$data[data11]." ";}//$Type_Acte
-  //$pdf->Cell(80,3,$Notaire.'  '.$Type_Acte,0,1);
+    //if (empty($data[data9])) {$Notaire = "";} else {$Notaire = "               Notaire : ".$data[data9]." ";}  //$Notaire
+    //if (empty($data[data11])) {$Type_Acte  = "";} else {$Type_Acte  ="     Acte de : ".$data[data11]." ";}//$Type_Acte
+    //$pdf->Cell(80,3,$Notaire.'  '.$Type_Acte,0,1);
   if (empty($data[9])) {$Notaire = "";} else {$Notaire = "               Notaire : ".$data[9]." ";}  //$Notaire
   if (empty($data[8])) {$cote = "";} else {$cote = "               Cote : ".$data[8]." ";}  //$Cote
   if (empty($data[11])) {$Type_Acte  = "";} else {$Type_Acte  ="     Acte de : ".$data[11]." ";}//$Type_Acte
   $pdf->Cell(80,3,$Notaire.'  '.$cote.'   '.$Type_Acte,0,1);
 
 
-  // info Intervenant1
+    // info Intervenant1
   if (empty($data[15])) {$lieuorigine1 = "";} else {$lieuorigine1 = "Originaire de ".$data[15]." ";}  //$lieuorigine 
   if ($data[16]!=''or empty($data[16])) {$datenaiss1 = "";} else {$datenaiss1 ="né le : ".$data[16]." ";}//$datenaiss 
   if (empty($data[17])) {$ages1 = "";} else {$ages1 ="Age : ".$data[17]." ans ";}//$ages 
@@ -391,7 +389,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
   if (empty($data[19])) {$prof = "";} else {$prof = "Profession ".$data[19]." ";}  //Profession
   if (empty($data[18])) {$commentaire1 = "";} else {$commentaire1 = " ".$data[18]." ";}  //commentaire1
   $commentaireEpx = $prof.$commentaire;   
-  /*$l1 ="\n".$data[data12]."   ".$data[data13]."  ".$data[data11]."                    Le ".$data[data6]." ".$data[data7]."";*/
+   //*$l1 ="\n".$data[data12]."   ".$data[data13]."  ".$data[data11]."                    Le ".$data[data6]." ".$data[data7]."";*/
   $pdf->Cell(80,3,$data[12].'  '.$data[13],0,0,L);
   $pdf->Cell(10,3,$data[6].'  '.$data[7],0,1);
   $l1='';
@@ -401,7 +399,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
   if (empty($data[23])){} else {$l1= $l1."  - "."Père  : ".$data[23]." ".$data[24]." ".$data[25]." ".$data[26]."\n";}  
   if (empty($data[27])){} else {$l1= $l1."  - "."Mère  : ".$data[27]." ".$data[28]." ".$data[29]." ".$data[30]."\n";} 
   
-  //Info Intervenant2
+    //Info Intervenant2
   if (empty($data[34])) {$lieuorigine2 = "";} else {$lieuorigine2 = "Originaire de ".$data[34]." ";}  //$lieuorigine
   if ($data[35]!=''or empty($data[35])) {$datenaiss2 = "";} else {$datenaiss2 ="née le : ".$data[35]." ";}//$datenaiss 
   if (empty($data[36])) {$ages2 = "";} else {$ages2 ="Age : ".$data[36]." ans ";}//$ages 
@@ -417,15 +415,15 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
   if (empty($data[46])){} else {$l1= $l1."  - "."Mère  : ".$data[46]." ".$data[47]." ".$data[49]." ".$data[48]."\n";} 
     
     // Témoins
-    if (empty($data[50])){} else {$l1= $l1."\n"."  - "."Témoin 1  : ".$data[50]." ".$data[51]."  ".$data[52]."\n";} 
+  if (empty($data[50])){} else {$l1= $l1."\n"."  - "."Témoin 1  : ".$data[50]." ".$data[51]."  ".$data[52]."\n";} 
   if (empty($data[53])){} else {$l1= $l1."  - "."Témoin 2  : ".$data[53]." ".$data[54]."  ".$data[55]."\n";}  
   if (empty($data[56])){} else {$l1= $l1."  - "."Témoin 3  : ".$data[56]." ".$data[57]."  ".$data[58]."\n";} 
-    if (empty($data[59])){} else {$l1= $l1."  - "."Témoin 4  : ".$data[59]." ".$data[60]."  ".$data[61]."\n";}  
+  if (empty($data[59])){} else {$l1= $l1."  - "."Témoin 4  : ".$data[59]." ".$data[60]."  ".$data[61]."\n";}  
   $com = str_replace("§"," - ",$data[62]);
   if (empty($data[62])){} else {$l1= $l1."  - ".$com."\n";}
-    $pdf->write(3,$l1);
-    $sep = "-----------------------------------------------------------------------------------------------------------------------------------------------\n";
-    $pdf->write(3,$sep);
+  $pdf->write(3,$l1);
+  $sep = "-----------------------------------------------------------------------------------------------------------------------------------------------\n";
+  $pdf->write(3,$sep);
   break;
   }
 }
@@ -437,9 +435,9 @@ switch ($type_actes_nimegue) { //Ajout du repertoire par Epouses ou Interv2
   $titre3 = "Par ordre alphabétique sur l'épouse";
   $pdf->SetFont('Times','',16);// Police Times gras 12
   $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
-    $pdf->SetFont('Times','',8);
+  $pdf->SetFont('Times','',8);
   //liste_epouses_m();
-    $mar = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data28` ASC";
+  $mar = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data28` ASC";
   $req=$connexionBD->execute_requete($mar);
     while ($data=$connexionBD->ligne_suivante_resultat($req))
       {
@@ -462,9 +460,9 @@ switch ($type_actes_nimegue) { //Ajout du repertoire par Epouses ou Interv2
    $titre3 = "Par ordre alphabétique sur l'intervenant 2";
    $pdf->SetFont('Times','',16);// Police Times gras 12
    $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
-     $pdf->SetFont('Times','',8);
-     $div = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data31` ASC";//tri
-     $req=$connexionBD->execute_requete($div);
+   $pdf->SetFont('Times','',8);
+   $div = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data31` ASC";//tri
+   $req=$connexionBD->execute_requete($div);
    while ($data=$connexionBD->ligne_suivante_resultat($req))
     {
       $ligne ++;
