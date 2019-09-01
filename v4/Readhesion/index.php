@@ -7,8 +7,6 @@ require_once("../Commun/ConnexionBD.php");
 require_once("../Commun/Adherent.php");
 
 
-$gst_url_site = ($_SERVER['HTTP_HOST']=='readhesion.genea16.net')? "https://adherents.genea16.net": '..';                     
-
 /*---------------------------------------------------------------------------
   Démarrage du programme
   ---------------------------------------------------------------------------*/
