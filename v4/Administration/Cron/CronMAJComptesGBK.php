@@ -12,6 +12,7 @@ require_once '../../Commun/constantes.php';
 require_once '../../Commun/ConnexionBD.php';
 require_once '../../Commun/Adherent.php';
 */
+
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 $st_requete = "select idf , annee_cotisation, statut from adherent where statut in ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."')   and annee_cotisation >=  YEAR( NOW( )) order by idf ";
 $a_liste_idf=$connexionBD->sql_select($st_requete);
@@ -21,7 +22,7 @@ foreach ($a_liste_idf as $i_idf)
 {
   $st_cmd_gbk .= "set ".PREFIXE_ADH_GBK.$i_idf." ".NB_POINTS_GBK."\r\n";
 }
-
+//print("<pre>$st_cmd_gbk</pre>");
 if (!Adherent::execute_cmd_gbk($st_cmd_gbk))
 {
     $st_message_erreur = Adherent::erreur_gbk();
@@ -39,7 +40,7 @@ if (!Adherent::execute_cmd_gbk($st_cmd_gbk))
 }
 else
 {
-	print("<h3>MAJ r&eacute;ssie</h3>");
+	print("<h3>MAJ r&eacute;ussie</h3>");
 }
 
 ?>
