@@ -1,13 +1,19 @@
 <?php
 
+/*
 require_once '/var/www/clients/client1/web3/web/v4/Commun/config.php';
 require_once '/var/www/clients/client1/web3/web/v4/Commun/constantes.php';
 require_once '/var/www/clients/client1/web3/web/v4/Commun/ConnexionBD.php';
 require_once '/var/www/clients/client1/web3/web/v4/Commun/Adherent.php';
+*/
 
+require_once '../../Commun/config.php';
+require_once '../../Commun/constantes.php';
+require_once '../../Commun/ConnexionBD.php';
+require_once '../../Commun/Adherent.php';
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-
-$a_liste_idf=$connexionBD->sql_select("select idf , annee_cotisation, statut from adherent where statut = 'B' or statut = 'I'   and annee_cotisation >=  YEAR( NOW( )) order by idf ");
+$st_requete = "select idf , annee_cotisation, statut from adherent where statut in ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."')   and annee_cotisation >=  YEAR( NOW( )) order by idf ";
+$a_liste_idf=$connexionBD->sql_select($st_requete);
 
 $st_cmd_gbk = '';
 foreach ($a_liste_idf as $i_idf)
@@ -23,7 +29,6 @@ if (!Adherent::execute_cmd_gbk($st_cmd_gbk))
     $st_entete  = "From: ".LIB_ASSO."<".EMAIL_DIRASSO.">\n>";
     $st_entete .= "Reply-to: ".LIB_ASSO."<".EMAIL_DIRASSO.">\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\n";
-    $st_entete .= "Bcc: fbouffanet@yahoo.fr\n";
     $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= 'MIME-Version: 1.0' . "\n"; 
     $st_sujet = "Test Comptes GBK";
@@ -31,5 +36,6 @@ if (!Adherent::execute_cmd_gbk($st_cmd_gbk))
     $st_adresses =  join(',',$a_adresses);        
     mail($st_adresses,$st_sujet,$st_message_erreur, $st_entete);
 }
+
 
 ?>
