@@ -37,7 +37,7 @@ print('<div class="container">');
  * @param integer $pi_idf_commune_acte identifiant de la commune ? exporter
  * @param character $pc_idf_type_acte identifiant du type d'acte ? exporter (type de naissance)
  * @param array $pa_liste_personnes liste des personnes ? exporter (calcul?es par une requ?te SQL pr?c?dente)
- * @param array $pa_liste_actes liste des actes ? exporter (calcul?es par une requ?te SQL pr?c?dente)
+ * @param array $pa_liste_actes liste des actes à exporter (calcul?es par une requ?te SQL pr?c?dente)
  * @param object $pf pointeur sur le fichier de sortie
  */
 
