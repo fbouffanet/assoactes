@@ -253,6 +253,9 @@ $pdf->AddPage();
 $pdf->SetFont('Times','',8);
 $pdf->SetMargins(20,5);
 
+echo $commune;
+sleep(15);
+
 $req=$connexionBD->execute_requete($sql);
 $ligne = 1; // compteur de ligne
 while ($data=$connexionBD->ligne_suivante_resultat($req))
@@ -261,7 +264,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
       if ($ligne == 2)
        {
            $pdf->SetFont('Times','B',36);// Police Times gras 20
-           $pdf->Cell(0,10,"  ppppppp ".utf8_decode($commune),0,1,'C');//Nom de la commune
+           $pdf->Cell(0,10,"  ".utf8_decode($commune),0,1,'C');//Nom de la commune
            $pdf->SetFont('Times','B',16);// Police Times gras 12
            $pdf->Ln(5);// saut de ligne de 50 mn
            $pdf->Cell(0,10,$titre,0,1,'C');
