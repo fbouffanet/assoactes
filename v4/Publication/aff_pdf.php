@@ -119,7 +119,7 @@ function charge_csv(){
   data68 text  NOT NULL,
   data69 text  NOT NULL,
   data70 text  NOT NULL
-) ENGINE=CSV DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci";
+) ENGINE=CSV DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci";
 
 global $connexionBD; //$connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 $connexionBD->execute_requete($sqlcsv);
@@ -497,7 +497,6 @@ $nom_fichier = $commune.'_'.$type_actes_nimegue.'_'.$datemini.'_'.$datemaxi.'_'.
 
 print $nom_fichier;
 ob_end_clean(); // Détruit les données du tampon de sortie et éteint la temporisation de sortie
-//$pdf->Output($nom_fichier,'D');
-$pdf->Output($nom_fichier,'D','true');
+$pdf->Output($nom_fichier,'D');
 print('</body>');
 ?>
