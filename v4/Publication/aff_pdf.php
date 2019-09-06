@@ -247,7 +247,7 @@ if ($type_actes_nimegue == "V")
   break;
 }
 
-$pdf = new PDF();
+$pdf = new FPDF('P','mn','A4');
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',8);
