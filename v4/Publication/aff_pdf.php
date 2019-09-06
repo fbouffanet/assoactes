@@ -119,7 +119,7 @@ function charge_csv(){
   data68 text  NOT NULL,
   data69 text  NOT NULL,
   data70 text  NOT NULL
-) ENGINE=CSV ";
+) ENGINE=CSV DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci";
 
 global $connexionBD; //$connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 $connexionBD->execute_requete($sqlcsv);
