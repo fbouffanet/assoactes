@@ -498,6 +498,6 @@ $nom_fichier = $commune.'_'.$type_actes_nimegue.'_'.$datemini.'_'.$datemaxi.'_'.
 print $nom_fichier;
 ob_end_clean(); // Détruit les données du tampon de sortie et éteint la temporisation de sortie
 //$pdf->Output($nom_fichier,'D');
-$pdf->Output(,,true);
+$pdf->Output($nom_fichier,'D','true');
 print('</body>');
 ?>
