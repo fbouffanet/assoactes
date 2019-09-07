@@ -25,7 +25,7 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 $copy="L’achat des tables ne donne pas droit à copie ou reproduction.
 Toute reproduction ou représentation intégrale, ou partielle, par quelque procédé que ce soit, des pages publiées dans la présente
 publication, faite sans le consentement de l’A.G. C. 16, est illicite et constitue une contrefaçon.
-Art. L. 122-4 et 5 L. 335-2 & s. du Code de la propriété intellectuelle.";
+Art. L. 122-4 et 5 L. 335-2 du Code de la propriété intellectuelle.";
 $today = date("M-y");
 $message =  isset($_POST['message']) ? $_POST['message']: '';
 $TypeActe =  isset($_POST['TypeActe']) ? $_POST['TypeActe'] : '' ;
@@ -120,6 +120,7 @@ function charge_csv(){
   data69 text  NOT NULL,
   data70 text  NOT NULL
 ) ENGINE=CSV DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci";
+//DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci
 
 global $connexionBD; //$connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 $connexionBD->execute_requete($sqlcsv);
