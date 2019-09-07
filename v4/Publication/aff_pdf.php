@@ -1,5 +1,4 @@
 <?php
-// Modif ligne pour Kn2z 45/46 - 186/187
 require_once '../Commun/config.php';
 require_once '../Commun/constantes.php';
 require_once('../Commun/Identification.php');
