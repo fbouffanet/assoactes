@@ -216,7 +216,6 @@ if ($type_actes_nimegue == "V")
 {
     case "N": //selection sur les naissances
 	$titre = "Baptêmes Naissances";
-	//$titreHP = $titre." de ".utf8_encode($commune);
     $titreHP = $titre." de ".$commune;
 	$pdf->titrehp = $titreHP;
 	break;
@@ -237,7 +236,7 @@ if ($type_actes_nimegue == "V")
 	break;
 }
 header('Content-type: text/html; charset=latin1');
-$pdf = new FPDF();
+$pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',8);
