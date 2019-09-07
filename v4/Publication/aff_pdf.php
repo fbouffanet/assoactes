@@ -1,5 +1,6 @@
 <?php
 header( 'content-type: text/html; charset=utf-8' );
+
 require_once '../Commun/config.php';
 require_once '../Commun/constantes.php';
 require_once('../Commun/Identification.php');
@@ -183,11 +184,9 @@ charge_csv();//charge le fichier en table
 	list ($datemini,$datemaxi,$nbractes) = explode(";", $buffer);
 	fclose($pa);
 //echo $datemini."-".$datemaxi."-".$nbractes;
+
 //************************************************************
 //Analyse du fichier
-
-
-
 
 $data = array();
 $sql = "SELECT * FROM tmp_publication LIMIT 0, 1";//Lecture de la premiere ligne
@@ -236,7 +235,7 @@ if ($type_actes_nimegue == "V")
 	$titreHP = $titre." de ".$commune;
 	break;
 }
-
+header('Content-type: text/html; charset=utf-8');
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
