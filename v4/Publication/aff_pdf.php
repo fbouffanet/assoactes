@@ -133,6 +133,7 @@ class PDF extends FPDF
 // En-tête
 function Header()
   {
+	  
    if($this->PageNo()==1)
     {
         //Première page
@@ -235,8 +236,8 @@ if ($type_actes_nimegue == "V")
 	$titreHP = $titre." de ".$commune;
 	break;
 }
-header('Content-type: text/html; charset=utf-8');
-$pdf = new PDF();
+header('Content-type: text/html; charset=latin1');
+$pdf = new FPDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',8);
