@@ -25,7 +25,7 @@ $TypeActe =  isset($_POST['TypeActe']) ? $_POST['TypeActe'] : '' ;
 
 function Mois_Annee ()  // PL 23/04/2014  Function pour affichage du mois en français
 {
-   $mois = array('', 'Janvier', 'F&eacute;vrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Ao&ucirc;t', 'Septembre', 'Octobre', 'Novembre', 'D&eacute;cembre);
+   $mois = array('', 'Janvier', 'F&eacute;vrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Ao&ucirc;t', 'Septembre', 'Octobre', 'Novembre', 'D&eacute;cembre');
    $mois_numero = date("n");   // ou $mois_numero = date("n");    m donne 01 à 12, n donne 1 à 12
    $mois_complet = $mois[$mois_numero];
 
