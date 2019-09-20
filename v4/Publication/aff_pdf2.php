@@ -12,7 +12,7 @@ require_once '../Publication/fpdf/fpdf.php';
 ob_start();// Enclenche la temporisation de sortie
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
+header('Content-Type: text/html; charset=UTF-8'); 
 
 $copy="L&rsquo;achat des tables ne donne pas droit &agrave; copie ou reproduction.<br />
 Toute reproduction ou repr&eacute;sentation int&eacute;grale, ou partielle, par quelque proc&eacute;d&eacute; que ce soit, des pages publi&eacute;es dans la pr&eacute;sente<br />
