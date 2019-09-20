@@ -7,7 +7,7 @@ require_once('../Commun/VerificationDroits.php');
 verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
 require_once '../Commun/commun.php';
-require_once '../Publication/fpdf/fpdf.php';
+require_once '../Publication/fpdf/fpdf.php'; 
 
 ob_start();// Enclenche la temporisation de sortie
 
@@ -23,10 +23,10 @@ $message =  isset($_POST['message']) ? $_POST['message']: '';
 $TypeActe =  isset($_POST['TypeActe']) ? $_POST['TypeActe'] : '' ;
 
 
-function Mois_Annee ()  // PL 23/04/2014  Function pour affichage du mois en français
+function Mois_Annee ()  // PL 23/04/2014  Function pour affichage du mois en franÃ§ais
 {
    $mois = array('', 'Janvier', 'F&eacute;vrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Ao&ucirc;t', 'Septembre', 'Octobre', 'Novembre', 'D&eacute;cembre');
-   $mois_numero = date("n");   // ou $mois_numero = date("n");    m donne 01 à 12, n donne 1 à 12
+   $mois_numero = date("n");   // ou $mois_numero = date("n");    m donne 01 Ã  12, n donne 1 Ã  12
    $mois_complet = $mois[$mois_numero];
 
    $annee = date("Y");
@@ -122,20 +122,20 @@ $connexionBD->execute_requete($sqlcsv);
        die("Impossible de copier $st_export_nimv3 en $st_tmp_file\n");
 
   $connexionBD->execute_requete("LOAD DATA INFILE '$st_tmp_file'REPLACE INTO TABLE tmp_publication FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n'");// Je recharge la table publication avec le CSV
-  print 'fichier chargé';
+  print 'fichier chargÃ©';
    unlink($st_tmp_file);
 
        }//Fin charge_csv
 
 class PDF extends FPDF
 {
-// En-tête
+// En-tÃªte
 function Header()
   {
 	  
    if($this->PageNo()==1)
     {
-        //Première page
+        //PremiÃ¨re page
         $this->Image('./img/logo1.jpg',20,12,150);// Logo
         $this->Ln(40);
     }
@@ -159,17 +159,17 @@ function Header()
 function Footer()
   {
    if($this->PageNo()==1)
-    { //Première page
+    { //PremiÃ¨re page
     }
     else
     {   //Pages suivantes
-    $this->SetY(-15);// Positionnement à 1,5 cm du bas
+    $this->SetY(-15);// Positionnement Ã  1,5 cm du bas
     $this->SetFont('Times','I',8);// Police Times italique 8
 
-    // PL 23/04/2014 remplacement affichage $today par appel la function Mois_Annee pour mois en français
+    // PL 23/04/2014 remplacement affichage $today par appel la function Mois_Annee pour mois en franÃ§ais
     //	$today = date("M-y");
     $today = Mois_Annee();
-    $titreBP = "©".$today." Association Généalogique de la Charente  - Page ";
+    $titreBP = "Â©".$today." Association GÃ©nÃ©alogique de la Charente  - Page ";
     $this->Cell(0,10,$titreBP.$this->PageNo().'/{nb}',0,0,'C');// Numero de page
     }
   } //Footer()
@@ -180,7 +180,7 @@ function Footer()
 charge_csv(); //charge le fichier en table
 
     // Rajout PL *************************************************
-    // On récupére les données date et nb d'actes dans le fichier txt
+    // On rÃ©cupÃ©re les donnÃ©es date et nb d'actes dans le fichier txt
     $gst_repertoire_publication = $_SERVER['DOCUMENT_ROOT'].'/v4/Publication/telechargements';
     $st_export_annee ="$gst_repertoire_publication/ExportAnnee.txt";
 	$pa = fopen($st_export_annee, "r");
@@ -202,8 +202,8 @@ $data=$connexionBD->ligne_suivante_resultat($req);
 
 //=============================================================================
 $commune = $data[2];// nom de la commune
-$chaine = $data[1];// N° de la commune
-$titreN = substr ($chaine, strlen ($chaine) - 3);// N° de la commune
+$chaine = $data[1];// NÂ° de la commune
+$titreN = substr ($chaine, strlen ($chaine) - 3);// NÂ° de la commune
 $type_actes_nimegue = $data[5];// Type Acte (B,D,M,V)
 $image = "./img/image".$data[5].".jpg";//Titre
 $image1 = "./img/image1".$data[5].".jpg";//Titre
@@ -224,7 +224,7 @@ if ($type_actes_nimegue == "V")
 	$pdf->titrehp = $titreHP;
 	break;
 
-	case "D"://selection sur les décès
+	case "D"://selection sur les dÃ©cÃ¨s
 	$titre = "D&eacute;c&egrave;s S&eacute;pulture";
 	$titreHP = $titre." de ".$commune;
 	break;
@@ -258,13 +258,13 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
            $pdf->Ln(5);// saut de ligne de 50 mn
 	       $pdf->Cell(0,10,$titre,0,1,'C');
 	      //$pdf->Ln(10);// Saut de ligne
-    	   $titre2 = 'Années '.$datemini.' à '.$datemaxi.'  soit '.$nbractes.' actes';
+    	   $titre2 = 'AnnÃ©es '.$datemini.' Ã  '.$datemaxi.'  soit '.$nbractes.' actes';
     	   $pdf->Cell(0,10,$titre2,0,1,'C');// Date
-		   $pdf->SetFont('Times','',18);// Police Times gras 12// N°de paroisse
-		   $pdf->Cell(0,10,$titreN,0,1,'C');// N°de paroisse
-		   $titre3 = "Par ordre alphabétique";
+		   $pdf->SetFont('Times','',18);// Police Times gras 12// NÂ°de paroisse
+		   $pdf->Cell(0,10,$titreN,0,1,'C');// NÂ°de paroisse
+		   $titre3 = "Par ordre alphabÃ©tique";
 		   $pdf->SetFont('Times','',16);// Police Times gras 12
-		   $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
+		   $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabÃ©tique
     	   $pdf->SetFont('Times','',8);
 		   $pdf->Ln(10);// Saut de ligne
     	   $pdf->Image( $image1,60,120,100,80);// Logo
@@ -272,7 +272,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
     	   $pdf->Cell(20);
     	   $pdf->MultiCell(150,4,$message,0,C);
     	   //$pdf->Ln(40);
-		   $pdf->SetY(-45);// Positionnement à 1,5 cm du bas
+		   $pdf->SetY(-45);// Positionnement Ã  1,5 cm du bas
     	   $pdf->Cell(20);
     	   $pdf->MultiCell(150,4,$copy,1,C);
     	   $pdf->AddPage();
@@ -327,7 +327,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
    //affichage de chaque champ de la ligne en question
    // info epoux
 	if (empty($data[12])) {$lieuorigine1 = "";} else {$lieuorigine1 = " Originaire de ".$data[12]." ";}  //$lieuorigine
-	//if ($data[data13]!=''or 0) {$datenaiss1 = "";} else {$datenaiss1 = " né le : ".$data[data13]." ";}
+	//if ($data[data13]!=''or 0) {$datenaiss1 = "";} else {$datenaiss1 = " nÃ© le : ".$data[data13]." ";}
 	if ($data[13]!=''or empty($data[13])) {$datenaiss1 = "";} else {$datenaiss1 = " n&eacute;(e) le : ".$data[13]." ";}//$datenaiss
 	if (empty($data[14])) {$ages1 = "";} else {$ages1 =" Age : ".$data[14]." ans ";}//$ages
 	$info1= $lieuorigine1.$datenaiss1.$ages1;//Lieu origine + date naiss + age
@@ -357,7 +357,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
 	if (empty($data[35])){} else {$l1= $l1."   - "."Veuve de : ".$data[35]." ".$data[36]." ".$data[37]."\n";}
 	if (empty($data[38])){} else {$l1= $l1."   - "."P&egrave;re  : ".$data[38]." ".$data[39]." ".$data[40]." ".$data[41]."\n";}
 	if (empty($data[42])){} else {$l1= $l1."   - "."M&egrave;re  : ".$data[42]." ".$data[43]." ".$data[44]." ".$data[45]."\n";}
-  	// Témoins
+  	// TÃ©moins
   	if (empty($data[46])){} else {$l1= $l1."    - "."T&eacute;moin 1  : ".$data[46]." ".$data[47]." ".$data[48]."\n ";}
 	if (empty($data[49])){} else {$l1= $l1."    - "."T&eacute;moin 2  : ".$data[49]." ".$data[50]." ".$data[51]."\n ";}
   	if (empty($data[52])){} else {$l1= $l1."    - "."T&eacute;moin 3  : ".$data[52]." ".$data[53]." ".$data[54]."\n ";}
@@ -415,12 +415,12 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
 	if (empty($data[42])){} else {$l1= $l1."  - "."P&egrave;re  : ".$data[42]." ".$data[43]." ".$data[45]." ".$data[44]."\n";}
 	if (empty($data[46])){} else {$l1= $l1."  - "."M&egrave;re  : ".$data[46]." ".$data[47]." ".$data[49]." ".$data[48]."\n";}
 
-  	// Témoins
+  	// TÃ©moins
   	if (empty($data[50])){} else {$l1= $l1."\n"."  - "."T&eacute;moin 1  : ".$data[50]." ".$data[51]."  ".$data[52]."\n";}
 	if (empty($data[53])){} else {$l1= $l1."  - "."T&eacute;moin 2  : ".$data[53]." ".$data[54]."  ".$data[55]."\n";}
 	if (empty($data[56])){} else {$l1= $l1."  - "."T&eacute;moin 3  : ".$data[56]." ".$data[57]."  ".$data[58]."\n";}
   	if (empty($data[59])){} else {$l1= $l1."  - "."T&eacute;moin 4  : ".$data[59]." ".$data[60]."  ".$data[61]."\n";}
-	$com = str_replace("§"," - ",$data[62]);
+	$com = str_replace("Â§"," - ",$data[62]);
 	if (empty($data[62])){} else {$l1= $l1."  - ".$com."\n";}
   	$pdf->write(3,$l1);
   	$sep = "-----------------------------------------------------------------------------------------------------------------------------------------------\n";
@@ -435,7 +435,7 @@ switch ($type_actes_nimegue) { //Ajout du repertoire par Epouses ou Interv2
 	$pdf->AddPage();
 	$titre3 = "Par ordre alphab&eacute;tique sur l&#039;&eacute;pouse";
 	$pdf->SetFont('Times','',16);// Police Times gras 12
-	$pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
+	$pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabÃ©tique
     $pdf->SetFont('Times','',8);
 	//liste_epouses_m();
     $mar = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data28` ASC";
@@ -460,7 +460,7 @@ switch ($type_actes_nimegue) { //Ajout du repertoire par Epouses ou Interv2
 	 $pdf->AddPage();
 	 $titre3 = "Par ordre alphab&eacute;tique sur l&#039;intervenant 2";
 	 $pdf->SetFont('Times','',16);// Police Times gras 12
-	 $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
+	 $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabÃ©tique
      $pdf->SetFont('Times','',8);
      $div = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data31` ASC";//tri
      $req=$connexionBD->execute_requete($div);
@@ -487,6 +487,6 @@ $nom_fichier = $commune.'_'.$type_actes_nimegue.'_'.$datemini.'_'.$datemaxi.'_'.
 
 
 print $nom_fichier;
-ob_end_clean(); // Détruit les données du tampon de sortie et éteint la temporisation de sortie
+ob_end_clean(); // DÃ©truit les donnÃ©es du tampon de sortie et Ã©teint la temporisation de sortie
 $pdf->Output($nom_fichier,'D');
 ?>
