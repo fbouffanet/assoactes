@@ -239,7 +239,7 @@ if ($type_actes_nimegue == "V")
 	$titreHP = $titre." de ".$commune;
 	break;
 }
-header('Content-type: text/html; charset=latin1');
+echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
