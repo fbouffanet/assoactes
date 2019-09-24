@@ -13,7 +13,6 @@ ob_start();// Enclenche la temporisation de sortie
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
-
 $copy="L’achat des tables ne donne pas droit à copie ou reproduction.
 Toute reproduction ou représentation intégrale, ou partielle, par quelque procédé que ce soit, des pages publiées dans la présente
 publication, faite sans le consentement de l’A.G. C. 16, est illicite et constitue une contrefaçon.
