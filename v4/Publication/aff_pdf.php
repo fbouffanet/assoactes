@@ -197,7 +197,7 @@ $data=$connexionBD->ligne_suivante_resultat($req);
  //echo $data[5]["commune"];
 
 //=============================================================================
-$commune = utf8_decode($data[2]);// nom de la commune
+$commune = $data[2];// nom de la commune
 $chaine = $data[1];// N° de la commune
 $titreN = substr ($chaine, strlen ($chaine) - 3);// N° de la commune
 $type_actes_nimegue = $data[5];// Type Acte (B,D,M,V)
