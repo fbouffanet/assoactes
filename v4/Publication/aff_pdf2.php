@@ -7,12 +7,13 @@ require_once('../Commun/VerificationDroits.php');
 verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
 require_once '../Commun/commun.php';
-require_once '../Publication/fpdf/fpdf.php'; 
+require_once '../Publication/fpdf/fpdf.php';
 
 ob_start();// Enclenche la temporisation de sortie
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-header('Content-Type: text/html; charset=UTF-8'); 
+//header('Content-Type: text/html; charset=UTF-8'); 
+header('Content-Type: text/html; charset=ISO-8859-15');
 
 $copy="L&rsquo;achat des tables ne donne pas droit &agrave; copie ou reproduction.<br />
 Toute reproduction ou repr&eacute;sentation int&eacute;grale, ou partielle, par quelque proc&eacute;d&eacute; que ce soit, des pages publi&eacute;es dans la pr&eacute;sente<br />
@@ -132,7 +133,7 @@ class PDF extends FPDF
 // En-tête
 function Header()
   {
-	  
+
    if($this->PageNo()==1)
     {
         //Première page
