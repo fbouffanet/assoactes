@@ -8,6 +8,7 @@ verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
 require_once '../Commun/commun.php';
 require_once '../Publication/fpdf/fpdf.php';
+require_once '../Publication/fpdf/tfpdf/tfpdf.php';
 
 ob_start();// Enclenche la temporisation de sortie
 
@@ -40,78 +41,78 @@ function charge_csv(){
    $st_export_nimv3 ="$gst_repertoire_publication/ExportNimV3.csv";
 
   $sqlcsv ="CREATE TEMPORARY TABLE IF NOT EXISTS tmp_publication (
-  data0 text COLLATE utf8_unicode_ci NOT NULL,
-  data1 text COLLATE utf8_unicode_ci NOT NULL,
-  data2 text COLLATE utf8_unicode_ci NOT NULL,
-  data3 text COLLATE utf8_unicode_ci NOT NULL,
-  data4 text COLLATE utf8_unicode_ci NOT NULL,
-  data5 text COLLATE utf8_unicode_ci NOT NULL,
-  data6 text COLLATE utf8_unicode_ci NOT NULL,
-  data7 text COLLATE utf8_unicode_ci NOT NULL,
-  data8 text COLLATE utf8_unicode_ci NOT NULL,
-  data9 text COLLATE utf8_unicode_ci NOT NULL,
-  data10 text COLLATE utf8_unicode_ci NOT NULL,
-  data11 text COLLATE utf8_unicode_ci NOT NULL,
-  data12 text COLLATE utf8_unicode_ci NOT NULL,
-  data13 text COLLATE utf8_unicode_ci NOT NULL,
-  data14 text COLLATE utf8_unicode_ci NOT NULL,
-  data15 text COLLATE utf8_unicode_ci NOT NULL,
-  data16 text COLLATE utf8_unicode_ci NOT NULL,
-  data17 text COLLATE utf8_unicode_ci NOT NULL,
-  data18 text COLLATE utf8_unicode_ci NOT NULL,
-  data19 text COLLATE utf8_unicode_ci NOT NULL,
-  data20 text COLLATE utf8_unicode_ci NOT NULL,
-  data21 text COLLATE utf8_unicode_ci NOT NULL,
-  data22 text COLLATE utf8_unicode_ci NOT NULL,
-  data23 text COLLATE utf8_unicode_ci NOT NULL,
-  data24 text COLLATE utf8_unicode_ci NOT NULL,
-  data25 text COLLATE utf8_unicode_ci NOT NULL,
-  data26 text COLLATE utf8_unicode_ci NOT NULL,
-  data27 text COLLATE utf8_unicode_ci NOT NULL,
-  data28 text COLLATE utf8_unicode_ci NOT NULL,
-  data29 text COLLATE utf8_unicode_ci NOT NULL,
-  data30 text COLLATE utf8_unicode_ci NOT NULL,
-  data31 text COLLATE utf8_unicode_ci NOT NULL,
-  data32 text COLLATE utf8_unicode_ci NOT NULL,
-  data33 text COLLATE utf8_unicode_ci NOT NULL,
-  data34 text COLLATE utf8_unicode_ci NOT NULL,
-  data35 text COLLATE utf8_unicode_ci NOT NULL,
-  data36 text COLLATE utf8_unicode_ci NOT NULL,
-  data37 text COLLATE utf8_unicode_ci NOT NULL,
-  data38 text COLLATE utf8_unicode_ci NOT NULL,
-  data39 text COLLATE utf8_unicode_ci NOT NULL,
-  data40 text COLLATE utf8_unicode_ci NOT NULL,
-  data41 text COLLATE utf8_unicode_ci NOT NULL,
-  data42 text COLLATE utf8_unicode_ci NOT NULL,
-  data43 text COLLATE utf8_unicode_ci NOT NULL,
-  data44 text COLLATE utf8_unicode_ci NOT NULL,
-  data45 text COLLATE utf8_unicode_ci NOT NULL,
-  data46 text COLLATE utf8_unicode_ci NOT NULL,
-  data47 text COLLATE utf8_unicode_ci NOT NULL,
-  data48 text COLLATE utf8_unicode_ci NOT NULL,
-  data49 text COLLATE utf8_unicode_ci NOT NULL,
-  data50 text COLLATE utf8_unicode_ci NOT NULL,
-  data51 text COLLATE utf8_unicode_ci NOT NULL,
-  data52 text COLLATE utf8_unicode_ci NOT NULL,
-  data53 text COLLATE utf8_unicode_ci NOT NULL,
-  data54 text COLLATE utf8_unicode_ci NOT NULL,
-  data55 text COLLATE utf8_unicode_ci NOT NULL,
-  data56 text COLLATE utf8_unicode_ci NOT NULL,
-  data57 text COLLATE utf8_unicode_ci NOT NULL,
-  data58 text COLLATE utf8_unicode_ci NOT NULL,
-  data59 text COLLATE utf8_unicode_ci NOT NULL,
-  data60 text COLLATE utf8_unicode_ci NOT NULL,
-  data61 text COLLATE utf8_unicode_ci NOT NULL,
-  data62 text COLLATE utf8_unicode_ci NOT NULL,
-  data63 text COLLATE utf8_unicode_ci NOT NULL,
-  data64 text COLLATE utf8_unicode_ci NOT NULL,
-  data65 text COLLATE utf8_unicode_ci NOT NULL,
-  data66 text COLLATE utf8_unicode_ci NOT NULL,
-  data67 text COLLATE utf8_unicode_ci NOT NULL,
-  data68 text COLLATE utf8_unicode_ci NOT NULL,
-  data69 text COLLATE utf8_unicode_ci NOT NULL,
-  data70 text COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=CSV DEFAULT charset utf8 collate utf8_unicode_ci";
+  data0 text COLLATE latin1_general_ci NOT NULL,
+  data1 text COLLATE latin1_general_ci NOT NULL,
+  data2 text COLLATE latin1_general_ci NOT NULL,
+  data3 text COLLATE latin1_general_ci NOT NULL,
+  data4 text COLLATE latin1_general_ci NOT NULL,
+  data5 text COLLATE latin1_general_ci NOT NULL,
+  data6 text COLLATE latin1_general_ci NOT NULL,
+  data7 text COLLATE latin1_general_ci NOT NULL,
+  data8 text COLLATE latin1_general_ci NOT NULL,
+  data9 text COLLATE latin1_general_ci NOT NULL,
+  data10 text COLLATE latin1_general_ci NOT NULL,
+  data11 text COLLATE latin1_general_ci NOT NULL,
+  data12 text COLLATE latin1_general_ci NOT NULL,
+  data13 text COLLATE latin1_general_ci NOT NULL,
+  data14 text COLLATE latin1_general_ci NOT NULL,
+  data15 text COLLATE latin1_general_ci NOT NULL,
+  data16 text COLLATE latin1_general_ci NOT NULL,
+  data17 text COLLATE latin1_general_ci NOT NULL,
+  data18 text COLLATE latin1_general_ci NOT NULL,
+  data19 text COLLATE latin1_general_ci NOT NULL,
+  data20 text COLLATE latin1_general_ci NOT NULL,
+  data21 text COLLATE latin1_general_ci NOT NULL,
+  data22 text COLLATE latin1_general_ci NOT NULL,
+  data23 text COLLATE latin1_general_ci NOT NULL,
+  data24 text COLLATE latin1_general_ci NOT NULL,
+  data25 text COLLATE latin1_general_ci NOT NULL,
+  data26 text COLLATE latin1_general_ci NOT NULL,
+  data27 text COLLATE latin1_general_ci NOT NULL,
+  data28 text COLLATE latin1_general_ci NOT NULL,
+  data29 text COLLATE latin1_general_ci NOT NULL,
+  data30 text COLLATE latin1_general_ci NOT NULL,
+  data31 text COLLATE latin1_general_ci NOT NULL,
+  data32 text COLLATE latin1_general_ci NOT NULL,
+  data33 text COLLATE latin1_general_ci NOT NULL,
+  data34 text COLLATE latin1_general_ci NOT NULL,
+  data35 text COLLATE latin1_general_ci NOT NULL,
+  data36 text COLLATE latin1_general_ci NOT NULL,
+  data37 text COLLATE latin1_general_ci NOT NULL,
+  data38 text COLLATE latin1_general_ci NOT NULL,
+  data39 text COLLATE latin1_general_ci NOT NULL,
+  data40 text COLLATE latin1_general_ci NOT NULL,
+  data41 text COLLATE latin1_general_ci NOT NULL,
+  data42 text COLLATE latin1_general_ci NOT NULL,
+  data43 text COLLATE latin1_general_ci NOT NULL,
+  data44 text COLLATE latin1_general_ci NOT NULL,
+  data45 text COLLATE latin1_general_ci NOT NULL,
+  data46 text COLLATE latin1_general_ci NOT NULL,
+  data47 text COLLATE latin1_general_ci NOT NULL,
+  data48 text COLLATE latin1_general_ci NOT NULL,
+  data49 text COLLATE latin1_general_ci NOT NULL,
+  data50 text COLLATE latin1_general_ci NOT NULL,
+  data51 text COLLATE latin1_general_ci NOT NULL,
+  data52 text COLLATE latin1_general_ci NOT NULL,
+  data53 text COLLATE latin1_general_ci NOT NULL,
+  data54 text COLLATE latin1_general_ci NOT NULL,
+  data55 text COLLATE latin1_general_ci NOT NULL,
+  data56 text COLLATE latin1_general_ci NOT NULL,
+  data57 text COLLATE latin1_general_ci NOT NULL,
+  data58 text COLLATE latin1_general_ci NOT NULL,
+  data59 text COLLATE latin1_general_ci NOT NULL,
+  data60 text COLLATE latin1_general_ci NOT NULL,
+  data61 text COLLATE latin1_general_ci NOT NULL,
+  data62 text COLLATE latin1_general_ci NOT NULL,
+  data63 text COLLATE latin1_general_ci NOT NULL,
+  data64 text COLLATE latin1_general_ci NOT NULL,
+  data65 text COLLATE latin1_general_ci NOT NULL,
+  data66 text COLLATE latin1_general_ci NOT NULL,
+  data67 text COLLATE latin1_general_ci NOT NULL,
+  data68 text COLLATE latin1_general_ci NOT NULL,
+  data69 text COLLATE latin1_general_ci NOT NULL,
+  data70 text COLLATE latin1_general_ci NOT NULL
+) ENGINE=CSV DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci";
 global $connexionBD; 
 $connexionBD->execute_requete($sqlcsv);
 
@@ -143,7 +144,7 @@ function Header()
         //Pages suivantes
         global $titreHP;
         $this->SetFillColor(220,220,220);
-        $this->SetFont('Times','I',8);// Police Times italique 8
+        $this->SetFont('DejaVu','I',8);// Police DejaVu italique 8
 		$this->Cell(0,5,$titreHP,0,1,'C',true);// Titre de la publication
     }
 
@@ -159,7 +160,7 @@ function Footer()
     else
     {   //Pages suivantes
     $this->SetY(-15);// Positionnement à 1,5 cm du bas
-    $this->SetFont('Times','I',8);// Police Times italique 8
+    $this->SetFont('DejaVu','I',8);// Police DejaVu italique 8
 
 // PL 23/04/2014 remplacement affichage $today par appel la function Mois_Annee pour mois en français
 //	$today = date("M-y");
@@ -236,10 +237,12 @@ if ($type_actes_nimegue == "V")
 	break;
 }
 
-$pdf = new PDF();
+$pdf = new tPDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
-$pdf->SetFont('Times','',8);
+$pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
+$pdf->AddFont('DejaVu', 'B', 'DejaVuSansCondensed-Bold.ttf', true);
+$pdf->SetFont('DejaVu','',8);
 $pdf->SetMargins(20,5);
 
 $req=$connexionBD->execute_requete($sql);
@@ -249,20 +252,20 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
       $ligne ++;
       if ($ligne == 2)
    	   {
-	       $pdf->SetFont('Times','B',36);// Police Times gras 20
+	       $pdf->SetFont('DejaVu','B',36);// Police DejaVu gras 20
    	       $pdf->Cell(0,10,"   ".$commune,0,1,'C');//Nom de la commune
-           $pdf->SetFont('Times','B',16);// Police Times gras 12
+           $pdf->SetFont('DejaVu','B',16);// Police DejaVu gras 12
            $pdf->Ln(5);// saut de ligne de 50 mn
 	       $pdf->Cell(0,10,$titre,0,1,'C');
 	      //$pdf->Ln(10);// Saut de ligne
     	   $titre2 = 'Années '.$datemini.' à '.$datemaxi.'  soit '.$nbractes.' actes';
     	   $pdf->Cell(0,10,$titre2,0,1,'C');// Date
-		   $pdf->SetFont('Times','',18);// Police Times gras 12// N°de paroisse
+		   $pdf->SetFont('DejaVu','',18);// Police DejaVu gras 12// N°de paroisse
 		   $pdf->Cell(0,10,$titreN,0,1,'C');// N°de paroisse
 		   $titre3 = "Par ordre alphabétique";
-		   $pdf->SetFont('Times','',16);// Police Times gras 12
+		   $pdf->SetFont('DejaVu','',16);// Police DejaVu gras 12
 		   $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
-    	   $pdf->SetFont('Times','',8);
+    	   $pdf->SetFont('DejaVu','',8);
 		   $pdf->Ln(10);// Saut de ligne
     	   $pdf->Image( $image1,60,120,100,80);// Logo
 		   $pdf->Ln(100);
@@ -281,7 +284,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
    case "N":// $type_actes_nimegue = N
     //affichage de chaque champ de la ligne en question
   	//$l1 ="\n".$data[data10]."   ".$data[data11]."   sexe :  ".$data[data12]."   Le ".$data[data6]." ".$data[data7]."       ".$data[data13]."";
-  	//$pdf->SetFont('Times','B',8 );//Passage en gras
+  	//$pdf->SetFont('DejaVu','B',8 );//Passage en gras
 	$pdf->Cell(50,3,$data[10].'  '.$data[11],0,0,L);
   	$pdf->Cell(20,3,'Sexe : '.$data[12],0,0,L);
 	$pdf->Cell(10,3,$data[6].'  '.$data[7],0,1);
@@ -431,9 +434,9 @@ switch ($type_actes_nimegue) { //Ajout du repertoire par Epouses ou Interv2
    case "M":
 	$pdf->AddPage();
 	$titre3 = "Par ordre alphabétique sur l'épouse";
-	$pdf->SetFont('Times','',16);// Police Times gras 12
+	$pdf->SetFont('DejaVu','',16);// Police DejaVu gras 12
 	$pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
-    $pdf->SetFont('Times','',8);
+    $pdf->SetFont('DejaVu','',8);
 	//liste_epouses_m();
     $mar = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data28` ASC";
 	$req=$connexionBD->execute_requete($mar);
@@ -456,9 +459,9 @@ switch ($type_actes_nimegue) { //Ajout du repertoire par Epouses ou Interv2
 	case "V":
 	 $pdf->AddPage();
 	 $titre3 = "Par ordre alphabétique sur l'intervenant 2";
-	 $pdf->SetFont('Times','',16);// Police Times gras 12
+	 $pdf->SetFont('DejaVu','',16);// Police DejaVu gras 12
 	 $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
-     $pdf->SetFont('Times','',8);
+     $pdf->SetFont('DejaVu','',8);
      $div = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data31` ASC";//tri
      $req=$connexionBD->execute_requete($div);
 	 while ($data=$connexionBD->ligne_suivante_resultat($req))
