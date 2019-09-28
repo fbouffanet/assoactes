@@ -8,7 +8,6 @@ verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
 require_once '../Commun/commun.php';
 require_once '../Publication/fpdf/fpdf.php';
-require_once '../Publication/fpdf/tfpdf/tfpdf.php';
 
 ob_start();// Enclenche la temporisation de sortie
 
@@ -144,7 +143,7 @@ function Header()
         //Pages suivantes
         global $titreHP;
         $this->SetFillColor(220,220,220);
-        $this->SetFont('DejaVu','I',8);// Police DejaVu italique 8
+        $this->SetFont('Times','I',8);// Police Times italique 8
 		$this->Cell(0,5,$titreHP,0,1,'C',true);// Titre de la publication
     }
 
@@ -160,7 +159,7 @@ function Footer()
     else
     {   //Pages suivantes
     $this->SetY(-15);// Positionnement à 1,5 cm du bas
-    $this->SetFont('DejaVu','I',8);// Police DejaVu italique 8
+    $this->SetFont('Times','I',8);// Police Times italique 8
 
 // PL 23/04/2014 remplacement affichage $today par appel la function Mois_Annee pour mois en français
 //	$today = date("M-y");
@@ -240,9 +239,7 @@ if ($type_actes_nimegue == "V")
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
-$pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
-$pdf->AddFont('DejaVu', 'B', 'DejaVuSansCondensed-Bold.ttf', true);
-$pdf->SetFont('DejaVu','',8);
+$pdf->SetFont('Times','',8);
 $pdf->SetMargins(20,5);
 
 $req=$connexionBD->execute_requete($sql);
@@ -252,20 +249,20 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
       $ligne ++;
       if ($ligne == 2)
    	   {
-	       $pdf->SetFont('DejaVu','B',36);// Police DejaVu gras 20
+	       $pdf->SetFont('Times','B',36);// Police Times gras 20
    	       $pdf->Cell(0,10,"   ".$commune,0,1,'C');//Nom de la commune
-           $pdf->SetFont('DejaVu','B',16);// Police DejaVu gras 12
+           $pdf->SetFont('Times','B',16);// Police Times gras 12
            $pdf->Ln(5);// saut de ligne de 50 mn
 	       $pdf->Cell(0,10,$titre,0,1,'C');
 	      //$pdf->Ln(10);// Saut de ligne
     	   $titre2 = 'Années '.$datemini.' à '.$datemaxi.'  soit '.$nbractes.' actes';
     	   $pdf->Cell(0,10,$titre2,0,1,'C');// Date
-		   $pdf->SetFont('DejaVu','',18);// Police DejaVu gras 12// N°de paroisse
+		   $pdf->SetFont('Times','',18);// Police Times gras 12// N°de paroisse
 		   $pdf->Cell(0,10,$titreN,0,1,'C');// N°de paroisse
 		   $titre3 = "Par ordre alphabétique";
-		   $pdf->SetFont('DejaVu','',16);// Police DejaVu gras 12
+		   $pdf->SetFont('Times','',16);// Police Times gras 12
 		   $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
-    	   $pdf->SetFont('DejaVu','',8);
+    	   $pdf->SetFont('Times','',8);
 		   $pdf->Ln(10);// Saut de ligne
     	   $pdf->Image( $image1,60,120,100,80);// Logo
 		   $pdf->Ln(100);
@@ -284,7 +281,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
    case "N":// $type_actes_nimegue = N
     //affichage de chaque champ de la ligne en question
   	//$l1 ="\n".$data[data10]."   ".$data[data11]."   sexe :  ".$data[data12]."   Le ".$data[data6]." ".$data[data7]."       ".$data[data13]."";
-  	//$pdf->SetFont('DejaVu','B',8 );//Passage en gras
+  	//$pdf->SetFont('Times','B',8 );//Passage en gras
 	$pdf->Cell(50,3,$data[10].'  '.$data[11],0,0,L);
   	$pdf->Cell(20,3,'Sexe : '.$data[12],0,0,L);
 	$pdf->Cell(10,3,$data[6].'  '.$data[7],0,1);
@@ -434,9 +431,9 @@ switch ($type_actes_nimegue) { //Ajout du repertoire par Epouses ou Interv2
    case "M":
 	$pdf->AddPage();
 	$titre3 = "Par ordre alphabétique sur l'épouse";
-	$pdf->SetFont('DejaVu','',16);// Police DejaVu gras 12
+	$pdf->SetFont('Times','',16);// Police Times gras 12
 	$pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
-    $pdf->SetFont('DejaVu','',8);
+    $pdf->SetFont('Times','',8);
 	//liste_epouses_m();
     $mar = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data28` ASC";
 	$req=$connexionBD->execute_requete($mar);
@@ -459,9 +456,9 @@ switch ($type_actes_nimegue) { //Ajout du repertoire par Epouses ou Interv2
 	case "V":
 	 $pdf->AddPage();
 	 $titre3 = "Par ordre alphabétique sur l'intervenant 2";
-	 $pdf->SetFont('DejaVu','',16);// Police DejaVu gras 12
+	 $pdf->SetFont('Times','',16);// Police Times gras 12
 	 $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
-     $pdf->SetFont('DejaVu','',8);
+     $pdf->SetFont('Times','',8);
      $div = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data31` ASC";//tri
      $req=$connexionBD->execute_requete($div);
 	 while ($data=$connexionBD->ligne_suivante_resultat($req))
