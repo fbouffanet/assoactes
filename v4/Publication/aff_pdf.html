@@ -6,8 +6,9 @@
     <meta name="author" content="Association Généalogique de la Charente">
   </head>
   <body>
+
 <?php
-// 26-09
+
 require_once '../Commun/config.php';
 require_once '../Commun/constantes.php';
 require_once('../Commun/Identification.php');
@@ -496,6 +497,6 @@ ob_end_clean(); // Détruit les données du tampon de sortie et éteint la temporis
 $pdf->Output($nom_fichier,'D');
 ?>
 
-    
-  </body>
-</html>
+      </body>
+</html>    
+
