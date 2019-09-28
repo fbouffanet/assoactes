@@ -120,7 +120,7 @@ $connexionBD->execute_requete($sqlcsv);
    if (!copy($st_export_nimv3, $st_tmp_file))
        die("Impossible de copier $st_export_nimv3 en $st_tmp_file\n");
 
-  $connexionBD->execute_requete("LOAD DATA INFILE '$st_tmp_file'REPLACE INTO TABLE tmp_publication FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n'");// Je recharge la table publication avec le CSV
+  $connexionBD->execute_requete("LOAD DATA INFILE '$st_tmp_file' CHARACTER SET utf8 REPLACE INTO TABLE tmp_publication FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n'");// Je recharge la table publication avec le CSV
   print 'fichier chargé';
    unlink($st_tmp_file);
 
