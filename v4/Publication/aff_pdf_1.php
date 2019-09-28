@@ -237,7 +237,7 @@ if ($type_actes_nimegue == "V")
 	break;
 }
 
-$pdf = new tPDF();
+$pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
