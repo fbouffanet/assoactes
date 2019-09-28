@@ -6,7 +6,7 @@ require_once('../Commun/VerificationDroits.php');
 verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
 require_once '../Commun/PaginationTableau.php';
-require_once '../Commun/commun.php'; 
+require_once '../Commun/commun.php';
 
 $gst_repertoire_publication = $_SERVER['DOCUMENT_ROOT'].'/v4/Publication/telechargements';
 
@@ -37,7 +37,7 @@ print('<div class="container">');
  * @param integer $pi_idf_commune_acte identifiant de la commune ? exporter
  * @param character $pc_idf_type_acte identifiant du type d'acte ? exporter (type de naissance)
  * @param array $pa_liste_personnes liste des personnes ? exporter (calcul?es par une requ?te SQL pr?c?dente)
- * @param array $pa_liste_actes liste des actes ? exporter (calcul?es par une requ?te SQL pr?c?dente)
+ * @param array $pa_liste_actes liste des actes à exporter (calcul?es par une requ?te SQL pr?c?dente)
  * @param object $pf pointeur sur le fichier de sortie
  */
 
@@ -699,7 +699,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 										} else {
     print "</br>";
     print ('</form>');
-	print ('<form action="aff_pdf2.php" method="post">');
+	print ('<form action="aff_pdf.php" method="post">');
 	print ('<p>');
 	if ($menuDIV == "O")	{
 	print "<br><b>Compl&egrave;ment du type acte pour les actes divers expl=> Actes Notari&egrave;s</b></br>";
@@ -713,7 +713,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 	print ('</form>');
 
 //------------------------------------
-   //print("<a href=\"aff_pdf2.php\"><b>Exportation du PDF</a><br>");
+   //print("<a href=\"aff_pdf.php\"><b>Exportation du PDF</a><br>");
    }
    print('<input type="hidden" name="mode" value="FORMULAIRE"/><br>');
    //print("<input type=submit value=\"Retour\"></div>");
