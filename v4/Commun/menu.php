@@ -1,5 +1,11 @@
-
 <?php
+
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
+// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Texte de la licence : http://www.gnu.org/copyleft/gpl.html
+//-------------------------------------------------------------------?
+
 // connexion BD doit avoir été chargé
 $a_categories_menu =$connexionBD->sql_select_multiple("select libelle,script,droit from categorie_menu order by rang");
 $a_elements_menu =$connexionBD->liste_valeur_par_doubles_clefs("select categorie, libelle, script,droit from element_menu order by categorie,rang");
