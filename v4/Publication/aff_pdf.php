@@ -1,5 +1,4 @@
 <?php
-// 26-09
 require_once '../Commun/config.php';
 require_once '../Commun/constantes.php';
 require_once('../Commun/Identification.php');
