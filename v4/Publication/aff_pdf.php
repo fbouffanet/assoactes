@@ -116,8 +116,7 @@ global $connexionBD;
 $connexionBD->execute_requete($sqlcsv);
 
 	$st_tmp_file = $_SERVER['DOCUMENT_ROOT'].'/v4/Publication/tmp/publication.txt';
-  // $st_tmp_file="/tmp/publication.txt";
-
+  
    if (!copy($st_export_nimv3, $st_tmp_file))
        die("Impossible de copier $st_export_nimv3 en $st_tmp_file\n");
 
