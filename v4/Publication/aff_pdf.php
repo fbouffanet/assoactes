@@ -112,7 +112,7 @@ function charge_csv(){
   data69 text COLLATE latin1_general_ci NOT NULL,
   data70 text COLLATE latin1_general_ci NOT NULL
 ) ENGINE=CSV DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci";
-global $connexionBD; //$connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
+global $connexionBD; 
 $connexionBD->execute_requete($sqlcsv);
 
 	$st_tmp_file = $_SERVER['DOCUMENT_ROOT'].'/v4/Publication/tmp/publication.txt';
