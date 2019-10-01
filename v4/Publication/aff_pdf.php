@@ -236,11 +236,11 @@ if ($type_actes_nimegue == "V")
 }
 
 $pdf = new PDF();
+$pdf->SetAutoPageBreak(true, 10);
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',8);
 $pdf->SetMargins(20,5);
-$pdf->SetAutoPageBreak(true, 10);
 
 $req=$connexionBD->execute_requete($sql);
 $ligne = 1; // compteur de ligne
