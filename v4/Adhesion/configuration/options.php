@@ -12,9 +12,9 @@
 	DEFINE( 'CUSTOM_PAYMENT_PAGE_CODE', '' );
 	//HOMOLOGATION
   //DEFINE( 'CONTRACT_NUMBER', '1234567' ); // Contract type default (ex: 001 = CB, 003 = American Express...)
-	//DEFINE( 'CONTRACT_NUMBER_LIST', '1234567' ); // Contract type multiple values (separator: ;)
+	DEFINE( 'CONTRACT_NUMBER_LIST', '1234567' ); // Contract type multiple values (separator: ;)
 	//PRODUCTION
-  DEFINE( 'CONTRACT_NUMBER', '3110381' ); // Contract type default (ex: 001 = CB, 003 = American Express...)
+  //DEFINE( 'CONTRACT_NUMBER', '3110381' ); // Contract type default (ex: 001 = CB, 003 = American Express...)
 	DEFINE( 'CONTRACT_NUMBER_LIST', '3110381;12345678' ); // Contract type multiple values (separator: ;)
   
   DEFINE( 'SECOND_CONTRACT_NUMBER_LIST', '' ); // Contract type multiple values (separator: ;)
