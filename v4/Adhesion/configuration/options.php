@@ -5,9 +5,9 @@
 	DEFINE( 'LANGUAGE_CODE', '' ); // Payline pages language
 	DEFINE( 'PAYMENT_ACTION', 101 ); // Default payment method
 	DEFINE( 'PAYMENT_MODE', 'CPT' ); // Default payment mode
-	DEFINE( 'CANCEL_URL', 'http://inscription.genea16.net'); // Default cancel URL
-	DEFINE( 'NOTIFICATION_URL','http://adherents.genea16.net/Adhesion/TraitementAdhesion.php'); // Default notification URL
-	DEFINE( 'RETURN_URL', 'http://adherents.genea16.net'); // Default return URL
+	DEFINE( 'CANCEL_URL', 'https://adherents.dev.genea16.net/Inscription/index.php'); // Default cancel URL
+	DEFINE( 'NOTIFICATION_URL','https://adherents.dev.genea16.net/Adhesion/TraitementAdhesion.php'); // Default notification URL
+	DEFINE( 'RETURN_URL', 'https://adherents.dev.genea16.net'); // Default return URL
 	DEFINE( 'CUSTOM_PAYMENT_TEMPLATE_URL', ''); // Default payment template URL
 	DEFINE( 'CUSTOM_PAYMENT_PAGE_CODE', '' );
 	//HOMOLOGATION
@@ -15,7 +15,7 @@
 	DEFINE( 'CONTRACT_NUMBER_LIST', '1234567' ); // Contract type multiple values (separator: ;)
 	//PRODUCTION
   //DEFINE( 'CONTRACT_NUMBER', '3110381' ); // Contract type default (ex: 001 = CB, 003 = American Express...)
-	DEFINE( 'CONTRACT_NUMBER_LIST', '3110381;12345678' ); // Contract type multiple values (separator: ;)
+	DEFINE( 'CONTRACT_NUMBER_LIST', '3110381;12345678;1234567' ); // Contract type multiple values (separator: ;)
   
   DEFINE( 'SECOND_CONTRACT_NUMBER_LIST', '' ); // Contract type multiple values (separator: ;)
 	

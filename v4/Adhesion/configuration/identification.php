@@ -14,5 +14,5 @@
 	DEFINE( 'PROXY_LOGIN', '' ); // Proxy login (optional)
 	DEFINE( 'PROXY_PASSWORD', '' ); // Proxy password (optional)
 
-	DEFINE( 'PRODUCTION', TRUE); // Demonstration (FALSE) or production (TRUE) mode
+	DEFINE( 'PRODUCTION', FALSE); // Demonstration (FALSE) or production (TRUE) mode
 ?>
