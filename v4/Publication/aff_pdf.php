@@ -236,7 +236,6 @@ if ($type_actes_nimegue == "V")
 }
 
 $pdf = new PDF();
-$pdf->SetAutoPageBreak(true,50);
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',8);
