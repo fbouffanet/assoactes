@@ -132,15 +132,15 @@ if(isset($result) && $result['result']['code'] == '00000' )
     {
       case TYPE_INSCRIPTION:
         if (empty($st_jeton_ins))
-           $st_requete = "update `inscription_prov` set ins_statut='$gst_statut', ins_prix=$i_tarif, ins_aide = $gst_aides, ins_type_origine=$gi_origine,ins_description_origine='$gst_origine',ins_type='".TYPE_INSCRIPTION."',ins_token= '$st_token' where idf = $gi_idf_prov";  
+           $st_requete = "update `inscription_prov` set ins_date_paiement=now(),ins_statut='$gst_statut', ins_prix=$i_tarif, ins_aide = $gst_aides, ins_type_origine=$gi_origine,ins_description_origine='$gst_origine',ins_type='".TYPE_INSCRIPTION."',ins_token= '$st_token' where idf = $gi_idf_prov";  
         else
            $st_requete = "
-           insert into `inscription_prov`(ins_date, ins_nom, ins_prenom, ins_adr1, ins_adr2, ins_cp, ins_commune, ins_pays, ins_email_perso, ins_site_web, ins_telephone, ins_cache, ins_idf_agc, ins_alea, ins_valid,ins_mdp,ins_statut,ins_prix,ins_aide,ins_type_origine,ins_description_origine,ins_type,ins_token) 
-           select ins_date, ins_nom, ins_prenom, ins_adr1, ins_adr2, ins_cp, ins_commune, ins_pays, ins_email_perso, ins_site_web, ins_telephone, ins_cache, ins_idf_agc, ins_alea, ins_valid,ins_mdp,'$gst_statut',$i_tarif,$gst_aides,$gi_origine,'$gst_origine','".TYPE_INSCRIPTION."','$st_token' from `inscription_prov` where idf=$gi_idf_prov";  
+           insert into `inscription_prov`(ins_date_paiement,ins_date, ins_nom, ins_prenom, ins_adr1, ins_adr2, ins_cp, ins_commune, ins_pays, ins_email_perso, ins_site_web, ins_telephone, ins_cache, ins_idf_agc, ins_alea, ins_valid,ins_mdp,ins_statut,ins_prix,ins_aide,ins_type_origine,ins_description_origine,ins_type,ins_token) 
+           select now(),ins_date, ins_nom, ins_prenom, ins_adr1, ins_adr2, ins_cp, ins_commune, ins_pays, ins_email_perso, ins_site_web, ins_telephone, ins_cache, ins_idf_agc, ins_alea, ins_valid,ins_mdp,'$gst_statut',$i_tarif,$gst_aides,$gi_origine,'$gst_origine','".TYPE_INSCRIPTION."','$st_token' from `inscription_prov` where idf=$gi_idf_prov";  
         $connexionBD->execute_requete($st_requete);
       break;    
       case TYPE_READHESION:
-        $st_requete = "insert `inscription_prov`(ins_idf_agc,ins_nom,ins_prenom,ins_email_perso,ins_mdp,ins_statut,ins_prix,ins_aide,ins_type_origine,ins_description_origine,ins_type,ins_token) select $i_idf_agc,'$st_nom_adh','$st_prenom_adh','$st_email_adh',mdp,'$gst_statut',$i_tarif,$gst_aides,$gi_origine,'$gst_origine','".TYPE_READHESION."','$st_token' from adherent where idf=$i_idf_agc";  
+        $st_requete = "insert `inscription_prov`(ins_date_paiement,ins_idf_agc,ins_nom,ins_prenom,ins_email_perso,ins_mdp,ins_statut,ins_prix,ins_aide,ins_type_origine,ins_description_origine,ins_type,ins_token) select now(),$i_idf_agc,'$st_nom_adh','$st_prenom_adh','$st_email_adh',mdp,'$gst_statut',$i_tarif,$gst_aides,$gi_origine,'$gst_origine','".TYPE_READHESION."','$st_token' from adherent where idf=$i_idf_agc";  
         $connexionBD->execute_requete($st_requete);
       break;
       default:
