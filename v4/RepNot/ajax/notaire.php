@@ -1,7 +1,9 @@
 <?php
-
-
-
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
+// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Texte de la licence : http://www.gnu.org/copyleft/gpl.html
+//-------------------------------------------------------------------
 require_once('../../Commun/config.php');
 
 require_once('../../Commun/constantes.php');
@@ -25,7 +27,5 @@ foreach ($a_rep_not as $a_notaire)
   $a_resultats[$i_idf_rep] = sprintf("%s - %s (%s)",utf8_encode($st_notaire),utf8_encode($st_commune),utf8_encode($st_cote));     
 }
 
-//echo json_encode(array_values($a_resultats));
 echo json_encode($a_resultats);  
-
 ?>
