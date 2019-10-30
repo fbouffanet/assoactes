@@ -323,13 +323,13 @@ function charge_divers($pi_code_insee,$pst_nom_commune,$pi_idf_commune,$pi_idf_s
    $connexionBD -> initialise_params(array(':code_com'=>$pi_code_insee,':commune'=>$pst_nom_commune));
 	$st_requete = sprintf("select DATETXT,DREPUB,COTE,LIBRE,SIGLE,LIBELLE,NOM,PRE,SEXE,ORI,DNAIS,AGE,COM,PRO,EXCON,EXC_PRE,EXC_COM,P_NOM,P_PRE,P_COM,P_PRO,M_NOM,M_PRE,M_COM,M_PRO,C_NOM,C_PRE,C_SEXE,C_ORI,C_DNAIS,C_AGE,C_COM,C_PRO,C_EXCON,C_X_PRE,C_X_COM,CP_NOM,CP_PRE,CP_COM,CP_PRO,CM_NOM,CM_PRE,CM_COM,CM_PRO,T1_NOM,T1_PRE,T1_COM,T2_NOM,T2_PRE,T2_COM,T3_NOM,T3_PRE,T3_COM,T4_NOM,T4_PRE,T4_COM,COMGEN,IDNIM,PHOTOS from %s_div3 where CODCOM=:code_com and COMMUNE=:commune",$gst_prefixe_table);
 	$a_actes = $connexionBD -> sql_select_multiple($st_requete);
-   
+
    // Empeche le chargement de la table le temps de la mise a jour
    $connexionBD->execute_requete("LOCK TABLES `personne` write, `patronyme` write, `prenom` write ,`acte` write, `profession` write, `commune_personne` write, `stats_patronyme` write, `stats_commune` write, `union` write,`personne` as p1 read,`personne` as p2 read,`union` as u read,`type_acte` as ta read,`type_acte` write, `acte` as a read,`releveur` write,`adherent` read,`prenom_simple` write, `groupe_prenoms` write"); 
    // les redondances de donnees seront traitees par sql load data et la contrainte sur l'index nom   
    $i_nb_actes =0 ;
 	foreach ($a_actes as $a_ligne)
-	{         
+	{   
 		list($st_date,$st_date_rep,$st_cote,$st_libre,$st_sigle_type_acte,$st_type_acte,$st_nom_intv1,$st_prn_intv1,$c_sexe_intv1,$st_orig_intv1,$st_dnais_intv1,$i_age_intv1,$st_cmt_intv1,$st_prof_intv1,$st_nom_excjt_intv1,$st_prn_excjt_intv1,$st_cmt_excjt_intv1,$st_nom_pere_intv1,$st_prn_pere_intv1,$st_cmt_pere_intv1,$st_prof_pere_intv1,$st_nom_mere_intv1,$st_prn_mere_intv1,$st_cmt_mere_intv1,$st_prof_mere_intv1,$st_nom_intv2,$st_prn_intv2,$c_sexe_intv2,$st_orig_intv2,$st_dnais_intv2,$i_age_intv2,$st_cmt_intv2,$st_prof_intv2,$st_nom_excjt_intv2,$st_prn_excjt_intv2,$st_cmt_excjt_intv2,$st_nom_pere_intv2,$st_prn_pere_intv2,$st_cmt_pere_intv2,$st_prof_pere_intv2,$st_nom_mere_intv2,$st_prn_mere_intv2,$st_cmt_mere_intv2,$st_prof_mere_intv2,$st_nom_tem1,$st_prn_tem1,$st_cmt_tem1,$st_nom_tem2,$st_prn_tem2,$st_cmt_tem2,$st_nom_tem3,$st_prn_tem3,$st_cmt_tem3,$st_nom_tem4,$st_prn_tem4,$st_cmt_tem4,$st_cmt_acte,$i_num_enreg,$st_permalien) = $a_ligne;
 		// nettoyage des noms
 		nettoie_nom($st_nom_intv1);
@@ -1025,7 +1025,7 @@ if (isset($_GET['prefixe_ea_bd']))
 						$ga_communes[$i_idf_commune_courant]['M']=array($st_code_commune_courant,$st_nom_commune_courant,'OK',$i_nb_actes);
 					break;
 					case 'D':
-						print("<div class=\"alert alert-info\">Migration des actes de d&eacute;c&eagrave;s de la commune $st_nom_commune_courant($st_code_commune_courant)</div>");
+						print("<div class=\"alert alert-info\">Migration des actes de d&eacute;c&egrave;s de la commune $st_nom_commune_courant($st_code_commune_courant)</div>");
 						$a_liste_deces_existants = array();
 						$i_nb_actes = charge_deces($st_code_commune_courant,$st_nom_commune_courant,$i_idf_commune_courant,1,null,$a_liste_deces_existants);
 						$ga_communes[$i_idf_commune_courant]['D']=array($st_code_commune_courant,$st_nom_commune_courant,'OK',$i_nb_actes);
@@ -1034,7 +1034,7 @@ if (isset($_GET['prefixe_ea_bd']))
 						print("<div class=\"alert alert-info\">Migration des actes divers de la commune $st_nom_commune_courant($st_code_commune_courant)</div>");
 						$a_liste_divers_existants = array();
 						$i_nb_actes = charge_divers($st_code_commune_courant,$st_nom_commune_courant,$i_idf_commune_courant,1,null,$a_liste_divers_existants);
-						$ga_communes[$i_idf_commune_courant]['D']=array($st_code_commune_courant,$st_nom_commune_courant,'OK',$i_nb_actes);
+						$ga_communes[$i_idf_commune_courant]['V']=array($st_code_commune_courant,$st_nom_commune_courant,'OK',$i_nb_actes);
 					break;
 				}
 				// réécriture du fichier communes
