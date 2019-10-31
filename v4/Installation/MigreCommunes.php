@@ -79,6 +79,52 @@ print('<div class="container">');
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
+/**
+ * Renvoie la distance entre les deux communes identifiées par leur longitudes et latitudes
+ * @param double $pf_lat1 latitude de la première commune (Exemple : 0.804179843464377)
+ * @param double $pf_lon1 longitude de la première commune (Exemple : 0.00363609679055735)
+ * @param double $pf_lat1 latitude de la seconde commune 
+ * @param double $pf_lon1 longitude de la seconde commune
+ * @return double distance entre les deux communes en km  
+ */ 
+function distance($pf_lat1, $pf_lon1, $pf_lat2, $pf_lon2) 
+{	
+	$R = 6371;
+	$dLat = $pf_lat2 - $pf_lat1;
+	$dLong = $pf_lon2 - $pf_lon1;
+	$var1= $dLong/2;
+	$var2= $dLat/2;
+	$a= pow(sin($dLat/2), 2) + cos($pf_lat1) * cos($pf_lat2) * pow(sin($dLong/2), 2);
+	$c= 2 * atan2(sqrt($a),sqrt(1-$a));
+	$d= $R * $c;
+	return $d;
+}
+
+/**
+ * Ajoute dans la table SQL tableau_kilometrique la liste des distances
+ * entre chaque commune et la nouvelle commune crée
+ * @param object $pconnexionBD Identifiant de la connexion de base
+ * @param array $pa_coordonnees_communes tableau des coordonnées des communes (latitude,longitude) indexées par l'identifiant commune
+ * @param double $pf_latitude latitude de la commune ajoutée
+ * @param double $pf_longitude longitude de la commune ajoutée 
+ */ 
+function calcule_coordonnees_commune($pconnexionBD,$pa_coordonnees_communes,$pi_idf_commune,$pf_latitude,$pf_longitude)
+{
+
+   $st_requete = 'insert into tableau_kilometrique (idf_commune1,idf_commune2,distance) values ';
+   $a_lignes = array();
+   foreach($pa_coordonnees_communes as $i_idf_commune => $a_coord)
+   {
+      list($f_latitude_cour,$f_longitude_cour) = $a_coord;
+      $i_dist=round(distance($pf_latitude,$pf_longitude,$f_latitude_cour,$f_longitude_cour));
+      if ($pi_idf_commune!=$i_idf_commune)
+        $a_lignes[]= "($pi_idf_commune,$i_idf_commune,$i_dist)";     
+   }
+   $st_lignes = join(',',$a_lignes);
+   $st_requete .= $st_lignes;
+   $pconnexionBD->execute_requete($st_requete);
+}
+
 if (empty($_POST['prefixe_table']))
 {
 	print('<form method="post" action='.$_SERVER['PHP_SELF'].' id="migration_commune">');
@@ -95,35 +141,41 @@ if (empty($_POST['prefixe_table']))
 }	
 else
 {	
+	
 	$gst_prefixe_table = isset($_POST['prefixe_table']) ? trim($_POST['prefixe_table']) : 'act';
 	$ga_actes = array();
-	$st_requete = sprintf("SELECT distinct codcom,commune FROM %s_mar3",$gst_prefixe_table);
+	$ga_coordonnees = array();
+	$st_requete = sprintf("SELECT distinct m.codcom,m.commune,g.lon,g.lat FROM %s_mar3 m left join %s_geoloc g on (m.commune=g.commune)",$gst_prefixe_table,$gst_prefixe_table);
 	$a_communes = $connexionBD->sql_select_multiple($st_requete);
 	foreach ($a_communes as $a_ligne)
 	{
-		list($st_code_commune,$st_nom_commune) = $a_ligne;
+		list($st_code_commune,$st_nom_commune,$f_longitude,$f_latitude) = $a_ligne;
 		$ga_actes[$st_code_commune][$st_nom_commune]['M'] = 1;
+		$ga_coordonnees[$st_code_commune][$st_nom_commune] = array($f_longitude,$f_latitude);
 	}	
-	$st_requete = sprintf("SELECT distinct codcom,commune FROM %s_nai3",$gst_prefixe_table);
+	$st_requete = sprintf("SELECT distinct n.codcom,n.commune,g.lon,g.lat FROM %s_nai3 n left join %s_geoloc g on (n.commune=g.commune)",$gst_prefixe_table,$gst_prefixe_table);
 	$a_communes = $connexionBD->sql_select_multiple($st_requete);
 	foreach ($a_communes as $a_ligne)
 	{
-		list($st_code_commune,$st_nom_commune) = $a_ligne;
+		list($st_code_commune,$st_nom_commune,$f_longitude,$f_latitude) = $a_ligne;
 		$ga_actes[$st_code_commune][$st_nom_commune]['N'] = 1;
+		$ga_coordonnees[$st_code_commune][$st_nom_commune] = array($f_longitude,$f_latitude);
 	}
-	$st_requete = sprintf("SELECT distinct codcom,commune FROM %s_dec3",$gst_prefixe_table);
+	$st_requete = sprintf("SELECT distinct d.codcom,d.commune,g.lon,g.lat FROM %s_dec3 d left join %s_geoloc g on (d.commune=g.commune)",$gst_prefixe_table,$gst_prefixe_table);
 	$a_communes = $connexionBD->sql_select_multiple($st_requete);
 	foreach ($a_communes as $a_ligne)
 	{
-		list($st_code_commune,$st_nom_commune) = $a_ligne;
+		list($st_code_commune,$st_nom_commune,$f_longitude,$f_latitude)= $a_ligne;
 		$ga_actes[$st_code_commune][$st_nom_commune]['D'] = 1;
+		$ga_coordonnees[$st_code_commune][$st_nom_commune] = array($f_longitude,$f_latitude);
 	}
-	$st_requete = sprintf("SELECT distinct codcom,commune FROM %s_div3",$gst_prefixe_table);
+	$st_requete = sprintf("SELECT distinct v.codcom,v.commune,g.lon,g.lat FROM %s_div3 v join %s_geoloc g on (v.commune=g.commune)",$gst_prefixe_table,$gst_prefixe_table);
 	$a_communes = $connexionBD->sql_select_multiple($st_requete);
 	foreach ($a_communes as $a_ligne)
 	{
-		list($st_code_commune,$st_nom_commune) = $a_ligne;
+		list($st_code_commune,$st_nom_commune,$f_longitude,$f_latitude) = $a_ligne;
 		$ga_actes[$st_code_commune][$st_nom_commune]['V'] = 1;
+		$ga_coordonnees[$st_code_commune][$st_nom_commune] = array($f_longitude,$f_latitude);
 	}
 
 	$ga_num_paroisse = array();
@@ -136,9 +188,31 @@ else
 			$ga_num_paroisse[$st_code_commune] = array_key_exists($st_code_commune,$ga_num_paroisse) ? $ga_num_paroisse[$st_code_commune] +1 : 0;
 			if (preg_match('/^(\d+)/',$st_code_commune,$a_correspondances))
 			{	
-				print(sprintf("<div class=\"alert alert-info\">Cr&eacute;ation de la commune: %s (%d-%d)</div>",$st_nom_commune,$a_correspondances[1],$ga_num_paroisse[$st_code_commune]));
-				$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse) values(:nom,:code_insee,:num_paroisse)";
-				$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune]));
+		        print(sprintf("<div class=\"alert alert-info\">Cr&eacute;ation de la commune: %s (%d-%d)</div>",$st_nom_commune,$a_correspondances[1],$ga_num_paroisse[$st_code_commune]));
+				if (isset($ga_coordonnees[$st_code_commune][$st_nom_commune]))
+				{	
+					list($f_longitude,$f_latitude) = $ga_coordonnees[$st_code_commune][$st_nom_commune];
+					// conversion en radians
+					if (!empty($f_longitude) && !empty($f_latitude))
+					{	
+						$f_longitude = $f_longitude * pi()/180;
+						$f_latitude = $f_latitude * pi()/180;
+						$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse,longitude,latitude) values(:nom,:code_insee,:num_paroisse,:longitude,:latitude)";
+						$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune],':longitude'=>$f_longitude,':latitude'=>$f_latitude));
+					}
+					else
+					{
+						$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse) values(:nom,:code_insee,:num_paroisse)";
+						$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune]));
+					}
+				}
+				else
+				{
+					$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse) values(:nom,:code_insee,:num_paroisse)";
+					$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune]));
+				}
+				
+				
 				try
 				{					
 					$connexionBD->execute_requete($st_requete);
@@ -146,8 +220,18 @@ else
 				catch (PDOException $e) {
 					echo 'Insertion impossible : ' . $e->getMessage();
 					continue;
-				}		
-				$ga_idf_commune_cree[$st_code_commune][$st_nom_commune]=$connexionBD->dernier_idf_insere();
+				}
+				$i_idf_commune_ajoutee = $connexionBD->dernier_idf_insere();	
+				$ga_idf_commune_cree[$st_code_commune][$st_nom_commune]=$i_idf_commune_ajoutee;
+				if (!empty($f_longitude) && !empty($f_latitude))
+				{
+					$i_nb_communes= $connexionBD->sql_select1("select count(*) from commune_acte");
+					if ($i_nb_communes>0)
+					{
+						$a_coord_communes = $connexionBD->sql_select_multiple_par_idf("select idf,latitude,longitude from commune_acte");
+						calcule_coordonnees_commune($connexionBD,$a_coord_communes,$i_idf_commune_ajoutee,$f_latitude,$f_longitude);
+					}
+				}
 			}
 			else
 				print("<div class=\alert alert-danger\>$st_code_commune ne contient pas d'entier</div>");
@@ -173,7 +257,8 @@ else
 		}
 	}
 	fclose($pf);
-	print("<div class=\"alert alert-success\">Fichier des communes cr&eacute;&eacute; . Lancer la migration des actes</div>");
+	print("<div class=\"alert alert-success\">Fichier des communes cr&eacute;&eacute;</div>");
+	print("<a href=\"MigreActes.php?prefixe_ea_bd=$gst_prefixe_table\" class=\"btn btn-warning\" role=\"button\">Lancer la migration des actes</a>");
 }	
 
 print('</div></body></html>');
