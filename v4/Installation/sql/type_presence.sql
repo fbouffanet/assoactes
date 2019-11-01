@@ -14,6 +14,6 @@ INSERT INTO `type_presence` (`idf`, `nom`) VALUES
 (1, 'Intervenant'),
 (4, 'Marraine'),
 (3, 'Parrain'),
-(6, 'PÃ¨re'),
-(7, 'MÃ¨re'),
-(2, 'TÃ©moin');
+(6, 'Père'),
+(7, 'Mère'),
+(2, 'Témoin');
