@@ -26,7 +26,7 @@ function affiche_menu($pa_tables) {
    print('<div class="align-center">');
    print(implode('<br>',$pa_tables));
    print('</div>');
-   print('<input type=hidden name=mode value="OPTIMISATION"></div>');
+   print('<input type=hidden name=mode value="OPTIMISATION">');
    print('<button type="submit" class="btn btn-primary col-md-4 col-md-offset-4">Lancer l\'optimisation</button>');
    print('</div></div>');
 }
@@ -66,7 +66,7 @@ print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("../Commun/menu.php");
 
-$ga_tables = array('acte','chargement','commune_personne','patronyme','personne','prenom','profession','stats_commune','stats_patronyme','tableau_kilometrique','type_acte','union','variantes_patro');
+$ga_tables = array('acte','chargement','commune_personne','demandes_adherent','document','groupe_prenoms','modification_acte','modification_personne','patronyme','personne','photos','prenom','prenom_simple','profession','releveur','rep_not_actes','rep_not_desc','rep_not_variantes','source','stats_cnx','stats_commune','stats_patronyme','tableau_kilometrique','type_acte','type_presence','union','variantes_patro','variantes_prenom');
 $gst_mode = empty($_POST['mode']) ? 'FORMULAIRE': $_POST['mode'] ;
 print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 switch($gst_mode)
