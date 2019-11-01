@@ -584,9 +584,13 @@ switch ($gst_mode) {
      menu_liste($connexionBD);
      if (!empty($f_latitude) && !empty($f_longitude))
      {
-         $i_idf_commune_ajoutee = $connexionBD->dernier_idf_insere();
-         calcule_coordonnees_commune($connexionBD,$a_coord_communes,$i_idf_commune_ajoutee,$f_latitude,$f_longitude);
-     }
+		$i_nb_communes= $connexionBD->sql_select1("select count(*) from commune_acte");
+		if ($i_nb_communes>0)
+		{
+			$i_idf_commune_ajoutee = $connexionBD->dernier_idf_insere();
+			calcule_coordonnees_commune($connexionBD,$a_coord_communes,$i_idf_commune_ajoutee,$f_latitude,$f_longitude);
+		}
+	 }
    break;
    case 'SUPPRIMER':
      $a_liste_communes = $_POST['supp'];
