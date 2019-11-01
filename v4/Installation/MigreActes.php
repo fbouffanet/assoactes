@@ -1007,6 +1007,7 @@ if (isset($_GET['prefixe_ea_bd']))
 			if (is_null($i_idf_commune_courant))
 			{
 				print("<div class=\"alert alert-success\">Migration termin&eacute;e</div>");
+				print("<a href=\"MigreUtilisateurs.php?prefixe_ea_bd=$gst_prefixe_table\" class=\"btn btn-warning\" role=\"button\">Lancer la migration des utilisateurs</a>");
 			}
 			else
 			{	
