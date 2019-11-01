@@ -27,7 +27,6 @@ if (isset($_GET['prefixe_ea_bd']))
 	$gst_prefixe_table = $_GET['prefixe_ea_bd'];
 	$st_requete =  sprintf("insert into adherent(ident,prenom,nom,email_perso,email_forum,mdp,statut,annee_cotisation,date_premiere_adhesion,date_paiement,confidentiel,prix,infos_agc,type_origine,description_origine,jeton_paiement,clef_nouveau_mdp) select login,prenom,nom,email,email,hashpass,'I',year(now()),ifnull(dtcreation,curdate()),ifnull(dtcreation,curdate()),'O',15,'','','','',''
 	from %s_user3",$gst_prefixe_table);
-	$connexionBD->execute_requete($st_requete);
 	try
 	{					
 		$connexionBD->execute_requete($st_requete);
