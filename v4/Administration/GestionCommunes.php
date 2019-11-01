@@ -535,7 +535,9 @@ switch ($gst_mode) {
      if (!empty($f_latitude) && !empty($f_longitude))
      {
         $connexionBD->execute_requete("delete from tableau_kilometrique where idf_commune1=$gi_idf_commune or idf_commune2=$gi_idf_commune");
-        calcule_coordonnees_commune($connexionBD,$a_coord_communes,$gi_idf_commune,$f_latitude,$f_longitude);
+		$i_nb_communes= $connexionBD->sql_select1("select count(*) from commune_acte");
+		if ($i_nb_communes>1)
+			calcule_coordonnees_commune($connexionBD,$a_coord_communes,$gi_idf_commune,$f_latitude,$f_longitude);
      }
      menu_liste($connexionBD);  
   break;
@@ -585,7 +587,7 @@ switch ($gst_mode) {
      if (!empty($f_latitude) && !empty($f_longitude))
      {
 		$i_nb_communes= $connexionBD->sql_select1("select count(*) from commune_acte");
-		if ($i_nb_communes>0)
+		if ($i_nb_communes>1)
 		{
 			$i_idf_commune_ajoutee = $connexionBD->dernier_idf_insere();
 			calcule_coordonnees_commune($connexionBD,$a_coord_communes,$i_idf_commune_ajoutee,$f_latitude,$f_longitude);
