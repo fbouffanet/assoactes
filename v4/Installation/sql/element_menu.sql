@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `element_menu` (
 
 INSERT INTO `element_menu` (`libelle`, `rang`, `categorie`, `script`, `droit`) VALUES
 ('Couple/Individu', 1, 'Les Recherches', 'Recherches.php', ''),
-('Etat des relevÃ©s', 2, 'Les Recherches', 'AfficheStatsCommune.php', ''),
+('Etat des relevés', 2, 'Les Recherches', 'AfficheStatsCommune.php', ''),
 ('Chargement/Export', 1, 'Administration', 'Administration/GestionDonnees.php', 'CHGMT_EXPT'),
 ('Suppression', 3, 'Administration', 'Administration/SuppressionDonnees.php', 'CHGMT_EXPT'),
 ('Stats/Commune', 3, 'Les Recherches', 'AfficheStatsTypeActeCommune.php', ''),
@@ -30,7 +30,7 @@ INSERT INTO `element_menu` (`libelle`, `rang`, `categorie`, `script`, `droit`) V
 ('Mes informations', 3, 'Compte Personnel', 'MajInfosAdherent.php', ''),
 ('Stats Consultations', 1, 'Stats', 'Stats/StatsConsultations.php', 'STATS'),
 ('Optimisation base', 9, 'Administration', 'Administration/OptimisationTables.php', 'CHGMT_EXPT'),
-('Derniers connectÃ©s', 5, 'Utilitaires', 'Utilitaires/DerniersConnectes.php', 'UTILITAIRE'),
+('Derniers connectés', 5, 'Utilitaires', 'Utilitaires/DerniersConnectes.php', 'UTILITAIRE'),
 ('Publi/chargements', 3, 'Utilitaires', 'Utilitaires/PublicationChargements.php', 'UTILITAIRE'),
 ('Aide', 12, 'Les Recherches', 'AideRecherches.php', ''),
 ('Comparaison Nim/V4', 5, 'Stats', 'Stats/VerifieStatsNim.php', 'STATS'),
@@ -40,12 +40,12 @@ INSERT INTO `element_menu` (`libelle`, `rang`, `categorie`, `script`, `droit`) V
 ('Photos Releveurs', 11, 'Gestion releveurs', 'Releves/GestionPhotos.php', 'RELEVES'),
 ('Statistiques NMD', 6, 'Les Recherches', 'StatsNMD.php', ''),
 ('Occupation tables', 18, 'Utilitaires', 'Utilitaires/UtilisationTables.php', 'UTILITAIRE'),
-('Stats AdhÃ©sions', 4, 'Stats', 'Stats/StatsAdhesion.php', 'STATS'),
-('Log des AdhÃ©rents', 4, 'Utilitaires', 'Utilitaires/Lecture_log.php', 'UTILITAIRE'),
+('Stats Adhésions', 4, 'Stats', 'Stats/StatsAdhesion.php', 'STATS'),
+('Log des Adhérents', 4, 'Utilitaires', 'Utilitaires/Lecture_log.php', 'UTILITAIRE'),
 ('Rep Notaires', 10, 'Administration', 'RepNot/GestionRepNot.php', 'CHGMT_EXPT'),
-('Variantes PrÃ©nom', 2, 'Utilitaires', 'Utilitaires/GestionVariantesPrenom.php', 'VARIANTES'),
+('Variantes Prénom', 2, 'Utilitaires', 'Utilitaires/GestionVariantesPrenom.php', 'VARIANTES'),
 ('Types d''actes', 6, 'Administration', 'Administration/GestionTypesActesDivers.php', 'CHGMT_EXPT'),
-('RÃ©pertoires  Notaire', 9, 'Les Recherches', 'RepNot/RechercheRepNot.php', ''),
+('Répertoires Notaire', 9, 'Les Recherches', 'RepNot/RechercheRepNot.php', ''),
 ('Export Historique', 2, 'Stats', 'Stats/ExportHisto.php', 'STATS'),
 ('Ttes les demandes', 2, 'Compte Personnel', 'DemandesMesCantons.php', '');
 
