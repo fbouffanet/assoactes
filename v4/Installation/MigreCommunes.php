@@ -226,7 +226,7 @@ else
 				if (!empty($f_longitude) && !empty($f_latitude))
 				{
 					$i_nb_communes= $connexionBD->sql_select1("select count(*) from commune_acte");
-					if ($i_nb_communes>0)
+					if ($i_nb_communes>1)
 					{
 						$a_coord_communes = $connexionBD->sql_select_multiple_par_idf("select idf,latitude,longitude from commune_acte");
 						calcule_coordonnees_commune($connexionBD,$a_coord_communes,$i_idf_commune_ajoutee,$f_latitude,$f_longitude);
