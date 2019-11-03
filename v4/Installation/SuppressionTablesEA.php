@@ -54,7 +54,7 @@ if (file_exists('prefixe_tables_EA.txt'))
 			print('<div class="panel-heading">Suppression des tables ExpoActes</div>');
 			print('<div class="panel-body">');
 			print("<form enctype=\"multipart/form-data\" id=\"formulaire_suppression\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-			print('<button type=submit class="btn btn-danger col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-trash"> Lancer la suppression de toutes les tables ExpoActes</button>');	
+			print('<button type=submit class="btn btn-danger col-md-offset-2 col-md-8"><span class="glyphicon glyphicon-trash"> Lancer la suppression de toutes les tables ExpoActes</button>');	
 			print('<input type="hidden" name="mode" value="SUPPRESSION">');
 			print('</div></div>');
 		break;
@@ -67,6 +67,7 @@ if (file_exists('prefixe_tables_EA.txt'))
 				$st_requete = "drop table $st_table";
 				$connexionBD->execute_requete($st_requete);
 			}
+			print(sprintf("<div class=\"alert alert-info\">Suppression termin&eacute;e</div>",$st_table));
 		break;
 		default : print("mode $gst_mode inconnu");   
 	}
