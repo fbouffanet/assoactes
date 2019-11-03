@@ -43,30 +43,35 @@ print('<body>');
 print('<div class="container">');
 
 $gst_mode = empty($_POST['mode']) ? 'FORMULAIRE': $_POST['mode'] ;
-$gst_prefixe = 'act';
-print('</div></body></html>');
-switch($gst_mode)
+
+if (file_exists('prefixe_tables_EA.txt'))
 {
-   case 'FORMULAIRE' :
-    print('<div class="panel panel-primary">');
-    print('<div class="panel-heading">Suppression des tables ExpoActes</div>');
-    print('<div class="panel-body">');
-    print("<form enctype=\"multipart/form-data\" id=\"formulaire_suppression\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-    print('<button type=submit class="btn btn-danger col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-trash"> Lancer la suppression de toutes les tables ExpoActes</button>');	
-    print('<input type="hidden" name="mode" value="SUPPRESSION">');
-	print('</div></div>');
-   break;
-   case 'SUPPRESSION' :
-	$a_tables = array('nai3','mar3','dec3','div3','geoloc','log','metadb','metalg','mgrplg','params','prenom','sums','traceip','user3');
-	foreach ($a_tables as $st_table)
+	$gst_prefixe_table = file_get_contents('prefixe_tables_EA.txt');
+	switch($gst_mode)
 	{
-		$st_table =  sprintf("%s_%s",$gst_prefixe,$st_table);
-		print(sprintf("<div class=\"alert alert-info\">Suppression de la table %s</div>",$st_table));
-		$st_requete = "drop table $st_table";
-		$connexionBD->execute_requete($st_requete);
+		case 'FORMULAIRE' :
+			print('<div class="panel panel-primary">');
+			print('<div class="panel-heading">Suppression des tables ExpoActes</div>');
+			print('<div class="panel-body">');
+			print("<form enctype=\"multipart/form-data\" id=\"formulaire_suppression\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+			print('<button type=submit class="btn btn-danger col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-trash"> Lancer la suppression de toutes les tables ExpoActes</button>');	
+			print('<input type="hidden" name="mode" value="SUPPRESSION">');
+			print('</div></div>');
+		break;
+		case 'SUPPRESSION' :
+			$a_tables = array('nai3','mar3','dec3','div3','geoloc','log','metadb','metalg','mgrplg','params','prenom','sums','traceip','user3');
+			foreach ($a_tables as $st_table)
+			{
+				$st_table =  sprintf("%s_%s",$gst_prefixe_table,$st_table);
+				print(sprintf("<div class=\"alert alert-info\">Suppression de la table %s</div>",$st_table));
+				$st_requete = "drop table $st_table";
+				$connexionBD->execute_requete($st_requete);
+			}
+		break;
+		default : print("mode $gst_mode inconnu");   
 	}
-   break;
-   default : print("mode $gst_mode inconnu");   
-}   
-   
+}
+else
+	print("<div class=\"alert alert-danger\">Erreur: Le pr&eacute;fixe 'prefixe_ea_bd' n'est pas d&eacute;fini !</div>");	
+print('</div></body></html>');   
 ?>
