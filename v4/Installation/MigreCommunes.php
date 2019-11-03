@@ -143,6 +143,9 @@ else
 {	
 	
 	$gst_prefixe_table = isset($_POST['prefixe_table']) ? trim($_POST['prefixe_table']) : 'act';
+	$pf = fopen('prefixe_tables_EA.txt', 'w');
+	fwrite($pf,$gst_prefixe_table);
+    fclose($pf);
 	$ga_actes = array();
 	$ga_coordonnees = array();
 	$st_requete = sprintf("SELECT distinct m.codcom,m.commune,g.lon,g.lat FROM %s_mar3 m left join %s_geoloc g on (m.commune=g.commune)",$gst_prefixe_table,$gst_prefixe_table);

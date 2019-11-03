@@ -982,9 +982,9 @@ $i_idf_commune_courant = null;
 $st_code_commune_courant= null;
 $st_nom_commune_courant=null;
 $st_type_courant =null;
-if (isset($_GET['prefixe_ea_bd']))
+if (file_exists('prefixe_tables_EA.txt'))
 {
-	$gst_prefixe_table = $_GET['prefixe_ea_bd'];
+	$gst_prefixe_table = file_get_contents('prefixe_tables_EA.txt');
 	$i_compteur = isset($_GET['compteur']) ? (int) $_GET['compteur'] :  1;
  	if (file_exists('communes.csv'))
 	{
@@ -1007,7 +1007,7 @@ if (isset($_GET['prefixe_ea_bd']))
 			if (is_null($i_idf_commune_courant))
 			{
 				print("<div class=\"alert alert-success\">Migration termin&eacute;e</div>");
-				print("<a href=\"MigreUtilisateurs.php?prefixe_ea_bd=$gst_prefixe_table\" class=\"btn btn-warning\" role=\"button\">Lancer la migration des utilisateurs</a>");
+				print("<a href=\"MigreUtilisateurs.php\" class=\"btn btn-warning\" role=\"button\">Lancer la migration des utilisateurs</a>");
 			}
 			else
 			{	
@@ -1050,7 +1050,7 @@ if (isset($_GET['prefixe_ea_bd']))
 				}
 				fclose($pf);
 				print("<div class=\"alert alert-warning\">Chargement de la prochaine commune. Ne pas interrompre</div>");
-				print("<meta http-equiv=\"refresh\" content=\"1; url=".$_SERVER['PHP_SELF']."?prefixe_ea_bd=$gst_prefixe_table\" />");
+				print("<meta http-equiv=\"refresh\" content=\"1; url=".$_SERVER['PHP_SELF']."\" />");
 			}
 		}
 		else
