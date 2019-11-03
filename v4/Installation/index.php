@@ -16,6 +16,8 @@ $gst_fichier_configuration='../Commun/config.php';
 if (file_exists($gst_fichier_configuration))
 	require_once($gst_fichier_configuration);
 
+$gst_logo_association = isset($gst_logo_association) ? basename($gst_logo_association): '';
+
 require_once("../Commun/Adherent.php");
 
 print('<!DOCTYPE html>');
@@ -137,9 +139,10 @@ print('<div class="container">');
 *  Affiche le menu des paramètres du site
 *  @param string $pst_url_site Adresse du site
 *  @param string $pst_rep_site Répertoire du site
+*  @param string $pst_logo_asso Logo du l'association
 *  @param string $pst_rep_site Adresse de sortie du site
 */
-function affiche_parametres_site($pst_url_site,$pst_rep_site,$pst_url_sortie)
+function affiche_parametres_site($pst_url_site,$pst_rep_site,$pst_logo_asso,$pst_url_sortie)
 {
 	print('<div class="panel panel-primary">');
 	print("<div class=\"panel-heading\">Param&egrave;tres du site</div>");
@@ -155,6 +158,10 @@ function affiche_parametres_site($pst_url_site,$pst_rep_site,$pst_url_sortie)
     print("<input type=text maxlength=100 size=20 name=rep_site id=rep_site value=\"$pst_rep_site\" class=\"form-control\">");
     print('</div></div>');
     print('<div class="form-group row">');
+	print("<label for=\"logo_asso\" class=\"col-md-4 col-form-label control-label\">Logo de l'association (doit &ecirc;tre d&eacute;j&agrave; t&eacute;l&eacute;charg&eacute; dans le r&eacute;pertoire images du site):</label>");
+    print('<div class="col-md-8">');
+    print("<input type=text maxlength=100 size=20 name=logo_asso id=logo_asso value=\"$pst_logo_asso\" class=\"form-control\">");
+    print('</div></div>');
     print("<label for=\"url_sortie\" class=\"col-md-4 col-form-label control-label\">Adresse de sortie du site:</label>");
     print('<div class="col-md-8">');
     print("<input type=text maxlength=100 size=20 name=url_sortie id=url_sortie value=\"$pst_url_sortie\" class=\"form-control\">");
@@ -259,6 +266,7 @@ function affiche_parametres_geneabank($pst_administrateur_gbk,$pst_mdp_administr
 * Affiche le menu de configuration
 *  @param string $pst_url_site Adresse du site
 *  @param string $pst_rep_site Répertoire du site
+*  @param string $pst_logo_asso Logo de l'association
 *  @param string $pst_rep_site Adresse de sortie du site
 *  @param string $pst_serveur_bd nom du serveur
 *  @param string $pst_utilisateur_bd utilisateur de la base
@@ -267,10 +275,10 @@ function affiche_parametres_geneabank($pst_administrateur_gbk,$pst_mdp_administr
 *  @param string $pst_administrateur_gbk Compte administrateur Geneabank
 *  @param string $pst_mdp_administrateur_gbk Mot de passe administrateur
 */
-function affiche_menu_configuration ($pst_url_site,$pst_rep_site,$pst_url_sortie,$pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd,$pst_administrateur_gbk,$pst_mdp_administrateur_gbk)
+function affiche_menu_configuration ($pst_url_site,$pst_rep_site,$pst_logo_asso,$pst_url_sortie,$pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd,$pst_administrateur_gbk,$pst_mdp_administrateur_gbk)
 {
 	print('<form method="post" action='.$_SERVER['PHP_SELF'].' id="installation">');
-	affiche_parametres_site($pst_url_site,$pst_rep_site,$pst_url_sortie);
+	affiche_parametres_site($pst_url_site,$pst_rep_site,$pst_logo_asso,$pst_url_sortie);
 	affiche_parametres_base($pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd);
 	affiche_parametres_administrateur('','','','');
 	affiche_parametres_geneabank($pst_administrateur_gbk,$pst_mdp_administrateur_gbk);
@@ -287,6 +295,8 @@ function affiche_menu_configuration ($pst_url_site,$pst_rep_site,$pst_url_sortie
 *  @param string $pst_rep_site Répertoire du site
 *  @param string $pst_emails_gestbase emails des administrateurs de base
 *  @param string $pst_rep_site Adresse de sortie du site
+*  @param string $pst_logo_asso Logo de l'association
+*  @param string $pst_url_sortie Url de sortie
 *  @param string $pst_serveur_bd nom du serveur
 *  @param string $pst_utilisateur_bd utilisateur de la base
 *  @param string $pst_mdp_utilisateur_bd mot de passe utilisateur
@@ -294,7 +304,7 @@ function affiche_menu_configuration ($pst_url_site,$pst_rep_site,$pst_url_sortie
 *  @param string $pst_administrateur_gbk Compte administrateur Geneabank
 *  @param string $pst_mdp_administrateur_gbk Mot de passe administrateur
 */
-function ecrit_fichier_de_configuration($pst_fichier_configuration,$pst_url_site,$pst_rep_site,$pst_emails_gestbase,$pst_url_sortie,$pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd,$pst_administrateur_gbk,$pst_mdp_administrateur_gbk)
+function ecrit_fichier_de_configuration($pst_fichier_configuration,$pst_url_site,$pst_rep_site,$pst_emails_gestbase,$pst_logo_asso,$pst_url_sortie,$pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd,$pst_administrateur_gbk,$pst_mdp_administrateur_gbk)
 {
 	$pf = fopen($pst_fichier_configuration, "w");
 	if ($pf===false)
@@ -309,7 +319,6 @@ function ecrit_fichier_de_configuration($pst_fichier_configuration,$pst_url_site
 		fwrite($pf,"\$gst_rep_site = \"$pst_rep_site\";\n");
 		fwrite($pf,"\$gst_emails_gestbase = \"$pst_emails_gestbase\";\n");
 		fwrite($pf,"\$gst_url_sortie = \"$pst_url_sortie\";\n");
-		fwrite($pf,"\n");
 		fwrite($pf,"// Paramètres Base de données\n");
 		fwrite($pf,"\$gst_serveur_bd = \"$pst_serveur_bd\";\n");
 		fwrite($pf,"\$gst_utilisateur_bd = \"$pst_utilisateur_bd\";\n");
@@ -323,7 +332,9 @@ function ecrit_fichier_de_configuration($pst_fichier_configuration,$pst_url_site
 		
 		fwrite($pf,'$gst_url_images = "$gst_url_site/images";');
 		fwrite($pf,"\n");
-	    fwrite($pf,'$gst_repertoire_telechargement = "$gst_rep_site/Administration/telechargements";');
+		fwrite($pf,"\$gst_logo_association = \"\$gst_url_images/$pst_logo_asso\";\n");
+		fwrite($pf,"\n");
+		fwrite($pf,'$gst_repertoire_telechargement = "$gst_rep_site/Administration/telechargements";');
 		fwrite($pf,"\n");
 		fwrite($pf,'$gst_url_telechargement_actes = $gst_url_site."Administration/telechargements";');
 		fwrite($pf,"\n");
@@ -353,6 +364,7 @@ if (isset($_POST['nom_bd']))
 	$gst_url_site = trim($_POST['url_site']);
 	$gst_rep_site = trim($_POST['rep_site']);
 	$gst_url_sortie = trim($_POST['url_sortie']);
+	$gst_logo_asso = trim($_POST['logo_asso']);
 
 	$gst_serveur_bd  = trim($_POST['serveur_bd']);
 	$gst_utilisateur_bd = trim($_POST['utilisateur_bd']);
@@ -375,7 +387,7 @@ if (isset($_POST['nom_bd']))
 	{
 		die("<div class=\"alert alert-danger\">Connexion &agrave; la base de donn&eacute;es impossible</div>");
     }
-	ecrit_fichier_de_configuration($gst_fichier_configuration,$gst_url_site,$gst_rep_site,$gst_email_administrateur,$gst_url_sortie,$gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_administrateur_gbk,$gst_mdp_administrateur_gbk);
+	ecrit_fichier_de_configuration($gst_fichier_configuration,$gst_url_site,$gst_rep_site,$gst_email_administrateur,$gst_logo_asso,$gst_url_sortie,$gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_administrateur_gbk,$gst_mdp_administrateur_gbk);
 	$b_erreur=false;
 	foreach (glob("sql/*.sql") as $st_fichier)
 	{
@@ -436,7 +448,7 @@ if (isset($_POST['nom_bd']))
 }
 else
 {	
-	affiche_menu_configuration($gst_url_site,$gst_rep_site,$gst_url_sortie,$gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_administrateur_gbk,$gst_mdp_administrateur_gbk);	
+	affiche_menu_configuration($gst_url_site,$gst_rep_site,$gst_logo_association,$gst_url_sortie,$gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_administrateur_gbk,$gst_mdp_administrateur_gbk);	
 }
 
 print('</div></body></html>');
