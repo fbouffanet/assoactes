@@ -261,7 +261,7 @@ else
 	}
 	fclose($pf);
 	print("<div class=\"alert alert-success\">Fichier des communes cr&eacute;&eacute;</div>");
-	print("<a href=\"MigreActes.php?prefixe_ea_bd=$gst_prefixe_table\" class=\"btn btn-warning\" role=\"button\">Lancer la migration des actes</a>");
+	print("<a href=\"MigreActes.php\" class=\"btn btn-warning\" role=\"button\">Lancer la migration des actes</a>");
 }	
 
 print('</div></body></html>');
