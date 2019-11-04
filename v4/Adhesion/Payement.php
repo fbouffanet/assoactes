@@ -83,7 +83,7 @@ switch ($gst_type)
       $gst_ref = implode('_',array('READHESION',$st_nom_adh,$st_prenom_adh,$i_idf_agc,$st_temps));
   break;
   default:
-    die("<div class=\"alert alert-danger\">Type d'inscription inconnu</div>");      
+    die("<div class=\"alert alert-danger\">Type d'inscription ($gst_type) inconnu</div>");      
 }
 
 // calcul du tarif
