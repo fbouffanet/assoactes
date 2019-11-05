@@ -87,7 +87,7 @@ if (($i_mois>10 && $i_annee_cotisation==$i_annee) ||  $i_annee_cotisation+1==$i_
    print($adherent->formulaire_type_inscription($st_pays,$st_cp));
    print($adherent->formulaire_aides_possibles());
    print($adherent->formulaire_origine());
-   print("<input type=hidden name=type value=".TYPE_READHESION.">");
+   print("<input type=hidden name=type value=\"".TYPE_READHESION."\">");
    print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Proc&eacute;der au r&egrave;glement</button>');
    print('</form></div></div>');
 }

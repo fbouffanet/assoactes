@@ -13,6 +13,10 @@ require_once("$gst_chemin/Commun/constantes.php");
 require_once("$gst_chemin/Commun/ConnexionBD.php");
 require_once("$gst_chemin/Commun/commun.php"); 
 
+print("<pre>");
+print_r($_POST);
+print("</pre>");
+
 $gst_session_statut = isset($_SESSION['statut']) ? $_SESSION['statut'] : '';
 $gst_session_type = isset($_SESSION['type']) ? $_SESSION['type'] : '';
 $ga_session_aides = isset($_SESSION['aides']) ? $_SESSION['aides']: array();
@@ -28,6 +32,7 @@ $gst_origine = isset($_POST['description_origine']) ? trim($_POST['description_o
 $gst_aides = array_sum($ga_aides);
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
+print("Type=$gst_type<br>\n");
 switch ($gst_type)
 {
   case TYPE_INSCRIPTION:
