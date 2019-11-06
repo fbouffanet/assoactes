@@ -77,11 +77,18 @@ $st_requete = "SELECT nom,prenom,idf,email_perso,statut,DATE_FORMAT(date_paiemen
 FROM `adherent`
 $gst_tri_requete
 ";
+
+$ga_adhesions = $connexionBD->sql_select_multiple($st_requete);
+$ga_tableau = array();
+foreach ($ga_adhesions as $a_ligne)
+{
+   list($st_nom,$st_prenom,$i_idf,$st_email_perso,$st_statut,$st_date_paiement) = $a_ligne;
+   $ga_tableau[] = array($st_nom,$st_prenom,"<a href=\"../ListeAdherents.php?mod=$i_idf\">$i_idf</a>",$st_email_perso,$st_statut,$st_date_paiement);
+}
 print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" name=\"DernieresAdhesions\">");
 $pagination->init_page_cour($gi_num_page_cour);
 $pagination->affiche_entete_liste_select("DernieresAdhesions");
-$pagination->init_param_bd($connexionBD,$st_requete);
-$pagination->affiche_tableau_simple_requete_sql();
+$pagination->affiche_tableau_simple($ga_tableau);
 print("</form></div></div>");
 print("</div></body></html>");
 ?>
