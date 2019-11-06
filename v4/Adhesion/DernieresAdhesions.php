@@ -73,7 +73,7 @@ switch($gst_mode_tri)
       $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nbadhts,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array("<a href=\"".$_SERVER['PHP_SELF']."?tri_adhesions=NomAdh\">Nom</a>",'Prénom','Numéro','Email','Statut','Date de paiement'));
 }
 
-$st_requete = "SELECT nom,prenom,idf,email_perso,statut,DATE_FORMAT(date_paiement,'%d/%m/%Y %k:%i') 
+$st_requete = "SELECT nom,prenom,idf,email_perso,statut,DATE_FORMAT(date_paiement,'%d/%m/%Y') 
 FROM `adherent`
 $gst_tri_requete
 ";
