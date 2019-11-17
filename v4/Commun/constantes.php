@@ -346,8 +346,8 @@ $ga_pays = array(
 "Zimbabwe",
 );
 
-$ga_scripts_demande=array('InfosActe.php','InfosAGL.php','InfosChabatz.php','InfosCGSS.php','InfosRepNot.php','InfosTD.php');
-$ga_icones_source=array('infos.png','ninfos.png','td.png','tdv.png','agl.png','nagl.png','rnot.png','RGD.png','chabatz.png','nchabatz.png','tdi.png','idx.png','nidx.png','cgss.png','ncgss.png');
+$ga_scripts_demande=array('InfosActe.php','InfosTD.php');
+$ga_icones_source=array('infos.png','ninfos.png','td.png','tdv.png','rnot.png','tdi.png','idx.png','nidx.png');
 $ga_booleen_oui_non=array(true=>'oui',false=>'non');
 
 define('AIDE_RELEVES',1);
@@ -434,5 +434,5 @@ define('IDF_SOURCE_TD',4);
 define('SEUIL_RETENTION_ADHTS',5);                   
 define('NB_PERSONNES_BLOC_CHGMT',1000);
 define('NB_ACTES_BLOC_CHGMT',2000);
-define('PAGE_RECHERCHE','Recherches.php');
+define('PAGE_RECHERCHE','index.php');
 ?>
