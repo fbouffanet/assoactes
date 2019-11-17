@@ -33,7 +33,7 @@ print("<div class=\"panel-heading\">Demandes de modification de TD</div>");
 print('<div class="panel-body">');
 
 $i_nb_tds=$connexionBD->sql_select1("select sum( nb_actes ) from `stats_commune` where `idf_type_acte` =".IDF_MARIAGE." and `idf_source` =".IDF_SOURCE_TD);
-print("<div class=\"row\"><div class=\"col-md-4 col-md-offset-4\"><div class=\"badge\">$i_nb_tds</div> TDMs en base</div></div>");
+print("<div class=\"row\"><div class=\"col-md-4 col-md-offset-4 badge\">$i_nb_tds TDMs en base</div></div>");
 if (isset($_SESSION['ident']))
 {
   $st_requete = "select distinct ma.idf,a.date,ta.nom,ca.nom,GROUP_CONCAT(distinct concat(prties.prenom,' ',prties.patronyme) order by prties.idf separator ' X ') as parties,ma.date_modif,ma.email_demandeur from `modification_acte` ma join acte a on (ma.idf_acte=a.idf) join `modification_personne` prties on (ma.idf=prties.idf_modification_acte and prties.idf_type_presence=".IDF_PRESENCE_INTV.") join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) where a.idf_source=".IDF_SOURCE_TD." and ma.statut is null or ma.statut not in ('A','R') group by ma.idf";
