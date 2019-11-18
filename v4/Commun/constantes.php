@@ -38,19 +38,12 @@ $ga_types_nimegue = array(IDF_NAISSANCE => 'Baptemes/Naissances',IDF_MARIAGE =>'
 define('LIB_MANQUANT','!');
 
 define('DROIT_CHARGEMENT','CHGMT_EXPT');
-define('DROIT_CREATION_ADHERENT','CREATADH');
-define('DROIT_MODIFICATION_ADHERENT','MODADH');
 define('DROIT_GESTION_ADHERENT','GESTADHT');
 define('DROIT_MODIFICATION_DROITS','GESTDROITS');
 define('DROIT_UTILITAIRES','UTILITAIRE');
 define('DROIT_VARIANTES','VARIANTES');
-define('DROIT_PUBLICATION','PUBLICATIO');
 define('DROIT_RELEVES','RELEVES');
-define('DROIT_NOTAIRES','NOTAIRES');
-define('DROIT_VALIDATION_TD','TD');
 define('DROIT_STATS','STATS');
-define('DROIT_VALIDATION_PERMALIEN','PERMALIEN');
-define('DROIT_GENEABANK','GENEABANK');
 
 
 $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
@@ -58,13 +51,8 @@ $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
                    DROIT_MODIFICATION_DROITS => 'Modification Droits Adherent',
                    DROIT_UTILITAIRES => 'Acces aux utilitaires',
                    DROIT_VARIANTES => 'Gestion des variantes',
-                   DROIT_PUBLICATION => 'Gestion des publications',
                    DROIT_RELEVES => 'Suivi des relevés',
-                   DROIT_NOTAIRES => 'Edition des liasses notariales',
-                   DROIT_VALIDATION_TD => 'Validation des modifications de TD',
-                   DROIT_STATS => 'Acces aux statistiques',
-                   DROIT_VALIDATION_PERMALIEN => 'Validation des modifications de permalien',
-				   DROIT_GENEABANK => 'Gestion des points GeneaBank'
+                   DROIT_STATS => 'Acces aux statistiques'
                   );
 define('NB_LIGNES_PAR_PAGE',25);
 define('DELTA_NAVIGATION',5);
@@ -430,7 +418,7 @@ $ga_annees_revolutionnaires      = array(
                                 14=>'An XIV'                      
                                 );
 define('IDF_SOURCE_RELEVES_AGC',1); 
-define('IDF_SOURCE_TD',4);
+define('IDF_SOURCE_TD',0);
 define('SEUIL_RETENTION_ADHTS',5);                   
 define('NB_PERSONNES_BLOC_CHGMT',1000);
 define('NB_ACTES_BLOC_CHGMT',2000);

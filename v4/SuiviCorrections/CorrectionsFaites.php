@@ -8,7 +8,7 @@ require_once '../Commun/config.php';
 require_once('../Commun/Identification.php');
 require_once('../Commun/constantes.php');
 require_once('../Commun/VerificationDroits.php');
-verifie_privilege(DROIT_VALIDATION_TD);
+verifie_privilege(DROIT_CHARGEMENT);
 require_once '../Commun/commun.php';
 require_once('../Commun/ConnexionBD.php');
 require_once('../Commun/PaginationTableau.php');
@@ -21,7 +21,7 @@ print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr">');
-print("<title>Liste des demandes de modification de TD validées ou refusées</title>");
+print("<title>Liste des demandes de correction acceptées ou refusées</title>");
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
@@ -71,7 +71,7 @@ if (isset($_SESSION['ident']))
   {
     case 'LISTE':
 	  print('<div class="panel panel-primary">');
-      print("<div class=\"panel-heading\">Liste des demandes de modification de TD trait&eacute;es</div>");
+      print("<div class=\"panel-heading\">Liste des demandes de correction trait&eacute;es</div>");
       print('<div class="panel-body">');
       print("<form id=\"liste_td\" name=\"liste_td\" action=\"".$_SERVER['PHP_SELF']."\" method=post>");
       print("<input type=\"hidden\" name=\"mode\" value=\"LISTE\">");
@@ -106,15 +106,15 @@ if (isset($_SESSION['ident']))
       switch ($gi_type_acte)
       {
         case 0:
-          $st_requete =($gst_statut == 'A') ? "select distinct ma.idf,ma.idf_acte,a.date,ta.nom,ca.nom,GROUP_CONCAT(distinct concat(prties.prenom,' ',prties.patronyme) order by prties.idf separator ' X ') as parties,ma.date_modif,ma.email_demandeur,ma.date_validation,concat(adht.nom,' ',adht.prenom) as valideur from `modification_acte` ma join acte a on (ma.idf_acte=a.idf) join `modification_personne` prties on (ma.idf=prties.idf_modification_acte and prties.idf_type_presence=".IDF_PRESENCE_INTV.") join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join adherent adht on (ma.idf_valideur=adht.idf) where a.idf_source=".IDF_SOURCE_TD." and ma.statut='A' group by ma.idf order by ma.date_modif desc" : "select distinct ma.idf,ma.idf_acte,a.date,ta.nom,ca.nom,GROUP_CONCAT(distinct concat(prties.prenom,' ',prties.patronyme) order by prties.idf separator ' X ') as parties,ma.date_modif,ma.email_demandeur,ma.date_validation,concat(adht.nom,' ',adht.prenom) as valideur,ma.motif_refus from `modification_acte` ma join acte a on (ma.idf_acte=a.idf) join `modification_personne` prties on (ma.idf=prties.idf_modification_acte and prties.idf_type_presence=".IDF_PRESENCE_INTV.") join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join adherent adht on (ma.idf_valideur=adht.idf) where a.idf_source=".IDF_SOURCE_TD." and ma.statut='R' group by ma.idf order by ma.date_modif desc";
+          $st_requete =($gst_statut == 'A') ? "select distinct ma.idf,ma.idf_acte,a.date,ta.nom,ca.nom,GROUP_CONCAT(distinct concat(prties.prenom,' ',prties.patronyme) order by prties.idf separator ' X ') as parties,ma.date_modif,ma.email_demandeur,ma.date_validation,concat(adht.nom,' ',adht.prenom) as valideur from `modification_acte` ma join acte a on (ma.idf_acte=a.idf) join `modification_personne` prties on (ma.idf=prties.idf_modification_acte and prties.idf_type_presence=".IDF_PRESENCE_INTV.") join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join adherent adht on (ma.idf_valideur=adht.idf) where ma.statut='A' group by ma.idf order by ma.date_modif desc" : "select distinct ma.idf,ma.idf_acte,a.date,ta.nom,ca.nom,GROUP_CONCAT(distinct concat(prties.prenom,' ',prties.patronyme) order by prties.idf separator ' X ') as parties,ma.date_modif,ma.email_demandeur,ma.date_validation,concat(adht.nom,' ',adht.prenom) as valideur,ma.motif_refus from `modification_acte` ma join acte a on (ma.idf_acte=a.idf) join `modification_personne` prties on (ma.idf=prties.idf_modification_acte and prties.idf_type_presence=".IDF_PRESENCE_INTV.") join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join adherent adht on (ma.idf_valideur=adht.idf) where ma.statut='R' group by ma.idf order by ma.date_modif desc";
         break;
         case IDF_NAISSANCE:
         case IDF_MARIAGE:
         case IDF_DECES:
-          $st_requete = ($gst_statut == 'A') ? "select distinct ma.idf,ma.idf_acte,a.date,ta.nom,ca.nom,GROUP_CONCAT(distinct concat(prties.prenom,' ',prties.patronyme) order by prties.idf separator ' X ') as parties,ma.date_modif,ma.email_demandeur,ma.date_validation,concat(adht.nom,' ',adht.prenom) as valideur from `modification_acte` ma join acte a on (ma.idf_acte=a.idf) join `modification_personne` prties on (ma.idf=prties.idf_modification_acte and prties.idf_type_presence=".IDF_PRESENCE_INTV.") join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join adherent adht on (ma.idf_valideur=adht.idf) where a.idf_source=".IDF_SOURCE_TD." and ma.statut='A' and a.idf_type_acte=$gi_type_acte group by ma.idf order by ma.date_modif desc" : "select distinct ma.idf,ma.idf_acte,a.date,ta.nom,ca.nom,GROUP_CONCAT(distinct concat(prties.prenom,' ',prties.patronyme) order by prties.idf separator ' X ') as parties,ma.date_modif,ma.email_demandeur,ma.date_validation,concat(adht.nom,' ',adht.prenom) as valideur,ma.motif_refus from `modification_acte` ma join acte a on (ma.idf_acte=a.idf) join `modification_personne` prties on (ma.idf=prties.idf_modification_acte and prties.idf_type_presence=".IDF_PRESENCE_INTV.") join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join adherent adht on (ma.idf_valideur=adht.idf) where a.idf_source=".IDF_SOURCE_TD." and ma.statut='R' and a.idf_type_acte=$gi_type_acte group by ma.idf order by ma.date_modif desc";
+          $st_requete = ($gst_statut == 'A') ? "select distinct ma.idf,ma.idf_acte,a.date,ta.nom,ca.nom,GROUP_CONCAT(distinct concat(prties.prenom,' ',prties.patronyme) order by prties.idf separator ' X ') as parties,ma.date_modif,ma.email_demandeur,ma.date_validation,concat(adht.nom,' ',adht.prenom) as valideur from `modification_acte` ma join acte a on (ma.idf_acte=a.idf) join `modification_personne` prties on (ma.idf=prties.idf_modification_acte and prties.idf_type_presence=".IDF_PRESENCE_INTV.") join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join adherent adht on (ma.idf_valideur=adht.idf) where ma.statut='A' and a.idf_type_acte=$gi_type_acte group by ma.idf order by ma.date_modif desc" : "select distinct ma.idf,ma.idf_acte,a.date,ta.nom,ca.nom,GROUP_CONCAT(distinct concat(prties.prenom,' ',prties.patronyme) order by prties.idf separator ' X ') as parties,ma.date_modif,ma.email_demandeur,ma.date_validation,concat(adht.nom,' ',adht.prenom) as valideur,ma.motif_refus from `modification_acte` ma join acte a on (ma.idf_acte=a.idf) join `modification_personne` prties on (ma.idf=prties.idf_modification_acte and prties.idf_type_presence=".IDF_PRESENCE_INTV.") join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join adherent adht on (ma.idf_valideur=adht.idf) where ma.statut='R' and a.idf_type_acte=$gi_type_acte group by ma.idf order by ma.date_modif desc";
         break;
         case IDF_DIVERS:
-          $st_requete = ($gst_statut == 'A') ? "select distinct ma.idf,ma.idf_acte,a.date,ta.nom,ca.nom,GROUP_CONCAT(distinct concat(prties.prenom,' ',prties.patronyme) order by prties.idf separator ' X ') as parties,ma.date_modif,ma.email_demandeur,ma.date_validation,concat(adht.nom,' ',adht.prenom) as valideur from `modification_acte` ma join acte a on (ma.idf_acte=a.idf) join `modification_personne` prties on (ma.idf=prties.idf_modification_acte and prties.idf_type_presence=".IDF_PRESENCE_INTV.") join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join adherent adht on (ma.idf_valideur=adht.idf) where a.idf_source=".IDF_SOURCE_TD." and ma.statut='A' and a.idf_type_acte not in (".IDF_NAISSANCE.','.IDF_MARIAGE.','.IDF_DECES.") group by ma.idf order by ma.date_modif desc" : "select distinct ma.idf,ma.idf_acte,a.date,ta.nom,ca.nom,GROUP_CONCAT(distinct concat(prties.prenom,' ',prties.patronyme) order by prties.idf separator ' X ') as parties,ma.date_modif,ma.email_demandeur,ma.date_validation,concat(adht.nom,' ',adht.prenom) as valideur,ma.motif_refus from `modification_acte` ma join acte a on (ma.idf_acte=a.idf) join `modification_personne` prties on (ma.idf=prties.idf_modification_acte and prties.idf_type_presence=".IDF_PRESENCE_INTV.") join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join adherent adht on (ma.idf_valideur=adht.idf) where a.idf_source=".IDF_SOURCE_TD." and ma.statut='R' and a.idf_type_acte not in (".IDF_NAISSANCE.','.IDF_MARIAGE.','.IDF_DECES.") group by ma.idf order by ma.date_modif desc";
+          $st_requete = ($gst_statut == 'A') ? "select distinct ma.idf,ma.idf_acte,a.date,ta.nom,ca.nom,GROUP_CONCAT(distinct concat(prties.prenom,' ',prties.patronyme) order by prties.idf separator ' X ') as parties,ma.date_modif,ma.email_demandeur,ma.date_validation,concat(adht.nom,' ',adht.prenom) as valideur from `modification_acte` ma join acte a on (ma.idf_acte=a.idf) join `modification_personne` prties on (ma.idf=prties.idf_modification_acte and prties.idf_type_presence=".IDF_PRESENCE_INTV.") join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join adherent adht on (ma.idf_valideur=adht.idf) where ma.statut='A' and a.idf_type_acte not in (".IDF_NAISSANCE.','.IDF_MARIAGE.','.IDF_DECES.") group by ma.idf order by ma.date_modif desc" : "select distinct ma.idf,ma.idf_acte,a.date,ta.nom,ca.nom,GROUP_CONCAT(distinct concat(prties.prenom,' ',prties.patronyme) order by prties.idf separator ' X ') as parties,ma.date_modif,ma.email_demandeur,ma.date_validation,concat(adht.nom,' ',adht.prenom) as valideur,ma.motif_refus from `modification_acte` ma join acte a on (ma.idf_acte=a.idf) join `modification_personne` prties on (ma.idf=prties.idf_modification_acte and prties.idf_type_presence=".IDF_PRESENCE_INTV.") join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join adherent adht on (ma.idf_valideur=adht.idf) where ma.statut='R' and a.idf_type_acte not in (".IDF_NAISSANCE.','.IDF_MARIAGE.','.IDF_DECES.") group by ma.idf order by ma.date_modif desc";
         break;          
       }
       //FBOprint("$gst_statut $st_requete<br>");
@@ -135,9 +135,9 @@ if (isset($_SESSION['ident']))
 		    $st_action .='<button type="submit" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-eye-open"></span> Voir la<br>demande</button>';
           $st_action .= "</form>";
           if ($gst_statut == 'A')
-            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_action,"<a href=\"../InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"btn btn-primary btn-xs\" role=\"button\"><span class=\"glyphicon glyphicon-eye-open\"></span> Voir la<br> modification</a>");
+            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_action,"<a href=\"../InfosActe.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"btn btn-primary btn-xs\" role=\"button\"><span class=\"glyphicon glyphicon-eye-open\"></span> Voir la<br> modification</a>");
           else
-            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_commentaires,$st_action,"<a href=\"../InfosTD.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"btn btn-primary btn-xs\" role=\"button\"><span class=\"glyphicon glyphicon-eye-open\"></span> Voir la<br>modification</a>");
+            $a_tableau_a_afficher[] = array($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_demandeur,$st_date_validation,$st_valideur,$st_commentaires,$st_action,"<a href=\"../InfosActe.php?idf_acte=$i_idf_acte\" target=\"_blank\" class=\"btn btn-primary btn-xs\" role=\"button\"><span class=\"glyphicon glyphicon-eye-open\"></span> Voir la<br>modification</a>");
         }
         $pagination->init_page_cour($gi_num_page_cour);
         $pagination->affiche_entete_liste_select("liste_td");
@@ -152,7 +152,7 @@ if (isset($_SESSION['ident']))
    break;
    case 'VISU_MODIF':
 	print('<div class="panel panel-primary">');
-    print("<div class=\"panel-heading\">Visualisation d'une modification de relev&eacute; de TD</div>");
+    print("<div class=\"panel-heading\">Visualisation d'une modification demandée</div>");
     print('<div class="panel-body">');
     if (isset ($_POST['idf_modif']))
     {

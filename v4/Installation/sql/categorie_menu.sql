@@ -9,11 +9,12 @@ CREATE TABLE IF NOT EXISTS `categorie_menu` (
 INSERT INTO `categorie_menu` (`libelle`, `rang`, `script`, `droit`) VALUES
 ('Accueil', 1, 'index.php', ''),
 ('Les Recherches', 2, '', ''),
-('Compte Personnel', 4, '', ''),
-('Membres', 5, '', ''),
-('Administration', 6, '', 'CHGMT_EXPT'),
+('Compte Personnel', 3, '', ''),
+('Membres', 4, '', ''),
+('Administration', 5, '', 'CHGMT_EXPT'),
+('Suivi corrections', 6, '', 'CHGMT_EXPT'),
 ('Utilitaires', 7, '', 'UTILITAIRE'),
 ('Stats', 8, '', 'STATS'),
-('Gestion releveurs', 10, '', 'RELEVES'),
-('AdminGKB', 14, '/Administration/ExportGeneabank.php', 'GENEABANK'),
-('Sortie', 15, 'Sortie.php', '');
+('Gestion releveurs', 9, '', 'RELEVES'),
+('AdminGKB', 10, '/Administration/ExportGeneabank.php', 'GENEABANK'),
+('Sortie', 11, 'Sortie.php', '');
