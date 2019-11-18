@@ -83,7 +83,7 @@ $ga_tableau = array();
 foreach ($ga_adhesions as $a_ligne)
 {
    list($st_nom,$st_prenom,$i_idf,$st_email_perso,$st_statut,$st_date_paiement) = $a_ligne;
-   $ga_tableau[] = array($st_nom,$st_prenom,"<a href=\"../ListeAdherents.php?mod=$i_idf\">$i_idf</a>",$st_email_perso,$st_statut,$st_date_paiement);
+   $ga_tableau[] = array($st_nom,$st_prenom,"<a href=\"../ListeAdherents.php?mod=$i_idf\" target=\"_blank\">$i_idf</a>",$st_email_perso,$st_statut,$st_date_paiement);
 }
 print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" name=\"DernieresAdhesions\">");
 $pagination->init_page_cour($gi_num_page_cour);
