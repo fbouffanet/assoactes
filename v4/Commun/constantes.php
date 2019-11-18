@@ -21,7 +21,7 @@ define('IDF_NAISSANCE',3);
 define('IDF_DECES',4);
 define('IDF_UNION',6); 
 define('IDF_CM',2);
-define('IDF_RECENS',147);  
+define('IDF_RECENS',7);  
 
 // libelles
 define('LIB_MARIAGE','Mariage');
