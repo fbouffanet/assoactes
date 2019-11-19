@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `element_menu` (
 
 
 INSERT INTO `element_menu` (`libelle`, `rang`, `categorie`, `script`, `droit`) VALUES
-('Couple/Individu', 1, 'Les Recherches', 'Recherches.php', ''),
+('Couple/Individu', 1, 'Les Recherches', 'index.php', ''),
 ('Etat des relevés', 2, 'Les Recherches', 'AfficheStatsCommune.php', ''),
 ('Chargement/Export', 1, 'Administration', 'Administration/GestionDonnees.php', 'CHGMT_EXPT'),
 ('Suppression', 3, 'Administration', 'Administration/SuppressionDonnees.php', 'CHGMT_EXPT'),
@@ -47,6 +47,10 @@ INSERT INTO `element_menu` (`libelle`, `rang`, `categorie`, `script`, `droit`) V
 ('Types d''actes', 6, 'Administration', 'Administration/GestionTypesActesDivers.php', 'CHGMT_EXPT'),
 ('Répertoires Notaire', 9, 'Les Recherches', 'RepNot/RechercheRepNot.php', ''),
 ('Export Historique', 2, 'Stats', 'Stats/ExportHisto.php', 'STATS'),
-('Ttes les demandes', 2, 'Compte Personnel', 'DemandesMesCantons.php', '');
+('Ttes les demandes', 2, 'Compte Personnel', 'DemandesMesCantons.php', ''),
+('Corrections demandées', 1, 'Suivi corrections', 'SuiviCorrections/CorrectionsDemandees.php', 'CHGMT_EXPT'),
+('Corrections faites', 2, 'Suivi corrections', 'SuiviCorrections/CorrectionsFaites.php ', 'CHGMT_EXPT');
+
+
 
 

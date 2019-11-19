@@ -16,4 +16,4 @@ INSERT INTO `type_acte` (`idf`, `nom`, `sigle_nimegue`) VALUES
 (3, 'Baptême/Naissance', ''),
 (4, 'Sépulture/Décès', ''),
 (5, 'Testament', 'Ttt'),
-(6, 'Recensement', 'Recen');
+(7, 'Recensement', 'Recen');
