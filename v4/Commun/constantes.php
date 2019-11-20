@@ -58,18 +58,7 @@ define('NB_LIGNES_PAR_PAGE',25);
 define('DELTA_NAVIGATION',5);
 
 
-define('LIB_ASSO','Association Genealogique de la Charente');
 define('LIB_ASSO_AVEC_','Association Genealogique de la Charente');
-define('SIGLE_ASSO','AGC');
-define('EMAIL_INSCRIPTION_FORUM','');
-define('EMAIL_FORUM','');
-define('EMAIL_DIRASSO','');
-define('EMAIL_INFOASSO','');
-define('EMAIL_GBKADMIN','');
-define('EMAIL_PRESASSO','');
-define('IDF_ASSO_GBK','');
-define('PREFIXE_ADH_GBK','');
-define('NB_POINTS_GBK',100);
 
 define('TOUS_ADHERENTS','T');
 define('ADHESION_BULLETIN','B');
