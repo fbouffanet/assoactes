@@ -1,6 +1,9 @@
 <?php
 
 $gst_fichier_constantes = '../Commun/constantes.php';
+$gst_fichier_configuration='../Commun/config.php';
+if (file_exists($gst_fichier_configuration))
+	require_once($gst_fichier_configuration);
 
 print('<!DOCTYPE html>');
 print("<head>");
@@ -240,6 +243,7 @@ if (isset($_POST['lib_asso']))
 		fwrite($pf,"define('NB_POINTS_GBK',$gi_nb_points_gbk);\n");
 		fwrite($pf,"?>\n");
 		print("<div class=\"alert alert-success\">$gst_fichier_constantes sauvegard&eacute;</div>");
+		print("<a href=\"$gst_url_site\" class=\"btn btn-info\" role=\"button\" target=\"_blank\">Acc&eacute;der au site</a>");
 	}	
 }
 else	

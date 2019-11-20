@@ -443,7 +443,10 @@ if (isset($_POST['nom_bd']))
 		$sth->execute(array(':privilege'=>'RELEVES'));
 		$sth->execute(array(':privilege'=>'STATS'));	
 		print("<div class=\"alert alert-success\">Compte administrateur cr&eacute;&eacute;</div>");
-		print("<div class=\"alert alert-info\"><a href=\"$gst_url_site\" target=\"_blank\">Acc&eacute;s au site</a></div>");
+		print('<div class="form-group row">');
+		print("<a href=\"Configuration.php\" class=\"btn btn-info\" role=\"button\">Personnaliser les param&egrave;tres</a>");
+		print('</div>');
+		
 	}
 }
 else
