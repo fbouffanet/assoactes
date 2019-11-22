@@ -96,7 +96,7 @@ $(document).ready(function() {
  *
  * The API key to use
  */
-var APIkey= "<?php echo CLEF_API_GEOPORTAIL; ?>"; //Changement de la clé 25/10/2016 //FP 
+var APIkey= "<?php echo CLEF_API_GEOPORTAIL; ?>";
 
  
                 
