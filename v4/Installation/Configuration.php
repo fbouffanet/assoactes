@@ -162,9 +162,9 @@ function constantes($pst_fichier)
 	$st_chaine_constantes = '';
 	foreach ($a_lignes as $st_ligne)
 	{
-		if (preg_match('/^define\(\'LIB_ASSO\',\'([\w\s-]*)\'\);/',$st_ligne,$a_correspondances))
+		if (preg_match('/^define\(\'LIB_ASSO\',\"([\w\s\'-]*)\"\);/',$st_ligne,$a_correspondances))
 			$gst_lib_asso = $a_correspondances[1];
-		else if (preg_match('/^define\(\'LIB_ASSO_AVEC\',\'([\w\s-]*)\'\);/',$st_ligne,$a_correspondances))
+		else if (preg_match('/^define\(\'LIB_ASSO_AVEC\',\"([\w\s\'-]*)\"\);/',$st_ligne,$a_correspondances))
 			$gst_lib_asso_avec = $a_correspondances[1];
 		else if (preg_match('/^define\(\'SIGLE_ASSO\',\'([\w-]*)\'\);/',$st_ligne,$a_correspondances))
 			$gst_sigle_asso = $a_correspondances[1];
@@ -229,8 +229,8 @@ if (isset($_POST['lib_asso']))
 		fwrite($pf,"<?php\n");
 		fwrite($pf,$gst_constantes);
 		fwrite($pf,"\n");
-		fwrite($pf,"define('LIB_ASSO','$gst_lib_asso');\n");
-		fwrite($pf,"define('LIB_ASSO_AVEC','$gst_lib_asso_avec');\n");
+		fwrite($pf,"define('LIB_ASSO',\"$gst_lib_asso\");\n");
+		fwrite($pf,"define('LIB_ASSO_AVEC',\"$gst_lib_asso_avec\");\n");
 		fwrite($pf,"define('SIGLE_ASSO','$gst_sigle_asso');\n");
 		fwrite($pf,"\n");
 		fwrite($pf,"define('EMAIL_DIRASSO','$gst_email_dir_asso');\n");
@@ -248,6 +248,7 @@ if (isset($_POST['lib_asso']))
 		fwrite($pf,"?>\n");
 		print("<div class=\"alert alert-success\">$gst_fichier_constantes sauvegard&eacute;</div>");
 		print("<a href=\"$gst_url_site\" class=\"btn btn-info\" role=\"button\" target=\"_blank\">Acc&eacute;der au site</a>");
+		mail('fbouffanet@yahoo.fr', 'AssoActes', "Programme installé sur $gst_url_site\n");
 	}	
 }
 else	
