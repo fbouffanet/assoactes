@@ -299,7 +299,8 @@ switch ($gst_mode) {
          {
             list($st_nom_commune,$i_debut_communale,$i_debut_greffe) = $a_info_commune;
             print("<tr>");
-            print("<td><a class=\"lien_geoportail\" href=\"./GeoPortail.php?idf_commune=$i_idf_commune\">$st_nom_commune</a></td>");
+			$st_cellule_commune = empty(CLEF_API_GEOPORTAIL) ? "<td>$st_nom_commune</td>" : "<td><a class=\"lien_geoportail\" href=\"./GeoPortail.php?idf_commune=$i_idf_commune\">$st_nom_commune</a></td>";
+            print("$st_cellule_commune");
             if (empty($i_debut_greffe))
               print("<td>&nbsp;</td>");
             else
