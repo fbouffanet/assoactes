@@ -413,6 +413,14 @@ define('NB_PERSONNES_BLOC_CHGMT',1000);
 define('NB_ACTES_BLOC_CHGMT',2000);
 define('PAGE_RECHERCHE','index.php');
 
+
+
+
+
+
+
+
+
 define('LIB_ASSO','');
 define('LIB_ASSO_AVEC','');
 define('SIGLE_ASSO','');
@@ -428,4 +436,5 @@ define('EMAIL_GBKADMIN','');
 define('IDF_ASSO_GBK','');
 define('PREFIXE_ADH_GBK','');
 define('NB_POINTS_GBK',100);
+define('CLEF_API_GEOPORTAIL','');
 ?>

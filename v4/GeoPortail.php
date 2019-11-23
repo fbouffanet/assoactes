@@ -96,10 +96,8 @@ $(document).ready(function() {
  *
  * The API key to use
  */
-var APIkey= "cervpkrr0dboxq0t5hnw1jbm"; //Changement de la clé 25/10/2016 //FP 
-//var APIkey= "ehy2f6q20wxy93lyvkchxetb"; 
-// Clef de test après
-//const APIkey = "pyn3zoiee6xv53fcm140sdun";
+var APIkey= "<?php echo CLEF_API_GEOPORTAIL; ?>";
+
  
                 
 /**
