@@ -130,7 +130,12 @@ if (empty($_POST['prefixe_table']))
 	print('<form method="post" action='.$_SERVER['PHP_SELF'].' id="migration_commune">');
 	print('<div class="panel panel-primary">');
 	print("<div class=\"panel-heading\">Migration des communes ExpoActes</div>");
-    print('<div class="panel-body">');
+	print('<div class="panel-body">');
+	print("<div class=\"row\">Les conditions suivantes doivent &ecirc;tre remplies:</div>");
+	print("<ul>\n");
+	print("<li>Les codes communes doivent commencer par un entier</li>\n");
+	print("<li>Deux communes distinctes ne doivent pas partager le m&ecirc;me code commune (l'entier doit &ecirc;tre diff&eacute;rent)</li>\n");
+	print("</ul>\n");
 	print('<div class="form-group row">');
     print("<label for=\"prefixe_table\" class=\"col-md-4 col-form-label control-label\">Pr&eacute;fixe des tables EA:</label>");
     print('<div class="col-md-8">');

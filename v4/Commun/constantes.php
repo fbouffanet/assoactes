@@ -21,7 +21,7 @@ define('IDF_NAISSANCE',3);
 define('IDF_DECES',4);
 define('IDF_UNION',6); 
 define('IDF_CM',2);
-define('IDF_RECENS',147);  
+define('IDF_RECENS',7);  
 
 // libelles
 define('LIB_MARIAGE','Mariage');
@@ -44,7 +44,7 @@ define('DROIT_UTILITAIRES','UTILITAIRE');
 define('DROIT_VARIANTES','VARIANTES');
 define('DROIT_RELEVES','RELEVES');
 define('DROIT_STATS','STATS');
-define('DROIT_GENEABANK','GENEABANK');
+
 
 $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
                    DROIT_GESTION_ADHERENT => 'Gestion Adherent',
@@ -52,25 +52,10 @@ $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
                    DROIT_UTILITAIRES => 'Acces aux utilitaires',
                    DROIT_VARIANTES => 'Gestion des variantes',
                    DROIT_RELEVES => 'Suivi des relevés',
-                   DROIT_STATS => 'Acces aux statistiques',
-				   DROIT_GENEABANK => 'Gestion des points GeneaBank'
+                   DROIT_STATS => 'Acces aux statistiques'
                   );
 define('NB_LIGNES_PAR_PAGE',25);
 define('DELTA_NAVIGATION',5);
-
-
-define('LIB_ASSO','Association Genealogique de la Charente');
-define('LIB_ASSO_AVEC_','Association Genealogique de la Charente');
-define('SIGLE_ASSO','AGC');
-define('EMAIL_INSCRIPTION_FORUM','geneagc16-subscribe@yahoogroupes.fr');
-define('EMAIL_FORUM','geneagc16@yahoogroupes.fr');
-define('EMAIL_DIRASSO','agc-dir@genea16.net');
-define('EMAIL_INFOASSO','agc-info@genea16.net');
-define('EMAIL_GBKADMIN','agc-geneabank@genea16.net');
-define('EMAIL_PRESASSO','agc-dir@genea16.net');
-define('IDF_ASSO_GBK','gbkagcharente');
-define('PREFIXE_ADH_GBK','AGC');
-define('NB_POINTS_GBK',100);
 
 define('TOUS_ADHERENTS','T');
 define('ADHESION_BULLETIN','B');
@@ -335,8 +320,8 @@ $ga_pays = array(
 "Zimbabwe",
 );
 
-$ga_scripts_demande=array('InfosActe.php','InfosAGL.php','InfosChabatz.php','InfosCGSS.php','InfosRepNot.php','InfosTD.php');
-$ga_icones_source=array('infos.png','ninfos.png','td.png','tdv.png','agl.png','nagl.png','rnot.png','RGD.png','chabatz.png','nchabatz.png','tdi.png','idx.png','nidx.png','cgss.png','ncgss.png');
+$ga_scripts_demande=array('InfosActe.php','InfosTD.php');
+$ga_icones_source=array('infos.png','ninfos.png','td.png','tdv.png','rnot.png','tdi.png','idx.png','nidx.png');
 $ga_booleen_oui_non=array(true=>'oui',false=>'non');
 
 define('AIDE_RELEVES',1);
@@ -419,9 +404,26 @@ $ga_annees_revolutionnaires      = array(
                                 14=>'An XIV'                      
                                 );
 define('IDF_SOURCE_RELEVES_AGC',1); 
-define('IDF_SOURCE_TD',4);
+define('IDF_SOURCE_TD',0);
 define('SEUIL_RETENTION_ADHTS',5);                   
 define('NB_PERSONNES_BLOC_CHGMT',1000);
 define('NB_ACTES_BLOC_CHGMT',2000);
-define('PAGE_RECHERCHE','Recherches.php');
+define('PAGE_RECHERCHE','index.php');
+
+define('LIB_ASSO',"");
+define('LIB_ASSO_AVEC',"");
+define('SIGLE_ASSO','');
+
+define('EMAIL_DIRASSO','');
+define('EMAIL_INFOASSO','');
+define('EMAIL_PRESASSO','');
+
+define('EMAIL_INSCRIPTION_FORUM','');
+define('EMAIL_FORUM','');
+
+define('EMAIL_GBKADMIN','');
+define('IDF_ASSO_GBK','');
+define('PREFIXE_ADH_GBK','');
+define('NB_POINTS_GBK',100);
+define('CLEF_API_GEOPORTAIL','');
 ?>
