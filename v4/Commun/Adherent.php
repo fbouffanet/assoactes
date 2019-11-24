@@ -330,14 +330,14 @@ class Adherent
       $st_chaine .= '<div class="form-group row">';
 	  $st_chaine .= sprintf("<label for=\"nom\" class=\"col-md-4 col-form-label control-label\">Nom</label>");
 	  $st_chaine .= '<div class="col-md-8">';
-	  $st_chaine .= sprintf("<input type=text maxlength=20 size=20 name=nom id=nom value=\"%s\" class=\"form-control text-uppercase \">",$this->st_nom);
+	  $st_chaine .= sprintf("<input type=text maxlength=30 size=20 name=nom id=nom value=\"%s\" class=\"form-control text-uppercase \">",$this->st_nom);
 	  $st_chaine .= '</div>';
 	  $st_chaine .= '</div>';
 	  
 	  $st_chaine .=  '<div class="form-group row">';
       $st_chaine .= sprintf("<label for=\"prenom\" class=\"col-md-4 col-form-label control-label\">Pr&eacute;nom</label>");
 	  $st_chaine .=  '<div class="col-md-8">';
-	  $st_chaine .= sprintf("<input type=text maxlength=30 size=20 name=prenom id=prenom value=\"%s\" class=\"form-control text-capitalize\">",$this->st_prenom);
+	  $st_chaine .= sprintf("<input type=text maxlength=20 size=20 name=prenom id=prenom value=\"%s\" class=\"form-control text-capitalize\">",$this->st_prenom);
       $st_chaine .= '</div>';
 	  $st_chaine .= '</div>';
 
