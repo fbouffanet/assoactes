@@ -33,37 +33,26 @@ define('SEP_CSV',';');
 define('FDL_CSV','\n');
 
 $ga_sexe = array('M'=>'M','F'=>'F','?'=>'?');
-$ga_types_nimegue = array(IDF_NAISSANCE => 'Baptemes/Naissances',IDF_MARIAGE =>'Mariages', IDF_DECES => 'Sepultures/Deces', IDF_DIVERS=>'Divers(CM,...)',IDF_RECENS=>LIB_RECENSEMENT);
+$ga_types_nimegue = array(IDF_NAISSANCE => 'Baptêmes/Naissances',IDF_MARIAGE =>'Mariages', IDF_DECES => 'Sépultures/Décès', IDF_DIVERS=>'Divers(CM,...)',IDF_RECENS=>LIB_RECENSEMENT);
 
 define('LIB_MANQUANT','!');
 
 define('DROIT_CHARGEMENT','CHGMT_EXPT');
-define('DROIT_CREATION_ADHERENT','CREATADH');
-define('DROIT_MODIFICATION_ADHERENT','MODADH');
 define('DROIT_GESTION_ADHERENT','GESTADHT');
 define('DROIT_MODIFICATION_DROITS','GESTDROITS');
 define('DROIT_UTILITAIRES','UTILITAIRE');
 define('DROIT_VARIANTES','VARIANTES');
-define('DROIT_PUBLICATION','PUBLICATIO');
 define('DROIT_RELEVES','RELEVES');
-define('DROIT_NOTAIRES','NOTAIRES');
-define('DROIT_VALIDATION_TD','TD');
 define('DROIT_STATS','STATS');
-define('DROIT_VALIDATION_PERMALIEN','PERMALIEN');
 define('DROIT_GENEABANK','GENEABANK');
-
 
 $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
                    DROIT_GESTION_ADHERENT => 'Gestion Adherent',
                    DROIT_MODIFICATION_DROITS => 'Modification Droits Adherent',
                    DROIT_UTILITAIRES => 'Acces aux utilitaires',
                    DROIT_VARIANTES => 'Gestion des variantes',
-                   DROIT_PUBLICATION => 'Gestion des publications',
                    DROIT_RELEVES => 'Suivi des relevés',
-                   DROIT_NOTAIRES => 'Edition des liasses notariales',
-                   DROIT_VALIDATION_TD => 'Validation des modifications de TD',
                    DROIT_STATS => 'Acces aux statistiques',
-                   DROIT_VALIDATION_PERMALIEN => 'Validation des modifications de permalien',
 				   DROIT_GENEABANK => 'Gestion des points GeneaBank'
                   );
 define('NB_LIGNES_PAR_PAGE',25);

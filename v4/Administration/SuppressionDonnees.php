@@ -58,6 +58,10 @@ $(document).ready(function() {
   
   $(".js-select-avec-recherche").select2();
   
+  $("#autre_type_acte").change(function() {
+	$('#type_autre').prop('checked',true);
+  });
+  
   $.validator.addMethod('plusGrand', function(value, element, param) {
     if (this.optional(element)) return true;
     var annee_max=$(param).val();
@@ -71,7 +75,6 @@ $(document).ready(function() {
 	 rules: {
      idf_source: "required",
      idf_commune_acte: "required",
-     idf_type_acte: "required",
      annee_min: "integer",
      annee_max: { 
       integer: true,
@@ -84,9 +87,6 @@ $(document).ready(function() {
 		},
     idf_commune_acte: {
 			required: "Une commune doit être choisie"
-		},
-    idf_type_acte: {
-			required: "Un type d'acte doit être choisi"
 		},
     annee_min: {
       integer: "l'année minimale doit être un entier"
@@ -131,7 +131,35 @@ $(document).ready(function() {
 	},
   submitHandler: function(form) {
     var source=$('#idf_source option:selected').text();
-    var type_acte=$('#idf_type_acte option:selected').text();
+    var lib_type_acte='';
+	switch (parseInt($('input[name=type_acte]:checked', form).val()))
+	{
+		case 1:
+			lib_type_acte='Baptême/Naissance';
+			$("#idf_type_acte").val(<?php echo IDF_NAISSANCE;?>);
+		break;
+		case 2:
+			lib_type_acte='Mariage';
+			$("#idf_type_acte").val(<?php echo IDF_MARIAGE;?>);
+		break;
+		case 3:
+			lib_type_acte='Sépulture/Décès';
+			$("#idf_type_acte").val(<?php echo IDF_DECES;?>);
+		break;
+		case 4:
+			lib_type_acte='Contrat de mariage';
+			$("#idf_type_acte").val(<?php echo IDF_CM;?>);
+		break;
+		case 5:
+			lib_type_acte='Recensement';
+			$("#idf_type_acte").val(<?php echo IDF_RECENS;?>);
+		break;
+		case 6:
+			lib_type_acte=$('#autre_type_acte option:selected').text();
+			$("#idf_type_acte").val($('#autre_type_acte option:selected').val());
+		break;		
+	}
+	console.log($("#idf_type_acte").val());
     var commune=$('#idf_commune_acte option:selected').text();
     var annee_min=$('#annee_min').val();
     var annee_max=$('#annee_max').val();
@@ -148,7 +176,7 @@ $(document).ready(function() {
     {
       intervalle =  "jusqu'en "+annee_max;
     }
-    var question = 'Etes-vous sûr de supprimer les actes ('+type_acte+')'+' de la commune '+commune+'  de la source '+source;
+    var question = 'Etes-vous sûr de supprimer les actes ('+lib_type_acte+')'+' de la commune '+commune+'  et de la source '+source;
     if (intervalle!='')
     {
        question= question + ' ('+intervalle+')'; 
@@ -189,7 +217,7 @@ switch($gst_mode)
    case 'FORMULAIRE' :
      $a_sources = $connexionBD->liste_valeur_par_clef("select idf,nom from source order by nom");
      $a_communes_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from commune_acte order by nom");
-     $a_types_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from type_acte order by nom");
+     $a_types_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from type_acte where idf not in(".IDF_NAISSANCE.','.IDF_MARIAGE.','.IDF_DECES.','.IDF_CM.','.IDF_RECENS.") order by nom");
      unset($a_types_acte[IDF_UNION]);
      $a_types_acte['DIV']="Tous divers Nimegue";
 	   print('<div class="panel panel-primary">');
@@ -210,11 +238,34 @@ switch($gst_mode)
      print(chaine_select_options($gi_idf_commune_acte,$a_communes_acte));
      print('</select></div></div>');
 	   print('<div class="form-row col-md-12">');
-     print('<label for="idf_type_acte" class="col-form-label col-md-2 col-md-offset-3">Type d\'acte:</label>');
-     print('<div class="col-md-4">');
-     print('<select name=idf_type_acte id=idf_type_acte class="js-select-avec-recherche form-control">');
+     print('<label for="col_type_acte" class="col-form-label col-md-2 col-md-offset-3">Type d\'acte:</label>');
+     print('<div class="col-md-4 input-group" id="col_type_acte">');
+	 print('<label class="radio">');
+	 print('<input value="1" type="radio" name="type_acte" id="type_naissance" >Bapt&ecirc;me/Naissance');
+	 print('</label>');
+	 print('<label class="radio">');
+	 print('<input value="2" type="radio" name="type_acte" id="type_mariage" checked="checked">Mariage');
+	 print('</label>');
+	 print('<label class="radio">');
+	 print('<input value="3" type="radio" name="type_acte" id="type_deces" >S&eacute;pulture/D&eacute;c&eacute;s');
+	 print('</label>');
+     print('<label class="radio">');
+	 print('<input value="4" type="radio" name="type_acte" id="type_cm" >Contrat de mariage');
+	 print('</label>');
+	 print('<label class="radio">');
+	 print('<input value="5" type="radio" name="type_acte" id="type_recens" >Recensement');
+	 print('</label>');
+	 print('<label class="radio">');
+	 print('<div class="input-group">');
+	 print('<input value="6" type="radio" name="type_acte" id="type_autre" >');
+	 print('<span class="input-group-addon">Autre:</span>'); 
+	 print('<select name=autre_type_acte id=autre_type_acte class="js-select-avec-recherche form-control">');
      print(chaine_select_options($gc_idf_type_acte,$a_types_acte));
-     print('</select></div></div>');
+     print('</select>');
+	 print('</div>');
+	 print('</label>');
+	 print('<input type="hidden" name="idf_type_acte" id="idf_type_acte" value="'.IDF_MARIAGE.'">');
+	 print('</div></div>');
 	   print('<div class="form-row col-md-12">');
      print('<label for="annee_min" class="col-form-label col-md-2 col-md-offset-3">Annee minimale:</label>');
      print('<div class="col-md-4">');
@@ -229,7 +280,8 @@ switch($gst_mode)
      print('</form></div></div>');
    break;
    case 'SUPPRESSION' : 
-                        $_SESSION['idf_commune_acte'] = $gi_idf_commune_acte;                                                            $i_nb_permaliens = nombre_permaliens($gi_idf_commune_acte,$gc_idf_type_acte);
+                        $_SESSION['idf_commune_acte'] = $gi_idf_commune_acte;                                                            
+						$i_nb_permaliens = nombre_permaliens($gi_idf_commune_acte,$gc_idf_type_acte);
                         if ($i_nb_permaliens!=0)
                         {
                             print("<div class=\"alert alert-danger\">");
