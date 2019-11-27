@@ -18,7 +18,7 @@ $gst_mode = empty($_POST['mode']) ? 'FORMULAIRE': $_POST['mode'] ;
 
 if ($gst_mode=='COMPARAISON')
 {
-	$st_fich_dest = @tempnam($gst_repertoire_telechargement,"adhts_CGCP");
+	$st_fich_dest = "$gst_repertoire_telechargement/adhts_cgcp";
 	if (!move_uploaded_file($_FILES['AdhtsCGCP']['tmp_name'],$st_fich_dest)) 
     {
         print("<div class=\"alert alert-danger\">Erreur de t&eacute;l&eacute;chargement :</div>");
@@ -54,6 +54,7 @@ if ($gst_mode=='COMPARAISON')
 		fputcsv($fh,array($i_annee_inscription_cgcp,$st_nom_adht,$st_email_adht,$i_annee_cotisation,$st_derniere_cnx_cgcp,$st_statut_agc,$st_derniere_cnx_agc),';');  		
 	}	
     fclose($fh);
+	unlink($st_fich_dest);
 	exit();     
 }
 
