@@ -33,7 +33,7 @@ define('SEP_CSV',';');
 define('FDL_CSV','\n');
 
 $ga_sexe = array('M'=>'M','F'=>'F','?'=>'?');
-$ga_types_nimegue = array(IDF_NAISSANCE => 'Baptemes/Naissances',IDF_MARIAGE =>'Mariages', IDF_DECES => 'Sepultures/Deces', IDF_DIVERS=>'Divers(CM,...)',IDF_RECENS=>LIB_RECENSEMENT);
+$ga_types_nimegue = array(IDF_NAISSANCE => 'Baptêmes/Naissances',IDF_MARIAGE =>'Mariages', IDF_DECES => 'Sépultures/Décès', IDF_DIVERS=>'Divers(CM,...)',IDF_RECENS=>LIB_RECENSEMENT);
 
 define('LIB_MANQUANT','!');
 
