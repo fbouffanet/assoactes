@@ -147,8 +147,8 @@ $(document).ready(function() {
 			$("#idf_type_acte").val(<?php echo IDF_DECES;?>);
 		break;
 		case 4:
-			lib_type_acte='Contrat de mariage';
-			$("#idf_type_acte").val(<?php echo IDF_CM;?>);
+			lib_type_acte='Tous divers Nimègue';
+			$("#idf_type_acte").val('DIV');
 		break;
 		case 5:
 			lib_type_acte='Recensement';
@@ -206,7 +206,7 @@ $i_session_idf_commune_acte = isset($_SESSION['idf_commune_acte']) ? $_SESSION['
 $gi_idf_commune_acte = empty($_POST['idf_commune_acte']) ? $i_session_idf_commune_acte : $_POST['idf_commune_acte'];
 $gc_idf_type_acte = empty($_POST['idf_type_acte']) ? 0: $_POST['idf_type_acte'];
 
-$gst_types_acte = '('.IDF_MARIAGE.','.IDF_NAISSANCE.','.IDF_DECES.')';
+$gst_types_acte = '('.IDF_MARIAGE.','.IDF_NAISSANCE.','.IDF_DECES.','.IDF_RECENS.')';
 
 $gi_annee_min = empty($_POST['annee_min']) ? '' : (int) $_POST['annee_min'];
 $gi_annee_max = empty($_POST['annee_max']) ? '' : (int) $_POST['annee_max'];
@@ -217,9 +217,8 @@ switch($gst_mode)
    case 'FORMULAIRE' :
      $a_sources = $connexionBD->liste_valeur_par_clef("select idf,nom from source order by nom");
      $a_communes_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from commune_acte order by nom");
-     $a_types_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from type_acte where idf not in(".IDF_NAISSANCE.','.IDF_MARIAGE.','.IDF_DECES.','.IDF_CM.','.IDF_RECENS.") order by nom");
+     $a_types_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from type_acte where idf not in(".IDF_NAISSANCE.','.IDF_MARIAGE.','.IDF_DECES.','.IDF_RECENS.") order by nom");
      unset($a_types_acte[IDF_UNION]);
-     $a_types_acte['DIV']="Tous divers Nimegue";
 	   print('<div class="panel panel-primary">');
      print('<div class="panel-heading">Suppression des donn&eacute;es d\'une commune/paroisse</div>');
      print('<div class="panel-body">');
@@ -250,7 +249,7 @@ switch($gst_mode)
 	 print('<input value="3" type="radio" name="type_acte" id="type_deces" >S&eacute;pulture/D&eacute;c&eacute;s');
 	 print('</label>');
      print('<label class="radio">');
-	 print('<input value="4" type="radio" name="type_acte" id="type_cm" >Contrat de mariage');
+	 print('<input value="4" type="radio" name="type_acte" id="type_divers" >Tous divers Nim&egrave;gue');
 	 print('</label>');
 	 print('<label class="radio">');
 	 print('<input value="5" type="radio" name="type_acte" id="type_recens" >Recensement');
