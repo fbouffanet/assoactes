@@ -86,6 +86,7 @@ function affiche_menu($pconnexionBD,$pi_idf_groupe) {
   print("<button type=\"button\" id=\"fusionner\" class=\"btn btn-warning\"><span class=\"glyphicon glyphicon-arrow-left\"></span>  Fusionner</button>");   
   print("<button type=\"button\" id=\"vider\" class=\"btn btn-warning\"><span class=\"glyphicon glyphicon-erase\"></span> Vider</button>");
   print("<button type=\"button\" id=\"exporter\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon glyphicon-download-alt\"></span> Exporter les variantes</button>");
+  print("<button type=\"button\" id=\"supprimer_inutilises\" class=\"btn btn-warning\"><span class=\"glyphicon glyphicon glyphicon-trash\"></span> Supprimer les pr&eacute;noms inutilis&eacute;s</button>");
   $a_prenoms = $pconnexionBD->sql_select("select libelle from prenom order by idf desc limit 20");
   if (count($a_prenoms)>0)
   {     
@@ -336,7 +337,7 @@ $(document).ready(function() {
 		variantes: {
          required: {
 			   depends: function(element) {
-                         return $("#mode").val() != 'SUPPRIMER';
+                         return $("#mode").val() != 'SUPPRIMER' && $("#mode").val() != 'SUPPRIMER_INUTILISES';
             }
          }   
 		},
@@ -483,6 +484,11 @@ $(document).ready(function() {
 $('#annuler').click(function() {
       window.location.href='<?php echo $_SERVER['PHP_SELF'] ?>';
 	}); 
+	
+	$( "#supprimer_inutilises" ).click(function() {
+	$("#mode").val('SUPPRIMER_INUTILISES');
+	$("#variantes_prenom").submit(); 
+  });
 });
 </script>
 <?php
@@ -549,6 +555,28 @@ switch ($gst_mode) {
    if (empty($gst_erreurs)) $gst_infos ="Variantes fusionn&eacute;es";
    affiche_menu($connexionBD,$i_idf_groupe); 
  break;
+ case 'SUPPRIMER_INUTILISES':
+	$a_prenoms_a_supprimer= $connexionBD->sql_select("select idf FROM `prenom` WHERE idf not in (select idf_prenom from `personne`)");
+	if (count($a_prenoms_a_supprimer)>0)
+	{
+		$st_prenoms_a_supprimer=join(',',$a_prenoms_a_supprimer);
+		$connexionBD->execute_requete("delete FROM `prenom` WHERE idf in ($st_prenoms_a_supprimer)");
+		$connexionBD->execute_requete("delete FROM `groupe_prenoms` WHERE idf_prenom not in (select idf from `prenom`)");
+		$a_prenoms_simples_a_supprimer= $connexionBD->sql_select("select idf FROM `prenom_simple` WHERE idf not in (select idf_prenom_simple from `groupe_prenoms`)");
+		if (count($a_prenoms_simples_a_supprimer)>0)
+		{
+			$st_prenoms_simples_a_supprimer=join(',',$a_prenoms_simples_a_supprimer);
+			$connexionBD->execute_requete("delete FROM `prenom_simple` WHERE idf in('$st_prenoms_simples_a_supprimer')");
+		}
+		$connexionBD->execute_requete("delete FROM `variantes_prenom` WHERE libelle not in (select libelle from `prenom_simple`)");
+		if (empty($gst_erreurs)) $gst_infos ="Pr&eacute;noms inutilis&eacute;s supprim&eacute;s";
+			
+	}
+	else
+		$gst_infos = "Pas de pr&eacute;noms &agrave; supprimer";
+	affiche_menu($connexionBD,$gi_idf_groupe);
+	
+ break;   
  default:
 } 
 
