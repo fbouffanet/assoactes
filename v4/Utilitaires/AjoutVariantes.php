@@ -87,6 +87,14 @@ function affiche_menu($pconnexionBD,$pi_idf_groupe) {
 	print("<input type=text name=\"variante_a_chercher\" id=\"variante_a_chercher\" value=\"\" class=\"form-control\" size=30>");
 	print("</div>");
 	print('</div>');
+	
+	print('<div class="form-group row">');
+	print("<label for=\"majeure_a_chercher\" class=\"col-form-label col-md-2\">ou bien majeure &agrave; chercher:</label>");
+	print("<div class='col-md-10'>");
+	print('<select name=majeure_a_chercher id=majeure_a_chercher class="form-control">');
+    print('</select>');
+	print("</div>");
+	print('</div>');
   
 	$st_majeure = empty($pi_idf_groupe) ?  '' :$pconnexionBD->sql_select1("select patronyme from variantes_patro where idf_groupe=$pi_idf_groupe and majeure=1");
 	//print("maj=$st_majeure ($pi_idf_groupe) select patronyme from variantes_patro where idf_groupe=$pi_idf_groupe and majeure=1<br>");
@@ -369,10 +377,13 @@ print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<link href='../css/jquery-ui.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='../css/select2.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/select2-bootstrap.min.css' type='text/css' rel='stylesheet'>");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/jquery.validate.min.js' type='text/javascript'></script>");
 print("<script src='../js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
+print("<script src='../js/select2.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>"); 
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 ?>
@@ -666,7 +677,26 @@ print('<link rel="shortcut icon" href="images/favicon.ico">');
 
 $('#annuler').click(function() {
       window.location.href='<?php echo $_SERVER['PHP_SELF'] ?>';
-	});  
+	}); 
+
+
+$('#majeure_a_chercher').select2({
+  allowClear: true,	
+  ajax: {
+    url: '../ajax/majeure_patro.php',
+	dataType: 'json',
+	processResults: function (data) {
+		return {
+			results: data
+		};
+	}
+  }
+});
+
+$('#majeure_a_chercher').on('select2:select', function (e) {
+	var majeure=e.params.data.text;
+	maj_variantes(majeure,'#idf_groupe','#majeure','#variantes','#cmt_retour'); 
+});
   
 });
 </script>
