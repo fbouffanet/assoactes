@@ -120,6 +120,7 @@ function affiche_menu($pconnexionBD,$pi_idf_groupe) {
 	print("<button type=\"button\" id=\"fusionner\" class=\"btn btn-warning\"><span class=\"glyphicon glyphicon-arrow-left\"></span> Fusionner</button>");
    print("<button type=\"button\" id=\"vider\" class=\"btn btn-warning\"><span class=\"glyphicon glyphicon-erase\"></span> Vider</button>");
 	print("<button type=\"button\" id=\"exporter\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon glyphicon-download-alt\"> Calculer les variantes restantes</button>");
+	print("<button type=\"button\" id=\"supprimer_inutilises\" class=\"btn btn-warning\"><span class=\"glyphicon glyphicon glyphicon-trash\"></span> Supprimer les patronymes inutilis&eacute;s</button>");
 	print("</div>");
    print("</div>");
   
@@ -501,12 +502,16 @@ print('<link rel="shortcut icon" href="images/favicon.ico">');
   $( "#variantes_patro" ).validate({
 	  rules: {
 	    majeure: {
-         required: true
+         required: {
+			   depends: function(element) {
+				   return $("#mode").val() != 'SUPPRIMER_INUTILISES';
+			   }
+		 }	   
        },
 		variantes: {
          required: {
 			   depends: function(element) {
-                         return $("#mode").val() != 'SUPPRIMER';
+                         return $("#mode").val() != 'SUPPRIMER' && $("#mode").val() != 'SUPPRIMER_INUTILISES';
             }
          }   
 		},
@@ -607,6 +612,11 @@ print('<link rel="shortcut icon" href="images/favicon.ico">');
   
   $( "#fusionner" ).click(function() {
 	$("#mode").val('FUSIONNER');
+	$("#variantes_patro").submit(); 
+  });
+  
+  $( "#supprimer_inutilises" ).click(function() {
+	$("#mode").val('SUPPRIMER_INUTILISES');
 	$("#variantes_patro").submit(); 
   });
   
@@ -721,6 +731,21 @@ switch ($gst_mode) {
    $gst_infos ="Variante fusionn&eacute;e";
    affiche_menu($connexionBD,$i_idf_groupe); 
  break;
+ case 'SUPPRIMER_INUTILISES':
+	$a_patronymes_a_supprimer= $connexionBD->sql_select("select idf FROM `patronyme` WHERE idf not in (select idf_patronyme from `stats_patronyme`)");
+	if (count($a_patronymes_a_supprimer)>0)
+	{
+		$st_patronymes_a_supprimer=join(',',$a_patronymes_a_supprimer);
+		$connexionBD->execute_requete("delete FROM `patronyme` WHERE idf in ($st_patronymes_a_supprimer)");
+		$connexionBD->execute_requete("delete FROM `variantes_patro` WHERE patronyme not in (select libelle from `patronyme`)");
+		if (empty($gst_erreurs)) $gst_infos ="Patronymes inutilis&eacute;s supprim&eacute;s";
+			
+	}
+	else
+		$gst_infos = "Pas de patronymes &agrave; supprimer";
+	affiche_menu($connexionBD,$gi_idf_groupe);
+	
+ break;   
  default:
 } 
 
