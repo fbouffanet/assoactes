@@ -62,7 +62,7 @@ $(document).ready(function() {
 			required: "L'URL de sortie est obligatoire"
 		},
 		logo_asso: {
-			extension: "L'extension doit Ãªtre png,gif,jpg ou jpeg"
+			extension: "L'extension doit être png,gif,jpg ou jpeg"
         },
 		serveur_bd: {
 			required: "Le nom du serveur est obligatoire"
