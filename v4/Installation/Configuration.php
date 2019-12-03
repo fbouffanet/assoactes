@@ -265,12 +265,12 @@ else
 	print('<div class="form-group row">');
     print("<label for=\"lib_asso_avec\" class=\"col-md-4 col-form-label control-label\">Libell&eacute; du site avec article devant (Exemple: l'Association G&eacute;n&eacute;alogique de ... ou le Cercle G&eacute;n&eacute;alogique de ....):</label>");
     print('<div class="col-md-8">');
-    print("<input type=text maxlength=40 size=40 name=lib_asso_avec id=lib_asso_avec value=\"$gst_lib_asso_avec\" class=\"form-control\">");
+    print("<input type=text maxlength=60 size=40 name=lib_asso_avec id=lib_asso_avec value=\"$gst_lib_asso_avec\" class=\"form-control\">");
     print('</div></div>');
 	print('<div class="form-group row">');
     print("<label for=\"sigle_asso\" class=\"col-md-4 col-form-label control-label\">Sigle du site (Exemple: AG...  ou CG... ....):</label>");
     print('<div class="col-md-8">');
-    print("<input type=text maxlength=40 size=40 name=sigle_asso id=lsigle_asso value=\"$gst_sigle_asso\" class=\"form-control\">");
+    print("<input type=text maxlength=60 size=40 name=sigle_asso id=lsigle_asso value=\"$gst_sigle_asso\" class=\"form-control\">");
     print('</div></div>');
 	print("</div></div>");
 	
@@ -332,7 +332,11 @@ else
     print('<div class="col-md-8">');
     print("<input type=text maxlength=40 size=40 name=nb_points_gbk id=nb_points_gbk value=\"$gi_nb_points_gbk\" class=\"form-control\">");
     print('</div></div>');
+	print('</div></div>');
 	
+	print('<div class="panel panel-primary">');
+	print("<div class=\"panel-heading\">Cartographie</div>");
+    print('<div class="panel-body">');
 	print('<div class="form-group row">');
     print("<label for=\"nb_points_gbk\" class=\"col-md-4 col-form-label control-label\">Clef API G&eacute;portail (laisser vide si inutilis&eacute;e):</label>");
     print('<div class="col-md-8">');

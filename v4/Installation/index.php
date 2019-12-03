@@ -1,25 +1,18 @@
 <?php
-
 $gst_url_site = isset($_SERVER['SERVER_NAME'])? $_SERVER['SERVER_NAME'] : '';
 $gst_rep_site = isset($_SERVER['DOCUMENT_ROOT'])? $_SERVER['DOCUMENT_ROOT'] : '';
 $gst_url_sortie = '';
-
 $gst_serveur_bd  = '';
 $gst_utilisateur_bd = '';
 $gst_mdp_utilisateur_bd = '';
 $gst_nom_bd = '';
-
 $gst_administrateur_gbk = '';
 $gst_mdp_administrateur_gbk = '';
-
 $gst_fichier_configuration='../Commun/config.php';
 if (file_exists($gst_fichier_configuration))
 	require_once($gst_fichier_configuration);
-
 $gst_logo_association = isset($gst_logo_association) ? basename($gst_logo_association): '';
-
 require_once("../Commun/Adherent.php");
-
 print('<!DOCTYPE html>');
 print("<head>");
 print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
@@ -43,6 +36,9 @@ $(document).ready(function() {
      url_site: "required",
      rep_site: "required",
 	 url_sortie: "required",
+	 logo_asso: {
+        extension: "png|gif|jpg|jpeg"
+      },
 	 serveur_bd: "required",
      utilisateur_bd: "required",
 	 mdp_utilisateur_bd: "required",
@@ -65,6 +61,9 @@ $(document).ready(function() {
 		url_sortie: {
 			required: "L'URL de sortie est obligatoire"
 		},
+		logo_asso: {
+			extension: "L'extension doit Ãªtre png,gif,jpg ou jpeg"
+        },
 		serveur_bd: {
 			required: "Le nom du serveur est obligatoire"
 		},
@@ -81,7 +80,7 @@ $(document).ready(function() {
 			required: "Le nom de l'administrateur est obligatoire"
 		},
 		prenom_administrateur: {
-			required: "Le prénom de l'administrateur est obligatoire"
+			required: "Le prÃ©nom de l'administrateur est obligatoire"
 		},
 		mdp_administrateur: {
 			required: "Le mot de passe de l'administrateur est obligatoire"
@@ -96,17 +95,14 @@ $(document).ready(function() {
 	errorPlacement: function ( error, element ) {
 		// Add the `help-block` class to the error element
 		error.addClass( "help-block" );
-
 		// Add `has-feedback` class to the parent div.form-group
 		// in order to add icons to inputs
 		element.parents( ".col-md-8" ).addClass( "has-feedback" );
-
 		if ( element.prop( "type" ) === "checkbox" ) {
 				error.insertAfter( element.parent( "label" ) );
 		} else {
 				error.insertAfter( element );
 		}
-
 		// Add the span element, if doesn't exists, and apply the icon classes to it.
 		if ( !element.next( "span" )[ 0 ] ) {
 			 $( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
@@ -134,11 +130,10 @@ print('<title>Installation d\'AssoActes</title>');
 print('</head>');
 print('<body>');
 print('<div class="container">');
-
 /*
-*  Affiche le menu des paramètres du site
+*  Affiche le menu des paramÃ¨tres du site
 *  @param string $pst_url_site Adresse du site
-*  @param string $pst_rep_site Répertoire du site
+*  @param string $pst_rep_site RÃ©pertoire du site
 *  @param string $pst_logo_asso Logo du l'association
 *  @param string $pst_rep_site Adresse de sortie du site
 */
@@ -157,20 +152,19 @@ function affiche_parametres_site($pst_url_site,$pst_rep_site,$pst_logo_asso,$pst
     print('<div class="col-md-8">');
     print("<input type=text maxlength=100 size=20 name=rep_site id=rep_site value=\"$pst_rep_site\" class=\"form-control\">");
     print('</div></div>');
-    print('<div class="form-group row">');
-	print("<label for=\"logo_asso\" class=\"col-md-4 col-form-label control-label\">Logo de l'association (doit &ecirc;tre d&eacute;j&agrave; t&eacute;l&eacute;charg&eacute; dans le r&eacute;pertoire images du site):</label>");
+    print('<div class="form-group row"><div class="custom-file">');
+	print("<label for=\"logo_asso\" class=\"col-form-label col-md-4\">Logo de l'association (laisser vide s'il n'y en a pas):</label>");
     print('<div class="col-md-8">');
-    print("<input type=text maxlength=100 size=20 name=logo_asso id=logo_asso value=\"$pst_logo_asso\" class=\"form-control\">");
-    print('</div></div>');
+    print("<input name=logo_asso id=logo_asso type=\"file\" class=\"custom-file-input\">");
+    print('</div></div></div>');
     print("<label for=\"url_sortie\" class=\"col-md-4 col-form-label control-label\">Adresse de sortie du site:</label>");
     print('<div class="col-md-8">');
     print("<input type=text maxlength=100 size=20 name=url_sortie id=url_sortie value=\"$pst_url_sortie\" class=\"form-control\">");
     print('</div></div>');	
 	print("</div></div>");
 }
-
 /*
-*  Affiche le menu des paramètres de la base
+*  Affiche le menu des paramÃ¨tres de la base
 *  @param string $pst_serveur_bd nom du serveur
 *  @param string $pst_utilisateur_bd utilisateur de la base
 *  @param string $pst_mdp_utilisateur_bd mot de passe utilisateur
@@ -203,7 +197,6 @@ function affiche_parametres_base($pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_ut
     print('</div></div>');	
 	print("</div></div>");
 }
-
 /*
 *  Affiche le menu du compte administrateur de la base
 *  @param string $pst_nom_administrateur Nom de l'administrateur
@@ -238,9 +231,8 @@ function affiche_parametres_administrateur($pst_nom_administrateur,$pst_prenom_a
     print('</div></div>');
 	print("</div></div>");
 }
-
 /*
-*  Affiche le menu des paramètres Geneabank
+*  Affiche le menu des paramÃ¨tres Geneabank
 *  @param string $pst_administrateur_gbk Compte administrateur Geneabank
 *  @param string $pst_mdp_administrateur_gbk Mot de passe administrateur
 */
@@ -261,11 +253,10 @@ function affiche_parametres_geneabank($pst_administrateur_gbk,$pst_mdp_administr
     print('</div></div>');
 	print("</div></div>");
 }
-
 /*
 * Affiche le menu de configuration
 *  @param string $pst_url_site Adresse du site
-*  @param string $pst_rep_site Répertoire du site
+*  @param string $pst_rep_site RÃ©pertoire du site
 *  @param string $pst_logo_asso Logo de l'association
 *  @param string $pst_rep_site Adresse de sortie du site
 *  @param string $pst_serveur_bd nom du serveur
@@ -277,7 +268,7 @@ function affiche_parametres_geneabank($pst_administrateur_gbk,$pst_mdp_administr
 */
 function affiche_menu_configuration ($pst_url_site,$pst_rep_site,$pst_logo_asso,$pst_url_sortie,$pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd,$pst_administrateur_gbk,$pst_mdp_administrateur_gbk)
 {
-	print('<form method="post" action='.$_SERVER['PHP_SELF'].' id="installation">');
+	print('<form enctype="multipart/form-data" method="post" action='.$_SERVER['PHP_SELF'].' id="installation">');
 	affiche_parametres_site($pst_url_site,$pst_rep_site,$pst_logo_asso,$pst_url_sortie);
 	affiche_parametres_base($pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd);
 	affiche_parametres_administrateur('','','','');
@@ -287,12 +278,11 @@ function affiche_menu_configuration ($pst_url_site,$pst_rep_site,$pst_logo_asso,
 	print('</div>');
 	print('</form>');
 }
-
 /*
 * Ecrit le fichier de configuration
 *  @param string $pst_fichier_configuration Fichier de configuration
 *  @param string $pst_url_site Adresse du site
-*  @param string $pst_rep_site Répertoire du site
+*  @param string $pst_rep_site RÃ©pertoire du site
 *  @param string $pst_emails_gestbase emails des administrateurs de base
 *  @param string $pst_rep_site Adresse de sortie du site
 *  @param string $pst_logo_asso Logo de l'association
@@ -314,25 +304,28 @@ function ecrit_fichier_de_configuration($pst_fichier_configuration,$pst_url_site
 	else
 	{
 		fwrite($pf,"<?php\n");
-		fwrite($pf,"// Paramètres Site\n");
+		fwrite($pf,"// ParamÃ¨tres Site\n");
 		fwrite($pf,"\$gst_url_site = \"$pst_url_site\";\n");
 		fwrite($pf,"\$gst_rep_site = \"$pst_rep_site\";\n");
 		fwrite($pf,"\$gst_emails_gestbase = \"$pst_emails_gestbase\";\n");
 		fwrite($pf,"\$gst_url_sortie = \"$pst_url_sortie\";\n");
-		fwrite($pf,"// Paramètres Base de données\n");
+		fwrite($pf,"// ParamÃ¨tres Base de donnÃ©es\n");
 		fwrite($pf,"\$gst_serveur_bd = \"$pst_serveur_bd\";\n");
 		fwrite($pf,"\$gst_utilisateur_bd = \"$pst_utilisateur_bd\";\n");
 		fwrite($pf,"\$gst_mdp_utilisateur_bd = \"$pst_mdp_utilisateur_bd\";\n");
 		fwrite($pf,"\$gst_nom_bd = \"$pst_nom_bd\";\n");
 		fwrite($pf,"\n");
-		fwrite($pf,"// Paramètres Généabank\n");
+		fwrite($pf,"// ParamÃ¨tres GÃ©nÃ©abank\n");
 		fwrite($pf,"\$gst_administrateur_gbk = \"$pst_administrateur_gbk\";\n");
 		fwrite($pf,"\$gst_mdp_administrateur_gbk = \"$pst_mdp_administrateur_gbk\";\n");
 		fwrite($pf,"\n");
 		
 		fwrite($pf,'$gst_url_images = "$gst_url_site/images";');
 		fwrite($pf,"\n");
-		fwrite($pf,"\$gst_logo_association = \"\$gst_url_images/$pst_logo_asso\";\n");
+		if(empty($pst_logo_asso))
+			fwrite($pf,"\$gst_logo_association = \"\";\n");
+		else	
+			fwrite($pf,"\$gst_logo_association = \"\$gst_url_images/$pst_logo_asso\";\n");
 		fwrite($pf,"\n");
 		fwrite($pf,'$gst_repertoire_telechargement = "$gst_rep_site/Administration/telechargements";');
 		fwrite($pf,"\n");
@@ -358,25 +351,33 @@ function ecrit_fichier_de_configuration($pst_fichier_configuration,$pst_url_site
 		print("<div class=\"alert alert-success\">$pst_fichier_configuration sauvegard&eacute;</div>");
 	}	
 }
-
 if (isset($_POST['nom_bd']))
 {
 	$gst_url_site = trim($_POST['url_site']);
 	$gst_rep_site = trim($_POST['rep_site']);
 	$gst_url_sortie = trim($_POST['url_sortie']);
-	$gst_logo_asso = trim($_POST['logo_asso']);
-
 	$gst_serveur_bd  = trim($_POST['serveur_bd']);
 	$gst_utilisateur_bd = trim($_POST['utilisateur_bd']);
 	$gst_mdp_utilisateur_bd = trim($_POST['mdp_utilisateur_bd']);
 	$gst_nom_bd = trim($_POST['nom_bd']);
-
 	$gst_nom_administrateur = trim($_POST['nom_administrateur']);
 	$gst_prenom_administrateur = trim($_POST['prenom_administrateur']);
 	$gst_mdp_administrateur = trim($_POST['mdp_administrateur']);
 	$gst_email_administrateur = trim($_POST['email_administrateur']);
 	$gst_administrateur_gbk = trim($_POST['administrateur_gbk']);
 	$gst_mdp_administrateur_gbk = trim($_POST['mdp_administrateur_gbk']);
+	
+	$gst_logo_asso='';
+	if (isset($_FILES['logo_asso']['name']))
+	{	
+		$gst_logo_asso=basename($_FILES['logo_asso']['name']);
+		$st_fich_dest = "../images/$gst_logo_asso"; 
+		if (move_uploaded_file($_FILES['logo_asso']['tmp_name'],$st_fich_dest))
+		{
+			print("<div class=\"alert alert-success\">Logo correctement t&eacute;l&eacute;charg&eacute; dans $st_fich_dest</div>");
+		}
+	}
+	
 	
 	try
 	{
@@ -453,6 +454,5 @@ else
 {	
 	affiche_menu_configuration($gst_url_site,$gst_rep_site,$gst_logo_association,$gst_url_sortie,$gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_administrateur_gbk,$gst_mdp_administrateur_gbk);	
 }
-
 print('</div></body></html>');
 ?>

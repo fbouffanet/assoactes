@@ -69,20 +69,6 @@ $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
 define('NB_LIGNES_PAR_PAGE',25);
 define('DELTA_NAVIGATION',5);
 
-
-define('LIB_ASSO','Association Genealogique de la Charente');
-define('LIB_ASSO_AVEC_','Association Genealogique de la Charente');
-define('SIGLE_ASSO','AGC');
-define('EMAIL_INSCRIPTION_FORUM','geneagc16-subscribe@yahoogroupes.fr');
-define('EMAIL_FORUM','geneagc16@yahoogroupes.fr');
-define('EMAIL_DIRASSO','agc-dir@genea16.net');
-define('EMAIL_INFOASSO','agc-info@genea16.net');
-define('EMAIL_GBKADMIN','agc-geneabank@genea16.net');
-define('EMAIL_PRESASSO','agc-dir@genea16.net');
-define('IDF_ASSO_GBK','gbkagcharente');
-define('PREFIXE_ADH_GBK','AGC');
-define('NB_POINTS_GBK',100);
-
 define('TOUS_ADHERENTS','T');
 define('ADHESION_BULLETIN','B');
 define('ADHESION_INTERNET','I');
@@ -435,5 +421,22 @@ define('SEUIL_RETENTION_ADHTS',5);
 define('NB_PERSONNES_BLOC_CHGMT',1000);
 define('NB_ACTES_BLOC_CHGMT',2000);
 define('PAGE_RECHERCHE','Recherches.php');
-define('CLEF_API_GEOPORTAIL','cervpkrr0dboxq0t5hnw1jbm');
+
+define('LIB_ASSO',"");
+define('LIB_ASSO_AVEC',"");
+define('SIGLE_ASSO','');
+
+define('EMAIL_DIRASSO','');
+define('EMAIL_INFOASSO','');
+define('EMAIL_PRESASSO','');
+
+define('EMAIL_INSCRIPTION_FORUM','');
+define('EMAIL_FORUM','');
+
+define('EMAIL_GBKADMIN','');
+define('IDF_ASSO_GBK','');
+define('PREFIXE_ADH_GBK','');
+define('NB_POINTS_GBK',);
+
+define('CLEF_API_GEOPORTAIL','');
 ?>
