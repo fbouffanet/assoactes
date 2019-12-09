@@ -28,7 +28,7 @@ print("<div>Ce relev&eacute; de mariage a été depos&eacute; par une autre associ
 print("<div><br>L'association Chabatz d'entrar avec laquelle l'AGC a un accord de partenariat par le biais des AGL (Amiti&eacute;s G&eacute;n&eacute;alogiques du Limousin).<br></div>");
 print("<div><br>Le relev&eacute; est un relev&eacute; de Table D&eacute;cennale, il ne comporte donc pas de filiation.<br></div>");
 print("<div><br>Pour en savoir plus, vous êtes invit&eacute;s à rentrer en contact directement avec:<br></div>");
-print("<div>Chabatz d'entrar : <a href=\"http://ray.faure.free.fr\">http://ray.faure.free.fr/</a><br></div>");
+print("<div>Chabatz d'entrar : <a href=\"http://cdentrar.free.fr\">http://cdentrar.free.fr</a><br></div>");
 print("<div><br>Gene@micalement</div>");
 print("<div><br>Les gestionnaires de la base AGC</div>");
 print('<div class="form-row">');
