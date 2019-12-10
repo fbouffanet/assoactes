@@ -31,16 +31,21 @@ if (isset ($_GET['term']))
   $st_majeure= '';
   if (count($a_patros)>0)
   {	
-    list($i_idf_groupe,$st_patronylme_majeur,$st_majeure) = array_shift($a_patros);  
-	foreach ($a_patros as  $a_ligne)
-	{
-     list($i_idf_groupe,$st_patronyme,$st_majeure)  =  $a_ligne;
-	   $a_variantes_patros[]=utf8_encode($st_patronyme);
-     if (array_key_exists($i_idf_groupe,$a_resultats))
-         $a_resultats[$i_idf_groupe][]=utf8_encode($st_patronyme);         
-     else
-         $a_resultats[$i_idf_groupe]=array(utf8_encode($st_patronyme));       
+    list($i_idf_groupe,$st_patronyme_majeur,$st_majeure) = array_shift($a_patros);
+    if (count($a_patros)>0)
+	{		
+		foreach ($a_patros as  $a_ligne)
+		{
+			list($i_idf_groupe,$st_patronyme,$st_majeure)  =  $a_ligne;
+			$a_variantes_patros[]=utf8_encode($st_patronyme);
+			if (array_key_exists($i_idf_groupe,$a_resultats))
+				$a_resultats[$i_idf_groupe][]=utf8_encode($st_patronyme);         
+			else
+				$a_resultats[$i_idf_groupe]=array(utf8_encode($st_patronyme));       
+		}
 	}
+	else
+		$a_resultats[$i_idf_groupe]=array(utf8_encode($st_patronyme_majeur));
   }  
 }
 $a_retour = array();
@@ -49,7 +54,7 @@ $a_retour['nb_reponses']= $i_nb_resultats;
 if ($i_nb_resultats==1)
 {
   $a_retour['idf_groupe']=$i_idf_groupe;
-  $a_retour['majeure']=$st_patronylme_majeur;
+  $a_retour['majeure']=$st_patronyme_majeur;
   $a_retour['variantes']= $a_variantes_patros;
 }
 else

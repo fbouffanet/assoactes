@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `adherent` (
   `max_nai` smallint(11) unsigned NOT NULL DEFAULT '500',
   `max_mar_div` smallint(10) unsigned NOT NULL DEFAULT '50' COMMENT 'Quota Mariage/Divers',
   `max_dec` smallint(11) unsigned NOT NULL DEFAULT '500',
-  `clef_nouveau_mdp` smallint(5) unsigned NOT NULL,
+  `clef_nouveau_mdp` smallint(5) unsigned NOT NULL DEFAULT '',
   PRIMARY KEY (`idf`),
   UNIQUE KEY `ident` (`ident`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ;
