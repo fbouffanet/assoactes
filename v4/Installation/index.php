@@ -227,7 +227,7 @@ function affiche_parametres_administrateur($pst_nom_administrateur,$pst_prenom_a
 	print('<div class="form-group row">');
     print("<label for=\"email_administrateur\" class=\"col-md-4 col-form-label control-label\">Email administrateur:</label>");
     print('<div class="col-md-8">');
-    print("<input type=text maxlength=20 size=20 name=email_administrateur id=email_administrateur value=\"$pst_email_administrateur\" class=\"form-control\">");
+    print("<input type=text maxlength=60 size=20 name=email_administrateur id=email_administrateur value=\"$pst_email_administrateur\" class=\"form-control\">");
     print('</div></div>');
 	print("</div></div>");
 }
