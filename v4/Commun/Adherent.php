@@ -1096,7 +1096,6 @@ class Adherent
   
     $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
     $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
-    $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= 'MIME-Version: 1.0' . "\n"; 
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
     $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
