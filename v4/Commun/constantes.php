@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -21,19 +21,19 @@ define('IDF_NAISSANCE',3);
 define('IDF_DECES',4);
 define('IDF_UNION',6); 
 define('IDF_CM',2);
-define('IDF_RECENS',147);  
+define('IDF_RECENS',7);  
 
 // libelles
 define('LIB_MARIAGE','Mariage');
-define('LIB_DECES','Sépulture/Décès');
-define('LIB_NAISSANCE','Baptême/Naissance');
+define('LIB_DECES','SÃ©pulture/DÃ©cÃ¨s');
+define('LIB_NAISSANCE','BaptÃªme/Naissance');
 define('LIB_RECENSEMENT','Recensement');
 
 define('SEP_CSV',';');
 define('FDL_CSV','\n');
 
 $ga_sexe = array('M'=>'M','F'=>'F','?'=>'?');
-$ga_types_nimegue = array(IDF_NAISSANCE => 'Baptêmes/Naissances',IDF_MARIAGE =>'Mariages', IDF_DECES => 'Sépultures/Décès', IDF_DIVERS=>'Divers(CM,...)',IDF_RECENS=>LIB_RECENSEMENT);
+$ga_types_nimegue = array(IDF_NAISSANCE => 'BaptÃªmes/Naissances',IDF_MARIAGE =>'Mariages', IDF_DECES => 'SÃ©pultures/DÃ©cÃ¨s', IDF_DIVERS=>'Divers(CM,...)',IDF_RECENS=>LIB_RECENSEMENT);
 
 define('LIB_MANQUANT','!');
 
@@ -59,7 +59,7 @@ $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
                    DROIT_UTILITAIRES => 'Acces aux utilitaires',
                    DROIT_VARIANTES => 'Gestion des variantes',
                    DROIT_PUBLICATION => 'Gestion des publications',
-                   DROIT_RELEVES => 'Suivi des relevés',
+                   DROIT_RELEVES => 'Suivi des relevÃ©s',
                    DROIT_NOTAIRES => 'Edition des liasses notariales',
                    DROIT_VALIDATION_TD => 'Validation des modifications de TD',
                    DROIT_STATS => 'Acces aux statistiques',
@@ -211,7 +211,7 @@ $ga_pays = array(
 "Macao",
 "Macedoine",
 "Madagascar",
-"Madère",
+"MadÃ¨re",
 "Malaisie",
 "Malawi",
 "Maldives",
@@ -369,19 +369,19 @@ $ga_mois = array(1=>'Janvier',
                  12=> 'Decembre');
 
 $ga_mois_revolutionnaires       = array(                          
-                                1=> 'Vendémiaire',                 
+                                1=> 'VendÃ©miaire',                 
                                 2=> 'Brumaire',                    
                                 3=> 'Frimaire',                    
-                                4=> 'Nivôse',                      
-                                5=> 'Pluviôse',                    
-                                6=> 'Ventôse',                     
+                                4=> 'NivÃ´se',                      
+                                5=> 'PluviÃ´se',                    
+                                6=> 'VentÃ´se',                     
                                 7=> 'Germinal',                    
-                                8=> 'Floréal',                     
+                                8=> 'FlorÃ©al',                     
                                 9=> 'Prairial',                    
                                 10=> 'Messidor',                   
                                 11=> 'Thermidor',                  
                                 12=> 'Fructidor',
-                                13=> 'Complémentaires'                   
+                                13=> 'ComplÃ©mentaires'                   
                                );
 
 $ga_mois_revolutionnaires_nimegue       = array(                          
