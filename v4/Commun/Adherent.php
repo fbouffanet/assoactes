@@ -649,7 +649,9 @@ class Adherent
       if (!empty($gst_administrateur_gbk))
       {
         if (!$this->change_mdp_gbk($pst_nouveau_mdp))
-          $this->envoie_message_geneabank_erreur_changement_mdp();         
+		{	
+          $this->envoie_message_geneabank_erreur_changement_mdp();
+        }		  
       }
       $this->change_mdp_base($pst_nouveau_mdp);
       return $this->envoie_message_geneabank_changement_mdp();
@@ -757,8 +759,10 @@ class Adherent
    public function cree() 
    {
       if (!$this->cree_utilisateur_gbk($this->st_mdp))
+	  {	  
           $this->envoie_message_geneabank();
-      $st_confidentiel = $this->b_confidentiel ? 'O' :' N';
+      }
+	  $st_confidentiel = $this->b_confidentiel ? 'O' :' N';
       $st_mdp_hash = password_hash($this->st_mdp, PASSWORD_DEFAULT);
       $this->connexionBD->initialise_params(array(':nom'=>$this->st_nom,':prenom'=>$this->st_prenom,':adr1'=>$this->st_adresse1,':adr2'=>$this->st_adresse2,':cp'=>$this->st_code_postal,':ville'=>$this->st_ville,':pays'=>$this->st_pays,':tel'=>$this->st_tel,':email_perso'=>$this->st_email_perso,':email_forum'=>$this->st_email_forum,':site'=>$this->st_site,':statut'=>$this->st_statut,':confidentiel'=>$st_confidentiel,':ident_adh'=>$this->st_ident,':mdp'=>$st_mdp_hash,':aide'=>$this->i_aide,':type_origine'=>$this->i_origine,':description_origine'=>$this->st_origine,':infos_agc'=>$this->st_infos_agc,':date_premiere_adhesion'=>$this->st_date_premiere_adhesion,':date_paiement'=>$this->st_date_paiement,':prix'=>$this->i_prix,':annee_cotisation'=>$this->i_annee_cotisation,':jeton_paiement'=>$this->st_jeton_paiement,':ip_restreinte'=>$this->st_ip_restreinte,':clef_nouveau_mdp'=>0));
       $st_requete = "insert into adherent(nom,prenom,adr1,adr2,cp,ville,pays,tel,email_perso,email_forum,site,statut,confidentiel,ident,mdp,aide,type_origine,description_origine,infos_agc,date_premiere_adhesion,date_paiement,prix,annee_cotisation,jeton_paiement,ip_restreinte,clef_nouveau_mdp) values(:nom,:prenom,:adr1,:adr2,:cp,upper(:ville),:pays,:tel,:email_perso,:email_forum,:site,:statut,:confidentiel,:ident_adh,:mdp,:aide,:type_origine,:description_origine,:infos_agc,str_to_date(:date_premiere_adhesion,'%d/%m/%Y'),str_to_date(:date_paiement,'%d/%m/%Y'),:prix,:annee_cotisation,:jeton_paiement,:ip_restreinte,:clef_nouveau_mdp)";
@@ -773,11 +777,17 @@ class Adherent
 		  if ($this->envoie_message_adherent())
 			  print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
 		  else
+		  {
 			  print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; l'adh&eacute;rent</div>");
+			  print("<blockquote>".error_get_last()['message']."</blockquote>");	
+		  }
 		  if ($this->envoie_message_direction())
 			   print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; la direction de l'association</div>");
 		  else
+		  {  
 			 print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; la direction de l'association</div>");
+			 print("<blockquote>".error_get_last()['message']."</blockquote>");	
+          }
    }
    
    /*
@@ -937,7 +947,7 @@ class Adherent
     $st_message .= '--'.$st_frontiere."--\n";
 	$st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "a l'": "au " ;
     $st_sujet = "Inscription $st_prefixe_asso".SIGLE_ASSO." - ".LIB_ASSO;
-    return (mail($this->st_email_perso,$st_sujet,$st_message, $st_entete));
+    return (@mail($this->st_email_perso,$st_sujet,$st_message, $st_entete));
   }
   
   /** Envoie un message de readhesion 
@@ -980,7 +990,7 @@ class Adherent
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_html."\n\n";
     $st_message .= '--'.$st_frontiere."--\n";
-    return (mail($this->st_email_perso,$st_sujet,$st_message, $st_entete));
+    return (@mail($this->st_email_perso,$st_sujet,$st_message, $st_entete));
   }
   
   /** Envoie un message d'inscription généabank à l'admin geneabank
@@ -1017,7 +1027,7 @@ class Adherent
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_html."\n\n";
     $st_message .= '--'.$st_frontiere."--\n";
-    return (mail(EMAIL_GBKADMIN,$st_sujet, $st_message , $st_entete));
+    return (@mail(EMAIL_GBKADMIN,$st_sujet, $st_message , $st_entete));
   }
   
   /** Envoie un message de changement de mot de passe généabank à l'admin geneabank
@@ -1041,7 +1051,7 @@ class Adherent
     $st_entete .= "From: ".EMAIL_DIRASSO."\r\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\r\n";
     $st_entete .= "Reply-to: ".EMAIL_DIRASSO."\r\n";
-    return (mail(EMAIL_GBKADMIN,$st_sujet, nl2br(stripslashes($st_texte)), $st_entete));
+    return (@mail(EMAIL_GBKADMIN,$st_sujet, nl2br(stripslashes($st_texte)), $st_entete));
   }
   
   /** Envoie un message de changement de mot de passe généabank à l'admin geneabank
@@ -1074,7 +1084,7 @@ class Adherent
     $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
     $st_entete .= "Content-type: text/html; charset=cp1252 \r\n";
     $st_entete .= "From: ".EMAIL_DIRASSO."\r\n";
-    return (mail($this->st_email_perso,$st_sujet, nl2br(stripslashes($st_texte)), $st_entete));
+    return (@mail($this->st_email_perso,$st_sujet, nl2br(stripslashes($st_texte)), $st_entete));
 
   }
   
@@ -1096,7 +1106,6 @@ class Adherent
   
     $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
     $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
-    $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
     $st_entete .= 'MIME-Version: 1.0' . "\n"; 
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
     $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
@@ -1109,7 +1118,7 @@ class Adherent
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_html."\n\n";
     $st_message .= '--'.$st_frontiere."--\n";
-    return (mail(EMAIL_PRESASSO,$st_sujet, $st_message, $st_entete));
+    return (@mail(EMAIL_PRESASSO,$st_sujet, $st_message, $st_entete));
   }
   
   /*
