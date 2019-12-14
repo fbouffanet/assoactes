@@ -1,8 +1,8 @@
 <?php
 
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
+// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -119,12 +119,12 @@ class Adherent
       }
       if ($this->st_ident_modificateur==$this->st_ident)
       {
-         $this -> a_filtres_parametres["ident_adh"] = array(array("required", "true", "L'identifiant est obligatoire",""),array("pattern", "/^\w+$/", "L'identifiant ne doit contenir que des lettres et des chiffres",""),array("maxlength", 12, "L'identifiant contient au maximum 12 caractÃ¨res",""));
-          $this -> a_filtres_parametres["mdp_adh"] = array(array("required", "true", "Le mot de passe est obligatoire",""),array("pattern", "/^\w+$/", "Le mot de passe ne doit contenir que des lettres et des chiffres",""),array("maxlength", 12, "L'identifiant contient au maximum 12 caractÃ¨res",""));
+         $this -> a_filtres_parametres["ident_adh"] = array(array("required", "true", "L'identifiant est obligatoire",""),array("pattern", "/^\w+$/", "L'identifiant ne doit contenir que des lettres et des chiffres",""),array("maxlength", 12, "L'identifiant contient au maximum 12 caractères",""));
+          $this -> a_filtres_parametres["mdp_adh"] = array(array("required", "true", "Le mot de passe est obligatoire",""),array("pattern", "/^\w+$/", "Le mot de passe ne doit contenir que des lettres et des chiffres",""),array("maxlength", 12, "L'identifiant contient au maximum 12 caractères",""));
       }
       $this -> a_filtres_parametres["nom"] = array(array("required", "true", "Le patronyme est obligatoire",""));
-      $this -> a_filtres_parametres["prenom"] = array(array("required", "true", "Le prÃ©nom est obligatoire",""));
-      $this -> a_filtres_parametres["adresse1"] = array(array("required", "true", "L'adresse est vide. Remplir la premiÃ¨re ligne",""));
+      $this -> a_filtres_parametres["prenom"] = array(array("required", "true", "Le prénom est obligatoire",""));
+      $this -> a_filtres_parametres["adresse1"] = array(array("required", "true", "L'adresse est vide. Remplir la première ligne",""));
       $this -> a_filtres_parametres["code_postal"] = array(array("required", "true", "Le code postal est obligatoire",""));
       $this -> a_filtres_parametres["ville"] = array(array("required", "true", "La ville est obligatoire",""));
       $this -> a_filtres_parametres["email_forum"] = array(array("required", "true", "L'email est obligatoire",""),
@@ -142,8 +142,8 @@ class Adherent
                                                     array("number", "true", "Le prix est un entier",""),
                                                     array("cotisation_statut","true","la cotisation n'est pas conforme au statut","$('#statut_adherent option:selected').text()")
                                                    );
-      $this->a_filtres_parametres["annee_cotisation"] = array(array("required", "true", "L'annÃ©e de cotisation est obligatoire",""),
-                                                    array("number", "true", "L'annÃ©e de cotisation est un entier","")
+      $this->a_filtres_parametres["annee_cotisation"] = array(array("required", "true", "L'année de cotisation est obligatoire",""),
+                                                    array("number", "true", "L'année de cotisation est un entier","")
                                                    );
       $this->a_filtres_parametres["ip_restreinte"] = array(array("ipv4", "true", "Ceci n'est pas une adresse  IP",""));
       $this->a_filtres_parametres["max_nai"] = array(array("required", "true", "Le quota de naissance est obligatoire",""),
@@ -152,15 +152,15 @@ class Adherent
       $this->a_filtres_parametres["max_mar_div"] = array(array("required", "true", "Le quota de mariage/divers est obligatoire",""),
                                                     array("number", "true", "Le quota de mariage/divers est un entier","")
                                                    );
-      $this->a_filtres_parametres["max_dec"] = array(array("required", "true", "Le quota de dÃ©cÃ¨s est obligatoire",""),
-                                                    array("number", "true", "Le quota de dÃ©cÃ¨s est un entier","")
+      $this->a_filtres_parametres["max_dec"] = array(array("required", "true", "Le quota de décès est obligatoire",""),
+                                                    array("number", "true", "Le quota de décès est un entier","")
                                                    );                                                                                          
      
      self::$st_erreur_gbk='';                                                                                                                                                                                                                                                                                                   
    }
    
    /**
-    *  Renvoie le nom de l'adhÃ©rent
+    *  Renvoie le nom de l'adhérent
     */
     public function getNom() 
     {
@@ -168,7 +168,7 @@ class Adherent
     }
    
    /**
-    *  Renvoie le prÃ©nom de l'adhÃ©rent
+    *  Renvoie le prénom de l'adhérent
     */
     public function getPrenom() 
     {
@@ -176,7 +176,7 @@ class Adherent
     }
     
      /**
-    *  Renvoie l'email perso de l'adhÃ©rent
+    *  Renvoie l'email perso de l'adhérent
     */
     public function getEmailPerso() 
     {
@@ -185,7 +185,7 @@ class Adherent
     
     
 	  /**
-    *  Renvoie le statut de l'adhÃ©rent
+    *  Renvoie le statut de l'adhérent
     */
     public function getStatut() 
     {
@@ -193,9 +193,9 @@ class Adherent
     }
    
    /**
-     * Renvoie la liste des filtres jquery validator Â… activer par champ de paramÃ¨tre
+     * Renvoie la liste des filtres jquery validator … activer par champ de paramètre
      * 
-     * @return array tableau nom du paramÂŠtre => (type de filtre, message d'erreur Â… afficher)
+     * @return array tableau nom du paramŠtre => (type de filtre, message d'erreur … afficher)
      */
     public function getFiltresParametres()
     
@@ -204,7 +204,7 @@ class Adherent
          }
     
    /**
-    * Initialise l'adhÃ©rent depuis une formulaire post
+    * Initialise l'adhérent depuis une formulaire post
 
    */
    public function initialise_depuis_formulaire()
@@ -276,8 +276,8 @@ class Adherent
    }
         
    /**
-   * Renvoie un formulaire HTML d'Ã©dition des informations personnelles
-   * @param boolean $pb_gestionnaire l'utilisateur connectÃ© est-il un gestionnaire ou pas ?
+   * Renvoie un formulaire HTML d'édition des informations personnelles
+   * @param boolean $pb_gestionnaire l'utilisateur connecté est-il un gestionnaire ou pas ?
    */
    public function formulaire_infos_personnelles($pb_gestionnaire)
    {
@@ -287,7 +287,7 @@ class Adherent
       if (a_droits($this->st_ident_modificateur,DROIT_GESTION_ADHERENT))
       {
 		$st_chaine .= '<div class="form-group row">';  
-        $st_chaine .= sprintf("<label for=\"no_adht\" class=\"col-md-4 col-form-label control-label\">NÂ° d'adh&eacute;rent</label>");
+        $st_chaine .= sprintf("<label for=\"no_adht\" class=\"col-md-4 col-form-label control-label\">N° d'adh&eacute;rent</label>");
 		$st_chaine .= '<div class="col-md-8">';
 		$st_chaine .= sprintf("<input type=\"text\" value=\"%d\" id=\"no_adht\" size=5 readonly class=\"form-control\">",$this -> i_idf);
 		$st_chaine .=  "<label for=\"statut_adherent\" class=\"sr-only\">Statut</label><select name=statut_adherent id=statut_adherent class=\"form-control\">";
@@ -302,7 +302,7 @@ class Adherent
         $this -> connexionBD->initialise_params(array(':statut'=>$this->st_statut)); 
         $st_statut = $this -> connexionBD->sql_select1("select nom from statut_adherent where idf=:statut");
 		$st_chaine .= '<div class="form-group row col-md-12">';
-        $st_chaine .= sprintf("<label for=\"no_adht\" class=\"col-md-4 col-form-label\">NÂ° d'adh&eacute;rent</label>");
+        $st_chaine .= sprintf("<label for=\"no_adht\" class=\"col-md-4 col-form-label\">N° d'adh&eacute;rent</label>");
 		$st_chaine .= '<div class="col-md-2">';
 		$st_chaine .= sprintf("<input type=\"text\" value=\"%d\" id=\"no_adht\" size=5 readonly placeholder=\"%s\">",$this -> i_idf,$this->st_ident);
 		$st_chaine .= '</div>';
@@ -315,7 +315,7 @@ class Adherent
       if ($this->st_ident_modificateur==$this->st_ident)
       {
         $st_readonly = $pb_gestionnaire ? 'readonly' : '';
-        // L'administrateur n'est pas supposÃ© changer l'identifiant d'un utilisateur
+        // L'administrateur n'est pas supposé changer l'identifiant d'un utilisateur
 		$st_chaine .= '<div class="form-group row">';
         $st_chaine .= sprintf("<label for=\"ident_adh\" class=\"col-md-4 col-form-label\">Votre identifiant (base ".SIGLE_ASSO.")</label>");
 		$st_chaine .= '<div class="col-md-8">';
@@ -424,14 +424,14 @@ class Adherent
    */
    public function formulaire_aides_possibles() 
    {
-      $st_chaine ="<label for=\"aides\">Je souhaite mÂ’impliquer dans le fonctionnement de lÂ’association en:</label>";
+      $st_chaine ="<label for=\"aides\">Je souhaite m’impliquer dans le fonctionnement de l’association en:</label>";
 	  $st_chaine .= '<div class="form-group" id="aides">';
       $st_coche = ($this->i_aide & AIDE_RELEVES) ? 'checked' : '';
       $st_chaine .= "<div class=\"checkbox\"><label><input type=checkbox name=\"aide[]\" value=".AIDE_RELEVES." id=\"".AIDE_RELEVES."\" class=\"form-check-input\" $st_coche>Effectuant des relev&eacute;s</label></div>\n";
       $st_coche = ($this->i_aide & AIDE_INFORMATIQUE) ? 'checked' : '';
-      $st_chaine .= "<div class=\"checkbox\"><label><input type=checkbox name=\"aide[]\" value=".AIDE_INFORMATIQUE." id=\"".AIDE_INFORMATIQUE."\" class=\"form-check-input\" $st_coche>Participant &agrave; lÂ’informatique</label></div>\n";
+      $st_chaine .= "<div class=\"checkbox\"><label><input type=checkbox name=\"aide[]\" value=".AIDE_INFORMATIQUE." id=\"".AIDE_INFORMATIQUE."\" class=\"form-check-input\" $st_coche>Participant &agrave; l’informatique</label></div>\n";
       $st_coche = ($this->i_aide & AIDE_AD) ? 'checked' : '';
-      $st_chaine .= "<div class=\"checkbox\"><label><input type=checkbox name=\"aide[]\" value=".AIDE_AD." id=\"".AIDE_AD."\" class=\"form-check-input\" $st_coche>Faisant de lÂ’entraide aux AD</label></div>\n";
+      $st_chaine .= "<div class=\"checkbox\"><label><input type=checkbox name=\"aide[]\" value=".AIDE_AD." id=\"".AIDE_AD."\" class=\"form-check-input\" $st_coche>Faisant de l’entraide aux AD</label></div>\n";
       $st_coche = ($this->i_aide & AIDE_BULLETIN) ? 'checked' : '';
       $st_chaine .="<div class=\"checkbox\"><label><input type=checkbox name=\"aide[]\" value=".AIDE_BULLETIN." id=\"".AIDE_BULLETIN."\" class=\"form-check-input\" $st_coche>Participant au Bulletin</label></div>\n";
       $st_chaine .="</div>";
@@ -440,7 +440,7 @@ class Adherent
    }
    
    /*
-   *  Affiche le formulaire des origines possibles de l'adhÃ©rent
+   *  Affiche le formulaire des origines possibles de l'adhérent
    */
    public function formulaire_origine()
    {
@@ -476,7 +476,7 @@ class Adherent
    * Renvoie le formulaire des quotas de consultation
    * @param string $pi_max_nai quota des naissances
    * @param string $pi_max_mar_div quota des mariages et divers
-   * @param string $pi_max_dec quota des dÃ©cÃ¨s
+   * @param string $pi_max_dec quota des décès
    */
    public static function formulaire_quotas_consultation($pi_max_nai,$pi_max_mar_div,$pi_max_dec)
    {
@@ -571,8 +571,8 @@ class Adherent
    
     /*
     * renvoie le formulaire du type d'inscription (Internet ou Bulletin)
-    * @param string $pst_pays  pays de l'adhÃ©rent
-    * @param string $pst_cp  code postal de l'adhÃ©rent
+    * @param string $pst_pays  pays de l'adhérent
+    * @param string $pst_cp  code postal de l'adhérent
     * @return string formulaire d'inscription
     */
     function  formulaire_type_inscription($pst_pays,$pst_cp)
@@ -584,9 +584,9 @@ class Adherent
       $st_chaine .= "<div class=\"radio\"><label><input type=\"radio\" name=\"statut\" value=\"".ADHESION_INTERNET."\" id=\"".ADHESION_INTERNET."\" checked class=\"form-check-input\">Uniquement internet: $i_tarif euros</label></div>";
       if (strtoupper($pst_pays)=='FRANCE' &&  preg_match('/^\d+$/',$pst_cp) && substr($pst_cp,0,2)<96 )
       {
-        // Les dÃ©partements mÃ©troppolitains ont un code postal infÃ©rieur Ã  96
-        // Les DOM s'Ã©tendent de 971 Ã  976
-        // les TOM de 984 Ã  988
+        // Les départements métroppolitains ont un code postal inférieur à 96
+        // Les DOM s'étendent de 971 à 976
+        // les TOM de 984 à 988
         $i_tarif = $ga_tarifs['bulletin_metro'];
         $st_chaine .= "<div class=\"radio\"><label><input type=\"radio\" name=\"statut\" value=\"".ADHESION_BULLETIN."\" id=\"".ADHESION_BULLETIN."\" class=\"form-check-input\">Internet + bulletins: $i_tarif euros (France M&eacute;tropolitaine)</label></div>";
       }
@@ -600,7 +600,7 @@ class Adherent
     }
    
    /*
-   * Affiche le formulaire de gestion des droits de l'adhÃ©rent
+   * Affiche le formulaire de gestion des droits de l'adhérent
    */
    public function formulaire_droits_adherents()
    {
@@ -627,7 +627,7 @@ class Adherent
    }
    
    /*
-   * Change le mot de passe de l'adhÃ©rent uniquement dans la base 
+   * Change le mot de passe de l'adhérent uniquement dans la base 
    * @param string $pst_nouveau_mdp nouveau mot de passe
    */
    private function change_mdp_base($pst_nouveau_mdp)
@@ -639,7 +639,7 @@ class Adherent
    }
    
    /*
-   * Change le mot de passe de l'adhÃ©rent
+   * Change le mot de passe de l'adhérent
    * @param string $pst_nouveau_mdp nouveau mot de passe
    */
    public function change_mdp($pst_nouveau_mdp)
@@ -649,14 +649,16 @@ class Adherent
       if (!empty($gst_administrateur_gbk))
       {
         if (!$this->change_mdp_gbk($pst_nouveau_mdp))
-          $this->envoie_message_geneabank_erreur_changement_mdp();         
+		{	
+          $this->envoie_message_geneabank_erreur_changement_mdp();
+        }		  
       }
       $this->change_mdp_base($pst_nouveau_mdp);
       return $this->envoie_message_geneabank_changement_mdp();
    }
    
    /*
-   * Reactive l'adhÃ©rent (recrÃ©ation du compte gbk et changement de mot de passe)
+   * Reactive l'adhérent (recréation du compte gbk et changement de mot de passe)
    */
    public function reactive()
    {
@@ -673,7 +675,7 @@ class Adherent
    }
    
    /*
-   * Modifie l'adhÃ©rent (l'adhÃ©rent Ã  modifier est l'adhÃ©rent connectÃ©)
+   * Modifie l'adhérent (l'adhérent à modifier est l'adhérent connecté)
    */   
    public function modifie_infos_personnelles()
    {
@@ -701,7 +703,7 @@ class Adherent
    }
    
    /*
-   * Modifie l'adhÃ©rent (l'adhÃ©rent connectÃ© est un gestionnaire de base)
+   * Modifie l'adhérent (l'adhérent connecté est un gestionnaire de base)
    */
    public function modifie_avec_droits()
    {
@@ -714,13 +716,13 @@ class Adherent
          $st_confidentiel  = $this->b_confidentiel ? 'O': 'N';
          if ($this->i_idf==$i_idf_adht_connecte)
          {  
-            // L'utilisateur connectÃ© modifie son propre compte 	 
+            // L'utilisateur connecté modifie son propre compte 	 
             $this->connexionBD->initialise_params(array(':nom'=>$this->st_nom,':prenom'=>$this->st_prenom,':adr1'=>$this->st_adresse1,':adr2'=>$this->st_adresse2,':cp'=>$this->st_code_postal,':ville'=>$this->st_ville,':pays'=>$this->st_pays,':tel'=>$this->st_tel,':email_perso'=>$this->st_email_perso,':email_forum'=>$this->st_email_forum,':site'=>$this->st_site,':statut'=>$this->st_statut,':confidentiel'=>$st_confidentiel,':ident_adh'=>$this->st_ident,':aide'=>$this->i_aide,':type_origine'=>$this->i_origine,':description_origine'=>$this->st_origine,':ident'=>$this->st_ident_modificateur));
             $this->connexionBD->execute_requete("update adherent set nom=:nom,prenom=:prenom,adr1=:adr1,adr2=:adr2,cp=:cp,ville=upper(:ville),pays=:pays,tel=:tel,email_perso=:email_perso,email_forum=:email_forum,site=:site,statut=:statut,confidentiel=:confidentiel, ident=:ident_adh,aide=:aide,type_origine=:type_origine,description_origine=:description_origine where ident=:ident"); 
          }
          else if (a_droits($this->st_ident_modificateur,DROIT_GESTION_ADHERENT))
          {
-			     // l'utilisateur connectÃ© est un administrateur
+			     // l'utilisateur connecté est un administrateur
 			     $this->modifie();            
          }            
         if ($this->i_idf==$i_idf_adht_connecte && $this->st_ident!=$this->st_ident_modificateur)
@@ -752,13 +754,15 @@ class Adherent
    }
    
    /*
-   * CrÃ©e un adhÃ©rent
+   * Crée un adhérent
    */
    public function cree() 
    {
       if (!$this->cree_utilisateur_gbk($this->st_mdp))
+	  {	  
           $this->envoie_message_geneabank();
-      $st_confidentiel = $this->b_confidentiel ? 'O' :' N';
+      }
+	  $st_confidentiel = $this->b_confidentiel ? 'O' :' N';
       $st_mdp_hash = password_hash($this->st_mdp, PASSWORD_DEFAULT);
       $this->connexionBD->initialise_params(array(':nom'=>$this->st_nom,':prenom'=>$this->st_prenom,':adr1'=>$this->st_adresse1,':adr2'=>$this->st_adresse2,':cp'=>$this->st_code_postal,':ville'=>$this->st_ville,':pays'=>$this->st_pays,':tel'=>$this->st_tel,':email_perso'=>$this->st_email_perso,':email_forum'=>$this->st_email_forum,':site'=>$this->st_site,':statut'=>$this->st_statut,':confidentiel'=>$st_confidentiel,':ident_adh'=>$this->st_ident,':mdp'=>$st_mdp_hash,':aide'=>$this->i_aide,':type_origine'=>$this->i_origine,':description_origine'=>$this->st_origine,':infos_agc'=>$this->st_infos_agc,':date_premiere_adhesion'=>$this->st_date_premiere_adhesion,':date_paiement'=>$this->st_date_paiement,':prix'=>$this->i_prix,':annee_cotisation'=>$this->i_annee_cotisation,':jeton_paiement'=>$this->st_jeton_paiement,':ip_restreinte'=>$this->st_ip_restreinte,':clef_nouveau_mdp'=>0));
       $st_requete = "insert into adherent(nom,prenom,adr1,adr2,cp,ville,pays,tel,email_perso,email_forum,site,statut,confidentiel,ident,mdp,aide,type_origine,description_origine,infos_agc,date_premiere_adhesion,date_paiement,prix,annee_cotisation,jeton_paiement,ip_restreinte,clef_nouveau_mdp) values(:nom,:prenom,:adr1,:adr2,:cp,upper(:ville),:pays,:tel,:email_perso,:email_forum,:site,:statut,:confidentiel,:ident_adh,:mdp,:aide,:type_origine,:description_origine,:infos_agc,str_to_date(:date_premiere_adhesion,'%d/%m/%Y'),str_to_date(:date_paiement,'%d/%m/%Y'),:prix,:annee_cotisation,:jeton_paiement,:ip_restreinte,:clef_nouveau_mdp)";
@@ -773,15 +777,21 @@ class Adherent
 		  if ($this->envoie_message_adherent())
 			  print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
 		  else
+		  {
 			  print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; l'adh&eacute;rent</div>");
+			  print("<blockquote>".error_get_last()['message']."</blockquote>");	
+		  }
 		  if ($this->envoie_message_direction())
 			   print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; la direction de l'association</div>");
 		  else
+		  {  
 			 print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; la direction de l'association</div>");
+			 print("<blockquote>".error_get_last()['message']."</blockquote>");	
+          }
    }
    
    /*
-   * Modifie un adhÃ©rent
+   * Modifie un adhérent
    */
    public function modifie()
    {
@@ -796,7 +806,7 @@ class Adherent
    }	   
    
    /*
-   * CrÃ©e l'adhÃ©rent dans la base
+   * Crée l'adhérent dans la base
    */   
    public function cree_avec_droits()
    {
@@ -818,7 +828,7 @@ class Adherent
    }
    
    /* 
-   * Supprime l'adhÃ©rent en cours (gÃ©nÃ©abank + basev4)
+   * Supprime l'adhérent en cours (généabank + basev4)
    */
    public function supprime()
    {     
@@ -837,8 +847,8 @@ class Adherent
    }
       
    /*
-    * Construit la chaine permettant la validation des paramÃ¨tres d'un formulaire
-    * @return string rÃ©gles de validation
+    * Construit la chaine permettant la validation des paramètres d'un formulaire
+    * @return string régles de validation
     */
   public function regles_validation()
   {
@@ -869,7 +879,7 @@ class Adherent
   }
   
   /*
-  * Renvoie un mot de passe construit alÃ©atoirement
+  * Renvoie un mot de passe construit aléatoirement
   * @return string mot de passe 
   */
   public static function mdp_alea()
@@ -880,7 +890,7 @@ class Adherent
     return $st_mdp;
   }
   
-  /** Envoie une message d'inscription Ã  l'adhÃ©rent
+  /** Envoie une message d'inscription à l'adhérent
  * @global string $gst_url_site Adresse du site
  * @global string $gst_administrateur_gbk Administrateur Geneabank 
  */ 
@@ -937,7 +947,7 @@ class Adherent
     $st_message .= '--'.$st_frontiere."--\n";
 	$st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "a l'": "au " ;
     $st_sujet = "Inscription $st_prefixe_asso".SIGLE_ASSO." - ".LIB_ASSO;
-    return (mail($this->st_email_perso,$st_sujet,$st_message, $st_entete));
+    return (@mail($this->st_email_perso,$st_sujet,$st_message, $st_entete));
   }
   
   /** Envoie un message de readhesion 
@@ -980,11 +990,11 @@ class Adherent
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_html."\n\n";
     $st_message .= '--'.$st_frontiere."--\n";
-    return (mail($this->st_email_perso,$st_sujet,$st_message, $st_entete));
+    return (@mail($this->st_email_perso,$st_sujet,$st_message, $st_entete));
   }
   
-  /** Envoie un message d'inscription gÃ©nÃ©abank Ã  l'admin geneabank
- * @return boolean Le message a Ã©tÃ© envoyÃ© ou pas  
+  /** Envoie un message d'inscription généabank à l'admin geneabank
+ * @return boolean Le message a été envoyé ou pas  
  */ 
   function envoie_message_geneabank() {
     $st_message_html = "<font color=\"red\">";
@@ -1017,22 +1027,22 @@ class Adherent
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_html."\n\n";
     $st_message .= '--'.$st_frontiere."--\n";
-    return (mail(EMAIL_GBKADMIN,$st_sujet, $st_message , $st_entete));
+    return (@mail(EMAIL_GBKADMIN,$st_sujet, $st_message , $st_entete));
   }
   
-  /** Envoie un message de changement de mot de passe gÃ©nÃ©abank Ã  l'admin geneabank
-  * @param string $pi_num_adh Identifiant de connexion de l'adhÃ©rent
-  * @param string $pst_mdp Mot de passe de l'adhÃ©rent
-  * @param string $pst_prenom PrÃ©nom de l'adhÃ©rent
-   * @param string $pst_nom Nom de l'adhÃ©rent
-  * @return boolean Le message a Ã©tÃ© envoyÃ© ou pas  
+  /** Envoie un message de changement de mot de passe généabank à l'admin geneabank
+  * @param string $pi_num_adh Identifiant de connexion de l'adhérent
+  * @param string $pst_mdp Mot de passe de l'adhérent
+  * @param string $pst_prenom Prénom de l'adhérent
+   * @param string $pst_nom Nom de l'adhérent
+  * @return boolean Le message a été envoyé ou pas  
   */ 
   function envoie_message_geneabank_erreur_changement_mdp() {
-    $st_texte  = sprintf("Erreur lors du changement de mot de passe GÃ©nÃ©aBank de <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
+    $st_texte  = sprintf("Erreur lors du changement de mot de passe GénéaBank de <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
     $st_texte .= "<font color=\"red\">";
     $st_texte .= self::$st_erreur_gbk;
     $st_texte .= "</font>";
-    $st_texte .= "Faire un copier de la ligne ci dessous et la coller dans l'interface de gestion de GÃ©nÃ©abank.\n\n";
+    $st_texte .= "Faire un copier de la ligne ci dessous et la coller dans l'interface de gestion de Généabank.\n\n";
     $st_texte .= sprintf("register ".PREFIXE_ADH_GBK."%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
     $st_texte .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
     $st_sujet = "Changement de mot de passe GeneaBank";
@@ -1041,15 +1051,15 @@ class Adherent
     $st_entete .= "From: ".EMAIL_DIRASSO."\r\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\r\n";
     $st_entete .= "Reply-to: ".EMAIL_DIRASSO."\r\n";
-    return (mail(EMAIL_GBKADMIN,$st_sujet, nl2br(stripslashes($st_texte)), $st_entete));
+    return (@mail(EMAIL_GBKADMIN,$st_sujet, nl2br(stripslashes($st_texte)), $st_entete));
   }
   
-  /** Envoie un message de changement de mot de passe gÃ©nÃ©abank Ã  l'admin geneabank
-  * @param string $pi_num_adh Identifiant de connexion de l'adhÃ©rent
-  * @param string $pst_mdp Mot de passe de l'adhÃ©rent
-  * @param string $pst_prenom PrÃ©nom de l'adhÃ©rent
-   * @param string $pst_nom Nom de l'adhÃ©rent
-  * @return boolean Le message a Ã©tÃ© envoyÃ© ou pas  
+  /** Envoie un message de changement de mot de passe généabank à l'admin geneabank
+  * @param string $pi_num_adh Identifiant de connexion de l'adhérent
+  * @param string $pst_mdp Mot de passe de l'adhérent
+  * @param string $pst_prenom Prénom de l'adhérent
+   * @param string $pst_nom Nom de l'adhérent
+  * @return boolean Le message a été envoyé ou pas  
   */ 
   function envoie_message_geneabank_changement_mdp() {
 	global $gst_administrateur_gbk;
@@ -1074,12 +1084,12 @@ class Adherent
     $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
     $st_entete .= "Content-type: text/html; charset=cp1252 \r\n";
     $st_entete .= "From: ".EMAIL_DIRASSO."\r\n";
-    return (mail($this->st_email_perso,$st_sujet, nl2br(stripslashes($st_texte)), $st_entete));
+    return (@mail($this->st_email_perso,$st_sujet, nl2br(stripslashes($st_texte)), $st_entete));
 
   }
   
-  /** Envoie un message d'inscription gÃ©nÃ©abank Ã  l'admin geneabank 
-  * @return boolean Le message a Ã©tÃ© envoyÃ© ou pas  
+  /** Envoie un message d'inscription généabank à l'admin geneabank 
+  * @return boolean Le message a été envoyé ou pas  
   */
   function envoie_message_direction() {
     $st_message_html  = sprintf("L'adh&eacute;rent <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
@@ -1108,11 +1118,11 @@ class Adherent
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_html."\n\n";
     $st_message .= '--'.$st_frontiere."--\n";
-    return (mail(EMAIL_PRESASSO,$st_sujet, $st_message, $st_entete));
+    return (@mail(EMAIL_PRESASSO,$st_sujet, $st_message, $st_entete));
   }
   
   /*
-  * Initialise l'adhÃ©rent avec les donnÃ©es venant de l'inscription en ligne
+  * Initialise l'adhérent avec les données venant de l'inscription en ligne
   * @param string $pst_token token identifiant une inscription provisoire
   */
   public function initialise_inscription_en_ligne($pst_token)
@@ -1141,7 +1151,7 @@ class Adherent
   }
  
   /*
-  * Initialise l'adhÃ©rent avec les donnÃ©es venant de la readhesion en ligne
+  * Initialise l'adhérent avec les données venant de la readhesion en ligne
   * @param string $pst_token token identifiant une inscription provisoire
   */
   public function initialise_readhesion_en_ligne($pst_token)
@@ -1152,8 +1162,8 @@ class Adherent
     list($st_type_inscription,$st_nom,$st_prenom,$st_adr1,$st_adr2,$st_code_postal,$st_ville,$st_pays,$st_tel,$st_email_perso,$st_site,$st_confidentiel,$st_statut,$i_prix,$i_aide,$i_origine,$st_origine,$st_jeton_paiement)=$this -> connexionBD->sql_select_liste("select ins_type,ins_nom,ins_prenom,ins_adr1,ins_adr2,ins_cp, ins_commune,ins_pays,ins_telephone,ins_email_perso,ins_site_web,ins_cache,ins_statut,ins_prix,ins_aide,ins_type_origine,ins_description_origine,ins_token from `inscription_prov` where ins_token=:jeton");
     if ($st_type_inscription=='I')
     {
-       // une nouvelle inscription remplace les donnÃ©es de l'ancienne adhÃ©sion
-       // il s'agit en gÃ©nÃ©ral des anciens adhÃ©rents qui n'ont pas rÃ©-adhÃ©rÃ© Ã  temps
+       // une nouvelle inscription remplace les données de l'ancienne adhésion
+       // il s'agit en général des anciens adhérents qui n'ont pas ré-adhéré à temps
       $this->st_nom=$st_nom;
       $this->st_prenom=$st_prenom;
       $this->st_adresse1=$st_adr1;
@@ -1180,7 +1190,7 @@ class Adherent
   }
   
   /*
-   * GÃ©nÃ¨re une demande de nouveau mot de passe
+   * Génère une demande de nouveau mot de passe
    * @global $gst_url_site Adresse du site
    */
    public function demande_nouveau_mdp()
@@ -1231,7 +1241,7 @@ class Adherent
    }
    
    /*
-   *  VÃ©rifie si la clef demandÃ©e correspond Ã  la clef courante de nouveau mot de passe
+   *  Vérifie si la clef demandée correspond à la clef courante de nouveau mot de passe
    *  @param integer $pi_clef clef
    *  @return true|false
    */
@@ -1241,7 +1251,7 @@ class Adherent
    }
   
   /*
-  *  Se connecte au compte administrateur GÃ©nÃ©abank
+  *  Se connecte au compte administrateur Généabank
   */
   private static function connexion_gbk()
   {              
@@ -1270,7 +1280,7 @@ class Adherent
    }
    
    /*
-   *  Change le mot de passe geneabank de l'adhÃ©rent
+   *  Change le mot de passe geneabank de l'adhérent
    */
    public function change_mdp_gbk($pst_nouveau_mdp)
    {
@@ -1306,7 +1316,7 @@ class Adherent
    
    
    /*
-   *  ExÃ©cute une commande Geneabank
+   *  Exécute une commande Geneabank
    *  @param string $pst_cmd commande a executer 
    */
    public static function execute_cmd_gbk($pst_cmd)
@@ -1326,7 +1336,7 @@ class Adherent
           );
           $context  = stream_context_create($a_options);
           $st_resultat = file_get_contents(self::$gst_url_gbk, false, $context);  
-          if (preg_match('/Commande exÃ©cutÃ©e correctement/',$st_resultat))
+          if (preg_match('/Commande exécutée correctement/',$st_resultat))
             return true;
           else
           {
@@ -1341,7 +1351,7 @@ class Adherent
    }
    
    /*
-   * CrÃ©e l'adhÃ©rent dans Geneabank
+   * Crée l'adhérent dans Geneabank
    */
    public function cree_utilisateur_gbk($pst_nouveau_mdp='')
    {
@@ -1353,7 +1363,7 @@ class Adherent
    }
    
    /*
-   * Supprime l'adhÃ©rent de Geneabank
+   * Supprime l'adhérent de Geneabank
    */
    public function supprime_utilisateur_gbk()
    {
@@ -1363,7 +1373,7 @@ class Adherent
    }   
    
    /*
-   * Renvoie la derniÃ¨re erreur GÃ©nÃ©abank
+   * Renvoie la dernière erreur Généabank
    */
    public static function erreur_gbk()
    {
