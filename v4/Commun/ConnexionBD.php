@@ -65,7 +65,8 @@ class ConnexionBD {
 	{
 		try
 		{
-      $connexionBD = new PDO("mysql:host=$pst_serveur;dbname=$pst_nom_bd;charset=UTF8", $pst_ident, $pst_mdp);
+      //$connexionBD = new PDO("mysql:host=$pst_serveur;dbname=$pst_nom_bd;charset=UTF8", $pst_ident, $pst_mdp);
+	  $connexionBD = new PDO("mysql:host=$pst_serveur;dbname=$pst_nom_bd;charset=latin1", $pst_ident, $pst_mdp);
       $connexionBD->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		}
 		catch(PDOException $x)
