@@ -28,6 +28,7 @@ class RequeteRecherche {
    */
    public function clause_droite_patronyme($pst_patronyme,$pst_variantes,$pi_num_param) {
       $st_clause = '';
+	  $pst_patronyme=utf8_vers_cp1252($pst_patronyme);
       if (($pst_variantes=='') || preg_match('/\%/',$pst_patronyme))
       {      
          if (preg_match('/\%/',$pst_patronyme))
@@ -79,6 +80,7 @@ class RequeteRecherche {
      $st_clause = '';
      if (!empty($pst_prenom))
      {  
+        $pst_prenom=utf8_vers_cp1252($pst_prenom);
         if (($pst_variantes=='') || preg_match('/\%/',$pst_prenom))
         { 
           if (preg_match('/\%/',$pst_prenom))

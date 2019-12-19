@@ -7,6 +7,7 @@
 require_once('Commun/Identification.php');
 require_once('Commun/config.php');
 require_once('Commun/constantes.php');
+require_once('Commun/commun.php');
 require_once('Commun/ConnexionBD.php');
 require_once('RequeteRecherche.php');
 require_once('Commun/PaginationTableau.php');
@@ -36,6 +37,7 @@ else
 
 print('<!DOCTYPE html>');
 print("<head>\n");
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr"> ');
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
@@ -86,7 +88,7 @@ function param_entier($pst_param,$pst_init)
 }
 
 /*
-* Renvoie la valeur du paramètre de type chaine selon les variables de session et CGI
+* Renvoie la valeur du paramètre de type chaine selon les variables de session et POST
 * @param string $st_param nom du paramètre
 * @param integer longueur maximale du paramètre
 * @return string valeur du paramètre

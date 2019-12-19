@@ -1,7 +1,7 @@
-<?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+ï»¿<?php
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('Commun/Identification.php');
@@ -11,7 +11,7 @@ require_once('Commun/ConnexionBD.php');
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr"> ');
 print('<title>Base '.SIGLE_ASSO.': Vos recherches</title>');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
@@ -88,7 +88,7 @@ $(document).ready(function() {
         var i = parseInt(value);
         var j = parseInt(annee_max);
         return i >= j;
-    }, "l'année maximale doit être plus grande que l'année minimale");
+    }, "l'annÃ©e maximale doit Ãªtre plus grande que l'annÃ©e minimale");
 	
 	$.validator.addMethod('verifDate', function(value, element, param) {		
 		
@@ -102,7 +102,7 @@ $(document).ready(function() {
 		}
 		return true;
 		
-    }, "La période est invalide.");
+    }, "La pÃ©riode est invalide.");
 
     $.validator.addMethod('plusGrandReleve', function(value, element, param) {
         if (this.optional(element)) return true;
@@ -126,13 +126,13 @@ $(document).ready(function() {
 		end.setSeconds(0);
 
         return end >= start;
-    }, "la date maximale doit être plus grande que la date minimale");
+    }, "la date maximale doit Ãªtre plus grande que la date minimale");
 
     jQuery.validator.addMethod("libelle_joker", function(value, element) {
         // allow any non-whitespace characters as the host part
         var libelle = value.replace(/\*+/g, '*');
         return (libelle != '*' && libelle != '!') || ((libelle == '*' || libelle == '!') && $("#idf_commune_recherches_communes").val() != '');
-    }, 'La commune doit être spécifiée quand le caractère joker ou ! est utilisé');
+    }, 'La commune doit Ãªtre spÃ©ifiÃ©e quand le caractÃ¨re joker ou ! est utilisÃ©');
 
     //validation rules
     $("#recherches_communes").validate({
@@ -187,28 +187,28 @@ $(document).ready(function() {
         },
         messages: {
             annee_min: {
-                integer: "L'année doit être un entier",
-                minlength: "L'année doit comporter 4 chiffes"
+                integer: "L'annÃ©e doit Ãªtre un entier",
+                minlength: "L'annÃ©e doit comporter 4 chiffes"
             },
             annee_max: {
-                integer: "L'année doit être un entier",
-                minlength: "L'année doit comporter 4 chiffes"
+                integer: "L'annÃ©e doit Ãªtre un entier",
+                minlength: "L'annÃ©e doit comporter 4 chiffes"
             },
             releve_annee_min_communes: {
-                integer: "L'année doit être un entier",
-                minlength: "L'année doit comporter 4 chiffes",
-                required: "L'année est obligatoire"
+                integer: "L'annÃ©e doit Ãªtre un entier",
+                minlength: "L'annÃ©e doit comporter 4 chiffes",
+                required: "L'annÃ©e est obligatoire"
             },
             releve_annee_max_communes: {
-                integer: "L'année doit être un entier",
-                minlength: "L'année doit comporter 4 chiffes",
-                required: "L'année est obligatoire"
+                integer: "L'annÃ©e doit Ãªtre un entier",
+                minlength: "L'annÃ©e doit comporter 4 chiffes",
+                required: "L'annÃ©e est obligatoire"
             },
             idf_commune_recherches_communes: {
-                required: "Une commune doit être remplie si le rayon est non vide ou si tous les patronymes sont choisis"
+                required: "Une commune doit Ãªtre remplie si le rayon est non vide ou si tous les patronymes sont choisis"
             },
             rayon: {
-                integer: "Le rayon doit être un entier"
+                integer: "Le rayon doit Ãªtre un entier"
             }
         },
 		errorElement: "em",
@@ -250,7 +250,7 @@ $(document).ready(function() {
     jQuery.validator.addMethod("patro_recherche", function(value, element) {
         var patro = value.replace(/\*+/g, '*');
         return this.optional(element) || (patro == '*' || patro.length >= 3 || patro == '!');
-    }, "Le patronyme doit comporter au moins 3 caractères (* comprises) ou correspondre à * ou ! exactement");
+    }, "Le patronyme doit comporter au moins 3 caractÃ¨res (* comprises) ou correspondre Ã  * ou ! exactement");
 
     //validation rules
     $("#recherches_couple").validate({
@@ -268,10 +268,10 @@ $(document).ready(function() {
         },
         messages: {
             nom_epx: {
-                required: "Le nom de l'époux est obligatoire"
+                required: "Le nom de l'Ã©poux est obligatoire"
             },
             nom_epse: {
-                required: "Le nom de l'épouse est obligatoire"
+                required: "Le nom de l'Ã©pouse est obligatoire"
             }
         },
 		errorElement: "em",
@@ -349,7 +349,7 @@ $(document).ready(function() {
                 required: "Le nom est obligatoire"
             },
             prenom: {
-                required: "Le pr&eacute;nom est obligatoire si aucune commune/paroisse n'est s&eacute;lectionn&eacute;e. Veuillez choisir une commune avec un rayon de recherche"
+                required: "Le prÃ©nom est obligatoire si aucune commune/paroisse n'est s&eacute;lectionnÃ©e. Veuillez choisir une commune avec un rayon de recherche"
             }
         },
 		errorElement: "em",
@@ -668,7 +668,7 @@ print('<div class="form-row col-md-12">');
 
 print('<div class="form-group col-md-10 lib_erreur">');
 print("<label class=\"sr-only\" for=\"releve_type_communes\">Actes</label><div class=\"input-group\"><span class=\"input-group-addon\">actes</span><select id=\"releve_type_communes\" name=\"releve_type_communes\" class=\"form-control form-control-sm\">");
-$options = array(0=>'publiés', 1=>"modifiés");
+$options = array(0=>'publi&eacute;s', 1=>"modifi&eacute;s");
 print(chaine_select_options($gst_releve_type,$options));
 print("</select></div>");
 
@@ -866,7 +866,7 @@ print('</div>'); //fin ligne
 
 print("</form>");
 print('</div>'); 
-print('</div>');  // fin pavé
+print('</div>');  // fin pavÃ©
 
 print('<div class="pave-tous-patronymes panel panel-primary">');
 print('<div class="panel-heading">Recherche sur tous les patronymes</div>');
@@ -896,8 +896,8 @@ print('</div>');
 print('</div>'); //fin ligne
 
 print("</form>");
-print('</div>'); // fin body pavé
-print("</div>"); // fin pavé
+print('</div>'); // fin body pavÃ©
+print("</div>"); // fin pavÃ©
 
 print("</div>"); // fin panel-group
 print("</div>"); // fin container
