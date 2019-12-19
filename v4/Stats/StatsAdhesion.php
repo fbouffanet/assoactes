@@ -43,7 +43,7 @@ function Mois_Annee ()  // Function pour affichage du mois en français
    $mois_complet = $mois[$mois_numero];
    $jour = date("d");
    $annee = date("Y");
-   return $jour." ".$mois_complet." ".$annee;
+   return $jour." ".cp1252_vers_utf8($mois_complet)." ".$annee;
 }
 
 
@@ -184,7 +184,7 @@ switch ($gst_mode)
 $st_requete = "SELECT a.annee_cotisation,count(*),sum(case when jeton_paiement !='' then 1 else 0 end)  FROM `adherent` a where a.statut in ('B','I') group by a.annee_cotisation order by a.annee_cotisation desc";
 print('<div class="panel-group">');
 print('<div class="panel panel-info">');
-print('<div class="panel-heading">Nbrs Adh(B+I) année de cotisation</div>');
+print('<div class="panel-heading">Nbrs Adh(B+I) ann&eacute;e de cotisation</div>');
 print('<div class="panel-body">');
  
 $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'stats_adhesions',3,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Ann&eacute;e','Nbrs','Adh&eacute;sions<br> en ligne'));
