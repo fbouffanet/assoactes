@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------?
 
@@ -104,7 +104,7 @@ class ModificationActe extends Acte {
          } 
     
     /**
-     * Charge la correction de l'acte à partir de la BD
+     * Charge la correction de l'acte Ã  partir de la BD
      * 
      * @param integer $pi_idf_modification identifiant de la modification
      */
@@ -158,14 +158,14 @@ class ModificationActe extends Acte {
             } 
         else
              {
-            throw new Exception("L'acte initial a été modifié");
+            throw new Exception("L'acte initial a Ã©tÃ© modifiÃ©");
              } 
         } 
     
     /**
-     * Crée l'enregistrement en base
+     * CrÃ©e l'enregistrement en base
      * 
-     * @return integer identifiant de l'enregistrement créé
+     * @return integer identifiant de l'enregistrement crÃ©Ã©
      */
     public function cree()
     
@@ -192,14 +192,14 @@ class ModificationActe extends Acte {
          } 
     
     /**
-     * Renvoie le formulaire d'édition d'un acte
+     * Renvoie le formulaire d'Ã©dition d'un acte
      */
     public function formulaire_liste_personnes()
     
     
     
     {
-         // les actes divers correspondent à une grille de mariage élaborée dans Nimègue
+         // les actes divers correspondent Ã  une grille de mariage Ã©laborÃ©e dans NimÃ¨gue
         $a_grille = array_key_exists($this -> i_idf_type_acte, $this -> ga_grille_saisie) ? $this -> ga_grille_saisie[$this -> i_idf_type_acte]: $this -> ga_grille_saisie[IDF_MARIAGE] ;
          $st_chaine = "";
          $i = 0;
@@ -234,7 +234,7 @@ class ModificationActe extends Acte {
                      } 
                 if (count($a_liste_personnes) > 0 && $a_liste_personnes[0] -> getIdfTypePresence() == $i_idf_type_presence)
                      {
-                // la personne existe déjà dans la BD
+                // la personne existe dÃ©jÃ  dans la BD
                 $o_pers = array_shift($a_liste_personnes);
                  $o_pers -> setNumParam($i);
                  if ($i_idf_type_presence == IDF_PRESENCE_INTV)
@@ -243,7 +243,7 @@ class ModificationActe extends Acte {
                  } 
             else
                  {
-            // personne vide dans le type de présence attendu doit être créé
+            // personne vide dans le type de prÃ©sence attendu doit Ãªre crÃ©Ã©
             $o_pers = new ModificationPersonne($this -> connexionBD, $this -> i_idf, null, null, null, null);
              $o_pers -> setIdfTypePresence($i_idf_type_presence);
              $o_pers -> setNumParam($i);
@@ -284,7 +284,7 @@ private function type_mime_vers_ext($pst_type_mime)
  * 
  * @param integer $pi_idf_commune_acte identifiant de la commune
  * @param integer $pi_idf_acte identifiant de l'acte
- * @param integer $pi_num_photo numéro de la photo
+ * @param integer $pi_num_photo numÃ©ro de la photo
  * @param string $pst_ext extension du nom de fichier
  * @return string nom de la photo
  * @global $gst_rep_photos_modifs
@@ -300,7 +300,7 @@ private function nom_photo($pi_idf_commune_acte, $pi_idf_acte, $pi_num_photo, $p
      {
         $pi_num_photo += 3;
          $st_photo = sprintf("%s/%d_%d_%d.%s", $gst_rep_photos_modifs, $pi_idf_commune_acte, $pi_idf_acte, $pi_num_photo, $pst_ext);
-         // Sécurité
+         // SÃ©curitÃ©
         if ($pi_num_photo > 50)
              break;
          } 
@@ -370,8 +370,8 @@ public function initialise_depuis_formulaire($pi_idf_acte)
          $o_pers -> initialise_depuis_formulaire($this -> i_idf, $a_grille[$i]);
          if ($this -> i_idf_type_acte == IDF_MARIAGE)
          {
-            // le sexe de l'intervenant est le maitre pour décider des couples
-            // ceux-ci sont crées dans la fonction maj_liste_personnes de Acte en fonction de la grille  définie pour le type d'acte
+            // le sexe de l'intervenant est le maitre pour dÃ©cider des couples
+            // ceux-ci sont crÃ©es dans la fonction maj_liste_personnes de Acte en fonction de la grille  dÃ©finie pour le type d'acte
             if ($o_pers -> getIdfTypePresence() == IDF_PRESENCE_INTV)
                  {
                 if ($i_nb_intv % 2 == 0)
@@ -440,8 +440,14 @@ public function commentaires_demandeur()
      return $st_chaine;
      } 
 
+public function versChaine2()
+    
+{
+	return cp1252_vers_utf8($this->versChaine());
+}	
+
 /**
- * Renvoie les différences entre la modification et l'acte d'origine
+ * Renvoie les diffÃ©rences entre la modification et l'acte d'origine
  */
 public function differences()
 
@@ -453,8 +459,8 @@ public function differences()
      $st_description_acte = $o_acte -> versChaine();
      $st_description_modif = $this -> versChaine();
      setlocale(LC_CTYPE, 'fr_FR.UTF8');
-     // $o_FineDiff = new FineDiff(iconv("cp1252", "UTF-8", $st_description_acte), iconv("cp1252", "UTF-8", $st_description_modif), FineDiff :: $wordGranularity);
-    $o_FineDiff = new FineDiff($st_description_acte, $st_description_modif, FineDiff :: $wordGranularity);
+     //$o_FineDiff = new FineDiff(iconv("cp1252", "UTF-8", $st_description_acte), iconv( "UTF-8","cp1252", $st_description_modif), FineDiff :: $wordGranularity);
+     $o_FineDiff = new FineDiff($st_description_acte, $st_description_modif, FineDiff :: $wordGranularity);
      $st_chaine = "<fieldset>";
      $st_chaine .= "<legend>Diff&eacute;rences</legend>";
      $st_diffs = $o_FineDiff -> renderDiffToHTML();
@@ -544,7 +550,7 @@ public function validation_formulaire_refus()
  * Refuse la modification (changement du statut + envoil d'un email au demandeur)
  * 
  * @param integer $pi_idf_valideur identifiant du valideur
- * @param string $pst_prenom_valideur prénom du valideur
+ * @param string $pst_prenom_valideur prÃ©nom du valideur
  * @param string $pst_nom_valideur nom du valideur
  * @param string $pst_email_valideur email du valideur
  * @param string $pst_motif motif du refus
@@ -589,7 +595,7 @@ public function refuse($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur
  * Accepte la modification (changement du statut + envoil d'un email au demandeur)
  * 
  * @param integer $pi_idf_valideur identifiant du valideur
- * @param string $pst_prenom_valideur prénom du valideur
+ * @param string $pst_prenom_valideur prÃ©nom du valideur
  * @param string $pst_nom_valideur nom du valideur
  * @param string $pst_email_valideur email du valideur
  * @param string $pst_cmt_valideur commentaires du valideur

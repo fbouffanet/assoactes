@@ -19,7 +19,7 @@ require_once('../Administration/chargement/ModificationActe.php');
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print("<title>Liste des demandes de correction acceptées ou refusées</title>");
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');

@@ -14,9 +14,9 @@ $(".recopie_commune").click(function() {
 $(".maj_deces").click(function() {
 	var cible= $(this).data('cible');
   if ($(cible).val()=='')
-   $(cible).val('†');
+   $(cible).val('â€ ');
   else
-   $(cible).val($(cible).val()+' †');
+   $(cible).val($(cible).val()+' â€ ');
   
 });
 
@@ -60,7 +60,7 @@ $(".maj_date_rep").click(function() {
   }
   else
   {
-    alert("Le jour, le mois ou l'année révolutionnaire est vide");
+    alert("Le jour, le mois ou l'annÃ©e rÃ©volutionnaire est vide");
   }
 });
 
