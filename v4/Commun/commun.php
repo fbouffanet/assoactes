@@ -6,6 +6,16 @@
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
+/*
+* Renvoie une chaine encodée en cp1252 en UTF8
+* @param string $st_valeur chaine à convertir
+* @return string chaine encodée en UTF8
+*/
+function cp1252_vers_utf8($st_valeur)
+{
+	return mb_convert_encoding($st_valeur,'UTF8','cp1252');
+}
+
 /**
 * Renvoie la chaine d'options dans un select HTML
 /* @param string $pst_idf_choisi identifiant de l'option choisie
@@ -16,7 +26,7 @@ function chaine_select_options($pst_idf_choisi,$pa_tableau)
    $st_chaine_options = '';
    foreach ($pa_tableau as $st_idf => $st_val)
    {
-      $st_chaine_options .= ("$pst_idf_choisi" !='' && "$st_idf"=="$pst_idf_choisi") ? "<option value=\"$st_idf\" selected=\"selected\">$st_val</option>\n": "<option value=\"$st_idf\">$st_val</option>\n";
+      $st_chaine_options .= ("$pst_idf_choisi" !='' && "$st_idf"=="$pst_idf_choisi") ? "<option value=\"$st_idf\" selected=\"selected\">".cp1252_vers_utf8($st_val)."</option>\n": "<option value=\"$st_idf\">".cp1252_vers_utf8($st_val)."</option>\n";
    }
    return $st_chaine_options;
 }
@@ -31,7 +41,7 @@ function chaine_select_options_simple($pst_valeur,$pa_tableau)
    $st_chaine_options = '';
    foreach ($pa_tableau as $st_val)
    {
-      $st_chaine_options .= ("$pst_valeur" !='' && "$st_val"=="$pst_valeur") ? "<option selected=\"selected\">$st_val</option>\n": "<option >$st_val</option>\n";
+      $st_chaine_options .= ("$pst_valeur" !='' && "$st_val"=="$pst_valeur") ? "<option selected=\"selected\">".cp1252_vers_utf8($st_val)."</option>\n": "<option >".cp1252_vers_utf8($st_val)."</option>\n";
    }
    return $st_chaine_options;
 }
@@ -48,12 +58,12 @@ function chaine_select_options_multiple($pa_selection,$pa_tableau)
     {       
        if (((count($pa_selection)!=0)) && (in_array("$st_element",$pa_selection,FALSE)))
        {
-          $st_chaine_options.="<option selected >$st_element</option>";        
+          $st_chaine_options.="<option selected >".cp1252_vers_utf8($st_element)."</option>";        
        }
        else
        {
           // Element ne faisant pas partie de la sélection
-          $st_chaine_options.="<option >$st_element</option>";
+          $st_chaine_options.="<option >".cp1252_vers_utf8($st_element)."</option>";
        }    
     }
     
@@ -80,6 +90,8 @@ function commence_par_une_voyelle($pst_chaine)
 		default:
 			return false;
 	}
-}	
+}
+
+	
 
 ?>

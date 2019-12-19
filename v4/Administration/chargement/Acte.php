@@ -625,8 +625,8 @@ class Acte {
              $st_chaine .= $this -> st_commentaires;
              $i_nb_lignes += substr_count($this -> st_commentaires, "\n");;
              } 
-        $this -> i_nb_lignes = $i_nb_lignes;
-         return $st_chaine;
+			$this -> i_nb_lignes = $i_nb_lignes;
+			return mb_convert_encoding($st_chaine,'UTF8','cp1252');
          }
           
     public function versChaineSansTemoins()
@@ -671,8 +671,8 @@ class Acte {
                  } 
             $i_nb_lignes += $o_pers -> getNbLignes();
              } 
-        $this -> i_nb_lignes = $i_nb_lignes;
-         return $st_chaine;
+			$this -> i_nb_lignes = $i_nb_lignes;
+			return mb_convert_encoding($st_chaine,'UTF8','cp1252');
          } 
          
     public function versTableauHTML()

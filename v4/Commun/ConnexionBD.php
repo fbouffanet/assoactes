@@ -65,8 +65,7 @@ class ConnexionBD {
 	{
 		try
 		{
-      //$connexionBD = new PDO("mysql:host=$pst_serveur;dbname=$pst_nom_bd;charset=UTF8", $pst_ident, $pst_mdp);
-	  $connexionBD = new PDO("mysql:host=$pst_serveur;dbname=$pst_nom_bd;charset=latin1", $pst_ident, $pst_mdp);
+      $connexionBD = new PDO("mysql:host=$pst_serveur;dbname=$pst_nom_bd;charset=latin1", $pst_ident, $pst_mdp);
       $connexionBD->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		}
 		catch(PDOException $x)
@@ -77,25 +76,25 @@ class ConnexionBD {
 		return $connexionBD;
 	}
 
-  public function desactive_cache()
-  {
-    $this->o_lien_bd->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, false);
-  }
+	public function desactive_cache()
+	{
+		$this->o_lien_bd->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, false);
+	}
   
-  public function initialise_params($pa_params)
-  {
-    $this->a_params = $pa_params;
-  }
+	public function initialise_params($pa_params)
+	{
+		$this->a_params = $pa_params;
+	}
 
-  public function ajoute_params($pa_params)
-  {
-    $this->a_params=array_merge ($this->a_params,$pa_params);
-  }
+	public function ajoute_params($pa_params)
+	{
+		$this->a_params=array_merge ($this->a_params,$pa_params);
+	}
 
-  public function params()
-  {
-    return $this->a_params;
-  }
+	public function params()
+	{
+		return $this->a_params;
+	}
 
 	public function sql_select1($pst_requete)
 	{
@@ -276,9 +275,9 @@ class ConnexionBD {
 	}
 
 	/**
-	*  Dans un r�sultat � deux colonnes A et B, regroupe les �l�ments B dans un tableau indexes par A
-	*  @param string $pst_requete  � traiter
-	*  @return array tableau indexes par A
+	*  Dans un résultat à deux colonnes A et B, regroupe les éléments B dans un tableau indexés par A
+	*  @param string $pst_requete à traiter
+	*  @return array tableau indexés par A
 	*/
 	function groupe_valeurs_par_clef($pst_requete)
 	{
@@ -319,8 +318,8 @@ class ConnexionBD {
 	}
 
   /**
-	* Renvoie le nombre de lignes d�truites ou modifi�es par la derni�re commande
-	* @return integer nombre de lignes affect�es par la derni�re commande, update, execute
+	* Renvoie le nombre de lignes détruites ou modifiées par la dernière commande
+	* @return integer nombre de lignes affectées par la dernire commande, update, execute
 	*/
 	function nb_lignes_affectees ()
 	{
@@ -328,7 +327,7 @@ class ConnexionBD {
 	}
 
 	/**
-	* Renvoie la ligne suivante du r�sultat d'une requ�te
+	* Renvoie la ligne suivante du résultat d'une requête
 	* @return array ou FALSE si plus de r�sultat
 	*/
 	function ligne_suivante_resultat() {

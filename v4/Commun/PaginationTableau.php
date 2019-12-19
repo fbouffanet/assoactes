@@ -112,7 +112,7 @@ class PaginationTableau {
       print("<table class=\"table table-bordered table-striped\">");
       print("<thead><tr>");
       foreach ($this->a_entete as $st_cell_entete) {
-         print("<th>$st_cell_entete</th>");
+         print("<th>".cp1252_vers_utf8($st_cell_entete)."</th>");
       }
       print("</tr></thead>\n");
 	  print('<tbody>');
@@ -123,7 +123,7 @@ class PaginationTableau {
          foreach ($a_ligne as $st_champ)
          {
             if ($st_champ!="")
-              print("<td class=\"lib_erreur\">$st_champ</td>");
+              print("<td class=\"lib_erreur\">".cp1252_vers_utf8($st_champ)."</td>");
             else
               print("<td>&nbsp;</td>");
          }         
@@ -155,7 +155,7 @@ class PaginationTableau {
          foreach ($a_ligne as $st_champ)
          {
             if ($st_champ!="")
-              print("<td>$st_champ</td>");
+              print("<td>".cp1252_vers_utf8($st_champ)."</td>");
             else
               print("<td>&nbsp;</td>");   
          }         
@@ -180,7 +180,7 @@ class PaginationTableau {
       print("<table class=\"table table-bordered table-striped\">");
       print("<thead><tr>");
       foreach ($this->a_entete as $st_cell_entete) {
-         print("<th>$st_cell_entete</th>");
+         print("<th>".cp1252_vers_utf8($st_cell_entete)."</th>");
       }
       print("</tr></thead>\n");
       print('<tbody>');
@@ -193,7 +193,7 @@ class PaginationTableau {
          foreach ($a_ligne as $st_nom_element)
          {
             if ($st_nom_element!= '')
-               print("<td>$st_nom_element</td>");
+               print("<td>".cp1252_vers_utf8($st_nom_element)."</td>");
             else
                print("<td>&nbsp;</td>");   
          }
@@ -227,7 +227,7 @@ class PaginationTableau {
       print("<table class=\"table table-bordered table-striped\">");
       print("<thead><tr>");
       foreach ($this->a_entete as $st_cell_entete) {
-         print("<th>$st_cell_entete</th>");
+         print("<th>".cp1252_vers_utf8($st_cell_entete)."</th>");
       }
       print("</tr></thead>\n");
 	  print('<tbody>');
@@ -241,7 +241,7 @@ class PaginationTableau {
          foreach ($a_ligne as $st_nom_element)
          {
             if ($st_nom_element!= '')
-               print("<td>$st_nom_element</td>");
+               print("<td>".cp1252_vers_utf8($st_nom_element)."</td>");
             else
                print("<td>&nbsp;</td>");   
          }
@@ -287,7 +287,7 @@ class PaginationTableau {
 		print("<table class=\"table table-bordered table-striped\">");
 		print("<thead><tr>");
 		foreach ($this->a_entete as $st_cell_entete) {
-			print("<th>$st_cell_entete</th>");
+			print("<th>".cp1252_vers_utf8($st_cell_entete)."</th>");
 		}
 		print("</tr></thead>\n");
 		print('<tbody>');
@@ -300,7 +300,7 @@ class PaginationTableau {
 			foreach ($a_ligne as $st_nom_element)
 			{
 				if ($st_nom_element!= '')
-				print("<td>$st_nom_element</td>");
+				print("<td>".cp1252_vers_utf8($st_nom_element)."</td>");
 				else
 				print("<td>&nbsp;</td>");   
 			}

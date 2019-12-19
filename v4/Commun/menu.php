@@ -37,9 +37,9 @@ foreach ($a_categories_menu as $a_categorie)
               if ($st_script=='')
                  print("$st_libelle");
               else if (preg_match('/^http\:\/\//',$st_script))
-                 print("<a href=\"$st_script\" target=\"_blank\">$st_libelle</a>");   
+                 print("<a href=\"$st_script\" target=\"_blank\">".cp1252_vers_utf8($st_libelle)."</a>");   
               else
-                 print("<a href=\"$gst_url_site/$st_script\">$st_libelle</a>");
+                 print("<a href=\"$gst_url_site/$st_script\">".cp1252_vers_utf8($st_libelle)."</a>");
               print("</li>\n");   
            }
          }
@@ -51,9 +51,9 @@ foreach ($a_categories_menu as $a_categorie)
         if ($st_script=='')        
           print("<a href=\"#\">$st_categorie</a>");
         else if (preg_match('/^http\:\/\//',$st_script))
-          print("<a href=\"$st_script\" target=\"_blank\">$st_categorie</a>"); 
+          print("<a href=\"$st_script\" target=\"_blank\">".cp1252_vers_utf8($st_categorie)."</a>"); 
         else 
-          print("<a href=\"$gst_url_site/$st_script\">$st_categorie</a>");
+          print("<a href=\"$gst_url_site/$st_script\">".cp1252_vers_utf8($st_categorie)."</a>");
         print("</li>\n");   
       }  
    }   
