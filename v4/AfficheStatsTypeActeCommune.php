@@ -99,7 +99,7 @@ if (count($a_liste_stats)!=0)
       print("<tr>");
       foreach ($a_ligne as $st_champ)
       {
-         print("<td>$st_champ</td>");
+         print("<td>".cp1252_vers_utf8($st_champ)."</td>");
       }
       print("</tr>");
       $i++;
