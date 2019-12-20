@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('../Commun/config.php');
@@ -14,16 +14,16 @@ require_once('commun_rep_not.php');
 
 /*
 * Affiche la grille de recherche
-* @param object $pconnexionBD connexion à la BD
+* @param object $pconnexionBD connexion Ã  la BD
 * @param integer $pi_idf_commune identifiant de la commune du notaire
 * @param integer $pi_rayon rayon de recherche
 * @param string $pst_type_acte type d'acte
-* @param integer $pi_annee_min année minimale de l'acte
-* @param integer $pi_annee_max année maximale de l'acte
+* @param integer $pi_annee_min annÃ©e minimale de l'acte
+* @param integer $pi_annee_max annÃ©e maximale de l'acte
 * @param string $pst_nom1 nom du premier intervenant
-* @param string $pst_prenom1 prénom du premier intervenant
+* @param string $pst_prenom1 prÃ©nom du premier intervenant
 * @param string $pst_nom2 nom du second intervenant
-* @param string $pst_prenom2 prénom du second intervenant
+* @param string $pst_prenom2 prÃ©nom du second intervenant
 * @param string $pst_paroisse paroisse objet de l'acte (acte capitulaire)
 * @param string $pst_commentaires commentaires de l'acte
 * @param string $pb_rech_phonetique recherche phonetique
@@ -142,8 +142,8 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
 }
 
   /**
-   * Renvoie la partie droite de l'egalite dans la clause de recherche par prénom (Gère le joker* ) 
-   * @param string $pst_prenom : prénom à chercher  
+   * Renvoie la partie droite de l'egalite dans la clause de recherche par prÃ©nom (Gre le joker* ) 
+   * @param string $pst_prenom : prÃ©nom Ã  chercher  
    */
    function clause_droite_prenom($pst_prenom,$pi_num_param)
    {
@@ -159,8 +159,8 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
    }
 
 /**
-* Renvoie la partie droite de l'egalite dans la clause de recherche par patronyme or prénom (Gère le joker* ) 
-* @param string $pst_nom : patronyme ou prénom à chercher  
+* Renvoie la partie droite de l'egalite dans la clause de recherche par patronyme or prÃ©nom (GÃ¨re le joker* ) 
+* @param string $pst_nom : patronyme ou prÃ©nom Ã  chercher  
 */
 function clause_droite_nom($pconnexionBD,$pst_nom,$pb_variantes,$pi_num_param)
 {
@@ -199,8 +199,8 @@ function clause_droite_nom($pconnexionBD,$pst_nom,$pb_variantes,$pi_num_param)
 }
 
 /**
-* Renvoie la partie droite de l'egalite dans la clause de recherche par patronyme or prénom (Gère le joker* ) 
-* @param string $pst_nom : patronyme ou prénom à chercher  
+* Renvoie la partie droite de l'egalite dans la clause de recherche par patronyme or prÃ©nom (GÃ¨re le joker* ) 
+* @param string $pst_nom : patronyme ou prÃ©nom Ã  chercher  
 */
 function clause_commune($pconnexionBD,$pst_nom)
 {
@@ -214,22 +214,22 @@ function clause_commune($pconnexionBD,$pst_nom)
 }
 
 /*
-* Renvoie la requête de recherche en fonction des critères sélectionnés
-* @param object $pconnexionBD connexion à la BD
+* Renvoie la requÃªte de recherche en fonction des critÃ¨res sÃ©lectionnÃ©s
+* @param object $pconnexionBD connexion Ã  la BD
 * @param integer $pi_idf_commune identifiant de la commune du notaire
 * @param integer $pi_rayon rayon de recherche
-* @param integer $pi_idf_repertoire identifiant du répertoire
+* @param integer $pi_idf_repertoire identifiant du rÃ©pertoire
 * @param string $pst_type_acte type d'acte
-* @param integer $pi_annee_min année minimale de l'acte
-* @param integer $pi_annee_max année maximale de l'acte
+* @param integer $pi_annee_min annÃ©e minimale de l'acte
+* @param integer $pi_annee_max annÃ©e maximale de l'acte
 * @param string $pst_nom1 nom du premier intervenant
-* @param string $pst_prenom1 prénom du premier intervenant
+* @param string $pst_prenom1 prÃ©nom du premier intervenant
 * @param string $pst_nom2 nom du second intervenant
-* @param string $pst_prenom2 prénom du second intervenant
+* @param string $pst_prenom2 prÃ©nom du second intervenant
 * @param string $pst_paroisse paroisse objet de l'acte (acte capitulaire)
 * @param string $pst_commentaires Recherche libre dans le commentaire
-* @param boolean  $pb_rech_phonetique Recherche patronymique phonétique (0|1))
-* @return array(Requête SQL NB actes, Requête SQL résultats)
+* @param boolean  $pb_rech_phonetique Recherche patronymique phonÃ©tique (0|1))
+* @return array(RequÃªte SQL NB actes, RequÃªte SQL rÃ©sultats)
 */
 function requete_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_idf_repertoire,$pst_type_acte,$pi_annee_min,$pi_annee_max,$pst_nom1,$pst_prenom1,$pst_nom2,$pst_prenom2,$pst_paroisse,$pst_commentaires,$pb_rech_phonetique)
 {
@@ -322,22 +322,22 @@ function requete_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_idf_reper
 }
 
 /*
-* Affiche les résultats de recherche
-* @param object $pconnexionBD connexion à la BD
+* Affiche les rÃ©sultats de recherche
+* @param object $pconnexionBD connexion Ã  la BD
 * @param integer $pi_idf_commune identifiant de la commune du notaire
 * @param integer $pi_rayon rayon de recherche
-* @param integer $pi_idf_repertoire identifiant du répertoire
+* @param integer $pi_idf_repertoire identifiant du rÃ©pertoire
 * @param string $pst_type_acte type d'acte
-* @param integer $pi_annee_min année minimale de l'acte
-* @param integer $pi_annee_max année maximale de l'acte
+* @param integer $pi_annee_min annÃ©e minimale de l'acte
+* @param integer $pi_annee_max annÃ©e maximale de l'acte
 * @param string $pst_nom1 nom du premier intervenant
-* @param string $pst_prenom1 prénom du premier intervenant
+* @param string $pst_prenom1 prÃ©nom du premier intervenant
 * @param string $pst_nom2 nom du second intervenant
-* @param string $pst_prenom2 prénom du second intervenant
+* @param string $pst_prenom2 prÃ©nom du second intervenant
 * @param string $pst_paroisse paroisse objet de l'acte (acte capitulaire)
 * @param string $pst_commentaires recherche libre dans commentaires 
-* @param boolean  $pb_rech_phonetique Recherche patronymique phonétique (0|1))
-* @param integer $pi_num_page numéro de la page
+* @param boolean  $pb_rech_phonetique Recherche patronymique phonÃ©tique (0|1))
+* @param integer $pi_num_page numÃ©ro de la page
 */
 function affiche_resultats_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_idf_repertoire,$pst_type_acte,$pi_annee_min,$pi_annee_max,$pst_nom1,$pst_prenom1,$pst_nom2,$pst_prenom2,$pst_paroisse,$pst_commentaires,$pb_rech_phonetique,$pi_num_page)
 {
