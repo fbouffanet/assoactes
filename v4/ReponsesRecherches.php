@@ -135,7 +135,7 @@ function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$
     if (!empty($pi_idf_type_acte))
     {
       $st_type_acte = $pconnexionBD->sql_select1("select nom from type_acte where idf=$pi_idf_type_acte");
-      $st_criteres .= "Type d'acte: $st_type_acte\n";
+      $st_criteres .= "Type d'acte: ".cp1252_vers_utf8($st_type_acte)."\n";
     }
     if ($pi_annee_min!='' && $pi_annee_max!='')
       $st_criteres .= " de $pi_annee_min &agrave; $pi_annee_max";
@@ -150,9 +150,9 @@ function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$
 	if (!empty($pi_idf_source))
     {
       $st_type_acte = $pconnexionBD->sql_select1("select nom from source where idf=$pi_idf_source");
-      $st_criteres .= "Source s&eacute;lectionn&eacute;e: $st_type_acte\n";
+      $st_criteres .= "Source s&eacute;lectionn&eacute;e: ".cp1252_vers_utf8($st_type_acte)."\n";
     }
-    $st_criteres .= "Commune s&eacute;lectionn&eacute;e: $st_nom_commune\n";
+    $st_criteres .= "Commune s&eacute;lectionn&eacute;e: ".cp1252_vers_utf8($st_nom_commune)."\n";
     $st_bloc_rappel = nl2br($st_criteres);
     $st_communes_voisines=join("\n",array_values($requeteRecherche->communes_voisines()));
     if (count(array_values($requeteRecherche->communes_voisines()))>1)

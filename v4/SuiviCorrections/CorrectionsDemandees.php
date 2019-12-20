@@ -56,9 +56,9 @@ if (isset($_SESSION['ident']))
           list($st_date,$st_type,$st_commune,$st_parties,$st_date_demande,$st_email_demandeur) = $a_groupe;
           print("<tr>");
           print("<td>$st_date</td>");
-          print("<td>$st_type</td>");
-          print("<td>$st_commune</td>");
-          print("<td>$st_parties</td>");
+          print("<td>".cp1252_vers_utf8($st_type)."</td>");
+          print("<td>".cp1252_vers_utf8($st_commune)."</td>");
+          print("<td>".cp1252_vers_utf8($st_parties)."</td>");
           print("<td>$st_date_demande</td>");
           print("<td>$st_email_demandeur</td>");
           print("<td>");

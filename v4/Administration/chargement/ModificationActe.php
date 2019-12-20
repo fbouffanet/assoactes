@@ -337,6 +337,7 @@ public function initialise_depuis_formulaire($pi_idf_acte)
          $this -> st_cmt_modif = isset($_POST["cmt_modif"])?trim($_POST["cmt_modif"]):'';
         
          } 
+	$this -> st_cmt_modif =self::utf8_vers_cp1252($this -> st_cmt_modif);	 
     for ($i = 1;$i <= self :: $i_nb_photos;$i++)
      {
         $st_photo = '';
@@ -358,7 +359,7 @@ public function initialise_depuis_formulaire($pi_idf_acte)
             } 
         $this -> a_photos[] = basename($st_photo);
          } 
-    $a_grille = array_key_exists($this -> i_idf_type_acte, $this -> ga_grille_saisie) ? $this -> ga_grille_saisie[$this -> i_idf_type_acte] : $this -> ga_grille_saisie[IDF_MARIAGE];
+     $a_grille = array_key_exists($this -> i_idf_type_acte, $this -> ga_grille_saisie) ? $this -> ga_grille_saisie[$this -> i_idf_type_acte] : $this -> ga_grille_saisie[IDF_MARIAGE];
      $a_sexe_personne = array_key_exists($this -> i_idf_type_acte, $this -> ga_sexe_personne) ? $this -> ga_sexe_personne[$this -> i_idf_type_acte]: $this -> ga_sexe_personne[IDF_MARIAGE] ;
      $i_nb_personnes = count($a_grille);
      $this -> a_liste_personnes = array();
@@ -430,7 +431,7 @@ public function commentaires_demandeur()
 {
      $st_chaine = "<fieldset><legend>Commentaires &agrave; destination du valideur:</legend>";
      $st_chaine .= "<div class=\"text-center\">Commentaires:<textarea name=cmt_modif rows=4 cols=80 class=\"form-control jqte_edit\">";
-     $st_chaine .= $this -> st_cmt_modif;
+     $st_chaine .= cp1252_vers_utf8($this -> st_cmt_modif);
      $st_chaine .= "</textarea></div>";
      $st_chaine .= "</fieldset>";
      $st_chaine .= "<fieldset><legend>Commentaires &agrave; destination du demandeur:</legend>";
@@ -439,12 +440,7 @@ public function commentaires_demandeur()
      $st_chaine .= "</fieldset>";
      return $st_chaine;
      } 
-
-public function versChaine2()
-    
-{
-	return cp1252_vers_utf8($this->versChaine());
-}	
+	
 
 /**
  * Renvoie les différences entre la modification et l'acte d'origine
@@ -460,7 +456,7 @@ public function differences()
      $st_description_modif = $this -> versChaine();
      setlocale(LC_CTYPE, 'fr_FR.UTF8');
      //$o_FineDiff = new FineDiff(iconv( "UTF-8","cp1252", $st_description_acte), iconv( "UTF-8","cp1252", $st_description_modif), FineDiff :: $wordGranularity);
-     $o_FineDiff = new FineDiff($st_description_acte, $st_description_modif, FineDiff :: $wordGranularity);
+	 $o_FineDiff = new FineDiff($st_description_acte, $st_description_modif, FineDiff :: $wordGranularity);
      $st_chaine = "<fieldset>";
      $st_chaine .= "<legend>Diff&eacute;rences</legend>";
      $st_diffs = $o_FineDiff -> renderDiffToHTML();
@@ -561,7 +557,7 @@ public function refuse($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur
 
 {
      global $gst_url_site;
-     $st_requete = sprintf("update modification_acte set idf_valideur=%d,date_validation=now(),statut='R',motif_refus='%s' where idf=%d", $pi_idf_valideur, $pst_motif_refus, $this -> i_idf);
+     $st_requete = sprintf("update modification_acte set idf_valideur=%d,date_validation=now(),statut='R',motif_refus='%s' where idf=%d", $pi_idf_valideur, utf8_vers_cp1252($pst_motif_refus), $this -> i_idf);
      $this -> connexionBD -> execute_requete($st_requete);
      print("<div class=\"alert alert-danger\">La modification a &eacute;t&eacute; refus&eacute;e</div>");
      // print(sprintf("%s %s (%s) =>%s <br>",$pst_prenom_valideur,$pst_nom_valideur,$pst_email_valideur,$this->st_email_demandeur));

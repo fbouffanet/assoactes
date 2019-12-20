@@ -553,7 +553,7 @@ class Acte {
     {
          global $ga_mois_revolutionnaires, $ga_annees_revolutionnaires, $ga_mois_revolutionnaires_nimegue, $gst_url_images, $gst_url_site;
          $st_chaine = '';
-         $st_chaine .= sprintf("<tr><th>Type d'acte</th><td colspan=2>%s</td>", $this -> st_type_acte);
+         $st_chaine .= sprintf("<tr><th>Type d'acte</th><td colspan=2>%s</td>", self::cp1252_vers_utf8($this -> st_type_acte));
          $st_chaine .= sprintf("<th>Date </th><td class=\"lib_erreur\" colspan=2><input type=text id=\"date\" name=\"date\" value=\"%s\" maxlength=10 class=\"form-control\"></td>", $this -> date_propre($this -> st_date));
 		 $i_jour_rep = null;
          $i_mois_rep = null;

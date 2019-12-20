@@ -219,9 +219,9 @@ class ModificationPersonne extends Personne
 		$this -> st_patronyme = self :: patronyme_propre( $this -> st_patronyme );
 		$this -> st_prenom =self::utf8_vers_cp1252($this -> st_prenom);
         $this -> st_surnom = self :: prenom_propre($this -> st_surnom);
-		$this -> st_origine = self :: prenom_propre($this -> st_origine);
-		$this -> st_residence = self :: prenom_propre($this -> st_residence);
-		$this -> st_profession = self :: prenom_propre($this -> st_profession);
+		$this -> st_origine = self :: utf8_vers_cp1252($this -> st_origine);
+		$this -> st_residence = self :: utf8_vers_cp1252($this -> st_residence);
+		$this -> st_profession = self :: utf8_vers_cp1252($this -> st_profession);
          // met à jour le champ est_decede en même temps que le commentaire
 		 $this -> st_commentaire =self::utf8_vers_cp1252($this -> st_commentaire);
         $this -> st_commentaire = self :: commentaire_propre($this -> st_commentaire);
