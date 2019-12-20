@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('Commun/config.php');
@@ -46,7 +46,7 @@ switch ($gst_mode) {
 print('<!DOCTYPE html>');
 print("<head>\n");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
@@ -230,15 +230,15 @@ $(document).ready(function() {
   messages: {
 	max_nai: {
       required: "Le quota de naissance est obligatoire",
-      integer: "Le quota de naissance doit être entier"
+      integer: "Le quota de naissance doit Ãªtre entier"
      },
      max_mar_div: {
       required: "Le quota de mariage/divers est obligatoire",
-      integer: "Le quota de mariage/divers doit être entier"
+      integer: "Le quota de mariage/divers doit Ãªtre entier"
      },
 	 max_dec: {
-      required: "Le quota de décès est obligatoire",
-      integer: "Le quota de décès doit être entier"
+      required: "Le quota de dÃ©cÃ¨s est obligatoire",
+      integer: "Le quota de dÃ©cÃ¨s doit Ãªtre entier"
      }
    
 	},
@@ -277,7 +277,7 @@ $(document).ready(function() {
 		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
 	},
 	 submitHandler: function(form) {
-		if (confirm('Etes-vous sûr de mettre à jour les quotas globaux ?'))
+		if (confirm('Etes-vous sÃ»r de mettre Ã  jour les quotas globaux ?'))
         {
             form.submit();
         }         
@@ -321,7 +321,7 @@ $(document).ready(function() {
   });
     
   $("#bouton_maj_statut_adhts").click(function() {
-    if (confirm("Souhaitez-vous mettre à jour le statut de tous les adherents qui ne sont pas a jour ?"))   
+    if (confirm("Souhaitez-vous mettre Ã  jour le statut de tous les adherents qui ne sont pas a jour ?"))   
     {
       $("#maj_statut_adhts").submit();
     }
@@ -338,7 +338,7 @@ $(document).ready(function() {
             } 
     },
     messages: {
-      "supp[]": "Merci de choisir au moins un adhérent à supprimer"
+      "supp[]": "Merci de choisir au moins un adhÃ©rent Ã  supprimer"
     },
 	errorElement: "em",
 	errorPlacement: function ( error, element ) {
@@ -374,24 +374,24 @@ $(document).ready(function() {
       case 'SUPPRIMER':
         if(nb_adherents>=1)
         {
-          if (confirm('Etes-vous sûr de supprimer les adhérents '+adherents+' ?'))
+          if (confirm('Etes-vous sÃ¼r de supprimer les adhÃ©rents '+adherents+' ?'))
           {
             form.submit();
           }
         }
         else
-          alert("Merci de sélectionner au moins un adhérent");  
+          alert("Merci de sÃ©lectionner au moins un adhÃ©rent");  
       break;
       case 'FUSIONNER':
          if(nb_adherents==2)
         {
-          if (confirm('Etes-vous sûr de fusionner les adhérents '+adherents+' ?'))
+          if (confirm('Etes-vous sÃ¼r de fusionner les adhÃ©rents '+adherents+' ?'))
           {
             form.submit();
           }
         }
         else
-           alert("Merci de sélectionner deux adhérents"); 
+           alert("Merci de sÃ©lectionner deux adhÃ©rents"); 
       break;
       default:
         form.submit();  
@@ -400,7 +400,7 @@ $(document).ready(function() {
   });
   
    $("#recreer_mdp").click(function() {
-    if (confirm("Souhaitez-vous mettre réellement créer un nouveau mot de passe ?"))   
+    if (confirm("Souhaitez-vous mettre rÃ©ellement crÃ©er un nouveau mot de passe ?"))   
     {
       $('#mode_modifier').val("RECREER_MDP");
       $("#modification_adherent").submit();
@@ -473,8 +473,8 @@ print('</head>');
  * Affiche la liste des communes
  * @param object $pconnexionBD
  * @param string $pst_ident identifiant de l'utilisateur courant 
- * @param string $pst_nom_a_chercher nom à chercher
- * @param char identifiant du statut à afficher  
+ * @param string $pst_nom_a_chercher nom Ã  chercher
+ * @param char identifiant du statut Ã  afficher  
  */ 
 function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
 {
@@ -520,11 +520,11 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
    if ($pst_nom_a_chercher=='')
    {
      $i_session_initiale = isset($_SESSION['initiale_adh']) ? $_SESSION['initiale_adh'] : $a_initiales_adherents[0];
-     $gc_initiale = empty($_GET['initiale_adh']) ? $i_session_initiale : $_GET['initiale_adh'];
+     $gc_initiale = empty($_GET['initiale_adh']) ? $i_session_initiale : utf8_vers_cp1252($_GET['initiale_adh']);
    }
    else
    {
-      $gc_initiale = strtoupper(substr($pst_nom_a_chercher,0,1));
+      $gc_initiale = strtoupper(substr(utf8_vers_cp1252($pst_nom_a_chercher),0,1));
       if ($gc_initiale=='*') $gc_initiale = $a_initiales_adherents[0];
    }
    if (!in_array($gc_initiale,$a_initiales_adherents))
@@ -532,6 +532,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
    $_SESSION['initiale_adh'] = $gc_initiale;   
    foreach ($a_initiales_adherents as $c_initiale)
    {
+	 $c_initiale = cp1252_vers_utf8($c_initiale);  
      if ($c_initiale==$gc_initiale)
         print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
      else
@@ -567,7 +568,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
    {                
       if (a_droits($pst_ident,DROIT_GESTION_ADHERENT))
       {  
-         // membre ayant les droits de création  
+         // membre ayant les droits de crÃ©ation  
          $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_liste_adherents),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Adh&eacute;rent','Identifiant','Email','Visite','Statut','Modifier','Selectionner','Stats','Recherches'));
          $pagination->init_page_cour($gi_num_page_cour);
          $pagination->affiche_entete_liens_navigation();
@@ -582,7 +583,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
       }
       else if (a_droits($pst_ident,DROIT_STATS))
       {
-          // adhérent avec les droits stats        
+          // adhÃ©rent avec les droits stats        
          $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_liste_adherents),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Adh&eacute;rent','Identifiant','Email','Site','Stats','Recherches'));
          $pagination->init_page_cour($gi_num_page_cour);
          $pagination->affiche_entete_liens_navigation();
@@ -598,7 +599,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
       }
       else
       {
-          // adhérent de base          
+          // adhÃ©rent de base          
          $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_liste_adherents),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Adh&eacute;rent','Identifiant','Email','Site'));
          $pagination->init_page_cour($gi_num_page_cour);
          $pagination->affiche_entete_liens_navigation();
@@ -653,7 +654,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
    }  
 }
 
-/** Affiche le menu de modification d'un adhérent
+/** Affiche le menu de modification d'un adhÃ©rent
  * @param object $padherent
  * @param integer $pi_idf_adherent identifiant de l'adht
  * @global string $gst_rep_trombinoscope 
@@ -686,7 +687,7 @@ function menu_modifier($padherent,$pi_idf_adherent)
 	print("</form>");
 }
 
-/* Affiche le menu d'ajout d'un adhérent
+/* Affiche le menu d'ajout d'un adhÃ©rent
  * @param object $pconnexionBD Identifiant de la connexion de base
  * @param string $pst_ident identifiant de l'utilisateur courant 
  */ 
@@ -716,11 +717,11 @@ function menu_ajouter($padherent)
 	print("</form>");
 }
 
-/** Affiche le menu de visualisation d'un adhérent (visiteur sans aucun droit)
+/** Affiche le menu de visualisation d'un adhÃ©rent (visiteur sans aucun droit)
  * @param object $pconnexionBD Identifiant de la connexion de base
- * @param integer $pi_idf_adherent Identifiant de l'adherent à modifier 
+ * @param integer $pi_idf_adherent Identifiant de l'adherent Ã  modifier 
  * @param string $pst_ident identifiant de l'utilisateur courant
- * @global string $gst_rep_trombinoscope répertoire du trombinoscope
+ * @global string $gst_rep_trombinoscope rÃ©pertoire du trombinoscope
  * @global string $gst_url_trombinoscope url du trombinoscope  
  */ 
 function menu_visualiser($pconnexionBD,$pi_idf_adherent)
@@ -757,9 +758,9 @@ function menu_visualiser($pconnexionBD,$pi_idf_adherent)
 
 }
 
-/** Exporte les adhérents définis par le statut. Le résultat est un tableau HTML
+/** Exporte les adhÃ©rents dÃ©finis par le statut. Le rÃ©sultat est un tableau HTML
  * @param object $pconnexionBD Identifiant de la connexion de base
- * @param string statut de l'adhérent
+ * @param string statut de l'adhÃ©rent
  */ 
 function exporte_adresses_par_statut($pconnexionBD,$pc_statut)
 {
@@ -787,7 +788,7 @@ function exporte_adresses_par_statut($pconnexionBD,$pc_statut)
     else
     {
        print("<table class=\"table table-bordered table-striped\">\n");
-       print("<tr><th>Adh&eacute;rent</th><th>N°</th><th>Email</th><th>Adresse1</th><th>Adresse2</th><th>CP</th><th>Ville</th><th>Pays</th></tr>\n");
+       print("<tr><th>Adh&eacute;rent</th><th>NÂ°</th><th>Email</th><th>Adresse1</th><th>Adresse2</th><th>CP</th><th>Ville</th><th>Pays</th></tr>\n");
        foreach ($a_liste_adherents as $a_ligne)
        {
           print("<tr>"); 
@@ -811,9 +812,9 @@ function exporte_adresses_par_statut($pconnexionBD,$pc_statut)
 	print("</form>");
 }
 
-/** Exporte les adhérents définis par le statut. Le résultat est un tableau HTML
+/** Exporte les adhÃ©rents dÃ©finis par le statut. Le rÃ©sultat est un tableau HTML
  * @param object $pconnexionBD Identifiant de la connexion de base
- * @param string statut de l'adhérent
+ * @param string statut de l'adhÃ©rent
  */ 
 function exporte_adresses_publipostage($pconnexionBD)
 {
@@ -840,7 +841,7 @@ function exporte_adresses_publipostage($pconnexionBD)
 	}
 }
 
-/** Exporte tous les adhérents
+/** Exporte tous les adhÃ©rents
  * @param object $pconnexionBD Identifiant de la connexion de base
  */ 
 function exporte_tout($pconnexionBD)
@@ -867,7 +868,7 @@ function exporte_tout($pconnexionBD)
 	}
 }
 
-/** Montre les aides possibles des adhérents
+/** Montre les aides possibles des adhÃ©rents
  * @param object $pconnexionBD Identifiant de la connexion de base
  */ 
 function montre_aides_adherents($pconnexionBD)
@@ -987,7 +988,7 @@ function montre_aides_adherents($pconnexionBD)
 }
 
 
-/** montre les quotas de tous les adhérents
+/** montre les quotas de tous les adhÃ©rents
  * @param object $pconnexionBD Identifiant de la connexion de base
  */ 
 function montre_quotas_adherents($pconnexionBD)
@@ -1025,7 +1026,7 @@ function montre_quotas_adherents($pconnexionBD)
    print("</form></div>");
 }
 
-/** maj les quotas de tous les adhérents
+/** maj les quotas de tous les adhÃ©rents
  * @param object $pconnexionBD Identifiant de la connexion de base
  */ 
 function maj_quotas_adherents($pconnexionBD)
@@ -1043,8 +1044,8 @@ function maj_quotas_adherents($pconnexionBD)
 	}	
 }	
 
-/** Effectue la bascule des adhérents. Les adhérents plus à jour de leur cotisations sont suspendus
- * Ceux de plus de 5 ans sont supprimés
+/** Effectue la bascule des adhÃ©rents. Les adhÃ©rents plus Ã  jour de leur cotisations sont suspendus
+ * Ceux de plus de 5 ans sont supprimÃ©s
  * @param object $pconnexionBD Identifiant de la connexion de base
  */ 
 function maj_statut_adherents($pconnexionBD)
@@ -1116,11 +1117,11 @@ function maj_statut_adherents($pconnexionBD)
     }
 }
 
-/** Fusionne 2 adhérents: le plus petit numéro est conservé et les informations
- * du second adhérent ajoutées au premier si les nom et adresses sont identiques 
+/** Fusionne 2 adhÃ©rents: le plus petit numÃ©ro est conservÃ© et les informations
+ * du second adhÃ©rent ajoutÃ©es au premier si les nom et adresses sont identiques 
  * @param object $pconnexionBD Identifiant de la connexion de base
- * @param integer $pi_idf_adh1 identifiant du premier adhérent
- * @param integer $pi_idf_adh1 identifiant du second adhérent 
+ * @param integer $pi_idf_adh1 identifiant du premier adhÃ©rent
+ * @param integer $pi_idf_adh1 identifiant du second adhÃ©rent 
  */
 function fusionner($pconnexionBD,$pi_idf_adh1,$pi_idf_adh2)
 {
@@ -1283,8 +1284,7 @@ switch ($gst_mode) {
    break;
    case 'RECREER_MDP':
       $adherent = new Adherent($connexionBD,$gi_idf_adherent);
-      $st_mdp = Adherent::mdp_alea();
-      //print("Nouveau MDP=$st_mdp<br>");        
+      $st_mdp = Adherent::mdp_alea();    
       if ($adherent->change_mdp($st_mdp))
         print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
       else
