@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('Commun/Identification.php');
@@ -34,8 +34,8 @@ if (!empty($_SESSION['ident']))
 }
 
 /*
-* Construit la chaine permettant la validation des paramètres d'un formulaire
-* @return string régles de validation
+* Construit la chaine permettant la validation des paramÃ¨tres d'un formulaire
+* @return string rÃ¨gles de validation
 */
 function regles_validation()
 {
@@ -43,7 +43,7 @@ function regles_validation()
 	$a_filtres = $go_acte->getFiltresParametres();
   for ($i=1;$i<=ModificationActe::getNbPhotos();$i++)
   {
-    $a_filtres["photo$i"]= array(array("extension",'"gif|png|jpg|jpeg"',"seulement, les extensions gif, png, jpg ou jpeg sont acceptées"));
+    $a_filtres["photo$i"]= array(array("extension",'"gif|png|jpg|jpeg"',"seulement, les extensions gif, png, jpg ou jpeg sont acceptÃ©es"));
   }
   if (empty($gst_email_demandeur))
       $a_filtres["code"]= array(array("required",'true',"Le code est requis"));
@@ -85,10 +85,10 @@ $gst_mode = isset($_REQUEST['MODE']) ? $_REQUEST['MODE'] : '';
 
 if (isset($_REQUEST['idf_acte']))
 {
-	//+ vérification que l'acte a bien été demandé par l'adhérent connecté
+	//+ vÃ©rification que l'acte a bien Ã©tÃ© demandÃ© par l'adhÃ©rent connectÃ©
 	$gi_idf_acte= (int) $_REQUEST['idf_acte'];
   $gi_idf_source = $connexionBD->sql_select1("select idf_source from acte where idf=$gi_idf_acte");
-  // Vérification des droits d'accèq
+  // VÃ©rification des droits d'accÃ¨s
   if ($gi_idf_source!=IDF_SOURCE_TD)
   {
     if (empty($gi_idf_demandeur))
@@ -126,7 +126,7 @@ else
 ?>
 <!DOCTYPE html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href='css/styles.css' type='text/css' rel='stylesheet'>
 <link href='css/bootstrap.min.css' rel='stylesheet'>
@@ -251,7 +251,7 @@ else
   {
     if (empty($gi_idf_demandeur)) 
     {
-      // Modification de TD => une vérification du captch doit être faite
+      // Modification de TD => une vÃ©rification du captch doit Ãªtre faite
       if (chk_crypt($_POST['code']))
       {
         $go_acte = new ModificationActe($connexionBD,$gi_idf_acte,null);
@@ -276,7 +276,7 @@ else
     }
     else
     {
-      // La modification vient d'un adhérent => pas de captcha
+      // La modification vient d'un adhÃ©rent => pas de captcha
       $go_acte = new ModificationActe($connexionBD,$gi_idf_acte,null);
       $go_acte->initialise_depuis_formulaire($gi_idf_acte); 
       $go_acte->setEmailDemandeur($gst_email_demandeur);            

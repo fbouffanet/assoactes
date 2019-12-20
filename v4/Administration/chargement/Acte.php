@@ -41,7 +41,7 @@ class Acte {
 	* @param string $st_valeur chaine cp1252 à convertir
 	* @return string chaine encodée en UTF8
 	*/
-	static private function cp1252_vers_utf8($st_valeur)
+	static public function cp1252_vers_utf8($st_valeur)
 	{
 		return mb_convert_encoding($st_valeur,'UTF8','cp1252');
 	}
@@ -51,7 +51,7 @@ class Acte {
 	* @param string $st_valeur chaine UTF8 à convertir
 	* @return string chaine encodée en UTF8
 	*/
-	static private function utf8_vers_cp1252($st_valeur)
+	static public function utf8_vers_cp1252($st_valeur)
 	{
 		return mb_convert_encoding($st_valeur,'cp1252','UTF8');
 	}
@@ -455,17 +455,17 @@ class Acte {
          $i_mois = $this -> i_mois;
          $i_annee = $this -> i_annee;
          $st_date_rep = $this -> st_date_rep;
-         $st_cote = self::utf8_vers_cp1252($this -> st_cote);
-         $st_libre = self::utf8_vers_cp1252($this -> st_libre);
+         $st_cote = $this -> st_cote;
+         $st_libre = $this -> st_libre;
          $st_url = $this -> st_url;
-         $st_commentaires = self::utf8_vers_cp1252($this -> st_commentaires);
+         $st_commentaires = $this -> st_commentaires;
          if (($this -> a_infos == false) && (preg_match('/vue/i', $st_cote)||(!empty($this -> st_url))))
              $i_details_supplementaires = 2;
          else if (($this -> a_infos) || !empty($this -> st_libre) || !empty($this -> st_commentaires))
              $i_details_supplementaires = 1;
          else
              $i_details_supplementaires = 0;;
-         $st_commentaires = str_replace("\n", '�', $st_commentaires);
+         $st_commentaires = str_replace("\n", '§', $st_commentaires);
          $created = time();
 		     $changed = time();
          if (isset($this -> i_idf))
@@ -524,7 +524,10 @@ class Acte {
              $this -> st_libre = isset($_POST["libre"])?substr(trim($_POST["libre"]), 0, 50):'';
              $this -> st_commentaires = isset($_POST["cmt_acte"])?substr(trim($_POST["cmt_acte"]), 0, 1200):'';
              $this -> st_url = isset($_POST["permalien"])?substr(trim($_POST["permalien"]), 0, 100):'';
-             } 
+             }
+        $this -> st_cote =self::utf8_vers_cp1252($this -> st_cote);
+        $this -> st_libre =self::utf8_vers_cp1252($this -> st_libre);
+        $this -> st_commentaires =self::utf8_vers_cp1252($this -> st_commentaires);			
         list($i_jour, $i_mois, $i_annee) = $this -> date_vers_triplet($this -> st_date);
          $this -> i_jour = $i_jour;
          $this -> i_mois = $i_mois;
@@ -790,7 +793,7 @@ public function formulaire_bas_acte()
 
 {
      $st_chaine = "<tr class=\"bg-primary\"><td colspan=8>Commentaires g&eacute;n&eacute;raux sur l'acte</td></tr>";
-     $st_chaine .= sprintf("<tr><td colspan=8><div class=\"text-center\"><textarea name=cmt_acte rows=10 cols=80>%s</textarea></div></td></tr>", str_replace('§', "\n", $this -> st_commentaires));
+     $st_chaine .= sprintf("<tr><td colspan=8><div class=\"text-center\"><textarea name=cmt_acte rows=10 cols=80>%s</textarea></div></td></tr>", str_replace('§', "\n", self::cp1252_vers_utf8($this -> st_commentaires)));
      return $st_chaine;
      } 
 

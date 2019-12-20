@@ -459,7 +459,7 @@ public function differences()
      $st_description_acte = $o_acte -> versChaine();
      $st_description_modif = $this -> versChaine();
      setlocale(LC_CTYPE, 'fr_FR.UTF8');
-     //$o_FineDiff = new FineDiff(iconv("cp1252", "UTF-8", $st_description_acte), iconv( "UTF-8","cp1252", $st_description_modif), FineDiff :: $wordGranularity);
+     //$o_FineDiff = new FineDiff(iconv( "UTF-8","cp1252", $st_description_acte), iconv( "UTF-8","cp1252", $st_description_modif), FineDiff :: $wordGranularity);
      $o_FineDiff = new FineDiff($st_description_acte, $st_description_modif, FineDiff :: $wordGranularity);
      $st_chaine = "<fieldset>";
      $st_chaine .= "<legend>Diff&eacute;rences</legend>";
