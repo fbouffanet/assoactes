@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -69,7 +69,7 @@ class CommunePersonne {
      if (array_key_exists(strval($pst_nom),$this->a_idf_par_commune))
         return $this->a_idf_par_commune[strval($pst_nom)];
      else
-        return 16777215; // Max de Mediumint => Marqueur pour détecter les erreurs éventuelles  
+        return 16777215; // Max de Mediumint => Marqueur pour dÃ©tecter les erreurs Ã©ventuelles  
    }
    
 }

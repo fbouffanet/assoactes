@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------?
 
@@ -73,7 +73,7 @@ class Profession {
         return $this->a_idf_par_profession[strval($pst_nom)];
      else
      {
-        return 65535; // Max de Smallint => Marqueur pour détecter les erreurs éventuelles
+        return 65535; // Max de Smallint => Marqueur pour dÃ©tecter les erreurs Ã©ventuelles
      }      
    }
 }

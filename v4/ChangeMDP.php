@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once 'Commun/config.php';
@@ -26,7 +26,7 @@ $adherent = new Adherent($connexionBD,$i_idf_adht_connecte);
 print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 
@@ -73,21 +73,21 @@ $(document).ready(function() {
     mdp_courant: {
       required: "Le mot de passe courant est obligatoire",
 		  pattern: "Le mot de passe ne doit contenir que des lettres et des chiffres",
-      minlength: "Le mot de passe doit contenir au minimum 8 caractères",
-		  maxlength: "Le mot de passe doit contenir au maximum 12 caractères"
+      minlength: "Le mot de passe doit contenir au minimum 8 caractÃ¨res",
+		  maxlength: "Le mot de passe doit contenir au maximum 12 caractÃ¨res"
 	 },
    nouveau_mdp: {
       required: "Le nouveau mot de passe est obligatoire",
 		  pattern: "Le mot de passe ne doit contenir que des lettres et des chiffres",
-      minlength: "Le mot de passe doit contenir au minimum 8 caractères",
-		  maxlength: "Le mot de passe doit contenir au maximum 12 caractères"
+      minlength: "Le mot de passe doit contenir au minimum 8 caractÃ¨res",
+		  maxlength: "Le mot de passe doit contenir au maximum 12 caractÃ¨res"
 	 },
    nouveau_mdp2: {
       required: "Le second nouveau mot de passe est obligatoire",
 		  pattern: "Le mot de passe ne doit contenir que des lettres et des chiffres",
-      minlength: "Le mot de passe doit contenir au minimum 8 caractères",
-		  maxlength: "Le mot de passe doit contenier au maximum 12 caractères",
-      equalTo: "le second mot de passe est différent du premier"
+      minlength: "Le mot de passe doit contenir au minimum 8 caractÃ¨res",
+		  maxlength: "Le mot de passe doit contenier au maximum 12 caractÃ¨res",
+      equalTo: "le second mot de passe est diffÃ©rent du premier"
 	 }
   },
   errorElement: "em",
@@ -132,10 +132,10 @@ print("<title>Base ".SIGLE_ASSO.": Changer votre mot de passe</title>\n");
 print('</head>');
 
 /**
- * Affiche de la table d'édition
+ * Affiche de la table d'Ã©dition
  * @param object $pconnexionBD
  * @param object $padherent objet adherent 
- * @param integer $pi_idf_adh identifiant de l'adhérent
+ * @param integer $pi_idf_adh identifiant de l'adhÃ©rent
 
  */ 
 function menu_change_mdp($pconnexionBD,$padherent,$pi_idf_adh)
@@ -201,8 +201,8 @@ switch ($gst_mode) {
      menu_change_mdp($connexionBD,$adherent,$i_idf_adht_connecte);
   break;
   case 'MODIFIER' :
-     $gst_mdp_courant = substr(trim($_POST['mdp_courant']),0,12);
-     $gst_nouveau_mdp = substr(trim($_POST['nouveau_mdp']),0,12);
+     $gst_mdp_courant = utf8_vers_cp1252(substr(trim($_POST['mdp_courant']),0,12));
+     $gst_nouveau_mdp = utf8_vers_cp1252(substr(trim($_POST['nouveau_mdp']),0,12));
      $st_requete = "select mdp from adherent where ident='$gst_ident'";
      $st_mdp_hash = $connexionBD->sql_select1($st_requete);
      if (password_verify($gst_mdp_courant,$st_mdp_hash))
