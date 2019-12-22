@@ -90,7 +90,7 @@ class ChargementNimV3 {
 				{
 					// Tentative de récupération d'un fichier Nimgue V3 issu d'un fichier Nimègue V2 
 					if ($st_prn_excjt_epx=='' && $st_cmt_excjt_epx== '')
-					{è
+					{
 						list($st_nom_excjt_epx,$st_prn_excjt_epx,$st_cmt_excjt_epx) = infos_conjoint($st_nom_excjt_epx);
 					}          
 					$cjt_epoux = new Personne($connexionBD,$i_acte,IDF_PRESENCE_EXCJT,'F',$st_nom_excjt_epx,$st_prn_excjt_epx);
