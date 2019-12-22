@@ -9,7 +9,7 @@ require_once('../Commun/commun.php');
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -196,7 +196,7 @@ else
 			$ga_num_paroisse[$st_code_commune] = array_key_exists($st_code_commune,$ga_num_paroisse) ? $ga_num_paroisse[$st_code_commune] +1 : 0;
 			if (preg_match('/^(\d+)/',$st_code_commune,$a_correspondances))
 			{	
-		        print(sprintf("<div class=\"alert alert-info\">Cr&eacute;ation de la commune: %s (%d-%d)</div>",$st_nom_commune,$a_correspondances[1],$ga_num_paroisse[$st_code_commune]));
+		        print(sprintf("<div class=\"alert alert-info\">Cr&eacute;ation de la commune: %s (%d-%d)</div>",cp1252_vers_utf8($st_nom_commune),$a_correspondances[1],$ga_num_paroisse[$st_code_commune]));
 				if (isset($ga_coordonnees[$st_code_commune][$st_nom_commune]))
 				{	
 					list($f_longitude,$f_latitude) = $ga_coordonnees[$st_code_commune][$st_nom_commune];
@@ -260,7 +260,7 @@ else
 					fputcsv($pf, array($i_code_commune,$st_nom_commune,$ga_idf_commune_cree[$i_code_commune][$st_nom_commune],$st_type,'',''),SEP_CSV);
 				}
 				else
-					print("<div class=\"alert alert-danger\">Pas d'identifiant de commune cr&eacute;e pour le code $i_code_commune et la commune $st_nom_commune</div>");
+					print("<div class=\"alert alert-danger\">Pas d'identifiant de commune cr&eacute;e pour le code $i_code_commune et la commune ".cp1252_vers_utf8($st_nom_commune)."</div>");
 			}
 		}
 	}

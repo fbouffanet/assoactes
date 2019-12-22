@@ -158,7 +158,7 @@ if (isset($gst_ident ))
         foreach ($a_ddes_paroisses as $a_ligne)
         {
           list($st_paroisse,$i_idf_paroisse,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
-          print(sprintf("<tr><td>%s</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",$st_paroisse,$i_total,ddes_communes($i_nb_nai,$i_idf_paroisse,IDF_NAISSANCE),ddes_communes($i_nb_mar,$i_idf_paroisse,IDF_MARIAGE),ddes_communes($i_nb_dec,$i_idf_paroisse,IDF_DECES),ddes_communes($i_nb_cm,$i_idf_paroisse,IDF_CM)));
+          print(sprintf("<tr><td>%s</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",cp1252_vers_utf8($st_paroisse),$i_total,ddes_communes($i_nb_nai,$i_idf_paroisse,IDF_NAISSANCE),ddes_communes($i_nb_mar,$i_idf_paroisse,IDF_MARIAGE),ddes_communes($i_nb_dec,$i_idf_paroisse,IDF_DECES),ddes_communes($i_nb_cm,$i_idf_paroisse,IDF_CM)));
         }
         print("</table>\n");
       }                                                                         
@@ -180,7 +180,7 @@ if (isset($gst_ident ))
         foreach ($a_ddes_cantons as $a_ligne)
         {
           list($st_canton,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
-          print(sprintf("<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td></tr>\n",$st_canton,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
+          print(sprintf("<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td></tr>\n",cp1252_vers_utf8($st_canton),$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
         }
         print("</table>\n");
       }

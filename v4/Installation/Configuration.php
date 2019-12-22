@@ -7,7 +7,7 @@ if (file_exists($gst_fichier_configuration))
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -202,7 +202,7 @@ $gst_constantes = constantes($gst_fichier_constantes);
 if (isset($_POST['lib_asso']))
 {
 	$gst_lib_asso = trim($_POST['lib_asso']);
-	$gst_lib_asso_avec = trim($_POST['lib_asso_avec']);
+	$gst_lib_asso_avec =trim($_POST['lib_asso_avec']);
 	$gst_sigle_asso = trim($_POST['sigle_asso']);
 	
 	$gst_email_dir_asso = trim($_POST['email_dir_asso']);

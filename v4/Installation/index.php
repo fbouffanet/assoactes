@@ -13,9 +13,10 @@ if (file_exists($gst_fichier_configuration))
 	require_once($gst_fichier_configuration);
 $gst_logo_association = isset($gst_logo_association) ? basename($gst_logo_association): '';
 require_once("../Commun/Adherent.php");
+require_once("../Commun/commun.php");
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -407,7 +408,7 @@ if (isset($_POST['nom_bd']))
 	}
 	if (!$b_erreur)
 	{	
-		$st_mdp_hash = password_hash($gst_mdp_administrateur, PASSWORD_DEFAULT);
+		$st_mdp_hash = password_hash(utf8_vers_cp1252($gst_mdp_administrateur), PASSWORD_DEFAULT);
 		date_default_timezone_set('Europe/Paris');
 		$st_date_premiere_adhesion = date("Y-m-d");
 		$aujourdhui = getdate();
@@ -419,7 +420,7 @@ if (isset($_POST['nom_bd']))
 			print_r($dbh->errorInfo());
 			$b_erreur=true;		
 		} 
-		if ($sth->execute(array(':prenom'=>$gst_prenom_administrateur,':nom'=>$gst_nom_administrateur,':email_perso'=>$gst_email_administrateur,':email_forum'=>$gst_email_administrateur,':mdp'=>$st_mdp_hash,':annee_cotisation'=>$i_annee_adhesion,':date_premiere_adhesion'=>$st_date_premiere_adhesion,':date_paiement'=>$st_date_premiere_adhesion,':confidentiel'=>'O',':prix'=>15,':infos_agc'=>'',':type_origine'=>0,':description_origine'=>0,':jeton_paiement'=>'',':clef_nouveau_mdp'=>0)))
+		if ($sth->execute(array(':prenom'=>utf8_vers_cp1252($gst_prenom_administrateur),':nom'=>utf8_vers_cp1252($gst_nom_administrateur),':email_perso'=>utf8_vers_cp1252($gst_email_administrateur),':email_forum'=>utf8_vers_cp1252($gst_email_administrateur),':mdp'=>$st_mdp_hash,':annee_cotisation'=>$i_annee_adhesion,':date_premiere_adhesion'=>$st_date_premiere_adhesion,':date_paiement'=>$st_date_premiere_adhesion,':confidentiel'=>'O',':prix'=>15,':infos_agc'=>'',':type_origine'=>0,':description_origine'=>0,':jeton_paiement'=>'',':clef_nouveau_mdp'=>0)))
 			print("<div class=\"alert alert-success\">L'adh&eacute;rent a &eacute;t&eacute; cr&eacute;&eacute;</div>");
 		else
 		{	

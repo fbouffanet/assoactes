@@ -25,7 +25,7 @@ require_once('../Administration/chargement/Releveur.php');
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -1014,25 +1014,25 @@ if (file_exists('prefixe_tables_EA.txt'))
 				switch ($st_type_courant)
 				{
 					case 'N':
-						print("<div class=\"alert alert-info\">Migration des actes de naissances de la commune $st_nom_commune_courant($st_code_commune_courant)</div>");
+						print("<div class=\"alert alert-info\">Migration des actes de naissances de la commune ".cp1252_vers_utf8($st_nom_commune_courant)."($st_code_commune_courant)</div>");
 						$a_liste_naissances_existantes = array();
 						$i_nb_actes = charge_naissances($st_code_commune_courant,$st_nom_commune_courant,$i_idf_commune_courant,1,null,$a_liste_naissances_existantes);
 						$ga_communes[$i_idf_commune_courant]['N']=array($st_code_commune_courant,$st_nom_commune_courant,'OK',$i_nb_actes);
 					break;
 					case 'M':
-						print("<div class=\"alert alert-info\">Migration des actes de mariages de la commune $st_nom_commune_courant($st_code_commune_courant)</div>");
+						print("<div class=\"alert alert-info\">Migration des actes de mariages de la commune ".cp1252_vers_utf8($st_nom_commune_courant)."($st_code_commune_courant)</div>");
 						$a_liste_mariages_existants = array();
 						$i_nb_actes = charge_mariages($st_code_commune_courant,$st_nom_commune_courant,$i_idf_commune_courant,1,null,$a_liste_mariages_existants);
 						$ga_communes[$i_idf_commune_courant]['M']=array($st_code_commune_courant,$st_nom_commune_courant,'OK',$i_nb_actes);
 					break;
 					case 'D':
-						print("<div class=\"alert alert-info\">Migration des actes de d&eacute;c&egrave;s de la commune $st_nom_commune_courant($st_code_commune_courant)</div>");
+						print("<div class=\"alert alert-info\">Migration des actes de d&eacute;c&egrave;s de la commune ".cp1252_vers_utf8($st_nom_commune_courant)."($st_code_commune_courant)</div>");
 						$a_liste_deces_existants = array();
 						$i_nb_actes = charge_deces($st_code_commune_courant,$st_nom_commune_courant,$i_idf_commune_courant,1,null,$a_liste_deces_existants);
 						$ga_communes[$i_idf_commune_courant]['D']=array($st_code_commune_courant,$st_nom_commune_courant,'OK',$i_nb_actes);
 					break;
 					case 'V':
-						print("<div class=\"alert alert-info\">Migration des actes divers de la commune $st_nom_commune_courant($st_code_commune_courant)</div>");
+						print("<div class=\"alert alert-info\">Migration des actes divers de la commune ".cp1252_vers_utf8($st_nom_commune_courant)."($st_code_commune_courant)</div>");
 						$a_liste_divers_existants = array();
 						$i_nb_actes = charge_divers($st_code_commune_courant,$st_nom_commune_courant,$i_idf_commune_courant,1,null,$a_liste_divers_existants);
 						$ga_communes[$i_idf_commune_courant]['V']=array($st_code_commune_courant,$st_nom_commune_courant,'OK',$i_nb_actes);

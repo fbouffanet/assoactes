@@ -47,8 +47,7 @@ INSERT INTO `element_menu` (`libelle`, `rang`, `categorie`, `script`, `droit`) V
 ('Types d''actes', 6, 'Administration', 'Administration/GestionTypesActesDivers.php', 'CHGMT_EXPT'),
 ('Répertoires Notaire', 9, 'Les Recherches', 'RepNot/RechercheRepNot.php', ''),
 ('Export Historique', 2, 'Stats', 'Stats/ExportHisto.php', 'STATS'),
-('Ttes les demandes', 2, 'Compte Personnel', 'DemandesMesCantons.php', ''),
-('Corrections demandées', 1, 'Suivi corrections', 'SuiviCorrections/CorrectionsDemandees.php', 'CHGMT_EXPT'),
+('Corrections demandÃ©es', 1, 'Suivi corrections', 'SuiviCorrections/CorrectionsDemandees.php', 'CHGMT_EXPT'),
 ('Corrections faites', 2, 'Suivi corrections', 'SuiviCorrections/CorrectionsFaites.php ', 'CHGMT_EXPT');
 
 
