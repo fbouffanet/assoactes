@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -25,8 +25,8 @@ define('IDF_RECENS',7);
 
 // libelles
 define('LIB_MARIAGE','Mariage');
-define('LIB_DECES','Sépulture/Décés');
-define('LIB_NAISSANCE','Baptême/Naissance');
+define('LIB_DECES','SÃ©pulture/DÃ©cÃ¨s');
+define('LIB_NAISSANCE','BaptÃªme/Naissance');
 define('LIB_RECENSEMENT','Recensement');
 
 define('SEP_CSV',';');
@@ -54,8 +54,8 @@ $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
                    DROIT_MODIFICATION_DROITS => 'Modification Droits Adherent',
                    DROIT_UTILITAIRES => 'Acces aux utilitaires',
                    DROIT_VARIANTES => 'Gestion des variantes',
-                   DROIT_RELEVES => 'Suivi des relevés',
-                   DROIT_STATS => 'Accés aux statistiques',
+                   DROIT_RELEVES => 'Suivi des relevÃ©s',
+                   DROIT_STATS => 'AccÃ¨s aux statistiques',
 				   DROIT_GENEABANK => 'Gestion des points GeneaBank'
                   );
 define('NB_LIGNES_PAR_PAGE',25);
@@ -203,7 +203,7 @@ $ga_pays = array(
 "Macao",
 "Macedoine",
 "Madagascar",
-"Madère",
+"MadÃ¨re",
 "Malaisie",
 "Malawi",
 "Maldives",
@@ -361,19 +361,19 @@ $ga_mois = array(1=>'Janvier',
                  12=> 'Decembre');
 
 $ga_mois_revolutionnaires       = array(                          
-                                1=> 'Vendémiaire',                 
+                                1=> 'VendÃ©miaire',                 
                                 2=> 'Brumaire',                    
                                 3=> 'Frimaire',                    
-                                4=> 'Nivôse',                      
-                                5=> 'Pluviôse',                    
-                                6=> 'Ventôse',                     
+                                4=> 'NivÃ´se',                      
+                                5=> 'PluviÃ´se',                    
+                                6=> 'VentÃ´se',                     
                                 7=> 'Germinal',                    
                                 8=> 'Florial',                     
                                 9=> 'Prairial',                    
                                 10=> 'Messidor',                   
                                 11=> 'Thermidor',                  
                                 12=> 'Fructidor',
-                                13=> 'Complémentaires'                   
+                                13=> 'ComplÃ©mentaires'                   
                                );
 
 $ga_mois_revolutionnaires_nimegue       = array(                          
