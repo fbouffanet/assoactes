@@ -249,6 +249,9 @@ if (isset($_POST['lib_asso']))
 		print("<div class=\"alert alert-success\">$gst_fichier_constantes sauvegard&eacute;</div>");
 		print("<a href=\"$gst_url_site\" class=\"btn btn-info\" role=\"button\" target=\"_blank\">Acc&eacute;der au site</a>");
 		mail('fbouffanet@yahoo.fr', 'AssoActes', "Programme installé sur $gst_url_site\n");
+		print("<div>Si vous souhaitez essayer de migrer des donn&eacute;es depuis ExpoActes, cliquez sur le bouton suivant</div>");
+		print("<div>Les donn&eacute;es d'ExpoActes ne sont pas modifi&eacute;es</div>");
+		print("<a href=\"MigreCommunes.php\" class=\"btn btn-warning\" role=\"button\" target=\"_blank\">Migration de donn&eacute;es depuis ExpoActes</a>");
 	}	
 }
 else	

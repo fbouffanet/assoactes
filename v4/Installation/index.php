@@ -196,6 +196,14 @@ function affiche_parametres_base($pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_ut
     print('<div class="col-md-8">');
     print("<input type=text maxlength=20 size=20 name=nom_bd id=nom_bd value=\"$pst_nom_bd\" class=\"form-control\">");
     print('</div></div>');	
+	print('<div class="form-group row">');
+	print("<label for=\"effacer_anciennes_tables\" class=\"col-md-4 col-form-label control-label\">Effacer les tables d'une ancienne installation</label>");
+    print('<div class="col-md-8">');
+    print('<div class="checkbox">');
+    print('<label>');
+    print('<input type="checkbox" id="effacer_anciennes_tables" name="effacer_anciennes_tables" value="O">');
+    print('</label>');
+    print('</div></div></div>');	
 	print("</div></div>");
 }
 /*
@@ -389,6 +397,15 @@ if (isset($_POST['nom_bd']))
 	{
 		die("<div class=\"alert alert-danger\">Connexion &agrave; la base de donn&eacute;es impossible</div>");
     }
+	if (isset($_POST['effacer_anciennes_tables']) && $_POST['effacer_anciennes_tables']=='O')
+	{	
+		$st_requete = "DROP TABLE `acte`, `adherent`, `canton`, `categorie_menu`, `chantiers`, `chargement`, `collection_acte`, `commune_acte`, `commune_personne`, `demandes_adherent`, `documents`, `element_menu`, `groupe_prenoms`, `modification_acte`, `modification_personne`, `patronyme`, `personne`, `photos`, `prenom`, `prenom_simple`, `privilege`, `profession`, `releveur`, `rep_not_actes`, `rep_not_desc`, `rep_not_variantes`, `source`, `stats_cnx`, `stats_commune`, `stats_patronyme`, `statut_adherent`, `tableau_kilometrique`, `type_acte`, `type_presence`, `union`, `variantes_patro`, `variantes_prenom`";
+		$sth = $connexionBD->prepare($st_requete);
+		if ($sth->execute())
+			print("<div class=\"alert alert-success\">Anciennes tables supprim&eacute;es</div>"); 
+		else
+			print("<div class=\"alert alert-error\">Impossible de supprimer les anciennes tables</div>"); 
+	}
 	ecrit_fichier_de_configuration($gst_fichier_configuration,$gst_url_site,$gst_rep_site,$gst_email_administrateur,$gst_logo_asso,$gst_url_sortie,$gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_administrateur_gbk,$gst_mdp_administrateur_gbk);
 	$b_erreur=false;
 	foreach (glob("sql/*.sql") as $st_fichier)
