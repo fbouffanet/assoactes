@@ -1,8 +1,8 @@
 <?php
 
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -78,7 +78,7 @@ else
 
 
 /**
-* Vérifie que si l'utilisateur est autorisé à se connecter (statut B,I,H)
+* VÃ©rifie que si l'utilisateur est autorisÃ© Ã  se connecter (statut B,I,H)
 * @param string $pst_ident identifiant de l'utilisateur
 * @param string $pst_mdp mot de passe de l'utilisateur
 * @return boolean l'utilisateur est authentifie ou non ?
@@ -122,7 +122,7 @@ function affiche_menu_auth($pst_message)
   print("<script src='$gst_url_site/js/jquery.validate.min.js' type='text/javascript'></script>\n");
   print("<script src='$gst_url_site/js/bootstrap.min.js' type='text/javascript'></script>");
   print("<link rel=\"shortcut icon\" href=\"$gst_url_site/images/favicon.ico\">");
-  print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />');
+  print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />');
   print("<title>Identification</title>\n");
   print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
   print("<script type='text/javascript'>");
@@ -247,7 +247,7 @@ function affiche_menu_refus()
   print("<!DOCTYPE html>");
   print("<head>\n");
   print("<link rel=\"shortcut icon\" href=\"$gst_url_site/images/favicon.ico\">");
-  print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />');
+  print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />');
   print("<link href='$gst_url_site/css/styles.css' type='text/css' rel='stylesheet'>");
   print("<link href='$gst_url_site/css/bootstrap.min.css' rel='stylesheet'>");
   print("<title>Refus de connexion</title>\n");
