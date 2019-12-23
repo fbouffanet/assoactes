@@ -97,7 +97,6 @@ function affiche_menu($pconnexionBD,$pi_idf_groupe) {
 	print('</div>');
   
 	$st_majeure = empty($pi_idf_groupe) ?  '' :$pconnexionBD->sql_select1("select patronyme from variantes_patro where idf_groupe=$pi_idf_groupe and majeure=1");
-	//print("maj=$st_majeure ($pi_idf_groupe) select patronyme from variantes_patro where idf_groupe=$pi_idf_groupe and majeure=1<br>");
 	print('<div class="form-group row">');
 	print("<label for=\"majeure\" class=\"col-form-label col-md-2\">Majeure trouv&eacute;e</label>");
 	print("<div class='col-md-10'>");
@@ -167,8 +166,9 @@ function affiche_menu($pconnexionBD,$pi_idf_groupe) {
 function ajoute_variantes($pconnexionBD,$pi_idf_groupe,$pst_majeure,$pa_variantes)
 {
 	global $gst_infos,$gst_erreurs;
-	$st_majeure = strtoupper(stripslashes(trim($pst_majeure)));
+	$st_majeure = strtoupper(stripslashes(trim(utf8_vers_cp1252($pst_majeure))));
 	$a_variantes = array_unique(array_map('trim',$pa_variantes));
+	$a_variantes = array_unique(array_map('utf8_vers_cp1252',$a_variantes));
 	$st_infos = '';
 	$st_erreurs = '';
 	$pconnexionBD->initialise_params(array(':majeure'=>$pst_majeure));
@@ -238,18 +238,18 @@ function modifie_variantes($pconnexionBD,$pi_idf_groupe,$pst_majeure,$pst_varian
 	}
 	else
 	{
-      $pconnexionBD->initialise_params(array(':majeure'=>$pst_majeure));
+      $pconnexionBD->initialise_params(array(':majeure'=>utf8_vers_cp1252($pst_majeure)));
       $a_variantes_a_ajouter[]  =  "(:majeure,$pi_idf_groupe,1)";
       foreach($a_variantes as $st_variante)
       {
-         $st_variante=strtoupper($st_variante);
+         $st_variante=strtoupper(utf8_vers_cp1252($st_variante));
          if ($st_variante=="") continue;
          $a_params_precedents=$pconnexionBD->params();
          $pconnexionBD->initialise_params(array(':variante'=>$st_variante));
          list($i_nb_variantes,$st_majeure_variante) =$pconnexionBD->sql_select_liste("select count(*),vp2.patronyme from variantes_patro vp1 join variantes_patro vp2 on (vp1.idf_groupe=vp2.idf_groupe) where vp2.majeure=1 and vp1.patronyme = :variante collate latin1_general_ci");
          $pconnexionBD->initialise_params($a_params_precedents);
          if ($i_nb_variantes>0) 
-            $gst_erreurs .= "Variante $st_variante d&eacute;j&agrave; r&eacute;f&eacute;renc&eacute;e sous la majeure $st_majeure_variante. Elle ne sera pas ajout&eacute;e<br>"; 
+            $gst_erreurs .= "Variante $st_variante d&eacute;j&agrave; r&eacute;f&eacute;renc&eacute;e sous la majeure ".cp1252_vers_utf8($st_majeure_variante).".Elle ne sera pas ajout&eacute;e<br>"; 
          else
          {
             $pconnexionBD->ajoute_params(array(":variante$i"=>$st_variante));
@@ -284,7 +284,7 @@ function complete_variantes($pconnexionBD,$pi_idf_groupe,$pa_variantes)
    $i=0;
    foreach ($pa_variantes as $st_variante)   
    { 
-      $st_variante=strtoupper(stripslashes($st_variante));
+      $st_variante=strtoupper(stripslashes(utf8_vers_cp1252($st_variante)));
       $pconnexionBD->ajoute_params(array(":variante$i"=>$st_variante));
       $a_variantes_a_ajouter[] = "(:variante$i,$pi_idf_groupe,0)";
       $i++;      
@@ -303,7 +303,6 @@ function complete_variantes($pconnexionBD,$pi_idf_groupe,$pa_variantes)
 */
 function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 {
-	  $a_patronymes = $pconnexionBD->sql_select("select distinct p.libelle from `stats_patronyme` sp join patronyme p on (sp.idf_patronyme=p.idf) where p.libelle REGEXP '^[A-Z \?\(\)]+$' and p.libelle not in (select patronyme from `variantes_patro`)");
     $a_groupes_variantes = $pconnexionBD->liste_valeur_par_clef("select patronyme,majeure from `variantes_patro` where idf_groupe = $pi_idf_groupe");
     $oPhonex = new phonex;
     $a_phonex_variantes = array();
@@ -313,6 +312,7 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
     $st_variantes_courantes = '';
     foreach ($a_groupes_variantes as $st_patronyme => $st_majeure_courante)
     {
+	   $st_patronyme=cp1252_vers_utf8($st_patronyme);
        $oPhonex -> build ($st_patronyme);
        $sPhonex = $oPhonex -> sString;
        $a_code_phonex[] = $sPhonex;
@@ -331,7 +331,7 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
     print('<div class="row form-group">');    
     print('<label for="majeure" class="col-form-label col-md-2">Majeure</label>');
 	print('<div class="col-md-10">');
-	print("<input type=text name=\"majeure\" id=\"majeure\" value=\"$st_majeure\" class=\"form-control\" size=30 readonly>");
+	print("<input type=text name=\"majeure\" id=\"majeure\" value=\"".$st_majeure."\" class=\"form-control\" size=30 readonly>");
 	print('</div>');
 	print('</div>');
 	print('<div class="row form-group">'); 
@@ -369,7 +369,7 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<title>Base '.SIGLE_ASSO.': Gestion des variantes Patronymiques</title>');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -685,7 +685,7 @@ $('#majeure_a_chercher').select2({
   placeholder: "Taper une initiale",
   "language": {
        "noResults": function(){
-           return "Pas de résultats";
+           return "Pas de rÃ©sultats";
        }
   },	   
   ajax: {
@@ -723,7 +723,7 @@ switch ($gst_mode) {
    $st_majeure = isset($_POST['majeure']) ? trim($_POST['majeure']) : '';
    $st_variantes = isset($_POST['variantes']) ? trim($_POST['variantes']) : '';
    $a_variantes = explode("\n",$st_variantes);    
-   ajoute_variantes($connexionBD,$i_idf_groupe,$st_majeure,$a_variantes);
+   ajoute_variantes($connexionBD,$i_idf_groupe,utf8_vers_cp1252($st_majeure),utf8_vers_cp1252($a_variantes));
    affiche_menu($connexionBD,$i_idf_groupe);
  break;
  case 'MODIFIER':
@@ -732,7 +732,7 @@ switch ($gst_mode) {
    $st_variantes = isset($_POST['variantes']) ? trim($_POST['variantes']) : ''; 
    if (!empty($i_idf_groupe))
    {
-      modifie_variantes($connexionBD,$i_idf_groupe,$st_majeure,$st_variantes);
+      modifie_variantes($connexionBD,$i_idf_groupe,utf8_vers_cp1252($st_majeure),utf8_vers_cp1252($st_variantes));
       affiche_menu($connexionBD,$i_idf_groupe);
    }
  break;

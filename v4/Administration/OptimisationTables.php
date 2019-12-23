@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ require_once '../Commun/ConnexionBD.php';
 
 /**
  * Affiche le menu de lancement
- * @param array $pa_tables Liste des tables à optimiser
+ * @param array $pa_tables Liste des tables Ã  optimiser
  */
 function affiche_menu($pa_tables) {
    print('<div class="panel panel-primary">');
@@ -33,8 +33,8 @@ function affiche_menu($pa_tables) {
 
 /**
  * Optimise les tables MySql correspondantes
- * @param object $pconnexionBD Connection à la base des données
- * @param array $pa_tables Liste des tables à optimiser  
+ * @param object $pconnexionBD Connection Ã  la base des donnÃ©es
+ * @param array $pa_tables Liste des tables Ã  optimiser  
  */
 function optimise_tables($pconnexionBD,$pa_tables) {
    print('<div class="align-center">');
@@ -86,6 +86,5 @@ switch($gst_mode)
 
 print('</form>');
 print('</div></body></html>');
-
 
 ?>

@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once '../Commun/config.php';
@@ -15,7 +15,7 @@ require_once('../Commun/PaginationTableau.php');
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=cp1252" />');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />');
 print('<meta http-equiv="content-language" content="fr" /> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -26,8 +26,8 @@ print('</head>');
   
   /**
  * Affiche le menu formulaire
- * @param array Liste des adhérents
- * @param integer Identifiant d'un adhérent 
+ * @param array Liste des adhÃ©rents
+ * @param integer Identifiant d'un adhÃ©rent 
  */ 
 function affiche_formulaire($pa_adherents,$pi_idf_adherent)
 {
@@ -49,7 +49,7 @@ function affiche_formulaire($pa_adherents,$pi_idf_adherent)
 	print('<option value=2>Requ&ecirc;te recherche sur couple </option>');
 	print('<option value=3>Requ&ecirc;te recherche sur les d&eacute;c&egrave;s </option>');
 	print('<option value=4>Requ&ecirc;te recherche sur les naissances </option>');
-	print('<option value=5>Requ&ecirc;te recherche sur les dépouillements </option>');
+	print('<option value=5>Requ&ecirc;te recherche sur les dÃ©pouillements </option>');
 	print('<option value=6>Requ&ecirc;te recherche sur les liasses</option>');
 	print('<option value=7>Requ&ecirc;te recherche sur les r&eacute;pertoires</option>');
 	print("</select>");
@@ -76,13 +76,13 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 
 
 $ga_fichiers_logs = array(
-    1=> array('requetes_personne.log',5,array('Date','Ident','IP','Nom','Prenom','Commune','Rayon','Année Min','Année Max','Commentaires')),
-    2=> array('requetes_couple.log',7,array('Date','Ident','IP','Nom Epx','Prenom Epx','Nom Epse','Prenom Epse','Commune','Rayon','Année Min','Année Max')),
+    1=> array('requetes_personne.log',5,array('Date','Ident','IP','Nom','Prenom','Commune','Rayon','AnnÃ©e Min','AnnÃ©e Max','Commentaires')),
+    2=> array('requetes_couple.log',7,array('Date','Ident','IP','Nom Epx','Prenom Epx','Nom Epse','Prenom Epse','Commune','Rayon','AnnÃ©e Min','AnnÃ©e Max')),
     3=> array('requetes_deces.log',3,array('Date','Ident','IP','Commune')),
     4=> array('requetes_naissances.log',3,array('Date','Ident','IP','Commune')),
     5=> array('requetes_depouillements.log',null,array('Date','Ident','IP','Commune','Type d\'acte')),
-    6=>array('requetes_liasse.log',8,array('Date','Ident','IP','Nom notaire','Prenom Notaire','Serie','Cote Debut','Cote Fin','Commune','Rayon','Année Min','Année Max')),
-    7=>array('requetes_rep_not.log',3,array('Date','Ident','IP','Commune','Rayon','Idf Rep','Type acte','Année Min','Année Max','Nom 1','Prenom 1','Nom 2','Prenom 2','Paroisse'))
+    6=>array('requetes_liasse.log',8,array('Date','Ident','IP','Nom notaire','Prenom Notaire','Serie','Cote Debut','Cote Fin','Commune','Rayon','AnnÃ©e Min','AnnÃ©e Max')),
+    7=>array('requetes_rep_not.log',3,array('Date','Ident','IP','Commune','Rayon','Idf Rep','Type acte','AnnÃ©e Min','AnnÃ©e Max','Nom 1','Prenom 1','Nom 2','Prenom 2','Paroisse'))
   );
 
 
@@ -117,7 +117,6 @@ else
 				if (!empty($st_libre))
                   $st_requete .=  " and (adresse_ip like '%$st_libre%' or ca.nom like '%$st_libre%')";
 				$st_requete .=" order by date_demande";
-				//print("Req=$st_requete<br>");
 				$a_ddes=$connexionBD->sql_select_multiple($st_requete);
 				$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_ddes),NB_LIGNES_PAR_PAGE,1,array('Date','Adherent','IP','Commune'));
 				$pagination->affiche_tableau_simple($a_ddes);
@@ -127,7 +126,6 @@ else
 				if (!empty($st_libre))
                   $st_requete .=  " and (adresse_ip like '%$st_libre%' or ca.nom like '%$st_libre%')";
 				$st_requete .=" order by date_demande";
-				//print("Req=$st_requete<br>");
 				$a_ddes=$connexionBD->sql_select_multiple($st_requete);
 				$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_ddes),NB_LIGNES_PAR_PAGE,1,array('Date','Adherent','IP','Commune'));
 				$pagination->affiche_tableau_simple($a_ddes);

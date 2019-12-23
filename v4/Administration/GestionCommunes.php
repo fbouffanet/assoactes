@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -24,7 +24,7 @@ if ($gst_mode=='EXPORTER')
 print('<!DOCTYPE html>');
 print("<head>");
 print("<title>Gestion des communes</title>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -70,23 +70,23 @@ $("#edition_commune").validate({
 		},
     code_insee: {
       required: "Le code insee est obligatoire",
-      integer: "Le code insee doit être un entier"
+      integer: "Le code insee doit Ãªtre un entier"
     },
     num_paroisse: {
-      required: "Le numéro de paroisse est obligatoire",
-      integer: "Le numéro de paroisse doit être un entier"
+      required: "Le numÃ©ro de paroisse est obligatoire",
+      integer: "Le numÃ©ro de paroisse doit Ãªtre un entier"
     },
     longitude: {
-       number:  "La longitude doit être un nombre(Exemple: 0.098625643597231)"
+       number:  "La longitude doit Ãªtre un nombre(Exemple: 0.098625643597231)"
     },
     latitude: {
-       number:  "La latitude doit être un nombre(Exemple: 0.80823290553212)"
+       number:  "La latitude doit Ãªtre un nombre(Exemple: 0.80823290553212)"
     },
      date_min_controle: {
-       dateITA: "Le format doit être de la forme JJ/MM/AAAA"
+       dateITA: "Le format doit Ãªtre de la forme JJ/MM/AAAA"
     },
     date_max_controle: {
-       dateITA: "Le format doit être de la forme JJ/MM/AAAA"
+       dateITA: "Le format doit Ãªtre de la forme JJ/MM/AAAA"
     }
 	},
   errorElement: "em",
@@ -133,7 +133,7 @@ $("#suppression_communes").validate({
             } 
   },
   messages: {
-     "supp[]": "Merci de choisir au moins une commune à supprimer"
+     "supp[]": "Merci de choisir au moins une commune Ã  supprimer"
   },
   errorElement: "em",
   errorPlacement: function ( error, element ) {
@@ -161,7 +161,7 @@ $("#suppression_communes").validate({
       }
     
     });
-        if (confirm('Etes-vous sûr de supprimer les communes'+communes+' ?')) {
+        if (confirm('Etes-vous sÃ»r de supprimer les communes'+communes+' ?')) {
             form.submit();
         }
     }
@@ -261,20 +261,20 @@ function menu_liste($pconnexionBD)
 }
 
 /**
- * Affiche de la table d'édition
+ * Affiche de la table d'Ã©dition
  * @param string $pst_nom_commune Nom de la commune
  * @param integer $pi_code_insee Code Insee
- * @param integer $pi_num_paroisse Numéro de la paroisse ou arrondissement 
+ * @param integer $pi_num_paroisse NumÃ©ro de la paroisse ou arrondissement 
  * @param string $pst_latitude Latitude (forme 0.804596785)
  * @param string $pst_longitude Longitude (forme 0.012217305)
  * @param integer $pi_idf_canton identifiant du canton
  * @param array $pa_cantons liste des cantons 
- * @param integer $pi_debut_communale début de la collection communale
- * @param integer $pi_debut_greffe début de la collection du greffe
+ * @param integer $pi_debut_communale dÃ©but de la collection communale
+ * @param integer $pi_debut_greffe dÃ©but de la collection du greffe
  * @param string $pst_protestants registre protestant (O|N)
  * @param string $pst_sans_rp sans registres paroissiaux (O|N)
  * @param string $pst_points_svg points sur la carte SVG
- * @param string $pst_bureau_controle bureau de contrôle (O|N)
+ * @param string $pst_bureau_controle bureau de contrÃ´le (O|N)
  * @param string $pst_date_min_controle date minimale du bureau des actes
  * @param string $pst_date_max_controle date maximale du bureau des actes
  */ 
@@ -283,7 +283,7 @@ function menu_edition($pst_nom_commune,$pi_code_insee,$pi_num_paroisse,$pst_lati
    print('<div class="form-group row">'); 
    print('<label for="nom_commune" class="col-form-label col-md-2">Nom</label>');
    print('<div class="col-md-10">');
-   print("<input type=\"text\" maxlength=50 size=30 name=nom_commune id=nom_commune value=\"$pst_nom_commune\" class=\"form-control\">");
+   print("<input type=\"text\" maxlength=50 size=30 name=nom_commune id=nom_commune value=\"".cp1252_vers_utf8($pst_nom_commune)."\" class=\"form-control\">");
    print('</div>');
    print('</div>');
    print('<div class="form-group row">'); 
@@ -376,9 +376,9 @@ function menu_edition($pst_nom_commune,$pi_code_insee,$pi_num_paroisse,$pst_lati
    print('</div>');
 }
 
-/** Affiche le ménu de modification d'une commune
+/** Affiche le menu de modification d'une commune
  * @param object $pconnexionBD Identifiant de la connexion de base
- * @param integer $pi_idf_commune Identifiant de la commune à modifier 
+ * @param integer $pi_idf_commune Identifiant de la commune Ã  modifier 
  * @param array $pa_cantons liste des cantons 
  */ 
 function menu_modifier($pconnexionBD,$pi_idf_commune,$pa_cantons)
@@ -411,9 +411,9 @@ function menu_ajouter($pa_cantons)
 }
 
 /**
- * Renvoie la distance entre les deux communes identifiées par leur longitudes et latitudes
- * @param double $pf_lat1 latitude de la première commune (Exemple : 0.804179843464377)
- * @param double $pf_lon1 longitude de la première commune (Exemple : 0.00363609679055735)
+ * Renvoie la distance entre les deux communes identifiÃ©es par leur longitudes et latitudes
+ * @param double $pf_lat1 latitude de la premiÃ¨re commune (Exemple : 0.804179843464377)
+ * @param double $pf_lon1 longitude de la premiÃ¨re commune (Exemple : 0.00363609679055735)
  * @param double $pf_lat1 latitude de la seconde commune 
  * @param double $pf_lon1 longitude de la seconde commune
  * @return double distance entre les deux communes en km  
@@ -433,11 +433,11 @@ function distance($pf_lat1, $pf_lon1, $pf_lat2, $pf_lon2)
 
 /**
  * Ajoute dans la table SQL tableau_kilometrique la liste des distances
- * entre chaque commune et la nouvelle commune crée
+ * entre chaque commune et la nouvelle commune crÃ©e
  * @param object $pconnexionBD Identifiant de la connexion de base
- * @param array $pa_coordonnees_communes tableau des coordonnées des communes (latitude,longitude) indexées par l'identifiant commune
- * @param double $pf_latitude latitude de la commune ajoutée
- * @param double $pf_longitude longitude de la commune ajoutée 
+ * @param array $pa_coordonnees_communes tableau des coordonnÃ©es des communes (latitude,longitude) indexÃ©es par l'identifiant commune
+ * @param double $pf_latitude latitude de la commune ajoutÃ©e
+ * @param double $pf_longitude longitude de la commune ajoutÃ©e 
  */ 
 function calcule_coordonnees_commune($pconnexionBD,$pa_coordonnees_communes,$pi_idf_commune,$pf_latitude,$pf_longitude)
 {
@@ -457,14 +457,14 @@ function calcule_coordonnees_commune($pconnexionBD,$pa_coordonnees_communes,$pi_
 }
 
 /**
- * Exporte les communes au format Nimègue
- * @param object $pconnexionBD Connexion à la base
+ * Exporte les communes au format NimÃ¨gue
+ * @param object $pconnexionBD Connexion Ã  la base
   
  */ 
 function exporte_communes_Nim($pconnexionBD) {
     $a_communes = $pconnexionBD->sql_select_multiple("select nom, code_insee, numero_paroisse from commune_acte order by nom");
     $a_depts = array('16' => 'Charente',
-                     '79' => 'Deux-Sèvres',
+                     '79' => 'Deux-SÃ¨vres',
                      '86' => 'Vienne',
                      '24' => 'Dordogne',
                      '87' => 'Haute-Vienne'
@@ -517,6 +517,7 @@ switch ($gst_mode) {
          $st_date_min_controle = trim($_POST['date_min_controle']);
          $st_date_max_controle = trim($_POST['date_max_controle']);
      }
+	 $st_nom_commune=utf8_vers_cp1252($st_nom_commune);
      $i_code_insee = trim($_POST['code_insee']);
      $i_num_paroisse = trim($_POST['num_paroisse']);
      $f_latitude = trim($_POST['latitude']);
@@ -568,6 +569,7 @@ switch ($gst_mode) {
          $st_date_min_controle = trim($_POST['date_min_controle']);
          $st_date_max_controle = trim($_POST['date_max_controle']);
      }
+	 $st_nom_commune=utf8_vers_cp1252($st_nom_commune);
      $i_code_insee = trim($_POST['code_insee']);
      $i_num_paroisse = trim($_POST['num_paroisse']);
      $f_latitude = trim($_POST['latitude']);
@@ -626,5 +628,4 @@ switch ($gst_mode) {
 }  
 
 print('</div></body></html>');
-
 ?>

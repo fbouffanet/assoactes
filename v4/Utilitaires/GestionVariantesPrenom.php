@@ -69,7 +69,7 @@ function affiche_menu($pconnexionBD,$pi_idf_groupe) {
     $a_variantes = $pconnexionBD->sql_select("select libelle from variantes_prenom where idf_groupe=$pi_idf_groupe order by libelle");
     foreach ($a_variantes as $st_variante)
     {
-      print("$st_variante\n");
+      print(cp1252_vers_utf8($st_variante)."\n");
     }
   }
   print("</textarea>");
@@ -94,7 +94,7 @@ function affiche_menu($pconnexionBD,$pi_idf_groupe) {
      print("<tr><th>20 derniers<br>nouveaux pr&eacute;noms</th></tr>");
      foreach ($a_prenoms as $st_prenom)
      {
-       print("<tr><td>$st_prenom</td></tr>");
+       print("<tr><td>".cp1252_vers_utf8($st_prenom)."</td></tr>");
      }
      print("</table>");
   }
@@ -185,6 +185,7 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 		print('<table class="table table-bordered table-striped">');
 		foreach ($a_prenoms as $st_prenom)
 		{
+			$st_prenom=cp1252_vers_utf8($st_prenom);
 			print("<tr><td>$st_prenom</td><td><div class=\"lib_erreur\"><div class=\"checkbox\"><label><input type=checkbox id=\"st_prenom\" name=\"variantes[]\" class=\"form-check-input\" value=\"$st_prenom\"></label></div></div></td></tr>\n");
 		}
 		print('</table>');
@@ -198,7 +199,7 @@ function affiche_menu_completer($pconnexionBD,$pi_idf_groupe)
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<title>Base '.SIGLE_ASSO.': Gestion des variantes Prenom</title>');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -504,7 +505,7 @@ switch ($gst_mode) {
   affiche_menu($connexionBD,$gi_idf_groupe);
  break;
  case 'CREER':
-   $st_variantes = isset($_POST['variantes']) ? trim($_POST['variantes']) : '';
+   $st_variantes = isset($_POST['variantes']) ? utf8_vers_cp1252(trim($_POST['variantes'])) : '';
    $a_variantes = explode("\n",$st_variantes);
    $i_idf_groupe = $connexionBD->sql_select1("select max(idf_groupe) from variantes_prenom");
    $i_idf_groupe++;  
@@ -513,7 +514,7 @@ switch ($gst_mode) {
    affiche_menu($connexionBD,$i_idf_groupe);
  break;
  case 'MODIFIER':
-   $st_variantes = isset($_POST['variantes']) ? trim($_POST['variantes']) : '';
+   $st_variantes = isset($_POST['variantes']) ? utf8_vers_cp1252(trim($_POST['variantes'])) : '';
    $a_variantes = explode("\n",$st_variantes);
    $i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : '';
    if (!empty($i_idf_groupe))
@@ -531,7 +532,7 @@ switch ($gst_mode) {
  break;
  case 'COMPLETER':
 	$i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : '';
-	$a_variantes = isset($_POST['variantes']) ? $_POST['variantes'] : ''; 
+	$a_variantes = isset($_POST['variantes']) ? utf8_vers_cp1252($_POST['variantes']) : ''; 
 	if (!empty($i_idf_groupe) && count($a_variantes)>0)
 	{	
 		ajoute_variantes($connexionBD,$i_idf_groupe,$a_variantes);
