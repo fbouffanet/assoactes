@@ -516,8 +516,8 @@ switch ($gst_mode) {
  case 'MODIFIER':
    $st_variantes = isset($_POST['variantes']) ? utf8_vers_cp1252(trim($_POST['variantes'])) : '';
    $a_variantes = explode("\n",$st_variantes);
-   $i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : '';
-   if (!empty($i_idf_groupe))
+   $i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : null;
+   if (isset($i_idf_groupe))
    {
       $connexionBD->execute_requete("delete from variantes_prenom where idf_groupe=$i_idf_groupe");
 	  $gst_infos = "Variante modifi&eacute;e";
@@ -526,14 +526,14 @@ switch ($gst_mode) {
    }
  break;
  case 'MENU_COMPLETER':
-	$i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : '';
-	if (!empty($i_idf_groupe))
+	$i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : null;
+	if (isset($i_idf_groupe))
 		affiche_menu_completer($connexionBD,$i_idf_groupe);
  break;
  case 'COMPLETER':
-	$i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : '';
+	$i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : null;
 	$a_variantes = isset($_POST['variantes']) ? utf8_vers_cp1252($_POST['variantes']) : ''; 
-	if (!empty($i_idf_groupe) && count($a_variantes)>0)
+	if (isset($i_idf_groupe) && count($a_variantes)>0)
 	{	
 		ajoute_variantes($connexionBD,$i_idf_groupe,$a_variantes);
 		if (empty($gst_erreurs)) $gst_infos = "Variante compl&eacute;t&eacute;e";
@@ -541,8 +541,8 @@ switch ($gst_mode) {
 	}
  break;
  case 'SUPPRIMER':
-   $i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : '';
-   if (!empty($i_idf_groupe))
+   $i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : null;
+   if (isset($i_idf_groupe))
    {
       $connexionBD->execute_requete("delete from variantes_prenom where idf_groupe=$i_idf_groupe");
 	  if (empty($gst_erreurs)) $gst_infos ="Variante supprim&eacute;e";
