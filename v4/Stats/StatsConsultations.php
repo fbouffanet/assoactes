@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('../Commun/Identification.php');
@@ -15,9 +15,9 @@ require_once('../Commun/PaginationTableau.php');
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr"> ');
-print('<title>Base '.SIGLE_ASSO.': Stats consulations adhérent</title>');
+print('<title>Base '.SIGLE_ASSO.': Stats consulations adhÃ©rent</title>');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
@@ -27,9 +27,9 @@ print('<link rel="shortcut icon" href="images/favicon.ico">');
 print("</head>");
 
 /*
-  Renvoie le lien pour afficher les demandes d'une commune de l'adhérent courant
+  Renvoie le lien pour afficher les demandes d'une commune de l'adhÃ©rent courant
   @param integer $pi_nb_ddes nombre de demandes
-  @param integer $pi_idf_adherent identifiant de l'adhérent
+  @param integer $pi_idf_adherent identifiant de l'adhÃ©rent
   @param integer $pi_idf_type_acte identifiant type de l'acte 
 */
 function stats_adht($pi_nb_ddes,$pi_idf_adherent)

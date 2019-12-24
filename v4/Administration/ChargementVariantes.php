@@ -235,7 +235,7 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp)
       print("<div class=\"alert alert-danger\">Erreur de t&eacute;l&eacute;chargement :</div>");
       switch($_FILES['Variantes']['error'])
       { 
-           case 2 : print("Fichier trop gros par rapport à MAX_FILE_SIZE");break;
+           case 2 : print("Fichier trop gros par rapport Ã  MAX_FILE_SIZE");break;
            default : print("Erreur inconnue");print_r($_FILES);
       }
       exit;
@@ -341,7 +341,7 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp)
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");

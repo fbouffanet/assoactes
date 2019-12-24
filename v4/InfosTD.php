@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 session_start();
@@ -19,11 +19,11 @@ require_once('Administration/chargement/CommunePersonne.php');
 require_once('Administration/chargement/Profession.php');   
 
 /*
-* Enregistre des informations de statistiques naissances et décès dans un fichier journal
+* Enregistre des informations de statistiques naissances et dÃ©cÃ¨s dans un fichier journal
 * @param string $pst_nom_fichier nom du fichier journal
-* @param string $pst_ident identifiant de l'adhérent
-* @param string $pst_adresse_ip adresse ip de l'adhérent
-* @param string $pi_idf_commune identifiant de la commune demandée
+* @param string $pst_ident identifiant de l'adhÃ©rent
+* @param string $pst_adresse_ip adresse ip de l'adhÃ©rent
+* @param string $pi_idf_commune identifiant de la commune demandÃ©e
 */
 function enregistre_journal($pst_nom_fichier,$pst_ident,$pst_adresse_ip,$pi_idf_commune)
 {
@@ -47,7 +47,7 @@ print('<!DOCTYPE html>');
 print('<html lang="fr">');
 print("<head>\n");
 print('<meta http-equiv="content-language" content="fr"> ');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr"> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");

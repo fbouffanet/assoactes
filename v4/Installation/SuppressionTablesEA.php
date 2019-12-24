@@ -10,7 +10,7 @@ require_once('../Commun/commun.php');
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -28,7 +28,7 @@ print("<script type='text/javascript'>");
 $(document).ready(function() {
 	$("#formulaire_suppression").validate({
 	submitHandler: function(form) {
-		var question = 'Etes-vous sûr de supprimer toutes les tables ExpoActes ?';
+		var question = 'Etes-vous sÃ»r de supprimer toutes les tables ExpoActes ?';
 		if (confirm(question))
 		{
 			 form.submit();

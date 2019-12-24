@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÈnÈalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association G√©n√©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique GÈnÈrale GPL GNU publiÈe par la Free Software Foundation
+// Licence Publique G√©n√©rale GPL GNU publi√©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once '../Commun/config.php';
@@ -14,7 +14,7 @@ verifie_privilege(DROIT_UTILITAIRES);
 require_once '../Commun/ConnexionBD.php';
 
 /**
- * Affiche le menu de sÈlection
+ * Affiche le menu de s√©lection
  * @global $gi_max_taille_upload Maximun de la taille  
  */
 function affiche_menu() {
@@ -35,8 +35,8 @@ function affiche_menu() {
 }  
 
 /**
- * Charge les statistiques NimËgue V3 et les compare avec celles de la base V4
- * @param object $pconnexionBD Connexion ‡ la base 
+ * Charge les statistiques Nim√®gue V3 et les compare avec celles de la base V4
+ * @param object $pconnexionBD Connexion √† la base 
  */ 
 function Verifie_StatsNim($pconnexionBD,$pst_rep_tmp)
 {
@@ -75,10 +75,10 @@ function Verifie_StatsNim($pconnexionBD,$pst_rep_tmp)
    */
    if (!move_uploaded_file($_FILES['StatsNim']['tmp_name'],$st_fich_dest)) 
    {
-      print("<div class=\"alert alert-danger\">Erreur de tÈlÈchargement :</div>");
+      print("<div class=\"alert alert-danger\">Erreur de t√©l√©chargement :</div>");
       switch($_FILES['StatsNim']['error'])
       { 
-           case 2 : print("Fichier trop gros par rapport ‡ MAX_FILE_SIZE");break;
+           case 2 : print("Fichier trop gros par rapport √† MAX_FILE_SIZE");break;
            default : print("Erreur inconnue");print_r($_FILES);
       }
       exit;
@@ -95,7 +95,7 @@ function Verifie_StatsNim($pconnexionBD,$pst_rep_tmp)
    while (!feof($pf))
    {      
       $st_ligne           = fgets($pf);
-      //"Code";"Commune";"DÇpart.";"Nbr de N";"Dates N";"Nbr de M";"Dates M";"Nbr de D";"Dates D";"Nbr de V";"Dates V";"TOTAL";"Dpt";"Comment. libre";"N saisis le";"N saisis par";"N contrìlÇs par";"N validÇs ?";"N validÇ le";"M saisis le";"M saisis par";"M contrìlÇs par";"M validÇs ?";"M validÇs le";"D saisis le";"D saisis par";"D contrìlÇs par";"D validÇs ?";"D validÇs le";"V saisis le";"V saisis par";"V contrìlÇs par";"V validÇs ?";"V validÇs le"
+      //"Code";"Commune";"D√©part.";"Nbr de N";"Dates N";"Nbr de M";"Dates M";"Nbr de D";"Dates D";"Nbr de V";"Dates V";"TOTAL";"Dpt";"Comment. libre";"N saisis le";"N saisis par";"N contr√¥l√©s par";"N valid√©s ?";"N valid√©s le";"M saisis le";"M saisis par";"M contr√¥l√©s par";"M valid√©s ?";"M vvalid√©s  le";"D saisis le";"D saisis par";"D contr√¥l√©s par";"D valid√©s s ?";"D valid√©s  le";"V saisis le";"V saisis par";"V contr√¥l√©s par";"V valid√©s  ?";"V valid√©s  le"
       list($st_code,$st_commune,$st_dpt,$i_nb_nai,$st_dates_nai,$i_nb_mar,$st_dates_mar,$i_nb_dec,$st_dates_dec,$i_nb_div,$st_dates_div,$st_ajeter) = split(';',$st_ligne,12);
       $i_nb_nai = preg_replace('/\D+/','',$i_nb_nai);
       $i_nb_mar = preg_replace('/\D+/','',$i_nb_mar);
@@ -178,7 +178,7 @@ function Verifie_StatsNim($pconnexionBD,$pst_rep_tmp)
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print("<title>Verification des statistiques Nimegue</title>");
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');

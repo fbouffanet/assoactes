@@ -238,7 +238,6 @@ $(document).ready(function() {
 			   dataType: 'json',
 			   cache: false,
 				timeout: 1000,
-        //contentType: "application/x-www-form-urlencoded;charset=windows-1252",
         success:function(reponse) {
             var nb_reponses=reponse['nb_reponses'];   
             $(cmt_retour).html('');
