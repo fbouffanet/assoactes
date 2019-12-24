@@ -272,7 +272,7 @@ function affiche_page_resultats($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_anne
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8 >');
 print('<meta http-equiv="content-language" content="fr"> ');
 print("<title>TDM de l'AGC</title>");
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
