@@ -345,11 +345,11 @@ date_default_timezone_set($gst_time_zone);
 	  print('<form>'); 
 	  print('<div class="form-row">');
 	  if ($st_variantes_epx_trouvees!="")
-        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epx\">Patronyme:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_patros_epx\">$st_variantes_epx_trouvees</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epx\">Patronyme:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_patros_epx\">".cp1252_vers_utf8($st_variantes_epx_trouvees)."</textarea></div>");
       else
         print("<div class=\"col-md-4\">Pas de variantes patronymiques connues</div>");
       if ($st_variantes_prenoms_epx!="")
-        print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms_epx\">Pr&eacute;nom:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_prenoms_epx\">$st_variantes_prenoms_epx</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms_epx\">Pr&eacute;nom:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_prenoms_epx\">".cp1252_vers_utf8($st_variantes_prenoms_epx)."</textarea></div>");
       else
         print("<div class=\"col-md-6\">Pas de variantes de pr&eacute;noms connues</div>");
       print("</div>"); // fin ligne
@@ -368,11 +368,11 @@ date_default_timezone_set($gst_time_zone);
 	  print('<form>');
 	  print('<div class="form-row">');
       if ($st_variantes_epse_trouvees!="")
-        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epse\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros_epse\" rows=8 cols=20>$st_variantes_epse_trouvees</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epse\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros_epse\" rows=8 cols=20>".cp1252_vers_utf8($st_variantes_epse_trouvees)."</textarea></div>");
       else
         print("<div class=\"col-md-6\">Pas de variantes patronymiques connues</div>");
       if ($st_variantes_prenoms_epse!="")
-        print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms_epse\">Pr&eacute;nom:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_prenoms_epse\">$st_variantes_prenoms_epse</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms_epse\">Pr&eacute;nom:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_prenoms_epse\">".cp1252_vers_utf8($st_variantes_prenoms_epse)."</textarea></div>");
       else
         print("<div class=\"col-md-6\">Pas de variantes de pr&eacute;noms connues</div>");
 	  print("</div>"); // fin ligne
@@ -495,11 +495,11 @@ date_default_timezone_set($gst_time_zone);
 	   print('<div class="form-row">');
         
       if ($st_variantes_trouvees!="")
-        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros\" rows=8 cols=20>$st_variantes_trouvees</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros\" rows=8 cols=20>".cp1252_vers_utf8($st_variantes_trouvees)."</textarea></div>");
       else
         print("<div class=\"col-md-6\">Pas de variantes connues</div>");
       if ($st_variantes_prenoms!="")
-		print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms\">Pr&eacute;nom:</label><textarea class=\"form-control\" id=\"variantes_prenoms\" rows=8 cols=20>$st_variantes_prenoms</textarea></div>");
+		print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms\">Pr&eacute;nom:</label><textarea class=\"form-control\" id=\"variantes_prenoms\" rows=8 cols=20>".cp1252_vers_utf8($st_variantes_prenoms)."</textarea></div>");
       else
         print("<div class=\"col-md-6\">Pas de variantes connues</div>");
       print("</div>"); // fin ligne
