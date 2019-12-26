@@ -1,4 +1,9 @@
 <?php
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
+// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Texte de la licence : http://www.gnu.org/copyleft/gpl.html
+//-------------------------------------------------------------------
 
 $gst_fichier_constantes = '../Commun/constantes.php';
 $gst_fichier_configuration='../Commun/config.php';
@@ -65,7 +70,7 @@ $(document).ready(function() {
 			email: "Ceci n'est pas un email"
 		},
 		email_pres_asso: {
-			required: "L'email de la pr�sidence de l'association est obligatoire",
+			required: "L'email de la présidence de l'association est obligatoire",
 			email: "Ceci n'est pas un email"
 		},
 		email_inscription_forum: {
@@ -141,7 +146,7 @@ $gi_nb_points_gbk = 0;
 /*
 * Renvoie le fichier de constantes dans une chaine
 *  @param string $pst_fichier Fichier de constantes
-*  @return string Contenu du fichier constantes sans les constantes � mettre � jour
+*  @return string Contenu du fichier constantes sans les constantes à mettre à jour
 *  @global string $gst_lib_asso
 *  @global string $gst_lib_asso_avec
 *  @global string $gst_sigle_asso
@@ -248,7 +253,7 @@ if (isset($_POST['lib_asso']))
 		fwrite($pf,"?>\n");
 		print("<div class=\"alert alert-success\">$gst_fichier_constantes sauvegard&eacute;</div>");
 		print("<a href=\"$gst_url_site\" class=\"btn btn-info\" role=\"button\" target=\"_blank\">Acc&eacute;der au site</a>");
-		mail('fbouffanet@yahoo.fr', 'AssoActes', "Programme install� sur $gst_url_site\n");
+		mail('fbouffanet@yahoo.fr', 'AssoActes', "Programme installé sur $gst_url_site\n");
 		print("<div>Si vous souhaitez essayer de migrer des donn&eacute;es depuis ExpoActes, cliquez sur le bouton suivant</div>");
 		print("<div>Les donn&eacute;es d'ExpoActes ne sont pas modifi&eacute;es</div>");
 		print("<a href=\"MigreCommunes.php\" class=\"btn btn-warning\" role=\"button\" target=\"_blank\">Migration de donn&eacute;es depuis ExpoActes</a>");
