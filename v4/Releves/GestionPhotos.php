@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 //http://127.0.0.1:8888/Gestion_Photos.php
@@ -19,7 +19,7 @@ require_once('../Commun/commun.php');
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=cp1252" />');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />');
 print('<meta http-equiv="content-language" content="fr" /> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -99,11 +99,11 @@ $("#edition_photos").validate({
 		},
     nbr_photos: {
       required: "Le nombre de photos est obligatoire",
-      integer: "Le nombre de photos doit etre un entier"
+      integer: "Le nombre de photos doit Ãªtre un entier"
     },
     poids_photos: {
       required: "Le poids des photos est obligatoire",
-      integer: "Le poids des photos  doit être un entier"
+      integer: "Le poids des photos  doit Ãªtre un entier"
     },
 	dt_prise: {
 		dateITA: "ceci n'est pas une date"
@@ -154,7 +154,7 @@ $("#suppression_photos").validate({
             } 
   },
   messages: {
-     "supp[]": "Merci de choisir au moins une photo à supprimer"
+     "supp[]": "Merci de choisir au moins une photo Ã  supprimer"
   },
   errorElement: "em",
   errorPlacement: function ( error, element ) {
@@ -182,7 +182,7 @@ $("#suppression_photos").validate({
       }
     
     });
-        if (confirm('Etes-vous sûr de supprimer les documents photos '+photos+' ?')) {
+        if (confirm('Etes-vous sÃ»r de supprimer les documents photos '+photos+' ?')) {
             form.submit();
         }
     }
@@ -210,8 +210,8 @@ $gi_num_page_cour = empty($_GET['num_page']) ? $gi_session_num_page_cour : $_GET
 
 /**
  * Affiche la liste des communes
- * @param object $pconnexionBD  connexion à la base de données
- * @param string $pst_commune_a_chercher commune à chercher 
+ * @param object $pconnexionBD  connexion Ã  la base de donnÃ©es
+ * @param string $pst_commune_a_chercher commune Ã  chercher 
  */ 
 function menu_liste($pconnexionBD,$pst_commune_a_chercher)
 {
@@ -296,20 +296,20 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
 }
 
 /**
- * Affiche de la table d'édition
+ * Affiche de la table d'Ã©dition
  * @param integer $pi_id_commune identifiant de la commune
  * @param string $pst_fourchette Fourchette de la photo
  * @param integer $pi_id_collection identifiant de la collection
  * @param integer $pi_nbr_photos nombres de photos
  * @param integer $pi_poids poids de photos 
  * @param integer $pid_auteur auteur de photos 
- * @param string $pcrel_pap Relevé papier (O|N)
- * @param string $pcrel_base Relevé Base (O|N)
- * @param string $pcrel_td Relevé TD (O|N) 
+ * @param string $pcrel_pap RelevÃ© papier (O|N)
+ * @param string $pcrel_base RelevÃ© Base (O|N)
+ * @param string $pcrel_td RelevÃ© TD (O|N) 
  * @param date $pdt_prise Date de prise de vue 
  * @param array $pa_communes liste des communes
  * @param array $pa_collections liste des collections    
- * @param array $pa_adherents liste des auteurs (adhérents) 
+ * @param array $pa_adherents liste des auteurs (adhÃ©rents) 
  */ 
 function menu_edition($pi_id_commune,$pst_fourchette,$pi_id_collection,$pi_nbr_photos,$pi_poids,$pid_auteur,$pcrel_pap,$pcrel_base,$pcrel_td,$pdt_prise,$pa_communes,$pa_collections,$pa_adherents)
 {
@@ -385,7 +385,7 @@ function menu_edition($pi_id_commune,$pst_fourchette,$pi_id_collection,$pi_nbr_p
  * @param integer $pi_idf_photo Identifiant de la collection de photo
  * @param array $pa_communes Liste des commmunes
  * @param array $pa_collections Liste des collections
- * @param array $pa_adherents Liste des adhérents
+ * @param array $pa_adherents Liste des adhÃ©rents
  */ 
 function menu_modifier($pconnexionBD,$pi_idf_photo,$pa_communes,$pa_collections,$pa_adherents)
 {
@@ -405,7 +405,7 @@ function menu_modifier($pconnexionBD,$pi_idf_photo,$pa_communes,$pa_collections,
 /** Affiche le menu d'ajout d'une photo
  * @param array $pa_communes Liste des commmunes
  * @param array $pa_collections Liste des collections
- * @param array $pa_adherents Liste des adhérents
+ * @param array $pa_adherents Liste des adhÃ©rents
  */ 
 function menu_ajouter($pa_communes,$pa_collections,$pa_adherents)
 {
@@ -421,7 +421,7 @@ function menu_ajouter($pa_communes,$pa_collections,$pa_adherents)
 
 /**
  * Charge les photos dans la base
- * @param object $pconnexionBD Connexion à la base
+ * @param object $pconnexionBD Connexion Ã  la base
  */ 
 function charge_photos($pconnexionBD)
 {
@@ -450,7 +450,7 @@ function charge_photos($pconnexionBD)
    $a_lignes = array();
    while (( list($i_num_paroisse,$st_nom_paroisse,$st_fourchette,$st_nature,$i_taille,$i_nbre,$st_auteur,$i_idf_adh,$st_date_prise) = fgetcsv($pf, 1000,';')) !== FALSE)
    {
-       // Saute les lignes sans numéro de paroisse
+       // Saute les lignes sans numÃ©ro de paroisse
        if (!is_numeric($i_num_paroisse))
           continue;
       $i_code_insee = substr($i_num_paroisse,0,5);
@@ -465,7 +465,7 @@ function charge_photos($pconnexionBD)
             $i_annee_deb = trim($i_annee_deb);
             $i_annee_fin = trim($i_annee_fin);
             $st_fourchette = "$i_annee_deb-$i_annee_fin";
-            // mise en conformité de la date
+            // mise en conformitÃ© de la date
             list($i_jour,$i_mois,$i_annee)=explode('/',$st_date_prise,3);
             $st_date_prise = join('-',array($i_annee,$i_mois,$i_jour));
             list($i_idf_paroisse) = $a_paroisses[$i_code_insee][$i_num_paroisse2];
