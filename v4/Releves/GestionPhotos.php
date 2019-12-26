@@ -534,7 +534,7 @@ switch ($gst_mode) {
 	   $st_requete= "update `photos` set id_commune=$i_id_commune, fourchette='$st_fourchette',id_collection=$i_id_collection,nbr_photos=$i_nbr_photos,poids_total=$i_poids_photos,id_auteur=$i_id_auteur,releve_papier='$c_rel_pap',releve_base='$c_rel_base',releve_td='$c_rel_td', date_prise=$c_date_prise where idf=$gi_idf_photo";
      $connexionBD->execute_requete($st_requete);
      
-     menu_liste($connexionBD);  
+     menu_liste($connexionBD,$gst_commune_a_chercher);  
   break;
   case 'MENU_AJOUTER' : 
 
@@ -550,11 +550,15 @@ switch ($gst_mode) {
      $c_rel_pap = $_POST['rel_pap'];
      $c_rel_base = $_POST['rel_base'];
      $c_rel_td = $_POST['rel_td'];
-     list($i_jour,$i_mois,$i_annee)=explode('/',$_POST['dt_prise'],3);
-     $c_date_prise = join('-',array($i_annee,$i_mois,$i_jour));
-
+	 if (!empty($_POST['dt_prise']))
+	 {	 
+		list($i_jour,$i_mois,$i_annee)=explode('/',$_POST['dt_prise'],3);
+		$c_date_prise = join('-',array($i_annee,$i_mois,$i_jour));
+	 }
+	 else
+		$c_date_prise = null;
      $connexionBD->execute_requete("insert into photos(id_commune,fourchette,id_collection,nbr_photos,poids_total,id_auteur,releve_papier,releve_base,releve_td,date_prise) values($i_id_commune,'$st_fourchette',$i_id_collection,$i_nbr_photos,$i_poids_photos,$i_id_auteur,'$c_rel_pap','$c_rel_base','$c_rel_td','$c_date_prise')");
-     menu_liste($connexionBD);
+     menu_liste($connexionBD,$gst_commune_a_chercher);
    break;
    case 'SUPPRIMER':
      $a_liste_photos = $_POST['supp'];
@@ -579,11 +583,11 @@ switch ($gst_mode) {
           print("</table>");          		    
 		 }
      }
-     menu_liste($connexionBD);
+     menu_liste($connexionBD,$gst_commune_a_chercher);
    break;
    case 'CHARGER':
       charge_photos($connexionBD);
-      menu_liste($connexionBD);
+      menu_liste($connexionBD,$gst_commune_a_chercher);
    break;  
       
 }  
