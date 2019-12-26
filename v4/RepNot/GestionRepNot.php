@@ -418,14 +418,14 @@ function menu_liste($pconnexionBD)
 	foreach($a_liste_rep_not as $i_idf_rep => $a_ligne)
 	{
       list($st_notaire,$st_paroisse,$st_cote) = $a_ligne;
-      print("<option value=\"$i_idf_rep\">$st_notaire - $st_paroisse ($st_cote)</option>");
+      print("<option value=\"$i_idf_rep\">".cp1252_vers_utf8($st_notaire)." - ".cp1252_vers_utf8($st_paroisse)." ($st_cote)</option>");
 	}
 	print("</select></div>"); 
 	print('<input type="hidden" name="mode" value="EXPORT" />');
 	print('<div class="col-md-6">');
 	print('<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"></span> Exporter le r&eacute;pertoire</button>');
 	print("</div>");
-	print("</div></div>"); 
+	print("</div>"); 
 	
 	print('</form></div></div>');
   
@@ -440,7 +440,7 @@ function menu_liste($pconnexionBD)
 	foreach($a_liste_rep_not as $i_idf_rep => $a_ligne)
 	{
       list($st_notaire,$st_paroisse,$st_cote) = $a_ligne;
-      print("<option value=\"$i_idf_rep\">$st_notaire - $st_paroisse ($st_cote)</option>");
+      print("<option value=\"$i_idf_rep\">".cp1252_vers_utf8($st_notaire)." - ".cp1252_vers_utf8($st_paroisse)." ($st_cote)</option>");
 	}
 	print("</select></div>");
 	print('<input type="hidden" name="mode" value="IMPORT" >');
@@ -462,14 +462,14 @@ function menu_liste($pconnexionBD)
 	print("<label for=\"type_acte_orig\">Remplacer le type:</label><select name=\"type_acte_orig\" id=\"type_acte_orig\" class=\"form-control js-select-avec-recherche\"><option></option>");
 	foreach ($a_types as $st_type)
 	{
-		print("<option>$st_type</option>\n");
+		print("<option>".cp1252_vers_utf8($st_type)."</option>\n");
 	}
 	print("</select></div>");
 	print('<div class="form-group col-md-5">');
-	print("<label for\"type_acte_dest\">par le type:</label><select name=\"type_acte_dest\" id=\"type_acte_dest\" class=\"form-control js-select-avec-recherche\"><option></option>");	
+	print("<label for=\"type_acte_dest\">par le type:</label><select name=\"type_acte_dest\" id=\"type_acte_dest\" class=\"form-control js-select-avec-recherche\"><option></option>");	
 	foreach ($a_types as $st_type)
    {
-		print("<option>$st_type</option>\n");
+		print("<option>".cp1252_vers_utf8($st_type)."</option>\n");
 	}
    print("</select>\n");
 	print("</div>");
