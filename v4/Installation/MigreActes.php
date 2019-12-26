@@ -1,4 +1,9 @@
 <?php
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
+// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Texte de la licence : http://www.gnu.org/copyleft/gpl.html
+//-------------------------------------------------------------------
 
 require_once('../Commun/config.php');
 require_once('../Commun/constantes.php');
@@ -216,7 +221,7 @@ function charge_mariages($pi_code_insee,$pst_nom_commune,$pi_idf_commune,$pi_idf
 		}
 		else
 		{
-			$this->a_deja_existants[] = "Le mariage $st_prn_epx $st_nom_epx X $st_prn_epse $st_nom_epse du $st_date existe déjà";
+			$this->a_deja_existants[] = "Le mariage ".cp1252_vers_utf8($st_prn_epx)." ".cp1252_vers_utf8($st_nom_epx)." X ".cp1252_vers_utf8($st_prn_epse)." ".cp1252_vers_utf8($st_nom_epse)." du $st_date existe déjà";
 		} 
 	}   
   
@@ -507,7 +512,7 @@ function charge_divers($pi_code_insee,$pst_nom_commune,$pi_idf_commune,$pi_idf_s
 		}
 		else
 		{
-			$this->a_deja_existants[] ="L'acte divers $st_prn_intv1 $st_nom_intv1 X $st_prn_intv2 $st_nom_intv2 du $st_date existe déjà";
+			$this->a_deja_existants[] ="L'acte divers ".cp1252_vers_utf8($st_prn_intv1)." ".cp1252_vers_utf8($st_nom_intv1)." X ".cp1252_vers_utf8($st_prn_intv2)." ".cp1252_vers_utf8($st_nom_intv2)." du $st_date existe déjà";
 		} 
 	}      
 	
@@ -693,7 +698,7 @@ function charge_naissances($pi_code_insee,$pst_nom_commune,$pi_idf_commune,$pi_i
 		}
 		else
 		{
-			$this->a_deja_existants[] = "La naissance de $st_prn $st_nom du $st_date existe déjà";
+			$this->a_deja_existants[] = "La naissance de ".cp1252_vers_utf8($st_prn)." ".cp1252_vers_utf8($st_nom)." du $st_date existe déjà";
 		} 
 	}  
    	
@@ -894,7 +899,7 @@ function charge_deces($pi_code_insee,$pst_nom_commune,$pi_idf_commune,$pi_idf_so
 		}
 		else
 		{
-			$this->a_deja_existants[] = "Le décès de $st_prn $st_nom du $st_date existe déjà";
+			$this->a_deja_existants[] = "Le décès de ".cp1252_vers_utf8($st_prn)." ".cp1252_vers_utf8($st_nom)." du $st_date existe déjà";
 		} 
 	} 
 		
