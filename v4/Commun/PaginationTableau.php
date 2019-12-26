@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -22,11 +22,11 @@ class PaginationTableau {
    /**
     * Constructeur
     * param string $pst_nom_script Nom du script qui utilise la pagination
-    * param string $pst_param_numpage Paramètre GET du numéro de page
+    * param string $pst_param_numpage ParamÃ¨tre GET du numÃ©ro de page
     * param integer $pi_nb_total_lignes Nombre total de lignes
     * param integer $pi_nb_lignes_par_page Nombre de lignes par page
-    * param integer $pi_delta_navig Nombre de pages à présenter avant et après la page courante 
-    * param array $pa_entete Tableau représentantant l'entête du tableau HTML                              
+    * param integer $pi_delta_navig Nombre de pages Ã  prÃ©senter avant et aprÃ¨s la page courante 
+    * param array $pa_entete Tableau reprÃ©sentantant l'entÃªte du tableau HTML                              
     */       
    public  function __construct ($pst_nom_script,$pst_param_numpage,$pi_nb_total_lignes,$pi_nb_lignes_par_page,$pi_delta_navig,$pa_entete) {     
      $this->st_nom_script=$pst_nom_script;
@@ -40,9 +40,9 @@ class PaginationTableau {
    }
     
    /**
-    * Initialise les paramètres liés à la connexion BD   
+    * Initialise les paramÃ¨tres liÃ©s Ã  la connexion BD   
     * param object $pconnexionBD Connexion BD
-    * param integer $pst_requete Requete SQL décrivant le résultat      
+    * param integer $pst_requete Requete SQL dÃ©crivant le rÃ©sultat      
     */
    public function init_param_bd($pconnexionBD,$pst_requete) {
      $this->connexionBD=$pconnexionBD;
@@ -50,8 +50,8 @@ class PaginationTableau {
    }
           
    /**
-    * Affiche l'entête de navigation liens
-    * L'entête se presente sous la forme d'une liste d'ancres HTML [pagecourante - delta ... pagecourante ... pagecourante + delta]     
+    * Affiche l'entÃªte de navigation liens
+    * L'entÃªte se presente sous la forme d'une liste d'ancres HTML [pagecourante - delta ... pagecourante ... pagecourante + delta]     
     */       
    public function affiche_entete_liens_navigation() {
      $i_deb = 1;
@@ -77,7 +77,7 @@ class PaginationTableau {
    
    
    /**
-    * Affiche l'entête sous la forme d'une liste déroulante
+    * Affiche l'entÃªte sous la forme d'une liste dÃ©roulante
     * @param string $pst_nom_formulaire nom du formulaire   
     */
     public function affiche_entete_liste_select($pst_nom_formulaire) {
@@ -103,7 +103,7 @@ class PaginationTableau {
    }
      
    /**
-    * Affiche le contenu du tableau correspondant ª $i_nb_lignes_par_page lignes de la page courante . La requete SQL est utilisée
+    * Affiche le contenu du tableau correspondant Ã  $i_nb_lignes_par_page lignes de la page courante . La requete SQL est utilisÃ©e
     */       
    public function affiche_tableau_simple_requete_sql() {
       $st_requete = $this->st_requete;
@@ -132,12 +132,12 @@ class PaginationTableau {
       }
       print('</tbody>');      
       print("</table>");
-      // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
+      // paramÃ¨tre pour gÃ©rer le numÃ©ro de page dans le cas d'un numÃ©ro de page envoyÃ© par mÃ©thode POST
       print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
    }   
 
    /**
-    * Affiche le contenu du tableau correspondant ª $i_nb_lignes_par_page lignes de la page courante . La requete SQL est utilisée
+    * Affiche le contenu du tableau correspondant Ã  $i_nb_lignes_par_page lignes de la page courante . La requete SQL est utilisÃ©e
     */       
    public function affiche_tableau_simple($pa_tableau) {
       $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
@@ -164,14 +164,14 @@ class PaginationTableau {
       }
       print('</tbody>');      
       print("</table>");
-      // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
+      // paramÃ¨tre pour gÃ©rer le numÃ©ro de page dans le cas d'un numÃ©ro de page envoyÃ© par mÃ©thode POST
       print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
    }   
 
 
  /**
-    * Affiche le contenu du tableau correspondant ª $i_nb_lignes_par_page lignes de la page courante
-    * @param integer $pi_type_identifiant type d'identifiant utilisé (1: entier (défaut)| 2: chaine)  	
+    * Affiche le contenu du tableau correspondant Ã  $i_nb_lignes_par_page lignes de la page courante
+    * @param integer $pi_type_identifiant type d'identifiant utilisÃ© (1: entier (dÃ©faut)| 2: chaine)  	
     */       
    public function affiche_tableau_edition($pi_type_identifiant=1) {
       $st_requete = $this->st_requete;
@@ -213,12 +213,12 @@ class PaginationTableau {
       }
       print('</tbody>');      
       print("</table>");
-      // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
+      // paramÃ¨tre pour gÃ©rer le numÃ©ro de page dans le cas d'un numÃ©ro de page envoyÃ© par mÃ©thode POST
       print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
    }   
     
 /**
-    * Affiche le contenu du tableau correspondant ª $i_nb_lignes_par_page lignes de la page courante  
+    * Affiche le contenu du tableau correspondant Ã  $i_nb_lignes_par_page lignes de la page courante  
     */       
    public function affiche_tableau_edition_remplacer() {
       $st_requete = $this->st_requete;
@@ -253,13 +253,13 @@ class PaginationTableau {
       }
       print('</tbody>');       
       print("</table>");
-      // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
+      // paramÃ¨tre pour gÃ©rer le numÃ©ro de page dans le cas d'un numÃ©ro de page envoyÃ© par mÃ©thode POST
       print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
    }     
    
    /**
-    * Met ª jour le num‚ro de page courante   
-    * param integer $pi_page_cour Num‚ro de la page courante 
+    * Met Ã  jour le numÃ©ro de page courante   
+    * param integer $pi_page_cour NumÃ©ro de la page courante 
     */       
    public function init_page_cour($pi_page_cour) {
      if ($pi_page_cour<1)
@@ -270,7 +270,7 @@ class PaginationTableau {
    }
    
    /*
-   * Renvoie le nombre de pages à afficher
+   * Renvoie le nombre de pages Ã  afficher
    * @return integer nombre de pages   
    */
    public function nb_pages() {
@@ -278,7 +278,7 @@ class PaginationTableau {
    }
    
 	/**
-	 * Affiche le contenu du tableau correspondant ª $i_nb_lignes_par_page lignes de la page courante bouton modifier remplacé par un bouton Sélectionner, par des cases à cocher
+	 * Affiche le contenu du tableau correspondant Ã  $i_nb_lignes_par_page lignes de la page courante bouton modifier remplacÃ© par un bouton SÃ©lectionner, par des cases Ã  cocher
 	 */       
 	public function affiche_tableau_edition_select() {
 		$st_requete = $this->st_requete;
@@ -311,15 +311,15 @@ class PaginationTableau {
 		}
         print('<t/body>');		
 		print("</table>");
-		// paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
+		// paramÃ¨tre pour gÃ©rer le numÃ©ro de page dans le cas d'un numÃ©ro de page envoyÃ© par mÃ©thode POST
 		print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
 	}
   
   /**
    * Affiche la liste des pages
-   * @param integer $total  nombre total de résultats
-   * @param integer $per_page nombre de résultats par page
-   * @param integer $current_page numéro de la courante
+   * @param integer $total  nombre total de rÃ©sultats
+   * @param integer $per_page nombre de rÃ©sultats par page
+   * @param integer $current_page numÃ©ro de la courante
    */
   public function get_pagination($total, $per_page, $current_page = 0) {
 
@@ -344,8 +344,7 @@ class PaginationTableau {
   }
   $nav .= '</ul></div>';
   return $nav;
-}
-   
+}   
 	
 }
 ?>
