@@ -273,9 +273,9 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu,$pi_idf_releveur_visu)
    foreach($a_releveurs as $i_idf_releveur => $st_releveur)
    {
       if ($i_idf_releveur==$pi_idf_releveur_visu)
-        print("<option value=\"$i_idf_releveur\" selected>$st_releveur</option>");
+        print("<option value=\"$i_idf_releveur\" selected>".cp1252_vers_utf8($st_releveur)."</option>");
       else  
-        print("<option value=\"$i_idf_releveur\">$st_releveur</option>");             
+        print("<option value=\"$i_idf_releveur\">".cp1252_vers_utf8($st_releveur)."</option>");             
    }
    print('</select>');
    print('</div></div>'); //fin ligne
@@ -324,7 +324,7 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu,$pi_idf_releveur_visu)
            print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=$c_initiale&idf_statut_visu=$pi_idf_statut_visu\" class=\"page-item\">$c_initiale</a></li>");
       }
       print("</ul></div>");
-      $st_requete = "select ch.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relevé papier' end), concat(ad.nom,'  ',ad.prenom,' (',ad.idf,')') from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) join `adherent` ad on (ch.id_releveur = ad.idf) where ca.nom like '$gc_initiale%'";
+      $st_requete = "select ch.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relev&eacute; papier' end), concat(ad.nom,'  ',ad.prenom,' (',ad.idf,')') from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) join `adherent` ad on (ch.id_releveur = ad.idf) where ca.nom like '$gc_initiale%'";
       $a_clauses =array();
       if (!empty($pi_idf_statut_visu))
 	     $a_clauses[] = "ch.statut=$pi_idf_statut_visu";
@@ -385,7 +385,7 @@ function chaine_select_options_chantier($pst_idf_choisi,$pa_tableau)
       list($st_nom,$st_fourchette,$st_support) = $st_val;
       //$st_val = 'Commune : '.$st_nom.', Fourchette : '.$st_fourchette.',  '.$st_support;
       $st_val = $st_nom.', Fourchette : '.$st_fourchette.',  '.$st_support;
-      $st_chaine_options .= ("$pst_idf_choisi" !='' && "$st_idf"=="$pst_idf_choisi") ? "<option value=\"$st_idf\" selected=\"selected\">$st_val</option>\n": "<option value=\"$st_idf\">$st_val</option>\n";
+      $st_chaine_options .= ("$pst_idf_choisi" !='' && "$st_idf"=="$pst_idf_choisi") ? "<option value=\"$st_idf\" selected=\"selected\">".cp1252_vers_utf8($st_val)."</option>\n": "<option value=\"$st_idf\">".cp1252_vers_utf8($st_val)."</option>\n";
    }
    return $st_chaine_options;
 }
@@ -589,7 +589,7 @@ function exporte_liste_releves($pconnexionBD,$pi_idf_stat_export)
   ---------------------------------------------------------------------------*/
 $ga_tbl_statut = array( 0=>'Tous', 1=>'En cours', 2=>'Termin&eacute;',3=>'Abandonn&eacute;');
 require_once("$gst_chemin/Commun/menu.php");
-$ga_documents = $connexionBD->sql_select_multiple_par_idf("select r.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relevé papier' end) from `documents` r  join `commune_acte` ca  on (r.id_commune = ca.idf ) order by ca.nom");
+$ga_documents = $connexionBD->sql_select_multiple_par_idf("select r.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relev&eacute; papier' end) from `documents` r  join `commune_acte` ca  on (r.id_commune = ca.idf ) order by ca.nom");
 $ga_communes  = $connexionBD->liste_valeur_par_clef("select idf,nom from `commune_acte` order by nom");
 $ga_adherent  = $connexionBD->liste_valeur_par_clef("select idf,concat(nom,'  ',prenom,' (',idf,')') from adherent where statut in ('".ADHESION_INTERNET."','".ADHESION_BULLETIN."','".ADHESION_SUSPENDU."') order by nom,prenom");
 switch ($gst_mode) {
@@ -646,7 +646,7 @@ switch ($gst_mode) {
     $i_statut = (int) $_POST['statut'];
     $connexionBD->initialise_params(array(':comment_envoi'=>$st_comment_envoi,':comment_retour'=>$st_comment_retour));
     $connexionBD->execute_requete("update `chantiers` set id_document=$i_id_document, id_releveur=$i_id_releveur, type_acte=$i_type_acte, date_convention='$c_date_convention', date_envoi='$c_date_envoi', date_retour='$c_date_retour',date_fin='$c_date_fin', comment_envoi=:comment_envoi, comment_retour=:comment_retour, statut=$i_statut where idf=$gi_idf_chantier"); 
-     menu_liste($connexionBD,$gi_idf_statut);  
+     menu_liste($connexionBD,$gi_idf_statut,$gi_idf_releveur);  
   break;
   case 'MENU_AJOUTER' : 
      menu_ajouter($ga_documents,$ga_adherent,$gi_idf_releveur);
@@ -698,7 +698,7 @@ switch ($gst_mode) {
    $connexionBD->initialise_params(array(':comment_envoi'=>$st_comment_envoi,':comment_retour'=>$st_comment_retour));
    $st_requete = "insert into chantiers (id_document, id_releveur, type_acte, date_convention, date_envoi, date_retour, date_fin,comment_envoi, comment_retour, statut) values ($i_id_document, $i_id_releveur, $i_type_acte, '$c_date_convention', '$c_date_envoi', '$c_date_retour','$c_date_fin',:comment_envoi , :comment_retour, $i_statut)";   
    $connexionBD->execute_requete($st_requete);
-   menu_liste($connexionBD,$gi_idf_statut);
+   menu_liste($connexionBD,$gi_idf_statut,$gi_idf_releveur);
    break;
    case 'SUPPRIMER':
       $a_liste_supprime = isset($_POST['supp']) ? $_POST['supp'] :  array();
