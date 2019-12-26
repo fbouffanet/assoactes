@@ -1,5 +1,4 @@
 <!DOCTYPE html> 
-<html lang="fr">
 <head>
   <title>Statistiques des adhésions</title>
   <meta charset="iso-8859-15">       <!-- ou charset="utf-8" -->
