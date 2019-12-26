@@ -4,6 +4,7 @@
 // Licence Publique Générale GPL GNU publiée par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
+
 require_once('../Commun/config.php');
 require_once('../Commun/constantes.php');
 require_once('../Commun/Identification.php');
