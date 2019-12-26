@@ -625,8 +625,8 @@ function calcule_variantes($pconnexionBD,$pst_rep_tmp) {
           {
             $a_lignes[] = "($i,:param_$i)";
             $a_params[":param_$i"] = $st_patronyme; 			 
-          }
-          $i++;
+            $i++;
+		  }
        }
     }
     if (count ($a_lignes)>0)
