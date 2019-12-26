@@ -1,15 +1,15 @@
 <?php
 
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
 /*
-* Renvoie une chaine encodée en cp1252 en UTF8
-* @param string $st_valeur chaine cp1252 à convertir
-* @return string chaine encodée en UTF8
+* Renvoie une chaine encodÃ©e en cp1252 en UTF8
+* @param string $st_valeur chaine cp1252 Ã  convertir
+* @return string chaine encodÃ©e en UTF8
 */
 function cp1252_vers_utf8($st_valeur)
 {
@@ -17,9 +17,9 @@ function cp1252_vers_utf8($st_valeur)
 }
 
 /*
-* Renvoie une chaine encodée en UTF8 en cp1252
-* @param string $st_valeur chaine UTF8 à convertir
-* @return string chaine encodée en UTF8
+* Renvoie une chaine encodÃ©e en UTF8 en cp1252
+* @param string $st_valeur chaine UTF8 Ã  convertir
+* @return string chaine encodÃ©e en UTF8
 */
 function utf8_vers_cp1252($st_valeur)
 {
@@ -62,7 +62,7 @@ function chaine_select_options_simple($pst_valeur,$pa_tableau,$pb_conversion_enc
 
 /**
 * Renvoie la chaine d'options dans un select multiple HTML 
-/* @param array $pa_selection liste des valeurs déjà sélectionnés
+/* @param array $pa_selection liste des valeurs dÃ©jÃ  sÃ©lectionnÃ©s
 *  @param array $pa_tableau tableau des valeurs a afficher
 *  @param boolean convertit l'encodage de cp 1252 en utf8 
 */
@@ -78,7 +78,7 @@ function chaine_select_options_multiple($pa_selection,$pa_tableau,$pb_conversion
        }
        else
        {
-          // Element ne faisant pas partie de la sélection
+          // Element ne faisant pas partie de la sÃ©lection
           $st_chaine_options.="<option>$st_element</option>";
        }    
     }
@@ -87,8 +87,8 @@ function chaine_select_options_multiple($pa_selection,$pa_tableau,$pb_conversion
 }
 
 /*
-* Vérifie que la chaine commence par une voyelle ou non
-* @param string $pst_chaine chaine à tester
+* VÃ©rifie que la chaine commence par une voyelle ou non
+* @param string $pst_chaine chaine Ã  tester
 * @return boolean (vrai si la chaine commence par une voyelle, faux sinon)
 */
 function commence_par_une_voyelle($pst_chaine)
