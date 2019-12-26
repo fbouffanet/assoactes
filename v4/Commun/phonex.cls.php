@@ -2,7 +2,7 @@
 /**
 * CLASS phonex
 * phonex, phonetics search algo
-* based on the algorithm described here : http://sqlpro.developpez.com/cours/soundex/ by Frédéric BROUARD
+* based on the algorithm described here : http://sqlpro.developpez.com/cours/soundex/ by FrÃ©dÃ©ric BROUARD
 *
 * author Johan Barbier <barbier_johan@hotmail.com>
 */
@@ -46,9 +46,9 @@ class phonex {
 	* private replacement array
 	*/
 	private $aReplaceGrp4 = array (
-		'é' => 'y',
-		'è' => 'y',
-		'ê' => 'y',
+		'Ã©' => 'y',
+		'Ã¨' => 'y',
+		'Ãª' => 'y',
 		'ai' => 'y',
 		'ei' => 'y',
 		'er' => 'yr',
