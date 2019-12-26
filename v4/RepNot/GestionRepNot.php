@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
+// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once '../Commun/config.php';
@@ -55,7 +55,7 @@ switch ($gst_mode) {
 print('<!DOCTYPE html>');
 print("<head>");
 print("<title>Gestion des Repertoires de notaire</title>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -165,7 +165,7 @@ $("#ajoute_rep_not").validate({
 
 $("#import_rep_not").validate({ 
     submitHandler : function(form) {
-      if (confirm("Voulez-vous vraiment recharger le rÃ©pertoire "+$("#idf_rep_import option:selected").text()+' ?')) {
+      if (confirm("Voulez-vous vraiment recharger le répertoire "+$("#idf_rep_import option:selected").text()+' ?')) {
         form.submit();
       }
     },
@@ -248,7 +248,7 @@ $("#fusionner_type").validate({
       type_acte_dest: "required"
     },
     messages: {
-         type_acte_orig: "Choisir un type Ã  remplacer",
+         type_acte_orig: "Choisir un type à remplacer",
          type_acte_dest: "Choisir le type de destination"  
     },
 	errorElement: "em",
@@ -295,7 +295,7 @@ $("#suppression_repertoires").validate({
             } 
   },
   messages: {
-     "supp[]": "Merci de choisir au moins un rÃ©pertoire Ã  supprimer"
+     "supp[]": "Merci de choisir au moins un répertoire à supprimer"
   },
   errorElement: "em",
   errorPlacement: function ( error, element ) {
@@ -322,7 +322,7 @@ $("#suppression_repertoires").validate({
         repertoires=repertoires+' '+$this.attr("id");
       }   
     });
-    if (confirm('Etes-vous sÃ»r de supprimer les rÃ©pertoires '+repertoires+' ?')) {
+    if (confirm('Etes-vous sûr de supprimer les répertoires '+repertoires+' ?')) {
             form.submit();
         }
     }
@@ -352,9 +352,9 @@ else
 
 $gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 
-/* Renvoie la liste des rÃ©pertoires de notaires
+/* Renvoie la liste des répertoires de notaires
  * @param object $pconnexionBD Identifiant de la connexion de base
- * @return array tableau de (nom_notaire,paroisse, cote, publication, nb actes) indexÃ© par l'identifiant du rÃ©pertoire
+ * @return array tableau de (nom_notaire,paroisse, cote, publication, nb actes) indexé par l'identifiant du répertoire
 */
 function liste_rep_not($pconnexionBD)
 {
@@ -418,14 +418,14 @@ function menu_liste($pconnexionBD)
 	foreach($a_liste_rep_not as $i_idf_rep => $a_ligne)
 	{
       list($st_notaire,$st_paroisse,$st_cote) = $a_ligne;
-      print("<option value=\"$i_idf_rep\">".cp1252_vers_utf8($st_notaire)." - ".cp1252_vers_utf8($st_paroisse)." ($st_cote)</option>");
+      print("<option value=\"$i_idf_rep\">$st_notaire - $st_paroisse ($st_cote)</option>");
 	}
 	print("</select></div>"); 
 	print('<input type="hidden" name="mode" value="EXPORT" />');
 	print('<div class="col-md-6">');
 	print('<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-download-alt"></span> Exporter le r&eacute;pertoire</button>');
 	print("</div>");
-	print("</div>"); 
+	print("</div></div>"); 
 	
 	print('</form></div></div>');
   
@@ -440,7 +440,7 @@ function menu_liste($pconnexionBD)
 	foreach($a_liste_rep_not as $i_idf_rep => $a_ligne)
 	{
       list($st_notaire,$st_paroisse,$st_cote) = $a_ligne;
-      print("<option value=\"$i_idf_rep\">".cp1252_vers_utf8($st_notaire)." - ".cp1252_vers_utf8($st_paroisse)." ($st_cote)</option>");
+      print("<option value=\"$i_idf_rep\">$st_notaire - $st_paroisse ($st_cote)</option>");
 	}
 	print("</select></div>");
 	print('<input type="hidden" name="mode" value="IMPORT" >');
@@ -462,14 +462,14 @@ function menu_liste($pconnexionBD)
 	print("<label for=\"type_acte_orig\">Remplacer le type:</label><select name=\"type_acte_orig\" id=\"type_acte_orig\" class=\"form-control js-select-avec-recherche\"><option></option>");
 	foreach ($a_types as $st_type)
 	{
-		print("<option>".cp1252_vers_utf8($st_type)."</option>\n");
+		print("<option>$st_type</option>\n");
 	}
 	print("</select></div>");
 	print('<div class="form-group col-md-5">');
-	print("<label for=\"type_acte_dest\">par le type:</label><select name=\"type_acte_dest\" id=\"type_acte_dest\" class=\"form-control js-select-avec-recherche\"><option></option>");	
+	print("<label for\"type_acte_dest\">par le type:</label><select name=\"type_acte_dest\" id=\"type_acte_dest\" class=\"form-control js-select-avec-recherche\"><option></option>");	
 	foreach ($a_types as $st_type)
    {
-		print("<option>".cp1252_vers_utf8($st_type)."</option>\n");
+		print("<option>$st_type</option>\n");
 	}
    print("</select>\n");
 	print("</div>");
@@ -492,15 +492,15 @@ function menu_liste($pconnexionBD)
 }
 
 /**
- * Affiche de la table d'Ã©dition
+ * Affiche de la table d'édition
  * @param array $pa_communes liste des communes
  * @param array $pa_releveurs liste des releveurs
- * @param integer $pi_idf_repertoire identifiant du rÃ©pertoire
+ * @param integer $pi_idf_repertoire identifiant du répertoire
  * @param string $pst_nom_notaire Nom du notaire
  * @param string $pst_cote Cote du notaire
  * @param integer $pi_idf_commune Identifiant de la commune
  * @param integer $pi_idf_releveur Identifiant du releveur
- * @param character $pc_publication Publication du rÃ©pertoire ('O'|'N')
+ * @param character $pc_publication Publication du répertoire ('O'|'N')
  */ 
 function menu_edition($pa_communes,$pa_releveurs,$pi_idf_repertoire,$pst_nom_notaire,$pst_cote,$pi_idf_commune,$pi_idf_releveur,$pc_publication)
 {
@@ -513,7 +513,7 @@ function menu_edition($pa_communes,$pa_releveurs,$pi_idf_repertoire,$pst_nom_not
    print('<div class="form-group row">');
    print('<label for="nom_notaire" class="col-form-label col-md-2">Nom du notaire</label>');
    print('<div class="col-md-10">');
-   print("<input type=\"text\" maxlength=50 size=30 name=nom_notaire id=nom_notaire value=\"".cp1252_vers_utf8($pst_nom_notaire)."\" class=\"form-control\">");
+   print("<input type=\"text\" maxlength=50 size=30 name=nom_notaire id=nom_notaire value=\"$pst_nom_notaire\" class=\"form-control\">");
    print('</div>');
    print('</div>');
    print('<div class="form-group row">');
@@ -547,9 +547,9 @@ function menu_edition($pa_communes,$pa_releveurs,$pi_idf_repertoire,$pst_nom_not
    print('</div>');
 }
 
-/** Affiche le menu de modification d'un rÃ©pertoire
+/** Affiche le menu de modification d'un répertoire
  * @param object $pconnexionBD Identifiant de la connexion de base
- * @param integer $pi_idf_repertoire Identifiant du rÃ©pertoire Ã  modifier 
+ * @param integer $pi_idf_repertoire Identifiant du répertoire à modifier 
  * @param array $pa_communes liste des communes
  * @param array $pa_releveurs liste des releveurs
  */ 
@@ -569,7 +569,7 @@ function menu_modifier($pconnexionBD,$pi_idf_repertoire,$pa_communes,$pa_releveu
    print('</form>');
 }
 
-/** Affiche le menu d'ajout d'un rÃ©pertoire
+/** Affiche le menu d'ajout d'un répertoire
  * @param array $pa_communes liste des communes
  * @param array $pa_releveurs liste des releveurs 
  */ 
@@ -588,12 +588,12 @@ function menu_ajouter($pa_communes,$pa_releveurs)
 }
 
 /**
- * Calcule les variantes de tous les patronymes commenÃ§ant par une lettre ou une parenthese
- * @param object $pconnexionBD Connexion Ã  la base 
- * @param string $pst_rep_tmp rÃ©pertoire temporaire oÃ¹ est stockÃ© le fichier avant chargement en base
+ * Calcule les variantes de tous les patronymes commençant par une lettre ou une parenthese
+ * @param object $pconnexionBD Connexion à la base 
+ * @param string $pst_rep_tmp répertoire temporaire où est stocké le fichier avant chargement en base
  */
 function calcule_variantes($pconnexionBD,$pst_rep_tmp) {
-    $ga_patronymes = $pconnexionBD->sql_select("select distinct patronyme from (select nom1 as patronyme from rep_not_actes union select distinct nom2 as patronyme from rep_not_actes) T");
+    $ga_patronymes = $pconnexionBD->sql_select("select distinct nom1 as patronyme from rep_not_actes union select distinct nom2 as patronyme from rep_not_actes");
     //$i_precision = 7; 
     $i_precision = 8;     
     $oPhonex = new phonex;
@@ -613,8 +613,7 @@ function calcule_variantes($pconnexionBD,$pst_rep_tmp) {
           $a_groupe_patros[$i_phonex]= array($st_patronyme); 
        
     }    
-    $i_cpt_grp=0;
-	$i_cpt_var=0;
+    $i=0;
 	$st_requete_insertion = "insert ignore into `rep_not_variantes` (idf_groupe,nom) values ";
     $a_lignes = array();
 	$a_params = array();
@@ -624,11 +623,10 @@ function calcule_variantes($pconnexionBD,$pst_rep_tmp) {
        {
           foreach ($a_patros as $st_patronyme)
           {
-            $a_lignes[] = "($i_cpt_grp,:param_$i_cpt_var)";
-            $a_params[":param_$i_cpt_var"] = $st_patronyme; 			 
-            $i_cpt_var++;
+            $a_lignes[] = "($i,:param_$i)";
+            $a_params[":param_$i"] = $st_patronyme; 			 
+            $i++;
 		  }
-		  $i_cpt_grp++;         
        }
     }
     if (count ($a_lignes)>0)
@@ -654,7 +652,7 @@ function calcule_variantes($pconnexionBD,$pst_rep_tmp) {
 	}	 
 }   
 
-/** Export le contenu du rÃ©pertoire de notaire spÃ©cifiÃ©
+/** Export le contenu du répertoire de notaire spécifié
  * @param object $pconnexionBD Identifiant de la connexion de base
  * @param integer $pi_idf_stat_export identifiant du statut de l'export 
  */ 
@@ -677,10 +675,10 @@ function exporte_rep_not($pconnexionBD,$pi_idf_rep)
 }
 
 /**
- *  Charge le ficher dans le rÃ©pertoire spÃ©cifiÃ©
+ *  Charge le ficher dans le répertoire spécifié
  * @param object $pconnexionBD Identifiant de la connexion de base 
- * @param integer $pi_idf_rep Identifiant du rÃ©pertoire
- * @param string $pst_parametre_load_data ParamÃ¨tres du Load Data
+ * @param integer $pi_idf_rep Identifiant du répertoire
+ * @param string $pst_parametre_load_data Paramètres du Load Data
  */
 function importe_rep_not($pconnexionBD,$pi_idf_rep)
 {
@@ -772,7 +770,7 @@ switch ($gst_mode) {
 	{
 		$i_idf_repertoire = (int) $_POST['idf_repertoire'];
 		$st_notaire = trim($_POST['nom_notaire']);
-		$st_notaire = utf8_vers_cp1252(substr($st_notaire,0,50));
+		$st_notaire = substr($st_notaire,0,50);
 		$st_cote = trim($_POST['cote']);
 		$st_cote = substr($st_cote,0,10);
 		$i_idf_commune = (int) ($_POST['idf_commune']);
@@ -798,13 +796,13 @@ switch ($gst_mode) {
   break;
   case 'AJOUTER':
 		$st_notaire = trim($_POST['nom_notaire']);
-		$st_notaire = utf8_vers_cp1252(substr($st_notaire,0,50));
+		$st_notaire = substr($st_notaire,0,50);
 		$st_cote = trim($_POST['cote']);
 		$st_cote = substr($st_cote,0,10);
 		$i_idf_commune = (int) ($_POST['idf_commune']);
 		$i_idf_releveur = (int) ($_POST['idf_releveur']);
 		$c_publication = isset ($_POST['publication']) ? 'O' : 'N';
-		$connexionBD->initialise_params(array(':notaire'=>$st_notaire,':cote'=>$st_cote,':idf_commune'=>$i_idf_commune,':idf_releveur'=>$i_idf_releveur,':publication'=>$c_publication));
+    $connexionBD->initialise_params(array(':notaire'=>$st_notaire,':cote'=>$st_cote,':idf_commune'=>$i_idf_commune,':idf_releveur'=>$i_idf_releveur,':publication'=>$c_publication));
 		$st_requete = "insert into `rep_not_desc`(nom_notaire,cote,idf_commune,idf_releveur,publication) values(:notaire,:cote,:idf_commune,:idf_releveur,:publication)";
 		$connexionBD->execute_requete($st_requete);
      menu_liste($connexionBD);
@@ -814,6 +812,7 @@ switch ($gst_mode) {
 		foreach ($a_liste_repertoires as $i_idf_repertoire)
 		{
 			$st_requete ="select count(idf_acte) from `rep_not_actes` rna  join `rep_not_desc` rnd on (rna.idf_repertoire=rnd.idf_repertoire) where rnd.idf_repertoire=$i_idf_repertoire";
+			//print("Req=$st_requete<br>");
 			$i_nb_actes = $connexionBD->sql_select1($st_requete);
 			if ($i_nb_actes==0)
 				$connexionBD->execute_requete("delete from `rep_not_desc` where idf_repertoire=$i_idf_repertoire");
@@ -834,9 +833,9 @@ switch ($gst_mode) {
   break;
   case 'FUSIONNER_TYPE':
      $st_type_acte_orig = trim($_POST['type_acte_orig']);
-	 $st_type_acte_orig = utf8_vers_cp1252(substr($st_type_acte_orig,0,40));
+	 $st_type_acte_orig = substr($st_type_acte_orig,0,40);
      $st_type_acte_dest = trim($_POST['type_acte_dest']);
-	 $st_type_acte_dest = utf8_vers_cp1252(substr($st_type_acte_dest,0,40));
+	 $st_type_acte_dest = substr($st_type_acte_dest,0,40);
 	 $connexionBD->initialise_params(array(':type_orig'=>$st_type_acte_orig,':type_dest'=>$st_type_acte_dest));
 	 $st_requete = "update `rep_not_actes` set `type`=:type_dest where `type`=:type_orig";
      try
@@ -845,7 +844,7 @@ switch ($gst_mode) {
      }
      catch (Exception $e)
      {
-      echo 'Exception reÃ§uue : ',  $e->getMessage(), "\n";
+      echo 'Exception reçue : ',  $e->getMessage(), "\n";
      }
      print("<div class=\"alert alert-success\">Remplacement effectu&eacute;</div>");
      menu_liste($connexionBD);
