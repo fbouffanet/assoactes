@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('../Commun/config.php');
@@ -16,7 +16,7 @@ require_once('../Commun/commun.php');
 require_once('../Commun/Benchmark.inc');
 
 /**
- * Affiche le menu de sélection
+ * Affiche le menu de sÃ©lection
  */
 function AfficheMenu() {
    
@@ -38,20 +38,20 @@ function AfficheMenu() {
    print("</form>");
    print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    print('<input type="hidden" name="mode" value="EXPORT_COMPTEURS">');
-   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Mise à jour des compteurs adh&eacute;rents</button>');
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4">Mise &agrave; jour des compteurs adh&eacute;rents</button>');
    print("</form></div></div>");
 }
 
 /**
- * Exporte la liste des couples pour Généabank dans le fichier
- * spécifié par  $pst_nom_fichier et $pst_nom_fichier
- * @param object $pconnexionBD Connexion à la base de donnée
- * @param string $pst_idf_geneabank Identifiant Généabank de l'association
- * @param string $pst_repertoire_export Répertoire de l'export
- * @return string Nom du fichier temporaire créé   
+ * Exporte la liste des couples pour GÃ©nÃ©abank dans le fichier
+ * spÃ©cifiÃ© par  $pst_nom_fichier et $pst_nom_fichier
+ * @param object $pconnexionBD Connexion Ã  la base de donnÃ©e
+ * @param string $pst_idf_geneabank Identifiant GÃ©nÃ©abank de l'association
+ * @param string $pst_repertoire_export RÃ©pertoire de l'export
+ * @return string Nom du fichier temporaire crÃ©Ã©   
  * Exemple d'export :
- * ;CHARON;René;MONDO ?;Suzanne;gbkagcharente;décès ancien cjt
- * ;DELOR;Pierre;DUMAS DELAGE;Françoise;gbkagcharente;décès  
+ * ;CHARON;RenÃ©;MONDO ?;Suzanne;gbkagcharente;dÃ©cÃ¨s ancien cjt
+ * ;DELOR;Pierre;DUMAS DELAGE;FranÃ§oise;gbkagcharente;dÃ©cÃ¨s  
  */ 
 function  ExporteUnions($pconnexionBD,$pst_idf_geneabank,$pst_repertoire_export)
 {
@@ -70,19 +70,19 @@ function  ExporteUnions($pconnexionBD,$pst_idf_geneabank,$pst_repertoire_export)
 }
 
 /**
- * Exporte l'index des noms pour Généabank dans le fichier
- * spécifié par  $pst_nom_fichier et $pst_nom_fichier
- * Le fichier est au format Index Généanet 
- * @param object $pconnexionBD Connexion à la base de donnée
- * @param string $pst_idf_geneabank Identifiant Généabank de l'association
- * @param string $pst_repertoire_export Répertoire de l'export
- * @global $gst_code_dpt_geneabank Code département généabank (Ex: F16)
- * @global $gst_code_region_geneabank Code région généabank (Ex: PCH)
- * @global $gst_code_pays_geneabank Code pays généabank (Ex: FRA)
- * @global $gst_code_type_geneabank Source généabank (Ex: C pour acte original)      
+ * Exporte l'index des noms pour GÃ©nÃ©abank dans le fichier
+ * spÃ©cifiÃ© par  $pst_nom_fichier et $pst_nom_fichier
+ * Le fichier est au format Index GÃ©nÃ©anet 
+ * @param object $pconnexionBD Connexion Ã  la base de donnÃ©e
+ * @param string $pst_idf_geneabank Identifiant GÃ©nÃ©abank de l'association
+ * @param string $pst_repertoire_export RÃ©pertoire de l'export
+ * @global $gst_code_dpt_geneabank Code dÃ©partement gÃ©nÃ©abank (Ex: F16)
+ * @global $gst_code_region_geneabank Code rÃ©gion gÃ©nÃ©abank (Ex: PCH)
+ * @global $gst_code_pays_geneabank Code pays gÃ©nÃ©abank (Ex: FRA)
+ * @global $gst_code_type_geneabank Source gÃ©nÃ©abank (Ex: C pour acte original)      
  * Exemple d'export :
- * BATARD;décés;1777;1777;1;CLAIX;F16;PCH;FRA;C
- * BATARDE;décés;1791;1791;1;BECHERESSE;F16;PCH;FRA;C
+ * BATARD;dÃ©cÃ¨s;1777;1777;1;CLAIX;F16;PCH;FRA;C
+ * BATARDE;dÃ©cÃ¨s;1791;1791;1;BECHERESSE;F16;PCH;FRA;C
  */ 
 function  ExporteIndexPatros($pconnexionBD,$pst_idf_geneabank,$pst_repertoire_export)
 {
@@ -105,8 +105,8 @@ function  ExporteIndexPatros($pconnexionBD,$pst_idf_geneabank,$pst_repertoire_ex
 }
 
 /**
- * Affiche le résultat du fichier
- * @param string $pst_url_export Url du répertoire de l'export 
+ * Affiche le rÃ©sultat du fichier
+ * @param string $pst_url_export Url du rÃ©pertoire de l'export 
  * @param string $pst_nom_fichier Nom du fichier 
  */ 
 function AfficheResultatFichier($pst_url_export,$pst_nom_fichier){
@@ -122,15 +122,15 @@ function AfficheResultatFichier($pst_url_export,$pst_nom_fichier){
 
 
 /**
- * Exporte l'index des noms pour Généabank dans le fichier
- * spécifié par  $pst_nom_fichier et $pst_nom_fichier
- * Le fichier est au format Index Généanet 
- * @param object $pconnexionBD Connexion à la base de donnée
- * @param string $pst_repertoire_export Répertoire de l'export
+ * Exporte l'index des noms pour GÃ©nÃ©abank dans le fichier
+ * spÃ©cifiÃ© par  $pst_nom_fichier et $pst_nom_fichier
+ * Le fichier est au format Index GÃ©nÃ©anet 
+ * @param object $pconnexionBD Connexion Ã  la base de donnÃ©e
+ * @param string $pst_repertoire_export RÃ©pertoire de l'export
  * @param string $pst_nom_fichier
- * @param string $pst_url_export Url du répertoire de l'export  
- * @param string $st_prefixe_adherent_gbk préfixe adhérent Généabank
- * @param integer $pi_nb_demandes_gbk Nombre de demandes authorisées pour un adhérent par mois 
+ * @param string $pst_url_export Url du rÃ©pertoire de l'export  
+ * @param string $st_prefixe_adherent_gbk prÃ©fixe adhÃ©rent GÃ©nÃ©abank
+ * @param integer $pi_nb_demandes_gbk Nombre de demandes authorisÃ©es pour un adhÃ©rent par mois 
  */ 
 function MajCompteurAdherents($pconnexionBD,$pst_repertoire_export,$pst_nom_fichier,$pst_url_export,$st_prefixe_adherent_gbk,$pi_nb_demandes_gbk) {
    $a_liste_idf=$pconnexionBD->sql_select("select idf , annee_cotisation, statut from adherent where statut = 'B' or statut = 'I'   and annee_cotisation >=  YEAR( NOW()) order by idf ");
@@ -158,12 +158,12 @@ function MajCompteurAdherents($pconnexionBD,$pst_repertoire_export,$pst_nom_fich
 }
 
 /**
- * Exporte l'index des communes pour Généabank dans le fichier
- * spécifié par  $pst_nom_fichier et $pst_nom_fichier
- * @param object $pconnexionBD Connexion à la base de donnée
- * @param string $pst_repertoire_export Répertoire de l'export
+ * Exporte l'index des communes pour GÃ©nÃ©abank dans le fichier
+ * spÃ©cifiÃ© par  $pst_nom_fichier et $pst_nom_fichier
+ * @param object $pconnexionBD Connexion Ã  la base de donnÃ©e
+ * @param string $pst_repertoire_export RÃ©pertoire de l'export
  * @param string $pst_nom_fichier
- * @param string $pst_url_export Url du répertoire de l'export   
+ * @param string $pst_url_export Url du rÃ©pertoire de l'export   
  */ 
 function ExporteIndexCommunes($pconnexionBD,$pst_repertoire_export,$pst_nom_fichier,$pst_url_export) {
    global $gst_pays_geneabank,$gst_url_interrogation_geneabank;
@@ -197,7 +197,7 @@ function ExporteIndexCommunes($pconnexionBD,$pst_repertoire_export,$pst_nom_fich
  -----------------------------------------------------------------------------*/
 print('<!DOCTYPE html>');
 print("<Head>\n");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print("<title>Gestion des export Geneabank</title>");
 print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
@@ -228,7 +228,7 @@ switch ($gst_mode) {
      $st_chemin_zip="$gst_repertoire_indexes_geneabank/$gst_index_couple_geneabank";
      if (file_exists($st_chemin_zip)) unlink($st_chemin_zip);
      if ($zip->open($st_chemin_zip, ZIPARCHIVE::CREATE)!==TRUE) {
-        exit("<div class=\"alert alert-danger\">Impossible d'écrire <$st_chemin_zip></div\n");
+        exit("<div class=\"alert alert-danger\">Impossible d'Ã©crire <$st_chemin_zip></div\n");
      }
      $zip->addFile($st_fichier_unions,"cpl_".IDF_ASSO_GBK);
      $zip->close(); 
@@ -247,7 +247,7 @@ switch ($gst_mode) {
      $st_chemin_zip="$gst_repertoire_index_geneabank/$gst_index_patros_geneabank";
      if (file_exists($st_chemin_zip)) unlink($st_chemin_zip);
      if ($zip->open($st_chemin_zip, ZIPARCHIVE::CREATE)!==TRUE) {
-        exit("<div class=\"alert alert-danger\">Impossible d'écrire <$st_chemin_zip></div\n");
+        exit("<div class=\"alert alert-danger\">Impossible d'Ã©crire <$st_chemin_zip></div\n");
      }
      $zip->addFile($st_fichier_indexes,IDF_ASSO_GBK);
      $zip->close(); 
