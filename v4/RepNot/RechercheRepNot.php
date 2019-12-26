@@ -248,7 +248,7 @@ function requete_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_idf_reper
 		$a_clauses[]= "rnd.idf_repertoire=$pi_idf_repertoire";
 	if (!empty($pst_type_acte))
   {
-    $pconnexionBD->ajoute_params(array(':type_acte'=>$pst_type_acte));
+    $pconnexionBD->ajoute_params(array(':type_acte'=>utf8_vers_cp1252($pst_type_acte)));
      if (preg_match('/\:/',$pst_type_acte))
            $a_clauses[] = "`type` like :type_acte collate latin1_german1_ci";
         else
@@ -266,18 +266,18 @@ function requete_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_idf_reper
     $pst_nom1 = str_replace('*','%',$pst_nom1);
 		$pst_prenom1 = str_replace('*','%',$pst_prenom1);
     $a_clauses[]='((nom1'.clause_droite_nom($pconnexionBD,$pst_nom1,$pb_rech_phonetique,1).' and prenom1'.clause_droite_prenom($pst_prenom1,1).') or (nom2 '.clause_droite_nom($pconnexionBD,$pst_nom1,$pb_rech_phonetique,1).' and prenom2'.clause_droite_prenom($pst_prenom1,1).'))';
-	   $pconnexionBD->ajoute_params(array(':nom1'=>$pst_nom1,':prenom1'=>$pst_prenom1));
+	   $pconnexionBD->ajoute_params(array(':nom1'=>utf8_vers_cp1252($pst_nom1),':prenom1'=>utf8_vers_cp1252($pst_prenom1)));
   }
   elseif (!empty($pst_nom1))
   {
     $pst_nom1 = str_replace('*','%',$pst_nom1);
 		$a_clauses[]='(nom1'.clause_droite_nom($pconnexionBD,$pst_nom1,$pb_rech_phonetique,1).' or nom2'.clause_droite_nom($pconnexionBD,$pst_nom1,$pb_rech_phonetique,1).')';
-    $pconnexionBD->ajoute_params(array(':nom1'=>$pst_nom1));
+    $pconnexionBD->ajoute_params(array(':nom1'=>utf8_vers_cp1252($pst_nom1)));
 	}
   elseif (!empty($pst_prenom1))
   {
 	  $pst_prenom1 = str_replace('*','%',$pst_prenom1);
-    $pconnexionBD->ajoute_params(array(':prenom1'=>$pst_prenom1,':prenom2'=>$pst_prenom1));
+    $pconnexionBD->ajoute_params(array(':prenom1'=>utf8_vers_cp1252($pst_prenom1),':prenom2'=>utf8_vers_cp1252($pst_prenom1)));
     $a_clauses[]='(prenom1'.clause_droite_prenom($pst_prenom1,1).' or prenom2'.clause_droite_prenom($pst_prenom1,2).')';
 	}
   if (!empty($pst_nom2) && !empty($pst_prenom2))
@@ -285,29 +285,29 @@ function requete_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_idf_reper
     $pst_nom2 = str_replace('*','%',$pst_nom2);
 		$pst_prenom2 = str_replace('*','%',$pst_prenom2);
     $a_clauses[]='((nom1'.clause_droite_nom($pconnexionBD,$pst_nom2,$pb_rech_phonetique,2).' and prenom1'.clause_droite_prenom($pst_prenom2,2).') or (nom2'.clause_droite_nom($pconnexionBD,$pst_nom2,$pb_rech_phonetique,2).' and prenom2'.clause_droite_prenom($pst_prenom2,2).'))';
-	  $pconnexionBD->ajoute_params(array(':nom2'=>$pst_nom2,':prenom2'=>$pst_prenom2));
+	  $pconnexionBD->ajoute_params(array(':nom2'=>utf8_vers_cp1252($pst_nom2),':prenom2'=>utf8_vers_cp1252($pst_prenom2)));
   }
   elseif (!empty($pst_nom2))
   {
     $pst_nom2 = str_replace('*','%',$pst_nom2);
 		$a_clauses[]='(nom1'.clause_droite_nom($pconnexionBD,$pst_nom2,$pb_rech_phonetique,2).' or nom2'.clause_droite_nom($pconnexionBD,$pst_nom2,$pb_rech_phonetique,2).')';
-	  $pconnexionBD->ajoute_params(array(':nom2'=>$pst_nom2));
+	  $pconnexionBD->ajoute_params(array(':nom2'=>utf8_vers_cp1252($pst_nom2)));
   }
   elseif (!empty($pst_prenom2))
   {
     $pst_prenom2 = str_replace('*','%',$pst_prenom2);
-    $pconnexionBD->ajoute_params(array(':prenom1'=>$pst_prenom2,':prenom2'=>$pst_prenom2));
+    $pconnexionBD->ajoute_params(array(':prenom1'=>utf8_vers_cp1252($pst_prenom2),':prenom2'=>utf8_vers_cp1252($pst_prenom2)));
 		$a_clauses[]='(prenom1'.clause_droite_prenom($pst_prenom2,1).' or prenom2'.clause_droite_prenom($pst_prenom2,2).')';	
   }
   if (!empty($pst_paroisse))
   {
 		$a_clauses[]='paroisse'.clause_commune($pconnexionBD,$pst_paroisse);
-    $pconnexionBD->ajoute_params(array(':commune'=>$pst_paroisse));
+    $pconnexionBD->ajoute_params(array(':commune'=>utf8_vers_cp1252($pst_paroisse)));
   }
   if (!empty($pst_commentaires))
   {
 		$a_clauses[]="commentaires like ':commentaires'"; 
-    $pconnexionBD->ajoute_params(array(':commentaires'=>"%$pst_commentaires%")); 
+    $pconnexionBD->ajoute_params(array(':commentaires'=>utf8_vers_cp1252("%$pst_commentaires%"))); 
 	}
 	if (count($a_clauses)>0)
 	{
@@ -402,7 +402,7 @@ function affiche_resultats_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi
           $st_date =  sprintf("%d mois inconnu %4d",$i_jour,$i_annee);
         else   
           $st_date =  sprintf("%d %s %4d",$i_jour,$ga_mois[$i_mois],$i_annee);
-			$a_ligne = array($st_date,$st_type,"$st_prenom1 $st_nom1","$st_prenom2 $st_nom2",$st_paroisse,$st_commentaires,sprintf("%s - %s (%s)",$st_notaire,$st_com_notaire,$st_cote),$i_page,$st_date_rep);
+			$a_ligne = array($st_date,cp1252_vers_utf8($st_type),cp1252_vers_utf8("$st_prenom1 $st_nom1"),cp1252_vers_utf8("$st_prenom2 $st_nom2"),cp1252_vers_utf8($st_paroisse),cp1252_vers_utf8($st_commentaires),sprintf("%s - %s (%s)",cp1252_vers_utf8($st_notaire),cp1252_vers_utf8($st_com_notaire),$st_cote),$i_page,$st_date_rep);
 			foreach ($a_ligne as $st_champ)
 			{
 				if ($st_champ!="")
@@ -436,7 +436,7 @@ $gst_mode = empty($_REQUEST['mode']) ? 'MENU' : $_REQUEST['mode'];
       
 print('<!DOCTYPE html>');
 print("<head>\n");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
