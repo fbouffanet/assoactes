@@ -155,12 +155,6 @@ function affiche_menu() {
    print('<div class="panel panel-primary">');
    print('<div class="panel-heading">Gestion des variantes</div>');
    print('<div class="panel-body">');
-   print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
-   print('<input type="hidden" name="mode" value="EXTRAIT_ACCENTS" />');
-   print('<div class="form-group row">'); 
-   print('<button type=submit class="btn btn-primary col-md-offset-4 col-md-4">Calculer les patronymes avec accents</button>');
-   print("</div>"); 
-   print('</form>');
 
    print('<div class="panel panel-info">');
    print('<div class="panel-heading">Chargement</div>');
@@ -214,17 +208,6 @@ function affiche_menu() {
 /**
  * Charge les variantes de Nimègue V3 issues du fichier téléchargé
  * @param object $pconnexionBD Connexion à la base 
- */ 
-function extrait_patro_accents($pconnexionBD)
-{
-   $pconnexionBD->execute_requete("truncate table patro_accent");
-   $pconnexionBD->execute_requete("insert into `patro_accent` SELECT DISTINCT libelle FROM `patronyme` WHERE libelle NOT REGEXP '^[A-Z ]+$' AND left( libelle, 1 ) IN (
-'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P','Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z') and  libelle not like '%\.%'and libelle not like '%?%'");
-}
-
-/**
- * Charge les variantes de Nimègue V3 issues du fichier téléchargé
- * @param object $pconnexionBD Connexion à la base 
  * @param string $pst_rep_tmp répertoire temporaire où est stocké le fichier avant chargement en base
  */ 
 function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp)
@@ -264,43 +247,17 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp)
       if (preg_match("/^[ ]*$/",$st_ligne)) continue;
       list($st_nimv3,$st_homon,$st_majeure,$st_variante,$st_ajeter) = preg_split('/\;/',$st_ligne);
       if ($st_prev_majeure!=$st_majeure)
-      {
-         if (count($a_patros_courants)>0)
-         {
-            // on change de majeure => on cherche les patronymes avec accents correspondant à toutes les variantes de la majeure en cours
-            $st_variantes=join(',',array_map("entre_quotes",$a_patros_courants)); 
-            $st_requete = "select nom from `patro_accent` where nom  COLLATE latin1_swedish_ci in ($st_variantes) ";
-            //print("Req=$st_requete<br>");
-            $a_patros_accent = $pconnexionBD->sql_select($st_requete);         
-            foreach ($a_patros_accent as $st_patro_accent)
-            {
-              $a_groupes_patros[$st_patro_accent]=array($i_idf_groupe,0);                  
-            }
-            $a_patros_courants=array();
-         }          
+      {          		 
          $i_idf_groupe++;
          $st_prev_majeure=$st_majeure;
          $a_groupes_patros[$st_majeure]=array($i_idf_groupe,1);
-         $a_patros_courants[] = $st_majeure;          
+         $a_patros_courants=array();  
+		 $a_patros_courants[] = $st_majeure;          
       }
       $a_groupes_patros[$st_variante]=array($i_idf_groupe,0);
       $a_patros_courants[] = $st_variante;        
    }   
    fclose($pf);
-   // calcul des variantes pour les patronymes en cours
-   
-   if (count($a_patros_courants)>0)
-   {
-
-		$st_variantes=join(',',array_map("entre_quotes",$a_patros_courants)); 
-		$st_requete = "select nom from `patro_accent` where nom COLLATE latin1_swedish_ci in ($st_variantes)";
-		$a_patros_accent = $pconnexionBD->sql_select($st_requete);         
-		foreach ($a_patros_accent as $st_patro_accent)
-		{
-			$a_groupes_patros[$st_patro_accent]=array($i_idf_groupe,0);                  
-		}
-		$a_patros_courants=array();
-   }
    
    if (count ($a_groupes_patros)>0)
    {   
@@ -399,14 +356,6 @@ switch($gst_mode)
        affiche_menu();
    break;
    
-   case 'EXTRAIT_ACCENTS' :
-       $i_temps_courant = time();
-       extrait_patro_accents($connexionBD);
-       print("<div class=\"alert alert-info\"><br>Dur&eacute;e: ".(time()-$i_temps_courant)." s</div>");
-       print("<div class=\"alert alert-success\">Calcul termin&eacute;</div>");
-       affiche_menu();       
-   break;
-   
    case 'CHARGEMENT' :
        charge_variantes_NimV3($connexionBD,$gst_repertoire_telechargement);
   
@@ -415,14 +364,14 @@ switch($gst_mode)
    case 'EXPORT_NIMV3':
        $st_export_nimv3 = "$gst_repertoire_telechargement/ExportNimV3.csv";
        exporte_variantes_nimV3($connexionBD,$st_export_nimv3);
-       print("<div class=\"alert alert-success\">Export cr&eacute;e: <a href=\"./telechargements/ExportNimV3.csv\">Variantes Nimègue V3</a></div>");
+       print("<div class=\"alert alert-success\">Export cr&eacute;e: <a href=\"./telechargements/ExportNimV3.csv\">Variantes Nim&egrave;gue  V3</a></div>");
        affiche_menu();       
    break;
    
    case 'EXPORT_NIMV2':
        $st_export_nimv2 = "$gst_repertoire_telechargement/ExportNimV2.csv";
        exporte_variantes_nimV2($connexionBD,$st_export_nimv2);
-       print("<div class=\"alert alert-success\">Export cr&eacute;e: <a href=\"./telechargements/ExportNimV2.csv\">Variantes Nimègue V2</a></div>");
+       print("<div class=\"alert alert-success\">Export cr&eacute;e: <a href=\"./telechargements/ExportNimV2.csv\">Variantes Nim&egrave;gue  V2</a></div>");
        affiche_menu();       
    break;
    
