@@ -613,7 +613,8 @@ function calcule_variantes($pconnexionBD,$pst_rep_tmp) {
           $a_groupe_patros[$i_phonex]= array($st_patronyme); 
        
     }    
-    $i=0;
+    $i_cpt_grp=0;
+	$i_cpt_var=0;
 	$st_requete_insertion = "insert ignore into `rep_not_variantes` (idf_groupe,nom) values ";
     $a_lignes = array();
 	$a_params = array();
@@ -623,10 +624,11 @@ function calcule_variantes($pconnexionBD,$pst_rep_tmp) {
        {
           foreach ($a_patros as $st_patronyme)
           {
-            $a_lignes[] = "($i,:param_$i)";
-            $a_params[":param_$i"] = $st_patronyme; 
-             $i++;			
-          }         
+            $a_lignes[] = "($i_cpt_grp,:param_$i_cpt_var)";
+            $a_params[":param_$i_cpt_var"] = $st_patronyme; 			 
+            $i_cpt_var++;
+		  }
+		  $i_cpt_grp++;         
        }
     }
     if (count ($a_lignes)>0)
