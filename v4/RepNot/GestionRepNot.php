@@ -593,7 +593,7 @@ function menu_ajouter($pa_communes,$pa_releveurs)
  * @param string $pst_rep_tmp répertoire temporaire où est stocké le fichier avant chargement en base
  */
 function calcule_variantes($pconnexionBD,$pst_rep_tmp) {
-    $ga_patronymes = $pconnexionBD->sql_select("select distinct nom1 as patronyme from rep_not_actes union select distinct nom2 as patronyme from rep_not_actes");
+    $ga_patronymes = $pconnexionBD->sql_select("select distinct patronyme from (select nom1 as patronyme from rep_not_actes union select distinct nom2 as patronyme from rep_not_actes) T");
     //$i_precision = 7; 
     $i_precision = 8;     
     $oPhonex = new phonex;
@@ -613,7 +613,8 @@ function calcule_variantes($pconnexionBD,$pst_rep_tmp) {
           $a_groupe_patros[$i_phonex]= array($st_patronyme); 
        
     }    
-    $i=0;
+    $i_cpt_grp=0;
+	$i_cpt_var=0;
 	$st_requete_insertion = "insert ignore into `rep_not_variantes` (idf_groupe,nom) values ";
     $a_lignes = array();
 	$a_params = array();
@@ -623,10 +624,11 @@ function calcule_variantes($pconnexionBD,$pst_rep_tmp) {
        {
           foreach ($a_patros as $st_patronyme)
           {
-            $a_lignes[] = "($i,:param_$i)";
-            $a_params[":param_$i"] = $st_patronyme; 			 
-            $i++;
+            $a_lignes[] = "($i_cpt_grp,:param_$i_cpt_var)";
+            $a_params[":param_$i_cpt_var"] = $st_patronyme; 			 
+            $i_cpt_var++;
 		  }
+		  $i_cpt_grp++;
        }
     }
     if (count ($a_lignes)>0)
