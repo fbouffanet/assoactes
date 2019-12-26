@@ -305,7 +305,7 @@ class PaginationTableau {
 				print("<td>&nbsp;</td>");   
 			}
 			
-			print("<td><input type=button class=\"btn btn-primary btn-block\" id=\"bouton$idf_element\" value=Sélectionner onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
+			print("<td><input type=button class=\"btn btn-primary btn-block\" id=\"bouton$idf_element\" value=SÃ©lectionner onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
 			print("</tr>\n");
 			$i++;
 		}
