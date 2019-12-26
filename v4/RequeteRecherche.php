@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publie par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 class RequeteRecherche {
@@ -21,10 +21,10 @@ class RequeteRecherche {
    }
    
    /**
-   * Renvoie la partie droite de l'egalite dans la clause de recherche par nom (Gère le joker* ) 
-   * @param string $pst_patronyme : patronyme à chercher 
-   * @param string $pst_variantes : variantes à chercher (si non vide)
-   * @param integer $pi_num_param : numéro du paramètre 
+   * Renvoie la partie droite de l'egalite dans la clause de recherche par nom (GÃ¨re le joker* ) 
+   * @param string $pst_patronyme : patronyme Ã  chercher 
+   * @param string $pst_variantes : variantes Ã  chercher (si non vide)
+   * @param integer $pi_num_param : numÃ©ro du paramÃ¨tre 
    */
    public function clause_droite_patronyme($pst_patronyme,$pst_variantes,$pi_num_param) {
       $st_clause = '';
@@ -70,10 +70,10 @@ class RequeteRecherche {
    }
    
    /**
-   * Renvoie la partie droite de l'egalite dans la clause de recherche par prénom (Gère le joker* )
-   * @param string $pst_prenom : prénom à chercher 
-   * @param string $pst_variantes : variantes à chercher (si non vide)
-   * @param integer $pi_num_param : numéro du paramètre
+   * Renvoie la partie droite de l'egalite dans la clause de recherche par prÃ©nom (GÃ¨re le joker* )
+   * @param string $pst_prenom : prÃ©nom Ã  chercher 
+   * @param string $pst_variantes : variantes Ã  chercher (si non vide)
+   * @param integer $pi_num_param : numÃ©ro du paramÃ¨tre
    */
    function clause_droite_prenom($pst_prenom,$pst_variantes,$pi_num_param)
    {
@@ -127,7 +127,7 @@ class RequeteRecherche {
    * Renvoie la partie droite de l'egalite dans la clause de recherche de commune 
    * @param integer $pi_idf_commune : identifiant de la commune de recherche     
    * @param integer $pi_rayon : rayon de recherche en km
-   * @param string $pst_paroisses_rattachees : recherche dans les paroisses de même code insee ('oui'|'')   
+   * @param string $pst_paroisses_rattachees : recherche dans les paroisses de mÃªme code insee ('oui'|'')   
    */   
    function clause_droite_commune($pi_idf_commune,$pi_rayon,$pst_paroisses_rattachees)
    {
