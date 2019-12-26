@@ -19,7 +19,7 @@
  * Retourne vrai si la chaine est un prénom (Tous les prénoms simples en minuscules sauf l'initiale en majuscule). Exemple :  Jean-Louis
  * ! est considéré comme un prénom valide (non lisible) 
  * @param string $pst_chaine Chaine à vérifier
- * @return boolean vrai si $pst_chaine est un prÚnom
+ * @return boolean vrai si $pst_chaine est un prénom
  */ 
  function est_prenom($pst_chaine)
  {
@@ -33,7 +33,7 @@
     return true;
  }
 
-/** Renvoie les informations du conjoint tirees d'un champ nimegue V2
+/** Renvoie les informations du conjoint tirees d'un champ nimègue V2
  * @param string $pst_conjoint
  * @return array(nom_conjoint, prenom_conjoint, commentaires conjoints)  
  */
@@ -159,7 +159,7 @@ function infos_conjoint($pst_conjoint)
      }  
   }
   if ($st_lib_dec!='')
-      $st_cmt_conjoint.= "\x86$st_lib_dec";
+      $st_cmt_conjoint.= "\†$st_lib_dec";
   nettoie_prenom($st_prenom_conjoint);
   nettoie_commentaires($st_cmt_conjoint);
   return array($st_patro_conjoint,$st_prenom_conjoint,$st_cmt_conjoint);
@@ -169,7 +169,7 @@ function infos_conjoint($pst_conjoint)
 /**
  * Renvoie vrai si l'acte comporte un élement pouvait apporter une information autre que le nom ou le prénom, faux sinon
  *
- * @param array $pa_champs Champs Ó regarder
+ * @param array $pa_champs Champs à regarder
  * @param integer $pi_indice1 index du premier champ décrivant l'individu 1
  * @param integer $pi_indice2 index du premier champ  décrivant l'individu 2
  * @param integer $pi_longueur_personnes longueur des champs décrivant un individu
@@ -180,7 +180,7 @@ function est_informatif($pa_champs,$pi_indice1,$pi_indice2,$pi_longueur_personne
 {
    $st_chaine = join('',array_slice($pa_champs,$pi_indice1,$pi_longueur_personnes));
    $st_chaine .= join('',array_slice($pa_champs,$pi_indice2,$pi_longueur_personnes));
-   #  on considÞre que l'acte ne comporte pas d'information si tous ses champs sont vides
+   #  on considère que l'acte ne comporte pas d'information si tous ses champs sont vides
    return !preg_match('/^[\s\!\?]*$/',$st_chaine);
 }
 
