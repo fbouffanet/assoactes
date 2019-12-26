@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('../Commun/config.php');
@@ -21,20 +21,20 @@ if (!empty ($gi_annee) && !empty ($gi_idf_canton))
 	$st_requete= "select ca.nom,month(date_demande) as mois, count(*) from stats_gbk sg join commune_acte ca on (sg.idf_commune=ca.idf) join canton c on (ca.idf_canton=c.idf) where c.idf=$gi_idf_canton and year(date_demande)=$gi_annee group by ca.nom, month(date_demande) order by ca.nom, mois";
 	//print("Req=$st_requete<br>");
 	$ga_donnees = $connexionBD->liste_valeur_par_doubles_clefs($st_requete);	
-	// empile les étiquettes
+	// empile les Ã©tiquettes
 	$a_resultats['labels'] = $ga_mois;
 	$i=0;
 	$a_resultats['donnees'] = array();	
 	foreach ($ga_donnees as $st_commune => $a_stat_com)
 	{
-		// empile les catégories de graphes
+		// empile les catÃ©gories de graphes
 		$a_serie_courante = array();
 		$st_commune = mb_convert_encoding($st_commune, "UTF-8","Windows-1252");
 		$a_serie_courante['label'] = "$st_commune";
 		$a_serie_courante['borderColor'] = $ga_couleurs[$i];
 		$a_serie_courante['backgroundColor'] = $ga_couleurs[$i];
 		$a_serie_courante['fill'] = false;
-		//complète les séries
+		//complÃ¨te les sÃ©ries
 		$a_donnees =array();
 		$a_mois = range(1,12);
 		foreach ($a_mois as $i_mois)
