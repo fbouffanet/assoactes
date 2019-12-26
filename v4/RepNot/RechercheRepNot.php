@@ -159,7 +159,7 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
    }
 
 /**
-* Renvoie la partie droite de l'egalite dans la clause de recherche par patronyme or prénom (Gère le joker* ) 
+* Renvoie la partie droite de l'égalite dans la clause de recherche par patronyme or prénom (Gère le joker* ) 
 * @param string $pst_nom : patronyme ou prénom à chercher  
 */
 function clause_droite_nom($pconnexionBD,$pst_nom,$pb_variantes,$pi_num_param)
