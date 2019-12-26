@@ -593,7 +593,7 @@ function menu_ajouter($pa_communes,$pa_releveurs)
  * @param string $pst_rep_tmp répertoire temporaire où est stocké le fichier avant chargement en base
  */
 function calcule_variantes($pconnexionBD,$pst_rep_tmp) {
-    $ga_patronymes = $pconnexionBD->sql_select("select distinct nom1 as patronyme from rep_not_actes union select distinct nom2 as patronyme from rep_not_actes");
+    $ga_patronymes = $pconnexionBD->sql_select("select distinct patronyme from (select nom1 as patronyme from rep_not_actes union select distinct nom2 as patronyme from rep_not_actes) T");
     //$i_precision = 7; 
     $i_precision = 8;     
     $oPhonex = new phonex;

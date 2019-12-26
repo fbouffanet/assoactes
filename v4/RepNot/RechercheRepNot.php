@@ -175,9 +175,10 @@ function clause_droite_nom($pconnexionBD,$pst_nom,$pb_variantes,$pi_num_param)
     else
     {
       $a_params_precedents=$pconnexionBD->params();
-      $pconnexionBD->initialise_params(array(":nom"=>$pst_nom));
-      $st_requete = "select rnv1.nom from rep_not_variantes rnv1, rep_not_variantes rnv2 where rnv2.nom = :nom  COLLATE latin1_general_ci and rnv1.idf_groupe=rnv2.idf_groupe";
+      $pconnexionBD->initialise_params(array(":nom"=>utf8_vers_cp1252($pst_nom)));
+      $st_requete = "select rnv1.nom from rep_not_variantes rnv1, rep_not_variantes rnv2 where rnv2.nom = :nom COLLATE latin1_german1_ci and rnv1.idf_groupe=rnv2.idf_groupe";
       $a_variantes=$pconnexionBD->sql_select($st_requete);
+	  
       $pconnexionBD->initialise_params($a_params_precedents);
       if (count($a_variantes)==0)
            $st_clause = "=:nom$pi_num_param";
@@ -636,7 +637,7 @@ switch ($gst_mode)
     if (empty($_REQUEST['ancienne_page']))
       $b_rech_phonetique = isset($_POST['rech_phonetique'])? true : $b_session_rech_phonetique;
     else
-      $b_rech_phonetique = isset($_POST['rech_phonetique'])? true : false;      
+      $b_rech_phonetique = isset($_POST['rech_phonetique'])? true : false; 
 		$_SESSION['idf_commune_notaire']    = $i_idf_commune_notaire;
 		$_SESSION['idf_repertoire']    		= $i_idf_repertoire;
 		$_SESSION['rayon_rep_not']                  = $i_rayon;
