@@ -5,9 +5,13 @@
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
-$gst_url_site = isset($_SERVER['SERVER_NAME'])? $_SERVER['SERVER_NAME'] : '';
+$gst_url_site = isset($_SERVER['SERVER_NAME'])? "http://".$_SERVER['SERVER_NAME'] : '';
+if (basename($gst_url_site)!='v4')
+	$gst_url_site.="/v4";
 $gst_rep_site = isset($_SERVER['DOCUMENT_ROOT'])? $_SERVER['DOCUMENT_ROOT'] : '';
-$gst_url_sortie = '';
+if (basename($gst_rep_site)!='v4')
+	$gst_rep_site.="/v4";
+$gst_url_sortie = $gst_url_site;
 $gst_serveur_bd  = '';
 $gst_utilisateur_bd = '';
 $gst_mdp_utilisateur_bd = '';
