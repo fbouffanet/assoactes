@@ -435,21 +435,28 @@ function distance($pf_lat1, $pf_lon1, $pf_lat2, $pf_lon2)
  * Ajoute dans la table SQL tableau_kilometrique la liste des distances
  * entre chaque commune et la nouvelle commune crée
  * @param object $pconnexionBD Identifiant de la connexion de base
+ * @param integer $pi_idf_commune identifiant de la commune à ajouter
+ * @param string $pst_nom_commune nom de la commune ajoutée  
  * @param array $pa_coordonnees_communes tableau des coordonnées des communes (latitude,longitude) indexées par l'identifiant commune
  * @param double $pf_latitude latitude de la commune ajoutée
  * @param double $pf_longitude longitude de la commune ajoutée 
  */ 
-function calcule_coordonnees_commune($pconnexionBD,$pa_coordonnees_communes,$pi_idf_commune,$pf_latitude,$pf_longitude)
+function calcule_coordonnees_commune($pconnexionBD,$pa_coordonnees_communes,$pi_idf_commune,$pst_nom_commune,$pf_latitude,$pf_longitude)
 {
 
    $st_requete = 'insert into tableau_kilometrique (idf_commune1,idf_commune2,distance) values ';
    $a_lignes = array();
    foreach($pa_coordonnees_communes as $i_idf_commune => $a_coord)
    {
-      list($f_latitude_cour,$f_longitude_cour) = $a_coord;
+      list($st_nom,$f_latitude_cour,$f_longitude_cour) = $a_coord;
       $i_dist=round(distance($pf_latitude,$pf_longitude,$f_latitude_cour,$f_longitude_cour));
-      if ($pi_idf_commune!=$i_idf_commune)
-        $a_lignes[]= "($pi_idf_commune,$i_idf_commune,$i_dist)";     
+	  if ($i_dist<=255)
+	  {  
+		if ($pi_idf_commune!=$i_idf_commune)
+			$a_lignes[]= "($pi_idf_commune,$i_idf_commune,$i_dist)";
+      }
+      else
+        print("<div class=\"alert alert-danger\">La distance est supérieure à 255km. Vérifier les longitudes et latitudes des communes $pst_nom_commune et $st_nom</div>");		  
    }
    $st_lignes = join(',',$a_lignes);
    $st_requete .= $st_lignes;
@@ -529,7 +536,7 @@ switch ($gst_mode) {
      $st_protestants= isset($_POST['protestants'])? 'O': 'N';     
      $st_sans_rp= isset($_POST['sans_rp'])? 'O': 'N';
      $st_bureau_controle   = isset($_POST['bureau_controle'])? 'O': 'N';
-     $a_coord_communes = $connexionBD->sql_select_multiple_par_idf("select idf,latitude,longitude from commune_acte");
+     $a_coord_communes = $connexionBD->sql_select_multiple_par_idf("select idf,nom,latitude,longitude from commune_acte");
      $connexionBD->initialise_params(array(':nom_commune'=>$st_nom_commune,':code_insee'=>$i_code_insee,':numero_paroisse'=>$i_num_paroisse,':latitude'=>$f_latitude,':longitude'=>$f_longitude,':idf_canton'=>$i_idf_canton,':debut_communale'=>$i_debut_communale,':debut_greffe'=>$i_debut_greffe,':points_svg'=>$st_points_svg,':protestants'=>$st_protestants,':sans_rp'=>$st_sans_rp,':bureau_controle'=>$st_bureau_controle,':date_min_controle'=>$st_date_min_controle,':date_max_controle'=>$st_date_max_controle,':idf_commune'=>$gi_idf_commune));
      $st_requete = "update commune_acte set nom=:nom_commune, code_insee=:code_insee,numero_paroisse=:numero_paroisse,latitude=:latitude,longitude=:longitude,idf_canton=:idf_canton,debut_communale=:debut_communale,debut_greffe=:debut_greffe,points_svg=:points_svg,protestants=:protestants,sans_rp=:sans_rp,bureau_controle=:bureau_controle,date_min_controle=:date_min_controle,date_max_controle=:date_max_controle where idf=:idf_commune";
      $connexionBD->execute_requete($st_requete);
@@ -538,7 +545,7 @@ switch ($gst_mode) {
         $connexionBD->execute_requete("delete from tableau_kilometrique where idf_commune1=$gi_idf_commune or idf_commune2=$gi_idf_commune");
 		$i_nb_communes= $connexionBD->sql_select1("select count(*) from commune_acte");
 		if ($i_nb_communes>1)
-			calcule_coordonnees_commune($connexionBD,$a_coord_communes,$gi_idf_commune,$f_latitude,$f_longitude);
+			calcule_coordonnees_commune($connexionBD,$a_coord_communes,$gi_idf_commune,$st_nom_commune,$f_latitude,$f_longitude);
      }
      menu_liste($connexionBD);  
   break;
@@ -581,7 +588,7 @@ switch ($gst_mode) {
      $st_protestants= isset($_POST['protestants'])? 'O': 'N';
      $st_sans_rp= isset($_POST['sans_rp'])? 'O': 'N';
      $st_bureau_controle   = isset($_POST['bureau_controle'])? 'O': 'N';  
-     $a_coord_communes = $connexionBD->sql_select_multiple_par_idf("select idf,latitude,longitude from commune_acte");
+     $a_coord_communes = $connexionBD->sql_select_multiple_par_idf("select idf,nom,latitude,longitude from commune_acte");
      $connexionBD->initialise_params(array(':nom_commune'=>$st_nom_commune,':code_insee'=>$i_code_insee,':numero_paroisse'=>$i_num_paroisse,':latitude'=>$f_latitude,':longitude'=>$f_longitude,':idf_canton'=>$i_idf_canton,':debut_communale'=>$i_debut_communale,':debut_greffe'=>$i_debut_greffe,':points_svg'=>$st_points_svg,':protestants'=>$st_protestants,':sans_rp'=>$st_sans_rp,':bureau_controle'=>$st_bureau_controle,':date_min_controle'=>$st_date_min_controle,':date_max_controle'=>$st_date_max_controle));
      $st_requete="insert into commune_acte(nom,code_insee,numero_paroisse,longitude,latitude,idf_canton,debut_communale,debut_greffe,protestants,sans_rp,points_svg,bureau_controle,date_min_controle,date_max_controle) values(:nom_commune,:code_insee,:numero_paroisse,:latitude,:longitude,:idf_canton,:debut_communale,:debut_greffe,:protestants,:sans_rp,:points_svg,:bureau_controle,:date_min_controle,:date_max_controle)";
      $connexionBD->execute_requete($st_requete);   
@@ -592,7 +599,7 @@ switch ($gst_mode) {
 		if ($i_nb_communes>1)
 		{
 			$i_idf_commune_ajoutee = $connexionBD->dernier_idf_insere();
-			calcule_coordonnees_commune($connexionBD,$a_coord_communes,$i_idf_commune_ajoutee,$f_latitude,$f_longitude);
+			calcule_coordonnees_commune($connexionBD,$a_coord_communes,$i_idf_commune_ajoutee,$st_nom_commune,$f_latitude,$f_longitude);
 		}
 	 }
    break;
@@ -622,10 +629,7 @@ switch ($gst_mode) {
         } 
      }
      menu_liste($connexionBD);
-   break;
-   
-      
+   break;      
 }  
-
 print('</div></body></html>');
 ?>
