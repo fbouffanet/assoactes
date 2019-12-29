@@ -220,8 +220,8 @@ else
 				}
 				else
 				{
-					$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse) values(:nom,:code_insee,:num_paroisse)";
-					$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune]));
+					$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse,idf_canton) values(:nom,:code_insee,:num_paroisse,:idf_canton)";
+					$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune],':idf_canton'=>0));
 				}
 				
 				
