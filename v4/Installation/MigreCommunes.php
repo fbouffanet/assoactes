@@ -109,24 +109,34 @@ function distance($pf_lat1, $pf_lon1, $pf_lat2, $pf_lon2)
  * entre chaque commune et la nouvelle commune crée
  * @param object $pconnexionBD Identifiant de la connexion de base
  * @param array $pa_coordonnees_communes tableau des coordonnées des communes (latitude,longitude) indexées par l'identifiant commune
+ * @param integer $pi_idf_commune identifiant de la commune à ajouter
+ * @param string $pst_nom_commune nom de la commune ajoutée 
  * @param double $pf_latitude latitude de la commune ajoutée
  * @param double $pf_longitude longitude de la commune ajoutée 
  */ 
-function calcule_coordonnees_commune($pconnexionBD,$pa_coordonnees_communes,$pi_idf_commune,$pf_latitude,$pf_longitude)
+function calcule_coordonnees_commune($pconnexionBD,$pa_coordonnees_communes,$pi_idf_commune,$pst_nom_commune,$pf_latitude,$pf_longitude)
 {
 
    $st_requete = 'insert into tableau_kilometrique (idf_commune1,idf_commune2,distance) values ';
    $a_lignes = array();
    foreach($pa_coordonnees_communes as $i_idf_commune => $a_coord)
    {
-      list($f_latitude_cour,$f_longitude_cour) = $a_coord;
+      list($st_nom,$f_latitude_cour,$f_longitude_cour) = $a_coord;
       $i_dist=round(distance($pf_latitude,$pf_longitude,$f_latitude_cour,$f_longitude_cour));
-      if ($pi_idf_commune!=$i_idf_commune)
-        $a_lignes[]= "($pi_idf_commune,$i_idf_commune,$i_dist)";     
+      if ($i_dist<=255)
+	  {  
+		if ($pi_idf_commune!=$i_idf_commune)
+			$a_lignes[]= "($pi_idf_commune,$i_idf_commune,$i_dist)";
+      }
+      else
+        print("<div class=\"alert alert-danger\">La distance est supérieure à 255 km. Vérifier les longitudes et latitudes des communes ".cp1252_vers_utf8($pst_nom_commune)." et ".cp1252_vers_utf8($st_nom)."</div>");       
    }
-   $st_lignes = join(',',$a_lignes);
-   $st_requete .= $st_lignes;
-   $pconnexionBD->execute_requete($st_requete);
+   if (count($a_lignes)>0)
+   {   
+     $st_lignes = join(',',$a_lignes);
+     $st_requete .= $st_lignes;
+     $pconnexionBD->execute_requete($st_requete);
+   }
 }
 
 if (empty($_POST['prefixe_table']))
@@ -209,13 +219,13 @@ else
 					{	
 						$f_longitude = $f_longitude * pi()/180;
 						$f_latitude = $f_latitude * pi()/180;
-						$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse,longitude,latitude) values(:nom,:code_insee,:num_paroisse,:longitude,:latitude)";
-						$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune],':longitude'=>$f_longitude,':latitude'=>$f_latitude));
+						$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse,idf_canton,longitude,latitude) values(:nom,:code_insee,:num_paroisse,:idf_canton,:longitude,:latitude)";
+						$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune],':idf_canton'=>0,':longitude'=>$f_longitude,':latitude'=>$f_latitude));
 					}
 					else
 					{
-						$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse) values(:nom,:code_insee,:num_paroisse)";
-						$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune]));
+						$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse,idf_canton) values(:nom,:code_insee,:num_paroisse,:idf_canton)";
+						$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune],':idf_canton'=>0));
 					}
 				}
 				else
@@ -240,8 +250,8 @@ else
 					$i_nb_communes= $connexionBD->sql_select1("select count(*) from commune_acte");
 					if ($i_nb_communes>1)
 					{
-						$a_coord_communes = $connexionBD->sql_select_multiple_par_idf("select idf,latitude,longitude from commune_acte");
-						calcule_coordonnees_commune($connexionBD,$a_coord_communes,$i_idf_commune_ajoutee,$f_latitude,$f_longitude);
+						$a_coord_communes = $connexionBD->sql_select_multiple_par_idf("select idf,nom,latitude,longitude from commune_acte");
+						calcule_coordonnees_commune($connexionBD,$a_coord_communes,$i_idf_commune_ajoutee,$st_nom_commune,$f_latitude,$f_longitude);
 					}
 				}
 			}
