@@ -167,6 +167,39 @@ $("#suppression_communes").validate({
     }
 });
 
+$("#cantons").validate({
+  rules: {
+	  FichCantons: {
+        required: true,
+        extension: "csv|txt"
+      }
+  },
+  messages: {
+      FichCantons: {
+			required: "Un fichier doit être choisi",
+			extension: "Le fichier doit être du type csv ou txt"
+		}
+  },
+  errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+	},
+	unhighlight: function (element, errorClass, validClass) {
+		$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+	}
+});
+
+
 $("#modifier" ).click(function() {
     $('#mode').val("MODIFIER");
     $("form").submit();
@@ -256,7 +289,17 @@ function menu_liste($pconnexionBD)
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
    print("<input type=hidden name=mode value=\"EXPORTER\">");
    print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-download-alt"></span> Exporter les communes</button>');    
-   print('</form></div></div>');  
+   print('</form>');
+   
+   print("<form  id=\"cantons\" enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
+   print("<input type=hidden name=mode value=\"CHARGER_CANTONS\">");
+   print('<div class="form-group row"><div class="custom-file">'); 
+   print('<label for="FichCantons" class="col-form-label col-md-2 col-md-offset-3">Fichier des cantons (un par ligne):</label>');
+   print('<div class="col-md-4">');
+   print('<input name="FichCantons" id="FichCantons" type="file" class="custom-file-input">');
+   print('</div></div></div>');
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-upload"></span>Charger les cantons</button>');    
+   print('</form></div></div>');
 
 }
 
@@ -456,7 +499,7 @@ function calcule_coordonnees_commune($pconnexionBD,$pa_coordonnees_communes,$pi_
 			$a_lignes[]= "($pi_idf_commune,$i_idf_commune,$i_dist)";
       }
       else
-        print("<div class=\"alert alert-danger\">La distance est supérieure à 255km. Vérifier les longitudes et latitudes des communes $pst_nom_commune et $st_nom</div>");		  
+        print("<div class=\"alert alert-danger\">La distance est supérieure à 255 km. Vérifier les longitudes et latitudes des communes $pst_nom_commune et ".cp1252_vers_utf8($st_nom)."</div>");		  
    }
    $st_lignes = join(',',$a_lignes);
    $st_requete .= $st_lignes;
@@ -629,7 +672,43 @@ switch ($gst_mode) {
         } 
      }
      menu_liste($connexionBD);
-   break;      
+   break;
+   case 'CHARGER_CANTONS':
+     $st_fich_dest = "$gst_repertoire_telechargement/cantons.twt";
+     if (!move_uploaded_file($_FILES['FichCantons']['tmp_name'],$st_fich_dest)) 
+     {
+        print("Erreur de telechargement : impossible de copier en $st_fich_dest:<br>");
+        switch($_FILES['FichCantons']['error'])
+        { 
+           case 2 : print("Fichier trop gros par rapport a MAX_FILE_SIZE");break;
+           default : print("Erreur inconnue");print_r($_FILES);
+        }
+        
+        exit;
+     }
+	 $pf=fopen($st_fich_dest,"r") or die("Impossible de lire $st_fich_dest");
+	 $i=0;
+	 $a_cantons = array();
+	 $a_colonnes = array();
+	 while (!feof($pf))
+     {      
+       $st_canton       = fgets($pf);
+	   $a_cantons[":canton$i"]=utf8_vers_cp1252($st_canton);
+	   $a_colonnes[] = "(:canton$i)";
+	   $i++;
+	 }
+	 fclose($pf);
+	 if (count($a_colonnes)>0)
+	 {	 
+		$st_requete = "insert ignore INTO `canton` (nom) values ";
+		$st_colonnes = join(',',$a_colonnes);
+	    $st_requete .= $st_colonnes;
+		$connexionBD->initialise_params($a_cantons);  
+        $connexionBD->execute_requete($st_requete);
+		print("<div class=\"alert alert-success\" role=\"alert\">$i cantons charg&eacute;s</div>");
+     }
+	 menu_liste($connexionBD);
+	break;
 }  
 print('</div></body></html>');
 ?>
