@@ -219,19 +219,19 @@ else
 					{	
 						$f_longitude = $f_longitude * pi()/180;
 						$f_latitude = $f_latitude * pi()/180;
-						$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse,idf_canton,longitude,latitude) values(:nom,:code_insee,:num_paroisse,:idf_canton,:longitude,:latitude)";
-						$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune],':idf_canton'=>0,':longitude'=>$f_longitude,':latitude'=>$f_latitude));
+						$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse,idf_canton,longitude,latitude,points_svg,date_min_controle,date_max_controle) values(:nom,:code_insee,:num_paroisse,:idf_canton,:longitude,:latitude,:points_svg,:date_min_controle,:date_max_controle)";
+						$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune],':idf_canton'=>0,':longitude'=>$f_longitude,':latitude'=>$f_latitude,':points_svg'=>'',':date_min_controle'=>'',':date_max_controle'=>''));
 					}
 					else
 					{
-						$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse,idf_canton) values(:nom,:code_insee,:num_paroisse,:idf_canton)";
-						$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune],':idf_canton'=>0));
+						$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse,idf_canton,points_svg,date_min_controle,date_max_controle) values(:nom,:code_insee,:num_paroisse,:idf_canton,:points_svg,:date_min_controle,:date_max_controle)";
+						$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune],':idf_canton'=>0,':points_svg'=>'',':date_min_controle'=>'',':date_max_controle'=>''));
 					}
 				}
 				else
 				{
-					$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse,idf_canton) values(:nom,:code_insee,:num_paroisse,:idf_canton)";
-					$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune],':idf_canton'=>0));
+					$st_requete = "insert into commune_acte(nom,code_insee,numero_paroisse,idf_canton,points_svg,date_min_controle,date_max_controle) values(:nom,:code_insee,:num_paroisse,:idf_canton,:points_svg,:date_min_controle,:date_max_controle)";
+					$connexionBD->initialise_params(array(':nom'=>$st_nom_commune,':code_insee'=>$a_correspondances[1],':num_paroisse'=>$ga_num_paroisse[$st_code_commune],':idf_canton'=>0,':points_svg'=>'',':date_min_controle'=>'',':date_max_controle'=>''));
 				}
 				
 				
