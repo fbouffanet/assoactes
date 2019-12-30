@@ -26,7 +26,8 @@ switch ($gst_mode) {
 		header("Pragma: public");
 		header("Content-disposition: attachment; filename=\"VariantesNimegue.txt\"");
 		$fh = @fopen('php://output', 'w' );
-		$ga_patronymes = $connexionBD->sql_select("select distinct p.libelle from `stats_patronyme` sp join patronyme p on (sp.idf_patronyme=p.idf) where p.libelle REGEXP '^[A-Z \?\(\)]+$' and p.libelle not in (select patronyme from `variantes_patro`)");
+		//$ga_patronymes = $connexionBD->sql_select("select distinct p.libelle from `stats_patronyme` sp join patronyme p on (sp.idf_patronyme=p.idf) where p.libelle REGEXP '^[A-Z \?\(\)ÂÄÇÉÈÊËÎÏÔÖÙÚÛ]+$' and p.libelle not in (select patronyme from `variantes_patro`) order by p.libelle");
+		$ga_patronymes = $connexionBD->sql_select("select distinct p.libelle from `stats_patronyme` sp join patronyme p on (sp.idf_patronyme=p.idf) where  p.libelle not in (select patronyme from `variantes_patro`) order by p.libelle");
 		$gh_variantes = array();
 		$oPhonex = new phonex;
 		foreach($ga_patronymes as $st_patronyme)
