@@ -52,7 +52,7 @@ switch ($gst_mode) {
 				$st_majeure = array_shift($a_variantes);
 				foreach ($a_variantes as $st_patro)
 				{
-					fputcsv($fh,array("NIMEGUEV3","H",$st_majeure,$st_patro),SEP_CSV); 
+					fputcsv($fh,array("NIMEGUEV3","H",$st_majeure,$st_patro,''),SEP_CSV); 
 				}
 			}
 		}
