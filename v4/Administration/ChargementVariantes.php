@@ -270,7 +270,7 @@ function charge_variantes_NimV3($pconnexionBD,$pst_rep_tmp)
 			list($i_idf_groupe,$b_majeure) = $a_valeurs;
 			$a_colonnes[]="(:idf_groupe$i,:patronyme$i,:majeure$i)";
 			$a_variantes_a_creer[":idf_groupe$i"]=$i_idf_groupe;
-		    $a_variantes_a_creer[":patronyme$i"]=$st_patronyme;
+		    $a_variantes_a_creer[":patronyme$i"]=utf8_vers_cp1252($st_patronyme);
 			$a_variantes_a_creer[":majeure$i"]=$b_majeure;
 			$i++;
 		}
