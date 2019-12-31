@@ -350,7 +350,7 @@ class Acte {
     /**
      * renvoie la date sous la forme AAAAMMJJ
      * 
-     * @param string $pst_date (JJ/MM/AAAA)
+     * @param string $pst_date (JJ[/-]MM[/-]AAAA)
      * return array (jour, mois, annee)
      */
     private function date_vers_triplet($pst_date)
@@ -359,7 +359,7 @@ class Acte {
     {
          if (!empty($pst_date))
              {
-            list ($i_jour, $i_mois, $i_annee) = preg_split('/\//', $pst_date, 3);
+             list ($i_jour, $i_mois, $i_annee) = preg_split('/[\/-]+/', $pst_date, 3);
              $i_jour = str_replace('_', '0', $i_jour);
              $i_mois = str_replace('_', '0', $i_mois);
              $i_annee = str_replace('_', '0', $i_annee);
