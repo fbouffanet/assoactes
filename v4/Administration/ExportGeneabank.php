@@ -240,7 +240,7 @@ switch ($gst_mode) {
    break;
    case 'EXPORT_INDEX_PATROS' :
      $etape_prec = getmicrotime();
-     $st_fichier_indexes = ExporteIndexesPatros($connexionBD,IDF_ASSO_GBK,$gst_repertoire_indexes_geneabank);
+     $st_fichier_indexes = ExporteIndexPatros($connexionBD,IDF_ASSO_GBK,$gst_repertoire_indexes_geneabank);
      print('<div class="text-center">');
      print benchmark("Export Index : $st_fichier_indexes");
      $zip = new ZipArchive();
