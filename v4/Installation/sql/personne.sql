@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `personne` (
   `idf_type_presence` tinyint(3) unsigned NOT NULL,
   `sexe` varchar(1) COLLATE latin1_general_ci NOT NULL,
   `patronyme` varchar(30) COLLATE latin1_general_ci NOT NULL,
-  `idf_prenom` mediumint(8) unsigned NOT NULL,
+  `idf_prenom` mediumint(8) unsigned NULL,
   `surnom` varchar(20) COLLATE latin1_general_ci DEFAULT NULL,
   `idf_origine` mediumint(8) unsigned DEFAULT NULL,
   `idf_residence` smallint(5) unsigned DEFAULT NULL,
