@@ -30,7 +30,7 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 if (file_exists('prefixe_tables_EA.txt'))
 {
 	$gst_prefixe_table = file_get_contents('prefixe_tables_EA.txt');
-	$st_requete =  sprintf("insert into adherent(ident,prenom,nom,email_perso,email_forum,mdp,statut,annee_cotisation,date_premiere_adhesion,date_paiement,confidentiel,prix,infos_agc,type_origine,description_origine,jeton_paiement,clef_nouveau_mdp) select login,prenom,nom,email,email,hashpass,'I',year(now()),ifnull(dtcreation,curdate()),ifnull(dtcreation,curdate()),'O',15,'','','','',''
+	$st_requete =  sprintf("insert into adherent(ident,prenom,nom,email_perso,email_forum,mdp,statut,annee_cotisation,date_premiere_adhesion,date_paiement,confidentiel,prix,infos_agc,type_origine,description_origine,jeton_paiement,clef_nouveau_mdp) select login,prenom,nom,email,email,hashpass,'I',year(now()),ifnull(dtcreation,curdate()),ifnull(dtcreation,curdate()),'O',15,'',0,'','',0
 	from %s_user3",$gst_prefixe_table);
 	try
 	{					
