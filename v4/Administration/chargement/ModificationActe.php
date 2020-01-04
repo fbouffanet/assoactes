@@ -628,7 +628,7 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
      $st_message = 'Bonjour,<br><br>';
      $st_message .= "Votre proposition de modification d'un acte de la base ".SIGLE_ASSO." vient d'&ecirc;tre accept&eacute;e<br>";
      $st_message .= "Vous pouvez consulter l'acte &agrave l'adresse suivante:<br>";
-     $st_message .= sprintf("<a href=\"%s/InfosTD.php?idf_acte=%d\">$gst_url_site/InfosTD.php?idf_acte=%d</a><br>", $gst_url_site, $this -> i_idf_acte, $this -> i_idf_acte);
+     $st_message .= sprintf("<a href=\"%s/InfosActe.php?idf_acte=%d\">$gst_url_site/InfosActe.php?idf_acte=%d</a><br>", $gst_url_site, $this -> i_idf_acte, $this -> i_idf_acte);
      if (! empty($pst_cmt_valideur))
          {
         $st_message .= "<br>Commentaires du valideur: $pst_cmt_valideur<br>";
