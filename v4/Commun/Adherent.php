@@ -1365,7 +1365,7 @@ class Adherent
           );
           $context  = stream_context_create($a_options);
           $st_resultat = file_get_contents(self::$gst_url_gbk, false, $context);  
-          if (preg_match('/Commande exécutée correctement/',$st_resultat))
+          if (preg_match('/Commande exÃ©cutÃ©e correctement/',$st_resultat))
             return true;
           else
           {
