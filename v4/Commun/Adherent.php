@@ -1067,11 +1067,11 @@ class Adherent
   * @return boolean Le message a √©t√© envoy√© ou pas  
   */ 
   function envoie_message_geneabank_erreur_changement_mdp() {
-    $st_texte  = sprintf("Erreur lors du changement de mot de passe GÈnÈaBank de <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
+    $st_texte  = sprintf("Erreur lors du changement de mot de passe G√©n√©aBank de <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
     $st_texte .= "<font color=\"red\">";
     $st_texte .= self::$st_erreur_gbk;
     $st_texte .= "</font>";
-    $st_texte .= "Faire un copier de la ligne ci dessous et la coller dans l'interface de gestion de GÈnÈabank.\n\n";
+    $st_texte .= "Faire un copier de la ligne ci dessous et la coller dans l'interface de gestion de G√©n√©abank.\n\n";
     $st_texte .= sprintf("register ".PREFIXE_ADH_GBK."%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
     $st_texte .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
     $st_sujet = "Changement de mot de passe GeneaBank";
