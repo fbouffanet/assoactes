@@ -1258,8 +1258,11 @@ switch ($gst_mode) {
     if ($adherent->envoie_message_readhesion())
       print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
     else
+	{	
       print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; l'adh&eacute;rent</div>");
-    menu_liste($connexionBD,$gst_ident,$gst_nom_a_chercher,$gc_statut);
+	  print("<blockquote>".error_get_last()['message']."</blockquote>");	
+	}
+	menu_liste($connexionBD,$gst_ident,$gst_nom_a_chercher,$gc_statut);
    break;
    case 'VISU_ADHERENT':
    menu_visualiser($connexionBD,$gi_idf_adherent);  
@@ -1288,8 +1291,11 @@ switch ($gst_mode) {
       if ($adherent->change_mdp($st_mdp))
         print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; l'adh&eacute;rent</div>");
       else
+	  {
         print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; l'adh&eacute;rent</div>");
-      menu_liste($connexionBD,$gst_ident,$gst_nom_a_chercher,$gc_statut);
+        print("<blockquote>".error_get_last()['message']."</blockquote>"); 
+	  }
+	  menu_liste($connexionBD,$gst_ident,$gst_nom_a_chercher,$gc_statut);
    break;       
 }  
 print('</div></body></html>');
