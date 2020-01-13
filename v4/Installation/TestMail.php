@@ -29,12 +29,15 @@ print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 $(document).ready(function() {
 	$("#mail_brut").validate({
 	rules: {
-     email1: {"required": true,
+     email_destinataire1: {"required": true,
+			 "email":true
+	 },
+	 email_origine1: {
 			 "email":true
 	 }
 	},
 	messages: {
-		email1: {
+		email_destinataire1: {
 			required: "L'email est obligatoire",
 			email:"Ceci n'est pas un email"
 		},
@@ -86,10 +89,20 @@ function affiche_menu()
 	print("<div class=\"panel-heading\">Envoi d'un email brut</div>");
 	print('<div class="panel-body">');
 	print('<input name="mode" type="hidden" value="brut">');
-    print('<div class="form-group row">');  
-    print("<label for=\"email_brut\" class=\"col-md-4 col-form-label control-label\">Email de destination</label>");
+	print('<div class="form-group row">');  
+    print("<label for=\"email_origine1\" class=\"col-md-4 col-form-label control-label\">Email d'origine</label>");
 	print('<div class="col-md-8">');
-	print("<input type=text maxlength=40 size=40 name=email1 id=email1 value=\"fbouffanet@yahoo.fr\" class=\"form-control\">");
+	print("<input type=text maxlength=40 size=40 name=email_origine1 id=email_origine1 value=\"".EMAIL_DIRASSO."\" class=\"form-control\">");
+    print('</div></div>');
+	print('<div class="form-group row">');  
+    print("<label for=\"lib_origine1\" class=\"col-md-4 col-form-label control-label\">libell&eacute; d'origine</label>");
+	print('<div class="col-md-8">');
+	print("<input type=text maxlength=40 size=40 name=lib_origine1 id=lib_origine1 value=\"".LIB_DIRASSO."\" class=\"form-control\">");
+    print('</div></div>');
+    print('<div class="form-group row">');  
+    print("<label for=\"email_destinataire1\" class=\"col-md-4 col-form-label control-label\">Email de destination</label>");
+	print('<div class="col-md-8">');
+	print("<input type=text maxlength=40 size=40 name=email_destinataire1 id=email_destinataire1 value=\"fbouffanet@yahoo.fr\" class=\"form-control\">");
     print('</div></div>');
 	print('<button type="submit" class="btn btn-primary  col-md-offset-4 col-md-4""><span class="glyphicon glyphicon-wrench"></span> Envoyer un email brut</button>'); 
 	print('</div></div>');
@@ -100,9 +113,19 @@ function affiche_menu()
 	print('<div class="panel-body">');
 	print('<input name="mode" type="hidden" value="html">');
     print('<div class="form-group row">');  
-    print("<label for=\"email_brut\" class=\"col-md-4 col-form-label control-label\">Email de destination</label>");
+    print("<label for=\"email_origine2\" class=\"col-md-4 col-form-label control-label\">Email d'origine</label>");
 	print('<div class="col-md-8">');
-	print("<input type=text maxlength=40 size=40 name=email2 id=email2 value=\"fbouffanet@yahoo.fr\" class=\"form-control\">");
+	print("<input type=text maxlength=40 size=40 name=email_origine2 id=email_origine2 value=\"".EMAIL_DIRASSO."\" class=\"form-control\">");
+    print('</div></div>');
+	print('<div class="form-group row">');  
+    print("<label for=\"lib_origine2\" class=\"col-md-4 col-form-label control-label\">libell&eacute; d'origine</label>");
+	print('<div class="col-md-8">');
+	print("<input type=text maxlength=40 size=40 name=lib_origine2 id=lib_origine2 value=\"".LIB_DIRASSO."\" class=\"form-control\">");
+    print('</div></div>');
+    print('<div class="form-group row">');  
+    print("<label for=\"email_destinataire2\" class=\"col-md-4 col-form-label control-label\">Email de destination</label>");
+	print('<div class="col-md-8">');
+	print("<input type=text maxlength=40 size=40 name=email_destinataire2 id=email_destinataire2 value=\"fbouffanet@yahoo.fr\" class=\"form-control\">");
     print('</div></div>');
 	print('<button type="submit" class="btn btn-primary  col-md-offset-4 col-md-4""><span class="glyphicon glyphicon-wrench"></span> Envoyer un email HTML</button>'); 
 	print('</div></div>');
@@ -115,7 +138,7 @@ function affiche_menu()
     print('<div class="form-group row">');  
     print("<label for=\"email_brut\" class=\"col-md-4 col-form-label control-label\">Email de destination</label>");
 	print('<div class="col-md-8">');
-	print("<input type=text maxlength=40 size=40 name=email2 id=email2 value=\"fbouffanet@yahoo.fr\" class=\"form-control\">");
+	print("<input type=text maxlength=40 size=40 name=email3 id=email3 value=\"fbouffanet@yahoo.fr\" class=\"form-control\">");
     print('</div></div>');
 	print('<button type="submit" class="btn btn-primary  col-md-offset-4 col-md-4""><span class="glyphicon glyphicon-wrench"></span> Envoyer un email en plusieurs formats</button>'); 
 	print('</div></div>');
@@ -131,16 +154,26 @@ if (empty($_POST['mode']))
 }
 else
 {
+	
 	switch($_POST['mode'])
 	{
 		case 'brut':
+		
+		    $st_email_destinataire=trim($_POST['email_destinataire1']);
+            $st_email_origine=trim($_POST['email_origine1']);
+            $st_lib_origine=trim($_POST['lib_origine1']);			
 		    $st_entete  = 'MIME-Version: 1.0' . "\n";
 			$st_entete .= "Content-Type: text/plain; charset=\"cp1252\"; format=flowed\n";
 			$st_entete .= "Content-Transfer-Encoding: 8bit\n";
 			$st_entete .= "X-Mailer: PHP".phpversion()."\n";
-			$st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
-			$st_destinataire=trim($_POST['email1']);
-			if (@mail($st_destinataire, "Test de mail brut", "Ceci est un message brut", $st_entete))
+			if (!empty($st_email_origine))
+			{	
+				$st_entete  .= "From: $st_lib_origine";
+				if (!empty($st_email_origine))
+					$st_entete  .=" <$st_email_origine>";
+				$st_entete  .="\n>";
+			}
+			if (@mail($st_email_destinataire, "Test de mail brut", "Ceci est un message brut", $st_entete))
 				print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; $st_destinataire</div>");
 			else
 			{
@@ -150,17 +183,25 @@ else
 			affiche_menu();
 		break;
 		case 'html':
+		    $st_email_destinataire=trim($_POST['email_destinataire2']);
+            $st_email_origine=trim($_POST['email_origine2']);
+            $st_lib_origine=trim($_POST['lib_origine2']);
 		    $st_entete  = 'MIME-Version: 1.0' . "\n";
 			$st_entete .= "Content-Type: text/html; charset=\"cp1252\"; format=flowed\n";
 			$st_entete .= "Content-Transfer-Encoding: 8bit\n";
 			$st_entete .= "X-Mailer: PHP".phpversion()."\n";
-			$st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
-			$st_destinataire=trim($_POST['email2']);
-			if (@mail($st_destinataire, "Test de mail HTML", "Ceci est un message HTML",$st_entete))
-				print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; $st_destinataire</div>");
+			if (!empty($st_email_origine))
+			{	
+				$st_entete  .= "From: $st_lib_origine";
+				if (!empty($st_email_origine))
+					$st_entete  .=" <$st_email_origine>";
+				$st_entete  .="\n>";
+			}
+			if (@mail($st_email_destinataire, "Test de mail HTML", "Ceci est un message HTML",$st_entete))
+				print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; $st_email_destinataire</div>");
 			else
 			{
-				print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; $st_destinataire</div>");
+				print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; $st_email_destinataire</div>");
 				print("<blockquote>".error_get_last()['message']."</blockquote>");	
 			}				
 			affiche_menu();
@@ -186,12 +227,12 @@ else
 			$st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
 			$st_message .= $st_message_html."\n\n";
 			$st_message .= '--'.$st_frontiere."--\n";
-			$st_destinataire=trim($_POST['email2']);
-			if (@mail($st_destinataire, "Test de mail HTML", "Ceci est un message HTML",$st_entete))
-				print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; $st_destinataire</div>");
+			$st_email_destinataire=trim($_POST['email_destinataire3']);
+			if (@mail($st_email_destinataire, "Test de mail HTML", "Ceci est un message HTML",$st_entete))
+				print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; $st_email_destinataire</div>");
 			else
 			{
-				print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; $st_destinataire</div>");
+				print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; $st_email_destinataire</div>");
 				print("<blockquote>".error_get_last()['message']."</blockquote>");	
 			}				
 			affiche_menu();
