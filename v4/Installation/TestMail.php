@@ -97,7 +97,7 @@ function affiche_menu()
 	print('<div class="form-group row">');  
     print("<label for=\"lib_origine1\" class=\"col-md-4 col-form-label control-label\">libell&eacute; d'origine</label>");
 	print('<div class="col-md-8">');
-	print("<input type=text maxlength=40 size=40 name=lib_origine1 id=lib_origine1 value=\"".LIB_DIRASSO."\" class=\"form-control\">");
+	print("<input type=text maxlength=40 size=40 name=lib_origine1 id=lib_origine1 value=\"".LIB_ASSO."\" class=\"form-control\">");
     print('</div></div>');
     print('<div class="form-group row">');  
     print("<label for=\"email_destinataire1\" class=\"col-md-4 col-form-label control-label\">Email de destination</label>");
@@ -120,7 +120,7 @@ function affiche_menu()
 	print('<div class="form-group row">');  
     print("<label for=\"lib_origine2\" class=\"col-md-4 col-form-label control-label\">libell&eacute; d'origine</label>");
 	print('<div class="col-md-8">');
-	print("<input type=text maxlength=40 size=40 name=lib_origine2 id=lib_origine2 value=\"".LIB_DIRASSO."\" class=\"form-control\">");
+	print("<input type=text maxlength=40 size=40 name=lib_origine2 id=lib_origine2 value=\"".LIB_ASSO."\" class=\"form-control\">");
     print('</div></div>');
     print('<div class="form-group row">');  
     print("<label for=\"email_destinataire2\" class=\"col-md-4 col-form-label control-label\">Email de destination</label>");
@@ -135,10 +135,20 @@ function affiche_menu()
 	print("<div class=\"panel-heading\">Envoi d'un email en plusieurs formats (Texte/HTML)</div>");
 	print('<div class="panel-body">');
 	print('<input name="mode" type="hidden" value="multiple">');
-    print('<div class="form-group row">');  
-    print("<label for=\"email_brut\" class=\"col-md-4 col-form-label control-label\">Email de destination</label>");
+	print('<div class="form-group row">');  
+    print("<label for=\"email_origine3\" class=\"col-md-4 col-form-label control-label\">Email d'origine</label>");
 	print('<div class="col-md-8">');
-	print("<input type=text maxlength=40 size=40 name=email3 id=email3 value=\"fbouffanet@yahoo.fr\" class=\"form-control\">");
+	print("<input type=text maxlength=40 size=40 name=email_origine3 id=email_origine3 value=\"".EMAIL_DIRASSO."\" class=\"form-control\">");
+    print('</div></div>');
+	print('<div class="form-group row">');  
+    print("<label for=\"lib_origine3\" class=\"col-md-4 col-form-label control-label\">libell&eacute; d'origine</label>");
+	print('<div class="col-md-8">');
+	print("<input type=text maxlength=40 size=40 name=lib_origine3 id=lib_origine3 value=\"".LIB_ASSO."\" class=\"form-control\">");
+    print('</div></div>');
+    print('<div class="form-group row">');  
+    print("<label for=\"email_destinataire3\" class=\"col-md-4 col-form-label control-label\">Email de destination</label>");
+	print('<div class="col-md-8">');
+	print("<input type=text maxlength=40 size=40 name=email_destinataire3 id=email_destinataire3 value=\"fbouffanet@yahoo.fr\" class=\"form-control\">");
     print('</div></div>');
 	print('<button type="submit" class="btn btn-primary  col-md-offset-4 col-md-4""><span class="glyphicon glyphicon-wrench"></span> Envoyer un email en plusieurs formats</button>'); 
 	print('</div></div>');
@@ -154,7 +164,8 @@ if (empty($_POST['mode']))
 }
 else
 {
-	
+    ini_set( 'display_errors', 1 );
+    error_reporting( E_ALL );	
 	switch($_POST['mode'])
 	{
 		case 'brut':
@@ -163,7 +174,7 @@ else
             $st_email_origine=trim($_POST['email_origine1']);
             $st_lib_origine=trim($_POST['lib_origine1']);			
 		    $st_entete  = 'MIME-Version: 1.0' . "\n";
-			$st_entete .= "Content-Type: text/plain; charset=\"cp1252\"; format=flowed\n";
+			$st_entete .= "Content-Type: text/plain; charset=\"utf-8\"; format=flowed\n";
 			$st_entete .= "Content-Transfer-Encoding: 8bit\n";
 			$st_entete .= "X-Mailer: PHP".phpversion()."\n";
 			if (!empty($st_email_origine))
@@ -174,10 +185,10 @@ else
 				$st_entete  .="\n>";
 			}
 			if (@mail($st_email_destinataire, "Test de mail brut", "Ceci est un message brut", $st_entete))
-				print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; $st_destinataire</div>");
+				print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; $st_email_destinataire</div>");
 			else
 			{
-				print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; $st_destinataire</div>");
+				print("<div class=\"alert alert-danger\"> Echec lors de l'envoi du  message &agrave; $st_email_destinataire</div>");
 				print("<blockquote>".error_get_last()['message']."</blockquote>");	
 			}				
 			affiche_menu();
@@ -187,7 +198,7 @@ else
             $st_email_origine=trim($_POST['email_origine2']);
             $st_lib_origine=trim($_POST['lib_origine2']);
 		    $st_entete  = 'MIME-Version: 1.0' . "\n";
-			$st_entete .= "Content-Type: text/html; charset=\"cp1252\"; format=flowed\n";
+			$st_entete .= "Content-Type: text/html; charset=\"utf-8\"; format=flowed\n";
 			$st_entete .= "Content-Transfer-Encoding: 8bit\n";
 			$st_entete .= "X-Mailer: PHP".phpversion()."\n";
 			if (!empty($st_email_origine))
@@ -207,19 +218,25 @@ else
 			affiche_menu();
 		break;
 		case 'multiple':
+		    $st_email_destinataire=trim($_POST['email_destinataire3']);
+            $st_email_origine=trim($_POST['email_origine3']);
+            $st_lib_origine=trim($_POST['lib_origine3']);
 			$st_message_texte= "Ceci est un message texte";
 			$st_message_html = "Ceci est un <font color=\"red\"> message <h3>HTML</h3>";
 			$st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
-		    $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
-			$st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
-			$st_entete .= "Cc: ".EMAIL_DIRASSO."\n";
-			$st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
-			$st_entete .= "Disposition-Notification-To: ".SIGLE_ASSO."<".EMAIL_DIRASSO.">\n";
+		    $st_entete  = "";
+			if (!empty($st_email_origine))
+			{	
+				$st_entete  .= "From: $st_lib_origine";
+				if (!empty($st_email_origine))
+					$st_entete  .=" <$st_email_origine>";
+				$st_entete  .="\n>";
+			}
 			$st_entete .= 'MIME-Version: 1.0' . "\n"; 
 			$st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
 			$st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n"; 
 			$st_message .= '--'.$st_frontiere."\n";
-			$st_message .= 'Content-Type: text/plain; charset="cp1252"'."\n";
+			$st_message .= 'Content-Type: text/plain; charset="utf-8"'."\n";
 			$st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
 			$st_message .= $st_message_texte."\n\n";
 			$st_message .= '--'.$st_frontiere."\n";
@@ -227,7 +244,6 @@ else
 			$st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
 			$st_message .= $st_message_html."\n\n";
 			$st_message .= '--'.$st_frontiere."--\n";
-			$st_email_destinataire=trim($_POST['email_destinataire3']);
 			if (@mail($st_email_destinataire, "Test de mail HTML", "Ceci est un message HTML",$st_entete))
 				print("<div class=\"alert alert-success\"> Message envoy&eacute; &agrave; $st_email_destinataire</div>");
 			else
