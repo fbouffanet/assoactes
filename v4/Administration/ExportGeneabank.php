@@ -93,7 +93,7 @@ function  ExporteIndexPatros($pconnexionBD,$pst_idf_geneabank,$pst_repertoire_ex
    $st_requete =  "select p.libelle,ta.nom,sp.annee_min,sp.annee_max,sp.nb_personnes,ca.nom from stats_patronyme sp join patronyme p on (sp.idf_patronyme=p.idf) join commune_acte ca on (sp.idf_commune=ca.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) join source s on (sp.idf_source=s.idf) where s.publication_geneabank=1 and p.libelle REGEXP '^[A-Za-z ()]+$' ";
    $pconnexionBD->desactive_cache();
    $pconnexionBD->execute_requete($st_requete);
-   $st_fichier = "$pst_repertoire_export/gbk.txt";
+   $st_fichier = "$pst_repertoire_export/gbkpatros.txt";
    $pf = fopen($st_fichier, "w") or die("<div class=\"alert alert-danger\">Impossible d'&eacute;crire $st_fichier</div>");
    while (list($st_patro,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_personnes,$st_commune)=$pconnexionBD->ligne_suivante_resultat())
    {
