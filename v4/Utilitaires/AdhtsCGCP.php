@@ -43,15 +43,15 @@ if ($gst_mode=='COMPARAISON')
     header("Pragma: public");
     header("Content-disposition: attachment; filename=\"adhts_cgcp.csv\"");
     $fh = @fopen('php://output', 'w' );
-	fputcsv($fh,array('Année inscription CGCP','Adht','Email','Année cotisation CGCP','Dernière connexion CGCP','Absence CGCP (en J)','Statut AGC','Dernière connexion AGC','Absence AGC (en J)'),';'); 
+	fputcsv($fh,array('Année inscription CGCP','Adht','Email','Année cotisation CGCP','Dernière connexion CGCP','Absence CGCP (en J)','Statut AGC','Dernière connexion AGC','Absence AGC (en J)','Année cotisation AGC'),';'); 
 	foreach ($ga_adht_cgcp as $i_idf_adht => $a_adht)
 	{
-		list($i_annee_inscription_cgcp,$st_nom_adht,$st_email_adht,$i_annee_cotisation,$st_derniere_cnx_cgcp,$i_absence_cgcp) = $a_adht;
-		$st_requete="select statut,date(derniere_connexion),datediff(now(),derniere_connexion) from adherent where email_forum='$st_email_adht' or email_perso='$st_email_adht'";
+		list($i_annee_inscription_cgcp,$st_nom_adht,$st_email_adht,$i_annee_cotisation_cgcp,$st_derniere_cnx_cgcp,$i_absence_cgcp) = $a_adht;
+		$st_requete="select statut,date(derniere_connexion),datediff(now(),derniere_connexion),annee_cotisation from adherent where email_forum='$st_email_adht' or email_perso='$st_email_adht'";
 		$st_statut_agc=  '';
 		$st_derniere_cnx_agc='';
-		list($st_statut_agc,$st_derniere_cnx_agc,$i_absence_agc)=$connexionBD->sql_select_liste($st_requete);
-		fputcsv($fh,array($i_annee_inscription_cgcp,$st_nom_adht,$st_email_adht,$i_annee_cotisation,$st_derniere_cnx_cgcp,$i_absence_cgcp,$st_statut_agc,$st_derniere_cnx_agc,$i_absence_agc),';');  		
+		list($st_statut_agc,$st_derniere_cnx_agc,$i_absence_agc,$i_annee_cotisation_agc)=$connexionBD->sql_select_liste($st_requete);
+		fputcsv($fh,array($i_annee_inscription_cgcp,$st_nom_adht,$st_email_adht,$i_annee_cotisation_cgcp,$st_derniere_cnx_cgcp,$i_absence_cgcp,$st_statut_agc,$st_derniere_cnx_agc,$i_absence_agc,$i_annee_cotisation_agc),';');  		
 	}	
     fclose($fh);
 	unlink($st_fich_dest);
