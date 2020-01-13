@@ -241,7 +241,8 @@ else
 		case 'basique':
 		
 		    $st_email_destinataire=trim($_POST['email_destinataire0']);
-            $st_email_origine=trim($_POST['email_origine0']);		
+            $st_email_origine=trim($_POST['email_origine0']);
+			$st_entete = '';
 			if (!empty($st_email_origine))
 				$st_entete  = "From: $st_email_origine\n";
 			if (mail($st_email_destinataire, "Test de mail brut", "Ceci est un message brut", $st_entete))
