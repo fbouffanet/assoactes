@@ -104,7 +104,7 @@ $i_idf_commune = $connexionBD->sql_select1("select idf_commune from acte where i
 
 $a_profession=$connexionBD->liste_valeur_par_clef("select idf, nom from profession");
 list($i_idf_type_acte,$i_idf_commune)=$connexionBD->sql_select_liste("select idf_type_acte,idf_commune from acte where idf=$gi_idf_acte");
-$gst_adresse_ip = $_SERVER['REMOTE_ADDR'];
+$gst_adresse_ip = substr($_SERVER['REMOTE_ADDR'],0,15);
 
 
 $result = $connexionBD->sql_select_stats_actes($i_idf_adherent, $gi_idf_acte, $i_idf_type_acte);
