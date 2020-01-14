@@ -27,12 +27,21 @@ if(isset($_GET['per_page']) && in_array($_GET['per_page'], array_keys($per_page_
 if(empty($gst_logo_association))	
 	$gi_largeur_page=600;
 else
-{	
-	list($i_largeur_logo, $i_hauteur_logo, $st_type_logo, $st_attributs_logo) = getimagesize($gst_logo_association);
-	if ($i_largeur_logo<=400)
-	   $gi_largeur_page=(int) round($i_largeur_logo/100)*200;
-	else	
-	   $gi_largeur_page=(int) round($i_largeur_logo/100)*120;
+{
+	$headers = @get_headers($gst_logo_association);
+	if(strpos($headers[0],'404') === false)
+	{
+		list($i_largeur_logo, $i_hauteur_logo, $st_type_logo, $st_attributs_logo) = getimagesize($gst_logo_association);
+		if ($i_largeur_logo<=400)
+			$gi_largeur_page=(int) round($i_largeur_logo/100)*200;
+		else	
+			$gi_largeur_page=(int) round($i_largeur_logo/100)*120;
+	}
+	else
+	{
+		print("<div class='alert alert-warning'>Impossible de charger $gst_logo_association</div>\n");
+		$gi_largeur_page=600;
+	}		
 }
 
 print('<!DOCTYPE html>');
