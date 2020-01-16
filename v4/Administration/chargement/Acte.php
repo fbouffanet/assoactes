@@ -447,7 +447,7 @@ class Acte {
     {
          $i_idf = $this -> i_idf;
          $i_idf_commune = $this -> i_idf_commune;
-         $i_idf_type_acte = $this -> typeActe -> vers_idf(self::utf8_vers_cp1252($this -> st_type_acte));
+         $i_idf_type_acte = $this -> i_idf_type_acte;
          $i_idf_source = $this -> i_idf_source;
          $st_date = $this -> st_date;
          $i_idf_releveur = $this -> i_idf_releveur;
