@@ -142,6 +142,15 @@ class Personne
 								 $this -> prenom -> ajoute( $this -> st_prenom );
 								 } 
 				
+				public function setSurnom( $pst_surnom )
+				
+				
+				
+				
+				{
+								 $this -> st_surnom = $pst_surnom ;
+								 }
+								 
 				public function setSexe( $pst_sexe )
 				
 				
@@ -199,7 +208,20 @@ class Personne
 												$this -> st_origine = trim($pst_origine);
 												 $this -> communePersonne -> ajoute( $pst_origine );
 												 } 
-								} 
+								}
+				
+				public function setResidence( $pst_residence )
+				
+				
+				
+				
+				{
+								 if ( !empty( $pst_residence ) )
+												 {
+												$this -> st_residence = trim($pst_residence);
+												 $this -> communePersonne -> ajoute( $pst_residence );
+												 } 
+								} 		
 				
 				public function getAge( $pst_age )
 				
