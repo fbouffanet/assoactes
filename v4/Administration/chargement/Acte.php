@@ -108,6 +108,8 @@ class Acte {
          $this -> st_sigle_type_acte_nimegue = null;
          $this -> a_infos = false;
          $this -> a_liste_personnes = array();
+		 $this -> st_date_creation = time();
+		 $this -> st_date_modification = time();
          } 
     
     public function importeNimV2($pst_date_rep, $pst_cote, $pst_libre, $pst_commentaires)
@@ -296,7 +298,27 @@ class Acte {
     
     {
          $this -> a_params_completion_auto = $pa_params_completion_auto;
-         } 
+         }
+
+	/**
+     * Initialise la date de création
+     */
+    public function setDateCreation($pst_date_creation)
+    
+    
+    {
+         $this -> date_creation = $pst_date_creation;
+         }
+
+	/**
+     * Initialise la date de modification
+     */
+    public function setDateModification($pst_date_modification)
+    
+    
+    {
+         $this -> date_modification = $pst_date_modification;
+         } 		
     
     /**
      * Renvoie le contenu de l'acte sous la forme d'une chaine CSV
@@ -322,8 +344,8 @@ class Acte {
 		 $a_actes_a_creer[":commentaires$this->i_idf"]=$this -> st_commentaires;
 		 $a_actes_a_creer[":url$this->i_idf"]=$this -> st_url;
 		 $a_actes_a_creer[":details_supplementaires$this->i_idf"]=$this -> i_details_supplementaires;
-		 $a_actes_a_creer[":creation$this->i_idf"]=time(); 
-		 $a_actes_a_creer[":modification$this->i_idf"]=time(); 
+		 $a_actes_a_creer[":creation$this->i_idf"]=$this -> date_creation; 
+		 $a_actes_a_creer[":modification$this->i_idf"]=$this -> date_modification; 
           return array("(:idf$this->i_idf,:idf_commune$this->i_idf,:idf_type_acte$this->i_idf,:idf_source$this->i_idf,:idf_releveur$this->i_idf,:date$this->i_idf,:jour$this->i_idf,:mois$this->i_idf,:annee$this->i_idf,:date_rep$this->i_idf,:cote$this->i_idf,:libre$this->i_idf,:commentaires$this->i_idf,:url$this->i_idf,:details_supplementaires$this->i_idf,:creation$this->i_idf,:modification$this->i_idf)",$a_actes_a_creer);
          } 
     
@@ -410,6 +432,8 @@ class Acte {
          $this -> st_date_rep = str_replace(' ', '', $st_date_rep);
          $this -> st_cote = $st_cote;
          $this -> st_libre = $st_libre;
+		 $this -> st_date_creation = time();
+		 $this -> st_date_modification = time();
          if (preg_match('/(https*\:\/\/[\w\:\/\.]+)/', $st_commentaires, $a_champs))
              {
             $this -> st_url = $a_champs[1];
@@ -466,20 +490,18 @@ class Acte {
          else
              $i_details_supplementaires = 0;;
          $st_commentaires = str_replace("\n", '§', $st_commentaires);
-         $created = time();
-		     $changed = time();
          if (isset($this -> i_idf))
              {
             $i_idf = $this -> i_idf;
-              $this -> connexionBD -> initialise_params(array(':idf' => $i_idf, ':idf_commune' => $i_idf_commune, ':idf_type_acte' => $i_idf_type_acte, ':idf_source' => $i_idf_source, ':date' => $st_date, ':jour' => $i_jour, ':mois' => $i_mois, ':annee' => $i_annee, ':date_rep' => $st_date_rep, ':cote' => $st_cote, ':libre' => $st_libre, ':url' => $st_url, ':commentaires' => $st_commentaires, ':details_supplementaires' => $i_details_supplementaires, ':changed' => $changed));
+              $this -> connexionBD -> initialise_params(array(':idf' => $i_idf, ':idf_commune' => $i_idf_commune, ':idf_type_acte' => $i_idf_type_acte, ':idf_source' => $i_idf_source, ':date' => $st_date, ':jour' => $i_jour, ':mois' => $i_mois, ':annee' => $i_annee, ':date_rep' => $st_date_rep, ':cote' => $st_cote, ':libre' => $st_libre, ':url' => $st_url, ':commentaires' => $st_commentaires, ':details_supplementaires' => $i_details_supplementaires, ':changed' => $this -> st_date_modification));
              $st_requete = "update acte set idf_commune=:idf_commune,idf_type_acte=:idf_type_acte,idf_source=:idf_source,date=:date,jour=:jour,mois=:mois,annee=:annee,date_rep=:date_rep,cote=:cote,libre=:libre,url=:url,commentaires=:commentaires,details_supplementaires=:details_supplementaires,changed=:changed where idf=:idf";
              $this -> connexionBD -> execute_requete($st_requete);
              return $i_idf;
              } 
         else
              {
-				$this -> connexionBD -> initialise_params(array(':idf_commune' => $i_idf_commune, ':idf_type_acte' => $i_idf_type_acte, ':idf_source' => $i_idf_source, ':date' => $st_date, ':jour' => $i_jour, ':mois' => $i_mois, ':annee' => $i_annee, ':date_rep' => $st_date_rep, ':cote' => $st_cote, ':libre' => $st_libre, ':url' => $st_url, ':commentaires' => $st_commentaires, ':details_supplementaires' => $i_details_supplementaires,':created'=>$created,':changed'=>$changed)); 
-            $st_requete = "insert into acte(idf_commune,idf_type_acte,idf_source,date,jour,mois,annee,date_rep,cote,libre,commentaires,url,details_supplementaires) values(:idf_commune,:idf_type_acte,:idf_source,:date,:jour,:mois,:annee,:date_rep,:cote,:libre,:commentaires,:url,:details_supplementaires,$created,$changed)";
+				$this -> connexionBD -> initialise_params(array(':idf_commune' => $i_idf_commune, ':idf_type_acte' => $i_idf_type_acte, ':idf_source' => $i_idf_source, ':date' => $st_date, ':jour' => $i_jour, ':mois' => $i_mois, ':annee' => $i_annee, ':date_rep' => $st_date_rep, ':cote' => $st_cote, ':libre' => $st_libre, ':url' => $st_url, ':commentaires' => $st_commentaires, ':details_supplementaires' => $i_details_supplementaires,':created'=>$this -> st_date_creation,':changed'=>$this -> st_date_modification)); 
+            $st_requete = "insert into acte(idf_commune,idf_type_acte,idf_source,date,jour,mois,annee,date_rep,cote,libre,commentaires,url,details_supplementaires) values(:idf_commune,:idf_type_acte,:idf_source,:date,:jour,:mois,:annee,:date_rep,:cote,:libre,:commentaires,:url,:details_supplementaires,:created,:changed)";
              $this -> connexionBD -> execute_requete($st_requete);
              return $this -> connexionBD -> dernier_idf_insere();
              } 
