@@ -40,6 +40,7 @@ if (file_exists('prefixe_tables_EA.txt'))
 		die("<div class=\"alert alert-danger\">Impossible de migrer les utilisateurs ".$e->getMessage()."</div>"); 
 	}
 	print("<div class=\"alert alert-success\">Migration des utilisateurs effectu&eacute;e</div>");
+	print("<a href=\"$gst_url_site\" class=\"btn btn-info\" role=\"button\" target=\"_blank\">Acc&eacute;der au site</a>");
 }
 else
 	print("<div class=\"alert alert-danger\">Erreur: Le pr&eacute;fixe 'prefixe_ea_bd' n'est pas d&eacute;fini !</div>");	

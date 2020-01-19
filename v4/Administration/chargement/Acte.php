@@ -307,7 +307,7 @@ class Acte {
     
     
     {
-         $this -> date_creation = $pst_date_creation;
+         $this -> st_date_creation = $pst_date_creation;
          }
 
 	/**
@@ -344,8 +344,8 @@ class Acte {
 		 $a_actes_a_creer[":commentaires$this->i_idf"]=$this -> st_commentaires;
 		 $a_actes_a_creer[":url$this->i_idf"]=$this -> st_url;
 		 $a_actes_a_creer[":details_supplementaires$this->i_idf"]=$this -> i_details_supplementaires;
-		 $a_actes_a_creer[":creation$this->i_idf"]=$this -> date_creation; 
-		 $a_actes_a_creer[":modification$this->i_idf"]=$this -> date_modification; 
+		 $a_actes_a_creer[":creation$this->i_idf"]=$this -> st_date_creation; 
+		 $a_actes_a_creer[":modification$this->i_idf"]=$this -> st_date_modification; 
           return array("(:idf$this->i_idf,:idf_commune$this->i_idf,:idf_type_acte$this->i_idf,:idf_source$this->i_idf,:idf_releveur$this->i_idf,:date$this->i_idf,:jour$this->i_idf,:mois$this->i_idf,:annee$this->i_idf,:date_rep$this->i_idf,:cote$this->i_idf,:libre$this->i_idf,:commentaires$this->i_idf,:url$this->i_idf,:details_supplementaires$this->i_idf,:creation$this->i_idf,:modification$this->i_idf)",$a_actes_a_creer);
          } 
     
