@@ -309,6 +309,10 @@ function menu_edition($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_adr
    print($ga_tarifs['bulletin_metro']." euros pour la France,<br>");
    print($ga_tarifs['bulletin_etranger']." euros pour les autres pays (DOM/TOM inclus)</li>");
    print("</ul>");
+   print("<blockquote>");
+   print("<div>Un email de confirmation va vous &ecirc;tre envoy&eacute; &agrave; votre adresse d'inscription. Si vous ne l'avez pas re&ccedil;u, v&eacute;rifier que celui-ci n'est pas dans vos ind&eacute;sirables</div>");
+   print("<div>La r&eacute;ception de cet email est indispensable pour poursuive le processus d'adh&eacute;sion ou r&eacute;-adh&eacute;sion. Vous pourrez ensuite choisir lors du paiement le type d'inscription voulu (Internet ou Bulletin)</div>");
+   print("<blockquote>");
 }
 
 
