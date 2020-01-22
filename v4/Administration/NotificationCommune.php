@@ -184,8 +184,8 @@ function EnvoieNotification($pconnexionBD,$pi_idf_commune,$pi_idf_type_acte,$pst
      // meme sujet pour les naissances, mariages et deces
      case IDF_MARIAGE:
      case IDF_NAISSANCE:
-     case IDF_DECES: $st_sujet = "MAJ Base ".SIGLE_ASSO.": $st_type_acte de la commune de $st_commune"; break;
-     default: $st_sujet = "MAJ Base ".SIGLE_ASSO.": Actes divers de la commune de $st_commune";
+     case IDF_DECES: $st_sujet = "MAJ Base ".SIGLE_ASSO.": ".cp1252_vers_utf8($st_type_acte)." de la commune de ".cp1252_vers_utf8($st_commune); break;
+     default: $st_sujet = "MAJ Base ".SIGLE_ASSO.": Actes divers de la commune de ".cp1252_vers_utf8($st_commune);
    }        
    
    list($gst_nom,$gst_prenom,$gst_email) =$pconnexionBD->sql_select_liste("select nom,prenom,email_forum from adherent where ident='".$_SESSION['ident']."'");
@@ -195,7 +195,7 @@ function EnvoieNotification($pconnexionBD,$pi_idf_commune,$pi_idf_type_acte,$pst
    $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
    // Remplacement des adresses HTTP par un lien HTML
    $pst_msg_html = preg_replace('/(http\:\/\/\S+)\ /','<a href="$1">$1</a>',nl2br($pst_msg_html));
-   $st_message_texte = html_entity_decode(str_ireplace(array("<br>","<br />","<hr />","<hr>"),"\r\n",$pst_msg_html),ENT_COMPAT,'cp1252');
+   $st_message_texte = html_entity_decode(str_ireplace(array("<br>","<br />","<hr />","<hr>"),"\r\n",$pst_msg_html),ENT_COMPAT,'UTF-8');
    setlocale(LC_CTYPE, 'fr_FR.UTF8');
    $st_message_texte = strip_tags(iconv("UTF8", "ASCII//TRANSLIT", $st_message_texte));
    $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n"; 
