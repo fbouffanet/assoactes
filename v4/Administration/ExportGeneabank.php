@@ -244,7 +244,7 @@ switch ($gst_mode) {
      print('<div class="text-center">');
      print benchmark("Export Index : $st_fichier_indexes");
      $zip = new ZipArchive();
-     $st_chemin_zip="$gst_repertoire_index_geneabank/$gst_index_patros_geneabank";
+     $st_chemin_zip="$gst_repertoire_indexes_geneabank/$gst_index_patros_geneabank";
      if (file_exists($st_chemin_zip)) unlink($st_chemin_zip);
      if ($zip->open($st_chemin_zip, ZIPARCHIVE::CREATE)!==TRUE) {
         exit("<div class=\"alert alert-danger\">Impossible d'écrire <$st_chemin_zip></div\n");
