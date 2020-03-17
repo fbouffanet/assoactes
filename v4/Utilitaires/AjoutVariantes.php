@@ -681,13 +681,7 @@ $('#annuler').click(function() {
 
 
 $('#majeure_a_chercher').select2({
-  allowClear: true,
-  placeholder: "Taper une initiale",
-  "language": {
-       "noResults": function(){
-           return "Pas de résultats";
-       }
-  },	   
+  allowClear: true,	
   ajax: {
     url: '../ajax/majeure_patro.php',
 	dataType: 'json',
