@@ -44,8 +44,8 @@ switch ($gst_type)
         die("Identifiant provisoire inconnu: $gi_idf_prov<br>"); 
       list($st_nom_adh,$st_prenom_adh,$st_email_adh,$st_cp_adh,$st_pays_adh,$st_jeton_ins) = $a_adh;
       setlocale(LC_CTYPE, 'fr_FR.UTF8');
-      $st_nom_adh = trim(strip_tags(iconv("utf8", "ASCII//TRANSLIT", $_POST['nom'])));
-      $st_prenom_adh = trim(strip_tags(iconv("utf8", "ASCII//TRANSLIT", $_POST['prenom'])));
+      $st_nom_adh = trim(strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $_POST['nom'])));
+      $st_prenom_adh = trim(strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $_POST['prenom'])));
       // suppression des espaces
       $st_nom_adh = preg_replace('/\s/','',$st_nom_adh);
       $st_prenom_adh = preg_replace('/\s/','',$st_prenom_adh);
@@ -76,8 +76,8 @@ switch ($gst_type)
          die("<div class=\"alert alert-danger\"> Identifiant ".SIGLE_ASSO." non retrouv&eacute;</div>");
       list($i_idf_agc,$st_nom_adh,$st_prenom_adh,$st_email_adh,$st_cp_adh,$st_pays_adh,$i_annee_cotisation_adh)= $a_adh_agc;
       setlocale(LC_CTYPE, 'fr_FR.UTF8');
-      $st_nom_adh = trim(strip_tags(iconv("utf8", "ASCII//TRANSLIT", $st_nom_adh)));
-      $st_prenom_adh = trim(strip_tags(iconv("utf8", "ASCII//TRANSLIT", $st_prenom_adh)));
+      $st_nom_adh = trim(strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_nom_adh)));
+      $st_prenom_adh = trim(strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_prenom_adh)));
       // suppression des espaces
       $st_nom_adh = preg_replace('/\s/','',$st_nom_adh);
       $st_prenom_adh = preg_replace('/\s/','',$st_prenom_adh);
