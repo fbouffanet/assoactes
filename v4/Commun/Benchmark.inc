@@ -1,11 +1,11 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 function getmicrotime() {
-    // découpe le tableau de microsecondes selon les espaces
+    // dÃ©coupe le tableau de microsecondes selon les espaces
     list($usec, $sec) = explode(" ",microtime());
 
     // replace dans l'ordre
@@ -13,8 +13,8 @@ function getmicrotime() {
 }
 
 /**
-*@desc Affiche le temps écoulé (en microsecondes) depuis la dernière étape.
-* L'argument $nom_etape permet de spécifier ce qui est mesuré (ex. "page de stats" ou "requête numéro 7")
+* @desc Affiche le temps Ã©coulÃ© (en microsecondes) depuis la derniÃ¨re Ã©tape.
+* L'argument $nom_etape permet de spÃ©cifier ce qui est mesurÃ© (ex. "page de stats" ou "requÃªte numÃ©ro 7")
 */
 function benchmark ($nom_etape) 
 {

@@ -1,12 +1,12 @@
 <?php
 
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
-// connexion BD doit avoir été chargé
+// connexion BD doit avoir Ã©tÃ© chargÃ© auparavant
 $a_categories_menu =$connexionBD->sql_select_multiple("select libelle,script,droit from categorie_menu order by rang");
 $a_elements_menu =$connexionBD->liste_valeur_par_doubles_clefs("select categorie, libelle, script,droit from element_menu order by categorie,rang");
 if (isset($_SESSION['ident']))
@@ -37,9 +37,9 @@ foreach ($a_categories_menu as $a_categorie)
               if ($st_script=='')
                  print("$st_libelle");
               else if (preg_match('/^http\:\/\//',$st_script))
-                 print("<a href=\"$st_script\" target=\"_blank\">$st_libelle</a>");   
+                 print("<a href=\"$st_script\" target=\"_blank\">".cp1252_vers_utf8($st_libelle)."</a>");   
               else
-                 print("<a href=\"$gst_url_site/$st_script\">$st_libelle</a>");
+                 print("<a href=\"$gst_url_site/$st_script\">".cp1252_vers_utf8($st_libelle)."</a>");
               print("</li>\n");   
            }
          }
@@ -51,9 +51,9 @@ foreach ($a_categories_menu as $a_categorie)
         if ($st_script=='')        
           print("<a href=\"#\">$st_categorie</a>");
         else if (preg_match('/^http\:\/\//',$st_script))
-          print("<a href=\"$st_script\" target=\"_blank\">$st_categorie</a>"); 
+          print("<a href=\"$st_script\" target=\"_blank\">".cp1252_vers_utf8($st_categorie)."</a>"); 
         else 
-          print("<a href=\"$gst_url_site/$st_script\">$st_categorie</a>");
+          print("<a href=\"$gst_url_site/$st_script\">".cp1252_vers_utf8($st_categorie)."</a>");
         print("</li>\n");   
       }  
    }   

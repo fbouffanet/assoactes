@@ -8,7 +8,7 @@
 
 /**
  * Retourne vrai si la chaine est un patronyme (chaine majuscule)
- * @param string $pst_chaine Chaine Ó vÚrifier
+ * @param string $pst_chaine Chaine à vérifier
  * @return boolean vrai si $pst_chaine est en majuscules 
  */ 
  function est_patronyme($pst_chaine)
@@ -17,10 +17,10 @@
  }
 
 /**
- * Retourne vrai si la chaine est un prÚnom (Tous les prÚnoms simples en minuscules sauf l'initiale en majuscule). Exemple :  Jean-Louis
- * ! est considÚrÚ comme un prÚnom valide (non lisible) 
- * @param string $pst_chaine Chaine Ó vÚrifier
- * @return boolean vrai si $pst_chaine est un prÚnom
+ * Retourne vrai si la chaine est un prÚnom (Tous les prénoms simples en minuscules sauf l'initiale en majuscule). Exemple :  Jean-Louis
+ * ! est considéré comme un prénom valide (non lisible) 
+ * @param string $pst_chaine Chaine à vérifier
+ * @return boolean vrai si $pst_chaine est un prénom
  */ 
  function est_prenom($pst_chaine)
  {
@@ -28,7 +28,7 @@
     $a_champs = explode('-',$pst_chaine);
     foreach ($a_champs as $st_champ)
     {
-       if ($st_champ!=ucfirst(strtolower($st_champ)) || !preg_match("/^[A-Za-za����������]+$/",strval($st_champ)))
+       if ($st_champ!=ucfirst(strtolower($st_champ)) || !preg_match("/^[A-Za-zaéèçïöü]+$/",strval($st_champ)))
            return false;
     }
     return true;
@@ -68,13 +68,13 @@ function infos_conjoint($pst_conjoint)
      {
         if (est_patronyme($a_champs[0]) && est_prenom($a_champs[1]))
         {
-           // le conjoint est de la forme : NOM PrÚnom
+           // le conjoint est de la forme : NOM Prénom
            $st_patro_conjoint = $a_champs[0];
            $st_prenom_conjoint = $a_champs[1];
         }
         elseif (est_patronyme($a_champs[1]) && est_prenom($a_champs[0]))
         {
-           // le conjoint est de la forme : PrÚnom NOM 
+           // le conjoint est de la forme : Prénom NOM 
            $st_patro_conjoint = $a_champs[1];
            $st_prenom_conjoint = $a_champs[0];
         }
@@ -96,19 +96,6 @@ function infos_conjoint($pst_conjoint)
        $a_prenom_possible = array();
        $a_inconnus = array();
        $a_autres = array();
-       /*
-       foreach ($a_champs as $st_champ)
-       { 
-         if ($st_champ=='?')
-            $a_inconnus[]='?';
-         else if (est_patronyme($st_champ))
-            $a_patro_possible[] = $st_champ;
-         else if (est_prenom($st_champ))
-            $a_prenom_possible[] = $st_champ;
-         else
-            $a_autres[] = $st_champ;
-       }
-       */
        $st_champ = array_shift($a_champs);
        $b_patro_init = false;
        $b_prenom_init = false;
@@ -121,7 +108,7 @@ function infos_conjoint($pst_conjoint)
           }
           else if (est_patronyme($st_champ))
           { 
-             // Un patronyme a d�j� �t� trouv� => echec de la conversion
+             // Un patronyme a déjà été trouvé => echec de la conversion
              if ($b_patro_init)
              {
                 array_push($a_autres,$a_champs);
@@ -130,14 +117,13 @@ function infos_conjoint($pst_conjoint)
              $b_patro_init = true; 
              while (!is_null($st_champ) && est_patronyme($st_champ))
              {
-                //print("PAT=$st_champ\n");
                 $a_patro_possible[] = $st_champ;
                 $st_champ = array_shift($a_champs);   
              }
           }
           else if (est_prenom($st_champ))
           {
-             // Un pr�nom a d�j� �t� trouv� => echec de la conversion
+             // Un prénom a déjà été trouvé => echec de la conversion
              if ($b_prenom_init)
              {
                 array_push($a_autres,$a_champs);
@@ -145,8 +131,7 @@ function infos_conjoint($pst_conjoint)
              }
              $b_prenom_init = true; 
              while (!is_null($st_champ) && est_prenom($st_champ))
-             {
-                //print("PRN=$st_champ\n"); 
+             { 
                 $a_prenom_possible[] = $st_champ;
                 $st_champ = array_shift($a_champs);
              }
@@ -158,7 +143,7 @@ function infos_conjoint($pst_conjoint)
           }  
                    
        }
-       // rÚcupÚration d'un prÚnom inconnu si un nom est possible
+       // récupération d'un prénom inconnu si un nom est possible
        if (count($a_prenom_possible)==0 && count($a_inconnus)==1 && count($a_patro_possible)>=1)
           $a_prenom_possible[] = '?'; 
        if (count($a_autres)==0 && count($a_patro_possible)>=1 && count($a_prenom_possible)>=1)
@@ -180,12 +165,12 @@ function infos_conjoint($pst_conjoint)
   return array($st_patro_conjoint,$st_prenom_conjoint,$st_cmt_conjoint);
 }
 /**
- * Renvoie vrai si l'acte comporte un Úlement pouvait apporter une information autre que le nom ou le prénom, faux sinon
+ * Renvoie vrai si l'acte comporte un élement pouvait apporter une information autre que le nom ou le prénom, faux sinon
  *
- * @param unknown_type $pa_champs Champs Ó regarder
- * @param unknown_type $pi_indice1 index du premier champ dÚcrivant l'individu 1
- * @param unknown_type $pi_indice2 index du premier champ  dÚcrivant l'individu 2
- * @param unknown_type $pi_longueur_personnes longueur des champs dÚcrivant un individu
+ * @param unknown_type $pa_champs Champs à regarder
+ * @param unknown_type $pi_indice1 index du premier champ décrivant l'individu 1
+ * @param unknown_type $pi_indice2 index du premier champ  décrivant l'individu 2
+ * @param unknown_type $pi_longueur_personnes longueur des champs décrivant un individu
  * @return boolean vrai si l'acte est filiatif
  */
 
@@ -193,12 +178,12 @@ function est_informatif($pa_champs,$pi_indice1,$pi_indice2,$pi_longueur_personne
 {
    $st_chaine = join('',array_slice($pa_champs,$pi_indice1,$pi_longueur_personnes));
    $st_chaine .= join('',array_slice($pa_champs,$pi_indice2,$pi_longueur_personnes));
-   #  on considÞre que l'acte ne comporte pas d'informations si tous ses champs sont vides
+   #  on considère que l'acte ne comporte pas d'informations si tous ses champs sont vides
    return !preg_match('/^[\s\!\?]*$/',$st_chaine);
 }
 
 /**
-  *  Rend un prÚnom propre (Exemple "JEAn-eMILE d'ALENCON" => "Jean-Emile D\'Alencon")
+  *  Rend un prénom propre (Exemple "JEAn-eMILE d'ALENCON" => "Jean-Emile D\'Alencon")
   *  @param string $pst_prenom
  */ 
 function nettoie_prenom(&$pst_prenom)

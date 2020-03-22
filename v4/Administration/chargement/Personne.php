@@ -1,14 +1,33 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
 class Personne
  {
-				function __autoload( $class_name )
+				/*
+				* Renvoie une chaine encodÃ©e en cp1252 en UTF8
+				* @param string $st_valeur chaine cp1252 Ã  convertir
+				* @return string chaine encodÃ©e en UTF8
+				*/
+				static public function cp1252_vers_utf8($st_valeur)
+				{
+					return mb_convert_encoding($st_valeur,'UTF8','cp1252');
+				}
 				
+				/*
+				* Renvoie une chaine encodÃ©e en UTF8 en cp1252
+				* @param string $st_valeur chaine UTF8 Ã  convertir
+				* @return string chaine encodÃ©e en UTF8
+				*/
+				static public function utf8_vers_cp1252($st_valeur)
+				{
+					return mb_convert_encoding($st_valeur,'cp1252','UTF8');
+				}
+				
+				function __autoload( $class_name )
 				
 				
 				
@@ -123,6 +142,15 @@ class Personne
 								 $this -> prenom -> ajoute( $this -> st_prenom );
 								 } 
 				
+				public function setSurnom( $pst_surnom )
+				
+				
+				
+				
+				{
+								 $this -> st_surnom = $pst_surnom ;
+								 }
+								 
 				public function setSexe( $pst_sexe )
 				
 				
@@ -161,7 +189,7 @@ class Personne
 				if (!empty($pst_date_naissance))
 				{ 
 					if (preg_match('/^\d+$/',$pst_date_naissance))
-					// la date de naissance ne comporte qu'une année
+					// la date de naissance ne comporte qu'une annÃ©e
 						$this -> st_date_naissance = sprintf("__/__/%04d",$pst_date_naissance);
 					else 
 						$this -> st_date_naissance = $pst_date_naissance;
@@ -180,7 +208,20 @@ class Personne
 												$this -> st_origine = trim($pst_origine);
 												 $this -> communePersonne -> ajoute( $pst_origine );
 												 } 
-								} 
+								}
+				
+				public function setResidence( $pst_residence )
+				
+				
+				
+				
+				{
+								 if ( !empty( $pst_residence ) )
+												 {
+												$this -> st_residence = trim($pst_residence);
+												 $this -> communePersonne -> ajoute( $pst_residence );
+												 } 
+								} 		
 				
 				public function getAge( $pst_age )
 				
@@ -428,6 +469,7 @@ class Personne
 				{
 								 $st_chaine = '';
 								 $i_nb_lignes = 0;
+
 								 switch ( $this -> i_idf_type_presence )
 								 {
 												case IDF_PRESENCE_INTV:
@@ -435,20 +477,20 @@ class Personne
 																 switch ( $pi_idf_type_acte )
 																 {
 																				case IDF_NAISSANCE:
-																								 $st_chaine .= sprintf( "De: %s %s (%s)\n", $this -> st_patronyme, $this -> st_prenom, $this -> c_sexe );
+																								 $st_chaine .= sprintf( "De: %s %s (%s)\n", self::cp1252_vers_utf8($this -> st_patronyme), self::cp1252_vers_utf8($this -> st_prenom), $this -> c_sexe );
 																								 $i_nb_lignes = 1;
 																								 if ( !empty( $this -> st_commentaire ) )
 																												 {
-																												$st_chaine .= $this -> st_commentaire . "\n";
+																												$st_chaine .= self::cp1252_vers_utf8($this -> st_commentaire) . "\n";
 																												 $i_nb_lignes++;
 																												 } 
 																								break;
 																				 case IDF_RECENS:
-																								 $st_chaine .= sprintf( "%s %s (%s) ", $this -> st_patronyme, $this -> st_prenom, $this -> c_sexe );
+																								 $st_chaine .= sprintf( "%s %s (%s) ", self::cp1252_vers_utf8($this -> st_patronyme), self::cp1252_vers_utf8($this -> st_prenom), $this -> c_sexe );
 																								 $i_nb_lignes = 1;
 																								 if ( !empty( $this -> st_commentaire ) )
 																												 {
-																												$st_chaine .= $this -> st_commentaire ;
+																												$st_chaine .= self::cp1252_vers_utf8($this -> st_commentaire);
 																												 $i_nb_lignes++;
 																												 } 
 																								$st_ligne = '';
@@ -456,26 +498,26 @@ class Personne
 																												 {
 																													 if (preg_match( '/^__\/__\/(\d+)$/', $this -> st_date_naissance,$a_correspondances ) || preg_match( '/^\?\?\/\?\?\/(\d+)$/', $this -> st_date_naissance,$a_correspondances ))
 																													 {
-																														 $st_lib = $this -> c_sexe != 'F'? 'Né':'Née';
+																														 $st_lib = $this -> c_sexe != 'F'? 'NÃ©':'NÃ©e';
 																													 $st_ligne .= sprintf( " $st_lib en %s", $a_correspondances[1] );
 																													 }
 																													 else
 																													 {
-																														$st_lib = $this -> c_sexe != 'F'? 'Né':'Née';
+																														$st_lib = $this -> c_sexe != 'F'? 'NÃ©':'NÃ©e';
 																														$st_ligne .= sprintf( " $st_lib le %s", $this -> st_date_naissance );
 																													 }	
 																												 }
 																								 if ( !preg_match( '/^\s*$/', $this -> st_age ) )
 																												 {
-																												$st_lib = $this -> c_sexe != 'F'? 'Agé':'Agée';
+																												$st_lib = $this -> c_sexe != 'F'? 'AgÃ©':'AgÃ©e';
 																												 $st_ligne .= sprintf( " $st_lib de %s", $this -> st_age );
 																												 if ( preg_match( '/^\d+$/', $this -> st_age ) )
 																																 $st_ligne .= " ans";
 																												 } 
 																								if ( !empty( $this -> st_profession ) )
-																												 $st_ligne .= sprintf( " Profession de %s", $this -> st_profession );
+																												 $st_ligne .= sprintf( " Profession de %s", self::cp1252_vers_utf8($this -> st_profession) );
 																								if ( !empty( $this -> st_origine ) )
-																												 $st_ligne .= sprintf( " Originaire de %s", $this -> st_origine );			 
+																												 $st_ligne .= sprintf( " Originaire de %s", self::cp1252_vers_utf8($this -> st_origine) );			 
 																								 if ( $st_ligne != '' )
 																												 $st_chaine .= "$st_ligne\n";
 																								 $i_nb_lignes++;
@@ -483,40 +525,40 @@ class Personne
 																								 break;
 																				 default:
 																								 $st_chaine .= $this -> i_num_param == 1 ? "De: " : "Avec: ";
-																								 $st_chaine .= sprintf( "%s %s (%s)\n", $this -> st_patronyme, $this -> st_prenom, $this -> c_sexe );
+																								 $st_chaine .= sprintf( "%s %s (%s)\n", self::cp1252_vers_utf8($this -> st_patronyme), self::cp1252_vers_utf8($this -> st_prenom), $this -> c_sexe );
 																								
 																								 $i_nb_lignes = 1;
 																								 if ( !empty( $this -> st_commentaire ) )
 																												 {
-																												$st_chaine .= $this -> st_commentaire . "\n";
+																												$st_chaine .= self::cp1252_vers_utf8($this -> st_commentaire) . "\n";
 																												 $i_nb_lignes++;
 																												 } 
 																								$st_ligne = '';
 																								 if ( !empty( $this -> st_origine ) )
-																												 $st_ligne .= sprintf( " Originaire de %s", $this -> st_origine );
+																												 $st_ligne .= sprintf( " Originaire de %s", self::cp1252_vers_utf8($this -> st_origine) );
 																								 $this -> st_date_naissance = preg_replace( '/^\s+$/', '', $this -> st_date_naissance );
 																								 if ( !preg_match( '/^\s*$/', $this -> st_date_naissance ) )
 																												 {
 																													 if (preg_match( '/^__\/__\/(\d+)$/', $this -> st_date_naissance,$a_correspondances )|| preg_match( '/^\?\?\/\?\?\/(\d+)$/', $this -> st_date_naissance,$a_correspondances ))
 																													 {
-																														 $st_lib = $this -> c_sexe != 'F'? 'Né':'Née';
+																														 $st_lib = $this -> c_sexe != 'F'? 'NÃ©':'NÃ©e';
 																													 $st_ligne .= sprintf( " $st_lib en %s", $a_correspondances[1] );
 																													 }
 																													 else
 																													 {
-																														$st_lib = $this -> c_sexe != 'F'? 'Né':'Née';
+																														$st_lib = $this -> c_sexe != 'F'? 'NÃ©':'NÃ©e';
 																														$st_ligne .= sprintf( " $st_lib le %s", $this -> st_date_naissance );
 																													 }	
 																												 } 
 																								if ( !preg_match( '/^\s*$/', $this -> st_age ) )
 																												 {
-																												$st_lib = $this -> c_sexe != 'F'? 'Agé':'Agée';
+																												$st_lib = $this -> c_sexe != 'F'? 'AgÃ©':'AgÃ©e';
 																												 $st_ligne .= sprintf( " $st_lib de %s", $this -> st_age );
 																												 if ( preg_match( '/^\d+$/', $this -> st_age ) )
 																																 $st_ligne .= " ans";
 																												 } 
 																								if ( !empty( $this -> st_profession ) )
-																												 $st_ligne .= sprintf( " Profession de %s\n", $this -> st_profession );
+																												 $st_ligne .= sprintf( " Profession de %s\n", self::cp1252_vers_utf8($this -> st_profession) );
 																								 if ( $st_ligne != '' )
 																												 $st_chaine .= "$st_ligne\n";
 																								 $i_nb_lignes++;
@@ -525,20 +567,20 @@ class Personne
 												 case IDF_PRESENCE_PERE:
 												 case IDF_PRESENCE_MERE:
 																 if ( !empty( $this -> st_patronyme ) )
-																				 $st_chaine .= sprintf( "%s %s", $this -> st_patronyme, $this -> st_prenom );
+																				 $st_chaine .= sprintf( "%s %s", self::cp1252_vers_utf8($this -> st_patronyme), self::cp1252_vers_utf8($this -> st_prenom) );
 																 if ( !empty( $this -> st_profession ) )
 																				 $st_chaine .= sprintf( " Profession de %s", $this -> st_profession );
-																 $st_chaine .= ' ' . $this -> st_commentaire;
+																 $st_chaine .= ' ' . self::cp1252_vers_utf8($this -> st_commentaire);
 																 $st_chaine .= "\n";
 																 $i_nb_lignes = 1;
 																 break;
 												 case IDF_PRESENCE_EXCJT:
 																 if ( !empty( $this -> st_patronyme ) )
 																				 {
-																				$st_chaine .= sprintf( "Ancien conjoint: %s %s", $this -> st_patronyme, $this -> st_prenom );
+																				$st_chaine .= sprintf( "Ancien conjoint: %s %s", self::cp1252_vers_utf8($this -> st_patronyme), self::cp1252_vers_utf8($this -> st_prenom) );
 																				 if ( !empty( $this -> st_profession ) )
-																								 $st_chaine .= sprintf( " Profession de %s", $this -> st_profession );
-																				 $st_chaine .= ' ' . $this -> st_commentaire;
+																								 $st_chaine .= sprintf( " Profession de %s", self::cp1252_vers_utf8($this -> st_profession) );
+																				 $st_chaine .= ' ' . self::cp1252_vers_utf8($this -> st_commentaire);
 																				 $st_chaine .= "\n";
 																				 $i_nb_lignes = 1;
 																				 } 
@@ -546,26 +588,27 @@ class Personne
 												 case IDF_PRESENCE_PARRAIN:
 																 if ( !empty( $this -> st_patronyme ) )
 																				 {
-																				$st_chaine .= sprintf( "Parrain/témoin: %s %s %s\n", $this -> st_patronyme, $this -> st_prenom, $this -> st_commentaire );
+																				$st_chaine .= sprintf( "Parrain/tÃ©moin: %s %s %s\n", self::cp1252_vers_utf8($this -> st_patronyme), self::cp1252_vers_utf8($this -> st_prenom), self::cp1252_vers_utf8($this -> st_commentaire) );
 																				 $i_nb_lignes = 1;
 																				 } 
 																break;
 												 case IDF_PRESENCE_MARRAINE:
 																 if ( !empty( $this -> st_patronyme ) )
 																				 {
-																				$st_chaine .= sprintf( "Marraine/témoin: %s %s %s\n", $this -> st_patronyme, $this -> st_prenom, $this -> st_commentaire );
+																				$st_chaine .= sprintf( "Marraine/tÃ©moin: %s %s %s\n", self::cp1252_vers_utf8($this -> st_patronyme), self::cp1252_vers_utf8($this -> st_prenom), self::cp1252_vers_utf8($this -> st_commentaire) );
 																				 $i_nb_lignes = 1;
 																				 } 
 																break;
 												 case IDF_PRESENCE_TEMOIN:
 																 if ( !empty( $this -> st_patronyme ) )
 																				 {
-																				$st_chaine .= sprintf( "Témoin: %s %s %s\n", $this -> st_patronyme, $this -> st_prenom, $this -> st_commentaire );
+																				$st_chaine .= sprintf( "TÃ©moin: %s %s %s\n", self::cp1252_vers_utf8($this -> st_patronyme), self::cp1252_vers_utf8($this -> st_prenom), self::cp1252_vers_utf8($this -> st_commentaire) );
 																				 $i_nb_lignes = 1;
 																				 } 
 																break;
 																 } 
 								$this -> i_nb_lignes = $i_nb_lignes;
+								 //return self::cp1252_vers_utf8($st_chaine);
 								 return $st_chaine;
 								 } 
 				
@@ -582,7 +625,7 @@ class Personne
 								 $st_chaine .= sprintf( "<tr><th>Patronyme</th><td>%s</td>\n", $this -> st_patronyme );
 								 $st_chaine .= sprintf( "<tr><th>Prenom</th><td>%s</td>\n", $this -> st_prenom );
 								 $st_chaine .= sprintf( "<tr><th>Idf Type Pr&eacute;sence</th><td>%d</td>\n", $this -> i_idf_type_presence );
-								 $st_chaine .= sprintf( "<tr><th>R‚sidence</th><td>%s</td>\n", $this -> st_residence );
+								 $st_chaine .= sprintf( "<tr><th>R&eacute;sidence</th><td>%s</td>\n", $this -> st_residence );
 								 $st_chaine .= sprintf( "<tr><th>Origine</th><td>%s</td>\n", $this -> st_origine );
 								 $st_chaine .= sprintf( "<tr><th>Profession</th><td>%s</td>\n", $this -> st_profession );
 								 $st_chaine .= sprintf( "<tr><th>Age</th><td>%s</td>\n", $this -> st_age );
@@ -594,8 +637,8 @@ class Personne
 								 } 
 				
 				/**
-				* Rend un prénom propre (Example "JEAn eMILE d'ALENCON" => "Jean Emile D\'alencon")
-				*       remplace tous les "-" par des espaces et considère les espaces comme separateurs de champs
+				* Rend un prÃ©nom propre (Example "JEAn eMILE d'ALENCON" => "Jean Emile D\'alencon")
+				*       remplace tous les "-" par des espaces et considÃ¨re les espaces comme separateurs de champs
 				*       apres avoir mis des majuscules a chaque prenom, les recolle en les separant par 1 espace
 				* pour finir tous les espaces sont remplaces par un "-"
 				* 
@@ -631,9 +674,9 @@ class Personne
 								 } 
 				
 				/**
-				* Nettoie les commentaires et renvoie si la personne est decedee ou non (  presence de Å dans le commentaires ou non)
+				* Nettoie les commentaires et renvoie si la personne est decedee ou non (  presence de â€  dans le commentaires ou non)
 				* 
-				* @param string $pst_commentaires commentaireà nettoyer
+				* @param string $pst_commentaires commentaire Ã   nettoyer
 				* return integer (0|1)
 				*/
 				public function commentaire_propre( $pst_commentaires )
@@ -643,7 +686,7 @@ class Personne
 				
 				
 				{
-								 $this -> i_est_decede = ( strpos( $pst_commentaires, "\x86" ) === false ) ? 0 : 1;
+								 $this -> i_est_decede = ( strpos( $pst_commentaires, "â€ " ) === false ) ? 0 : 1;
 								 if ( preg_match( '/dcd/i', $pst_commentaires ) )
 												 $this -> i_est_decede = 1;
 								 // return addslashes($pst_commentaires);
@@ -651,7 +694,7 @@ class Personne
 								 } 
 				
 				/**
-				* Renvoie le contenu de la personne sous la forme d'une ligne SQL à insérer
+				* Renvoie le contenu de la personne sous la forme d'une ligne SQL Ã  insÃ©rer
 				* 
 				* @return string personne sous forme CSV
 				*/
@@ -683,7 +726,7 @@ class Personne
 								 } 
 				
 				/**
-				* Renvoie la requête de base pour un chargement de personne
+				* Renvoie la requÃªte de base pour un chargement de personne
 				*/
 				public static function requete_base()
 				
@@ -696,9 +739,9 @@ class Personne
 								 } 
 				
 				/**
-				* Renvoie la liste des filtres jquery validator à activer par champ de paramètre
+				* Renvoie la liste des filtres jquery validator Ã  activer par champ de paramÃ¨tre
 				* 
-				* @return array tableau nom du paramŠtre => (type de filtre, message d'erreur … afficher)
+				* @return array tableau nom du paramÃ¨tre => (type de filtre, message d'erreur Ã  afficher)
 				*/
 				public function getFiltresParametres()
 				
@@ -711,9 +754,9 @@ class Personne
 								 } 
 				
 				/**
-				* Renvoie la liste des paramètres avec complétion automatique
+				* Renvoie la liste des paramÃ¨tres avec complÃ¨tion automatique
 				* 
-				* @return array tableau nom du paramŠtre => (nom de la fonction ajax … utiliser pour l'autocompl‚tion,nombre de caractŠres minimal)
+				* @return array tableau nom du paramÃ¨tre => (nom de la fonction ajax Ã  utiliser pour l'autocomplÃ¨tion,nombre de caractÃ¨res minimal)
 				*/
 				public function parametres_completion_auto()
 				
@@ -726,7 +769,7 @@ class Personne
 								 } 
 				
 				/**
-				* Charge la personne à partir de la BD
+				* Charge la personne Ã  partir de la BD
 				* 
 				* @param integer $pi_idf_personne identifiant de la personne
 				*/
@@ -757,10 +800,10 @@ class Personne
 								 } 
 				
 				/**
-				* Cree une nouvelle personne dans la base de données
+				* Cree une nouvelle personne dans la base de donnÃ©es
 				* 
-				* @return integer identifiant de la personne crée ou null si vide
-				* ATTENTION: les communes, professions et prénoms doivent avoir été rechargés auparavant sinon les nouveaux éléments ne seront pas créés
+				* @return integer identifiant de la personne crÃ©e ou null si vide
+				* ATTENTION: les communes, professions et prÃ©noms doivent avoir Ã©tÃ© rechargÃ©s auparavant sinon les nouveaux Ã©lÃ©ments ne seront pas crÃ©Ã©s
 				*/
 				public function cree()
 				
@@ -783,7 +826,7 @@ class Personne
 								 $i_idf_prenom = empty( $this -> st_prenom ) ? 0 : $this -> prenom -> vers_idf( $this -> st_prenom );
 								 $i_idf_profession = empty( $this -> st_profession ) ? 0: $this -> profession -> vers_idf( $this -> st_profession );
 								 $i_idf_origine = empty( $this -> st_origine ) ? 0 : $this -> communePersonne -> vers_idf( $this -> st_origine );
-								 $i_idf_residence = empty( $this -> st_residence ) ? 0 : $this -> communePersonne -> vers_idf( $this -> st_residence );
+								 $i_idf_residence = empty( $this -> st_residence ) ? 0 : $this -> communePersonne -> vers_idf( $this -> st_residence);
 								 $st_commentaire = $this -> st_commentaire;
 								 $i_est_decede = $this -> i_est_decede;
 								 $i_idf_pere = $this -> i_idf_pere;
@@ -795,9 +838,9 @@ class Personne
 								 } 
 				
 				/**
-				* Modifie la personne dans la base de données
+				* Modifie la personne dans la base de donnÃ©es
 				* 
-				* @return integer identifiant de la personne crée ou null si vide
+				* @return integer identifiant de la personne crÃ©e ou null si vide
 				*/
 				public function modifie()
 				
@@ -810,8 +853,6 @@ class Personne
 								 $i_idf_acte = $this -> i_idf_acte;
 								 $i_idf_type_presence = $this -> i_idf_type_presence;
 								 $c_sexe = $this -> c_sexe;
-								 $st_patronyme = $this -> st_patronyme;
-								 $st_prenom = $this -> st_prenom;
 								 if ( empty( $this -> st_patronyme ) && empty( $this -> st_prenom ) )
 												 return null;
 								 $st_surnom = $this -> st_surnom;
@@ -833,7 +874,7 @@ class Personne
 												 $i_idf_profession = 0;
 								 if ( !empty( $this -> st_origine ) )
 												 {
-												$this -> communePersonne -> ajoute( $this -> st_origine );
+												$this -> communePersonne -> ajoute( $this -> st_origine);
 												 $this -> communePersonne -> sauve();
 												 $i_idf_origine = $this -> communePersonne -> vers_idf( $this -> st_origine );
 												 } 
@@ -863,7 +904,7 @@ class Personne
 				* Initialise la personne depuis une formulaire POST
 				* 
 				* @param integer $pi_idf_acte identifiant de l'acte
-				* @param integer $pi_pi_idf_type_presence type de présence
+				* @param integer $pi_pi_idf_type_presence type de prÃ¨sence
 				*/
 				public function initialise_depuis_formulaire( $pi_idf_acte, $pi_pi_idf_type_presence )
 				
@@ -918,20 +959,28 @@ class Personne
 												 $this -> st_profession = isset( $_POST["prof$i_num_parametre"] )?substr( trim( $_POST["prof$i_num_parametre"] ), 0, 35 ):'';
 												 $this -> st_commentaire = isset( $_POST["cmt$i_num_parametre"] )?substr( trim( $_POST["cmt$i_num_parametre"] ), 0, 70 ):'';
 												 } 
-								$this -> st_patronyme = self :: patronyme_propre( $this -> st_patronyme );
+								 $this -> st_patronyme =self::utf8_vers_cp1252($this -> st_patronyme);
+								 $this -> st_patronyme = self :: patronyme_propre( $this -> st_patronyme );
+								 
+								 $this -> st_prenom =self::utf8_vers_cp1252($this -> st_prenom);
 								 $this -> st_prenom = self :: prenom_propre( $this -> st_prenom );
 								 $this -> prenom -> ajoute( $this -> st_prenom );
+								 $this -> st_profession =self::utf8_vers_cp1252($this -> st_profession);
 								 $this -> profession -> ajoute( $this -> st_profession );
+								 $this -> st_origine =self::utf8_vers_cp1252($this -> st_origine);
 								 $this -> communePersonne -> ajoute( $this -> st_origine );
+								 $this -> st_residence =self::utf8_vers_cp1252($this -> st_residence);
 								 $this -> communePersonne -> ajoute( $this -> st_residence );
-								 // met à jour le champ est_decede en même temps que le commentaire
+								 // met Ã  jour le champ est_decede en mÃªme temps que le commentaire
+								 $this -> st_commentaire =self::utf8_vers_cp1252($this -> st_commentaire);
 								$this -> st_commentaire = self :: commentaire_propre( $this -> st_commentaire );
+								 
 								 if ( empty( $this -> st_patronyme ) && ( !empty( $this -> st_prenom ) || !empty( $this -> st_commentaire ) ) )
 												 $this -> st_patronyme = LIB_MANQUANT;
 								 } 
 				
 				/**
-				* Renvoie un formulaire HTML d'édition d'une personne
+				* Renvoie un formulaire HTML d'Ã©dition d'une personne
 				* 
 				* @param integer $pi_idf_type_acte identifiant du type d'acte
 				* @param string $pst_commune commune de l'acte
@@ -955,12 +1004,12 @@ class Personne
 																 {
 																				case IDF_NAISSANCE:
 																								 $st_chaine = "<tr>";
-																								 $st_chaine .= sprintf( "<th>Patronyme</th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control text-uppercase form-control-xs\"></td>", $this -> st_patronyme );
-																								 $st_chaine .= sprintf( "<th>Pr&eacute;nom</th><td><input type=text id=\"prn$i_num_parametre\" name=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 class=\"form-control text-capitalize form-control-xs\"></td>", $this -> st_prenom );
+																								 $st_chaine .= sprintf( "<th>Patronyme</th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control text-uppercase form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_patronyme));
+																								 $st_chaine .= sprintf( "<th>Pr&eacute;nom</th><td><input type=text id=\"prn$i_num_parametre\" name=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 class=\"form-control text-capitalize form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_prenom) );
 																								 $st_chaine .= "<th>Sexe</th><td><select name=sexe$i_num_parametre class=\"form-control\">";
 																								 $st_chaine .= chaine_select_options( $this -> c_sexe, $ga_sexe );
 																								 $st_chaine .= "</select></td>";
-																								 $st_chaine .= sprintf( "<th>Commentaires</th><td><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control form-control-xs\"></td>", $this -> st_commentaire );
+																								 $st_chaine .= sprintf( "<th>Commentaires</th><td><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_commentaire ));
 																								 $st_chaine .= "</tr>\n";
 																								 $this -> a_filtres_parametres["patro$i_num_parametre"] = array( array( "required", "true", "Le patronyme est obligatoire" ) );
 																								 $this -> a_parametres_completion_auto["patro$i_num_parametre"] = array( 'patronyme.php', 3 );
@@ -968,24 +1017,24 @@ class Personne
 																				 default:
 																								
 																								/**
-																								* la structure de personne est la même pour ces 3 types d'acte
+																								* la structure de personne est la mÃªme pour ces 3 types d'acte
 																								*/
 																								 $st_chaine = "<tr>";
-																								 $st_chaine .= sprintf( "<th>Patronyme</th><td class=\"lib_erreur\"><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control text-uppercase col-md-3 form-control-xs\"></td>", $this -> st_patronyme );
+																								 $st_chaine .= sprintf( "<th>Patronyme</th><td class=\"lib_erreur\"><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control text-uppercase col-md-3 form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_patronyme) );
 																								
-																								 $st_chaine .= sprintf( "<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\"  value=\"%s\" maxlength=35 class=\"form-control text-capitalize col-md-3 form-control-xs\"></td>", $this -> st_prenom );
+																								 $st_chaine .= sprintf( "<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\"  value=\"%s\" maxlength=35 class=\"form-control text-capitalize col-md-3 form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_prenom) );
 																								
-																								 $st_chaine .= sprintf( "<th>Profession</th><td><input type=text name=\"prof$i_num_parametre\" id=\"prof$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control form-control-xs\"></td>", $this -> st_profession );
+																								 $st_chaine .= sprintf( "<th>Profession</th><td><input type=text name=\"prof$i_num_parametre\" id=\"prof$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_profession) );
 																								 $st_chaine_deces = ( $pi_idf_type_acte == IDF_DECES ) ? "<button type=\"button\" data-cible=\"#cmt$i_num_parametre\" class=\"btn btn-primary maj_deces\">&dagger;</button>" : '';
-																								 $st_chaine .= sprintf( "<th>Commentaires</th><td><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control form-control-xs\">%s</td>", $this -> st_commentaire, $st_chaine_deces );
+																								 $st_chaine .= sprintf( "<th>Commentaires</th><td><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control form-control-xs\">%s</td>", self::cp1252_vers_utf8($this -> st_commentaire), $st_chaine_deces );
 																								 $st_chaine .= "</tr><tr>";
-																								 $st_chaine .= sprintf( "<th><a class=\"recopie_commune btn btn-info btn-xs\" data-source=\"$pst_commune\" data-cible=\"#orig$i_num_parametre\" ><span class=\"glyphicon glyphicon-copy\"></span> Lieu<br>d'origine</a></th><td><input type=text name=\"orig$i_num_parametre\"  id=\"orig$i_num_parametre\"  value=\"%s\" maxlength=50 class=\"form-control form-control-xs\">", $this -> st_origine );
+																								 $st_chaine .= sprintf( "<th><a class=\"recopie_commune btn btn-info btn-xs\" data-source=\"$pst_commune\" data-cible=\"#orig$i_num_parametre\" ><span class=\"glyphicon glyphicon-copy\"></span> Lieu<br>d'origine</a></th><td><input type=text name=\"orig$i_num_parametre\"  id=\"orig$i_num_parametre\"  value=\"%s\" maxlength=50 class=\"form-control form-control-xs\">", self::cp1252_vers_utf8($this -> st_origine) );
 																								
 																								 $st_chaine .= "</td>";
 																								 $st_chaine .= $pi_idf_type_acte == IDF_MARIAGE ? "<th>Sexe</th><td><select name=sexe$i_num_parametre disabled class=\"form-control\">" : "<th>Sexe</th><td><select name=sexe$i_num_parametre class=\"form-control form-control-xs\">";
 																								 $st_chaine .= chaine_select_options( $this -> c_sexe, $ga_sexe );
 																								 $st_chaine .= "</select></td>";
-																								 $st_chaine .= sprintf( "<th>Age</th><td class=\"lib_erreur\"><input type=text name=\"age$i_num_parametre\" id=\"age$i_num_parametre\" value=\"%s\" maxlength=15 class=\"form-control form-control-xs\"></td>", $this -> st_age );
+																								 $st_chaine .= sprintf( "<th>Age</th><td class=\"lib_erreur\"><input type=text name=\"age$i_num_parametre\" id=\"age$i_num_parametre\" value=\"%s\" maxlength=15 class=\"form-control form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_age ));
 																								 $st_chaine .= "<th>Date &deg;</th><td class=\"lib_erreur\">";
 																								 $i_jour_rep = null;
 																								 $i_mois_rep = null;
@@ -1023,7 +1072,7 @@ class Personne
 																								 $st_chaine .= "</div></td></tr>\n";
 																								 $this -> a_filtres_parametres["patro$i_num_parametre"] = array( array( "required", "true", "Le patronyme est obligatoire" ) );
 																								 if ( $pi_idf_type_acte != IDF_DECES )
-																												 $this -> a_filtres_parametres["age$i_num_parametre"] = array( array( "number", "true", "L'âge doit être un entier" ) );
+																												 $this -> a_filtres_parametres["age$i_num_parametre"] = array( array( "number", "true", "L'Ã¢ge doit Ãªtre un entier" ) );
 																								 $this -> a_filtres_parametres["dnais$i_num_parametre"] = array( array( "dateITA", "true", "La date de naissance est de la forme JJ/MM/AAAA" ) );
 																								 $this -> a_parametres_completion_auto["patro$i_num_parametre"] = array( 'patronyme.php', 3 );
 																								 $this -> a_parametres_completion_auto["prof$i_num_parametre"] = array( 'profession.php', 4 );
@@ -1046,11 +1095,11 @@ class Personne
 																								 break;
 																								 } 
 																$st_chaine = "<tr>";
-																 $st_chaine .= sprintf( "<th><a class=\"recopie_patro btn btn-info btn-xs\" data-source=\"$pi_idf_patro_intv\" data-cible=\"#patro$i_num_parametre\" role=\"button\"><span class=\"glyphicon glyphicon-copy\"></span>  Patronyme<br>%s</a></th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\"  maxlength=30 class=\"form-control text-uppercase form-control-xs\"></td>", $st_lib, $this -> st_patronyme );
-																 $st_chaine .= sprintf( "<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 class=\"form-control text-capitalize form-control-xs\"></td>", $this -> st_prenom );
-																 $st_chaine .= sprintf( "<th>Profession</th><td><input type=text name=\"prof$i_num_parametre\" id=\"prof$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control\"></td>", $this -> st_profession );
+																 $st_chaine .= sprintf( "<th><a class=\"recopie_patro btn btn-info btn-xs\" data-source=\"$pi_idf_patro_intv\" data-cible=\"#patro$i_num_parametre\" role=\"button\"><span class=\"glyphicon glyphicon-copy\"></span>  Patronyme<br>%s</a></th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\"  maxlength=30 class=\"form-control text-uppercase form-control-xs\"></td>", $st_lib, self::cp1252_vers_utf8($this -> st_patronyme ));
+																 $st_chaine .= sprintf( "<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 class=\"form-control text-capitalize form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_prenom) );
+																 $st_chaine .= sprintf( "<th>Profession</th><td><input type=text name=\"prof$i_num_parametre\" id=\"prof$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control\"></td>", self::cp1252_vers_utf8($this -> st_profession ));
 																 $st_chaine .= '<th>Commentaires</th>';
-																 $st_chaine .= sprintf( "<td><div class=\"input-group\"><label for=\"cmt$i_num_parametre\" class=\"sr-only\">Commentaires</label><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control form-control-xs\"><span class=\"input-group-btn\"><button type=\"button\" class=\"maj_deces btn btn-primary\" data-cible=\"#cmt$i_num_parametre\">&dagger;</button></span></div></td>", $this -> st_commentaire );
+																 $st_chaine .= sprintf( "<td><div class=\"input-group\"><label for=\"cmt$i_num_parametre\" class=\"sr-only\">Commentaires</label><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control form-control-xs\"><span class=\"input-group-btn\"><button type=\"button\" class=\"maj_deces btn btn-primary\" data-cible=\"#cmt$i_num_parametre\">&dagger;</button></span></div></td>", self::cp1252_vers_utf8($this -> st_commentaire) );
 																 $st_chaine .= "</tr>\n";
 																 $this -> a_parametres_completion_auto["patro$i_num_parametre"] = array( 'patronyme.php', 3 );
 																 $this -> a_parametres_completion_auto["prof$i_num_parametre"] = array( 'profession.php', 4 );
@@ -1059,7 +1108,7 @@ class Personne
 												 case IDF_PRESENCE_MARRAINE:
 												 case IDF_PRESENCE_TEMOIN:
 																/**
-																* la structure de personne est la mˆme pour ces 3 types de présence
+																* la structure de personne est la mÃªme pour ces 3 types de prÃ¨sence
 																*/
 																 switch ( $this -> i_idf_type_presence )
 																 {
@@ -1076,9 +1125,9 @@ class Personne
 																								 $st_lib = '';
 																								 } 
 																$st_chaine = "<tr>";
-																 $st_chaine .= sprintf( "<th>Patronyme %s</th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\"  maxlength=30 class=\"form-control text-uppercase form-control-xs\"></td>", $st_lib, $this -> st_patronyme );
-																 $st_chaine .= sprintf( "<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 class=\"form-control text-capitalize form-control-xs\"></td>", $this -> st_prenom );
-																 $st_chaine .= sprintf( "<th>Commentaires</th><td colspan=5><div class=\"input-group\"><label for=\"cmt$i_num_parametre\" class=\"sr-only\">Commentaires</label><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control form-control-xs\"><span class=\"input-group-btn\"><button type=\"button\" class=\"maj_deces btn btn-primary\" data-cible=\"#cmt$i_num_parametre\">&dagger;</button></span></div></td>", $this -> st_commentaire );
+																 $st_chaine .= sprintf( "<th>Patronyme %s</th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\"  maxlength=30 class=\"form-control text-uppercase form-control-xs\"></td>", $st_lib, self::cp1252_vers_utf8($this -> st_patronyme));
+																 $st_chaine .= sprintf( "<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 class=\"form-control text-capitalize form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_prenom ));
+																 $st_chaine .= sprintf( "<th>Commentaires</th><td colspan=5><div class=\"input-group\"><label for=\"cmt$i_num_parametre\" class=\"sr-only\">Commentaires</label><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control form-control-xs\"><span class=\"input-group-btn\"><button type=\"button\" class=\"maj_deces btn btn-primary\" data-cible=\"#cmt$i_num_parametre\">&dagger;</button></span></div></td>", self::cp1252_vers_utf8($this -> st_commentaire) );
 																 $st_chaine .= "</tr>\n";
 																 $this -> a_parametres_completion_auto["patro$i_num_parametre"] = array( 'patronyme.php', 3 );
 																 } 
@@ -1086,7 +1135,7 @@ class Personne
 								 } 
 				
 				/**
-				* Renvoie la personne au format Nimègue V3
+				* Renvoie la personne au format NimÃ¨gue V3
 				* 
 				* @param integer $pi_idf_type_acte identifiant du type d'acte
 				* @return array tableau des colonnes
@@ -1142,8 +1191,8 @@ class Personne
 								} 
 				
 				/**
-				* Renvoie si la personne contient des informations supplémentaires
-				* Une demande n'est possible que si un acte contient au moins un renseignement supplémentaire en plus de la date, la commune et le nom des intervenants
+				* Renvoie si la personne contient des informations supplÃ©mentaires
+				* Une demande n'est possible que si un acte contient au moins un renseignement supplÃ©mentaire en plus de la date, la commune et le nom des intervenants
 				* 
 				* @return boolean 
 				*/
@@ -1165,7 +1214,7 @@ class Personne
 								} 
 				
 				/**
-				* Initialise l'objet à partir des variables de sessions
+				* Initialise l'objet Ã  partir des variables de sessions
 				*/
 				public function intialise_variables_sessions ()
 				
@@ -1188,7 +1237,7 @@ class Personne
 								 } 
 				
 				/**
-				* Charge l'objet à partir des variables de session
+				* Charge l'objet Ã  partir des variables de session
 				*/
 				public function charge_variables_sessions()
 				

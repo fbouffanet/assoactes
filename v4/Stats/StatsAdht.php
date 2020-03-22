@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('../Commun/Identification.php');
@@ -16,7 +16,7 @@ require_once('../Commun/PaginationTableau.php');
 print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr"> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -27,11 +27,11 @@ print("<link href='../css/jquery-ui.theme.min.css' type='text/css' rel='styleshe
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
-print('<title>Base '.SIGLE_ASSO.': Stats consultations adhérent</title>');
+print('<title>Base '.SIGLE_ASSO.': Stats consultations adhÃ©rent</title>');
 print("</head>");
 
 /*
-  Renvoie le lien pour afficher les demandes d'une commune de l'adhérent courant
+  Renvoie le lien pour afficher les demandes d'une commune de l'adhÃ©rent courant
   @param integer $pi_nb_ddes nombre de demandes
   @param integer $pi_idf_commune identifiant de la commune
   @param integer $pi_idf_type_acte identifiant type de l'acte 
@@ -49,10 +49,10 @@ function ddes_communes($pi_nb_ddes,$pi_idf_commune,$pi_idf_type_acte)
 }
 
 /*
-  Renvoie le lien pour afficher les demandes d'une commune de l'adhérent courant
+  Renvoie le lien pour afficher les demandes d'une commune de l'adhÃ©rent courant
   @param integer $pi_nb_ddes nombre de demandes
   @param integer $pi_mois identifiant du mois
-  @param integer  $pi_annee identifiant de l'année
+  @param integer  $pi_annee identifiant de l'annÃ©e
   @param integer $pi_idf_type_acte identifiant type de l'acte 
 */
 function ddes_mois_annee($pi_nb_ddes,$pi_mois,$pi_annee,$pi_idf_type_acte)
@@ -95,7 +95,7 @@ if (isset($gi_idf_adherent ))
       list($i_tot_ddes,$i_tot_nai,$i_tot_mar,$i_tot_dec,$i_tot_cm)=$connexionBD->sql_select_liste($st_requete);
       $st_adherent=$connexionBD->sql_select1("select concat(prenom,' ',nom,'(',idf,')') from adherent where idf=$gi_idf_adherent");
       print('<div class="panel panel-primary">');
-      print("<div class=\"panel-heading\">Statistiques des demandes de l'adh&eacute;rent $st_adherent</div>");
+      print("<div class=\"panel-heading\">Statistiques des demandes de l'adh&eacute;rent ".cp1252_vers_utf8($st_adherent)."</div>");
       print('<div class="panel-body">');
       print('<div class="panel-group">');
       
@@ -207,7 +207,7 @@ if (isset($gi_idf_adherent ))
        $st_adherent=$connexionBD->sql_select1("select concat(prenom,' ',nom,'(',idf,')') from adherent where idf=$gi_idf_adherent");
 
 	   print('<div class="panel panel-primary">');
-       print("<div class=\"panel-heading\">Demandes de l'adh&eacute;rent $st_adherent</div>");
+       print("<div class=\"panel-heading\">Demandes de l'adh&eacute;rent ".cp1252_vers_utf8($st_adherent)."</div>");
        print('<div class="panel-body">');
 	   print('<div class="panel panel-info">');
        print("<div class=\"panel-heading\">$st_type_acte &agrave; $st_commune</div>");
@@ -282,7 +282,7 @@ if (isset($gi_idf_adherent ))
        $st_type_acte=$connexionBD->sql_select1("select nom from type_acte where idf=$i_idf_type_acte");
        $st_adherent=$connexionBD->sql_select1("select concat(prenom,' ',nom,'(',idf,')') from adherent where idf=$gi_idf_adherent");
 	   print('<div class="panel panel-primary">');
-       print("<div class=\"panel-heading\">Demandes de l'adh&eacute;rent $st_adherent</div>");
+       print("<div class=\"panel-heading\">Demandes de l'adh&eacute;rent ".cp1252_vers_utf8($st_adherent)."</div>");
        print('<div class="panel-body">');
 	   print('<div class="panel panel-info">');
        print(sprintf("<div class=\"panel-heading\">%s en %0.2d/%0.4d</div>",$st_type_acte,$i_mois,$i_annee));

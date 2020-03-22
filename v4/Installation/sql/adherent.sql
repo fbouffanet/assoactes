@@ -1,0 +1,40 @@
+--
+-- Table structure for table `adherent`
+--
+
+CREATE TABLE IF NOT EXISTS `adherent` (
+  `idf` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `nom` varchar(30) COLLATE latin1_general_ci DEFAULT NULL,
+  `prenom` varchar(20) COLLATE latin1_general_ci DEFAULT NULL,
+  `ident` varchar(12) COLLATE latin1_general_ci DEFAULT NULL,
+  `mdp` varchar(255) COLLATE latin1_general_ci DEFAULT NULL,
+  `email_forum` varchar(60) COLLATE latin1_general_ci DEFAULT NULL,
+  `email_perso` varchar(60) COLLATE latin1_general_ci DEFAULT NULL,
+  `tel` varchar(15) COLLATE latin1_general_ci DEFAULT NULL,
+  `adr1` varchar(40) COLLATE latin1_general_ci DEFAULT NULL,
+  `adr2` varchar(40) COLLATE latin1_general_ci DEFAULT NULL,
+  `cp` varchar(12) COLLATE latin1_general_ci DEFAULT NULL,
+  `ville` varchar(40) COLLATE latin1_general_ci DEFAULT NULL,
+  `pays` varchar(40) COLLATE latin1_general_ci DEFAULT NULL,
+  `confidentiel` char(1) COLLATE latin1_general_ci NOT NULL,
+  `date_premiere_adhesion` date NOT NULL,
+  `statut` char(1) COLLATE latin1_general_ci NOT NULL,
+  `derniere_connexion` datetime DEFAULT NULL COMMENT 'Date de dernière connexion',
+  `site` varchar(80) COLLATE latin1_general_ci DEFAULT NULL,
+  `infos_agc` text COLLATE latin1_general_ci NOT NULL COMMENT 'Informations réservées à l''AGC',
+  `date_paiement` date NOT NULL,
+  `prix` tinyint(4) unsigned NOT NULL COMMENT 'Prix de l''adhésion',
+  `annee_cotisation` year(4) NOT NULL COMMENT 'Annee de la cotisation',
+  `ip_connexion` varchar(15) COLLATE latin1_general_ci DEFAULT NULL,
+  `ip_restreinte` varchar(15) COLLATE latin1_general_ci DEFAULT NULL,
+  `aide` tinyint(4) NOT NULL DEFAULT '0',
+  `type_origine` tinyint(3) unsigned NOT NULL COMMENT 'Type de l''origine',
+  `description_origine` varchar(80) COLLATE latin1_general_ci NOT NULL,
+  `jeton_paiement` varchar(50) COLLATE latin1_general_ci NOT NULL,
+  `max_nai` smallint(11) unsigned NOT NULL DEFAULT '500',
+  `max_mar_div` smallint(10) unsigned NOT NULL DEFAULT '50' COMMENT 'Quota Mariage/Divers',
+  `max_dec` smallint(11) unsigned NOT NULL DEFAULT '500',
+  `clef_nouveau_mdp` smallint(5) unsigned NULL DEFAULT '0',
+  PRIMARY KEY (`idf`),
+  UNIQUE KEY `ident` (`ident`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ;

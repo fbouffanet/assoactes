@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 //http://127.0.0.1:8888/Gestion_Documents.php
@@ -21,7 +21,7 @@ require_once("$gst_chemin/Commun/commun.php");
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=cp1252" />');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />');
 print('<meta http-equiv="content-language" content="fr" /> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -64,7 +64,7 @@ $("#suppression_documents").validate({
             } 
   },
   messages: {
-     "supp[]": "Merci de choisir au moins un document &agrave; supprimer"
+     "supp[]": "Merci de choisir au moins un document Ã  supprimer"
   },
   errorElement: "em",
   errorPlacement: function ( error, element ) {
@@ -92,7 +92,7 @@ $("#suppression_documents").validate({
       }
     
     });
-        if (confirm('Etes-vous sûr de supprimer les documents '+documents+' ?')) {
+        if (confirm('Etes-vous sÃ»r de supprimer les documents '+documents+' ?')) {
             form.submit();
         }
     }
@@ -110,7 +110,7 @@ $("#edition_documents").validate({
 			required: "La fourchette est obligatoire"
 		},
     quantite: {
-      integer: "Le nombre de documents doit &ecirc;tre un entier"
+      integer: "Le nombre de documents doit Ãªtre un entier"
     }
   }
   ,
@@ -248,7 +248,7 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
 }
 
 /**
- * Affiche de la table d'édition
+ * Affiche de la table d'Ã©dition
  * @param integer $pi_id_commune identifiant de la commune
  * @param integer $pi_type acte identifiant des types d'acte
  * @param integer $pi_nature_acte identifiant la nature de l'acte

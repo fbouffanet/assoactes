@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once '../Commun/config.php';
@@ -17,7 +17,7 @@ require_once('../Commun/commun.php');
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print("<title>Publication d'un chargement</title>");
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
@@ -55,7 +55,7 @@ function menu_liste($pconnexionBD)
       {
          list($st_date,$st_commune,$i_type_nim,$i_nb_actes,$c_publication) = $a_chgt;
          
-         $st_publication = $c_publication=='N' ? "<input type=checkbox name=\"publi[]\" id=\"$st_date $st_commune $ga_types_nimegue[$i_type_nim]\" value=$i_idf_chgt class=\"form-check-label col-form-label control-label\">" : "<input type=checkbox name=\"publi[]\" id=\"$st_date $st_commune $ga_types_nimegue[$i_type_nim]\" value=$i_idf_chgt checked class=\"form-check-label col-form-label control-label\">\n";
+         $st_publication = $c_publication=='N' ? "<input type=checkbox name=\"publi[]\" id=\"$st_date ".cp1252_vers_utf8($st_commune)." ".$ga_types_nimegue[$i_type_nim]."\" value=$i_idf_chgt class=\"form-check-label col-form-label control-label\">" : "<input type=checkbox name=\"publi[]\" id=\"$st_date ".$st_commune." ".cp1252_vers_utf8($ga_types_nimegue[$i_type_nim])."\" value=$i_idf_chgt checked class=\"form-check-label col-form-label control-label\">\n";
          $a_tableau_affichage[]=array($st_date,$st_commune,$ga_types_nimegue[$i_type_nim],$i_nb_actes,$st_publication);
          $a_liste_ids[]=$i_idf_chgt;
       }
@@ -66,7 +66,7 @@ function menu_liste($pconnexionBD)
    print("<input type=hidden name=mode value=\"PUBLIER\">");
    $a_liste_ids=array_slice($a_liste_ids,($gi_num_page_cour-1)*NB_LIGNES_PAR_PAGE,NB_LIGNES_PAR_PAGE);
    print("<input type=hidden name=chargements value=\"".implode(',',$a_liste_ids)."\">");
-   print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Publier/Cacher les chargements sélectionn&eacute;s</button></div>'); 
+   print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-primary">Publier/Cacher les chargements sÃ©lectionn&eacute;s</button></div>'); 
    print("</form>");
    print("</div></div>");  
 }
@@ -97,9 +97,6 @@ switch ($gst_mode) {
       
 }  
 
-
 print('</div></body></html>');
-
-
 
 ?>

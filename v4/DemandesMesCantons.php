@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('Commun/config.php');
@@ -20,7 +20,7 @@ require_once('Administration/chargement/Profession.php');
 /**
  * Affiche la liste des cantons choisis
  * @param object $pconnexionBD
- * @param integer $pi_idf_adherent Identifiant de l'adhérent
+ * @param integer $pi_idf_adherent Identifiant de l'adhÃ©rent
  */ 
 function affiche_cantons_choisis($pconnexionBD,$pi_idf_adherent)
 {
@@ -52,10 +52,10 @@ function affiche_cantons_choisis($pconnexionBD,$pi_idf_adherent)
 }
 
 /**
- * Affiche la liste des dernièeres demandes
+ * Affiche la liste des derniÃ¨eres demandes
  * @param object $pconnexionBD
- * @param string $pi_idf_adherent identifiant de l'adéhrent
- * param string $pst_info infos à afficher
+ * @param string $pi_idf_adherent identifiant de l'adÃ©hrent
+ * param string $pst_info infos Ã  afficher
  */ 
 function affiche_dernieres_demandes($pconnexionBD,$pi_idf_adherent,$pst_info)
 {
@@ -137,14 +137,14 @@ order by da.date_demande desc";
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=cp1252" />');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />');
 print('<meta http-equiv="content-language" content="fr" /> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
-print('<title>Base '.SIGLE_ASSO.': Dernières Demandes</title>');
+print('<title>Base '.SIGLE_ASSO.': DerniÃ¨res Demandes</title>');
 print("</head>");
 
 print("<body>");
