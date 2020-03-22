@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 //http://127.0.0.1:8888/ValideInscription.php
@@ -20,7 +20,7 @@ require_once("$gst_chemin/Commun/commun.php");
 require_once("$gst_chemin/Commun/Adherent.php"); 
 
 /*---------------------------------------------------------------------------
-  Démarrage du programme
+  DÃ©marrage du programme
   ---------------------------------------------------------------------------*/
 
 $alea = isset( $_GET['alea'])? $_GET['alea'] : '0';
@@ -30,9 +30,9 @@ $idf_prov = isset( $_GET['idf_prov'])? $_GET['idf_prov'] : '0';
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 /*
-Lorsque l'adhérent clique sur le lien, le script ValideInscription.php est exécuté
-On va vérifier que le clef de la table correspond à la clef fournie
-par l'adhérent (clef + numéro d'adhérent).
+Lorsque l'adhÃ©rent clique sur le lien, le script ValideInscription.php est exÃ©cutÃ©
+On va vÃ©rifier que le clef de la table correspond Ã  la clef fournie
+par l'adhÃ©rent (clef + numÃ©ro d'adhÃ©rent).
 Si c'est le cas, on poursuit l'inscription sinon, on affiche un message d'erreur.
 */
 $st_requete = "select idf, ins_nom, ins_prenom,ins_cp,ins_pays,ins_email_perso from inscription_prov where idf = '$idf_prov' and ins_alea = '$alea'";
@@ -46,13 +46,13 @@ if (empty($a_retour_prov))   // Pas d'enregistrement
   header("Location: $gst_url_inscription?erreur=$mess");
   exit;
 }	
-// On l'a trouvé, on va plus loin
+// On l'a trouvÃ©, on va plus loin
 else
 {
    list($gi_idf_ins,$gst_nom_ins,$gst_prenom_ins,$gst_cp_ins,$gst_pays_ins,$gst_email_ins)= $a_retour_prov;
    print('<!DOCTYPE html>');
    print("<head>");
-   print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+   print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
    print('<meta http-equiv="content-language" content="fr">');
    print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
    print("<link href='$gst_url_site/css/styles.css' type='text/css' rel='stylesheet'>");
@@ -67,7 +67,7 @@ else
    require_once("$gst_chemin/Commun/menu.php");
    
    $mess = "";
-   // Essaye de récupérer l'ancien numéro de l'adhérent si le numéro n'est pas saisie et son adresse email correspond à un adhérent connu
+   // Essaye de rÃ©cupÃ©rer l'ancien numÃ©ro de l'adhÃ©rent si le numÃ©ro n'est pas saisie et son adresse email correspond Ã  un adhÃ©rent connu
    if (empty($idf_agc))   
 	 {
         $st_requete = "select idf,mdp from adherent where email_perso='$gst_email_ins'";
@@ -80,17 +80,17 @@ else
         }    
    }
    
-   if (!empty($idf_agc))   // recherche de l'adhérent
+   if (!empty($idf_agc))   // recherche de l'adhÃ©rent
 	 {
       $st_requete = "select max(idf) from adherent";
       $i_max_idf = $connexionBD->sql_select1($st_requete);
       $st_requete = "select idf, nom, prenom, statut,annee_cotisation, cp,pays from adherent where idf = $idf_agc";
       $a_retour_adh = $connexionBD->sql_select_liste($st_requete);
-		  /*
-		  Si l'ancien numéro d'inscription est défini mais n'existe pas
-      dans la table des adhérents, on garde également le numéro.
+	  /*
+	  Si l'ancien numÃ©ro d'inscription est dÃ©fini mais n'existe pas
+      dans la table des adhÃ©rents, on garde Ã©galement le numÃ©ro.
       */
-      if (empty($a_retour_adh) && $idf_agc<$i_max_idf )   // numéro agc inexistant
+      if (empty($a_retour_adh) && $idf_agc<$i_max_idf )   // numÃ©ro agc inexistant
 	    {
 	      $mess = "Votre inscription sera valid&eacute;e avec le num&eacute;ro ".$idf_agc." que vous avez saisi (2)\n";
 	    }
@@ -99,31 +99,31 @@ else
 	       list($gi_idf,$gst_nom,$gst_prenom,$gst_status,$gi_annee_cotisation,$gst_cp,$gst_pays) =$a_retour_adh;
          $aujourdhui = getdate();
          /*
-         Si l'ancien numéro d'inscription est défini mais est déjà associé
-         à un adhérent qui n'est pas suspendu alors on le met à nul.
-         L'adhérent sera inscrit sous un nouveau numéro
-         Si la date d'inscription est après septembre, on considère qu'il s'agit d'une tentative de réadhésion
+         Si l'ancien numÃ©ro d'inscription est dÃ©fini mais est dÃ©jÃ  associÃ©
+         Ã  un adhÃ©rent qui n'est pas suspendu alors on le met Ã  nul.
+         L'adhÃ©rent sera inscrit sous un nouveau numÃ©ro
+         Si la date d'inscription est aprÃ¨s septembre, on considÃ¨re qu'il s'agit d'une tentative de rÃ©adhÃ©sion
          */
-         if ($gst_status != 'S' && $aujourdhui['mon']<=9)  // Statut de l'adhérent non suspendu --> on remet à 0 dans l'inscription provisoire
+         if ($gst_status != 'S' && $aujourdhui['mon']<=9)  // Statut de l'adhÃ©rent non suspendu --> on remet Ã  0 dans l'inscription provisoire
          {
 	         $st_requete = "update `inscription_prov` set ins_idf_agc = '0' where idf = $idf_prov";
            $connexionBD->execute_requete($st_requete);
 				   $mess = "Votre inscription sera valid&eacute;e avec un nouveau num&eacute;ro (3)\n";
          }
          /*
-         Si l'ancien numéro d'inscription est défini et correspond à un
-         adhérent suspendu et que les noms et prénoms coincident
-         avec le nom de l'adhérent, on garde le numéro sinon on le met à nul
+         Si l'ancien numÃ©ro d'inscription est dÃ©fini et correspond Ã  un
+         adhÃ©rent suspendu et que les noms et prÃ©noms coÃ¯ncident
+         avec le nom de l'adhÃ©rent, on garde le numÃ©ro sinon on le met Ã  nul
         */
-         else                        // Statut de l'adhérent suspendu  --> même nom et prénom alors on garde le numéro
+         else                        // Statut de l'adhÃ©rent suspendu  --> mÃªme nom et prÃ©nom alors on garde le numÃ©ro
          {
             setlocale(LC_CTYPE, 'fr_FR.UTF8');
-            $st_nom_ins = trim(str_replace('-',' ',strtoupper(iconv("cp1252", "ASCII//TRANSLIT",$gst_nom_ins))));
-            $st_nom = trim(str_replace('-',' ',strtoupper(iconv("cp1252", "ASCII//TRANSLIT",$gst_nom))));
-            $st_prenom_ins = trim(str_replace('-',' ',strtoupper(iconv("cp1252", "ASCII//TRANSLIT",$gst_prenom_ins))));
-            $st_prenom = trim(str_replace('-',' ',strtoupper(iconv("cp1252", "ASCII//TRANSLIT",$gst_prenom))));
+            $st_nom_ins = trim(str_replace('-',' ',strtoupper(iconv("UTF-8", "ASCII//TRANSLIT",$gst_nom_ins))));
+            $st_nom = trim(str_replace('-',' ',strtoupper(iconv("UTF-8", "ASCII//TRANSLIT",$gst_nom))));
+            $st_prenom_ins = trim(str_replace('-',' ',strtoupper(iconv("UTF-8", "ASCII//TRANSLIT",$gst_prenom_ins))));
+            $st_prenom = trim(str_replace('-',' ',strtoupper(iconv("UTF-8", "ASCII//TRANSLIT",$gst_prenom))));
             
-            if ($st_nom_ins == $st_nom &&   // nom et prénom identiques
+            if ($st_nom_ins == $st_nom &&   // nom et prÃ©nom identiques
 	            $st_prenom_ins == $st_prenom)
 	          {
 			        $mess = "Votre inscription sera valid&eacute;e avec le num&eacute;ro ".$idf_agc." que vous avez saisi ou que nous avons retrouv&eacute; (4)";
@@ -132,7 +132,7 @@ else
 			      }
 			      else
 			      {
-              // on remet à 0 dans l'inscription provisoire
+              // on remet Ã  0 dans l'inscription provisoire
 		          $st_requete = "update `inscription_prov` set ins_idf_agc = '0' where idf = $idf_prov";
               $connexionBD->execute_requete($st_requete);
 				      $mess = "Votre inscription sera valid&eacute;e avec un nouveau num&eacute;ro (5)\n";
