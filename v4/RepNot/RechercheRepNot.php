@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('../Commun/config.php');
@@ -14,16 +14,16 @@ require_once('commun_rep_not.php');
 
 /*
 * Affiche la grille de recherche
-* @param object $pconnexionBD connexion à la BD
+* @param object $pconnexionBD connexion Ã  la BD
 * @param integer $pi_idf_commune identifiant de la commune du notaire
 * @param integer $pi_rayon rayon de recherche
 * @param string $pst_type_acte type d'acte
-* @param integer $pi_annee_min année minimale de l'acte
-* @param integer $pi_annee_max année maximale de l'acte
+* @param integer $pi_annee_min annÃ©e minimale de l'acte
+* @param integer $pi_annee_max annÃ©e maximale de l'acte
 * @param string $pst_nom1 nom du premier intervenant
-* @param string $pst_prenom1 prénom du premier intervenant
+* @param string $pst_prenom1 prÃ©nom du premier intervenant
 * @param string $pst_nom2 nom du second intervenant
-* @param string $pst_prenom2 prénom du second intervenant
+* @param string $pst_prenom2 prÃ©nom du second intervenant
 * @param string $pst_paroisse paroisse objet de l'acte (acte capitulaire)
 * @param string $pst_commentaires commentaires de l'acte
 * @param string $pb_rech_phonetique recherche phonetique
@@ -142,8 +142,8 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
 }
 
   /**
-   * Renvoie la partie droite de l'egalite dans la clause de recherche par prénom (Gère le joker* ) 
-   * @param string $pst_prenom : prénom à chercher  
+   * Renvoie la partie droite de l'egalite dans la clause de recherche par prÃ©nom (Gre le joker* ) 
+   * @param string $pst_prenom : prÃ©nom Ã  chercher  
    */
    function clause_droite_prenom($pst_prenom,$pi_num_param)
    {
@@ -159,8 +159,8 @@ function affiche_grille_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pst_t
    }
 
 /**
-* Renvoie la partie droite de l'egalite dans la clause de recherche par patronyme or prénom (Gère le joker* ) 
-* @param string $pst_nom : patronyme ou prénom à chercher  
+* Renvoie la partie droite de l'Ã©galite dans la clause de recherche par patronyme or prÃ©nom (GÃ¨re le joker* ) 
+* @param string $pst_nom : patronyme ou prÃ©nom Ã  chercher  
 */
 function clause_droite_nom($pconnexionBD,$pst_nom,$pb_variantes,$pi_num_param)
 {
@@ -175,9 +175,10 @@ function clause_droite_nom($pconnexionBD,$pst_nom,$pb_variantes,$pi_num_param)
     else
     {
       $a_params_precedents=$pconnexionBD->params();
-      $pconnexionBD->initialise_params(array(":nom"=>$pst_nom));
-      $st_requete = "select rnv1.nom from rep_not_variantes rnv1, rep_not_variantes rnv2 where rnv2.nom = :nom  COLLATE latin1_general_ci and rnv1.idf_groupe=rnv2.idf_groupe";
+      $pconnexionBD->initialise_params(array(":nom"=>utf8_vers_cp1252($pst_nom)));
+      $st_requete = "select rnv1.nom from rep_not_variantes rnv1, rep_not_variantes rnv2 where rnv2.nom = :nom COLLATE latin1_german1_ci and rnv1.idf_groupe=rnv2.idf_groupe";
       $a_variantes=$pconnexionBD->sql_select($st_requete);
+	  
       $pconnexionBD->initialise_params($a_params_precedents);
       if (count($a_variantes)==0)
            $st_clause = "=:nom$pi_num_param";
@@ -199,8 +200,8 @@ function clause_droite_nom($pconnexionBD,$pst_nom,$pb_variantes,$pi_num_param)
 }
 
 /**
-* Renvoie la partie droite de l'egalite dans la clause de recherche par patronyme or prénom (Gère le joker* ) 
-* @param string $pst_nom : patronyme ou prénom à chercher  
+* Renvoie la partie droite de l'egalite dans la clause de recherche par patronyme or prÃ©nom (GÃ¨re le joker* ) 
+* @param string $pst_nom : patronyme ou prÃ©nom Ã  chercher  
 */
 function clause_commune($pconnexionBD,$pst_nom)
 {
@@ -214,22 +215,22 @@ function clause_commune($pconnexionBD,$pst_nom)
 }
 
 /*
-* Renvoie la requête de recherche en fonction des critères sélectionnés
-* @param object $pconnexionBD connexion à la BD
+* Renvoie la requÃªte de recherche en fonction des critÃ¨res sÃ©lectionnÃ©s
+* @param object $pconnexionBD connexion Ã  la BD
 * @param integer $pi_idf_commune identifiant de la commune du notaire
 * @param integer $pi_rayon rayon de recherche
-* @param integer $pi_idf_repertoire identifiant du répertoire
+* @param integer $pi_idf_repertoire identifiant du rÃ©pertoire
 * @param string $pst_type_acte type d'acte
-* @param integer $pi_annee_min année minimale de l'acte
-* @param integer $pi_annee_max année maximale de l'acte
+* @param integer $pi_annee_min annÃ©e minimale de l'acte
+* @param integer $pi_annee_max annÃ©e maximale de l'acte
 * @param string $pst_nom1 nom du premier intervenant
-* @param string $pst_prenom1 prénom du premier intervenant
+* @param string $pst_prenom1 prÃ©nom du premier intervenant
 * @param string $pst_nom2 nom du second intervenant
-* @param string $pst_prenom2 prénom du second intervenant
+* @param string $pst_prenom2 prÃ©nom du second intervenant
 * @param string $pst_paroisse paroisse objet de l'acte (acte capitulaire)
 * @param string $pst_commentaires Recherche libre dans le commentaire
-* @param boolean  $pb_rech_phonetique Recherche patronymique phonétique (0|1))
-* @return array(Requête SQL NB actes, Requête SQL résultats)
+* @param boolean  $pb_rech_phonetique Recherche patronymique phonÃ©tique (0|1))
+* @return array(RequÃªte SQL NB actes, RequÃªte SQL rÃ©sultats)
 */
 function requete_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_idf_repertoire,$pst_type_acte,$pi_annee_min,$pi_annee_max,$pst_nom1,$pst_prenom1,$pst_nom2,$pst_prenom2,$pst_paroisse,$pst_commentaires,$pb_rech_phonetique)
 {
@@ -248,7 +249,7 @@ function requete_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_idf_reper
 		$a_clauses[]= "rnd.idf_repertoire=$pi_idf_repertoire";
 	if (!empty($pst_type_acte))
   {
-    $pconnexionBD->ajoute_params(array(':type_acte'=>$pst_type_acte));
+    $pconnexionBD->ajoute_params(array(':type_acte'=>utf8_vers_cp1252($pst_type_acte)));
      if (preg_match('/\:/',$pst_type_acte))
            $a_clauses[] = "`type` like :type_acte collate latin1_german1_ci";
         else
@@ -266,18 +267,18 @@ function requete_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_idf_reper
     $pst_nom1 = str_replace('*','%',$pst_nom1);
 		$pst_prenom1 = str_replace('*','%',$pst_prenom1);
     $a_clauses[]='((nom1'.clause_droite_nom($pconnexionBD,$pst_nom1,$pb_rech_phonetique,1).' and prenom1'.clause_droite_prenom($pst_prenom1,1).') or (nom2 '.clause_droite_nom($pconnexionBD,$pst_nom1,$pb_rech_phonetique,1).' and prenom2'.clause_droite_prenom($pst_prenom1,1).'))';
-	   $pconnexionBD->ajoute_params(array(':nom1'=>$pst_nom1,':prenom1'=>$pst_prenom1));
+	   $pconnexionBD->ajoute_params(array(':nom1'=>utf8_vers_cp1252($pst_nom1),':prenom1'=>utf8_vers_cp1252($pst_prenom1)));
   }
   elseif (!empty($pst_nom1))
   {
     $pst_nom1 = str_replace('*','%',$pst_nom1);
 		$a_clauses[]='(nom1'.clause_droite_nom($pconnexionBD,$pst_nom1,$pb_rech_phonetique,1).' or nom2'.clause_droite_nom($pconnexionBD,$pst_nom1,$pb_rech_phonetique,1).')';
-    $pconnexionBD->ajoute_params(array(':nom1'=>$pst_nom1));
+    $pconnexionBD->ajoute_params(array(':nom1'=>utf8_vers_cp1252($pst_nom1)));
 	}
   elseif (!empty($pst_prenom1))
   {
 	  $pst_prenom1 = str_replace('*','%',$pst_prenom1);
-    $pconnexionBD->ajoute_params(array(':prenom1'=>$pst_prenom1,':prenom2'=>$pst_prenom1));
+    $pconnexionBD->ajoute_params(array(':prenom1'=>utf8_vers_cp1252($pst_prenom1),':prenom2'=>utf8_vers_cp1252($pst_prenom1)));
     $a_clauses[]='(prenom1'.clause_droite_prenom($pst_prenom1,1).' or prenom2'.clause_droite_prenom($pst_prenom1,2).')';
 	}
   if (!empty($pst_nom2) && !empty($pst_prenom2))
@@ -285,29 +286,29 @@ function requete_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_idf_reper
     $pst_nom2 = str_replace('*','%',$pst_nom2);
 		$pst_prenom2 = str_replace('*','%',$pst_prenom2);
     $a_clauses[]='((nom1'.clause_droite_nom($pconnexionBD,$pst_nom2,$pb_rech_phonetique,2).' and prenom1'.clause_droite_prenom($pst_prenom2,2).') or (nom2'.clause_droite_nom($pconnexionBD,$pst_nom2,$pb_rech_phonetique,2).' and prenom2'.clause_droite_prenom($pst_prenom2,2).'))';
-	  $pconnexionBD->ajoute_params(array(':nom2'=>$pst_nom2,':prenom2'=>$pst_prenom2));
+	  $pconnexionBD->ajoute_params(array(':nom2'=>utf8_vers_cp1252($pst_nom2),':prenom2'=>utf8_vers_cp1252($pst_prenom2)));
   }
   elseif (!empty($pst_nom2))
   {
     $pst_nom2 = str_replace('*','%',$pst_nom2);
 		$a_clauses[]='(nom1'.clause_droite_nom($pconnexionBD,$pst_nom2,$pb_rech_phonetique,2).' or nom2'.clause_droite_nom($pconnexionBD,$pst_nom2,$pb_rech_phonetique,2).')';
-	  $pconnexionBD->ajoute_params(array(':nom2'=>$pst_nom2));
+	  $pconnexionBD->ajoute_params(array(':nom2'=>utf8_vers_cp1252($pst_nom2)));
   }
   elseif (!empty($pst_prenom2))
   {
     $pst_prenom2 = str_replace('*','%',$pst_prenom2);
-    $pconnexionBD->ajoute_params(array(':prenom1'=>$pst_prenom2,':prenom2'=>$pst_prenom2));
+    $pconnexionBD->ajoute_params(array(':prenom1'=>utf8_vers_cp1252($pst_prenom2),':prenom2'=>utf8_vers_cp1252($pst_prenom2)));
 		$a_clauses[]='(prenom1'.clause_droite_prenom($pst_prenom2,1).' or prenom2'.clause_droite_prenom($pst_prenom2,2).')';	
   }
   if (!empty($pst_paroisse))
   {
 		$a_clauses[]='paroisse'.clause_commune($pconnexionBD,$pst_paroisse);
-    $pconnexionBD->ajoute_params(array(':commune'=>$pst_paroisse));
+    $pconnexionBD->ajoute_params(array(':commune'=>utf8_vers_cp1252($pst_paroisse)));
   }
   if (!empty($pst_commentaires))
   {
 		$a_clauses[]="commentaires like ':commentaires'"; 
-    $pconnexionBD->ajoute_params(array(':commentaires'=>"%$pst_commentaires%")); 
+    $pconnexionBD->ajoute_params(array(':commentaires'=>utf8_vers_cp1252("%$pst_commentaires%"))); 
 	}
 	if (count($a_clauses)>0)
 	{
@@ -322,22 +323,22 @@ function requete_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_idf_reper
 }
 
 /*
-* Affiche les résultats de recherche
-* @param object $pconnexionBD connexion à la BD
+* Affiche les rÃ©sultats de recherche
+* @param object $pconnexionBD connexion Ã  la BD
 * @param integer $pi_idf_commune identifiant de la commune du notaire
 * @param integer $pi_rayon rayon de recherche
-* @param integer $pi_idf_repertoire identifiant du répertoire
+* @param integer $pi_idf_repertoire identifiant du rÃ©pertoire
 * @param string $pst_type_acte type d'acte
-* @param integer $pi_annee_min année minimale de l'acte
-* @param integer $pi_annee_max année maximale de l'acte
+* @param integer $pi_annee_min annÃ©e minimale de l'acte
+* @param integer $pi_annee_max annÃ©e maximale de l'acte
 * @param string $pst_nom1 nom du premier intervenant
-* @param string $pst_prenom1 prénom du premier intervenant
+* @param string $pst_prenom1 prÃ©nom du premier intervenant
 * @param string $pst_nom2 nom du second intervenant
-* @param string $pst_prenom2 prénom du second intervenant
+* @param string $pst_prenom2 prÃ©nom du second intervenant
 * @param string $pst_paroisse paroisse objet de l'acte (acte capitulaire)
 * @param string $pst_commentaires recherche libre dans commentaires 
-* @param boolean  $pb_rech_phonetique Recherche patronymique phonétique (0|1))
-* @param integer $pi_num_page numéro de la page
+* @param boolean  $pb_rech_phonetique Recherche patronymique phonÃ©tique (0|1))
+* @param integer $pi_num_page numÃ©ro de la page
 */
 function affiche_resultats_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_idf_repertoire,$pst_type_acte,$pi_annee_min,$pi_annee_max,$pst_nom1,$pst_prenom1,$pst_nom2,$pst_prenom2,$pst_paroisse,$pst_commentaires,$pb_rech_phonetique,$pi_num_page)
 {
@@ -402,7 +403,7 @@ function affiche_resultats_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi
           $st_date =  sprintf("%d mois inconnu %4d",$i_jour,$i_annee);
         else   
           $st_date =  sprintf("%d %s %4d",$i_jour,$ga_mois[$i_mois],$i_annee);
-			$a_ligne = array($st_date,$st_type,"$st_prenom1 $st_nom1","$st_prenom2 $st_nom2",$st_paroisse,$st_commentaires,sprintf("%s - %s (%s)",$st_notaire,$st_com_notaire,$st_cote),$i_page,$st_date_rep);
+			$a_ligne = array($st_date,cp1252_vers_utf8($st_type),cp1252_vers_utf8("$st_prenom1 $st_nom1"),cp1252_vers_utf8("$st_prenom2 $st_nom2"),cp1252_vers_utf8($st_paroisse),cp1252_vers_utf8($st_commentaires),sprintf("%s - %s (%s)",cp1252_vers_utf8($st_notaire),cp1252_vers_utf8($st_com_notaire),$st_cote),$i_page,$st_date_rep);
 			foreach ($a_ligne as $st_champ)
 			{
 				if ($st_champ!="")
@@ -436,7 +437,7 @@ $gst_mode = empty($_REQUEST['mode']) ? 'MENU' : $_REQUEST['mode'];
       
 print('<!DOCTYPE html>');
 print("<head>\n");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
@@ -636,7 +637,7 @@ switch ($gst_mode)
     if (empty($_REQUEST['ancienne_page']))
       $b_rech_phonetique = isset($_POST['rech_phonetique'])? true : $b_session_rech_phonetique;
     else
-      $b_rech_phonetique = isset($_POST['rech_phonetique'])? true : false;      
+      $b_rech_phonetique = isset($_POST['rech_phonetique'])? true : false; 
 		$_SESSION['idf_commune_notaire']    = $i_idf_commune_notaire;
 		$_SESSION['idf_repertoire']    		= $i_idf_repertoire;
 		$_SESSION['rayon_rep_not']                  = $i_rayon;

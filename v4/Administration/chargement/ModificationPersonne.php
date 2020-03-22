@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -53,7 +53,7 @@ class ModificationPersonne extends Personne
          } 
     
     /**
-     * Charge la personne à partir de la BD
+     * Charge la personne Ã  partir de la BD
      * 
      * @param integer $pi_idf_personne identifiant de la personne
      */
@@ -78,9 +78,9 @@ class ModificationPersonne extends Personne
          } 
     
     /**
-     * Cree une nouvelle personne dans la base de données
+     * Cree une nouvelle personne dans la base de donnÃ©es
      * 
-     * @return integer identifiant de la personne crée ou null si vide
+     * @return integer identifiant de la personne crÃ©e ou null si vide
      */
     public function cree()
     
@@ -108,9 +108,9 @@ class ModificationPersonne extends Personne
          } 
     
     /**
-     * Modifie la personne dans la base de données
+     * Modifie la personne dans la base de donnÃ©es
      * 
-     * @return integer identifiant de la personne crée ou null si vide
+     * @return integer identifiant de la personne crÃ©e ou null si vide
      */
     public function modifie()
     
@@ -164,7 +164,7 @@ class ModificationPersonne extends Personne
      * Initialise la personne depuis une formulaire post
      * 
      * @param integer $pi_idf_acte identifiant de l'acte
-     * @param integer $pi_pi_idf_type_presence type de présence
+     * @param integer $pi_pi_idf_type_presence type de prÃ©sence
      */
     public function initialise_depuis_formulaire($pi_idf_acte, $pi_pi_idf_type_presence)
     
@@ -215,16 +215,22 @@ class ModificationPersonne extends Personne
              $this -> st_profession = isset($_POST["prof$i_num_parametre"])?substr(trim($_POST["prof$i_num_parametre"]), 0, 35):'';
              $this -> st_commentaire = isset($_POST["cmt$i_num_parametre"])?substr(trim($_POST["cmt$i_num_parametre"]), 0, 70):'';
              } 
-        $this -> st_patronyme = self :: patronyme_propre($this -> st_patronyme);
-         $this -> st_prenom = self :: prenom_propre($this -> st_prenom);
-         // met à jour le champ est_decede en même temps que le commentaire
+        $this -> st_patronyme =self::utf8_vers_cp1252($this -> st_patronyme);
+		$this -> st_patronyme = self :: patronyme_propre( $this -> st_patronyme );
+		$this -> st_prenom =self::utf8_vers_cp1252($this -> st_prenom);
+        $this -> st_surnom = self :: prenom_propre($this -> st_surnom);
+		$this -> st_origine = self :: utf8_vers_cp1252($this -> st_origine);
+		$this -> st_residence = self :: utf8_vers_cp1252($this -> st_residence);
+		$this -> st_profession = self :: utf8_vers_cp1252($this -> st_profession);
+         // met Ã  jour le champ est_decede en mÃªme temps que le commentaire
+		 $this -> st_commentaire =self::utf8_vers_cp1252($this -> st_commentaire);
         $this -> st_commentaire = self :: commentaire_propre($this -> st_commentaire);
          if (empty($this -> st_patronyme) && (!empty($this -> st_prenom) || !empty($this -> st_commentaire)))
              $this -> st_patronyme = LIB_MANQUANT;
          } 
     
     /**
-     * Renvoie un formulaire HTML d'édition d'une personne
+     * Renvoie un formulaire HTML d'Ã©dition d'une personne
      * 
      * @param integer $pi_idf_type_acte identifiant du type d'acte
      * @param string $pst_commune commune de l'acte
@@ -243,37 +249,37 @@ class ModificationPersonne extends Personne
              {
             case IDF_NAISSANCE:
                  $st_chaine .= "<tr>";
-                 $st_chaine .= sprintf("<th>Patronyme</th><td class=\"lib_erreur\"><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control text-uppercase form-control-xs\"></td>", $this -> st_patronyme);
-                 $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text id=\"prn$i_num_parametre\" name=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 class=\"form-control text-capitalize form-control-xs\"></td>", $this -> st_prenom);
+                 $st_chaine .= sprintf("<th>Patronyme</th><td class=\"lib_erreur\"><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control text-uppercase form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_patronyme));
+                 $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text id=\"prn$i_num_parametre\" name=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 class=\"form-control text-capitalize form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_prenom));
                  $st_chaine .= "<th>Sexe</th><td><select name=sexe$i_num_parametre class=\"form-control\">";
                  $st_chaine .= chaine_select_options($this -> c_sexe, $ga_sexe);
                  $st_chaine .= "</select></td>";
-                 $st_chaine .= sprintf("<th>Commentaires</th><td><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control form-control-xs\"></td>", $this -> st_commentaire);
+                 $st_chaine .= sprintf("<th>Commentaires</th><td><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_commentaire));
                  $st_chaine .= "</tr>\n";
                  $this -> a_filtres_parametres["patro$i_num_parametre"] = array(array("required", "true", "Le patronyme est obligatoire"));
                  $this -> a_parametres_completion_auto["patro$i_num_parametre"] = array('patronyme.php', 3);
                  break;
              default:
                 /**
-                 * la structure de personne est la même pour ces 3 types d'acte
+                 * la structure de personne est la mÃªme pour ces 3 types d'acte
                  */
                  $st_chaine .= "<tr>";
-                 $st_chaine .= sprintf("<th>Patronyme</th><td class=\"lib_erreur\"><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control text-uppercase form-control-xs \"></td>", $this -> st_patronyme);
+                 $st_chaine .= sprintf("<th>Patronyme</th><td class=\"lib_erreur\"><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control text-uppercase form-control-xs \"></td>", self::cp1252_vers_utf8($this -> st_patronyme));
                 
-                 $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\"  value=\"%s\" maxlength=35 class=\"form-control text-capitalize form-control-xs\"></td>", $this -> st_prenom);
+                 $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\"  value=\"%s\" maxlength=35 class=\"form-control text-capitalize form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_prenom));
                 
-                 $st_chaine .= sprintf("<th>Profession</th><td><input type=text name=\"prof$i_num_parametre\" id=\"prof$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control form-control-xs\"></td>", $this -> st_profession);
+                 $st_chaine .= sprintf("<th>Profession</th><td><input type=text name=\"prof$i_num_parametre\" id=\"prof$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_profession));
                  $st_chaine_deces = ($pi_idf_type_acte == IDF_DECES) ? "<button type=\"button\" class=\"maj_deces btn btn-primary\" data-cible=\"#cmt$i_num_parametre\">&dagger;</button>" : '';
-                 $st_chaine .= sprintf("<th>Commentaires</th><td><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control form-control-xs\">%s</td>", $this -> st_commentaire, $st_chaine_deces);
+                 $st_chaine .= sprintf("<th>Commentaires</th><td><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control form-control-xs\">%s</td>", self::cp1252_vers_utf8($this -> st_commentaire), $st_chaine_deces);
                  $st_chaine .= "</tr><tr>";
-                 $st_chaine .= sprintf("<th><a class=\"recopie_commune btn btn-info btn-xs\" data-source=\"$pst_commune\" data-cible=\"#orig$i_num_parametre\" ><span class=\"glyphicon glyphicon-copy\"></span> Lieu<br>d'origine</a></th><td><input type=text name=\"orig$i_num_parametre\"  id=\"orig$i_num_parametre\"  value=\"%s\" maxlength=50 class=\"form-control\">", $this -> st_origine);
+                 $st_chaine .= sprintf("<th><a class=\"recopie_commune btn btn-info btn-xs\" data-source=\"$pst_commune\" data-cible=\"#orig$i_num_parametre\" ><span class=\"glyphicon glyphicon-copy\"></span> Lieu<br>d'origine</a></th><td><input type=text name=\"orig$i_num_parametre\"  id=\"orig$i_num_parametre\"  value=\"%s\" maxlength=50 class=\"form-control\">", self::cp1252_vers_utf8($this -> st_origine));
                 
                  $st_chaine .= "</td>";
                  $st_chaine .= $pi_idf_type_acte == IDF_MARIAGE ? "<th>Sexe</th><td><select name=sexe$i_num_parametre disabled>" : "<th>Sexe</th><td><select name=sexe$i_num_parametre class=\"form-control form-control-xs\">";
                  $st_chaine .= chaine_select_options($this -> c_sexe, $ga_sexe);
                  $st_chaine .= "</select></td>";
                  $st_chaine .= sprintf("<th>Age</th><td class=\"lib_erreur\"><input type=text name=\"age$i_num_parametre\" id=\"age$i_num_parametre\" value=\"%s\" maxlength=15 class=\"form-control form-control-xs\"></td>", $this -> st_age);
-                 $st_chaine .= "<th>Date °</th><td class=\"lib_erreur\">";
+                 $st_chaine .= "<th>Date Â°</th><td class=\"lib_erreur\">";
                  $i_jour_rep = null;
                  $i_mois_rep = null;
                  $i_annee_rep = null;
@@ -310,14 +316,14 @@ class ModificationPersonne extends Personne
                  $st_chaine .= "</div></td></tr>\n";
                  $this -> a_filtres_parametres["patro$i_num_parametre"] = array(array("required", "true", "Le patronyme est obligatoire"));
                  if ($pi_idf_type_acte != IDF_DECES)
-                     $this -> a_filtres_parametres["age$i_num_parametre"] = array(array("number", "true", "L'âge doit être un entier"));
+                     $this -> a_filtres_parametres["age$i_num_parametre"] = array(array("number", "true", "L'Ã¢ge doit Ãªtre un entier"));
                  $this -> a_filtres_parametres["dnais$i_num_parametre"] = array(array("dateITA", "true", "La date de naissance est de la forme JJ/MM/AAAA"));
                  $this -> a_parametres_completion_auto["patro$i_num_parametre"] = array('patronyme.php', 3);
                  $this -> a_parametres_completion_auto["prof$i_num_parametre"] = array('profession.php', 4);
                  $this -> a_parametres_completion_auto["orig$i_num_parametre"] = array('commune_acte_saisie.php', 3);
                  } 
             break;
-         case IDF_PRESENCE_PERE:
+			case IDF_PRESENCE_PERE:
              case IDF_PRESENCE_MERE:
              case IDF_PRESENCE_EXCJT:
                  switch ($this -> i_idf_type_presence)
@@ -333,10 +339,10 @@ class ModificationPersonne extends Personne
                      break;
                      } 
                 $st_chaine .= "<tr>";
-                 $st_chaine .= sprintf("<th><a class=\"recopie_patro btn btn-info btn-xs\" data-source=\"$pi_idf_patro_intv\" data-cible=\"#patro$i_num_parametre\"><span class=\"glyphicon glyphicon-copy\"></span> Patronyme<br>%s</a></th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\"  maxlength=30 class=\"form-control text-uppercase form-control-xs\"></td>", $st_lib, $this -> st_patronyme);
-                 $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 class=\"form-control text-capitalize form-control-xs\"></td>", $this -> st_prenom);
-                 $st_chaine .= sprintf("<th>Profession</th><td><input type=text name=\"prof$i_num_parametre\" id=\"prof$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control form-control-xs\"></td>", $this -> st_profession);
-                 $st_chaine .= sprintf("<th>Commentaires</th><td><div class=\"input-group\"><label for=\"cmt$i_num_parametre\" class=\"sr-only\">Commentaires</label><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control form-control-xs\"><span class=\"input-group-btn\"><button type=button class=\"maj_deces btn btn-primary\" data-cible=\"#cmt$i_num_parametre\">&dagger;</button></span></div></td>", $this -> st_commentaire);
+                 $st_chaine .= sprintf("<th><a class=\"recopie_patro btn btn-info btn-xs\" data-source=\"$pi_idf_patro_intv\" data-cible=\"#patro$i_num_parametre\"><span class=\"glyphicon glyphicon-copy\"></span> Patronyme<br>%s</a></th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\"  maxlength=30 class=\"form-control text-uppercase form-control-xs\"></td>", $st_lib, self::cp1252_vers_utf8($this -> st_patronyme));
+                 $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 class=\"form-control text-capitalize form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_prenom));
+                 $st_chaine .= sprintf("<th>Profession</th><td><input type=text name=\"prof$i_num_parametre\" id=\"prof$i_num_parametre\" value=\"%s\" maxlength=30 class=\"form-control form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_profession));
+                 $st_chaine .= sprintf("<th>Commentaires</th><td><div class=\"input-group\"><label for=\"cmt$i_num_parametre\" class=\"sr-only\">Commentaires</label><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control form-control-xs\"><span class=\"input-group-btn\"><button type=button class=\"maj_deces btn btn-primary\" data-cible=\"#cmt$i_num_parametre\">&dagger;</button></span></div></td>", self::cp1252_vers_utf8($this -> st_commentaire));
                  $st_chaine .= "</tr>\n";
                  $this -> a_parametres_completion_auto["patro$i_num_parametre"] = array('patronyme.php', 3);
                  $this -> a_parametres_completion_auto["prof$i_num_parametre"] = array('profession.php', 4);
@@ -345,7 +351,7 @@ class ModificationPersonne extends Personne
                  case IDF_PRESENCE_MARRAINE:
                  case IDF_PRESENCE_TEMOIN:
                     /**
-                     * la structure de personne est la même pour ces 3 types de présence
+                     * la structure de personne est la mÃªme pour ces 3 types de prÃ©sence
                      */
                      switch ($this -> i_idf_type_presence)
                      {
@@ -362,9 +368,9 @@ class ModificationPersonne extends Personne
                          $st_lib = '';
                          } 
                     $st_chaine .= "<tr>";
-                     $st_chaine .= sprintf("<th>Patronyme %s</th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\"  maxlength=30 class=\"form-control text-uppercase form-control-xs \"></td>", $st_lib, $this -> st_patronyme);
-                     $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 class=\"form-control text-capitalize form-control-xs\"></td>", $this -> st_prenom);
-                     $st_chaine .= sprintf("<th>Commentaires</th><td colspan=5><div class=\"input-group\"><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" size=70 maxlength=70 class=\"form-control form-control-xs\"><span class=\"input-group-btn\"><button type=button class=\"maj_deces btn btn-primary\" data-cible=\"#cmt$i_num_parametre\">&dagger;</button></span></div></td>", $this -> st_commentaire);
+                     $st_chaine .= sprintf("<th>Patronyme %s</th><td><input type=text name=\"patro$i_num_parametre\" id=\"patro$i_num_parametre\" value=\"%s\"  maxlength=30 class=\"form-control text-uppercase form-control-xs \"></td>", $st_lib, self::cp1252_vers_utf8($this -> st_patronyme));
+                     $st_chaine .= sprintf("<th>Pr&eacute;nom</th><td><input type=text name=\"prn$i_num_parametre\" id=\"prn$i_num_parametre\" value=\"%s\" maxlength=35 class=\"form-control text-capitalize form-control-xs\"></td>", self::cp1252_vers_utf8($this -> st_prenom));
+                     $st_chaine .= sprintf("<th>Commentaires</th><td colspan=5><div class=\"input-group\"><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" size=70 maxlength=70 class=\"form-control form-control-xs\"><span class=\"input-group-btn\"><button type=button class=\"maj_deces btn btn-primary\" data-cible=\"#cmt$i_num_parametre\">&dagger;</button></span></div></td>", self::cp1252_vers_utf8($this -> st_commentaire));
                      $st_chaine .= "</tr>\n";
                      $this -> a_parametres_completion_auto["patro$i_num_parametre"] = array('patronyme.php', 3);
                      } 
@@ -372,7 +378,7 @@ class ModificationPersonne extends Personne
                  } 
             
             /**
-             * Renvoie la personne au format Nimègue V3
+             * Renvoie la personne au format NimÃ¨gue V3
              * 
              * @param integer $pi_idf_type_acte identifiant du type d'acte
              * @return array tableau des colonnes
@@ -424,8 +430,8 @@ class ModificationPersonne extends Personne
                     } 
                 
                 /**
-                 * Renvoie si la personne contient des informations supplémentaires
-                 * Une demande n'est possible que si un acte contient au moins un renseignement supplémentaire en plus de la date, la commune et le nom des intervenants
+                 * Renvoie si la personne contient des informations supplÃ©mentaires
+                 * Une demande n'est possible que si un acte contient au moins un renseignement supplÃ©mentaire en plus de la date, la commune et le nom des intervenants
                  * 
                  * @return boolean 
                  */

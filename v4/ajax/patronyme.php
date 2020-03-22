@@ -24,7 +24,7 @@ if (isset ($_GET['term']))
   $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
   $st_rech="$st_rech%";
   $connexionBD->initialise_params(array(':recherche'=>$st_rech));
-  $st_requete = "select distinct patronyme from variantes_patro where `patronyme` COLLATE latin1_german1_ci like :recherche order by patronyme";
+  $st_requete = "select distinct libelle from patronyme where `libelle` COLLATE latin1_german1_ci like :recherche order by libelle";
   $a_patros = $connexionBD->sql_select($st_requete);
   $a_resultats = array();
   foreach ($a_patros as $st_patro)

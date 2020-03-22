@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once 'Commun/config.php';
@@ -23,7 +23,7 @@ $adherent = new Adherent($connexionBD,$i_idf_adht_connecte);
 print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
@@ -108,7 +108,7 @@ $(document).ready(function() {
      messages: {
        MaPhoto: {
 			 required: "La photo est obligatoire",
-       extension: "L'image doit être au format JPEG"
+       extension: "L'image doit Ãªtre au format JPEG"
 		  }, 
   }
   });
@@ -119,14 +119,14 @@ print("<title>Base ".SIGLE_ASSO.": Vos informations personnelles</title>\n");
 print('</head>');
 
 /**
- * Affiche de la table d'édition
+ * Affiche de la table d'Ã©dition
  * @param object $pconnexionBD
  * @param object $padherent objet adherent 
- * @param integer $pi_idf_adh identifiant de l'adhérent
- * @global array $ga_droits tableau des droits possibles classés par identifiant
+ * @param integer $pi_idf_adh identifiant de l'adhÃ©rent
+ * @global array $ga_droits tableau des droits possibles classÃ©s par identifiant
  * @global array $ga_pays liste des pays
  * @global integer $gi_max_taille_upload taille maximale d'upload  
- * @global string $gst_rep_trombinoscope Répertoire du trombinoscope 
+ * @global string $gst_rep_trombinoscope RÃ©pertoire du trombinoscope 
  * @global string $gst_url_trombinoscope Url du trombinoscope 
  */ 
 function menu_edition_adherent($pconnexionBD,$padherent,$pi_idf_adh)
@@ -175,8 +175,8 @@ function menu_edition_adherent($pconnexionBD,$padherent,$pi_idf_adh)
 }
 
 /**
- * Charge la photo de l'adhérent sur le site
- * @param integer $pi_idf_adh identifiant de l'adhérent 
+ * Charge la photo de l'adhÃ©rent sur le site
+ * @param integer $pi_idf_adh identifiant de l'adhÃ©rent 
  */ 
 function maj_photo($pi_idf_adh) {
    global $gst_rep_trombinoscope;
@@ -220,7 +220,7 @@ switch ($gst_mode) {
      }
      catch (Exception $e)
      {
-        echo 'Exception reçue : ',  $e->getMessage(), "\n";
+        echo 'Exception reÃ§ue : ',  $e->getMessage(), "\n";
      }
      menu_edition_adherent($connexionBD,$adherent,$i_idf_adht_connecte);
   break;

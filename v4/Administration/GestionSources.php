@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ require_once('../Commun/commun.php');
 print('<!DOCTYPE html>');
 print("<head>");
 print("<title>Gestion des sources</title>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -87,7 +87,7 @@ $(document).ready(function() {
             } 
   },
   messages: {
-     "supp[]": "Merci de choisir au moins une source à supprimer"
+     "supp[]": "Merci de choisir au moins une source Ã  supprimer"
   },
   errorElement: "em",
   errorPlacement: function ( error, element ) {
@@ -114,7 +114,7 @@ $(document).ready(function() {
         sources=sources+' '+$this.attr("id");
       }   
     });
-    if (confirm('Etes-vous sûr de supprimer les sources '+sources+' ?')) {
+    if (confirm('Etes-vous sÃ»r de supprimer les sources '+sources+' ?')) {
             form.submit();
         }
     }
@@ -190,14 +190,14 @@ function menu_liste($pconnexionBD)
 }
 
 /**
- * Affiche de la table d'édition
+ * Affiche de la table d'Ã©dition
  * @param string $pst_nom_source Nom de la source
- * @param integer $pi_publication_gbk La source doit-elle Ûtre publiÚes sous GÚnÚabank (0|1) 
+ * @param integer $pi_publication_gbk La source doit-elle Ãªtre publiÃ©es sous GÃ©nÃ©abank (0|1) 
  * @param string $pst_script_demande Script qui fait la demande de l'acte
  * @param boolean $pi_utilise_details Doit-on utiliser le champ "details_supplementaires" 
- * @param string $pst_icone_info icone à afficher si l'acte a des informations 
- * @param string $pst_icone_ninfo icone à afficher si l'acte n'a pas d'information supplémentaires
- * @param string $pst_icone_index icone à afficher si l'acte correspond à une indexation 
+ * @param string $pst_icone_info icone Ã  afficher si l'acte a des informations 
+ * @param string $pst_icone_ninfo icone Ã  afficher si l'acte n'a pas d'information supplÃ©mentaires
+ * @param string $pst_icone_index icone Ã  afficher si l'acte correspond Ã  une indexation 
  */ 
 function menu_edition($pst_nom_source,$pi_publication_gbk,$pst_script_demande,$pi_utilise_details,$pst_icone_info,$pst_icone_ninfo,$pst_icone_index)
 {
@@ -206,7 +206,7 @@ function menu_edition($pst_nom_source,$pi_publication_gbk,$pst_script_demande,$p
    print('<div class="form-group row">');   
    print('<label for="nom_source" class="col-form-label col-md-2">Nom</label>');
    print('<div class="col-md-10">');
-   print("<input type=\"text\" maxlength=50 size=30 name=nom_source id=nom_source value=\"$pst_nom_source\" class=\"form-control\">");
+   print("<input type=\"text\" maxlength=50 size=30 name=nom_source id=nom_source value=\"".cp1252_vers_utf8($pst_nom_source)."\" class=\"form-control\">");
    print('</div>');
    print('</div>');
    
@@ -257,7 +257,7 @@ function menu_edition($pst_nom_source,$pi_publication_gbk,$pst_script_demande,$p
 
 /** Affiche le menu de modification d'une source
  * @param object $pconnexionBD Identifiant de la connexion de base
- * @param integer $pi_idf_source Identifiant de la source Ó modifier 
+ * @param integer $pi_idf_source Identifiant de la source Ã  modifier 
  * @param array $pa_cantons liste des cantons 
  */ 
 function menu_modifier($pconnexionBD,$pi_idf_source)
@@ -299,7 +299,7 @@ switch ($gst_mode) {
   menu_modifier($connexionBD,$gi_idf_source);
   break;
   case 'MODIFIER' :
-     $st_nom_source = trim($_POST['nom_source']);
+     $st_nom_source = utf8_vers_cp1252(trim($_POST['nom_source']));
      $i_publication_geneabank = isset($_POST['publication_geneabank']) ? $_POST['publication_geneabank']: 0;
      $st_script_demande = trim($_POST['script_demande']);
      $i_utilise_details = isset($_POST['utilise_details']) ? $_POST['utilise_details']: 0;
@@ -313,7 +313,7 @@ switch ($gst_mode) {
   menu_ajouter();
   break;
   case 'AJOUTER':
-     $st_nom_source = trim($_POST['nom_source']);
+     $st_nom_source = utf8_vers_cp1252(trim($_POST['nom_source']));
      $i_publication_geneabank = isset($_POST['publication_geneabank']) ? $_POST['publication_geneabank']: 0;
      $st_script_demande = trim($_POST['script_demande']);
      $i_utilise_details = isset($_POST['utilise_details']) ? $_POST['utilise_details']: 0;
@@ -336,13 +336,13 @@ switch ($gst_mode) {
         {
           print('<div class="alert alert-danger">Les actes suivants doivent &ecirc;tre supprim&egrave;s auparavant:</div>');
           $st_nom_source = $connexionBD->sql_select1("select nom from source where idf=$i_idf_source");
-          print("<div class=\"align-center\">Source: $st_nom_source</div>");
+          print("<div class=\"align-center\">Source: ".cp1252_vers_utf8($st_nom_source)."</div>");
           print("<table class=\"table table-bordered table-striped\">");
           print("<tr><th>Commune</th><th>Type d'acte</th></tr>\n");
           foreach ($a_actes as $a_acte)
           {
              list($st_commune,$st_type) = $a_acte;
-             print("<tr><td>$st_commune</td><td>$st_type</td></tr>\n");
+             print("<tr><td>".cp1252_vers_utf8($st_commune)."</td><td>".cp1252_vers_utf8($st_type)."</td></tr>\n");
           }
           print("</table>");          
         } 

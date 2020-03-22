@@ -101,7 +101,7 @@ exit();
 
 print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print("<title>Statistiques</title>");
 print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");

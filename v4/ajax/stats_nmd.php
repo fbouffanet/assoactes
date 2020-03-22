@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('../Commun/config.php');
@@ -27,20 +27,20 @@ if (!empty ($gi_idf_commune_acte) && !empty ($gc_idf_type_acte) && !empty ($gi_a
 	//print("Req=$st_requete<br>");
 	$ga_donnees = $connexionBD->liste_valeur_par_doubles_clefs($st_requete);
 	$a_annees = range($gi_annee_min,$gi_annee_max,1);
-	// empile les étiquettes
+	// empile les Ã©tiquettes
 	$a_resultats['labels'] = $a_annees;
 	$i=0;
 	$a_resultats['donnees'] = array();	
 	foreach ($ga_donnees as $st_commune => $a_stat_com)
 	{
-		// empile les catégories de graphes
+		// empile les catÃ©gories de graphes
 		$a_serie_courante = array();
     $st_commune = mb_convert_encoding($st_commune, "UTF-8","Windows-1252");
 		$a_serie_courante['label'] = "$st_commune";
 		$a_serie_courante['borderColor'] = $ga_couleurs[$i];
     $a_serie_courante['backgroundColor'] = $ga_couleurs[$i];
     $a_serie_courante['fill'] = false;
-		//complète les séries
+		//complÃ¨te les sÃ©ries
 		$a_donnees =array();
 		foreach ($a_annees as $i_annee)
 		{			

@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -21,35 +21,29 @@ define('IDF_NAISSANCE',3);
 define('IDF_DECES',4);
 define('IDF_UNION',6); 
 define('IDF_CM',2);
-define('IDF_RECENS',147);  
+define('IDF_RECENS',7);  
 
 // libelles
 define('LIB_MARIAGE','Mariage');
-define('LIB_DECES','Sépulture/Décès');
-define('LIB_NAISSANCE','Baptême/Naissance');
+define('LIB_DECES','SÃ©pulture/DÃ©cÃ¨s');
+define('LIB_NAISSANCE','BaptÃªme/Naissance');
 define('LIB_RECENSEMENT','Recensement');
 
 define('SEP_CSV',';');
 define('FDL_CSV','\n');
 
 $ga_sexe = array('M'=>'M','F'=>'F','?'=>'?');
-$ga_types_nimegue = array(IDF_NAISSANCE => 'Baptêmes/Naissances',IDF_MARIAGE =>'Mariages', IDF_DECES => 'Sépultures/Décès', IDF_DIVERS=>'Divers(CM,...)',IDF_RECENS=>LIB_RECENSEMENT);
+$ga_types_nimegue = array(IDF_NAISSANCE => LIB_NAISSANCE,IDF_MARIAGE =>LIB_MARIAGE, IDF_DECES => LIB_DECES, IDF_DIVERS=>'Divers(CM,...)',IDF_RECENS=>LIB_RECENSEMENT);
 
 define('LIB_MANQUANT','!');
 
 define('DROIT_CHARGEMENT','CHGMT_EXPT');
-define('DROIT_CREATION_ADHERENT','CREATADH');
-define('DROIT_MODIFICATION_ADHERENT','MODADH');
 define('DROIT_GESTION_ADHERENT','GESTADHT');
 define('DROIT_MODIFICATION_DROITS','GESTDROITS');
 define('DROIT_UTILITAIRES','UTILITAIRE');
 define('DROIT_VARIANTES','VARIANTES');
-define('DROIT_PUBLICATION','PUBLICATIO');
 define('DROIT_RELEVES','RELEVES');
-define('DROIT_NOTAIRES','NOTAIRES');
-define('DROIT_VALIDATION_TD','TD');
 define('DROIT_STATS','STATS');
-define('DROIT_VALIDATION_PERMALIEN','PERMALIEN');
 define('DROIT_GENEABANK','GENEABANK');
 
 
@@ -58,30 +52,12 @@ $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
                    DROIT_MODIFICATION_DROITS => 'Modification Droits Adherent',
                    DROIT_UTILITAIRES => 'Acces aux utilitaires',
                    DROIT_VARIANTES => 'Gestion des variantes',
-                   DROIT_PUBLICATION => 'Gestion des publications',
-                   DROIT_RELEVES => 'Suivi des relevés',
-                   DROIT_NOTAIRES => 'Edition des liasses notariales',
-                   DROIT_VALIDATION_TD => 'Validation des modifications de TD',
-                   DROIT_STATS => 'Acces aux statistiques',
-                   DROIT_VALIDATION_PERMALIEN => 'Validation des modifications de permalien',
+                   DROIT_RELEVES => 'Suivi des relevÃ©s',
+                   DROIT_STATS => 'AccÃ¨s aux statistiques',
 				   DROIT_GENEABANK => 'Gestion des points GeneaBank'
                   );
 define('NB_LIGNES_PAR_PAGE',25);
 define('DELTA_NAVIGATION',5);
-
-
-define('LIB_ASSO','Association Genealogique de la Charente');
-define('LIB_ASSO_AVEC_','Association Genealogique de la Charente');
-define('SIGLE_ASSO','AGC');
-define('EMAIL_INSCRIPTION_FORUM','geneagc16-subscribe@yahoogroupes.fr');
-define('EMAIL_FORUM','geneagc16@yahoogroupes.fr');
-define('EMAIL_DIRASSO','agc-dir@genea16.net');
-define('EMAIL_INFOASSO','agc-info@genea16.net');
-define('EMAIL_GBKADMIN','agc-geneabank@genea16.net');
-define('EMAIL_PRESASSO','agc-dir@genea16.net');
-define('IDF_ASSO_GBK','gbkagcharente');
-define('PREFIXE_ADH_GBK','AGC');
-define('NB_POINTS_GBK',100);
 
 define('TOUS_ADHERENTS','T');
 define('ADHESION_BULLETIN','B');
@@ -225,7 +201,7 @@ $ga_pays = array(
 "Macao",
 "Macedoine",
 "Madagascar",
-"Madère",
+"MadÃ¨re",
 "Malaisie",
 "Malawi",
 "Maldives",
@@ -346,8 +322,8 @@ $ga_pays = array(
 "Zimbabwe",
 );
 
-$ga_scripts_demande=array('InfosActe.php','InfosAGL.php','InfosChabatz.php','InfosCGSS.php','InfosRepNot.php','InfosTD.php');
-$ga_icones_source=array('infos.png','ninfos.png','td.png','tdv.png','agl.png','nagl.png','rnot.png','RGD.png','chabatz.png','nchabatz.png','tdi.png','idx.png','nidx.png','cgss.png','ncgss.png');
+$ga_scripts_demande=array('InfosActe.php');
+$ga_icones_source=array('infos.png','ninfos.png','td.png','tdv.png','tdi.png','idx.png','nidx.png');
 $ga_booleen_oui_non=array(true=>'oui',false=>'non');
 
 define('AIDE_RELEVES',1);
@@ -383,19 +359,19 @@ $ga_mois = array(1=>'Janvier',
                  12=> 'Decembre');
 
 $ga_mois_revolutionnaires       = array(                          
-                                1=> 'Vendémiaire',                 
+                                1=> 'VendÃ©miaire',                 
                                 2=> 'Brumaire',                    
                                 3=> 'Frimaire',                    
-                                4=> 'Nivôse',                      
-                                5=> 'Pluviôse',                    
-                                6=> 'Ventôse',                     
+                                4=> 'NivÃ´se',                      
+                                5=> 'PluviÃ´se',                    
+                                6=> 'VentÃ´se',                     
                                 7=> 'Germinal',                    
-                                8=> 'Floréal',                     
+                                8=> 'Florial',                     
                                 9=> 'Prairial',                    
                                 10=> 'Messidor',                   
                                 11=> 'Thermidor',                  
                                 12=> 'Fructidor',
-                                13=> 'Complémentaires'                   
+                                13=> 'ComplÃ©mentaires'                   
                                );
 
 $ga_mois_revolutionnaires_nimegue       = array(                          
@@ -434,6 +410,7 @@ define('IDF_SOURCE_TD',4);
 define('SEUIL_RETENTION_ADHTS',5);                   
 define('NB_PERSONNES_BLOC_CHGMT',1000);
 define('NB_ACTES_BLOC_CHGMT',2000);
-define('PAGE_RECHERCHE','Recherches.php');
-define('CLEF_API_GEOPORTAIL','cervpkrr0dboxq0t5hnw1jbm');
+define('PAGE_RECHERCHE','index.php');
+
+
 ?>

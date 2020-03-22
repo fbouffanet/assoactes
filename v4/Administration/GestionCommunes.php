@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -24,7 +24,7 @@ if ($gst_mode=='EXPORTER')
 print('<!DOCTYPE html>');
 print("<head>");
 print("<title>Gestion des communes</title>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -70,23 +70,23 @@ $("#edition_commune").validate({
 		},
     code_insee: {
       required: "Le code insee est obligatoire",
-      integer: "Le code insee doit être un entier"
+      integer: "Le code insee doit Ãªtre un entier"
     },
     num_paroisse: {
-      required: "Le numéro de paroisse est obligatoire",
-      integer: "Le numéro de paroisse doit être un entier"
+      required: "Le numÃ©ro de paroisse est obligatoire",
+      integer: "Le numÃ©ro de paroisse doit Ãªtre un entier"
     },
     longitude: {
-       number:  "La longitude doit être un nombre(Exemple: 0.098625643597231)"
+       number:  "La longitude doit Ãªtre un nombre(Exemple: 0.098625643597231)"
     },
     latitude: {
-       number:  "La latitude doit être un nombre(Exemple: 0.80823290553212)"
+       number:  "La latitude doit Ãªtre un nombre(Exemple: 0.80823290553212)"
     },
      date_min_controle: {
-       dateITA: "Le format doit être de la forme JJ/MM/AAAA"
+       dateITA: "Le format doit Ãªtre de la forme JJ/MM/AAAA"
     },
     date_max_controle: {
-       dateITA: "Le format doit être de la forme JJ/MM/AAAA"
+       dateITA: "Le format doit Ãªtre de la forme JJ/MM/AAAA"
     }
 	},
   errorElement: "em",
@@ -133,7 +133,7 @@ $("#suppression_communes").validate({
             } 
   },
   messages: {
-     "supp[]": "Merci de choisir au moins une commune à supprimer"
+     "supp[]": "Merci de choisir au moins une commune Ã  supprimer"
   },
   errorElement: "em",
   errorPlacement: function ( error, element ) {
@@ -161,11 +161,44 @@ $("#suppression_communes").validate({
       }
     
     });
-        if (confirm('Etes-vous sûr de supprimer les communes'+communes+' ?')) {
+        if (confirm('Etes-vous sÃ»r de supprimer les communes'+communes+' ?')) {
             form.submit();
         }
     }
 });
+
+$("#cantons").validate({
+  rules: {
+	  FichCantons: {
+        required: true,
+        extension: "csv|txt"
+      }
+  },
+  messages: {
+      FichCantons: {
+			required: "Un fichier doit Ãªtre choisi",
+			extension: "Le fichier doit Ãªtre du type csv ou txt"
+		}
+  },
+  errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	if ( element.prop( "type" ) === "checkbox" ) {
+		error.insertAfter( element.parent( "label" ) );
+	} else {
+		error.insertAfter( element );
+	}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+	},
+	unhighlight: function (element, errorClass, validClass) {
+		$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+	}
+});
+
 
 $("#modifier" ).click(function() {
     $('#mode').val("MODIFIER");
@@ -225,9 +258,9 @@ function menu_liste($pconnexionBD)
    foreach ($a_initiales_communes as $c_initiale)
    {
      if ($c_initiale==$gc_initiale)
-        print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
+        print("<li class=\"page-item active\"><span class=\"page-link\">".cp1252_vers_utf8($c_initiale)."<span class=\"sr-only\">(current)</span></span></li>");
      else
-        print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale=$c_initiale\">$c_initiale</a></li>");
+        print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale=$c_initiale\">".cp1252_vers_utf8($c_initiale)."</a></li>");
    }
    print("</ul></div></div>");
    
@@ -256,25 +289,35 @@ function menu_liste($pconnexionBD)
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
    print("<input type=hidden name=mode value=\"EXPORTER\">");
    print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-download-alt"></span> Exporter les communes</button>');    
-   print('</form></div></div>');  
+   print('</form>');
+   
+   print("<form  id=\"cantons\" enctype=\"multipart/form-data\" action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
+   print("<input type=hidden name=mode value=\"CHARGER_CANTONS\">");
+   print('<div class="form-group row"><div class="custom-file">'); 
+   print('<label for="FichCantons" class="col-form-label col-md-2 col-md-offset-3">Fichier des cantons (un par ligne):</label>');
+   print('<div class="col-md-4">');
+   print('<input name="FichCantons" id="FichCantons" type="file" class="custom-file-input">');
+   print('</div></div></div>');
+   print('<button type=submit class="btn btn-primary col-md-4 col-md-offset-4"><span class="glyphicon glyphicon-upload"></span>Charger les cantons</button>');    
+   print('</form></div></div>');
 
 }
 
 /**
- * Affiche de la table d'édition
+ * Affiche de la table d'Ã©dition
  * @param string $pst_nom_commune Nom de la commune
  * @param integer $pi_code_insee Code Insee
- * @param integer $pi_num_paroisse Numéro de la paroisse ou arrondissement 
+ * @param integer $pi_num_paroisse NumÃ©ro de la paroisse ou arrondissement 
  * @param string $pst_latitude Latitude (forme 0.804596785)
  * @param string $pst_longitude Longitude (forme 0.012217305)
  * @param integer $pi_idf_canton identifiant du canton
  * @param array $pa_cantons liste des cantons 
- * @param integer $pi_debut_communale début de la collection communale
- * @param integer $pi_debut_greffe début de la collection du greffe
+ * @param integer $pi_debut_communale dÃ©but de la collection communale
+ * @param integer $pi_debut_greffe dÃ©but de la collection du greffe
  * @param string $pst_protestants registre protestant (O|N)
  * @param string $pst_sans_rp sans registres paroissiaux (O|N)
  * @param string $pst_points_svg points sur la carte SVG
- * @param string $pst_bureau_controle bureau de contrôle (O|N)
+ * @param string $pst_bureau_controle bureau de contrÃ´le (O|N)
  * @param string $pst_date_min_controle date minimale du bureau des actes
  * @param string $pst_date_max_controle date maximale du bureau des actes
  */ 
@@ -283,7 +326,7 @@ function menu_edition($pst_nom_commune,$pi_code_insee,$pi_num_paroisse,$pst_lati
    print('<div class="form-group row">'); 
    print('<label for="nom_commune" class="col-form-label col-md-2">Nom</label>');
    print('<div class="col-md-10">');
-   print("<input type=\"text\" maxlength=50 size=30 name=nom_commune id=nom_commune value=\"$pst_nom_commune\" class=\"form-control\">");
+   print("<input type=\"text\" maxlength=50 size=30 name=nom_commune id=nom_commune value=\"".cp1252_vers_utf8($pst_nom_commune)."\" class=\"form-control\">");
    print('</div>');
    print('</div>');
    print('<div class="form-group row">'); 
@@ -376,9 +419,9 @@ function menu_edition($pst_nom_commune,$pi_code_insee,$pi_num_paroisse,$pst_lati
    print('</div>');
 }
 
-/** Affiche le ménu de modification d'une commune
+/** Affiche le menu de modification d'une commune
  * @param object $pconnexionBD Identifiant de la connexion de base
- * @param integer $pi_idf_commune Identifiant de la commune à modifier 
+ * @param integer $pi_idf_commune Identifiant de la commune Ã  modifier 
  * @param array $pa_cantons liste des cantons 
  */ 
 function menu_modifier($pconnexionBD,$pi_idf_commune,$pa_cantons)
@@ -411,9 +454,9 @@ function menu_ajouter($pa_cantons)
 }
 
 /**
- * Renvoie la distance entre les deux communes identifiées par leur longitudes et latitudes
- * @param double $pf_lat1 latitude de la première commune (Exemple : 0.804179843464377)
- * @param double $pf_lon1 longitude de la première commune (Exemple : 0.00363609679055735)
+ * Renvoie la distance entre les deux communes identifiÃ©es par leur longitudes et latitudes
+ * @param double $pf_lat1 latitude de la premiÃ¨re commune (Exemple : 0.804179843464377)
+ * @param double $pf_lon1 longitude de la premiÃ¨re commune (Exemple : 0.00363609679055735)
  * @param double $pf_lat1 latitude de la seconde commune 
  * @param double $pf_lon1 longitude de la seconde commune
  * @return double distance entre les deux communes en km  
@@ -433,23 +476,30 @@ function distance($pf_lat1, $pf_lon1, $pf_lat2, $pf_lon2)
 
 /**
  * Ajoute dans la table SQL tableau_kilometrique la liste des distances
- * entre chaque commune et la nouvelle commune crée
+ * entre chaque commune et la nouvelle commune crÃ©e
  * @param object $pconnexionBD Identifiant de la connexion de base
- * @param array $pa_coordonnees_communes tableau des coordonnées des communes (latitude,longitude) indexées par l'identifiant commune
- * @param double $pf_latitude latitude de la commune ajoutée
- * @param double $pf_longitude longitude de la commune ajoutée 
+ * @param integer $pi_idf_commune identifiant de la commune Ã  ajouter
+ * @param string $pst_nom_commune nom de la commune ajoutÃ©e  
+ * @param array $pa_coordonnees_communes tableau des coordonnÃ©es des communes (latitude,longitude) indexÃ©es par l'identifiant commune
+ * @param double $pf_latitude latitude de la commune ajoutÃ©e
+ * @param double $pf_longitude longitude de la commune ajoutÃ©e 
  */ 
-function calcule_coordonnees_commune($pconnexionBD,$pa_coordonnees_communes,$pi_idf_commune,$pf_latitude,$pf_longitude)
+function calcule_coordonnees_commune($pconnexionBD,$pa_coordonnees_communes,$pi_idf_commune,$pst_nom_commune,$pf_latitude,$pf_longitude)
 {
 
    $st_requete = 'insert into tableau_kilometrique (idf_commune1,idf_commune2,distance) values ';
    $a_lignes = array();
    foreach($pa_coordonnees_communes as $i_idf_commune => $a_coord)
    {
-      list($f_latitude_cour,$f_longitude_cour) = $a_coord;
+      list($st_nom,$f_latitude_cour,$f_longitude_cour) = $a_coord;
       $i_dist=round(distance($pf_latitude,$pf_longitude,$f_latitude_cour,$f_longitude_cour));
-      if ($pi_idf_commune!=$i_idf_commune)
-        $a_lignes[]= "($pi_idf_commune,$i_idf_commune,$i_dist)";     
+	  if ($i_dist<=255)
+	  {  
+		if ($pi_idf_commune!=$i_idf_commune)
+			$a_lignes[]= "($pi_idf_commune,$i_idf_commune,$i_dist)";
+      }
+      else
+        print("<div class=\"alert alert-danger\">La distance est supÃ©rieure Ã  255 km. VÃ©rifier les longitudes et latitudes des communes $pst_nom_commune et ".cp1252_vers_utf8($st_nom)."</div>");		  
    }
    $st_lignes = join(',',$a_lignes);
    $st_requete .= $st_lignes;
@@ -457,14 +507,14 @@ function calcule_coordonnees_commune($pconnexionBD,$pa_coordonnees_communes,$pi_
 }
 
 /**
- * Exporte les communes au format Nimègue
- * @param object $pconnexionBD Connexion à la base
+ * Exporte les communes au format NimÃ¨gue
+ * @param object $pconnexionBD Connexion Ã  la base
   
  */ 
 function exporte_communes_Nim($pconnexionBD) {
     $a_communes = $pconnexionBD->sql_select_multiple("select nom, code_insee, numero_paroisse from commune_acte order by nom");
     $a_depts = array('16' => 'Charente',
-                     '79' => 'Deux-Sèvres',
+                     '79' => 'Deux-SÃ¨vres',
                      '86' => 'Vienne',
                      '24' => 'Dordogne',
                      '87' => 'Haute-Vienne'
@@ -517,6 +567,7 @@ switch ($gst_mode) {
          $st_date_min_controle = trim($_POST['date_min_controle']);
          $st_date_max_controle = trim($_POST['date_max_controle']);
      }
+	 $st_nom_commune=utf8_vers_cp1252($st_nom_commune);
      $i_code_insee = trim($_POST['code_insee']);
      $i_num_paroisse = trim($_POST['num_paroisse']);
      $f_latitude = trim($_POST['latitude']);
@@ -528,7 +579,7 @@ switch ($gst_mode) {
      $st_protestants= isset($_POST['protestants'])? 'O': 'N';     
      $st_sans_rp= isset($_POST['sans_rp'])? 'O': 'N';
      $st_bureau_controle   = isset($_POST['bureau_controle'])? 'O': 'N';
-     $a_coord_communes = $connexionBD->sql_select_multiple_par_idf("select idf,latitude,longitude from commune_acte");
+     $a_coord_communes = $connexionBD->sql_select_multiple_par_idf("select idf,nom,latitude,longitude from commune_acte");
      $connexionBD->initialise_params(array(':nom_commune'=>$st_nom_commune,':code_insee'=>$i_code_insee,':numero_paroisse'=>$i_num_paroisse,':latitude'=>$f_latitude,':longitude'=>$f_longitude,':idf_canton'=>$i_idf_canton,':debut_communale'=>$i_debut_communale,':debut_greffe'=>$i_debut_greffe,':points_svg'=>$st_points_svg,':protestants'=>$st_protestants,':sans_rp'=>$st_sans_rp,':bureau_controle'=>$st_bureau_controle,':date_min_controle'=>$st_date_min_controle,':date_max_controle'=>$st_date_max_controle,':idf_commune'=>$gi_idf_commune));
      $st_requete = "update commune_acte set nom=:nom_commune, code_insee=:code_insee,numero_paroisse=:numero_paroisse,latitude=:latitude,longitude=:longitude,idf_canton=:idf_canton,debut_communale=:debut_communale,debut_greffe=:debut_greffe,points_svg=:points_svg,protestants=:protestants,sans_rp=:sans_rp,bureau_controle=:bureau_controle,date_min_controle=:date_min_controle,date_max_controle=:date_max_controle where idf=:idf_commune";
      $connexionBD->execute_requete($st_requete);
@@ -537,7 +588,7 @@ switch ($gst_mode) {
         $connexionBD->execute_requete("delete from tableau_kilometrique where idf_commune1=$gi_idf_commune or idf_commune2=$gi_idf_commune");
 		$i_nb_communes= $connexionBD->sql_select1("select count(*) from commune_acte");
 		if ($i_nb_communes>1)
-			calcule_coordonnees_commune($connexionBD,$a_coord_communes,$gi_idf_commune,$f_latitude,$f_longitude);
+			calcule_coordonnees_commune($connexionBD,$a_coord_communes,$gi_idf_commune,$st_nom_commune,$f_latitude,$f_longitude);
      }
      menu_liste($connexionBD);  
   break;
@@ -568,6 +619,7 @@ switch ($gst_mode) {
          $st_date_min_controle = trim($_POST['date_min_controle']);
          $st_date_max_controle = trim($_POST['date_max_controle']);
      }
+	 $st_nom_commune=utf8_vers_cp1252($st_nom_commune);
      $i_code_insee = trim($_POST['code_insee']);
      $i_num_paroisse = trim($_POST['num_paroisse']);
      $f_latitude = trim($_POST['latitude']);
@@ -579,7 +631,7 @@ switch ($gst_mode) {
      $st_protestants= isset($_POST['protestants'])? 'O': 'N';
      $st_sans_rp= isset($_POST['sans_rp'])? 'O': 'N';
      $st_bureau_controle   = isset($_POST['bureau_controle'])? 'O': 'N';  
-     $a_coord_communes = $connexionBD->sql_select_multiple_par_idf("select idf,latitude,longitude from commune_acte");
+     $a_coord_communes = $connexionBD->sql_select_multiple_par_idf("select idf,nom,latitude,longitude from commune_acte");
      $connexionBD->initialise_params(array(':nom_commune'=>$st_nom_commune,':code_insee'=>$i_code_insee,':numero_paroisse'=>$i_num_paroisse,':latitude'=>$f_latitude,':longitude'=>$f_longitude,':idf_canton'=>$i_idf_canton,':debut_communale'=>$i_debut_communale,':debut_greffe'=>$i_debut_greffe,':points_svg'=>$st_points_svg,':protestants'=>$st_protestants,':sans_rp'=>$st_sans_rp,':bureau_controle'=>$st_bureau_controle,':date_min_controle'=>$st_date_min_controle,':date_max_controle'=>$st_date_max_controle));
      $st_requete="insert into commune_acte(nom,code_insee,numero_paroisse,longitude,latitude,idf_canton,debut_communale,debut_greffe,protestants,sans_rp,points_svg,bureau_controle,date_min_controle,date_max_controle) values(:nom_commune,:code_insee,:numero_paroisse,:latitude,:longitude,:idf_canton,:debut_communale,:debut_greffe,:protestants,:sans_rp,:points_svg,:bureau_controle,:date_min_controle,:date_max_controle)";
      $connexionBD->execute_requete($st_requete);   
@@ -590,7 +642,7 @@ switch ($gst_mode) {
 		if ($i_nb_communes>1)
 		{
 			$i_idf_commune_ajoutee = $connexionBD->dernier_idf_insere();
-			calcule_coordonnees_commune($connexionBD,$a_coord_communes,$i_idf_commune_ajoutee,$f_latitude,$f_longitude);
+			calcule_coordonnees_commune($connexionBD,$a_coord_communes,$i_idf_commune_ajoutee,$st_nom_commune,$f_latitude,$f_longitude);
 		}
 	 }
    break;
@@ -621,10 +673,42 @@ switch ($gst_mode) {
      }
      menu_liste($connexionBD);
    break;
-   
-      
+   case 'CHARGER_CANTONS':
+     $st_fich_dest = "$gst_repertoire_telechargement/cantons.twt";
+     if (!move_uploaded_file($_FILES['FichCantons']['tmp_name'],$st_fich_dest)) 
+     {
+        print("Erreur de telechargement : impossible de copier en $st_fich_dest:<br>");
+        switch($_FILES['FichCantons']['error'])
+        { 
+           case 2 : print("Fichier trop gros par rapport a MAX_FILE_SIZE");break;
+           default : print("Erreur inconnue");print_r($_FILES);
+        }
+        
+        exit;
+     }
+	 $pf=fopen($st_fich_dest,"r") or die("Impossible de lire $st_fich_dest");
+	 $i=0;
+	 $a_cantons = array();
+	 $a_colonnes = array();
+	 while (!feof($pf))
+     {      
+       $st_canton       = fgets($pf);
+	   $a_cantons[":canton$i"]=utf8_vers_cp1252($st_canton);
+	   $a_colonnes[] = "(:canton$i)";
+	   $i++;
+	 }
+	 fclose($pf);
+	 if (count($a_colonnes)>0)
+	 {	 
+		$st_requete = "insert ignore INTO `canton` (nom) values ";
+		$st_colonnes = join(',',$a_colonnes);
+	    $st_requete .= $st_colonnes;
+		$connexionBD->initialise_params($a_cantons);  
+        $connexionBD->execute_requete($st_requete);
+		print("<div class=\"alert alert-success\" role=\"alert\">$i cantons charg&eacute;s</div>");
+     }
+	 menu_liste($connexionBD);
+	break;
 }  
-
 print('</div></body></html>');
-
 ?>

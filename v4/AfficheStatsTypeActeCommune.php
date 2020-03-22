@@ -14,7 +14,7 @@ require_once('Commun/ConnexionBD.php');
 print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
@@ -99,7 +99,7 @@ if (count($a_liste_stats)!=0)
       print("<tr>");
       foreach ($a_ligne as $st_champ)
       {
-         print("<td>$st_champ</td>");
+         print("<td>".cp1252_vers_utf8($st_champ)."</td>");
       }
       print("</tr>");
       $i++;

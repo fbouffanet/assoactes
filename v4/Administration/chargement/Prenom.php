@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -59,7 +59,7 @@ class Prenom {
          die('Sauvegarde Prenom impossible: ' . $e->getMessage().": $st_requete");
       }
 	 }
-     $st_requete = "select idf,libelle from prenom left join groupe_prenoms on (idf=idf_prenom) where idf_prenom is null and libelle regexp('[ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜİàáâãäåçèéêëìíîïğòóôõöùúûüıÿA-Za-z]+')"; 
+     $st_requete = "select idf,libelle from prenom left join groupe_prenoms on (idf=idf_prenom) where idf_prenom is null and libelle regexp('[Ã€ÃÃ‚ÃƒÃ„Ã…Ã‡ÃˆÃ‰ÃŠÃ‹ÃŒÃÃÃÃ’Ã“Ã”Ã•Ã–Ã™ÃšÃ›ÃœÃÃ Ã¡Ã¢Ã£Ã¤Ã¥Ã§Ã¨Ã©ÃªÃ«Ã¬Ã­Ã®Ã¯Ã°Ã²Ã³Ã´ÃµÃ¶Ã¹ÃºÃ»Ã¼Ã½Ã¿A-Za-z]+')"; 
      $a_prenoms= $this->connexionBD->liste_valeur_par_clef($st_requete);
      $a_prenoms=array_unique($a_prenoms);
      if (count($a_prenoms)>0)
@@ -173,7 +173,7 @@ class Prenom {
         return $this->a_idf_par_prenom[strval($pst_nom)];
      else
      {
-        return 16777215; // Max de Mediumint => Marqueur pour détecter les erreurs éventuelles  
+        return 16777215; // Max de Mediumint => Marqueur pour dÃ©tecter les erreurs Ã©ventuelles  
      }      
    }
 }

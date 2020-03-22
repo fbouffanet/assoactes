@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -33,11 +33,11 @@ class StatsPatronyme {
 	} 
    
   /**
-  * Met à jour les date minimale et maximale en fonction de l'annee courante $pi_annee
+  * Met Ã  jour les date minimale et maximale en fonction de l'annee courante $pi_annee
   *
   * @param string $pi_annee annee courante
-  * @param string $pi_annee_min ann‚e minimale jusqu'à présent
-  * @param string $pi_annne_max ann‚e maximale jusqu'à présent
+  * @param string $pi_annee_min annÃ©e minimale jusqu'Ã  prÃ©sent
+  * @param string $pi_annne_max annÃ©e maximale jusqu'Ã  prÃ©sent
   * @return array(date_min, date_max)
   */
 
@@ -62,7 +62,7 @@ class StatsPatronyme {
   }
 
   /**
-  *  Met à jour les statistiques du tableau $a_stats pour le patronyme $pst_patro en fonction de l'annee $pi_annee
+  *  Met Ã  jour les statistiques du tableau $a_stats pour le patronyme $pst_patro en fonction de l'annee $pi_annee
   * @param string $pst_patro : Patronyme a mettre a jour
   * @param integer $pi_annee : Annee en cours
   */ 
@@ -72,7 +72,7 @@ class StatsPatronyme {
      $this->patronyme->ajoute($pst_patro);
      if ((count($this->a_stat)!=0) && (isset($this->a_stat[strval($pst_patro)][strval($pst_type_acte)])))
      {  
-        // Un patronyme existe déjà pour le patronyme et le type d'acte défini dans les statistiques
+        // Un patronyme existe dÃ©jÃ  pour le patronyme et le type d'acte dÃ©fini dans les statistiques
         list($i_annee_min,$i_annee_max,$i_nb_personnes) = $this->a_stat[strval($pst_patro)][strval($pst_type_acte)];
         list($i_annee_min,$i_annee_max) = $this->annees_min_max($pi_annee,$i_annee_min,$i_annee_max);        
         $this->a_stat[strval($pst_patro)][strval($pst_type_acte)] = array($i_annee_min,$i_annee_max,$i_nb_personnes+1);
@@ -84,7 +84,7 @@ class StatsPatronyme {
   }
     
   /*
-  * Met à jour le contenu de la table stats_patronyme à partir de la variable $a_stat  
+  * Met Ã  jour le contenu de la table stats_patronyme Ã  partir de la variable $a_stat  
   */
   public function sauve() {
 
@@ -139,14 +139,14 @@ class StatsPatronyme {
    }
    
 	/*
-	Met à jour les statistiques des patronymes suite à une modification
+	Met Ã  jour les statistiques des patronymes suite Ã  une modification
 	@param integer $pi_idf_type_acte identifiant du type d'acte
-	@param integer $pi_idf_acte identifiant de l'acte modifié
+	@param integer $pi_idf_acte identifiant de l'acte modifiÃ©
 	*/
 	function maj_stats($pi_idf_type_acte,$pi_idf_acte=null) {
 		$st_requete = sprintf("delete from `stats_patronyme` where idf_commune=%d and idf_type_acte=%d and idf_source=%d",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source);
 		$this->connexionBD->execute_requete($st_requete);
-		// Création des éventuels nouveaux patronymes
+		// CrÃ©ation des Ã©ventuels nouveaux patronymes
 		if (!empty($pi_idf_acte))
 		{	  
 			$st_requete = sprintf("select p.patronyme from personne p where p.idf_acte=%d and p.patronyme not in (select libelle from patronyme)",$pi_idf_acte);

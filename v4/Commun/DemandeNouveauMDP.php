@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -16,7 +16,7 @@ $gst_mode = empty($_POST['mode']) ? 'FORMULAIRE': $_POST['mode'] ;
 print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<title>Creation d'un nouveau mot de passe</title>");
@@ -112,8 +112,8 @@ function affiche_menu()
 } 
   
 /**
- * Renvoie le mot de passe à l'utilisateur si son email est reconnu, sinon renvoie à la première page.
- * @param string $pst_email Email perso de l'adhérent
+ * Renvoie le mot de passe Ã  l'utilisateur si son email est reconnu, sinon renvoie Ã  la premiÃ¨re page.
+ * @param string $pst_email Email perso de l'adhÃ©rent
  * @global string $gst_serveur_bd
  * @global string $gst_utilisateur_bd
  * @global string $gst_nom_bd
@@ -172,7 +172,7 @@ switch($gst_mode)
       affiche_menu();
    break;
    case 'DEMANDE':
-     // le champ est netttoyé et tronqué à la valeur maximale de la base
+     // le champ est netttoyÃ© et tronquÃ© Ã  la valeur maximale de la base
      $st_email = substr(trim($_POST['email_adht']),0,60);
      verifie_demande($st_email);     
    break;

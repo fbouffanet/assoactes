@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -9,7 +9,7 @@
  * Charge les recensements
  * @param string $pst_fichier localisation du fichier
  * @param integer $pi_idf_commune : identifiant de la commune a charger
- * @param integer $pi_annee: année de recensement
+ * @param integer $pi_annee: annÃ©e de recensement
  * @param integer $pi_idf_source : identifiant de la source 
  * @param integer $pi_idf_releveur : identifiant de l'adherent releveur   
  * @return boolean : a reussi ou pas  
@@ -41,7 +41,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
    $i_acte_courant = null;
    $i_page_courante = null;
    $i_idf_derniere_personne = null;
-   $stats_commune->compte_acte(LIB_RECENSEMENT,$pi_annee);
+   $stats_commune->compte_acte(utf8_vers_cp1252(LIB_RECENSEMENT),$pi_annee);
    $i=0;   
    while (!feof($pf))
    {      
@@ -88,12 +88,12 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
       nettoie_prenom($st_prenom);   
 	  if ((empty($st_rue_courante) && empty($st_quartier_courant) && empty($i_maison_courante) && empty($i_menage_courant)) || ($st_rue_ligne!=$st_rue_courante || $st_quartier_ligne!=$st_quartier_courant ||  $i_maison_ligne!=$i_maison_courante || $i_menage_ligne!=$i_menage_courant))
 	  {
-		 $acte = new Acte($connexionBD,$pi_idf_commune,LIB_RECENSEMENT,'N',$pi_idf_source,sprintf("00/00/%04d",$pi_annee),$releveur->idf_releveur($pi_idf_releveur));
+		 $acte = new Acte($connexionBD,$pi_idf_commune,utf8_vers_cp1252(LIB_RECENSEMENT),'N',$pi_idf_source,sprintf("00/00/%04d",$pi_annee),$releveur->idf_releveur($pi_idf_releveur));
 		 $st_commentaires = sprintf("Nom de la Rue: %s\n",$st_rue_ligne);
 		 $st_commentaires .= sprintf("Quartier: %s\n",$st_quartier_ligne);
-		 $st_commentaires .= sprintf("N° maison: %d\n",$i_maison_ligne);
-		 $st_commentaires .= sprintf("N° ménage: %d\n",$i_menage_ligne);
-		 $st_commentaires .= sprintf("N° de page: %d",$i_page_ligne);
+		 $st_commentaires .= sprintf("NÂ° maison: %d\n",$i_maison_ligne);
+		 $st_commentaires .= sprintf("NÂ° mÃ©nage: %d\n",$i_menage_ligne);
+		 $st_commentaires .= sprintf("NÂ° de page: %d",$i_page_ligne);
 		 $acte->setCommentaires($st_commentaires);
          $acte->setDetailSupp(1);
 		 $acte->setUrl($st_permalien);
@@ -103,7 +103,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 		 if (!empty($st_nom))
 		 {	 
 			$personne = new Personne($connexionBD,$i_acte_courant,IDF_PRESENCE_INTV,'?',$st_nom,$st_prenom);
-			$stats_patronyme->maj_patro($st_nom,LIB_RECENSEMENT,$pi_annee);
+			$stats_patronyme->maj_patro($st_nom,utf8_vers_cp1252(LIB_RECENSEMENT),$pi_annee);
 			$personne->setProfession($st_profession);
 			$personne->setCommentaires($st_observations);
 			$personne->setAge($st_age);
@@ -116,13 +116,13 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 				$i_idf_veuve=$personne->getIdf(); 
 				$personne = new Personne($connexionBD,$i_acte_courant,IDF_PRESENCE_EXCJT,'M',$st_nom_epoux,'');
 				$a_liste_personnes[]=$personne;
-				$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte_courant,LIB_RECENSEMENT,$personne->getIdf(),$st_nom_epoux,$i_idf_veuve,$st_nom);
+				$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte_courant,utf8_vers_cp1252(LIB_RECENSEMENT),$personne->getIdf(),$st_nom_epoux,$i_idf_veuve,$st_nom);
 			}
 		 }
       }
 	  else
 	  {
-		 $stats_patronyme->maj_patro($st_nom,LIB_RECENSEMENT,$pi_annee);
+		 $stats_patronyme->maj_patro($st_nom,utf8_vers_cp1252(LIB_RECENSEMENT),$pi_annee);
 		 if (!empty($st_nom))
 		 {
 			if (preg_match('/sa femme/i',$st_observations))
@@ -142,7 +142,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 				$i_idf_personne_courante = $personne->getIdf();
 				$a_liste_personnes[]=$personne;
 				
-				$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte_courant,LIB_RECENSEMENT,$i_idf_derniere_personne,$st_nom_derniere_personne,$i_idf_personne_courante,$st_nom);		
+				$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte_courant,utf8_vers_cp1252(LIB_RECENSEMENT),$i_idf_derniere_personne,$st_nom_derniere_personne,$i_idf_personne_courante,$st_nom);		
 			}
 			else
 			{
@@ -159,7 +159,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 					$i_idf_veuve=$personne->getIdf(); 
 					$personne = new Personne($connexionBD,$i_acte_courant,IDF_PRESENCE_EXCJT,'M',$st_nom_epoux,'');
 					$a_liste_personnes[]=$personne;
-					$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte_courant,LIB_RECENSEMENT,$personne->getIdf(),$st_nom_epoux,$i_idf_veuve,$st_nom);
+					$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte_courant,utf8_vers_cp1252(LIB_RECENSEMENT),$personne->getIdf(),$st_nom_epoux,$i_idf_veuve,$st_nom);
 				}
 			}
 		}		
@@ -173,7 +173,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
    } 
    fclose($pf);  
    
-   // Sauvegarde des types d'acte par sécurité si 'Naissance' n'a pas été déjà défini comme type d'acte
+   // Sauvegarde des types d'acte par sÃ©curitÃ© si 'Recensement' n'a pas Ã©tÃ© dÃ©jÃ  dÃ©fini comme type d'acte
 	$type_acte->sauve();
 	$union->sauve();
     $patronyme->sauve();	

@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('./Commun/config.php');
@@ -22,7 +22,7 @@ $a_types_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from type_ac
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
@@ -89,7 +89,7 @@ $.validator.addMethod('plusGrand', function(value, element, param) {
     var i = parseInt(value);
     var j = parseInt(annee_max);
     return i >= j;
-}, "l'année maximale doit être plus grande que l'année minimale");
+}, "l'annÃ©e maximale doit Ãªtre plus grande que l'annÃ©e minimale");
 
 //validation rules
 $("#stats_nmd").validate({
@@ -110,14 +110,14 @@ $("#stats_nmd").validate({
 	},
 	messages: {
 		annee_min: {
-      required: "L'annee minimale est obligatoire",
-			integer: "L'année doit être un entier",
-			minlength: "L'année doit comporter 4 chiffes"
+      required: "L'annÃ©e minimale est obligatoire",
+			integer: "L'annÃ©e doit Ãªtre un entier",
+			minlength: "L'annÃ©e doit comporter 4 chiffes"
 		},
 		annee_max: {
-      required: "L'annee maximale est obligatoire",
-			integer: "L'année doit être un entier",
-			minlength: "L'année doit comporter 4 chiffes"
+      required: "L'annÃ©e maximale est obligatoire",
+			integer: "L'annÃ©e doit Ãªtre un entier",
+			minlength: "L'annÃ©e doit comporter 4 chiffes"
 		}
 	},
 	errorElement: "em",

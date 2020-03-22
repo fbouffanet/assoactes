@@ -1,10 +1,10 @@
 <!DOCTYPE html> 
 <head>
-  <title>Statistiques des adhésions</title>
+  <title>Statistiques des adhÃ©sions</title>
   <meta charset="iso-8859-15">       <!-- ou charset="utf-8" -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="images/favicon.ico">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="content-language" content="fr">
 <link href='../css/styles.css' type='text/css' rel='stylesheet'>
 <link href='../css/bootstrap.min.css' rel='stylesheet'>
@@ -16,9 +16,9 @@
 <body>
 <div class="container">
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 $gst_chemin = "../";
@@ -35,18 +35,18 @@ require_once("$gst_chemin/Commun/ConnexionBD.php");
 require_once("$gst_chemin/Commun/PaginationTableau.php");
 require_once("$gst_chemin/Commun/commun.php");
 
-function Mois_Annee ()  // Function pour affichage du mois en français
+function Mois_Annee ()  // Function pour affichage du mois en franÃ§ais
 {
-   $mois = array('', 'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre');
+   $mois = array('', 'Janvier', 'FÃ©vrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'AoÃ»t', 'Septembre', 'Octobre', 'Novembre', 'DÃ©cembre');
    $mois_numero = date("n");   
    $mois_complet = $mois[$mois_numero];
    $jour = date("d");
    $annee = date("Y");
-   return $jour." ".$mois_complet." ".$annee;
+   return $jour." ".cp1252_vers_utf8($mois_complet)." ".$annee;
 }
 
 
-/* --- Cumule et affiche les résultats --- */
+/* --- Cumule et affiche les rÃ©sultats --- */
 function Affiche_Stats()
 {
   global $connexionBD;
@@ -134,7 +134,7 @@ function Affiche_Stats()
   print("</form></div></div>");	
 }
 
-/* --- Saisie de l'année à afficher --- */
+/* --- Saisie de l'annÃ©e Ã  afficher --- */
 
 function Saisie_annee()
 {
@@ -159,7 +159,7 @@ function Saisie_annee()
    
 }
 
-/* --- Début du programme --- */
+/* --- DÃ©but du programme --- */
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("$gst_chemin/Commun/menu.php");
@@ -178,12 +178,12 @@ switch ($gst_mode)
 }
 
 //=====================================================================================
-// requête SQL qui compte le nombre  d'adhérent par année
+// requÃªte SQL qui compte le nombre  d'adhÃ©rent par annÃ©e
 
 $st_requete = "SELECT a.annee_cotisation,count(*),sum(case when jeton_paiement !='' then 1 else 0 end)  FROM `adherent` a where a.statut in ('B','I') group by a.annee_cotisation order by a.annee_cotisation desc";
 print('<div class="panel-group">');
 print('<div class="panel panel-info">');
-print('<div class="panel-heading">Nbrs Adh(B+I) année de cotisation</div>');
+print('<div class="panel-heading">Nbrs Adh(B+I) ann&eacute;e de cotisation</div>');
 print('<div class="panel-body">');
  
 $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'stats_adhesions',3,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Ann&eacute;e','Nbrs','Adh&eacute;sions<br> en ligne'));
@@ -193,8 +193,8 @@ $pagination->affiche_tableau_simple_requete_sql();
 print('</div></div>');
 
 //=================================================================================== 
-// début du tableau Adhésion par mois
-// requête SQL Comptage des demandes par mois
+// dÃ©but du tableau AdhÃ©sion par mois
+// requÃªte SQL Comptage des demandes par mois
 $st_requete = "SELECT YEAR(date_paiement)as annee, MONTH(date_paiement)as mois, COUNT(*)as nombre FROM adherent WHERE `statut`IN ('B','I') GROUP BY YEAR(date_paiement) desc,MONTH(date_paiement) desc ";
 
 print('<div class="panel panel-info">');
@@ -207,7 +207,7 @@ $pagination->affiche_tableau_simple_requete_sql();
 print('</div></div>');
  
 //====================================================================================== 
-// Nbrs Adh par statut et année de cotisation
+// Nbrs Adh par statut et annÃ©e de cotisation
   
 $st_requete = 'SELECT a.annee_cotisation,sa.nom,count(*) FROM `adherent` a  join `statut_adherent` sa on (sa.idf=a.statut) group by a.annee_cotisation,a.statut order by a.annee_cotisation desc,a.statut'; 
 
@@ -220,7 +220,7 @@ $pagination->init_page_cour($gi_num_page_cour);
 $pagination->affiche_tableau_simple_requete_sql();
 print('</div></div>');
 
-//Répartition des Adhérents  
+//RÃ©partition des AdhÃ©rents  
 
 // Combien en France
 $st_requete = ("SELECT COUNT( * ) as Nbrs , left( cp, 2 ) as Departement FROM `adherent` WHERE `pays` LIKE 'france' AND `statut` IN ('B', 'I')GROUP BY left( cp, 2 )");
