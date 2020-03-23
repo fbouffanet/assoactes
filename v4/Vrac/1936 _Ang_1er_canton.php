@@ -27,6 +27,11 @@ $connexionBD->ferme();
 	<colgroup width="472"></colgroup>
 	<colgroup width="85"></colgroup>
 	<tr>
+		<td height="25" align="left">Recensement d&egraveAngoul&eemeeme 1939 </td>
+		<td align="left"><i><u><br></u></i></td>
+	</tr>
+	<tr>
+	<tr>
 		<td height="17" align="left">???? Marie 473</td>
 		<td align="left"><i><u><br></u></i></td>
 	</tr>
