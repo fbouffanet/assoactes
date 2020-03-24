@@ -28,8 +28,8 @@ $connexionBD->ferme();
 
 
 <div class= "container-fluid" >
-<div class="p-3 mb-2 bg-dark text-white">Actes notariés en vrac</div>
-<h1>Actes notariés en vrac</h1>
+
+<h1><p class="Actes notariés en vrac"></h1>
 
 
 <h2 style="text-align:left">Acte divers dans les <a href="FabriceBouffanet.php">Cantons de Mansle et St-Amant de Boixe</a></h2>
