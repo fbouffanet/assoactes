@@ -24,7 +24,7 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 require_once("../Commun/menu.php");
 $connexionBD->ferme();
 ?>
-
+ <div class= "container-fluid" >
 <div class=TITRE>Actes notariés en vrac</div>
 
 
@@ -51,6 +51,7 @@ $connexionBD->ferme();
 <dir>
 <li>Recensement relevé par Jean Patrick BAZILLE</li>
 </dir>
+</div>
 </div>
 </body>
 </html>
