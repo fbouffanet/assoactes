@@ -25,16 +25,11 @@ require_once("../Commun/menu.php");
 $connexionBD->ferme();
 ?>
 
-<div class="container-sm">100% wide until small breakpoint</div>
-<div class="container-md">100% wide until medium breakpoint</div>
-<div class="container-lg">100% wide until large breakpoint</div>
-<div class="container-xl">100% wide until extra large breakpoint</div>
-
- <div class= "container-fluid" >
-<div class=TITRE>Actes notariés en vrac</div>
 
 
-
+<div class= "container-fluid" >
+<div class="p-3 mb-2 bg-dark text-white">Actes notariés en vrac</div>
+<h1>Actes notariés en vrac</h1>
 
 
 <h2 style="text-align:left">Acte divers dans les <a href="FabriceBouffanet.php">Cantons de Mansle et St-Amant de Boixe</a></h2>
