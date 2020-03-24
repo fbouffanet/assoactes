@@ -26,10 +26,10 @@ $connexionBD->ferme();
 <div class= "container-fluid" >
 <h1>Actes notari&eacute;s de <a href="mailto:pnexon@free.fr">M Philippe NEXON</a></h1>
 <h1>Contrats de Mariages.</h1>
-<h4><big><b><u><a name="MeDEREIX et MENUT">MeDEREIX et MENUT</a></u></b></big></h4>
+<h4><big><b><u><a name="MeDEREIX et MENUT">Mes DEREIX et MENUT</a></u></b></big></h4>
 <h4><ul type="disc">
 
-<li>le 21/12/1757 à Rougnac , MeDEREIX et MENUT , 2E4796</li>
+<li>le 21/12/1757 à Rougnac , Mes DEREIX et MENUT , 2E4796</li>
 
 <li>Jean et jacques NEXON , fils de françois (charpentier) et marie MESTAYER , demeurants à la faye paroisse de Gardes avec Marie et catherine DAYRE , filles de jean (maréchal) et marie PERROT , demeurants au village de cussac paroisse de Rougnac .</li>
 <li>le 15/01/1761 à Rougnac , Me DEREIX et DUMONT , 2E4797</li>
