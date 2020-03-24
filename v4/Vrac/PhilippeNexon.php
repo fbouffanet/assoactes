@@ -25,8 +25,8 @@ $connexionBD->ferme();
 ?>
 <div class= "container-fluid" >
 <h1>Actes notari&eacute;s de <a href="mailto:pnexon@free.fr">M Philippe NEXON</a></h1>
-<h1>Contrats de Mariages.</h1>
-<h4><big><b><u><a name="MeDEREIX et MENUT">Mes DEREIX et MENUT</a></u></b></big></h4>
+<h2>Contrats de Mariages.</h2>
+<h4><big><b><u><a name="Me DEREIX et MENUT">Mes DEREIX et MENUT</a></u></b></big></h4>
 <h4><ul type="disc">
 
 <li>le 21/12/1757 à Rougnac , Mes DEREIX et MENUT , 2E4796</li>
@@ -34,11 +34,11 @@ $connexionBD->ferme();
 <li>Jean et jacques NEXON , fils de françois (charpentier) et marie MESTAYER , demeurants à la faye paroisse de Gardes avec Marie et catherine DAYRE , filles de jean (maréchal) et marie PERROT , demeurants au village de cussac paroisse de Rougnac .</li>
 <li>le 15/01/1761 à Rougnac , Me DEREIX et DUMONT , 2E4797</li>
 <li>Estienne NEXON , fils de françois et marie MESTAYER ,demeurants à la faye avec marguerite FAURE , fille de jacques (dcd) et gabrielle GUILHON , demeurants au village de cussac .</li>
-<li>le 17/01/1790 à Rougnac , MeDEREIX à lavalette , 2E19524</li>
+<li>le 17/01/1790 à Rougnac , Me DEREIX à lavalette , 2E19524</li>
 <li>Jean NEXON , fils de étienne (dcd) et marguerite FAURE , demeurant à cussac avec marguerite FORESTIER , fille de léonard (dcd) et catherine BAZELY (dcd) , demeurants à lémerie paroisse de Rougnac ( avec son curateur guillaume FORESTIER ) .</li>
 <li>le 05/03/1696 , Me DUMONTET à Dignac 2E2741</li>
 <li>entre françois VALLADON et Marguerite NEXON , fille jean (dcd) et anne DESBOUCHAUD présents : jean et françois ses fréres , léonarde DUPON belle-soeur</li>
-<li>le 03/05/1696 , MeDEREIX à gardes , 2E2963</li>
+<li>le 03/05/1696 , Me DEREIX à gardes , 2E2963</li>
 <li>entre henri VIDAUD et toinette NEXON , fille de Pierre et marie CHAIGNEAU</li>
 
 <li>le 02/02/1699 , Me DEREIX à gardes , 2E2964</li>
@@ -54,10 +54,10 @@ $connexionBD->ferme();
 <li>entre jean NEXON , fils de jean (dcd) et marie DAYRE et françoise BOUYER , fille de antoine et jeanne LAVAUD</li>
 <li>le 06/07/1792 , Me DEREIX à Lavalette 2E19524</li>
 <li>entre françois NEXON , fils de jacques et catherine DAYRES et marie CAMPOT , fille de jean et jeanne CHARLES .</li>
-<h1>Testament</h1>
+<h2>Testament</h2>
 <li>le 30/01/1694 , Me DEREIX à gardes , 2E2963</li>
 <li>de jean NEXON à jeanne RUDEIX ?</li>
-<h1>Partage</h1>
+<h2>Partage</h2>
 <li>1703 , Me DEREIX à gardes , 2E2965</li>
 <li>partage entre les NEXON/CHAIGNEAU/BARDY/VIDAUD</li>
 
