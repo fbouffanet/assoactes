@@ -44,16 +44,14 @@ $connexionBD->ferme();
 <dir>
 <li> Actes notariés relevés par <a href="mailto:pnexon@free.fr">Philippe NEXON</a></li>
 </dir>
-
-
 <h2 align=left style="text-align:left">Actes notariés de la <a href="CM_CharenteMaritime.php">Charente Maritime</a></h2>
 <h2 align=left style="text-align:left">Ils se sont mariés en <a href="Migrants.php">Indre & Loire</a></h2>
-</div>
 <div class=TITRE>Recensement</div>
-<h2 style="text-align:left">recensement d’Angoulême 1936 <a href="1936 _Ang_1er_canton.php">1936 _Ang_1er_canton</a></h2>
+<h2 style="text-align:left">Recensement d’Angoulême 1936 <a href="1936 _Ang_1er_canton.php">1936 _Ang_1er_canton</a></h2>
 <dir>
-<li>Recencement relevé par Jean Patrick BAZILLE</li>
+<li>Recensement relevé par Jean Patrick BAZILLE</li>
 </dir>
+</div>
 </body>
 </html>
 
