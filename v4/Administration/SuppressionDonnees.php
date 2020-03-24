@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ function nombre_permaliens($pi_idf_commune_acte,$pc_idf_type_acte)
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -69,7 +69,7 @@ $(document).ready(function() {
     var i = parseInt(value);
     var j = parseInt(annee_max);
     return i >= j;
-}, "l'année maximale doit être plus grande que l'année minimale");
+}, "l'annÃ©e maximale doit Ãªtre plus grande que l'annÃ©e minimale");
   
   $("#formulaire_suppression").validate({
 	 rules: {
@@ -83,16 +83,16 @@ $(document).ready(function() {
     },  
 	 messages: {
 	  idf_source: {
-			required: "Une source doit être choisie"
+			required: "Une source doit Ãªtre choisie"
 		},
     idf_commune_acte: {
-			required: "Une commune doit être choisie"
+			required: "Une commune doit Ãªtre choisie"
 		},
     annee_min: {
-      integer: "l'année minimale doit être un entier"
+      integer: "l'annÃ©e minimale doit Ãªtre un entier"
     },
     annee_max: {
-      integer: "l'année maximale doit être un entier"
+      integer: "l'annÃ©e maximale doit Ãªtre un entier"
     }
 	},
   errorElement: "em",
@@ -135,7 +135,7 @@ $(document).ready(function() {
 	switch (parseInt($('input[name=type_acte]:checked', form).val()))
 	{
 		case 1:
-			lib_type_acte='Baptême/Naissance';
+			lib_type_acte='BaptÃªme/Naissance';
 			$("#idf_type_acte").val(<?php echo IDF_NAISSANCE;?>);
 		break;
 		case 2:
@@ -143,11 +143,11 @@ $(document).ready(function() {
 			$("#idf_type_acte").val(<?php echo IDF_MARIAGE;?>);
 		break;
 		case 3:
-			lib_type_acte='Sépulture/Décès';
+			lib_type_acte='SÃ©pulture/DÃ©cÃ¨s';
 			$("#idf_type_acte").val(<?php echo IDF_DECES;?>);
 		break;
 		case 4:
-			lib_type_acte='Tous divers Nimègue';
+			lib_type_acte='Tous divers NimÃ¨gue';
 			$("#idf_type_acte").val('DIV');
 		break;
 		case 5:
@@ -166,17 +166,17 @@ $(document).ready(function() {
     var intervalle= '';
     if (annee_min!='' && annee_max!='')
     {
-       intervalle = 'de '+annee_min+' à '+annee_max;
+       intervalle = 'de '+annee_min+' Ã  '+annee_max;
     }
     else if (annee_min!='')
     {
-       intervalle =  'à partir de '+annee_min;
+       intervalle =  'Ã  partir de '+annee_min;
     }
     else if (annee_max!='')
     {
       intervalle =  "jusqu'en "+annee_max;
     }
-    var question = 'Etes-vous sûr de supprimer les actes ('+lib_type_acte+')'+' de la commune '+commune+'  et de la source '+source;
+    var question = 'Etes-vous sÃ»r de supprimer les actes ('+lib_type_acte+')'+' de la commune '+commune+'  et de la source '+source;
     if (intervalle!='')
     {
        question= question + ' ('+intervalle+')'; 
@@ -279,7 +279,7 @@ switch($gst_mode)
      print('</form></div></div>');
    break;
    case 'SUPPRESSION' : 
-                        $_SESSION['idf_commune_acte'] = $gi_idf_commune_acte;                                                            
+                        $_SESSION['idf_commune_acte'] = $gi_idf_commune_acte;  
 						$i_nb_permaliens = nombre_permaliens($gi_idf_commune_acte,$gc_idf_type_acte);
                         if ($i_nb_permaliens!=0)
                         {

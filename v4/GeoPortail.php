@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('Commun/config.php');
@@ -152,7 +152,7 @@ function initMap() {
  */
 function loadAPI() {
     // wait for all classes to be loaded
-    // on attend que les classes soient chargées
+    // on attend que les classes soient chargÃ©es
     if (checkApiLoading('loadAPI();',['OpenLayers','Geoportal','Geoportal.Viewer','Geoportal.Viewer.Default'])===false) {
         return;
     }
@@ -163,7 +163,7 @@ function loadAPI() {
 }
 
 // assign callback when "onload" event is fired
-// assignation de la fonction à appeler lors de la levée de l'évènement "onload"
+// assignation de la fonction Ã  appeler lors de la levÃ©e de l'Ã©vÃ©nement "onload"
 window.onload= loadAPI;
     
   <!-- -->

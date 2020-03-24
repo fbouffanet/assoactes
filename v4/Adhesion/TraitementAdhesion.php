@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 $gst_chemin = "../";
@@ -51,14 +51,14 @@ if ($response['result']['code'] == '00000' )
   list($i_idf_ins_prov,$i_idf_agc,$st_type_adhesion,$st_ancien_statut) = $connexionBD->sql_select_liste($st_requete);
   if (empty($st_ancien_statut))
   {
-	   // l'adhérent doit forcément être créé
+	   // l'adhÃ©rent doit forcÃ©ment Ãªtre crÃ©Ã©
 	   $adherent = new Adherent($connexionBD,null);
 	   $adherent->initialise_inscription_en_ligne($st_token);
 	   $adherent->cree();
   }
   else
   {
-	   // le compte généabank doit être recréé
+	   // le compte gÃ©nÃ©abank doit Ãªtre recrÃ©Ã©
 	   $adherent = new Adherent($connexionBD,$i_idf_agc);
      if ($st_ancien_statut==ADHESION_SUSPENDU)
 		   $adherent->reactive();

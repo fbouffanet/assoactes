@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('Commun/Identification.php');
@@ -12,10 +12,10 @@ require_once('Commun/PaginationTableau.php');
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr"> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-print('<title>Base '.SIGLE_ASSO.': Stats consulations adhérent</title>');
+print('<title>Base '.SIGLE_ASSO.': Stats consulations adhÃ©rent</title>');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='js/jquery-min.js' type='text/javascript'></script>");
@@ -24,7 +24,7 @@ print('<link rel="shortcut icon" href="images/favicon.ico">');
 print("</head>");
 
 /*
-  Renvoie le lien pour afficher les demandes d'une commune de l'adhérent courant
+  Renvoie le lien pour afficher les demandes d'une commune de l'adhÃ©rent courant
   @param integer $pi_nb_ddes nombre de demandes
   @param integer $pi_idf_commune identifiant de la commune
   @param integer $pi_idf_type_acte identifiant type de l'acte 
@@ -42,10 +42,10 @@ function ddes_communes($pi_nb_ddes,$pi_idf_commune,$pi_idf_type_acte)
 }
 
 /*
-  Renvoie le lien pour afficher les demandes d'une commune de l'adhérent courant
+  Renvoie le lien pour afficher les demandes d'une commune de l'adhÃ©rent courant
   @param integer $pi_nb_ddes nombre de demandes
   @param integer $pi_mois identifiant du mois
-  @param integer  $pi_annee identifiant de l'année
+  @param integer  $pi_annee identifiant de l'annÃ©e
   @param integer $pi_idf_type_acte identifiant type de l'acte 
 */
 function ddes_mois_annee($pi_nb_ddes,$pi_mois,$pi_annee,$pi_idf_type_acte)
@@ -158,7 +158,7 @@ if (isset($gst_ident ))
         foreach ($a_ddes_paroisses as $a_ligne)
         {
           list($st_paroisse,$i_idf_paroisse,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
-          print(sprintf("<tr><td>%s</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",$st_paroisse,$i_total,ddes_communes($i_nb_nai,$i_idf_paroisse,IDF_NAISSANCE),ddes_communes($i_nb_mar,$i_idf_paroisse,IDF_MARIAGE),ddes_communes($i_nb_dec,$i_idf_paroisse,IDF_DECES),ddes_communes($i_nb_cm,$i_idf_paroisse,IDF_CM)));
+          print(sprintf("<tr><td>%s</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",cp1252_vers_utf8($st_paroisse),$i_total,ddes_communes($i_nb_nai,$i_idf_paroisse,IDF_NAISSANCE),ddes_communes($i_nb_mar,$i_idf_paroisse,IDF_MARIAGE),ddes_communes($i_nb_dec,$i_idf_paroisse,IDF_DECES),ddes_communes($i_nb_cm,$i_idf_paroisse,IDF_CM)));
         }
         print("</table>\n");
       }                                                                         
@@ -180,7 +180,7 @@ if (isset($gst_ident ))
         foreach ($a_ddes_cantons as $a_ligne)
         {
           list($st_canton,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
-          print(sprintf("<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td></tr>\n",$st_canton,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
+          print(sprintf("<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td></tr>\n",cp1252_vers_utf8($st_canton),$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
         }
         print("</table>\n");
       }
@@ -204,7 +204,7 @@ if (isset($gst_ident ))
        print("<div class=\"panel-heading\">Vos demandes par commune</div>");
        print('<div class="panel-body">');
 	   print('<div class="panel panel-info">');
-       print("<div class=\"panel-heading\">$st_type_acte &agrave; $st_commune</div>");
+       print("<div class=\"panel-heading\">".cp1252_vers_utf8($st_type_acte)." &agrave; ".cp1252_vers_utf8($st_commune)."</div>");
        print('<div class="panel-body">');
        $gi_num_page = empty($_POST['num_page_ddes_adht']) ?  $i_session_num_page: (integer) $_POST['num_page_ddes_adht'];
        $_SESSION['mode']=$gst_mode;
@@ -278,7 +278,7 @@ if (isset($gst_ident ))
        print('<div class="panel-heading">Vos demandes par mois et ann&eacute;e</div>');
        print('<div class="panel-body">');
 	   print('<div class="panel panel-info">');
-       print(sprintf("<div class=\"panel-heading\">%s en %0.2d/%0.4d</div>",$st_type_acte,$i_mois,$i_annee));
+       print(sprintf("<div class=\"panel-heading\">%s en %0.2d/%0.4d</div>",cp1252_vers_utf8($st_type_acte),$i_mois,$i_annee));
        print('<div class="panel-body">');
        $gi_num_page = empty($_POST['num_page_ddes_adht']) ?  $i_session_num_page: (integer) $_POST['num_page_ddes_adht'];
        $_SESSION['mode']=$gst_mode;

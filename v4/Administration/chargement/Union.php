@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -30,7 +30,7 @@ class Union {
    }
    
    /**
-   * @param string $pst_valeur valeur à convertir
+   * @param string $pst_valeur valeur Ã  convertir
    * @return string champ CSV  
    */     
    static function champ_csv($pst_valeur)
@@ -79,15 +79,15 @@ class Union {
    }
    
    /*
-   * Crée une union dans la table Union
+   * CrÃ©e une union dans la table Union
    * @param integer $pi_idf_source identifiant de la source
    * @param integer $pi_idf_commune identifiant de la commune
    * @param integer $pi_idf_acte identifiant de l'acte
    * @param integer $pi_idf_type_acte identifiant du type de l'acte
-   * @param integer $pi_idf_epoux identifiant de l'époux
-   * @param string  $pst_nom_epoux nom de l'époux
-   * @param integer $pi_idf_epouse identifiant de l'épouse
-   * @param string  $pst_nom_epouse nom de l'épouse
+   * @param integer $pi_idf_epoux identifiant de l'Ã©poux
+   * @param string  $pst_nom_epoux nom de l'Ã©poux
+   * @param integer $pi_idf_epouse identifiant de l'Ã©pouse
+   * @param string  $pst_nom_epouse nom de l'Ã©pouse
    */
    public function cree($pi_idf_source,$pi_idf_commune,$pi_idf_acte,$pi_idf_type_acte,$pi_idf_epoux,$pst_nom_epoux,$pi_idf_epouse,$pst_nom_epouse)
    {

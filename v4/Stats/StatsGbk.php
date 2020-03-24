@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once '../Commun/config.php';
@@ -14,7 +14,7 @@ require_once('../Commun/ConnexionBD.php');
 
 /**
  * Exporte l'historique des demandes GBK
- * @param object $pconnexionBD Connexion à la BD 
+ * @param object $pconnexionBD Connexion Ã  la BD 
  */
 function exporte_historique_cantons($pconnexionBD)
 {
@@ -54,7 +54,7 @@ function exporte_historique_cantons($pconnexionBD)
 
 /**
  * Affiche les statistiques cumulees
- * @param object $pconnexionBD Connexion à la BD 
+ * @param object $pconnexionBD Connexion Ã  la BD 
  */ 
 function affiche_stats_cumulees($pconnexionBD)
 {
@@ -107,7 +107,7 @@ function affiche_stats_cumulees($pconnexionBD)
 
 /**
  * Affiche le menu formulaire
- * @param object $pconnexionBD Connexionà la BD 
+ * @param object $pconnexionBD Connexion Ã  la BD 
  */ 
 function affiche_formulaire($pconnexionBD) {
   $a_cantons=$pconnexionBD->liste_valeur_par_clef("select idf,nom from canton order by nom");
@@ -175,7 +175,7 @@ if ($gst_mode=='EXPORT_HISTORIQUE')
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=cp1252" />');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />');
 print('<meta http-equiv="content-language" content="fr" /> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");

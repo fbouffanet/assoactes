@@ -1,12 +1,12 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
 class Releveur {
-  // Statistique divers à compléter
+  // Statistique divers Ã  complÃ©ter
   protected $connexionBD;
   protected $a_releveurs;
 
@@ -16,11 +16,11 @@ class Releveur {
   }
   
   /**
-  * Renvoie l'identifiant du releveur correspondant … l'adh‚rent identifi‚ par son identifiant adh‚rent
-  * S'il n'existe pas, le cr‚e  
-  * La liste des identifiants releveurs est mis en cache pour ‚viter les accŠs BD
+  * Renvoie l'identifiant du releveur correspondant Ã  l'adhÃ©rent identifiÃ© par son identifiant adhÃ©rent
+  * S'il n'existe pas, le crÃ©e  
+  * La liste des identifiants releveurs est mis en cache pour Ã©viter les accÃ¨s BD
   *  
-  * @param integer $pi_idf_adherent identifiant de l'adh‚rent
+  * @param integer $pi_idf_adherent identifiant de l'adhÃ©rent
   * @return integer $i_idf_releveur
   */
 

@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('../Commun/Identification.php');
@@ -15,10 +15,10 @@ require_once('../Commun/PaginationTableau.php');
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr"> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-print('<title>Base '.SIGLE_ASSO.': Stats consulations adhérent</title>');
+print('<title>Base '.SIGLE_ASSO.': Stats consulations adh&eacute;rent</title>');
 print('<link href="../css/styles.css" type="text/css" rel="stylesheet">');
 print('<link href="../css/bootstrap.min.css" rel="stylesheet">');
 print('<script src="../js/jquery-min.js" type="text/javascript"></script>');
@@ -49,14 +49,14 @@ function affiche_formulaire() {
   print('<label for="idf_journal" class="form-form-label col-md-2">S&eacute;lection du fichier pour la recherche</label>');  
   print('<div class="col-md-6">');
   print('<select name="idf_journal" id="idf_journal" class="form-control">');
-  print('<option value=1>Requête recherche sur une personne </OPTION>');
-  print('<option value=2>Requête recherche sur un couple </OPTION>');
-  print('<option value=3>Requête recherche sur les dépouillements </OPTION>');
-  print('<option value=4>Requête recherche sur les liasses</OPTION>');
-  print('<option value=5>Requête recherche sur les r&eacute;pertoires</OPTION>');
-  print('<option value=6>Requête recherche sur les TD de mariage</OPTION>');
-  print('<option value=7>Requête recherche sur les TD de naissance</OPTION>');
-  print('<option value=8>Requête recherche sur les TD de d&eacute;c&eacute;s</OPTION>');
+  print('<option value=1>RequÃªte recherche sur une personne </OPTION>');
+  print('<option value=2>RequÃªte recherche sur un couple </OPTION>');
+  print('<option value=3>RequÃªte recherche sur les dÃ©pouillements </OPTION>');
+  print('<option value=4>RequÃªte recherche sur les liasses</OPTION>');
+  print('<option value=5>RequÃªte recherche sur les r&eacute;pertoires</OPTION>');
+  print('<option value=6>RequÃªte recherche sur les TD de mariage</OPTION>');
+  print('<option value=7>RequÃªte recherche sur les TD de naissance</OPTION>');
+  print('<option value=8>RequÃªte recherche sur les TD de d&eacute;c&eacute;s</OPTION>');
   print("</select>");
   print('</div>');
   print('</div>');  
@@ -90,11 +90,11 @@ print('<div class="container">');
 require_once("../Commun/menu.php");
 
 $ga_fichiers_logs = array(
-    1=> array('requetes_personne.log',5,array('Date','Ident','IP','Nom','Prenom','Commune','Rayon','Année Min','Année Max','Commentaires')),
-    2=> array('requetes_couple.log',7,array('Date','Ident','IP','Nom Epx','Prenom Epx','Nom Epse','Prenom Epse','Commune','Rayon','Année Min','Année Max')),
+    1=> array('requetes_personne.log',5,array('Date','Ident','IP','Nom','Prenom','Commune','Rayon','AnnÃ©e Min','AnnÃ©e Max','Commentaires')),
+    2=> array('requetes_couple.log',7,array('Date','Ident','IP','Nom Epx','Prenom Epx','Nom Epse','Prenom Epse','Commune','Rayon','AnnÃ©e Min','AnnÃ©e Max')),
     3=> array('requetes_depouillements.log',null,array('Date','Ident','IP','Commune','Type d\'acte')),
-    4=>array('requetes_liasse.log',8,array('Date','Ident','IP','Nom notaire','Prenom Notaire','Serie','Cote Debut','Cote Fin','Commune','Rayon','Année Min','Année Max')),
-    5=>array('requetes_rep_not.log',3,array('Date','Ident','IP','Commune','Rayon','Idf Rep','Type acte','Année Min','Année Max','Nom 1','Prenom 1','Nom 2','Prenom 2','Paroisse')),
+    4=>array('requetes_liasse.log',8,array('Date','Ident','IP','Nom notaire','Prenom Notaire','Serie','Cote Debut','Cote Fin','Commune','Rayon','AnnÃ©e Min','AnnÃ©e Max')),
+    5=>array('requetes_rep_not.log',3,array('Date','Ident','IP','Commune','Rayon','Idf Rep','Type acte','AnnÃ©e Min','AnnÃ©e Max','Nom 1','Prenom 1','Nom 2','Prenom 2','Paroisse')),
     6=>array('requetes_td_mariages.log',3,array('Date','Ident','IP','Commune')),
     7=>array('requetes_td_naissances.log',3,array('Date','Ident','IP','Commune')),
     8=>array('requetes_td_deces.log',3,array('Date','Ident','IP','Commune'))
@@ -104,7 +104,7 @@ list($gst_adherent,$gst_ident)=$connexionBD->sql_select_liste("select concat(pre
 $a_communes_acte = $connexionBD->liste_valeur_par_clef("select idf,nom from commune_acte");
 
 print('<div class="panel panel-primary">');
-print("<div class=\"panel-heading\">Affichage des recherches de l'adh&eacute;rent $gst_adherent</div>");
+print("<div class=\"panel-heading\">Affichage des recherches de l'adh&eacute;rent ".cp1252_vers_utf8($gst_adherent)."</div>");
 print('<div class="panel-body">');
 if (isset($gi_idf_adherent ))
 {

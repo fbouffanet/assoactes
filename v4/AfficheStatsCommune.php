@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 session_start();
@@ -14,7 +14,7 @@ require_once('./Commun/ConnexionBD.php');
 print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
@@ -27,7 +27,7 @@ print("<script src='js/sjquery.validate.min.js' type='text/javascript'></script>
 print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
-print('<title>Base '.SIGLE_ASSO.': Etat des relevés</title>');
+print('<title>Base '.SIGLE_ASSO.': Etat des relevÃ©s</title>');
 ?>
 <SCRIPT type="text/javascript">
 $(document).ready(function() {
@@ -59,10 +59,10 @@ $('a.lien_geoportail').click(function(){
 print('</head>');
 
 /*
- * Renvoie une chaine intervalle d'années ou une seule année si l'intervalle est vide
- * @param integer $pi_deb : Année de début
- * @param integer $pi_fin : Année de fin 
- * @return string Chaine représentant l'intervalle   
+ * Renvoie une chaine intervalle d'annÃ©es ou une seule annÃ©e si l'intervalle est vide
+ * @param integer $pi_deb : AnnÃ©e de dÃ©but
+ * @param integer $pi_fin : AnnÃ©e de fin 
+ * @return string Chaine reprÃ©sentant l'intervalle   
 */
 function chaine_intervalle($pi_deb,$pi_fin)
 {
@@ -78,8 +78,8 @@ function cellule_stat($pi_idf_commune,$pi_idf_type_acte,$pi_annee_min,$pi_annee_
 }
 
 /**
-    * Affiche l'entête de navigation liens
-    * L'entête se presente sous la forme d'une liste d'ancres HTML [pagecourante - delta ... pagecourante ... pagecourante + delta]     
+    * Affiche l'entÃªte de navigation liens
+    * L'entÃªte se presente sous la forme d'une liste d'ancres HTML [pagecourante - delta ... pagecourante ... pagecourante + delta]     
 */
 function affiche_entete_liens_navigation($pi_num_page_cour,$pi_nb_pages)
 {
@@ -174,6 +174,7 @@ switch ($gst_mode) {
         if (!empty($gst_commune_a_chercher))
         {
             $st_requete .= " where ca.nom like :recherche";
+			$gst_commune_a_chercher=utf8_vers_cp1252($gst_commune_a_chercher);
             $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher));       
         }
      }
@@ -183,12 +184,14 @@ switch ($gst_mode) {
         if (!empty($gst_commune_a_chercher))
         {
             $st_requete .= " and ca.nom like :recherche";
+			$gst_commune_a_chercher=utf8_vers_cp1252($gst_commune_a_chercher);
             $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher)); 
         }
      }
      $st_requete .= " ORDER BY init";
      //FBOprint("Req=$st_requete<br>"); 
-     $a_initiales_communes = $connexionBD->sql_select($st_requete);
+     
+	 $a_initiales_communes = $connexionBD->sql_select($st_requete);
      
      print('<div class="form-row">');
      if (count($a_initiales_communes)>0)
@@ -203,15 +206,15 @@ switch ($gst_mode) {
         foreach ($a_initiales_communes as $c_initiale)
         {
           if ($c_initiale==$gc_initiale)
-            print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
+            print("<li class=\"page-item active\"><span class=\"page-link\">".cp1252_vers_utf8($c_initiale)."<span class=\"sr-only\">(current)</span></span></li>");
           else
-           print("<li class=\"page-item\"><a class=\"page-link\" href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=$c_initiale&amp;idf_source=$gi_idf_source\">$c_initiale</a></li>");
+           print("<li class=\"page-item\"><a class=\"page-link\" href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=$c_initiale&amp;idf_source=$gi_idf_source\">".cp1252_vers_utf8($c_initiale)."</a></li>");
         }
         print("</ul>");
         print('</div>');
      }
      print('</div>');
-     //Calcul de la liste complète des communes commencant par l'initiale
+     //Calcul de la liste complÃ¨te des communes commencant par l'initiale
      if (empty($gi_idf_source))
      {
        if (empty($gst_commune_a_chercher))
@@ -299,7 +302,7 @@ switch ($gst_mode) {
          {
             list($st_nom_commune,$i_debut_communale,$i_debut_greffe) = $a_info_commune;
             print("<tr>");
-			$st_cellule_commune = empty(CLEF_API_GEOPORTAIL) ? "<td>$st_nom_commune</td>" : "<td><a class=\"lien_geoportail\" href=\"./GeoPortail.php?idf_commune=$i_idf_commune\">$st_nom_commune</a></td>";
+			$st_cellule_commune = empty(CLEF_API_GEOPORTAIL) ? "<td>".cp1252_vers_utf8($st_nom_commune)."</td>" : "<td><a class=\"lien_geoportail\" href=\"./GeoPortail.php?idf_commune=$i_idf_commune\">".cp1252_vers_utf8($st_nom_commune)."</a></td>";
             print("$st_cellule_commune");
             if (empty($i_debut_greffe))
               print("<td>&nbsp;</td>");
@@ -353,7 +356,7 @@ switch ($gst_mode) {
   case 'DETAIL' :  
      print('<div class="panel panel-primary">');
      print('<div class="panel-heading">');
-     print("Liste des ann&eacute;es disponibles de: $gst_nom_commune ($gst_type_acte)");
+     print("Liste des ann&eacute;es disponibles de: ".cp1252_vers_utf8($gst_nom_commune)." (".cp1252_vers_utf8($gst_type_acte).")");
      if  ($gst_canton!='')
         print("<br> Canton de $gst_canton");
      print("<br>Source: $a_sources[$gi_idf_source]");   

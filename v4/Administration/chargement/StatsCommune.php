@@ -1,12 +1,12 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
 class StatsCommune {
-  // Statistique divers à compléter
+  // Statistique divers Ã  complÃ©ter
   protected $connexionBD;
   protected $i_idf_commune;
   protected $i_idf_source;
@@ -22,7 +22,7 @@ class StatsCommune {
   }
   
   /**
-  * Met à jour les date minimale, maximale, le nombre d'actes en fonction de l'annee courante $pi_annee
+  * Met Ã  jour les date minimale, maximale, le nombre d'actes en fonction de l'annee courante $pi_annee
   *
   * @param string $pi_annee annee courante
   * @return array(date_min, date_max)
@@ -33,8 +33,8 @@ class StatsCommune {
      if (array_key_exists(strval($pst_type_acte),$this->a_stats_commune))
      {
        list($i_annee_min,$i_annee_max,$i_nb_actes) = $this->a_stats_commune[strval($pst_type_acte)];
-       //9999 est une année inconnue pour Nimègue
-       //Nimègue autorise le caractère ? dans l'année
+       //9999 est une annÃ©e inconnue pour Nimgue
+       //NimÃ¨gue autorise le caractÃ¨re ? dans l'annÃ©e
        if (($pi_annee != 9999) && ($pi_annee != 0))
        {
          if ($pi_annee<$i_annee_min || $i_annee_min==0) $i_annee_min=$pi_annee;
@@ -44,7 +44,7 @@ class StatsCommune {
        $this->a_stats_commune[strval($pst_type_acte)] = array($i_annee_min,$i_annee_max,$i_nb_actes);
      }
      else
-       // si l'année est 0 ou 9999, on espère qu'il existera au moins un acte avec une année valide dans le fichier pour corriger la fourchette
+       // si l'annÃ©e est 0 ou 9999, on espÃ¨re qu'il existera au moins un acte avec une annÃ©e valide dans le fichier pour corriger la fourchette
        $this->a_stats_commune[strval($pst_type_acte)] = array($pi_annee,$pi_annee,1); 
      
   }
@@ -63,7 +63,7 @@ class StatsCommune {
   }
   
   /*
-   Met à jour les statistiques de la commune en cours suite à une modification
+   Met Ã  jour les statistiques de la commune en cours suite Ã  une modification
    @param integer $pi_idf_type_acte identifiant du type d'acte
    */
    function maj_stats($pi_idf_type_acte) {

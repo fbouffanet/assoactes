@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -34,6 +34,27 @@ class Acte {
      protected $i_nb_lignes;
     
      protected $ga_grille_saisie;
+	 
+	 
+	/*
+	* Renvoie une chaine encodÃ©e en cp1252 en UTF8
+	* @param string $st_valeur chaine cp1252 Ã  convertir
+	* @return string chaine encodÃ©e en UTF8
+	*/
+	static public function cp1252_vers_utf8($st_valeur)
+	{
+		return mb_convert_encoding($st_valeur,'UTF8','cp1252');
+	}
+				
+	/*
+	* Renvoie une chaine encodÃ©e en UTF8 en cp1252
+	* @param string $st_valeur chaine UTF8 Ã  convertir
+	* @return string chaine encodÃ©e en UTF8
+	*/
+	static public function utf8_vers_cp1252($st_valeur)
+	{
+		return mb_convert_encoding($st_valeur,'cp1252','UTF8');
+	}
     
      function __autoload($class_name)
     
@@ -87,6 +108,8 @@ class Acte {
          $this -> st_sigle_type_acte_nimegue = null;
          $this -> a_infos = false;
          $this -> a_liste_personnes = array();
+		 $this -> st_date_creation = time();
+		 $this -> st_date_modification = time();
          } 
     
     public function importeNimV2($pst_date_rep, $pst_cote, $pst_libre, $pst_commentaires)
@@ -227,9 +250,9 @@ class Acte {
 	} 	 
     
     /**
-     * Positionne la liste des filtres jquery validator à activer par champ de paramètre
+     * Positionne la liste des filtres jquery validator Ã  activer par champ de paramÃ¨tre
      * 
-     * @param array $ tableau nom du paramètre => (type de filtre, message d'erreur à afficher)
+     * @param array $ tableau nom du paramÃ¨tre => (type de filtre, message d'erreur Ã  afficher)
      */
     public function setFiltresParametres($pa_filtres_parametres)
     
@@ -238,7 +261,7 @@ class Acte {
          }
      
      /*
-     * Renvoie les détails supplémentaires
+     * Renvoie les dÃ©tails supplÃ©mentaires
      */         
      public function getDetailsSupplementaires()
      {
@@ -246,9 +269,9 @@ class Acte {
      } 
     
     /**
-     * Renvoie la liste des filtres jquery validator à activer par champ de paramètre
+     * Renvoie la liste des filtres jquery validator Ã  activer par champ de paramÃ tre
      * 
-     * @return array tableau nom du paramètre => (type de filtre, message d'erreur à afficher)
+     * @return array tableau nom du paramÃ tre => (type de filtre, message d'erreur Ã  afficher)
      */
     public function getFiltresParametres()
     
@@ -258,7 +281,7 @@ class Acte {
          } 
     
     /**
-     * Renvoie les paramètres d'autocomplétion
+     * Renvoie les paramÃ¨tres d'autocomplÃ¨tion
      */
     public function getParamsCompletionAuto()
     
@@ -268,19 +291,39 @@ class Acte {
          } 
     
     /**
-     * Initialise les paramètres d'autocomplétion
+     * Initialise les paramÃ¨tres d'autocomplÃ¨tion
      */
     public function setParamsCompletionAuto($pa_params_completion_auto)
     
     
     {
          $this -> a_params_completion_auto = $pa_params_completion_auto;
-         } 
+         }
+
+	/**
+     * Initialise la date de crÃ©ation
+     */
+    public function setDateCreation($pst_date_creation)
+    
+    
+    {
+         $this -> st_date_creation = $pst_date_creation;
+         }
+
+	/**
+     * Initialise la date de modification
+     */
+    public function setDateModification($pst_date_modification)
+    
+    
+    {
+         $this -> date_modification = $pst_date_modification;
+         } 		
     
     /**
      * Renvoie le contenu de l'acte sous la forme d'une chaine CSV
      * 
-     * @return string acte sous forme CSV (séparateur=;)
+     * @return string acte sous forme CSV (sÃ©parateur=;)
      */
     public function ligne_sql_a_inserer()
     
@@ -301,13 +344,13 @@ class Acte {
 		 $a_actes_a_creer[":commentaires$this->i_idf"]=$this -> st_commentaires;
 		 $a_actes_a_creer[":url$this->i_idf"]=$this -> st_url;
 		 $a_actes_a_creer[":details_supplementaires$this->i_idf"]=$this -> i_details_supplementaires;
-		 $a_actes_a_creer[":creation$this->i_idf"]=time(); 
-		 $a_actes_a_creer[":modification$this->i_idf"]=time(); 
+		 $a_actes_a_creer[":creation$this->i_idf"]=$this -> st_date_creation; 
+		 $a_actes_a_creer[":modification$this->i_idf"]=$this -> st_date_modification; 
           return array("(:idf$this->i_idf,:idf_commune$this->i_idf,:idf_type_acte$this->i_idf,:idf_source$this->i_idf,:idf_releveur$this->i_idf,:date$this->i_idf,:jour$this->i_idf,:mois$this->i_idf,:annee$this->i_idf,:date_rep$this->i_idf,:cote$this->i_idf,:libre$this->i_idf,:commentaires$this->i_idf,:url$this->i_idf,:details_supplementaires$this->i_idf,:creation$this->i_idf,:modification$this->i_idf)",$a_actes_a_creer);
          } 
     
     /**
-     * Renvoie la requête de base pour un chargement d'acte
+     * Renvoie la requÃªte de base pour un chargement d'acte
      */
     public static function requete_base()
     
@@ -329,7 +372,7 @@ class Acte {
     /**
      * renvoie la date sous la forme AAAAMMJJ
      * 
-     * @param string $pst_date (JJ/MM/AAAA)
+     * @param string $pst_date (JJ[/-]MM[/-]AAAA)
      * return array (jour, mois, annee)
      */
     private function date_vers_triplet($pst_date)
@@ -338,7 +381,7 @@ class Acte {
     {
          if (!empty($pst_date))
              {
-            list ($i_jour, $i_mois, $i_annee) = preg_split('/\//', $pst_date, 3);
+             list ($i_jour, $i_mois, $i_annee) = preg_split('/[\/-]+/', $pst_date, 3);
              $i_jour = str_replace('_', '0', $i_jour);
              $i_mois = str_replace('_', '0', $i_mois);
              $i_annee = str_replace('_', '0', $i_annee);
@@ -359,7 +402,7 @@ class Acte {
          } 
     
     /**
-     * Charge l'acte et la liste des personnes rattachées à partir de la BD
+     * Charge l'acte et la liste des personnes rattachÃ©es Ã  partir de la BD
      * 
      * @param integer $pi_idf_acte identifiant de l'acte
      */
@@ -389,6 +432,8 @@ class Acte {
          $this -> st_date_rep = str_replace(' ', '', $st_date_rep);
          $this -> st_cote = $st_cote;
          $this -> st_libre = $st_libre;
+		 $this -> st_date_creation = time();
+		 $this -> st_date_modification = time();
          if (preg_match('/(https*\:\/\/[\w\:\/\.]+)/', $st_commentaires, $a_champs))
              {
             $this -> st_url = $a_champs[1];
@@ -416,9 +461,9 @@ class Acte {
         } 
     
     /**
-     * Sauvegarde l'acte dans la base de données
+     * Sauvegarde l'acte dans la base de donnÃ©es
      * 
-     * @return integer identifiant de l'acte créé
+     * @return integer identifiant de l'acte crÃ©Ã©
      */
     public function sauve()
     
@@ -426,7 +471,7 @@ class Acte {
     {
          $i_idf = $this -> i_idf;
          $i_idf_commune = $this -> i_idf_commune;
-         $i_idf_type_acte = $this -> typeActe -> vers_idf($this -> st_type_acte);
+         $i_idf_type_acte = $this -> i_idf_type_acte;
          $i_idf_source = $this -> i_idf_source;
          $st_date = $this -> st_date;
          $i_idf_releveur = $this -> i_idf_releveur;
@@ -444,21 +489,19 @@ class Acte {
              $i_details_supplementaires = 1;
          else
              $i_details_supplementaires = 0;;
-         $st_commentaires = str_replace("\n", '§', $st_commentaires);
-         $created = time();
-		     $changed = time();
+         $st_commentaires = str_replace("\n", 'Â§', $st_commentaires);
          if (isset($this -> i_idf))
              {
             $i_idf = $this -> i_idf;
-              $this -> connexionBD -> initialise_params(array(':idf' => $i_idf, ':idf_commune' => $i_idf_commune, ':idf_type_acte' => $i_idf_type_acte, ':idf_source' => $i_idf_source, ':date' => $st_date, ':jour' => $i_jour, ':mois' => $i_mois, ':annee' => $i_annee, ':date_rep' => $st_date_rep, ':cote' => $st_cote, ':libre' => $st_libre, ':url' => $st_url, ':commentaires' => $st_commentaires, ':details_supplementaires' => $i_details_supplementaires, ':changed' => $changed));
+              $this -> connexionBD -> initialise_params(array(':idf' => $i_idf, ':idf_commune' => $i_idf_commune, ':idf_type_acte' => $i_idf_type_acte, ':idf_source' => $i_idf_source, ':date' => $st_date, ':jour' => $i_jour, ':mois' => $i_mois, ':annee' => $i_annee, ':date_rep' => $st_date_rep, ':cote' => $st_cote, ':libre' => $st_libre, ':url' => $st_url, ':commentaires' => $st_commentaires, ':details_supplementaires' => $i_details_supplementaires, ':changed' => $this -> st_date_modification));
              $st_requete = "update acte set idf_commune=:idf_commune,idf_type_acte=:idf_type_acte,idf_source=:idf_source,date=:date,jour=:jour,mois=:mois,annee=:annee,date_rep=:date_rep,cote=:cote,libre=:libre,url=:url,commentaires=:commentaires,details_supplementaires=:details_supplementaires,changed=:changed where idf=:idf";
              $this -> connexionBD -> execute_requete($st_requete);
              return $i_idf;
              } 
         else
              {
-				$this -> connexionBD -> initialise_params(array(':idf_commune' => $i_idf_commune, ':idf_type_acte' => $i_idf_type_acte, ':idf_source' => $i_idf_source, ':date' => $st_date, ':jour' => $i_jour, ':mois' => $i_mois, ':annee' => $i_annee, ':date_rep' => $st_date_rep, ':cote' => $st_cote, ':libre' => $st_libre, ':url' => $st_url, ':commentaires' => $st_commentaires, ':details_supplementaires' => $i_details_supplementaires,':created'=>$created,':changed'=>$changed)); 
-            $st_requete = "insert into acte(idf_commune,idf_type_acte,idf_source,date,jour,mois,annee,date_rep,cote,libre,commentaires,url,details_supplementaires) values(:idf_commune,:idf_type_acte,:idf_source,:date,:jour,:mois,:annee,:date_rep,:cote,:libre,:commentaires,:url,:details_supplementaires,$created,$changed)";
+				$this -> connexionBD -> initialise_params(array(':idf_commune' => $i_idf_commune, ':idf_type_acte' => $i_idf_type_acte, ':idf_source' => $i_idf_source, ':date' => $st_date, ':jour' => $i_jour, ':mois' => $i_mois, ':annee' => $i_annee, ':date_rep' => $st_date_rep, ':cote' => $st_cote, ':libre' => $st_libre, ':url' => $st_url, ':commentaires' => $st_commentaires, ':details_supplementaires' => $i_details_supplementaires,':created'=>$this -> st_date_creation,':changed'=>$this -> st_date_modification)); 
+            $st_requete = "insert into acte(idf_commune,idf_type_acte,idf_source,date,jour,mois,annee,date_rep,cote,libre,commentaires,url,details_supplementaires) values(:idf_commune,:idf_type_acte,:idf_source,:date,:jour,:mois,:annee,:date_rep,:cote,:libre,:commentaires,:url,:details_supplementaires,:created,:changed)";
              $this -> connexionBD -> execute_requete($st_requete);
              return $this -> connexionBD -> dernier_idf_insere();
              } 
@@ -503,7 +546,10 @@ class Acte {
              $this -> st_libre = isset($_POST["libre"])?substr(trim($_POST["libre"]), 0, 50):'';
              $this -> st_commentaires = isset($_POST["cmt_acte"])?substr(trim($_POST["cmt_acte"]), 0, 1200):'';
              $this -> st_url = isset($_POST["permalien"])?substr(trim($_POST["permalien"]), 0, 100):'';
-             } 
+             }
+        $this -> st_cote =self::utf8_vers_cp1252($this -> st_cote);
+        $this -> st_libre =self::utf8_vers_cp1252($this -> st_libre);
+        $this -> st_commentaires =self::utf8_vers_cp1252($this -> st_commentaires);			
         list($i_jour, $i_mois, $i_annee) = $this -> date_vers_triplet($this -> st_date);
          $this -> i_jour = $i_jour;
          $this -> i_mois = $i_mois;
@@ -521,7 +567,7 @@ class Acte {
         } 
     
     /**
-     * Renvoie un formulaire HTML d'édition de l'entête d'un acte
+     * Renvoie un formulaire HTML d'Ã©dition de l'entÃªte d'un acte
      */
     public function formulaire_haut_acte()
     
@@ -529,7 +575,7 @@ class Acte {
     {
          global $ga_mois_revolutionnaires, $ga_annees_revolutionnaires, $ga_mois_revolutionnaires_nimegue, $gst_url_images, $gst_url_site;
          $st_chaine = '';
-         $st_chaine .= sprintf("<tr><th>Type d'acte</th><td colspan=2>%s</td>", $this -> st_type_acte);
+         $st_chaine .= sprintf("<tr><th>Type d'acte</th><td colspan=2>%s</td>", self::cp1252_vers_utf8($this -> st_type_acte));
          $st_chaine .= sprintf("<th>Date </th><td class=\"lib_erreur\" colspan=2><input type=text id=\"date\" name=\"date\" value=\"%s\" maxlength=10 class=\"form-control\"></td>", $this -> date_propre($this -> st_date));
 		 $i_jour_rep = null;
          $i_mois_rep = null;
@@ -559,7 +605,7 @@ class Acte {
              $i_mois_rep = array_key_exists(ucfirst(strtolower($st_mois_rep)), $a_mois_rep_nim_vers_entier) ? $a_mois_rep_nim_vers_entier[ucfirst(strtolower($st_mois_rep))]: null;
              $i_annee_rep = (int) $i_annee_rep;
              } 
-		// Champ date républicaine
+		// Champ date rÃ©publicaine
         $st_chaine .= sprintf("<td colspan=3><div class=\"btn-group-vertical\"><input type=text name=date_rep id=date_rep value=\"%s\" maxlength=10 class=\"form-control form-control-xs\">", $this -> st_date_rep);
 		// Bouton d'ouverture du popup
         $st_chaine .= "<button type=\"button\" class=\"ouvre_popup btn btn-primary btn-xs\" data-id_fenetre=\"#popup_date_rep_acte\"><span class=\"glyphicon glyphicon-calendar\"></span>  Saisir une date r&eacute;publicaine</button></div>";
@@ -567,9 +613,9 @@ class Acte {
         $st_chaine .= sprintf("<div class=\"popup_date_rep\" id=\"popup_date_rep_acte\" title=\"Fenetre\">%s</div></td></tr>\n", $st_chaine_date_rep);	 
         
 		 
-         $st_chaine .= sprintf("<tr><th>Commune</th><td colspan=2>%s</td>", $this -> st_commune);
-		 $st_chaine .= sprintf("<th>Cote</th><td colspan=2><input type=text name=cote value=\"%s\" maxlength=40 class=\"form-control\"></td>", $this -> st_cote);
-         $st_chaine .= sprintf("<th >Libre</th><td colspan=2><input type=text name=libre value=\"%s\" size=50 maxlength=70 class=\"form-control\"></td></tr>\n", $this -> st_libre);
+         $st_chaine .= sprintf("<tr><th>Commune</th><td colspan=2>%s</td>", self::cp1252_vers_utf8($this -> st_commune));
+		 $st_chaine .= sprintf("<th>Cote</th><td colspan=2><input type=text name=cote value=\"%s\" maxlength=40 class=\"form-control\"></td>", self::cp1252_vers_utf8($this -> st_cote));
+         $st_chaine .= sprintf("<th >Libre</th><td colspan=2><input type=text name=libre value=\"%s\" size=50 maxlength=70 class=\"form-control\"></td></tr>\n", self::cp1252_vers_utf8($this -> st_libre));
          
          $st_chaine .= sprintf("<tr><th >Permalien <a target=\"_blank\" href=\"%s/Permalien_AD16.html\"><span class=\"glyphicon glyphicon-link\"></span></a></th><td colspan=7 class=\"lib_erreur\"><input type=text name=\"permalien\" id=\"permalien\" value=\"%s\" size=100 maxlength=100 class=\"form-control\"></td></tr>\n", $gst_url_site, $this -> st_url);
          $this -> a_filtres_parametres["permalien"] = array(array("pattern", "/^https*\:\/\/[\w\.]+\/ark\:\/[\d]+\/[\w]+\/[\w]+$/", "Ce n'est pas un permalien. Merci de lire l'aide en cliquant sur le point d'interrogation"));
@@ -581,12 +627,12 @@ class Acte {
     
     {
          $st_chaine = '';
-         $st_chaine .= sprintf("%s à %s", $this -> st_type_acte, $this -> st_commune);
+         $st_chaine .= sprintf("%s Ã  %s", self::cp1252_vers_utf8($this -> st_type_acte), self::cp1252_vers_utf8($this -> st_commune));
 		 $st_chaine .= (empty($this -> i_jour) || ($this -> i_jour=='00'))  && (empty($this -> i_mois) || $this -> i_mois=='00') && !empty($this -> i_annee) ? sprintf(" en %s", $this -> i_annee) : sprintf(" le %s", $this -> st_date);
          if ($this -> st_date_rep != '')
              $st_chaine .= sprintf(" (%s)", $this -> st_date_rep);
          $i_nb_lignes = 1;
-         $st_chaine .= sprintf(" %s %s\n", $this -> st_cote, $this -> st_libre);
+         $st_chaine .= sprintf(" %s %s\n", self::cp1252_vers_utf8($this -> st_cote),self::cp1252_vers_utf8( $this -> st_libre));
          $c_sexe_intv = null;
          $b_pere_defini = false;
          foreach ($this -> a_liste_personnes as $o_pers)
@@ -621,19 +667,19 @@ class Acte {
              } 
         if (!empty($this -> st_commentaires))
              {
-            $this -> st_commentaires = str_replace('§', "\n", $this -> st_commentaires);
-             $st_chaine .= $this -> st_commentaires;
+            $this -> st_commentaires = str_replace('Â§', "\n", $this -> st_commentaires);
+             $st_chaine .= self::cp1252_vers_utf8($this -> st_commentaires);
              $i_nb_lignes += substr_count($this -> st_commentaires, "\n");;
              } 
-        $this -> i_nb_lignes = $i_nb_lignes;
-         return $st_chaine;
+			$this -> i_nb_lignes = $i_nb_lignes;
+			return $st_chaine;
          }
           
     public function versChaineSansTemoins()
     
     {
          $st_chaine = '';
-         $st_chaine .= sprintf("%s à %s", $this -> st_type_acte, $this -> st_commune);
+         $st_chaine .= sprintf("%s Ã  %s", $this -> st_type_acte, $this -> st_commune);
 		 $st_chaine .= empty($this -> i_jour) && empty($this -> i_mois) && !empty($this -> i_annee) ? sprintf(" en %s", $this -> i_annee) : sprintf(" le %s", $this -> st_date);
          if ($this -> st_date_rep != '')
              $st_chaine .= sprintf(" (%s)", $this -> st_date_rep);
@@ -671,8 +717,8 @@ class Acte {
                  } 
             $i_nb_lignes += $o_pers -> getNbLignes();
              } 
-        $this -> i_nb_lignes = $i_nb_lignes;
-         return $st_chaine;
+			$this -> i_nb_lignes = $i_nb_lignes;
+			return self::cp1252_vers_utf8($st_chaine);
          } 
          
     public function versTableauHTML()
@@ -696,14 +742,14 @@ class Acte {
          } 
     
     /**
-     * Renvoie le formulaire d'édition d'un acte
+     * Renvoie le formulaire d'Ã©dition d'un acte
      */
     public function formulaire_liste_personnes()
     
     
     {
          $i_idf_type_acte = $this -> typeActe -> vers_idf($this -> st_type_acte);
-         // les actes divers correspondent à une grille de mariage élaborée dans Nimègue
+         // les actes divers correspondent Ã  une grille de mariage Ã©laborÃ©e dans NimÃ¨gue
         $a_grille = array_key_exists($i_idf_type_acte, $this -> ga_grille_saisie) ? $this -> ga_grille_saisie[$i_idf_type_acte]: $this -> ga_grille_saisie[IDF_MARIAGE] ;
          $st_chaine = "";
          $i = 0;
@@ -738,7 +784,7 @@ class Acte {
                      } 
                 if (count($a_liste_personnes) > 0 && $a_liste_personnes[0] -> getIdfTypePresence() == $i_idf_type_presence)
                      {
-                // la personne existe déjà dans la BD
+                // la personne existe dÃ©jÃ  dans la BD
                 $o_pers = array_shift($a_liste_personnes);
                  $o_pers -> setNumParam($i);
                  if ($i_idf_type_presence == IDF_PRESENCE_INTV)
@@ -747,7 +793,7 @@ class Acte {
                  } 
             else
                  {
-            // personne vide dans le type de présence attendu doit être créé
+            // personne vide dans le type de prÃ©sence attendu doit Ãªtre crÃ©Ã©
             $o_pers = new Personne($this -> connexionBD, $this -> i_idf, null, null, null, null);
              $o_pers -> setIdfTypePresence($i_idf_type_presence);
              $o_pers -> setNumParam($i);
@@ -760,7 +806,7 @@ class Acte {
      } 
 
 /**
- * Renvoie un formulaire HTML d'édition du bas d'un acte
+ * Renvoie un formulaire HTML d'Ã©dition du bas d'un acte
  * 
  * @return string bas du formulaire de l'acte
  */
@@ -769,12 +815,12 @@ public function formulaire_bas_acte()
 
 {
      $st_chaine = "<tr class=\"bg-primary\"><td colspan=8>Commentaires g&eacute;n&eacute;raux sur l'acte</td></tr>";
-     $st_chaine .= sprintf("<tr><td colspan=8><div class=\"text-center\"><textarea name=cmt_acte rows=10 cols=80>%s</textarea></div></td></tr>", str_replace('§', "\n", $this -> st_commentaires));
+     $st_chaine .= sprintf("<tr><td colspan=8><div class=\"text-center\"><textarea name=cmt_acte rows=10 cols=80>%s</textarea></div></td></tr>", str_replace('Â§', "\n", self::cp1252_vers_utf8($this -> st_commentaires)));
      return $st_chaine;
      } 
 
 /**
- * Renvoie l'écran d'affichage du permalien si défini
+ * Renvoie l'Ã©cran d'affichage du permalien si dÃ©fini
  * 
  * @param  $pi_hauteur integer hauteur en points de l'image
  * @param  $pi_largeur integer largeur en points de l'image
@@ -784,7 +830,7 @@ public function affichage_image_permalien($pi_hauteur = 800, $pi_largeur = 800)
 
 
 {
-     $st_caveat = "<div class=\"text-center\" >Si un message indiquant qu'une  licence est  nécessaire, merci de l'accepter en cliquant sur \"J'ai pris connaissance des informations ci-dessus et j'accepte les conditions\" et rafra&icirc;chir la page en appuyant sur la touche F5 du clavier</div>";
+     $st_caveat = "<div class=\"text-center\" >Si un message indiquant qu'une  licence est Ã©n&eacute;cessaire, merci de l'accepter en cliquant sur \"J'ai pris connaissance des informations ci-dessus et j'accepte les conditions\" et rafra&icirc;chir la page en appuyant sur la touche F5 du clavier</div>";
      if (!empty($this -> st_url))
          {
         $st_chaine = '<div class="text-center">';
@@ -798,7 +844,7 @@ public function affichage_image_permalien($pi_hauteur = 800, $pi_largeur = 800)
      } 
 
 /**
- * renvoie la chaine jquery des fonctions d'autocomplétion
+ * renvoie la chaine jquery des fonctions d'autocomplÃ©tion
  */
 public function fonctions_jquery_completion()
 
@@ -818,11 +864,11 @@ public function fonctions_jquery_completion()
      } 
 
 /**
- * Met à jour la liste des personnes d'un acte à partir d'un formulaire
+ * Met Ã  jour la liste des personnes d'un acte Ã  partir d'un formulaire
  * 
  * @param integer $pi_idf_source identifiant de la source
  * @param integer $pi_idf_commune_acte identifiant de la commune
- * @param object $ punion Objet de type union
+ * @param object $punion Objet de type union
  */
 public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punion)
 
@@ -834,10 +880,10 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
      $i_num_parametres = count($a_grille_personnes);
      $i = 0;
      $a_liste_personnes = array();
-     // suppression des précedentes personnes et unions
+     // suppression des prÃ©cÃ©dentes personnes et unions
     $this -> connexionBD -> execute_requete("DELETE FROM `personne` where idf_acte=" . $this -> i_idf);
      $this -> connexionBD -> execute_requete("DELETE FROM `union` where idf_acte=" . $this -> i_idf);
-     // création des personnes
+     // crÃ©ation des personnes
     $c_sexe_intv = '';
      foreach ($a_grille_personnes as $i_idf_type_presence)
      {
@@ -866,7 +912,7 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
          $a_liste_personnes[$i] = $o_pers;
          $i++;
          } 
-    // création des parents
+    // crÃ©ation des parents
     $a_parents = array_key_exists($i_idf_type_acte, $this -> ga_parents) ? $this -> ga_parents[$i_idf_type_acte]: $this -> ga_parents[IDF_MARIAGE];
      foreach ($a_parents as $i_idf_intv => $a_idx_parents)
      {
@@ -888,7 +934,7 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
      {
         $o_pers -> cree();
          } 
-    // création des couples
+    // crÃ©ation des couples
     $a_couples = array_key_exists($i_idf_type_acte, $this -> ga_grille_couples) ? $this -> ga_grille_couples[$i_idf_type_acte]: $this -> ga_grille_couples[IDF_MARIAGE];
      foreach ($a_couples as $a_couple)
      {
@@ -897,7 +943,7 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
              {
             if ($a_liste_personnes[$i_idf_cjt] -> getSexe() == 'M' && $a_liste_personnes[$i_idf_cjte] -> getSexe() == 'F')
                  {
-                // Union à définir
+                // Union Ã  dÃ©finir
                 $punion -> cree($this -> i_idf_source, $this -> i_idf_commune, $this -> i_idf, $this -> i_idf_type_acte, $a_liste_personnes[$i_idf_cjt] -> getIdf(), $a_liste_personnes[$i_idf_cjt] -> getPatronyme(), $a_liste_personnes[$i_idf_cjte] -> getIdf(), $a_liste_personnes[$i_idf_cjte] -> getPatronyme());
                  } 
             else if ($a_liste_personnes[$i_idf_cjt] -> getSexe() == 'F' && $a_liste_personnes[$i_idf_cjte] -> getSexe() == 'M')
@@ -909,7 +955,7 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
     } 
 
 /**
- * Renvoie l'entête de l'acte au format Nimègue V3
+ * Renvoie l'entÃªte de l'acte au format NimÃ¨gue V3
  */
 public function colonnes_entete_nimv3()
 
@@ -944,7 +990,7 @@ public function liste_personnes_nimv3()
 
 {
      $i_idf_type_acte = $this -> typeActe -> vers_idf($this -> st_type_acte);
-     // les actes divers correspondent à une grille de mariage élaborée dans Nimègue
+     // les actes divers correspondent Ã  une grille de mariage Ã©laborÃ©e dans NimÃ¨gue
     $a_grille = array_key_exists($i_idf_type_acte, $this -> ga_grille_saisie) ? $this -> ga_grille_saisie[$i_idf_type_acte]: $this -> ga_grille_saisie[IDF_MARIAGE] ;
      $a_champs = array();
      $i = 0;
@@ -954,13 +1000,13 @@ public function liste_personnes_nimv3()
      {
         if (count($a_liste_personnes) > 0 && $a_liste_personnes[0] -> getIdfTypePresence() == $i_idf_type_presence)
              {
-            // la personne existe déjà dans la BD
+            // la personne existe dÃ©jÃ  dans la BD
             $o_pers = array_shift($a_liste_personnes);
              $a_champs = array_merge($a_champs, $o_pers -> colonnes_nimv3($i_idf_type_acte));
              } 
         else
              {
-            // personne vide dans le type de présence attendu doit être créé
+            // personne vide dans le type de prÃ©sence attendu doit Ãªtre crÃ©Ã©
             $o_pers = new Personne($this -> connexionBD, $this -> i_idf, null, null, null, null);
              $o_pers -> setIdfTypePresence($i_idf_type_presence);
              $a_champs = array_merge($a_champs, $o_pers -> colonnes_nimv3($i_idf_type_acte));
@@ -993,9 +1039,9 @@ public function intialise_variables_sessions ()
     } 
 
 /**
- * Charge l'objet à partir des variables de session
+ * Charge l'objet Ã  partir des variables de session
  * 
- * @param integer $pi_num_parametre numéro de paramètre
+ * @param integer $pi_num_parametre numÃ©ro de paramÃ¨tre
  */
 public function charge_variables_sessions()
 
@@ -1013,13 +1059,13 @@ public function charge_variables_sessions()
      $this -> st_commentaires = isset($_SESSION["commentaires"]) ? $_SESSION["commentaires"] : $this -> st_commentaires;
      $a_grille = array_key_exists($this -> i_idf_type_acte, $this -> ga_grille_saisie) ? $this -> ga_grille_saisie[$this -> i_idf_type_acte] : $this -> ga_grille_saisie[IDF_MARIAGE];
      $i_nb_personnes = count($a_grille);
-     // une TD peut avoir été complétée => il faut charger la grille correspondant à l'acte
+     // une TD peut avoir Ã©tÃ© complÃ©tÃ©e => il faut charger la grille correspondant Ã  l'acte
     $a_grille = array_key_exists($this -> i_idf_type_acte, $this -> ga_grille_saisie) ? $this -> ga_grille_saisie[$this -> i_idf_type_acte]: $this -> ga_grille_saisie[IDF_MARIAGE] ;
      $i = 0;
      $this -> a_liste_personnes = array();
      foreach ($a_grille as $i_idf_type_presence)
      {
-        // personne vide dans le type de présence attendu doit être créé
+        // personne vide dans le type de prÃ©sence attendu doit Ãªtre crÃ©Ã©
         $o_pers = new Personne($this -> connexionBD, $this -> i_idf, null, null, null, null);
          $o_pers -> setIdfTypePresence($i_idf_type_presence);
          $o_pers -> setNumParam($i);

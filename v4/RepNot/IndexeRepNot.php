@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once('../Commun/config.php');
@@ -15,7 +15,7 @@ require_once('commun_rep_not.php');
 $gst_loc_rep = $gst_rep_site.DIRECTORY_SEPARATOR.'RepNot'.DIRECTORY_SEPARATOR.'photos'; 
                 
  /*
-* Renvoie la liste des photos d'un répertoire
+* Renvoie la liste des photos d'un rÃ©pertoire
 * @param string $pst_chemin 
 * @return array liste des photos 
 */
@@ -50,8 +50,8 @@ function liste_photos($pst_chemin)
 
 /*
 * Affiche la barre de navigation parmi les photos
-* @param object $pconnexionBD connexion à la BD 
-* @param integer $pi_idf_rep identifiant du répertoire
+* @param object $pconnexionBD connexion Ã  la BD 
+* @param integer $pi_idf_rep identifiant du rÃ©pertoire
 * @param integer $pi_page_courante page courante
 * @param array $pa_photos liste des photos 
 */
@@ -70,7 +70,7 @@ function affiche_barre_navigation($pconnexionBD,$pi_idf_rep,$pi_page_courante,$p
 			print('<button id="vue_gauche" class="btn btn-primary"><span class="glyphicon glyphicon-triangle-left"></span></button>');
 			print('</div>');
 		}
-		// Affichage de l'accès à la page directement
+		// Affichage de l'accÃ¨s Ã  la page directement
 		print("<input type=hidden name=\"idf_rep\" value=\"$pi_idf_rep\">");
 		print('<div class="input-group">');
 		print("<span class=\"input-group-addon\">Page courante:</span>");
@@ -87,7 +87,7 @@ function affiche_barre_navigation($pconnexionBD,$pi_idf_rep,$pi_page_courante,$p
 		}
 		print("</div>");
 		print("</form></ul></div></div>");
-		// Met à jour la bd avec la page sélectionnée
+		// Met Ã  jour la bd avec la page sÃ©lectionnÃ©e
 		$st_requete = "update rep_not_desc set page_courante=$pi_page_courante where idf_repertoire=$pi_idf_rep";
 		$pconnexionBD->execute_requete($st_requete);		
 	}
@@ -100,10 +100,10 @@ function affiche_barre_navigation($pconnexionBD,$pi_idf_rep,$pi_page_courante,$p
 
 /*
 * Affiche la grille de saisie
-* @param integer $pi_format format de la grille (0 sans prénom|1 avec prénom)
-* @param integer $pi_idf_repertoire identifiant du répertoire
+* @param integer $pi_format format de la grille (0 sans prÃ©nom|1 avec prÃ©nom)
+* @param integer $pi_idf_repertoire identifiant du rÃ©pertoire
 * @param integer $pi_page_courante page courante
-* @param integer $pi_annee_courante année courante
+* @param integer $pi_annee_courante annÃ©e courante
 * @param integer $pi_mois_courant mois courant 
 */
 function affiche_grille_saisie($pi_format,$pi_idf_repertoire,$pi_page_courante,$pi_annee_courante,$pi_mois_courant)
@@ -120,7 +120,7 @@ function affiche_grille_saisie($pi_format,$pi_idf_repertoire,$pi_page_courante,$
 	switch ($pi_format)
 	{
 		case 0:
-			// Prénom et nom
+			// PrÃ©nom et nom
 			print("<tr>");
 			print("<th>Nom1</th><td class=\"lib_erreur\"><input type=\"text\" id=\"nom1\" name=\"nom1\" class=\"patro_ou_paroisse form-control\" maxlength=40 size=20 style=\"text-transform: uppercase;\"></td>");
 			print("<th>Pr&eacute;nom1</th><td><input type=\"text\" id=\"prenom1\" name=\"prenom1\" maxlength=30 size=20 style=\"text-transform: capitalize;\" class=\"form-control\"></td>");
@@ -170,12 +170,12 @@ function affiche_grille_saisie($pi_format,$pi_idf_repertoire,$pi_page_courante,$
 }
 
 /*
-* Affiche la liste des actes déjà saisis pour le mois et année courante
-* @param object $pconnexionBD connexion à la BD
-* @param integer $pi_idf_repertoire identifiant du répertoire
-* @param integer $pi_format format de la grille (0 sans prénom|1 avec prénom)
+* Affiche la liste des actes dÃ©jÃ  saisis pour le mois et annÃ©e courante
+* @param object $pconnexionBD connexion Ã  la BD
+* @param integer $pi_idf_repertoire identifiant du rÃ©pertoire
+* @param integer $pi_format format de la grille (0 sans prÃ©nom|1 avec prÃ©nom)
 * @param integer $pi_page_courante page courante
-* @param integer $pi_annee_courante année courante
+* @param integer $pi_annee_courante annÃ©e courante
 * @param integer $pi_mois_courant mois courant 
 */
 function affiche_actes_saisis($pconnexionBD,$pi_idf_repertoire,$pi_format,$pi_page_courante,$pi_annee_courante,$pi_mois_courant)
@@ -234,7 +234,7 @@ function affiche_actes_saisis($pconnexionBD,$pi_idf_repertoire,$pi_format,$pi_pa
       
 print('<!DOCTYPE html>');
 print("<head>\n");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr"> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -307,7 +307,7 @@ $(document).ready(function() {
 		messages:{
 			page_crte: {
 				required: "La page est obligatoire",
-				number: "La page doit être un nombre"
+				number: "La page doit Ãªtre un nombre"
 			}     
     }   
 	});		
@@ -319,7 +319,7 @@ $(document).ready(function() {
 	  }
     else
     {
-      alert('La page courante doit être un entier');
+      alert('La page courante doit Ãªtre un entier');
     } 
   });
 	$("#vue_droite").click(function(){
@@ -330,7 +330,7 @@ $(document).ready(function() {
    }
     else
     {
-      alert('La page courante doit être un entier');
+      alert('La page courante doit Ãªtre un entier');
     } 
 	});
 	$("#saisie").validate({
@@ -356,12 +356,12 @@ $(document).ready(function() {
 		},	
 		messages:{
 			annee: {
-				required: "L'année est obligatoire",
-				number: "L'année doit être un nombre"
+				required: "L'annÃ©e est obligatoire",
+				number: "L'annÃ©e doit Ãªtre un nombre"
 			},
 			jour: {
 				required: "Le jour est obligatoire",
-				number: "Le jour doit être un nombre",
+				number: "Le jour doit Ãªtre un nombre",
 				max: "Un mois comporte au maximum 31 jours"
 			},
 			type_acte: {
@@ -561,7 +561,7 @@ $(document).ready(function() {
     }
     else
     {
-      alert("Le jour, le mois ou l'année révolutionnaire est vide");
+      alert("Le jour, le mois ou l'annÃ©e rÃ©volutionnaire est vide");
     }
 });
 	

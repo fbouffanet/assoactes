@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÈnÈalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association G√©n√©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique GÈnÈrale GPL GNU publiÈe par la Free Software Foundation
+// Licence Publique G√©n√©rale GPL GNU publi√©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ class ChargementNimV3 {
    * @param integer $pi_idf_commune : identifiant de la commune a charger
    * @param integer $pi_idf_source : identifiant de la source 
    * @param integer $pi_idf_releveur : identifiant de l'adherent releveur 
-   * @param array $pa_liste_mariages_existants : Liste des mariages existants indexÈs par date, nom Èpoux, prÈnom Èpoux, nom Èpouse, prÈnom Èpouse (valeur=true))        
+   * @param array $pa_liste_mariages_existants : Liste des mariages existants index√©s par date, nom √©poux, pr√©nom √©poux, nom √©pouse, pr√©nom √©pouse (valeur=true))        
    * @return boolean : a reussi ou pas  
    */ 
 	function charge_mariages($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releveur,$pa_liste_mariages_existants)
@@ -65,30 +65,30 @@ class ChargementNimV3 {
 			// nettoyage des noms
 			nettoie_nom($st_nom_epx);
 			nettoie_nom($st_nom_epse);      
-			// Nettoyage des prÈnoms
+			// Nettoyage des pr√©noms
 			nettoie_prenom($st_prn_epx);
 			nettoie_prenom($st_prn_epse);  
 			if ((!isset($pa_liste_mariages_existants[strval($st_date)][strval($st_nom_epx)][strval($st_prn_epx)][strval($st_nom_epse)][strval($st_prn_epse)])))
 			{
 				$i_nb_actes++;
-				$acte = new Acte($connexionBD,$pi_idf_commune,LIB_MARIAGE,'M',$pi_idf_source,$st_date,$releveur->idf_releveur($pi_idf_releveur));
+				$acte = new Acte($connexionBD,$pi_idf_commune,utf8_vers_cp1252(LIB_MARIAGE),'M',$pi_idf_source,$st_date,$releveur->idf_releveur($pi_idf_releveur));
 				$i_annee = $acte->getAnnee();
-				$stats_commune->compte_acte(LIB_MARIAGE,$i_annee); 
+				$stats_commune->compte_acte(utf8_vers_cp1252(LIB_MARIAGE),$i_annee); 
 				$acte->importeNimV3($st_date_rep,$st_cote,$st_libre,$st_cmt_acte);
 				$acte->setUrl($st_permalien);
 				$acte->setDetailSupp($i_detail_supp);
 				$i_acte=$acte->getIdf();
 				$a_liste_actes[] = $acte;         
-				// CrÈation de l'epoux, de ses Èventuels conjoint et parents
+				// Cr√©ation de l'epoux, de ses √©ventuels conjoint et parents
 				$epoux = new Personne($connexionBD,$i_acte,IDF_PRESENCE_INTV,'M',$st_nom_epx,$st_prn_epx);
 				$epoux->importeMarNimV3($st_orig_epx,$st_dnais_epx,$i_age_epx,$st_prof_epx);
 				$epoux->setCommentaires($st_cmt_epx);
-				$stats_patronyme->maj_patro($st_nom_epx,LIB_MARIAGE,$i_annee);
+				$stats_patronyme->maj_patro($st_nom_epx,utf8_vers_cp1252(LIB_MARIAGE),$i_annee);
 				if ($st_nom_excjt_epx=='' && $st_prn_excjt_epx!='')
 					$st_nom_excjt_epx = LIB_MANQUANT;
 				if ($st_nom_excjt_epx!= '')
 				{
-					// Tentative de rÈcupÈration d'un fichier NimËgue V3 issu d'un fichier NimËgue V2 
+					// Tentative de r√©cup√©ration d'un fichier Nimgue V3 issu d'un fichier Nim√®gue V2 
 					if ($st_prn_excjt_epx=='' && $st_cmt_excjt_epx== '')
 					{
 						list($st_nom_excjt_epx,$st_prn_excjt_epx,$st_cmt_excjt_epx) = infos_conjoint($st_nom_excjt_epx);
@@ -96,15 +96,15 @@ class ChargementNimV3 {
 					$cjt_epoux = new Personne($connexionBD,$i_acte,IDF_PRESENCE_EXCJT,'F',$st_nom_excjt_epx,$st_prn_excjt_epx);
 					$cjt_epoux->setCommentaires($st_cmt_excjt_epx);
 					$a_liste_personnes[]=$cjt_epoux;
-					$stats_patronyme->maj_patro($st_nom_excjt_epx,LIB_MARIAGE,$i_annee);               
-					$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,LIB_MARIAGE,$epoux->getIdf(),$st_nom_epx,$cjt_epoux->getIdf(),$st_nom_excjt_epx);      
+					$stats_patronyme->maj_patro($st_nom_excjt_epx,utf8_vers_cp1252(LIB_MARIAGE),$i_annee);               
+					$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,utf8_vers_cp1252(LIB_MARIAGE),$epoux->getIdf(),$st_nom_epx,$cjt_epoux->getIdf(),$st_nom_excjt_epx);      
 				}   
 				if ($st_nom_pere_epx=='' && $st_prn_pere_epx!='')
 					$st_nom_pere_epx = LIB_MANQUANT;             
 				if ($st_nom_pere_epx!='')
 				{
 					$pere_epoux = new Personne($connexionBD,$i_acte,IDF_PRESENCE_PERE,'M',$st_nom_pere_epx,$st_prn_pere_epx);
-					$stats_patronyme->maj_patro($st_nom_pere_epx,LIB_MARIAGE,$i_annee);
+					$stats_patronyme->maj_patro($st_nom_pere_epx,utf8_vers_cp1252(LIB_MARIAGE),$i_annee);
 					$pere_epoux->setProfession($st_prof_pere_epx);
 					$pere_epoux->setCommentaires($st_cmt_pere_epx);
 					$a_liste_personnes[]=$pere_epoux;
@@ -115,7 +115,7 @@ class ChargementNimV3 {
 				if ($st_nom_mere_epx!='')
 				{
 					$mere_epoux = new Personne($connexionBD,$i_acte,IDF_PRESENCE_MERE,'F',$st_nom_mere_epx,$st_prn_mere_epx);
-					$stats_patronyme->maj_patro($st_nom_mere_epx,LIB_MARIAGE,$i_annee);
+					$stats_patronyme->maj_patro($st_nom_mere_epx,utf8_vers_cp1252(LIB_MARIAGE),$i_annee);
 					$mere_epoux->setProfession($st_prof_mere_epx); 
 					$mere_epoux->setCommentaires($st_cmt_mere_epx);
 					$a_liste_personnes[]=$mere_epoux;
@@ -123,33 +123,33 @@ class ChargementNimV3 {
 				}
 				$a_liste_personnes[]=$epoux;
 				if ($st_nom_pere_epx!='' && $st_nom_mere_epx!='')
-					$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,LIB_MARIAGE,$pere_epoux->getIdf(),$st_nom_pere_epx,$mere_epoux->getIdf(),$st_nom_mere_epx); 
-				// CrÈation de l'epouse, de ses Èventuels conjoint et parents
+					$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,utf8_vers_cp1252(LIB_MARIAGE),$pere_epoux->getIdf(),$st_nom_pere_epx,$mere_epoux->getIdf(),$st_nom_mere_epx); 
+				// Cr√©ation de l'epouse, de ses √©ventuels conjoint et parents
 				$epouse = new Personne($connexionBD,$i_acte,IDF_PRESENCE_INTV,'F',$st_nom_epse,$st_prn_epse);
 				$epouse->importeMarNimV3($st_orig_epse,$st_dnais_epse,$i_age_epse,$st_prof_epse);
 				$epouse->setCommentaires($st_cmt_epse);
-				$stats_patronyme->maj_patro($st_nom_epse,LIB_MARIAGE,$i_annee);
+				$stats_patronyme->maj_patro($st_nom_epse,utf8_vers_cp1252(LIB_MARIAGE),$i_annee);
 				if ($st_nom_excjt_epse=='' && $st_prn_excjt_epse!='')
 					$st_nom_excjt_epse = LIB_MANQUANT;
 				if ($st_nom_excjt_epse!= '')
 				{
-					// Tentative de rÈcupÈration d'un fichier NimËgue V3 issu d'un fichier NimËgue V2 
+					// Tentative de r√©cup√©ration d'un fichier Nim√®gue V3 issu d'un fichier Nim√®gue V2 
 					if ($st_prn_excjt_epse=='' && $st_cmt_excjt_epse== '')
 					{
 						list($st_nom_excjt_epse,$st_prn_excjt_epse,$st_cmt_excjt_epse) = infos_conjoint($st_nom_excjt_epse);
 					}	 
 					$cjt_epouse = new Personne($connexionBD,$i_acte,IDF_PRESENCE_EXCJT,'M',$st_nom_excjt_epse,$st_prn_excjt_epse);
 					$cjt_epouse->setCommentaires($st_cmt_excjt_epse);
-					$stats_patronyme->maj_patro($st_nom_excjt_epse,LIB_MARIAGE,$i_annee);               
+					$stats_patronyme->maj_patro($st_nom_excjt_epse,utf8_vers_cp1252(LIB_MARIAGE),$i_annee);               
 					$a_liste_personnes[]=$cjt_epouse;
-					$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,LIB_MARIAGE,$cjt_epouse->getIdf(),$st_nom_excjt_epse,$epouse->getIdf(),$st_nom_epse);   
+					$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,utf8_vers_cp1252(LIB_MARIAGE),$cjt_epouse->getIdf(),$st_nom_excjt_epse,$epouse->getIdf(),$st_nom_epse);   
 				}           
 				if ($st_nom_pere_epse=='' && $st_prn_pere_epse!='')
 					$st_nom_pere_epse = LIB_MANQUANT;         
 				if ($st_nom_pere_epse!='')
 				{
 					$pere_epouse = new Personne($connexionBD,$i_acte,IDF_PRESENCE_PERE,'M',$st_nom_pere_epse,$st_prn_pere_epse);
-					$stats_patronyme->maj_patro($st_nom_pere_epse,LIB_MARIAGE,$i_annee);
+					$stats_patronyme->maj_patro($st_nom_pere_epse,utf8_vers_cp1252(LIB_MARIAGE),$i_annee);
 					$pere_epouse->setProfession($st_prof_pere_epse);
 					$pere_epouse->setCommentaires($st_cmt_pere_epse);
 					$a_liste_personnes[]=$pere_epouse;
@@ -162,22 +162,22 @@ class ChargementNimV3 {
 					$mere_epouse = new Personne($connexionBD,$i_acte,IDF_PRESENCE_MERE,'F',$st_nom_mere_epse,$st_prn_mere_epse);
 					$mere_epouse->setProfession($st_prof_mere_epse);
 					$mere_epouse->setCommentaires($st_cmt_mere_epse);
-					$stats_patronyme->maj_patro($st_nom_mere_epse,LIB_MARIAGE,$i_annee);
+					$stats_patronyme->maj_patro($st_nom_mere_epse,utf8_vers_cp1252(LIB_MARIAGE),$i_annee);
 					$a_liste_personnes[]=$mere_epouse;
 					$epouse->setIdfMere($mere_epouse->getIdf());
 				}
 				$a_liste_personnes[]=$epouse;
 				if ($st_nom_pere_epse!='' && $st_nom_mere_epse!='')
-					$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,LIB_MARIAGE,$pere_epouse->getIdf(),$st_nom_pere_epse,$mere_epouse->getIdf(),$st_nom_mere_epse); 
-				// CrÈation du lien conjoint entre Èpoux
-				$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,LIB_MARIAGE,$epoux->getIdf(),$st_nom_epx,$epouse->getIdf(),$st_nom_epse);
+					$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,utf8_vers_cp1252(LIB_MARIAGE),$pere_epouse->getIdf(),$st_nom_pere_epse,$mere_epouse->getIdf(),$st_nom_mere_epse); 
+				// Cr√©ation du lien conjoint entre √©poux
+				$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,utf8_vers_cp1252(LIB_MARIAGE),$epoux->getIdf(),$st_nom_epx,$epouse->getIdf(),$st_nom_epse);
 				if ($st_nom_tem1=='' && ($st_prn_tem1!='' || $st_cmt_tem1!=''))
 					$st_nom_tem1 = LIB_MANQUANT;
 				if ($st_nom_tem1!='')
 				{
 					$temoin1 = new Personne($connexionBD,$i_acte,IDF_PRESENCE_TEMOIN,'?',$st_nom_tem1,$st_prn_tem1);
 					$temoin1->setCommentaires($st_cmt_tem1);
-					$stats_patronyme->maj_patro($st_nom_tem1,LIB_MARIAGE,$i_annee);            
+					$stats_patronyme->maj_patro($st_nom_tem1,utf8_vers_cp1252(LIB_MARIAGE),$i_annee);            
 					$a_liste_personnes[]=$temoin1;
 				}
 				if ($st_nom_tem2=='' && ($st_prn_tem2!='' || $st_cmt_tem2!=''))
@@ -186,7 +186,7 @@ class ChargementNimV3 {
 				{
 					$temoin2 = new Personne($connexionBD,$i_acte,IDF_PRESENCE_TEMOIN,'?',$st_nom_tem2,$st_prn_tem2);
 					$temoin2->setCommentaires($st_cmt_tem2);
-					$stats_patronyme->maj_patro($st_nom_tem2,LIB_MARIAGE,$i_annee);           
+					$stats_patronyme->maj_patro($st_nom_tem2,utf8_vers_cp1252(LIB_MARIAGE),$i_annee);           
 					$a_liste_personnes[]=$temoin2;
 				}
 				if ($st_nom_tem3=='' && ($st_prn_tem3!='' || $st_cmt_tem3!=''))
@@ -195,7 +195,7 @@ class ChargementNimV3 {
 				{
 					$temoin3 = new Personne($connexionBD,$i_acte,IDF_PRESENCE_TEMOIN,'?',$st_nom_tem3,$st_prn_tem3);
 					$temoin3->setCommentaires($st_cmt_tem3);
-					$stats_patronyme->maj_patro($st_nom_tem3,LIB_MARIAGE,$i_annee);            
+					$stats_patronyme->maj_patro($st_nom_tem3,utf8_vers_cp1252(LIB_MARIAGE),$i_annee);            
 					$a_liste_personnes[]=$temoin3;
 				}
 				if ($st_nom_tem4=='' && ($st_prn_tem4!='' || $st_cmt_tem4!=''))
@@ -204,13 +204,13 @@ class ChargementNimV3 {
 				{
 					$temoin4 = new Personne($connexionBD,$i_acte,IDF_PRESENCE_TEMOIN,'?',$st_nom_tem4,$st_prn_tem4);
 					$temoin4->setCommentaires($st_cmt_tem4);
-					$stats_patronyme->maj_patro($st_nom_tem4,LIB_MARIAGE,$i_annee);            
+					$stats_patronyme->maj_patro($st_nom_tem4,utf8_vers_cp1252(LIB_MARIAGE),$i_annee);            
 					$a_liste_personnes[]=$temoin4;
 				}
 			}
 			else
 			{
-				$this->a_deja_existants[] = "Le mariage $st_prn_epx $st_nom_epx X $st_prn_epse $st_nom_epse du $st_date existe dÈj‡";
+				$this->a_deja_existants[] = "Le mariage ".cp1252_vers_utf8($st_prn_epx)." ".cp1252_vers_utf8($st_nom_epx)." X ".cp1252_vers_utf8($st_prn_epse)." ".cp1252_vers_utf8($st_nom_epse)." du $st_date existe d√©j√†";
 			} 
 		}   
 		fclose($pf);   
@@ -300,7 +300,7 @@ class ChargementNimV3 {
  * @param integer $pi_idf_commune : identifiant de la commune a charger
  * @param integer $pi_idf_source : identifiant de la source 
  * @param integer $pi_idf_releveur : identifiant de l'adherent releveur 
- * @param array $pa_liste_divers_existants : Liste des divers existants indexÈs par date, nom Èpoux, prÈnom Èpoux, nom Èpouse, prÈnom Èpouse (valeur=true))  
+ * @param array $pa_liste_divers_existants : Liste des divers existants index√©s par date, nom √©poux, pr√©nom √©poux, nom √©pouse, pr√©nom √©pouse (valeur=true))  
  * @return boolean : a reussi ou pas  
  */ 
 function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releveur,$pa_liste_divers_existants)
@@ -347,7 +347,7 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
 		// nettoyage des noms
 		nettoie_nom($st_nom_intv1);
 		nettoie_nom($st_nom_intv2);      
-		// Nettoyage des prÈnoms
+		// Nettoyage des pr√©noms
 		nettoie_prenom($st_prn_intv1);
 		nettoie_prenom($st_prn_intv2);
 		if (!array_key_exists(strval($st_type_acte),$a_types_acte_par_idf))
@@ -365,7 +365,7 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
 			$acte->setDetailSupp($i_detail_supp);
 			$i_acte=$acte->getIdf();         
 			$a_liste_actes[] = $acte;
-			// CrÈation de l'intervenant 1, de ses Èventuels conjoint et parents
+			// Cr√©ation de l'intervenant 1, de ses √©ventuels conjoint et parents
 			$intv1 = new Personne($connexionBD,$i_acte,IDF_PRESENCE_INTV,$c_sexe_intv1,$st_nom_intv1,$st_prn_intv1);
 			$intv1->importeDivNimV3($st_orig_intv1,$st_dnais_intv1,$i_age_intv1,$st_prof_intv1);
 			$intv1->setCommentaires($st_cmt_intv1);
@@ -375,7 +375,7 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
 			if ($st_nom_excjt_intv1!= '')
 			{         
 				$c_sexe_cjt_intv1 = ($c_sexe_intv1=='M') ? 'F' : 'M';
-				// Tentative de rÈcupÈration d'un fichier NimËgue V3 issu d'un fichier NimËgue V2 
+				// Tentative de r√©cup√©ration d'un fichier Nim√®gue V3 issu d'un fichier Nim√®gue V2 
 				if ($st_prn_excjt_intv1=='' && $st_cmt_excjt_intv1== '')
 				{
 					list($st_nom_excjt_intv1,$st_prn_excjt_intv1,$st_cmt_excjt_intv1) = infos_conjoint($st_nom_excjt_intv1);
@@ -416,7 +416,7 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
 			$a_liste_personnes[]=$intv1;
 			if ($st_nom_pere_intv1!='' && $st_nom_mere_intv1!='')
 				$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,$st_type_acte,$pere_intv1->getIdf(),$st_nom_pere_intv1,$mere_intv1->getIdf(),$st_nom_mere_intv1); 
-			// CrÈation de l'intervenant2, de ses Èventuels conjoint et parents
+			// Cr√©ation de l'intervenant2, de ses √©ventuels conjoint et parents
 			if($st_nom_intv2!='')
 			{
 				$intv2 = new Personne($connexionBD,$i_acte,IDF_PRESENCE_INTV,$c_sexe_intv2,$st_nom_intv2,$st_prn_intv2);
@@ -428,7 +428,7 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
 				if ($st_nom_excjt_intv2!= '')
 				{
 					$c_sexe_cjt_intv2 = ($c_sexe_intv2=='M') ? 'F' : 'M';
-					// Tentative de rÈcupÈration d'un fichier NimËgue V3 issu d'un fichier NimËgue V2 
+					// Tentative de r√©cup√®√©ration d'un fichier Nimgue V3 issu d'un fichier Nim√®gue V2 
 					if ($st_prn_excjt_intv2=='' && $st_cmt_excjt_intv2== '')
 					{
 						list($st_nom_excjt_intv2,$st_prn_excjt_intv2,$st_cmt_excjt_intv2) = infos_conjoint($st_nom_excjt_intv2);
@@ -470,8 +470,8 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
 				$a_liste_personnes[]=$intv2;
 				if ($st_nom_pere_intv2!='' && $st_nom_mere_intv2!='')
 					$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,$st_type_acte,$pere_intv2->getIdf(),$st_nom_pere_intv2,$mere_intv2->getIdf(),$st_nom_mere_intv2); 
-				// CrÈation du lien couple entre intervenant si c'est un couple :
-				// personnes de sexes diffÈrents
+				// Cr√©ation du lien couple entre intervenant si c'est un couple :
+				// personnes de sexes diff√©rents
 				if (($c_sexe_intv1=='M' && $c_sexe_intv2=='F')
 					||
 					($c_sexe_intv1=='F' && $c_sexe_intv2=='M')
@@ -519,7 +519,7 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
 		}
 		else
 		{
-			$this->a_deja_existants[] ="L'acte divers $st_prn_intv1 $st_nom_intv1 X $st_prn_intv2 $st_nom_intv2 du $st_date existe dÈj‡";
+			$this->a_deja_existants[] ="L'acte divers ".cp1252_vers_utf8($st_prn_intv1)." ".cp1252_vers_utf8($st_nom_intv1)." X ".cp1252_vers_utf8($st_prn_intv2)." ".cp1252_vers_utf8($st_nom_intv2)." du $st_date existe d√©j√†";
 		} 
 	} 
 	fclose($pf);      
@@ -610,7 +610,7 @@ function charge_divers($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_relev
  * @param integer $pi_idf_commune : identifiant de la commune a charger
  * @param integer $pi_idf_source : identifiant de la source 
  * @param integer $pi_idf_releveur : identifiant de l'adherent releveur 
- * @param array $pa_liste_naissances_existantes : Liste des naissances existantes indexÈes par date, nom , prÈnom,(valeur=true))    
+ * @param array $pa_liste_naissances_existantes : Liste des naissances existantes index√©es par date, nom , pr√©nom,(valeur=true))    
  * @return boolean : a reussi ou pas  
  */ 
 function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releveur,$pa_liste_naissances_existantes)
@@ -646,7 +646,7 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
 		nettoie_nom($st_nom);    
 		nettoie_nom($st_nom_pere);
 		nettoie_nom($st_nom_mere);
-		// Nettoyage des prÈnoms
+		// Nettoyage des pr√©noms
 		nettoie_prenom($st_prn);
 		nettoie_prenom($st_prn_pere);
 		nettoie_prenom($st_prn_mere);          
@@ -654,25 +654,25 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
 		if (!isset($pa_liste_naissances_existantes[strval($st_date)][strval($st_nom)][strval($st_prn)]))
 		{  
 			$i_nb_actes++;
-			$acte = new Acte($connexionBD,$pi_idf_commune,LIB_NAISSANCE,'N',$pi_idf_source,$st_date,$releveur->idf_releveur($pi_idf_releveur));
+			$acte = new Acte($connexionBD,$pi_idf_commune,utf8_vers_cp1252(LIB_NAISSANCE),'N',$pi_idf_source,$st_date,$releveur->idf_releveur($pi_idf_releveur));
 			$i_annee = $acte->getAnnee();
 			//print("$st_date,$st_nom,$st_prn,$st_sexe,$st_nom_pere,$st_prn_pere,$st_nom_mere,$st_prn_mere<br>");
-			$stats_commune->compte_acte(LIB_NAISSANCE,$i_annee); 
+			$stats_commune->compte_acte(utf8_vers_cp1252(LIB_NAISSANCE),$i_annee); 
 			$acte->importeNimV3($st_date_rep,$st_cote,$st_libre,$st_cmt_acte);
 			$acte->setUrl($st_permalien);
-			$acte->setDetailSupp(1); // ‡ complÈter si l'on veut affiner le dÈtail
+			$acte->setDetailSupp(1); // √† compl√©ter si l'on veut affiner le d√©tail
 			$i_acte = $acte->getIdf();
 			$a_liste_actes[] = $acte; 
-			// CrÈation du nouveau nÈ
+			// Cr√©ation du nouveau n√©
 			$nouveaune = new Personne($connexionBD,$i_acte,IDF_PRESENCE_INTV,$st_sexe,$st_nom,$st_prn);
 			$nouveaune->setCommentaires($st_cmt);        
-			$stats_patronyme->maj_patro($st_nom,LIB_NAISSANCE,$i_annee);
+			$stats_patronyme->maj_patro($st_nom,utf8_vers_cp1252(LIB_NAISSANCE),$i_annee);
 			if ($st_nom_pere=='' && $st_prn_pere!='')
 				$st_nom_pere = LIB_MANQUANT;   
 			if ($st_nom_pere!='')
 			{
 				$pere = new Personne($connexionBD,$i_acte,IDF_PRESENCE_PERE,'M',$st_nom_pere,$st_prn_pere);
-				$stats_patronyme->maj_patro($st_nom_pere,LIB_NAISSANCE,$i_annee);
+				$stats_patronyme->maj_patro($st_nom_pere,utf8_vers_cp1252(LIB_NAISSANCE),$i_annee);
 				$pere->setProfession($st_prof_pere);
 				$pere->setCommentaires($st_cmt_pere);
 				$a_liste_personnes[]=$pere;
@@ -683,7 +683,7 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
 			if ($st_nom_mere!='')
 			{
 				$mere = new Personne($connexionBD,$i_acte,IDF_PRESENCE_MERE,'F',$st_nom_mere,$st_prn_mere);
-				$stats_patronyme->maj_patro($st_nom_mere,LIB_NAISSANCE,$i_annee);
+				$stats_patronyme->maj_patro($st_nom_mere,utf8_vers_cp1252(LIB_NAISSANCE),$i_annee);
 				$mere->setProfession($st_prof_mere);
 				$mere->setCommentaires($st_cmt_mere);
 				$a_liste_personnes[]=$mere;
@@ -691,14 +691,14 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
 			}
 			$a_liste_personnes[]=$nouveaune;
 			if ($st_nom_pere!='' && $st_nom_mere!='')
-				$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,LIB_NAISSANCE,$pere->getIdf(),$st_nom_pere,$mere->getIdf(),$st_nom_mere);
+				$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,utf8_vers_cp1252(LIB_NAISSANCE),$pere->getIdf(),$st_nom_pere,$mere->getIdf(),$st_nom_mere);
 			if ($st_nom_tem1=='' && ($st_prn_tem1!='' || $st_cmt_tem1!=''))
 				$st_nom_tem1 = LIB_MANQUANT;   
 			if ($st_nom_tem1!='')
 			{
 				$temoin1 = new Personne($connexionBD,$i_acte,IDF_PRESENCE_PARRAIN,'?',$st_nom_tem1,$st_prn_tem1);
 				$temoin1->setCommentaires($st_cmt_tem1);
-				$stats_patronyme->maj_patro($st_nom_tem1,LIB_NAISSANCE,$i_annee);            
+				$stats_patronyme->maj_patro($st_nom_tem1,utf8_vers_cp1252(LIB_NAISSANCE),$i_annee);            
 				$a_liste_personnes[]=$temoin1;
 			}
 			if ($st_nom_tem2=='' && ($st_prn_tem2!='' || $st_cmt_tem2!=''))
@@ -707,20 +707,19 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
 			{
 				$temoin2 = new Personne($connexionBD,$i_acte,IDF_PRESENCE_MARRAINE,'?',$st_nom_tem2,$st_prn_tem2);
 				$temoin2->setCommentaires($st_cmt_tem2);
-				$stats_patronyme->maj_patro($st_nom_tem2,LIB_NAISSANCE,$i_annee);           
+				$stats_patronyme->maj_patro($st_nom_tem2,utf8_vers_cp1252(LIB_NAISSANCE),$i_annee);           
 				$a_liste_personnes[]=$temoin2;
 			}                                  
 		}
 		else
 		{
-			$this->a_deja_existants[] = "La naissance de $st_prn $st_nom du $st_date existe dÈj‡";
+			$this->a_deja_existants[] = "La naissance de ".cp1252_vers_utf8($st_prn)." ".cp1252_vers_utf8($st_nom)." du $st_date existe d√©j√†";
 		} 
 	} 
 	fclose($pf);  
    	
 	if (count($a_liste_personnes)>0)
 	{
-		//$a_liste_personnes[0]->sauveCommunePersonne();
 		$a_liste_personnes[0]->sauveProfession();
 		$a_liste_personnes[0]->sauvePrenom();
 		$st_personnes = '';
@@ -803,7 +802,7 @@ function charge_naissances($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_r
  * @param integer $pi_idf_commune : identifiant de la commune a charger
  * @param integer $pi_idf_source : identifiant de la source 
  * @param integer $pi_idf_releveur : identifiant de l'adherent releveur 
- * @param array $pa_liste_deces_existants : Liste des deces existants indexÈes par date, nom , prÈnom,(valeur=true))  
+ * @param array $pa_liste_deces_existants : Liste des deces existants index√©es par date, nom , pr√©nom,(valeur=true))  
  * @return boolean : a reussi ou pas  
  */ 
 function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releveur,$pa_liste_deces_existants)
@@ -840,25 +839,25 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
 		nettoie_nom($st_nom);    
 		nettoie_nom($st_nom_pere);
 		nettoie_nom($st_nom_mere);
-		// Nettoyage des prÈnoms
+		// Nettoyage des pr√©noms
 		nettoie_prenom($st_prn);
 		nettoie_prenom($st_prn_pere);
 		nettoie_prenom($st_prn_mere);              
 		if (!isset($pa_liste_deces_existants[strval($st_date)][strval($st_nom)][strval($st_prn)]))
 		{
 			$i_nb_actes++;
-			$acte = new Acte($connexionBD,$pi_idf_commune,LIB_DECES,'D',$pi_idf_source,$st_date,$releveur->idf_releveur($pi_idf_releveur));
+			$acte = new Acte($connexionBD,$pi_idf_commune,utf8_vers_cp1252(LIB_DECES),'D',$pi_idf_source,$st_date,$releveur->idf_releveur($pi_idf_releveur));
 			$i_annee = $acte->getAnnee();
-			$stats_commune->compte_acte(LIB_DECES,$i_annee); 
+			$stats_commune->compte_acte(utf8_vers_cp1252(LIB_DECES),$i_annee); 
 			$acte->importeNimV3($st_date_rep,$st_cote,$st_libre,$st_cmt_acte);
 			$acte->setUrl($st_permalien);
-			$acte->setDetailSupp(1); // ‡ complÈter si l'on veut affiner le dÈtail
+			$acte->setDetailSupp(1); // √† compl√©ter si l'on veut affiner le d√©tail
 			$i_acte = $acte->getIdf(); 
 			$a_liste_actes[]=$acte;
-			// CrÈation du nouveau nÈ
+			// Cr√©ation du nouveau n√©
 			$defunt = new Personne($connexionBD,$i_acte,IDF_PRESENCE_INTV,$c_sexe,$st_nom,$st_prn);
 			$defunt->importeDecNimV3($st_orig,$st_dnais,$st_age,$st_prof,$st_cmt);   
-			$stats_patronyme->maj_patro($st_nom,LIB_DECES,$i_annee);
+			$stats_patronyme->maj_patro($st_nom,utf8_vers_cp1252(LIB_DECES),$i_annee);
 
 			if ($st_nom_cjt!= '')
 			{
@@ -866,13 +865,13 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
 				$cjt_defunt = new Personne($connexionBD,$i_acte,IDF_PRESENCE_EXCJT,$c_sexe_cjt,$st_nom_cjt,$st_prn_cjt);
 				$cjt_defunt->setProfession($st_prof_cjt);
 				$cjt_defunt->setCommentaires($st_cmt_cjt);
-				$stats_patronyme->maj_patro($st_nom_cjt,LIB_DECES,$i_annee);               
+				$stats_patronyme->maj_patro($st_nom_cjt,utf8_vers_cp1252(LIB_DECES),$i_annee);               
 				$a_liste_personnes[]=$cjt_defunt;
 				switch($c_sexe)
 				{
-					case 'M': $union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,LIB_DECES,$defunt->getIdf(),$st_nom,$cjt_defunt->getIdf(),$st_nom_cjt);break;
-					case 'F': $union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,LIB_DECES,$cjt_defunt->getIdf(),$st_nom_cjt,$defunt->getIdf(),$st_nom);break;
-					default: $union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,LIB_DECES,$defunt->getIdf(),$st_nom,$cjt_defunt->getIdf(),$st_nom_cjt);
+					case 'M': $union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,utf8_vers_cp1252(LIB_DECES),$defunt->getIdf(),$st_nom,$cjt_defunt->getIdf(),$st_nom_cjt);break;
+					case 'F': $union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,utf8_vers_cp1252(LIB_DECES),$cjt_defunt->getIdf(),$st_nom_cjt,$defunt->getIdf(),$st_nom);break;
+					default: $union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,utf8_vers_cp1252(LIB_DECES),$defunt->getIdf(),$st_nom,$cjt_defunt->getIdf(),$st_nom_cjt);
 				}
              
 			}
@@ -881,7 +880,7 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
 			if ($st_nom_pere!='')
 			{
 				$pere = new Personne($connexionBD,$i_acte,IDF_PRESENCE_PERE,'M',$st_nom_pere,$st_prn_pere);
-				$stats_patronyme->maj_patro($st_nom_pere,LIB_DECES,$i_annee);
+				$stats_patronyme->maj_patro($st_nom_pere,utf8_vers_cp1252(LIB_DECES),$i_annee);
 				$pere->setProfession($st_prof_pere);
 				$pere->setCommentaires($st_cmt_pere);
 				$a_liste_personnes[]=$pere;
@@ -892,7 +891,7 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
 			if ($st_nom_mere!='')
 			{
 				$mere = new Personne($connexionBD,$i_acte,IDF_PRESENCE_MERE,'F',$st_nom_mere,$st_prn_mere);
-				$stats_patronyme->maj_patro($st_nom_mere,LIB_DECES,$i_annee);
+				$stats_patronyme->maj_patro($st_nom_mere,utf8_vers_cp1252(LIB_DECES),$i_annee);
 				$mere->setProfession($st_prof_mere);
 				$mere->setCommentaires($st_cmt_mere);
 				$a_liste_personnes[]=$mere;
@@ -902,14 +901,14 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
 			$a_liste_personnes[]=$defunt;
         
 			if ($st_nom_pere!='' && $st_nom_mere!='')
-				$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,LIB_DECES,$pere->getIdf(),$st_nom_pere,$mere->getIdf(),$st_nom_mere);
+				$union->ajoute($pi_idf_source,$pi_idf_commune,$i_acte,utf8_vers_cp1252(LIB_DECES),$pere->getIdf(),$st_nom_pere,$mere->getIdf(),$st_nom_mere);
 			if ($st_nom_tem1=='' && ($st_prn_tem1!='' || $st_cmt_tem1!=''))
 				$st_nom_tem1 = LIB_MANQUANT;
 			if ($st_nom_tem1!='')
 			{
 				$temoin1 = new Personne($connexionBD,$i_acte,IDF_PRESENCE_TEMOIN,'?',$st_nom_tem1,$st_prn_tem1);
 				$temoin1->setCommentaires($st_cmt_tem1);
-				$stats_patronyme->maj_patro($st_nom_tem1,LIB_DECES,$i_annee);            
+				$stats_patronyme->maj_patro($st_nom_tem1,utf8_vers_cp1252(LIB_DECES),$i_annee);            
 				$a_liste_personnes[]=$temoin1;
 			}
 			if ($st_nom_tem2=='' && ($st_prn_tem2!='' || $st_cmt_tem2!=''))
@@ -918,13 +917,13 @@ function charge_deces($pst_fichier,$pi_idf_commune,$pi_idf_source,$pi_idf_releve
 			{
 				$temoin2 = new Personne($connexionBD,$i_acte,IDF_PRESENCE_TEMOIN,'?',$st_nom_tem2,$st_prn_tem2);
 				$temoin2->setCommentaires($st_cmt_tem2);
-				$stats_patronyme->maj_patro($st_nom_tem2,LIB_DECES,$i_annee);           
+				$stats_patronyme->maj_patro($st_nom_tem2,utf8_vers_cp1252(LIB_DECES),$i_annee);           
 				$a_liste_personnes[]=$temoin2;
 			}                                  
 		}
 		else
 		{
-			$this->a_deja_existants[] = "Le dÈcËs de $st_prn $st_nom du $st_date existe dÈj‡";
+			$this->a_deja_existants[] = "Le d√©c√®s de ".cp1252_vers_utf8($st_prn)." ".cp1252_vers_utf8($st_nom)." du $st_date existe d√©j√†";
 		} 
 	} 
 	fclose($pf);  	

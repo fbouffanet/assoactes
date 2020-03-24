@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once '../Commun/config.php';
@@ -15,13 +15,13 @@ require_once('../Commun/PaginationTableau.php');
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
-print('<title>Base '.SIGLE_ASSO.': Dernières connexions</title>');
+print('<title>Base '.SIGLE_ASSO.': DerniÃ¨res connexions</title>');
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print('</head>');
 
@@ -96,12 +96,12 @@ switch($gst_mode_tri)
 {   
    case 'NomAdh' :
      $gst_tri_requete = "ORDER BY `nom` ASC";
-     $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nbadh_connectes,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Nom','Prénom','Numéro','Email','Code<br>Postal','Ville','Statut','Ann&eacute;e de<br> cotisation',"<a href=\"".$_SERVER['PHP_SELF']."?tri_adh_cnx=DateCnx\">Date de la<br>derni&egrave;re connexion</a>"));
+     $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nbadh_connectes,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Nom','PrÃ©nom','NumÃ©ro','Email','Code<br>Postal','Ville','Statut','Ann&eacute;e de<br> cotisation',"<a href=\"".$_SERVER['PHP_SELF']."?tri_adh_cnx=DateCnx\">Date de la<br>derni&egrave;re connexion</a>"));
    break;
    default:
    case 'DateCnx':
       $gst_tri_requete = "ORDER BY `derniere_connexion` DESC";
-      $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nbadh_connectes,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array("<a href=\"".$_SERVER['PHP_SELF']."?tri_adh_cnx=NomAdh\">Nom</a>",'Prénom','Numéro','Email','Code<br>Postal','Ville','Statut','Ann&eacute;e de<br> cotisation','Date de la<br> derni&egrave;re connexion'));
+      $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nbadh_connectes,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array("<a href=\"".$_SERVER['PHP_SELF']."?tri_adh_cnx=NomAdh\">Nom</a>",'PrÃ©nom','NumÃ©ro','Email','Code<br>Postal','Ville','Statut','Ann&eacute;e de<br> cotisation','Date de la<br> derni&egrave;re connexion'));
 }
 
 $st_requete = "SELECT nom, prenom,idf,email_perso,cp,ville,statut,annee_cotisation,DATE_FORMAT(derniere_connexion,'%d/%m/%Y %k:%i') 

@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 //http://127.0.0.1:8888/Gestion_Chantiers.php
@@ -10,7 +10,7 @@ $gst_chemin = "../";
 require_once("$gst_chemin/Commun/Identification.php");
 require_once("$gst_chemin/Commun/config.php");
 require_once("$gst_chemin/Commun/constantes.php");
-// La page est reservee uniquement aux gens ayant les droits relevés
+// La page est reservee uniquement aux gens ayant les droits relevÃ©s
 require_once("$gst_chemin/Commun/VerificationDroits.php");
 verifie_privilege(DROIT_RELEVES);
 require_once("$gst_chemin/Commun/ConnexionBD.php");
@@ -31,7 +31,7 @@ switch ($gst_mode) {
 }
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=cp1252" />');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />');
 print('<meta http-equiv="content-language" content="fr" /> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -87,7 +87,7 @@ $(document).ready(function() {
             } 
 		},
 		messages: {
-     "supp[]": "Merci de choisir au moins un chantier &agrave; supprimer"
+     "supp[]": "Merci de choisir au moins un chantier Ã  supprimer"
 		},
 		errorElement: "em",
 		errorPlacement: function ( error, element ) {
@@ -114,7 +114,7 @@ $(document).ready(function() {
 				chantiers=chantiers+' '+$this.attr("id");
 			}
 			});
-			if (confirm('Etes-vous sûr de supprimer les chantiers '+chantiers+' ?')) {
+			if (confirm('Etes-vous sÃ»r de supprimer les chantiers '+chantiers+' ?')) {
 				form.submit();
 			}
 		}
@@ -164,17 +164,17 @@ $(document).ready(function() {
 		messages: {
 			date_convention: {
 				required: "La date de la convention est obligatoire",
-				dateITA: "La date de la convention doit être de la forme : JJ/MM/AAAA"
+				dateITA: "La date de la convention doit Ãªtre de la forme : JJ/MM/AAAA"
 			},
 			date_envoi: {
 				required: "La date d'envoi est obligatoire",
-				dateITA: "La date d'envoi doit être de la forme : JJ/MM/AAAA"
+				dateITA: "La date d'envoi doit Ãªtre de la forme : JJ/MM/AAAA"
 			},
 			date_retour: {
-				dateITA: "La date de retour doit être de la forme : JJ/MM/AAAA"
+				dateITA: "La date de retour doit Ãªtre de la forme : JJ/MM/AAAA"
 			},
 			date_fin: {
-				dateITA: "La date de fin doit être de la forme : JJ/MM/AAAA"
+				dateITA: "La date de fin doit Ãªtre de la forme : JJ/MM/AAAA"
 			}
 		},
 		errorElement: "em",
@@ -236,11 +236,12 @@ $i_session_idf_releveur = isset($_SESSION['idf_releveur_session']) ? $_SESSION['
 $gi_idf_releveur=isset($_POST['idf_releveur']) ?  (integer) $_POST['idf_releveur'] : $i_session_idf_releveur;
 $_SESSION['idf_statut_session'] = $gi_idf_statut;
 $_SESSION['idf_releveur_session'] = $gi_idf_releveur;
+
 /**
  * Affiche la liste des communes
  * @param object $rconnexionBD
- * @param integer $pi_idf_statut identifiant du statut à visualiser
- * @param integer $pi_idf_releveur_visu identifiant du releveur à visualiser 
+ * @param integer $pi_idf_statut identifiant du statut Ã  visualiser
+ * @param integer $pi_idf_releveur_visu identifiant du releveur Ã  visualiser 
  */ 
 function menu_liste($rconnexionBD,$pi_idf_statut_visu,$pi_idf_releveur_visu)
 {
@@ -272,9 +273,9 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu,$pi_idf_releveur_visu)
    foreach($a_releveurs as $i_idf_releveur => $st_releveur)
    {
       if ($i_idf_releveur==$pi_idf_releveur_visu)
-        print("<option value=\"$i_idf_releveur\" selected>$st_releveur</option>");
+        print("<option value=\"$i_idf_releveur\" selected>".cp1252_vers_utf8($st_releveur)."</option>");
       else  
-        print("<option value=\"$i_idf_releveur\">$st_releveur</option>");             
+        print("<option value=\"$i_idf_releveur\">".cp1252_vers_utf8($st_releveur)."</option>");             
    }
    print('</select>');
    print('</div></div>'); //fin ligne
@@ -323,7 +324,7 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu,$pi_idf_releveur_visu)
            print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=$c_initiale&idf_statut_visu=$pi_idf_statut_visu\" class=\"page-item\">$c_initiale</a></li>");
       }
       print("</ul></div>");
-      $st_requete = "select ch.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relevé papier' end), concat(ad.nom,'  ',ad.prenom,' (',ad.idf,')') from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) join `adherent` ad on (ch.id_releveur = ad.idf) where ca.nom like '$gc_initiale%'";
+      $st_requete = "select ch.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relev&eacute; papier' end), concat(ad.nom,'  ',ad.prenom,' (',ad.idf,')') from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) join `adherent` ad on (ch.id_releveur = ad.idf) where ca.nom like '$gc_initiale%'";
       $a_clauses =array();
       if (!empty($pi_idf_statut_visu))
 	     $a_clauses[] = "ch.statut=$pi_idf_statut_visu";
@@ -374,7 +375,7 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu,$pi_idf_releveur_visu)
    print("</form>");  
 }
 /*
-   Fonction de composition du document de chantier pour la liste déroulante
+   Fonction de composition du document de chantier pour la liste dÃ©roulante
 */
 function chaine_select_options_chantier($pst_idf_choisi,$pa_tableau)
 {
@@ -384,12 +385,12 @@ function chaine_select_options_chantier($pst_idf_choisi,$pa_tableau)
       list($st_nom,$st_fourchette,$st_support) = $st_val;
       //$st_val = 'Commune : '.$st_nom.', Fourchette : '.$st_fourchette.',  '.$st_support;
       $st_val = $st_nom.', Fourchette : '.$st_fourchette.',  '.$st_support;
-      $st_chaine_options .= ("$pst_idf_choisi" !='' && "$st_idf"=="$pst_idf_choisi") ? "<option value=\"$st_idf\" selected=\"selected\">$st_val</option>\n": "<option value=\"$st_idf\">$st_val</option>\n";
+      $st_chaine_options .= ("$pst_idf_choisi" !='' && "$st_idf"=="$pst_idf_choisi") ? "<option value=\"$st_idf\" selected=\"selected\">".cp1252_vers_utf8($st_val)."</option>\n": "<option value=\"$st_idf\">".cp1252_vers_utf8($st_val)."</option>\n";
    }
    return $st_chaine_options;
 }
 /**
- * Affiche de la table d'édition
+ * Affiche de la table d'Ã©dition
  * @param integer $pi_id_document identifiant du registre
  * @param integer $pi_id_releveur identifiant de l'adherent
  * @param integer $pi_type_acte identifiant des types d'acte
@@ -401,7 +402,7 @@ function chaine_select_options_chantier($pst_idf_choisi,$pa_tableau)
  * @param string $pst_comment_retour commentaires retour
  * @param integer $pi_statut statut du chantier
  * @param array $pa_documents liste des documents
- * @param array $pa_adherents liste des releveurs (adhérents) 
+ * @param array $pa_adherents liste des releveurs (adhÃ©rents) 
  */ 
 function menu_edition($pi_id_document,$pi_id_releveur,$pi_type_acte,$pst_convention,$pst_envoi,$pst_retour,$pst_fin,$pst_comment_envoi,$pst_comment_retour,$pi_statut,$pa_documents,$pa_adherents)
 {
@@ -516,7 +517,7 @@ function menu_edition($pi_id_document,$pi_id_releveur,$pi_type_acte,$pst_convent
  * @param object $rconnexionBD Identifiant de la connexion de base
  * @param integer $pi_idf_chantier Identifiant du chantier
  * @param array $pa_documents Liste des documents
- * @param array $pa_adherents Liste des adhérents (releveur)
+ * @param array $pa_adherents Liste des adhÃ©rents (releveur)
  */ 
 function menu_modifier($rconnexionBD,$pi_idf_chantier,$pa_documents,$pa_adherents)
 {
@@ -536,7 +537,7 @@ function menu_modifier($rconnexionBD,$pi_idf_chantier,$pa_documents,$pa_adherent
 
 /** Affiche le menu d'ajout d'un chantier
  * @param array $pa_documents Liste des documents
- * @param array $pa_adherents Liste des adhérents (releveur)
+ * @param array $pa_adherents Liste des adhÃ©rents (releveur)
  */ 
 function menu_ajouter($pa_documents,$pa_adherents)
 {
@@ -550,7 +551,7 @@ function menu_ajouter($pa_documents,$pa_adherents)
    print('</form>');
 }
 
-/** Export la liste des relevés au format donnée
+/** Export la liste des relevÃ©s au format donnÃ©e
  * @param object $pconnexionBD Identifiant de la connexion de base
  * @param integer $pi_idf_stat_export identifiant du statut de l'export 
  */ 
@@ -564,7 +565,7 @@ function exporte_liste_releves($pconnexionBD,$pi_idf_stat_export)
    $fh = @fopen('php://output', 'w' );       
    if (count($a_liste_releves)>0)
    {
-     fputcsv($fh, array("Commune","Fourchette","Nature","Releveur","Dernière MAJ")); 
+     fputcsv($fh, array("Commune","Fourchette","Nature","Releveur","DerniÃ¨re MAJ")); 
      foreach ($a_liste_releves as $a_ligne)
      {
         if (empty($pi_idf_stat_export))
@@ -584,11 +585,11 @@ function exporte_liste_releves($pconnexionBD,$pi_idf_stat_export)
 }
 
 /*---------------------------------------------------------------------------
-  Démarrage du programme
+  DÃ©marrage du programme
   ---------------------------------------------------------------------------*/
 $ga_tbl_statut = array( 0=>'Tous', 1=>'En cours', 2=>'Termin&eacute;',3=>'Abandonn&eacute;');
 require_once("$gst_chemin/Commun/menu.php");
-$ga_documents = $connexionBD->sql_select_multiple_par_idf("select r.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relevé papier' end) from `documents` r  join `commune_acte` ca  on (r.id_commune = ca.idf ) order by ca.nom");
+$ga_documents = $connexionBD->sql_select_multiple_par_idf("select r.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relev&eacute; papier' end) from `documents` r  join `commune_acte` ca  on (r.id_commune = ca.idf ) order by ca.nom");
 $ga_communes  = $connexionBD->liste_valeur_par_clef("select idf,nom from `commune_acte` order by nom");
 $ga_adherent  = $connexionBD->liste_valeur_par_clef("select idf,concat(nom,'  ',prenom,' (',idf,')') from adherent where statut in ('".ADHESION_INTERNET."','".ADHESION_BULLETIN."','".ADHESION_SUSPENDU."') order by nom,prenom");
 switch ($gst_mode) {
@@ -645,7 +646,7 @@ switch ($gst_mode) {
     $i_statut = (int) $_POST['statut'];
     $connexionBD->initialise_params(array(':comment_envoi'=>$st_comment_envoi,':comment_retour'=>$st_comment_retour));
     $connexionBD->execute_requete("update `chantiers` set id_document=$i_id_document, id_releveur=$i_id_releveur, type_acte=$i_type_acte, date_convention='$c_date_convention', date_envoi='$c_date_envoi', date_retour='$c_date_retour',date_fin='$c_date_fin', comment_envoi=:comment_envoi, comment_retour=:comment_retour, statut=$i_statut where idf=$gi_idf_chantier"); 
-     menu_liste($connexionBD,$gi_idf_statut);  
+     menu_liste($connexionBD,$gi_idf_statut,$gi_idf_releveur);  
   break;
   case 'MENU_AJOUTER' : 
      menu_ajouter($ga_documents,$ga_adherent,$gi_idf_releveur);
@@ -697,7 +698,7 @@ switch ($gst_mode) {
    $connexionBD->initialise_params(array(':comment_envoi'=>$st_comment_envoi,':comment_retour'=>$st_comment_retour));
    $st_requete = "insert into chantiers (id_document, id_releveur, type_acte, date_convention, date_envoi, date_retour, date_fin,comment_envoi, comment_retour, statut) values ($i_id_document, $i_id_releveur, $i_type_acte, '$c_date_convention', '$c_date_envoi', '$c_date_retour','$c_date_fin',:comment_envoi , :comment_retour, $i_statut)";   
    $connexionBD->execute_requete($st_requete);
-   menu_liste($connexionBD,$gi_idf_statut);
+   menu_liste($connexionBD,$gi_idf_statut,$gi_idf_releveur);
    break;
    case 'SUPPRIMER':
       $a_liste_supprime = isset($_POST['supp']) ? $_POST['supp'] :  array();

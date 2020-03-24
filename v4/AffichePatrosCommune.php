@@ -16,7 +16,7 @@ print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
@@ -164,17 +164,19 @@ print("<label for=\"patro_patcom\" class=\"col-form-label col-md-2 col-md-offset
 print("<div class=\"col-md-4\"><input type=text id=patro_patcom name=patro_patcom size=15 maxlength=30 value=\"$gst_patronyme\" class=\"form-control\" aria-describedby=\"aideCommune\">");
 print('<small id="aideCommune" class="form-text text-muted">laisser * si aucun patronyme choisi</small></div><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Chercher</button></div>');
 
+$gst_patronyme=utf8_vers_cp1252($gst_patronyme);
 if (empty($gi_idf_commune))
 {
    print("<div class=\"form-row col-md-12\"><div class=\"text-center alert alert-danger\">Pas de donn&eacute;es</div></div>");
 }
 else if ($gi_idf_type_acte==-1)
 {  
+    
 	// Calcul de la liste des initiales
 	if ($gst_patronyme=='')
 		$st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf) where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune  having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z') ORDER BY init";
 	else
-		$st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune  and p.libelle $gst_clause_patronyme having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')  ORDER BY init";
+		$st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune  and p.libelle $gst_clause_patronyme having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')  ORDER BY init";	
 	$connexionBD->initialise_params(array(":patro"=>$gst_patronyme));   
 	//print("Req=$st_requete< br>");
 	$a_initiales_patronymes = $connexionBD->sql_select($st_requete);
@@ -282,8 +284,8 @@ else
 	if ($gst_patronyme=='')
 		$st_requete="select p.libelle, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle like '$gc_initiale%' order by p.libelle";
 	else
-	{
-		$st_requete="select p.libelle, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle like '$gc_initiale%' and p.libelle $gst_clause_patronyme order by p.libelle";   
+	{		
+		$st_requete="select p.libelle, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle like '$gc_initiale%' and p.libelle $gst_clause_patronyme order by p.libelle";
 		$connexionBD->initialise_params(array(":patro"=>$gst_patronyme)); 
 	}
 	$a_liste_stats = $connexionBD->sql_select_multiple($st_requete);

@@ -10,7 +10,7 @@ require_once('../Commun/Identification.php');
 require_once('../Commun/constantes.php');
 require_once('../Commun/commun.php');
 require_once('../Commun/VerificationDroits.php');
-verifie_privilege(DROIT_VALIDATION_TD);
+verifie_privilege(DROIT_CHARGEMENT);
 require_once('../Commun/ConnexionBD.php');
 require_once('../Commun/finediff.php');
 require_once('../Commun/phonex.cls.php');
@@ -42,7 +42,7 @@ if (!empty($_SESSION['ident']))
 }
 
 /*
-* Construit la chaine permettant la validation des paramÞtres d'un formulaire
+* Construit la chaine permettant la validation des paramètres d'un formulaire
 * @return string règles de validation
 */
 function regles_validation()
@@ -113,7 +113,7 @@ else
 ?>
 <!DOCTYPE html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href='../css/styles.css' type='text/css' rel='stylesheet'>
 <link href='../css/bootstrap.min.css' rel='stylesheet'>

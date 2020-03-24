@@ -7,6 +7,7 @@
 require_once('Commun/Identification.php');
 require_once('Commun/config.php');
 require_once('Commun/constantes.php');
+require_once('Commun/commun.php');
 require_once('Commun/ConnexionBD.php');
 require_once('RequeteRecherche.php');
 require_once('Commun/PaginationTableau.php');
@@ -26,16 +27,26 @@ if(isset($_GET['per_page']) && in_array($_GET['per_page'], array_keys($per_page_
 if(empty($gst_logo_association))	
 	$gi_largeur_page=600;
 else
-{	
-	list($i_largeur_logo, $i_hauteur_logo, $st_type_logo, $st_attributs_logo) = getimagesize($gst_logo_association);
-	if ($i_largeur_logo<=400)
-	   $gi_largeur_page=(int) round($i_largeur_logo/100)*200;
-	else	
-	   $gi_largeur_page=(int) round($i_largeur_logo/100)*120;
+{
+	$headers = @get_headers($gst_logo_association);
+	if(strpos($headers[0],'404') === false)
+	{
+		list($i_largeur_logo, $i_hauteur_logo, $st_type_logo, $st_attributs_logo) = getimagesize($gst_logo_association);
+		if ($i_largeur_logo<=400)
+			$gi_largeur_page=(int) round($i_largeur_logo/100)*200;
+		else	
+			$gi_largeur_page=(int) round($i_largeur_logo/100)*120;
+	}
+	else
+	{
+		print("<div class='alert alert-warning'>Impossible de charger $gst_logo_association</div>\n");
+		$gi_largeur_page=600;
+	}		
 }
 
 print('<!DOCTYPE html>');
 print("<head>\n");
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr"> ');
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
@@ -86,7 +97,7 @@ function param_entier($pst_param,$pst_init)
 }
 
 /*
-* Renvoie la valeur du paramètre de type chaine selon les variables de session et CGI
+* Renvoie la valeur du paramètre de type chaine selon les variables de session et POST
 * @param string $st_param nom du paramètre
 * @param integer longueur maximale du paramètre
 * @return string valeur du paramètre
@@ -133,7 +144,7 @@ function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$
     if (!empty($pi_idf_type_acte))
     {
       $st_type_acte = $pconnexionBD->sql_select1("select nom from type_acte where idf=$pi_idf_type_acte");
-      $st_criteres .= "Type d'acte: $st_type_acte\n";
+      $st_criteres .= "Type d'acte: ".cp1252_vers_utf8($st_type_acte)."\n";
     }
     if ($pi_annee_min!='' && $pi_annee_max!='')
       $st_criteres .= " de $pi_annee_min &agrave; $pi_annee_max";
@@ -148,9 +159,9 @@ function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$
 	if (!empty($pi_idf_source))
     {
       $st_type_acte = $pconnexionBD->sql_select1("select nom from source where idf=$pi_idf_source");
-      $st_criteres .= "Source s&eacute;lectionn&eacute;e: $st_type_acte\n";
+      $st_criteres .= "Source s&eacute;lectionn&eacute;e: ".cp1252_vers_utf8($st_type_acte)."\n";
     }
-    $st_criteres .= "Commune s&eacute;lectionn&eacute;e: $st_nom_commune\n";
+    $st_criteres .= "Commune s&eacute;lectionn&eacute;e: ".cp1252_vers_utf8($st_nom_commune)."\n";
     $st_bloc_rappel = nl2br($st_criteres);
     $st_communes_voisines=join("\n",array_values($requeteRecherche->communes_voisines()));
     if (count(array_values($requeteRecherche->communes_voisines()))>1)
@@ -343,11 +354,11 @@ date_default_timezone_set($gst_time_zone);
 	  print('<form>'); 
 	  print('<div class="form-row">');
 	  if ($st_variantes_epx_trouvees!="")
-        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epx\">Patronyme:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_patros_epx\">$st_variantes_epx_trouvees</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epx\">Patronyme:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_patros_epx\">".cp1252_vers_utf8($st_variantes_epx_trouvees)."</textarea></div>");
       else
         print("<div class=\"col-md-4\">Pas de variantes patronymiques connues</div>");
       if ($st_variantes_prenoms_epx!="")
-        print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms_epx\">Pr&eacute;nom:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_prenoms_epx\">$st_variantes_prenoms_epx</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms_epx\">Pr&eacute;nom:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_prenoms_epx\">".cp1252_vers_utf8($st_variantes_prenoms_epx)."</textarea></div>");
       else
         print("<div class=\"col-md-6\">Pas de variantes de pr&eacute;noms connues</div>");
       print("</div>"); // fin ligne
@@ -366,11 +377,11 @@ date_default_timezone_set($gst_time_zone);
 	  print('<form>');
 	  print('<div class="form-row">');
       if ($st_variantes_epse_trouvees!="")
-        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epse\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros_epse\" rows=8 cols=20>$st_variantes_epse_trouvees</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epse\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros_epse\" rows=8 cols=20>".cp1252_vers_utf8($st_variantes_epse_trouvees)."</textarea></div>");
       else
         print("<div class=\"col-md-6\">Pas de variantes patronymiques connues</div>");
       if ($st_variantes_prenoms_epse!="")
-        print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms_epse\">Pr&eacute;nom:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_prenoms_epse\">$st_variantes_prenoms_epse</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms_epse\">Pr&eacute;nom:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_prenoms_epse\">".cp1252_vers_utf8($st_variantes_prenoms_epse)."</textarea></div>");
       else
         print("<div class=\"col-md-6\">Pas de variantes de pr&eacute;noms connues</div>");
 	  print("</div>"); // fin ligne
@@ -493,11 +504,11 @@ date_default_timezone_set($gst_time_zone);
 	   print('<div class="form-row">');
         
       if ($st_variantes_trouvees!="")
-        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros\" rows=8 cols=20>$st_variantes_trouvees</textarea></div>");
+        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros\" rows=8 cols=20>".cp1252_vers_utf8($st_variantes_trouvees)."</textarea></div>");
       else
         print("<div class=\"col-md-6\">Pas de variantes connues</div>");
       if ($st_variantes_prenoms!="")
-		print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms\">Pr&eacute;nom:</label><textarea class=\"form-control\" id=\"variantes_prenoms\" rows=8 cols=20>$st_variantes_prenoms</textarea></div>");
+		print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms\">Pr&eacute;nom:</label><textarea class=\"form-control\" id=\"variantes_prenoms\" rows=8 cols=20>".cp1252_vers_utf8($st_variantes_prenoms)."</textarea></div>");
       else
         print("<div class=\"col-md-6\">Pas de variantes connues</div>");
       print("</div>"); // fin ligne

@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 session_start();
@@ -44,8 +44,8 @@ switch ($gst_type)
         die("Identifiant provisoire inconnu: $gi_idf_prov<br>"); 
       list($st_nom_adh,$st_prenom_adh,$st_email_adh,$st_cp_adh,$st_pays_adh,$st_jeton_ins) = $a_adh;
       setlocale(LC_CTYPE, 'fr_FR.UTF8');
-      $st_nom_adh = trim(strip_tags(iconv("cp1252", "ASCII//TRANSLIT", $_POST['nom'])));
-      $st_prenom_adh = trim(strip_tags(iconv("cp1252", "ASCII//TRANSLIT", $_POST['prenom'])));
+      $st_nom_adh = trim(strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $_POST['nom'])));
+      $st_prenom_adh = trim(strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $_POST['prenom'])));
       // suppression des espaces
       $st_nom_adh = preg_replace('/\s/','',$st_nom_adh);
       $st_prenom_adh = preg_replace('/\s/','',$st_prenom_adh);
@@ -76,8 +76,8 @@ switch ($gst_type)
          die("<div class=\"alert alert-danger\"> Identifiant ".SIGLE_ASSO." non retrouv&eacute;</div>");
       list($i_idf_agc,$st_nom_adh,$st_prenom_adh,$st_email_adh,$st_cp_adh,$st_pays_adh,$i_annee_cotisation_adh)= $a_adh_agc;
       setlocale(LC_CTYPE, 'fr_FR.UTF8');
-      $st_nom_adh = trim(strip_tags(iconv("cp1252", "ASCII//TRANSLIT", $st_nom_adh)));
-      $st_prenom_adh = trim(strip_tags(iconv("cp1252", "ASCII//TRANSLIT", $st_prenom_adh)));
+      $st_nom_adh = trim(strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_nom_adh)));
+      $st_prenom_adh = trim(strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_prenom_adh)));
       // suppression des espaces
       $st_nom_adh = preg_replace('/\s/','',$st_nom_adh);
       $st_prenom_adh = preg_replace('/\s/','',$st_prenom_adh);
@@ -93,7 +93,7 @@ switch ($gst_type)
 }
 
 // calcul du tarif
-// même code que ce soit une première inscription ou une réadhésion
+// mÃªme code que ce soit une premiÃ¨re inscription ou une rÃ©adhÃ©sion
 switch ($gst_statut)
 {
   case ADHESION_INTERNET:
@@ -137,7 +137,7 @@ if(isset($result) && $result['result']['code'] == '00000' )
 //if (true)
 {
     $st_token = $result['token'];
-    // mise à jour des statuts, prix et aides possibles
+    // mise Ã  jour des statuts, prix et aides possibles
     switch ($gst_type)
     {
       case TYPE_INSCRIPTION:

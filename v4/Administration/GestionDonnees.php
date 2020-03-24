@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -34,8 +34,8 @@ require_once 'chargement/ChargementRecens.php';
 require_once 'chargement/Releveur.php';
 
 /**
- * Renvoie la liste des mariages pour la source et la commune donn‚es
- * sous la forme d'un table ou chaque ligne est (date,nom ‚poux, pr‚nom ‚poux,nom ‚pouse, pr‚nom ‚pouse) 
+ * Renvoie la liste des mariages pour la source et la commune donnÃ©es
+ * sous la forme d'un table ou chaque ligne est (date,nom Ã©poux, prÃ©nom Ã©poux,nom Ã©pouse, prÃ©nom Ã©pouse) 
  * @param object $pconnexionBD Identifiant de la connexion BD
  * @param integer $pi_idf_source identifiant de la source
  * @param integer $pi_idf_commune identifiant de la commune
@@ -56,8 +56,8 @@ function liste_mariages_existant ($pconnexionBD,$pi_idf_source,$pi_idf_commune)
 }
 
 /**
- * Renvoie la liste des divers pour la source et la commune donn‚es
- * sous la forme d'un table ou chaque ligne est (date,nom ‚poux, pr‚nom ‚poux,nom ‚pouse, pr‚nom ‚pouse) - Premier temps : seuls les CM sont v‚rifi‚s
+ * Renvoie la liste des divers pour la source et la commune donnÃ©es
+ * sous la forme d'un table ou chaque ligne est (date,nom Ã©poux, prÃ©nom Ã©poux,nom Ã©pouse, prÃ©nom Ã©pouse) - Premier temps : seuls les CM sont vÃ©rifiÃ©s
  * ou acte divers ayant un couple 
  * @param object $pconnexionBD Identifiant de la connexion BD
  * @param integer $pi_idf_source identifiant de la source
@@ -79,8 +79,8 @@ function liste_divers_existant ($pconnexionBD,$pi_idf_source,$pi_idf_commune)
 }
 
 /**
- * Renvoie la liste des naissances pour la source et la commune donn‚es
- * sous la forme d'un table ou chaque ligne est (date,nom ‚poux, pr‚nom ‚poux,nom ‚pouse, pr‚nom ‚pouse) - Premier temps : seuls les CM sont vérifiés
+ * Renvoie la liste des naissances pour la source et la commune donnÃ©es
+ * sous la forme d'un table ou chaque ligne est (date,nom Ã©poux, prÃ©nom Ã©poux,nom Ã©pouse, prÃ©nom Ã©pouse) - Premier temps : seuls les CM sont vÃ©rifiÃ©s
  * ou acte divers ayant un couple 
  * @param object $pconnexionBD Identifiant de la connexion BD
  * @param integer $pi_idf_source identifiant de la source
@@ -101,8 +101,8 @@ function liste_naissances_existant ($pconnexionBD,$pi_idf_source,$pi_idf_commune
 }
 
 /**
- * Renvoie la liste des deces pour la source et la commune donn‚es
- * sous la forme d'un table ou chaque ligne est (date,nom ‚poux, pr‚nom ‚poux,nom ‚pouse, pr‚nom ‚pouse) - Premier temps : seuls les CM sont vérifiés
+ * Renvoie la liste des deces pour la source et la commune donnÃ©es
+ * sous la forme d'un table ou chaque ligne est (date,nom Ã©poux, prÃ©nom Ã©poux,nom Ã©pouse, prÃ©nom Ã©pouse) - Premier temps : seuls les CM sont vÃ©rifiÃ©s
  * ou acte divers ayant un couple 
  * @param object $pconnexionBD Identifiant de la connexion BD
  * @param integer $pi_idf_source identifiant de la source
@@ -123,18 +123,18 @@ function liste_deces_existant ($pconnexionBD,$pi_idf_source,$pi_idf_commune)
 }
 
 /**
- * Exporte les naissances au format Nimègue V2
+ * Exporte les naissances au format NimÃ¨gue V2
  * @param object $pconnexionBD lien connexion BD
  * @param integer $pi_idf_source identifiant de la source
- * @param integer $pi_idf_commune_acte identifiant de la commune à exporter      
- * @param character $pc_idf_type_acte identifiant du type d'acte à exporter (type de naissance)
- * @param array $pa_liste_personnes liste des personnes à exporter (calculées par une requête SQL précédente)
- * @param array $pa_liste_actes liste des actes à exporter (calculées par une requête SQL précédente)  
+ * @param integer $pi_idf_commune_acte identifiant de la commune Ã  exporter      
+ * @param character $pc_idf_type_acte identifiant du type d'acte Ã  exporter (type de naissance)
+ * @param array $pa_liste_personnes liste des personnes Ã  exporter (calculÃ©es par une requÃªte SQL prÃ©cÃ©dente)
+ * @param array $pa_liste_actes liste des actes Ã  exporter (calculÃ©es par une requÃªte SQL prÃ©cÃ©dente)  
  * @param object $pf pointeur sur le fichier de sortie
  */
 function export_nai_nimv2($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-   // à adapter pour prendre le champ code insee
+   // Ã  adapter pour prendre le champ code insee
   list($i_code_insee,$st_nom_commune,$i_dpt_commune,$st_departement) = $pconnexionBD->sql_select_liste("select CONCAT(CAST(ca.code_insee AS CHAR(5)),'-',RIGHT(CAST(100+ca.numero_paroisse AS CHAR(3)),2)), ca.nom, dept.idf, dept.nom from commune_acte ca, departement dept WHERE LEFT(ca.code_insee/1000,2)=LEFT(dept.idf,2) AND ca.idf=$pi_idf_commune_acte");
   $a_prenom=$pconnexionBD->liste_valeur_par_clef("select idf, libelle from prenom");
   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");   
@@ -197,9 +197,9 @@ function export_nai_nimv2($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
       }
       list($idf_commune_acte,$idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre,$st_commentaires,$st_url) = $pa_liste_actes[$i_idf_acte];
       array_unshift($a_champs,'N',$st_date,$st_date_rep,$st_cote,$st_libre);
-      array_unshift($a_champs,$i_dpt_commune,$st_departement); // code département, nom département
+      array_unshift($a_champs,$i_dpt_commune,$st_departement); // code dÃ©partement, nom dÃ©partement
       array_unshift($a_champs,"NIMEGUE-V2",$i_code_insee,$st_nom_commune);
-      // Crée les témoins manquants
+      // CrÃ©e les tÃ©moins manquants
       for ($i=$i_nb_temoins;$i<2;$i++)
       {
          array_push($a_champs,"","","");
@@ -212,7 +212,7 @@ function export_nai_nimv2($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
       }
       $a_champs[]=$st_commentaires;
       $no_enregistrement=$no_enregistrement+1;
-      $a_champs[]=$no_enregistrement; // Numéro d'enregistrement
+      $a_champs[]=$no_enregistrement; // NumÃ©ro d'enregistrement
       $a_champs[]="";
       fwrite($pf,(implode(';',$a_champs)));
       fwrite($pf,"\r\n");
@@ -220,19 +220,19 @@ function export_nai_nimv2($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 }
 
 /**
- * Exporte les deces au format Nimègue V3
+ * Exporte les deces au format NimÃ¨gue V3
  * @param object $pconnexionBD lien connexion BD
  * @param integer $pi_idf_source identifiant de la source
- * @param integer $pi_idf_commune_acte identifiant de la commune à exporter      
- * @param character $pc_idf_type_acte identifiant du type d'acte à exporter (type : décès)
- * @param array $pa_liste_personnes liste des personnes à exporter (calculées par une requête SQL précédente)
- * @param array $pa_liste_actes liste des actes à exporter (calculées par une requête SQL précédente)  
+ * @param integer $pi_idf_commune_acte identifiant de la commune Ã  exporter      
+ * @param character $pc_idf_type_acte identifiant du type d'acte Ã  exporter (type : dÃ©cÃ¨s)
+ * @param array $pa_liste_personnes liste des personnes Ã  exporter (calculÃ©es par une requÃªte SQL prÃ©cÃ©dente)
+ * @param array $pa_liste_actes liste des actes Ã  exporter (calculÃ©es par une requÃªte SQL prÃ©cÃ©dente)  
  * @param object $pf pointeur sur le fichier de sortie 
  */
 
 function export_dec_nimv2($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-   // à adapter pour prendre le champ code insee
+   // Ã  adapter pour prendre le champ code insee
   list($i_code_insee,$st_nom_commune,$i_dpt_commune,$st_departement) = $pconnexionBD->sql_select_liste("select CONCAT(CAST(ca.code_insee AS CHAR(5)),'-',RIGHT(CAST(100+ca.numero_paroisse AS CHAR(3)),2)), ca.nom, dept.idf, dept.nom from commune_acte ca, departement dept WHERE LEFT(ca.code_insee/1000,2)=LEFT(dept.idf,2) AND ca.idf=$pi_idf_commune_acte");
   $no_enregistrement=10000;
   $a_prenom=$pconnexionBD->liste_valeur_par_clef("select idf, libelle from prenom");
@@ -309,22 +309,22 @@ function export_dec_nimv2($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
       }
       list($idf_commune_acte,$idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre,$st_commentaires,$st_url) = $pa_liste_actes[$i_idf_acte];
       array_unshift($a_champs,'D',$st_date,$st_date_rep,$st_cote,$st_libre);
-      array_unshift($a_champs,$i_dpt_commune,$st_departement); // code département, nom département
+      array_unshift($a_champs,$i_dpt_commune,$st_departement); // code dÃ©partement, nom dÃ©partement
       array_unshift($a_champs,"NIMEGUE-V2",$i_code_insee,$st_nom_commune);
-      // Crée les témoins manquants
+      // CrÃ©e les tÃ©moins manquants
       for ($i=$i_nb_temoins;$i<2;$i++)
       {
          array_push($a_champs,"","","");
       }
-      $st_commentaires = preg_replace('/\r\n/','§',$st_commentaires);
+      $st_commentaires = preg_replace('/\r\n/','Â§',$st_commentaires);
       if (!empty($st_url))
       {
          if (strpos($st_commentaires,$st_url)===false)
-            $st_commentaires.="§$st_url";               
+            $st_commentaires.="Â§$st_url";               
       }
       $a_champs[]=$st_commentaires;
       $no_enregistrement=$no_enregistrement+1;
-      $a_champs[]=$no_enregistrement; // Numéro d'enregistrement
+      $a_champs[]=$no_enregistrement; // NumÃ©ro d'enregistrement
       $a_champs[]="";
       fwrite($pf,(implode(';',$a_champs)));
       fwrite($pf,"\r\n");
@@ -332,19 +332,19 @@ function export_dec_nimv2($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 }
 
 /**
- * Exporte les mariages au format Nimègue V2
+ * Exporte les mariages au format NimÃ¨gue V2
  * @param object $pconnexionBD lien connexion BD
  * @param integer $pi_idf_source identifiant de la source
- * @param integer $pi_idf_commune_acte identifiant de la commune à exporter      
- * @param character $pc_idf_type_acte identifiant du type d'acte à exporter (type : mariage)
- * @param array $pa_liste_personnes liste des personnes à exporter (calculées par une requête SQL précédente)
- * @param array $pa_liste_actes liste des actes à exporter (calculées par une requête SQL précédente)  
+ * @param integer $pi_idf_commune_acte identifiant de la commune Ã  exporter      
+ * @param character $pc_idf_type_acte identifiant du type d'acte Ã  exporter (type : mariage)
+ * @param array $pa_liste_personnes liste des personnes Ã  exporter (calculÃ©es par une requÃªte SQL prÃ©cÃ©dente)
+ * @param array $pa_liste_actes liste des actes Ã  exporter (calculÃ©es par une requÃªte SQL prÃ©cÃ©dente)  
  * @param object $pf pointeur sur le fichier de sortie  
  */
 
 function export_mar_nimv2($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-  // à adapter pour prendre le champ code insee
+  // Ã  adapter pour prendre le champ code insee
   list($i_code_insee,$st_nom_commune,$i_dpt_commune,$st_departement) = $pconnexionBD->sql_select_liste("select CONCAT(CAST(ca.code_insee AS CHAR(5)),'-',RIGHT(CAST(100+ca.numero_paroisse AS CHAR(3)),2)), ca.nom, dept.idf, dept.nom from commune_acte ca, departement dept WHERE LEFT(ca.code_insee/1000,2)=LEFT(dept.idf,2) AND ca.idf=$pi_idf_commune_acte");
   $no_enregistrement=10000;
   $a_prenom=$pconnexionBD->liste_valeur_par_clef("select idf, libelle from prenom");
@@ -446,22 +446,22 @@ function export_mar_nimv2($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
   }
   list($idf_commune_acte,$idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre,$st_commentaires,$st_url) = $pa_liste_actes[$i_idf_acte];
   array_unshift($a_champs,'M',$st_date,$st_date_rep,$st_cote,$st_libre);
-      array_unshift($a_champs,$i_dpt_commune,$st_departement); // code département, nom département
+      array_unshift($a_champs,$i_dpt_commune,$st_departement); // code dÃ©partement, nom dÃ©partement
   array_unshift($a_champs,"NIMEGUE-V2",$i_code_insee,$st_nom_commune);
-  // Crée les témoins manquants
+  // CrÃ©e les tÃ©moins manquants
   for ($i=$i_nb_temoins;$i<4;$i++)
   {
      array_push($a_champs,"","","");
   }
-  $st_commentaires = preg_replace('/\r\n/','§',$st_commentaires);
+  $st_commentaires = preg_replace('/\r\n/','Â§',$st_commentaires);
   if (!empty($st_url))
   {
      if (strpos($st_commentaires,$st_url)===false)
-        $st_commentaires.="§$st_url";               
+        $st_commentaires.="Â§$st_url";               
   }
   $a_champs[]=$st_commentaires;
   $no_enregistrement=$no_enregistrement+1;
-  $a_champs[]=$no_enregistrement; // Numéro d'enregistrement
+  $a_champs[]=$no_enregistrement; // NumÃ©ro d'enregistrement
   $a_champs[]="";
   fwrite($pf,(implode(';',$a_champs)));
   fwrite($pf,"\r\n");
@@ -469,12 +469,12 @@ function export_mar_nimv2($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 }
 
 /**
- * Exporte les actes divers au format Nimègue V2
+ * Exporte les actes divers au format NimÃ¨gue V2
  * @param object $pconnexionBD lien connexion BD
  * @param integer $pi_idf_source identifiant de la source
- * @param integer $pi_idf_commune_acte identifiant de la commune à exporter      
- * @param array $pa_liste_personnes liste des personnes à exporter (calculées par une requête SQL précédente)
- * @param array $pa_liste_actes liste des actes à exporter (calculées par une requête SQL précédente)  
+ * @param integer $pi_idf_commune_acte identifiant de la commune Ã  exporter      
+ * @param array $pa_liste_personnes liste des personnes Ã  exporter (calculÃ©es par une requÃªte SQL prÃ©cÃ©dente)
+ * @param array $pa_liste_actes liste des actes Ã  exporter (calculÃ©es par une requÃªte SQL prÃ©cÃ©dente)  
  * @param object $pf pointeur sur le fichier de sortie   
  */
 
@@ -576,8 +576,8 @@ function export_div_nimv2($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
       case IDF_PRESENCE_TEMOIN:
         if ($i_nb_personnes==1)
         {
-            // Si le premier t‚moin en seconde position, le second intervenant n'a pas ‚t‚ saisi
-            // ses champs doivent donc ˆtre compl‚t‚s
+            // Si le premier tÃ©moin en seconde position, le second intervenant n'a pas Ã©tÃ© saisi
+            // ses champs doivent donc Ãªtre complÃ©tÃ©s
             array_push($a_champs,"","","","","","","","","","","","","","","","");                       
         }
         $a_champs[] = $st_patronyme;
@@ -592,22 +592,22 @@ function export_div_nimv2($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   list($st_type_acte,$st_sigle_acte) = $a_type_acte[$idf_type_acte];
   array_unshift($a_champs,$st_sigle_acte,$st_type_acte); 
   array_unshift($a_champs,'V',$st_date,$st_date_rep,$st_cote,$st_libre);
-  array_unshift($a_champs,$i_dpt_commune,$st_departement); // code département, nom département
+  array_unshift($a_champs,$i_dpt_commune,$st_departement); // code dÃ©partement, nom dÃ©partement
   array_unshift($a_champs,"NIMEGUE-V2",$i_code_insee,$st_nom_commune);
-  // Cr‚e les t‚moins manquants
+  // CrÃ©e les tÃ©moins manquants
   for ($i=$i_nb_temoins;$i<4;$i++)
   {
      array_push($a_champs,"","","");
   }
-  $st_commentaires = preg_replace('/\r\n/','§',$st_commentaires);
+  $st_commentaires = preg_replace('/\r\n/','Â§',$st_commentaires);
   if (!empty($st_url))
   {
      if (strpos($st_commentaires,$st_url)===false)
-        $st_commentaires.="§$st_url";                
+        $st_commentaires.="Â§$st_url";                
   }
   $a_champs[]=$st_commentaires;
   $no_enregistrement=$no_enregistrement+1;
-  $a_champs[]=$no_enregistrement; // Num‚ro d'enregistrement
+  $a_champs[]=$no_enregistrement; // NumÃ©ro d'enregistrement
   $a_champs[]="";
   fwrite($pf,(implode(';',$a_champs)));
   fwrite($pf,"\r\n");
@@ -615,19 +615,19 @@ function export_div_nimv2($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
 }
 
 /**
- * Exporte les naissances au format Nimègue V3
+ * Exporte les naissances au format NimÃ¨gue V3
  * @param object $pconnexionBD lien connexion BD
  * @param integer $pi_idf_source identifiant de la source
- * @param integer $pi_idf_commune_acte identifiant de la commune à exporter      
- * @param character $pc_idf_type_acte identifiant du type d'acte à exporter (type de naissance)
- * @param array $pa_liste_personnes liste des personnes à exporter (calculées par une requête SQL précédente)
- * @param array $pa_liste_actes liste des actes à exporter (calculées par une requête SQL précédente)  
+ * @param integer $pi_idf_commune_acte identifiant de la commune Ã  exporter      
+ * @param character $pc_idf_type_acte identifiant du type d'acte Ã  exporter (type de naissance)
+ * @param array $pa_liste_personnes liste des personnes Ã  exporter (calculÃ©es par une requÃªte SQL prÃ©cÃ©dente)
+ * @param array $pa_liste_actes liste des actes Ã  exporter (calculÃ©es par une requÃªte SQL prÃ©cÃ©dente)  
  * @param object $pf pointeur sur le fichier de sortie
  */
  
 function export_nai_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-  // à adapter pour prendre le champ code insee
+  // Ã  adapter pour prendre le champ code insee
   list($i_code_insee,$st_nom_commune,$i_dpt_commune,$st_departement) = $pconnexionBD->sql_select_liste("select CONCAT(CAST(ca.code_insee AS CHAR(5)),'-',RIGHT(CAST(100+ca.numero_paroisse AS CHAR(3)),2)), ca.nom, dept.idf, dept.nom from commune_acte ca, departement dept WHERE LEFT(ca.code_insee/1000,2)=LEFT(dept.idf,2) AND ca.idf=$pi_idf_commune_acte");
   $a_prenom=$pconnexionBD->liste_valeur_par_clef("select idf, libelle from prenom");
   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");   
@@ -689,17 +689,17 @@ function export_nai_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
       }
       list($idf_commune_acte,$idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre,$st_commentaires,$st_permalien) = $pa_liste_actes[$i_idf_acte];
       array_unshift($a_champs,'N',$st_date,$st_date_rep,$st_cote,$st_libre);
-      array_unshift($a_champs,$i_dpt_commune,$st_departement); // code département, nom département
+      array_unshift($a_champs,$i_dpt_commune,$st_departement); // code dÃ©partement, nom dÃ©partement
       array_unshift($a_champs,"NIMEGUEV3",$i_code_insee,$st_nom_commune);
-      // Crée les témoins manquants
+      // CrÃ©e les tÃ©moins manquants
       for ($i=$i_nb_temoins;$i<2;$i++)
       {
          array_push($a_champs,"","","");
       }
-      $st_commentaires = preg_replace('/\r\n/','§',$st_commentaires);
+      $st_commentaires = preg_replace('/\r\n/','Â§',$st_commentaires);
       $no_enregistrement=$no_enregistrement+1;
       $a_champs[]=trim($st_commentaires);
-      $a_champs[]=$no_enregistrement; // Numéro d'enregistrement
+      $a_champs[]=$no_enregistrement; // NumÃ©ro d'enregistrement
       $a_champs[]=$st_permalien;
       fwrite($pf,(implode(';',$a_champs)));
       fwrite($pf,"\r\n");
@@ -707,19 +707,19 @@ function export_nai_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 }
 
 /**
- * Exporte les deces au format Nimègue V3
+ * Exporte les deces au format NimÃ¨gue V3
  * @param object $pconnexionBD lien connexion BD
  * @param integer $pi_idf_source identifiant de la source
- * @param integer $pi_idf_commune_acte identifiant de la commune à exporter      
- * @param character $pc_idf_type_acte identifiant du type d'acte à exporter (type : décès)
- * @param array $pa_liste_personnes liste des personnes à exporter (calculées par une requête SQL précédente)
- * @param array $pa_liste_actes liste des actes à exporter (calculées par une requête SQL précédente)  
+ * @param integer $pi_idf_commune_acte identifiant de la commune Ã  exporter      
+ * @param character $pc_idf_type_acte identifiant du type d'acte Ã  exporter (type : dÃ©cÃ¨s)
+ * @param array $pa_liste_personnes liste des personnes Ã  exporter (calculÃ©es par une requÃªte SQL prÃ©cÃ©dente)
+ * @param array $pa_liste_actes liste des actes Ã  exporter (calculÃ©es par une requÃªte SQL prÃ©cÃ©dente)  
  * @param object $pf pointeur sur le fichier de sortie 
  */
  
 function export_dec_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-   // à adapter pour prendre le champ code insee
+   // Ã  adapter pour prendre le champ code insee
   list($i_code_insee,$st_nom_commune,$i_dpt_commune,$st_departement) = $pconnexionBD->sql_select_liste("select CONCAT(CAST(ca.code_insee AS CHAR(5)),'-',RIGHT(CAST(100+ca.numero_paroisse AS CHAR(3)),2)), ca.nom, dept.idf, dept.nom from commune_acte ca, departement dept WHERE LEFT(ca.code_insee/1000,2)=LEFT(dept.idf,2) AND ca.idf=$pi_idf_commune_acte");
   $a_prenom=$pconnexionBD->liste_valeur_par_clef("select idf, libelle from prenom");
   $a_commune_personne=$pconnexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
@@ -801,17 +801,17 @@ function export_dec_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
       }
       list($idf_commune_acte,$idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre,$st_commentaires,$st_permalien) = $pa_liste_actes[$i_idf_acte];
       array_unshift($a_champs,'D',$st_date,$st_date_rep,$st_cote,$st_libre);
-      array_unshift($a_champs,$i_dpt_commune,$st_departement); // code département, nom département
+      array_unshift($a_champs,$i_dpt_commune,$st_departement); // code dÃ©partement, nom dÃ©partement
       array_unshift($a_champs,"NIMEGUEV3",$i_code_insee,$st_nom_commune);
-      // Crée les témoins manquants
+      // CrÃ©e les tÃ©moins manquants
       for ($i=$i_nb_temoins;$i<2;$i++)
       {
          array_push($a_champs,"","","");
       }
-      $st_commentaires = preg_replace('/\r\n/','§',$st_commentaires);
+      $st_commentaires = preg_replace('/\r\n/','Â§',$st_commentaires);
       $a_champs[]=trim($st_commentaires);
       $no_enregistrement=$no_enregistrement+1;
-      $a_champs[]=$no_enregistrement; // Numéro d'enregistrement
+      $a_champs[]=$no_enregistrement; // NumÃ©ro d'enregistrement
       $a_champs[]=$st_permalien;
       fwrite($pf,(implode(';',$a_champs)));
       fwrite($pf,"\r\n");
@@ -819,19 +819,19 @@ function export_dec_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 }
 
 /**
- * Exporte les mariages au format Nimègue V3
+ * Exporte les mariages au format NimÃ¨gue V3
  * @param object $pconnexionBD lien connexion BD
  * @param integer $pi_idf_source identifiant de la source
- * @param integer $pi_idf_commune_acte identifiant de la commune à exporter
- * @param character $pc_idf_type_acte identifiant du type d'acte à exporter (type : mariage)
- * @param array $pa_liste_personnes liste des personnes à exporter (calculées par une requête SQL précédente)
- * @param array $pa_liste_actes liste des actes à exporter (calculées par une requête SQL précédente)  
+ * @param integer $pi_idf_commune_acte identifiant de la commune Ã  exporter
+ * @param character $pc_idf_type_acte identifiant du type d'acte Ã  exporter (type : mariage)
+ * @param array $pa_liste_personnes liste des personnes Ã  exporter (calculÃ©es par une requÃªte SQL prÃ©cÃ©dente)
+ * @param array $pa_liste_actes liste des actes Ã  exporter (calculÃ©es par une requÃªte SQL prÃ©cÃ©dente)  
  * @param object $pf pointeur sur le fichier de sortie
  */
 
 function export_mar_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-  // à adapter pour prendre le champ code insee
+  // Ã  adapter pour prendre le champ code insee
   list($i_code_insee,$st_nom_commune,$i_dpt_commune,$st_departement) = $pconnexionBD->sql_select_liste("select CONCAT(CAST(ca.code_insee AS CHAR(5)),'-',RIGHT(CAST(100+ca.numero_paroisse AS CHAR(3)),2)), ca.nom, dept.idf, dept.nom from commune_acte ca, departement dept WHERE LEFT(ca.code_insee/1000,2)=LEFT(dept.idf,2) AND ca.idf=$pi_idf_commune_acte");
   $a_prenom=$pconnexionBD->liste_valeur_par_clef("select idf, libelle from prenom");
   $a_commune_personne=$pconnexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
@@ -917,17 +917,17 @@ function export_mar_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
   }
   list($idf_commune_acte,$idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre,$st_commentaires,$st_permalien) = $pa_liste_actes[$i_idf_acte];
   array_unshift($a_champs,'M',$st_date,$st_date_rep,$st_cote,$st_libre);
-  array_unshift($a_champs,$i_dpt_commune,$st_departement); // code département, nom département
+  array_unshift($a_champs,$i_dpt_commune,$st_departement); // code dÃ©partement, nom dÃ©partement
   array_unshift($a_champs,"NIMEGUEV3",$i_code_insee,$st_nom_commune);
-  // Crée les témoins manquants
+  // CrÃ©e les tÃ©moins manquants
   for ($i=$i_nb_temoins;$i<4;$i++)
   {
      array_push($a_champs,"","","");
   }
-  $st_commentaires = preg_replace('/\r\n/','§',$st_commentaires);
+  $st_commentaires = preg_replace('/\r\n/','Â§',$st_commentaires);
   $a_champs[]=trim($st_commentaires);
   $no_enregistrement=$no_enregistrement+1;
-  $a_champs[]=$no_enregistrement; // Numéro d'enregistrement
+  $a_champs[]=$no_enregistrement; // NumÃ©ro d'enregistrement
   $a_champs[]=$st_permalien;
   fwrite($pf,(implode(';',$a_champs)));
   fwrite($pf,"\r\n");
@@ -936,12 +936,12 @@ function export_mar_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 
 
 /**
- * Exporte les actes divers au format Nimègue V3
+ * Exporte les actes divers au format NimÃ¨gue V3
  * @param object $pconnexionBD lien connexion BD
  * @param integer $pi_idf_source identifiant de la source
- * @param integer $pi_idf_commune_acte identifiant de la commune à exporter      
- * @param array $pa_liste_personnes liste des personnes à exporter (calculées par une requête SQL précédente)
- * @param array $pa_liste_actes liste des actes à exporter (calculées par une requête SQL précédente)  
+ * @param integer $pi_idf_commune_acte identifiant de la commune Ã  exporter      
+ * @param array $pa_liste_personnes liste des personnes Ã  exporter (calculÃ©ees par une requÃªte SQL prÃ©cÃ©dente)
+ * @param array $pa_liste_actes liste des actes Ã  exporter (calculÃ©es par une requÃªte SQL prÃ©cÃ©dente)  
  * @param object $pf pointeur sur le fichier de sortie   
  */
  
@@ -1027,8 +1027,8 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
       case IDF_PRESENCE_TEMOIN:
         if ($i_nb_personnes==1)
         {
-            // Si le premier t‚moin en seconde position, le second intervenant n'a pas ‚t‚ saisi
-            // ses champs doivent donc ˆtre compl‚t‚s
+            // Si le premier tÃ©moin en seconde position, le second intervenant n'a pas Ã©tÃ© saisi
+            // ses champs doivent donc Ãªtre complÃ©tÃ©s
             array_push($a_champs,"","","","","","","","","","","","","","","","","","","");                       
         } 
         $a_champs[] = $st_patronyme;
@@ -1043,17 +1043,17 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   list($st_type_acte,$st_sigle_acte) = $a_type_acte[$idf_type_acte];
   array_unshift($a_champs,$st_sigle_acte,$st_type_acte); 
   array_unshift($a_champs,'V',$st_date,$st_date_rep,$st_cote,$st_libre);
-  array_unshift($a_champs,$i_dpt_commune,$st_departement); // code département, nom département
+  array_unshift($a_champs,$i_dpt_commune,$st_departement); // code dÃ©partement, nom dÃ©partement
   array_unshift($a_champs,"NIMEGUEV3",$i_code_insee,$st_nom_commune);
-  // Crée les témoins manquants
+  // CrÃ©e les tÃ©moins manquants
   for ($i=$i_nb_temoins;$i<4;$i++)
   {
      array_push($a_champs,"","","");
   }
-  $st_commentaires = preg_replace('/\r\n/','§',$st_commentaires);
+  $st_commentaires = preg_replace('/\r\n/','Â§',$st_commentaires);
   $a_champs[]=trim($st_commentaires);
   $no_enregistrement=$no_enregistrement+1;
-  $a_champs[]=$no_enregistrement; // Numéro d'enregistrement
+  $a_champs[]=$no_enregistrement; // NumÃ©ro d'enregistrement
   $a_champs[]=$st_permalien;
   fwrite($pf,(implode(';',$a_champs)));
   fwrite($pf,"\r\n");
@@ -1062,11 +1062,11 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
 
 /**
  * Exporte les index pour alimenter le moteur des AD
- * Le résultat est stocké dans le fichier $pst_fichier
+ * Le rÃ©sultat est stockÃ© dans le fichier $pst_fichier
  * Le format est de la forme:
  * NOM;PRENOM;COMMUNE;ANNEE,TYPE_ACTES.
- * Seuls les intervenants sont export‚s (pas les parents, parents, marraines)
- * Les sources utilis‚es sont la base et les TD AGC     
+ * Seuls les intervenants sont exportÃ©s (pas les parents, parents, marraines)
+ * Les sources utilisÃ©es sont la base et les TD AGC     
  * @param object $pconnexionBD lien connexion BD
  * @param object $pf pointeur sur le fichier de sortie  
  */
@@ -1075,13 +1075,10 @@ function export_index_AD($pconnexionBD,$pst_fichier)
 {
    $a_ligne = array();
    $st_requete="select p.patronyme,prn.libelle,ca.nom,a.annee,ta.nom from personne p join prenom prn on (p.idf_prenom=prn.idf) join acte a on (p.idf_acte=a.idf) join commune_acte ca on (a.idf_commune=ca.idf) join type_acte ta on (a.idf_type_acte=ta.idf) where p.idf_type_presence=".IDF_PRESENCE_INTV." and a.idf_source=1 and a.idf_type_acte=".IDF_MARIAGE." or a.idf_type_acte=".IDF_NAISSANCE." or a.idf_type_acte=".IDF_DECES ;
-   //print("Requete=$st_requete<br>");
    $pconnexionBD->execute_requete($st_requete);
    $pf = fopen($pst_fichier, "w") or die("<div class=\"alert alert-danger\">Impossible d'&eacute;crire $pst_fichier</div>");
    while (list($st_patro,$st_prenom,$st_commune,$st_annee,$st_type_acte)=$pconnexionBD->ligne_suivante_resultat())
    {
-      //print_r($a_ligne);
-      //print("<hr><br>");
       $st_ligne = join(';',array($st_patro,$st_prenom,$st_commune,$st_annee,$st_type_acte));
       fwrite($pf,"$st_ligne\r\n");      
    }
@@ -1092,14 +1089,14 @@ function export_index_AD($pconnexionBD,$pst_fichier)
  * Affiche le menu de la page
  * @param integer $pi_idf_source identifiant de la source
  * @param integer $pi_idf_commune_acte identifiant du releveur
- * @param integer $pc_idf_type_acte identifiant du type d'acte sélectionné
- * @param integer $pi_idf_version_nimegue identifiant de la version de nimègue sélectionnée
- * @global integer $gi_max_taille_upload taille maximale du téléchargement
+ * @param integer $pc_idf_type_acte identifiant du type d'acte sÃ©lectionnÃ©
+ * @param integer $pi_idf_version_nimegue identifiant de la version de nimÃ¨gue sÃ©lectionnÃ©e
+ * @global integer $gi_max_taille_upload taille maximale du tÃ©lÃ©chargement
  * @global array $ga_sources liste des sources
  * @global array $ga_communes_acte liste des communes
- * @global array $ga_adherents liste des adhérents
- * @global array $ga_types_nimegue liste des types d'acte Nimègue
- * @global array $ga_versions_nimegue liste des versions de Nimègue
+ * @global array $ga_adherents liste des adhÃ©rents
+ * @global array $ga_types_nimegue liste des types d'acte NimÃ¨gue
+ * @global array $ga_versions_nimegue liste des versions de NimÃ¨gue
  */
 function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_idf_type_acte,$pi_idf_version_nimegue)
 {
@@ -1149,7 +1146,7 @@ function affiche_menu($pi_idf_source,$pi_idf_commune_acte,$pi_idf_releveur,$pc_i
     print('<label for="idf_type_acte" class="col-form-label col-md-2 col-md-offset-3">Type d\'acte Nimegue:</label>');
     print('<div class="col-md-4">');
     print('<select name=idf_type_acte id="idf_type_acte" class="js-select-avec-recherche form-control">');
-    print(chaine_select_options($pc_idf_type_acte,$ga_types_nimegue));
+    print(chaine_select_options($pc_idf_type_acte,$ga_types_nimegue,false));
     print('</select>');
 	  print('</div></div>');
 	
@@ -1335,7 +1332,7 @@ switch($gst_mode)
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -1369,8 +1366,8 @@ $(document).ready(function() {
     },  
 	 messages: {
 	  FichNim: {
-			required: "Un fichier doit être choisi",
-			extension: "Le fichier doit être du type csv ou txt"
+			required: "Un fichier doit Ãªtre choisi",
+			extension: "Le fichier doit Ãªtre du type csv ou txt"
 		}
 	},
   submitHandler: function(form) {
@@ -1379,7 +1376,7 @@ $(document).ready(function() {
     var commune=$('#idf_commune_acte option:selected').text();
     if ($('#mode').val()=="CHARGEMENT")
     {
-      if (confirm('Etes-vous sûr de recharger le fichier de la commune '+commune+' ('+type_acte+')'+' de la source '+source+' ?'))
+      if (confirm('Etes-vous sÃ»r de recharger le fichier de la commune '+commune+' ('+type_acte+')'+' de la source '+source+' ?'))
       {
 			 form.submit();
       }
@@ -1438,13 +1435,13 @@ $(document).ready(function() {
     },  
 	 messages: {
 	  FichRecens: {
-			required: "Un fichier doit être choisi",
-			extension: "Le fichier doit être du type csv ou txt"
+			required: "Un fichier doit Ãªtre choisi",
+			extension: "Le fichier doit Ãªtre du type csv ou txt"
 		},
     annee_recens: {
-       required: "L'année doit être spécifiée",
-       integer: "L'année doit être un entier",
-       minlength: "L'année doit comporter 4 chiffes"
+       required: "L'annÃ©e doit Ãªtre spÃ©cifiÃ©e",
+       integer: "L'annÃ©e doit Ãªtre un entier",
+       minlength: "L'annÃ©e doit comporter 4 chiffes"
     },
 	},
   errorElement: "em",
@@ -1484,7 +1481,7 @@ $(document).ready(function() {
   submitHandler: function(form) {
     var annee_recens=$('#annee_recens').val();
     var commune=$('#idf_commune_recens option:selected').text();
-    if (confirm('Etes-vous sûr de charger les recensements de la commune '+commune+' ('+annee_recens+') ?'))
+    if (confirm('Etes-vous sÃ»r de charger les recensements de la commune '+commune+' ('+annee_recens+') ?'))
       {
 			 form.submit();
       }
@@ -1544,11 +1541,11 @@ switch($gst_mode)
        default: $st_type_nimegue='I';
      }
      list($st_nom_commune,$i_code_insee,$i_numero_paroisse) = $connexionBD->sql_select_liste("select nom,code_insee,numero_paroisse from commune_acte where idf=$gi_idf_commune_acte");     
-     // Suppression des quotes ‚ventuelles
+     // Suppression des quotes Ã©ventuelles
      $st_nom_commune= str_replace ("'",'',$st_nom_commune);
      if (preg_match("/^([\w\-]+)\s*/",$st_nom_commune,$a_correspondances))
      {
-        // Récupère le premier champ de la commune qui doit ˆtre un alphanumerique
+        // RÃ©cupÃ¨re le premier champ de la commune qui doit Ãªtre un alphanumerique
         $st_nom=$a_correspondances[1];
         $st_nom_fich_dest = sprintf("%s_%.5d%.2d-%s.txt",$st_nom,$i_code_insee,$i_numero_paroisse,$st_type_nimegue);   
         
@@ -1687,11 +1684,11 @@ switch($gst_mode)
      $_SESSION['idf_commune_acte'] = $gi_idf_commune_acte;
      $_SESSION['annee_recens'] = $gi_annee_recens;
      list($st_nom_commune,$i_code_insee,$i_numero_paroisse) = $connexionBD->sql_select_liste("select nom,code_insee,numero_paroisse from commune_acte where idf=$gi_idf_commune_acte");     
-     // Suppression des quotes ‚ventuelles
+     // Suppression des quotes Ã©ventuelles
      $st_nom_commune= str_replace ("'",'',$st_nom_commune);
      if (preg_match("/^([\w\-]+)\s*/",$st_nom_commune,$a_correspondances))
      {
-        // Récupère le premier champ de la commune qui doit ˆtre un alphanumerique
+        // RÃ©cupÃ¨re le premier champ de la commune qui doit Ãªtre un alphanumerique
         $st_nom=$a_correspondances[1];
         $st_nom_fich_dest = sprintf("%s_%.5d%.2d-recens.txt",$st_nom,$i_code_insee,$i_numero_paroisse);   
         

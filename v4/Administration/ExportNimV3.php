@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
@@ -38,8 +38,7 @@ if (isset($_REQUEST['idf_acte']))
    $go_acte->charge($gi_idf_acte);
    $a_col_personnes= $go_acte->colonnes_entete_nimv3();
    $a_col_personnes=array_merge($a_col_personnes,$go_acte->liste_personnes_nimv3());
-   $a_col_personnes[]=str_replace("\r\n",'§',$go_acte->getCommentaires());
-   //$a_col_personnes[]=$go_acte->getCommentaires();
+   $a_col_personnes[]=str_replace("\r\n",'Â§',$go_acte->getCommentaires());
    $a_col_personnes[]='';
    $a_col_personnes[]=$go_acte->getUrl();
    fwrite($pf,(join(';',$a_col_personnes)));
@@ -48,6 +47,6 @@ if (isset($_REQUEST['idf_acte']))
    exit(); 
 }
 else
-  die("idf_acte n'est pas défini");
+  die("idf_acte n'est pas dÃ©fini");
 
 ?>

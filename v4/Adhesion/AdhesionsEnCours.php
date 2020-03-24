@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once '../Commun/config.php';
@@ -22,7 +22,7 @@ require_once("include.php");
 print('<!DOCTYPE html>');
 print("<head>");
 print("<title>Adhesions en cours</title>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -39,7 +39,7 @@ $('a.lien_edition').click(function(){
   });
 
 $("#bouton_creer_adherent").click(function() {
-	if (confirm("Voulez-vous réellement créer cet adhérent ?"))   
+	if (confirm("Voulez-vous rÃ©ellement crÃ©er cet adhÃ©rent ?"))   
     {
       $("#creer_adherent").submit();
     }
@@ -138,9 +138,9 @@ function affiche_statut($pst_jeton)
 }
 
 /**
- * Crée le statut identifié par le jeton
+ * CrÃ©e le statut identifiÃ© par le jeton
  * @param string $pst_jeton jeton identifiant la transaction 
- * @global object $connexionBD connexion à la BD
+ * @global object $connexionBD connexion Ã  la BD
  */ 
 function cree_adherent($pst_jeton)
 {
@@ -149,20 +149,20 @@ function cree_adherent($pst_jeton)
   list($i_idf_ins_prov,$i_idf_agc,$st_type_adhesion,$st_ancien_statut) = $connexionBD->sql_select_liste($st_requete);
   if (empty($st_ancien_statut))
   {
-	   // l'adhérent doit forcément être créé
+	   // l'adhÃ©rent doit forcÃ©ment Ãªtre crÃ©Ã©
 	   $adherent = new Adherent($connexionBD,null);
 	   $adherent->initialise_inscription_en_ligne($pst_jeton);
 	   $adherent->cree();
   }
   else
   {
-	   // le compte génébank doit être recréé
+	   // le compte gÃ©nÃ©abank doit Ãªtre recrÃ©Ã©
 	   $adherent = new Adherent($connexionBD,$i_idf_agc);
 	   if ($st_ancien_statut==ADHESION_SUSPENDU)
 	   {
 		    $adherent->cree_utilisateur_gbk();
 	   }
-	   // c'est forcément une réadhésion
+	   // c'est forcÃ©ment une rÃ©adhÃ©sion
 	   $adherent->initialise_readhesion_en_ligne($pst_jeton);
 	   $adherent->modifie();
      $adherent->modifie_adhesion();
@@ -177,7 +177,6 @@ function cree_adherent($pst_jeton)
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("../Commun/menu.php");
 
-
 switch ($gst_mode) {
   case 'LISTE' : menu_liste($connexionBD); 
   break;
@@ -189,7 +188,5 @@ switch ($gst_mode) {
   default:  
       
 }  
-
 print('</div></body></html>');
-
 ?>

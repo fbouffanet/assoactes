@@ -12,7 +12,7 @@ require_once 'Commun/Adherent.php';
 print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print("<title>Creation d'un nouveau mot de passe</title>");
 print("<link href='$gst_url_site/css/styles.css' type='text/css' rel='stylesheet'>");

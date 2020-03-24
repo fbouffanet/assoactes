@@ -1,11 +1,10 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
-//echo '<script type="text/javascript">window.alert("'.$message.'");</script>';
 require_once '../Commun/config.php';
 require_once '../Commun/constantes.php';
 require_once('../Commun/Identification.php');
@@ -20,7 +19,7 @@ require_once('../Commun/commun.php');
 print('<!DOCTYPE html>');
 print("<head>");
 print("<title>Gestion des Types d'actes</title>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -147,17 +146,17 @@ function menu_liste($pconnexionBD)
 }
 
 /**
- * Affichage de la table d'édition des types d'actes
+ * Affichage de la table d'Ã©dition des types d'actes
  * @param string $pst_type_acte Nom du type d'acte
  * @param string $pst_sigle Sigle du type d'acte
- * @param integer $pi_idf_type_acte clé idf du type d'acte
+ * @param integer $pi_idf_type_acte clÃ© idf du type d'acte
  */ 
 function menu_edition($pst_type_acte,$pst_sigle,$pi_idf_type_acte)
 {
    print('<div class="form-group row">');    
    print('<label for="nom_type_acte" class="col-form-label col-md-2">Type d\'acte</label>');
    print('<div class="col-md-10">');
-   print("<input type=\"text\" maxlength=50 size=30 name=nom_type_acte id=nom_type_acte value=\"$pst_type_acte\">");
+   print("<input type=\"text\" maxlength=50 size=30 name=nom_type_acte id=nom_type_acte value=\"".cp1252_vers_utf8($pst_type_acte)."\">");
    print('</div>');
    print('</div>');
    print('<div class="form-group row">'); 
@@ -176,7 +175,7 @@ function menu_edition($pst_type_acte,$pst_sigle,$pi_idf_type_acte)
 
 /** Affiche le formulaire de modification d'un type d'acte
  * @param object $pconnexionBD Identifiant de la connexion de base
- * @param integer $pi_idf_type_acte Identifiant du type d'acte Ó modifier 
+ * @param integer $pi_idf_type_acte Identifiant du type d'acte Ã  modifier 
  */ 
 function menu_modifier($pconnexionBD,$pi_idf_type_acte)
 {
@@ -193,7 +192,7 @@ function menu_modifier($pconnexionBD,$pi_idf_type_acte)
 	print('</form></div></div>');
 }
 
-/** Affiche liste des types d'actes pour sélectionner celui qui remplacera le type sélectionné
+/** Affiche liste des types d'actes pour sÃ©lectionner celui qui remplacera le type sÃ©lectionnÃ©
  */
 function menu_remplacer($pconnexionBD,$pi_idf_type_acte)
 {
@@ -268,7 +267,7 @@ switch ($gst_mode)
 	menu_modifier($connexionBD,$gi_idf_type_acte);
   break;
   case 'MODIFIER' :
-     $st_nom_type_acte = trim($_POST['nom_type_acte']);
+     $st_nom_type_acte = utf8_vers_cp1252(trim($_POST['nom_type_acte']));
      $st_sigle_type_acte = trim($_POST['sigle_type_acte']);
      $connexionBD->execute_requete("update type_acte set nom='$st_nom_type_acte', sigle_nimegue='$st_sigle_type_acte' where idf=$gi_idf_type_acte");
      menu_liste($connexionBD);  
@@ -289,7 +288,7 @@ switch ($gst_mode)
  	 menu_ajouter($gi_idf_type_acte);
   break;
   case 'AJOUTER':
-     $st_nom_type_acte = trim($_POST['nom_type_acte']);
+     $st_nom_type_acte = utf8_vers_cp1252(trim($_POST['nom_type_acte']));
      $st_sigle_type_acte = trim($_POST['sigle_type_acte']);
 	 $gi_idf_type_acte = $_POST['idf_type_acte'];
 	 $sql_req="insert into type_acte (idf, nom, sigle_nimegue) values ($gi_idf_type_acte, '$st_nom_type_acte', '$st_sigle_type_acte')";

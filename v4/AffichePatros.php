@@ -17,7 +17,7 @@ print('<!DOCTYPE html>');
 print("<Head>\n");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
@@ -39,6 +39,14 @@ $(document).ready(function() {
   $.fn.select2.defaults.set( "theme", "bootstrap" );
   
   $(".js-select-avec-recherche").select2();
+  
+  $('#patronyme').autocomplete({
+    source : function(request, response) {
+    $.getJSON("./ajax/patronyme_commune.php", { term: request.term}, 
+              response);
+    },
+   minLength: 3
+});
 
 $("#patros").validate({
   rules: {
@@ -212,6 +220,7 @@ switch ($gst_mode)
 		$_SESSION['mode']=$gst_mode; 
 		$_SESSION['tri_pat']=$gst_tri;
 		$gst_patronyme  = preg_replace('/\*+/','%', $gst_patronyme);
+		$gst_patronyme=utf8_vers_cp1252($gst_patronyme);
 		if (($gst_patronyme== '*') || (empty($gst_patronyme)) || (strlen($gst_patronyme)<2))
 			affiche_menu($gi_idf_commune,$gi_rayon,$gi_idf_source,"Le patronyme doit comporter au moins deux caract&egrave;res");
 		else
