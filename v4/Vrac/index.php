@@ -24,8 +24,17 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 require_once("../Commun/menu.php");
 $connexionBD->ferme();
 ?>
+
+<div class="container-sm">100% wide until small breakpoint</div>
+<div class="container-md">100% wide until medium breakpoint</div>
+<div class="container-lg">100% wide until large breakpoint</div>
+<div class="container-xl">100% wide until extra large breakpoint</div>
+
  <div class= "container-fluid" >
 <div class=TITRE>Actes notariés en vrac</div>
+
+
+
 
 
 <h2 style="text-align:left">Acte divers dans les <a href="FabriceBouffanet.php">Cantons de Mansle et St-Amant de Boixe</a></h2>
