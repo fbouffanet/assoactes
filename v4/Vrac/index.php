@@ -42,7 +42,7 @@ $connexionBD->ferme();
 <dir>
 <li>Actes notariés relevés par <a href="mailto:antoine.dorcier@gmail.com">Antoine DORCIER</a></li>
 </dir>
-<h2 style="text-align:left">Acte divers &agrave; Rougnac, Dignac, Villebois <a href="PhilippeNexon.php">Derieix et Menut</a></h2>
+<h2 style="text-align:left">Acte divers &agrave; Rougnac, Dignac, Villebois <a href="PhilippeNexon.php">Dereix et Menut</a></h2>
 <dir>
 <li> Actes notariés relevés par <a href="mailto:pnexon@free.fr">Philippe NEXON</a></li>
 </dir>
