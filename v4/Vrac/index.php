@@ -30,8 +30,6 @@ $connexionBD->ferme();
 <div class= "container-fluid" >
 
 <h1><p class="bg-info">Actes notariés en vrac</p></h1>
-
-
 <h2 style="text-align:left">Acte divers dans les <a href="FabriceBouffanet.php">Cantons de Mansle et St-Amant de Boixe</a></h2>
 <dir>
 <li>Actes notariés relevés par <a href="mailto:fbouffanet@yahoo.fr">Fabrice BOUFFANET</a></li>
@@ -50,7 +48,7 @@ $connexionBD->ferme();
 </dir>
 <h2 align=left style="text-align:left">Actes notariés de la <a href="CM_CharenteMaritime.php">Charente Maritime</a></h2>
 <h2 align=left style="text-align:left">Ils se sont mariés en <a href="Migrants.php">Indre & Loire</a></h2>
-<div class=TITRE>Recensement</div>
+<h1><p class="bg-info">Recensement</p></h1>
 <h2 style="text-align:left">Recensement d’Angoulême 1936 <a href="1936 _Ang_1er_canton.php">1936 _Ang_1er_canton</a></h2>
 <dir>
 <li>Recensement relevé par Jean Patrick BAZILLE</li>
