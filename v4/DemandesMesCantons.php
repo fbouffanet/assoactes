@@ -43,7 +43,7 @@ function affiche_cantons_choisis($pconnexionBD,$pi_idf_adherent)
       {
           print("<input type=checkbox name='cantons_choisis[]' id='canton_$i_idf_canton' value='$i_idf_canton' class=\"form-check-input\">");
       } 
-      print("</td><td>$st_canton</td></tr>\n");
+      print("</td><td>".cp1252_vers_utf8($st_canton)."</td></tr>\n");
    }
    print ("</table>\n");
    print("<input type=hidden name='mode' value='MODIFICATION_CANTONS'>");
@@ -102,14 +102,14 @@ order by da.date_demande desc";
            list($st_date,$st_type_acte,$st_commune,$st_parties,$st_demandeur,$st_email_demandeur,$st_date_dem) = $a_groupe;
            print("<tr>");
            print("<td>$st_date</td>");
-           print("<td>$st_type_acte</td>");
-           print("<td>$st_commune</td>");
-           print("<td>$st_parties</td>");
+           print("<td>".cp1252_vers_utf8($st_type_acte)."</td>");
+           print("<td>".cp1252_vers_utf8($st_commune)."</td>");
+           print("<td>".cp1252_vers_utf8($st_parties)."</td>");
            $o_acte = new Acte($pconnexionBD, null, null, null, null, null, null);
            $o_acte -> charge($i_idf_acte);
            $st_description_acte = $o_acte -> versChaineSansTemoins();
           
-           print("<td><textarea class=\"form-control\">$st_description_acte</textarea></td>");
+           print("<td><textarea class=\"form-control\">".cp1252_vers_utf8($st_description_acte)."</textarea></td>");
            print("<td>$st_demandeur</td>");
            
            print("<td align=\"center\"><a href=\"mailto:$st_email_demandeur?subject=Votre demande ".SIGLE_ASSO.": $st_parties a $st_commune\"><span class=\"glyphicon glyphicon glyphicon-envelope\"></span></a></td>");

@@ -55,11 +55,11 @@ function menu_liste($pconnexionBD)
       {
          list($st_date,$st_commune,$i_type_nim,$i_nb_actes,$c_publication) = $a_chgt;
          
-         $st_publication = $c_publication=='N' ? "<input type=checkbox name=\"publi[]\" id=\"$st_date ".cp1252_vers_utf8($st_commune)." ".$ga_types_nimegue[$i_type_nim]."\" value=$i_idf_chgt class=\"form-check-label col-form-label control-label\">" : "<input type=checkbox name=\"publi[]\" id=\"$st_date ".$st_commune." ".cp1252_vers_utf8($ga_types_nimegue[$i_type_nim])."\" value=$i_idf_chgt checked class=\"form-check-label col-form-label control-label\">\n";
-         $a_tableau_affichage[]=array($st_date,$st_commune,$ga_types_nimegue[$i_type_nim],$i_nb_actes,$st_publication);
+         $st_publication = $c_publication=='N' ? "<input type=checkbox name=\"publi[]\" id=\"$st_date ".$st_commune." ".$ga_types_nimegue[$i_type_nim]."\" value=$i_idf_chgt class=\"form-check-label col-form-label control-label\">" : "<input type=checkbox name=\"publi[]\" id=\"$st_date ".$st_commune." ".$ga_types_nimegue[$i_type_nim]."\" value=$i_idf_chgt checked class=\"form-check-label col-form-label control-label\">\n";
+         $a_tableau_affichage[]=array($st_date,cp1252_vers_utf8($st_commune),$ga_types_nimegue[$i_type_nim],$i_nb_actes,$st_publication);
          $a_liste_ids[]=$i_idf_chgt;
       }
-      $pagination->affiche_tableau_simple($a_tableau_affichage);
+      $pagination->affiche_tableau_simple($a_tableau_affichage,false);
    }
    else
      print("<div class=\"alert alert-danger\">Pas de chargements</div>\n");
