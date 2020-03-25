@@ -6,11 +6,12 @@ require_once('../v4/Commun/constantes.php');
 require_once('../v4/Commun/ConnexionBD.php');
 require_once('../v4/Commun/config.php');
 require_once('RequeteRecherche.php');
+require_once('commun_gbk.php');
 require_once('../v4/Commun/Benchmark.inc');
 
 print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
 print("<Head>\n");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'>");
 print("<script src='GestionCheckBoxes.js' type='text/javascript'></script>");
@@ -266,7 +267,7 @@ if ($i_nb_actes>0)
     $st_detail = $i_details==1 ? $a_commentaires[$i_idf_acte] : "Seul le nom de la commune est disponible";   
     $st_class = ($i%2==0) ? 'ligne_paire':  'ligne_impaire';
     print("<tr class=$st_class>\n");
-    $a_lignes = array_map('cellule_tableau',array($a_types_acte[$i_idf_type_acte],$a_parties[$i_idf_acte],$i_annee,"$st_prenom_epoux $st_patro_epoux ($a_types_presence[$i_idf_type_presence_epoux]) X $st_prenom_epouse $st_patro_epouse ($a_types_presence[$i_idf_type_presence_epouse])",$st_detail,"<div align=center><input type=checkbox name=\"actes[]\" value=\"$i_idf_acte\"></div>"));
+    $a_lignes = array_map('cellule_tableau',array(cp1252_vers_utf8($a_types_acte[$i_idf_type_acte]),cp1252_vers_utf8($a_parties[$i_idf_acte]),$i_annee,cp1252_vers_utf8("$st_prenom_epoux $st_patro_epoux ($a_types_presence[$i_idf_type_presence_epoux]) X $st_prenom_epouse $st_patro_epouse ($a_types_presence[$i_idf_type_presence_epouse])"),$st_detail,"<div align=center><input type=checkbox name=\"actes[]\" value=\"$i_idf_acte\"></div>"));
     print(join('',$a_lignes));
     print("</tr>\n");
     $i++;
