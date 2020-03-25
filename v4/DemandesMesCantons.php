@@ -112,7 +112,7 @@ order by da.date_demande desc";
            print("<td><textarea class=\"form-control\">".$st_description_acte."</textarea></td>");
            print("<td>".cp1252_vers_utf8($st_demandeur)."</td>");
            
-           print("<td align=\"center\"><a href=\"mailto:$st_email_demandeur?subject=Votre demande ".SIGLE_ASSO.": $st_parties a $st_commune\"><span class=\"glyphicon glyphicon glyphicon-envelope\"></span></a></td>");
+           print("<td align=\"center\"><a href=\"mailto:$st_email_demandeur?subject=Votre demande ".SIGLE_ASSO.": ".cp1252_vers_utf8($st_parties)." a ".cp1252_vers_utf8($st_commune)."\"><span class=\"glyphicon glyphicon glyphicon-envelope\"></span></a></td>");
            print("<td>$st_date_dem</td>");
            print("</tr>\n");
         }
