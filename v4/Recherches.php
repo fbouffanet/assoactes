@@ -669,7 +669,7 @@ print('<div class="form-row col-md-12">');
 print('<div class="form-group col-md-10 lib_erreur">');
 print("<label class=\"sr-only\" for=\"releve_type_communes\">Actes</label><div class=\"input-group\"><span class=\"input-group-addon\">actes</span><select id=\"releve_type_communes\" name=\"releve_type_communes\" class=\"form-control form-control-sm\">");
 $options = array(0=>'publiés', 1=>"modifiés");
-print(chaine_select_options($gst_releve_type,$options));
+print(chaine_select_options($gst_releve_type,$options,false));
 print("</select></div>");
 
 print("<label class=\"sr-only\" for=\"releve_mois_min_communes\">entre</label><div class=\"input-group\"><span class=\"input-group-addon\">entre</span><select id=\"releve_mois_min_communes\" name=\"releve_mois_min_communes\" class=\"form-control form-control-sm\">");
