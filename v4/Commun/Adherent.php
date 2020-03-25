@@ -281,6 +281,7 @@ class Adherent
 	  $this -> st_ville =self::utf8_vers_cp1252($this -> st_ville);
 	  $this -> st_pays =self::utf8_vers_cp1252($this -> st_pays);
 	  $this -> st_infos_agc =self::utf8_vers_cp1252($this -> st_infos_agc);
+	  $this -> st_origine =self::utf8_vers_cp1252($this -> st_origine);
       if (strlen($this->st_tel)==10)         
         $this->st_tel = wordwrap($this->st_tel,2,' ',true);   
       $this->st_email_perso = isset($_POST['email_perso']) ? substr(trim($_POST['email_perso']),0,60): '';
@@ -497,7 +498,7 @@ class Adherent
       $st_chaine .= "<div class=\"radio\"><label><input type=\"radio\" id=\"OrigineAutre\" name=\"type_origine\" value=\"".ORIGINE_AUTRE."\" class=\"form-check-input\" $st_coche>";
       $st_chaine .= "Autre</label></div></div>";
 	  
-      $st_chaine .= sprintf("<div class=\"form-group\"><label for=\"description_origine\">Veuillez pr&eacute;ciser SVP dans tous les cas:</label><input type=\"text\" maxlength=80 size=20 name=\"description_origine\" id=description_origine value=\"%s\" class=\"form-control\"></div>",$this->st_origine);	  
+      $st_chaine .= sprintf("<div class=\"form-group\"><label for=\"description_origine\">Veuillez pr&eacute;ciser SVP dans tous les cas:</label><input type=\"text\" maxlength=80 size=20 name=\"description_origine\" id=description_origine value=\"%s\" class=\"form-control\"></div>",self::cp1252_vers_utf8($this->st_origine));	  
       return $st_chaine;
    } 
    
