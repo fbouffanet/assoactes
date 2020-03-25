@@ -208,24 +208,24 @@ else
   $st_description_acte = $o_acte -> versChaine();
   $i_nb_lignes = $o_acte ->getNbLignes();
   $st_permalien=  $o_acte->getUrl();
-  $st_releve_html = str_replace(array("\r","\n"),'',nl2br(htmlentities($st_description_acte,ENT_COMPAT,'cp1252')));
+  $st_releve_html = str_replace(array("\r","\n"),'',nl2br(htmlentities($st_description_acte,ENT_COMPAT,'UTF-8')));
 
   $st_frontiere = '-----=' . md5(uniqid(mt_rand()));
   $st_commentaire = $_POST['commentaire'];
   setlocale(LC_CTYPE, 'fr_FR.UTF8');
-  $st_prenom_adht = strip_tags(iconv("cp1252", "ASCII//TRANSLIT", $st_prenom_adht));
-  $st_nom_adht = strip_tags(iconv("cp1252", "ASCII//TRANSLIT", $st_nom_adht));
-  $st_titre = strip_tags(iconv("cp1252", "ASCII//TRANSLIT", $st_titre));
+  $st_prenom_adht = strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_prenom_adht));
+  $st_nom_adht = strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_nom_adht));
+  $st_titre = strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_titre));
 
   $st_debut_msg_html  = "Bonjour<br /><br />";
   $st_debut_msg_html .= "Demande d'information ";
   $st_debut_msg_html .= "ci-dessous trouv&eacute;e dans les tables du site<br /><br />";
 
-  $st_fin_msg_html = "<br />\n<div>Commentaire: <br />".html_entity_decode(stripslashes($st_commentaire),ENT_COMPAT,'cp1252')."</div><br />";
+  $st_fin_msg_html = "<br />\n<div>Commentaire: <br />".html_entity_decode(stripslashes($st_commentaire),ENT_COMPAT,'UTF-8')."</div><br />";
   $st_fin_msg_html .= "<br />\nMerci<br />";
   $st_message_html =   $st_debut_msg_html.$st_releve_html.$st_fin_msg_html;
-  $st_message_texte = html_entity_decode(str_ireplace(array("<br>","<br />"),"\r\n",$st_message_html),ENT_COMPAT,'cp1252');
-  $st_message_texte = strip_tags(iconv("cp1252", "ASCII//TRANSLIT", $st_message_texte));
+  $st_message_texte = html_entity_decode(str_ireplace(array("<br>","<br />"),"\r\n",$st_message_html),ENT_COMPAT,'UTF-8');
+  $st_message_texte = strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_message_texte));
   $st_entete = "From: $st_prenom_adht $st_nom_adht <$st_email_adht>\n";
   $st_entete .= "Reply-to: $st_prenom_adht $st_nom_adht <$st_email_adht>\n";
   $st_entete .= 'MIME-Version: 1.0' . "\n";
@@ -236,7 +236,7 @@ else
   $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
   $st_message .= $st_message_texte."\n\n";
   $st_message .= '--'.$st_frontiere."\n";
-  $st_message .= 'Content-Type: text/html; charset="cp1252"'."\n";
+  $st_message .= 'Content-Type: text/html; charset="UTF-8"'."\n";
   $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
   $st_message .= $st_message_html."\n\n";
   $st_message .= '--'.$st_frontiere."--\n";
