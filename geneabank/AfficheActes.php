@@ -89,3 +89,4 @@ print("</form>");
 print('<br><div class=alignCenter><a href="http://www.genea16.net" class=LienAGC>Association G&eacute;n&eacute;alogique de la Charente</a></div>');
 print("</body>");
 
+?>
