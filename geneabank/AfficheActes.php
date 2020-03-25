@@ -13,6 +13,7 @@ require_once('commun_gbk.php');
 print('<!DOCTYPE html>');
 print("<Head>\n");
 print('<meta http-equiv="content-language" content="fr" /> ');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'/>");
 print('</Head>');
 
