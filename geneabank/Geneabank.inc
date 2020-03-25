@@ -1,24 +1,24 @@
 <?php
-// Interface PHP pour Généabank; Copyright 2006; Jean-Pierre Bach (Généalogie en Pays de Tulle). jeanpierre.bach@wanadoo.fr
+// Interface PHP pour GÃ©nÃ©abank; Copyright 2006; Jean-Pierre Bach (GÃ©nÃ©alogie en Pays de Tulle). jeanpierre.bach@wanadoo.fr
 // V1.0 du 6/08/2006
 
 /*
- * Version spéciale de session_start(), à utiliser au tout début
- *   de l'exécution de la page PHP qui doit afficher les actes.
- * Comme session_start(), cette fonction DOIT être appelée
+ * Version spÃ©ciale de session_start(), Ã  utiliser au tout dÃ©but
+ *   de l'exÃ©cution de la page PHP qui doit afficher les actes.
+ * Comme session_start(), cette fonction DOIT Ãªtre appelÃ©e
  *   *avant* l'envoi du "BODY" de la page html.
  *
- * Si on était certain que le navigateur client supportait les "cookies",
+ * Si on Ã©tait certain que le navigateur client supportait les "cookies",
  *   Il suffirait d'appeler session_start() "standard".
- *   ou de demander à PHP de fonctionner dans un mode de session automatique.
+ *   ou de demander Ã  PHP de fonctionner dans un mode de session automatique.
  *
  * Mais comme on ne sait pas trop comment se comporterait le navigateur, 
- *  la fonction ci-dessous a pour objectif de récupérer l'identifiant de
- *  session dans le message émis par Généabank, dans l'hypothèse ou
- *  le cookie "standard" PHPSESSID ne serait pas défini.
+ *  la fonction ci-dessous a pour objectif de rÃ©cupÃ©rer l'identifiant de
+ *  session dans le message Ã©mis par GÃ©nÃ©abank, dans l'hypothÃ¨se ou
+ *  le cookie "standard" PHPSESSID ne serait pas dÃ©fini.
  *
- * Cette fonction est donc adaptée à des Apache /PHP en configuration "standard".
- * Ce code pourrait (devrait?) être retouché en cas de codification différente
+ * Cette fonction est donc adaptÃ©e Ã  des Apache /PHP en configuration "standard".
+ * Ce code pourrait (devrait?) Ãªtre retouchÃ© en cas de codification diffÃ©rente
  *   du nom du cookie ou du code de session.
  */
 
@@ -29,7 +29,7 @@ function Gbk_session_start() {
 	$SessionValide = false;
 	
 	if (isset ($_COOKIE['PHPSESSID'])) {
-		// Tout va bien, il suffit de faire un "session_start" pour récupérer la session
+		// Tout va bien, il suffit de faire un "session_start" pour rÃ©cupÃ©rer la session
 		session_id($_COOKIE['PHPSESSID']);
 		session_start();
 		$SessionValide = 1;
@@ -37,7 +37,7 @@ function Gbk_session_start() {
 	else {
 		if ((isset ($_GET['key'])) && (isset ($_GET['auth']))) {
 			$key = $_GET['key'];
-			$l = strlen($key);  // Je m'adapte à des formats de sessions différents. Le MD5 doit être sur 32 chars
+			$l = strlen($key);  // Je m'adapte Ã  des formats de sessions diffÃ©rents. Le MD5 doit Ãªtre sur 32 chars
 			$sid = substr($key, 0, $l - 32);
 			session_id($sid);
 			session_start();
@@ -50,29 +50,29 @@ function Gbk_session_start() {
 
 function GeneaBank ($amount, $assoc, $str2Display,$myUrl)  {
 
-//echo "<p>Debug: Tentative d'activation d'un échange Genebank.</p>";
+//echo "<p>Debug: Tentative d'activation d'un Ã©change Genebank.</p>";
 
-	// paramètres statiques (peuvent être inclus à partir d'un include séparé, comme dans:
+	// paramÃ¨tres statiques (peuvent Ãªtre inclus Ã  partir d'un include sÃ©parÃ©, comme dans:
 	//    include('localGbkParams.inc');
 	$gbkUrl = 'http://www.geneabank.org/cgi-bin/transaction';
 	
 
-	/* Séquence paranoïde : 
-	 * Je range dans le contexte de session l'Id de la session elle-même.
-	 * Ce bidouillou apporte une redondance qui servira à me conforter
-	 *  dans l'idée que la demande d'affichage en retour provient bien de Gbk
+	/* SÃ©quence paranoÃ¯de : 
+	 * Je range dans le contexte de session l'Id de la session elle-mÃªme.
+	 * Ce bidouillou apporte une redondance qui servira Ã  me conforter
+	 *  dans l'idÃ©e que la demande d'affichage en retour provient bien de Gbk
 	 */
 	$session = session_id();  
-	$_SESSION['Gbk_Sid'] = $session;   // Cette auto référence est vraiment de la paranoïa... M'enfin
+	$_SESSION['Gbk_Sid'] = $session;   // Cette auto rÃ©fÃ©rence est vraiment de la paranoÃ¯a... M'enfin
 	
 	/* Je sauve dans l'environnement de session tout ce qui pourra
-	 *	me servir à vérifier le jeton et afficher l'acte en retour
+	 *	me servir Ã  vÃ©rifier le jeton et afficher l'acte en retour
 	 */
 	$_SESSION['Gbk_Amount'] = $amount;
 	$_SESSION['Gbk_Str']    = $str2Display;
 	
-	/* Je calcule une clé qui est différente du (seul) sid pour éviter de rejouer une requête
-	 *  qui aurait seulement le même nombre de points
+	/* Je calcule une clÃ© qui est diffrente du (seul) sid pour Ã©viter de rejouer une requÃªte
+	 *  qui aurait seulement le mÃªme nombre de points
 	 */
 	$key = $session . md5($session.$str2Display);
 	if ($amount > 1) { $pluriel ='s'; } 
@@ -84,7 +84,7 @@ function GeneaBank ($amount, $assoc, $str2Display,$myUrl)  {
 		<input type='hidden' name='to' value='$assoc'>
 		<input type='hidden' name='amount' value='$amount'>
 		<input_type='hidden' name='language' value='fr'>
-		<input type='submit' value=\"Cliquer ici pour transférer $amount point$pluriel à l'Association Généalogique de la Charente\">
+		<input type='submit' value=\"Cliquer ici pour transfÃ©rer $amount point$pluriel Ã  l'Association GÃ©nÃ©alogique de la Charente\">
 	</FORM>";
 	
 }
@@ -94,8 +94,8 @@ function GeneaBank ($amount, $assoc, $str2Display,$myUrl)  {
 function verifJetonGBK() { 
 	
 	/*
-	 * On a besoin de connaître les mots de passe des associations reconnues
-	 *  Ceci peut être fait dans un fichier séparé comme 
+	 * On a besoin de connÃ®tre les mots de passe des associations reconnues
+	 *  Ceci peut Ãªtre fait dans un fichier sÃ©parÃ© comme 
 	 *   include('localGbkParams.inc');
 	 * Le principe est d'initialiser une liste des mots de passe des associations
 	 *   reconnues dans un tableau GbkPwd:
@@ -103,15 +103,15 @@ function verifJetonGBK() {
 	$GbkPwd['agcharente']='pasouly4';
 	/* ... */
 	
-	// On tente d'abord de récupérer la session à l'origine de cette demande
+	// On tente d'abord de rÃ©cupÃ©rer la session Ã  l'origine de cette demande
 	if (isset($_GET['key'])) {
 		$key = $_GET['key'];
 		$l = strlen($key);
-		//echo "<p>Debug Longueur de clé = $l</p>";
-		$inpSession=substr($key, 0, $l - 32);  // Le MD5 doit occuper 32 caractères
+		//echo "<p>Debug Longueur de clÃ© = $l</p>";
+		$inpSession=substr($key, 0, $l - 32);  // Le MD5 doit occuper 32 caractÃ¨res
 		$session = session_id();
 		//echo "<p>Debug session = $session</p>";
-		//session_id($session);                     En principe, ceci a déjà été fait
+		//session_id($session);                     En principe, ceci a dÃ©jÃ  Ã©tÃ© fait
 		if (isset($_SESSION['Gbk_Sid'])) {
 			$sessKid = $_SESSION['Gbk_Sid'];
 			if (   ($session != $sessKid)
@@ -125,7 +125,7 @@ function verifJetonGBK() {
 				 * Fin de code Debug
 				 */
 				echo "</b></p>";
-				$_SESSION['Gbk_Sid']=''; // Tuer ce code pour éviter tout vol de session
+				$_SESSION['Gbk_Sid']=''; // Tuer ce code pour Ãªviter tout vol de session
 				return false;
 			}
 		} else { 
@@ -141,23 +141,23 @@ function verifJetonGBK() {
 			return false;
 		}
 	} else {
-		echo "<p><b>Erreur: Clé manquante en retour</b></p>";
-		$_SESSION['Gbk_Sid']=''; // Tuer ce code pour éviter tout vol de session
+		echo "<p><b>Erreur: ClÃ© manquante en retour</b></p>";
+		$_SESSION['Gbk_Sid']=''; // Tuer ce code pour Ã©viter tout vol de session
 		return false;
 	}
 	
-	/* ATTENTION: l'instruction  suivante est peut-être gênante, 
-	 *   Dans la mesure où elle va interdire un réaffichage de la même
+	/* ATTENTION: l'instruction  suivante est peut-Ãªtre gÃªnante, 
+	 *   Dans la mesure oÃ¹ elle va interdire un rÃ©affichage de la mÃªme
 	 *   page par le bouton "actualiser" du navigateur.
-	 * Il pourrait être judicieux de la *supprimer* (elle n'est pas fondamentale)
+	 * Il pourrait Ãªtre judicieux de la *supprimer* (elle n'est pas fondamentale)
 	 */
-	//$_SESSION['Gbk_Sid']=''; // Tuer ce code, maintenant inutile, pour éviter tout vol de session (Supprimé par FP)
+	//$_SESSION['Gbk_Sid']=''; // Tuer ce code, maintenant inutile, pour Ã©viter tout vol de session (SupprimÃ© par FP)
 
 	
 	if (isset($_SESSION['Gbk_Str'])) {
 		$str = $_SESSION['Gbk_Str'];
 	} else {
-		echo "<p><b>Erreur d'initialisation (chaîne) de session</b></p>";
+		echo "<p><b>Erreur d'initialisation (chaÃ®ne) de session</b></p>";
 		return false;
 	}
 	
@@ -175,12 +175,12 @@ function verifJetonGBK() {
 		return false;
 		}
 	
-	/* On va récupérer ici les AUTRES paramètres de la requête,
-	 *   Puis on vérifiera la signature du jeton, basée sur ces params
+	/* On va rÃ©cupÃ©rer ici les AUTRES paramÃ¨tres de la requÃªte,
+	 *   Puis on vÃ©rifiera la signature du jeton, basÃ©e sur ces params
 	 */
 
 	if (isset($_GET['auth'])) {
-		$auth = $_GET['auth'];   // On n'arrive ici qu'après avoir vérifié que l'item était défini
+		$auth = $_GET['auth'];   // On n'arrive ici qu'aprÃ¨s avoir vÃ©rifiÃ© que l'item Ã©tait dÃ©fini
 	} else {
 		echo "<p><b>Erreur: non respect du protocole GeneBank (absence jeton)</b></p>";
 		return false;
@@ -189,20 +189,20 @@ function verifJetonGBK() {
 		$ref = $_GET['ref'];
 		//echo '<p>Debug: ref = ' . htmlspecialchars($ref) . '</p>';
 	} else {
-		echo "<p><b>Erreur: non respect du protocole GeneBank (absence référence)</b></p>";
+		echo "<p><b>Erreur: non respect du protocole GeneBank (absence rÃ©fÃ©rence)</b></p>";
 		return false;
 	}
         if (isset($_GET['amount'])) {
 		$amount=$_GET['amount'];
 		//echo "<p>Debug amount = $amount</p>";
 		if ($amount != $_SESSION['Gbk_Amount']) {
-			echo '<p><b>Erreur: Le nb de points accordés ' 
+			echo '<p><b>Erreur: Le nb de points accordÃ©s ' 
 	                     . htmlspecialchars($amount)
-			     . "n'est pas celui demandé</b></p>";
+			     . "n'est pas celui demandÃ©</b></p>";
 			return false;
 		}
 	} else {
-		echo "<p><b>Erreur: Nb de points accordés manquant.</b></p>";
+		echo "<p><b>Erreur: Nb de points accordÃ©s manquant.</b></p>";
 		return false;
 	}
 	if (isset($_GET['to'])) {
@@ -231,7 +231,7 @@ function verifJetonGBK() {
 
 	if ($auth == $expected_auth) { return $str; }
 	else {
-		echo "<p><b>Erreur: l'autorisation d'affichage par Généabank est invalide.</b></p>";
+		echo "<p><b>Erreur: l'autorisation d'affichage par GÃ©nÃ©abank est invalide.</b></p>";
 		return false;
 	}
 

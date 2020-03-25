@@ -9,7 +9,7 @@ require_once('RequeteRecherche.php');
 require_once('commun_gbk.php');
 require_once('../v4/Commun/Benchmark.inc');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
+print('<!DOCTYPE html>');
 print("<Head>\n");
 print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');

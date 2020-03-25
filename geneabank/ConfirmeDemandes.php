@@ -7,8 +7,10 @@ require_once('../v4/Commun/config.php');
 require_once('../v4/Commun/ConnexionBD.php');
 require_once('../v4/Commun/constantes.php');
 
+print('<!DOCTYPE html>');
 print("<Head>\n");
 print('<meta http-equiv="content-language" content="fr" /> ');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'/>");
 print('</Head>');
 
