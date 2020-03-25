@@ -12,7 +12,7 @@ require_once('../v4/Commun/constantes.php');
 require_once('commun_gbk.php');
 print("Test3<br>");
 require_once('AffichageActe.php');
-die("Test4<br>");
+print("Test4<br>");
 
 
 
