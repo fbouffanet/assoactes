@@ -1,14 +1,21 @@
 <?php
 
+
 require ('Geneabank.inc');
+
 
 Gbk_session_start(); 
 
 require_once('../v4/Commun/config.php');
 require_once('../v4/Commun/ConnexionBD.php');
 require_once('../v4/Commun/constantes.php');
-require_once('AffichageActe.php');
 require_once('commun_gbk.php');
+print("Test3<br>");
+require_once('AffichageActe.php');
+die("Test4<br>");
+
+
+
 
 print('<!DOCTYPE html>');
 print("<Head>\n");

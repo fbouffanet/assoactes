@@ -1,7 +1,5 @@
 <?php
 
-require_once('commun_gbk.php');
-
 /**
  * Renvoie la description d'un acte de mariage ou d'un acte divers
  * @param object $pconnexionBD Connexion à la base de données
