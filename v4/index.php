@@ -125,7 +125,7 @@ if (count($a_bulletins)>0)
 	else
   $st_bulletin_html = file_get_contents($st_article_bulletin);     
   if (preg_match('~<body[^>]*>(.*?)</body>~si', $st_bulletin_html, $a_patterns))
-  print($a_patterns[1]); 
+  print(cp1252_vers_utf8($a_patterns[1])); 
 }
 else
   print('<div class="alert alert-danger">Pas d\'article disponible</div>');
