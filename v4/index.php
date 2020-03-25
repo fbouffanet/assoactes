@@ -92,14 +92,14 @@ else
       list($st_date,$st_commune,$st_type_nim,$i_nb_actes) = $a_chargement;
       switch ($st_type_nim) 
       {
-         case IDF_NAISSANCE: $st_type_acte='°';break;
+         case IDF_NAISSANCE: $st_type_acte='Â°';break;
          case IDF_MARIAGE: $st_type_acte='X';break;
          case IDF_DECES: $st_type_acte='&dagger;';break;
          case IDF_DIVERS: $st_type_acte='Divers(CM...)';break;
 		 case IDF_RECENS: $st_type_acte='Recensement';break;
       }
       print("<tr>");
-      print("<td>$st_commune</td><td>$st_type_acte</td><td>$i_nb_actes</td>");
+      print("<td>".cp1252_vers_utf8($st_commune)."</td><td>".cp1252_vers_utf8($st_type_acte)."</td><td>$i_nb_actes</td>");
       print("</tr>");
       
    }
