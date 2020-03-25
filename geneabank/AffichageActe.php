@@ -2,23 +2,23 @@
 
 /**
  * Renvoie la description d'un acte de mariage ou d'un acte divers
- * @param object $pconnexionBD Connexion à la base de données
- * @param array $pa_type_acte Liste des types d'actes indexés par leur identifiant
- * @param array $pa_profession Liste des professons indexées par leur identifiant
- * @param array $pa_commune_personne Liste des communes d'origine des personnes indexées par leur identifiant
- * @param integer $pi_idf_acte identifiant de l'acte à afficher
- * return array Tableau à deux éléments (description de l'acte, commentaires de l'acte,url)       
+ * @param object $pconnexionBD Connexion Ã  la base de donnÃ©es
+ * @param array $pa_type_acte Liste des types d'actes indexÃ©s par leur identifiant
+ * @param array $pa_profession Liste des professons indexÃ©es par leur identifiant
+ * @param array $pa_commune_personne Liste des communes d'origine des personnes indexÃ©es par leur identifiant
+ * @param integer $pi_idf_acte identifiant de l'acte Ã  afficher
+ * return array Tableau Ã  deux Ã©lÃ©ments (description de l'acte, commentaires de l'acte,url)       
  */ 
 function description_mariage_ou_divers($pconnexionBD,$pa_type_acte,$pa_profession,$pa_commune_personne,$pi_idf_acte)
 {
   $st_reponse = '';
   // Affichage des infos de l'acte
   list($i_idf_commune_acte,$st_commune_acte,$i_idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre,$st_commentaires_acte,$st_permalien)= $pconnexionBD->sql_select_liste("select ca.idf,ca.nom,idf_type_acte,date, date_rep, cote,libre, commentaires,url from acte join commune_acte ca on(ca.idf=acte.idf_commune) where acte.idf=$pi_idf_acte");
-  $st_reponse .= "$pa_type_acte[$i_idf_type_acte] à $st_commune_acte le $st_date";
+  $st_reponse .= "$pa_type_acte[$i_idf_type_acte] Ã  $st_commune_acte le $st_date";
   if ($st_date_rep!='')
      $st_reponse .=" ($st_date_rep)";
   $st_reponse .=" $st_cote $st_libre\n";
-  // Récupération des infos de conjoint pour la commune correspondante
+  // RÃ©cupÃ©ration des infos de conjoint pour la commune correspondante
   $a_conjointe_epx = array();
   $a_conjoint_epse = array();
   $a_union=$pconnexionBD->sql_select_multiple("select idf_epoux, idf_epouse from `union` join personne epoux on (idf_epoux=epoux.idf) join personne epouse on (idf_epouse=epouse.idf) where `union`.idf_acte=$pi_idf_acte and (epouse.idf_type_presence=".IDF_PRESENCE_EXCJT." or epoux.idf_type_presence=".IDF_PRESENCE_EXCJT.")");
@@ -44,19 +44,19 @@ function description_mariage_ou_divers($pconnexionBD,$pa_type_acte,$pa_professio
         $st_reponse .="$st_patronyme $st_prenom ($c_sexe)\n";
         if ($st_commentaires!='')
            $st_reponse .=$st_commentaires."\n";
-        // groupe l'origine, la date de naissance, l'âge et la profession sur une même ligne
+        // groupe l'origine, la date de naissance, l'Ã¢ge et la profession sur une mÃªme ligne
         $st_ligne= "";                 
         if ($i_idf_origine!=0 && array_key_exists($i_idf_origine,$pa_commune_personne))
            $st_ligne.= " Originaire de $pa_commune_personne[$i_idf_origine]";
         $st_date_naissance = preg_replace('/^\s+$/','',$st_date_naissance);
         if (!preg_match('/^\s*$/',$st_date_naissance))
         {
-    	     $st_lib = $c_sexe!='F'? 'Né':'Née';
+    	     $st_lib = $c_sexe!='F'? 'NÃ©':'NÃ©e';
     	     $st_ligne.= " $st_lib le $st_date_naissance";
         }
         if (!preg_match('/^\s*$/',$st_age))
         {
-    	     $st_lib = $c_sexe!='F'? 'Agé':'Agée';
+    	     $st_lib = $c_sexe!='F'? 'AgÃ©':'AgÃ©e';
     	     $st_ligne.= " $st_lib de $st_age";
     	     if (preg_match('/^\d+$/',$st_age))
               $st_ligne.= " ans";  
@@ -112,7 +112,7 @@ function description_mariage_ou_divers($pconnexionBD,$pa_type_acte,$pa_professio
         }          
         else
         {
-          // les cas ? et M sont considérés comme identiques
+          // les cas ? et M sont considÃ©rÃ©s comme identiques
           
           if (array_key_exists($i_idf_pers,$a_conjointe_epx))
           {
@@ -131,35 +131,35 @@ function description_mariage_ou_divers($pconnexionBD,$pa_type_acte,$pa_professio
         }    
       break;
       case IDF_PRESENCE_TEMOIN :
-        $st_reponse .="Témoin: $st_patronyme $st_prenom $st_commentaires\n";
+        $st_reponse .="TÃ©moin: $st_patronyme $st_prenom $st_commentaires\n";
       break;
       }
    }
    if ($st_commentaires_acte!='')
-      $st_reponse .= str_replace('§',"\n",$st_commentaires_acte);
+      $st_reponse .= str_replace('Â§',"\n",$st_commentaires_acte);
    return array($st_reponse,$st_permalien);   
       
 }
 
 /**
  * Renvoie la description courte d'un acte de mariage ou d'un acte divers
- * @param object $pconnexionBD Connexion à la base de données
- * @param array $pa_type_acte Liste des types d'actes indexés par leur identifiant
- * @param array $pa_profession Liste des professons indexées par leur identifiant
- * @param array $pa_commune_personne Liste des communes d'origine des personnes indexées par leur identifiant
- * @param integer $pi_idf_acte identifiant de l'acte à afficher
- * return array Tableau à deux éléments (description de l'acte, commentaires de l'acte,url)       
+ * @param object $pconnexionBD Connexion Ã  la base de donnÃ©es
+ * @param array $pa_type_acte Liste des types d'actes indexÃ©s par leur identifiant
+ * @param array $pa_profession Liste des professons indexÃ©es par leur identifiant
+ * @param array $pa_commune_personne Liste des communes d'origine des personnes indexÃ©es par leur identifiant
+ * @param integer $pi_idf_acte identifiant de l'acte Ã  afficher
+ * return array Tableau Ã  deux Ã©lÃ©ments (description de l'acte, commentaires de l'acte,url)       
  */ 
 function description_courte_mariage_ou_divers($pconnexionBD,$pa_type_acte,$pa_profession,$pa_commune_personne,$pi_idf_acte)
 {
   $st_reponse = '';
   // Affichage des infos de l'acte
   list($i_idf_commune_acte,$st_commune_acte,$i_idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre)= $pconnexionBD->sql_select_liste("select ca.idf,ca.nom,idf_type_acte,date, date_rep, cote,libre, commentaires,url from acte join commune_acte ca on(ca.idf=acte.idf_commune) where acte.idf=$pi_idf_acte");
-  $st_reponse .= "$pa_type_acte[$i_idf_type_acte] à $st_commune_acte le $st_date";
+  $st_reponse .= "$pa_type_acte[$i_idf_type_acte] Ã  $st_commune_acte le $st_date";
   if ($st_date_rep!='')
      $st_reponse .=" ($st_date_rep)";
   $st_reponse .=" $st_cote $st_libre\n";
-  // Récupération des infos de conjoint pour la commune correspondante
+  // RÃ©cupÃ©ration des infos de conjoint pour la commune correspondante
   $a_conjointe_epx = array();
   $a_conjoint_epse = array();
   $a_union=$pconnexionBD->sql_select_multiple("select idf_epoux, idf_epouse from `union` join personne epoux on (idf_epoux=epoux.idf) join personne epouse on (idf_epouse=epouse.idf) where `union`.idf_acte=$pi_idf_acte and (epouse.idf_type_presence=".IDF_PRESENCE_EXCJT." or epoux.idf_type_presence=".IDF_PRESENCE_EXCJT.")");
@@ -185,19 +185,19 @@ function description_courte_mariage_ou_divers($pconnexionBD,$pa_type_acte,$pa_pr
         $st_reponse .="$st_patronyme $st_prenom ($c_sexe)\n";
         if ($st_commentaires!='')
            $st_reponse .=$st_commentaires."\n";
-        // groupe l'origine, la date de naissance, l'âge et la profession sur une même ligne
+        // groupe l'origine, la date de naissance, l'Ãªge et la profession sur une mÃªme ligne
         $st_ligne= "";                 
         if ($i_idf_origine!=0 && array_key_exists($i_idf_origine,$pa_commune_personne))
            $st_ligne.= " Originaire de $pa_commune_personne[$i_idf_origine]";
         $st_date_naissance = preg_replace('/^\s+$/','',$st_date_naissance);
         if (!preg_match('/^\s*$/',$st_date_naissance))
         {
-    	     $st_lib = $c_sexe!='F'? 'Né':'Née';
+    	     $st_lib = $c_sexe!='F'? 'NÃ©':'NÃ©e';
     	     $st_ligne.= " $st_lib le $st_date_naissance";
         }
         if (!preg_match('/^\s*$/',$st_age))
         {
-    	     $st_lib = $c_sexe!='F'? 'Agé':'Agée';
+    	     $st_lib = $c_sexe!='F'? 'AgÃ©':'AgÃ©e';
     	     $st_ligne.= " $st_lib de $st_age";
     	     if (preg_match('/^\d+$/',$st_age))
               $st_ligne.= " ans";  
@@ -253,7 +253,7 @@ function description_courte_mariage_ou_divers($pconnexionBD,$pa_type_acte,$pa_pr
         }          
         else
         {
-          // les cas ? et M sont considérés comme identiques
+          // les cas ? et M sont considÃ©rÃ©s comme identiques
           
           if (array_key_exists($i_idf_pers,$a_conjointe_epx))
           {
@@ -280,11 +280,11 @@ function description_courte_mariage_ou_divers($pconnexionBD,$pa_type_acte,$pa_pr
 
 
 /**
- * Renvoie la description de l'acte de naissance donné au fromat texte
- * @param object $pconnexionBD Connexion à la base de données
- * @param array  $pa_profession liste des professions indexées par leur identifiant
+ * Renvoie la description de l'acte de naissance donnÃ© au fromat texte
+ * @param object $pconnexionBD Connexion Ã  la base de donnÃ©es
+ * @param array  $pa_profession liste des professions indexÃ©es par leur identifiant
  * @param integer $pi_idf_acte Identifiant de l'acte
- * return array Tableau à deux éléments (description de l'acte, commentaires de l'acte,permalien)  
+ * return array Tableau Ã  deux Ã©lÃ©ments (description de l'acte, commentaires de l'acte,permalien)  
  */ 
 function description_naissance($pconnexionBD,$pa_profession,$pi_idf_acte) 
 {
@@ -301,7 +301,7 @@ function description_naissance($pconnexionBD,$pa_profession,$pi_idf_acte)
 
    $a_liste_personnes= $pconnexionBD->sql_select_multiple_par_idf("select p.idf,p.idf_type_presence,p.sexe, p.patronyme,ifnull(prenom.libelle,''),p.idf_origine,p.date_naissance,p.age,p.idf_profession, p.commentaires,p.idf_pere,p.idf_mere,p.est_decede from personne p left join prenom on (p.idf_prenom=prenom.idf) where idf_acte=$pi_idf_acte order by p.idf");
 
-   $st_description .= "0 à $st_commune_acte le $st_date";
+   $st_description .= "Â° Ã  $st_commune_acte le $st_date";
    if ($st_date_rep!='')
       $st_description .= " ($st_date_rep)";
    $st_description .= " $st_cote $st_libre\n";
@@ -345,25 +345,25 @@ function description_naissance($pconnexionBD,$pa_profession,$pi_idf_acte)
          }   
       break;
       case IDF_PRESENCE_PARRAIN :
-        $st_description .="Parrain/témoin: $st_patronyme $st_prenom $st_commentaires\n";
+        $st_description .="Parrain/tÃ©moin: $st_patronyme $st_prenom $st_commentaires\n";
       break;
       case IDF_PRESENCE_MARRAINE :
-        $st_description .= "Marraine/témoin: $st_patronyme $st_prenom $st_commentaires\n";
+        $st_description .= "Marraine/tÃ©moin: $st_patronyme $st_prenom $st_commentaires\n";
       break;
       }   
    }
    if ($st_commentaires_acte!='')
-      $st_commentaires_acte = str_replace('§',"\n",$st_commentaires_acte);  
+      $st_commentaires_acte = str_replace('Â§',"\n",$st_commentaires_acte);  
    return array($st_description,$st_commentaires_acte,$st_permalien);
 }
 
 /**
- * Renvoie la description de l'acte de naissance donné au fromat texte
- * @param object $pconnexionBD Connexion à la base de données
- * @param array  $pa_profession liste des professions indexées par leur identifiant
- * @param array $pa_commune_personne Liste des communes d'origine des personnes indexées par leur identifiant 
+ * Renvoie la description de l'acte de naissance donnÃ© au fromat texte
+ * @param object $pconnexionBD Connexion Ã  la base de donnÃ©es
+ * @param array  $pa_profession liste des professions indexÃ©es par leur identifiant
+ * @param array $pa_commune_personne Liste des communes d'origine des personnes indexÃ©es par leur identifiant 
  * @param integer $pi_idf_acte Identifiant de l'acte
- * return array Tableau à deux éléments (description de l'acte, commentaires de l'acte,permalien)  
+ * return array Tableau Ã  deux Ã©lÃ©ments (description de l'acte, commentaires de l'acte,permalien)  
  */ 
 function description_deces($pconnexionBD,$pa_profession,$pa_commune_personne,$pi_idf_acte) 
 {
@@ -379,7 +379,7 @@ function description_deces($pconnexionBD,$pa_profession,$pa_commune_personne,$pi
    }
 
    $a_liste_personnes= $pconnexionBD->sql_select_multiple_par_idf("select p.idf,p.idf_type_presence,p.sexe, p.patronyme,ifnull(prenom.libelle,''),p.idf_origine,p.date_naissance,p.age,p.idf_profession, p.commentaires,p.idf_pere,p.idf_mere,p.est_decede from personne p left join prenom on (p.idf_prenom=prenom.idf) where idf_acte=$pi_idf_acte order by p.idf");
-   $st_description .= "† à $st_commune_acte le $st_date";
+   $st_description .= "&dagger; Ã  $st_commune_acte le $st_date";
    if ($st_date_rep!='')
       $st_description.= " ($st_date_rep)";
    $st_description.= " $st_cote $st_libre\n";
@@ -395,12 +395,12 @@ function description_deces($pconnexionBD,$pa_profession,$pa_commune_personne,$pi
            $st_description.= " Originaire de $pa_commune_personne[$i_idf_origine]";
         if (!preg_match('/^\s*$/',$st_date_naissance))
         {
-    	     $st_lib = $c_sexe!='F'? 'Né':'Née';
+    	     $st_lib = $c_sexe!='F'? 'NÃ©':'NÃ©e';
     	     $st_description.= " $st_lib le $st_date_naissance";
         }
         if (!preg_match('/^\s*$/',$st_age))
         {
-    	     $st_lib = $c_sexe!='F'? 'Agé':'Agée';
+    	     $st_lib = $c_sexe!='F'? 'AgÃ©':'AgÃ©e';
     	     $st_description.=" $st_lib de $st_age";
     	     if (preg_match('/^\d+$/',$st_age))
               $st_description.= " ans";  
@@ -473,13 +473,13 @@ function description_deces($pconnexionBD,$pa_profession,$pa_commune_personne,$pi
         $st_description.= "\n";                 
       break;
       case IDF_PRESENCE_TEMOIN :
-        $st_description.= "Témoin: $st_patronyme $st_prenom $st_commentaires\n";
+        $st_description.= "TÃ©moin: $st_patronyme $st_prenom $st_commentaires\n";
            
       break;
     }     
   }
   if ($st_commentaires_acte!='')
-      $st_commentaires_acte = str_replace('§',"\n",$st_commentaires_acte);    
+      $st_commentaires_acte = str_replace('Â§',"\n",$st_commentaires_acte);    
    return array($st_description,$st_commentaires_acte,$st_permalien);
 }
 

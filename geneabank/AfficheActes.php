@@ -8,7 +8,9 @@ require_once('../v4/Commun/config.php');
 require_once('../v4/Commun/ConnexionBD.php');
 require_once('../v4/Commun/constantes.php');
 require_once('AffichageActe.php');
+require_once('commun_gbk.php');
 
+print('<!DOCTYPE html>');
 print("<Head>\n");
 print('<meta http-equiv="content-language" content="fr" /> ');
 print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'/>");
