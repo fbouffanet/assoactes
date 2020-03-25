@@ -99,7 +99,7 @@ else
 		 case IDF_RECENS: $st_type_acte='Recensement';break;
       }
       print("<tr>");
-      print("<td>".cp1252_vers_utf8($st_commune)."</td><td>".cp1252_vers_utf8($st_type_acte)."</td><td>$i_nb_actes</td>");
+      print("<td>".cp1252_vers_utf8($st_commune)."</td><td>$st_type_acte</td><td>$i_nb_actes</td>");
       print("</tr>");
       
    }
