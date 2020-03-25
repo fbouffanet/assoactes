@@ -109,8 +109,8 @@ order by da.date_demande desc";
            $o_acte -> charge($i_idf_acte);
            $st_description_acte = $o_acte -> versChaineSansTemoins();
           
-           print("<td><textarea class=\"form-control\">".cp1252_vers_utf8($st_description_acte)."</textarea></td>");
-           print("<td>$st_demandeur</td>");
+           print("<td><textarea class=\"form-control\">".$st_description_acte."</textarea></td>");
+           print("<td>".cp1252_vers_utf8$st_demandeur)."</td>");
            
            print("<td align=\"center\"><a href=\"mailto:$st_email_demandeur?subject=Votre demande ".SIGLE_ASSO.": $st_parties a $st_commune\"><span class=\"glyphicon glyphicon glyphicon-envelope\"></span></a></td>");
            print("<td>$st_date_dem</td>");
