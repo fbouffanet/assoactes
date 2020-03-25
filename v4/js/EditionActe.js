@@ -48,7 +48,7 @@ $(".maj_date_rep").click(function() {
 			 var o_date_rep=new CalRep(jour_rep,mois_rep,annee_rep);
 			 o_date_rep.convertir();
 			 $(date_greg).val(o_date_rep.getDateGreg());
-			 $(cmt).val($(cmt).val()+'° '+o_date_rep.getDateRepNim());
+			 $(cmt).val($(cmt).val()+'Â° '+o_date_rep.getDateRepNim());
 			 $(date_rep).val(o_date_rep.getDateRepNim());
        if ($(date_greg).val()!='')
 			 {
