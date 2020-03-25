@@ -6,6 +6,7 @@ session_start();
 require_once('../v4/Commun/config.php');
 require_once('../v4/Commun/ConnexionBD.php');
 require_once('../v4/Commun/constantes.php');
+require_once('commun_gbk.php');
 
 print('<!DOCTYPE html>');
 print("<Head>\n");
@@ -54,8 +55,8 @@ foreach ($a_intervenants as $i_idf_acte => $a_intervenant)
      if ($st_parents!='')
         $a_parents[] = $st_parents;          
   }
-  $a_parties[$i_idf_acte] = implode(" X ",$a_intv);
-  $a_types_actes[$i_idf_acte] = $st_type_acte;
+  $a_parties[$i_idf_acte] = cp1252_vers_utf8(implode(" X ",$a_intv));
+  $a_types_actes[$i_idf_acte] = cp1252_vers_utf8($st_type_acte);
   $a_annees[$i_idf_acte] = $i_annee;
   if ($i_details_supplementaires==0)
   {
@@ -63,8 +64,8 @@ foreach ($a_intervenants as $i_idf_acte => $a_intervenant)
   }
   else if (count($a_parents)>1)
   {
-     $a_renseignements[$i_idf_acte] = "Epoux : $a_parents[0]<br>";
-     $a_renseignements[$i_idf_acte] .= "Epouse : $a_parents[1]";
+     $a_renseignements[$i_idf_acte] = cp1252_vers_utf8("Epoux : $a_parents[0]<br>");
+     $a_renseignements[$i_idf_acte] .= cp1252_vers_utf8("Epouse : $a_parents[1]");
   }
   else
   {
