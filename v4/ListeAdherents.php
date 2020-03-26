@@ -552,7 +552,7 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
    }
    
    if (!empty($pst_nom_a_chercher))
-      $a_champs_recherche[':nom_a_chercher']=$pst_nom_a_chercher;
+      $a_champs_recherche[':nom_a_chercher']=utf8_vers_cp1252($pst_nom_a_chercher);
    if (a_droits($pst_ident,DROIT_GESTION_ADHERENT))
    { 
       $st_requete = ($pst_nom_a_chercher=='') ? "select adherent.idf,concat(prenom, ' ',adherent.nom),adherent.ident, email_perso, DATE_FORMAT(derniere_connexion,'%d/%m/%Y'),sa.nom from adherent join statut_adherent sa on (sa.idf=adherent.statut) where adherent.nom like '$gc_initiale%' $st_clause_statut" : "select adherent.idf,concat(prenom, ' ',adherent.nom),adherent.ident, email_perso, DATE_FORMAT(derniere_connexion,'%d/%m/%Y'),sa.nom from adherent join statut_adherent sa on (sa.idf=adherent.statut) where (adherent.nom like :nom_a_chercher or adherent.email_forum like :nom_a_chercher or adherent.email_perso like :nom_a_chercher or adherent.ip_connexion like :nom_a_chercher) $st_clause_statut";
