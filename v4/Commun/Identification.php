@@ -66,7 +66,7 @@ if (isset($_POST['ident']))
       {
           $st_sujet = "Base V4 - Refus de connexion";
           $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
-          $st_entete .= 'Content-type: text/html; charset=cp1252' . "\r\n";
+          $st_entete .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
           $st_entete .= "From: BASE ".SIGLE_ASSO." <".EMAIL_INFOASSO.">\r\n";
           $st_texte = "L'adh&eacute;rent $st_ident a tent&eacute; de se connecter depuis l'adresse ip $gst_adresse_ip qui n'est pas autoris&eacute;e<br>";
           mail($gst_emails_gestbase, $st_sujet, $st_texte, $st_entete);
