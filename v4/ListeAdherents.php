@@ -1079,7 +1079,7 @@ function maj_statut_adherents($pconnexionBD)
     foreach ($a_adhts_a_supprimer as $i_idf_adht => $a_infos_adhts)
     {
        list($st_prenom,$st_nom) = $a_infos_adhts;
-       $st_adhts_supprimes .= "<tr><td>$i_idf_adht</td><td>$st_prenom</td><td>$st_nom</td></tr>\n";
+       $st_adhts_supprimes .= "<tr><td>$i_idf_adht</td><td>".self::cp1252_vers_utf8($st_prenom)."</td><td>".self::cp1252_vers_utf8($st_nom)."</td></tr>\n";
        $adherent = new Adherent($pconnexionBD,$i_idf_adht);
        $adherent->supprime();
     }
@@ -1105,11 +1105,11 @@ function maj_statut_adherents($pconnexionBD)
        $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
        $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
        $st_message .= '--'.$st_frontiere."\n";
-       $st_message .= 'Content-Type: text/plain; charset="cp1252"'."\n";
+       $st_message .= 'Content-Type: text/plain; charset="UTF-8"'."\n";
        $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
        $st_message .= $st_message_texte."\n\n";
        $st_message .= '--'.$st_frontiere."\n";
-       $st_message .= 'Content-Type: text/html; charset="cp1252"'."\n";
+       $st_message .= 'Content-Type: text/html; charset="UTF-8"'."\n";
        $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
        $st_message .= $st_message_html."\n\n";
        $st_message .= '--'.$st_frontiere."--\n";
