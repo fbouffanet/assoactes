@@ -1077,7 +1077,7 @@ class Adherent
     $st_texte .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
     $st_sujet = "Changement de mot de passe GeneaBank";
     $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
-    $st_entete .= "Content-type: text/html; charset=cp1252 \r\n";
+    $st_entete .= "Content-type: text/html; charset=UTF-8 \r\n";
     $st_entete .= "From: ".EMAIL_DIRASSO."\r\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\r\n";
     $st_entete .= "Reply-to: ".EMAIL_DIRASSO."\r\n";
@@ -1112,7 +1112,7 @@ class Adherent
     $st_texte .= "Cordialement,\n\nLes responsables du site";
     $st_sujet = "Votre nouveau mot de passe du site ".SIGLE_ASSO;
     $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
-    $st_entete .= "Content-type: text/html; charset=cp1252 \r\n";
+    $st_entete .= "Content-type: text/html; charset=UTF-8\r\n";
     $st_entete .= "From: ".EMAIL_DIRASSO."\r\n";
     return (@mail($this->st_email_perso,$st_sujet, nl2br(stripslashes($st_texte)), $st_entete));
 
