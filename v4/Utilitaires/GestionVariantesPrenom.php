@@ -531,9 +531,6 @@ switch ($gst_mode) {
  break;
  case 'COMPLETER':
 	$i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : null;
-	print("<pre>");
-	print_r($_POST['variantes']);
-	print("</pre>");
 	$a_variantes = isset($_POST['variantes']) ? utf8_vers_cp1252(trim($_POST['variantes'])) : ''; 
 	if (isset($i_idf_groupe) && count($a_variantes)>0)
 	{	
