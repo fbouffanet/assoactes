@@ -188,7 +188,7 @@ function description_courte_mariage_ou_divers($pconnexionBD,$pa_type_acte,$pa_pr
         // groupe l'origine, la date de naissance, l'êge et la profession sur une même ligne
         $st_ligne= "";                 
         if ($i_idf_origine!=0 && array_key_exists($i_idf_origine,$pa_commune_personne))
-           $st_ligne.= " Originaire de ".cp1252_vers_utf8$pa_commune_personne[$i_idf_origine]);
+           $st_ligne.= " Originaire de ".cp1252_vers_utf8($pa_commune_personne[$i_idf_origine]);
         $st_date_naissance = preg_replace('/^\s+$/','',$st_date_naissance);
         if (!preg_match('/^\s*$/',$st_date_naissance))
         {
