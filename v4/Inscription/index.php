@@ -169,11 +169,10 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   $st_entete = 'MIME-Version: 1.0' . "\r\n";
   $st_entete .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
   $st_entete .= "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\r\n>";
-  $st_entete .= "Reply-to: ".LIB_ASSO."<".EMAIL_DIRASSO.">\r\n";
   $st_entete .= "Return-Path: ".EMAIL_DIRASSO."\r\n";   
   $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "a l'": "au " ;
   $sujet    = "Pre-inscription $st_prefixe_asso".SIGLE_ASSO;
-  $st_message_html  = "Bonjour ". $pst_ins_prenom. " " . $pst_ins_nom . ", \n\n";
+  $st_message_html  = "Bonjour ". cp1252_vers_utf8($pst_ins_prenom). " " . cp1252_vers_utf8($pst_ins_nom) . ", \n\n";
   $st_message_html .= "Vous vous &ecirc;tes pr&eacute;-inscrit ce jour, le " .$jour. " $st_prefixe_asso".SIGLE_ASSO."\n";
   $st_message_html .= "Nous vous remercions et vous demandons de nous confirmer votre inscription en cliquant sur ce lien suivant: \n\n";
   $st_message_html .= "<a href=\"$gst_url_validation?alea=$pst_ins_alea&amp;idf_agc=$pst_ins_idf_agc&amp;idf_prov=$int_idf_prov\">$gst_url_validation?alea=$pst_ins_alea&amp;idf_agc=$pst_ins_idf_agc&amp;idf_prov=$int_idf_prov</a>";
