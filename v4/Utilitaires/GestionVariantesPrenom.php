@@ -584,8 +584,9 @@ switch ($gst_mode) {
 		$gst_infos = "Pas de pr&eacute;noms &agrave; supprimer";
 	affiche_menu($connexionBD,$gi_idf_groupe);
 	
- break;   
+ break; 
  default:
+	print("<div id=\"erreurs\" class=\"alert alert-danger\">Mode $gst_mode inconnu</div>");
 } 
 
 print("</div>");
