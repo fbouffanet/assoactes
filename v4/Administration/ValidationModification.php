@@ -10,7 +10,7 @@ require_once('../Commun/Identification.php');
 require_once('../Commun/constantes.php');
 require_once('../Commun/commun.php');
 require_once('../Commun/VerificationDroits.php');
-verifie_privilege(DROIT_CHARGEMENT);
+verifie_privilege(DROIT_VALIDATION_TD);
 require_once('../Commun/ConnexionBD.php');
 require_once('../Commun/finediff.php');
 require_once('../Commun/phonex.cls.php');
