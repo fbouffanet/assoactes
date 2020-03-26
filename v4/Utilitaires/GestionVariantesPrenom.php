@@ -4,6 +4,7 @@
 // Licence Publique Générale GPL GNU publiée par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
+
 require_once('../Commun/Identification.php');
 require_once('../Commun/commun.php');
 require_once('../Commun/constantes.php');
@@ -33,6 +34,7 @@ switch ($gst_mode) {
    exit();
  break;
 }
+
 
 /**
  * Affiche le menu formulaire
@@ -142,7 +144,7 @@ function ajoute_variantes($pconnexionBD,$pi_idf_groupe,$pa_variantes)
 	  $i_nb_variantes =$pconnexionBD->sql_select1("select count(idf_groupe) from variantes_prenom where libelle = :variante collate latin1_general_ci");
 	  $pconnexionBD->initialise_params($a_params_precedents);
 	  if ($i_nb_variantes>0) 
-		  $gst_erreurs.= "Variante $st_variante d&eacute;j&agrave; r&eacute;f&eacute;renc&eacute;e. Elle ne sera pas ajout&eacute;e<br>"; 
+		  $gst_erreurs.= "Variante ".cp1252_vers_utf8($st_variante)." d&eacute;j&agrave; r&eacute;f&eacute;renc&eacute;e. Elle ne sera pas ajout&eacute;e<br>"; 
 	  else
       {
         $a_params[":prenom$i"] = $st_variante;
@@ -498,7 +500,6 @@ print('<div class="container">');
 
 require_once("../Commun/menu.php");
 
-
 switch ($gst_mode) {
  case 'AFFICHER' :
   affiche_menu($connexionBD,$gi_idf_groupe);
@@ -537,6 +538,13 @@ switch ($gst_mode) {
 		ajoute_variantes($connexionBD,$i_idf_groupe,$a_variantes);
 		if (empty($gst_erreurs)) $gst_infos = "Variante compl&eacute;t&eacute;e";
 		affiche_menu($connexionBD,$i_idf_groupe);
+	}
+	else
+	{
+		if (!isset($i_idf_groupe))
+			$gst_erreurs = "Le groupe n'est pas d&eacute;fini";
+		else if (count($a_variantes)==0)
+			$gst_erreurs = "La liste de variantes est vide";
 	}
  break;
  case 'SUPPRIMER':
