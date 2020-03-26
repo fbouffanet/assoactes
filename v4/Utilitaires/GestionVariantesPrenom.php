@@ -140,14 +140,14 @@ function ajoute_variantes($pconnexionBD,$pi_idf_groupe,$pa_variantes)
 	  $st_variante=ucfirst(strtolower(trim($st_variante)));
 	  if ($st_variante=="") continue;
 	  $a_params_precedents=$pconnexionBD->params();
-	  $pconnexionBD->initialise_params(array(':variante'=>$st_variante));
+	  $pconnexionBD->initialise_params(array(':variante'=>utf8_vers_cp1252($st_variante)));
 	  $i_nb_variantes =$pconnexionBD->sql_select1("select count(idf_groupe) from variantes_prenom where libelle = :variante collate latin1_general_ci");
 	  $pconnexionBD->initialise_params($a_params_precedents);
 	  if ($i_nb_variantes>0) 
 		  $gst_erreurs.= "Variante ".cp1252_vers_utf8($st_variante)." d&eacute;j&agrave; r&eacute;f&eacute;renc&eacute;e. Elle ne sera pas ajout&eacute;e<br>"; 
 	  else
       {
-        $a_params[":prenom$i"] = $st_variante;
+        $a_params[":prenom$i"] = cp1252_vers_utf8($st_variante);
         $a_valeurs[]=sprintf("(%d,:prenom%d)",$pi_idf_groupe,$i);
         $i++;
 	  }
