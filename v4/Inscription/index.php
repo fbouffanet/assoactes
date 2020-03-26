@@ -170,7 +170,7 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   $st_entete .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
   $st_entete .= "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\r\n>";
   $st_entete .= "Reply-to: ".LIB_ASSO."<".EMAIL_DIRASSO.">\r\n";
-  $st_entete .= "Return-Path: ".LIB_ASSO."<".EMAIL_DIRASSO.">\r\n";   
+  $st_entete .= "Return-Path: ".EMAIL_DIRASSO."\r\n";   
   $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "a l'": "au " ;
   $sujet    = "Pre-inscription $st_prefixe_asso".SIGLE_ASSO;
   $st_message_html  = "Bonjour ". $pst_ins_prenom. " " . $pst_ins_nom . ", \n\n";
