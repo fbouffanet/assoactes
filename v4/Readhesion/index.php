@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once("../Commun/Identification.php");
@@ -12,11 +12,11 @@ require_once("../Commun/Adherent.php");
 
 
 /*---------------------------------------------------------------------------
-  Démarrage du programme
+  DÃ©marrage du programme
   ---------------------------------------------------------------------------*/
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='$gst_url_site/css/styles.css' type='text/css' rel='stylesheet'>");
@@ -50,7 +50,7 @@ list($i_sec,$i_min,$i_heure,$i_jour,$i_mois,$i_annee,$i_jsem,$i_jan,$b_hiv)= loc
 $i_mois++;
 $i_annee+=1900;
 
-//FBO: à décommenter lorsque validé
+//FBO: Ã  dÃ©commenter lorsque validÃ©
 if (($i_mois>10 && $i_annee_cotisation==$i_annee) ||  $i_annee_cotisation+1==$i_annee) 
 //FBOif (true)
 {
