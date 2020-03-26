@@ -499,7 +499,6 @@ print("<body>");
 print('<div class="container">');
 
 require_once("../Commun/menu.php");
-print("<div  class=\"alert alert-warning\">Mode $gst_mode</div>");
 switch ($gst_mode) {
  case 'AFFICHER' :
   affiche_menu($connexionBD,$gi_idf_groupe);
@@ -545,6 +544,7 @@ switch ($gst_mode) {
 			$gst_erreurs = "Le groupe n'est pas d&eacute;fini";
 		else if (count($a_variantes)==0)
 			$gst_erreurs = "La liste de variantes est vide";
+		affiche_menu($connexionBD,$i_idf_groupe);
 	}
  break;
  case 'SUPPRIMER':
