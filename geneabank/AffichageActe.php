@@ -345,7 +345,7 @@ function description_naissance($pconnexionBD,$pa_profession,$pi_idf_acte)
          }   
       break;
       case IDF_PRESENCE_PARRAIN :
-        $st_description .="Parrain/témoin: .".cp1252_vers_utf8($st_patronyme)." ".cp1252_vers_utf8($st_prenom)." ".cp1252_vers_utf8($st_commentaires)."\n";
+        $st_description .="Parrain/témoin: ".cp1252_vers_utf8($st_patronyme)." ".cp1252_vers_utf8($st_prenom)." ".cp1252_vers_utf8($st_commentaires)."\n";
       break;
       case IDF_PRESENCE_MARRAINE :
         $st_description .= "Marraine/témoin: ".cp1252_vers_utf8($st_patronyme)." ".cp1252_vers_utf8($st_preno)." ".cp1252_vers_utf8($st_commentaires)."\n";
