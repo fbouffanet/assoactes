@@ -499,7 +499,7 @@ print("<body>");
 print('<div class="container">');
 
 require_once("../Commun/menu.php");
-
+print("<div  class=\"alert alert-warning\">Mode $gst_mode</div>");
 switch ($gst_mode) {
  case 'AFFICHER' :
   affiche_menu($connexionBD,$gi_idf_groupe);
