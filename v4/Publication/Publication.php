@@ -1,5 +1,5 @@
 <?php
-//26-09 
+//26-09
 require_once '../Commun/config.php';
 require_once '../Commun/constantes.php';
 require_once('../Commun/Identification.php');
@@ -29,7 +29,6 @@ print('</head>');
 
 print("\n<body>");
 print('<div class="container">');
-
 
 /**
  * Exporte les naissances au format Nim?gue V3
@@ -718,7 +717,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
    }
    print('<input type="hidden" name="mode" value="FORMULAIRE"/><br>');
    //print("<input type=submit value=\"Retour\"></div>");
-   print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit" class="btn btn-secondary">Retour</button></div>');
+   print('<div class="form-group col-md-4 col-md-offset-4"><button type="submit"class="btn btn-secondary">Retour</button></div>');
 
    break;
 
