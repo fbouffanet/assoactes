@@ -8,6 +8,7 @@ require_once 'Commun/config.php';
 require_once 'Commun/constantes.php';
 require_once 'Commun/ConnexionBD.php';
 require_once 'Commun/Adherent.php';
+require_once 'Commun/commun.php';
 
 print('<!DOCTYPE html>');
 print("<head>");
