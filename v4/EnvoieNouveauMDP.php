@@ -49,7 +49,7 @@ if(!empty($gi_idf_adht) && !empty($gi_clef))
          $st_mdp = Adherent::mdp_alea();         
 		 if ($adherent->change_mdp($st_mdp))
 		 {       
-            print(sprintf("<div class=\"alert alert-success\">Bonjour <strong>%s %s</strong><br><br>",$adherent->getPrenom(),$adherent->getNom()));
+            print(sprintf("<div class=\"alert alert-success\">Bonjour <strong>%s %s</strong><br><br>",cp1252_vers_utf8($adherent->getPrenom()),cp1252_vers_utf8($adherent->getNom())));
             print("Votre nouveau mot de passe a bien &eacute;t&eacute; g&eacute;n&eacute;r&eacute;<br>");
             print("Vous le recevrez sous peu, &agrave; l'adresse email que vous nous avez indiqu&eacute;e<br>");
             print(sprintf("---><strong>%s</strong><---<br><br>",$adherent->getEmailPerso()));
