@@ -1079,7 +1079,7 @@ function maj_statut_adherents($pconnexionBD)
     foreach ($a_adhts_a_supprimer as $i_idf_adht => $a_infos_adhts)
     {
        list($st_prenom,$st_nom) = $a_infos_adhts;
-       $st_adhts_supprimes .= "<tr><td>$i_idf_adht</td><td>".self::cp1252_vers_utf8($st_prenom)."</td><td>".self::cp1252_vers_utf8($st_nom)."</td></tr>\n";
+       $st_adhts_supprimes .= "<tr><td>$i_idf_adht</td><td>".cp1252_vers_utf8($st_prenom)."</td><td>".cp1252_vers_utf8($st_nom)."</td></tr>\n";
        $adherent = new Adherent($pconnexionBD,$i_idf_adht);
        $adherent->supprime();
     }
