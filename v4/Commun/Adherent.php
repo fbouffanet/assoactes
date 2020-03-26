@@ -1365,7 +1365,7 @@ class Adherent
             )
           );
           $context  = stream_context_create($a_options);
-          $st_resultat = file_get_contents(self::$gst_url_gbk, false, $context);  
+          $st_resultat = self::cp1252_vers_utf8(file_get_contents(self::$gst_url_gbk, false, $context));  
           if (preg_match('/Commande exécutée correctement/',$st_resultat))
             return true;
           else
