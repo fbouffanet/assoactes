@@ -131,7 +131,7 @@ function description_mariage_ou_divers($pconnexionBD,$pa_type_acte,$pa_professio
         }    
       break;
       case IDF_PRESENCE_TEMOIN :
-        $st_reponse .="Témoin: .".cp1252_vers_utf8($st_patronyme)." ".cp1252_vers_utf8($st_prenom)." ".cp1252_vers_utf8($st_commentaires)."\n";
+        $st_reponse .="Témoin: ".cp1252_vers_utf8($st_patronyme)." ".cp1252_vers_utf8($st_prenom)." ".cp1252_vers_utf8($st_commentaires)."\n";
       break;
       }
    }
