@@ -8,7 +8,7 @@ require_once '../Commun/ConnexionBD.php';
 require_once '../Commun/commun.php';
 require_once '../Publication/fpdf/fpdf.php';
 
-ob_start();// Enclenche la temporisation de sortie
+ob_start();// Enclenche la temporisation de sortie 
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
