@@ -18,7 +18,7 @@ require_once('Commun/PaginationTableau.php');
 print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
@@ -239,7 +239,7 @@ function Saisie_recherche($connexionBD)
 	print('<div class="col-md-4">');
 	print('<button class="btn btn-primary" type=submit name="valide_cou"><span class="glyphicon glyphicon-search"></span> Recherche</button>');
     print('</div>');	
-	print('<label for="cou" class="col-form-label col-md-4">Cousinage des adhérents</label>');
+	print('<label for="cou" class="col-form-label col-md-4">Cousinage des adhérents UTF-8 </label>');
 	print('<div class="col-md-4">');
 	print('<select id="cou" name=cousinage class="form-control">'.Select_nom('COU',$connexionBD).'</select>');
 	print("<input type=hidden name=mode value=\"COUSIN\">");
