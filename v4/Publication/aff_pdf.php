@@ -163,7 +163,7 @@ function Footer()
 // PL 23/04/2014 remplacement affichage $today par appel la function Mois_Annee pour mois en français
 //	$today = date("M-y");
    $today = Mois_Annee();
-    $titreBP = "©".$today." Association Généalogique de la Charente  - Page ";
+    $titreBP = "©".$today." Association G&eacute;n&eacute;alogique de la Charente  - Page ";
     $this->Cell(0,10,$titreBP.$this->PageNo().'/{nb}',0,0,'C');// Numero de page
     }
   }//Footer()
