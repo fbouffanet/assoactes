@@ -1,5 +1,4 @@
 <?php
-//26-09 
 require_once '../Commun/config.php';
 require_once '../Commun/constantes.php';
 require_once('../Commun/Identification.php');
@@ -13,7 +12,7 @@ $gst_repertoire_publication = $_SERVER['DOCUMENT_ROOT'].'/v4/Publication/telecha
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<link rel="shortcut icon" href="images/favicon.ico">') ;
+print('<link rel="shortcut icon" href="images/favicon.ico">');
 print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
