@@ -40,15 +40,7 @@ function getContentBottom($pst_type, $pst_email_adht, $pi_idf_acte){
       {
         case IDF_NAISSANCE: $st_msg = "";
         case IDF_DECES:     $st_msg = "";
-        default:            $st_msg = "<blockquote class=\"blockquote\"><p class=\"row text-justify\">Vous pouvez mettre vos commentaires dans la cellule ci-dessous qui paraitra sur le forum &agrave; la suite de la r&eacute;ponse de la base. Votre adresse <span class=\"label label-danger\">$pst_email_adht</span> doit &ecirc;tre inscrite sur le forum Yahoogroupes $st_prefixe_asso".SIGLE_ASSO."<br>
-                                <span class=\"label label-danger\">Sans cela, votre demande ne pourra &ecirc;tre prise en compte</span></p></blockquote>
-                                <form id=\"envoi_forum\" method=post action=".$_SERVER['PHP_SELF'].">
-                                <input type=\"hidden\" name=\"mode\" value=\"ENVOI_FORUM\">
-                                <input type=\"hidden\" name=\"idf_acte\" value=\"$pi_idf_acte\">
-								<div class=\"lib_erreur\">
-                                <textarea cols=\"40\" rows=\"6\" name=\"commentaire\" class=\"form-control\"></textarea>
-								</div>
-                                </form>";
+        default:            $st_msg = "";
         break;
       }
    }
@@ -63,7 +55,7 @@ print('<!DOCTYPE html>');
 print('<html lang="fr">');
 print("<head>\n");
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr"> ');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
@@ -72,52 +64,19 @@ print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>"
 print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
 print("<script src='js/jQuery.print.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>"); 
+if (isset($_REQUEST['idf_acte']))
+{
+  $gi_idf_acte = (int) $_REQUEST['idf_acte'];
+}
+else
+ die("<div class=\"alert alert-danger\">Erreur: L'identifiant de l'acte est manquant</div>");
+
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {
-	$("#envoi_forum").validate({
-	rules: {
-		commentaire: "required"
-	},
-	messages: {
-	commentaire: "Le commentaire est obligatoire"
-	},
-	errorElement: "em",
-    errorPlacement: function ( error, element ) {
-		// Add the `help-block` class to the error element
-		error.addClass( "help-block" );
 
-		// Add `has-feedback` class to the parent div.form-group
-		// in order to add icons to inputs
-		element.parents( ".lib_erreur" ).addClass( "has-feedback" );
-
-		if ( element.prop( "type" ) === "checkbox" ) {
-			error.insertAfter( element.parent( "label" ) );
-		} else {
-			error.insertAfter( element );
-		}
-		// Add the span element, if doesn't exists, and apply the icon classes to it.
-		if ( !element.next( "span" )[ 0 ] ) {
-			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
-		}
-	},
-	success: function ( label, element ) {
-		// Add the span element, if doesn't exists, and apply the icon classes to it.
-		if ( !$( element ).next( "span" )[ 0 ] ) {
-			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
-		}
-	},
-	highlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
-		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
-	},
-	unhighlight: function ( element, errorClass, validClass ) {
-		$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
-		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
-	}
-});
-$("#bouton_envoi").click(function(){
-    $('#envoi_forum').submit()();
+$("#bouton_correction").click(function(){
+	 window.open('PropositionModification.php?idf_acte=<?php print $gi_idf_acte; ?>', '_blank');
 });
 
 $("#bouton_fermeture").click(function(){
@@ -137,12 +96,6 @@ print('<body>');
 print('<div class="container">');
 
 print("<div class=\"text-center\"><img src=\"$gst_logo_association\" alt='Logo ".SIGLE_ASSO."'></div>");
-if (isset($_REQUEST['idf_acte']))
-{
-  $gi_idf_acte = (int) $_REQUEST['idf_acte'];
-}
-else
- die("Erreur: L'identifiant de l'acte est manquant");
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
@@ -153,24 +106,23 @@ $a_profession=$connexionBD->liste_valeur_par_clef("select idf, nom from professi
 list($i_idf_type_acte,$i_idf_commune)=$connexionBD->sql_select_liste("select idf_type_acte,idf_commune from acte where idf=$gi_idf_acte");
 $gst_adresse_ip = $_SERVER['REMOTE_ADDR'];
 
-if (empty($_POST['mode']))
-{
-  $result = $connexionBD->sql_select_stats_actes($i_idf_adherent, $gi_idf_acte, $i_idf_type_acte);
-  $i_nb_ddes = $result['counter_type'];
-  $i_nb_ddes_acte = $result['counter_acte'];
 
-  switch ($i_idf_type_acte)
-  {
-    case IDF_NAISSANCE: $i_max = $i_max_nai;
+$result = $connexionBD->sql_select_stats_actes($i_idf_adherent, $gi_idf_acte, $i_idf_type_acte);
+$i_nb_ddes = $result['counter_type'];
+$i_nb_ddes_acte = $result['counter_acte'];
+
+switch ($i_idf_type_acte)
+{
+	case IDF_NAISSANCE: $i_max = $i_max_nai;
     break;
     case IDF_DECES:     $i_max = $i_max_dec;
     break;
     default:            $i_max = $i_max_mar_div;
     break;
-  }
-  if ($i_max-$i_nb_ddes>0)
-  {
-    $o_acte = new Acte($connexionBD, null, null, null, null, null, null);
+}
+if ($i_max-$i_nb_ddes>0)
+{
+	$o_acte = new Acte($connexionBD, null, null, null, null, null, null);
     $o_acte -> charge($gi_idf_acte);
     $st_description_acte = $o_acte -> versChaine();
     $i_nb_lignes = $o_acte ->getNbLignes();
@@ -190,77 +142,14 @@ if (empty($_POST['mode']))
     }
     print(getRecapitulatifMessage($i_idf_type_acte, $i_max, $i_nb_ddes));
     print(getContentBottom($i_idf_type_acte, $st_email_adht, $gi_idf_acte));
-  }
-  else
-  {
-    print('<div class="alert alert-danger">Vous avez atteint votre quota. Merci d\'attendre le prochain mois</div>');
-  }
 }
 else
 {
-  $st_requete = "select a.date,ta.nom,ca.nom,GROUP_CONCAT(concat(prn.libelle,' ',p.patronyme) order by p.idf separator ' X ') from acte a join commune_acte ca on (a.idf_commune=ca.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join personne p on (p.idf_acte=a.idf) join prenom prn on (p.idf_prenom=prn.idf)  where a.idf=$gi_idf_acte and p.idf_type_presence=".IDF_PRESENCE_INTV." group by a.idf";
-  list($st_date,$st_type_acte,$st_commune,$st_personnes)=$connexionBD->sql_select_liste($st_requete);
-  $st_titre = "$st_personnes le $st_date a $st_commune";
-  $a_commune_personne=$connexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
-  $a_type_acte=$connexionBD->liste_valeur_par_clef("select idf, nom from type_acte");
-  $o_acte = new Acte($connexionBD, null, null, null, null, null, null);
-  $o_acte -> charge($gi_idf_acte);
-  $st_description_acte = $o_acte -> versChaine();
-  $i_nb_lignes = $o_acte ->getNbLignes();
-  $st_permalien=  $o_acte->getUrl();
-  $st_releve_html = str_replace(array("\r","\n"),'',nl2br(htmlentities($st_description_acte,ENT_COMPAT,'UTF-8')));
-
-  $st_frontiere = '-----=' . md5(uniqid(mt_rand()));
-  $st_commentaire = $_POST['commentaire'];
-  setlocale(LC_CTYPE, 'fr_FR.UTF8');
-  $st_prenom_adht = strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_prenom_adht));
-  $st_nom_adht = strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_nom_adht));
-  $st_titre = strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_titre));
-
-  $st_debut_msg_html  = "Bonjour<br /><br />";
-  $st_debut_msg_html .= "Demande d'information ";
-  $st_debut_msg_html .= "ci-dessous trouv&eacute;e dans les tables du site<br /><br />";
-
-  $st_fin_msg_html = "<br />\n<div>Commentaire: <br />".html_entity_decode(stripslashes($st_commentaire),ENT_COMPAT,'UTF-8')."</div><br />";
-  $st_fin_msg_html .= "<br />\nMerci<br />";
-  $st_message_html =   $st_debut_msg_html.$st_releve_html.$st_fin_msg_html;
-  $st_message_texte = html_entity_decode(str_ireplace(array("<br>","<br />"),"\r\n",$st_message_html),ENT_COMPAT,'UTF-8');
-  $st_message_texte = strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_message_texte));
-  $st_entete = "From: $st_prenom_adht $st_nom_adht <$st_email_adht>\n";
-  $st_entete .= "Reply-to: $st_prenom_adht $st_nom_adht <$st_email_adht>\n";
-  $st_entete .= 'MIME-Version: 1.0' . "\n";
-  $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
-  $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
-  $st_message .= '--'.$st_frontiere."\n";
-  $st_message .= 'Content-Type: text/plain; charset="us-ascii"'."\n";
-  $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-  $st_message .= $st_message_texte."\n\n";
-  $st_message .= '--'.$st_frontiere."\n";
-  $st_message .= 'Content-Type: text/html; charset="UTF-8"'."\n";
-  $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-  $st_message .= $st_message_html."\n\n";
-  $st_message .= '--'.$st_frontiere."--\n";
-  if (mail(EMAIL_FORUM,"DI: $st_titre", $st_message, $st_entete))
-      print('<div class="alert alert-success">La demande d\'information a &eacute;t&eacute; envoy&eacute;e</div>');
-  else
-  {
-    print('<div class="alert alert-danger">La demande d\'information n\'a pas &eacute;t&eacute; envoy&eacute;e</div>');
-    $pf=@fopen("$gst_rep_logs/di_non_envoyees.log",'a');
-    date_default_timezone_set($gst_time_zone);
-    list($i_sec,$i_min,$i_heure,$i_jmois,$i_mois,$i_annee,$i_j_sem,$i_j_an,$b_hiver)=localtime();
-    $i_mois++;
-    $i_annee+=1900;
-    $st_date_log = sprintf("%02d/%02d/%04d %02d:%02d:%02d",$i_jmois,$i_mois,$i_annee,$i_heure,$i_min,$i_sec);
-    $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$gst_adresse_ip,$st_prenom_adht,$st_nom_adht,$st_email_adht));
-    @fwrite($pf,"$st_chaine_log\n");
-    @fclose($pf);
-  }
+	print('<div class="alert alert-danger">Vous avez atteint votre quota. Merci d\'attendre le prochain mois</div>');
 }
-
 print('<div class="btn-group-vertical btn-group-xs col-xs-8 col-xs-offset-2" role="group" aria-label="Groupe de demandes">');
-if (!empty(EMAIL_FORUM))
-   print('<button type="button" id="bouton_envoi" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span> Envoyer une remarque sur le forum</button>');
-print('<button type=button id="bouton_impression" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Imprimer</button>');
+print('<button type=button id="bouton_impression" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Imprimer</button>');  
+print('<button type=button id="bouton_correction" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> Proposer une correction</button>'); 
 print('<button type=button id="bouton_fermeture" class="btn btn-warning"><span class="glyphicon glyphicon-remove"></span> Fermer la fen&ecirc;tre</button>');
 print('</div>');
 print('</div>');
