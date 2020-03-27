@@ -163,7 +163,7 @@ function rappel_recherches_communes($pconnexionBD,$pst_titre,$pi_idf_type_acte,$
     }
     $st_criteres .= "Commune s&eacute;lectionn&eacute;e: ".cp1252_vers_utf8($st_nom_commune)."\n";
     $st_bloc_rappel = nl2br($st_criteres);
-    $st_communes_voisines=join("\n",array_values($requeteRecherche->communes_voisines()));
+    $st_communes_voisines=join("\n",cp1252_vers_utf8(array_values($requeteRecherche->communes_voisines())));
     if (count(array_values($requeteRecherche->communes_voisines()))>1)
     {
       $st_bloc_rappel .="<div class=\"form-group\"><label for=\"communes_voisines\">Paroisses voisines ou rattach&eacute;es";
