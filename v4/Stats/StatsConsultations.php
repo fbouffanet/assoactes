@@ -151,7 +151,7 @@ if (count($a_ddes_communes)>0)
    foreach ($a_ddes_communes as $a_ligne)
    {
       list($st_commune,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
-      print(sprintf("<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td></tr>\n",$st_commune,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
+      print(sprintf("<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td></tr>\n",cp1252_vers_utf8($st_commune),$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
    }
    print("</table>\n");
 }
