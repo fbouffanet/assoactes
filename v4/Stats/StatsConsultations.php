@@ -72,7 +72,7 @@ if (count($a_ddes_adht)>0)
    foreach ($a_ddes_adht as $a_ligne)
    {
       list($i_idf_adherent,$st_adherent,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
-      print(sprintf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",$st_adherent,stats_adht($i_total,$i_idf_adherent),$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
+      print(sprintf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",cp1252_vers_utf8($st_adherent),stats_adht($i_total,$i_idf_adherent),$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
    }
    print("</table>\n");
 }
@@ -129,7 +129,7 @@ if (count($a_ddes_canton)>0)
    foreach ($a_ddes_canton as $a_ligne)
    {
       list($st_canton,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
-      print(sprintf("<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td></tr>\n",$st_canton,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
+      print(sprintf("<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td></tr>\n",cp1252_vers_utf8($st_canton),$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
    }
    print("</table>\n");
 }
