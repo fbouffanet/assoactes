@@ -4,7 +4,7 @@ session_start();
 
 //http://127.0.0.1:8888/Recherche_Sommaire.php
 /*
-Programme de recherche des éléments du sommaire des bulletins AGC
+Programme de recherche des Ã©lÃ©ments du sommaire des bulletins AGC
 PL 06/13
 */
 
@@ -18,7 +18,7 @@ require_once('Commun/PaginationTableau.php');
 print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
@@ -40,12 +40,12 @@ $gi_num_page_cour = empty($_GET['num_page']) ? $i_session_num_page : $_GET['num_
 CREATE TABLE IF NOT EXISTS `sommaire`
 ( 
   `idf` smallint(5) unsigned NOT NULL auto_increment,
-  `numero` smallint(3),        numéro du bulletin
-  `moisannee` varchar(30),     mois et année du bulletin
+  `numero` smallint(3),        numÃ©ro du bulletin
+  `moisannee` varchar(30),     mois et annÃ©e du bulletin
   `rubrique` text,             rubrique du sommaire
   `auteur` varchar(50),        auteur de la rubrique correspondante
   `type` varchar(5),           art pour article, asc pour ascendance, fam pour famille, cou pour cousins, des pour descendance
-  `flag` enum ('O', 'N'),      pour utilisation ultèrieure
+  `flag` enum ('O', 'N'),      pour utilisation ultÃ¨rieure
    PRIMARY KEY (`idf`)
 );
 */
@@ -62,7 +62,7 @@ function Affiche_noms($type, $sconnexionBD)
          $session_numero = isset($_SESSION['rubrique']) ? $_SESSION['rubrique'] : '';
          $numero = isset($_POST['rubrique']) ? $_POST['rubrique'] : $session_numero;
          $_SESSION['rubrique']= $numero;
-			$titre = "Sommaire du numéro ".$numero;
+			$titre = "Sommaire du numÃ©ro ".$numero;
       break;
       case 'ART' :
          $session_article = isset($_SESSION['article'])? $_SESSION['article'] : '';
@@ -74,7 +74,7 @@ function Affiche_noms($type, $sconnexionBD)
          $session_famille = isset($_SESSION['famille'])? $_SESSION['famille'] : ''; 
          $auteur = isset($_POST['famille']) ?  $_POST['famille'] : $session_famille;
          $_SESSION['famille']= $auteur;
-			$titre = "Famille étudiée de ".$auteur;
+			$titre = "Famille Ã©tudiÃ©e de ".$auteur;
       break;
       case 'ASC' :
          $session_ascendance = isset($_SESSION['ascendance'])? $_SESSION['ascendance'] : ''; 
@@ -152,20 +152,20 @@ function Select_nom($type,$connexionBD)
    return $chaine_options;
 }
 
-/* --- Saisie des critères de recherche --- */
+/* --- Saisie des critÃ¨res de recherche --- */
 /*
 +------------------------------------------------------+
-|   Les rubriques d'un numéro    =========    valider  |
+|   Les rubriques d'un numÃ©ro    =========    valider  |
 +------------------------------------------------------+
 |   Chaque article d'un auteur   =========    valider  |
 +------------------------------------------------------+
-|   Familles étudiées            =========    valider  |
+|   Familles Ã©tudiÃ©es            =========    valider  |
 +------------------------------------------------------+
-|   Ascendance d'un adhérent     =========    valider  |
+|   Ascendance d'un adhÃ©rent     =========    valider  |
 +------------------------------------------------------+
-|   Descendance d'un adhérent    =========    valider  |
+|   Descendance d'un adhÃ©rent    =========    valider  |
 +------------------------------------------------------+
-|   Cousinage des adhérents      =========    valider  |
+|   Cousinage des adhÃ©rents      =========    valider  |
 +------------------------------------------------------+
 */
 function Saisie_recherche($connexionBD)
@@ -179,7 +179,7 @@ function Saisie_recherche($connexionBD)
 	print('<div class="col-md-4">');
 	print('<button class="btn btn-primary" type=submit id="rub_recherche" name="valide_rub"><span class="glyphicon glyphicon-search"></span> Recherche</button>');
     print('</div>');	
-	print('<label for="rub" class="col-form-label col-md-4">Les rubriques d\'un numéro</label>');
+	print('<label for="rub" class="col-form-label col-md-4">Les rubriques d\'un numÃ©ro</label>');
     print('<div class="col-md-4">');
 	print('<select id="rub" name="rubrique" class="form-control">'.Select_rubrique($connexionBD).'</select>');
     print("<input type=hidden name=mode value=\"RUBRIQUE\">");
@@ -203,7 +203,7 @@ function Saisie_recherche($connexionBD)
 	print('<div class="col-md-4">');
 	print('<button class="btn btn-primary" type=submit  name="valide_fam"><span class="glyphicon glyphicon-search"></span> Recherche</button>');
     print('</div>');	
-    print('<label for="fam" class="col-form-label col-md-4">Familles étudiées</label>');
+    print('<label for="fam" class="col-form-label col-md-4">Familles Ã©tudiÃ©es</label>');
 	print('<div class="col-md-4">');
 	print('<select id="fam" name=famille class="form-control">'.Select_nom('FAM',$connexionBD).'</select>');
 	print("<input type=hidden name=mode value=\"FAMILLE\">");
@@ -215,7 +215,7 @@ function Saisie_recherche($connexionBD)
 	print('<div class="col-md-4">');
 	print('<button class="btn btn-primary" type=submit name="valide_asc"><span class="glyphicon glyphicon-search"></span>  Recherche</button>');
     print('</div>');	
-	print('<label for="asc" class="col-form-label col-md-4">Ascendance d\'un adhérent</label>');
+	print('<label for="asc" class="col-form-label col-md-4">Ascendance d\'un adhÃ©rent</label>');
 	print('<div class="col-md-4">');
 	print('<select id="asc" name=ascendance class="form-control">'.Select_nom('ASC',$connexionBD).'</select>');
     print("<input type=hidden name=mode value=\"ASCEND\">");
@@ -227,7 +227,7 @@ function Saisie_recherche($connexionBD)
 	print('<div class="col-md-4">');
 	print('<button class="btn btn-primary" type=submit name="valide_des"><span class="glyphicon glyphicon-search"></span>  Recherche</button>');
     print('</div>');	
-	print('<label for="des" class="col-form-label col-md-4">Descendance d\'un adhérent</label>');
+	print('<label for="des" class="col-form-label col-md-4">Descendance d\'un adhÃ©rent</label>');
 	print('<div class="col-md-4">');
 	print('<select id="des" name=descendance class="form-control">'.Select_nom('DES',$connexionBD).'</select>');
 	print("<input type=hidden name=mode value=\"DESCEND\">");
@@ -239,7 +239,7 @@ function Saisie_recherche($connexionBD)
 	print('<div class="col-md-4">');
 	print('<button class="btn btn-primary" type=submit name="valide_cou"><span class="glyphicon glyphicon-search"></span> Recherche</button>');
     print('</div>');	
-	print('<label for="cou" class="col-form-label col-md-4">Cousinage des adhérents</label>');
+	print('<label for="cou" class="col-form-label col-md-4">Cousinage des adhÃ©rents charset=UTF-8 </label>');
 	print('<div class="col-md-4">');
 	print('<select id="cou" name=cousinage class="form-control">'.Select_nom('COU',$connexionBD).'</select>');
 	print("<input type=hidden name=mode value=\"COUSIN\">");
@@ -250,7 +250,7 @@ function Saisie_recherche($connexionBD)
 	print("</div>");
 }
 
-/* --- Début du programme --- */
+/* --- DÃ©but du programme --- */
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("Commun/menu.php");
