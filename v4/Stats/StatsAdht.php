@@ -210,7 +210,7 @@ if (isset($gi_idf_adherent ))
        print("<div class=\"panel-heading\">Demandes de l'adh&eacute;rent ".cp1252_vers_utf8($st_adherent)."</div>");
        print('<div class="panel-body">');
 	   print('<div class="panel panel-info">');
-       print("<div class=\"panel-heading\">$st_type_acte &agrave; $st_commune</div>");
+       print("<div class=\"panel-heading\">".cp1252_vers_utf8($st_type_acte)." &agrave; ".cp1252_vers_utf8($st_commune)."</div>");
        print('<div class="panel-body">');
       $gi_num_page = empty($_POST['num_page_ddes_adht']) ?  $i_session_num_page: (integer) $_POST['num_page_ddes_adht'];
        $_SESSION['mode']=$gst_mode;
