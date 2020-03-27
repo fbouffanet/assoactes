@@ -144,10 +144,10 @@ function ajoute_variantes($pconnexionBD,$pi_idf_groupe,$pa_variantes)
 	  $i_nb_variantes =$pconnexionBD->sql_select1("select count(idf_groupe) from variantes_prenom where libelle = :variante collate latin1_general_ci");
 	  $pconnexionBD->initialise_params($a_params_precedents);
 	  if ($i_nb_variantes>0) 
-		  $gst_erreurs.= "Variante ".cp1252_vers_utf8($st_variante)." d&eacute;j&agrave; r&eacute;f&eacute;renc&eacute;e. Elle ne sera pas ajout&eacute;e<br>"; 
+		  $gst_erreurs.= "Variante $st_variante d&eacute;j&agrave; r&eacute;f&eacute;renc&eacute;e. Elle ne sera pas ajout&eacute;e<br>"; 
 	  else
       {
-        $a_params[":prenom$i"] = cp1252_vers_utf8($st_variante);
+        $a_params[":prenom$i"] = utf8_vers_cp1252($st_variante);
         $a_valeurs[]=sprintf("(%d,:prenom%d)",$pi_idf_groupe,$i);
         $i++;
 	  }
@@ -531,7 +531,7 @@ switch ($gst_mode) {
  break;
  case 'COMPLETER':
 	$i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : null;
-	$a_variantes = isset($_POST['variantes']) ? utf8_vers_cp1252(trim($_POST['variantes'])) : ''; 
+	$a_variantes = isset($_POST['variantes']) ? ($_POST['variantes']) : array(); 
 	if (isset($i_idf_groupe) && count($a_variantes)>0)
 	{	
 		ajoute_variantes($connexionBD,$i_idf_groupe,$a_variantes);
