@@ -185,7 +185,7 @@ if (isset($gi_idf_adherent ))
         foreach ($a_ddes_cantons as $a_ligne)
         {
           list($st_canton,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
-          print(sprintf("<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td></tr>\n",$st_canton,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
+          print(sprintf("<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td></tr>\n",cp1252_vers_utf8($st_canton),$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
         }
         print("</table>\n");
       }
@@ -248,7 +248,7 @@ if (isset($gi_idf_adherent ))
             if (array_key_exists($i_idf_acte,$a_liste_actes))
             {
               list($st_date_acte,$st_parties)=$a_liste_actes[$i_idf_acte];
-              $a_tableau_affichage[] = array($st_date_dde,$st_adresse_ip,$st_date_acte,$st_parties);
+              $a_tableau_affichage[] = array($st_date_dde,$st_adresse_ip,$st_date_acte,cp1252_vers_utf8($st_parties));
             }
             else
             {
@@ -324,11 +324,11 @@ if (isset($gi_idf_adherent ))
             if (array_key_exists($i_idf_acte,$a_liste_actes))
             {
               list($st_date_acte,$st_parties)=$a_liste_actes[$i_idf_acte];
-              $a_tableau_affichage[] = array($st_date_dde,$st_adresse_ip,$st_commune,$st_date_acte,$st_parties);
+              $a_tableau_affichage[] = array($st_date_dde,$st_adresse_ip,cp1252_vers_utf8($st_commune),$st_date_acte,cp1252_vers_utf8($st_parties));
             }
             else
             {
-              $a_tableau_affichage[] = array($st_date_dde,$st_adresse_ip,$st_commune,'&nbsp;',"R&eacute;f&eacute;rence originale de l'acte modifi&eacute;e");
+              $a_tableau_affichage[] = array($st_date_dde,$st_adresse_ip,cp1252_vers_utf8($st_commune),'&nbsp;',"R&eacute;f&eacute;rence originale de l'acte modifi&eacute;e");
             }  
           } 
           $pagination->init_page_cour($gi_num_page);
