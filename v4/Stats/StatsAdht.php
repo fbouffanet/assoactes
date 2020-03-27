@@ -285,7 +285,7 @@ if (isset($gi_idf_adherent ))
        print("<div class=\"panel-heading\">Demandes de l'adh&eacute;rent ".cp1252_vers_utf8($st_adherent)."</div>");
        print('<div class="panel-body">');
 	   print('<div class="panel panel-info">');
-       print(sprintf("<div class=\"panel-heading\">%s en %0.2d/%0.4d</div>",$st_type_acte,$i_mois,$i_annee));
+       print(sprintf("<div class=\"panel-heading\">%s en %0.2d/%0.4d</div>",cp1252_vers_utf8($st_type_acte),$i_mois,$i_annee));
        print('<div class="panel-body">');
        $gi_num_page = empty($_POST['num_page_ddes_adht']) ?  $i_session_num_page: (integer) $_POST['num_page_ddes_adht'];
        $_SESSION['mode']=$gst_mode;
@@ -324,11 +324,11 @@ if (isset($gi_idf_adherent ))
             if (array_key_exists($i_idf_acte,$a_liste_actes))
             {
               list($st_date_acte,$st_parties)=$a_liste_actes[$i_idf_acte];
-              $a_tableau_affichage[] = array($st_date_dde,$st_adresse_ip,cp1252_vers_utf8($st_commune),$st_date_acte,cp1252_vers_utf8($st_parties));
+              $a_tableau_affichage[] = array($st_date_dde,$st_adresse_ip,$st_commune,$st_date_acte,$st_parties);
             }
             else
             {
-              $a_tableau_affichage[] = array($st_date_dde,$st_adresse_ip,cp1252_vers_utf8($st_commune),'&nbsp;',"R&eacute;f&eacute;rence originale de l'acte modifi&eacute;e");
+              $a_tableau_affichage[] = array($st_date_dde,$st_adresse_ip,$st_commune,'&nbsp;',"R&eacute;f&eacute;rence originale de l'acte modifi&eacute;e");
             }  
           } 
           $pagination->init_page_cour($gi_num_page);
