@@ -189,7 +189,7 @@ function Recupere_sommaire()
 	$i_nb_sommaires = count($a_liste_sommaires);
 	if ($i_nb_sommaires!=0)
 	{     
-		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_sommaires,NB_LIGNES_PAR_PAGE,1,array('Bulletin','Mois Année','Désignation de la rubrique','Auteur du texte','Type','Modifier','Supprimer'));
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_sommaires,NB_LIGNES_PAR_PAGE,1,array('Bulletin','Mois Ann&eacute;e','D&eacute;signation de la rubrique','Auteur du texte','Type','Modifier','Supprimer'));
 		$pagination->init_param_bd($connexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_entete_liens_navigation();
@@ -205,7 +205,7 @@ function Recupere_sommaire()
 function Recherche_enreg($idrub)
 {
 	global $connexionBD;
-    $st_requete = "select numero,moisannee,rubrique,auteur,type from sommaire where idf = $idrub";
+    $st_requete = "select numero,moisannee,rubrique,auteur,type from sommaire where idf = ".utf8_vers_cp1252($idrub);
 	list($num,$moisaa,$rubrique,$auteur,$typrub)=$connexionBD->sql_select_liste($st_requete);
  	Affiche_saisie($num, $moisaa, $rubrique, $auteur, $typrub, $idrub);
 }
@@ -280,7 +280,7 @@ function Affiche_saisie($num, $moisaa, $rubrique, $auteur, $typrub, $idrub)
 	print('<div class="row form-group">');
     print('<label for="auteur" class="col-form-label col-md-4">Code Auteur</label>');
 	print('<div class="col-md-4">');
-	print("<input type=text value='$auteur' name=auteur id=auteur>");
+	print("<input type=text value='".cp1252_vers_utf8($auteur)."' name=auteur id=auteur>");
 	print('</div></div>');
 	
 	print('<div class="row form-group">');
@@ -300,7 +300,7 @@ function Affiche_saisie($num, $moisaa, $rubrique, $auteur, $typrub, $idrub)
 		   $txtrub = $rubrique;
 		}
 	}
-	print("<input type=text size=70 value='$txtrub' name=txtrub id=txtrub>");
+	print("<input type=text size=70 value='".cp1252_vers_utf8($txtrub)."' name=txtrub id=txtrub>");
 	print('</div></div>');
 
 	print("<input type=hidden name=idrub value=$idrub>");
@@ -331,7 +331,7 @@ function Enregistrement()
 	$flag = "N";
 	if ($idrub == 0)               // création d'un enregistrement
 	{
-		$connexionBD->initialise_params(array(':numero'=>$numero,':moisannee'=>$moisannee,":rubrique"=>$rubrique,":auteur"=>$auteur,":type"=>$type,":flag"=>$flag));
+		$connexionBD->initialise_params(array(':numero'=>$numero,':moisannee'=>$moisannee,":rubrique"=>utf8_vers_cp1252($rubrique),":auteur"=>utf8_vers_cp1252($auteur),":type"=>utf8_vers_cp1252($type),":flag"=>$flag));
 		$sqlins = "insert into sommaire (numero, moisannee, rubrique, auteur, type, flag)
                  values (:numero, :moisannee, :rubrique, :auteur, :type, :flag)";
 		$connexionBD->execute_requete($sqlins);	
@@ -346,7 +346,7 @@ function Enregistrement()
 	}
 	else                           // modification d'un enregistrement
 	{
-      $connexionBD->initialise_params(array(':numero'=>$numero,':moisannee'=>$moisannee,":rubrique"=>$rubrique,":auteur"=>$auteur));
+      $connexionBD->initialise_params(array(':numero'=>$numero,':moisannee'=>$moisannee,":rubrique"=>utf8_vers_cp1252($rubrique),":auteur"=>utf8_vers_cp1252($auteur)));
       $sqlmaj = "update sommaire set numero = :numero, moisannee = :moisannee, rubrique = :rubrique, 
 		                               auteur = :auteur where idf = $idrub";  
 	    $connexionBD->execute_requete($sqlmaj);
