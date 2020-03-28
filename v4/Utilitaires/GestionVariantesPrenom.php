@@ -4,6 +4,7 @@
 // Licence Publique Générale GPL GNU publiée par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
+
 require_once('../Commun/Identification.php');
 require_once('../Commun/commun.php');
 require_once('../Commun/constantes.php');
@@ -33,6 +34,7 @@ switch ($gst_mode) {
    exit();
  break;
 }
+
 
 /**
  * Affiche le menu formulaire
@@ -138,14 +140,14 @@ function ajoute_variantes($pconnexionBD,$pi_idf_groupe,$pa_variantes)
 	  $st_variante=ucfirst(strtolower(trim($st_variante)));
 	  if ($st_variante=="") continue;
 	  $a_params_precedents=$pconnexionBD->params();
-	  $pconnexionBD->initialise_params(array(':variante'=>$st_variante));
+	  $pconnexionBD->initialise_params(array(':variante'=>utf8_vers_cp1252($st_variante)));
 	  $i_nb_variantes =$pconnexionBD->sql_select1("select count(idf_groupe) from variantes_prenom where libelle = :variante collate latin1_general_ci");
 	  $pconnexionBD->initialise_params($a_params_precedents);
 	  if ($i_nb_variantes>0) 
 		  $gst_erreurs.= "Variante $st_variante d&eacute;j&agrave; r&eacute;f&eacute;renc&eacute;e. Elle ne sera pas ajout&eacute;e<br>"; 
 	  else
       {
-        $a_params[":prenom$i"] = $st_variante;
+        $a_params[":prenom$i"] = utf8_vers_cp1252($st_variante);
         $a_valeurs[]=sprintf("(%d,:prenom%d)",$pi_idf_groupe,$i);
         $i++;
 	  }
@@ -497,8 +499,6 @@ print("<body>");
 print('<div class="container">');
 
 require_once("../Commun/menu.php");
-
-
 switch ($gst_mode) {
  case 'AFFICHER' :
   affiche_menu($connexionBD,$gi_idf_groupe);
@@ -531,11 +531,19 @@ switch ($gst_mode) {
  break;
  case 'COMPLETER':
 	$i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : null;
-	$a_variantes = isset($_POST['variantes']) ? utf8_vers_cp1252($_POST['variantes']) : ''; 
+	$a_variantes = isset($_POST['variantes']) ? ($_POST['variantes']) : array(); 
 	if (isset($i_idf_groupe) && count($a_variantes)>0)
 	{	
 		ajoute_variantes($connexionBD,$i_idf_groupe,$a_variantes);
 		if (empty($gst_erreurs)) $gst_infos = "Variante compl&eacute;t&eacute;e";
+		affiche_menu($connexionBD,$i_idf_groupe);
+	}
+	else
+	{
+		if (!isset($i_idf_groupe))
+			$gst_erreurs = "Le groupe n'est pas d&eacute;fini";
+		else if (count($a_variantes)==0)
+			$gst_erreurs = "La liste de variantes est vide";
 		affiche_menu($connexionBD,$i_idf_groupe);
 	}
  break;
@@ -576,8 +584,9 @@ switch ($gst_mode) {
 		$gst_infos = "Pas de pr&eacute;noms &agrave; supprimer";
 	affiche_menu($connexionBD,$gi_idf_groupe);
 	
- break;   
+ break; 
  default:
+	print("<div id=\"erreurs\" class=\"alert alert-danger\">Mode $gst_mode inconnu</div>");
 } 
 
 print("</div>");

@@ -220,7 +220,6 @@ switch ($gst_mode)
 		$_SESSION['mode']=$gst_mode; 
 		$_SESSION['tri_pat']=$gst_tri;
 		$gst_patronyme  = preg_replace('/\*+/','%', $gst_patronyme);
-		$gst_patronyme=utf8_vers_cp1252($gst_patronyme);
 		if (($gst_patronyme== '*') || (empty($gst_patronyme)) || (strlen($gst_patronyme)<2))
 			affiche_menu($gi_idf_commune,$gi_rayon,$gi_idf_source,"Le patronyme doit comporter au moins deux caract&egrave;res");
 		else

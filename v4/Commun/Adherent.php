@@ -281,6 +281,7 @@ class Adherent
 	  $this -> st_ville =self::utf8_vers_cp1252($this -> st_ville);
 	  $this -> st_pays =self::utf8_vers_cp1252($this -> st_pays);
 	  $this -> st_infos_agc =self::utf8_vers_cp1252($this -> st_infos_agc);
+	  $this -> st_origine =self::utf8_vers_cp1252($this -> st_origine);
       if (strlen($this->st_tel)==10)         
         $this->st_tel = wordwrap($this->st_tel,2,' ',true);   
       $this->st_email_perso = isset($_POST['email_perso']) ? substr(trim($_POST['email_perso']),0,60): '';
@@ -497,7 +498,7 @@ class Adherent
       $st_chaine .= "<div class=\"radio\"><label><input type=\"radio\" id=\"OrigineAutre\" name=\"type_origine\" value=\"".ORIGINE_AUTRE."\" class=\"form-check-input\" $st_coche>";
       $st_chaine .= "Autre</label></div></div>";
 	  
-      $st_chaine .= sprintf("<div class=\"form-group\"><label for=\"description_origine\">Veuillez pr&eacute;ciser SVP dans tous les cas:</label><input type=\"text\" maxlength=80 size=20 name=\"description_origine\" id=description_origine value=\"%s\" class=\"form-control\"></div>",$this->st_origine);	  
+      $st_chaine .= sprintf("<div class=\"form-group\"><label for=\"description_origine\">Veuillez pr&eacute;ciser SVP dans tous les cas:</label><input type=\"text\" maxlength=80 size=20 name=\"description_origine\" id=description_origine value=\"%s\" class=\"form-control\"></div>",self::cp1252_vers_utf8($this->st_origine));	  
       return $st_chaine;
    } 
    
@@ -926,7 +927,7 @@ class Adherent
   function envoie_message_adherent() {
     global $gst_url_site,$gst_administrateur_gbk;
     $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ; 
-    $st_message_html  = sprintf("Bonjour <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
+    $st_message_html  = sprintf("Bonjour <font><strong>%s %s</strong></font>\n\n",self::cp1252_vers_utf8($this->st_prenom),self::cp1252_vers_utf8($this->st_nom));
 	if (!empty($gst_administrateur_gbk))
 		$st_message_html .= "Vous venez d'&ecirc;tre inscrit(e) sur le site $st_prefixe_asso".SIGLE_ASSO." et &agrave; G&eacute;n&eacute;abank.\n";
     else
@@ -966,11 +967,11 @@ class Adherent
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
     $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n"; 
     $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/plain; charset="cp1252"'."\n";
+    $st_message .= 'Content-Type: text/plain; charset="UTF-8"'."\n";
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_texte."\n\n";
     $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/html; charset="cp1252"'."\n";
+    $st_message .= 'Content-Type: text/html; charset="UTF-8"'."\n";
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_html."\n\n";
     $st_message .= '--'.$st_frontiere."--\n";
@@ -985,7 +986,7 @@ class Adherent
  */
   function envoie_message_readhesion() {
     global $gst_url_site;
-    $st_message_html  = sprintf("Bonjour <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
+    $st_message_html  = sprintf("Bonjour <font><strong>%s %s</strong></font>\n\n",self::cp1252_vers_utf8($this->st_prenom),self::cp1252_vers_utf8($this->st_nom));
     $st_message_html .= sprintf("Nous accusons r&eacute;ception de votre paiement, votre inscription est valid&eacute;e pour l'ann&eacute;e %d\n",$this->i_annee_cotisation);
     $st_message_html .= "Afin de mettre &agrave; jour vos informations, il vous suffit, pour cela, de vous rendre &agrave; l'adresse suivante:\n";
     $st_message_html .= "<a href=\"$gst_url_site\">$gst_url_site</a>\n\n";
@@ -1011,11 +1012,11 @@ class Adherent
 
     $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
     $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/plain; charset="cp1252"'."\n";
+    $st_message .= 'Content-Type: text/plain; charset="UTF-8"'."\n";
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_texte."\n\n";
     $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/html; charset="cp1252"'."\n";
+    $st_message .= 'Content-Type: text/html; charset="UTF-8"'."\n";
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_html."\n\n";
     $st_message .= '--'.$st_frontiere."--\n";
@@ -1029,9 +1030,9 @@ class Adherent
     $st_message_html = "<font color=\"red\">";
     $st_message_html .= self::$st_erreur_gbk;
     $st_message_html .= "</font>";
-    $st_message_html  .= sprintf("Inscription G&eacute;n&eacute;aBank de <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
+    $st_message_html  .= sprintf("Inscription G&eacute;n&eacute;aBank de <font><strong>%s %s</strong></font>\n\n",self::cp1252_vers_utf8($this->st_prenom),self::cp1252_vers_utf8($this->st_nom));
     $st_message_html .= "Faire un copier de la ligne ci dessous et la coller dans l'interface de gestion de G&eacute;n&eacute;abank.\n\n";
-    $st_message_html .= sprintf("register ".PREFIXE_ADH_GBK."%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
+    $st_message_html .= sprintf("register ".PREFIXE_ADH_GBK."%d %s %s %s %s\n",$this->i_idf,self::cp1252_vers_utf8($this->st_mdp),$this->st_email_perso,self::cp1252_vers_utf8($this->st_nom),self::cp1252_vers_utf8($this->st_prenom));
     $st_message_html .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
     $st_message_html = nl2br($st_message_html);
     $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
@@ -1048,11 +1049,11 @@ class Adherent
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
     $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n"; 
     $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/plain; charset="cp1252"'."\n";
+    $st_message .= 'Content-Type: text/plain; charset="UTF-8"'."\n";
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_texte."\n\n";
     $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/html; charset="cp1252"'."\n";
+    $st_message .= 'Content-Type: text/html; charset="UTF-8"'."\n";
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_html."\n\n";
     $st_message .= '--'.$st_frontiere."--\n";
@@ -1076,7 +1077,7 @@ class Adherent
     $st_texte .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
     $st_sujet = "Changement de mot de passe GeneaBank";
     $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
-    $st_entete .= "Content-type: text/html; charset=cp1252 \r\n";
+    $st_entete .= "Content-type: text/html; charset=UTF-8 \r\n";
     $st_entete .= "From: ".EMAIL_DIRASSO."\r\n";
     $st_entete .= "Cc: ".EMAIL_DIRASSO."\r\n";
     $st_entete .= "Reply-to: ".EMAIL_DIRASSO."\r\n";
@@ -1111,7 +1112,7 @@ class Adherent
     $st_texte .= "Cordialement,\n\nLes responsables du site";
     $st_sujet = "Votre nouveau mot de passe du site ".SIGLE_ASSO;
     $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
-    $st_entete .= "Content-type: text/html; charset=cp1252 \r\n";
+    $st_entete .= "Content-type: text/html; charset=UTF-8\r\n";
     $st_entete .= "From: ".EMAIL_DIRASSO."\r\n";
     return (@mail($this->st_email_perso,$st_sujet, nl2br(stripslashes($st_texte)), $st_entete));
 
@@ -1121,10 +1122,10 @@ class Adherent
   * @return boolean Le message a été envoyé ou pas  
   */
   function envoie_message_direction() {
-    $st_message_html  = sprintf("L'adh&eacute;rent <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
+    $st_message_html  = sprintf("L'adh&eacute;rent <font><strong>%s %s</strong></font>\n\n",self::cp1252_vers_utf8($this->st_prenom),self::cp1252_vers_utf8($this->st_nom));
     $st_message_html .= "vient d'&ecirc;tre inscrit(e)\n\n";
     $st_message_html .= sprintf("Num&eacute;ro : %d\n",$this->i_idf);
-    $st_message_html .= sprintf(" son MdP : %s\n",$this->st_mdp);
+    $st_message_html .= sprintf(" son MdP : %s\n",self::cp1252_vers_utf8($this->st_mdp));
     $st_message_html .= sprintf(" son Email : %s\n",$this->st_email_perso);
 
     $st_message_html = nl2br($st_message_html);
@@ -1139,11 +1140,11 @@ class Adherent
     $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
     $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
     $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/plain; charset="cp1252"'."\n";
+    $st_message .= 'Content-Type: text/plain; charset="UTF-8"'."\n";
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_texte."\n\n";
     $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/html; charset="cp1252"'."\n";
+    $st_message .= 'Content-Type: text/html; charset="UTF-8"'."\n";
     $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
     $st_message .= $st_message_html."\n\n";
     $st_message .= '--'.$st_frontiere."--\n";
@@ -1235,7 +1236,7 @@ class Adherent
           $st_requete = "update adherent set clef_nouveau_mdp=:clef where idf=:idf";
           $this->connexionBD->execute_requete($st_requete);
           
-          $st_message_html  = sprintf("Bonjour <strong>%s %s</strong>\n\n",$this->st_prenom,$this->st_nom);
+          $st_message_html  = sprintf("Bonjour <strong>%s %s</strong>\n\n",self::cp1252_vers_utf8($this->st_prenom),self::cp1252_vers_utf8($this->st_nom));
 		  $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ;
           $st_message_html .= "Vous venez de demander un nouveau mot de passe &agrave; la base $st_prefixe_asso".SIGLE_ASSO."\n";
           $st_message_html .= "Afin de confirmer ce changement, merci de cliquer sur le lien ci-dessous ou de le copier/coller dans la barre de navigation de votre navigateur:\n";
@@ -1255,11 +1256,11 @@ class Adherent
           $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
           $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
           $st_message .= '--'.$st_frontiere."\n";
-          $st_message .= 'Content-Type: text/plain; charset="cp1252"'."\n";
+          $st_message .= 'Content-Type: text/plain; charset="UTF-8"'."\n";
           $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
           $st_message .= $st_message_texte."\n\n";
           $st_message .= '--'.$st_frontiere."\n";
-          $st_message .= 'Content-Type: text/html; charset="cp1252"'."\n";
+          $st_message .= 'Content-Type: text/html; charset="UTF-8"'."\n";
           $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
           $st_message .= $st_message_html."\n\n";
           $st_message .= '--'.$st_frontiere."--\n";
@@ -1364,7 +1365,7 @@ class Adherent
             )
           );
           $context  = stream_context_create($a_options);
-          $st_resultat = file_get_contents(self::$gst_url_gbk, false, $context);  
+          $st_resultat = self::cp1252_vers_utf8(file_get_contents(self::$gst_url_gbk, false, $context));  
           if (preg_match('/Commande exécutée correctement/',$st_resultat))
             return true;
           else

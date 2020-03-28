@@ -152,13 +152,13 @@ function affiche_grille_saisie($pi_format,$pi_idf_repertoire,$pi_page_courante,$
   $st_chaine_date_rep .= '<div class="col-md-4">';
   $st_chaine_date_rep.= ' <select name="mois_rep" id="mois_rep" class="form-control">';
   $st_chaine_date_rep.= '<option value=""></option>';
-  $st_chaine_date_rep.= chaine_select_options(null,$ga_mois_revolutionnaires);
+  $st_chaine_date_rep.= chaine_select_options(null,$ga_mois_revolutionnaires,false);
   $st_chaine_date_rep.= '</select>';
   $st_chaine_date_rep .= '</div>';
   $st_chaine_date_rep .= '<div class="col-md-2">';
   $st_chaine_date_rep.= ' <select name="annee_rep" id="annee_rep" class="form-control">';
   $st_chaine_date_rep.= '<option value=""></option>';
-  $st_chaine_date_rep.= chaine_select_options(null,$ga_annees_revolutionnaires);
+  $st_chaine_date_rep.= chaine_select_options(null,$ga_annees_revolutionnaires,false);
   $st_chaine_date_rep .= '</select>';
   $st_chaine_date_rep .= '</div>';
   $st_chaine = "<tr><th>Date r&eacute;publicaine</th><td colspan=4><div class=\"row form-group\">$st_chaine_date_rep</div></td><td colspan=3><button type=button id=maj_date class=\"btn btn-primary\">maj de la date</button></td></tr>";
@@ -212,14 +212,14 @@ function affiche_actes_saisis($pconnexionBD,$pi_idf_repertoire,$pi_format,$pi_pa
 			   switch ($pi_format)
 			   {
 				    case 0:
-					   print("<td>$st_nom1</td><td>$st_prenom1</td><td>$st_nom2</td><td>$st_prenom2</td>");
+					   print("<td>".cp1252_vers_utf8($st_nom1)."</td><td>".cp1252_vers_utf8($st_prenom1)."</td><td>".cp1252_vers_utf8($st_nom2)."</td><td>".cp1252_vers_utf8($st_prenom2)."</td>");
 				    break;
 				    case 1:
 					   print("<td>Nom1</td><td>Nom2</td>");
 				    break;
 				    default:
 			   }
-			   print("<td>$st_paroisse</td><td>$st_commentaires</td><td><span class=\"glyphicon glyphicon-edit elem_edition\" id=\"$i_idf_acte\"></span></td><td><span class=\"glyphicon glyphicon-trash elem_suppression\" id=\"$i_idf_acte\"></span>
+			   print("<td>".cp1252_vers_utf8($st_paroisse)."</td><td>".cp1252_vers_utf8($st_commentaires)."</td><td><span class=\"glyphicon glyphicon-edit elem_edition\" id=\"$i_idf_acte\"></span></td><td><span class=\"glyphicon glyphicon-trash elem_suppression\" id=\"$i_idf_acte\"></span>
 			   </td></tr>");
 		    }
 		  print('</tbody></table>');

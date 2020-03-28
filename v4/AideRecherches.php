@@ -5,7 +5,7 @@ require_once('Commun/constantes.php');
 require_once('Commun/ConnexionBD.php');
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
@@ -25,7 +25,7 @@ require_once("Commun/menu.php");
     <img alt="MenuRecherches" style="width: 698px; height: 282px;" src="images/MenuV4.png">
   </span>
 </p>
-<div>Cet écran comporte 3 pavés&nbsp;: 
+<div>Cet Ã©cran comporte 3 pavÃ©s&nbsp;: 
 </div>
 <ul>     
   <li>    
@@ -33,11 +33,11 @@ require_once("Commun/menu.php");
     <span >
       <span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
       </span>
-    </span>Le 1<sup>er</sup> pavé est 
+    </span>Le 1<sup>er</sup> pavÃ© est 
     <span >&nbsp;
-    </span>commun aux deux autres pavés qui sont des modules de recherche. Ce pavé <strong>
+    </span>commun aux deux autres pavÃ©s qui sont des modules de recherche. Ce pavÃ© <strong>
       <span style="font-weight: bold;">optionnel
-      </span>    </strong>a pour mission d’affiner la recherche et ainsi limiter le nombre de réponses obtenues.
+      </span>    </strong>a pour mission d'affiner la recherche et ainsi limiter le nombre de rÃ©ponses obtenues.
   </div>  
   </li>   
 </ul>
@@ -47,7 +47,7 @@ require_once("Commun/menu.php");
     <span >&nbsp;&nbsp;&nbsp; 
       <span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
       </span>
-    </span>Source&nbsp;: liste de l’origine des actes ( AGC, AGL… )
+    </span>Source&nbsp;: liste de l'origine des actes ( AGC, AGL,.. )
   </div>  
   </li>     
   <li>    
@@ -55,7 +55,7 @@ require_once("Commun/menu.php");
     <span>&nbsp;&nbsp;&nbsp; 
       <span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
       </span>
-    </span>Type d’acte&nbsp;: rechercher uniquement dans les naissances ou les sépultures ou les mariages…
+    </span>Type d'acte&nbsp;: rechercher uniquement dans les naissances ou les sÃ©pultures ou les mariages
   </div>    
   </li>     
   <li>    
@@ -63,7 +63,7 @@ require_once("Commun/menu.php");
     <span >&nbsp;&nbsp;&nbsp; 
       <span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
       </span>
-    </span>Commune/paroisse&nbsp;: la recherche se fait sur la commune sélectionnée
+    </span>Commune/paroisse&nbsp;: la recherche se fait sur la commune sÃ©lectionnÃ©e
   </div>    
   </li>     
   <li>    
@@ -71,9 +71,9 @@ require_once("Commun/menu.php");
     <span >&nbsp;&nbsp;&nbsp; 
       <span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
       </span>
-    </span>Rayon de recherche&nbsp;: cette recherche cible une zone géographique de 
+    </span>Rayon de recherche&nbsp;: cette recherche cible une zone gÃ©ographique de 
     <span >&nbsp;
-    </span>(X) kms autour de la paroisse sélectionnée
+    </span>(X) kms autour de la paroisse sÃ©lectionnÃ©e
   </div>    
   </li>     
   <li>    
@@ -81,7 +81,7 @@ require_once("Commun/menu.php");
     <span >&nbsp;&nbsp;&nbsp; 
       <span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
       </span>
-    </span>Années&nbsp;: limite la recherche sur une fourchette d’années
+    </span>AnnÃ©es&nbsp;: limite la recherche sur une fourchette d'annÃ©es
   </div>  
   </li>   
 </ol>
@@ -94,7 +94,7 @@ require_once("Commun/menu.php");
     <span >
       <span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
       </span>
-    </span>Le 2<sup>ème</sup> pavé concerne la recherche par couple
+    </span>Le 2<sup>Ã¨me</sup> pavÃ© concerne la recherche par couple
   </div>    
   </li>   
 </ul>
@@ -102,9 +102,9 @@ require_once("Commun/menu.php");
 </p>
 <ol style="margin-left: 80px;">  
   <li>    
-  <div>C’est quoi au juste cette recherche&nbsp;? Il s’agit de rechercher le couple dans tous les actes où il peut se trouver c’est-à-dire en tant qu’époux et épouse, père et mère, 
+  <div>C'est quoi au juste cette recherche&nbsp;? Il s'agit de rechercher le couple dans tous les actes oÃ¹ il peut se trouver c'est-Ã -dire en tant qu'Ã©poux et Ã©pouse, pÃ¨re et mÃ¨re, 
     <span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">intervenant et ancien conjoint
-    </span>. Imaginez un peu les possibilités&nbsp;! en 2 clics, en ayant renseigné simplement les deux noms du couple, vous obtenez son mariage, la liste de tous ses enfants (naissance, mariage, décès)
+    </span>. Imaginez un peu les possibilitÃ©s&nbsp;! en 2 clics, en ayant renseignÃ© simplement les deux noms du couple, vous obtenez son mariage, la liste de tous ses enfants (naissance, mariage, dÃ©cÃ¨s)
   </div>    
   </li>     
   <li>    
@@ -112,7 +112,7 @@ require_once("Commun/menu.php");
     <span >
       <span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
       </span>
-    </span>Renseignez impérativement les noms de l’époux et de l’épouse
+    </span>Renseignez impÃ©rativement les noms de l'Ã©poux et de l'Ã©pouse
   </div>    
   </li>     
   <li>    
@@ -120,7 +120,7 @@ require_once("Commun/menu.php");
     <span >
       <span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
       </span>
-    </span>Recherche par variantes connues&nbsp;: cette option élargit la recherche aux différentes orthographes du patronyme ( exemple&nbsp;: 
+    </span>Recherche par variantes connues&nbsp;: cette option Ã©largit la recherche aux diffÃ©rentes orthographes du patronyme ( exemple&nbsp;: 
     <span >&nbsp;
     </span>
     <span>AIGRETAUD &nbsp;; AIGRETEAUX &nbsp;; 
@@ -129,7 +129,7 @@ require_once("Commun/menu.php");
       <span >&nbsp;
       </span>AIGRETTEAUX &nbsp;; 
       <span >&nbsp;
-      </span>AYGRETEAU &nbsp;; AYGRETTEAU&nbsp;; ÉGRETAU &nbsp;;     
+      </span>AYGRETEAU &nbsp;; AYGRETTEAU&nbsp;; RGRETAU &nbsp;;     
       <span >&nbsp;
       </span>HEGRETEAU ....)&nbsp;
     </span>
@@ -160,7 +160,7 @@ require_once("Commun/menu.php");
     <span >
       <span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
       </span>
-    </span>Le 3<sup>ème</sup> pavé concerne la recherche d’un individu en particulier
+    </span>Le 3<sup>Ã¨me</sup> pavÃ© concerne la recherche d'un individu en particulier
     </li>   
   </ul>
 </div>
@@ -170,7 +170,7 @@ require_once("Commun/menu.php");
     <span >
       <span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
       </span>
-    </span>Renseignez impérativement le nom de la personne
+    </span>Renseignez impÃ©rativement le nom de la personne
   </div>    
   </li>  
   <li>    
@@ -178,33 +178,33 @@ require_once("Commun/menu.php");
     <span >
       <span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">
       </span>
-    </span>Le type de présence permet d'affiner la chercher parmi les intervenants, les parents, les anciens conjoints, les témoins, les parrain/marraine
+    </span>Le type de prÃ©sence permet d'affiner la chercher parmi les intervenants, les parents, les anciens conjoints, les tÃ©moins, les parrain/marraine
   </div>  
   </li>
 </ol>
 <div style="text-align: center;">
-  <span style="font-style: italic; color: red;">Attention seules les 100 premières réponses son
+  <span style="font-style: italic; color: red;">Attention seules les 100 premiÃ¨res rÃ©ponses son
   </span>
   <span>
-    <span style="font-style: italic; color: red;">t affichées, alors affinez votre recherche
+    <span style="font-style: italic; color: red;">t affichÃ©es, alors affinez votre recherche
     </span>
     <br>
-    Depuis les AM d'Angoulême et AD sont en ligne, l'AGC procède à des indexations, c'est-à-dire que seule la référence des archives en ligne et notée dans l'acte.
-    <br>Vous pouvez obtenir la cote de l'acte en survolant l'icone correspondante avec le nez la souris comme indiqué ci-dessous:
+    Depuis les AM d'AngoulÃªme et AD sont en ligne, l'AGC procÃ¨de Ã  des indexations, c'est-Ã -dire que seule la rÃ©fÃ©rence des archives en ligne et notÃ©e dans l'acte.
+    <br>Vous pouvez obtenir la cote de l'acte en survolant l'icone correspondante avec le nez la souris comme indiquÃ© ci-dessous:
     <br>
-    <img  alt="Résultat de recherche" src="images\cote_idx.png">
+    <img  alt="RÃ©sultat de recherche" src="images\cote_idx.png">
     <br>
-    <img  alt="Résultat de recherche" src="images\cote_tdi.png">
+    <img  alt="RÃ©sultat de recherche" src="images\cote_tdi.png">
     <br>
-    Ces indexations peuvent être consultées sans aucune limite
+    Ces indexations peuvent Ãªtre consultÃ©es sans aucune limite
     <br>
-    <br>Pour consulter le relevé des autres actes, cliquez sur le i en face de l'acte qui vous intéresse comme indiqué dans l'image ci-dessous.
+    <br>Pour consulter le relevÃ© des autres actes, cliquez sur le i en face de l'acte qui vous intÃ©resse comme indiquÃ© dans l'image ci-dessous.
     <br>
     <br>
     <img style="width: 768px; height: 402px;" alt="Résultat de recherche" src="images/ReponseV4.png">
     
-    <br>Une nouvelle fenêtre apparaît. Si ce n'est pas le cas, vérifiez que votre navigateur n'a pas interdit l'ouverture de la fenêtre.
-    <br>Celle-ci se présente ainsi:
+    <br>Une nouvelle fenÃªtre apparaÃ®t. Si ce n'est pas le cas, vÃ©rifiez que votre navigateur n'a pas interdit l'ouverture de la fenÃªtre.
+    <br>Celle-ci se prÃ©sente ainsi:
     <br>
     <br>
     <img style="width: 600px; height: 626px;" alt="Ajout dans le panier" src="images/DetailV4.png">

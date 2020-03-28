@@ -297,13 +297,13 @@ class ModificationPersonne extends Personne
 		         $st_chaine_date_rep .= '<div class="col-xs-4">';
                  $st_chaine_date_rep .= " <select name=\"mois_rep\" id=\"mois_rep$i_num_parametre\" class=\"form-control\">";
                  $st_chaine_date_rep .= '<option value=""></option>';
-                 $st_chaine_date_rep .= chaine_select_options($i_mois_rep, $ga_mois_revolutionnaires);
+                 $st_chaine_date_rep .= chaine_select_options($i_mois_rep, $ga_mois_revolutionnaires,false);
                  $st_chaine_date_rep .= '</select>';
 				 $st_chaine_date_rep .= '</div>';
 		         $st_chaine_date_rep .= '<div class="col-xs-2">';
                  $st_chaine_date_rep .= " <select name=\"annee_rep\" id=\"annee_rep$i_num_parametre\" class=\"form-control\">";
                  $st_chaine_date_rep .= '<option value=""></option>';
-                 $st_chaine_date_rep .= chaine_select_options($i_annee_rep, $ga_annees_revolutionnaires);
+                 $st_chaine_date_rep .= chaine_select_options($i_annee_rep, $ga_annees_revolutionnaires,false);
                  $st_chaine_date_rep .= '</select>';
 				 $st_chaine_date_rep .= '</div>';
                  $st_chaine_date_rep .= "<input type=\"button\" class=\"btn btn-primary maj_date_rep\" data-jour_rep=\"#jour_rep$i_num_parametre\" data-mois_rep=\"#mois_rep$i_num_parametre\" data-annee_rep=\"#annee_rep$i_num_parametre\" data-date_greg=\"#dnais$i_num_parametre\" data-date_rep=\"\" data-cmt=\"#cmt$i_num_parametre\" data-id_fenetre=\"#popup_dnais$i_num_parametre\" value=\"Maj date naissance\">";

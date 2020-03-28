@@ -139,7 +139,7 @@ class PaginationTableau {
    /**
     * Affiche le contenu du tableau correspondant à $i_nb_lignes_par_page lignes de la page courante . La requete SQL est utilisée
     */       
-   public function affiche_tableau_simple($pa_tableau) {
+   public function affiche_tableau_simple($pa_tableau,$pb_conversion_encodage=true) {
       $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
       $pa_tableau=array_slice($pa_tableau,$i_limite_inf,$this->i_nb_lignes_par_page);
       print("<table class=\"table table-bordered table-striped\">");
@@ -155,8 +155,11 @@ class PaginationTableau {
          foreach ($a_ligne as $st_champ)
          {
             if ($st_champ!="")
-              print("<td>".cp1252_vers_utf8($st_champ)."</td>");
-            else
+			  if ($pb_conversion_encodage)
+				print("<td>".cp1252_vers_utf8($st_champ)."</td>");
+			  else
+				print("<td>$st_champ</td>");  
+			else
               print("<td>&nbsp;</td>");   
          }         
          print("</tr>\n");
@@ -173,7 +176,7 @@ class PaginationTableau {
     * Affiche le contenu du tableau correspondant à $i_nb_lignes_par_page lignes de la page courante
     * @param integer $pi_type_identifiant type d'identifiant utilisé (1: entier (défaut)| 2: chaine)  	
     */       
-   public function affiche_tableau_edition($pi_type_identifiant=1) {
+   public function affiche_tableau_edition($pi_type_identifiant=1,$pb_conversion_encodage=true) {
       $st_requete = $this->st_requete;
       $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
       $st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
@@ -193,8 +196,11 @@ class PaginationTableau {
          foreach ($a_ligne as $st_nom_element)
          {
             if ($st_nom_element!= '')
-               print("<td>".cp1252_vers_utf8($st_nom_element)."</td>");
-            else
+			    if ($pb_conversion_encodage)
+					print("<td>".cp1252_vers_utf8($st_nom_element)."</td>");
+				else
+					print("<td>$st_nom_element)</td>");
+			else
                print("<td>&nbsp;</td>");   
          }
          switch ($pi_type_identifiant)

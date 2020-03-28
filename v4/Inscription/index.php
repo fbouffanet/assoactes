@@ -1,7 +1,7 @@
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once("../Commun/config.php");
@@ -19,7 +19,7 @@ include $cryptinstall;
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='$gst_url_site/css/styles.css' type='text/css' rel='stylesheet'>");
@@ -55,10 +55,10 @@ $("#inscription").validate({
 			required: "Le patronyme est obligatoire"
 		},
 		prenom: {
-			required: "Le prénom est obligatoire"
+			required: "Le prÃ©nom est obligatoire"
 		},
     adr1: {
-			required: "L'adresse est vide. Remplir la première ligne"
+			required: "L'adresse est vide. Remplir la premiÃ¨re ligne"
 		},
     cp: {
 			required: "Le code postal est obligatoire"
@@ -74,7 +74,7 @@ $("#inscription").validate({
 			url: "Ceci n'est pas l'adresse d'un site"
 		},
     idf_agc: {
-      integer: "L'identifiant doit être un entier"
+      integer: "L'identifiant doit Ãªtre un entier"
     },
     code: {
 			required: "Le code est obligatoire"
@@ -150,10 +150,10 @@ if ($st_erreur!="")
 }
 
 /*
-* Envoie un mail à l'adhérent
-* @param string $pst_ins_nom nom de l'adhérent
-* @param string $pst_ins_prenom prénom de l'adhérent
-* @param string $pst_ins_email_perso email de l'adhérent
+* Envoie un mail Ã  l'adhÃ©rent
+* @param string $pst_ins_nom nom de l'adhÃ©rent
+* @param string $pst_ins_prenom prÃ©nom de l'adhÃ©rent
+* @param string $pst_ins_email_perso email de l'adhÃ©rent
 * @param string $pst_ins_idf_agc identifiant AGC provisoire
 * @param string $pst_ins_alea alea
 * @param string $int_idf_prov Identifiant provisoire
@@ -165,19 +165,17 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   global $_SERVER,$gst_url_validation;
   
   $gst_url = basename($_SERVER['PHP_SELF']);
-  $jour = sprintf ("%02s/%02s/%4s", substr($dt_ins_date,8,2), substr($dt_ins_date,5,2), substr($dt_ins_date,0,4));
-  
-  $frontiere = '-----=' . md5(uniqid(mt_rand()));  
-  $headers  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
-  $headers .= "Reply-to: ".LIB_ASSO."<".EMAIL_DIRASSO.">\n";
-	$headers .= 'MIME-Version: 1.0' . "\n"; 
-  $headers .= 'Content-Type: multipart/alternative; boundary="'.$frontiere.'"';      
-    $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "a l'": "au " ;
-	$sujet    = "Pre-inscription $st_prefixe_asso".SIGLE_ASSO;
-	$st_message_html  = "Bonjour ". $pst_ins_prenom. " " . $pst_ins_nom . ", \n\n";
-	$st_message_html .= "Vous vous &ecirc;tes pr&eacute;-inscrit ce jour, le " .$jour. " $st_prefixe_asso".SIGLE_ASSO."\n";
-	$st_message_html .= "Nous vous remercions et vous demandons de nous confirmer votre inscription en cliquant sur ce lien suivant: \n\n";
-	$st_message_html .= "<a href=\"$gst_url_validation?alea=$pst_ins_alea&amp;idf_agc=$pst_ins_idf_agc&amp;idf_prov=$int_idf_prov\">$gst_url_validation?alea=$pst_ins_alea&amp;idf_agc=$pst_ins_idf_agc&amp;idf_prov=$int_idf_prov</a>";
+  $jour = sprintf ("%02s/%02s/%4s", substr($dt_ins_date,8,2), substr($dt_ins_date,5,2), substr($dt_ins_date,0,4)); 
+  $st_entete = 'MIME-Version: 1.0' . "\r\n";
+  $st_entete .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+  $st_entete .= "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\r\n>";
+  $st_entete .= "Return-Path: ".EMAIL_DIRASSO."\r\n";   
+  $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "a l'": "au " ;
+  $sujet    = "Pre-inscription $st_prefixe_asso".SIGLE_ASSO;
+  $st_message_html  = "Bonjour ". cp1252_vers_utf8($pst_ins_prenom). " " . cp1252_vers_utf8($pst_ins_nom) . ", \n\n";
+  $st_message_html .= "Vous vous &ecirc;tes pr&eacute;-inscrit ce jour, le " .$jour. " $st_prefixe_asso".SIGLE_ASSO."\n";
+  $st_message_html .= "Nous vous remercions et vous demandons de nous confirmer votre inscription en cliquant sur ce lien suivant: \n\n";
+  $st_message_html .= "<a href=\"$gst_url_validation?alea=$pst_ins_alea&amp;idf_agc=$pst_ins_idf_agc&amp;idf_prov=$int_idf_prov\">$gst_url_validation?alea=$pst_ins_alea&amp;idf_agc=$pst_ins_idf_agc&amp;idf_prov=$int_idf_prov</a>";
   $a_time = localtime();
   if ($a_time[4]>5)
   {
@@ -185,23 +183,12 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   }
   $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ;
   $st_message_html .= "\n\n Les responsables $st_prefixe_asso".SIGLE_ASSO;
-  $st_message_html = nl2br($st_message_html);
-  $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
-	$st_message = 'This is a multi-part message in MIME format.'."\n\n"; 
-  $st_message .= '--'.$frontiere."\n";
-  $st_message .= 'Content-Type: text/plain; charset="cp1252"'."\n";
-  $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-  $st_message .= $st_message_texte."\r\n";
-  $st_message .= '--'.$frontiere."\r\n";
-  $st_message .= 'Content-Type: text/html; charset="cp1252"'."\n";
-  $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-  $st_message .= $st_message_html."\r\n";
-  $st_message .= '--'.$frontiere."--\r\n"; 
-  return mail($pst_ins_email_perso, $sujet, $st_message, $headers);
+  $st_message_html = nl2br($st_message_html); 
+  return mail($pst_ins_email_perso, $sujet, $st_message_html, $st_entete);
 }
 
 /**
- * Affiche de la table d'édition
+ * Affiche de la table d'Ã©dition
  
  * @param string $pst_ins_date     uniquement en validation sur l'enregistrement
  * @param string $pst_ins_nom
@@ -233,7 +220,7 @@ function menu_edition($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_adr
    print("<input type=text maxlength=30 size=20 name=prenom id=prenom value=\"$pst_ins_prenom\" class=\"form-control\">");
    print('</div></div>');
    print('<div class="form-group row">');
-   print("<label for=\"idf_agc\" class=\"col-md-4 col-form-label control-label\">Num&eacute;ro ".SIGLE_ASSO." (si déj&agrave; adh&eacute;rent)</label>");
+   print("<label for=\"idf_agc\" class=\"col-md-4 col-form-label control-label\">Num&eacute;ro ".SIGLE_ASSO." (si d&eacute;j&agrave; adh&eacute;rent)</label>");
    print('<div class="col-md-8">');
    print("<input type=text maxlength=10 size=10 name=idf_agc value=\"$pst_ins_idf_agc\" class=\"form-control\">");
    print('</div></div>');
@@ -316,7 +303,7 @@ function menu_edition($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_adr
 }
 
 
-/** Affiche le menu d'ajout d'un adhérent
+/** Affiche le menu d'ajout d'un adhÃ©rent
  */ 
 function saisie_adherent($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_adr2, $pst_ins_cp, $pst_ins_commune, $pst_ins_pays,
                       $pst_ins_email_perso, $pst_ins_site_web, $pst_ins_telephone, $pst_ins_cache, $pst_ins_idf_agc)
@@ -341,19 +328,19 @@ function saisie_adherent($pst_ins_nom, $pst_ins_prenom, $pst_ins_adr1, $pst_ins_
 }
 
 /**
- * Met à jour l'inscription dans table temporaire
+ * Met Ã  jour l'inscription dans table temporaire
  * @param string $pst_ins_date Date d'inscription
- * @param string $pst_ins_nom  Nom de l'adhérent
- * @param string $pst_ins_prenom Prénom de l'adhérent
+ * @param string $pst_ins_nom  Nom de l'adhÃ©rent
+ * @param string $pst_ins_prenom PrÃ©nom de l'adhÃ©rent
  * @param string $pst_ins_adr1   Ligne Adresse 1
  * @param string $pst_ins_adr2   Ligne Adresse 2
  * @param string $pst_ins_cp     Code Postal
  * @param string $pst_ins_commune  Commune
  * @param string $pst_ins_pays    Pays
- * @param string $pst_ins_email_perso Email adhérent
+ * @param string $pst_ins_email_perso Email adhÃ©rent
  * @param string $pst_ins_site_web Site Web
- * @param string $pst_ins_telephone Téléphone
- * @param string $pst_ins_cache   Confidentialité (O|N)
+ * @param string $pst_ins_telephone TÃ©lÃ©phone
+ * @param string $pst_ins_cache   ConfidentialitÃ© (O|N)
  * @param string $pst_ins_idf_agc Identifiant AGC
  */ 
 function preinscrit_adherent($pst_ins_date,$pst_ins_nom,$pst_ins_prenom,$pst_ins_adr1,$pst_ins_adr2,$pst_ins_cp,$pst_ins_commune,$pst_ins_pays,$pst_ins_email_perso,$pst_ins_site_web,$pst_ins_telephone,$pst_ins_cache,$pst_ins_idf_agc,$pst_ins_alea)
@@ -361,14 +348,20 @@ function preinscrit_adherent($pst_ins_date,$pst_ins_nom,$pst_ins_prenom,$pst_ins
    global $connexionBD;    	  
 	 $pst_ins_valid = "0";
    
-   if (strlen($pst_ins_telephone)==10)         
+   if (strlen($pst_ins_telephone)==10)	   
    $pst_ins_telephone = wordwrap($pst_ins_telephone,2,' ',true);
-  $connexionBD->initialise_params(array(':ins_date'=>$pst_ins_date,':nom'=>$pst_ins_nom,':prenom'=>$pst_ins_prenom,':adr1'=>$pst_ins_adr1,':adr2'=>$pst_ins_adr2,':ins_pays'=>$pst_ins_pays,':ins_cp'=>$pst_ins_cp,':ins_commune'=>$pst_ins_commune,':ins_telephone'=>$pst_ins_telephone,':ins_email_perso'=>$pst_ins_email_perso,':ins_site_web'=>$pst_ins_site_web,':ins_cache'=>$pst_ins_cache,':ins_idf_agc'=>$pst_ins_idf_agc,':ins_alea'=>$pst_ins_alea,':ins_valid'=>$pst_ins_valid));
+   $pst_ins_nom=utf8_vers_cp1252($pst_ins_nom);
+   $pst_ins_prenom=utf8_vers_cp1252($pst_ins_prenom);
+   $pst_ins_adr1=utf8_vers_cp1252($pst_ins_adr1);
+   $pst_ins_adr2=utf8_vers_cp1252($pst_ins_adr2);   
+   $pst_ins_commune=utf8_vers_cp1252($pst_ins_commune);
+   $pst_ins_pays=utf8_vers_cp1252($pst_ins_pays);
+	$connexionBD->initialise_params(array(':ins_date'=>$pst_ins_date,':nom'=>$pst_ins_nom,':prenom'=>$pst_ins_prenom,':adr1'=>$pst_ins_adr1,':adr2'=>$pst_ins_adr2,':ins_pays'=>$pst_ins_pays,':ins_cp'=>$pst_ins_cp,':ins_commune'=>$pst_ins_commune,':ins_telephone'=>$pst_ins_telephone,':ins_email_perso'=>$pst_ins_email_perso,':ins_site_web'=>$pst_ins_site_web,':ins_cache'=>$pst_ins_cache,':ins_idf_agc'=>$pst_ins_idf_agc,':ins_alea'=>$pst_ins_alea,':ins_valid'=>$pst_ins_valid));
      $connexionBD->execute_requete("insert into inscription_prov(ins_date, ins_nom, ins_prenom, ins_adr1, ins_adr2, ins_cp, ins_commune, ins_pays, ins_email_perso, ins_site_web, ins_telephone, ins_cache, ins_idf_agc, ins_alea, ins_valid,ins_type) values(:ins_date, :nom, :prenom, :adr1, :adr2, :ins_cp, :ins_commune, :ins_pays,:ins_email_perso, :ins_site_web, :ins_telephone, :ins_cache, :ins_idf_agc, :ins_alea, :ins_valid,'".TYPE_INSCRIPTION."')");
 } 
  
 /*---------------------------------------------------------------------------     
-  Démarrage du programme
+  DÃ©marrage du programme
   ---------------------------------------------------------------------------*/
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);

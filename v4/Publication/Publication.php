@@ -1,5 +1,4 @@
 <?php
-//26-09 
 require_once '../Commun/config.php';
 require_once '../Commun/constantes.php';
 require_once('../Commun/Identification.php');
@@ -14,7 +13,7 @@ $gst_repertoire_publication = $_SERVER['DOCUMENT_ROOT'].'/v4/Publication/telecha
 print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 print('<meta http-equiv="content-language" content="fr">');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -377,8 +376,8 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   $a_commune_personne=$pconnexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
   $a_type_acte=$pconnexionBD->sql_select_multiple_par_idf("select idf, nom,sigle_nimegue from type_acte");
-  $a_conjoint_h=$pconnexionBD->liste_valeur_par_clef("select idf_epoux, idf_epouse from `union` join `personne` on (idf_epouse=idf) where idf_commune=$pi_idf_commune_acte and idf_source=$pi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.") and idf_type_presence=".IDF_PRESENCE_EXCJT);
-  $a_conjoint_f=$pconnexionBD->liste_valeur_par_clef("select idf_epouse, idf_epoux from `union` join `personne` on (idf_epoux=idf) where idf_commune=$pi_idf_commune_acte and idf_source=$pi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.") and idf_type_presence=".IDF_PRESENCE_EXCJT);
+  $a_conjoint_h=$pconnexionBD->liste_valeur_par_clef("select idf_epoux, idf_epouse from `union` join `personne` on (idf_epouse=idf) where idf_commune=$pi_idf_commune_acte and idf_source=$pi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENSEMENT.") and idf_type_presence=".IDF_PRESENCE_EXCJT);
+  $a_conjoint_f=$pconnexionBD->liste_valeur_par_clef("select idf_epouse, idf_epoux from `union` join `personne` on (idf_epoux=idf) where idf_commune=$pi_idf_commune_acte and idf_source=$pi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENSEMENT.") and idf_type_presence=".IDF_PRESENCE_EXCJT);
   foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
   {
     $a_champs = array();
@@ -540,7 +539,7 @@ switch($gst_mode)
 	       print ('<label for="idf_type_acte" class="col-form-label col-md-1">Type d\'acte</label>');
 	       print ('<div class="col-md-2">');
 	        print ('<select name="idf_type_acte" id="idf_type_acte" class="form-control">');
-	         print (chaine_select_options($gc_idf_type_acte,$ga_types_nimegue));
+	         print (chaine_select_options($gc_idf_type_acte,$ga_types_nimegue,false));
 	        print ('</select>');
 	       print ('</div>');
         print ('</div>');

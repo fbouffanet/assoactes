@@ -417,7 +417,7 @@ switch ($gst_mode)
     {
        $st_sujet = "Vitrine TDM - Trop de connexions depuis $gst_adresse_ip";
        $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
-       $st_entete .= 'Content-type: text/html; charset=cp1252' . "\r\n";
+       $st_entete .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
        $st_entete .= "From: BASE ".SIGLE_ASSO." <".EMAIL_INFOASSO.">\r\n";
        $st_texte = "L'adresse ip $gst_adresse_ip a fait $i_nb_cnx demandes en 5 minutes et a été temporairement bloquée<br>";
        $st_texte = "Voir les logs dans <a href=\"$gst_url_site/logs/$gst_fichier_log\">$gst_url_site/logs/$gst_fichier_log</a><br>";

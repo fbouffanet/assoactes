@@ -565,7 +565,7 @@ public function refuse($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur
      if (!empty($this -> st_email_demandeur))
          {
         $st_entete = 'MIME-Version: 1.0' . "\r\n";
-         $st_entete .= 'Content-type: text/html; charset=cp1252' . "\r\n";
+         $st_entete .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
          $st_entete .= "From: $pst_prenom_valideur $pst_nom_valideur <$pst_email_valideur>\n";
          $st_entete .= "Bcc: $pst_prenom_valideur $pst_nom_valideur <$pst_email_valideur>\n";
          $st_entete .= "Return-Path: $pst_email_valideur\n";
@@ -621,7 +621,7 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
      $st_requete = sprintf("update modification_acte set idf_valideur=%d,date_validation=now(),statut='A' where idf=%d", $pi_idf_valideur, $this -> i_idf);
      $this -> connexionBD -> execute_requete($st_requete);
      $st_entete = 'MIME-Version: 1.0' . "\r\n";
-     $st_entete .= 'Content-type: text/html; charset=cp1252' . "\r\n"; 
+     $st_entete .= 'Content-type: text/html; charset=UTF-8' . "\r\n"; 
      $st_entete .= "From: $pst_prenom_valideur $pst_nom_valideur <$pst_email_valideur>\n";
      $st_entete .= "Bcc: $pst_prenom_valideur $pst_nom_valideur <$pst_email_valideur>\n";
      $st_entete .= "Return-Path: $pst_email_valideur\n";

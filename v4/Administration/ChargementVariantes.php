@@ -21,7 +21,7 @@ require_once('../Commun/phonex.cls.php');
 */
 function sans_accents($pst_chaine)
 {
-    $st_chaine = htmlentities($pst_chaine, ENT_NOQUOTES, 'cp1252');
+    $st_chaine = htmlentities($pst_chaine, ENT_NOQUOTES, 'UTF-8');
     
     $st_chaine = preg_replace('#&([A-za-z])(?:acute|cedil|circ|grave|orn|ring|slash|th|tilde|uml);#', '\1', $st_chaine);
     $st_chaine = preg_replace('#&([A-za-z]{2})(?:lig);#', '\1', $st_chaine); // pour les ligatures e.g. '&oelig;'

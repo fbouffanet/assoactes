@@ -163,7 +163,7 @@ if (isset($gi_idf_adherent ))
         foreach ($a_ddes_paroisses as $a_ligne)
         {
           list($st_paroisse,$i_idf_paroisse,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
-          print(sprintf("<tr><td>%s</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",$st_paroisse,$i_total,ddes_communes($i_nb_nai,$i_idf_paroisse,IDF_NAISSANCE),ddes_communes($i_nb_mar,$i_idf_paroisse,IDF_MARIAGE),ddes_communes($i_nb_dec,$i_idf_paroisse,IDF_DECES),ddes_communes($i_nb_cm,$i_idf_paroisse,IDF_CM)));
+          print(sprintf("<tr><td>%s</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",cp1252_vers_utf8($st_paroisse),$i_total,ddes_communes($i_nb_nai,$i_idf_paroisse,IDF_NAISSANCE),ddes_communes($i_nb_mar,$i_idf_paroisse,IDF_MARIAGE),ddes_communes($i_nb_dec,$i_idf_paroisse,IDF_DECES),ddes_communes($i_nb_cm,$i_idf_paroisse,IDF_CM)));
         }
         print("</table>\n");
       }                                                                         
@@ -185,7 +185,7 @@ if (isset($gi_idf_adherent ))
         foreach ($a_ddes_cantons as $a_ligne)
         {
           list($st_canton,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm) = $a_ligne;
-          print(sprintf("<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td></tr>\n",$st_canton,$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
+          print(sprintf("<tr><td>%s</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td><td>%d</td></tr>\n",cp1252_vers_utf8($st_canton),$i_total,$i_nb_nai,$i_nb_mar,$i_nb_dec,$i_nb_cm));
         }
         print("</table>\n");
       }
@@ -210,7 +210,7 @@ if (isset($gi_idf_adherent ))
        print("<div class=\"panel-heading\">Demandes de l'adh&eacute;rent ".cp1252_vers_utf8($st_adherent)."</div>");
        print('<div class="panel-body">');
 	   print('<div class="panel panel-info">');
-       print("<div class=\"panel-heading\">$st_type_acte &agrave; $st_commune</div>");
+       print("<div class=\"panel-heading\">".cp1252_vers_utf8($st_type_acte)." &agrave; ".cp1252_vers_utf8($st_commune)."</div>");
        print('<div class="panel-body">');
       $gi_num_page = empty($_POST['num_page_ddes_adht']) ?  $i_session_num_page: (integer) $_POST['num_page_ddes_adht'];
        $_SESSION['mode']=$gst_mode;
@@ -285,7 +285,7 @@ if (isset($gi_idf_adherent ))
        print("<div class=\"panel-heading\">Demandes de l'adh&eacute;rent ".cp1252_vers_utf8($st_adherent)."</div>");
        print('<div class="panel-body">');
 	   print('<div class="panel panel-info">');
-       print(sprintf("<div class=\"panel-heading\">%s en %0.2d/%0.4d</div>",$st_type_acte,$i_mois,$i_annee));
+       print(sprintf("<div class=\"panel-heading\">%s en %0.2d/%0.4d</div>",cp1252_vers_utf8($st_type_acte),$i_mois,$i_annee));
        print('<div class="panel-body">');
        $gi_num_page = empty($_POST['num_page_ddes_adht']) ?  $i_session_num_page: (integer) $_POST['num_page_ddes_adht'];
        $_SESSION['mode']=$gst_mode;

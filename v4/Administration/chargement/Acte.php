@@ -587,13 +587,13 @@ class Acte {
 		$st_chaine_date_rep .= '<div class="col-xs-4">';
          $st_chaine_date_rep .= ' <select name="mois_rep" id="mois_rep" class="form-control">';
          $st_chaine_date_rep .= '<option value=""></option>';
-         $st_chaine_date_rep .= chaine_select_options($i_mois_rep, $ga_mois_revolutionnaires);
+         $st_chaine_date_rep .= chaine_select_options($i_mois_rep, $ga_mois_revolutionnaires,false);
          $st_chaine_date_rep .= '</select>';
 		 $st_chaine_date_rep .= '</div>';
          $st_chaine_date_rep .= '<div class="col-xs-2">';
 		 $st_chaine_date_rep .= ' <select name="annee_rep" id="annee_rep" class="form-control">';
          $st_chaine_date_rep .= '<option value=""></option>';		 
-         $st_chaine_date_rep .= chaine_select_options($i_annee_rep, $ga_annees_revolutionnaires);
+         $st_chaine_date_rep .= chaine_select_options($i_annee_rep, $ga_annees_revolutionnaires,false);
          $st_chaine_date_rep .= '</select>';
 		 $st_chaine_date_rep .= '</div>';
          $st_chaine_date_rep .= "<button type=\"button\" class=\"maj_date_rep btn btn-primary col-xs-4\" data-jour_rep=\"#jour_rep\" data-mois_rep=\"#mois_rep\" data-annee_rep=\"#annee_rep\" data-date_greg=\"#date\" data-date_rep=\"#date_rep\" data-cmt=\"\" data-id_fenetre=\"#popup_date_rep_acte\">Maj date</button></div>";
@@ -679,7 +679,7 @@ class Acte {
     
     {
          $st_chaine = '';
-         $st_chaine .= sprintf("%s à %s", $this -> st_type_acte, $this -> st_commune);
+         $st_chaine .= sprintf("%s à %s", self::cp1252_vers_utf8($this -> st_type_acte), self::cp1252_vers_utf8($this -> st_commune));
 		 $st_chaine .= empty($this -> i_jour) && empty($this -> i_mois) && !empty($this -> i_annee) ? sprintf(" en %s", $this -> i_annee) : sprintf(" le %s", $this -> st_date);
          if ($this -> st_date_rep != '')
              $st_chaine .= sprintf(" (%s)", $this -> st_date_rep);
@@ -718,7 +718,7 @@ class Acte {
             $i_nb_lignes += $o_pers -> getNbLignes();
              } 
 			$this -> i_nb_lignes = $i_nb_lignes;
-			return self::cp1252_vers_utf8($st_chaine);
+			return $st_chaine;
          } 
          
     public function versTableauHTML()
