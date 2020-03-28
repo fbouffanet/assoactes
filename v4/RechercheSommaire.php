@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 
 //http://127.0.0.1:8888/Recherche_Sommaire.php
 /*
@@ -8,8 +7,7 @@ Programme de recherche des éléments du sommaire des bulletins AGC
 PL 06/13
 */
 
-
-require_once 'Commun/config.php';
+require_once('Commun/Identification.php');
 require_once('Commun/constantes.php');
 require_once 'Commun/commun.php';
 require_once('Commun/ConnexionBD.php');
@@ -98,7 +96,7 @@ function Affiche_noms($type, $sconnexionBD)
    if ($type == "RUB")
 	   $st_requete = "select numero, moisannee, rubrique from `sommaire` where numero = $numero";
 	else
-      $st_requete = "select numero, moisannee, rubrique from `sommaire` where auteur like '%$auteur%' and type = '$type'";
+      $st_requete = "select numero, moisannee, rubrique from `sommaire` where auteur like '%".utf8_vers_cp1252($auteur)."%' and type = '$type'";
 
      print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    $_SESSION['num_page_som'] = $gi_num_page_cour; 
@@ -147,7 +145,7 @@ function Select_nom($type,$connexionBD)
 	   $a_auteurs=$connexionBD->sql_select("select distinct det_auteur FROM detail_nom where det_type = '$type' order by det_auteur");		
   foreach ($a_auteurs as $st_auteur)
    {
-	   $chaine_options .= "<option >$st_auteur</option>\n";
+	   $chaine_options .= "<option >".cp1252_vers_utf8($st_auteur)."</option>\n";
    }
    return $chaine_options;
 }
