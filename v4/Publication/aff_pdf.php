@@ -1,5 +1,4 @@
 <?php
-
 require_once '../Commun/config.php';
 require_once '../Commun/constantes.php';
 require_once('../Commun/Identification.php');
@@ -112,16 +111,15 @@ function charge_csv(){
   data69 text COLLATE latin1_general_ci NOT NULL,
   data70 text COLLATE latin1_general_ci NOT NULL
 ) ENGINE=CSV DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci";
-global $connexionBD; //$connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
+global $connexionBD; 
 $connexionBD->execute_requete($sqlcsv);
 
 	$st_tmp_file = $_SERVER['DOCUMENT_ROOT'].'/v4/Publication/tmp/publication.txt';
-  // $st_tmp_file="/tmp/publication.txt";
-
+  
    if (!copy($st_export_nimv3, $st_tmp_file))
        die("Impossible de copier $st_export_nimv3 en $st_tmp_file\n");
 
-  $connexionBD->execute_requete("LOAD DATA INFILE '$st_tmp_file'REPLACE INTO TABLE tmp_publication FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n'");// Je recharge la table publication avec le CSV
+  $connexionBD->execute_requete("LOAD DATA INFILE '$st_tmp_file'  REPLACE INTO TABLE tmp_publication CHARACTER SET latin1 FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n'");// Je recharge la table publication avec le CSV
   print 'fichier chargé';
    unlink($st_tmp_file);
 

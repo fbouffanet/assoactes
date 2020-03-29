@@ -6,7 +6,7 @@ require_once('../Commun/ConnexionBD.php');
 
 print("<head>");
 print('<link rel="shortcut icon" href="../images/favicon.ico">');
-print('<meta http-equiv="Content-Type" content="text/html; charset=cp1252" />');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />');
 print('<meta http-equiv="content-language" content="fr" /> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -29,29 +29,29 @@ $connexionBD->ferme();
 
 <div class= "container-fluid" >
 
-<h1><p class="bg-info">Actes notariés en vrac</p></h1>
+<h1><p class="bg-info">Actes notari&eacutes en vrac</p></h1>
 <h2 style="text-align:left">Acte divers dans les <a href="FabriceBouffanet.php">Cantons de Mansle et St-Amant de Boixe</a></h2>
 <dir>
-<li>Actes notariés relevés par <a href="mailto:fbouffanet@yahoo.fr">Fabrice BOUFFANET</a></li>
+<li>Actes notari&eacutes relev&eacutes par <a href="mailto:fbouffanet@yahoo.fr">Fabrice BOUFFANET</a></li>
 </dir>
 <h2 style="text-align:left">Acte divers &agrave; <a href="Jean-LouisDars.php">Angoul&ecirc;me </a></h2>
 <dir>
-<li>Actes notariés relevés par <a href="mailto:jldars@orange.fr">Jean-Louis DARS</a></li>
+<li>Actes notari&eacutes relev&eacutes par <a href="mailto:jldars@orange.fr">Jean-Louis DARS</a></li>
 </dir>
 <h2 style="text-align:left">Acte divers &agrave; <a href="AntoineDorcier.php">La Rochefoucauld </a></h2>
 <dir>
-<li>Actes notariés relevés par <a href="mailto:antoine.dorcier@gmail.com">Antoine DORCIER</a></li>
+<li>Actes notari&eacutes relev&eacutes par <a href="mailto:antoine.dorcier@gmail.com">Antoine DORCIER</a></li>
 </dir>
 <h2 style="text-align:left">Acte divers &agrave; Rougnac, Dignac, Villebois <a href="PhilippeNexon.php">Dereix et Menut</a></h2>
 <dir>
-<li> Actes notariés relevés par <a href="mailto:pnexon@free.fr">Philippe NEXON</a></li>
+<li> Actes notari&eacutes relev&eacutes par <a href="mailto:pnexon@free.fr">Philippe NEXON</a></li>
 </dir>
-<h2 align=left style="text-align:left">Actes notariés de la <a href="CM_CharenteMaritime.php">Charente Maritime</a></h2>
-<h2 align=left style="text-align:left">Ils se sont mariés en <a href="Migrants.php">Indre & Loire</a></h2>
+<h2 align=left style="text-align:left">Actes notari&eacutes de la <a href="CM_CharenteMaritime.php">Charente Maritime</a></h2>
+<h2 align=left style="text-align:left">Ils se sont mari&eacutes en <a href="Migrants.php">Indre & Loire</a></h2>
 <h1><p class="bg-info">Recensement</p></h1>
-<h2 style="text-align:left">Recensement d’Angoulême 1936 <a href="1936 _Ang_1er_canton.php">1936 _Ang_1er_canton</a></h2>
+<h2 style="text-align:left">Recensement d'Angoul&ecircme 1936 <a href="1936 _Ang_1er_canton.php">1936 _Ang_1er_canton</a></h2>
 <dir>
-<li>Recensement relevé par Jean Patrick BAZILLE</li>
+<li>Recensement relev&eacute par Jean Patrick BAZILLE</li>
 </dir>
 </div>
 </div>
