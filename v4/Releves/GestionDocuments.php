@@ -212,7 +212,7 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
 		$gc_initiale='%';
    
 	$pst_commune_a_chercher = str_replace('*','%',$pst_commune_a_chercher);  
-	$st_requete = ($pst_commune_a_chercher=='') ? "select p.idf,ca.nom,p.fourchette, p.nature_acte, p.support, p.collection from `documents` p join `commune_acte` ca on (p.id_commune=ca.idf ) where ca.nom like '".utf8_vers_cp1252($gc_initiale)."%' order by ca.nom,p.fourchette,p.support" : " select p.idf,ca.nom,p.fourchette, p.nature_acte, p.support, p.collection  from `documents` p join `commune_acte` ca on (p.id_commune=ca.idf ) where ca.nom like '$pst_commune_a_chercher' order by ca.nom,p.fourchette,p.support";
+	$st_requete = ($pst_commune_a_chercher=='') ? "select p.idf,ca.nom,p.fourchette, p.nature_acte, p.support, p.collection from `documents` p join `commune_acte` ca on (p.id_commune=ca.idf ) where ca.nom like '".utf8_vers_cp1252($gc_initiale)."%' order by ca.nom,p.fourchette,p.support" : " select p.idf,ca.nom,p.fourchette, p.nature_acte, p.support, p.collection  from `documents` p join `commune_acte` ca on (p.id_commune=ca.idf ) where ca.nom like '".utf8_vers_cp1252($pst_commune_a_chercher)."' order by ca.nom,p.fourchette,p.support";
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
 	print("<input type=hidden name=mode value=\"LISTE\">");
     print('<div class="form-row col-md-12">');	
