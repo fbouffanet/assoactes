@@ -5,7 +5,7 @@ require_once('../Commun/constantes.php');
 require_once('../Commun/ConnexionBD.php');
 
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=cp1252" />');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />');
 print('<meta http-equiv="content-language" content="fr" /> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -26,10 +26,10 @@ $connexionBD->ferme();
 <h1 align =center>Actes notari&eacute; relev&eacute;s par M Jean-Louis DARS</h1>
 <div align=center>
    
-   La colonne "Classement" comporte la cote de la liasse du notaire aux AD &agrave; laquelle s'ajoute un num&eacute;ro d'acte personnel (par exemple: 2E1112-130 signifie cote 2E1112, numéro d'acte personnel 130...).
+   La colonne "Classement" comporte la cote de la liasse du notaire aux AD &agrave; laquelle s'ajoute un num&eacute;ro d'acte personnel (par exemple: 2E1112-130 signifie cote 2E1112, num&eacutero d'acte personnel 130...).
 </div>   
   <ul>
-  <li><a href=#ancetres>Actes concernant les ancêtres directs</a></li>
+  <li><a href=#ancetres>Actes concernant les anc&ecirctres directs</a></li>
   <li><a href=#cousins>Actes concernant les cousins</a></li>
   </ul> 
 <div align=center>  
@@ -38,7 +38,7 @@ $connexionBD->ferme();
   
   <table  border=1 cellpadding=0 cellspacing=0 width=1032>
     <tr class=xl2715333 height=17> 
-      <th height=17 class=xl2515333>Année</th>
+      <th height=17 class=xl2515333>Ann&eacutee</th>
       <th class=xl2615333>Date</th>
       <th class=xl2515333>Notaire</th>
       <th class=xl2515333>Classement</th>
@@ -54,7 +54,7 @@ $connexionBD->ferme();
   x:num="38244">14-sept</td>
       <td >Porcheron</td>
       <td >2E1088-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >ARONDEAU Marie</td>
       <td  align=right x:num>748</td>
@@ -75,12 +75,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
       <td  align=right
-  x:num="39691">31-août</td>
+  x:num="39691">31-ao&ucirct</td>
       <td >Micheau</td>
       <td >2E1023-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Plainte</td>
-      <td >AUBIN Léonard</td>
+      <td >AUBIN L&eacuteonard</td>
       <td  align=right x:num>1136</td>
       <td >et Catherine GALLOIS (coups et blessures sur Ant. ROY)</td>
     </tr>
@@ -92,21 +92,21 @@ $connexionBD->ferme();
       <td >2E411-20</td>
       <td >Lhoumeau</td>
       <td >Partage</td>
-      <td >AUBIN Léonard</td>
+      <td >AUBIN L&eacuteonard</td>
       <td  align=right x:num>955</td>
       <td class=xl3115333>et ses enfants. A prendre la suite des photos</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1714</td>
       <td  align=right
-  x:num="38352">31-déc</td>
-      <td >Mancié</td>
+  x:num="38352">31-d&eacutec</td>
+      <td >Manci&eacute</td>
       <td >2E944-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >AUBIN Marguerite</td>
       <td  align=right x:num>733</td>
-      <td >(Vve J. JOUANNET) à Mic. JOUANNET, Menaud ROY</td>
+      <td >(Vve J. JOUANNET) &agrave Mic. JOUANNET, Menaud ROY</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1710</td>
@@ -114,11 +114,11 @@ $connexionBD->ferme();
   x:num="38424">13-mars</td>
       <td >Micheau</td>
       <td >2E1034-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >AUBOIN Catherine</td>
       <td  align=right x:num>823</td>
-      <td >Jean DOMMET, Léonard AUBOIN et Frse DOMMET…</td>
+      <td >Jean DOMMET, L&eacuteonard AUBOIN et Frse DOMMET…</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1710</td>
@@ -126,8 +126,8 @@ $connexionBD->ferme();
   x:num="38635">10-oct</td>
       <td >Micheau</td>
       <td >2E1034-20</td>
-      <td >Angoulême</td>
-      <td >Procès verbal</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves verbal</td>
       <td >AUBOIN Catherine</td>
       <td  align=right x:num>823</td>
       <td >de Martial CLOCHARD</td>
@@ -136,21 +136,21 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1675</td>
       <td  align=right
   x:num="38602">7-sept</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E808-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >AUBOIN Jean</td>
       <td  align=right x:num>869</td>
-      <td >(fils de Léonard et Frçe. DOMMET) à Jean GUERIN</td>
+      <td >(fils de L&eacuteonard et Fr&ccedile. DOMMET) &agrave Jean GUERIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
       <td  align=right
-  x:num="38750">2-févr</td>
+  x:num="38750">2-f&eacutevr</td>
       <td >Robin</td>
       <td >2E1112-130</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >AUBOIN Jean</td>
       <td  align=right x:num>965</td>
@@ -162,19 +162,19 @@ $connexionBD->ferme();
   x:num="39032">11-nov</td>
       <td >Robin</td>
       <td >2E1112-220</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >AUBOIN Jean</td>
       <td  align=right x:num>966</td>
-      <td >et Jeanne MOQUET à Pierre DULAC le jeune</td>
+      <td >et Jeanne MOQUET &agrave Pierre DULAC le jeune</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
       <td  align=right
   x:num="38631">6-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E936-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >AUBOIN Jean</td>
       <td  align=right x:num>779</td>
@@ -185,24 +185,24 @@ $connexionBD->ferme();
       <td class=xl3315333 align=right x:num="40370">11-juil</td>
       <td >Delacheze</td>
       <td >2E440-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >AUBOIN Léonard</td>
+      <td >AUBOIN L&eacuteonard</td>
       <td  align=right x:num>1485</td>
-      <td >et Françoise DOUMET</td>
+      <td >et Fran&ccediloise DOUMET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1658</td>
       <td  align=right x:num="39588">20-mai</td>
       <td >Guyot</td>
       <td >2E781-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Afferme</td>
-      <td >AUBOIN Léonard</td>
+      <td >AUBOIN L&eacuteonard</td>
       <td  align=right x:num>1174</td>
       <td 
-  x:str="d'une maison (et un jeune goret) à Antoine CHARRON ">d'une maison (et 
-        un jeune goret) à Antoine CHARRON </td>
+  x:str="d'une maison (et un jeune goret) &agrave Antoine CHARRON ">d'une maison (et 
+        un jeune goret) &agrave Antoine CHARRON </td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1658</td>
@@ -210,20 +210,20 @@ $connexionBD->ferme();
   x:num="39706">15-sept</td>
       <td >Guyot</td>
       <td >2E781-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Afferme</td>
-      <td >AUBOIN Léonard</td>
+      <td >AUBOIN L&eacuteonard</td>
       <td  align=right x:num>1174</td>
-      <td >d'une maison à Louis BOURGET</td>
+      <td >d'une maison &agrave Louis BOURGET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1658</td>
       <td class=xl3315333 align=right x:num="40366">7-juil</td>
       <td >Delacheze</td>
       <td >2E441-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >AUBOIN Léonard</td>
+      <td >AUBOIN L&eacuteonard</td>
       <td  align=right x:num>1485</td>
       <td >et Jeanne GABORIAUD</td>
     </tr>
@@ -232,11 +232,11 @@ $connexionBD->ferme();
       <td  align=right x:num="39608">9-juin</td>
       <td >Mamain</td>
       <td >2E925-20</td>
-      <td >Angoulême</td>
-      <td >Procès verbal</td>
-      <td >AUBOIN Léonard</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves verbal</td>
+      <td >AUBOIN L&eacuteonard</td>
       <td  align=right x:num>1141</td>
-      <td >contre Pierre IRVOIX (histoire de bœufs…)</td>
+      <td >contre Pierre IRVOIX (histoire de b&oeligufs…)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
@@ -244,9 +244,9 @@ $connexionBD->ferme();
   x:num="38482">10-mai</td>
       <td >Peuple</td>
       <td >2E1065-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Echange</td>
-      <td >AUBOIN Léonard</td>
+      <td >AUBOIN L&eacuteonard</td>
       <td  align=right x:num>839</td>
       <td >avec Denis PAILHON</td>
     </tr>
@@ -258,7 +258,7 @@ $connexionBD->ferme();
       <td >2E308-20</td>
       <td >Lhoumeau</td>
       <td >Arrentement</td>
-      <td >AUBOIN Léonard</td>
+      <td >AUBOIN L&eacuteonard</td>
       <td  align=right x:num>822</td>
       <td >de Marie MAZURIER veuve de Jean BALANGE</td>
     </tr>
@@ -266,25 +266,25 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1669</td>
       <td  align=right
   x:num="38555">22-juil</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E934-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >AUBOIN Léonard</td>
+      <td >AUBOIN L&eacuteonard</td>
       <td class=xl3415333 x:num>858</td>
       <td >de regain et pacage de Etienne BOIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1671</td>
       <td  align=right
-  x:num="39052">1-déc</td>
+  x:num="39052">1-d&eacutec</td>
       <td >Robin</td>
       <td >2E1111-290</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Contrat</td>
-      <td >AUBOIN Léonard</td>
+      <td >AUBOIN L&eacuteonard</td>
       <td  align=right x:num>962</td>
-      <td >et Hélie THOUARD avec Jehan MAIGNAN</td>
+      <td >et H&eacutelie THOUARD avec Jehan MAIGNAN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
@@ -292,19 +292,19 @@ $connexionBD->ferme();
   x:num="38631">6-oct</td>
       <td >Peuple</td>
       <td >2E1067-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sous-arrentement</td>
-      <td >AUBOIN Léonard</td>
+      <td >AUBOIN L&eacuteonard</td>
       <td  align=right x:num>840</td>
-      <td >et Jeanne GABORIT à Jean AUBOIN</td>
+      <td >et Jeanne GABORIT &agrave Jean AUBOIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1736</td>
       <td  align=right
   x:num="38563">30-juil</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E960-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >AUBOIN Marie</td>
       <td  align=right x:num>786</td>
@@ -314,9 +314,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1740</td>
       <td  align=right
   x:num="38494">22-mai</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E962-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >AUBOIN Marie</td>
       <td  align=right x:num>791</td>
@@ -326,36 +326,36 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1741</td>
       <td  align=right
   x:num="38156">18-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E964-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >AUBOIN Marie</td>
       <td  align=right x:num>744</td>
-      <td >à Pierre ROUHIER</td>
+      <td >&agrave Pierre ROUHIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1744</td>
       <td  align=right
   x:num="38475">3-mai</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E963-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >AUBOIN Marie</td>
       <td  align=right x:num>801</td>
-      <td >à Pierre COUPILLAUD</td>
+      <td >&agrave Pierre COUPILLAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1643</td>
       <td class=xl3315333 align=right x:num="40194">16-janv</td>
       <td >Micheau</td>
       <td >2E1012-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >AUDOUIN Jean</td>
       <td  align=right x:num>1483</td>
-      <td >et Françoise BOILEVIN</td>
+      <td >et Fran&ccediloise BOILEVIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1648</td>
@@ -363,23 +363,23 @@ $connexionBD->ferme();
   x:num="39879">7-mars</td>
       <td >Sicard</td>
       <td >2E1188-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Afferme</td>
       <td >AUDOUIN Jean</td>
       <td  align=right x:num>1377</td>
-      <td >et Françoise BOILEVIN: du moulin de la Tour Garnier</td>
+      <td >et Fran&ccediloise BOILEVIN: du moulin de la Tour Garnier</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
       <td  align=right x:num="38535">2-juil</td>
       <td >Peuple</td>
       <td >2E1064-200</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >AUDOUIN Jean</td>
       <td  align=right x:num>859</td>
       <td 
-  x:str="d'une pièce de pré de Denis BERTHON ">d'une pièce de pré de Denis BERTHON 
+  x:str="d'une pi&egravece de pr&eacute de Denis BERTHON ">d'une pi&egravece de pr&eacute de Denis BERTHON 
       </td>
     </tr>
     <tr height=17> 
@@ -388,11 +388,11 @@ $connexionBD->ferme();
   x:num="38532">29-juin</td>
       <td >Peuple</td>
       <td >2E1066-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >AUDOUIN Jean</td>
       <td  align=right x:num>839</td>
-      <td >et Frçe. BOILEVIN de André MOREAU (d'un moulin)</td>
+      <td >et Fr&ccedile. BOILEVIN de Andr&eacute MOREAU (d'un moulin)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1632</td>
@@ -415,18 +415,18 @@ $connexionBD->ferme();
       <td >Partage</td>
       <td >BALOTEAU Philippe</td>
       <td >&nbsp;</td>
-      <td >Donné par Fabrice Bouffanet</td>
+      <td >Donn&eacute par Fabrice Bouffanet</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
       <td  align=right x:num="38972">12-sept</td>
       <td >Robin</td>
       <td >2E1111-350</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >BARREAU Marie</td>
       <td  align=right x:num>962</td>
-      <td >après décès de Guillaume BASSET</td>
+      <td >apr&egraves d&eacutec&egraves de Guillaume BASSET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
@@ -434,7 +434,7 @@ $connexionBD->ferme();
   x:num="39711">20-sept</td>
       <td >Cladier</td>
       <td >2E360-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >BARREAU Marie</td>
       <td  align=right x:num>1155</td>
@@ -446,11 +446,11 @@ $connexionBD->ferme();
   x:num="39456">9-janv</td>
       <td >Cladier</td>
       <td >2E361-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >BARREAU Marie</td>
       <td  align=right x:num>1157</td>
-      <td >Jean GUYOT et François BASSET et Jeanne GUYOT</td>
+      <td >Jean GUYOT et Fran&ccedilois BASSET et Jeanne GUYOT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
@@ -458,11 +458,11 @@ $connexionBD->ferme();
   x:num="39472">25-janv</td>
       <td >Cladier</td>
       <td >2E361-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >BARREAU Marie</td>
       <td  align=right x:num>1157</td>
-      <td >après contrat du 2e mariage avec Jean GUYOT</td>
+      <td >apr&egraves contrat du 2e mariage avec Jean GUYOT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
@@ -470,7 +470,7 @@ $connexionBD->ferme();
   x:num="39013">23-oct</td>
       <td >Peuple</td>
       <td >2E1069-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >BARREAU Marie</td>
       <td  align=right x:num>749</td>
@@ -482,7 +482,7 @@ $connexionBD->ferme();
   x:num="38454">12-avr</td>
       <td >Peynaud</td>
       <td >2E1072-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Abandon</td>
       <td >BARREAU Marie</td>
       <td  align=right x:num>785</td>
@@ -494,7 +494,7 @@ $connexionBD->ferme();
   x:num="39448">1-janv</td>
       <td >Guyot</td>
       <td >2E778-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >BASSET Guillaume</td>
       <td  align=right x:num>1157</td>
@@ -503,14 +503,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1653</td>
       <td  align=right
-  x:num="39871">27-févr</td>
+  x:num="39871">27-f&eacutevr</td>
       <td >Gaignier</td>
       <td >2E583-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >BASSET Guillaume</td>
       <td  align=right x:num>1205</td>
-      <td >et Leonard SERIT à Jean BECHADE</td>
+      <td >et Leonard SERIT &agrave Jean BECHADE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1669</td>
@@ -518,7 +518,7 @@ $connexionBD->ferme();
   x:num="38789">13-mars</td>
       <td >Robin</td>
       <td >2E1111-210</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >BASSET Guillaume</td>
       <td  align=right x:num>962</td>
@@ -527,10 +527,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
       <td  align=right
-  x:num="38694">8-déc</td>
+  x:num="38694">8-d&eacutec</td>
       <td >Peynaud</td>
       <td >2E1071-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >BASSET Guillaume</td>
       <td  align=right x:num>782</td>
@@ -542,7 +542,7 @@ $connexionBD->ferme();
   x:num="38639">14-oct</td>
       <td >Peynaud</td>
       <td >2E1071-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >BASSET Guillaume</td>
       <td  align=right x:num>782</td>
@@ -555,27 +555,27 @@ $connexionBD->ferme();
       <td >Chauvin</td>
       <td >2E323-30</td>
       <td >Lhoumeau</td>
-      <td >Déclaration</td>
+      <td >D&eacuteclaration</td>
       <td >BENESTEAU Catherine</td>
       <td  align=right x:num>843</td>
-      <td >et Vincent MESNARD son fils (et Françoise sa fille)</td>
+      <td >et Vincent MESNARD son fils (et Fran&ccediloise sa fille)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1664</td>
       <td class=xl3515333 align=right
-  x:num="39790">08-déc</td>
+  x:num="39790">08-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5924-10</td>
       <td >Vaux-Rouillac</td>
       <td >Renonciation</td>
       <td >BENESTEAU Etienne</td>
       <td  align=right x:num>1170</td>
-      <td >de Berthomée GENTIS</td>
+      <td >de Berthom&eacutee GENTIS</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
       <td class=xl3515333 align=right
-  x:num="39803">21-déc</td>
+  x:num="39803">21-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5926-80</td>
       <td >Vaux-Rouillac</td>
@@ -594,7 +594,7 @@ $connexionBD->ferme();
       <td >Echange</td>
       <td >BENESTEAU Etienne</td>
       <td  align=right x:num>1164</td>
-      <td >de pièces de terre avec Michel GENTIS, de Mérignac</td>
+      <td >de pi&egraveces de terre avec Michel GENTIS, de M&eacuterignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
@@ -616,7 +616,7 @@ $connexionBD->ferme();
       <td >Echange</td>
       <td >BENESTEAU Pierre</td>
       <td  align=right x:num>1168</td>
-      <td >et Estienne son fils, de Mérignac</td>
+      <td >et Estienne son fils, de M&eacuterignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1662</td>
@@ -628,7 +628,7 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >BERNARD Marie</td>
       <td  align=right x:num>1169</td>
-      <td class=xl3115333>comme héritière de Marie JOUBERT fille de François</td>
+      <td class=xl3115333>comme h&eacuteriti&egravere de Marie JOUBERT fille de Fran&ccedilois</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
@@ -637,10 +637,10 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5930-110</td>
       <td >Vaux-Rouillac</td>
-      <td >Déclaration</td>
+      <td >D&eacuteclaration</td>
       <td >BERNARD Marie</td>
       <td  align=right x:num>1164</td>
-      <td >Prise et terre des Giraud, près Ste Catherine, Echallat</td>
+      <td >Prise et terre des Giraud, pr&egraves Ste Catherine, Echallat</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
@@ -649,10 +649,10 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5930-120</td>
       <td >Vaux-Rouillac</td>
-      <td >Déclaration</td>
+      <td >D&eacuteclaration</td>
       <td >BERNARD Perrine</td>
       <td  align=right x:num>1164</td>
-      <td >Prise et terre du Bois de la Pie, près Ste Catherine</td>
+      <td >Prise et terre du Bois de la Pie, pr&egraves Ste Catherine</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
@@ -664,7 +664,7 @@ $connexionBD->ferme();
       <td >Partage</td>
       <td >BERNARD Perrine</td>
       <td  align=right x:num>1163</td>
-      <td >veuve de François BOISDON et ses enfants</td>
+      <td >veuve de Fran&ccedilois BOISDON et ses enfants</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
@@ -676,12 +676,12 @@ $connexionBD->ferme();
       <td >Transaction</td>
       <td >BERNARD Perrine</td>
       <td  align=right x:num>1164</td>
-      <td >et Jean BOISDON son fils avec Isaïe DANJOU</td>
+      <td >et Jean BOISDON son fils avec Isa&iumle DANJOU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
       <td  align=right
-  x:num="39670">10-août</td>
+  x:num="39670">10-ao&ucirct</td>
       <td >Daniaud</td>
       <td >2E5932-200</td>
       <td >Vaux-Rouillac</td>
@@ -697,7 +697,7 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5933-140</td>
       <td >Vaux-Rouillac</td>
-      <td >Métairie</td>
+      <td >M&eacutetairie</td>
       <td >BERNARD Perrine</td>
       <td  align=right x:num>1165</td>
       <td >et Michel DELABROUSSE et Jean BOISDON</td>
@@ -705,7 +705,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
       <td class=xl3515333 align=right
-  x:num="39789">07-déc</td>
+  x:num="39789">07-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5933-170</td>
       <td >Vaux-Rouillac</td>
@@ -736,7 +736,7 @@ $connexionBD->ferme();
       <td >Rappel</td>
       <td >BERNARD Perrine</td>
       <td  align=right x:num>1165</td>
-      <td >à Jacques BOISDON son fils</td>
+      <td >&agrave Jacques BOISDON son fils</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
@@ -745,15 +745,15 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5935-220</td>
       <td >Vaux-Rouillac</td>
-      <td >Délaissement</td>
+      <td >D&eacutelaissement</td>
       <td >BERNARD Perrine</td>
       <td  align=right x:num>1167</td>
-      <td >de pièces de terre à Jean BOISDON le jeune son fils</td>
+      <td >de pi&egraveces de terre &agrave Jean BOISDON le jeune son fils</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1684</td>
       <td  align=right
-  x:num="39853">9-févr</td>
+  x:num="39853">9-f&eacutevr</td>
       <td >Petit</td>
       <td >2E5182-10</td>
       <td >Saint-Cybarde<span
@@ -768,7 +768,7 @@ $connexionBD->ferme();
       <td class=xl3315333 align=right x:num="40016">22-juil</td>
       <td >Audouin</td>
       <td >2E120-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >BERNARD Perrine</td>
       <td  align=right x:num>1341</td>
@@ -780,7 +780,7 @@ $connexionBD->ferme();
   x:num="40016">22-juil</td>
       <td >Audouin</td>
       <td >2E120-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >BERNARD Perrine</td>
       <td  align=right x:num>1341</td>
@@ -795,7 +795,7 @@ $connexionBD->ferme();
       <td >Partage</td>
       <td >BIARD Jean</td>
       <td  align=right x:num>971</td>
-      <td >avec ses frère et soeurs</td>
+      <td >avec ses fr&egravere et soeurs</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1677</td>
@@ -807,7 +807,7 @@ $connexionBD->ferme();
       <td >Inventaire</td>
       <td >BIARD Jean</td>
       <td  align=right x:num>971</td>
-      <td >après décès de Françoise GRELLET sa mère</td>
+      <td >apr&egraves d&eacutec&egraves de Fran&ccediloise GRELLET sa m&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1682</td>
@@ -827,7 +827,7 @@ $connexionBD->ferme();
   x:num="38528">25-juin</td>
       <td >Porcheron</td>
       <td >2E1089-200</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >BIARD Jean</td>
       <td  align=right x:num>837</td>
@@ -843,12 +843,12 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >BIARD Paul</td>
       <td  align=right x:num>1156</td>
-      <td >d'un pré par Pierre FAURE (Guion GRELLET beau-père ?)</td>
+      <td >d'un pr&eacute par Pierre FAURE (Guion GRELLET beau-p&egravere ?)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1651</td>
       <td  align=right
-  x:num="39864">20-févr</td>
+  x:num="39864">20-f&eacutevr</td>
       <td >Rouyer</td>
       <td >2E4965-60</td>
       <td >Ruelle</td>
@@ -860,7 +860,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1651</td>
       <td  align=right
-  x:num="39849">5-févr</td>
+  x:num="39849">5-f&eacutevr</td>
       <td >Rouyer</td>
       <td >2E4965-50</td>
       <td >Ruelle</td>
@@ -875,11 +875,11 @@ $connexionBD->ferme();
   x:num="39590">22-mai</td>
       <td >Guyot</td>
       <td >2E779-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Echange</td>
       <td >BIARD Paul</td>
       <td  align=right x:num>1158</td>
-      <td >et Grégoire SALLATON</td>
+      <td >et Gr&eacutegoire SALLATON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1656</td>
@@ -887,11 +887,11 @@ $connexionBD->ferme();
   x:num="39453">6-janv</td>
       <td >Guyot</td>
       <td >2E781-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >BIARD Paul</td>
       <td  align=right x:num>1174</td>
-      <td >à Jehan BIBAUD: du droit de chauffage et pacage dans 
+      <td >&agrave Jehan BIBAUD: du droit de chauffage et pacage dans 
         les bois</td>
     </tr>
     <tr height=17> 
@@ -900,12 +900,12 @@ $connexionBD->ferme();
   x:num="39453">6-janv</td>
       <td >Guyot</td>
       <td >2E781-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transport</td>
       <td >BIARD Paul</td>
       <td  align=right x:num>1174</td>
       <td 
-  x:str="de François NORMAND:  droit de chauffage et pacage ds les bois ">de François 
+  x:str="de Fran&ccedilois NORMAND:  droit de chauffage et pacage ds les bois ">de Fran&ccedilois 
         NORMAND:  droit de chauffage et pacage ds les boi<span style='display:none'>s 
         </span></td>
     </tr>
@@ -915,7 +915,7 @@ $connexionBD->ferme();
   x:num="39768">16-nov</td>
       <td >Juilhard</td>
       <td >2E862-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Rôle</td>
       <td >BIARD Paul</td>
       <td  align=right x:num>1136</td>
@@ -931,7 +931,7 @@ $connexionBD->ferme();
       <td >Association</td>
       <td >BIARD Paul</td>
       <td  align=right x:num>974</td>
-      <td >et Méry BIARD et Frçe. et Marie GRELET lrs femmes</td>
+      <td >et M&eacutery BIARD et Fr&ccedile. et Marie GRELET lrs femmes</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1662</td>
@@ -943,7 +943,7 @@ $connexionBD->ferme();
       <td >Arrentement</td>
       <td >BIARD Paul</td>
       <td  align=right x:num>974</td>
-      <td >à Antoine COUPRIE</td>
+      <td >&agrave Antoine COUPRIE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1662</td>
@@ -967,7 +967,7 @@ $connexionBD->ferme();
       <td >Bail</td>
       <td >BIARD Paul</td>
       <td  align=right x:num>974</td>
-      <td >et Méry BIARD de François et Guillaume DARY</td>
+      <td >et M&eacutery BIARD de Fran&ccedilois et Guillaume DARY</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1664</td>
@@ -991,7 +991,7 @@ $connexionBD->ferme();
       <td >Transaction</td>
       <td >BIARD Paul</td>
       <td  align=right x:num>974</td>
-      <td >et Marie GRELET femme de Méry BIARD</td>
+      <td >et Marie GRELET femme de M&eacutery BIARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
@@ -1036,10 +1036,10 @@ $connexionBD->ferme();
       <td >Renon</td>
       <td >2E2939-90</td>
       <td >Garat</td>
-      <td >Procès verbal</td>
+      <td >Proc&egraves verbal</td>
       <td >BIARD Paul</td>
       <td  align=right x:num>972</td>
-      <td >et Méry BIARD</td>
+      <td >et M&eacutery BIARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
@@ -1051,7 +1051,7 @@ $connexionBD->ferme();
       <td >Possession</td>
       <td >BIARD Paul</td>
       <td  align=right x:num>972</td>
-      <td >et Méry BIARD et Frçe. et Marie GRELET lrs femmes</td>
+      <td >et M&eacutery BIARD et Fr&ccedile. et Marie GRELET lrs femmes</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
@@ -1063,7 +1063,7 @@ $connexionBD->ferme();
       <td >Partage</td>
       <td >BIARD Paul</td>
       <td  align=right x:num>972</td>
-      <td >et Méry BIARD et Frçe. et Marie GRELET lrs femmes</td>
+      <td >et M&eacutery BIARD et Fr&ccedile. et Marie GRELET lrs femmes</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1679</td>
@@ -1075,7 +1075,7 @@ $connexionBD->ferme();
       <td >Echange</td>
       <td >BOISDON Jacques</td>
       <td  align=right x:num>1165</td>
-      <td >et Jean BOISDON son frère, fils de Perrine BERNARD</td>
+      <td >et Jean BOISDON son fr&egravere, fils de Perrine BERNARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1679</td>
@@ -1096,7 +1096,7 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5934-180</td>
       <td >Vaux-Rouillac</td>
-      <td >Marché</td>
+      <td >March&eacute</td>
       <td >BOISDON Jacques</td>
       <td  align=right x:num>1165</td>
       <td >et Claude GUILLAUMEAU. Apprentissage de charpentier</td>
@@ -1104,14 +1104,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1680</td>
       <td  align=right
-  x:num="39793">11-déc</td>
+  x:num="39793">11-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5935-180</td>
       <td >Vaux-Rouillac</td>
       <td >Acquisition</td>
       <td >BOISDON Jacques</td>
       <td  align=right x:num>1167</td>
-      <td >de Jean ROY marchand: une pièce de terre</td>
+      <td >de Jean ROY marchand: une pi&egravece de terre</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
@@ -1137,7 +1137,7 @@ $connexionBD->ferme();
       <td >Accord</td>
       <td >BOISDON Jacques</td>
       <td  align=right x:num>1220</td>
-      <td >et Mathieu et Jean ses frères à propos partage</td>
+      <td >et Mathieu et Jean ses fr&egraveres &agrave propos partage</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1714</td>
@@ -1155,21 +1155,21 @@ $connexionBD->ferme();
       <td  align=right x:num="38904">6-juil</td>
       <td >Gibaud</td>
       <td >2E661-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
-      <td >BOISTEAU François</td>
+      <td >BOISTEAU Fran&ccedilois</td>
       <td  align=right x:num>969</td>
-      <td >et Ysabeau BOILEVIN à Guillaume BOISTEAU frère</td>
+      <td >et Ysabeau BOILEVIN &agrave Guillaume BOISTEAU fr&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
       <td  align=right
-  x:num="39061">10-déc</td>
+  x:num="39061">10-d&eacutec</td>
       <td >Robin</td>
       <td >2E1110-150</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >BOISTEAU François</td>
+      <td >BOISTEAU Fran&ccedilois</td>
       <td  align=right x:num>956</td>
       <td >de Michel BOISTEAU son fils</td>
     </tr>
@@ -1179,9 +1179,9 @@ $connexionBD->ferme();
   x:num="39004">14-oct</td>
       <td >Robin</td>
       <td >2E1111-170</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >BOISTEAU François</td>
+      <td >BOISTEAU Fran&ccedilois</td>
       <td  align=right x:num>962</td>
       <td >et Louise DELAGE</td>
     </tr>
@@ -1191,35 +1191,35 @@ $connexionBD->ferme();
   x:num="38905">7-juil</td>
       <td >Robin</td>
       <td >2E1111-150</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
-      <td >BOISTEAU François</td>
+      <td >BOISTEAU Fran&ccedilois</td>
       <td  align=right x:num>962</td>
-      <td >Michel, Berthomé, Pierre, Marguerite et Philippe</td>
+      <td >Michel, Berthom&eacute, Pierre, Marguerite et Philippe</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1671</td>
       <td  align=right
-  x:num="39079">28-déc</td>
+  x:num="39079">28-d&eacutec</td>
       <td >Robin</td>
       <td >2E1111-300</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
-      <td >BOISTEAU François</td>
+      <td >BOISTEAU Fran&ccedilois</td>
       <td  align=right x:num>962</td>
       <td >et Gervais BRANGIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
       <td  align=right
-  x:num="38954">25-août</td>
+  x:num="38954">25-ao&ucirct</td>
       <td >Robin</td>
       <td >2E1111-320</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
-      <td >BOISTEAU François</td>
+      <td >BOISTEAU Fran&ccedilois</td>
       <td  align=right x:num>962</td>
-      <td >après son décès</td>
+      <td >apr&egraves son d&eacutec&egraves</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1653</td>
@@ -1227,11 +1227,11 @@ $connexionBD->ferme();
   x:num="38912">14-juil</td>
       <td >Vachier</td>
       <td >2E1288-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >BOISTEAU Jean</td>
       <td  align=right x:num>1000</td>
-      <td >à Jehan BONNEMAIN son beau-frère</td>
+      <td >&agrave Jehan BONNEMAIN son beau-fr&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1654</td>
@@ -1239,30 +1239,30 @@ $connexionBD->ferme();
   x:num="38781">5-mars</td>
       <td >Vachier</td>
       <td >2E1290-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >BOISTEAU Jean</td>
       <td  align=right x:num>976</td>
-      <td >et Den. BONNEMAIN et Gasp. BONNEMAIN beau-père</td>
+      <td >et Den. BONNEMAIN et Gasp. BONNEMAIN beau-p&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1660</td>
       <td  align=right
-  x:num="39065">14-déc</td>
+  x:num="39065">14-d&eacutec</td>
       <td >Robin</td>
       <td >2E1109-200</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transport</td>
       <td >BOISTEAU Jean</td>
       <td  align=right x:num>954</td>
-      <td >et Denise BONNEMAIN à Thomas ANTOINE</td>
+      <td >et Denise BONNEMAIN &agrave Thomas ANTOINE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1660</td>
       <td class=xl2415333 align=right x:num="39833">20-janv</td>
       <td >Huguet Jean</td>
       <td >2E792-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Accord</td>
       <td >BOISTEAU Jean</td>
       <td  align=right x:num>1200</td>
@@ -1270,10 +1270,10 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
-      <td  align=right x:num="38948">19-août</td>
+      <td  align=right x:num="38948">19-ao&ucirct</td>
       <td >Robin</td>
       <td >2E1112-120</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >BOISTEAU Philippe</td>
       <td  align=right x:num>965</td>
@@ -1283,9 +1283,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1694</td>
       <td  align=right
   x:num="38537">4-juil</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E938-190</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >BOISTEAU Philippe</td>
       <td  align=right x:num>777</td>
@@ -1294,10 +1294,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1694</td>
       <td  align=right
-  x:num="38776">28-févr</td>
-      <td >Mancié</td>
+  x:num="38776">28-f&eacutevr</td>
+      <td >Manci&eacute</td>
       <td >2E938-170</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >BOISTEAU Philippe</td>
       <td  align=right x:num>777</td>
@@ -1309,7 +1309,7 @@ $connexionBD->ferme();
   x:num="38783">7-mars</td>
       <td >Vachier</td>
       <td >2E1290-110</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >BONNEMAIN Gaspard</td>
       <td  align=right x:num>976</td>
@@ -1321,7 +1321,7 @@ $connexionBD->ferme();
   x:num="38781">5-mars</td>
       <td >Vachier</td>
       <td >2E1290-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >BONNEMAIN Gaspard</td>
       <td  align=right x:num>976</td>
@@ -1333,7 +1333,7 @@ $connexionBD->ferme();
   x:num="39843">30-janv</td>
       <td >Gaignier</td>
       <td >2E583-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Convention</td>
       <td >BONNEMAIN Gaspard</td>
       <td  align=right x:num>1205</td>
@@ -1342,12 +1342,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1739</td>
       <td  align=right
-  x:num="38587">23-août</td>
+  x:num="38587">23-ao&ucirct</td>
       <td >Lalande</td>
       <td >2E4962-30</td>
       <td >Ruelle</td>
       <td >Ferme</td>
-      <td >BONNORONT André</td>
+      <td >BONNORONT Andr&eacute</td>
       <td  align=right x:num>758</td>
       <td >Jean BONNORONT - Jean FAURE</td>
     </tr>
@@ -1359,7 +1359,7 @@ $connexionBD->ferme();
       <td >2E4963-10</td>
       <td >Ruelle</td>
       <td >Vente</td>
-      <td >BONNORONT André</td>
+      <td >BONNORONT Andr&eacute</td>
       <td  align=right x:num>759</td>
       <td >Jean BONNORONT - Jean LARRAUD</td>
     </tr>
@@ -1371,7 +1371,7 @@ $connexionBD->ferme();
       <td >2E4963-40</td>
       <td >Ruelle</td>
       <td >Tableau</td>
-      <td >BONNORONT André</td>
+      <td >BONNORONT Andr&eacute</td>
       <td  align=right x:num>759</td>
       <td >Tableau des habitants de Magnac - Recollement</td>
     </tr>
@@ -1385,7 +1385,7 @@ $connexionBD->ferme();
       <td >Quittance</td>
       <td >BONNORONT Jacques</td>
       <td  align=right x:num>750</td>
-      <td >André BONNORONT - Jean BIBAUD</td>
+      <td >Andr&eacute BONNORONT - Jean BIBAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1703</td>
@@ -1393,34 +1393,34 @@ $connexionBD->ferme();
   x:num="39766">14-nov</td>
       <td >Aigre</td>
       <td >2E109-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >BONNORONT Jacques</td>
       <td  align=right x:num>1120</td>
-      <td >et André BONNORONT</td>
+      <td >et Andr&eacute BONNORONT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1704</td>
       <td  align=right
-  x:num="39503">25-févr</td>
+  x:num="39503">25-f&eacutevr</td>
       <td >Aigre</td>
       <td >2E109-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >BONNORONT Jacques</td>
       <td  align=right x:num>1120</td>
-      <td >et André son frère à Pierre RINGUET</td>
+      <td >et Andr&eacute son fr&egravere &agrave Pierre RINGUET</td>
     </tr>
     <tr height=17> 
       <td height=17 >&nbsp;</td>
       <td >&nbsp;</td>
       <td >Aigre</td>
       <td >2E110-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >BONNORONT Jacques</td>
       <td  align=right x:num>1120</td>
-      <td >à Pierre SURREAU</td>
+      <td >&agrave Pierre SURREAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
@@ -1428,7 +1428,7 @@ $connexionBD->ferme();
   x:num="38374">22-janv</td>
       <td >Robin</td>
       <td >2E1110-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >BONNORONT Jean</td>
       <td  align=right x:num>768</td>
@@ -1440,7 +1440,7 @@ $connexionBD->ferme();
   x:num="38445">3-avr</td>
       <td >Peuple</td>
       <td >2E1064-180</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >BONNORONT Jean</td>
       <td  align=right x:num>859</td>
@@ -1452,11 +1452,11 @@ $connexionBD->ferme();
   x:num="38667">11-nov</td>
       <td >Peuple</td>
       <td >2E1065-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >BONNORONT Jean</td>
       <td  align=right x:num>839</td>
-      <td >de François SIMARD</td>
+      <td >de Fran&ccedilois SIMARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
@@ -1464,11 +1464,11 @@ $connexionBD->ferme();
   x:num="38353">1-janv</td>
       <td >Peuple</td>
       <td >2E1065-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Apprentissage</td>
       <td >BONNORONT Jean</td>
       <td  align=right x:num>839</td>
-      <td >de Léonard FELLIT</td>
+      <td >de L&eacuteonard FELLIT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
@@ -1476,11 +1476,11 @@ $connexionBD->ferme();
   x:num="38741">24-janv</td>
       <td >Mamain</td>
       <td >2E930-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >BONNORONT Jean</td>
       <td  align=right x:num>978</td>
-      <td >et P. CHERDON et André LEURAUD ses beaux-frères</td>
+      <td >et P. CHERDON et Andr&eacute LEURAUD ses beaux-fr&egraveres</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
@@ -1488,11 +1488,11 @@ $connexionBD->ferme();
   x:num="38515">12-juin</td>
       <td >Peuple</td>
       <td >2E1066-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Apprentissage</td>
       <td >BONNORONT Jean</td>
       <td  align=right x:num>839</td>
-      <td >de Guillaume AUDOUIN fils de Jean (ancêtre)</td>
+      <td >de Guillaume AUDOUIN fils de Jean (anc&ecirctre)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
@@ -1504,7 +1504,7 @@ $connexionBD->ferme();
       <td >Reconnaissance</td>
       <td >BONNORONT Jean</td>
       <td  align=right x:num>873</td>
-      <td >et Jacques COUPRIE à M. de PRANSAC</td>
+      <td >et Jacques COUPRIE &agrave M. de PRANSAC</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
@@ -1512,17 +1512,17 @@ $connexionBD->ferme();
   x:num="38475">3-mai</td>
       <td >Peuple</td>
       <td >2E1067-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >BONNORONT Jean</td>
       <td  align=right x:num>841</td>
-      <td >et Françoise et Marie ses sœurs à François DUPORT</td>
+      <td >et Fran&ccediloise et Marie ses s&oeligurs &agrave Fran&ccedilois DUPORT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1744</td>
       <td  align=right
   x:num="38237">7-sept</td>
-      <td >Thénevot</td>
+      <td >Th&eacutenevot</td>
       <td >2E4967-10</td>
       <td >Ruelle</td>
       <td >Mariage</td>
@@ -1536,11 +1536,11 @@ $connexionBD->ferme();
   x:num="38480">8-mai</td>
       <td >Caillaud</td>
       <td >2E249-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >BONNORONT Pierre</td>
       <td  align=right x:num>776</td>
-      <td >Jeanne RIFFAUD - François PREVOST Anne LEBON</td>
+      <td >Jeanne RIFFAUD - Fran&ccedilois PREVOST Anne LEBON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1748</td>
@@ -1558,19 +1558,19 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1751</td>
       <td  align=right
   x:num="38094">17-avr</td>
-      <td >Thénevot</td>
+      <td >Th&eacutenevot</td>
       <td >2E4968-10</td>
       <td >Ruelle</td>
       <td >Transaction</td>
       <td >BONNORONT Pierre</td>
       <td  align=right x:num>749</td>
-      <td >Prançois PREVAUT</td>
+      <td >Pran&ccedilois PREVAUT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1751</td>
       <td  align=right
   x:num="38096">19-avr</td>
-      <td >Thénevot</td>
+      <td >Th&eacutenevot</td>
       <td >2E4968-20</td>
       <td >Ruelle</td>
       <td >Vente</td>
@@ -1582,7 +1582,7 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1755</td>
       <td  align=right
   x:num="38193">25-juil</td>
-      <td >Thénevot</td>
+      <td >Th&eacutenevot</td>
       <td >2E4968-40</td>
       <td >Ruelle</td>
       <td >Quittance</td>
@@ -1594,7 +1594,7 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1755</td>
       <td  align=right
   x:num="38193">25-juil</td>
-      <td >Thénevot</td>
+      <td >Th&eacutenevot</td>
       <td >2E4968-30</td>
       <td >Ruelle</td>
       <td >Reconnaissance</td>
@@ -1608,7 +1608,7 @@ $connexionBD->ferme();
   x:num="38162">24-juin</td>
       <td >Porcheron</td>
       <td >2E1088-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >BOUCHAUD Pierre</td>
       <td  align=right x:num>748</td>
@@ -1635,11 +1635,11 @@ $connexionBD->ferme();
       <td >Quittance</td>
       <td >BOUCHAUD Pierre</td>
       <td  align=right x:num>1328</td>
-      <td >donnée par Antoine CLOCHARD mari de Marie BOUCHAUD</td>
+      <td >donn&eacutee par Antoine CLOCHARD mari de Marie BOUCHAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1654</td>
-      <td  align=right x:num="39079">28-déc</td>
+      <td  align=right x:num="39079">28-d&eacutec</td>
       <td >Rouhier</td>
       <td >2E1119-60</td>
       <td >Lhoumeau</td>
@@ -1676,9 +1676,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1674</td>
       <td  align=right
   x:num="38501">29-mai</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E807-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >BRISSAUD Antoine</td>
       <td  align=right x:num>870</td>
@@ -1688,21 +1688,21 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1677</td>
       <td  align=right
   x:num="38362">10-janv</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E809-180</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >BRISSAUD Antoine</td>
       <td  align=right x:num>867</td>
-      <td >à Jean MARFRAUD</td>
+      <td >&agrave Jean MARFRAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
       <td  align=right
-  x:num="39480">2-févr</td>
+  x:num="39480">2-f&eacutevr</td>
       <td >Cladier</td>
       <td >2E365-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Compte</td>
       <td >BRISSAUD Antoine</td>
       <td  align=right x:num>1159</td>
@@ -1714,7 +1714,7 @@ $connexionBD->ferme();
   x:num="37994">8-janv</td>
       <td >Caillaud</td>
       <td >2E230-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >BRISSAUD Marguerite</td>
       <td  align=right x:num>591</td>
@@ -1723,7 +1723,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1683</td>
       <td  align=right
-  x:num="38931">2-août</td>
+  x:num="38931">2-ao&ucirct</td>
       <td >Boutillier</td>
       <td >2E227-30</td>
       <td >Lhoumeau</td>
@@ -1735,7 +1735,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1686</td>
       <td  align=right
-  x:num="38575">11-août</td>
+  x:num="38575">11-ao&ucirct</td>
       <td >Chauvin</td>
       <td >2E315-190</td>
       <td >L'houmeau</td>
@@ -1754,19 +1754,19 @@ $connexionBD->ferme();
       <td >Apprentissage</td>
       <td >BRISSAUD Toussaint</td>
       <td  align=right x:num>811</td>
-      <td >de François RAVON</td>
+      <td >de Fran&ccedilois RAVON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
       <td  align=right
-  x:num="39062">11-déc</td>
+  x:num="39062">11-d&eacutec</td>
       <td >Rouhier</td>
       <td >2E1124-30</td>
       <td >Lhoumeau</td>
       <td >Ferme</td>
       <td >BRISSAUD Toussaint</td>
       <td  align=right x:num>941</td>
-      <td >et François IMBERT de Pierre CHAUVEAU</td>
+      <td >et Fran&ccedilois IMBERT de Pierre CHAUVEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
@@ -1778,7 +1778,7 @@ $connexionBD->ferme();
       <td >Sommation</td>
       <td >BRISSAUD Toussaint</td>
       <td  align=right x:num>811</td>
-      <td >à Jean MESLIER</td>
+      <td >&agrave Jean MESLIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
@@ -1790,7 +1790,7 @@ $connexionBD->ferme();
       <td >Reconnaissance</td>
       <td >BRISSAUD Toussaint</td>
       <td  align=right x:num>811</td>
-      <td >et Louis VALLIN à P. COMBRET (et Marie IMBERT)</td>
+      <td >et Louis VALLIN &agrave P. COMBRET (et Marie IMBERT)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
@@ -1799,10 +1799,10 @@ $connexionBD->ferme();
       <td >Chauvin</td>
       <td >2E316-160</td>
       <td >Lhoumeau</td>
-      <td >Procès verbal</td>
+      <td >Proc&egraves verbal</td>
       <td >BRISSAUD Toussaint</td>
       <td  align=right x:num>811</td>
-      <td >Bâtiments acquis de Catherine DEDIEU</td>
+      <td >B&acirctiments acquis de Catherine DEDIEU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
@@ -1811,10 +1811,10 @@ $connexionBD->ferme();
       <td >Rouhier</td>
       <td >2E1125-10</td>
       <td >Lhoumeau</td>
-      <td >Procès verbal</td>
+      <td >Proc&egraves verbal</td>
       <td >BRISSAUD Toussaint</td>
       <td  align=right x:num>937</td>
-      <td >et François IMBERT et Pierre CHAUVAUD</td>
+      <td >et Fran&ccedilois IMBERT et Pierre CHAUVAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
@@ -1838,7 +1838,7 @@ $connexionBD->ferme();
       <td >Sommation</td>
       <td >BRISSAUD Toussaint</td>
       <td  align=right x:num>812</td>
-      <td >à Pierre COMBRET</td>
+      <td >&agrave Pierre COMBRET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1690</td>
@@ -1846,7 +1846,7 @@ $connexionBD->ferme();
   x:num="38159">21-juin</td>
       <td >Peynaud</td>
       <td >2E1070-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >BRISSAUD Toussaint</td>
       <td  align=right x:num>750</td>
@@ -1857,7 +1857,7 @@ $connexionBD->ferme();
       <td class=xl2415333 align=right x:num="39829">16-janv</td>
       <td >Audouin</td>
       <td >2E123-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
       <td >BRISSAUD Toussaint</td>
       <td  align=right x:num>1356</td>
@@ -1893,7 +1893,7 @@ $connexionBD->ferme();
       <td >Chauvin</td>
       <td >2E320-80</td>
       <td >Lhoumeau</td>
-      <td >Marché</td>
+      <td >March&eacute</td>
       <td >BRISSAUD Toussaint</td>
       <td  align=right x:num>815</td>
       <td >Jean SIRAUD et Marin VERNADAS: coupe de bois</td>
@@ -1908,15 +1908,15 @@ $connexionBD->ferme();
       <td >Transaction</td>
       <td >BRISSAUD Toussaint</td>
       <td  align=right x:num>801</td>
-      <td >Légier GIRAUD</td>
+      <td >L&eacutegier GIRAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1701</td>
       <td  align=right
-  x:num="39480">2-févr</td>
+  x:num="39480">2-f&eacutevr</td>
       <td >Aigre</td>
       <td >2E108-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >BRISSAUD Toussaint</td>
       <td  align=right x:num>1120</td>
@@ -1932,15 +1932,15 @@ $connexionBD->ferme();
       <td >Sommation</td>
       <td >BRISSAUD Toussaint</td>
       <td  align=right x:num>801</td>
-      <td >Cybard GOUGNET (marché de lattes)</td>
+      <td >Cybard GOUGNET (march&eacute de lattes)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1704</td>
       <td  align=right
-  x:num="38205">6-août</td>
+  x:num="38205">6-ao&ucirct</td>
       <td >Porcheron</td>
       <td >2E1086-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >BRISSAUD Toussaint</td>
       <td  align=right x:num>746</td>
@@ -1948,7 +1948,7 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1618</td>
-      <td class=xl3315333 align=right x:num="39866">22-févr</td>
+      <td class=xl3315333 align=right x:num="39866">22-f&eacutevr</td>
       <td >Rouhier</td>
       <td >2E1115-60</td>
       <td >L'houmeau</td>
@@ -1963,7 +1963,7 @@ $connexionBD->ferme();
       <td >Clochard</td>
       <td >2E412-140</td>
       <td >Lhoumeau</td>
-      <td >Déclaration</td>
+      <td >D&eacuteclaration</td>
       <td >CARRE Jean</td>
       <td  align=right x:num>953</td>
       <td >et Marie DELACROIX, pour Jean leur fils</td>
@@ -1974,9 +1974,9 @@ $connexionBD->ferme();
   x:num="38519">16-juin</td>
       <td >Peuple</td>
       <td >2E1061-110</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >CHAUVET François</td>
+      <td >CHAUVET Fran&ccedilois</td>
       <td  align=right x:num>860</td>
       <td >et Charlotte CHARREAU</td>
     </tr>
@@ -1986,34 +1986,34 @@ $connexionBD->ferme();
   x:num="38374">22-janv</td>
       <td >Peuple</td>
       <td >2E1062-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acquisition</td>
-      <td >CHAUVET François</td>
+      <td >CHAUVET Fran&ccedilois</td>
       <td  align=right x:num>859</td>
       <td >et Charlotte CHARREAU de Pierre FORGEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
       <td  align=right
-  x:num="38766">18-févr</td>
+  x:num="38766">18-f&eacutevr</td>
       <td >Rouhier</td>
       <td >2E1122-10</td>
       <td >Lhoumeau</td>
       <td >Quittance</td>
-      <td >CHAUVET François</td>
+      <td >CHAUVET Fran&ccedilois</td>
       <td  align=right x:num>944</td>
-      <td >Pour un pavage chez François RENAUD</td>
+      <td >Pour un pavage chez Fran&ccedilois RENAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
       <td class=xl3315333 align=right x:num="40023">29-juil</td>
       <td >Audouin</td>
       <td >2E121-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >CHAUVET François</td>
+      <td >CHAUVET Fran&ccedilois</td>
       <td  align=right x:num>1349</td>
-      <td >à Pasquet FORGEAU (pour une petite maison)</td>
+      <td >&agrave Pasquet FORGEAU (pour une petite maison)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1690</td>
@@ -2021,34 +2021,34 @@ $connexionBD->ferme();
   x:num="39957">24-mai</td>
       <td >Audouin</td>
       <td >2E123-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Afferme</td>
-      <td >CHAUVET François</td>
+      <td >CHAUVET Fran&ccedilois</td>
       <td  align=right x:num>1356</td>
-      <td >à Pierre SEGUIN (sous-location d'une maison)</td>
+      <td >&agrave Pierre SEGUIN (sous-location d'une maison)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1692</td>
       <td  align=right x:num="38624">29-sept</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E938-150</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >CHAUVET François</td>
+      <td >CHAUVET Fran&ccedilois</td>
       <td  align=right x:num>777</td>
-      <td >Louis ROSSIGNOL (François CHAUVET ancêtre?)</td>
+      <td >Louis ROSSIGNOL (Fran&ccedilois CHAUVET anc&ecirctre?)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1701</td>
       <td  align=right
-  x:num="39667">7-août</td>
+  x:num="39667">7-ao&ucirct</td>
       <td >Aigre</td>
       <td >2E108-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
-      <td >CHAUVET François</td>
+      <td >CHAUVET Fran&ccedilois</td>
       <td  align=right x:num>1120</td>
-      <td >et Jean BRUN avec Jean FENIOU (haie et fossé)</td>
+      <td >et Jean BRUN avec Jean FENIOU (haie et foss&eacute)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1716</td>
@@ -2056,7 +2056,7 @@ $connexionBD->ferme();
   x:num="38678">22-nov</td>
       <td >Porcheron</td>
       <td >2E1091-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >CHAUVET Louis</td>
       <td  align=right x:num>841</td>
@@ -2066,10 +2066,10 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1740</td>
       <td  align=right
   x:num="38563">30-juil</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E962-30</td>
-      <td >Angoulême</td>
-      <td >Procès verbal</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves verbal</td>
       <td >CHAUVET Louis</td>
       <td  align=right x:num>791</td>
       <td >et Madeleine ROUFFIGNAC de J. JAMAIN (arbres)</td>
@@ -2080,23 +2080,23 @@ $connexionBD->ferme();
   x:num="38423">12-mars</td>
       <td >Marchadier</td>
       <td >2E969-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >CHAUVET Louis</td>
       <td  align=right x:num>802</td>
-      <td >Et autres à  Marie THEVET</td>
+      <td >Et autres &agrave  Marie THEVET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1743</td>
       <td  align=right
   x:num="38596">1-sept</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E962-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >CHAUVET Louis</td>
       <td  align=right x:num>791</td>
-      <td >et autres à Sgr. du Maine Gagnaud</td>
+      <td >et autres &agrave Sgr. du Maine Gagnaud</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1745</td>
@@ -2104,7 +2104,7 @@ $connexionBD->ferme();
   x:num="38260">30-sept</td>
       <td >Caillaud</td>
       <td >2E944-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >CHAUVET Louis</td>
       <td  align=right x:num>713</td>
@@ -2116,11 +2116,11 @@ $connexionBD->ferme();
   x:num="39940">7-mai</td>
       <td >Huguet</td>
       <td >2E784-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
       <td >CHAUVET Marie</td>
       <td  align=right x:num>1191</td>
-      <td >veuve Antoine JOUANNET à propos CM de Arnaud son fils</td>
+      <td >veuve Antoine JOUANNET &agrave propos CM de Arnaud son fils</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1650</td>
@@ -2128,7 +2128,7 @@ $connexionBD->ferme();
   x:num="39971">7-juin</td>
       <td >Huguet</td>
       <td >2E785-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >CHAUVET Marie</td>
       <td  align=right x:num>1191</td>
@@ -2140,7 +2140,7 @@ $connexionBD->ferme();
   x:num="39973">9-juin</td>
       <td >Huguet</td>
       <td >2E785-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >CHAUVET Marie</td>
       <td  align=right x:num>1191</td>
@@ -2152,11 +2152,11 @@ $connexionBD->ferme();
   x:num="39599">31-mai</td>
       <td >Huguet Jean</td>
       <td >2E786-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Afferme</td>
       <td >CHAUVET Marie</td>
       <td  align=right x:num>1194</td>
-      <td >d'une pièce de pré de François MAURICE</td>
+      <td >d'une pi&egravece de pr&eacute de Fran&ccedilois MAURICE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1654</td>
@@ -2164,11 +2164,11 @@ $connexionBD->ferme();
   x:num="39570">2-mai</td>
       <td >Huguet Jean</td>
       <td >2E787-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Afferme</td>
       <td >CHAUVET Marie</td>
       <td  align=right x:num>1194</td>
-      <td >d'une maison à Jacques CALVAU</td>
+      <td >d'une maison &agrave Jacques CALVAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1656</td>
@@ -2176,11 +2176,11 @@ $connexionBD->ferme();
   x:num="39947">14-mai</td>
       <td >Huguet Jean</td>
       <td >2E789-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >CHAUVET Marie</td>
       <td  align=right x:num>1195</td>
-      <td >à Jean LIZEE de terres</td>
+      <td >&agrave Jean LIZEE de terres</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1656</td>
@@ -2188,11 +2188,11 @@ $connexionBD->ferme();
   x:num="40024">30-juil</td>
       <td >Huguet Jean</td>
       <td >2E789-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Afferme</td>
       <td >CHAUVET Marie</td>
       <td  align=right x:num>1195</td>
-      <td >à Bertrand DEPOITIERS d'un chambre dans sa maison</td>
+      <td >&agrave Bertrand DEPOITIERS d'un chambre dans sa maison</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
@@ -2200,7 +2200,7 @@ $connexionBD->ferme();
   x:num="38507">4-juin</td>
       <td >Robin</td>
       <td >2E1110-130</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >CHAUVET Marie</td>
       <td  align=right x:num>956</td>
@@ -2209,10 +2209,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1765</td>
       <td  align=right
-  x:num="38210">11-août</td>
+  x:num="38210">11-ao&ucirct</td>
       <td >Caillaud</td>
       <td >2E282-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >CHAUVET Michel</td>
       <td  align=right x:num>755</td>
@@ -2221,10 +2221,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1768</td>
       <td  align=right
-  x:num="38042">25-févr</td>
+  x:num="38042">25-f&eacutevr</td>
       <td >Caillaud</td>
       <td >2E287-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >CHAUVET Michel</td>
       <td  align=right x:num>751</td>
@@ -2240,7 +2240,7 @@ $connexionBD->ferme();
       <td >Titre</td>
       <td >CHAUVET Nicolas</td>
       <td  align=right x:num>911</td>
-      <td >à Antoine DEBUSSAC</td>
+      <td >&agrave Antoine DEBUSSAC</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1706</td>
@@ -2248,7 +2248,7 @@ $connexionBD->ferme();
   x:num="38362">10-janv</td>
       <td >Porcheron</td>
       <td >2E1087-150</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >CHAUVET Nicolas</td>
       <td  align=right x:num>840</td>
@@ -2260,7 +2260,7 @@ $connexionBD->ferme();
   x:num="38455">13-avr</td>
       <td >Deroullede</td>
       <td >2E453-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >CHAUVET Nicolas</td>
       <td  align=right x:num>769</td>
@@ -2270,21 +2270,21 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1727</td>
       <td  align=right
   x:num="38506">3-juin</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E836-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >CHAUVET Nicolas</td>
       <td  align=right x:num>714</td>
-      <td >et Jeanne BERNARD de Léonard ROUHIER</td>
+      <td >et Jeanne BERNARD de L&eacuteonard ROUHIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1680</td>
       <td  align=right
-  x:num="38773">25-févr</td>
+  x:num="38773">25-f&eacutevr</td>
       <td >Robin</td>
       <td >2E1112-190</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
       <td >CLERC Anne</td>
       <td  align=right x:num>966</td>
@@ -2296,7 +2296,7 @@ $connexionBD->ferme();
   x:num="38893">25-juin</td>
       <td >Peuple</td>
       <td >2E1069-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >CLERC Anne</td>
       <td  align=right x:num>749</td>
@@ -2312,7 +2312,7 @@ $connexionBD->ferme();
       <td >Reconnaissance</td>
       <td >CONSTANTIN Jacquette</td>
       <td  align=right x:num>963</td>
-      <td >Vve de Martin ROY pr maisons près égl. de l'Houm.</td>
+      <td >Vve de Martin ROY pr maisons pr&egraves &eacutegl. de l'Houm.</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1659</td>
@@ -2320,7 +2320,7 @@ $connexionBD->ferme();
   x:num="39018">28-oct</td>
       <td >Robin</td>
       <td >2E1109-160</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >COUPEAU Gillibert</td>
       <td  align=right x:num>954</td>
@@ -2332,7 +2332,7 @@ $connexionBD->ferme();
   x:num="38510">7-juin</td>
       <td >Peuple</td>
       <td >2E1065-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sous-ferme</td>
       <td >COUPEAU Gillibert</td>
       <td  align=right x:num>839</td>
@@ -2344,7 +2344,7 @@ $connexionBD->ferme();
   x:num="38814">7-avr</td>
       <td >Robin</td>
       <td >2E1111-220</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >COUPEAU Gillibert</td>
       <td  align=right x:num>962</td>
@@ -2356,7 +2356,7 @@ $connexionBD->ferme();
   x:num="38612">17-sept</td>
       <td >Peuple</td>
       <td >2E1067-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Bail</td>
       <td >COUPEAU Gillibert</td>
       <td  align=right x:num>840</td>
@@ -2377,23 +2377,23 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
       <td  align=right
-  x:num="38950">21-août</td>
-      <td >Mancié</td>
+  x:num="38950">21-ao&ucirct</td>
+      <td >Manci&eacute</td>
       <td >2E937-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >COUPEAU Jacques</td>
       <td  align=right x:num>778</td>
-      <td >et Marg. JAYET, Suzanne et Françoise JAYET</td>
+      <td >et Marg. JAYET, Suzanne et Fran&ccediloise JAYET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1694</td>
       <td  align=right
   x:num="38598">3-sept</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E938-200</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
       <td >COUPEAU Jacques</td>
       <td  align=right x:num>777</td>
       <td >Marguerite JAYET - Daniel M. JEAN et M. CROIZET</td>
@@ -2401,10 +2401,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1700</td>
       <td  align=right
-  x:num="38595">31-août</td>
+  x:num="38595">31-ao&ucirct</td>
       <td >Aigre</td>
       <td >2E107-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >COUPEAU Jacques</td>
       <td  align=right x:num>842</td>
@@ -2413,10 +2413,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1708</td>
       <td  align=right
-  x:num="38209">10-août</td>
-      <td >Jéheu</td>
+  x:num="38209">10-ao&ucirct</td>
+      <td >J&eacuteheu</td>
       <td >2E819-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >COUPEAU Jacques</td>
       <td  align=right x:num>708</td>
@@ -2425,10 +2425,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1711</td>
       <td  align=right
-  x:num="38035">18-févr</td>
-      <td >Jéheu</td>
+  x:num="38035">18-f&eacutevr</td>
+      <td >J&eacuteheu</td>
       <td >2E 820-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >COUPEAU Jacques</td>
       <td  align=right x:num>746</td>
@@ -2440,25 +2440,25 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1724</td>
       <td  align=right
   x:num="37988">2-janv</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E954-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >COUPEAU Jacques</td>
       <td  align=right x:num>590</td>
-      <td >Léonard ROUHIER</td>
+      <td >L&eacuteonard ROUHIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1727</td>
       <td  align=right
-  x:num="38409">26-févr</td>
-      <td >Jéheu</td>
+  x:num="38409">26-f&eacutevr</td>
+      <td >J&eacuteheu</td>
       <td >2E836-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >COUPEAU Jacques</td>
       <td  align=right x:num>714</td>
-      <td >et Marg. JAYET à Berthomé DAUVEAU</td>
+      <td >et Marg. JAYET &agrave Berthom&eacute DAUVEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1764</td>
@@ -2466,19 +2466,19 @@ $connexionBD->ferme();
   x:num="38127">20-mai</td>
       <td >Caillaud</td>
       <td >2E280-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >DARS Barthélémy</td>
+      <td >DARS Barth&eacutel&eacutemy</td>
       <td  align=right x:num>755</td>
       <td >Suzanne ROUHIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1735</td>
       <td  align=right
-  x:num="38390">7-févr</td>
-      <td >Mancié</td>
+  x:num="38390">7-f&eacutevr</td>
+      <td >Manci&eacute</td>
       <td >2E960-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >DARS Jean</td>
       <td  align=right x:num>786</td>
@@ -2490,7 +2490,7 @@ $connexionBD->ferme();
   x:num="38075">29-mars</td>
       <td >Caillaud</td>
       <td >2E236-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >DARS Jean</td>
       <td  align=right x:num>566</td>
@@ -2499,10 +2499,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1737</td>
       <td  align=right
-  x:num="38713">27-déc</td>
+  x:num="38713">27-d&eacutec</td>
       <td >Marchadier</td>
       <td >2E969-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Licitation</td>
       <td >DARS Jean</td>
       <td  align=right x:num>802</td>
@@ -2512,9 +2512,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1739</td>
       <td class=xl3515333 align=right
   x:num="38483">11-mai</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E961-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >DARS Jean</td>
       <td  align=right x:num>789</td>
@@ -2524,21 +2524,21 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1740</td>
       <td  align=right
   x:num="38618">23-sept</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E962-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >DARS Jean</td>
       <td  align=right x:num>791</td>
-      <td >et Jean DECLIDE à Mr. CHAUSSE</td>
+      <td >et Jean DECLIDE &agrave Mr. CHAUSSE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1741</td>
       <td  align=right
-  x:num="38584">20-août</td>
-      <td >Mancié</td>
+  x:num="38584">20-ao&ucirct</td>
+      <td >Manci&eacute</td>
       <td >2E962-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >DARS Jean</td>
       <td  align=right x:num>791</td>
@@ -2547,9 +2547,9 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1745</td>
       <td  align=right x:num="38629">4-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E963-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >DARS Jean</td>
       <td  align=right x:num>802</td>
@@ -2561,7 +2561,7 @@ $connexionBD->ferme();
   x:num="38654">29-oct</td>
       <td >Caillaud</td>
       <td >2E261-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >DARS Jean</td>
       <td  align=right x:num>865</td>
@@ -2573,7 +2573,7 @@ $connexionBD->ferme();
   x:num="38922">24-juil</td>
       <td >Caillaud</td>
       <td >2E263-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >DARS Jean</td>
       <td  align=right x:num>873</td>
@@ -2585,8 +2585,8 @@ $connexionBD->ferme();
   x:num="38674">18-nov</td>
       <td >Bernard</td>
       <td >2E174-50</td>
-      <td >Angoulême</td>
-      <td >Déclaration</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacuteclaration</td>
       <td >DARS Jean</td>
       <td  align=right x:num>788</td>
       <td >Pierre DARS, etc. (Jean GABORIT)</td>
@@ -2597,7 +2597,7 @@ $connexionBD->ferme();
   x:num="39520">13-mars</td>
       <td >Cladier</td>
       <td >2E362-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Compte</td>
       <td >DARS Jean l'ancien</td>
       <td  align=right x:num>1158</td>
@@ -2636,14 +2636,14 @@ $connexionBD->ferme();
       <td class=xl3715333>Vente</td>
       <td class=xl3715333>DARS Jean l'ancien</td>
       <td class=xl3715333 align=right x:num>1014</td>
-      <td class=xl3715333>et Joseph DARS et E. CLEMENT à Léonard GIGNAC</td>
+      <td class=xl3715333>et Joseph DARS et E. CLEMENT &agrave L&eacuteonard GIGNAC</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1706</td>
       <td  align=right x:num="38305">14-nov</td>
       <td >Boilevin</td>
       <td >2E203-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>755</td>
@@ -2664,14 +2664,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1711</td>
       <td  align=right
-  x:num="38691">5-déc</td>
+  x:num="38691">5-d&eacutec</td>
       <td >Porcheron</td>
       <td >2E1089-170</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>837</td>
-      <td >et François PRADEAU de Etienne HERBAUD</td>
+      <td >et Fran&ccedilois PRADEAU de Etienne HERBAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1720</td>
@@ -2679,7 +2679,7 @@ $connexionBD->ferme();
   x:num="38435">24-mars</td>
       <td >Porcheron</td>
       <td >2E1092-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>842</td>
@@ -2691,7 +2691,7 @@ $connexionBD->ferme();
   x:num="38447">5-avr</td>
       <td >Porcheron</td>
       <td >2E1092-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>842</td>
@@ -2703,7 +2703,7 @@ $connexionBD->ferme();
   x:num="38245">15-sept</td>
       <td >Boilevin</td>
       <td >2E206-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>576</td>
@@ -2715,7 +2715,7 @@ $connexionBD->ferme();
   x:num="38137">30-mai</td>
       <td >Deroullede</td>
       <td >2E455-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>708</td>
@@ -2724,10 +2724,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1722</td>
       <td  align=right
-  x:num="38228">29-août</td>
+  x:num="38228">29-ao&ucirct</td>
       <td >Deroullede</td>
       <td >2E455-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>709</td>
@@ -2737,9 +2737,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1724</td>
       <td  align=right
   x:num="38321">30-nov</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E954-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>590</td>
@@ -2749,9 +2749,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1725</td>
       <td  align=right
   x:num="38555">22-juil</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E834-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>788</td>
@@ -2761,9 +2761,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1726</td>
       <td  align=right
   x:num="38261">1-oct</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E835-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>572</td>
@@ -2773,21 +2773,21 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1728</td>
       <td  align=right
   x:num="38060">14-mars</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E956-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Constitution</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>576</td>
-      <td >Jean ROUFFIGNAC son beau-frère</td>
+      <td >Jean ROUFFIGNAC son beau-fr&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1729</td>
       <td  align=right
   x:num="38080">3-avr</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E838-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>573</td>
@@ -2799,7 +2799,7 @@ $connexionBD->ferme();
   x:num="38060">14-mars</td>
       <td >Caillaud</td>
       <td >2E229-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>576</td>
@@ -2808,10 +2808,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1729</td>
       <td  align=right
-  x:num="38343">22-déc</td>
-      <td >Jéheu</td>
+  x:num="38343">22-d&eacutec</td>
+      <td >J&eacuteheu</td>
       <td >2E838-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>573</td>
@@ -2823,7 +2823,7 @@ $connexionBD->ferme();
   x:num="38259">29-sept</td>
       <td >Caillaud</td>
       <td >2E230-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>591</td>
@@ -2835,7 +2835,7 @@ $connexionBD->ferme();
   x:num="38057">11-mars</td>
       <td >Caillaud</td>
       <td >2E231-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>591</td>
@@ -2847,7 +2847,7 @@ $connexionBD->ferme();
   x:num="38302">11-nov</td>
       <td >Caillaud</td>
       <td >2E232-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>709</td>
@@ -2856,22 +2856,22 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1733</td>
       <td  align=right
-  x:num="38384">1-févr</td>
-      <td >Jéheu</td>
+  x:num="38384">1-f&eacutevr</td>
+      <td >J&eacuteheu</td>
       <td >2E842-10</td>
-      <td >Angoulême</td>
-      <td >Délibération</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelib&eacuteration</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>776</td>
-      <td >Paroissiens de Saint Martial (sièges de l'église)</td>
+      <td >Paroissiens de Saint Martial (si&egraveges de l'&eacuteglise)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1734</td>
       <td  align=right
-  x:num="38028">11-févr</td>
+  x:num="38028">11-f&eacutevr</td>
       <td >Caillaud</td>
       <td >2E234-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>554</td>
@@ -2882,7 +2882,7 @@ $connexionBD->ferme();
       <td class=xl2415333 align=right x:num="38316">25-nov</td>
       <td >Caillaud</td>
       <td >2E236-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>566</td>
@@ -2893,7 +2893,7 @@ $connexionBD->ferme();
       <td  align=right x:num="38274">14-oct</td>
       <td >Caillaud</td>
       <td >2E236-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>566</td>
@@ -2905,7 +2905,7 @@ $connexionBD->ferme();
   x:num="38080">3-avr</td>
       <td >Caillaud</td>
       <td >2E236-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>566</td>
@@ -2917,7 +2917,7 @@ $connexionBD->ferme();
   x:num="38302">11-nov</td>
       <td >Caillaud</td>
       <td >2E237-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Rente, Quittance</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>730</td>
@@ -2927,13 +2927,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1738</td>
       <td  align=right
   x:num="38372">20-janv</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E961-10</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>789</td>
-      <td >Marg. ROUFFIGNAC à Cyb. CAILLAUD et J. DARS</td>
+      <td >Marg. ROUFFIGNAC &agrave Cyb. CAILLAUD et J. DARS</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1739</td>
@@ -2941,7 +2941,7 @@ $connexionBD->ferme();
   x:num="38353">1-janv</td>
       <td >Caillaud</td>
       <td >2E238-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>763</td>
@@ -2953,7 +2953,7 @@ $connexionBD->ferme();
   x:num="38442">31-mars</td>
       <td >Caillaud</td>
       <td >2E238-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>763</td>
@@ -2962,10 +2962,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1739</td>
       <td  align=right
-  x:num="38714">28-déc</td>
+  x:num="38714">28-d&eacutec</td>
       <td >Caillaud</td>
       <td >2E238-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>763</td>
@@ -2977,7 +2977,7 @@ $connexionBD->ferme();
   x:num="38516">13-juin</td>
       <td >Marchadier</td>
       <td >2E970-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>762</td>
@@ -2989,7 +2989,7 @@ $connexionBD->ferme();
   x:num="38451">9-avr</td>
       <td >Marchadier</td>
       <td >2E970-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Rente</td>
       <td >DARS Joseph</td>
       <td  align=right x:num>762</td>
@@ -3036,7 +3036,7 @@ $connexionBD->ferme();
       <td class=xl3315333 align=right x:num="39972">8-juin</td>
       <td >Audouin</td>
       <td >2E118-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >DAVID Jean</td>
       <td  align=right x:num>1334</td>
@@ -3059,7 +3059,7 @@ $connexionBD->ferme();
   x:num="38119">12-mai</td>
       <td >Porcheron</td>
       <td >2E1086-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >DAVID Jean</td>
       <td  align=right x:num>746</td>
@@ -3071,7 +3071,7 @@ $connexionBD->ferme();
   x:num="38603">8-sept</td>
       <td >Caillaud</td>
       <td >2E238-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >DAVID Jeanne</td>
       <td  align=right x:num>763</td>
@@ -3083,7 +3083,7 @@ $connexionBD->ferme();
   x:num="38508">5-juin</td>
       <td >Caillaud</td>
       <td >2E240-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >DAVID Jeanne</td>
       <td  align=right x:num>768</td>
@@ -3095,11 +3095,11 @@ $connexionBD->ferme();
   x:num="38660">4-nov</td>
       <td >Caillaud</td>
       <td >2E241-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >DAVID Jeanne</td>
       <td  align=right x:num>760</td>
-      <td >Jean PAPIN, BOUCHAUD à GILBERT</td>
+      <td >Jean PAPIN, BOUCHAUD &agrave GILBERT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1746</td>
@@ -3107,7 +3107,7 @@ $connexionBD->ferme();
   x:num="38535">2-juil</td>
       <td >Caillaud</td>
       <td >2E246-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >DAVID Jeanne</td>
       <td  align=right x:num>770</td>
@@ -3119,11 +3119,11 @@ $connexionBD->ferme();
   x:num="38641">16-oct</td>
       <td >Caillaud</td>
       <td >2E246-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >DAVID Jeanne</td>
       <td  align=right x:num>770</td>
-      <td >Veuve de Jean PAPIN (présence de Jean DARS)</td>
+      <td >Veuve de Jean PAPIN (pr&eacutesence de Jean DARS)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1697</td>
@@ -3135,7 +3135,7 @@ $connexionBD->ferme();
       <td >Cession</td>
       <td >DELAURIERE Jacques</td>
       <td  align=right x:num>1038</td>
-      <td >de Jacques DELAURIERE l'aîné</td>
+      <td >de Jacques DELAURIERE l'a&icircn&eacute</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1701</td>
@@ -3143,7 +3143,7 @@ $connexionBD->ferme();
   x:num="38489">17-mai</td>
       <td >Porcheron</td>
       <td >2E1085-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Echange</td>
       <td >DELAURIERE Jacques</td>
       <td  align=right x:num>778</td>
@@ -3152,7 +3152,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1723</td>
       <td  align=right
-  x:num="38228">29-août</td>
+  x:num="38228">29-ao&ucirct</td>
       <td >Lalande</td>
       <td >2E4959-20</td>
       <td >Ruelle</td>
@@ -3167,11 +3167,11 @@ $connexionBD->ferme();
   x:num="38838">1-mai</td>
       <td >Caillaud</td>
       <td >2E256-30</td>
-      <td >Angoulême</td>
-      <td >Titre clérical</td>
+      <td >Angoul&ecircme</td>
+      <td >Titre cl&eacuterical</td>
       <td >DELAURIERE Jean</td>
       <td  align=right x:num>789</td>
-      <td >Et Elisabeth ROUHIER pour Léonard DELAURIERE</td>
+      <td >Et Elisabeth ROUHIER pour L&eacuteonard DELAURIERE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1652</td>
@@ -3179,9 +3179,9 @@ $connexionBD->ferme();
   x:num="39477">30-janv</td>
       <td >Juilhard</td>
       <td >2E861-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Rôle</td>
-      <td >DENEUVILLE Françoise</td>
+      <td >DENEUVILLE Fran&ccediloise</td>
       <td  align=right x:num>1138</td>
       <td >Rôle de Puymoyen</td>
     </tr>
@@ -3191,9 +3191,9 @@ $connexionBD->ferme();
   x:num="39775">23-nov</td>
       <td >Juilhard</td>
       <td >2E861-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Rôle</td>
-      <td >DENEUVILLE Françoise</td>
+      <td >DENEUVILLE Fran&ccediloise</td>
       <td  align=right x:num>1138</td>
       <td >Rôle de Puymoyen</td>
     </tr>
@@ -3202,18 +3202,18 @@ $connexionBD->ferme();
       <td class=xl3315333 align=right x:num="39835">22-janv</td>
       <td >Audouin</td>
       <td >2E118-20</td>
-      <td >Angoulême</td>
-      <td >Révision</td>
+      <td >Angoul&ecircme</td>
+      <td >R&eacutevision</td>
       <td >DUPONT Jeanne</td>
       <td  align=right x:num>1334</td>
       <td >et Ant. BRISSEAU et Jeanne MARTIN (fille de Jeanne DUPONT)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
-      <td  align=right x:num="38585">21-août</td>
-      <td >Mancié</td>
+      <td  align=right x:num="38585">21-ao&ucirct</td>
+      <td >Manci&eacute</td>
       <td >2E937-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >DUPUY Helie</td>
       <td  align=right x:num>778</td>
@@ -3223,9 +3223,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1704</td>
       <td  align=right
   x:num="38300">9-nov</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E942-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>713</td>
@@ -3235,21 +3235,21 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1709</td>
       <td  align=right
   x:num="38086">9-avr</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E942-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Association</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>714</td>
-      <td >Etien. PINASSEAU (maison a costé sous un rocher...)</td>
+      <td >Etien. PINASSEAU (maison a cost&eacute sous un rocher...)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1709</td>
       <td  align=right
   x:num="38266">6-oct</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E819-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>708</td>
@@ -3259,9 +3259,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1711</td>
       <td  align=right
   x:num="38067">21-mars</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E 820-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>746</td>
@@ -3271,9 +3271,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1713</td>
       <td  align=right
   x:num="38017">31-janv</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E822-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Bail et Vente</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>746</td>
@@ -3283,9 +3283,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1715</td>
       <td  align=right
   x:num="38119">12-mai</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E945-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>733</td>
@@ -3295,9 +3295,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1716</td>
       <td  align=right
   x:num="38164">26-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E946-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>739</td>
@@ -3307,9 +3307,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1723</td>
       <td  align=right
   x:num="38185">17-juil</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E953-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>745</td>
@@ -3319,9 +3319,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1728</td>
       <td  align=right
   x:num="37999">13-janv</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E956-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>576</td>
@@ -3333,7 +3333,7 @@ $connexionBD->ferme();
   x:num="39749">28-oct</td>
       <td >Porcheron</td>
       <td >2E1094-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cheptel</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>1115</td>
@@ -3345,7 +3345,7 @@ $connexionBD->ferme();
   x:num="38099">22-avr</td>
       <td >Caillaud</td>
       <td >2E233-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Rente</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>709</td>
@@ -3354,10 +3354,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1738</td>
       <td  align=right
-  x:num="38350">29-déc</td>
+  x:num="38350">29-d&eacutec</td>
       <td >Caillaud</td>
       <td >2E237-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>730</td>
@@ -3366,10 +3366,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1738</td>
       <td  align=right
-  x:num="38350">29-déc</td>
+  x:num="38350">29-d&eacutec</td>
       <td >Caillaud</td>
       <td >2E237-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>730</td>
@@ -3378,10 +3378,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1738</td>
       <td  align=right
-  x:num="38696">10-déc</td>
-      <td >Mancié</td>
+  x:num="38696">10-d&eacutec</td>
+      <td >Manci&eacute</td>
       <td >2E961-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>789</td>
@@ -3393,7 +3393,7 @@ $connexionBD->ferme();
   x:num="38510">7-juin</td>
       <td >Caillaud</td>
       <td >2E240-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transport</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>768</td>
@@ -3405,7 +3405,7 @@ $connexionBD->ferme();
   x:num="38663">7-nov</td>
       <td >Caillaud</td>
       <td >2E241-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Consentement</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>760</td>
@@ -3417,7 +3417,7 @@ $connexionBD->ferme();
   x:num="38664">8-nov</td>
       <td >Caillaud</td>
       <td >2E241-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>760</td>
@@ -3429,7 +3429,7 @@ $connexionBD->ferme();
   x:num="38504">1-juin</td>
       <td >Caillaud</td>
       <td >2E245-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Bail</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>760</td>
@@ -3441,7 +3441,7 @@ $connexionBD->ferme();
   x:num="38376">24-janv</td>
       <td >Caillaud</td>
       <td >2E247-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>776</td>
@@ -3450,10 +3450,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1748</td>
       <td  align=right
-  x:num="38575">11-août</td>
+  x:num="38575">11-ao&ucirct</td>
       <td >Caillaud</td>
       <td >2E249-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Compte</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>776</td>
@@ -3465,7 +3465,7 @@ $connexionBD->ferme();
   x:num="38518">15-juin</td>
       <td >Caillaud</td>
       <td >2E249-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte obligatoire</td>
       <td >GABORIT Jean</td>
       <td  align=right x:num>776</td>
@@ -3474,14 +3474,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1700</td>
       <td  align=right
-  x:num="38762">14-févr</td>
+  x:num="38762">14-f&eacutevr</td>
       <td >Rouhier</td>
       <td >2E1137-20</td>
       <td >Lhoumeau</td>
       <td >Accord</td>
       <td >GABORIT Jeanne</td>
       <td  align=right x:num>911</td>
-      <td >Vve de Léonard AUBOIN, Cl. TULLIER et C. AUBOIN</td>
+      <td >Vve de L&eacuteonard AUBOIN, Cl. TULLIER et C. AUBOIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1657</td>
@@ -3489,11 +3489,11 @@ $connexionBD->ferme();
   x:num="39456">9-janv</td>
       <td >Guyot</td>
       <td >2E781-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Rente</td>
       <td >GAILLARD Jean</td>
       <td  align=right x:num>1174</td>
-      <td >et Jeanne DURANDEAU à Jacq. DESFORGES vve Denis LURAT</td>
+      <td >et Jeanne DURANDEAU &agrave Jacq. DESFORGES vve Denis LURAT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
@@ -3521,7 +3521,7 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
-      <td class=xl3315333 align=right x:num="39859">15-févr</td>
+      <td class=xl3315333 align=right x:num="39859">15-f&eacutevr</td>
       <td >Desport</td>
       <td >2E2130-20</td>
       <td >Champniers</td>
@@ -3535,7 +3535,7 @@ $connexionBD->ferme();
       <td  align=right x:num="38161">23-juin</td>
       <td >Caillaud</td>
       <td >2E287-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >GENAUD Jean</td>
       <td  align=right x:num>751</td>
@@ -3559,9 +3559,9 @@ $connexionBD->ferme();
       <td >2E5922-20</td>
       <td >Vaux-Rouillac</td>
       <td >Echange</td>
-      <td >GONTIER François</td>
+      <td >GONTIER Fran&ccedilois</td>
       <td  align=right x:num>1170</td>
-      <td >et François BOUVET</td>
+      <td >et Fran&ccedilois BOUVET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
@@ -3571,9 +3571,9 @@ $connexionBD->ferme();
       <td >2E5923-170</td>
       <td >Vaux-Rouillac</td>
       <td >Echange</td>
-      <td >GONTIER François</td>
+      <td >GONTIER Fran&ccedilois</td>
       <td  align=right x:num>1170</td>
-      <td >et Marie BERNARD avec les frères GESTREAU</td>
+      <td >et Marie BERNARD avec les fr&egraveres GESTREAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
@@ -3583,33 +3583,33 @@ $connexionBD->ferme();
       <td >2E5923-160</td>
       <td >Vaux-Rouillac</td>
       <td >Echange</td>
-      <td >GONTIER François</td>
+      <td >GONTIER Fran&ccedilois</td>
       <td  align=right x:num>1170</td>
-      <td >et Marie BERNARD avec François BOUVET</td>
+      <td >et Marie BERNARD avec Fran&ccedilois BOUVET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
       <td  align=right
-  x:num="39487">9-févr</td>
+  x:num="39487">9-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5923-140</td>
       <td >Vaux-Rouillac</td>
       <td >Echange</td>
-      <td >GONTIER François</td>
+      <td >GONTIER Fran&ccedilois</td>
       <td  align=right x:num>1170</td>
-      <td >et Jean BECHET: pièces de terre</td>
+      <td >et Jean BECHET: pi&egraveces de terre</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
       <td  align=right
-  x:num="39493">15-févr</td>
+  x:num="39493">15-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5926-20</td>
       <td >Vaux-Rouillac</td>
       <td >Acquisition</td>
-      <td >GONTIER François</td>
+      <td >GONTIER Fran&ccedilois</td>
       <td  align=right x:num>1168</td>
-      <td >une pièce de terre de François MARTINEAU</td>
+      <td >une pi&egravece de terre de Fran&ccedilois MARTINEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
@@ -3619,9 +3619,9 @@ $connexionBD->ferme();
       <td >2E5927-160</td>
       <td >Vaux-Rouillac</td>
       <td >Arrentement</td>
-      <td >GONTIER François</td>
+      <td >GONTIER Fran&ccedilois</td>
       <td  align=right x:num>1169</td>
-      <td >une pièce de terre à Mathieu BAILLIF</td>
+      <td >une pi&egravece de terre &agrave Mathieu BAILLIF</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
@@ -3631,7 +3631,7 @@ $connexionBD->ferme();
       <td >2E2940-50</td>
       <td >Garat</td>
       <td >Vente</td>
-      <td >GRELET Françoise</td>
+      <td >GRELET Fran&ccediloise</td>
       <td  align=right x:num>972</td>
       <td >Veuve de Paul BIARD de Georges FAURE</td>
     </tr>
@@ -3645,7 +3645,7 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >HOUCHART Jacques Et.</td>
       <td >&nbsp;</td>
-      <td >et Angélique Aldegonde POCHEZ</td>
+      <td >et Ang&eacutelique Aldegonde POCHEZ</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1705</td>
@@ -3669,31 +3669,31 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >IMBERT Marie</td>
       <td  align=right x:num>763</td>
-      <td >François, Pierre, Louise IMBERT</td>
+      <td >Fran&ccedilois, Pierre, Louise IMBERT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1717</td>
       <td  align=right
-  x:num="38585">21-août</td>
-      <td >Jéheu</td>
+  x:num="38585">21-ao&ucirct</td>
+      <td >J&eacuteheu</td>
       <td >2E826-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
       <td >IMBERT Marie</td>
       <td  align=right x:num>783</td>
-      <td >Pierre IMBERT et Léonard JULLIEN</td>
+      <td >Pierre IMBERT et L&eacuteonard JULLIEN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1719</td>
       <td  align=right
   x:num="39040">19-nov</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E828-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >IMBERT Marie</td>
       <td  align=right x:num>885</td>
-      <td >et Pierre IMBERT et JULLIEN à ROUHIER</td>
+      <td >et Pierre IMBERT et JULLIEN &agrave ROUHIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1732</td>
@@ -3701,7 +3701,7 @@ $connexionBD->ferme();
   x:num="38273">13-oct</td>
       <td >Caillaud</td>
       <td >2E232-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >IMBERT Marie</td>
       <td  align=right x:num>709</td>
@@ -3729,15 +3729,15 @@ $connexionBD->ferme();
       <td >Acquisition</td>
       <td >IMBERT Pierre</td>
       <td  align=right x:num>942</td>
-      <td >et Jeanne ROUSSEAU de François IMBERT</td>
+      <td >et Jeanne ROUSSEAU de Fran&ccedilois IMBERT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1694</td>
       <td  align=right
-  x:num="38706">20-déc</td>
-      <td >Mancié</td>
+  x:num="38706">20-d&eacutec</td>
+      <td >Manci&eacute</td>
       <td >2E938-220</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Promesse</td>
       <td >IMBERT Pierre</td>
       <td  align=right x:num>777</td>
@@ -3753,7 +3753,7 @@ $connexionBD->ferme();
       <td >Arrentement</td>
       <td >IZAMBARD Louis</td>
       <td  align=right x:num>1168</td>
-      <td >de Pierre BOUNY notaire (annulé)</td>
+      <td >de Pierre BOUNY notaire (annul&eacute)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
@@ -3762,10 +3762,10 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5935-230</td>
       <td >Vaux-Rouillac</td>
-      <td >Procès verbal</td>
+      <td >Proc&egraves verbal</td>
       <td >IZAMBARD Louis</td>
       <td  align=right x:num>1167</td>
-      <td >et Marie GUILLOT sa mère</td>
+      <td >et Marie GUILLOT sa m&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1683</td>
@@ -3801,7 +3801,7 @@ $connexionBD->ferme();
       <td >Transaction</td>
       <td >IZAMBARD Louis</td>
       <td  align=right x:num>1020</td>
-      <td >et Berthomé son frère avec Jean MESNARD</td>
+      <td >et Berthom&eacute son fr&egravere avec Jean MESNARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1695</td>
@@ -3816,14 +3816,14 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1696</td>
-      <td class=xl3515333 align=right x:num="39846">02-févr</td>
+      <td class=xl3515333 align=right x:num="39846">02-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5941-10</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
       <td >IZAMBARD Louis</td>
       <td  align=right x:num>1441</td>
-      <td >de Guillaume IZAMBARD (pièce de vigne)</td>
+      <td >de Guillaume IZAMBARD (pi&egravece de vigne)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1697</td>
@@ -3839,10 +3839,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1716</td>
       <td  align=right
-  x:num="38940">11-août</td>
-      <td >Mancié</td>
+  x:num="38940">11-ao&ucirct</td>
+      <td >Manci&eacute</td>
       <td >2E946-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >JAYET Antoine</td>
       <td  align=right x:num>739</td>
@@ -3852,21 +3852,21 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1725</td>
       <td  align=right
   x:num="37994">8-janv</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E955-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >JAYET Antoine</td>
       <td  align=right x:num>591</td>
-      <td >et Marie TOURNIER à GOUGNET-TOURNIER</td>
+      <td >et Marie TOURNIER &agrave GOUGNET-TOURNIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1725</td>
       <td  align=right
-  x:num="38039">22-févr</td>
-      <td >Mancié</td>
+  x:num="38039">22-f&eacutevr</td>
+      <td >Manci&eacute</td>
       <td >2E955-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >JAYET Antoine</td>
       <td  align=right x:num>591</td>
@@ -3875,14 +3875,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1728</td>
       <td  align=right
-  x:num="38339">18-déc</td>
-      <td >Mancié</td>
+  x:num="38339">18-d&eacutec</td>
+      <td >Manci&eacute</td>
       <td >2E956-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >JAYET Antoine</td>
       <td  align=right x:num>576</td>
-      <td >et Marie TOURNIER à TOURNIER-COQUIAUD</td>
+      <td >et Marie TOURNIER &agrave TOURNIER-COQUIAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1751</td>
@@ -3890,11 +3890,11 @@ $connexionBD->ferme();
   x:num="38550">17-juil</td>
       <td >Caillaud</td>
       <td >2E255-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >JAYET Antoine</td>
       <td  align=right x:num>787</td>
-      <td >et Marguerite JOUANNET, à Jean JOUANNET</td>
+      <td >et Marguerite JOUANNET, &agrave Jean JOUANNET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1658</td>
@@ -3902,11 +3902,11 @@ $connexionBD->ferme();
   x:num="38658">2-nov</td>
       <td >Peuple</td>
       <td >2E1061-120</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Bail</td>
-      <td >JAYET Berthomé Aîné</td>
+      <td >JAYET Berthom&eacute A&icircn&eacute</td>
       <td  align=right x:num>860</td>
-      <td >et Hélie DUPUY de Jean BIBAUD</td>
+      <td >et H&eacutelie DUPUY de Jean BIBAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1664</td>
@@ -3915,10 +3915,10 @@ $connexionBD->ferme();
       <td >Peynaud</td>
       <td >2E2766-20</td>
       <td >Dirac</td>
-      <td >Métairie</td>
-      <td >JAYET Berthomé Aîné</td>
+      <td >M&eacutetairie</td>
+      <td >JAYET Berthom&eacute A&icircn&eacute</td>
       <td  align=right x:num>874</td>
-      <td >et Hélie DUPUY de Jehan MOURIER</td>
+      <td >et H&eacutelie DUPUY de Jehan MOURIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
@@ -3928,7 +3928,7 @@ $connexionBD->ferme();
       <td >2E226-60</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >JAYET Berthomé Aîné</td>
+      <td >JAYET Berthom&eacute A&icircn&eacute</td>
       <td  align=right x:num>966</td>
       <td >et Magdelaine GUILLAUME</td>
     </tr>
@@ -3938,23 +3938,23 @@ $connexionBD->ferme();
   x:num="39007">17-oct</td>
       <td >Micheau</td>
       <td >2E1028-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >JAYET Berthomé Aîné</td>
+      <td >JAYET Berthom&eacute A&icircn&eacute</td>
       <td  align=right x:num>1028</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1666</td>
       <td  align=right
-  x:num="39795">13-déc</td>
+  x:num="39795">13-d&eacutec</td>
       <td >Cladier Jos.</td>
       <td >2E355-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >JAYET Berthomé Jeune</td>
+      <td >JAYET Berthom&eacute Jeune</td>
       <td  align=right x:num>1124</td>
-      <td >quittance à Pierre RIFFAUD et Jeanne JAYET (tx maison)</td>
+      <td >quittance &agrave Pierre RIFFAUD et Jeanne JAYET (tx maison)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
@@ -3963,10 +3963,10 @@ $connexionBD->ferme();
       <td >Chauvin</td>
       <td >2E309-80</td>
       <td >Lhoumeau</td>
-      <td >Procès verbal</td>
-      <td >JAYET Berthomé Jeune</td>
+      <td >Proc&egraves verbal</td>
+      <td >JAYET Berthom&eacute Jeune</td>
       <td  align=right x:num>822</td>
-      <td >et ses sœurs et P. RIFFAUD (Berthomé au couvent)</td>
+      <td >et ses s&oeligurs et P. RIFFAUD (Berthom&eacute au couvent)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
@@ -3976,9 +3976,9 @@ $connexionBD->ferme();
       <td >2E412-120</td>
       <td >Lhoumeau</td>
       <td >Reconnaissance</td>
-      <td >JAYET Berthomé Jeune</td>
+      <td >JAYET Berthom&eacute Jeune</td>
       <td  align=right x:num>953</td>
-      <td >avec ses sœurs à Michel SALESSE</td>
+      <td >avec ses s&oeligurs &agrave Michel SALESSE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1679</td>
@@ -3988,7 +3988,7 @@ $connexionBD->ferme();
       <td >2E312-10</td>
       <td >Lhoumeau</td>
       <td >Location</td>
-      <td >JAYET Berthomé Jeune</td>
+      <td >JAYET Berthom&eacute Jeune</td>
       <td  align=right x:num>783</td>
       <td >d'Antoine ROY</td>
     </tr>
@@ -4000,9 +4000,9 @@ $connexionBD->ferme();
       <td >2E412-160</td>
       <td >Lhoumeau</td>
       <td >Partage</td>
-      <td >JAYET Berthomé Jeune</td>
+      <td >JAYET Berthom&eacute Jeune</td>
       <td  align=right x:num>954</td>
-      <td >et ses sœurs</td>
+      <td >et ses s&oeligurs</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
@@ -4010,9 +4010,9 @@ $connexionBD->ferme();
   x:num="39619">20-juin</td>
       <td >Cladier</td>
       <td >2E368-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >JAYET Berthomé Jeune</td>
+      <td >JAYET Berthom&eacute Jeune</td>
       <td  align=right x:num>1162</td>
       <td >et Magdelaine GUILLAUME</td>
     </tr>
@@ -4022,11 +4022,11 @@ $connexionBD->ferme();
   x:num="38362">10-janv</td>
       <td >Chauvin</td>
       <td >2E314-120</td>
-      <td >Angoulême</td>
-      <td >Marché</td>
-      <td >JAYET Berthomé Jeune</td>
+      <td >Angoul&ecircme</td>
+      <td >March&eacute</td>
+      <td >JAYET Berthom&eacute Jeune</td>
       <td  align=right x:num>785</td>
-      <td >Léonard PIGERAUD et Pierre LIGNARS</td>
+      <td >L&eacuteonard PIGERAUD et Pierre LIGNARS</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1686</td>
@@ -4035,8 +4035,8 @@ $connexionBD->ferme();
       <td >Chauvin</td>
       <td >2E315-200</td>
       <td >L'houmeau</td>
-      <td >Déguerpissement</td>
-      <td >JAYET Berthomé Jeune</td>
+      <td >D&eacuteguerpissement</td>
+      <td >JAYET Berthom&eacute Jeune</td>
       <td  align=right x:num>787</td>
       <td >de Jean THOMAS</td>
     </tr>
@@ -4048,21 +4048,21 @@ $connexionBD->ferme();
       <td >2E321-200</td>
       <td >Lhoumeau</td>
       <td >Vente</td>
-      <td >JAYET Berthomé Jeune</td>
+      <td >JAYET Berthom&eacute Jeune</td>
       <td  align=right x:num>801</td>
-      <td >à Antoine SEBILLE</td>
+      <td >&agrave Antoine SEBILLE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1714</td>
       <td  align=right
-  x:num="38574">10-août</td>
+  x:num="38574">10-ao&ucirct</td>
       <td >Porcheron</td>
       <td >2E1090-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >JAYET Berthomé Jeune</td>
+      <td >JAYET Berthom&eacute Jeune</td>
       <td  align=right x:num>838</td>
-      <td >et Magd. GUILLAUME à Anne BOUHIER</td>
+      <td >et Magd. GUILLAUME &agrave Anne BOUHIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1636</td>
@@ -4071,7 +4071,7 @@ $connexionBD->ferme();
       <td >Rouhier</td>
       <td >2E1117-30</td>
       <td >L'houmeau</td>
-      <td >Marché</td>
+      <td >March&eacute</td>
       <td >JAYET Jean</td>
       <td  align=right x:num>1281</td>
       <td >et Marguerite MAUBERT</td>
@@ -4082,11 +4082,11 @@ $connexionBD->ferme();
   x:num="39616">17-juin</td>
       <td >Cladier Jos.</td>
       <td >2E355-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >PV et inventaire</td>
       <td >JAYET Jean</td>
       <td  align=right x:num>1124</td>
-      <td >et Margte MAUBERT suite décès. Fait par RIFFAUD gend.</td>
+      <td >et Margte MAUBERT suite d&eacutec&egraves. Fait par RIFFAUD gend.</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1645</td>
@@ -4098,7 +4098,7 @@ $connexionBD->ferme();
       <td >Sommation</td>
       <td >JOUANNET Arnaud</td>
       <td  align=right x:num>946</td>
-      <td >de J. FESTIS (et la mère d'Arnaud: Marie CHAUVET)</td>
+      <td >de J. FESTIS (et la m&egravere d'Arnaud: Marie CHAUVET)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1645</td>
@@ -4106,7 +4106,7 @@ $connexionBD->ferme();
   x:num="38532">29-juin</td>
       <td >Vachier</td>
       <td >2E1280-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >JOUANNET Arnaud</td>
       <td  align=right x:num>785</td>
@@ -4122,7 +4122,7 @@ $connexionBD->ferme();
       <td >Ferme</td>
       <td >JOUANNET Arnaud</td>
       <td  align=right x:num>969</td>
-      <td >de Françoise RAMBAUD (d'une maison)</td>
+      <td >de Fran&ccediloise RAMBAUD (d'une maison)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
@@ -4146,7 +4146,7 @@ $connexionBD->ferme();
       <td >Ferme</td>
       <td >JOUANNET Arnaud</td>
       <td  align=right x:num>968</td>
-      <td >et Pasquette JOUANNET sa sœur à Frçs. BECHET</td>
+      <td >et Pasquette JOUANNET sa s&oeligur &agrave Fr&ccedils. BECHET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
@@ -4158,7 +4158,7 @@ $connexionBD->ferme();
       <td >Transaction</td>
       <td >JOUANNET Arnaud</td>
       <td  align=right x:num>802</td>
-      <td >André BRISSON</td>
+      <td >Andr&eacute BRISSON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
@@ -4170,31 +4170,31 @@ $connexionBD->ferme();
       <td >Accord</td>
       <td >JOUANNET Arnaud</td>
       <td  align=right x:num>802</td>
-      <td >Anthoine ROY (témoin Jean JOUANNET fils d'Arnaud)</td>
+      <td >Anthoine ROY (t&eacutemoin Jean JOUANNET fils d'Arnaud)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
       <td  align=right
-  x:num="38948">19-août</td>
+  x:num="38948">19-ao&ucirct</td>
       <td >Clochard</td>
       <td >2E409-190</td>
       <td >Lhoumeau</td>
       <td >Apprentissage</td>
       <td >JOUANNET Arnaud</td>
       <td  align=right x:num>963</td>
-      <td >du métier de cordonnier pour son fils Martin</td>
+      <td >du m&eacutetier de cordonnier pour son fils Martin</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
       <td  align=right
   x:num="38467">25-avr</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E933-150</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >JOUANNET Arnaud</td>
       <td  align=right x:num>861</td>
-      <td >et Jean ROULLET à Georges BOYTEAU</td>
+      <td >et Jean ROULLET &agrave Georges BOYTEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
@@ -4211,7 +4211,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
       <td  align=right
-  x:num="38713">27-déc</td>
+  x:num="38713">27-d&eacutec</td>
       <td >Chauvin</td>
       <td >2E310-20</td>
       <td >Lhoumeau</td>
@@ -4230,7 +4230,7 @@ $connexionBD->ferme();
       <td >Ferme</td>
       <td >JOUANNET Jean</td>
       <td  align=right x:num>811</td>
-      <td >et autres JOUANNET à Jean ROUSSEAU</td>
+      <td >et autres JOUANNET &agrave Jean ROUSSEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1689</td>
@@ -4251,22 +4251,22 @@ $connexionBD->ferme();
       <td >Chauvin</td>
       <td >2E318-140</td>
       <td >Lhoumeau</td>
-      <td >Procès verbal</td>
+      <td >Proc&egraves verbal</td>
       <td >JOUANNET Jean</td>
       <td  align=right x:num>812</td>
-      <td >Fromages en mauvais état</td>
+      <td >Fromages en mauvais &eacutetat</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1692</td>
       <td  align=right
-  x:num="38588">24-août</td>
+  x:num="38588">24-ao&ucirct</td>
       <td >Chauvin</td>
       <td >2E318-190</td>
       <td >Lhoumeau</td>
       <td >Ferme</td>
       <td >JOUANNET Jean</td>
       <td  align=right x:num>812</td>
-      <td >Menaud ROY et autres JOUANNET à Jean FESTIX</td>
+      <td >Menaud ROY et autres JOUANNET &agrave Jean FESTIX</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1702</td>
@@ -4284,21 +4284,21 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1714</td>
       <td  align=right
   x:num="38626">1-oct</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E823-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >JOUANNET Michel</td>
       <td  align=right x:num>780</td>
-      <td >Suite décès de Catherine ROY</td>
+      <td >Suite d&eacutec&egraves de Catherine ROY</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1716</td>
       <td  align=right
   x:num="38180">12-juil</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E825-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >JOUANNET Michel</td>
       <td  align=right x:num>710</td>
@@ -4307,10 +4307,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1720</td>
       <td  align=right
-  x:num="39065">14-déc</td>
-      <td >Jéheu</td>
+  x:num="39065">14-d&eacutec</td>
+      <td >J&eacuteheu</td>
       <td >2E829-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >JOUANNET Michel</td>
       <td  align=right x:num>885</td>
@@ -4320,13 +4320,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1725</td>
       <td class=xl3515333 align=right
   x:num="38498">26-mai</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E834-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >JOUANNET Michel</td>
       <td  align=right x:num>788</td>
-      <td >Louis JOUANNET (son frère) et Catherine ROBINEAU</td>
+      <td >Louis JOUANNET (son fr&egravere) et Catherine ROBINEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1737</td>
@@ -4334,7 +4334,7 @@ $connexionBD->ferme();
   x:num="38001">15-janv</td>
       <td >Caillaud</td>
       <td >2E237-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >JOUANNET Michel</td>
       <td  align=right x:num>730</td>
@@ -4343,10 +4343,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1744</td>
       <td  align=right
-  x:num="38328">7-déc</td>
+  x:num="38328">7-d&eacutec</td>
       <td >Caillaud</td>
       <td >2E243-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >JOUANNET Michel</td>
       <td  align=right x:num>560</td>
@@ -4358,7 +4358,7 @@ $connexionBD->ferme();
   x:num="38118">11-mai</td>
       <td >Caillaud</td>
       <td >2E244-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ratification</td>
       <td >JOUANNET Michel</td>
       <td  align=right x:num>713</td>
@@ -4370,11 +4370,11 @@ $connexionBD->ferme();
   x:num="38550">17-juil</td>
       <td >Caillaud</td>
       <td >2E255-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >JOUANNET Michel</td>
       <td  align=right x:num>787</td>
-      <td >après décès Marguerite BRISSEAU</td>
+      <td >apr&egraves d&eacutec&egraves Marguerite BRISSEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1753</td>
@@ -4382,11 +4382,11 @@ $connexionBD->ferme();
   x:num="38437">26-mars</td>
       <td >Caillaud</td>
       <td >2E258-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >JOUANNET Michel</td>
       <td  align=right x:num>816</td>
-      <td >à Antoine JAYET et Marguerite JOUANNET (sa fille)</td>
+      <td >&agrave Antoine JAYET et Marguerite JOUANNET (sa fille)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1755</td>
@@ -4394,19 +4394,19 @@ $connexionBD->ferme();
   x:num="38504">1-juin</td>
       <td >Caillaud</td>
       <td >2E262-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Abandon</td>
       <td >JOUANNET Michel</td>
       <td  align=right x:num>868</td>
-      <td >à ses enfants (Ant. JAYET et Marguerite JOUANNET)</td>
+      <td >&agrave ses enfants (Ant. JAYET et Marguerite JOUANNET)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1690</td>
       <td  align=right
-  x:num="38403">20-févr</td>
-      <td >Mancié</td>
+  x:num="38403">20-f&eacutevr</td>
+      <td >Manci&eacute</td>
       <td >2E937-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >LAMOUR Anne</td>
       <td  align=right x:num>778</td>
@@ -4419,7 +4419,7 @@ $connexionBD->ferme();
       <td >Peynaud fils</td>
       <td >2E2770-30</td>
       <td >Dirac</td>
-      <td >Procès verbal</td>
+      <td >Proc&egraves verbal</td>
       <td >LAMOUR Anne</td>
       <td  align=right x:num>869</td>
       <td >et Etien. JEAN et Perrine LAMOUR et J. BRUNELIERE</td>
@@ -4428,13 +4428,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1711</td>
       <td  align=right
   x:num="38078">1-avr</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E943-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Accord</td>
       <td >LAMOUR Anne</td>
       <td  align=right x:num>721</td>
-      <td >J. GABORIT et M.TOURNIER (sépar. Anne et E. JEAN)</td>
+      <td >J. GABORIT et M.TOURNIER (s&eacutepar. Anne et E. JEAN)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1715</td>
@@ -4452,13 +4452,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1715</td>
       <td  align=right
   x:num="38165">27-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E945-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >LAMOUR Anne</td>
       <td  align=right x:num>733</td>
-      <td >ET Etienne JEAN à Robert RICHON</td>
+      <td >ET Etienne JEAN &agrave Robert RICHON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1716</td>
@@ -4466,19 +4466,19 @@ $connexionBD->ferme();
   x:num="38617">22-sept</td>
       <td >Porcheron</td>
       <td >2E1091-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >LAMOUR Anne</td>
       <td  align=right x:num>841</td>
-      <td >et Etienne JEAN à Robert RICHON</td>
+      <td >et Etienne JEAN &agrave Robert RICHON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1726</td>
       <td  align=right
   x:num="38170">2-juil</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E835-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >LAMOUR Anne</td>
       <td  align=right x:num>573</td>
@@ -4489,42 +4489,42 @@ $connexionBD->ferme();
       <td class=xl2415333 align=right x:num="39818">5-janv</td>
       <td >Huguet Jean</td>
       <td >2E793-300</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Rôle</td>
-      <td >LAMOUR Méry</td>
+      <td >LAMOUR M&eacutery</td>
       <td  align=right x:num>1203</td>
       <td class=xl4015333>Rôle de Sers</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1662</td>
-      <td  align=right x:num="39672">12-août</td>
+      <td  align=right x:num="39672">12-ao&ucirct</td>
       <td >Chauvin</td>
       <td >2E306-30</td>
       <td >Lhoumeau</td>
       <td >Vente</td>
-      <td >LAMOUR Méry</td>
+      <td >LAMOUR M&eacutery</td>
       <td  align=right x:num>1124</td>
-      <td >de bois à Robert Richon maître tonnelier</td>
+      <td >de bois &agrave Robert Richon ma&icirctre tonnelier</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
       <td  align=right
-  x:num="39079">28-déc</td>
+  x:num="39079">28-d&eacutec</td>
       <td >Clochard</td>
       <td >2E412-150</td>
       <td >Lhoumeau</td>
-      <td >Déclaration</td>
+      <td >D&eacuteclaration</td>
       <td >LASLIER Colette</td>
       <td  align=right x:num>954</td>
-      <td >et Berthomé JAYET</td>
+      <td >et Berthom&eacute JAYET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1734</td>
       <td  align=right
-  x:num="38700">14-déc</td>
-      <td >Mancié</td>
+  x:num="38700">14-d&eacutec</td>
+      <td >Manci&eacute</td>
       <td >2E959-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >LIET Anne</td>
       <td  align=right x:num>785</td>
@@ -4537,16 +4537,16 @@ $connexionBD->ferme();
       <td >2E2621-50</td>
       <td >La Couronne</td>
       <td >Accord</td>
-      <td >LIET François</td>
+      <td >LIET Fran&ccedilois</td>
       <td  align=right x:num>1501</td>
-      <td >et Hilaire LIET son frère (métairie par moitié)</td>
+      <td >et Hilaire LIET son fr&egravere (m&eacutetairie par moiti&eacute)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1704</td>
-      <td  align=right x:num="38202">3-août</td>
+      <td  align=right x:num="38202">3-ao&ucirct</td>
       <td >Porcheron</td>
       <td >2E1086-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >LIET Jean</td>
       <td  align=right x:num>746</td>
@@ -4556,9 +4556,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1708</td>
       <td  align=right
   x:num="38274">14-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E942-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >LIET Jean</td>
       <td  align=right x:num>713</td>
@@ -4571,10 +4571,10 @@ $connexionBD->ferme();
       <td >Meslier</td>
       <td >2E2587-50</td>
       <td >La Couronne</td>
-      <td >Rétrocession</td>
+      <td >R&eacutetrocession</td>
       <td >LIET Jean</td>
       <td  align=right x:num>825</td>
-      <td >de Jacques BARRE à François FALIGON</td>
+      <td >de Jacques BARRE &agrave Fran&ccedilois FALIGON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1714</td>
@@ -4586,15 +4586,15 @@ $connexionBD->ferme();
       <td >Quittance</td>
       <td >LIET Jean</td>
       <td  align=right x:num>775</td>
-      <td >François FALIGON</td>
+      <td >Fran&ccedilois FALIGON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1718</td>
       <td  align=right
   x:num="38136">29-mai</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E948-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >&nbsp;</td>
       <td >LIET Jean</td>
       <td  align=right x:num>741</td>
@@ -4604,9 +4604,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1718</td>
       <td  align=right
   x:num="38501">29-mai</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E948-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >LIET Jean</td>
       <td  align=right x:num>741</td>
@@ -4616,21 +4616,21 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1719</td>
       <td  align=right
   x:num="38892">24-juin</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E828-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transport</td>
       <td >LIET Jean</td>
       <td  align=right x:num>885</td>
-      <td >et Cat TATAINE à P. MOUCHIERE et Eliz. GRELLIER</td>
+      <td >et Cat TATAINE &agrave P. MOUCHIERE et Eliz. GRELLIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1722</td>
       <td  align=right
   x:num="38047">1-mars</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E831-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >LIET Jean</td>
       <td  align=right x:num>731</td>
@@ -4640,9 +4640,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1722</td>
       <td  align=right
   x:num="38288">28-oct</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E831-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >LIET Jean</td>
       <td  align=right x:num>731</td>
@@ -4654,7 +4654,7 @@ $connexionBD->ferme();
   x:num="38179">11-juil</td>
       <td >Caillaud</td>
       <td >2E244-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >LIET Jean</td>
       <td  align=right x:num>713</td>
@@ -4666,7 +4666,7 @@ $connexionBD->ferme();
   x:num="38645">20-oct</td>
       <td >Caillaud</td>
       <td >2E246-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >LIET Jean</td>
       <td  align=right x:num>770</td>
@@ -4678,7 +4678,7 @@ $connexionBD->ferme();
   x:num="40019">25-juil</td>
       <td >Lacaton</td>
       <td >2E880-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Bail</td>
       <td >LIZEE Jean</td>
       <td  align=right x:num>1208</td>
@@ -4687,14 +4687,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1657</td>
       <td  align=right
-  x:num="39808">26-déc</td>
+  x:num="39808">26-d&eacutec</td>
       <td >Micheau</td>
       <td >2E1018-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >LIZEE Jean</td>
       <td  align=right x:num>1124</td>
-      <td >et Colette SURREAU à leur fils Clément</td>
+      <td >et Colette SURREAU &agrave leur fils Cl&eacutement</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1659</td>
@@ -4702,7 +4702,7 @@ $connexionBD->ferme();
   x:num="38995">5-oct</td>
       <td >Gibaud</td>
       <td >2E669-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Donnation</td>
       <td >LIZEE Jean</td>
       <td  align=right x:num>941</td>
@@ -4711,14 +4711,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1659</td>
       <td  align=right
-  x:num="38932">3-août</td>
+  x:num="38932">3-ao&ucirct</td>
       <td >Robin</td>
       <td >2E1109-150</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >LIZEE Jean</td>
       <td  align=right x:num>954</td>
-      <td >d'une pièce de vigne à Jean LIZEE l'aîné son fils</td>
+      <td >d'une pi&egravece de vigne &agrave Jean LIZEE l'a&icircn&eacute son fils</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1660</td>
@@ -4726,19 +4726,19 @@ $connexionBD->ferme();
   x:num="39474">27-janv</td>
       <td >Juilhard</td>
       <td >2E862-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >LIZEE Jean</td>
       <td  align=right x:num>1136</td>
-      <td >à Clément LIZEE son fils</td>
+      <td >&agrave Cl&eacutement LIZEE son fils</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
       <td  align=right
-  x:num="38772">24-févr</td>
+  x:num="38772">24-f&eacutevr</td>
       <td >Robin</td>
       <td >2E1110-110</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Accord</td>
       <td >LIZEE Jean</td>
       <td  align=right x:num>956</td>
@@ -4748,13 +4748,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1663</td>
       <td  align=right
   x:num="38631">6-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E933-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >LIZEE Jean</td>
       <td  align=right x:num>861</td>
-      <td >et Col. SURREAU et René CLERC et Phil. MOREAU</td>
+      <td >et Col. SURREAU et Ren&eacute CLERC et Phil. MOREAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1666</td>
@@ -4762,11 +4762,11 @@ $connexionBD->ferme();
   x:num="38502">30-mai</td>
       <td >Peuple</td>
       <td >2E1064-120</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >LIZEE Jean</td>
       <td  align=right x:num>859</td>
-      <td >et Colette SURREAU à Jean LIZEE leur fils</td>
+      <td >et Colette SURREAU &agrave Jean LIZEE leur fils</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
@@ -4774,11 +4774,11 @@ $connexionBD->ferme();
   x:num="38480">8-mai</td>
       <td >Peuple</td>
       <td >2E1064-190</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
       <td >LIZEE Jean</td>
       <td  align=right x:num>859</td>
-      <td >et C. SURREAU à L. ROUHIER et Jeanne LIZEE lr. fille</td>
+      <td >et C. SURREAU &agrave L. ROUHIER et Jeanne LIZEE lr. fille</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1669</td>
@@ -4786,11 +4786,11 @@ $connexionBD->ferme();
   x:num="38355">3-janv</td>
       <td >Peuple</td>
       <td >2E1065-50</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
       <td >LIZEE Jean</td>
       <td  align=right x:num>839</td>
-      <td >et Colette SURREAU à Jean LIZEE leur fils</td>
+      <td >et Colette SURREAU &agrave Jean LIZEE leur fils</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1649</td>
@@ -4798,7 +4798,7 @@ $connexionBD->ferme();
   x:num="39703">12-sept</td>
       <td >Guyot</td>
       <td >2E777-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >LIZEE Jehan</td>
       <td  align=right x:num>1156</td>
@@ -4807,7 +4807,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
       <td  align=right
-  x:num="38944">15-août</td>
+  x:num="38944">15-ao&ucirct</td>
       <td >Rouhier</td>
       <td >2E1125-40</td>
       <td >Lhoumeau</td>
@@ -4819,10 +4819,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1719</td>
       <td  align=right
-  x:num="38956">27-août</td>
-      <td >Jéheu</td>
+  x:num="38956">27-ao&ucirct</td>
+      <td >J&eacuteheu</td>
       <td >2E828-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
       <td >LURAT Catherine</td>
       <td  align=right x:num>885</td>
@@ -4834,7 +4834,7 @@ $connexionBD->ferme();
   x:num="38640">15-oct</td>
       <td >Caillaud</td>
       <td >2E241-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >LURAT Catherine</td>
       <td  align=right x:num>760</td>
@@ -4846,7 +4846,7 @@ $connexionBD->ferme();
   x:num="38382">30-janv</td>
       <td >Caillaud</td>
       <td >2E247-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >LURAT Catherine</td>
       <td  align=right x:num>776</td>
@@ -4855,22 +4855,22 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1659</td>
       <td  align=right
-  x:num="38932">3-août</td>
+  x:num="38932">3-ao&ucirct</td>
       <td >Robin</td>
       <td >2E1109-140</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >LURAT Jean</td>
       <td  align=right x:num>954</td>
-      <td >et Françoise CARRE</td>
+      <td >et Fran&ccediloise CARRE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
       <td  align=right
-  x:num="38760">12-févr</td>
+  x:num="38760">12-f&eacutevr</td>
       <td >Robin</td>
       <td >2E1112-240</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >LURAT Jean</td>
       <td  align=right x:num>966</td>
@@ -4879,10 +4879,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
       <td  align=right
-  x:num="38756">8-févr</td>
+  x:num="38756">8-f&eacutevr</td>
       <td >Robin</td>
       <td >2E1112-230</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >LURAT Jean</td>
       <td  align=right x:num>966</td>
@@ -4903,10 +4903,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1683</td>
       <td  align=right
-  x:num="38751">3-févr</td>
+  x:num="38751">3-f&eacutevr</td>
       <td >Robin</td>
       <td >2E1112-250</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >LURAT Jean</td>
       <td  align=right x:num>966</td>
@@ -4916,9 +4916,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1684</td>
       <td  align=right
   x:num="38527">24-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E935-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >LURAT Jean</td>
       <td  align=right x:num>779</td>
@@ -4962,7 +4962,7 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
-      <td class=xl3315333 align=right x:num="40174">27-déc</td>
+      <td class=xl3315333 align=right x:num="40174">27-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5938-10</td>
       <td >Vaux-Rouillac</td>
@@ -4980,7 +4980,7 @@ $connexionBD->ferme();
       <td >Transaction</td>
       <td >MARTIN Jean</td>
       <td  align=right x:num>1441</td>
-      <td >et Jean BENESTEAU frère de feu Michel</td>
+      <td >et Jean BENESTEAU fr&egravere de feu Michel</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1679</td>
@@ -5011,8 +5011,8 @@ $connexionBD->ferme();
   x:num="38285">25-oct</td>
       <td >Caillaud</td>
       <td >2E253-10</td>
-      <td >Angoulême</td>
-      <td >Démission</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutemission</td>
       <td >MESNADEAU Marie</td>
       <td  align=right x:num>756</td>
       <td >BOUCHAUD</td>
@@ -5020,14 +5020,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
       <td  align=right
-  x:num="38712">26-déc</td>
-      <td >Mancié</td>
+  x:num="38712">26-d&eacutec</td>
+      <td >Manci&eacute</td>
       <td >2E933-200</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >MESNARD Jean</td>
       <td  align=right x:num>861</td>
-      <td >et Légère FOUGEREAU</td>
+      <td >et L&eacuteg&egravere FOUGEREAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
@@ -5035,11 +5035,11 @@ $connexionBD->ferme();
   x:num="39023">2-nov</td>
       <td >Mamain</td>
       <td >2E931-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >MESNARD Jean</td>
       <td  align=right x:num>970</td>
-      <td >et Légère FOUGEREAU à Antoine BAUDOUIN</td>
+      <td >et L&eacuteg&egravere FOUGEREAU &agrave Antoine BAUDOUIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1657</td>
@@ -5047,11 +5047,11 @@ $connexionBD->ferme();
   x:num="39909">6-avr</td>
       <td >Huguet Jean</td>
       <td >2E789-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acquisition</td>
       <td >MOQUET Jean</td>
       <td  align=right x:num>1195</td>
-      <td >pour Léonard ROBIN</td>
+      <td >pour L&eacuteonard ROBIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1657</td>
@@ -5059,7 +5059,7 @@ $connexionBD->ferme();
   x:num="39930">27-avr</td>
       <td >Huguet Jean</td>
       <td >2E789-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acquisition</td>
       <td >MOQUET Jean</td>
       <td  align=right x:num>1195</td>
@@ -5069,9 +5069,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1703</td>
       <td  align=right
   x:num="38293">2-nov</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E940-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >MOQUET Jeanne</td>
       <td  align=right x:num>738</td>
@@ -5099,7 +5099,7 @@ $connexionBD->ferme();
       <td >Quittance</td>
       <td >NESRAUD Catherine</td>
       <td  align=right x:num>1291</td>
-      <td >à Etienne BRISSON son gendre</td>
+      <td >&agrave Etienne BRISSON son gendre</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1652</td>
@@ -5107,11 +5107,11 @@ $connexionBD->ferme();
   x:num="39632">3-juil</td>
       <td >Huguet Jean</td>
       <td >2E786-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Afferme</td>
       <td >NOBLESSE Marguerite</td>
       <td  align=right x:num>1194</td>
-      <td >d'une pièce de pré de Geoffroy ROUGIER (12 charrettes 
+      <td >d'une pi&egravece de pr&eacute de Geoffroy ROUGIER (12 charrettes 
         de foin)</td>
     </tr>
     <tr height=17> 
@@ -5120,7 +5120,7 @@ $connexionBD->ferme();
   x:num="39450">3-janv</td>
       <td >Guyot</td>
       <td >2E779-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >NOBLESSE Marguerite</td>
       <td  align=right x:num>1158</td>
@@ -5129,10 +5129,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
       <td  align=right
-  x:num="38583">19-août</td>
+  x:num="38583">19-ao&ucirct</td>
       <td >Peuple</td>
       <td >2E1064-220</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
       <td >PANISSEAU Jeanne</td>
       <td  align=right x:num>859</td>
@@ -5141,10 +5141,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1706</td>
       <td  align=right
-  x:num="38340">19-déc</td>
-      <td >Mancié</td>
+  x:num="38340">19-d&eacutec</td>
+      <td >Manci&eacute</td>
       <td >2E942-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>713</td>
@@ -5156,7 +5156,7 @@ $connexionBD->ferme();
   x:num="38320">29-nov</td>
       <td >Porcheron</td>
       <td >2E1088-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>748</td>
@@ -5166,9 +5166,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1721</td>
       <td  align=right
   x:num="38012">26-janv</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E951-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>744</td>
@@ -5178,9 +5178,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1721</td>
       <td  align=right
   x:num="38285">25-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E951-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>744</td>
@@ -5190,9 +5190,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1721</td>
       <td  align=right
   x:num="38294">3-nov</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E951-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>744</td>
@@ -5202,9 +5202,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1723</td>
       <td  align=right
   x:num="38290">30-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E953-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>745</td>
@@ -5213,10 +5213,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1723</td>
       <td  align=right
-  x:num="38326">5-déc</td>
-      <td >Mancié</td>
+  x:num="38326">5-d&eacutec</td>
+      <td >Manci&eacute</td>
       <td >2E953-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>745</td>
@@ -5225,10 +5225,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1723</td>
       <td  align=right
-  x:num="38327">6-déc</td>
-      <td >Mancié</td>
+  x:num="38327">6-d&eacutec</td>
+      <td >Manci&eacute</td>
       <td >2E953-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>745</td>
@@ -5240,7 +5240,7 @@ $connexionBD->ferme();
   x:num="39739">18-oct</td>
       <td >Porcheron</td>
       <td >2E1094-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>1115</td>
@@ -5254,7 +5254,7 @@ $connexionBD->ferme();
   x:num="38125">18-mai</td>
       <td >Caillaud</td>
       <td >2E231-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>591</td>
@@ -5263,10 +5263,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1734</td>
       <td  align=right
-  x:num="38390">7-févr</td>
-      <td >Mancié</td>
+  x:num="38390">7-f&eacutevr</td>
+      <td >Manci&eacute</td>
       <td >2E959-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>785</td>
@@ -5275,10 +5275,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1748</td>
       <td  align=right
-  x:num="38693">7-déc</td>
+  x:num="38693">7-d&eacutec</td>
       <td >Caillaud</td>
       <td >2E249-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>776</td>
@@ -5290,7 +5290,7 @@ $connexionBD->ferme();
   x:num="38354">2-janv</td>
       <td >Caillaud</td>
       <td >2E249-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>778</td>
@@ -5299,10 +5299,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1754</td>
       <td class=xl3515333 align=right
-  x:num="38407">24-févr</td>
+  x:num="38407">24-f&eacutevr</td>
       <td >Caillaud</td>
       <td >2E260-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>863</td>
@@ -5314,7 +5314,7 @@ $connexionBD->ferme();
   x:num="38163">25-juin</td>
       <td >Peuple</td>
       <td >2E1069-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >PAPIN Michel</td>
       <td  align=right x:num>749</td>
@@ -5323,10 +5323,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1692</td>
       <td  align=right
-  x:num="38411">28-févr</td>
+  x:num="38411">28-f&eacutevr</td>
       <td >Peynaud</td>
       <td >2E1071-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >PAPIN Michel</td>
       <td  align=right x:num>782</td>
@@ -5338,11 +5338,11 @@ $connexionBD->ferme();
   x:num="38474">2-mai</td>
       <td >Peynaud</td>
       <td >2E1072-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
       <td >PAPIN Michel</td>
       <td  align=right x:num>789</td>
-      <td >et Jean PAPIN (après décès Anne CLERC leur mère)</td>
+      <td >et Jean PAPIN (apr&egraves d&eacutec&egraves Anne CLERC leur m&egravere)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1696</td>
@@ -5350,7 +5350,7 @@ $connexionBD->ferme();
   x:num="38255">25-sept</td>
       <td >Porcheron</td>
       <td >2E1084-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >PAPIN Michel</td>
       <td  align=right x:num>748</td>
@@ -5360,9 +5360,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1697</td>
       <td  align=right
   x:num="38149">11-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E939-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >PAPIN Michel</td>
       <td  align=right x:num>738</td>
@@ -5374,8 +5374,8 @@ $connexionBD->ferme();
   x:num="39774">22-nov</td>
       <td >Aigre</td>
       <td >2E109-30</td>
-      <td >Angoulême</td>
-      <td >Procès verbal</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves verbal</td>
       <td >PAPIN Michel</td>
       <td  align=right x:num>1120</td>
       <td >et Jean son fils (terre de raves et coups…)</td>
@@ -5386,7 +5386,7 @@ $connexionBD->ferme();
   x:num="38168">30-juin</td>
       <td >Porcheron</td>
       <td >2E1086-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >PAPIN Michel</td>
       <td  align=right x:num>746</td>
@@ -5398,11 +5398,11 @@ $connexionBD->ferme();
   x:num="38198">30-juil</td>
       <td >Porcheron</td>
       <td >2E1088-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >PAPIN Michel</td>
       <td  align=right x:num>748</td>
-      <td >avec Jean PAPIN à Antoine AUDIER</td>
+      <td >avec Jean PAPIN &agrave Antoine AUDIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1686</td>
@@ -5425,19 +5425,19 @@ $connexionBD->ferme();
       <td >Transaction</td>
       <td >PELEGEAY Jeanne</td>
       <td  align=right x:num>1448</td>
-      <td >et ses frère et soeur</td>
+      <td >et ses fr&egravere et soeur</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1718</td>
       <td  align=right
-  x:num="39494">16-févr</td>
+  x:num="39494">16-f&eacutevr</td>
       <td >&nbsp;</td>
       <td >NÝ18</td>
       <td >Saint-Omer</td>
       <td >Mariage</td>
       <td >POCHET Jacques Fr.</td>
       <td >&nbsp;</td>
-      <td >et Marie Thérèse Dominique LEBON</td>
+      <td >et Marie Th&eacuter&egravese Dominique LEBON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1729</td>
@@ -5449,7 +5449,7 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >POCHET Jacques Fr.</td>
       <td >&nbsp;</td>
-      <td >et Adrienne Angélique LEMAIRE</td>
+      <td >et Adrienne Ang&eacutelique LEMAIRE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1690</td>
@@ -5457,8 +5457,8 @@ $connexionBD->ferme();
   x:num="38793">17-mars</td>
       <td >Micheau</td>
       <td >2E1031-10</td>
-      <td >Angoulême</td>
-      <td >Métairie</td>
+      <td >Angoul&ecircme</td>
+      <td >M&eacutetairie</td>
       <td >POIRIER Guillaume</td>
       <td  align=right x:num>977</td>
       <td >et Marg. ROUHIER et Jean POIRIER son fils</td>
@@ -5466,10 +5466,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1715</td>
       <td  align=right
-  x:num="38042">25-févr</td>
-      <td >Mancié</td>
+  x:num="38042">25-f&eacutevr</td>
+      <td >Manci&eacute</td>
       <td >2E945-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >PV</td>
       <td >RAVAUD Marie</td>
       <td  align=right x:num>733</td>
@@ -5478,11 +5478,11 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1716</td>
       <td  align=right
-  x:num="38037">20-févr</td>
-      <td >Mancié</td>
+  x:num="38037">20-f&eacutevr</td>
+      <td >Manci&eacute</td>
       <td >2E946-20</td>
-      <td >Angoulême</td>
-      <td >Déclaration</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacuteclaration</td>
       <td >RAVAUD Marie</td>
       <td  align=right x:num>739</td>
       <td >Jean DUCOUX</td>
@@ -5493,11 +5493,11 @@ $connexionBD->ferme();
   x:num="38825">18-avr</td>
       <td >Vachier</td>
       <td >2E1290-150</td>
-      <td >Angoulême</td>
-      <td >Démission</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutemission</td>
       <td >RIFFAUD Etienne</td>
       <td  align=right x:num>976</td>
-      <td >de François RIFFAUD</td>
+      <td >de Fran&ccedilois RIFFAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1705</td>
@@ -5529,7 +5529,7 @@ $connexionBD->ferme();
   x:num="39031">10-nov</td>
       <td >Robin</td>
       <td >2E1112-180</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>965</td>
@@ -5539,9 +5539,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1683</td>
       <td  align=right
   x:num="38643">18-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E935-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Bail</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>779</td>
@@ -5551,25 +5551,25 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1686</td>
       <td  align=right
   x:num="38459">17-avr</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E936-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Opposition</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>779</td>
-      <td >François AUDIER</td>
+      <td >Fran&ccedilois AUDIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1686</td>
       <td  align=right
   x:num="38354">2-janv</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E936-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>779</td>
-      <td >François AUDIER - Philippe BOYTAUD</td>
+      <td >Fran&ccedilois AUDIER - Philippe BOYTAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
@@ -5586,7 +5586,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
       <td  align=right
-  x:num="38944">15-août</td>
+  x:num="38944">15-ao&ucirct</td>
       <td >Rouhier</td>
       <td >2E1125-50</td>
       <td >Lhoumeau</td>
@@ -5601,7 +5601,7 @@ $connexionBD->ferme();
   x:num="38283">23-oct</td>
       <td >Peuple</td>
       <td >2E1069-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>749</td>
@@ -5613,11 +5613,11 @@ $connexionBD->ferme();
   x:num="39637">8-juil</td>
       <td >Boilevin</td>
       <td >2E199-10</td>
-      <td >Angoulême</td>
-      <td >Marché</td>
+      <td >Angoul&ecircme</td>
+      <td >March&eacute</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>1122</td>
-      <td >et François AUDIER pour pavage pont de Ruelle</td>
+      <td >et Fran&ccedilois AUDIER pour pavage pont de Ruelle</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1690</td>
@@ -5629,12 +5629,12 @@ $connexionBD->ferme();
       <td >Cession</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>812</td>
-      <td >et François AUDIER à Guillaume BOISDON</td>
+      <td >et Fran&ccedilois AUDIER &agrave Guillaume BOISDON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1690</td>
       <td  align=right
-  x:num="39078">27-déc</td>
+  x:num="39078">27-d&eacutec</td>
       <td >Clochard</td>
       <td >2E413-160</td>
       <td >Lhoumeau</td>
@@ -5649,7 +5649,7 @@ $connexionBD->ferme();
   x:num="38641">16-oct</td>
       <td >Peynaud</td>
       <td >2E1071-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>782</td>
@@ -5665,15 +5665,15 @@ $connexionBD->ferme();
       <td >Reconnaissance</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>921</td>
-      <td >à Jean COUGNET</td>
+      <td >&agrave Jean COUGNET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1693</td>
       <td  align=right
   x:num="38500">28-mai</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E816-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>779</td>
@@ -5685,11 +5685,11 @@ $connexionBD->ferme();
   x:num="38496">24-mai</td>
       <td >Peynaud</td>
       <td >2E1072-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>785</td>
-      <td >Suzanne BASSET, François BASSET - Jean GUYOT</td>
+      <td >Suzanne BASSET, Fran&ccedilois BASSET - Jean GUYOT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1700</td>
@@ -5701,7 +5701,7 @@ $connexionBD->ferme();
       <td >Transaction</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>911</td>
-      <td class=xl3115333>et M. LIZEE 2e femme de J. ROUFFIGNAC son père</td>
+      <td class=xl3115333>et M. LIZEE 2e femme de J. ROUFFIGNAC son p&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1703</td>
@@ -5709,8 +5709,8 @@ $connexionBD->ferme();
   x:num="38294">3-nov</td>
       <td >Porcheron</td>
       <td >2E1086-20</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>746</td>
       <td >Marc BASSET</td>
@@ -5721,7 +5721,7 @@ $connexionBD->ferme();
   x:num="38292">1-nov</td>
       <td >Porcheron</td>
       <td >2E1086-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>746</td>
@@ -5733,7 +5733,7 @@ $connexionBD->ferme();
   x:num="38075">29-mars</td>
       <td >Boilevin</td>
       <td >2E203-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>755</td>
@@ -5755,21 +5755,21 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1713</td>
       <td  align=right
   x:num="38233">3-sept</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E943-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>721</td>
-      <td >et Jean AUDIER à Louise PREVOST</td>
+      <td >et Jean AUDIER &agrave Louise PREVOST</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1714</td>
       <td  align=right
   x:num="38616">21-sept</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E823-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transport</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>780</td>
@@ -5778,10 +5778,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1717</td>
       <td  align=right
-  x:num="38582">18-août</td>
+  x:num="38582">18-ao&ucirct</td>
       <td >Porcheron</td>
       <td >2E1091-80</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>841</td>
@@ -5797,27 +5797,27 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>790</td>
-      <td >à Jean MAIGNAN</td>
+      <td >&agrave Jean MAIGNAN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1720</td>
       <td  align=right
   x:num="38919">21-juil</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E829-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>885</td>
-      <td >à Charles CAILLOT (On parle de Jacques COUPAUD)</td>
+      <td >&agrave Charles CAILLOT (On parle de Jacques COUPAUD)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1727</td>
       <td  align=right
-  x:num="38026">9-févr</td>
-      <td >Mancié</td>
+  x:num="38026">9-f&eacutevr</td>
+      <td >Manci&eacute</td>
       <td >2E956-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >ROUFFIGNAC Jean</td>
       <td  align=right x:num>576</td>
@@ -5829,11 +5829,11 @@ $connexionBD->ferme();
   x:num="39018">28-oct</td>
       <td >Robin</td>
       <td >2E1109-250</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
-      <td >ROUFFIGNAC Jean Aîné</td>
+      <td >ROUFFIGNAC Jean A&icircn&eacute</td>
       <td  align=right x:num>955</td>
-      <td >et Françoise RATINEAU de Guillaume BOILEAU</td>
+      <td >et Fran&ccediloise RATINEAU de Guillaume BOILEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
@@ -5841,35 +5841,35 @@ $connexionBD->ferme();
   x:num="39575">7-mai</td>
       <td >Mamain</td>
       <td >2E924-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >ROUFFIGNAC Jean Aîné</td>
+      <td >ROUFFIGNAC Jean A&icircn&eacute</td>
       <td  align=right x:num>1140</td>
       <td >et F. RATINEAU d'Arnaud BENOIST (pour la vente de vin)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1671</td>
       <td  align=right
-  x:num="38580">16-août</td>
+  x:num="38580">16-ao&ucirct</td>
       <td >Peuple</td>
       <td >2E1066-30</td>
-      <td >Angoulême</td>
-      <td >Marché</td>
-      <td >ROUFFIGNAC Jean Aîné</td>
+      <td >Angoul&ecircme</td>
+      <td >March&eacute</td>
+      <td >ROUFFIGNAC Jean A&icircn&eacute</td>
       <td  align=right x:num>839</td>
-      <td >et François AUDIER et Mathurin CAZIER</td>
+      <td >et Fran&ccedilois AUDIER et Mathurin CAZIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
       <td  align=right
-  x:num="38944">15-août</td>
+  x:num="38944">15-ao&ucirct</td>
       <td >Robin</td>
       <td >2E1112-110</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >ROUFFIGNAC Jean Aîné</td>
+      <td >ROUFFIGNAC Jean A&icircn&eacute</td>
       <td  align=right x:num>965</td>
-      <td >et François AUDIER de Jacques CAILLET</td>
+      <td >et Fran&ccedilois AUDIER de Jacques CAILLET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
@@ -5877,23 +5877,23 @@ $connexionBD->ferme();
   x:num="39027">6-nov</td>
       <td >Robin</td>
       <td >2E1112-170</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >ROUFFIGNAC Jean Aîné</td>
+      <td >ROUFFIGNAC Jean A&icircn&eacute</td>
       <td  align=right x:num>966</td>
-      <td >et François AUDIER de DESCARSELLE</td>
+      <td >et Fran&ccedilois AUDIER de DESCARSELLE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1679</td>
       <td  align=right
-  x:num="38939">10-août</td>
+  x:num="38939">10-ao&ucirct</td>
       <td >Pillorget</td>
       <td >2E2167-10</td>
       <td >Champniers</td>
       <td >Vente</td>
-      <td >ROUFFIGNAC Jean Aîné</td>
+      <td >ROUFFIGNAC Jean A&icircn&eacute</td>
       <td  align=right x:num>1028</td>
-      <td >à Nicolas ROCHIER</td>
+      <td >&agrave Nicolas ROCHIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
@@ -5901,11 +5901,11 @@ $connexionBD->ferme();
   x:num="39621">22-juin</td>
       <td >Cladier</td>
       <td >2E368-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrantement</td>
-      <td >ROUFFIGNAC Jean Aîné</td>
+      <td >ROUFFIGNAC Jean A&icircn&eacute</td>
       <td  align=right x:num>1162</td>
-      <td class=xl3115333>et Françoise RATINEAU de Barthélémy JAYET</td>
+      <td class=xl3115333>et Fran&ccediloise RATINEAU de Barth&eacutel&eacutemy JAYET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1746</td>
@@ -5913,7 +5913,7 @@ $connexionBD->ferme();
   x:num="38448">6-avr</td>
       <td >Caillaud</td>
       <td >2E245-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >ROUFFIGNAC Marg.</td>
       <td  align=right x:num>760</td>
@@ -5922,10 +5922,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1702</td>
       <td  align=right
-  x:num="38223">24-août</td>
-      <td >Jéheu</td>
+  x:num="38223">24-ao&ucirct</td>
+      <td >J&eacuteheu</td>
       <td >2E818-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >ROUHIER Pierre</td>
       <td  align=right x:num>710</td>
@@ -5934,10 +5934,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1706</td>
       <td  align=right
-  x:num="38324">3-déc</td>
-      <td >Mancié</td>
+  x:num="38324">3-d&eacutec</td>
+      <td >Manci&eacute</td>
       <td >2E942-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >ROUHIER Pierre</td>
       <td  align=right x:num>713</td>
@@ -5946,10 +5946,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1708</td>
       <td  align=right
-  x:num="38336">15-déc</td>
-      <td >Mancié</td>
+  x:num="38336">15-d&eacutec</td>
+      <td >Manci&eacute</td>
       <td >2E942-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Accord</td>
       <td >ROUHIER Pierre</td>
       <td  align=right x:num>713</td>
@@ -5959,9 +5959,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1710</td>
       <td  align=right
   x:num="38284">24-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E942-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >ROUHIER Pierre</td>
       <td  align=right x:num>714</td>
@@ -5971,9 +5971,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1712</td>
       <td  align=right
   x:num="38178">10-juil</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E943-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >ROUHIER Pierre</td>
       <td  align=right x:num>721</td>
@@ -5982,10 +5982,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1728</td>
       <td  align=right
-  x:num="38342">21-déc</td>
-      <td >Mancié</td>
+  x:num="38342">21-d&eacutec</td>
+      <td >Manci&eacute</td>
       <td >2E956-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >ROUHIER Pierre</td>
       <td  align=right x:num>576</td>
@@ -5995,9 +5995,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1729</td>
       <td  align=right
   x:num="38674">18-nov</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E957-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >ROUHIER Pierre</td>
       <td  align=right x:num>781</td>
@@ -6007,9 +6007,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1729</td>
       <td  align=right
   x:num="38620">25-sept</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E957-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >ROUHIER Pierre</td>
       <td  align=right x:num>781</td>
@@ -6018,14 +6018,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1734</td>
       <td  align=right
-  x:num="38040">23-févr</td>
+  x:num="38040">23-f&eacutevr</td>
       <td >Caillaud</td>
       <td >2E234-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >ROUHIER Pierre</td>
       <td  align=right x:num>554</td>
-      <td >Françoise SURRAUD</td>
+      <td >Fran&ccediloise SURRAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1741</td>
@@ -6033,7 +6033,7 @@ $connexionBD->ferme();
   x:num="38511">8-juin</td>
       <td >Caillaud</td>
       <td >2E240-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >ROUHIER Pierre</td>
       <td  align=right x:num>768</td>
@@ -6045,7 +6045,7 @@ $connexionBD->ferme();
   x:num="38421">10-mars</td>
       <td >Caillaud</td>
       <td >2E249-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >ROUHIER Pierre</td>
       <td  align=right x:num>776</td>
@@ -6057,23 +6057,23 @@ $connexionBD->ferme();
   x:num="38637">12-oct</td>
       <td >Caillaud</td>
       <td >2E249-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >ROUHIER Pierre</td>
       <td  align=right x:num>776</td>
-      <td >Françoise SURRAUD - Jacques ROUHIER,  JOLLY…</td>
+      <td >Fran&ccediloise SURRAUD - Jacques ROUHIER,  JOLLY…</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1750</td>
       <td  align=right
-  x:num="38394">11-févr</td>
+  x:num="38394">11-f&eacutevr</td>
       <td >Caillaud</td>
       <td >2E252-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >ROUHIER Pierre</td>
       <td  align=right x:num>781</td>
-      <td >Françoise SURRAUD - Jacques ROUHIER</td>
+      <td >Fran&ccediloise SURRAUD - Jacques ROUHIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1755</td>
@@ -6081,11 +6081,11 @@ $connexionBD->ferme();
   x:num="38452">10-avr</td>
       <td >Caillaud</td>
       <td >2E262-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >ROUHIER Pierre</td>
       <td  align=right x:num>868</td>
-      <td >et Françse SURRAUD et autres à Ant. CIVADIER Curé</td>
+      <td >et Fran&ccedilse SURRAUD et autres &agrave Ant. CIVADIER Cur&eacute</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1759</td>
@@ -6093,7 +6093,7 @@ $connexionBD->ferme();
   x:num="38625">30-sept</td>
       <td >Bernard</td>
       <td >2E147-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >ROUHIER Suzanne</td>
       <td  align=right x:num>788</td>
@@ -6103,9 +6103,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1709</td>
       <td  align=right
   x:num="38266">6-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E964-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >ROUSSEAU Antoinette</td>
       <td  align=right x:num>744</td>
@@ -6118,19 +6118,19 @@ $connexionBD->ferme();
       <td >Clochard</td>
       <td >2E408-50</td>
       <td >Lhoumeau</td>
-      <td >Procès verbal</td>
+      <td >Proc&egraves verbal</td>
       <td >ROUSSEAU Jeanne</td>
       <td  align=right x:num>968</td>
-      <td >(Femme de P. IMBERT)  dégât fait par ânes ds safran</td>
+      <td >(Femme de P. IMBERT)  d&eacuteg&acirct fait par &acircnes ds safran</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1694</td>
       <td  align=right
-  x:num="38773">25-févr</td>
+  x:num="38773">25-f&eacutevr</td>
       <td >Rouhier</td>
       <td >2E1131-30</td>
       <td >Lhoumeau</td>
-      <td >Déclaration</td>
+      <td >D&eacuteclaration</td>
       <td >ROUSSEAU Jeanne</td>
       <td  align=right x:num>917</td>
       <td >veuve de Pierre IMBERT, contre Toussaint BRISSAUD</td>
@@ -6139,9 +6139,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1714</td>
       <td  align=right
   x:num="38462">20-avr</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E823-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >ROUYER Jean</td>
       <td  align=right x:num>780</td>
@@ -6151,9 +6151,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1718</td>
       <td class=xl3515333 align=right
   x:num="38529">26-juin</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E827-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >ROUYER Jean</td>
       <td  align=right x:num>787</td>
@@ -6162,10 +6162,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1747</td>
       <td  align=right
-  x:num="38694">8-déc</td>
+  x:num="38694">8-d&eacutec</td>
       <td >Caillaud</td>
       <td >2E248-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >ROUYER Leonard</td>
       <td  align=right x:num>776</td>
@@ -6175,11 +6175,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1718</td>
       <td  align=right
   x:num="38501">29-mai</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E827-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >ROUYER Léonard</td>
+      <td >ROUYER L&eacuteonard</td>
       <td  align=right x:num>787</td>
       <td >Marie PAPONNET</td>
     </tr>
@@ -6187,11 +6187,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1722</td>
       <td  align=right
   x:num="38117">10-mai</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E831-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >ROUYER Léonard</td>
+      <td >ROUYER L&eacuteonard</td>
       <td  align=right x:num>731</td>
       <td >Marguerite COUPEAU</td>
     </tr>
@@ -6201,9 +6201,9 @@ $connexionBD->ferme();
   x:num="38048">2-mars</td>
       <td >Caillaud</td>
       <td >2E243-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >ROUYER Léonard</td>
+      <td >ROUYER L&eacuteonard</td>
       <td  align=right x:num>560</td>
       <td >de MOISMORAND</td>
     </tr>
@@ -6213,9 +6213,9 @@ $connexionBD->ferme();
   x:num="38898">30-juin</td>
       <td >Caillaud</td>
       <td >2E264-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >ROUYER Léonard</td>
+      <td >ROUYER L&eacuteonard</td>
       <td  align=right x:num>1017</td>
       <td >et Marguerite COUPEAU au Docteur CHAIGNAUD</td>
     </tr>
@@ -6225,18 +6225,18 @@ $connexionBD->ferme();
   x:num="39575">7-mai</td>
       <td >Micheau</td>
       <td >2E1021-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >ROUYER Louis</td>
       <td  align=right x:num>1136</td>
-      <td >et Jean et Clément LIZEE de Jean MOREAU</td>
+      <td >et Jean et Cl&eacutement LIZEE de Jean MOREAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1664</td>
       <td class=xl2415333 align=right x:num="39909">6-avr</td>
       <td >Huguet Jean</td>
       <td >2E795-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >ROUYER Louis</td>
       <td  align=right x:num>1203</td>
@@ -6247,7 +6247,7 @@ $connexionBD->ferme();
       <td  align=right x:num="38375">23-janv</td>
       <td >Caillaud</td>
       <td >2E281-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >ROUYER Pierre</td>
       <td  align=right x:num>758</td>
@@ -6263,7 +6263,7 @@ $connexionBD->ferme();
       <td >Location</td>
       <td >ROY Catherine</td>
       <td  align=right x:num>804</td>
-      <td >et Pasquette JOUANNET à Louise DUBOIS</td>
+      <td >et Pasquette JOUANNET &agrave Louise DUBOIS</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1684</td>
@@ -6275,7 +6275,7 @@ $connexionBD->ferme();
       <td >Ferme</td>
       <td >ROY Catherine</td>
       <td  align=right x:num>762</td>
-      <td >à Jean JOUANNET</td>
+      <td >&agrave Jean JOUANNET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
@@ -6287,27 +6287,27 @@ $connexionBD->ferme();
       <td >Location</td>
       <td >ROY Catherine</td>
       <td  align=right x:num>811</td>
-      <td >A. ROY, Cath. COUPEAU, Eliz. ROY à M. JOUANNET</td>
+      <td >A. ROY, Cath. COUPEAU, Eliz. ROY &agrave M. JOUANNET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
       <td  align=right
-  x:num="38960">31-août</td>
+  x:num="38960">31-ao&ucirct</td>
       <td >Rouhier</td>
       <td >2E1124-20</td>
       <td >Lhoumeau</td>
       <td >Ferme</td>
       <td >ROY Catherine</td>
       <td  align=right x:num>941</td>
-      <td >(vve de Arnaud JOUANNET) à J. JOUANNET son fils</td>
+      <td >(vve de Arnaud JOUANNET) &agrave J. JOUANNET son fils</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1689</td>
       <td  align=right
   x:num="38793">17-mars</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E815-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >ROY Catherine</td>
       <td  align=right x:num>873</td>
@@ -6323,7 +6323,7 @@ $connexionBD->ferme();
       <td >Ferme</td>
       <td >ROY Catherine</td>
       <td  align=right x:num>921</td>
-      <td >à Jean JOUANNET son fils</td>
+      <td >&agrave Jean JOUANNET son fils</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1699</td>
@@ -6352,7 +6352,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1711</td>
       <td  align=right
-  x:num="38403">20-févr</td>
+  x:num="38403">20-f&eacutevr</td>
       <td >Chauvin</td>
       <td >2E321-220</td>
       <td >Lhoumeau</td>
@@ -6365,13 +6365,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1714</td>
       <td  align=right
   x:num="38549">16-juil</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E823-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >ROY Catherine</td>
       <td  align=right x:num>780</td>
-      <td >Suite à son décès</td>
+      <td >Suite &agrave son d&eacutec&egraves</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1725</td>
@@ -6382,12 +6382,12 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >SAUNIER Jean</td>
       <td  align=right x:num>1490</td>
-      <td >et Françoise GOBELET</td>
+      <td >et Fran&ccediloise GOBELET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1736</td>
       <td class=xl3315333 align=right
-  x:num="40214">5-févr</td>
+  x:num="40214">5-f&eacutevr</td>
       <td >Bire</td>
       <td >2E3476-20</td>
       <td >Mansle</td>
@@ -6398,10 +6398,10 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1653</td>
-      <td  align=right x:num="39846">2-févr</td>
+      <td  align=right x:num="39846">2-f&eacutevr</td>
       <td >Gaignier</td>
       <td >2E583-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >SIMARD Antoine</td>
       <td  align=right x:num>1205</td>
@@ -6413,7 +6413,7 @@ $connexionBD->ferme();
   x:num="20">20-janv</td>
       <td >Juilhard</td>
       <td >2E862-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >SIMARD Antoine</td>
       <td  align=right x:num>1136</td>
@@ -6425,11 +6425,11 @@ $connexionBD->ferme();
   x:num="39780">28-nov</td>
       <td >Micheau</td>
       <td >2E1018-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >SIMARD Antoine</td>
       <td  align=right x:num>1124</td>
-      <td >des biens laissés par Germaine ROY (Vincent SIMARD)</td>
+      <td >des biens laiss&eacutes par Germaine ROY (Vincent SIMARD)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1655</td>
@@ -6437,7 +6437,7 @@ $connexionBD->ferme();
   x:num="39890">18-mars</td>
       <td >Lacaton</td>
       <td >2E891-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Echange</td>
       <td >SIMARD Antoine</td>
       <td  align=right x:num>1174</td>
@@ -6448,18 +6448,18 @@ $connexionBD->ferme();
       <td class=xl2415333 align=right x:num="39895">23-mars</td>
       <td >Huguet Jean</td>
       <td >2E791-30</td>
-      <td >Angoulême</td>
-      <td >Métairie</td>
+      <td >Angoul&ecircme</td>
+      <td >M&eacutetairie</td>
       <td >SIMARD Antoine</td>
       <td  align=right x:num>1200</td>
-      <td >Métairie au village du Lion à Puymoyen</td>
+      <td >M&eacutetairie au village du Lion &agrave Puymoyen</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1660</td>
       <td  align=right x:num="39768">16-nov</td>
       <td >Juilhard</td>
       <td >2E862-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Rôle</td>
       <td >SIMARD Antoine</td>
       <td  align=right x:num>1136</td>
@@ -6471,7 +6471,7 @@ $connexionBD->ferme();
   x:num="39042">21-nov</td>
       <td >Gibaud</td>
       <td >2E664-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Rôle</td>
       <td >SIMARD Antoine</td>
       <td  align=right x:num>911</td>
@@ -6481,9 +6481,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1685</td>
       <td  align=right
   x:num="38541">8-juil</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E936-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >SIMARD Antoinette</td>
       <td  align=right x:num>779</td>
@@ -6495,11 +6495,11 @@ $connexionBD->ferme();
   x:num="38448">6-avr</td>
       <td >Gillibert</td>
       <td >2E710-40</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
       <td >SIMARD Antoinette</td>
       <td  align=right x:num>823</td>
-      <td >à Jean BIBAUD</td>
+      <td >&agrave Jean BIBAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
@@ -6507,7 +6507,7 @@ $connexionBD->ferme();
   x:num="38366">14-janv</td>
       <td >Gillibert</td>
       <td >2E710-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >SIMARD Antoinette</td>
       <td  align=right x:num>823</td>
@@ -6516,10 +6516,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
       <td  align=right
-  x:num="38399">16-févr</td>
+  x:num="38399">16-f&eacutevr</td>
       <td >Gillibert</td>
       <td >2E710-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >SIMARD Antoinette</td>
       <td  align=right x:num>823</td>
@@ -6529,13 +6529,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1688</td>
       <td  align=right
   x:num="38370">18-janv</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E937-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >SIMARD Antoinette</td>
       <td  align=right x:num>778</td>
-      <td >Jean BIBAUD à Michel PAPIN</td>
+      <td >Jean BIBAUD &agrave Michel PAPIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1702</td>
@@ -6547,7 +6547,7 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >SIMARD Antoinette</td>
       <td  align=right x:num>750</td>
-      <td >André BONNORON et Marie GIBAUD</td>
+      <td >Andr&eacute BONNORON et Marie GIBAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1694</td>
@@ -6556,7 +6556,7 @@ $connexionBD->ferme();
       <td >Rouhier</td>
       <td >2E1131-40</td>
       <td >Lhoumeau</td>
-      <td >Maîtrise</td>
+      <td >Ma&icirctrise</td>
       <td >SURREAU Louis</td>
       <td  align=right x:num>917</td>
       <td >&nbsp;</td>
@@ -6565,9 +6565,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1694</td>
       <td  align=right
   x:num="38460">18-avr</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E938-180</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >SURREAU Louis</td>
       <td  align=right x:num>777</td>
@@ -6579,7 +6579,7 @@ $connexionBD->ferme();
   x:num="38461">19-avr</td>
       <td >Porcheron</td>
       <td >2E1085-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >SURREAU Louis</td>
       <td  align=right x:num>778</td>
@@ -6588,26 +6588,26 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1701</td>
       <td  align=right
-  x:num="38583">19-août</td>
+  x:num="38583">19-ao&ucirct</td>
       <td >Porcheron</td>
       <td >2E1805-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sous-ferme</td>
       <td >SURREAU Louis</td>
       <td  align=right x:num>778</td>
-      <td >Geneviève LURAT - Jean LABOIESNE</td>
+      <td >Genevi&egraveve LURAT - Jean LABOIESNE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1703</td>
       <td  align=right
-  x:num="39813">31-déc</td>
+  x:num="39813">31-d&eacutec</td>
       <td >Aigre</td>
       <td >2E109-40</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
       <td >SURREAU Louis</td>
       <td  align=right x:num>1120</td>
-      <td >et François SURREAU son frère (Marie COSTE mère)</td>
+      <td >et Fran&ccedilois SURREAU son fr&egravere (Marie COSTE m&egravere)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1705</td>
@@ -6627,11 +6627,11 @@ $connexionBD->ferme();
   x:num="39561">23-avr</td>
       <td >Aigre</td>
       <td >2E113-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Donnation</td>
       <td >SURREAU Louis</td>
       <td  align=right x:num>1122</td>
-      <td >et Cath. LURAT, de Louis SURREAU et Geneviève GODIN</td>
+      <td >et Cath. LURAT, de Louis SURREAU et Genevi&egraveve GODIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
@@ -6639,7 +6639,7 @@ $connexionBD->ferme();
   x:num="38976">16-sept</td>
       <td >Robin</td>
       <td >2E1110-140</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >SURREAU Nicolas</td>
       <td  align=right x:num>956</td>
@@ -6651,11 +6651,11 @@ $connexionBD->ferme();
   x:num="38642">17-oct</td>
       <td >Peuple</td>
       <td >2E1064-140</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >SURREAU Nicolas</td>
       <td  align=right x:num>858</td>
-      <td >avec Louis SURREAU son frère</td>
+      <td >avec Louis SURREAU son fr&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1666</td>
@@ -6663,7 +6663,7 @@ $connexionBD->ferme();
   x:num="38737">20-janv</td>
       <td >Robin</td>
       <td >2E1111-110</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >SURREAU Nicolas</td>
       <td  align=right x:num>962</td>
@@ -6675,11 +6675,11 @@ $connexionBD->ferme();
   x:num="38642">17-oct</td>
       <td >Peuple</td>
       <td >2E1064-130</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >SURREAU Nicolas</td>
       <td  align=right x:num>858</td>
-      <td >avec Louis, Anne et Catherine ses frère et sœurs</td>
+      <td >avec Louis, Anne et Catherine ses fr&egravere et s&oeligurs</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1659</td>
@@ -6687,7 +6687,7 @@ $connexionBD->ferme();
   x:num="38357">5-janv</td>
       <td >Peuple</td>
       <td >2E1061-130</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Location</td>
       <td >SURREAU Pierre</td>
       <td  align=right x:num>860</td>
@@ -6696,10 +6696,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
       <td  align=right
-  x:num="38588">24-août</td>
+  x:num="38588">24-ao&ucirct</td>
       <td >Peuple</td>
       <td >2E1062-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >SURREAU Pierre</td>
       <td  align=right x:num>859</td>
@@ -6711,7 +6711,7 @@ $connexionBD->ferme();
   x:num="38193">25-juil</td>
       <td >Porcheron</td>
       <td >2E1084-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >TATAINE Pierre</td>
       <td  align=right x:num>748</td>
@@ -6723,7 +6723,7 @@ $connexionBD->ferme();
   x:num="38189">21-juil</td>
       <td >Porcheron</td>
       <td >2E1084-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >TATAINE Pierre</td>
       <td  align=right x:num>748</td>
@@ -6735,11 +6735,11 @@ $connexionBD->ferme();
   x:num="38301">10-nov</td>
       <td >Porcheron</td>
       <td >2E1084-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >TATAINE Pierre</td>
       <td  align=right x:num>748</td>
-      <td >François PORCHERON</td>
+      <td >Fran&ccedilois PORCHERON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1698</td>
@@ -6751,7 +6751,7 @@ $connexionBD->ferme();
       <td >Arrentement</td>
       <td >TATAINE Pierre</td>
       <td  align=right x:num>867</td>
-      <td >et Suzanne JAYET et autres à Jean BARREAU</td>
+      <td >et Suzanne JAYET et autres &agrave Jean BARREAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1702</td>
@@ -6759,34 +6759,34 @@ $connexionBD->ferme();
   x:num="39659">30-juil</td>
       <td >Aigre</td>
       <td >2E108-50</td>
-      <td >Angoulême</td>
-      <td >Marché</td>
+      <td >Angoul&ecircme</td>
+      <td >March&eacute</td>
       <td >TATAINE Pierre</td>
       <td  align=right x:num>1120</td>
       <td >et Pierre DANIAS de Michel DEBORDES</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1705</td>
-      <td class=xl3315333 align=right x:num="40028">3-août</td>
+      <td class=xl3315333 align=right x:num="40028">3-ao&ucirct</td>
       <td >Audouin</td>
       <td >2E126-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
-      <td >TOURNIER François</td>
+      <td >TOURNIER Fran&ccedilois</td>
       <td  align=right x:num>1365</td>
-      <td >et ses frère et soeur</td>
+      <td >et ses fr&egravere et soeur</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1621</td>
       <td class=xl3315333 align=right
-  x:num="40035">10-août</td>
+  x:num="40035">10-ao&ucirct</td>
       <td >Rouhier</td>
       <td >2E1115-70</td>
       <td >L'houmeau</td>
       <td >Ferme</td>
       <td >TOURNIER Helie</td>
       <td  align=right x:num>1291</td>
-      <td >de Audier ARNAUD (d'une maison à La Sablière de L'Houmeau)</td>
+      <td >de Audier ARNAUD (d'une maison &agrave La Sabli&egravere de L'Houmeau)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
@@ -6797,7 +6797,7 @@ $connexionBD->ferme();
       <td >Location</td>
       <td >TOURNIER Jean</td>
       <td  align=right x:num>822</td>
-      <td >à Mathieu MILLASSEAU</td>
+      <td >&agrave Mathieu MILLASSEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
@@ -6814,7 +6814,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
       <td  align=right
-  x:num="38411">28-févr</td>
+  x:num="38411">28-f&eacutevr</td>
       <td >Chauvin</td>
       <td >2E315-110</td>
       <td >L'houmeau</td>
@@ -6826,7 +6826,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
       <td  align=right
-  x:num="38411">28-févr</td>
+  x:num="38411">28-f&eacutevr</td>
       <td >Chauvin</td>
       <td >2E315-100</td>
       <td >L'houmeau</td>
@@ -6838,14 +6838,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1686</td>
       <td  align=right
-  x:num="38567">3-août</td>
+  x:num="38567">3-ao&ucirct</td>
       <td >Chauvin</td>
       <td >2E315-180</td>
       <td >L'houmeau</td>
       <td >Transaction</td>
       <td >TOURNIER Jean</td>
       <td  align=right x:num>787</td>
-      <td >Pierre IMBERT (Excès commis par Jean TOURNIER fils)</td>
+      <td >Pierre IMBERT (Exc&egraves commis par Jean TOURNIER fils)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
@@ -6857,7 +6857,7 @@ $connexionBD->ferme();
       <td >Sommation</td>
       <td >TOURNIER Jean</td>
       <td  align=right x:num>811</td>
-      <td >à Claude ANDRE</td>
+      <td >&agrave Claude ANDRE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
@@ -6877,11 +6877,11 @@ $connexionBD->ferme();
   x:num="38122">15-mai</td>
       <td >Peynaud</td>
       <td >2E1070-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >TOURNIER Jean</td>
       <td  align=right x:num>757</td>
-      <td >Droit de péage (peut-être pas ancêtre ?)</td>
+      <td >Droit de p&eacuteage (peut-&ecirctre pas anc&ecirctre ?)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1658</td>
@@ -6889,9 +6889,9 @@ $connexionBD->ferme();
   x:num="39477">30-janv</td>
       <td >Gaignier</td>
       <td >2E858-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >TOURNIER Jean l'aîné</td>
+      <td >TOURNIER Jean l'a&icircn&eacute</td>
       <td  align=right x:num>1152</td>
       <td >Jehanne BOUHIER</td>
     </tr>
@@ -6903,9 +6903,9 @@ $connexionBD->ferme();
       <td >2E225-70</td>
       <td >Lhoumeau</td>
       <td >Vente</td>
-      <td >TOURNIER Jean l'aîné</td>
+      <td >TOURNIER Jean l'a&icircn&eacute</td>
       <td  align=right x:num>969</td>
-      <td >et J. TOURNIER le jeune son frère à Léonard COUSTIER</td>
+      <td >et J. TOURNIER le jeune son fr&egravere &agrave L&eacuteonard COUSTIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1664</td>
@@ -6915,9 +6915,9 @@ $connexionBD->ferme();
       <td >2E307-10</td>
       <td >Lhoumeau</td>
       <td >Acte</td>
-      <td >TOURNIER Jean l'aîné</td>
+      <td >TOURNIER Jean l'a&icircn&eacute</td>
       <td  align=right x:num>802</td>
-      <td >Et Jean DEDIEU (et autre Jean TOURNIER frère)</td>
+      <td >Et Jean DEDIEU (et autre Jean TOURNIER fr&egravere)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
@@ -6927,7 +6927,7 @@ $connexionBD->ferme();
       <td >2E307-20</td>
       <td >Lhoumeau</td>
       <td >Acquisition</td>
-      <td >TOURNIER Jean l'aîné</td>
+      <td >TOURNIER Jean l'a&icircn&eacute</td>
       <td  align=right x:num>802</td>
       <td >de Pierre et Guillaume BOUHIER</td>
     </tr>
@@ -6938,27 +6938,27 @@ $connexionBD->ferme();
       <td >Chauvin</td>
       <td >2E319-80</td>
       <td >Lhoumeau</td>
-      <td >Démission</td>
-      <td >TOURNIER Jean l'aîné</td>
+      <td >D&eacutemission</td>
+      <td >TOURNIER Jean l'a&icircn&eacute</td>
       <td  align=right x:num>814</td>
-      <td >Don d'une gabarre à Jean son fils</td>
+      <td >Don d'une gabarre &agrave Jean son fils</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
       <td  align=right
-  x:num="39069">18-déc</td>
+  x:num="39069">18-d&eacutec</td>
       <td >Boutillier</td>
       <td >2E225-80</td>
       <td >Lhoumeau</td>
       <td >Partage</td>
       <td >TOURNIER Jean le jeune</td>
       <td  align=right x:num>969</td>
-      <td >avec Jean TOURNIER l'aîné son frère</td>
+      <td >avec Jean TOURNIER l'a&icircn&eacute son fr&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
       <td  align=right
-  x:num="38705">19-déc</td>
+  x:num="38705">19-d&eacutec</td>
       <td >Chauvin</td>
       <td >2E307-60</td>
       <td >Lhoumeau</td>
@@ -6977,12 +6977,12 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >TOURNIER Jean le jeune</td>
       <td  align=right x:num>953</td>
-      <td >et Marie RAVEAU à François DOYEN</td>
+      <td >et Marie RAVEAU &agrave Fran&ccedilois DOYEN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1694</td>
       <td  align=right
-  x:num="38772">24-févr</td>
+  x:num="38772">24-f&eacutevr</td>
       <td >Rouhier</td>
       <td >2E1131-20</td>
       <td >Lhoumeau</td>
@@ -6999,7 +6999,7 @@ $connexionBD->ferme();
       <td >2E1117-10</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >TOURNIER Jean le père</td>
+      <td >TOURNIER Jean le p&egravere</td>
       <td  align=right x:num>1281</td>
       <td >et Antoinette BRISSON</td>
     </tr>
@@ -7009,7 +7009,7 @@ $connexionBD->ferme();
   x:num="38643">18-oct</td>
       <td >Caillaud</td>
       <td >2E246-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >TOURNIER Magdelaine</td>
       <td  align=right x:num>770</td>
@@ -7018,10 +7018,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1730</td>
       <td  align=right
-  x:num="38352">31-déc</td>
+  x:num="38352">31-d&eacutec</td>
       <td >Caillaud</td>
       <td >2E230-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >TOURNIER Marie</td>
       <td  align=right x:num>591</td>
@@ -7033,7 +7033,7 @@ $connexionBD->ferme();
   x:num="38146">8-juin</td>
       <td >Caillaud</td>
       <td >2E232-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Bail</td>
       <td >TROUFFIER Jean</td>
       <td  align=right x:num>709</td>
@@ -7045,7 +7045,7 @@ $connexionBD->ferme();
   x:num="38556">23-juil</td>
       <td >Caillaud</td>
       <td >2E248-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >TROUFFIER Jean</td>
       <td  align=right x:num>776</td>
@@ -7055,9 +7055,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1691</td>
       <td  align=right
   x:num="38632">7-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E938-110</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >TUILLIER Claude</td>
       <td  align=right x:num>777</td>
@@ -7069,7 +7069,7 @@ $connexionBD->ferme();
   x:num="38376">24-janv</td>
       <td >Caillaud</td>
       <td >2E239-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >TUILLIER Pierre</td>
       <td  align=right x:num>763</td>
@@ -7081,7 +7081,7 @@ $connexionBD->ferme();
   x:num="38492">20-mai</td>
       <td >Caillaud</td>
       <td >2E241-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >TUILLIER Pierre</td>
       <td  align=right x:num>760</td>
@@ -7093,7 +7093,7 @@ $connexionBD->ferme();
   x:num="40065">9-sept</td>
       <td >Gaignier</td>
       <td >2E584-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >TULLIER Charles</td>
       <td  align=right x:num>1205</td>
@@ -7103,9 +7103,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1727</td>
       <td  align=right
   x:num="38141">3-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E956-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >TULLIER Pierre</td>
       <td  align=right x:num>576</td>
@@ -7113,18 +7113,18 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1654</td>
-      <td class=xl3315333 align=right x:num="39506">28-févr</td>
+      <td class=xl3315333 align=right x:num="39506">28-f&eacutevr</td>
       <td >Huguet Jean</td>
       <td class=xl4115333>2E787-10</td>
-      <td >Angoulême</td>
-      <td >Procès-verbal</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves-verbal</td>
       <td >&nbsp;</td>
       <td  align=right x:num>1194</td>
       <td >du moulin de Villement</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
-      <td  align=right x:num="39812">30-déc</td>
+      <td  align=right x:num="39812">30-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5926-90</td>
       <td >Vaux-Rouillac</td>
@@ -7141,7 +7141,7 @@ $connexionBD->ferme();
   <a name="cousins">
   <table  border=1 cellpadding=0 cellspacing=0 width=1014>
     <tr class=xl2720222 height=17> 
-      <th height=17 >Année</th>
+      <th height=17 >Ann&eacutee</th>
       <th class=xl2620222>Date</th>
       <th >Notaire</th>
       <th >Classement</th>
@@ -7154,14 +7154,14 @@ $connexionBD->ferme();
 
     <tr height=17> 
       <td height=17  align=right x:num>1610</td>
-      <td  align=right x:num="40170">23-déc</td>
+      <td  align=right x:num="40170">23-d&eacutec</td>
       <td >Rouhier</td>
       <td >2E1114-10</td>
       <td >L'Houmeau</td>
       <td >Mariage</td>
-      <td >François BRISSON et Marie MATHE</td>
+      <td >Fran&ccedilois BRISSON et Marie MATHE</td>
       <td  align=right x:num>1291</td>
-      <td class=xl3520222>frère de Etienne BRISSON</td>
+      <td class=xl3520222>fr&egravere de Etienne BRISSON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1614</td>
@@ -7169,11 +7169,11 @@ $connexionBD->ferme();
   x:num="39928">25-avr</td>
       <td >Cherade</td>
       <td >2E332-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Afferme</td>
       <td >Vincent et Simon SIMARD et Pierre FAURANT</td>
       <td  align=right x:num>1217</td>
-      <td >métairie St Martial d'Aê et Puymoyen</td>
+      <td >m&eacutetairie St Martial d'A&ecirc et Puymoyen</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1614</td>
@@ -7181,7 +7181,7 @@ $connexionBD->ferme();
   x:num="40095">9-oct</td>
       <td >Boutillier</td>
       <td >2E221-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Martial TRAPPON et Mathurine BOURDEIX</td>
       <td  align=right x:num>1316</td>
@@ -7197,7 +7197,7 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Robert RAMBAULD et Perrine THULLIER</td>
       <td  align=right x:num>1291</td>
-      <td >à Jacques THULLIER</td>
+      <td >&agrave Jacques THULLIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1614</td>
@@ -7207,9 +7207,9 @@ $connexionBD->ferme();
       <td >2E1115-20</td>
       <td >L'Houmeau</td>
       <td >Vente</td>
-      <td >Jean TOURNIER à Jean LAMBERT</td>
+      <td >Jean TOURNIER &agrave Jean LAMBERT</td>
       <td  align=right x:num>1291</td>
-      <td class=xl3520222>Charpentier frère d'Helie</td>
+      <td class=xl3520222>Charpentier fr&egravere d'Helie</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1614</td>
@@ -7219,9 +7219,9 @@ $connexionBD->ferme();
       <td >2E1115-30</td>
       <td >L'Houmeau</td>
       <td >Vente</td>
-      <td >Jean TOURNIER à Jean LAMBERT</td>
+      <td >Jean TOURNIER &agrave Jean LAMBERT</td>
       <td  align=right x:num>1291</td>
-      <td class=xl3520222>Gabarrier frère d'Hélie</td>
+      <td class=xl3520222>Gabarrier fr&egravere d'H&eacutelie</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1615</td>
@@ -7229,7 +7229,7 @@ $connexionBD->ferme();
   x:num="40024">30-juil</td>
       <td >Cherade</td>
       <td >2E335-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jehan RIFFAUD et Marie DUNOUHIER</td>
       <td  align=right x:num>1218</td>
@@ -7238,14 +7238,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1616</td>
       <td  align=right
-  x:num="40044">19-août</td>
+  x:num="40044">19-ao&ucirct</td>
       <td >Cherade</td>
       <td >2E332-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre DELAURIERE et Anne COMTE</td>
       <td  align=right x:num>1217</td>
-      <td >Veuve de François GREGOIRE</td>
+      <td >Veuve de Fran&ccedilois GREGOIRE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1616</td>
@@ -7253,7 +7253,7 @@ $connexionBD->ferme();
   x:num="39964">31-mai</td>
       <td >Cherade</td>
       <td >2E332-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Gilles POIRIER et Marguerite PETIT</td>
       <td  align=right x:num>1217</td>
@@ -7262,24 +7262,24 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1616</td>
       <td  align=right
-  x:num="40044">19-août</td>
+  x:num="40044">19-ao&ucirct</td>
       <td >Cherade</td>
       <td >2E332-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Location</td>
-      <td >Mathelin LIET à Gilles POIRIER</td>
+      <td >Mathelin LIET &agrave Gilles POIRIER</td>
       <td  align=right x:num>1217</td>
       <td >d'une boutique</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1616</td>
-      <td  align=right x:num="39684">24-août</td>
+      <td  align=right x:num="39684">24-ao&ucirct</td>
       <td >Guyot</td>
       <td >2E771-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Bail</td>
       <td 
-  x:str="à Antoine SIMARD le jeune ">à Antoine SIMARD le jeune </td>
+  x:str="&agrave Antoine SIMARD le jeune ">&agrave Antoine SIMARD le jeune </td>
       <td  align=right x:num>1162</td>
       <td >de Philippe DEXMIER</td>
     </tr>
@@ -7288,19 +7288,19 @@ $connexionBD->ferme();
       <td  align=right x:num="39928">25-avr</td>
       <td >Cherade</td>
       <td >2E333-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Accord</td>
       <td >Simon SIMARD et Pierre FAURANT</td>
       <td  align=right x:num>1217</td>
-      <td >avec François TERRASSON</td>
+      <td >avec Fran&ccedilois TERRASSON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1617</td>
       <td  align=right
-  x:num="40037">12-août</td>
+  x:num="40037">12-ao&ucirct</td>
       <td >Cherade</td>
       <td >2E333-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Helix LIMOUSIN, Ant. LIZEE et F. LIZEE leur fils</td>
       <td  align=right x:num>1217</td>
@@ -7312,9 +7312,9 @@ $connexionBD->ferme();
   x:num="39890">18-mars</td>
       <td >Cherade</td>
       <td >2E333-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Antoine PREVOST et Françoise DENEUFVILLE</td>
+      <td >Antoine PREVOST et Fran&ccediloise DENEUFVILLE</td>
       <td  align=right x:num>1217</td>
       <td >&nbsp;</td>
     </tr>
@@ -7326,7 +7326,7 @@ $connexionBD->ferme();
       <td >2E1115-50</td>
       <td >L'Houmeau</td>
       <td >Mariage</td>
-      <td >Damien PICONNIER et Françoise RAMBAULD</td>
+      <td >Damien PICONNIER et Fran&ccediloise RAMBAULD</td>
       <td  align=right x:num>1291</td>
       <td >fille de Robert RAMBAULD</td>
     </tr>
@@ -7336,7 +7336,7 @@ $connexionBD->ferme();
   x:num="39901">29-mars</td>
       <td >Cherade</td>
       <td >2E336-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Echange</td>
       <td >Simon SIMARD et Pierre FAURANT</td>
       <td  align=right x:num>1218</td>
@@ -7348,9 +7348,9 @@ $connexionBD->ferme();
   x:num="39965">1-juin</td>
       <td >Cherade</td>
       <td >2E336-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Simon SIMARD à François BERNARD</td>
+      <td >Simon SIMARD &agrave Fran&ccedilois BERNARD</td>
       <td  align=right x:num>1218</td>
       <td >&nbsp;</td>
     </tr>
@@ -7372,7 +7372,7 @@ $connexionBD->ferme();
   x:num="40101">15-oct</td>
       <td >Boutillier</td>
       <td >2E222-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jehan VARACHE et Letice DECHAUNIER</td>
       <td  align=right x:num>1306</td>
@@ -7381,7 +7381,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1630</td>
       <td  align=right
-  x:num="40531">19-déc</td>
+  x:num="40531">19-d&eacutec</td>
       <td >Couste</td>
       <td >2E3492-20</td>
       <td >Mansle</td>
@@ -7397,7 +7397,7 @@ $connexionBD->ferme();
       <td >2E3416-10</td>
       <td >Magnac</td>
       <td >Ferme</td>
-      <td >Pierre DELAFALLAYNE à Micheau DELAURIERE</td>
+      <td >Pierre DELAFALLAYNE &agrave Micheau DELAURIERE</td>
       <td  align=right x:num>1224</td>
       <td >&nbsp;</td>
     </tr>
@@ -7408,7 +7408,7 @@ $connexionBD->ferme();
       <td >2E3416-20</td>
       <td >Magnac</td>
       <td >Mariage</td>
-      <td >Guillaume BIARD et Léonarde FOUCHY</td>
+      <td >Guillaume BIARD et L&eacuteonarde FOUCHY</td>
       <td  align=right x:num>1224</td>
       <td >&nbsp;</td>
     </tr>
@@ -7419,21 +7419,21 @@ $connexionBD->ferme();
       <td >2E4583-10</td>
       <td >La Rochef.</td>
       <td >Accord</td>
-      <td >Guillaume DARS et François GESMOND</td>
+      <td >Guillaume DARS et Fran&ccedilois GESMOND</td>
       <td  align=right x:num>1071</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1632</td>
       <td  align=right
-  x:num="39136">23-févr</td>
+  x:num="39136">23-f&eacutevr</td>
       <td >Desaunieres</td>
       <td >2E4583-20</td>
       <td >La Rochef.</td>
       <td >Inventaire</td>
-      <td >Guillaume DARS et François VACHOT</td>
+      <td >Guillaume DARS et Fran&ccedilois VACHOT</td>
       <td  align=right x:num>1071</td>
-      <td >Après décès Berth. DARS</td>
+      <td >Apr&egraves d&eacutec&egraves Berth. DARS</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1633</td>
@@ -7448,10 +7448,10 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1634</td>
-      <td  align=right x:num="40173">26-déc</td>
+      <td  align=right x:num="40173">26-d&eacutec</td>
       <td >Lacaton</td>
       <td >2E880-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >DURANDEAUx et GIBOUINs</td>
       <td  align=right x:num>1208</td>
@@ -7463,19 +7463,19 @@ $connexionBD->ferme();
   x:num="39988">24-juin</td>
       <td >Lacaton</td>
       <td >2E880-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Catherine BONNORON à François GRAZILLIER</td>
+      <td >Catherine BONNORON &agrave Fran&ccedilois GRAZILLIER</td>
       <td  align=right x:num>1208</td>
       <td >(veuve Micheau MESNARD)  maison</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1635</td>
       <td  align=right
-  x:num="38576">12-août</td>
+  x:num="38576">12-ao&ucirct</td>
       <td >Gibaud</td>
       <td >2E655-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jehan BIARD et Marguerite CHAIGNEAU</td>
       <td  align=right x:num>871</td>
@@ -7484,10 +7484,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1635</td>
       <td  align=right
-  x:num="38707">21-déc</td>
+  x:num="38707">21-d&eacutec</td>
       <td >Gibaud</td>
       <td >2E655-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Location</td>
       <td >Pierre CYMARD de DELAVERGNE</td>
       <td  align=right x:num>871</td>
@@ -7496,22 +7496,22 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1635</td>
       <td  align=right
-  x:num="38707">21-déc</td>
+  x:num="38707">21-d&eacutec</td>
       <td >Gibaud</td>
       <td >2E655-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Location</td>
-      <td >Pierre CYMARD à SIRET</td>
+      <td >Pierre CYMARD &agrave SIRET</td>
       <td  align=right x:num>871</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1635</td>
       <td  align=right
-  x:num="38688">2-déc</td>
+  x:num="38688">2-d&eacutec</td>
       <td >Gibaud</td>
       <td >2E655-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre CYMARD et Suzanne DURAND</td>
       <td  align=right x:num>871</td>
@@ -7520,14 +7520,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1636</td>
       <td  align=right
-  x:num="38396">13-févr</td>
+  x:num="38396">13-f&eacutevr</td>
       <td >Gibaud</td>
       <td >2E655-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Pierre CYMARD, Etien. TEXIER, Nic. ROUZIER</td>
       <td  align=right x:num>871</td>
-      <td >et Sébastien DELAVERGNE</td>
+      <td >et S&eacutebastien DELAVERGNE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1636</td>
@@ -7535,9 +7535,9 @@ $connexionBD->ferme();
   x:num="38435">24-mars</td>
       <td >Gibaud</td>
       <td >2E655-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Sébastien AUDIER et Anne BIARD</td>
+      <td >S&eacutebastien AUDIER et Anne BIARD</td>
       <td  align=right x:num>871</td>
       <td >&nbsp;</td>
     </tr>
@@ -7547,11 +7547,11 @@ $connexionBD->ferme();
   x:num="38669">13-nov</td>
       <td >Gibaud</td>
       <td >2E655-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Jacques GODIN et Françoise SURREAU</td>
+      <td >Jacques GODIN et Fran&ccediloise SURREAU</td>
       <td  align=right x:num>871</td>
-      <td >à Denis SURREAU</td>
+      <td >&agrave Denis SURREAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1636</td>
@@ -7559,11 +7559,11 @@ $connexionBD->ferme();
   x:num="38670">14-nov</td>
       <td >Gibaud</td>
       <td >2E655-80</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Possession</td>
-      <td >Pierre DARS à Saint Pierre d'Angoulême</td>
+      <td >Pierre DARS &agrave Saint Pierre d'Angoul&ecircme</td>
       <td  align=right x:num>871</td>
-      <td >Prêtre</td>
+      <td >Pr&ecirctre</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1636</td>
@@ -7573,9 +7573,9 @@ $connexionBD->ferme();
       <td >2E3417-10</td>
       <td >Magnac</td>
       <td >Afferme</td>
-      <td >CAMBOYS à BREBINAUD, RIFFAUDs et autres</td>
+      <td >CAMBOYS &agrave BREBINAUD, RIFFAUDs et autres</td>
       <td  align=right x:num>1219</td>
-      <td >d'une métairie aux Riffaud, Ruelle</td>
+      <td >d'une m&eacutetairie aux Riffaud, Ruelle</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1636</td>
@@ -7605,9 +7605,9 @@ $connexionBD->ferme();
       <td  align=right x:num="40145">28-nov</td>
       <td >Lacaton</td>
       <td >2E881-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
-      <td >à Louis GAILLARD de Clément MOUSSIER</td>
+      <td >&agrave Louis GAILLARD de Cl&eacutement MOUSSIER</td>
       <td  align=right x:num>1208</td>
       <td >&nbsp;</td>
     </tr>
@@ -7617,7 +7617,7 @@ $connexionBD->ferme();
   x:num="39844">31-janv</td>
       <td >Lacaton</td>
       <td >2E881-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Simon BARRAUD et Catherine POYRIER</td>
       <td  align=right x:num>1208</td>
@@ -7629,7 +7629,7 @@ $connexionBD->ferme();
   x:num="39626">27-juin</td>
       <td >Guyot</td>
       <td >2E771-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Bail</td>
       <td >Jean BENESTEAU et Marguerite MERLIN</td>
       <td  align=right x:num>1162</td>
@@ -7643,7 +7643,7 @@ $connexionBD->ferme();
       <td >2E3417-20</td>
       <td >Magnac</td>
       <td >Mariage</td>
-      <td >François DELAURIERE et Françoise BRUN</td>
+      <td >Fran&ccedilois DELAURIERE et Fran&ccediloise BRUN</td>
       <td  align=right x:num>1219</td>
       <td >fils Micheau</td>
     </tr>
@@ -7674,14 +7674,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1638</td>
       <td  align=right
-  x:num="40054">29-août</td>
+  x:num="40054">29-ao&ucirct</td>
       <td >Lacaton</td>
       <td >2E881-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sous-ferme</td>
-      <td >à Nicolas SURREAU et Léonarde AUGELLIER</td>
+      <td >&agrave Nicolas SURREAU et L&eacuteonarde AUGELLIER</td>
       <td  align=right x:num>1208</td>
-      <td >de FrançoisPERTAUD</td>
+      <td >de Fran&ccediloisPERTAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1639</td>
@@ -7701,7 +7701,7 @@ $connexionBD->ferme();
   x:num="39972">08-juin</td>
       <td >Lacaton</td>
       <td >2E881-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre ROUSSEAU et Jeanne DELAGE</td>
       <td  align=right x:num>1208</td>
@@ -7710,12 +7710,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1639</td>
       <td  align=right
-  x:num="39786">04-déc</td>
+  x:num="39786">04-d&eacutec</td>
       <td >Guyot</td>
       <td >2E771-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François BOILEVIN et Marguerite PINEAU</td>
+      <td >Fran&ccedilois BOILEVIN et Marguerite PINEAU</td>
       <td  align=right x:num>1162</td>
       <td >&nbsp;</td>
     </tr>
@@ -7725,11 +7725,11 @@ $connexionBD->ferme();
   x:num="39981">17-juin</td>
       <td >Lacaton</td>
       <td >2E882-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acquisition</td>
       <td >Jean ROUFFIGNAC de Laurent ROUHIER</td>
       <td  align=right x:num>1209</td>
-      <td >maison à Bourdeix, Balzac</td>
+      <td >maison &agrave Bourdeix, Balzac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1640</td>
@@ -7737,9 +7737,9 @@ $connexionBD->ferme();
   x:num="40080">24-sept</td>
       <td >Lacaton</td>
       <td >2E882-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >François TULLIER pour voyage à Paris</td>
+      <td >Fran&ccedilois TULLIER pour voyage &agrave Paris</td>
       <td  align=right x:num>1209</td>
       <td >(Gaspard BONNEMAIN Me. tailleur)</td>
     </tr>
@@ -7749,11 +7749,11 @@ $connexionBD->ferme();
   x:num="39899">27-mars</td>
       <td >Lacaton</td>
       <td >2E882-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Apprentissage</td>
       <td >Jean BOISTAUD chez Simon MOUSNIER</td>
       <td  align=right x:num>1209</td>
-      <td >Maître sergetier</td>
+      <td >Ma&icirctre sergetier</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1640</td>
@@ -7761,11 +7761,11 @@ $connexionBD->ferme();
   x:num="39843">30-janv</td>
       <td >Lacaton</td>
       <td >2E882-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
-      <td >MARTIAL à Jean BOILEVIN fils d'Antoine</td>
+      <td >MARTIAL &agrave Jean BOILEVIN fils d'Antoine</td>
       <td  align=right x:num>1209</td>
-      <td >de Fl&nbsp;éac</td>
+      <td >de Fl&nbsp;&eacuteac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1640</td>
@@ -7773,7 +7773,7 @@ $connexionBD->ferme();
   x:num="39757">05-nov</td>
       <td >Guyot</td>
       <td >2E772-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Antoine RIFFAULT et Charlotte ALLEBERT</td>
       <td  align=right x:num>1163</td>
@@ -7785,9 +7785,9 @@ $connexionBD->ferme();
   x:num="39515">08-mars</td>
       <td >Guyot</td>
       <td >2E772-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >Jehan BOYTEAU à Jehan DELAGRAZELLE</td>
+      <td >Jehan BOYTEAU &agrave Jehan DELAGRAZELLE</td>
       <td  align=right x:num>1163</td>
       <td >&nbsp;</td>
     </tr>
@@ -7797,7 +7797,7 @@ $connexionBD->ferme();
   x:num="39560">22-avr</td>
       <td >Guyot</td>
       <td >2E772-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jehan LIMOUZIN et Marguerite RIFFAULT</td>
       <td  align=right x:num>1163</td>
@@ -7809,7 +7809,7 @@ $connexionBD->ferme();
   x:num="39889">17-mars</td>
       <td >Lacaton</td>
       <td >2E882-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Henry DECHERFALLOT et Magdelaine  BERNAR<span
   style='display:none'>D</span></td>
@@ -7822,7 +7822,7 @@ $connexionBD->ferme();
   x:num="39615">16-juin</td>
       <td >Guyot</td>
       <td >2E772-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Jehannet et Pierre BIARD</td>
       <td  align=right x:num>1163</td>
@@ -7836,7 +7836,7 @@ $connexionBD->ferme();
       <td >2E3417-40</td>
       <td >Magnac</td>
       <td >Donnation</td>
-      <td >Yzabel PINASSEAU à Jean BIARD son gendre</td>
+      <td >Yzabel PINASSEAU &agrave Jean BIARD son gendre</td>
       <td  align=right x:num>1219</td>
       <td >et Margte CHAGNAUD sa fille</td>
     </tr>
@@ -7846,9 +7846,9 @@ $connexionBD->ferme();
   x:num="39713">22-sept</td>
       <td >Guyot</td>
       <td >2E772-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sous-ferme</td>
-      <td >à Olivier BENESTEAU de Jean BOILEAU</td>
+      <td >&agrave Olivier BENESTEAU de Jean BOILEAU</td>
       <td  align=right x:num>1163</td>
       <td >une chambre basse</td>
     </tr>
@@ -7858,7 +7858,7 @@ $connexionBD->ferme();
   x:num="39706">15-sept</td>
       <td >Guyot</td>
       <td >2E772-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Mery MESNIER et Marie NOBLESSE</td>
       <td  align=right x:num>1163</td>
@@ -7867,10 +7867,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1641</td>
       <td  align=right
-  x:num="39662">02-août</td>
+  x:num="39662">02-ao&ucirct</td>
       <td >Guyot</td>
       <td >2E772-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Pierre BOISTEAU et Marie NALBERT</td>
       <td  align=right x:num>1163</td>
@@ -7883,7 +7883,7 @@ $connexionBD->ferme();
       <td >2E2775-40</td>
       <td >Douzat</td>
       <td >Vente</td>
-      <td >Berthomé IZAMBARD à Mr de Vilhonneur</td>
+      <td >Berthom&eacute IZAMBARD &agrave Mr de Vilhonneur</td>
       <td  align=right x:num>1218</td>
       <td >&nbsp;</td>
     </tr>
@@ -7904,21 +7904,21 @@ $connexionBD->ferme();
       <td  align=right x:num="39741">20-oct</td>
       <td >Guyot</td>
       <td >2E773-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Afferme</td>
-      <td >Denis LURAT l'aîné à Jehan BASSOULET</td>
+      <td >Denis LURAT l'a&icircn&eacute &agrave Jehan BASSOULET</td>
       <td  align=right x:num>1172</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1642</td>
       <td  align=right
-  x:num="40046">21-août</td>
+  x:num="40046">21-ao&ucirct</td>
       <td >Lacaton</td>
       <td >2E883-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >d'une gabarre à Pierre LURAT l'aîné</td>
+      <td >d'une gabarre &agrave Pierre LURAT l'a&icircn&eacute</td>
       <td  align=right x:num>1210</td>
       <td >et Jean LIZEE et Marie MARTIN</td>
     </tr>
@@ -7928,11 +7928,11 @@ $connexionBD->ferme();
   x:num="39740">19-oct</td>
       <td >Guyot</td>
       <td >2E773-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Afferme</td>
-      <td >André PREVOST à Jean NOBLESSE cordonnier</td>
+      <td >Andr&eacute PREVOST &agrave Jean NOBLESSE cordonnier</td>
       <td  align=right x:num>1172</td>
-      <td >Fils d'André NOBLESSE</td>
+      <td >Fils d'Andr&eacute NOBLESSE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1642</td>
@@ -7940,18 +7940,18 @@ $connexionBD->ferme();
   x:num="39649">20-juil</td>
       <td >Guyot</td>
       <td >2E773-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Aimery ROY à Pierre et Elizee LURAT</td>
+      <td >Aimery ROY &agrave Pierre et Elizee LURAT</td>
       <td  align=right x:num>1172</td>
-      <td >père et fils. Vente de bois</td>
+      <td >p&egravere et fils. Vente de bois</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1643</td>
       <td  align=right x:num="40022">28-juil</td>
       <td >Duru</td>
       <td >2E497-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Accord</td>
       <td >Jean LIZEE et Pierre GALOIS, gabariers</td>
       <td  align=right x:num>1216</td>
@@ -7962,9 +7962,9 @@ $connexionBD->ferme();
       <td  align=right x:num="39642">13-juil</td>
       <td >Guyot</td>
       <td >2E773-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
-      <td >Arnaud DELACROIX et Pierre SIMARD maçons</td>
+      <td >Arnaud DELACROIX et Pierre SIMARD ma&ccedilons</td>
       <td  align=right x:num>1172</td>
       <td >et Guerin BOILEVIN</td>
     </tr>
@@ -7974,40 +7974,40 @@ $connexionBD->ferme();
   x:num="39458">11-janv</td>
       <td >Guyot</td>
       <td >2E773-40</td>
-      <td >Angoulême</td>
-      <td >Marché</td>
-      <td >Arnaud DELACROIX et Pierre SIMARD maçons</td>
+      <td >Angoul&ecircme</td>
+      <td >March&eacute</td>
+      <td >Arnaud DELACROIX et Pierre SIMARD ma&ccedilons</td>
       <td  align=right x:num>1172</td>
       <td >et Guerin BOILEVIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1643</td>
       <td  align=right
-  x:num="39437">21-déc</td>
+  x:num="39437">21-d&eacutec</td>
       <td >Desaunieres</td>
       <td >2E4587-10</td>
       <td >La Rochef.</td>
       <td >Retrait lignage</td>
-      <td >Guillaume DARS et François DELAVIE</td>
+      <td >Guillaume DARS et Fran&ccedilois DELAVIE</td>
       <td  align=right x:num>1081</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1643</td>
       <td  align=right
-  x:num="40037">12-août</td>
+  x:num="40037">12-ao&ucirct</td>
       <td >Lacaton</td>
       <td >2E883-20</td>
-      <td >Angoulême</td>
-      <td >Marché</td>
-      <td >Pierre SIMARD et Renaud DELACROIX maçons</td>
+      <td >Angoul&ecircme</td>
+      <td >March&eacute</td>
+      <td >Pierre SIMARD et Renaud DELACROIX ma&ccedilons</td>
       <td  align=right x:num>1210</td>
       <td >(Lombrette ?) construction maison</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1643</td>
       <td  align=right
-  x:num="39784">02-déc</td>
+  x:num="39784">02-d&eacutec</td>
       <td >Prevost</td>
       <td >2E2775-10</td>
       <td >Douzat</td>
@@ -8022,11 +8022,11 @@ $connexionBD->ferme();
   x:num="39839">26-janv</td>
       <td >Huguet</td>
       <td >2E782-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
       <td >Helie et Jean YRVOIX et Marg. JABOUIN</td>
       <td  align=right x:num>1174</td>
-      <td >(Bernard et Genis YRVOIX) Fossé</td>
+      <td >(Bernard et Genis YRVOIX) Foss&eacute</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1643</td>
@@ -8057,7 +8057,7 @@ $connexionBD->ferme();
       <td  align=right x:num="40109">23-oct</td>
       <td >Duru</td>
       <td >2E497-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre PREVOST et Lucresse GIRAUD</td>
       <td  align=right x:num>1216</td>
@@ -8068,7 +8068,7 @@ $connexionBD->ferme();
       <td  align=right x:num="39589">21-mai</td>
       <td >Guyot</td>
       <td >2E774-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transport</td>
       <td >Jean MOUCHIERE gab. et Jeanne ROUSSEAU</td>
       <td  align=right x:num>1172</td>
@@ -8092,9 +8092,9 @@ $connexionBD->ferme();
   x:num="39637">08-juil</td>
       <td >Guyot</td>
       <td >2E774-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Afferme</td>
-      <td >Guerin BOILEVIN à Jean NOBLESSE cordonnier</td>
+      <td >Guerin BOILEVIN &agrave Jean NOBLESSE cordonnier</td>
       <td  align=right x:num>1172</td>
       <td >&nbsp;</td>
     </tr>
@@ -8104,9 +8104,9 @@ $connexionBD->ferme();
   x:num="39817">4-janv</td>
       <td >Huguet</td>
       <td >2E782-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Afferme</td>
-      <td >à Jehan GABORY de Claude MOULIN</td>
+      <td >&agrave Jehan GABORY de Claude MOULIN</td>
       <td  align=right x:num>1174</td>
       <td >d'une boutique</td>
     </tr>
@@ -8116,11 +8116,11 @@ $connexionBD->ferme();
   x:num="39939">6-mai</td>
       <td >Huguet</td>
       <td >2E782-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acquisition</td>
       <td >pour Pierre LAMET de Louis DESCARSELLE</td>
       <td  align=right x:num>1174</td>
-      <td >d'une pièce de vigne</td>
+      <td >d'une pi&egravece de vigne</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1645</td>
@@ -8128,7 +8128,7 @@ $connexionBD->ferme();
   x:num="39743">22-oct</td>
       <td >Guyot</td>
       <td >2E774-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre BASSET et Perrette MARANDAT</td>
       <td  align=right x:num>1172</td>
@@ -8136,10 +8136,10 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1645</td>
-      <td  align=right x:num="39856">12-févr</td>
+      <td  align=right x:num="39856">12-f&eacutevr</td>
       <td >Sicard</td>
       <td >2E1187-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Donnation</td>
       <td >Jean CHAUVET et Jeanne AUBIN sa femme</td>
       <td  align=right x:num>1365</td>
@@ -8159,12 +8159,12 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1646</td>
-      <td  align=right x:num="40037">12-août</td>
+      <td  align=right x:num="40037">12-ao&ucirct</td>
       <td >Huguet</td>
       <td >2E783-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >René DUPUY et Marie COCUT</td>
+      <td >Ren&eacute DUPUY et Marie COCUT</td>
       <td  align=right x:num>1191</td>
       <td >&nbsp;</td>
     </tr>
@@ -8174,9 +8174,9 @@ $connexionBD->ferme();
   x:num="38859">22-mai</td>
       <td >Gibaud</td>
       <td >2E661-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Marie ROY à Pierre PAICHOU</td>
+      <td >Marie ROY &agrave Pierre PAICHOU</td>
       <td  align=right x:num>969</td>
       <td >Femme de Antoine MICHEAU</td>
     </tr>
@@ -8186,7 +8186,7 @@ $connexionBD->ferme();
   x:num="39612">13-juin</td>
       <td >Guyot</td>
       <td >2E775-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Accord</td>
       <td >Jean BENET et Jehan NOBLESSE</td>
       <td  align=right x:num>1173</td>
@@ -8195,10 +8195,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1647</td>
       <td  align=right
-  x:num="40050">25-août</td>
+  x:num="40050">25-ao&ucirct</td>
       <td >Huguet</td>
       <td >2E783-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre VARACHE et Catherine FAURE</td>
       <td  align=right x:num>1191</td>
@@ -8210,11 +8210,11 @@ $connexionBD->ferme();
   x:num="38879">11-juin</td>
       <td >Gibaud</td>
       <td >2E661-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Jean YRVOIX et Gabrielle MARCHAIX</td>
       <td  align=right x:num>969</td>
-      <td >à Damlle. du Chilloux</td>
+      <td >&agrave Damlle. du Chilloux</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1647</td>
@@ -8222,8 +8222,8 @@ $connexionBD->ferme();
   x:num="38858">21-mai</td>
       <td >Gibaud</td>
       <td >2E661-10</td>
-      <td >Angoulême</td>
-      <td >Procès-verbal</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves-verbal</td>
       <td >Jehan LIMOUSIN et Marguerite RIFFAUD</td>
       <td  align=right x:num>969</td>
       <td >&nbsp;</td>
@@ -8234,9 +8234,9 @@ $connexionBD->ferme();
   x:num="39035">14-nov</td>
       <td >Gibaud</td>
       <td >2E661-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Mery DAVID à Colette FERRAUD</td>
+      <td >Mery DAVID &agrave Colette FERRAUD</td>
       <td  align=right x:num>969</td>
       <td >Femme de Nicolas DAVID</td>
     </tr>
@@ -8246,7 +8246,7 @@ $connexionBD->ferme();
   x:num="38728">11-janv</td>
       <td >Gibaud</td>
       <td >2E661-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jehan MOREAU et Mathurine VARACHE</td>
       <td  align=right x:num>969</td>
@@ -8268,7 +8268,7 @@ $connexionBD->ferme();
       <td  align=right x:num="39620">21-juin</td>
       <td >Guyot</td>
       <td >2E776-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Robert ROY et Perrette DELAGE</td>
       <td  align=right x:num>1159</td>
@@ -8277,25 +8277,25 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1648</td>
       <td  align=right
-  x:num="39809">27-déc</td>
+  x:num="39809">27-d&eacutec</td>
       <td >Guyot</td>
       <td >2E776-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Guillaume SURREAU et MarguerITE GUILHON</td>
       <td  align=right x:num>1159</td>
-      <td >Fils Léonard et Renée MAIGNAN</td>
+      <td >Fils L&eacuteonard et Ren&eacutee MAIGNAN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1648</td>
-      <td  align=right x:num="40056">31-août</td>
+      <td  align=right x:num="40056">31-ao&ucirct</td>
       <td >Rouyer</td>
       <td >2E4965-10</td>
       <td >Ruelle</td>
       <td >Testament</td>
-      <td >Françoise RIFFAUD femme Jehan GIBAUD</td>
+      <td >Fran&ccediloise RIFFAUD femme Jehan GIBAUD</td>
       <td  align=right x:num>1226</td>
-      <td >à Françoise GIBAUD sa filleule</td>
+      <td >&agrave Fran&ccediloise GIBAUD sa filleule</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1648</td>
@@ -8310,10 +8310,10 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1648</td>
-      <td  align=right x:num="39686">26-août</td>
+      <td  align=right x:num="39686">26-ao&ucirct</td>
       <td >Guyot</td>
       <td >2E776-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean BENESTEAU et Jehanne VERGNAULT</td>
       <td  align=right x:num>1159</td>
@@ -8335,11 +8335,11 @@ $connexionBD->ferme();
       <td  align=right x:num="39572">04-mai</td>
       <td >Guyot</td>
       <td >2E777-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Jacques CYMARD à Antoine BORDIER</td>
+      <td >Jacques CYMARD &agrave Antoine BORDIER</td>
       <td  align=right x:num>1156</td>
-      <td >d'une maison à Puymoyen</td>
+      <td >d'une maison &agrave Puymoyen</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1649</td>
@@ -8350,17 +8350,17 @@ $connexionBD->ferme();
       <td >Inventaire</td>
       <td >Michel DELAURIERE et ses enfants mineurs</td>
       <td  align=right x:num>1226</td>
-      <td >après décès de Françoise BOUDARD</td>
+      <td >apr&egraves d&eacutec&egraves de Fran&ccediloise BOUDARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1649</td>
-      <td  align=right x:num="39503">25-févr</td>
+      <td  align=right x:num="39503">25-f&eacutevr</td>
       <td >Guyot</td>
       <td >2E777-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td 
-  x:str="à Antoine SIMARD de Geoffroy BOUILHON ">à Antoine SIMARD de Geoffroy 
+  x:str="&agrave Antoine SIMARD de Geoffroy BOUILHON ">&agrave Antoine SIMARD de Geoffroy 
         BOUILHON </td>
       <td  align=right x:num>1157</td>
       <td >&nbsp;</td>
@@ -8371,9 +8371,9 @@ $connexionBD->ferme();
   x:num="39592">24-mai</td>
       <td >Guyot</td>
       <td >2E777-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Jacques CYMARD à Pierre GUYOT</td>
+      <td >Jacques CYMARD &agrave Pierre GUYOT</td>
       <td  align=right x:num>1156</td>
       <td >(V. SIMARD et M. PETITBOIS)</td>
     </tr>
@@ -8383,7 +8383,7 @@ $connexionBD->ferme();
   x:num="39535">28-mars</td>
       <td >Guyot</td>
       <td >2E777-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Guillme BARUTEAU et Magdelaine SIMARD</td>
       <td  align=right x:num>1156</td>
@@ -8394,7 +8394,7 @@ $connexionBD->ferme();
       <td  align=right x:num="39979">15-juin</td>
       <td >Lacaton</td>
       <td >2E866-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean YRVOIX et Catherine DELAFONT</td>
       <td  align=right x:num>1213</td>
@@ -8406,18 +8406,18 @@ $connexionBD->ferme();
   x:num="39958">25-mai</td>
       <td >Lacaton</td>
       <td >2E866-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >à Jehan LIZEE et Anne CONSTANTIN</td>
+      <td >&agrave Jehan LIZEE et Anne CONSTANTIN</td>
       <td  align=right x:num>1213</td>
-      <td >d'une maison à St André d'Aê</td>
+      <td >d'une maison &agrave St Andr&eacute d'A&ecirc</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1649</td>
       <td  align=right x:num="39474">27-janv</td>
       <td >Guyot</td>
       <td >2E777-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
       <td >Jehan NOBLESSE et Germain BOILEVIN</td>
       <td  align=right x:num>1157</td>
@@ -8429,7 +8429,7 @@ $connexionBD->ferme();
   x:num="39884">12-mars</td>
       <td >Huguet</td>
       <td >2E785-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Pierre FOURNON (mari de Catherine CARRE)</td>
       <td  align=right x:num>1191</td>
@@ -8441,9 +8441,9 @@ $connexionBD->ferme();
   x:num="39976">12-juin</td>
       <td >Huguet</td>
       <td >2E785-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
-      <td >des CARRE à Jehan CARRE leur frère</td>
+      <td >des CARRE &agrave Jehan CARRE leur fr&egravere</td>
       <td  align=right x:num>1191</td>
       <td >&nbsp;</td>
     </tr>
@@ -8452,15 +8452,15 @@ $connexionBD->ferme();
       <td  align=right x:num="39877">5-mars</td>
       <td >Lacaton</td>
       <td >2E888-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Afferme</td>
-      <td >à François COSTE et Marie CHARUAUD</td>
+      <td >&agrave Fran&ccedilois COSTE et Marie CHARUAUD</td>
       <td  align=right x:num>1213</td>
-      <td >métairie à St Martial d'Aê</td>
+      <td >m&eacutetairie &agrave St Martial d'A&ecirc</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1651</td>
-      <td  align=right x:num="39078">27-déc</td>
+      <td  align=right x:num="39078">27-d&eacutec</td>
       <td >Rouhier</td>
       <td >2E1119-50</td>
       <td >Lhoumeau</td>
@@ -8476,16 +8476,16 @@ $connexionBD->ferme();
       <td >2E4965-70</td>
       <td >Ruelle</td>
       <td >Testament</td>
-      <td >Helie BERHOME (mari de Françoise SEGAIN)</td>
+      <td >Helie BERHOME (mari de Fran&ccediloise SEGAIN)</td>
       <td  align=right x:num>1226</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1652</td>
-      <td  align=right x:num="39080">29-déc</td>
+      <td  align=right x:num="39080">29-d&eacutec</td>
       <td >Vachier</td>
       <td >2E1287-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Michel ROY et Catherine ESCOUPEAU</td>
       <td  align=right x:num>1013</td>
@@ -8494,14 +8494,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1652</td>
       <td  align=right
-  x:num="39059">08-déc</td>
+  x:num="39059">08-d&eacutec</td>
       <td >Pillorget</td>
       <td >2E2160-10</td>
       <td >Champniers</td>
       <td >Acquisition</td>
       <td >Gabriel et Helie MESGRET de F. COUPRIE</td>
       <td  align=right x:num>1016</td>
-      <td >et Françoise POITEVIN sa fe.</td>
+      <td >et Fran&ccediloise POITEVIN sa fe.</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1652</td>
@@ -8511,7 +8511,7 @@ $connexionBD->ferme();
       <td >2E2788-20</td>
       <td >Echallat</td>
       <td >Mariage</td>
-      <td >Guillme MARQUAIS et Fçoise GRATEREAU</td>
+      <td >Guillme MARQUAIS et F&ccediloise GRATEREAU</td>
       <td  align=right x:num>1156</td>
       <td >&nbsp;</td>
     </tr>
@@ -8521,7 +8521,7 @@ $connexionBD->ferme();
   x:num="39961">28-mai</td>
       <td >Gaignier</td>
       <td >2E583-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >Perrine TUILLIER veuve Pierre ARNAUD</td>
       <td  align=right x:num>1205</td>
@@ -8533,7 +8533,7 @@ $connexionBD->ferme();
   x:num="39514">07-mars</td>
       <td >Juilhard</td>
       <td >2E861-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
       <td >Jean, Gilles, Marie et Marie MARTIN</td>
       <td  align=right x:num>1138</td>
@@ -8542,12 +8542,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1653</td>
       <td  align=right
-  x:num="39872">28-févr</td>
+  x:num="39872">28-f&eacutevr</td>
       <td >Lacaton</td>
       <td >2E889-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Jean et Jean MARTIN à Arnaud LURAT</td>
+      <td >Jean et Jean MARTIN &agrave Arnaud LURAT</td>
       <td  align=right x:num>1205</td>
       <td >Vente de bois</td>
     </tr>
@@ -8557,7 +8557,7 @@ $connexionBD->ferme();
   x:num="39450">03-janv</td>
       <td >Guyot</td>
       <td >2E780-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Nicolas SURREAU et Marguerite RUET</td>
       <td  align=right x:num>1158</td>
@@ -8569,7 +8569,7 @@ $connexionBD->ferme();
   x:num="39009">19-oct</td>
       <td >Vachier</td>
       <td >2E1288-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jacques MESNARD et Marie RULLIER</td>
       <td  align=right x:num>1000</td>
@@ -8578,10 +8578,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1653</td>
       <td  align=right
-  x:num="38935">06-août</td>
+  x:num="38935">06-ao&ucirct</td>
       <td >Vachier</td>
       <td >2E1288-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Accord</td>
       <td >Pierre et Jean DURANDEAU son fils</td>
       <td  align=right x:num>1000</td>
@@ -8595,7 +8595,7 @@ $connexionBD->ferme();
       <td >2E2160-20</td>
       <td >Champniers</td>
       <td >Mariage</td>
-      <td >Guillaume BAUDRY et Andrée DELAURIERE</td>
+      <td >Guillaume BAUDRY et Andr&eacutee DELAURIERE</td>
       <td  align=right x:num>1016</td>
       <td >&nbsp;</td>
     </tr>
@@ -8609,7 +8609,7 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >Jehan PERROT et Marguerite VIOLLET</td>
       <td  align=right x:num>877</td>
-      <td >Acte tronqué abîmé</td>
+      <td >Acte tronqu&eacute ab&icircm&eacute</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1653</td>
@@ -8629,7 +8629,7 @@ $connexionBD->ferme();
   x:num="39645">16-juil</td>
       <td >Juilhard</td>
       <td >2E861-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Thomas COUPRIE et Marie YRVOIX</td>
       <td  align=right x:num>1138</td>
@@ -8641,16 +8641,16 @@ $connexionBD->ferme();
   x:num="39023">02-nov</td>
       <td >Vachier</td>
       <td >2E1288-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François CAILLAUD et Marie ROCHEBON</td>
+      <td >Fran&ccedilois CAILLAUD et Marie ROCHEBON</td>
       <td  align=right x:num>1000</td>
       <td >de L'Houmeau</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1653</td>
       <td  align=right
-  x:num="38757">09-févr</td>
+  x:num="38757">09-f&eacutevr</td>
       <td >Boutillier</td>
       <td >2E224-20</td>
       <td >Lhoumeau</td>
@@ -8662,12 +8662,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1653</td>
       <td  align=right
-  x:num="39866">22-févr</td>
+  x:num="39866">22-f&eacutevr</td>
       <td >Lacaton</td>
       <td >2E889-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >André BRISSON et Marguerite GRATEREAU</td>
+      <td >Andr&eacute BRISSON et Marguerite GRATEREAU</td>
       <td  align=right x:num>1205</td>
       <td >&nbsp;</td>
     </tr>
@@ -8679,21 +8679,21 @@ $connexionBD->ferme();
       <td >2E224-30</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >François BRISSAUD et Françoise ROUGIER</td>
+      <td >Fran&ccedilois BRISSAUD et Fran&ccediloise ROUGIER</td>
       <td  align=right x:num>976</td>
       <td >Fils de Micheu et M. DAVAILLE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1653</td>
       <td  align=right
-  x:num="40163">16-déc</td>
+  x:num="40163">16-d&eacutec</td>
       <td >Lacaton</td>
       <td >2E889-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Apprentissage</td>
       <td >Michel BOITEAU chez Me sergier</td>
       <td  align=right x:num>1205</td>
-      <td >Fils de François</td>
+      <td >Fils de Fran&ccedilois</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1653</td>
@@ -8701,20 +8701,20 @@ $connexionBD->ferme();
   x:num="39920">17-avr</td>
       <td >Lacaton</td>
       <td >2E889-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >Jean ROUHIER et Catherine. TESTEREAU</td>
       <td  align=right x:num>1205</td>
-      <td >à Pierre MOUCHIERE</td>
+      <td >&agrave Pierre MOUCHIERE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1653</td>
-      <td  align=right x:num="39846">2-févr</td>
+      <td  align=right x:num="39846">2-f&eacutevr</td>
       <td >Sicard</td>
       <td >2E1189-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
-      <td >Michel, Guillaume, Françoise BOILEVIN</td>
+      <td >Michel, Guillaume, Fran&ccediloise BOILEVIN</td>
       <td  align=right x:num>1377</td>
       <td >de Saint-MIchel</td>
     </tr>
@@ -8735,11 +8735,11 @@ $connexionBD->ferme();
   x:num="40004">10-juil</td>
       <td >Lacaton</td>
       <td >2E890-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
-      <td >Clément BERTHOME gabarrier</td>
+      <td >Cl&eacutement BERTHOME gabarrier</td>
       <td  align=right x:num>1175</td>
-      <td >à Antoine GUICHARD</td>
+      <td >&agrave Antoine GUICHARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1654</td>
@@ -8751,7 +8751,7 @@ $connexionBD->ferme();
       <td >Renonciation</td>
       <td >Marie COUPRIE</td>
       <td  align=right x:num>1019</td>
-      <td >hér.  Martin et F. CHAUVEAU</td>
+      <td >h&eacuter.  Martin et F. CHAUVEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1654</td>
@@ -8759,7 +8759,7 @@ $connexionBD->ferme();
   x:num="38801">25-mars</td>
       <td >Vachier</td>
       <td >2E1290-120</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean REFRANCHE et Denise NADAUD</td>
       <td  align=right x:num>976</td>
@@ -8771,7 +8771,7 @@ $connexionBD->ferme();
   x:num="38968">08-sept</td>
       <td >Gibaud</td>
       <td >2E664-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jehan LIZEE et Jehanne BARREAU</td>
       <td  align=right x:num>915</td>
@@ -8783,19 +8783,19 @@ $connexionBD->ferme();
   x:num="40005">11-juil</td>
       <td >Lacaton</td>
       <td >2E890-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
-      <td >Clément BERTHOME gabarrier</td>
+      <td >Cl&eacutement BERTHOME gabarrier</td>
       <td  align=right x:num>1175</td>
-      <td >à Antoine GUICHARD</td>
+      <td >&agrave Antoine GUICHARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1654</td>
       <td  align=right
-  x:num="38931">02-août</td>
+  x:num="38931">02-ao&ucirct</td>
       <td >Vachier</td>
       <td >2E1290-180</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre DELABAURIE et Guillemette PAPIN</td>
       <td  align=right x:num>977</td>
@@ -8807,9 +8807,9 @@ $connexionBD->ferme();
   x:num="38801">25-mars</td>
       <td >Gibaud</td>
       <td >2E664-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Philippe BOYTAUD à Jacques CASTAIGNE</td>
+      <td >Philippe BOYTAUD &agrave Jacques CASTAIGNE</td>
       <td  align=right x:num>915</td>
       <td >Vente de cire</td>
     </tr>
@@ -8819,7 +8819,7 @@ $connexionBD->ferme();
   x:num="38814">07-avr</td>
       <td >Vachier</td>
       <td >2E1290-130</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Apprentissage</td>
       <td >Pierre RIFFAUD chez Jehan LIMOUSIN</td>
       <td  align=right x:num>976</td>
@@ -8828,14 +8828,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1654</td>
       <td  align=right
-  x:num="40152">5-déc</td>
+  x:num="40152">5-d&eacutec</td>
       <td >Lacaton</td>
       <td >2E890-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >Jean IRVOIX fils de Philippe</td>
       <td  align=right x:num>1175</td>
-      <td >à Jean IRVOIX fils de Pierre</td>
+      <td >&agrave Jean IRVOIX fils de Pierre</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1654</td>
@@ -8843,9 +8843,9 @@ $connexionBD->ferme();
   x:num="39029">08-nov</td>
       <td >Vachier</td>
       <td >2E1290-190</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François DAVID et Catherine ALBERT</td>
+      <td >Fran&ccedilois DAVID et Catherine ALBERT</td>
       <td  align=right x:num>977</td>
       <td >&nbsp;</td>
     </tr>
@@ -8857,31 +8857,31 @@ $connexionBD->ferme();
       <td >2E4620-10</td>
       <td >La Rochef.</td>
       <td >Transaction</td>
-      <td >Pierre DARS et Léonard VILLEMANDY</td>
+      <td >Pierre DARS et L&eacuteonard VILLEMANDY</td>
       <td  align=right x:num>1048</td>
       <td >Marchand de La Rochefoucauld</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1654</td>
       <td  align=right
-  x:num="39429">13-déc</td>
+  x:num="39429">13-d&eacutec</td>
       <td >Grassin</td>
       <td >2E4620-20</td>
       <td >La Rochef.</td>
       <td >Ferme</td>
-      <td >Pierre DARS à Jean Jacques GOBELET</td>
+      <td >Pierre DARS &agrave Jean Jacques GOBELET</td>
       <td  align=right x:num>1048</td>
       <td >Marchand de La Rochefoucauld</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1654</td>
       <td  align=right
-  x:num="39504">26-févr</td>
+  x:num="39504">26-f&eacutevr</td>
       <td >Baudet</td>
       <td >2E2789-10</td>
       <td >Echallat</td>
       <td >Vente</td>
-      <td >Guillaume MARQUAIS à Pierre GRATEREAU</td>
+      <td >Guillaume MARQUAIS &agrave Pierre GRATEREAU</td>
       <td  align=right x:num>1158</td>
       <td >et Fr. GRATEREAU fem. de Gui.</td>
     </tr>
@@ -8891,7 +8891,7 @@ $connexionBD->ferme();
   x:num="38819">12-avr</td>
       <td >Vachier</td>
       <td >2E1290-140</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Thomas CAILLAUD et Isabelle ROY</td>
       <td  align=right x:num>976</td>
@@ -8915,7 +8915,7 @@ $connexionBD->ferme();
   x:num="40110">24-oct</td>
       <td >Lacaton</td>
       <td >2E890-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Michel PETIT et Marie TARDAT</td>
       <td  align=right x:num>1175</td>
@@ -8927,9 +8927,9 @@ $connexionBD->ferme();
   x:num="38826">19-avr</td>
       <td >Gibaud</td>
       <td >2E664-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François AUDIER et Antoinette BOILEAU</td>
+      <td >Fran&ccedilois AUDIER et Antoinette BOILEAU</td>
       <td  align=right x:num>915</td>
       <td >&nbsp;</td>
     </tr>
@@ -8939,7 +8939,7 @@ $connexionBD->ferme();
   x:num="39975">11-juin</td>
       <td >Gaignier</td>
       <td >2E583-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Apprentissage</td>
       <td >Jean TOURNIER fils de Pierre</td>
       <td  align=right x:num>1205</td>
@@ -8951,11 +8951,11 @@ $connexionBD->ferme();
   x:num="38859">22-mai</td>
       <td >Vachier</td>
       <td >2E1290-170</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >François LAUDAIS et Louise BONNORON</td>
+      <td >Fran&ccedilois LAUDAIS et Louise BONNORON</td>
       <td  align=right x:num>977</td>
-      <td >à Léonard AUGEREAU</td>
+      <td >&agrave L&eacuteonard AUGEREAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1654</td>
@@ -8963,7 +8963,7 @@ $connexionBD->ferme();
   x:num="38833">26-avr</td>
       <td >Vachier</td>
       <td >2E1290-160</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jehan BOYTAUD et Marie DOVEAU</td>
       <td  align=right x:num>977</td>
@@ -8983,23 +8983,23 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1654</td>
       <td  align=right
-  x:num="40229">20-févr</td>
+  x:num="40229">20-f&eacutevr</td>
       <td >Pechillon</td>
       <td >2E2621-20</td>
       <td >La Couronne</td>
       <td >Vente</td>
-      <td >Pierre GENETEAU à Jacques son frère</td>
+      <td >Pierre GENETEAU &agrave Jacques son fr&egravere</td>
       <td  align=right x:num>1501</td>
       <td >fils de Jean et Jeanne BOISDENET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1655</td>
-      <td  align=right x:num="40031">6-août</td>
+      <td  align=right x:num="40031">6-ao&ucirct</td>
       <td >Huguet Jean</td>
       <td >2E788-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Rente</td>
-      <td >Jean AUDOUIN à Dame Françoise LURAT</td>
+      <td >Jean AUDOUIN &agrave Dame Fran&ccediloise LURAT</td>
       <td  align=right x:num>1195</td>
       <td >&nbsp;</td>
     </tr>
@@ -9009,7 +9009,7 @@ $connexionBD->ferme();
   x:num="39922">19-avr</td>
       <td >Lacaton</td>
       <td >2E891-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Helie BERTHOMME</td>
       <td  align=right x:num>1174</td>
@@ -9018,12 +9018,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1655</td>
       <td  align=right
-  x:num="39120">07-févr</td>
+  x:num="39120">07-f&eacutevr</td>
       <td >Grassin</td>
       <td >2E4621-10</td>
       <td >La Rochef.</td>
       <td >Quittance</td>
-      <td >Pierre DARS à Guillaume PETIT</td>
+      <td >Pierre DARS &agrave Guillaume PETIT</td>
       <td  align=right x:num>1048</td>
       <td >Marchand de La Rochefoucauld</td>
     </tr>
@@ -9033,19 +9033,19 @@ $connexionBD->ferme();
   x:num="38658">2-nov</td>
       <td >Vachier</td>
       <td >2E1292-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
-      <td >Jehan BALLANGE à Jehan LIZEE et Bert. ROUX</td>
+      <td >Jehan BALLANGE &agrave Jehan LIZEE et Bert. ROUX</td>
       <td  align=right x:num>863</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1655</td>
       <td  align=right
-  x:num="38408">25-févr</td>
+  x:num="38408">25-f&eacutevr</td>
       <td >Vachier</td>
       <td >2E1292-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Michelle ROY</td>
       <td  align=right x:num>863</td>
@@ -9054,12 +9054,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1655</td>
       <td  align=right
-  x:num="38776">28-févr</td>
+  x:num="38776">28-f&eacutevr</td>
       <td >Lacoste</td>
       <td >2E2765-20</td>
       <td >Dirac</td>
       <td >Paiement</td>
-      <td >Nicolas, Jean et frères à Germaine SIMARD</td>
+      <td >Nicolas, Jean et fr&egraveres &agrave Germaine SIMARD</td>
       <td  align=right x:num>877</td>
       <td >et Nicolas VERGNAUD</td>
     </tr>
@@ -9069,7 +9069,7 @@ $connexionBD->ferme();
   x:num="38604">9-sept</td>
       <td >Vachier</td>
       <td >2E1292-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Michel BOYTAUD et Jehanne ROUSSY</td>
       <td  align=right x:num>863</td>
@@ -9095,7 +9095,7 @@ $connexionBD->ferme();
       <td >2E4591-10</td>
       <td >La Rochef.</td>
       <td >Ferme</td>
-      <td >Pierre DARS à Marie PASQUET</td>
+      <td >Pierre DARS &agrave Marie PASQUET</td>
       <td  align=right x:num>1091</td>
       <td >&nbsp;</td>
     </tr>
@@ -9105,9 +9105,9 @@ $connexionBD->ferme();
   x:num="39033">12-nov</td>
       <td >Gibaud</td>
       <td >2E665-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Syndicat</td>
-      <td >Des Maîtres sergiers d'Angoulême</td>
+      <td >Des Ma&icirctres sergiers d'Angoul&ecircme</td>
       <td  align=right x:num>911</td>
       <td >&nbsp;</td>
     </tr>
@@ -9117,11 +9117,11 @@ $connexionBD->ferme();
   x:num="39037">16-nov</td>
       <td >Gibaud</td>
       <td >2E665-10</td>
-      <td >Angoulême</td>
-      <td >Réception</td>
-      <td >Michel BOITEAU comme maître sergier</td>
+      <td >Angoul&ecircme</td>
+      <td >R&eacuteception</td>
+      <td >Michel BOITEAU comme ma&icirctre sergier</td>
       <td  align=right x:num>911</td>
-      <td >Fils de François BOISTEAU</td>
+      <td >Fils de Fran&ccedilois BOISTEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1655</td>
@@ -9142,7 +9142,7 @@ $connexionBD->ferme();
       <td >2E2621-40</td>
       <td >La Couronne</td>
       <td >Transaction</td>
-      <td >Helie GENETEAU et Pierre et Jacques ses frères</td>
+      <td >Helie GENETEAU et Pierre et Jacques ses fr&egraveres</td>
       <td  align=right x:num>1501</td>
       <td >&nbsp;</td>
     </tr>
@@ -9151,7 +9151,7 @@ $connexionBD->ferme();
       <td  align=right x:num="39824">11-janv</td>
       <td >Huguet Jean</td>
       <td >2E789-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Antoine GOUJON et Marie TOURNIER</td>
       <td  align=right x:num>1195</td>
@@ -9160,10 +9160,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1656</td>
       <td  align=right
-  x:num="39869">25-févr</td>
+  x:num="39869">25-f&eacutevr</td>
       <td >Huguet Jean</td>
       <td >2E789-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acquisition</td>
       <td >pour Jacq. DESMAISONS de Pierre ARONDEAU</td>
       <td  align=right x:num>1195</td>
@@ -9179,7 +9179,7 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >Robert BERTRAND et Louise ROUHIER</td>
       <td  align=right x:num>877</td>
-      <td >Paul et Méry BIARD</td>
+      <td >Paul et M&eacutery BIARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1656</td>
@@ -9199,7 +9199,7 @@ $connexionBD->ferme();
   x:num="40003">9-juil</td>
       <td >Huguet Jean</td>
       <td >2E789-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Jean LIZEE gabarrier et BASSOULET et RIGAUD</td>
       <td  align=right x:num>1195</td>
@@ -9213,7 +9213,7 @@ $connexionBD->ferme();
       <td >2E4591-20</td>
       <td >La Rochef.</td>
       <td >Vente</td>
-      <td >Pierre DODET à Guillaume DARS</td>
+      <td >Pierre DODET &agrave Guillaume DARS</td>
       <td  align=right x:num>1091</td>
       <td >&nbsp;</td>
     </tr>
@@ -9227,7 +9227,7 @@ $connexionBD->ferme();
       <td >Convention</td>
       <td >Guillaume DARS et Geremie MARANTIN</td>
       <td  align=right x:num>1048</td>
-      <td >Lab à boeufs de La Rochefouc.</td>
+      <td >Lab &agrave boeufs de La Rochefouc.</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1656</td>
@@ -9235,7 +9235,7 @@ $connexionBD->ferme();
   x:num="39604">05-juin</td>
       <td >Micheau</td>
       <td >2E1018-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean SIMARD et Antoinette GILLIBERT</td>
       <td  align=right x:num>1124</td>
@@ -9263,17 +9263,17 @@ $connexionBD->ferme();
       <td >Convention</td>
       <td >Guillaume DARS et Geremie MARANTIN</td>
       <td  align=right x:num>1048</td>
-      <td >Lab à boeufs de La Rochefouc.</td>
+      <td >Lab &agrave boeufs de La Rochefouc.</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1656</td>
       <td  align=right
-  x:num="40049">24-août</td>
+  x:num="40049">24-ao&ucirct</td>
       <td >Lacaton</td>
       <td >2E892-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Jean DIEUAIDE à Paul VANDEVELDE</td>
+      <td >Jean DIEUAIDE &agrave Paul VANDEVELDE</td>
       <td  align=right x:num>1205</td>
       <td >de papier</td>
     </tr>
@@ -9283,9 +9283,9 @@ $connexionBD->ferme();
   x:num="39997">03-juil</td>
       <td >Lacaton</td>
       <td >2E892-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Guillaume GRATEREAU à Michel son père</td>
+      <td >Guillaume GRATEREAU &agrave Michel son p&egravere</td>
       <td  align=right x:num>1205</td>
       <td >&nbsp;</td>
     </tr>
@@ -9298,12 +9298,12 @@ $connexionBD->ferme();
       <td >Reconnaissance</td>
       <td >Marie FOUCHER veuve Abraham MICHEAU</td>
       <td  align=right x:num>1501</td>
-      <td >à Michel GENETEAU son gendre</td>
+      <td >&agrave Michel GENETEAU son gendre</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1656</td>
       <td  align=right
-  x:num="40519">7-déc</td>
+  x:num="40519">7-d&eacutec</td>
       <td >Couste</td>
       <td >2E3496-10</td>
       <td >Mansle</td>
@@ -9329,7 +9329,7 @@ $connexionBD->ferme();
   x:num="39644">15-juil</td>
       <td >Guyot</td>
       <td >2E781-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Etienne BIARD et Jehanne MORISSET</td>
       <td  align=right x:num>1174</td>
@@ -9343,19 +9343,19 @@ $connexionBD->ferme();
       <td >2E4624-10</td>
       <td >La Rochef.</td>
       <td >Bail</td>
-      <td >Guillaume DARS à Pierre FORT</td>
+      <td >Guillaume DARS &agrave Pierre FORT</td>
       <td  align=right x:num>1049</td>
-      <td >Lab à boeufs de Saint-Projet</td>
+      <td >Lab &agrave boeufs de Saint-Projet</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1657</td>
       <td  align=right
-  x:num="38751">03-févr</td>
+  x:num="38751">03-f&eacutevr</td>
       <td >Lacoste</td>
       <td >2E2765-40</td>
       <td >Dirac</td>
       <td >Accord</td>
-      <td >François GAUVRY et Jean SIMARD</td>
+      <td >Fran&ccedilois GAUVRY et Jean SIMARD</td>
       <td  align=right x:num>877</td>
       <td >&nbsp;</td>
     </tr>
@@ -9367,9 +9367,9 @@ $connexionBD->ferme();
       <td >2E4625-10</td>
       <td >La Rochef.</td>
       <td >Acquisition</td>
-      <td >Léonard LABEILLE de Guillaume DARS</td>
+      <td >L&eacuteonard LABEILLE de Guillaume DARS</td>
       <td  align=right x:num>1049</td>
-      <td >Lab à boeufs de Saint-Projet</td>
+      <td >Lab &agrave boeufs de Saint-Projet</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1657</td>
@@ -9386,7 +9386,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1657</td>
       <td  align=right
-  x:num="38958">29-août</td>
+  x:num="38958">29-ao&ucirct</td>
       <td >Boutillier</td>
       <td >2E224-60</td>
       <td >Lhoumeau</td>
@@ -9402,32 +9402,32 @@ $connexionBD->ferme();
       <td >Grassin</td>
       <td >2E4625-20</td>
       <td >La Rochef.</td>
-      <td >Résignation</td>
-      <td >Pierre DARS et Hélie DARS</td>
+      <td >R&eacutesignation</td>
+      <td >Pierre DARS et H&eacutelie DARS</td>
       <td  align=right x:num>1049</td>
-      <td >Curé de Fleurignac et clerc</td>
+      <td >Cur&eacute de Fleurignac et clerc</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1657</td>
       <td  align=right
-  x:num="38591">27-août</td>
+  x:num="38591">27-ao&ucirct</td>
       <td >Peuple</td>
       <td >2E1061-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Location</td>
-      <td >André BRISSON et Marguerite GRATEREAU</td>
+      <td >Andr&eacute BRISSON et Marguerite GRATEREAU</td>
       <td  align=right x:num>860</td>
-      <td >à Martial PESNEAU</td>
+      <td >&agrave Martial PESNEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1658</td>
       <td  align=right
-  x:num="39805">23-déc</td>
+  x:num="39805">23-d&eacutec</td>
       <td >Micheau</td>
       <td >2E1018-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
-      <td >Jean ROUHIER et Françoise CONSTANTIN</td>
+      <td >Jean ROUHIER et Fran&ccediloise CONSTANTIN</td>
       <td  align=right x:num>1124</td>
       <td >&nbsp;</td>
     </tr>
@@ -9439,9 +9439,9 @@ $connexionBD->ferme();
       <td >2E4626-30</td>
       <td >La Rochef.</td>
       <td >Acquisition</td>
-      <td >Guillaume DARS à Léonard LABEILLE</td>
+      <td >Guillaume DARS &agrave L&eacuteonard LABEILLE</td>
       <td  align=right x:num>1051</td>
-      <td >Lab à boeufs de Saint-Projet</td>
+      <td >Lab &agrave boeufs de Saint-Projet</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1658</td>
@@ -9449,11 +9449,11 @@ $connexionBD->ferme();
   x:num="38886">18-juin</td>
       <td >Gibaud</td>
       <td >2E668-20</td>
-      <td >Angoulême</td>
-      <td >Réception</td>
+      <td >Angoul&ecircme</td>
+      <td >R&eacuteception</td>
       <td >Thomas DAVID</td>
       <td  align=right x:num>938</td>
-      <td >Comme maître sergier</td>
+      <td >Comme ma&icirctre sergier</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1658</td>
@@ -9463,17 +9463,17 @@ $connexionBD->ferme();
       <td >2E4627-10</td>
       <td >La Rochef.</td>
       <td >Ferme</td>
-      <td >Catherine CHEROT à Abraham BARBET</td>
+      <td >Catherine CHEROT &agrave Abraham BARBET</td>
       <td  align=right x:num>1051</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17 class=xl3620222 align=right x:num>1658</td>
       <td class=xl3720222 align=right
-  x:num="40171">24-déc</td>
+  x:num="40171">24-d&eacutec</td>
       <td class=xl3620222>Huguet Jean</td>
       <td class=xl3620222>2E790-30</td>
-      <td class=xl3620222>Angoulême</td>
+      <td class=xl3620222>Angoul&ecircme</td>
       <td class=xl3620222>Rôle</td>
       <td class=xl3620222>Charras</td>
       <td class=xl3620222 align=right x:num>1200</td>
@@ -9499,7 +9499,7 @@ $connexionBD->ferme();
       <td >2E4592-10</td>
       <td >La Rochef.</td>
       <td >Vente</td>
-      <td >Pierre MAYOU à Guillaume DARS</td>
+      <td >Pierre MAYOU &agrave Guillaume DARS</td>
       <td  align=right x:num>1092</td>
       <td >&nbsp;</td>
     </tr>
@@ -9509,16 +9509,16 @@ $connexionBD->ferme();
   x:num="39566">28-avr</td>
       <td >Juilhard</td>
       <td >2E862-10</td>
-      <td >Angoulême</td>
-      <td >Procès verbal</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves verbal</td>
       <td >Helie DARS</td>
       <td  align=right x:num>1136</td>
-      <td > neveu de Pierre DARS curé</td>
+      <td > neveu de Pierre DARS cur&eacute</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1658</td>
       <td  align=right
-  x:num="39127">14-févr</td>
+  x:num="39127">14-f&eacutevr</td>
       <td >Desaunieres</td>
       <td >2E4592-20</td>
       <td >La Rochef.</td>
@@ -9533,8 +9533,8 @@ $connexionBD->ferme();
   x:num="38897">29-juin</td>
       <td >Gibaud</td>
       <td >2E668-40</td>
-      <td >Angoulême</td>
-      <td >Réception</td>
+      <td >Angoul&ecircme</td>
+      <td >R&eacuteception</td>
       <td >Jehanne SIMARD</td>
       <td  align=right x:num>938</td>
       <td >Au Carmel</td>
@@ -9554,10 +9554,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1658</td>
       <td  align=right
-  x:num="38761">13-févr</td>
+  x:num="38761">13-f&eacutevr</td>
       <td >Gibaud</td>
       <td >2E668-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jehan BOYTEAU et Perrine PREVOST</td>
       <td  align=right x:num>938</td>
@@ -9569,11 +9569,11 @@ $connexionBD->ferme();
   x:num="38835">28-avr</td>
       <td >Robin</td>
       <td >2E1109-110</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >Jacques COUPRIE et Denise COUSTURIER</td>
       <td  align=right x:num>954</td>
-      <td >à Pierre SEGUIN</td>
+      <td >&agrave Pierre SEGUIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1658</td>
@@ -9581,9 +9581,9 @@ $connexionBD->ferme();
   x:num="38968">08-sept</td>
       <td >Robin</td>
       <td >2E1109-120</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François DAVID et Catherine DELACROIX</td>
+      <td >Fran&ccedilois DAVID et Catherine DELACROIX</td>
       <td  align=right x:num>954</td>
       <td >&nbsp;</td>
     </tr>
@@ -9605,9 +9605,9 @@ $connexionBD->ferme();
   x:num="38903">05-juil</td>
       <td >Gibaud</td>
       <td >2E668-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
-      <td >Denis DELAHAY à François IRVOIX</td>
+      <td >Denis DELAHAY &agrave Fran&ccedilois IRVOIX</td>
       <td  align=right x:num>938</td>
       <td >&nbsp;</td>
     </tr>
@@ -9617,11 +9617,11 @@ $connexionBD->ferme();
   x:num="40100">14-oct</td>
       <td >Huguet Jean</td>
       <td >2E790-10</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
-      <td >à Philippe BOISTEAU et François DECARSELES</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
+      <td >&agrave Philippe BOISTEAU et Fran&ccedilois DECARSELES</td>
       <td  align=right x:num>1200</td>
-      <td >pièce de pré</td>
+      <td >pi&egravece de pr&eacute</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1658</td>
@@ -9629,11 +9629,11 @@ $connexionBD->ferme();
   x:num="38835">28-avr</td>
       <td >Robin</td>
       <td >2E1109-120</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Jean DAVID et Marie DELACROIX</td>
       <td  align=right x:num>954</td>
-      <td >à Marie VERGNAUD</td>
+      <td >&agrave Marie VERGNAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1658</td>
@@ -9641,11 +9641,11 @@ $connexionBD->ferme();
   x:num="40104">18-oct</td>
       <td >Huguet Jean</td>
       <td >2E790-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >entre Ph. BOISTEAU et Fr. DECARSELES</td>
       <td  align=right x:num>1200</td>
-      <td >pièce de pré</td>
+      <td >pi&egravece de pr&eacute</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1658</td>
@@ -9675,11 +9675,11 @@ $connexionBD->ferme();
       <td  align=right x:num="39588">20-mai</td>
       <td >Huguet</td>
       <td >2E798-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Pierre MESNARD</td>
       <td  align=right x:num>1155</td>
-      <td >à Jeanne CONSTANTIN</td>
+      <td >&agrave Jeanne CONSTANTIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1659</td>
@@ -9687,28 +9687,28 @@ $connexionBD->ferme();
   x:num="38779">03-mars</td>
       <td >Robin</td>
       <td >2E1109-130</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Jean LURAT à Denis LURAT son père</td>
+      <td >Jean LURAT &agrave Denis LURAT son p&egravere</td>
       <td  align=right x:num>954</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1659</td>
       <td  align=right
-  x:num="39080">29-déc</td>
+  x:num="39080">29-d&eacutec</td>
       <td >Gibaud</td>
       <td >2E669-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >Jean ROY et Marguerite ROUX</td>
       <td  align=right x:num>941</td>
-      <td >à Paul MESNARD</td>
+      <td >&agrave Paul MESNARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1659</td>
       <td  align=right
-  x:num="39116">03-févr</td>
+  x:num="39116">03-f&eacutevr</td>
       <td >Grassin</td>
       <td >2E4628-10</td>
       <td >La Rochef.</td>
@@ -9720,14 +9720,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1659</td>
       <td  align=right
-  x:num="39080">29-déc</td>
+  x:num="39080">29-d&eacutec</td>
       <td >Gibaud</td>
       <td >2E669-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >Jean ROY et Marguerite ROUX</td>
       <td  align=right x:num>941</td>
-      <td >à Mathurin LANDRY</td>
+      <td >&agrave Mathurin LANDRY</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1659</td>
@@ -9744,10 +9744,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1659</td>
       <td  align=right
-  x:num="40162">15-déc</td>
+  x:num="40162">15-d&eacutec</td>
       <td >Huguet Jean</td>
       <td >2E791-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Hjacques SURREAU et Marie CHARRUAUD</td>
       <td  align=right x:num>1200</td>
@@ -9771,8 +9771,8 @@ $connexionBD->ferme();
   x:num="38995">05-oct</td>
       <td >Gibaud</td>
       <td >2E669-20</td>
-      <td >Angoulême</td>
-      <td >Marché</td>
+      <td >Angoul&ecircme</td>
+      <td >March&eacute</td>
       <td >Jean BIARD recouvreur et RP Cordeliers</td>
       <td  align=right x:num>941</td>
       <td >&nbsp;</td>
@@ -9783,9 +9783,9 @@ $connexionBD->ferme();
   x:num="38441">30-mars</td>
       <td >Peuple</td>
       <td >2E1061-140</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Louis DESCARCELLE à Léonard CERIT</td>
+      <td >Louis DESCARCELLE &agrave L&eacuteonard CERIT</td>
       <td  align=right x:num>860</td>
       <td >&nbsp;</td>
     </tr>
@@ -9819,7 +9819,7 @@ $connexionBD->ferme();
   x:num="39584">16-mai</td>
       <td >Huguet</td>
       <td >2E798-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Donnation</td>
       <td >Pierre MESNARD et Jeanne CONSTANTIN</td>
       <td  align=right x:num>1155</td>
@@ -9828,12 +9828,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1659</td>
       <td  align=right
-  x:num="40159">12-déc</td>
+  x:num="40159">12-d&eacutec</td>
       <td >Huguet Jean</td>
       <td >2E791-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Jean MAYOU à Philippe BOISTEAU</td>
+      <td >Jean MAYOU &agrave Philippe BOISTEAU</td>
       <td  align=right x:num>1200</td>
       <td >&nbsp;</td>
     </tr>
@@ -9843,7 +9843,7 @@ $connexionBD->ferme();
   x:num="38494">22-mai</td>
       <td >Peuple</td>
       <td >2E1061-170</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Jean LIMOUSIN et Catherine TEXIER</td>
       <td  align=right x:num>861</td>
@@ -9855,11 +9855,11 @@ $connexionBD->ferme();
   x:num="38452">10-avr</td>
       <td >Peuple</td>
       <td >2E1061-150</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
-      <td >François YRVOIX et Antoinette ROY</td>
+      <td >Fran&ccedilois YRVOIX et Antoinette ROY</td>
       <td  align=right x:num>861</td>
-      <td >de François NORMAND</td>
+      <td >de Fran&ccedilois NORMAND</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1660</td>
@@ -9871,7 +9871,7 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Marie DARS et Catherine CHEROT</td>
       <td  align=right x:num>1042</td>
-      <td >à Marie BARBET</td>
+      <td >&agrave Marie BARBET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1660</td>
@@ -9888,7 +9888,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1660</td>
       <td  align=right
-  x:num="39134">21-févr</td>
+  x:num="39134">21-f&eacutevr</td>
       <td >Grassin</td>
       <td >2E4630-10</td>
       <td >La Rochef.</td>
@@ -9903,9 +9903,9 @@ $connexionBD->ferme();
   x:num="39942">9-mai</td>
       <td >Huguet Jean</td>
       <td >2E792-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Macé ROY et Marie MARTIN</td>
+      <td >Mac&eacute ROY et Marie MARTIN</td>
       <td  align=right x:num>1200</td>
       <td >&nbsp;</td>
     </tr>
@@ -9915,9 +9915,9 @@ $connexionBD->ferme();
   x:num="38538">5-juil</td>
       <td >Peuple</td>
       <td >2E1061-180</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François ROUSSEAU et Marguerite AUDOUIN</td>
+      <td >Fran&ccedilois ROUSSEAU et Marguerite AUDOUIN</td>
       <td  align=right x:num>861</td>
       <td >&nbsp;</td>
     </tr>
@@ -9927,9 +9927,9 @@ $connexionBD->ferme();
   x:num="39772">20-nov</td>
       <td >Huguet</td>
       <td >2E798-30</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
-      <td >pour Jean BIARD de Marie BIARD sa sœur</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
+      <td >pour Jean BIARD de Marie BIARD sa s&oeligur</td>
       <td  align=right x:num>1155</td>
       <td >Me recouvreur de L'Houmeau</td>
     </tr>
@@ -9939,9 +9939,9 @@ $connexionBD->ferme();
   x:num="39029">08-nov</td>
       <td >Robin</td>
       <td >2E1109-180</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Colette SIMARD à Pierre FEBURE</td>
+      <td >Colette SIMARD &agrave Pierre FEBURE</td>
       <td  align=right x:num>954</td>
       <td >Tous ses biens</td>
     </tr>
@@ -9953,7 +9953,7 @@ $connexionBD->ferme();
       <td >2E4630-20</td>
       <td >La Rochef.</td>
       <td >Acquisition</td>
-      <td >Guillaume DARS de François LABEILLE</td>
+      <td >Guillaume DARS de Fran&ccedilois LABEILLE</td>
       <td  align=right x:num>1067</td>
       <td >&nbsp;</td>
     </tr>
@@ -9963,11 +9963,11 @@ $connexionBD->ferme();
   x:num="38681">25-nov</td>
       <td >Peuple</td>
       <td >2E1061-190</td>
-      <td >Angoulême</td>
-      <td >Droit cédé</td>
-      <td >Catherine FAURE et André GUYOT</td>
+      <td >Angoul&ecircme</td>
+      <td >Droit c&eacuted&eacute</td>
+      <td >Catherine FAURE et Andr&eacute GUYOT</td>
       <td  align=right x:num>860</td>
-      <td >à Nicolas COUPRIE</td>
+      <td >&agrave Nicolas COUPRIE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1660</td>
@@ -9975,11 +9975,11 @@ $connexionBD->ferme();
   x:num="39908">05-avr</td>
       <td >Gaignier</td>
       <td >2E586-10</td>
-      <td >Angoulême</td>
-      <td >Marché</td>
-      <td >Philippe et Marc BOISTEAU frères</td>
+      <td >Angoul&ecircme</td>
+      <td >March&eacute</td>
+      <td >Philippe et Marc BOISTEAU fr&egraveres</td>
       <td  align=right x:num>1205</td>
-      <td >Démolition d'un colombier</td>
+      <td >D&eacutemolition d'un colombier</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1660</td>
@@ -9999,19 +9999,19 @@ $connexionBD->ferme();
   x:num="38838">01-mai</td>
       <td >Robin</td>
       <td >2E1109-170</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Accord</td>
       <td >Pierre GUYOT et Antoinette ROY</td>
       <td  align=right x:num>954</td>
-      <td >Femme de François YRVOIX</td>
+      <td >Femme de Fran&ccedilois YRVOIX</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1660</td>
       <td  align=right
-  x:num="38939">10-août</td>
+  x:num="38939">10-ao&ucirct</td>
       <td >Gibaud</td>
       <td >2E669-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Etienne ROY et Louise PESNEAU</td>
       <td  align=right x:num>941</td>
@@ -10020,26 +10020,26 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1660</td>
       <td  align=right
-  x:num="39060">09-déc</td>
+  x:num="39060">09-d&eacutec</td>
       <td >Gibaud</td>
       <td >2E669-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
-      <td >Marie BIARD à Jean BIARD</td>
+      <td >Marie BIARD &agrave Jean BIARD</td>
       <td  align=right x:num>941</td>
-      <td >Pas enregistré les personnes</td>
+      <td >Pas enregistr&eacute les personnes</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1660</td>
       <td  align=right
-  x:num="39063">12-déc</td>
+  x:num="39063">12-d&eacutec</td>
       <td >Robin</td>
       <td >2E1109-190</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre BOISTEAU et Marie MESLIER</td>
       <td  align=right x:num>954</td>
-      <td >Fils de François et Y. BOILEVIN</td>
+      <td >Fils de Fran&ccedilois et Y. BOILEVIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1660</td>
@@ -10047,7 +10047,7 @@ $connexionBD->ferme();
   x:num="38475">3-mai</td>
       <td >Peuple</td>
       <td >2E1061-160</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean LIMOUSIN et Catherine TEXIER</td>
       <td  align=right x:num>861</td>
@@ -10059,7 +10059,7 @@ $connexionBD->ferme();
   x:num="38790">14-mars</td>
       <td >Gibaud</td>
       <td >2E669-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jacques IMBERT et Anne VARACHE</td>
       <td  align=right x:num>941</td>
@@ -10068,26 +10068,26 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1660</td>
       <td  align=right
-  x:num="39070">19-déc</td>
+  x:num="39070">19-d&eacutec</td>
       <td >Col</td>
       <td >2E4536-10</td>
       <td >La Rochef.</td>
-      <td >Délibération</td>
-      <td >Etienne et François DOR</td>
+      <td >D&eacutelib&eacuteration</td>
+      <td >Etienne et Fran&ccedilois DOR</td>
       <td  align=right x:num>1028</td>
       <td >Habitants de Chasseneuil</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1660</td>
       <td  align=right
-  x:num="39810">28-déc</td>
+  x:num="39810">28-d&eacutec</td>
       <td >Micheau</td>
       <td >2E1019-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Daniel TULLIER et Geneviève AUDOUIN</td>
+      <td >Daniel TULLIER et Genevi&egraveve AUDOUIN</td>
       <td  align=right x:num>1133</td>
-      <td >procureur au siège présidial</td>
+      <td >procureur au si&egravege pr&eacutesidial</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1661</td>
@@ -10097,17 +10097,17 @@ $connexionBD->ferme();
       <td >2E5922-30</td>
       <td >Vaux-Rouillac</td>
       <td >Testament</td>
-      <td >Mathieu MARQUAIS à Jeanne GONTIER</td>
+      <td >Mathieu MARQUAIS &agrave Jeanne GONTIER</td>
       <td  align=right x:num>1170</td>
       <td >de Fleurac, Vaux</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1661</td>
       <td  align=right
-  x:num="39685">25-août</td>
+  x:num="39685">25-ao&ucirct</td>
       <td >Juilhard</td>
       <td >2E863-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >Jean BIARD et Jean BOUILHAUD son gendre</td>
       <td  align=right x:num>1137</td>
@@ -10121,18 +10121,18 @@ $connexionBD->ferme();
       <td >2E2791-10</td>
       <td >Echallat</td>
       <td >Ferme</td>
-      <td >à Cath. GRATREAU et Pierre BENESTEAU</td>
+      <td >&agrave Cath. GRATREAU et Pierre BENESTEAU</td>
       <td  align=right x:num>1159</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1661</td>
-      <td >1 février</td>
+      <td >1 f&eacutevrier</td>
       <td >Huguet Jean</td>
       <td >2E793-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
-      <td >Auzanet et Berthomée BREBINEAU sa fille</td>
+      <td >Auzanet et Berthom&eacutee BREBINEAU sa fille</td>
       <td  align=right x:num>1203</td>
       <td >&nbsp;</td>
     </tr>
@@ -10151,21 +10151,21 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1661</td>
       <td  align=right
-  x:num="39427">11-déc</td>
+  x:num="39427">11-d&eacutec</td>
       <td >Desaunieres</td>
       <td >2E4592-40</td>
       <td >La Rochef.</td>
       <td >Cession</td>
-      <td >Blaise GOYON à Jehan et Charles DARS</td>
+      <td >Blaise GOYON &agrave Jehan et Charles DARS</td>
       <td  align=right x:num>1092</td>
       <td >ses gendres</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1661</td>
-      <td >1 février</td>
+      <td >1 f&eacutevrier</td>
       <td >Huguet Jean</td>
       <td >2E793-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Jehan BREBINEAU et Jehan GEOFFROY</td>
       <td  align=right x:num>1203</td>
@@ -10177,9 +10177,9 @@ $connexionBD->ferme();
   x:num="39039">18-nov</td>
       <td >Robin</td>
       <td >2E1109-220</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
-      <td >Jean BASSET et François BOILEVIN</td>
+      <td >Jean BASSET et Fran&ccedilois BOILEVIN</td>
       <td  align=right x:num>954</td>
       <td >&nbsp;</td>
     </tr>
@@ -10189,11 +10189,11 @@ $connexionBD->ferme();
   x:num="38898">30-juin</td>
       <td >Robin</td>
       <td >2E1109-210</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Gervais BRANGIER et Marguerite BOITEAU</td>
       <td  align=right x:num>955</td>
-      <td >Fille de Françs. et Y. BOILEVIN</td>
+      <td >Fille de Fran&ccedils. et Y. BOILEVIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1661</td>
@@ -10210,14 +10210,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1662</td>
       <td  align=right
-  x:num="39063">12-déc</td>
+  x:num="39063">12-d&eacutec</td>
       <td >Peynaud</td>
       <td >2E2766-10</td>
       <td >Dirac</td>
       <td >Vente</td>
-      <td >Antoine et François COUPRIE son fils</td>
+      <td >Antoine et Fran&ccedilois COUPRIE son fils</td>
       <td  align=right x:num>874</td>
-      <td >à Charles COUPILLAUD</td>
+      <td >&agrave Charles COUPILLAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1662</td>
@@ -10227,17 +10227,17 @@ $connexionBD->ferme();
       <td >2E5923-110</td>
       <td >Vaux-Rouillac</td>
       <td >Mariage</td>
-      <td >François GAUDON et Catherine GONTIER</td>
+      <td >Fran&ccedilois GAUDON et Catherine GONTIER</td>
       <td  align=right x:num>1169</td>
-      <td >frère d'Antoine et sœur de Perrine</td>
+      <td >fr&egravere d'Antoine et s&oeligur de Perrine</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1662</td>
       <td  align=right
-  x:num="39787">05-déc</td>
+  x:num="39787">05-d&eacutec</td>
       <td >Micheau</td>
       <td >2E1020-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >Philippe et Pierre BOISTEAU</td>
       <td  align=right x:num>1133</td>
@@ -10261,7 +10261,7 @@ $connexionBD->ferme();
   x:num="38834">27-avr</td>
       <td >Robin</td>
       <td >2E1109-240</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Jean LIZEE</td>
       <td  align=right x:num>955</td>
@@ -10277,7 +10277,7 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >Antoine GAUDON et Perrine GONTIER</td>
       <td  align=right x:num>1169</td>
-      <td >frère de François et sœur de Cath.</td>
+      <td >fr&egravere de Fran&ccedilois et s&oeligur de Cath.</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1662</td>
@@ -10287,9 +10287,9 @@ $connexionBD->ferme();
       <td >2E2734-100</td>
       <td >Dignac</td>
       <td >Cession</td>
-      <td >François BIARD et Pierre RENON</td>
+      <td >Fran&ccedilois BIARD et Pierre RENON</td>
       <td  align=right x:num>1153</td>
-      <td >à Mathurin PIERRE notaire</td>
+      <td >&agrave Mathurin PIERRE notaire</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1662</td>
@@ -10299,7 +10299,7 @@ $connexionBD->ferme();
       <td >2E306-20</td>
       <td >Lhoumeau</td>
       <td >Acte</td>
-      <td >Antoine ROY maître de gabarre</td>
+      <td >Antoine ROY ma&icirctre de gabarre</td>
       <td  align=right x:num>1124</td>
       <td >et Pierre COUVRINAUD marchd.</td>
     </tr>
@@ -10309,7 +10309,7 @@ $connexionBD->ferme();
   x:num="38529">26-juin</td>
       <td >Peuple</td>
       <td >2E1062-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Philippe et Antoine BOILEVIN</td>
       <td  align=right x:num>859</td>
@@ -10321,7 +10321,7 @@ $connexionBD->ferme();
   x:num="38832">25-avr</td>
       <td >Robin</td>
       <td >2E1109-230</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean LIZEE et Marguerite JOUBERT</td>
       <td  align=right x:num>955</td>
@@ -10330,7 +10330,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1662</td>
       <td  align=right
-  x:num="39118">05-févr</td>
+  x:num="39118">05-f&eacutevr</td>
       <td >Grassin</td>
       <td >2E4632-20</td>
       <td >La Rochef.</td>
@@ -10342,7 +10342,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1662</td>
       <td  align=right
-  x:num="39318">24-août</td>
+  x:num="39318">24-ao&ucirct</td>
       <td >Denis</td>
       <td >2E4578-10</td>
       <td >La Rochef.</td>
@@ -10354,14 +10354,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1662</td>
       <td  align=right
-  x:num="39669">09-août</td>
+  x:num="39669">09-ao&ucirct</td>
       <td >Micheau</td>
       <td >2E1020-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Jacques SUREAU</td>
       <td  align=right x:num>1133</td>
-      <td >à Marie CHARRUAULD sa femme</td>
+      <td >&agrave Marie CHARRUAULD sa femme</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1662</td>
@@ -10407,7 +10407,7 @@ $connexionBD->ferme();
       <td >2E4632-10</td>
       <td >La Rochef.</td>
       <td >Bail</td>
-      <td >Guillaume DARS et Françoise CAILHETRAU</td>
+      <td >Guillaume DARS et Fran&ccediloise CAILHETRAU</td>
       <td  align=right x:num>1067</td>
       <td >&nbsp;</td>
     </tr>
@@ -10417,7 +10417,7 @@ $connexionBD->ferme();
   x:num="39735">14-oct</td>
       <td >Micheau</td>
       <td >2E1020-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Jacques et Jeanne LIZEE</td>
       <td  align=right x:num>1133</td>
@@ -10438,14 +10438,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
       <td  align=right
-  x:num="39786">04-déc</td>
+  x:num="39786">04-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5923-200</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
       <td >Etienne GONTIER et Jeanne GIRAUDEAU sa fe.</td>
       <td  align=right x:num>1169</td>
-      <td >à Fr. et Et. TALLON père et fils</td>
+      <td >&agrave Fr. et Et. TALLON p&egravere et fils</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
@@ -10455,7 +10455,7 @@ $connexionBD->ferme();
       <td >2E306-40</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >Léonard BARRAUD et Catherine BENESTEAU</td>
+      <td >L&eacuteonard BARRAUD et Catherine BENESTEAU</td>
       <td  align=right x:num>1124</td>
       <td >&nbsp;</td>
     </tr>
@@ -10465,7 +10465,7 @@ $connexionBD->ferme();
   x:num="39901">29-mars</td>
       <td >Gaignier</td>
       <td >2E586-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Apprentissage</td>
       <td >Helie SURREAU fils de Denis</td>
       <td  align=right x:num>1205</td>
@@ -10477,11 +10477,11 @@ $connexionBD->ferme();
   x:num="39590">22-mai</td>
       <td >Micheau</td>
       <td >2E1021-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean AUDOUIN et Catherine BOILEVIN</td>
       <td  align=right x:num>1136</td>
-      <td >de Saint Martin d'Angoulême</td>
+      <td >de Saint Martin d'Angoul&ecircme</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
@@ -10493,7 +10493,7 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Pierre RIFFAUD et Jeanne JAYET</td>
       <td  align=right x:num>968</td>
-      <td >à Jean COUSTURIER</td>
+      <td >&agrave Jean COUSTURIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
@@ -10527,19 +10527,19 @@ $connexionBD->ferme();
       <td >2E2734-110</td>
       <td >Dignac</td>
       <td >Mariage</td>
-      <td >Jean BIARD et Berthomée GALLANT</td>
+      <td >Jean BIARD et Berthom&eacutee GALLANT</td>
       <td  align=right x:num>1153</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
       <td  align=right
-  x:num="39490">12-févr</td>
+  x:num="39490">12-f&eacutevr</td>
       <td >Huguet</td>
       <td >2E800-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
-      <td >Jehan et Jacques LIZEE père et fils</td>
+      <td >Jehan et Jacques LIZEE p&egravere et fils</td>
       <td  align=right x:num>1151</td>
       <td >et Jehanne LIZEE sa soeur</td>
     </tr>
@@ -10551,7 +10551,7 @@ $connexionBD->ferme();
       <td >2E5923-190</td>
       <td >Vaux-Rouillac</td>
       <td >Quittance</td>
-      <td >Pierre HERAUDEAU à Pierre MARTIN</td>
+      <td >Pierre HERAUDEAU &agrave Pierre MARTIN</td>
       <td  align=right x:num>1169</td>
       <td >de Fleurac, Vaux</td>
     </tr>
@@ -10563,7 +10563,7 @@ $connexionBD->ferme();
       <td >2E2938-140</td>
       <td >Garat</td>
       <td >Testament</td>
-      <td >Méonard COUPRIE pour Antoine COUPRIE</td>
+      <td >M&eacuteonard COUPRIE pour Antoine COUPRIE</td>
       <td  align=right x:num>974</td>
       <td >&nbsp;</td>
     </tr>
@@ -10586,32 +10586,32 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5925-20</td>
       <td >Vaux-Rouillac</td>
-      <td >Délaissement</td>
-      <td >Philippe GONTIER à Jeanne sa fille</td>
+      <td >D&eacutelaissement</td>
+      <td >Philippe GONTIER &agrave Jeanne sa fille</td>
       <td  align=right x:num>1170</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
       <td  align=right
-  x:num="38933">04-août</td>
+  x:num="38933">04-ao&ucirct</td>
       <td >Clochard</td>
       <td >2E408-20</td>
       <td >Lhoumeau</td>
       <td >Vente</td>
-      <td >à François TOURNIER et Marguerite GODIN</td>
+      <td >&agrave Fran&ccedilois TOURNIER et Marguerite GODIN</td>
       <td  align=right x:num>965</td>
       <td >Vente de vin</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
       <td  align=right
-  x:num="39078">27-déc</td>
+  x:num="39078">27-d&eacutec</td>
       <td >Renon</td>
       <td >2E2938-160</td>
       <td >Garat</td>
       <td >Mariage</td>
-      <td >François COUPRIE et Jehanne ANGELIER</td>
+      <td >Fran&ccedilois COUPRIE et Jehanne ANGELIER</td>
       <td  align=right x:num>974</td>
       <td >&nbsp;</td>
     </tr>
@@ -10622,7 +10622,7 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5923-130</td>
       <td >Vaux-Rouillac</td>
-      <td >Déclaration</td>
+      <td >D&eacuteclaration</td>
       <td >Jeanne GONTIER veuve Mathieu MARQUAIS</td>
       <td  align=right x:num>1170</td>
       <td >des meubles de son mari</td>
@@ -10630,22 +10630,22 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
       <td  align=right
-  x:num="39081">30-déc</td>
+  x:num="39081">30-d&eacutec</td>
       <td >Renon</td>
       <td >2E2938-170</td>
       <td >Garat</td>
       <td >Mariage</td>
-      <td >François CHAIGNON et Marie SIMARD</td>
+      <td >Fran&ccedilois CHAIGNON et Marie SIMARD</td>
       <td  align=right x:num>974</td>
       <td >et F. CHAIGNON et ANGELIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
       <td  align=right
-  x:num="38772">24-févr</td>
+  x:num="38772">24-f&eacutevr</td>
       <td >Robin</td>
       <td >2E1110-120</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Denis MESNARD</td>
       <td  align=right x:num>956</td>
@@ -10661,7 +10661,7 @@ $connexionBD->ferme();
       <td >Transaction</td>
       <td >Jean BERTRAND et Antoinette GILLIBERT</td>
       <td  align=right x:num>974</td>
-      <td >et Jean SIMARD beau-père</td>
+      <td >et Jean SIMARD beau-p&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
@@ -10673,7 +10673,7 @@ $connexionBD->ferme();
       <td >Partage</td>
       <td >Guillaume BONJOUR et Mauricette GUIONNET</td>
       <td  align=right x:num>1170</td>
-      <td >et Marie BONJOUR sœur</td>
+      <td >et Marie BONJOUR s&oeligur</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1663</td>
@@ -10681,7 +10681,7 @@ $connexionBD->ferme();
   x:num="39461">14-janv</td>
       <td >Mamain</td>
       <td >2E924-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jacques LIZEE et Mathurine RODEAU</td>
       <td  align=right x:num>1140</td>
@@ -10695,26 +10695,26 @@ $connexionBD->ferme();
       <td >2E417-10</td>
       <td >St-Cybard</td>
       <td >Mariage</td>
-      <td >François CHASSAIGNE et Jacquette BIARD</td>
+      <td >Fran&ccedilois CHASSAIGNE et Jacquette BIARD</td>
       <td  align=right x:num>1143</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1664</td>
       <td  align=right
-  x:num="38751">03-févr</td>
+  x:num="38751">03-f&eacutevr</td>
       <td >Robin</td>
       <td >2E1110-160</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
-      <td >Guillaume BOILEAU à Phil. BOISTEAU</td>
+      <td >Guillaume BOILEAU &agrave Phil. BOISTEAU</td>
       <td  align=right x:num>957</td>
       <td >J.ROUFFIGNAC et RATINEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1664</td>
       <td  align=right
-  x:num="39079">28-déc</td>
+  x:num="39079">28-d&eacutec</td>
       <td >Renon</td>
       <td >2E2938-200</td>
       <td >Garat</td>
@@ -10729,9 +10729,9 @@ $connexionBD->ferme();
   x:num="38848">11-mai</td>
       <td >Robin</td>
       <td >2E1110-200</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Louis SURREAU et Geneviève GODIN</td>
+      <td >Louis SURREAU et Genevi&egraveve GODIN</td>
       <td  align=right x:num>956</td>
       <td >Fils de Pierre et Mad. ROUGIER</td>
     </tr>
@@ -10741,7 +10741,7 @@ $connexionBD->ferme();
   x:num="38842">05-mai</td>
       <td >Robin</td>
       <td >2E1110-180</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Louis DESCARSELLE</td>
       <td  align=right x:num>956</td>
@@ -10753,9 +10753,9 @@ $connexionBD->ferme();
   x:num="38834">27-avr</td>
       <td >Robin</td>
       <td >2E1110-170</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Clément LIZEE et Marie DELAGE</td>
+      <td >Cl&eacutement LIZEE et Marie DELAGE</td>
       <td  align=right x:num>957</td>
       <td >Fils de J. et J. BOURDAGE</td>
     </tr>
@@ -10765,9 +10765,9 @@ $connexionBD->ferme();
   x:num="39634">05-juil</td>
       <td >Huguet</td>
       <td >2E800-30</td>
-      <td >Angoulême</td>
-      <td >Marché</td>
-      <td >François SALLEE et Louis DECARSELLE</td>
+      <td >Angoul&ecircme</td>
+      <td >March&eacute</td>
+      <td >Fran&ccedilois SALLEE et Louis DECARSELLE</td>
       <td  align=right x:num>1151</td>
       <td >bats de chevaux</td>
     </tr>
@@ -10777,8 +10777,8 @@ $connexionBD->ferme();
   x:num="39471">24-janv</td>
       <td >Huguet</td>
       <td >2E800-20</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
       <td >Jehan LIZEE pour Jehanne sa fille</td>
       <td  align=right x:num>1151</td>
       <td >&nbsp;</td>
@@ -10801,7 +10801,7 @@ $connexionBD->ferme();
   x:num="39006">16-oct</td>
       <td >Robin</td>
       <td >2E1110-220</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Michel BOITEAUD et Michelle LECLERQ</td>
       <td  align=right x:num>956</td>
@@ -10813,31 +10813,31 @@ $connexionBD->ferme();
   x:num="38834">27-avr</td>
       <td >Robin</td>
       <td >2E1110-170</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Guillaume BERNAZEAU et Marie LIZEE</td>
       <td  align=right x:num>957</td>
-      <td >Fille de Clément LIZEE</td>
+      <td >Fille de Cl&eacutement LIZEE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1664</td>
       <td  align=right
-  x:num="39489">11-févr</td>
+  x:num="39489">11-f&eacutevr</td>
       <td >Dumontet</td>
       <td >2E2734-120</td>
       <td >Dignac</td>
       <td >Ferme</td>
-      <td >Jean BIARD et Berthomée GALLANT</td>
+      <td >Jean BIARD et Berthom&eacutee GALLANT</td>
       <td  align=right x:num>1153</td>
       <td >de Guillazume FOUGERE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1664</td>
       <td  align=right
-  x:num="39688">28-août</td>
+  x:num="39688">28-ao&ucirct</td>
       <td >Huguet</td>
       <td >2E800-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jehan COCUAUD et Jehanne LIZEE</td>
       <td  align=right x:num>1151</td>
@@ -10849,31 +10849,31 @@ $connexionBD->ferme();
   x:num="38844">07-mai</td>
       <td >Robin</td>
       <td >2E1110-190</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Jehan CHARREAU à Michel ROY</td>
+      <td >Jehan CHARREAU &agrave Michel ROY</td>
       <td  align=right x:num>957</td>
       <td >et Marie CHARREAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1664</td>
       <td  align=right
-  x:num="38752">04-févr</td>
+  x:num="38752">04-f&eacutevr</td>
       <td >Clochard</td>
       <td >2E408-30</td>
       <td >Lhoumeau</td>
       <td >Ferme</td>
-      <td >François BOISDON et Antoinette BERNARD</td>
+      <td >Fran&ccedilois BOISDON et Antoinette BERNARD</td>
       <td  align=right x:num>968</td>
       <td >du Sr. de Maigne Gagnaud</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1664</td>
       <td  align=right
-  x:num="39065">14-déc</td>
+  x:num="39065">14-d&eacutec</td>
       <td >Robin</td>
       <td >2E1110-230</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jehan RIFFAUD et Guillemine DELAHAYE</td>
       <td  align=right x:num>956</td>
@@ -10882,12 +10882,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1664</td>
       <td  align=right
-  x:num="40028">3-août</td>
+  x:num="40028">3-ao&ucirct</td>
       <td >Huguet Jean</td>
       <td >2E795-20</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
-      <td >Robert à Massé ROY son fils</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
+      <td >Robert &agrave Mass&eacute ROY son fils</td>
       <td  align=right x:num>1203</td>
       <td >&nbsp;</td>
     </tr>
@@ -10897,8 +10897,8 @@ $connexionBD->ferme();
   x:num="39768">16-nov</td>
       <td >Mamain</td>
       <td >2E924-30</td>
-      <td >Angoulême</td>
-      <td >Marché</td>
+      <td >Angoul&ecircme</td>
+      <td >March&eacute</td>
       <td >Jean LIZEE et Jean PAPIN avec P. MOREAU</td>
       <td  align=right x:num>1140</td>
       <td >(tireurs de pierres et sable)</td>
@@ -10906,10 +10906,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1664</td>
       <td  align=right
-  x:num="38398">15-févr</td>
+  x:num="38398">15-f&eacutevr</td>
       <td >Peuple</td>
       <td >2E1063-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >Jeanne LORMAND veuve Antoine YRVOIX</td>
       <td  align=right x:num>859</td>
@@ -10934,10 +10934,10 @@ $connexionBD->ferme();
       <td >Clochard</td>
       <td >2E408-90</td>
       <td >Lhoumeau</td>
-      <td >Déclaration</td>
+      <td >D&eacuteclaration</td>
       <td >Philippe ROY</td>
       <td  align=right x:num>968</td>
-      <td >(et Marguerite ROY sa sœur)</td>
+      <td >(et Marguerite ROY sa s&oeligur)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1665</td>
@@ -10945,7 +10945,7 @@ $connexionBD->ferme();
   x:num="38746">29-janv</td>
       <td >Robin</td>
       <td >2E1110-240</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jehan NOBLESSE et Marie LAMOUREUX</td>
       <td  align=right x:num>957</td>
@@ -10966,14 +10966,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1665</td>
       <td  align=right
-  x:num="38768">20-févr</td>
+  x:num="38768">20-f&eacutevr</td>
       <td >Peynaud</td>
       <td >2E2766-30</td>
       <td >Dirac</td>
       <td >Ferme</td>
       <td >Philippe et Jehan BIARD</td>
       <td  align=right x:num>874</td>
-      <td >de François de LA GARDE</td>
+      <td >de Fran&ccedilois de LA GARDE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1665</td>
@@ -10991,10 +10991,10 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1665</td>
       <td  align=right
   x:num="38635">10-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E933-110</td>
-      <td >Angoulême</td>
-      <td >Procès verbal</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves verbal</td>
       <td >Pierre RIFFAUD</td>
       <td  align=right x:num>861</td>
       <td >&nbsp;</td>
@@ -11005,11 +11005,11 @@ $connexionBD->ferme();
   x:num="39613">14-juin</td>
       <td >Micheau</td>
       <td >2E1022-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sous-ferme</td>
-      <td >Mathiene CIMARD à Pierre BODET</td>
+      <td >Mathiene CIMARD &agrave Pierre BODET</td>
       <td  align=right x:num>1135</td>
-      <td >épouse de Pastry DENEUFVILLE</td>
+      <td >&eacutepouse de Pastry DENEUFVILLE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1665</td>
@@ -11020,14 +11020,14 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Jean BONJOUR et Cath. GARNIER sa femme</td>
       <td  align=right x:num>1237</td>
-      <td >à François DURANDEAU</td>
+      <td >&agrave Fran&ccedilois DURANDEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1665</td>
       <td  align=right x:num="38994">04-oct</td>
       <td >Robin</td>
       <td >2E1110-250</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Accord</td>
       <td >Guillaume MESLIER et Pierre BOITEAUD</td>
       <td  align=right x:num>957</td>
@@ -11036,10 +11036,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1665</td>
       <td  align=right
-  x:num="39480">02-févr</td>
+  x:num="39480">02-f&eacutevr</td>
       <td >Juilhard</td>
       <td >2E863-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Elie BOUTINON et Catherine SURREAU</td>
       <td  align=right x:num>1137</td>
@@ -11053,7 +11053,7 @@ $connexionBD->ferme();
       <td >2E4638-10</td>
       <td >La Rochef.</td>
       <td >Echange</td>
-      <td >Guillaume DARS et François MAYOU</td>
+      <td >Guillaume DARS et Fran&ccedilois MAYOU</td>
       <td  align=right x:num>1076</td>
       <td >Chez Dars</td>
     </tr>
@@ -11065,9 +11065,9 @@ $connexionBD->ferme();
       <td >2E2766-40</td>
       <td >Dirac</td>
       <td >Mariage</td>
-      <td >François SIMARD et Marie Lamoureux</td>
+      <td >Fran&ccedilois SIMARD et Marie Lamoureux</td>
       <td  align=right x:num>874</td>
-      <td >Frère d'Antoinette SIMARD</td>
+      <td >Fr&egravere d'Antoinette SIMARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1665</td>
@@ -11075,9 +11075,9 @@ $connexionBD->ferme();
   x:num="38678">22-nov</td>
       <td >Peuple</td>
       <td >2E1063-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François YRVOIX et Françoise BOVAUD</td>
+      <td >Fran&ccedilois YRVOIX et Fran&ccediloise BOVAUD</td>
       <td  align=right x:num>859</td>
       <td >&nbsp;</td>
     </tr>
@@ -11087,11 +11087,11 @@ $connexionBD->ferme();
   x:num="39613">14-juin</td>
       <td >Huguet</td>
       <td >2E801-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sous-ferme</td>
       <td >Mathieve SIMARD veuve Patry DENEUVILLE</td>
       <td  align=right x:num>1153</td>
-      <td >d'un pré à Louis MORINEAU</td>
+      <td >d'un pr&eacute &agrave Louis MORINEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1665</td>
@@ -11108,10 +11108,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1665</td>
       <td  align=right
-  x:num="38587">23-août</td>
+  x:num="38587">23-ao&ucirct</td>
       <td >Peuple</td>
       <td >2E1063-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre PINASSEAU et Marguerite AYGRON</td>
       <td  align=right x:num>859</td>
@@ -11125,19 +11125,19 @@ $connexionBD->ferme();
       <td >2E2954-20</td>
       <td >Vaux-Rouillac</td>
       <td >Arrentement</td>
-      <td >Antoine GONTIER drapier à Pierre GONTIER sergi<span style='display:none'>er</span></td>
+      <td >Antoine GONTIER drapier &agrave Pierre GONTIER sergi<span style='display:none'>er</span></td>
       <td  align=right x:num>1170</td>
-      <td >frères</td>
+      <td >fr&egraveres</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1665</td>
       <td  align=right
-  x:num="39491">13-févr</td>
+  x:num="39491">13-f&eacutevr</td>
       <td >Micheau</td>
       <td >2E1022-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Jean VIAUD à Jean LIZEE</td>
+      <td >Jean VIAUD &agrave Jean LIZEE</td>
       <td  align=right x:num>1135</td>
       <td >de Vindelle</td>
     </tr>
@@ -11149,7 +11149,7 @@ $connexionBD->ferme();
       <td >2E2734-140</td>
       <td >Dignac</td>
       <td >Ferme</td>
-      <td >François et Jean BIARD père et fils</td>
+      <td >Fran&ccedilois et Jean BIARD p&egravere et fils</td>
       <td  align=right x:num>1153</td>
       <td >de Jean BAYARD</td>
     </tr>
@@ -11161,9 +11161,9 @@ $connexionBD->ferme();
       <td >2E4639-10</td>
       <td >La Rochef.</td>
       <td >Ferme</td>
-      <td >François DOR de Abraham COL</td>
+      <td >Fran&ccedilois DOR de Abraham COL</td>
       <td  align=right x:num>1078</td>
-      <td >et François et Pierre GUYON</td>
+      <td >et Fran&ccedilois et Pierre GUYON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1665</td>
@@ -11196,7 +11196,7 @@ $connexionBD->ferme();
       <td >2E3060-20</td>
       <td >Hiersac</td>
       <td >Quittance</td>
-      <td >François PELLEGEAY à Margte PELLEGEAY</td>
+      <td >Fran&ccedilois PELLEGEAY &agrave Margte PELLEGEAY</td>
       <td  align=right x:num>1463</td>
       <td >&nbsp;</td>
     </tr>
@@ -11220,7 +11220,7 @@ $connexionBD->ferme();
       <td >2E2939-10</td>
       <td >Garat</td>
       <td >Ferme</td>
-      <td >Nicolas VERGNAUD à Nicolas SIMARD</td>
+      <td >Nicolas VERGNAUD &agrave Nicolas SIMARD</td>
       <td  align=right x:num>972</td>
       <td >&nbsp;</td>
     </tr>
@@ -11230,9 +11230,9 @@ $connexionBD->ferme();
   x:num="38910">12-juil</td>
       <td >Robin</td>
       <td >2E1111-160</td>
-      <td >Angoulême</td>
-      <td >Procès-verbal</td>
-      <td >François YRVOIX</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves-verbal</td>
+      <td >Fran&ccedilois YRVOIX</td>
       <td  align=right x:num>962</td>
       <td >&nbsp;</td>
     </tr>
@@ -11266,19 +11266,19 @@ $connexionBD->ferme();
   x:num="38473">1-mai</td>
       <td >Peuple</td>
       <td >2E1064-110</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >Thomas DAVID et Louise LIMOUSIN sa femme</td>
       <td  align=right x:num>858</td>
-      <td >à François JAUMARD</td>
+      <td >&agrave Fran&ccedilois JAUMARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1666</td>
       <td  align=right
-  x:num="39496">18-févr</td>
+  x:num="39496">18-f&eacutevr</td>
       <td >Micheau</td>
       <td >2E1022-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean ROUHIER et Jeanne BASSET</td>
       <td  align=right x:num>1135</td>
@@ -11292,14 +11292,14 @@ $connexionBD->ferme();
       <td >2E2734-150</td>
       <td >Dignac</td>
       <td >Quittance</td>
-      <td >à Jean BIARD et Jean et Jean CHASSEREAU</td>
+      <td >&agrave Jean BIARD et Jean et Jean CHASSEREAU</td>
       <td  align=right x:num>1153</td>
       <td >de Pierre CHAMBON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1666</td>
       <td  align=right
-  x:num="39313">19-août</td>
+  x:num="39313">19-ao&ucirct</td>
       <td >Grassin</td>
       <td >2E4641-10</td>
       <td >La Rochef.</td>
@@ -11312,11 +11312,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1666</td>
       <td  align=right
   x:num="38362">10-janv</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E933-120</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Procuration</td>
-      <td >Jean DAVID à Denis BROSSARD</td>
+      <td >Jean DAVID &agrave Denis BROSSARD</td>
       <td  align=right x:num>861</td>
       <td >&nbsp;</td>
     </tr>
@@ -11326,19 +11326,19 @@ $connexionBD->ferme();
   x:num="38739">22-janv</td>
       <td >Robin</td>
       <td >2E1111-120</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Charles GUILLAUME à Jehan GUILLAUME</td>
+      <td >Charles GUILLAUME &agrave Jehan GUILLAUME</td>
       <td  align=right x:num>962</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1666</td>
       <td  align=right
-  x:num="38707">21-déc</td>
+  x:num="38707">21-d&eacutec</td>
       <td >Peuple</td>
       <td >2E1064-150</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre DURRAY et Anne SURREAU</td>
       <td  align=right x:num>859</td>
@@ -11352,7 +11352,7 @@ $connexionBD->ferme();
       <td >2E2766-60</td>
       <td >Dirac</td>
       <td >Mariage</td>
-      <td >Mathurin PREVOST et Léonarde SIMONNOT</td>
+      <td >Mathurin PREVOST et L&eacuteonarde SIMONNOT</td>
       <td  align=right x:num>874</td>
       <td >2e mari  Antoinette SIMARD</td>
     </tr>
@@ -11362,8 +11362,8 @@ $connexionBD->ferme();
   x:num="39653">24-juil</td>
       <td >Micheau</td>
       <td >2E1022-40</td>
-      <td >Angoulême</td>
-      <td >Marché</td>
+      <td >Angoul&ecircme</td>
+      <td >March&eacute</td>
       <td >Louis DESCARSELLE et David CLERGEAU</td>
       <td  align=right x:num>1135</td>
       <td >cheaux de bas…</td>
@@ -11372,11 +11372,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1666</td>
       <td  align=right
   x:num="38500">28-mai</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E933-140</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
-      <td >Antoine SIMARD à Pierre SIMARD son fils</td>
+      <td >Antoine SIMARD &agrave Pierre SIMARD son fils</td>
       <td  align=right x:num>861</td>
       <td >&nbsp;</td>
     </tr>
@@ -11386,19 +11386,19 @@ $connexionBD->ferme();
   x:num="38850">13-mai</td>
       <td >Robin</td>
       <td >2E1111-140</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Jean LAMOUREUX et Elizabel DAVID</td>
       <td  align=right x:num>962</td>
-      <td >à Charles LAMOUREUX père</td>
+      <td >&agrave Charles LAMOUREUX p&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1666</td>
       <td  align=right
-  x:num="38771">23-févr</td>
-      <td >Jéheu</td>
+  x:num="38771">23-f&eacutevr</td>
+      <td >J&eacuteheu</td>
       <td >2E804-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre BILLARD et Marguerite CHADENNE</td>
       <td  align=right x:num>875</td>
@@ -11410,7 +11410,7 @@ $connexionBD->ferme();
   x:num="38734">17-janv</td>
       <td >Robin</td>
       <td >2E1111-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jehan DENEUVILLE et Antoinet. DELACOUR</td>
       <td  align=right x:num>962</td>
@@ -11420,9 +11420,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1666</td>
       <td  align=right
   x:num="38363">11-janv</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E933-130</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean DAVID et Jeanne DUPUY</td>
       <td  align=right x:num>861</td>
@@ -11434,21 +11434,21 @@ $connexionBD->ferme();
   x:num="39612">13-juin</td>
       <td >Cladier Jos.</td>
       <td >2E355-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François JAYET et Marie FOUCHIER</td>
+      <td >Fran&ccedilois JAYET et Marie FOUCHIER</td>
       <td  align=right x:num>1124</td>
-      <td >fils Berthomé et Helie DUPUY</td>
+      <td >fils Berthom&eacute et Helie DUPUY</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1666</td>
       <td  align=right
-  x:num="39486">08-févr</td>
+  x:num="39486">08-f&eacutevr</td>
       <td >Mamain</td>
       <td >2E925-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
-      <td >à Martial SIMARD des hér. de Pierre SIMARD</td>
+      <td >&agrave Martial SIMARD des h&eacuter. de Pierre SIMARD</td>
       <td  align=right x:num>1141</td>
       <td >Coupillauds, Bigets, Girauds…</td>
     </tr>
@@ -11458,9 +11458,9 @@ $connexionBD->ferme();
   x:num="39617">18-juin</td>
       <td >Cladier Jos.</td>
       <td >2E355-30</td>
-      <td >Angoulême</td>
-      <td >Marché</td>
-      <td >Pierre RIFFAUD et Ant. BOURGEAUD maçon</td>
+      <td >Angoul&ecircme</td>
+      <td >March&eacute</td>
+      <td >Pierre RIFFAUD et Ant. BOURGEAUD ma&ccedilon</td>
       <td  align=right x:num>1124</td>
       <td >&nbsp;</td>
     </tr>
@@ -11470,9 +11470,9 @@ $connexionBD->ferme();
   x:num="38740">23-janv</td>
       <td >Robin</td>
       <td >2E1111-130</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Charles GUILLAUME à Jehan GUILLAUME</td>
+      <td >Charles GUILLAUME &agrave Jehan GUILLAUME</td>
       <td  align=right x:num>962</td>
       <td >&nbsp;</td>
     </tr>
@@ -11482,9 +11482,9 @@ $connexionBD->ferme();
   x:num="38448">6-avr</td>
       <td >Peuple</td>
       <td >2E1064-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
-      <td >François THUILLIER et Gilles son fils (prêtre)</td>
+      <td >Fran&ccedilois THUILLIER et Gilles son fils (pr&ecirctre)</td>
       <td  align=right x:num>859</td>
       <td >&nbsp;</td>
     </tr>
@@ -11504,9 +11504,9 @@ $connexionBD->ferme();
       <td  align=right x:num="38369">17-janv</td>
       <td >Peuple</td>
       <td >2E1064-160</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Léonard BERNARD et Marie CATTIN</td>
+      <td >L&eacuteonard BERNARD et Marie CATTIN</td>
       <td  align=right x:num>859</td>
       <td >&nbsp;</td>
     </tr>
@@ -11520,7 +11520,7 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >Jean et Sim. GIRARD et Jeanne et Anne RENON</td>
       <td  align=right x:num>874</td>
-      <td >Annulé Sim. et Anne (1673)</td>
+      <td >Annul&eacute Sim. et Anne (1673)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
@@ -11537,7 +11537,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
       <td  align=right
-  x:num="39079">28-déc</td>
+  x:num="39079">28-d&eacutec</td>
       <td >Clochard</td>
       <td >2E409-140</td>
       <td >Lhoumeau</td>
@@ -11566,17 +11566,17 @@ $connexionBD->ferme();
       <td >2E409-130</td>
       <td >Lhoumeau</td>
       <td >Vente</td>
-      <td >SURREAU(x) à Jean DUTAIX et Je. GACHE</td>
+      <td >SURREAU(x) &agrave Jean DUTAIX et Je. GACHE</td>
       <td  align=right x:num>963</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
       <td  align=right
-  x:num="38406">23-févr</td>
+  x:num="38406">23-f&eacutevr</td>
       <td >Peuple</td>
       <td >2E1064-170</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Antoine SIMARD et Marie PERTUS</td>
       <td  align=right x:num>859</td>
@@ -11592,7 +11592,7 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Jean GAUDICHEAU et Helie MORIN</td>
       <td  align=right x:num>1168</td>
-      <td >à Pierre DANYAUD</td>
+      <td >&agrave Pierre DANYAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
@@ -11626,19 +11626,19 @@ $connexionBD->ferme();
       <td >2E4642-10</td>
       <td >La Rochef.</td>
       <td >Ferme</td>
-      <td >Pierre DOR à Heslie LESCHANCEAU</td>
+      <td >Pierre DOR &agrave Heslie LESCHANCEAU</td>
       <td  align=right x:num>1081</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
       <td  align=right
-  x:num="38955">26-août</td>
+  x:num="38955">26-ao&ucirct</td>
       <td >Renon</td>
       <td >2E2939-10b</td>
       <td >Garat</td>
       <td >Ferme</td>
-      <td >Nicolas SIMARD à Georges FAURE</td>
+      <td >Nicolas SIMARD &agrave Georges FAURE</td>
       <td  align=right x:num>972</td>
       <td >&nbsp;</td>
     </tr>
@@ -11650,7 +11650,7 @@ $connexionBD->ferme();
       <td >2E2734-160</td>
       <td >Dignac</td>
       <td >Ferme</td>
-      <td >à François BIARD</td>
+      <td >&agrave Fran&ccedilois BIARD</td>
       <td  align=right x:num>1153</td>
       <td >de Pierre DEVANTHENOT</td>
     </tr>
@@ -11672,7 +11672,7 @@ $connexionBD->ferme();
   x:num="39477">30-janv</td>
       <td >Micheau</td>
       <td >2E1023-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Antoine BOILEVIN et Jeanne BARATTE</td>
       <td  align=right x:num>1136</td>
@@ -11685,15 +11685,15 @@ $connexionBD->ferme();
       <td >Renon</td>
       <td >2E2939-20</td>
       <td >Garat</td>
-      <td >Métairie</td>
-      <td >Nicolas et Jean SIMARD à F. DUSSAIGNE</td>
+      <td >M&eacutetairie</td>
+      <td >Nicolas et Jean SIMARD &agrave F. DUSSAIGNE</td>
       <td  align=right x:num>972</td>
       <td >et Simonne NEBOUT sa femme</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
       <td  align=right
-  x:num="39812">30-déc</td>
+  x:num="39812">30-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5926-90</td>
       <td >Vaux-Rouillac</td>
@@ -11705,14 +11705,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
       <td  align=right
-  x:num="39670">10-août</td>
+  x:num="39670">10-ao&ucirct</td>
       <td >Daniaud</td>
       <td >2E5926-60</td>
       <td >Vaux-Rouillac</td>
       <td >Echange</td>
       <td >Helie LIMOUZIN et Pierre HERAUDEAU</td>
       <td  align=right x:num>1168</td>
-      <td >fils de François LIMOUZIN</td>
+      <td >fils de Fran&ccedilois LIMOUZIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
@@ -11720,23 +11720,23 @@ $connexionBD->ferme();
   x:num="38536">3-juil</td>
       <td >Peuple</td>
       <td >2E1064-210</td>
-      <td >Angoulême</td>
-      <td >Déclaration</td>
-      <td >François BOISTEAU et François BOILEVIN</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacuteclaration</td>
+      <td >Fran&ccedilois BOISTEAU et Fran&ccedilois BOILEVIN</td>
       <td  align=right x:num>859</td>
-      <td >Meuniers à La Pallut</td>
+      <td >Meuniers &agrave La Pallut</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
       <td  align=right
-  x:num="39661">01-août</td>
+  x:num="39661">01-ao&ucirct</td>
       <td >Micheau</td>
       <td >2E1023-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean TOURNIER et Louise JOYEUX</td>
       <td  align=right x:num>1136</td>
-      <td >Maître cordonnier</td>
+      <td >Ma&icirctre cordonnier</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
@@ -11744,11 +11744,11 @@ $connexionBD->ferme();
   x:num="38892">24-juin</td>
       <td >Robin</td>
       <td >2E1111-180</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Simon JAMAIN et Mathiere SIMARD</td>
       <td  align=right x:num>962</td>
-      <td >et Léonard DENEUVILLE</td>
+      <td >et L&eacuteonard DENEUVILLE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
@@ -11758,17 +11758,17 @@ $connexionBD->ferme();
       <td >2E409-120</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >Jean ROUSSEAU et Françoise HOUEILH</td>
+      <td >Jean ROUSSEAU et Fran&ccediloise HOUEILH</td>
       <td  align=right x:num>963</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1667</td>
       <td  align=right
-  x:num="38704">18-déc</td>
+  x:num="38704">18-d&eacutec</td>
       <td >Peuple</td>
       <td >2E1064-230</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean BIARD et Catherine CHAIGNAUD</td>
       <td  align=right x:num>859</td>
@@ -11782,7 +11782,7 @@ $connexionBD->ferme();
       <td >2E4642-20</td>
       <td >La Rochef.</td>
       <td >Ferme</td>
-      <td >Catherine CHEROT à Pierre GALINEAU</td>
+      <td >Catherine CHEROT &agrave Pierre GALINEAU</td>
       <td  align=right x:num>1081</td>
       <td >&nbsp;</td>
     </tr>
@@ -11802,9 +11802,9 @@ $connexionBD->ferme();
       <td  align=right x:num="39473">26-janv</td>
       <td >Cladier</td>
       <td >2E357-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
-      <td >Antoine ROY gabarrier à Pierre DURAND</td>
+      <td >Antoine ROY gabarrier &agrave Pierre DURAND</td>
       <td  align=right x:num>1153</td>
       <td >Litige de Saint-Savinien</td>
     </tr>
@@ -11818,17 +11818,17 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >Martin RICHARD et Jeanne GONTIER</td>
       <td  align=right x:num>1169</td>
-      <td >veuve de Isaïe TALLON</td>
+      <td >veuve de Isa&iumle TALLON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
       <td  align=right
   x:num="38532">29-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E933-180</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Echange</td>
-      <td >François AUDIER et Jean ROUFFIGNAC</td>
+      <td >Fran&ccedilois AUDIER et Jean ROUFFIGNAC</td>
       <td  align=right x:num>861</td>
       <td >&nbsp;</td>
     </tr>
@@ -11842,12 +11842,12 @@ $connexionBD->ferme();
       <td >Acquisition</td>
       <td >Mathieu BOISDON de Etienne COMPTE</td>
       <td  align=right x:num>1169</td>
-      <td >pièces de terre</td>
+      <td >pi&egraveces de terre</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
       <td  align=right
-  x:num="39809">27-déc</td>
+  x:num="39809">27-d&eacutec</td>
       <td >Dumontet</td>
       <td >2E2734-220</td>
       <td >Dignac</td>
@@ -11859,7 +11859,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
       <td  align=right
-  x:num="39809">27-déc</td>
+  x:num="39809">27-d&eacutec</td>
       <td >Dumontet</td>
       <td >2E2734-230</td>
       <td >Dignac</td>
@@ -11872,11 +11872,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1668</td>
       <td  align=right
   x:num="38598">3-sept</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E933-190</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >François DELAPLACE à Guillaume SURREAU</td>
+      <td >Fran&ccedilois DELAPLACE &agrave Guillaume SURREAU</td>
       <td  align=right x:num>861</td>
       <td >&nbsp;</td>
     </tr>
@@ -11884,11 +11884,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1668</td>
       <td  align=right
   x:num="38520">17-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E933-160</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
-      <td >Fabre HERAUDEAU à Daniel TULLIER</td>
+      <td >Fabre HERAUDEAU &agrave Daniel TULLIER</td>
       <td  align=right x:num>861</td>
       <td >&nbsp;</td>
     </tr>
@@ -11910,7 +11910,7 @@ $connexionBD->ferme();
   x:num="39758">06-nov</td>
       <td >Mamain</td>
       <td >2E927-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean BENESTEAU et Jeanne VINSONNEAU</td>
       <td  align=right x:num>1143</td>
@@ -11936,7 +11936,7 @@ $connexionBD->ferme();
       <td >2E5927-100</td>
       <td >Vaux-Rouillac</td>
       <td >Mariage</td>
-      <td >Rémy GOUILLARD et Elisabeth HERVE</td>
+      <td >R&eacutemy GOUILLARD et Elisabeth HERVE</td>
       <td  align=right x:num>1169</td>
       <td >&nbsp;</td>
     </tr>
@@ -11967,12 +11967,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
       <td  align=right
-  x:num="39668">08-août</td>
+  x:num="39668">08-ao&ucirct</td>
       <td >Cladier</td>
       <td >2E357-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
-      <td >Louis GOBEAU à Antoine ROY gabarrier</td>
+      <td >Louis GOBEAU &agrave Antoine ROY gabarrier</td>
       <td  align=right x:num>1153</td>
       <td >Trois saumons de plomb</td>
     </tr>
@@ -11986,12 +11986,12 @@ $connexionBD->ferme();
       <td >Transaction</td>
       <td >Jean BENESTEAU et Pierre ROGIER</td>
       <td  align=right x:num>1169</td>
-      <td >après CM avec Anne ROGIER</td>
+      <td >apr&egraves CM avec Anne ROGIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
       <td  align=right
-  x:num="38753">5-févr</td>
+  x:num="38753">5-f&eacutevr</td>
       <td >Peynaud</td>
       <td >2E2767-10</td>
       <td >Dirac</td>
@@ -12008,7 +12008,7 @@ $connexionBD->ferme();
       <td >2E409-160</td>
       <td >Lhoumeau</td>
       <td >Arrentement</td>
-      <td >Jean DURANDEAU à Christ. DURANDEAU</td>
+      <td >Jean DURANDEAU &agrave Christ. DURANDEAU</td>
       <td  align=right x:num>963</td>
       <td >et Marie CARRE fem. de Chris.</td>
     </tr>
@@ -12020,21 +12020,21 @@ $connexionBD->ferme();
       <td >2E4540-10</td>
       <td >La Rochef.</td>
       <td >Reconnaissance</td>
-      <td >Guillaume DARS à Jean DELABROSSE</td>
+      <td >Guillaume DARS &agrave Jean DELABROSSE</td>
       <td  align=right x:num>1025</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
       <td  align=right
-  x:num="39665">05-août</td>
+  x:num="39665">05-ao&ucirct</td>
       <td >Dumontet</td>
       <td >2E2734-190</td>
       <td >Dignac</td>
       <td >Ferme</td>
-      <td >à François BIARD et Pierre RENON</td>
+      <td >&agrave Fran&ccedilois BIARD et Pierre RENON</td>
       <td  align=right x:num>1153</td>
-      <td >de François DELAMARCHE</td>
+      <td >de Fran&ccedilois DELAMARCHE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
@@ -12054,9 +12054,9 @@ $connexionBD->ferme();
   x:num="39475">28-janv</td>
       <td >Cladier</td>
       <td >2E357-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
-      <td >Pierre DURAND à Jean COUPEAU gabarrier</td>
+      <td >Pierre DURAND &agrave Jean COUPEAU gabarrier</td>
       <td  align=right x:num>1153</td>
       <td >Litige de Saint-Savinien</td>
     </tr>
@@ -12066,19 +12066,19 @@ $connexionBD->ferme();
   x:num="39650">21-juil</td>
       <td >Micheau</td>
       <td >2E1023-30</td>
-      <td >Angoulême</td>
-      <td >Marché</td>
-      <td >François DECARSELLE et Pierre CLAUZURE</td>
+      <td >Angoul&ecircme</td>
+      <td >March&eacute</td>
+      <td >Fran&ccedilois DECARSELLE et Pierre CLAUZURE</td>
       <td  align=right x:num>1136</td>
       <td >cheaux de bas…</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
       <td  align=right
-  x:num="38775">27-févr</td>
+  x:num="38775">27-f&eacutevr</td>
       <td >Robin</td>
       <td >2E1111-190</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Michel AUDOUIN et Anne ROY</td>
       <td  align=right x:num>962</td>
@@ -12092,7 +12092,7 @@ $connexionBD->ferme();
       <td >2E409-170</td>
       <td >Lhoumeau</td>
       <td >Partage</td>
-      <td >Françoise POITEVIN et Françoise COUPRIE</td>
+      <td >Fran&ccediloise POITEVIN et Fran&ccediloise COUPRIE</td>
       <td  align=right x:num>963</td>
       <td >&nbsp;</td>
     </tr>
@@ -12104,7 +12104,7 @@ $connexionBD->ferme();
       <td >2E2767-20</td>
       <td >Dirac</td>
       <td >Ferme</td>
-      <td >Ferme de Jean SIMARD à Jean VEILLON</td>
+      <td >Ferme de Jean SIMARD &agrave Jean VEILLON</td>
       <td  align=right x:num>873</td>
       <td >&nbsp;</td>
     </tr>
@@ -12130,7 +12130,7 @@ $connexionBD->ferme();
       <td >Arrentement</td>
       <td >Jean GAUDICHEAU (et Pierre son fils)</td>
       <td  align=right x:num>1169</td>
-      <td >pièce de terre</td>
+      <td >pi&egravece de terre</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
@@ -12140,26 +12140,26 @@ $connexionBD->ferme();
       <td >2E2734-210</td>
       <td >Dignac</td>
       <td >Ferme</td>
-      <td >François CYMARD de Françoise BOURGEOIS</td>
+      <td >Fran&ccedilois CYMARD de Fran&ccediloise BOURGEOIS</td>
       <td  align=right x:num>1154</td>
       <td >Fils Antoine et J. PANISSEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
       <td  align=right
-  x:num="39788">06-déc</td>
+  x:num="39788">06-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5927-180</td>
       <td >Vaux-Rouillac</td>
       <td >Mariage</td>
-      <td >Jean GONTIER et Andrée TALLON</td>
+      <td >Jean GONTIER et Andr&eacutee TALLON</td>
       <td  align=right x:num>1169</td>
       <td >Jean GONTIER de Sigogne</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
       <td  align=right
-  x:num="39813">31-déc</td>
+  x:num="39813">31-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5927-190</td>
       <td >Vaux-Rouillac</td>
@@ -12172,13 +12172,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1668</td>
       <td  align=right
   x:num="38527">24-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E933-170</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >Jean BASSET et Laurence GARNIER</td>
       <td  align=right x:num>861</td>
-      <td >à P. TARDAT et T. DAVID</td>
+      <td >&agrave P. TARDAT et T. DAVID</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
@@ -12198,7 +12198,7 @@ $connexionBD->ferme();
       <td >Merilhon</td>
       <td >2E3073-10</td>
       <td >Hiersac</td>
-      <td >Procès verbal</td>
+      <td >Proc&egraves verbal</td>
       <td >Marie HASTIER et Jean BERTHOUMME son fils</td>
       <td  align=right x:num>1469</td>
       <td >chez Louis GONTIER et Ph. BERTH.</td>
@@ -12208,7 +12208,7 @@ $connexionBD->ferme();
       <td  align=right x:num="39466">19-janv</td>
       <td >Mamain</td>
       <td >2E927-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Jean BIARD et Jean MALABRE</td>
       <td  align=right x:num>1143</td>
@@ -12217,14 +12217,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1669</td>
       <td  align=right
-  x:num="39805">23-déc</td>
+  x:num="39805">23-d&eacutec</td>
       <td >Dumontet</td>
       <td >2E2734-250</td>
       <td >Dignac</td>
       <td >Inventaire</td>
       <td >Jeanne DELAURIERE et Jean BIARD</td>
       <td  align=right x:num>1154</td>
-      <td >après décès de François BIARD</td>
+      <td >apr&egraves d&eacutec&egraves de Fran&ccedilois BIARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1669</td>
@@ -12232,9 +12232,9 @@ $connexionBD->ferme();
   x:num="39770">18-nov</td>
       <td >Mamain</td>
       <td >2E927-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Donnation</td>
-      <td >Léonard BARRAUD et Cath. BENESTEAU</td>
+      <td >L&eacuteonard BARRAUD et Cath. BENESTEAU</td>
       <td  align=right x:num>1143</td>
       <td >&nbsp;</td>
     </tr>
@@ -12246,9 +12246,9 @@ $connexionBD->ferme();
       <td >2E2734-240</td>
       <td >Dignac</td>
       <td >Cession</td>
-      <td >Charlotte et Jeanne BIARD à Jean BIARD</td>
+      <td >Charlotte et Jeanne BIARD &agrave Jean BIARD</td>
       <td  align=right x:num>1154</td>
-      <td >leur frère</td>
+      <td >leur fr&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1669</td>
@@ -12256,11 +12256,11 @@ $connexionBD->ferme();
   x:num="40096">10-oct</td>
       <td >Huguet Jean</td>
       <td >2E796-10</td>
-      <td >Angoulême</td>
-      <td >Procès-verbal</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves-verbal</td>
       <td >Michel et Jean DELAURIERE son fils</td>
       <td  align=right x:num>1204</td>
-      <td >treille coupée, épées et armes à feu</td>
+      <td >treille coup&eacutee, &eacutep&eacutees et armes &agrave feu</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1669</td>
@@ -12270,7 +12270,7 @@ $connexionBD->ferme();
       <td >2E2767-30</td>
       <td >Dirac</td>
       <td >Testament</td>
-      <td >Etienne SIMARD à Marie GIRARD</td>
+      <td >Etienne SIMARD &agrave Marie GIRARD</td>
       <td  align=right x:num>873</td>
       <td >&nbsp;</td>
     </tr>
@@ -12278,13 +12278,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1669</td>
       <td  align=right
   x:num="38523">20-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E934-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Jacques ROUHIER et Marie AUBOIN</td>
       <td  align=right x:num>858</td>
-      <td >à Jean MIOT leur gendre</td>
+      <td >&agrave Jean MIOT leur gendre</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1669</td>
@@ -12292,19 +12292,19 @@ $connexionBD->ferme();
   x:num="38779">03-mars</td>
       <td >Robin</td>
       <td >2E1111-200</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >René LECLERCQ et Christophe VIOLET</td>
+      <td >Ren&eacute LECLERCQ et Christophe VIOLET</td>
       <td  align=right x:num>962</td>
-      <td >à François DELAPLACE</td>
+      <td >&agrave Fran&ccedilois DELAPLACE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1669</td>
       <td  align=right
   x:num="38744">27-janv</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E805-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Etienne CLERC et Arnaude AUBOIN</td>
       <td  align=right x:num>872</td>
@@ -12313,12 +12313,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1669</td>
       <td  align=right
-  x:num="39502">24-févr</td>
+  x:num="39502">24-f&eacutevr</td>
       <td >Cladier</td>
       <td >2E358-10</td>
-      <td >Angoulême</td>
-      <td >Métairie</td>
-      <td >à Nicolas et Jean SIMARD frères</td>
+      <td >Angoul&ecircme</td>
+      <td >M&eacutetairie</td>
+      <td >&agrave Nicolas et Jean SIMARD fr&egraveres</td>
       <td  align=right x:num>1153</td>
       <td >de Madame Salmon</td>
     </tr>
@@ -12326,11 +12326,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1669</td>
       <td  align=right
   x:num="38477">5-mai</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E934-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Louis SEURRAUD à Jean BENET</td>
+      <td >Louis SEURRAUD &agrave Jean BENET</td>
       <td  align=right x:num>858</td>
       <td >&nbsp;</td>
     </tr>
@@ -12338,23 +12338,23 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1669</td>
       <td  align=right
   x:num="38523">20-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E934-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Jacques ROUHIER à Cath. ROUHIER sa soeur</td>
+      <td >Jacques ROUHIER &agrave Cath. ROUHIER sa soeur</td>
       <td  align=right x:num>858</td>
-      <td >d'une maison à Genac</td>
+      <td >d'une maison &agrave Genac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1669</td>
       <td  align=right
-  x:num="38688">2-déc</td>
+  x:num="38688">2-d&eacutec</td>
       <td >Chauvin</td>
       <td >2E308-30</td>
       <td >Lhoumeau</td>
       <td >Quittance</td>
-      <td >Antoine ROY à Penotte NICOLAS</td>
+      <td >Antoine ROY &agrave Penotte NICOLAS</td>
       <td  align=right x:num>822</td>
       <td >&nbsp;</td>
     </tr>
@@ -12365,7 +12365,7 @@ $connexionBD->ferme();
       <td >2E3073-40</td>
       <td >Hiersac</td>
       <td >Vente</td>
-      <td >Jean DEBUSSAC à JEAN BOISDON le jeune</td>
+      <td >Jean DEBUSSAC &agrave JEAN BOISDON le jeune</td>
       <td  align=right x:num>1469</td>
       <td >de Ste Catherine, St Cybardeaux</td>
     </tr>
@@ -12377,7 +12377,7 @@ $connexionBD->ferme();
       <td >2E3073-20</td>
       <td >Hiersac</td>
       <td >Echange</td>
-      <td >Catherine IZAMBARD à Pierre DUCLOU</td>
+      <td >Catherine IZAMBARD &agrave Pierre DUCLOU</td>
       <td  align=right x:num>1469</td>
       <td >de terres</td>
     </tr>
@@ -12391,14 +12391,14 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Catherine IZAMBARD et Jean NAUD son fils</td>
       <td  align=right x:num>1469</td>
-      <td >de terres à André VALLETEAU</td>
+      <td >de terres &agrave Andr&eacute VALLETEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1670</td>
-      <td  align=right x:num="38592">28-août</td>
-      <td >Mancié</td>
+      <td  align=right x:num="38592">28-ao&ucirct</td>
+      <td >Manci&eacute</td>
       <td >2E934-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Martial LIZEE et Anne MARIETTE</td>
       <td  align=right x:num>858</td>
@@ -12410,7 +12410,7 @@ $connexionBD->ferme();
   x:num="39008">18-oct</td>
       <td >Robin</td>
       <td >2E1111-260</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Jean ROCHIER de Louise AUGIBAUD</td>
       <td  align=right x:num>962</td>
@@ -12424,21 +12424,21 @@ $connexionBD->ferme();
       <td >2E5928-160</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
-      <td >François HERAUDEAU à Pierre LAMBERT</td>
+      <td >Fran&ccedilois HERAUDEAU &agrave Pierre LAMBERT</td>
       <td  align=right x:num>1168</td>
-      <td >Marie HERAUDEAU fe. François</td>
+      <td >Marie HERAUDEAU fe. Fran&ccedilois</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1670</td>
       <td  align=right
-  x:num="39691">31-août</td>
+  x:num="39691">31-ao&ucirct</td>
       <td >Cladier</td>
       <td >2E358-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >à François SIMARD de Pierre SOULLE</td>
+      <td >&agrave Fran&ccedilois SIMARD de Pierre SOULLE</td>
       <td  align=right x:num>1153</td>
-      <td >Maison à Puymoyen</td>
+      <td >Maison &agrave Puymoyen</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1670</td>
@@ -12447,7 +12447,7 @@ $connexionBD->ferme();
       <td >Renon</td>
       <td >2E2939-70</td>
       <td >Garat</td>
-      <td >Marché</td>
+      <td >March&eacute</td>
       <td >Jean MANDAT et Jean LIMOUSIN</td>
       <td  align=right x:num>972</td>
       <td >&nbsp;</td>
@@ -12460,7 +12460,7 @@ $connexionBD->ferme();
       <td >2E5928-140</td>
       <td >Vaux-Rouillac</td>
       <td >Promesse</td>
-      <td >François GONTIER et autres</td>
+      <td >Fran&ccedilois GONTIER et autres</td>
       <td  align=right x:num>1168</td>
       <td >laboureur de Beauvoix, Vaux</td>
     </tr>
@@ -12470,7 +12470,7 @@ $connexionBD->ferme();
   x:num="38423">12-mars</td>
       <td >Peuple</td>
       <td >2E1065-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Echange</td>
       <td >Antoine SIMARD et Denis CARTERON</td>
       <td  align=right x:num>839</td>
@@ -12484,33 +12484,33 @@ $connexionBD->ferme();
       <td >2E5928-120</td>
       <td >Vaux-Rouillac</td>
       <td >Testament</td>
-      <td >Berthomé à Jacques COSTE son fils</td>
+      <td >Berthom&eacute &agrave Jacques COSTE son fils</td>
       <td  align=right x:num>1168</td>
       <td >Le Bourg, Echallat</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1670</td>
       <td  align=right
-  x:num="38753">05-févr</td>
+  x:num="38753">05-f&eacutevr</td>
       <td >Robin</td>
       <td >2E1111-230</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
-      <td >Jean LIZEE à Jacques LIZEE, COQUIAUD…</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
+      <td >Jean LIZEE &agrave Jacques LIZEE, COQUIAUD…</td>
       <td  align=right x:num>962</td>
       <td >et Jeanne LIZEE sa femme</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1670</td>
       <td  align=right
-  x:num="38945">16-août</td>
+  x:num="38945">16-ao&ucirct</td>
       <td >Mamain</td>
       <td >2E928-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Mathieu BASSET à Antoine PECHILLON</td>
+      <td >Mathieu BASSET &agrave Antoine PECHILLON</td>
       <td  align=right x:num>1014</td>
-      <td >et A. et J. BASSET sœur et frère</td>
+      <td >et A. et J. BASSET s&oeligur et fr&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1670</td>
@@ -12520,9 +12520,9 @@ $connexionBD->ferme();
       <td >2E5928-150</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
-      <td >Cibard et Cath. GONTIER enfants d'André</td>
+      <td >Cibard et Cath. GONTIER enfants d'Andr&eacute</td>
       <td  align=right x:num>1168</td>
-      <td >à Guillaume MARTIN</td>
+      <td >&agrave Guillaume MARTIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1670</td>
@@ -12532,7 +12532,7 @@ $connexionBD->ferme();
       <td >2E5928-100</td>
       <td >Vaux-Rouillac</td>
       <td >Inventaire</td>
-      <td >Berthomé et Jacques COSTE son fils</td>
+      <td >Berthom&eacute et Jacques COSTE son fils</td>
       <td  align=right x:num>1168</td>
       <td >Le Bourg, Echallat</td>
     </tr>
@@ -12551,7 +12551,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1670</td>
       <td  align=right
-  x:num="39788">06-déc</td>
+  x:num="39788">06-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5928-170</td>
       <td >Vaux-Rouillac</td>
@@ -12566,11 +12566,11 @@ $connexionBD->ferme();
   x:num="38371">19-janv</td>
       <td >Peuple</td>
       <td >2E1065-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >Jean COUILLEBAUD et Etienne ROY</td>
       <td  align=right x:num>839</td>
-      <td >à Clément LIZEE</td>
+      <td >&agrave Cl&eacutement LIZEE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1670</td>
@@ -12578,20 +12578,20 @@ $connexionBD->ferme();
   x:num="38968">08-sept</td>
       <td >Robin</td>
       <td >2E1111-250</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >André LEVRAUD et Marie BONNORON</td>
+      <td >Andr&eacute LEVRAUD et Marie BONNORON</td>
       <td  align=right x:num>962</td>
       <td >Fille de J. et Marie BABEL</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1670</td>
-      <td  align=right x:num="39871">27-févr</td>
+      <td  align=right x:num="39871">27-f&eacutevr</td>
       <td >Prevost</td>
       <td >2E2775-50</td>
       <td >Douzat</td>
       <td >Transaction</td>
-      <td >Berthomé IZAMBARD et Jean PLAINEAU gendre</td>
+      <td >Berthom&eacute IZAMBARD et Jean PLAINEAU gendre</td>
       <td  align=right x:num>1218</td>
       <td >&nbsp;</td>
     </tr>
@@ -12600,21 +12600,21 @@ $connexionBD->ferme();
       <td  align=right x:num="38779">03-mars</td>
       <td >Robin</td>
       <td >2E1111-240</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >Yzab. CHERBONNAUD et Michel BOITAUD</td>
       <td  align=right x:num>962</td>
-      <td >à AUGEREAU et MICHEAU</td>
+      <td >&agrave AUGEREAU et MICHEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1670</td>
       <td  align=right
-  x:num="39483">05-févr</td>
+  x:num="39483">05-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5928-130</td>
       <td >Vaux-Rouillac</td>
       <td >Partage</td>
-      <td >René, Jean, Jacques fils de Nicolas GONTIER</td>
+      <td >Ren&eacute, Jean, Jacques fils de Nicolas GONTIER</td>
       <td  align=right x:num>1168</td>
       <td >et de Antoinette BRISSON</td>
     </tr>
@@ -12633,11 +12633,11 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1670</td>
       <td  align=right
-  x:num="39319">25-août</td>
+  x:num="39319">25-ao&ucirct</td>
       <td >Grassin</td>
       <td >2E4649-10</td>
       <td >La Rochef.</td>
-      <td >Métairie</td>
+      <td >M&eacutetairie</td>
       <td >Jean DOR de Marie BARBET</td>
       <td  align=right x:num>1091</td>
       <td >Chez Dars</td>
@@ -12648,28 +12648,28 @@ $connexionBD->ferme();
   x:num="38963">03-sept</td>
       <td >Mamain</td>
       <td >2E928-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Pierre AUDOUIN et SORILLETs</td>
       <td  align=right x:num>1014</td>
-      <td >(M. BOURDAGE mère  Pierre)</td>
+      <td >(M. BOURDAGE m&egravere  Pierre)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1670</td>
       <td  align=right
-  x:num="39789">07-déc</td>
+  x:num="39789">07-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5928-180</td>
       <td >Vaux-Rouillac</td>
       <td >Cession</td>
-      <td >Pierre GAUDICHEAU (et Jean son père ?)</td>
+      <td >Pierre GAUDICHEAU (et Jean son p&egravere ?)</td>
       <td  align=right x:num>1168</td>
-      <td >service de Rémy GOUILLARD</td>
+      <td >service de R&eacutemy GOUILLARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1670</td>
       <td  align=right
-  x:num="39073">22-déc</td>
+  x:num="39073">22-d&eacutec</td>
       <td >Pillorget</td>
       <td >2E2165-30</td>
       <td >Champniers</td>
@@ -12688,17 +12688,17 @@ $connexionBD->ferme();
       <td >Ferme</td>
       <td >Catherine CHEROT veuve de Pierre DARS</td>
       <td  align=right x:num>1025</td>
-      <td >à Pierre DUMONTET</td>
+      <td >&agrave Pierre DUMONTET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1670</td>
       <td  align=right
-  x:num="39808">26-déc</td>
+  x:num="39808">26-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5928-190</td>
       <td >Vaux-Rouillac</td>
       <td >Afferme</td>
-      <td >Jacques GONTIER à Jean son frère</td>
+      <td >Jacques GONTIER &agrave Jean son fr&egravere</td>
       <td  align=right x:num>1168</td>
       <td >fils de Nicolas</td>
     </tr>
@@ -12711,15 +12711,15 @@ $connexionBD->ferme();
       <td >Echange</td>
       <td >Pierre BONJOUR et Jehanne CADY sa femme</td>
       <td  align=right x:num>1469</td>
-      <td >de terres avec André VALLETEAU</td>
+      <td >de terres avec Andr&eacute VALLETEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1671</td>
-      <td  align=right x:num="39494">16-févr</td>
+      <td  align=right x:num="39494">16-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5929-120</td>
       <td >Vaux-Rouillac</td>
-      <td >Déclaration</td>
+      <td >D&eacuteclaration</td>
       <td >Fiacre BOISDON, Jean BERNARD, etc.</td>
       <td  align=right x:num>1167</td>
       <td >&nbsp;</td>
@@ -12727,7 +12727,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1671</td>
       <td  align=right
-  x:num="39124">11-févr</td>
+  x:num="39124">11-f&eacutevr</td>
       <td >Imbert</td>
       <td >2E4684-10</td>
       <td >La Rochef.</td>
@@ -12756,7 +12756,7 @@ $connexionBD->ferme();
       <td >2E410-10</td>
       <td >Lhoumeau</td>
       <td >Partage</td>
-      <td >Barthélémy BAJOT et Marie CARRE</td>
+      <td >Barth&eacutel&eacutemy BAJOT et Marie CARRE</td>
       <td  align=right x:num>957</td>
       <td >Vve  Christoph. DURANDEAU</td>
     </tr>
@@ -12766,9 +12766,9 @@ $connexionBD->ferme();
   x:num="38685">29-nov</td>
       <td >Peuple</td>
       <td >2E1066-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Gurpine</td>
-      <td >Jean à Clément LIZEE</td>
+      <td >Jean &agrave Cl&eacutement LIZEE</td>
       <td  align=right x:num>839</td>
       <td >fils de J. et Colette SURREAU</td>
     </tr>
@@ -12778,9 +12778,9 @@ $connexionBD->ferme();
   x:num="38888">20-juin</td>
       <td >Mamain</td>
       <td >2E929-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
-      <td >Frère et sœurs COMPTE</td>
+      <td >Fr&egravere et s&oeligurs COMPTE</td>
       <td  align=right x:num>1000</td>
       <td >TALLON, BOIDON, GAILLARD</td>
     </tr>
@@ -12791,10 +12791,10 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5929-180</td>
       <td >Vaux-Rouillac</td>
-      <td >Déclaration</td>
+      <td >D&eacuteclaration</td>
       <td >Marie COURJAUD et Pierre COSTE son gendre</td>
       <td  align=right x:num>1168</td>
-      <td >de Nigronde: ancêtre ?</td>
+      <td >de Nigronde: anc&ecirctre ?</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1671</td>
@@ -12812,13 +12812,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1671</td>
       <td  align=right
   x:num="38856">19-mai</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E805-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Léonard BARRAUD et Catherine BENESTEAU</td>
+      <td >L&eacuteonard BARRAUD et Catherine BENESTEAU</td>
       <td  align=right x:num>872</td>
-      <td >à François YRVOIX</td>
+      <td >&agrave Fran&ccedilois YRVOIX</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1671</td>
@@ -12842,12 +12842,12 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Pierre MOQUET et Pierre IZAMBARD</td>
       <td  align=right x:num>1151</td>
-      <td >à Jean PLAINEAU</td>
+      <td >&agrave Jean PLAINEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1671</td>
       <td  align=right
-  x:num="38939">10-août</td>
+  x:num="38939">10-ao&ucirct</td>
       <td >Boutillier</td>
       <td >2E226-20</td>
       <td >Lhoumeau</td>
@@ -12862,20 +12862,20 @@ $connexionBD->ferme();
   x:num="38527">24-juin</td>
       <td >Peuple</td>
       <td >2E1066-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vendition</td>
-      <td >François YRVOIX et Antoinette ROY</td>
+      <td >Fran&ccedilois YRVOIX et Antoinette ROY</td>
       <td  align=right x:num>839</td>
-      <td >à Jacques BRAUD</td>
+      <td >&agrave Jacques BRAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1671</td>
       <td >sept</td>
       <td >Mamain</td>
       <td >2E929-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
-      <td >DESCARSELLE après décès de Louis</td>
+      <td >DESCARSELLE apr&egraves d&eacutec&egraves de Louis</td>
       <td  align=right x:num>1000</td>
       <td >Lettre de demande seulement</td>
     </tr>
@@ -12885,7 +12885,7 @@ $connexionBD->ferme();
   x:num="38923">25-juil</td>
       <td >Mamain</td>
       <td >2E929-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Accord</td>
       <td 
   x:str="Pierre AUDOIN et Antoine ANDRE ">Pierre AUDOIN et Antoine ANDRE </td>
@@ -12911,7 +12911,7 @@ $connexionBD->ferme();
       <td >Dumontet</td>
       <td >2E2735-10</td>
       <td >Dignac</td>
-      <td >Procès-verbal</td>
+      <td >Proc&egraves-verbal</td>
       <td >Jean BIARD et Pierre DEVANTHENAT</td>
       <td  align=right x:num>1155</td>
       <td >Texier en toile</td>
@@ -12922,7 +12922,7 @@ $connexionBD->ferme();
   x:num="39040">19-nov</td>
       <td >Robin</td>
       <td >2E1111-280</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Guillaume TEXIER et Mathurine TEXIER</td>
       <td  align=right x:num>962</td>
@@ -12934,21 +12934,21 @@ $connexionBD->ferme();
   x:num="38856">19-mai</td>
       <td >Mamain</td>
       <td >2E929-20</td>
-      <td >Angoulême</td>
-      <td >Démission</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutemission</td>
       <td >Jacques SURREAU et Marie CHARRAUD</td>
       <td  align=right x:num>1000</td>
-      <td >à J DELAROCHE Me de danse</td>
+      <td >&agrave J DELAROCHE Me de danse</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1671</td>
       <td  align=right
-  x:num="39480">02-févr</td>
+  x:num="39480">02-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5929-110</td>
       <td >Vaux-Rouillac</td>
       <td >Arrentement</td>
-      <td >à Denis GONTIER de Theophile DELAFOND</td>
+      <td >&agrave Denis GONTIER de Theophile DELAFOND</td>
       <td  align=right x:num>1167</td>
       <td >de Foussignac</td>
     </tr>
@@ -12958,16 +12958,16 @@ $connexionBD->ferme();
   x:num="38784">08-mars</td>
       <td >Robin</td>
       <td >2E1111-270</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François FOUGIERE et Jehanne ROY</td>
+      <td >Fran&ccedilois FOUGIERE et Jehanne ROY</td>
       <td  align=right x:num>962</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1671</td>
       <td  align=right
-  x:num="39492">14-févr</td>
+  x:num="39492">14-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5929-130</td>
       <td >Vaux-Rouillac</td>
@@ -12984,19 +12984,19 @@ $connexionBD->ferme();
       <td >2E4541-10</td>
       <td >La Rochef.</td>
       <td >Echange</td>
-      <td >Charles DARS et François BENOIST</td>
+      <td >Charles DARS et Fran&ccedilois BENOIST</td>
       <td  align=right x:num>1024</td>
       <td >de terres avec L. BROUSSARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1671</td>
       <td  align=right
-  x:num="39680">20-août</td>
+  x:num="39680">20-ao&ucirct</td>
       <td >Cladier</td>
       <td >2E359-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >à Pierre SIMARD de Mathurin BOUHIER</td>
+      <td >&agrave Pierre SIMARD de Mathurin BOUHIER</td>
       <td  align=right x:num>1155</td>
       <td >&nbsp;</td>
     </tr>
@@ -13008,14 +13008,14 @@ $connexionBD->ferme();
       <td >2E2767-40</td>
       <td >Dirac</td>
       <td >Ferme</td>
-      <td >Collas SIMARD à François DUSSAIGNE</td>
+      <td >Collas SIMARD &agrave Fran&ccedilois DUSSAIGNE</td>
       <td  align=right x:num>873</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1671</td>
       <td  align=right
-  x:num="39680">20-août</td>
+  x:num="39680">20-ao&ucirct</td>
       <td >Daniaud</td>
       <td >2E5929-170</td>
       <td >Vaux-Rouillac</td>
@@ -13054,20 +13054,20 @@ $connexionBD->ferme();
   x:num="38746">29-janv</td>
       <td >Mamain</td>
       <td >2E929-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Mathieu BERNARD et Marguerite CLEMENT</td>
       <td  align=right x:num>1000</td>
-      <td >de St Martial, Aê</td>
+      <td >de St Martial, A&ecirc</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
       <td  align=right
-  x:num="39492">14-févr</td>
+  x:num="39492">14-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5930-130</td>
       <td >Vaux-Rouillac</td>
-      <td >Déclaration</td>
+      <td >D&eacuteclaration</td>
       <td >Fiacre BOISDON</td>
       <td  align=right x:num>1164</td>
       <td >demeurant au bourg d'Echallat</td>
@@ -13080,7 +13080,7 @@ $connexionBD->ferme();
       <td >2E5930-160</td>
       <td >Vaux-Rouillac</td>
       <td >Partage</td>
-      <td >Mathieu et Macé GONTIER frères</td>
+      <td >Mathieu et Mac&eacute GONTIER fr&egraveres</td>
       <td  align=right x:num>1164</td>
       <td >fils d'Antoine, demt Bois Renard</td>
     </tr>
@@ -13090,7 +13090,7 @@ $connexionBD->ferme();
   x:num="38894">26-juin</td>
       <td >Robin</td>
       <td >2E1111-310</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jehan COMPERE et Jehanne SIMARD</td>
       <td  align=right x:num>962</td>
@@ -13099,26 +13099,26 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
       <td  align=right
-  x:num="38714">28-déc</td>
+  x:num="38714">28-d&eacutec</td>
       <td >Chauvin</td>
       <td >2E309-40</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >François DAVAILLE et Jeanne ROY</td>
+      <td >Fran&ccedilois DAVAILLE et Jeanne ROY</td>
       <td  align=right x:num>822</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
       <td  align=right
-  x:num="38771">23-févr</td>
+  x:num="38771">23-f&eacutevr</td>
       <td >Mamain</td>
       <td >2E930-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >DESCARSELLE</td>
       <td  align=right x:num>978</td>
-      <td >après mort de Louis leur père</td>
+      <td >apr&egraves mort de Louis leur p&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
@@ -13128,18 +13128,18 @@ $connexionBD->ferme();
       <td >2E309-20</td>
       <td >Lhoumeau</td>
       <td >Sous-arrentemt</td>
-      <td >André ROY à Robert ROY</td>
+      <td >Andr&eacute ROY &agrave Robert ROY</td>
       <td  align=right x:num>822</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
       <td  align=right
-  x:num="39492">14-févr</td>
+  x:num="39492">14-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5930-140</td>
       <td >Vaux-Rouillac</td>
-      <td >Déclaration</td>
+      <td >D&eacuteclaration</td>
       <td >Fiacre BOISDON et Jean BERNARD</td>
       <td  align=right x:num>1164</td>
       <td >demeurant au bourg d'Echallat</td>
@@ -13154,7 +13154,7 @@ $connexionBD->ferme();
       <td >Echange</td>
       <td >Pierre GONTIER et Elisabeth HERVE</td>
       <td  align=right x:num>1164</td>
-      <td >sa belle-fille, demt. Mérignac</td>
+      <td >sa belle-fille, demt. M&eacuterignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
@@ -13176,9 +13176,9 @@ $connexionBD->ferme();
       <td >2E5930-180</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
-      <td >P., F, Ja. TALLON et Math et Macé GONTIER</td>
+      <td >P., F, Ja. TALLON et Math et Mac&eacute GONTIER</td>
       <td  align=right x:num>1164</td>
-      <td >à Rémy GOUILLARD. Mérignac</td>
+      <td >&agrave R&eacutemy GOUILLARD. M&eacuterignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
@@ -13186,7 +13186,7 @@ $connexionBD->ferme();
   x:num="38823">16-avr</td>
       <td >Mamain</td>
       <td >2E930-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Louis DESCARSELLE</td>
       <td  align=right x:num>978</td>
@@ -13198,11 +13198,11 @@ $connexionBD->ferme();
   x:num="38430">19-mars</td>
       <td >Peuple</td>
       <td >2E1066-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
-      <td >Jean LIZEE de François GONTIER</td>
+      <td >Jean LIZEE de Fran&ccedilois GONTIER</td>
       <td  align=right x:num>839</td>
-      <td >F. GONTIER ancêtre ?</td>
+      <td >F. GONTIER anc&ecirctre ?</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
@@ -13219,7 +13219,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
       <td  align=right
-  x:num="38760">12-févr</td>
+  x:num="38760">12-f&eacutevr</td>
       <td >Pillorget</td>
       <td >2E2165-40</td>
       <td >Champniers</td>
@@ -13235,10 +13235,10 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5930-100</td>
       <td >Vaux-Rouillac</td>
-      <td >Délaissement</td>
-      <td >Catherine à Antoine GONTIER son frère</td>
+      <td >D&eacutelaissement</td>
+      <td >Catherine &agrave Antoine GONTIER son fr&egravere</td>
       <td  align=right x:num>1163</td>
-      <td >demeurant à Foussignac</td>
+      <td >demeurant &agrave Foussignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
@@ -13246,35 +13246,35 @@ $connexionBD->ferme();
   x:num="38989">29-sept</td>
       <td >Mamain</td>
       <td >2E930-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Rente</td>
       <td >Michel DELACROIX et Marie BOILEVIN</td>
       <td  align=right x:num>978</td>
-      <td >à Etienne TRONCHIERE</td>
+      <td >&agrave Etienne TRONCHIERE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
       <td  align=right
-  x:num="38956">27-août</td>
+  x:num="38956">27-ao&ucirct</td>
       <td >Robin</td>
       <td >2E1111-340</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Regné TAVERNAUD et Marie ROUGIER</td>
+      <td >Regn&eacute TAVERNAUD et Marie ROUGIER</td>
       <td  align=right x:num>962</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
       <td  align=right
-  x:num="39805">23-déc</td>
+  x:num="39805">23-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5930-200</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
       <td >Antoine et Marie GONTIER et Mathieu MARTIN</td>
       <td  align=right x:num>1164</td>
-      <td class=xl4120222>à &quot;restauratr. de corps humains&quot;</td>
+      <td class=xl4120222>&agrave &quot;restauratr. de corps humains&quot;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
@@ -13282,7 +13282,7 @@ $connexionBD->ferme();
   x:num="38814">07-avr</td>
       <td >Mamain</td>
       <td >2E930-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
       <td >Jean COUPEAU dit Chazelle par H. GAULTIER</td>
       <td  align=right x:num>978</td>
@@ -13298,7 +13298,7 @@ $connexionBD->ferme();
       <td >Acquisition</td>
       <td >Mathieu BOISDON (de Jean DEBUSSAC)</td>
       <td  align=right x:num>1164</td>
-      <td >Fils Franç. et Perrine BERNARD</td>
+      <td >Fils Fran&ccedil. et Perrine BERNARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
@@ -13306,9 +13306,9 @@ $connexionBD->ferme();
   x:num="38493">21-mai</td>
       <td >Peuple</td>
       <td >2E1066-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Rente</td>
-      <td >François ROY et Catherine MARTIN</td>
+      <td >Fran&ccedilois ROY et Catherine MARTIN</td>
       <td  align=right x:num>839</td>
       <td >Au profit de Aette. GADORAT</td>
     </tr>
@@ -13320,7 +13320,7 @@ $connexionBD->ferme();
       <td >2E2793-30</td>
       <td >Echallat</td>
       <td >Procuration</td>
-      <td >Pierre BOISDON à Marie ANDRE sa femme</td>
+      <td >Pierre BOISDON &agrave Marie ANDRE sa femme</td>
       <td  align=right x:num>1048</td>
       <td >&nbsp;</td>
     </tr>
@@ -13330,7 +13330,7 @@ $connexionBD->ferme();
   x:num="38522">19-juin</td>
       <td >Peuple</td>
       <td >2E1066-80</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean PAPIN ET Jeanne ROUHIER</td>
       <td  align=right x:num>839</td>
@@ -13356,19 +13356,19 @@ $connexionBD->ferme();
       <td >2E309-10</td>
       <td >Lhoumeau</td>
       <td >Cession</td>
-      <td >André ROY à Robert ROY</td>
+      <td >Andr&eacute ROY &agrave Robert ROY</td>
       <td  align=right x:num>822</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
       <td  align=right
-  x:num="38585">21-août</td>
+  x:num="38585">21-ao&ucirct</td>
       <td >Peuple</td>
       <td >2E1066-90</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
-      <td >Louis SURREAU et Geneviève GODIN</td>
+      <td >Louis SURREAU et Genevi&egraveve GODIN</td>
       <td  align=right x:num>839</td>
       <td >de Jacques BOVAUD</td>
     </tr>
@@ -13380,9 +13380,9 @@ $connexionBD->ferme();
       <td >2E5930-170</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
-      <td >Pierre GONTIER à Rémy GOUILLARD</td>
+      <td >Pierre GONTIER &agrave R&eacutemy GOUILLARD</td>
       <td  align=right x:num>1164</td>
-      <td >demt. Mérignac</td>
+      <td >demt. M&eacuterignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
@@ -13390,11 +13390,11 @@ $connexionBD->ferme();
   x:num="39257">24-juin</td>
       <td >Peuple</td>
       <td >2E1066-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vendition</td>
-      <td >François YRVOIX et Antoinette ROY</td>
+      <td >Fran&ccedilois YRVOIX et Antoinette ROY</td>
       <td  align=right x:num>839</td>
-      <td >à Jacques BRAUD</td>
+      <td >&agrave Jacques BRAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1672</td>
@@ -13402,9 +13402,9 @@ $connexionBD->ferme();
   x:num="39534">27-mars</td>
       <td >Cladier</td>
       <td >2E360-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >à Jean BIARD de Louis SURREAU</td>
+      <td >&agrave Jean BIARD de Louis SURREAU</td>
       <td  align=right x:num>1155</td>
       <td >et Denis POITEVIN</td>
     </tr>
@@ -13428,19 +13428,19 @@ $connexionBD->ferme();
       <td >2E309-70</td>
       <td >Lhoumeau</td>
       <td >Acquisition</td>
-      <td >Robert ROY de François GALLOPIN</td>
+      <td >Robert ROY de Fran&ccedilois GALLOPIN</td>
       <td  align=right x:num>822</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
       <td  align=right
-  x:num="39075">24-déc</td>
+  x:num="39075">24-d&eacutec</td>
       <td >Boutillier</td>
       <td >2E226-50</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >François IMBERT et Marie LIMOUSIN</td>
+      <td >Fran&ccedilois IMBERT et Marie LIMOUSIN</td>
       <td  align=right x:num>966</td>
       <td >Fils de P. et Jeanne ROUSSEAU</td>
     </tr>
@@ -13466,15 +13466,15 @@ $connexionBD->ferme();
       <td >Bail</td>
       <td >Jacques et Antoine MARQUAIS</td>
       <td  align=right x:num>1163</td>
-      <td >métairie de Nigronde</td>
+      <td >m&eacutetairie de Nigronde</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
       <td  align=right
-  x:num="38760">12-févr</td>
-      <td >Jéheu</td>
+  x:num="38760">12-f&eacutevr</td>
+      <td >J&eacuteheu</td>
       <td >2E806-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre COUTURIER et Suzanne ROUHIER</td>
       <td  align=right x:num>872</td>
@@ -13548,9 +13548,9 @@ $connexionBD->ferme();
       <td >2E5931-150</td>
       <td >Vaux-Rouillac</td>
       <td >Inventaire</td>
-      <td >requête P. FOURNIER et F. CARRE gendres</td>
+      <td >requ&ecircte P. FOURNIER et F. CARRE gendres</td>
       <td  align=right x:num>1163</td>
-      <td >après décès Pierre TALLON</td>
+      <td >apr&egraves d&eacutec&egraves Pierre TALLON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
@@ -13560,7 +13560,7 @@ $connexionBD->ferme();
       <td >2E5180-10</td>
       <td >St-Cybardeaux</td>
       <td >Vente</td>
-      <td >à Sébastien BOISDON fils de Nicolas</td>
+      <td >&agrave S&eacutebastien BOISDON fils de Nicolas</td>
       <td  align=right x:num>1210</td>
       <td >de P. MASSIOT et Jeanne MOREAU</td>
     </tr>
@@ -13568,13 +13568,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1673</td>
       <td  align=right
   x:num="38868">31-mai</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E806-300</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Denis BASSET et enfants DELAPLACE</td>
       <td  align=right x:num>872</td>
-      <td >de Frce DUFOUR leur mère</td>
+      <td >de Frce DUFOUR leur m&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
@@ -13584,9 +13584,9 @@ $connexionBD->ferme();
       <td >2E5931-130</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
-      <td >Jean GONTIER à Pierre HERAUDEAU</td>
+      <td >Jean GONTIER &agrave Pierre HERAUDEAU</td>
       <td  align=right x:num>1163</td>
-      <td >pièces de vigne à Foussignac</td>
+      <td >pi&egraveces de vigne &agrave Foussignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
@@ -13594,7 +13594,7 @@ $connexionBD->ferme();
   x:num="39465">18-janv</td>
       <td >Cladier</td>
       <td >2E360-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre NAVARRE et Jeanne CARRE</td>
       <td  align=right x:num>1155</td>
@@ -13603,14 +13603,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
       <td  align=right
-  x:num="39804">22-déc</td>
+  x:num="39804">22-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5931-200</td>
       <td >Vaux-Rouillac</td>
       <td >Baillette</td>
-      <td >à Jacques et Jean BOISDON frères du Fessou</td>
+      <td >&agrave Jacques et Jean BOISDON fr&egraveres du Fessou</td>
       <td  align=right x:num>1163</td>
-      <td >d'une pièce de terre à Douzat</td>
+      <td >d'une pi&egravece de terre &agrave Douzat</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
@@ -13620,18 +13620,18 @@ $connexionBD->ferme();
       <td >2E309-90</td>
       <td >Lhoumeau</td>
       <td >Location</td>
-      <td >Elisabeth ROY à Anne AUDIGIER</td>
+      <td >Elisabeth ROY &agrave Anne AUDIGIER</td>
       <td  align=right x:num>822</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
       <td  align=right
-  x:num="38403">20-févr</td>
+  x:num="38403">20-f&eacutevr</td>
       <td >Chauvin</td>
       <td >2E309-50</td>
       <td >Lhoumeau</td>
-      <td >Procès-verbal</td>
+      <td >Proc&egraves-verbal</td>
       <td >Robert ROY</td>
       <td  align=right x:num>822</td>
       <td >D'un lopin de vigne</td>
@@ -13640,13 +13640,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1673</td>
       <td  align=right
   x:num="38667">11-nov</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E807-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >DAVID, LELIS, MOUSSEAU, maris de RIFFAUD</td>
       <td  align=right x:num>870</td>
-      <td >à Pierre de La QUINTINYE</td>
+      <td >&agrave Pierre de La QUINTINYE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
@@ -13654,7 +13654,7 @@ $connexionBD->ferme();
   x:num="38874">06-juin</td>
       <td >Mamain</td>
       <td >2E931-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >Guillaume BOISDON et Margte. DUPUY</td>
       <td  align=right x:num>970</td>
@@ -13663,14 +13663,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
       <td  align=right
-  x:num="39812">30-déc</td>
+  x:num="39812">30-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5931-210</td>
       <td >Vaux-Rouillac</td>
       <td >Testament</td>
       <td >Helie GONTIER</td>
       <td  align=right x:num>1163</td>
-      <td >Fils François et Marie CAILLE</td>
+      <td >Fils Fran&ccedilois et Marie CAILLE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
@@ -13682,7 +13682,7 @@ $connexionBD->ferme();
       <td >Partage</td>
       <td >Antoine et Marie GONTIER et Mathieu MARTIN</td>
       <td  align=right x:num>1163</td>
-      <td >demeurant à Mérignac</td>
+      <td >demeurant &agrave M&eacuterignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
@@ -13690,7 +13690,7 @@ $connexionBD->ferme();
   x:num="38804">28-mars</td>
       <td >Mamain</td>
       <td >2E931-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Martin JOUANNET</td>
       <td  align=right x:num>970</td>
@@ -13699,12 +13699,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
       <td  align=right
-  x:num="38774">26-févr</td>
+  x:num="38774">26-f&eacutevr</td>
       <td >Mamain</td>
       <td >2E931-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Léonard PETIT et Isabelle BENESTEAU</td>
+      <td >L&eacuteonard PETIT et Isabelle BENESTEAU</td>
       <td  align=right x:num>970</td>
       <td >Promesse</td>
     </tr>
@@ -13712,9 +13712,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1673</td>
       <td  align=right
   x:num="38851">14-mai</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E806-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jacques BASSET et Marie MAMAIN</td>
       <td  align=right x:num>872</td>
@@ -13728,7 +13728,7 @@ $connexionBD->ferme();
       <td >2E2940-30</td>
       <td >Garat</td>
       <td >Mariage</td>
-      <td >Léonard ROY et Anne COUPRIE</td>
+      <td >L&eacuteonard ROY et Anne COUPRIE</td>
       <td  align=right x:num>972</td>
       <td >&nbsp;</td>
     </tr>
@@ -13738,7 +13738,7 @@ $connexionBD->ferme();
   x:num="38851">14-mai</td>
       <td >Robin</td>
       <td >2E1111-360</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jehan RUHET et Marguerite NOBLESSE</td>
       <td  align=right x:num>962</td>
@@ -13747,12 +13747,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
       <td  align=right
-  x:num="38952">23-août</td>
+  x:num="38952">23-ao&ucirct</td>
       <td >Col</td>
       <td >2E4541-20</td>
       <td >La Rochef.</td>
       <td >Bail</td>
-      <td >Charles DARS à Léonard BRUNET</td>
+      <td >Charles DARS &agrave L&eacuteonard BRUNET</td>
       <td  align=right x:num>1024</td>
       <td >&nbsp;</td>
     </tr>
@@ -13760,25 +13760,25 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1673</td>
       <td  align=right
   x:num="38536">3-juil</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E807-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Location</td>
-      <td >Marguerite SEGUIN à Denis BASSET</td>
+      <td >Marguerite SEGUIN &agrave Denis BASSET</td>
       <td  align=right x:num>870</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
       <td  align=right
-  x:num="39805">23-déc</td>
+  x:num="39805">23-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5931-190</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
       <td >Anne GONTIER et Jean MAURIN son fils</td>
       <td  align=right x:num>1163</td>
-      <td >demt. Les  Naulais à Mérignac</td>
+      <td >demt. Les  Naulais &agrave M&eacuterignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1673</td>
@@ -13793,14 +13793,14 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
-      <td  align=right x:num="38942">13-août</td>
+      <td  align=right x:num="38942">13-ao&ucirct</td>
       <td >Mamain</td>
       <td >2E932-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
-      <td >Jeanne MOQUET et André ARNAUD</td>
+      <td >Jeanne MOQUET et Andr&eacute ARNAUD</td>
       <td  align=right x:num>968</td>
-      <td >Pour des pansements et médic.</td>
+      <td >Pour des pansements et m&eacutedic.</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
@@ -13809,10 +13809,10 @@ $connexionBD->ferme();
       <td >Grassin</td>
       <td >2E4656</td>
       <td >La Rochef.</td>
-      <td >Légat</td>
-      <td >Charles DARS au curé et fabriqueurs</td>
+      <td >L&eacutegat</td>
+      <td >Charles DARS au cur&eacute et fabriqueurs</td>
       <td  align=right x:num>1030</td>
-      <td >de Rivières</td>
+      <td >de Rivi&egraveres</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
@@ -13834,7 +13834,7 @@ $connexionBD->ferme();
       <td >2E2629-10</td>
       <td >La Couronne</td>
       <td >Ferme</td>
-      <td >Philippe LIET à Pierre RIPPE</td>
+      <td >Philippe LIET &agrave Pierre RIPPE</td>
       <td  align=right x:num>1154</td>
       <td >&nbsp;</td>
     </tr>
@@ -13845,22 +13845,22 @@ $connexionBD->ferme();
       <td >Grassin</td>
       <td >2E4657-10</td>
       <td >La Rochef.</td>
-      <td >Métairie</td>
-      <td >Suzanne LEFEBVRE à Jean DOR</td>
+      <td >M&eacutetairie</td>
+      <td >Suzanne LEFEBVRE &agrave Jean DOR</td>
       <td  align=right x:num>1026</td>
-      <td >et Françoise LAROCHE sa fe.</td>
+      <td >et Fran&ccediloise LAROCHE sa fe.</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
       <td  align=right
-  x:num="38398">15-févr</td>
-      <td >Jéheu</td>
+  x:num="38398">15-f&eacutevr</td>
+      <td >J&eacuteheu</td>
       <td >2E807-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >Gervais BRANGIER et Marguerite BOYTAUD</td>
       <td  align=right x:num>870</td>
-      <td >à Antoine DESCARSELLE</td>
+      <td >&agrave Antoine DESCARSELLE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
@@ -13870,18 +13870,18 @@ $connexionBD->ferme();
       <td >2E4295-10</td>
       <td >Mornac</td>
       <td >Acquisition</td>
-      <td >d'Etienne par Arnaud et François COUPRIE</td>
+      <td >d'Etienne par Arnaud et Fran&ccedilois COUPRIE</td>
       <td  align=right x:num>877</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
       <td  align=right
-  x:num="38750">02-févr</td>
+  x:num="38750">02-f&eacutevr</td>
       <td >Renon</td>
       <td >2E2940-40</td>
       <td >Garat</td>
-      <td >Traité</td>
+      <td >Trait&eacute</td>
       <td >Jean BIARD et Cybard DUBOUCHAUD</td>
       <td  align=right x:num>972</td>
       <td >&nbsp;</td>
@@ -13889,10 +13889,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
       <td  align=right
-  x:num="38954">25-août</td>
+  x:num="38954">25-ao&ucirct</td>
       <td >Mamain</td>
       <td >2E932-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td 
   x:str="Pierre et Catherine BARBARY ">Pierre et Catherine BARBARY </td>
@@ -13902,11 +13902,11 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
       <td  align=right
-  x:num="38763">15-févr</td>
+  x:num="38763">15-f&eacutevr</td>
       <td >Robin</td>
       <td >2E1112-100</td>
-      <td >Angoulême</td>
-      <td >Procès-verbal</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves-verbal</td>
       <td >Charles GRELLIER et Jacquette PLASSEREAU</td>
       <td  align=right x:num>965</td>
       <td >&nbsp;</td>
@@ -13919,7 +13919,7 @@ $connexionBD->ferme();
       <td >2E5932-150</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
-      <td >François HERAUDEAU</td>
+      <td >Fran&ccedilois HERAUDEAU</td>
       <td  align=right x:num>1164</td>
       <td >&nbsp;</td>
     </tr>
@@ -13930,8 +13930,8 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5932-130</td>
       <td >Vaux-Rouillac</td>
-      <td >Délaissement</td>
-      <td >François CARRE</td>
+      <td >D&eacutelaissement</td>
+      <td >Fran&ccedilois CARRE</td>
       <td  align=right x:num>1164</td>
       <td >&nbsp;</td>
     </tr>
@@ -13939,18 +13939,18 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1674</td>
       <td  align=right
   x:num="38555">22-juil</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E807-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Léonard COTIT et Elisabeth RAYMOND</td>
+      <td >L&eacuteonard COTIT et Elisabeth RAYMOND</td>
       <td  align=right x:num>870</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
       <td  align=right
-  x:num="38766">18-févr</td>
+  x:num="38766">18-f&eacutevr</td>
       <td >Pillorget</td>
       <td >2E2166-10</td>
       <td >Champniers</td>
@@ -13981,7 +13981,7 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Cath TALLON, Nic GABORY et Jeanne MARTIN</td>
       <td  align=right x:num>1051</td>
-      <td >à Antoine VINSANT</td>
+      <td >&agrave Antoine VINSANT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
@@ -13989,21 +13989,21 @@ $connexionBD->ferme();
   x:num="38884">16-juin</td>
       <td >Robin</td>
       <td >2E1110-210</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Marie NOBLESSE veuve de Mery MESNIER</td>
       <td  align=right x:num>956</td>
-      <td >Sœur de Margte. NOBLESSE</td>
+      <td >S&oeligur de Margte. NOBLESSE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
       <td  align=right
   x:num="38473">1-mai</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E807-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >N. CIVADIER à Mic. MARCHAND et N. BASSET</td>
+      <td >N. CIVADIER &agrave Mic. MARCHAND et N. BASSET</td>
       <td  align=right x:num>870</td>
       <td >Vente de peaux</td>
     </tr>
@@ -14013,7 +14013,7 @@ $connexionBD->ferme();
   x:num="38746">29-janv</td>
       <td >Mamain</td>
       <td >2E932-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Antoine DESCARSELLE et Louise PREVOST</td>
       <td  align=right x:num>968</td>
@@ -14022,19 +14022,19 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
       <td  align=right
-  x:num="39490">12-févr</td>
+  x:num="39490">12-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5932-120</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
-      <td >Louis IZAMBARD à Jean MATIGNON</td>
+      <td >Louis IZAMBARD &agrave Jean MATIGNON</td>
       <td  align=right x:num>1164</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1674</td>
       <td  align=right
-  x:num="39483">05-févr</td>
+  x:num="39483">05-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5932-110</td>
       <td >Vaux-Rouillac</td>
@@ -14051,7 +14051,7 @@ $connexionBD->ferme();
       <td >2E4657-20</td>
       <td >La Rochef.</td>
       <td >Bail</td>
-      <td >Berthommé BIZARD à Jean DOR</td>
+      <td >Berthomm&eacute BIZARD &agrave Jean DOR</td>
       <td  align=right x:num>1026</td>
       <td >&nbsp;</td>
     </tr>
@@ -14059,9 +14059,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1675</td>
       <td  align=right
   x:num="38382">30-janv</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E808-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Claude PINAUD et Jeanne ROUHIER</td>
       <td  align=right x:num>869</td>
@@ -14075,7 +14075,7 @@ $connexionBD->ferme();
       <td >2E2629-40</td>
       <td >La Couronne</td>
       <td >Ferme</td>
-      <td >Philippe LIET à Jean RENETAU</td>
+      <td >Philippe LIET &agrave Jean RENETAU</td>
       <td  align=right x:num>1154</td>
       <td >&nbsp;</td>
     </tr>
@@ -14094,12 +14094,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
       <td  align=right
-  x:num="39480">02-févr</td>
+  x:num="39480">02-f&eacutevr</td>
       <td >Dumontet</td>
       <td >2E2736-10</td>
       <td >Dignac</td>
       <td >Quittance</td>
-      <td >à Jean BIARD de Jean BOISSEAU et C. BIARD</td>
+      <td >&agrave Jean BIARD de Jean BOISSEAU et C. BIARD</td>
       <td  align=right x:num>1156</td>
       <td >Marchand</td>
     </tr>
@@ -14111,45 +14111,45 @@ $connexionBD->ferme();
       <td >2E4542-40</td>
       <td >La Rochef.</td>
       <td >Vente</td>
-      <td >Charles DARS à Philippe FAUGIERE</td>
+      <td >Charles DARS &agrave Philippe FAUGIERE</td>
       <td  align=right x:num>1024</td>
-      <td >du pré échangé la veille</td>
+      <td >du pr&eacute &eacutechang&eacute la veille</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
       <td  align=right
-  x:num="38582">18-août</td>
+  x:num="38582">18-ao&ucirct</td>
       <td >Peuple</td>
       <td >2E1067-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vendition</td>
-      <td >Antoine SIMARD à Léonard BERNARD</td>
+      <td >Antoine SIMARD &agrave L&eacuteonard BERNARD</td>
       <td  align=right x:num>841</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
       <td  align=right
-  x:num="39672">12-août</td>
+  x:num="39672">12-ao&ucirct</td>
       <td >Dumontet</td>
       <td >2E2736-30</td>
       <td >Dignac</td>
       <td >Arrentement</td>
-      <td >à Jean BIARD marchand de Pierre CHENARD</td>
+      <td >&agrave Jean BIARD marchand de Pierre CHENARD</td>
       <td  align=right x:num>1156</td>
       <td >d'une grange</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
       <td  align=right
-  x:num="39679">19-août</td>
+  x:num="39679">19-ao&ucirct</td>
       <td >Cladier</td>
       <td >2E362-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >Nicolas BASSET de Nicolas CINADIER</td>
       <td  align=right x:num>1158</td>
-      <td >de peaux, 13 à la douzaine</td>
+      <td >de peaux, 13 &agrave la douzaine</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
@@ -14169,19 +14169,19 @@ $connexionBD->ferme();
   x:num="38491">19-mai</td>
       <td >Peuple</td>
       <td >2E1067-30</td>
-      <td >Angoulême</td>
-      <td >Départie</td>
-      <td >François YRVOIX et Antoinette ROY</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutepartie</td>
+      <td >Fran&ccedilois YRVOIX et Antoinette ROY</td>
       <td  align=right x:num>841</td>
-      <td >à Jacques BOVAUD</td>
+      <td >&agrave Jacques BOVAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
       <td  align=right
-  x:num="38397">14-févr</td>
+  x:num="38397">14-f&eacutevr</td>
       <td >Peuple</td>
       <td >2E1067-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Denis BASSET et Louise CHARRON</td>
       <td  align=right x:num>841</td>
@@ -14190,10 +14190,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
       <td  align=right
-  x:num="39678">18-août</td>
+  x:num="39678">18-ao&ucirct</td>
       <td >Cladier</td>
       <td >2E362-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Compte</td>
       <td >Marie BARREAU Jean SEGUIN fils</td>
       <td  align=right x:num>1158</td>
@@ -14202,12 +14202,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
       <td  align=right
-  x:num="39064">13-déc</td>
+  x:num="39064">13-d&eacutec</td>
       <td >Boutillier</td>
       <td >2E226-80</td>
       <td >Lhoumeau</td>
       <td >Partage</td>
-      <td >François et Jean CHASSAIGNE</td>
+      <td >Fran&ccedilois et Jean CHASSAIGNE</td>
       <td  align=right x:num>966</td>
       <td >Procuration J. CHASSAIGNE</td>
     </tr>
@@ -14215,9 +14215,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1675</td>
       <td  align=right
   x:num="38458">16-avr</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E808-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Georges BOYTAUD et Michelle YRVOIX</td>
       <td  align=right x:num>869</td>
@@ -14230,27 +14230,27 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5932-190</td>
       <td >Vaux-Rouillac</td>
-      <td >Résiliation</td>
+      <td >R&eacutesiliation</td>
       <td >Jean IZAMBARD dit &quot;La Gallerie&quot;</td>
       <td  align=right x:num>1164</td>
-      <td >pièce de terre</td>
+      <td >pi&egravece de terre</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
       <td  align=right
-  x:num="39064">13-déc</td>
+  x:num="39064">13-d&eacutec</td>
       <td >Boutillier</td>
       <td >2E226-70</td>
       <td >Lhoumeau</td>
       <td >Arrentement</td>
-      <td >François CHASSAIGNE et Jacquette BIARD</td>
+      <td >Fran&ccedilois CHASSAIGNE et Jacquette BIARD</td>
       <td  align=right x:num>966</td>
       <td >de Jacquette CALLEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
       <td  align=right
-  x:num="39081">30-déc</td>
+  x:num="39081">30-d&eacutec</td>
       <td >Grassin</td>
       <td >2E4658-10</td>
       <td >La Rochef.</td>
@@ -14262,7 +14262,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
       <td  align=right
-  x:num="39080">29-déc</td>
+  x:num="39080">29-d&eacutec</td>
       <td >Renon</td>
       <td >2E2940-60</td>
       <td >Garat</td>
@@ -14281,16 +14281,16 @@ $connexionBD->ferme();
       <td >Echange</td>
       <td >Charles DARS et Antoine AUGIER</td>
       <td  align=right x:num>1024</td>
-      <td >de prés</td>
+      <td >de pr&eacutes</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
       <td  align=right
-  x:num="39479">01-févr</td>
+  x:num="39479">01-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5932-160</td>
       <td >Vaux-Rouillac</td>
-      <td >Marché</td>
+      <td >March&eacute</td>
       <td >Jean BOISDON le jeune et Helie CHOLLET</td>
       <td  align=right x:num>1164</td>
       <td >arrachage de bois</td>
@@ -14299,9 +14299,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1675</td>
       <td  align=right
   x:num="38603">8-sept</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E808-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre LIZEE et Marie ROUYER</td>
       <td  align=right x:num>869</td>
@@ -14310,12 +14310,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
       <td  align=right
-  x:num="38385">2-févr</td>
+  x:num="38385">2-f&eacutevr</td>
       <td >Chauvin</td>
       <td >2E310-30</td>
       <td >Lhoumeau</td>
       <td >Quittance</td>
-      <td >André ROY et Je. AUGEREAU à André GIBOIN</td>
+      <td >Andr&eacute ROY et Je. AUGEREAU &agrave Andr&eacute GIBOIN</td>
       <td  align=right x:num>815</td>
       <td >par Robert ROY</td>
     </tr>
@@ -14325,9 +14325,9 @@ $connexionBD->ferme();
   x:num="39622">23-juin</td>
       <td >Cladier</td>
       <td >2E362-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Aquisition</td>
-      <td >Robert GODIN et François TOURNIER gendre</td>
+      <td >Robert GODIN et Fran&ccedilois TOURNIER gendre</td>
       <td  align=right x:num>1158</td>
       <td >pour Antoine GUYOT</td>
     </tr>
@@ -14341,17 +14341,17 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Jean IZAMBARD dit &quot;La Gallerie&quot;</td>
       <td  align=right x:num>1164</td>
-      <td >pièce de terre</td>
+      <td >pi&egravece de terre</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
       <td  align=right
-  x:num="38715">29-déc</td>
+  x:num="38715">29-d&eacutec</td>
       <td >Peuple</td>
       <td >2E1067-80</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
-      <td >Louise DELAGE veuve de François BOYTEAU</td>
+      <td >Louise DELAGE veuve de Fran&ccedilois BOYTEAU</td>
       <td  align=right x:num>840</td>
       <td >&nbsp;</td>
     </tr>
@@ -14363,7 +14363,7 @@ $connexionBD->ferme();
       <td >2E4542-20</td>
       <td >La Rochef.</td>
       <td >Vente</td>
-      <td >François FOUCAUD à Charles DARS</td>
+      <td >Fran&ccedilois FOUCAUD &agrave Charles DARS</td>
       <td  align=right x:num>1024</td>
       <td >de terres</td>
     </tr>
@@ -14375,9 +14375,9 @@ $connexionBD->ferme();
       <td >2E411-10</td>
       <td >Lhoumeau</td>
       <td >Quittance</td>
-      <td >François IMBERT et Marie LIMOUSIN</td>
+      <td >Fran&ccedilois IMBERT et Marie LIMOUSIN</td>
       <td  align=right x:num>955</td>
-      <td >à Pierre LIMOUSIN père</td>
+      <td >&agrave Pierre LIMOUSIN p&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
@@ -14387,7 +14387,7 @@ $connexionBD->ferme();
       <td >2E4542-10</td>
       <td >La Rochef.</td>
       <td >Vente</td>
-      <td >Jean ODON à Charles DARS</td>
+      <td >Jean ODON &agrave Charles DARS</td>
       <td  align=right x:num>1024</td>
       <td >de terres</td>
     </tr>
@@ -14399,10 +14399,10 @@ $connexionBD->ferme();
       <td >2E2736-20</td>
       <td >Dignac</td>
       <td >Vente</td>
-      <td >à Jean BIARD marchand de Noël GOUGNET</td>
+      <td >&agrave Jean BIARD marchand de Noël GOUGNET</td>
       <td  align=right x:num>1156</td>
       <td 
-  x:str="de cercles en châtaigner ">de cercles en châtaigner </td>
+  x:str="de cercles en ch&acirctaigner ">de cercles en ch&acirctaigner </td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
@@ -14410,9 +14410,9 @@ $connexionBD->ferme();
   x:num="38617">22-sept</td>
       <td >Peuple</td>
       <td >2E1067-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Christophe VIOLLET à Jean PAPIN</td>
+      <td >Christophe VIOLLET &agrave Jean PAPIN</td>
       <td  align=right x:num>840</td>
       <td >&nbsp;</td>
     </tr>
@@ -14431,10 +14431,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1675</td>
       <td  align=right
-  x:num="39666">06-août</td>
+  x:num="39666">06-ao&ucirct</td>
       <td >Cladier</td>
       <td >2E362-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >Denis BASSET de Claude TEXIER</td>
       <td  align=right x:num>1158</td>
@@ -14447,7 +14447,7 @@ $connexionBD->ferme();
       <td >2E3073-70</td>
       <td >Hiersac</td>
       <td >Inventaire</td>
-      <td >Jejan BONJOUR et Françoise BERTHOUME</td>
+      <td >Jejan BONJOUR et Fran&ccediloise BERTHOUME</td>
       <td  align=right x:num>1469</td>
       <td >et Antoine et Jean leurs fils</td>
     </tr>
@@ -14461,7 +14461,7 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Antoine et Jean BONJOUR</td>
       <td  align=right x:num>1469</td>
-      <td >à Guillaume et Jean COCHET</td>
+      <td >&agrave Guillaume et Jean COCHET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
@@ -14478,25 +14478,25 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1676</td>
       <td  align=right
   x:num="38376">24-janv</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E809-120</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Lunesse ROY et Guillaume COUGNASSE</td>
       <td  align=right x:num>866</td>
-      <td >Réhaussement d'un mur</td>
+      <td >R&eacutehaussement d'un mur</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
       <td  align=right
   x:num="38673">17-nov</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E809-160</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Hugues CHARLES à Louis SURREAU</td>
+      <td >Hugues CHARLES &agrave Louis SURREAU</td>
       <td  align=right x:num>867</td>
-      <td >Une pièce de terre</td>
+      <td >Une pi&egravece de terre</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
@@ -14514,13 +14514,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1676</td>
       <td  align=right
   x:num="38677">21-nov</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E809-170</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Pierre BOILEVIN et Catherine ORDONNEAU</td>
       <td  align=right x:num>867</td>
-      <td >à Lucas et Jean PIVETEAU</td>
+      <td >&agrave Lucas et Jean PIVETEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
@@ -14530,7 +14530,7 @@ $connexionBD->ferme();
       <td >2E2736-10</td>
       <td >Dignac</td>
       <td >Quittance</td>
-      <td >à Jean BIARD de Jean LACATON et J. BIARD</td>
+      <td >&agrave Jean BIARD de Jean LACATON et J. BIARD</td>
       <td  align=right x:num>1156</td>
       <td >Marchand</td>
     </tr>
@@ -14538,13 +14538,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1676</td>
       <td  align=right
   x:num="38374">22-janv</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E809-110</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >Berthommé et Pierre BOITAUD</td>
+      <td >Berthomm&eacute et Pierre BOITAUD</td>
       <td  align=right x:num>866</td>
-      <td >à DUSOUCHET</td>
+      <td >&agrave DUSOUCHET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
@@ -14576,7 +14576,7 @@ $connexionBD->ferme();
   x:num="39771">19-nov</td>
       <td >Cladier</td>
       <td >2E363-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre DE LAVARRE et Marie CARRE</td>
       <td  align=right x:num>1158</td>
@@ -14589,10 +14589,10 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5933-150</td>
       <td >Vaux-Rouillac</td>
-      <td >Procès-verbal</td>
-      <td >à François GONTIER et Marie COMPTE</td>
+      <td >Proc&egraves-verbal</td>
+      <td >&agrave Fran&ccedilois GONTIER et Marie COMPTE</td>
       <td  align=right x:num>1165</td>
-      <td >moulin à eau et à vent de Fleurac</td>
+      <td >moulin &agrave eau et &agrave vent de Fleurac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
@@ -14609,14 +14609,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
       <td  align=right
-  x:num="39501">23-févr</td>
+  x:num="39501">23-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5933-130</td>
       <td >Vaux-Rouillac</td>
       <td >Ferme</td>
-      <td >à François GONTIER et Marie COMPTE</td>
+      <td >&agrave Fran&ccedilois GONTIER et Marie COMPTE</td>
       <td  align=right x:num>1164</td>
-      <td >moulin à eau et à vent de Fleurac</td>
+      <td >moulin &agrave eau et &agrave vent de Fleurac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
@@ -14624,11 +14624,11 @@ $connexionBD->ferme();
   x:num="39541">03-avr</td>
       <td >Cladier</td>
       <td >2E363-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
-      <td >Louis DESCARCELLE garçon cellier</td>
+      <td >Louis DESCARCELLE gar&ccedilon cellier</td>
       <td  align=right x:num>1158</td>
-      <td > à Antoine DESCARCELLE</td>
+      <td > &agrave Antoine DESCARCELLE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
@@ -14650,9 +14650,9 @@ $connexionBD->ferme();
       <td >2E2736-40</td>
       <td >Dignac</td>
       <td >Ferme</td>
-      <td >à Jean BIARD marchand de Jean BAYARD</td>
+      <td >&agrave Jean BIARD marchand de Jean BAYARD</td>
       <td  align=right x:num>1156</td>
-      <td >de bâtiments</td>
+      <td >de b&acirctiments</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
@@ -14662,7 +14662,7 @@ $connexionBD->ferme();
       <td >2E2940-70</td>
       <td >Garat</td>
       <td >Mariage</td>
-      <td >Pierre GAILLARD et Françoise GIBAUD</td>
+      <td >Pierre GAILLARD et Fran&ccediloise GIBAUD</td>
       <td  align=right x:num>972</td>
       <td >Fils de J. et J. DURANDEAU</td>
     </tr>
@@ -14674,9 +14674,9 @@ $connexionBD->ferme();
       <td >2E2940-80</td>
       <td >Garat</td>
       <td >Inventaire</td>
-      <td >Méry BIARD et ses enfants</td>
+      <td >M&eacutery BIARD et ses enfants</td>
       <td  align=right x:num>972</td>
-      <td >Après décès de Marie GRELET</td>
+      <td >Apr&egraves d&eacutec&egraves de Marie GRELET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
@@ -14684,11 +14684,11 @@ $connexionBD->ferme();
   x:num="39627">28-juin</td>
       <td >Cladier</td>
       <td >2E363-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Accord</td>
       <td >Jean ROUHIER et Philippe DELAURIERE</td>
       <td  align=right x:num>1158</td>
-      <td >et Fcse DELAURIERE sa sœur</td>
+      <td >et Fcse DELAURIERE sa s&oeligur</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
@@ -14696,9 +14696,9 @@ $connexionBD->ferme();
   x:num="39015">25-oct</td>
       <td >Robin</td>
       <td >2E1112-140</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François RIFFAUD et Jeanne NOBLET</td>
+      <td >Fran&ccedilois RIFFAUD et Jeanne NOBLET</td>
       <td  align=right x:num>965</td>
       <td >&nbsp;</td>
     </tr>
@@ -14708,7 +14708,7 @@ $connexionBD->ferme();
   x:num="39762">10-nov</td>
       <td >Cladier</td>
       <td >2E363-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >Pierre LIMOUSIN et Jean GUYONNET</td>
       <td  align=right x:num>1158</td>
@@ -14717,14 +14717,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
       <td  align=right
-  x:num="39481">03-févr</td>
+  x:num="39481">03-f&eacutevr</td>
       <td >Dumontet</td>
       <td >2E2736-50</td>
       <td >Dignac</td>
       <td >Cession</td>
-      <td >à Jean BIARD de J. et C. BIARD ses soeurs</td>
+      <td >&agrave Jean BIARD de J. et C. BIARD ses soeurs</td>
       <td  align=right x:num>1156</td>
-      <td >suite décès Guillaume BIARD</td>
+      <td >suite d&eacutec&egraves Guillaume BIARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
@@ -14734,7 +14734,7 @@ $connexionBD->ferme();
       <td >2E4295-40</td>
       <td >Mornac</td>
       <td >Inventaire</td>
-      <td >Méry BIARD et Jehanne LAMOUREUX</td>
+      <td >M&eacutery BIARD et Jehanne LAMOUREUX</td>
       <td  align=right x:num>877</td>
       <td >&nbsp;</td>
     </tr>
@@ -14742,13 +14742,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1676</td>
       <td  align=right
   x:num="38365">13-janv</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E809-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
-      <td >Robert pour Françoise DELAURIERE</td>
+      <td >Robert pour Fran&ccediloise DELAURIERE</td>
       <td  align=right x:num>866</td>
-      <td >à ITHIERS</td>
+      <td >&agrave ITHIERS</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
@@ -14778,13 +14778,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1676</td>
       <td  align=right
   x:num="38451">9-avr</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E809-130</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Apprentissage</td>
       <td >Pierre ROY chez Pierre MICHEAU</td>
       <td  align=right x:num>866</td>
-      <td >Maître cordonnier</td>
+      <td >Ma&icirctre cordonnier</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
@@ -14806,9 +14806,9 @@ $connexionBD->ferme();
       <td >2E2736-60</td>
       <td >Dignac</td>
       <td >Quittance</td>
-      <td >Jean BIARD laboureur et Françoise DUPRE</td>
+      <td >Jean BIARD laboureur et Fran&ccediloise DUPRE</td>
       <td  align=right x:num>1156</td>
-      <td >à François DUPRE</td>
+      <td >&agrave Fran&ccedilois DUPRE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
@@ -14830,17 +14830,17 @@ $connexionBD->ferme();
       <td >2E4295-20</td>
       <td >Mornac</td>
       <td >Transport</td>
-      <td >De Antoine à Jehan ESCOUPEAU son frère</td>
+      <td >De Antoine &agrave Jehan ESCOUPEAU son fr&egravere</td>
       <td  align=right x:num>877</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
       <td  align=right
-  x:num="39489">11-févr</td>
+  x:num="39489">11-f&eacutevr</td>
       <td >Cladier</td>
       <td >2E363-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Jean GRATEREAU et Jean NAUZAIS</td>
       <td  align=right x:num>1158</td>
@@ -14850,9 +14850,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1676</td>
       <td  align=right
   x:num="38530">27-juin</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E809-150</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Charlotte TERRADE et Antoinette ROUGIER</td>
       <td  align=right x:num>867</td>
@@ -14866,21 +14866,21 @@ $connexionBD->ferme();
       <td >2E5933-160</td>
       <td >Vaux-Rouillac</td>
       <td >Sommation</td>
-      <td >Sébastien à Jean et Guillaume BOISDON</td>
+      <td >S&eacutebastien &agrave Jean et Guillaume BOISDON</td>
       <td  align=right x:num>1165</td>
-      <td >après décès de Nicolas leur père</td>
+      <td >apr&egraves d&eacutec&egraves de Nicolas leur p&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
       <td  align=right
   x:num="38514">11-juin</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E809-140</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
-      <td >Philippe TULLIER et François GAUVRY</td>
+      <td >Philippe TULLIER et Fran&ccedilois GAUVRY</td>
       <td  align=right x:num>867</td>
-      <td >Main levée</td>
+      <td >Main lev&eacutee</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
@@ -14890,19 +14890,19 @@ $connexionBD->ferme();
       <td >2E4295-30</td>
       <td >Mornac</td>
       <td >Mariage</td>
-      <td >Mery et Françoise BIARD et Je. LAMOUREUX</td>
+      <td >Mery et Fran&ccediloise BIARD et Je. LAMOUREUX</td>
       <td  align=right x:num>877</td>
       <td >et Antoine VARACHE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1676</td>
       <td  align=right
-  x:num="39493">15-févr</td>
+  x:num="39493">15-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5933-120</td>
       <td >Vaux-Rouillac</td>
       <td >Baillette</td>
-      <td >à Mathieu et Macé GONTIER</td>
+      <td >&agrave Mathieu et Mac&eacute GONTIER</td>
       <td  align=right x:num>1164</td>
       <td >de terres</td>
     </tr>
@@ -14910,11 +14910,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1677</td>
       <td  align=right
   x:num="38372">20-janv</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E809-200</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Jean GUYONNET et Françoise DELAURIERE</td>
+      <td >Jean GUYONNET et Fran&ccediloise DELAURIERE</td>
       <td  align=right x:num>867</td>
       <td >Fille de Hugues</td>
     </tr>
@@ -14926,14 +14926,14 @@ $connexionBD->ferme();
       <td >2E5933-200</td>
       <td >Vaux-Rouillac</td>
       <td >Sommation</td>
-      <td >Pierre HERAUDEAU à Jacques MESNARD</td>
+      <td >Pierre HERAUDEAU &agrave Jacques MESNARD</td>
       <td  align=right x:num>1165</td>
       <td >barriques d'eau de vie</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1677</td>
       <td  align=right
-  x:num="38750">02-févr</td>
+  x:num="38750">02-f&eacutevr</td>
       <td >Desport</td>
       <td >2E2128-30</td>
       <td >Champniers</td>
@@ -14950,7 +14950,7 @@ $connexionBD->ferme();
       <td >2E412-100</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >François RIFFAUD et Catherine HAY</td>
+      <td >Fran&ccedilois RIFFAUD et Catherine HAY</td>
       <td  align=right x:num>953</td>
       <td >&nbsp;</td>
     </tr>
@@ -14962,7 +14962,7 @@ $connexionBD->ferme();
       <td >2E2736-70</td>
       <td >Dignac</td>
       <td >Quittance</td>
-      <td >à Jean BIARD laboureur et Françoise DUPON</td>
+      <td >&agrave Jean BIARD laboureur et Fran&ccediloise DUPON</td>
       <td  align=right x:num>1156</td>
       <td >de Estienne PANYOT(?)</td>
     </tr>
@@ -14974,33 +14974,33 @@ $connexionBD->ferme();
       <td >2E2166-30</td>
       <td >Champniers</td>
       <td >Ferme</td>
-      <td >Joseph TARDIEU à Pierre DUMOUSSEAU</td>
+      <td >Joseph TARDIEU &agrave Pierre DUMOUSSEAU</td>
       <td  align=right x:num>1026</td>
       <td >des moulins de Villement</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1677</td>
       <td  align=right
-  x:num="39668">08-août</td>
+  x:num="39668">08-ao&ucirct</td>
       <td >Daniaud</td>
       <td >2E5933-220</td>
       <td >Vaux-Rouillac</td>
       <td >Sommation</td>
-      <td >à Mathieu et Macé GONTIER</td>
+      <td >&agrave Mathieu et Mac&eacute GONTIER</td>
       <td  align=right x:num>1165</td>
-      <td >de Bois Renard, Mérignac</td>
+      <td >de Bois Renard, M&eacuterignac</td>
     </tr>
     <tr height=17> 
       <td height=17 class=xl4220222 align=right x:num>1677</td>
       <td class=xl4320222 align=right
   x:num="38529">26-juin</td>
-      <td class=xl4220222>Jéheu</td>
+      <td class=xl4220222>J&eacuteheu</td>
       <td class=xl4420222>2E809-220</td>
-      <td class=xl4220222>Angoulême</td>
+      <td class=xl4220222>Angoul&ecircme</td>
       <td class=xl4220222>Consignation</td>
       <td class=xl4220222>Antoine LAMBERT Prieur de Charras</td>
       <td class=xl4220222 align=right x:num>867</td>
-      <td class=xl4220222>à Pierre THUET</td>
+      <td class=xl4220222>&agrave Pierre THUET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1677</td>
@@ -15017,12 +15017,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1677</td>
       <td  align=right
-  x:num="39057">06-déc</td>
+  x:num="39057">06-d&eacutec</td>
       <td >Clochard</td>
       <td >2E412-110</td>
       <td >Lhoumeau</td>
       <td >Inventaire</td>
-      <td >Françoise BUTET et DUPUY ses enfants</td>
+      <td >Fran&ccediloise BUTET et DUPUY ses enfants</td>
       <td  align=right x:num>953</td>
       <td >&nbsp;</td>
     </tr>
@@ -15034,9 +15034,9 @@ $connexionBD->ferme();
       <td >2E5933-190</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
-      <td >François HERAUDEAU dit l'avocat</td>
+      <td >Fran&ccedilois HERAUDEAU dit l'avocat</td>
       <td  align=right x:num>1165</td>
-      <td >à Guillaume et Pierre MARTIN</td>
+      <td >&agrave Guillaume et Pierre MARTIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1677</td>
@@ -15045,7 +15045,7 @@ $connexionBD->ferme();
       <td >Pillorget</td>
       <td >2E2166-40</td>
       <td >Champniers</td>
-      <td >Procès-verbal</td>
+      <td >Proc&egraves-verbal</td>
       <td >Joseph TARDIEU et Pierre DUMOUSSEAU</td>
       <td  align=right x:num>1026</td>
       <td >des moulins de Villement</td>
@@ -15058,7 +15058,7 @@ $connexionBD->ferme();
       <td >2E5933-210</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
-      <td >Pierre HERAUDEAU à Jean COMPTE</td>
+      <td >Pierre HERAUDEAU &agrave Jean COMPTE</td>
       <td  align=right x:num>1165</td>
       <td >&nbsp;</td>
     </tr>
@@ -15066,11 +15066,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1677</td>
       <td  align=right
   x:num="38425">14-mars</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E809-210</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Berthommé BOITAUD à Robert COLLIN</td>
+      <td >Berthomm&eacute BOITAUD &agrave Robert COLLIN</td>
       <td  align=right x:num>867</td>
       <td >Voir <font
   class=font520222>Jean BOISTEAU</font></td>
@@ -15078,14 +15078,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1677</td>
       <td  align=right
-  x:num="39485">07-févr</td>
+  x:num="39485">07-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5933-180</td>
       <td >Vaux-Rouillac</td>
       <td >Arrentement</td>
-      <td >à Jean GONTIER</td>
+      <td >&agrave Jean GONTIER</td>
       <td  align=right x:num>1165</td>
-      <td >de Bois Renard, Mérignac</td>
+      <td >de Bois Renard, M&eacuterignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1677</td>
@@ -15103,9 +15103,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1677</td>
       <td  align=right
   x:num="38371">19-janv</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E809-190</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Jeanne MONTAND et GODIN</td>
       <td  align=right x:num>867</td>
@@ -15119,9 +15119,9 @@ $connexionBD->ferme();
       <td >2E2736-80</td>
       <td >Dignac</td>
       <td >Vente</td>
-      <td >à Jean BIARD md. de Jean DEROULLEDE</td>
+      <td >&agrave Jean BIARD md. de Jean DEROULLEDE</td>
       <td  align=right x:num>1156</td>
-      <td >de bois de châtaigner</td>
+      <td >de bois de ch&acirctaigner</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
@@ -15133,15 +15133,15 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >Antoine et Catherine CHERBONNIERs</td>
       <td  align=right x:num>1014</td>
-      <td >et Pierre et Françse SEGAINs</td>
+      <td >et Pierre et Fran&ccedilse SEGAINs</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
       <td  align=right
-  x:num="38595">31-août</td>
-      <td >Mancié</td>
+  x:num="38595">31-ao&ucirct</td>
+      <td >Manci&eacute</td>
       <td >2E934-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Michel GAUTRAUD et Marguerite BOISTEAU</td>
       <td  align=right x:num>858</td>
@@ -15150,34 +15150,34 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
       <td  align=right
-  x:num="39675">15-août</td>
+  x:num="39675">15-ao&ucirct</td>
       <td >Daniaud</td>
       <td >2E5934-120</td>
       <td >Vaux-Rouillac</td>
       <td >Echange</td>
       <td >Jean BOISDON et Jean MOUNIER</td>
       <td  align=right x:num>1165</td>
-      <td >et François BARRY</td>
+      <td >et Fran&ccedilois BARRY</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
       <td  align=right
-  x:num="38754">06-févr</td>
+  x:num="38754">06-f&eacutevr</td>
       <td >Col</td>
       <td >2E4543-20</td>
       <td >La Rochef.</td>
       <td >Transaction</td>
-      <td >Charles DARS et François GESMOND</td>
+      <td >Charles DARS et Fran&ccedilois GESMOND</td>
       <td  align=right x:num>1022</td>
-      <td >avec les FOUCAUDs père et fils</td>
+      <td >avec les FOUCAUDs p&egravere et fils</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
       <td  align=right
-  x:num="38938">09-août</td>
+  x:num="38938">09-ao&ucirct</td>
       <td >Robin</td>
       <td >2E1112-150</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre PAPIN et Elizabeth SIMONNOT</td>
       <td  align=right x:num>965</td>
@@ -15191,7 +15191,7 @@ $connexionBD->ferme();
       <td >2E5934-140</td>
       <td >Vaux-Rouillac</td>
       <td >Testament</td>
-      <td >François GONTIER</td>
+      <td >Fran&ccedilois GONTIER</td>
       <td  align=right x:num>1165</td>
       <td >de Vaux</td>
     </tr>
@@ -15210,14 +15210,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
       <td  align=right
-  x:num="39675">15-août</td>
+  x:num="39675">15-ao&ucirct</td>
       <td >Daniaud</td>
       <td >2E5934-130</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
-      <td >Jean BOISDON à Jean MOUNIER</td>
+      <td >Jean BOISDON &agrave Jean MOUNIER</td>
       <td  align=right x:num>1165</td>
-      <td >et François BARRY</td>
+      <td >et Fran&ccedilois BARRY</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
@@ -15227,57 +15227,57 @@ $connexionBD->ferme();
       <td >2E5934-150</td>
       <td >Vaux-Rouillac</td>
       <td >Sommation</td>
-      <td >Pierre GONTIER à Pierre HERAUDEAU</td>
+      <td >Pierre GONTIER &agrave Pierre HERAUDEAU</td>
       <td  align=right x:num>1165</td>
-      <td >dîme de vigne…</td>
+      <td >d&icircme de vigne…</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
       <td  align=right
-  x:num="39792">10-déc</td>
+  x:num="39792">10-d&eacutec</td>
       <td >Dumontet</td>
       <td >2E2736-90</td>
       <td >Dignac</td>
       <td >Accord</td>
       <td >Jean BIARD md. et Jean LACATON</td>
       <td  align=right x:num>1156</td>
-      <td >et Jean GUITARD (châtaigner)</td>
+      <td >et Jean GUITARD (ch&acirctaigner)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
       <td  align=right
-  x:num="38754">06-févr</td>
+  x:num="38754">06-f&eacutevr</td>
       <td >Col</td>
       <td >2E4543-10</td>
       <td >La Rochef.</td>
       <td >Ferme</td>
-      <td >De Pierre SAUTEREAU à Charles DARS</td>
+      <td >De Pierre SAUTEREAU &agrave Charles DARS</td>
       <td  align=right x:num>1022</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
       <td  align=right
-  x:num="39675">15-août</td>
+  x:num="39675">15-ao&ucirct</td>
       <td >Daniaud</td>
       <td >2E5934-110</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
       <td >Jean BOISDON et Marie SAUVESTRE</td>
       <td  align=right x:num>1165</td>
-      <td >à Jean SAUVESTRE</td>
+      <td >&agrave Jean SAUVESTRE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
       <td  align=right
-  x:num="39805">23-déc</td>
+  x:num="39805">23-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5934-160</td>
       <td >Vaux-Rouillac</td>
       <td >Testament</td>
       <td >Guillaume BONJOUR</td>
       <td  align=right x:num>1165</td>
-      <td >à Mauricette GUIONNET sa fe.</td>
+      <td >&agrave Mauricette GUIONNET sa fe.</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
@@ -15287,13 +15287,13 @@ $connexionBD->ferme();
       <td >2E5934-100</td>
       <td >Vaux-Rouillac</td>
       <td >Vente</td>
-      <td >Louis HERAUDEAU à Jacques HERAUDEAU</td>
+      <td >Louis HERAUDEAU &agrave Jacques HERAUDEAU</td>
       <td  align=right x:num>1165</td>
-      <td >son frère</td>
+      <td >son fr&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
-      <td class=xl2420222 align=right x:num="39857">13-févr</td>
+      <td class=xl2420222 align=right x:num="39857">13-f&eacutevr</td>
       <td >Grassin</td>
       <td >2E4661-10</td>
       <td >La Rochef.</td>
@@ -15309,9 +15309,9 @@ $connexionBD->ferme();
       <td >2E5934-230</td>
       <td >Vaux-Rouillac</td>
       <td >Partage</td>
-      <td >Marie ROBERT, Jean et Sébastien BOISDON</td>
+      <td >Marie ROBERT, Jean et S&eacutebastien BOISDON</td>
       <td  align=right x:num>1165</td>
-      <td >après décès Nicolas BOISDON</td>
+      <td >apr&egraves d&eacutec&egraves Nicolas BOISDON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1679</td>
@@ -15319,11 +15319,11 @@ $connexionBD->ferme();
   x:num="39547">09-avr</td>
       <td >Gillibert</td>
       <td >2E706-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
-      <td >Guillaume à Sébastien (et Jean) BOISDON</td>
+      <td >Guillaume &agrave S&eacutebastien (et Jean) BOISDON</td>
       <td  align=right x:num>1139</td>
-      <td >d'Angoulême et Echallat</td>
+      <td >d'Angoul&ecircme et Echallat</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1679</td>
@@ -15335,17 +15335,17 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Jean BIARD de Pierre CLERC</td>
       <td  align=right x:num>970</td>
-      <td >de bois à livrer à Séguignac</td>
+      <td >de bois &agrave livrer &agrave S&eacuteguignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1679</td>
       <td  align=right
-  x:num="39079">28-déc</td>
+  x:num="39079">28-d&eacutec</td>
       <td >Col</td>
       <td >2E4543-40</td>
       <td >La Rochef.</td>
-      <td >Marché</td>
-      <td >Catherine DARS veuve de Franç. DARGEAT</td>
+      <td >March&eacute</td>
+      <td >Catherine DARS veuve de Fran&ccedil. DARGEAT</td>
       <td  align=right x:num>1022</td>
       <td >Jacques BOUDAUD charpent.</td>
     </tr>
@@ -15355,9 +15355,9 @@ $connexionBD->ferme();
   x:num="39778">26-nov</td>
       <td >Cladier</td>
       <td >2E366-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Clément et Jean LIZEE à Martial LIZEE frère</td>
+      <td >Cl&eacutement et Jean LIZEE &agrave Martial LIZEE fr&egravere</td>
       <td  align=right x:num>1160</td>
       <td >Fils Jean et Colette SURREAU</td>
     </tr>
@@ -15371,7 +15371,7 @@ $connexionBD->ferme();
       <td >Ferme</td>
       <td >Nicolas BIARD de Guillaume BARDAIN</td>
       <td  align=right x:num>970</td>
-      <td >Maréchal de Sers</td>
+      <td >Mar&eacutechal de Sers</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1679</td>
@@ -15379,16 +15379,16 @@ $connexionBD->ferme();
   x:num="39768">16-nov</td>
       <td >Cladier</td>
       <td >2E366-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >à Jean GAILHARD et Cath. RIVAUD</td>
+      <td >&agrave Jean GAILHARD et Cath. RIVAUD</td>
       <td  align=right x:num>1160</td>
       <td >du petit moulin de Momont</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1679</td>
       <td  align=right
-  x:num="38953">24-août</td>
+  x:num="38953">24-ao&ucirct</td>
       <td >Clochard</td>
       <td >2E412-170</td>
       <td >Lhoumeau</td>
@@ -15403,9 +15403,9 @@ $connexionBD->ferme();
   x:num="39547">09-avr</td>
       <td >Cladier</td>
       <td >2E366-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Compte</td>
-      <td >François CHASSAIGNE et Françoise BRISSON</td>
+      <td >Fran&ccedilois CHASSAIGNE et Fran&ccediloise BRISSON</td>
       <td  align=right x:num>1160</td>
       <td >&nbsp;</td>
     </tr>
@@ -15417,19 +15417,19 @@ $connexionBD->ferme();
       <td >2E5934-210</td>
       <td >Vaux-Rouillac</td>
       <td >Arrentement</td>
-      <td >Sébastien SAUVESTRE à Jean BOISDON</td>
+      <td >S&eacutebastien SAUVESTRE &agrave Jean BOISDON</td>
       <td  align=right x:num>1165</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1679</td>
       <td  align=right
-  x:num="39797">15-déc</td>
+  x:num="39797">15-d&eacutec</td>
       <td >Cladier</td>
       <td >2E366-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Compte</td>
-      <td >Martial LIZEE et le curé de Pougné</td>
+      <td >Martial LIZEE et le cur&eacute de Pougn&eacute</td>
       <td  align=right x:num>1160</td>
       <td >Fils Jean et Colette SURREAU</td>
     </tr>
@@ -15443,7 +15443,7 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >Jacques GONTIER et Marie DEVRIER</td>
       <td  align=right x:num>1165</td>
-      <td >Fils François et Marie BERNARD</td>
+      <td >Fils Fran&ccedilois et Marie BERNARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1679</td>
@@ -15451,7 +15451,7 @@ $connexionBD->ferme();
   x:num="38984">24-sept</td>
       <td >Robin</td>
       <td >2E1112-180</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean NOBLESSE et Marie VERGNAUD</td>
       <td  align=right x:num>966</td>
@@ -15484,10 +15484,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1679</td>
       <td  align=right
-  x:num="39806">24-déc</td>
+  x:num="39806">24-d&eacutec</td>
       <td >Cladier</td>
       <td >2E366-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Guillaume LIZEE et FOUGIERE</td>
       <td  align=right x:num>1160</td>
@@ -15500,7 +15500,7 @@ $connexionBD->ferme();
       <td >2E4662-10</td>
       <td >La Rochef.</td>
       <td >Acquisition</td>
-      <td >par Charles DARS de François MARBILLE</td>
+      <td >par Charles DARS de Fran&ccedilois MARBILLE</td>
       <td  align=right x:num>1281</td>
       <td >&nbsp;</td>
     </tr>
@@ -15524,7 +15524,7 @@ $connexionBD->ferme();
       <td >2E4662-30</td>
       <td >La Rochef.</td>
       <td >Ferme</td>
-      <td >à Charles DARS de François DEPRESIGOU</td>
+      <td >&agrave Charles DARS de Fran&ccedilois DEPRESIGOU</td>
       <td  align=right x:num>1281</td>
       <td >&nbsp;</td>
     </tr>
@@ -15534,7 +15534,7 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5935-110</td>
       <td >Vaux-Rouillac</td>
-      <td >Déclaration</td>
+      <td >D&eacuteclaration</td>
       <td >Jean IZAMBARD, Pierre BONJOUR, etc.</td>
       <td  align=right x:num>1167</td>
       <td >&nbsp;</td>
@@ -15542,7 +15542,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1680</td>
       <td  align=right
-  x:num="38405">22-févr</td>
+  x:num="38405">22-f&eacutevr</td>
       <td >Chauvin</td>
       <td >2E312-20</td>
       <td >Lhoumeau</td>
@@ -15570,7 +15570,7 @@ $connexionBD->ferme();
       <td >Chauvin</td>
       <td >2E312-60</td>
       <td >Lhoumeau</td>
-      <td >Procès-verbal</td>
+      <td >Proc&egraves-verbal</td>
       <td >Jean COUPEAU - Jean JOUANNET</td>
       <td  align=right x:num>783</td>
       <td >&nbsp;</td>
@@ -15581,9 +15581,9 @@ $connexionBD->ferme();
   x:num="39014">24-oct</td>
       <td >Robin</td>
       <td >2E1112-200</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >LAMOUREUX à Louis COURRIVAUD</td>
+      <td >LAMOUREUX &agrave Louis COURRIVAUD</td>
       <td  align=right x:num>966</td>
       <td >&nbsp;</td>
     </tr>
@@ -15593,16 +15593,16 @@ $connexionBD->ferme();
   x:num="39014">24-oct</td>
       <td >Robin</td>
       <td >2E1112-210</td>
-      <td >Angoulême</td>
-      <td >Procès-verbal</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves-verbal</td>
       <td >LAMOUREUX</td>
       <td  align=right x:num>966</td>
-      <td >du four de leur père et mère</td>
+      <td >du four de leur p&egravere et m&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1680</td>
       <td  align=right
-  x:num="39481">03-févr</td>
+  x:num="39481">03-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5935-140</td>
       <td >Vaux-Rouillac</td>
@@ -15621,12 +15621,12 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Marquise IZAMBARD vve Pierre LEMOYNE</td>
       <td  align=right x:num>1167</td>
-      <td >à de la CHALONIE</td>
+      <td >&agrave de la CHALONIE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1680</td>
       <td  align=right
-  x:num="38955">26-août</td>
+  x:num="38955">26-ao&ucirct</td>
       <td >Clochard</td>
       <td >2E412-180</td>
       <td >Lhoumeau</td>
@@ -15650,7 +15650,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1680</td>
       <td  align=right
-  x:num="39493">15-févr</td>
+  x:num="39493">15-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E2935-160</td>
       <td >Vaux-Rouillac</td>
@@ -15663,9 +15663,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1680</td>
       <td  align=right
   x:num="38523">20-juin</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E810-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ratification</td>
       <td >Pierre, Et. , Ant. , Louis et Guillemtte. MESNARD</td>
       <td  align=right x:num>864</td>
@@ -15678,7 +15678,7 @@ $connexionBD->ferme();
       <td >Chauvin</td>
       <td >2E312-50</td>
       <td >Lhoumeau</td>
-      <td >Procès-verbal</td>
+      <td >Proc&egraves-verbal</td>
       <td >Jean COUPEAU</td>
       <td  align=right x:num>783</td>
       <td >Naufrage de gabarre</td>
@@ -15686,14 +15686,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1680</td>
       <td  align=right
-  x:num="38393">10-févr</td>
-      <td >Jéheu</td>
+  x:num="38393">10-f&eacutevr</td>
+      <td >J&eacuteheu</td>
       <td >2E810-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François BOYLEVIN et Marie FRETILLIER</td>
+      <td >Fran&ccedilois BOYLEVIN et Marie FRETILLIER</td>
       <td  align=right x:num>864</td>
-      <td >Résilié par Mie FRETILLIER</td>
+      <td >R&eacutesili&eacute par Mie FRETILLIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1680</td>
@@ -15703,21 +15703,21 @@ $connexionBD->ferme();
       <td >2E312-40</td>
       <td >Lhoumeau</td>
       <td >Sommation</td>
-      <td >Jean COUPEAU à Bernard GAY</td>
+      <td >Jean COUPEAU &agrave Bernard GAY</td>
       <td  align=right x:num>783</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1680</td>
       <td  align=right
-  x:num="39483">05-févr</td>
+  x:num="39483">05-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5935-150</td>
       <td >Vaux-Rouillac</td>
       <td >Sommation</td>
       <td >Jeanne MESNARD veuve Helie IZAMBARD</td>
       <td  align=right x:num>1167</td>
-      <td >à Pierre IZAMBARD son fils</td>
+      <td >&agrave Pierre IZAMBARD son fils</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1680</td>
@@ -15729,7 +15729,7 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Cybard GONTIER et Marie DANYAUD</td>
       <td  align=right x:num>1167</td>
-      <td >à Guillaume MARTIN</td>
+      <td >&agrave Guillaume MARTIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1680</td>
@@ -15748,19 +15748,19 @@ $connexionBD->ferme();
       <td  align=center x:num="-80305">#######</td>
       <td >Audouin</td>
       <td >2E118-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
-      <td >François BIARD et Philippe BONNIN sa femme</td>
+      <td >Fran&ccedilois BIARD et Philippe BONNIN sa femme</td>
       <td  align=right x:num>1334</td>
-      <td >à Pierre RESPINGEAY</td>
+      <td >&agrave Pierre RESPINGEAY</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1680</td>
       <td  align=right
-  x:num="39872">28-févr</td>
+  x:num="39872">28-f&eacutevr</td>
       <td >Audouin</td>
       <td >2E118-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Meubles de + Marie MESNARD fe Pierre IRVOIX</td>
       <td  align=right x:num>1334</td>
@@ -15772,7 +15772,7 @@ $connexionBD->ferme();
   x:num="39972">8-juin</td>
       <td >Audouin</td>
       <td >2E118-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Louis DESCARSELLE</td>
       <td  align=right x:num>1334</td>
@@ -15781,21 +15781,21 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1680</td>
       <td  align=right
-  x:num="40029">4-août</td>
+  x:num="40029">4-ao&ucirct</td>
       <td >Audouin</td>
       <td >2E118-60</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
-      <td >Antoine ROUHIER à Pierre(?) ROUHIER son fils</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
+      <td >Antoine ROUHIER &agrave Pierre(?) ROUHIER son fils</td>
       <td  align=right x:num>1334</td>
       <td >de Champniers et St Yriers</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
       <td  align=right x:num="38474">2-mai</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E811-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Compromis</td>
       <td >GIRARD - BIARD</td>
       <td  align=right x:num>863</td>
@@ -15816,14 +15816,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
       <td  align=right
-  x:num="39502">24-févr</td>
+  x:num="39502">24-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5935-210</td>
       <td >Vaux-Rouillac</td>
       <td >Inventaire</td>
-      <td >Agné GONTIER veuve François VINET</td>
+      <td >Agn&eacute GONTIER veuve Fran&ccedilois VINET</td>
       <td  align=right x:num>1167</td>
-      <td >Orlut, Mérignac</td>
+      <td >Orlut, M&eacuterignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
@@ -15833,7 +15833,7 @@ $connexionBD->ferme();
       <td >2E412-190</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >Arnaud ROY et Françoise COLLAIN</td>
+      <td >Arnaud ROY et Fran&ccediloise COLLAIN</td>
       <td  align=right x:num>954</td>
       <td >Eliette ? COLLAIN</td>
     </tr>
@@ -15843,9 +15843,9 @@ $connexionBD->ferme();
   x:num="39590">22-mai</td>
       <td >Cladier</td>
       <td >2E368-10</td>
-      <td >Angoulême</td>
-      <td >Résiliation</td>
-      <td >Jean CARRE contrat de métairie à Chaumontet</td>
+      <td >Angoul&ecircme</td>
+      <td >R&eacutesiliation</td>
+      <td >Jean CARRE contrat de m&eacutetairie &agrave Chaumontet</td>
       <td  align=right x:num>1162</td>
       <td >Fils de Jean</td>
     </tr>
@@ -15865,13 +15865,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1681</td>
       <td  align=right
   x:num="38557">24-juil</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E811-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >François ROUSSEAU et Marguerite AUBOUIN</td>
+      <td >Fran&ccedilois ROUSSEAU et Marguerite AUBOUIN</td>
       <td  align=right x:num>863</td>
-      <td >à CHOPPIN et AUBINEAU</td>
+      <td >&agrave CHOPPIN et AUBINEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
@@ -15900,14 +15900,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
       <td  align=right
-  x:num="39670">10-août</td>
+  x:num="39670">10-ao&ucirct</td>
       <td >Cladier</td>
       <td >2E368-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Compte</td>
       <td >Antoine BOILEVIN et Jeanne BARATTE</td>
       <td  align=right x:num>1162</td>
-      <td >et François BARATTE frère</td>
+      <td >et Fran&ccedilois BARATTE fr&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
@@ -15929,7 +15929,7 @@ $connexionBD->ferme();
       <td >2E5935-190</td>
       <td >Vaux-Rouillac</td>
       <td >Inventaire</td>
-      <td >Catherine GONTIER veuve François GAUDON</td>
+      <td >Catherine GONTIER veuve Fran&ccedilois GAUDON</td>
       <td  align=right x:num>1167</td>
       <td >&nbsp;</td>
     </tr>
@@ -15939,7 +15939,7 @@ $connexionBD->ferme();
   x:num="39583">15-mai</td>
       <td >Gillibert</td>
       <td >2E707-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Guillaume BOISDON et Elisabeth BENOIST</td>
       <td  align=right x:num>1140</td>
@@ -15955,15 +15955,15 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Jean GONTIER et Jeanne MARTIN</td>
       <td  align=right x:num>1167</td>
-      <td >Les Lichères, Mérignac</td>
+      <td >Les Lich&egraveres, M&eacuterignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
       <td  align=right
-  x:num="38760">12-févr</td>
+  x:num="38760">12-f&eacutevr</td>
       <td >Robin</td>
       <td >2E1112-240</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Catherine DE MARSAT</td>
       <td  align=right x:num>966</td>
@@ -15979,15 +15979,15 @@ $connexionBD->ferme();
       <td >Acquisition</td>
       <td >Pierre GONTIER sergier dit Bois Renard</td>
       <td  align=right x:num>1167</td>
-      <td >Bois Renard, Mérignac</td>
+      <td >Bois Renard, M&eacuterignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
       <td  align=right
-  x:num="38390">7-févr</td>
-      <td >Jéheu</td>
+  x:num="38390">7-f&eacutevr</td>
+      <td >J&eacuteheu</td>
       <td >2E811-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre IMBERT et Marie CATIN</td>
       <td  align=right x:num>863</td>
@@ -16003,7 +16003,7 @@ $connexionBD->ferme();
       <td >Acquisition</td>
       <td >Marguerite GONTIER veuve Louis ROY</td>
       <td  align=right x:num>1167</td>
-      <td >Bois Renard, Mérignac</td>
+      <td >Bois Renard, M&eacuterignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
@@ -16021,11 +16021,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1681</td>
       <td  align=right
   x:num="38361">9-janv</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E811-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
-      <td >Catherine DESMAISON et Léonard YRVOIX</td>
+      <td >Catherine DESMAISON et L&eacuteonard YRVOIX</td>
       <td  align=right x:num>863</td>
       <td >&nbsp;</td>
     </tr>
@@ -16033,9 +16033,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1681</td>
       <td  align=right
   x:num="38535">2-juil</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E811-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Jean BOYTAUD et MORANT</td>
       <td  align=right x:num>863</td>
@@ -16068,12 +16068,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
       <td  align=right
-  x:num="39813">31-déc</td>
+  x:num="39813">31-d&eacutec</td>
       <td >Daniaud</td>
       <td >2E5935-270</td>
       <td >Vaux-Rouillac</td>
       <td >Mariage</td>
-      <td >François GRATEREAU et Perrine POUPARD</td>
+      <td >Fran&ccedilois GRATEREAU et Perrine POUPARD</td>
       <td  align=right x:num>1167</td>
       <td >&nbsp;</td>
     </tr>
@@ -16083,7 +16083,7 @@ $connexionBD->ferme();
   x:num="39587">19-mai</td>
       <td >Gillibert</td>
       <td >2E707-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Guillaume BOISDON</td>
       <td  align=right x:num>1140</td>
@@ -16099,19 +16099,19 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Jean IZAMBARD et Jeanne LIMOUSIN</td>
       <td  align=right x:num>1020</td>
-      <td > à Jean ROY</td>
+      <td > &agrave Jean ROY</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
       <td  align=right
-  x:num="38384">1-févr</td>
-      <td >Jéheu</td>
+  x:num="38384">1-f&eacutevr</td>
+      <td >J&eacuteheu</td>
       <td >2E811-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >Pierre ANDRE et Jean MESNADEAU</td>
       <td  align=right x:num>863</td>
-      <td >à Jean AYMARD</td>
+      <td >&agrave Jean AYMARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
@@ -16131,50 +16131,50 @@ $connexionBD->ferme();
   x:num="39656">27-juil</td>
       <td >Gibaud</td>
       <td >2E690-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean SIMARD et Marie CHOLLET</td>
       <td  align=right x:num>1139</td>
-      <td >d'Angoulême</td>
+      <td >d'Angoul&ecircme</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
       <td  align=right x:num="40078">22-sept</td>
       <td >Audouin</td>
       <td >2E119-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
-      <td >Philippe BOISTEAU à Pierre RESPINGEAY</td>
+      <td >Philippe BOISTEAU &agrave Pierre RESPINGEAY</td>
       <td  align=right x:num>1335</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1681</td>
       <td  align=right
-  x:num="40050">25-août</td>
+  x:num="40050">25-ao&ucirct</td>
       <td >Audouin</td>
       <td >2E119-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Antoine DESCARSELLE</td>
       <td  align=right x:num>1334</td>
-      <td >époux de Louise PREVOST</td>
+      <td >&eacutepoux de Louise PREVOST</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1682</td>
       <td  align=right x:num="38652">27-oct</td>
       <td >Chauvin</td>
       <td >2E314-110</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
-      <td >Jean ROY à Léonard DESMAISON</td>
+      <td >Jean ROY &agrave L&eacuteonard DESMAISON</td>
       <td  align=right x:num>784</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1682</td>
       <td  align=right
-  x:num="39060">09-déc</td>
+  x:num="39060">09-d&eacutec</td>
       <td >Desport</td>
       <td >2E2128-60</td>
       <td >Champniers</td>
@@ -16191,17 +16191,17 @@ $connexionBD->ferme();
       <td >2E314-100</td>
       <td >L'houmeau</td>
       <td >Ferme</td>
-      <td >François MOURIER à Jean ROY</td>
+      <td >Fran&ccedilois MOURIER &agrave Jean ROY</td>
       <td  align=right x:num>784</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1682</td>
       <td  align=right
-  x:num="39077">26-déc</td>
+  x:num="39077">26-d&eacutec</td>
       <td >Micheau</td>
       <td >2E1028-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Antoine BERGIER et Marguerite AUDOUIN</td>
       <td  align=right x:num>1028</td>
@@ -16215,14 +16215,14 @@ $connexionBD->ferme();
       <td >2E227-20</td>
       <td >Lhoumeau</td>
       <td >Quittance</td>
-      <td >Jean ROY à Michel ROY et Cath. COUPEAU</td>
+      <td >Jean ROY &agrave Michel ROY et Cath. COUPEAU</td>
       <td  align=right x:num>957</td>
       <td >Mari de Marg. CASTAIGNE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1682</td>
       <td  align=right
-  x:num="38935">06-août</td>
+  x:num="38935">06-ao&ucirct</td>
       <td >Renon</td>
       <td >2E2941-30</td>
       <td >Garat</td>
@@ -16237,11 +16237,11 @@ $connexionBD->ferme();
   x:num="38806">30-mars</td>
       <td >Micheau</td>
       <td >2E1028-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Guy DUCOUST et Marthe LIZEE</td>
       <td  align=right x:num>1028</td>
-      <td >Nièce de Marie LIZEE</td>
+      <td >Ni&egravece de Marie LIZEE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1682</td>
@@ -16251,7 +16251,7 @@ $connexionBD->ferme();
       <td >2E2738-10</td>
       <td >Dignac</td>
       <td >Transaction</td>
-      <td >François SIMARD et Gabriel DURAND</td>
+      <td >Fran&ccedilois SIMARD et Gabriel DURAND</td>
       <td  align=right x:num>865</td>
       <td >&nbsp;</td>
     </tr>
@@ -16259,9 +16259,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1682</td>
       <td  align=right
   x:num="38360">8-janv</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E811-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Genis et Jaqtte ROUX et J. et Marg. JOUBERT</td>
       <td  align=right x:num>863</td>
@@ -16284,11 +16284,11 @@ $connexionBD->ferme();
       <td  align=right x:num="40083">27-sept</td>
       <td >Audouin</td>
       <td >2E119-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
-      <td >Berthoumé BOISTEAU à Pierre RESPINGEAY</td>
+      <td >Berthoum&eacute BOISTEAU &agrave Pierre RESPINGEAY</td>
       <td  align=right x:num>1335</td>
-      <td class=xl3520222>fils François et Ysabeau BOILEVIN</td>
+      <td class=xl3520222>fils Fran&ccedilois et Ysabeau BOILEVIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1682</td>
@@ -16296,11 +16296,11 @@ $connexionBD->ferme();
   x:num="40083">27-sept</td>
       <td >Audouin</td>
       <td >2E119-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Berthoumé BOISTEAU à Pierre RESPINGEAY</td>
+      <td >Berthoum&eacute BOISTEAU &agrave Pierre RESPINGEAY</td>
       <td  align=right x:num>1335</td>
-      <td class=xl3520222>fils François et Ysabeau BOILEVIN</td>
+      <td class=xl3520222>fils Fran&ccedilois et Ysabeau BOILEVIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1682</td>
@@ -16316,12 +16316,12 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1683</td>
-      <td  align=right x:num="38955">26-août</td>
+      <td  align=right x:num="38955">26-ao&ucirct</td>
       <td >Boutillier</td>
       <td >2E227-40</td>
       <td >Lhoumeau</td>
       <td >Quittance</td>
-      <td >Jean COUPEAU à Philippe ARDOUIN sa femme</td>
+      <td >Jean COUPEAU &agrave Philippe ARDOUIN sa femme</td>
       <td  align=right x:num>974</td>
       <td >&nbsp;</td>
     </tr>
@@ -16333,7 +16333,7 @@ $connexionBD->ferme();
       <td >2E2793-50</td>
       <td >Echallat</td>
       <td >Mariage</td>
-      <td >François MAUBERT et Lorance MESNADEAU</td>
+      <td >Fran&ccedilois MAUBERT et Lorance MESNADEAU</td>
       <td  align=right x:num>1051</td>
       <td >de Moulidars</td>
     </tr>
@@ -16352,14 +16352,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1683</td>
       <td  align=right
-  x:num="38752">04-févr</td>
+  x:num="38752">04-f&eacutevr</td>
       <td >Izambard</td>
       <td >2E2802-130</td>
       <td >Echallat</td>
       <td >Reconnaissance</td>
-      <td >Marie BOISDON à Jean BOISDON</td>
+      <td >Marie BOISDON &agrave Jean BOISDON</td>
       <td  align=right x:num>1020</td>
-      <td >et Ant. TALLON ses père &amp; mère</td>
+      <td >et Ant. TALLON ses p&egravere &amp; m&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1683</td>
@@ -16370,19 +16370,19 @@ $connexionBD->ferme();
       <td >Saint-Cybarde<span
   style='display:none'>aux</span></td>
       <td >Mariage</td>
-      <td >Sébastien BOISDON et Sébastienne DANIAUD</td>
+      <td >S&eacutebastien BOISDON et S&eacutebastienne DANIAUD</td>
       <td  align=right x:num>1213</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1683</td>
       <td  align=right
-  x:num="38594">30-août</td>
+  x:num="38594">30-ao&ucirct</td>
       <td >Chauvin</td>
       <td >2E314-150</td>
       <td >L'houmeau</td>
       <td >Arrentement</td>
-      <td >Jean COUPEAU à son frère Pierre COUPEAU</td>
+      <td >Jean COUPEAU &agrave son fr&egravere Pierre COUPEAU</td>
       <td  align=right x:num>784</td>
       <td >&nbsp;</td>
     </tr>
@@ -16394,21 +16394,21 @@ $connexionBD->ferme();
       <td >2E314-170</td>
       <td >L'houmeau</td>
       <td >Quittance</td>
-      <td >Genis SEGUIN à Philippe DELAURIERE</td>
+      <td >Genis SEGUIN &agrave Philippe DELAURIERE</td>
       <td  align=right x:num>784</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1683</td>
       <td  align=right
-  x:num="38404">21-févr</td>
+  x:num="38404">21-f&eacutevr</td>
       <td >Bouillaud</td>
       <td >2E211-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
-      <td >Pierre et François SIMARD et Gabriel DURAND</td>
+      <td >Pierre et Fran&ccedilois SIMARD et Gabriel DURAND</td>
       <td  align=right x:num>841</td>
-      <td >Et  François et Jean BRUNET</td>
+      <td >Et  Fran&ccedilois et Jean BRUNET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1683</td>
@@ -16418,7 +16418,7 @@ $connexionBD->ferme();
       <td >2E314-130</td>
       <td >L'houmeau</td>
       <td >Cession</td>
-      <td >Jean COUPEAU à  Pierre COUPEAU gabarrier</td>
+      <td >Jean COUPEAU &agrave  Pierre COUPEAU gabarrier</td>
       <td  align=right x:num>785</td>
       <td >&nbsp;</td>
     </tr>
@@ -16429,20 +16429,20 @@ $connexionBD->ferme();
       <td >Chauvin</td>
       <td >2E314-180</td>
       <td >L'houmeau</td>
-      <td >Déclaration</td>
-      <td >Jean JOUANNET le jeune à Christophe GALLIER</td>
+      <td >D&eacuteclaration</td>
+      <td >Jean JOUANNET le jeune &agrave Christophe GALLIER</td>
       <td  align=right x:num>784</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1683</td>
       <td  align=right
-  x:num="38594">30-août</td>
+  x:num="38594">30-ao&ucirct</td>
       <td >Chauvin</td>
       <td >2E314-160</td>
       <td >L'houmeau</td>
       <td >Vente</td>
-      <td >gabarre de Jean COUPEAU à Jean JOUANNET</td>
+      <td >gabarre de Jean COUPEAU &agrave Jean JOUANNET</td>
       <td  align=right x:num>784</td>
       <td >&nbsp;</td>
     </tr>
@@ -16451,7 +16451,7 @@ $connexionBD->ferme();
       <td >&nbsp;</td>
       <td >Robin</td>
       <td >2E1112-270</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Nicolas AUBIN et Jeanne GABORIT</td>
       <td  align=right x:num>966</td>
@@ -16472,7 +16472,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1683</td>
       <td  align=right
-  x:num="38706">20-déc</td>
+  x:num="38706">20-d&eacutec</td>
       <td >Chauvin</td>
       <td >2E314-190</td>
       <td >L'houmeau</td>
@@ -16486,7 +16486,7 @@ $connexionBD->ferme();
       <td  align=right x:num="39942">9-mai</td>
       <td >Audouin</td>
       <td >2E120-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Daniel et Michel TULLIER et Jean DEBUSSAT</td>
       <td  align=right x:num>1341</td>
@@ -16498,7 +16498,7 @@ $connexionBD->ferme();
   x:num="40114">28-oct</td>
       <td >Audouin</td>
       <td >2E120-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Antoine DESCARSELLE et Catherine FETIX</td>
       <td  align=right x:num>1341</td>
@@ -16506,36 +16506,36 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1684</td>
-      <td  align=right x:num="38592">28-août</td>
+      <td  align=right x:num="38592">28-ao&ucirct</td>
       <td >Chauvin</td>
       <td >2E314-220</td>
       <td >L'houmeau</td>
       <td >Sommation</td>
-      <td >Louis DURET à Arnaud ROY gabarrier</td>
+      <td >Louis DURET &agrave Arnaud ROY gabarrier</td>
       <td  align=right x:num>785</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1684</td>
       <td  align=right
-  x:num="39082">31-déc</td>
+  x:num="39082">31-d&eacutec</td>
       <td >Gauvry</td>
       <td >2E4296-20</td>
       <td >Mornac</td>
       <td >Mariage</td>
-      <td >Jehan et Françoise ESCOUPEAU et…</td>
+      <td >Jehan et Fran&ccediloise ESCOUPEAU et…</td>
       <td  align=right x:num>881</td>
       <td >Jehanne et Pierre SEGUIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1684</td>
       <td  align=right
-  x:num="38688">2-déc</td>
-      <td >Jéheu</td>
+  x:num="38688">2-d&eacutec</td>
+      <td >J&eacuteheu</td>
       <td >2E812-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
-      <td >Jean VIGIER à Nicolas BASSET</td>
+      <td >Jean VIGIER &agrave Nicolas BASSET</td>
       <td  align=right x:num>801</td>
       <td >Achat d'un pourceau</td>
     </tr>
@@ -16543,9 +16543,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1684</td>
       <td  align=right
   x:num="38521">18-juin</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E812-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jacques BARBARIT et Anne BRISSEAU</td>
       <td  align=right x:num>801</td>
@@ -16554,7 +16554,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1684</td>
       <td  align=right
-  x:num="38749">01-févr</td>
+  x:num="38749">01-f&eacutevr</td>
       <td >Boutillier</td>
       <td >2E227-50</td>
       <td >Lhoumeau</td>
@@ -16569,11 +16569,11 @@ $connexionBD->ferme();
   x:num="38789">13-mars</td>
       <td >Gillibert</td>
       <td >2E708-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >Jeanne GENET et Mathurin AUTIN</td>
       <td  align=right x:num>1017</td>
-      <td >à Nicolas BASSET (peaux)</td>
+      <td >&agrave Nicolas BASSET (peaux)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1684</td>
@@ -16581,11 +16581,11 @@ $connexionBD->ferme();
   x:num="38789">13-mars</td>
       <td >Gillibert</td>
       <td >2E708-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >Guillaume MALLAT</td>
       <td  align=right x:num>1017</td>
-      <td >à Nicolas BASSET (peaux)</td>
+      <td >&agrave Nicolas BASSET (peaux)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1684</td>
@@ -16607,7 +16607,7 @@ $connexionBD->ferme();
       <td >2E314-210</td>
       <td >L'houmeau</td>
       <td >Ferme</td>
-      <td >François PITEAU à Jeanne JAYET et autres</td>
+      <td >Fran&ccedilois PITEAU &agrave Jeanne JAYET et autres</td>
       <td  align=right x:num>785</td>
       <td >Droit de sable</td>
     </tr>
@@ -16627,21 +16627,21 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1684</td>
       <td  align=right
   x:num="38547">14-juil</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E812-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Jean BRISSAUD à Pierre DUBOIS curé de St Mar<span style='display:none'>tial</span></td>
+      <td >Jean BRISSAUD &agrave Pierre DUBOIS cur&eacute de St Mar<span style='display:none'>tial</span></td>
       <td  align=right x:num>801</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
       <td  align=right
-  x:num="38712">26-déc</td>
-      <td >Jéheu</td>
+  x:num="38712">26-d&eacutec</td>
+      <td >J&eacuteheu</td>
       <td >2E813-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Compromis</td>
       <td >Jean et Michelle ROY avec Charlotte ROY</td>
       <td  align=right x:num>825</td>
@@ -16667,7 +16667,7 @@ $connexionBD->ferme();
       <td >2E315-150</td>
       <td >L'houmeau</td>
       <td >Quittance</td>
-      <td >Michel ROY et Cath. COUPEAU à CASTAIGNE</td>
+      <td >Michel ROY et Cath. COUPEAU &agrave CASTAIGNE</td>
       <td  align=right x:num>786</td>
       <td >&nbsp;</td>
     </tr>
@@ -16679,14 +16679,14 @@ $connexionBD->ferme();
       <td >2E2137-10</td>
       <td >Champniers</td>
       <td >Mariage</td>
-      <td >Joseph CLEMENT et Françoise VERY</td>
+      <td >Joseph CLEMENT et Fran&ccediloise VERY</td>
       <td  align=right x:num>1025</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
       <td  align=right
-  x:num="38756">08-févr</td>
+  x:num="38756">08-f&eacutevr</td>
       <td >Baudet</td>
       <td >2E2794-10</td>
       <td >Echallat</td>
@@ -16702,7 +16702,7 @@ $connexionBD->ferme();
       <td >Rouhier</td>
       <td >2E1122-20</td>
       <td >Lhoumeau</td>
-      <td >Maîtrise</td>
+      <td >Ma&icirctrise</td>
       <td >Guy ROUHIER</td>
       <td  align=right x:num>944</td>
       <td >de cordonnier</td>
@@ -16739,7 +16739,7 @@ $connexionBD->ferme();
       <td >2E315-160</td>
       <td >L'houmeau</td>
       <td >Quittance</td>
-      <td >Antoine ROY à Jean CHASTEAU</td>
+      <td >Antoine ROY &agrave Jean CHASTEAU</td>
       <td  align=right x:num>786</td>
       <td >&nbsp;</td>
     </tr>
@@ -16758,12 +16758,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
       <td  align=right
-  x:num="38700">14-déc</td>
+  x:num="38700">14-d&eacutec</td>
       <td >Chauvin</td>
       <td >2E315-170</td>
       <td >L'houmeau</td>
       <td >Reconnaissance</td>
-      <td >COMBRET, ROY, JOUANNET à DAVID</td>
+      <td >COMBRET, ROY, JOUANNET &agrave DAVID</td>
       <td  align=right x:num>786</td>
       <td >Success. Arnaud JOUANNET</td>
     </tr>
@@ -16776,7 +16776,7 @@ $connexionBD->ferme();
       <td >Saint-Cybarde<span
   style='display:none'>aux</span></td>
       <td >Inventaire</td>
-      <td >Franç. FENIOU curateur de Gabrielle IZAMBARD</td>
+      <td >Fran&ccedil. FENIOU curateur de Gabrielle IZAMBARD</td>
       <td  align=right x:num>1220</td>
       <td >fille Guillaume et Jacquette FENIOU</td>
     </tr>
@@ -16790,7 +16790,7 @@ $connexionBD->ferme();
       <td >Inventaire</td>
       <td >Pierre RIFFAUD, Pierre LAURENTson gendre</td>
       <td  align=right x:num>944</td>
-      <td >et Françoise RIFFAUD sa fille</td>
+      <td >et Fran&ccediloise RIFFAUD sa fille</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
@@ -16810,7 +16810,7 @@ $connexionBD->ferme();
   x:num="38460">18-avr</td>
       <td >Gibaud</td>
       <td >2E692-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre DAVID et Marie YVER</td>
       <td  align=right x:num>864</td>
@@ -16824,16 +16824,16 @@ $connexionBD->ferme();
       <td >2E315-120</td>
       <td >L'houmeau</td>
       <td >Quittance</td>
-      <td >Michel JOUANNET à Léonard FUSIGNAT</td>
+      <td >Michel JOUANNET &agrave L&eacuteonard FUSIGNAT</td>
       <td  align=right x:num>787</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
-      <td  align=right x:num="39870">26-févr</td>
+      <td  align=right x:num="39870">26-f&eacutevr</td>
       <td >Audouin</td>
       <td >2E121-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >Jacques BOISTEAU et Jean MESNARD</td>
       <td  align=right x:num>1349</td>
@@ -16842,14 +16842,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
       <td  align=right
-  x:num="40174">27-déc</td>
+  x:num="40174">27-d&eacutec</td>
       <td >Audouin</td>
       <td >2E121-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
-      <td >Jacquette BIARD après décès Fr. CHASSAIGNE</td>
+      <td >Jacquette BIARD apr&egraves d&eacutec&egraves Fr. CHASSAIGNE</td>
       <td  align=right x:num>1349</td>
-      <td >Maître gabarrier décédé à Rochefort</td>
+      <td >Ma&icirctre gabarrier d&eacutec&eacuted&eacute &agrave Rochefort</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
@@ -16861,7 +16861,7 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >Nicolas LOTTE et Marguerite BERNARD</td>
       <td  align=right x:num>1491</td>
-      <td class=xl3520222>fils Robert et Françoise BIARD</td>
+      <td class=xl3520222>fils Robert et Fran&ccediloise BIARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
@@ -16871,9 +16871,9 @@ $connexionBD->ferme();
       <td >2E3498-30</td>
       <td >Mansle</td>
       <td >Vente</td>
-      <td >Nicolas LOTTE à Antoine LOTTE son frère</td>
+      <td >Nicolas LOTTE &agrave Antoine LOTTE son fr&egravere</td>
       <td  align=right x:num>1491</td>
-      <td class=xl3520222>fils Robert et Françoise BIARD</td>
+      <td class=xl3520222>fils Robert et Fran&ccediloise BIARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1686</td>
@@ -16882,19 +16882,19 @@ $connexionBD->ferme();
       <td >2E4297-30</td>
       <td >Mornac</td>
       <td >Testament</td>
-      <td >Etienne RIFFAUD à Aymard RIFFAUD</td>
+      <td >Etienne RIFFAUD &agrave Aymard RIFFAUD</td>
       <td  align=right x:num>885</td>
       <td >et Jacquette CLEMENT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1686</td>
       <td  align=right
-  x:num="38939">10-août</td>
+  x:num="38939">10-ao&ucirct</td>
       <td >Izambard</td>
       <td >2E2802-200</td>
       <td >Echallat</td>
       <td >Mariage</td>
-      <td >François HERODEAU et Antoinette MARTIN</td>
+      <td >Fran&ccedilois HERODEAU et Antoinette MARTIN</td>
       <td  align=right x:num>1020</td>
       <td >de Triac</td>
     </tr>
@@ -16913,12 +16913,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17 class=xl4220222 align=right x:num>1686</td>
       <td class=xl4520222 align=right
-  x:num="38930">01-août</td>
+  x:num="38930">01-ao&ucirct</td>
       <td class=xl4220222>Rouhier</td>
       <td class=xl4420222>2E1123-10</td>
       <td class=xl4220222>Lhoumeau</td>
       <td class=xl4220222>Concordat</td>
-      <td class=xl4220222>Abbé de Grosbot aux religieux</td>
+      <td class=xl4220222>Abb&eacute de Grosbot aux religieux</td>
       <td class=xl4220222 align=right x:num>941</td>
       <td class=xl4220222>&nbsp;</td>
     </tr>
@@ -17012,20 +17012,20 @@ $connexionBD->ferme();
   x:num="39699">08-sept</td>
       <td >Serpaud</td>
       <td >2E1171-160</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
-      <td >François IRVOIX et ses enfants Pierre et Jean</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
+      <td >Fran&ccedilois IRVOIX et ses enfants Pierre et Jean</td>
       <td  align=right x:num>1173</td>
-      <td >à Perrine BOUILLON</td>
+      <td >&agrave Perrine BOUILLON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1686</td>
       <td  align=right
-  x:num="39079">28-déc</td>
+  x:num="39079">28-d&eacutec</td>
       <td >Micheau</td>
       <td >2E1030-20</td>
-      <td >Angoulême</td>
-      <td >Métairie</td>
+      <td >Angoul&ecircme</td>
+      <td >M&eacutetairie</td>
       <td >Arnaud GAILLARD et Antoinette RIPE</td>
       <td  align=right x:num>1020</td>
       <td >de dame Marie GUINDET</td>
@@ -17036,16 +17036,16 @@ $connexionBD->ferme();
   x:num="39706">15-sept</td>
       <td >Serpaud</td>
       <td >2E1171-170</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
-      <td >François IRVOIX et ses enfants Pierre et Jean</td>
+      <td >Fran&ccedilois IRVOIX et ses enfants Pierre et Jean</td>
       <td  align=right x:num>1173</td>
       <td >de Perrine BOUILLON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1686</td>
       <td  align=right
-  x:num="38761">13-févr</td>
+  x:num="38761">13-f&eacutevr</td>
       <td >Izambard</td>
       <td >2E2802-170</td>
       <td >Echallat</td>
@@ -17060,7 +17060,7 @@ $connexionBD->ferme();
   x:num="38892">24-juin</td>
       <td >Micheau</td>
       <td >2E1030-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Martin BOYTEAU et Marie ROY</td>
       <td  align=right x:num>1020</td>
@@ -17071,18 +17071,18 @@ $connexionBD->ferme();
       <td  align=right x:num="40059">3-sept</td>
       <td >Audouin</td>
       <td >2E121-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
       <td >Catherine DARS veuve DARJAT</td>
       <td  align=right x:num>1349</td>
-      <td >à Jean DULIGNON</td>
+      <td >&agrave Jean DULIGNON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
       <td  align=right x:num="38419">8-mars</td>
       <td >Gillibert</td>
       <td >2E710-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Jean BIBAUD</td>
       <td  align=right x:num>823</td>
@@ -17095,7 +17095,7 @@ $connexionBD->ferme();
       <td >Rouhier</td>
       <td >2E1124-10</td>
       <td >Lhoumeau</td>
-      <td >Procès-verbal</td>
+      <td >Proc&egraves-verbal</td>
       <td >ANDRE, GRENON, CARRE et Arnaud ROY</td>
       <td  align=right x:num>941</td>
       <td >&nbsp;</td>
@@ -17103,50 +17103,50 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
       <td  align=right
-  x:num="39059">08-déc</td>
+  x:num="39059">08-d&eacutec</td>
       <td >Clochard</td>
       <td >2E413-130</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >François DOYEN et Anne TOURNIER</td>
+      <td >Fran&ccedilois DOYEN et Anne TOURNIER</td>
       <td  align=right x:num>953</td>
       <td >Fille de J. et Jeanne BOUHIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
       <td  align=right
-  x:num="39079">28-déc</td>
+  x:num="39079">28-d&eacutec</td>
       <td >Rouhier</td>
       <td >2E1124-40</td>
       <td >Lhoumeau</td>
       <td >Donnation</td>
-      <td >Pierre, Nicolas et Françoise RIFFAUD</td>
+      <td >Pierre, Nicolas et Fran&ccediloise RIFFAUD</td>
       <td  align=right x:num>941</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
       <td  align=right
-  x:num="39079">28-déc</td>
+  x:num="39079">28-d&eacutec</td>
       <td >Rouhier</td>
       <td >2E1124-50</td>
       <td >Lhoumeau</td>
       <td >Partage</td>
-      <td >Nicolas et Françoise RIFFAUD</td>
+      <td >Nicolas et Fran&ccediloise RIFFAUD</td>
       <td  align=right x:num>941</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
       <td  align=right
-  x:num="39079">28-déc</td>
+  x:num="39079">28-d&eacutec</td>
       <td >Rouhier</td>
       <td >2E1124-60</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
       <td >Pierre VIDAUD et Anne AUBOUIN</td>
       <td  align=right x:num>941</td>
-      <td >Fille de Léo et J. GABORIT</td>
+      <td >Fille de L&eacuteo et J. GABORIT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
@@ -17154,7 +17154,7 @@ $connexionBD->ferme();
   x:num="39546">08-avr</td>
       <td >Serpaud</td>
       <td >2E1171-180</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Mathurine BERTOUME femme de Helie COSTE</td>
       <td  align=right x:num>1173</td>
@@ -17168,17 +17168,17 @@ $connexionBD->ferme();
       <td >2E316-120</td>
       <td >Lhoumeau</td>
       <td >Accord</td>
-      <td >Jean JOUANNET &quot;Le Jeune&quot;et Franç. PISSEAU</td>
+      <td >Jean JOUANNET &quot;Le Jeune&quot;et Fran&ccedil. PISSEAU</td>
       <td  align=right x:num>811</td>
-      <td >à propos d'une muraille</td>
+      <td >&agrave propos d'une muraille</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
       <td  align=right
-  x:num="38769">21-févr</td>
+  x:num="38769">21-f&eacutevr</td>
       <td >Micheau</td>
       <td >2E1030-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Marie CONSTANTIN veuve de Guil. TEXIER</td>
       <td  align=right x:num>1020</td>
@@ -17192,19 +17192,19 @@ $connexionBD->ferme();
       <td >2E316-130</td>
       <td >Lhoumeau</td>
       <td >Cession</td>
-      <td >Jean ARDOUIN à Jean JOUANNET &quot;Le Jeune&quot;</td>
+      <td >Jean ARDOUIN &agrave Jean JOUANNET &quot;Le Jeune&quot;</td>
       <td  align=right x:num>811</td>
       <td >Les DELACOUR</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
       <td  align=right
-  x:num="38203">4-août</td>
+  x:num="38203">4-ao&ucirct</td>
       <td >Clochard</td>
       <td >2E413-10</td>
       <td >L'Houmeau</td>
       <td >Arrentement</td>
-      <td >DAUVEAU Léonard</td>
+      <td >DAUVEAU L&eacuteonard</td>
       <td  align=right x:num>750</td>
       <td >Fse MONBOEUF - P. DAVID</td>
     </tr>
@@ -17214,9 +17214,9 @@ $connexionBD->ferme();
   x:num="38903">05-juil</td>
       <td >Serpaud</td>
       <td >2E1171-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >François BRISSAUD et Marg. RIFFAUD</td>
+      <td >Fran&ccedilois BRISSAUD et Marg. RIFFAUD</td>
       <td  align=right x:num>978</td>
       <td >&nbsp;</td>
     </tr>
@@ -17224,11 +17224,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1687</td>
       <td  align=right
   x:num="38500">28-mai</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E936-500</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
-      <td >Françoise BONNORONT - Pierre CHEZADANT</td>
+      <td >Fran&ccediloise BONNORONT - Pierre CHEZADANT</td>
       <td  align=right x:num>779</td>
       <td >&nbsp;</td>
     </tr>
@@ -17240,7 +17240,7 @@ $connexionBD->ferme();
       <td >2E316-150</td>
       <td >Lhoumeau</td>
       <td >Reconnaissance</td>
-      <td >Louis SURREAU à Pierre GAUTIER</td>
+      <td >Louis SURREAU &agrave Pierre GAUTIER</td>
       <td  align=right x:num>811</td>
       <td >&nbsp;</td>
     </tr>
@@ -17249,11 +17249,11 @@ $connexionBD->ferme();
       <td  align=right x:num="39831">18-janv</td>
       <td >Audouin</td>
       <td >2E122-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Léonard BARRAUD et Louise MOISSAN</td>
+      <td >L&eacuteonard BARRAUD et Louise MOISSAN</td>
       <td  align=right x:num>1349</td>
-      <td >2e mariage de Léonard</td>
+      <td >2e mariage de L&eacuteonard</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
@@ -17261,11 +17261,11 @@ $connexionBD->ferme();
   x:num="39833">20-janv</td>
       <td >Audouin</td>
       <td >2E122-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean BENESTAUD et Jacquette THINON</td>
       <td  align=right x:num>1349</td>
-      <td >Jacquette de Mérignac</td>
+      <td >Jacquette de M&eacuterignac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
@@ -17273,11 +17273,11 @@ $connexionBD->ferme();
   x:num="39952">19-mai</td>
       <td >Audouin</td>
       <td >2E122-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre SURREAU et Marguerite RIPE</td>
       <td  align=right x:num>1349</td>
-      <td >de St Martin d'Angoulême</td>
+      <td >de St Martin d'Angoul&ecircme</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1687</td>
@@ -17285,11 +17285,11 @@ $connexionBD->ferme();
   x:num="40104">18-oct</td>
       <td >Audouin</td>
       <td >2E122-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
-      <td >après décès Philippe BOISTEAU</td>
+      <td >apr&egraves d&eacutec&egraves Philippe BOISTEAU</td>
       <td  align=right x:num>1349</td>
-      <td >épx Anne DURAND</td>
+      <td >&eacutepx Anne DURAND</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
@@ -17298,18 +17298,18 @@ $connexionBD->ferme();
       <td >2E316-200</td>
       <td >Lhoumeau</td>
       <td >Reconnaissance</td>
-      <td >Pierre ROY curé de Brie à Catherine COUPEAU</td>
+      <td >Pierre ROY cur&eacute de Brie &agrave Catherine COUPEAU</td>
       <td  align=right x:num>811</td>
       <td >et Jean ROY, Jean SIRAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
       <td  align=right
-  x:num="38958">29-août</td>
+  x:num="38958">29-ao&ucirct</td>
       <td >Micheau</td>
       <td >2E1030-70</td>
-      <td >Angoulême</td>
-      <td >Métairie</td>
+      <td >Angoul&ecircme</td>
+      <td >M&eacutetairie</td>
       <td >Jean CARRE et Marie VARACHE</td>
       <td  align=right x:num>1020</td>
       <td >Fils de Jean et M. DELACROIX</td>
@@ -17342,9 +17342,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1688</td>
       <td  align=right
   x:num="38846">9-mai</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E814-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre JOUBERT et Anne CAILLIER</td>
       <td  align=right x:num>873</td>
@@ -17358,7 +17358,7 @@ $connexionBD->ferme();
       <td >2E2169-30</td>
       <td >Champniers</td>
       <td >Mariage</td>
-      <td >Léonard ROUSSEAU et Catherine CLEMENT</td>
+      <td >L&eacuteonard ROUSSEAU et Catherine CLEMENT</td>
       <td  align=right x:num>1034</td>
       <td >&nbsp;</td>
     </tr>
@@ -17377,7 +17377,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
       <td  align=right
-  x:num="39080">29-déc</td>
+  x:num="39080">29-d&eacutec</td>
       <td >Col</td>
       <td >2E4544-10</td>
       <td >La Rochef.</td>
@@ -17392,7 +17392,7 @@ $connexionBD->ferme();
   x:num="38923">25-juil</td>
       <td >Serpaud</td>
       <td >2E1171-110</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >L. AUBINEAU, P. COUSSEAU et M. LURAT</td>
       <td  align=right x:num>978</td>
@@ -17404,9 +17404,9 @@ $connexionBD->ferme();
   x:num="38655">30-oct</td>
       <td >Bouillaud</td>
       <td >2E211-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Marie PERROT à Marg. GUITARD et J. SIMARD</td>
+      <td >Marie PERROT &agrave Marg. GUITARD et J. SIMARD</td>
       <td  align=right x:num>841</td>
       <td >&nbsp;</td>
     </tr>
@@ -17414,11 +17414,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1688</td>
       <td  align=right
   x:num="38961">1-sept</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E814-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Abraham ROY et Renée RAYMOND</td>
+      <td >Abraham ROY et Ren&eacutee RAYMOND</td>
       <td  align=right x:num>873</td>
       <td >&nbsp;</td>
     </tr>
@@ -17428,16 +17428,16 @@ $connexionBD->ferme();
   x:num="38655">30-oct</td>
       <td >Bouillaud</td>
       <td >2E211-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >François SIMARD à Michelle BARDET sa femme</td>
+      <td >Fran&ccedilois SIMARD &agrave Michelle BARDET sa femme</td>
       <td  align=right x:num>841</td>
       <td >Et testament de Fr. SIMARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
       <td  align=right
-  x:num="38771">23-févr</td>
+  x:num="38771">23-f&eacutevr</td>
       <td >Clochard</td>
       <td >2E413-150</td>
       <td >Lhoumeau</td>
@@ -17465,8 +17465,8 @@ $connexionBD->ferme();
       <td >Izambard</td>
       <td >2E2802-210</td>
       <td >Echallat</td>
-      <td >Procès-verbal</td>
-      <td >Berthomé IZAMBARD</td>
+      <td >Proc&egraves-verbal</td>
+      <td >Berthom&eacute IZAMBARD</td>
       <td  align=right x:num>1020</td>
       <td >Fils de Berth. et M. GUILLOT</td>
     </tr>
@@ -17476,9 +17476,9 @@ $connexionBD->ferme();
   x:num="38721">04-janv</td>
       <td >Micheau</td>
       <td >2E1030-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Léonard et Marie MESNARDs</td>
+      <td >L&eacuteonard et Marie MESNARDs</td>
       <td  align=right x:num>1020</td>
       <td >et Pierre et Louise GRELIERs</td>
     </tr>
@@ -17488,7 +17488,7 @@ $connexionBD->ferme();
   x:num="38777">01-mars</td>
       <td >Micheau</td>
       <td >2E1030-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean MESNARD et Marie PINASSEAU</td>
       <td  align=right x:num>1020</td>
@@ -17500,45 +17500,45 @@ $connexionBD->ferme();
   x:num="38661">5-nov</td>
       <td >Bouillaud</td>
       <td >2E211-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
-      <td >François SIMARD et Marguerite GUYTARD</td>
+      <td >Fran&ccedilois SIMARD et Marguerite GUYTARD</td>
       <td  align=right x:num>841</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
       <td  align=right
-  x:num="38942">13-août</td>
+  x:num="38942">13-ao&ucirct</td>
       <td >Rouhier</td>
       <td >2E1125-60</td>
       <td >Lhoumeau</td>
       <td >Reconnaissance</td>
-      <td >Jacquette BIARD veuve  Françs CHASSAIGNE</td>
+      <td >Jacquette BIARD veuve  Fran&ccedils CHASSAIGNE</td>
       <td  align=right x:num>938</td>
-      <td >à François COUILLEBAUD</td>
+      <td >&agrave Fran&ccedilois COUILLEBAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
       <td  align=right
-  x:num="38763">15-févr</td>
+  x:num="38763">15-f&eacutevr</td>
       <td >Pillorget</td>
       <td >2E2169-10</td>
       <td >Champniers</td>
       <td >Quittance</td>
-      <td >Margte PERROT à François BIARD</td>
+      <td >Margte PERROT &agrave Fran&ccedilois BIARD</td>
       <td  align=right x:num>1034</td>
       <td >Paul BIARD et Fce GRELET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1688</td>
       <td  align=right
-  x:num="38752">04-févr</td>
+  x:num="38752">04-f&eacutevr</td>
       <td >Clochard</td>
       <td >2E413-140</td>
       <td >Lhoumeau</td>
       <td >Vente</td>
-      <td >Guillaume POIRIER à Jean DELAJALOFFAYE</td>
+      <td >Guillaume POIRIER &agrave Jean DELAJALOFFAYE</td>
       <td  align=right x:num>953</td>
       <td >&nbsp;</td>
     </tr>
@@ -17548,7 +17548,7 @@ $connexionBD->ferme();
   x:num="38738">21-janv</td>
       <td >Micheau</td>
       <td >2E1030-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >Marie CHARRAULD et Jeanne VIOLET</td>
       <td  align=right x:num>1020</td>
@@ -17572,7 +17572,7 @@ $connexionBD->ferme();
       <td >2E317-100</td>
       <td >Lhoumeau</td>
       <td >Sommation</td>
-      <td >Arnaud ROY aux frères SEGUIN</td>
+      <td >Arnaud ROY aux fr&egraveres SEGUIN</td>
       <td  align=right x:num>812</td>
       <td >&nbsp;</td>
     </tr>
@@ -17584,7 +17584,7 @@ $connexionBD->ferme();
       <td >2E1126-10</td>
       <td >Lhoumeau</td>
       <td >Cession</td>
-      <td >François BARREAU à Pierre BARREAU</td>
+      <td >Fran&ccedilois BARREAU &agrave Pierre BARREAU</td>
       <td  align=right x:num>937</td>
       <td >&nbsp;</td>
     </tr>
@@ -17594,19 +17594,19 @@ $connexionBD->ferme();
   x:num="38978">18-sept</td>
       <td >Serpaud</td>
       <td >2E1171-120</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Jean SIMARD à François IRVOIX</td>
+      <td >Jean SIMARD &agrave Fran&ccedilois IRVOIX</td>
       <td  align=right x:num>978</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1689</td>
       <td  align=right
-  x:num="38344">23-déc</td>
+  x:num="38344">23-d&eacutec</td>
       <td >Peynaud</td>
       <td >2E1070-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Louis Mesnadeau</td>
       <td  align=right x:num>757</td>
@@ -17620,7 +17620,7 @@ $connexionBD->ferme();
       <td >2E1126-20</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >François BARREAU et Marie GUIOT</td>
+      <td >Fran&ccedilois BARREAU et Marie GUIOT</td>
       <td  align=right x:num>937</td>
       <td >&nbsp;</td>
     </tr>
@@ -17642,16 +17642,16 @@ $connexionBD->ferme();
   x:num="38722">05-janv</td>
       <td >Micheau</td>
       <td >2E1030-80</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vidimation</td>
       <td >d'un contrat de vente de Pierre LIET</td>
       <td  align=right x:num>1020</td>
-      <td >à Guil. ARONDEAU</td>
+      <td >&agrave Guil. ARONDEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1689</td>
       <td  align=right
-  x:num="39078">27-déc</td>
+  x:num="39078">27-d&eacutec</td>
       <td >Rouhier</td>
       <td >2E1126-30</td>
       <td >Lhoumeau</td>
@@ -17687,7 +17687,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1689</td>
       <td  align=right
-  x:num="38749">01-févr</td>
+  x:num="38749">01-f&eacutevr</td>
       <td >Izambard</td>
       <td >2E2802-250</td>
       <td >Echallat</td>
@@ -17700,11 +17700,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1689</td>
       <td  align=right
   x:num="38624">29-sept</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E937-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Jean SIMARD à Léonard BERNARD</td>
+      <td >Jean SIMARD &agrave L&eacuteonard BERNARD</td>
       <td  align=right x:num>778</td>
       <td >&nbsp;</td>
     </tr>
@@ -17716,7 +17716,7 @@ $connexionBD->ferme();
       <td >2E317-140</td>
       <td >Lhoumeau</td>
       <td >Sommation</td>
-      <td >Jean JOUANNET &quot;Le Jeune&quot; à J. DURANDEAU</td>
+      <td >Jean JOUANNET &quot;Le Jeune&quot; &agrave J. DURANDEAU</td>
       <td  align=right x:num>812</td>
       <td >&nbsp;</td>
     </tr>
@@ -17741,7 +17741,7 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >Etienne BENESTEAU et Jeanne FOURNIER</td>
       <td  align=right x:num>1435</td>
-      <td class=xl3520222>frère de Michel BENESTEAU</td>
+      <td class=xl3520222>fr&egravere de Michel BENESTEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1689</td>
@@ -17749,11 +17749,11 @@ $connexionBD->ferme();
   x:num="39843">30-janv</td>
       <td >Audouin</td>
       <td >2E123-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Pierre ROUHIER et Françoise ANDRE</td>
+      <td >Pierre ROUHIER et Fran&ccediloise ANDRE</td>
       <td  align=right x:num>1356</td>
-      <td >frère de Jean le notaire</td>
+      <td >fr&egravere de Jean le notaire</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1689</td>
@@ -17761,7 +17761,7 @@ $connexionBD->ferme();
   x:num="40136">19-nov</td>
       <td >Audouin</td>
       <td >2E123-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
       <td >Jean CHASSAIGNE et Pierre BIARD</td>
       <td  align=right x:num>1356</td>
@@ -17773,20 +17773,20 @@ $connexionBD->ferme();
   x:num="40144">27-nov</td>
       <td >Audouin</td>
       <td >2E123-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Jacques ROUFFIGNAC à Anne ROCHIER sa fe.</td>
+      <td >Jacques ROUFFIGNAC &agrave Anne ROCHIER sa fe.</td>
       <td  align=right x:num>1356</td>
       <td >de Balzac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1690</td>
-      <td  align=right x:num="38769">21-févr</td>
-      <td >Jéheu</td>
+      <td  align=right x:num="38769">21-f&eacutevr</td>
+      <td >J&eacuteheu</td>
       <td >2E815-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >LIZEE à Daniel TULLIER</td>
+      <td >LIZEE &agrave Daniel TULLIER</td>
       <td  align=right x:num>873</td>
       <td >Ant. et Catherine AUDOUIN</td>
     </tr>
@@ -17798,7 +17798,7 @@ $connexionBD->ferme();
       <td >2E317-170</td>
       <td >Lhoumeau</td>
       <td >Ferme</td>
-      <td >François BONVALEST à Antoine JOUANNET</td>
+      <td >Fran&ccedilois BONVALEST &agrave Antoine JOUANNET</td>
       <td  align=right x:num>812</td>
       <td >&nbsp;</td>
     </tr>
@@ -17808,21 +17808,21 @@ $connexionBD->ferme();
   x:num="38080">3-avr</td>
       <td >Peuple</td>
       <td >2E1069-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >François CHAUVET à Pierre SEGUIN</td>
+      <td >Fran&ccedilois CHAUVET &agrave Pierre SEGUIN</td>
       <td  align=right x:num>749</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1690</td>
       <td  align=right
-  x:num="38960">31-août</td>
+  x:num="38960">31-ao&ucirct</td>
       <td >Rouhier</td>
       <td >2E1127-20</td>
       <td >Lhoumeau</td>
-      <td >Maîtrise</td>
-      <td >de Jean BOITEAU comme maître sergier</td>
+      <td >Ma&icirctrise</td>
+      <td >de Jean BOITEAU comme ma&icirctre sergier</td>
       <td  align=right x:num>922</td>
       <td >Fils de Michel</td>
     </tr>
@@ -17844,23 +17844,23 @@ $connexionBD->ferme();
   x:num="38016">30-janv</td>
       <td >Peuple</td>
       <td >2E1069-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >DAUVEAU Léonard</td>
+      <td >DAUVEAU L&eacuteonard</td>
       <td  align=right x:num>749</td>
-      <td >Françoise MONBOEUF</td>
+      <td >Fran&ccediloise MONBOEUF</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1690</td>
       <td  align=right
-  x:num="38769">21-févr</td>
+  x:num="38769">21-f&eacutevr</td>
       <td >Rouhier</td>
       <td >2E1127-10</td>
       <td >Lhoumeau</td>
       <td >Acquisition</td>
       <td >de Aymard RIFFAUD et Jacquette CLEMENT</td>
       <td  align=right x:num>922</td>
-      <td >à Thomas DAVID</td>
+      <td >&agrave Thomas DAVID</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1690</td>
@@ -17870,7 +17870,7 @@ $connexionBD->ferme();
       <td >2E317-200</td>
       <td >Lhoumeau</td>
       <td >Arrentement</td>
-      <td >Pierre DAVID à Jacques BASSET</td>
+      <td >Pierre DAVID &agrave Jacques BASSET</td>
       <td  align=right x:num>812</td>
       <td >&nbsp;</td>
     </tr>
@@ -17879,9 +17879,9 @@ $connexionBD->ferme();
       <td  align=right x:num="39821">8-janv</td>
       <td >Audouin</td>
       <td >2E123-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François ALBERT et Marguerite BOISTAUD</td>
+      <td >Fran&ccedilois ALBERT et Marguerite BOISTAUD</td>
       <td  align=right x:num>1356</td>
       <td >&nbsp;</td>
     </tr>
@@ -17892,14 +17892,14 @@ $connexionBD->ferme();
       <td >2E318-120</td>
       <td >Lhoumeau</td>
       <td >Procuration</td>
-      <td >Ant. JOUANNET à Marie CHARITE sa femme</td>
+      <td >Ant. JOUANNET &agrave Marie CHARITE sa femme</td>
       <td  align=right x:num>812</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
       <td  align=right
-  x:num="40163">16-déc</td>
+  x:num="40163">16-d&eacutec</td>
       <td >Petit</td>
       <td >2E5182-60</td>
       <td >Saint-Cybarde<span
@@ -17917,19 +17917,19 @@ $connexionBD->ferme();
       <td >2E1128-120</td>
       <td >Lhoumeau</td>
       <td >Reconnaissance</td>
-      <td >François AUDIER à Jean COUGNET</td>
+      <td >Fran&ccedilois AUDIER &agrave Jean COUGNET</td>
       <td  align=right x:num>921</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
       <td  align=right
-  x:num="39785">03-déc</td>
+  x:num="39785">03-d&eacutec</td>
       <td >Serpaud</td>
       <td >2E1171-220</td>
-      <td >Angoulême</td>
-      <td >Procès verbal</td>
-      <td >après décès Fr. GAILLARD et Marie RABOTEAU</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves verbal</td>
+      <td >apr&egraves d&eacutec&egraves Fr. GAILLARD et Marie RABOTEAU</td>
       <td  align=right x:num>1173</td>
       <td >de la maison et domaines</td>
     </tr>
@@ -17939,7 +17939,7 @@ $connexionBD->ferme();
   x:num="39694">03-sept</td>
       <td >Boilevin</td>
       <td >2E199-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Nicolas BOISTEAU et Jeanne LACROIX</td>
       <td  align=right x:num>1122</td>
@@ -17948,12 +17948,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
       <td  align=right
-  x:num="39067">16-déc</td>
+  x:num="39067">16-d&eacutec</td>
       <td >Rouhier</td>
       <td >2E1128-200</td>
       <td >Lhoumeau</td>
       <td >Acquisition</td>
-      <td >de Jeanne BENOIST de François IMBERT</td>
+      <td >de Jeanne BENOIST de Fran&ccedilois IMBERT</td>
       <td  align=right x:num>921</td>
       <td >Dans les prisons royales</td>
     </tr>
@@ -17963,9 +17963,9 @@ $connexionBD->ferme();
   x:num="39632">03-juil</td>
       <td >Serpaud</td>
       <td >2E1171-200</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
-      <td >après décès Fr. GAILLARD et Marie RABOTEAU</td>
+      <td >apr&egraves d&eacutec&egraves Fr. GAILLARD et Marie RABOTEAU</td>
       <td  align=right x:num>1173</td>
       <td >demande de Pierre RABOTEAU</td>
     </tr>
@@ -17977,7 +17977,7 @@ $connexionBD->ferme();
       <td >2E318-100</td>
       <td >Lhoumeau</td>
       <td >Quittance</td>
-      <td >Antoine JOUANNET à Jean PARANTEAU</td>
+      <td >Antoine JOUANNET &agrave Jean PARANTEAU</td>
       <td  align=right x:num>812</td>
       <td >et cession</td>
     </tr>
@@ -17987,9 +17987,9 @@ $connexionBD->ferme();
   x:num="39577">09-mai</td>
       <td >Gillibert</td>
       <td >2E712-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
-      <td >Pierre CHENEVIERE à Louis CHENEVIERE</td>
+      <td >Pierre CHENEVIERE &agrave Louis CHENEVIERE</td>
       <td  align=right x:num>1148</td>
       <td >&nbsp;</td>
     </tr>
@@ -17997,9 +17997,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1691</td>
       <td  align=right
   x:num="39032">11-nov</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E815-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean CAILLAUD et Marguerite COCUAUD</td>
       <td  align=right x:num>873</td>
@@ -18011,11 +18011,11 @@ $connexionBD->ferme();
   x:num="39596">28-mai</td>
       <td >Serpaud</td>
       <td >2E1171-190</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >Mathieu BASSET sergent du duché de La Roch.</td>
+      <td >Mathieu BASSET sergent du duch&eacute de La Roch.</td>
       <td  align=right x:num>1173</td>
-      <td >à Pierre BARREAU seigneur de Girac</td>
+      <td >&agrave Pierre BARREAU seigneur de Girac</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
@@ -18035,11 +18035,11 @@ $connexionBD->ferme();
   x:num="39557">19-avr</td>
       <td >Boilevin</td>
       <td >2E199-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
       <td >entre Michel PAPIN et Jeanne FERRET</td>
       <td  align=right x:num>1122</td>
-      <td >et DELPEUX (à Veuil)</td>
+      <td >et DELPEUX (&agrave Veuil)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
@@ -18048,7 +18048,7 @@ $connexionBD->ferme();
       <td >Rouhier</td>
       <td >2E1128-160</td>
       <td >Lhoumeau</td>
-      <td >Procès verbal</td>
+      <td >Proc&egraves verbal</td>
       <td >Denis BASSET et CHARRON</td>
       <td  align=right x:num>921</td>
       <td >&nbsp;</td>
@@ -18059,7 +18059,7 @@ $connexionBD->ferme();
   x:num="38969">09-sept</td>
       <td >Micheau</td>
       <td >2E1031-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Charles GABORIT et Magdelaine BECHET</td>
       <td  align=right x:num>977</td>
@@ -18080,7 +18080,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
       <td  align=right
-  x:num="38758">10-févr</td>
+  x:num="38758">10-f&eacutevr</td>
       <td >Clochard</td>
       <td >2E413-170</td>
       <td >Lhoumeau</td>
@@ -18095,9 +18095,9 @@ $connexionBD->ferme();
   x:num="39726">05-oct</td>
       <td >Serpaud</td>
       <td >2E1171-210</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >après décès Fr. GAILLARD et Marie RABOTEAU</td>
+      <td >apr&egraves d&eacutec&egraves Fr. GAILLARD et Marie RABOTEAU</td>
       <td  align=right x:num>1173</td>
       <td >des meubles</td>
     </tr>
@@ -18105,13 +18105,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1691</td>
       <td  align=right
   x:num="38927">29-juil</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E815-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Apprentissage</td>
       <td >Louis SURREAU, fils de Antoine, chez F. PAYET</td>
       <td  align=right x:num>873</td>
-      <td >Sans intérêt ?</td>
+      <td >Sans int&eacuter&ecirct ?</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
@@ -18128,12 +18128,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
       <td  align=right
-  x:num="39053">2-déc</td>
-      <td >Jéheu</td>
+  x:num="39053">2-d&eacutec</td>
+      <td >J&eacuteheu</td>
       <td >2E815-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
-      <td >Jean BERNIER à Michel BOISTEAU</td>
+      <td >Jean BERNIER &agrave Michel BOISTEAU</td>
       <td  align=right x:num>873</td>
       <td >et Michelle LECLERC</td>
     </tr>
@@ -18143,11 +18143,11 @@ $connexionBD->ferme();
   x:num="38734">17-janv</td>
       <td >Serpaud</td>
       <td >2E1171-130</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >B. et P. BOITAUD à A. PENOT (DUSOUCHET)</td>
+      <td >B. et P. BOITAUD &agrave A. PENOT (DUSOUCHET)</td>
       <td  align=right x:num>978</td>
-      <td >Fils de François BOISTAUD</td>
+      <td >Fils de Fran&ccedilois BOISTAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
@@ -18157,7 +18157,7 @@ $connexionBD->ferme();
       <td >2E1128-190</td>
       <td >Lhoumeau</td>
       <td >Reconnaissance</td>
-      <td >Jacques MOUSNIER à Philippe BOISTEAU</td>
+      <td >Jacques MOUSNIER &agrave Philippe BOISTEAU</td>
       <td  align=right x:num>921</td>
       <td >&nbsp;</td>
     </tr>
@@ -18165,11 +18165,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1691</td>
       <td  align=right
   x:num="38668">12-nov</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E938-120</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Demission</td>
-      <td >Berthomé et Michel BOITEAU</td>
+      <td >Berthom&eacute et Michel BOITEAU</td>
       <td  align=right x:num>777</td>
       <td >&nbsp;</td>
     </tr>
@@ -18188,7 +18188,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
       <td  align=right
-  x:num="38763">15-févr</td>
+  x:num="38763">15-f&eacutevr</td>
       <td >Rouhier</td>
       <td >2E1128-100</td>
       <td >Lhoumeau</td>
@@ -18200,7 +18200,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
       <td  align=right
-  x:num="38763">15-févr</td>
+  x:num="38763">15-f&eacutevr</td>
       <td >Rouhier</td>
       <td >2E1128-110</td>
       <td >Lhoumeau</td>
@@ -18224,12 +18224,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
       <td  align=right
-  x:num="39067">16-déc</td>
+  x:num="39067">16-d&eacutec</td>
       <td >Col</td>
       <td >2E4545-10</td>
       <td >La Rochef.</td>
       <td >Vente</td>
-      <td >à Marie DARS veuve d'Etienne MAYOU</td>
+      <td >&agrave Marie DARS veuve d'Etienne MAYOU</td>
       <td  align=right x:num>1022</td>
       <td >&nbsp;</td>
     </tr>
@@ -18239,7 +18239,7 @@ $connexionBD->ferme();
   x:num="38821">14-avr</td>
       <td >Serpaud</td>
       <td >2E1171-140</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean YRVOIX et Anne CLERGERIE</td>
       <td  align=right x:num>978</td>
@@ -18249,9 +18249,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1691</td>
       <td  align=right
   x:num="38632">7-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E938-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre CHAUVET et Perrine TEXIER</td>
       <td  align=right x:num>777</td>
@@ -18265,17 +18265,17 @@ $connexionBD->ferme();
       <td >2E318-110</td>
       <td >Lhoumeau</td>
       <td >Quittance</td>
-      <td >Mathurin BLANCHIER à Cath. RAVAMEAU</td>
+      <td >Mathurin BLANCHIER &agrave Cath. RAVAMEAU</td>
       <td  align=right x:num>812</td>
       <td >Veuve de Robert ROY</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
       <td  align=right
-  x:num="38411">28-févr</td>
+  x:num="38411">28-f&eacutevr</td>
       <td >Peynaud</td>
       <td >1E1071-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
       <td >Jean SIMARD - Mery ESTEVE - Fra. YRVOIX</td>
       <td  align=right x:num>782</td>
@@ -18286,19 +18286,19 @@ $connexionBD->ferme();
       <td  align=right x:num="39879">7-mars</td>
       <td >Audouin</td>
       <td >2E124-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Christophe LAMY à Nicolas BASSET marchand</td>
+      <td >Christophe LAMY &agrave Nicolas BASSET marchand</td>
       <td  align=right x:num>1356</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1691</td>
       <td  align=right
-  x:num="40150">3-déc</td>
+  x:num="40150">3-d&eacutec</td>
       <td >Audouin</td>
       <td >2E124-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Acte</td>
       <td >Entre Louis et Marguerite YRVOIX</td>
       <td  align=right x:num>1356</td>
@@ -18309,11 +18309,11 @@ $connexionBD->ferme();
       <td  align=right x:num="38495">23-mai</td>
       <td >Peynaud</td>
       <td >2E1071-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >Ant. MESNARD et Aignette SIMARD</td>
       <td  align=right x:num>782</td>
-      <td >à Jean SIMARD</td>
+      <td >&agrave Jean SIMARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1692</td>
@@ -18333,9 +18333,9 @@ $connexionBD->ferme();
   x:num="39726">05-oct</td>
       <td >Serpaud</td>
       <td >2E1172-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
-      <td >des meubles de François IRVOIX</td>
+      <td >des meubles de Fran&ccedilois IRVOIX</td>
       <td  align=right x:num>1172</td>
       <td >&nbsp;</td>
     </tr>
@@ -18349,12 +18349,12 @@ $connexionBD->ferme();
       <td >Partage</td>
       <td >Pierre RIFFAUD et autres RIFFAUD</td>
       <td  align=right x:num>812</td>
-      <td >ap. décès de Jeanne JAYET</td>
+      <td >ap. d&eacutec&egraves de Jeanne JAYET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1692</td>
       <td  align=right
-  x:num="39507">29-févr</td>
+  x:num="39507">29-f&eacutevr</td>
       <td >Prevost</td>
       <td >2E2777-10</td>
       <td >Douzat</td>
@@ -18373,7 +18373,7 @@ $connexionBD->ferme();
       <td >Inventaire</td>
       <td >Pierre RIFFAUD et autres RIFFAUD</td>
       <td  align=right x:num>812</td>
-      <td >ap. décès de Jeanne JAYET</td>
+      <td >ap. d&eacutec&egraves de Jeanne JAYET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1692</td>
@@ -18381,9 +18381,9 @@ $connexionBD->ferme();
   x:num="39474">27-janv</td>
       <td >Gillibert</td>
       <td >2E712-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Antoine SORIGNET et Françoise BOISDON</td>
+      <td >Antoine SORIGNET et Fran&ccediloise BOISDON</td>
       <td  align=right x:num>1148</td>
       <td >fille de Guillaume</td>
     </tr>
@@ -18393,8 +18393,8 @@ $connexionBD->ferme();
   x:num="38597">2-sept</td>
       <td >Peynaud</td>
       <td >2E1071-80</td>
-      <td >Angoulême</td>
-      <td >Procès-verbal</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves-verbal</td>
       <td >Philippe BOISTEAU  - Mathieu BOUTILLIER</td>
       <td  align=right x:num>782</td>
       <td >&nbsp;</td>
@@ -18405,9 +18405,9 @@ $connexionBD->ferme();
   x:num="38658">2-nov</td>
       <td >Bouillaud</td>
       <td >2E212-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Marie BONNORON à Barthelemie TEXIER</td>
+      <td >Marie BONNORON &agrave Barthelemie TEXIER</td>
       <td  align=right x:num>784</td>
       <td >&nbsp;</td>
     </tr>
@@ -18419,7 +18419,7 @@ $connexionBD->ferme();
       <td >2E413-190</td>
       <td >Lhoumeau</td>
       <td >Arrentement</td>
-      <td >Pierre DELABORIE à Jacques BASSET</td>
+      <td >Pierre DELABORIE &agrave Jacques BASSET</td>
       <td  align=right x:num>953</td>
       <td >et Marie MAMAIN fe. de Jacq.</td>
     </tr>
@@ -18431,7 +18431,7 @@ $connexionBD->ferme();
       <td >2E318-200</td>
       <td >Lhoumeau</td>
       <td >Ferme</td>
-      <td >Elizabeth ROY à Berthomé RANOUX</td>
+      <td >Elizabeth ROY &agrave Berthom&eacute RANOUX</td>
       <td  align=right x:num>812</td>
       <td >Locaon. d'un soufflet et estoc</td>
     </tr>
@@ -18443,19 +18443,19 @@ $connexionBD->ferme();
       <td >2E2777-20</td>
       <td >Douzat</td>
       <td >Paiement</td>
-      <td >à Jean BOISDON</td>
+      <td >&agrave Jean BOISDON</td>
       <td  align=right x:num>1148</td>
       <td >Jean NAUD et Paul COUSSAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1692</td>
       <td  align=right
-  x:num="38756">8-févr</td>
-      <td >Jéheu</td>
+  x:num="38756">8-f&eacutevr</td>
+      <td >J&eacuteheu</td>
       <td >2E815-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >André AVRIL et Marie YRVOIX</td>
+      <td >Andr&eacute AVRIL et Marie YRVOIX</td>
       <td  align=right x:num>873</td>
       <td >&nbsp;</td>
     </tr>
@@ -18467,7 +18467,7 @@ $connexionBD->ferme();
       <td >2E1129-20</td>
       <td >Lhoumeau</td>
       <td >Transaction</td>
-      <td >Françoise LARMAT et François IMBERT</td>
+      <td >Fran&ccediloise LARMAT et Fran&ccedilois IMBERT</td>
       <td  align=right x:num>921</td>
       <td >Hommicide…</td>
     </tr>
@@ -18477,7 +18477,7 @@ $connexionBD->ferme();
   x:num="39644">15-juil</td>
       <td >Gillibert</td>
       <td >2E712-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre ROY et Catherine MESTADRIE</td>
       <td  align=right x:num>1148</td>
@@ -18491,7 +18491,7 @@ $connexionBD->ferme();
       <td >2E1129-10</td>
       <td >Lhoumeau</td>
       <td >Vente</td>
-      <td >Pierre COMBRET à Catherine COUPEAU</td>
+      <td >Pierre COMBRET &agrave Catherine COUPEAU</td>
       <td  align=right x:num>921</td>
       <td >vente d'une gabarre neuve</td>
     </tr>
@@ -18522,10 +18522,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1692</td>
       <td  align=right
-  x:num="38589">25-août</td>
+  x:num="38589">25-ao&ucirct</td>
       <td >Peynaud</td>
       <td >2E1071-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Louis IMBERT et Marguerite JARRY</td>
       <td  align=right x:num>782</td>
@@ -18535,22 +18535,22 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1692</td>
       <td  align=right
   x:num="38597">2-sept</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E938-140</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Marie LIZEE à Germain BRANGIER</td>
+      <td >Marie LIZEE &agrave Germain BRANGIER</td>
       <td  align=right x:num>777</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1692</td>
-      <td  align=right x:num="40154">7-déc</td>
+      <td  align=right x:num="40154">7-d&eacutec</td>
       <td >Audouin</td>
       <td >2E124-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
-      <td >à Méry AUDIER par Catherine MAURIN</td>
+      <td >&agrave M&eacutery AUDIER par Catherine MAURIN</td>
       <td  align=right x:num>1356</td>
       <td >d'une maison</td>
     </tr>
@@ -18571,7 +18571,7 @@ $connexionBD->ferme();
   x:num="39631">02-juil</td>
       <td >Serpaud</td>
       <td >2E1172-200</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean BOYLEVIN et Marie FEBURE</td>
       <td  align=right x:num>1172</td>
@@ -18599,15 +18599,15 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Antoine ARONDEAU et Marg. MESTADRIE</td>
       <td  align=right x:num>1035</td>
-      <td >à Antoine BLANCHON</td>
+      <td >&agrave Antoine BLANCHON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1693</td>
       <td  align=right
-  x:num="38591">27-août</td>
+  x:num="38591">27-ao&ucirct</td>
       <td >Bouillaud</td>
       <td >2E212-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Guillaume AUDOUIN et Anne JUBERT</td>
       <td  align=right x:num>784</td>
@@ -18619,19 +18619,19 @@ $connexionBD->ferme();
   x:num="38507">4-juin</td>
       <td >Bouillaud</td>
       <td >2E212-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
-      <td >Michelle BARDET (feu François SIMARD)</td>
+      <td >Michelle BARDET (feu Fran&ccedilois SIMARD)</td>
       <td  align=right x:num>784</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1693</td>
       <td  align=right
-  x:num="38749">01-févr</td>
+  x:num="38749">01-f&eacutevr</td>
       <td >Couppeau</td>
       <td >2E424-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean CHERADE et Margte. CHASTAIGNER</td>
       <td  align=right x:num>971</td>
@@ -18657,7 +18657,7 @@ $connexionBD->ferme();
       <td >2E4297-60</td>
       <td >Mornac</td>
       <td >Vente</td>
-      <td >Par Marguerite RIFFAUD à Guillaume SURRAUD</td>
+      <td >Par Marguerite RIFFAUD &agrave Guillaume SURRAUD</td>
       <td  align=right x:num>885</td>
       <td >de Touvre</td>
     </tr>
@@ -18676,14 +18676,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1693</td>
       <td  align=right
-  x:num="39060">09-déc</td>
+  x:num="39060">09-d&eacutec</td>
       <td >Micheau</td>
       <td >2E1031-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
-      <td >François NOBLESSE</td>
+      <td >Fran&ccedilois NOBLESSE</td>
       <td  align=right x:num>977</td>
-      <td >ap. décès de son père Jean</td>
+      <td >ap. d&eacutec&egraves de son p&egravere Jean</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1693</td>
@@ -18691,19 +18691,19 @@ $connexionBD->ferme();
   x:num="39345">20-sept</td>
       <td >Peynaud</td>
       <td >2E1072-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >Marie THUET à Jean ROY fils</td>
+      <td >Marie THUET &agrave Jean ROY fils</td>
       <td  align=right x:num>785</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1694</td>
       <td  align=right
-  x:num="38578">14-août</td>
+  x:num="38578">14-ao&ucirct</td>
       <td >Peynaud</td>
       <td >2E1072-90</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Cath. ORDONNEAU, Michel et Jean BOYTEAU</td>
       <td  align=right x:num>789</td>
@@ -18717,7 +18717,7 @@ $connexionBD->ferme();
       <td >2E1131-50</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >François SURREAU et Marguerite GAULTIER</td>
+      <td >Fran&ccedilois SURREAU et Marguerite GAULTIER</td>
       <td  align=right x:num>917</td>
       <td >Fils de Nic et Marie COSTE</td>
     </tr>
@@ -18743,17 +18743,17 @@ $connexionBD->ferme();
       <td >Echange</td>
       <td >Etienne POITEVIN et Fce. ROUGIER</td>
       <td  align=right x:num>1035</td>
-      <td >femme de François BRISSEAU</td>
+      <td >femme de Fran&ccedilois BRISSEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1694</td>
       <td  align=right
-  x:num="38715">29-déc</td>
+  x:num="38715">29-d&eacutec</td>
       <td >Chauvin</td>
       <td >2E319-50</td>
       <td >Lhoumeau</td>
       <td >Cession</td>
-      <td >Arnaud ROY à Christophe GALLIOT</td>
+      <td >Arnaud ROY &agrave Christophe GALLIOT</td>
       <td  align=right x:num>814</td>
       <td >et Frcs et Elie SEGUIN</td>
     </tr>
@@ -18765,7 +18765,7 @@ $connexionBD->ferme();
       <td >2E319-10</td>
       <td >Lhoumeau</td>
       <td >Cession</td>
-      <td >Jean CAILLAUD à Elisabeth ROY sa mère</td>
+      <td >Jean CAILLAUD &agrave Elisabeth ROY sa m&egravere</td>
       <td  align=right x:num>814</td>
       <td >&nbsp;</td>
     </tr>
@@ -18789,7 +18789,7 @@ $connexionBD->ferme();
       <td >2E319-20</td>
       <td >Lhoumeau</td>
       <td >Quittance</td>
-      <td >Pierre RIFFAUD à Jean COMBRET</td>
+      <td >Pierre RIFFAUD &agrave Jean COMBRET</td>
       <td  align=right x:num>814</td>
       <td >Mari de Marie MESNIER</td>
     </tr>
@@ -18811,7 +18811,7 @@ $connexionBD->ferme();
   x:num="39760">08-nov</td>
       <td >Serpaud</td>
       <td >2E1172-300</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Joseph GUIOT et Marie MARTIN</td>
       <td  align=right x:num>1172</td>
@@ -18821,9 +18821,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1694</td>
       <td  align=right
   x:num="38658">2-nov</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E938-210</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >Jean et Pierre RIFFAUD - Marguerite GIRAUD</td>
       <td  align=right x:num>777</td>
@@ -18833,9 +18833,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1694</td>
       <td  align=right
   x:num="38370">18-janv</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E938-160</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean ROUHIER et Marguerite BARBARY</td>
       <td  align=right x:num>777</td>
@@ -18844,7 +18844,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1694</td>
       <td  align=right
-  x:num="38712">26-déc</td>
+  x:num="38712">26-d&eacutec</td>
       <td >Chauvin</td>
       <td >2E319-40</td>
       <td >Lhoumeau</td>
@@ -18856,7 +18856,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1694</td>
       <td  align=right
-  x:num="38952">23-août</td>
+  x:num="38952">23-ao&ucirct</td>
       <td >Rouhier</td>
       <td >2E1131-60</td>
       <td >Lhoumeau</td>
@@ -18871,7 +18871,7 @@ $connexionBD->ferme();
   x:num="38873">05-juin</td>
       <td >Micheau</td>
       <td >2E1032-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Compte</td>
       <td >Pierre CHAIGNEAU et Cath. ORDONNEAU</td>
       <td  align=right x:num>975</td>
@@ -18880,19 +18880,19 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1694</td>
       <td  align=right
-  x:num="38769">21-févr</td>
+  x:num="38769">21-f&eacutevr</td>
       <td >Pillorget</td>
       <td >2E2170-20</td>
       <td >Champniers</td>
       <td >Vente</td>
       <td >Lucresse ARONDEAU</td>
       <td  align=right x:num>1035</td>
-      <td >à Antoine BLANCHON</td>
+      <td >&agrave Antoine BLANCHON</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1694</td>
       <td  align=right
-  x:num="38956">27-août</td>
+  x:num="38956">27-ao&ucirct</td>
       <td >Rouhier</td>
       <td >2E1131-70</td>
       <td >Lhoumeau</td>
@@ -18910,7 +18910,7 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Etienne BENESTEAU</td>
       <td  align=right x:num>1441</td>
-      <td >Elis. HERVE vve Rémy GOUILLARD</td>
+      <td >Elis. HERVE vve R&eacutemy GOUILLARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1695</td>
@@ -18919,21 +18919,21 @@ $connexionBD->ferme();
       <td >2E319-60</td>
       <td >Lhoumeau</td>
       <td >Apprentissage</td>
-      <td >Jean JAYET chez Thomas TETREL me poêlier</td>
+      <td >Jean JAYET chez Thomas TETREL me po&ecirclier</td>
       <td  align=right x:num>814</td>
-      <td >fils de Berthomé JAYET</td>
+      <td >fils de Berthom&eacute JAYET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1695</td>
       <td  align=right
-  x:num="38760">12-févr</td>
+  x:num="38760">12-f&eacutevr</td>
       <td >Micheau</td>
       <td >2E1032-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Denis TOUCHES et Marie LIET sa femme</td>
       <td  align=right x:num>975</td>
-      <td >à Philippe LIET père</td>
+      <td >&agrave Philippe LIET p&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1695</td>
@@ -18943,7 +18943,7 @@ $connexionBD->ferme();
       <td >2E2770-10</td>
       <td >Dirac</td>
       <td >Mariage</td>
-      <td >François BIARD et Anne CARTIER</td>
+      <td >Fran&ccedilois BIARD et Anne CARTIER</td>
       <td  align=right x:num>869</td>
       <td >&nbsp;</td>
     </tr>
@@ -18951,9 +18951,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1695</td>
       <td  align=right
   x:num="38293">2-nov</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E939-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Pierre CHAUVET Jean TEXIER</td>
       <td  align=right x:num>738</td>
@@ -18962,12 +18962,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1696</td>
       <td  align=right
-  x:num="39053">02-déc</td>
+  x:num="39053">02-d&eacutec</td>
       <td >Clochard</td>
       <td >2E414-10</td>
       <td >Lhoumeau</td>
       <td >Partage</td>
-      <td >Pierre, Berthomée, Colette, Jacqtte RIFFAUD</td>
+      <td >Pierre, Berthom&eacutee, Colette, Jacqtte RIFFAUD</td>
       <td  align=right x:num>952</td>
       <td >&nbsp;</td>
     </tr>
@@ -18979,7 +18979,7 @@ $connexionBD->ferme();
       <td >2E2770-50</td>
       <td >Dirac</td>
       <td >Vente</td>
-      <td >Philippe BIARD à Jean SIMMONOT</td>
+      <td >Philippe BIARD &agrave Jean SIMMONOT</td>
       <td  align=right x:num>869</td>
       <td >&nbsp;</td>
     </tr>
@@ -18989,9 +18989,9 @@ $connexionBD->ferme();
   x:num="38780">04-mars</td>
       <td >Micheau</td>
       <td >2E1032-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Marie PAPIN à Jean ROUFFIGNAC</td>
+      <td >Marie PAPIN &agrave Jean ROUFFIGNAC</td>
       <td  align=right x:num>975</td>
       <td >&nbsp;</td>
     </tr>
@@ -19003,7 +19003,7 @@ $connexionBD->ferme();
       <td >2E1133-20</td>
       <td >Lhoumeau</td>
       <td >Reconnaissance</td>
-      <td >Jacques BIARD à François BOUCHET</td>
+      <td >Jacques BIARD &agrave Fran&ccedilois BOUCHET</td>
       <td  align=right x:num>914</td>
       <td >Fils de Gabriel BIARD</td>
     </tr>
@@ -19014,20 +19014,20 @@ $connexionBD->ferme();
       <td >Peynaud fils</td>
       <td >2E2770-40</td>
       <td >Dirac</td>
-      <td >Déclaration</td>
-      <td >Jeanne BARREAU et François LIZEE son fils</td>
+      <td >D&eacuteclaration</td>
+      <td >Jeanne BARREAU et Fran&ccedilois LIZEE son fils</td>
       <td  align=right x:num>869</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1696</td>
       <td  align=right
-  x:num="38394">11-févr</td>
+  x:num="38394">11-f&eacutevr</td>
       <td >Chauvin</td>
       <td >2E319-70</td>
       <td >Lhoumeau</td>
       <td >Quittance</td>
-      <td >Jean JOUANNET à Jeanne COUPEAU sa femme</td>
+      <td >Jean JOUANNET &agrave Jeanne COUPEAU sa femme</td>
       <td  align=right x:num>815</td>
       <td >Jean JOUANNET &quot;Le Jeune&quot;</td>
     </tr>
@@ -19039,7 +19039,7 @@ $connexionBD->ferme();
       <td >2E2770-20</td>
       <td >Dirac</td>
       <td >Cession</td>
-      <td >Louis SURREAU à Jean THINON</td>
+      <td >Louis SURREAU &agrave Jean THINON</td>
       <td  align=right x:num>869</td>
       <td >&nbsp;</td>
     </tr>
@@ -19051,7 +19051,7 @@ $connexionBD->ferme();
       <td >2E1133-10</td>
       <td >Lhoumeau</td>
       <td >Ferme</td>
-      <td >Jeanne COUPEAU à Jean VOUHIER</td>
+      <td >Jeanne COUPEAU &agrave Jean VOUHIER</td>
       <td  align=right x:num>914</td>
       <td >Veuve de Jean JOUANNET</td>
     </tr>
@@ -19070,7 +19070,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1697</td>
       <td  align=right
-  x:num="39484">06-févr</td>
+  x:num="39484">06-f&eacutevr</td>
       <td >Prevost</td>
       <td >2E2777-50</td>
       <td >Douzat</td>
@@ -19087,7 +19087,7 @@ $connexionBD->ferme();
       <td >2E320-30</td>
       <td >Lhoumeau</td>
       <td >Sommation</td>
-      <td >Jean TOURNIER à PETIT et Jacques CHAUVET</td>
+      <td >Jean TOURNIER &agrave PETIT et Jacques CHAUVET</td>
       <td  align=right x:num>815</td>
       <td >&nbsp;</td>
     </tr>
@@ -19101,7 +19101,7 @@ $connexionBD->ferme();
       <td >Cession</td>
       <td >Anne DURANDEAU veuve de Jean ROY</td>
       <td  align=right x:num>815</td>
-      <td >à Jean DURANDEAU  frère</td>
+      <td >&agrave Jean DURANDEAU  fr&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1697</td>
@@ -19136,17 +19136,17 @@ $connexionBD->ferme();
       <td >Lhoumeau</td>
       <td 
   x:str="Acquisition ">Acquisition </td>
-      <td >François BOURGUET de Anne DURANDEAU</td>
+      <td >Fran&ccedilois BOURGUET de Anne DURANDEAU</td>
       <td  align=right x:num>914</td>
       <td >Veuve de Jean ROY</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1697</td>
       <td  align=right
-  x:num="38933">04-août</td>
+  x:num="38933">04-ao&ucirct</td>
       <td >Micheau</td>
       <td >2E1032-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean MONBOEUF et Jeanne BARBARY</td>
       <td  align=right x:num>975</td>
@@ -19159,7 +19159,7 @@ $connexionBD->ferme();
       <td >Rouhier</td>
       <td >2E1134-40</td>
       <td >Lhoumeau</td>
-      <td >Procès-verbal</td>
+      <td >Proc&egraves-verbal</td>
       <td >Jacques BASSET et Pierre CLOCHARD</td>
       <td  align=right x:num>914</td>
       <td >Son gendre</td>
@@ -19172,7 +19172,7 @@ $connexionBD->ferme();
       <td >2E2770-60</td>
       <td >Dirac</td>
       <td >Vente</td>
-      <td >Marie BARBARY à Jean ROY</td>
+      <td >Marie BARBARY &agrave Jean ROY</td>
       <td  align=right x:num>869</td>
       <td >D'une gabarre</td>
     </tr>
@@ -19191,7 +19191,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1697</td>
       <td  align=right
-  x:num="39055">04-déc</td>
+  x:num="39055">04-d&eacutec</td>
       <td >Couppeau</td>
       <td >2E424-30</td>
       <td >St Cybard</td>
@@ -19203,10 +19203,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1697</td>
       <td  align=right
-  x:num="38200">1-août</td>
+  x:num="38200">1-ao&ucirct</td>
       <td >Boilevin</td>
       <td >2E201-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean Bernard et Marie Bernier</td>
       <td  align=right x:num>757</td>
@@ -19216,9 +19216,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1697</td>
       <td  align=right
   x:num="38134">27-mai</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E939-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre Surraud - Marguerite Brissaud</td>
       <td  align=right x:num>738</td>
@@ -19227,7 +19227,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1697</td>
       <td  align=right
-  x:num="39052">01-déc</td>
+  x:num="39052">01-d&eacutec</td>
       <td >Rouhier</td>
       <td >2E1134-70</td>
       <td >Lhoumeau</td>
@@ -19252,13 +19252,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1697</td>
       <td  align=right
   x:num="38266">6-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E939-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >COUPEAU Simon</td>
       <td  align=right x:num>738</td>
-      <td >François BONVASLET</td>
+      <td >Fran&ccedilois BONVASLET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1697</td>
@@ -19268,7 +19268,7 @@ $connexionBD->ferme();
       <td >2E1134-10</td>
       <td >Lhoumeau</td>
       <td >Cession</td>
-      <td >Jacquette BIARD à Jean CHASAIGNE</td>
+      <td >Jacquette BIARD &agrave Jean CHASAIGNE</td>
       <td  align=right x:num>914</td>
       <td >&nbsp;</td>
     </tr>
@@ -19280,7 +19280,7 @@ $connexionBD->ferme();
       <td >2E1135-10</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >Jean TOURNIER et Geneviève BOUILLAUD</td>
+      <td >Jean TOURNIER et Genevi&egraveve BOUILLAUD</td>
       <td  align=right x:num>912</td>
       <td >Fils de Marie RAVAUD</td>
     </tr>
@@ -19292,9 +19292,9 @@ $connexionBD->ferme();
       <td >2E320-50</td>
       <td >Lhoumeau</td>
       <td >Vente</td>
-      <td >Pierre ROY Curé à Louis SURREAU</td>
+      <td >Pierre ROY Cur&eacute &agrave Louis SURREAU</td>
       <td  align=right x:num>815</td>
-      <td >et Jacq. et Léo BOURGUET</td>
+      <td >et Jacq. et L&eacuteo BOURGUET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1698</td>
@@ -19304,7 +19304,7 @@ $connexionBD->ferme();
       <td >2E1135-20</td>
       <td >Lhoumeau</td>
       <td >Arrentement</td>
-      <td >Michelle ROY à François SURREAU</td>
+      <td >Michelle ROY &agrave Fran&ccedilois SURREAU</td>
       <td  align=right x:num>912</td>
       <td >&nbsp;</td>
     </tr>
@@ -19328,7 +19328,7 @@ $connexionBD->ferme();
       <td >2E320-60</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >François VALLETEAU et Berthomée RIFFAUD</td>
+      <td >Fran&ccedilois VALLETEAU et Berthom&eacutee RIFFAUD</td>
       <td  align=right x:num>815</td>
       <td >&nbsp;</td>
     </tr>
@@ -19340,19 +19340,19 @@ $connexionBD->ferme();
       <td >2E2771-10</td>
       <td >Dirac</td>
       <td >Mariage</td>
-      <td >François ROUSSEAU et Geneviève SURRAUD</td>
+      <td >Fran&ccedilois ROUSSEAU et Genevi&egraveve SURRAUD</td>
       <td  align=right x:num>867</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1698</td>
       <td  align=right
-  x:num="39079">28-déc</td>
+  x:num="39079">28-d&eacutec</td>
       <td >Rouhier</td>
       <td >2E1135-30</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >Mathieu DENEUVILLE et Françoise ROUHIER</td>
+      <td >Mathieu DENEUVILLE et Fran&ccediloise ROUHIER</td>
       <td  align=right x:num>912</td>
       <td >&nbsp;</td>
     </tr>
@@ -19364,9 +19364,9 @@ $connexionBD->ferme();
       <td >2E2771-20</td>
       <td >Dirac</td>
       <td >Vente</td>
-      <td >François LIZEE et Anne RONDINAUD</td>
+      <td >Fran&ccedilois LIZEE et Anne RONDINAUD</td>
       <td  align=right x:num>867</td>
-      <td >à Denis REIGNIER</td>
+      <td >&agrave Denis REIGNIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1698</td>
@@ -19410,7 +19410,7 @@ $connexionBD->ferme();
   x:num="39934">1-mai</td>
       <td >Gillibert</td>
       <td >2E714-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Guillaume BOISDON et Denise BANLIN</td>
       <td  align=right x:num>1328</td>
@@ -19418,7 +19418,7 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1699</td>
-      <td  align=right x:num="38691">5-déc</td>
+      <td  align=right x:num="38691">5-d&eacutec</td>
       <td >Peynaud fils</td>
       <td >2E2771-60</td>
       <td >Dirac</td>
@@ -19430,24 +19430,24 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1699</td>
       <td  align=right
-  x:num="38766">18-févr</td>
+  x:num="38766">18-f&eacutevr</td>
       <td >Rouhier</td>
       <td >2E1136-10</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >François BARBARY et Jeanne JOUANNET</td>
+      <td >Fran&ccedilois BARBARY et Jeanne JOUANNET</td>
       <td  align=right x:num>912</td>
       <td >Fille de Jean et Marg. AUBIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1699</td>
       <td  align=right
-  x:num="39080">29-déc</td>
+  x:num="39080">29-d&eacutec</td>
       <td >Micheau</td>
       <td >2E1033-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François SURREAU et Marie MOUCHIERE</td>
+      <td >Fran&ccedilois SURREAU et Marie MOUCHIERE</td>
       <td  align=right x:num>975</td>
       <td >&nbsp;</td>
     </tr>
@@ -19467,21 +19467,21 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1699</td>
       <td  align=right
   x:num="38180">12-juil</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E940-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >DAUVEAU Léonard</td>
+      <td >DAUVEAU L&eacuteonard</td>
       <td  align=right x:num>738</td>
-      <td >Françoise MONBOEUF</td>
+      <td >Fran&ccediloise MONBOEUF</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1699</td>
       <td  align=right
-  x:num="38959">30-août</td>
+  x:num="38959">30-ao&ucirct</td>
       <td >Micheau</td>
       <td >2E1033-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cheptel</td>
       <td >Guill. MESNARD et J. RESNIER sa femme</td>
       <td  align=right x:num>975</td>
@@ -19490,12 +19490,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1699</td>
       <td  align=right
-  x:num="38211">12-août</td>
+  x:num="38211">12-ao&ucirct</td>
       <td >Boilevin</td>
       <td >2E201-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >&nbsp;</td>
-      <td >Hélie Poirier</td>
+      <td >H&eacutelie Poirier</td>
       <td  align=right x:num>757</td>
       <td >&nbsp;</td>
     </tr>
@@ -19505,9 +19505,9 @@ $connexionBD->ferme();
   x:num="38798">22-mars</td>
       <td >Micheau</td>
       <td >2E1033-10</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
-      <td >François ROY à Etienne et Pierre ses enfants</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
+      <td >Fran&ccedilois ROY &agrave Etienne et Pierre ses enfants</td>
       <td  align=right x:num>975</td>
       <td >&nbsp;</td>
     </tr>
@@ -19519,7 +19519,7 @@ $connexionBD->ferme();
       <td >2E1136-30</td>
       <td >Lhoumeau</td>
       <td >Sommation</td>
-      <td >Pierre ROY à Marguerite LECLERC</td>
+      <td >Pierre ROY &agrave Marguerite LECLERC</td>
       <td  align=right x:num>912</td>
       <td >&nbsp;</td>
     </tr>
@@ -19529,7 +19529,7 @@ $connexionBD->ferme();
   x:num="38309">18-nov</td>
       <td >Porcheron</td>
       <td >2E1084-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >Jean DARS et Jeanne PAPONNET</td>
       <td  align=right x:num>748</td>
@@ -19538,7 +19538,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1699</td>
       <td  align=right
-  x:num="39804">22-déc</td>
+  x:num="39804">22-d&eacutec</td>
       <td >Prevost</td>
       <td >2E2777-60</td>
       <td >Douzat</td>
@@ -19553,21 +19553,21 @@ $connexionBD->ferme();
   x:num="38294">3-nov</td>
       <td >Porcheron</td>
       <td >2E1084-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>748</td>
-      <td >Berthomé MAIGNAN</td>
+      <td >Berthom&eacute MAIGNAN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1699</td>
       <td  align=right
-  x:num="38690">4-déc</td>
+  x:num="38690">4-d&eacutec</td>
       <td >Chauvin</td>
       <td >2E320-70</td>
       <td >Lhoumeau</td>
       <td >Cession</td>
-      <td >Jean ROY à Marie BARBARY</td>
+      <td >Jean ROY &agrave Marie BARBARY</td>
       <td  align=right x:num>815</td>
       <td >Veuve de Jean ROY</td>
     </tr>
@@ -19603,13 +19603,13 @@ $connexionBD->ferme();
       <td >2E320-40</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >Léonard JOUBERT et Elisabeth ROY</td>
+      <td >L&eacuteonard JOUBERT et Elisabeth ROY</td>
       <td  align=right x:num>815</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1699</td>
-      <td  align=right x:num="39851">7-févr</td>
+      <td  align=right x:num="39851">7-f&eacutevr</td>
       <td >Daniaud</td>
       <td >2E5942-40</td>
       <td >Vaux-Rouillac</td>
@@ -19651,31 +19651,31 @@ $connexionBD->ferme();
       <td >Reconnaissance</td>
       <td >Antoine, Marg., Jean, Suzanne AUDIER</td>
       <td  align=right x:num>911</td>
-      <td >à Antoine GRASLEN</td>
+      <td >&agrave Antoine GRASLEN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1700</td>
       <td  align=right
-  x:num="38221">22-août</td>
+  x:num="38221">22-ao&ucirct</td>
       <td >Boilevin</td>
       <td >2E201-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Léonard Yrvoix et Andrée Corly</td>
+      <td >L&eacuteonard Yrvoix et Andr&eacutee Corly</td>
       <td  align=right x:num>757</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1700</td>
       <td  align=right
-  x:num="38766">18-févr</td>
+  x:num="38766">18-f&eacutevr</td>
       <td >Rouhier</td>
       <td >2E1137-30</td>
       <td >Lhoumeau</td>
-      <td >Délaissement</td>
+      <td >D&eacutelaissement</td>
       <td >Michel, Jean, Pierre BOISTEAU</td>
       <td  align=right x:num>911</td>
-      <td >à Pierre GALLOCHIER</td>
+      <td >&agrave Pierre GALLOCHIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1700</td>
@@ -19683,9 +19683,9 @@ $connexionBD->ferme();
   x:num="38109">2-mai</td>
       <td >Boilevin</td>
       <td >2E201-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >&nbsp;</td>
-      <td >Renée Joubert, veuve de François Bernard</td>
+      <td >Ren&eacutee Joubert, veuve de Fran&ccedilois Bernard</td>
       <td  align=right x:num>757</td>
       <td >&nbsp;</td>
     </tr>
@@ -19693,9 +19693,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1700</td>
       <td  align=right
   x:num="38144">6-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E940-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >TUILLIER Jacques</td>
       <td  align=right x:num>738</td>
@@ -19704,7 +19704,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1700</td>
       <td  align=right
-  x:num="38386">3-févr</td>
+  x:num="38386">3-f&eacutevr</td>
       <td >Peynaud fils</td>
       <td >2E2771-70</td>
       <td >Dirac</td>
@@ -19743,11 +19743,11 @@ $connexionBD->ferme();
   x:num="38968">08-sept</td>
       <td >Micheau</td>
       <td >2E1033-40</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
       <td >Pierre IMBERT et Marie CATIN</td>
       <td  align=right x:num>975</td>
-      <td >à A. GEFFRENAUD</td>
+      <td >&agrave A. GEFFRENAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1700</td>
@@ -19757,7 +19757,7 @@ $connexionBD->ferme();
       <td >2E1137-70</td>
       <td >Lhoumeau</td>
       <td >Acquisition</td>
-      <td >François et Antoine COUPRIE (de Garat)</td>
+      <td >Fran&ccedilois et Antoine COUPRIE (de Garat)</td>
       <td  align=right x:num>911</td>
       <td >de Louis COUSIN</td>
     </tr>
@@ -19771,7 +19771,7 @@ $connexionBD->ferme();
       <td >Arrentement</td>
       <td >Antoine BOUJEAU et Jean DUPUY</td>
       <td  align=right x:num>911</td>
-      <td >à Pierre ROY</td>
+      <td >&agrave Pierre ROY</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1700</td>
@@ -19779,7 +19779,7 @@ $connexionBD->ferme();
   x:num="38492">20-mai</td>
       <td >Porcheron</td>
       <td >2E1085-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >Michel et Jean BOISTEAU - Hugues BIBAUD</td>
       <td  align=right x:num>778</td>
@@ -19803,7 +19803,7 @@ $connexionBD->ferme();
   x:num="38488">16-mai</td>
       <td >Porcheron</td>
       <td >2E1085-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Affermement</td>
       <td >Jean et Claude DUTRIEUX - Michel BOITEAU</td>
       <td  align=right x:num>778</td>
@@ -19813,7 +19813,7 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1700</td>
       <td  align=right
   x:num="38011">25-janv</td>
-      <td >Découx</td>
+      <td >D&eacutecoux</td>
       <td >2E2086-10</td>
       <td >Champniers</td>
       <td >Mariage</td>
@@ -19853,7 +19853,7 @@ $connexionBD->ferme();
       <td >Saint-Cybarde<span
   style='display:none'>aux</span></td>
       <td >Mariage</td>
-      <td >François BIARD et Anne BRESSIAUD</td>
+      <td >Fran&ccedilois BIARD et Anne BRESSIAUD</td>
       <td  align=right x:num>1223</td>
       <td >de Lanville er Rouillac</td>
     </tr>
@@ -19875,30 +19875,30 @@ $connexionBD->ferme();
       <td >2E5943-20</td>
       <td >Vaux-Rouillac</td>
       <td >Mariage</td>
-      <td >François BENESTEAU et Antoinette ROY</td>
+      <td >Fran&ccedilois BENESTEAU et Antoinette ROY</td>
       <td  align=right x:num>1448</td>
-      <td class=xl3520222>frère de Michel BENESTEAU</td>
+      <td class=xl3520222>fr&egravere de Michel BENESTEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1702</td>
       <td  align=right x:num="39531">24-mars</td>
       <td >Aigre</td>
       <td >2E108-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >Jeanne COUPEAU veuve Jean JOUANNET</td>
       <td  align=right x:num>1120</td>
-      <td >d'une gabarre à Jean ROY</td>
+      <td >d'une gabarre &agrave Jean ROY</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1702</td>
       <td  align=right
   x:num="39012">22-oct</td>
-      <td >Découx</td>
+      <td >D&eacutecoux</td>
       <td >2E2087-20</td>
       <td >Champniers</td>
-      <td >Déclaration</td>
-      <td >Françoise ROUGIER et Jean BRISSAUD</td>
+      <td >D&eacuteclaration</td>
+      <td >Fran&ccediloise ROUGIER et Jean BRISSAUD</td>
       <td  align=right x:num>1016</td>
       <td >son fils</td>
     </tr>
@@ -19910,7 +19910,7 @@ $connexionBD->ferme();
       <td >2E321-140</td>
       <td >Lhoumeau</td>
       <td >Vente</td>
-      <td >COMBRET à Jeanne COUPEAU</td>
+      <td >COMBRET &agrave Jeanne COUPEAU</td>
       <td  align=right x:num>801</td>
       <td >Vente d'une gabarre</td>
     </tr>
@@ -19922,7 +19922,7 @@ $connexionBD->ferme();
       <td >2E414-40</td>
       <td >Lhoumeau</td>
       <td >Vente</td>
-      <td >Arnaud ROY à Guillaume BONVASLET</td>
+      <td >Arnaud ROY &agrave Guillaume BONVASLET</td>
       <td  align=right x:num>952</td>
       <td >&nbsp;</td>
     </tr>
@@ -19930,9 +19930,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1702</td>
       <td  align=right
   x:num="38160">22-juin</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E818-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Association</td>
       <td >Louise SAUNIER et Louis SAUNIER</td>
       <td  align=right x:num>710</td>
@@ -19941,10 +19941,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1702</td>
       <td  align=right
-  x:num="38350">29-déc</td>
+  x:num="38350">29-d&eacutec</td>
       <td >Boilevin</td>
       <td >&nbsp;</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >&nbsp;</td>
       <td >Jean Yrvoix et son fils Jean</td>
       <td  align=right x:num>757</td>
@@ -19956,9 +19956,9 @@ $connexionBD->ferme();
   x:num="38631">6-oct</td>
       <td >Porcheron</td>
       <td >2E1085-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
-      <td >Louis SURREAU à Geneviève GODIN</td>
+      <td >Louis SURREAU &agrave Genevi&egraveve GODIN</td>
       <td  align=right x:num>778</td>
       <td >sa femme</td>
     </tr>
@@ -19968,7 +19968,7 @@ $connexionBD->ferme();
   x:num="39162">21-mars</td>
       <td >Porcheron</td>
       <td >2E1085-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Jeanne COUPEAU vve Jean JOUANNET</td>
       <td  align=right x:num>778</td>
@@ -19989,7 +19989,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1702</td>
       <td  align=right
-  x:num="38019">2-févr</td>
+  x:num="38019">2-f&eacutevr</td>
       <td >Texier</td>
       <td >2E3419-10</td>
       <td >Magnac</td>
@@ -20001,8 +20001,8 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1702</td>
       <td  align=right
-  x:num="39078">27-déc</td>
-      <td >Découx</td>
+  x:num="39078">27-d&eacutec</td>
+      <td >D&eacutecoux</td>
       <td >2E2087-30</td>
       <td >Champniers</td>
       <td >Vente</td>
@@ -20012,7 +20012,7 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1702</td>
-      <td  align=right x:num="39861">17-févr</td>
+      <td  align=right x:num="39861">17-f&eacutevr</td>
       <td >Petit</td>
       <td >2E5183-20</td>
       <td >Saint-Cybarde<span
@@ -20036,8 +20036,8 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1702</td>
       <td  align=right
-  x:num="38767">19-févr</td>
-      <td >Découx</td>
+  x:num="38767">19-f&eacutevr</td>
+      <td >D&eacutecoux</td>
       <td >2E2087-10</td>
       <td >Champniers</td>
       <td >Vente</td>
@@ -20051,7 +20051,7 @@ $connexionBD->ferme();
   x:num="39545">07-avr</td>
       <td >Aigre</td>
       <td >2E108-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Jeanne COUPEAU veuve Jean JOUANNET</td>
       <td  align=right x:num>1120</td>
@@ -20063,27 +20063,27 @@ $connexionBD->ferme();
   x:num="38895">27-juin</td>
       <td >Micheau</td>
       <td >2E1033-50</td>
-      <td >Angoulême</td>
-      <td >Procès-verbal</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves-verbal</td>
       <td >Marie BARBARY</td>
       <td  align=right x:num>975</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1702</td>
-      <td  align=right x:num="39845">1-févr</td>
+      <td  align=right x:num="39845">1-f&eacutevr</td>
       <td >Gillibert</td>
       <td >2E714-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Elie et Marie ROY avec Jeanne et ? RULLIER</td>
       <td  align=right x:num>1328</td>
-      <td >enfants de Massé ROY</td>
+      <td >enfants de Mass&eacute ROY</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1703</td>
       <td  align=right x:num="38990">30-sept</td>
-      <td >Découx</td>
+      <td >D&eacutecoux</td>
       <td >2E2087-70</td>
       <td >Champniers</td>
       <td >Quittance</td>
@@ -20098,7 +20098,7 @@ $connexionBD->ferme();
       <td >2E321-170</td>
       <td >Lhoumeau</td>
       <td >Quittance</td>
-      <td >CALLAUD et COMBRET à Marie JOUANNET</td>
+      <td >CALLAUD et COMBRET &agrave Marie JOUANNET</td>
       <td  align=right x:num>801</td>
       <td >&nbsp;</td>
     </tr>
@@ -20106,7 +20106,7 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1703</td>
       <td  align=right
   x:num="39025">04-nov</td>
-      <td >Découx</td>
+      <td >D&eacutecoux</td>
       <td >2E2087-80</td>
       <td >Champniers</td>
       <td >Mariage</td>
@@ -20124,13 +20124,13 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >MOQUET Jeanne</td>
       <td  align=right x:num>750</td>
-      <td >J. AUBOIN et Fçse METAYER</td>
+      <td >J. AUBOIN et F&ccedilse METAYER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1703</td>
       <td  align=right
   x:num="38734">17-janv</td>
-      <td >Découx</td>
+      <td >D&eacutecoux</td>
       <td >2E2087-40</td>
       <td >Champniers</td>
       <td >Mariage</td>
@@ -20141,12 +20141,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1703</td>
       <td  align=right
-  x:num="39060">09-déc</td>
-      <td >Découx</td>
+  x:num="39060">09-d&eacutec</td>
+      <td >D&eacutecoux</td>
       <td >2E2087-90</td>
       <td >Champniers</td>
       <td >Mariage</td>
-      <td >Jacques ROUYER et Françoise BERBINAUD</td>
+      <td >Jacques ROUYER et Fran&ccediloise BERBINAUD</td>
       <td  align=right x:num>1016</td>
       <td >&nbsp;</td>
     </tr>
@@ -20154,13 +20154,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1703</td>
       <td  align=right
   x:num="38838">01-mai</td>
-      <td >Découx</td>
+      <td >D&eacutecoux</td>
       <td >2E2087-50</td>
       <td >Champniers</td>
       <td >Quittance</td>
-      <td >François ROUYER et Françoise MIOT</td>
+      <td >Fran&ccedilois ROUYER et Fran&ccediloise MIOT</td>
       <td  align=right x:num>1016</td>
-      <td >à Jean MIOT son frère</td>
+      <td >&agrave Jean MIOT son fr&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1703</td>
@@ -20168,20 +20168,20 @@ $connexionBD->ferme();
   x:num="39755">03-nov</td>
       <td >Aigre</td>
       <td >2E109-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
       <td >Phillipe LIET (de la Couronne)</td>
       <td  align=right x:num>1120</td>
-      <td >de François RENARD</td>
+      <td >de Fran&ccedilois RENARD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1703</td>
       <td  align=right
   x:num="38970">10-sept</td>
-      <td >Découx</td>
+      <td >D&eacutecoux</td>
       <td >2E2087-60</td>
       <td >Champniers</td>
-      <td >Procès-verbal</td>
+      <td >Proc&egraves-verbal</td>
       <td >Etienne MAYOU</td>
       <td  align=right x:num>1016</td>
       <td >et SURRAUDs…</td>
@@ -20202,7 +20202,7 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1704</td>
       <td  align=right
   x:num="38727">10-janv</td>
-      <td >Découx</td>
+      <td >D&eacutecoux</td>
       <td >2E2088-10</td>
       <td >Champniers</td>
       <td >Mariage</td>
@@ -20218,7 +20218,7 @@ $connexionBD->ferme();
       <td >2E321-180</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >Jean VIGIER et Françoise JOUANNET</td>
+      <td >Jean VIGIER et Fran&ccediloise JOUANNET</td>
       <td  align=right x:num>801</td>
       <td >&nbsp;</td>
     </tr>
@@ -20226,7 +20226,7 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1704</td>
       <td  align=right
   x:num="38739">22-janv</td>
-      <td >Découx</td>
+      <td >D&eacutecoux</td>
       <td >2E2088-20</td>
       <td >Champniers</td>
       <td >Mariage</td>
@@ -20238,11 +20238,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1704</td>
       <td  align=right
   x:num="38850">13-mai</td>
-      <td >Découx</td>
+      <td >D&eacutecoux</td>
       <td >2E2088-30</td>
       <td >Champniers</td>
       <td >Quittance</td>
-      <td >Louis ROUYER à Jean COUSSAUD</td>
+      <td >Louis ROUYER &agrave Jean COUSSAUD</td>
       <td  align=right x:num>1018</td>
       <td >&nbsp;</td>
     </tr>
@@ -20264,7 +20264,7 @@ $connexionBD->ferme();
   x:num="38239">9-sept</td>
       <td >Boilevin</td>
       <td >&nbsp;</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre Yrvoix et Marie Bechade</td>
       <td  align=right x:num>757</td>
@@ -20276,15 +20276,15 @@ $connexionBD->ferme();
   x:num="38009">23-janv</td>
       <td >Porcheron</td>
       <td >2E1086-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Jacques DAVIDxFrançoise BIBAUD</td>
+      <td >Jacques DAVIDxFran&ccediloise BIBAUD</td>
       <td  align=right x:num>746</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1704</td>
-      <td  align=right x:num="40226">17-févr</td>
+      <td  align=right x:num="40226">17-f&eacutevr</td>
       <td >Bire</td>
       <td >2E3169-20</td>
       <td >Mansle</td>
@@ -20296,34 +20296,34 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1705</td>
       <td  align=right
-  x:num="39853">9-févr</td>
+  x:num="39853">9-f&eacutevr</td>
       <td >Petit</td>
       <td >2E5184-10</td>
       <td >Saint-Cybarde<span
   style='display:none'>aux</span></td>
       <td >Mariage</td>
-      <td >François MARTIN et Marie BOISDON</td>
+      <td >Fran&ccedilois MARTIN et Marie BOISDON</td>
       <td  align=right x:num>1223</td>
-      <td class=xl3520222>Frère de Cath. et soeur de Jacques</td>
+      <td class=xl3520222>Fr&egravere de Cath. et soeur de Jacques</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1705</td>
       <td  align=right x:num="39387">1-nov</td>
       <td >Porcheron</td>
       <td >2E1087-140</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François COTTIT et Geneviève ROY</td>
+      <td >Fran&ccedilois COTTIT et Genevi&egraveve ROY</td>
       <td  align=right x:num>840</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1705</td>
       <td  align=right
-  x:num="38579">15-août</td>
+  x:num="38579">15-ao&ucirct</td>
       <td >Porcheron</td>
       <td >2E1087-110</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean DELAURIERE et Cath. CHABARIBERE</td>
       <td  align=right x:num>840</td>
@@ -20332,12 +20332,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1705</td>
       <td  align=right
-  x:num="38583">19-août</td>
+  x:num="38583">19-ao&ucirct</td>
       <td >Porcheron</td>
       <td >2E1087-120</td>
-      <td >Angoulême</td>
-      <td >Réception</td>
-      <td >Isaac BOITEAU  comme maître sergier</td>
+      <td >Angoul&ecircme</td>
+      <td >R&eacuteception</td>
+      <td >Isaac BOITEAU  comme ma&icirctre sergier</td>
       <td  align=right x:num>840</td>
       <td >&nbsp;</td>
     </tr>
@@ -20347,7 +20347,7 @@ $connexionBD->ferme();
   x:num="38552">19-juil</td>
       <td >Porcheron</td>
       <td >2E1087-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Philippe, Daniel et Jean DELAURIERE</td>
       <td  align=right x:num>840</td>
@@ -20359,7 +20359,7 @@ $connexionBD->ferme();
   x:num="39415">29-nov</td>
       <td >Porcheron</td>
       <td >2E1087-130</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean BRISSON et Marie MARTIN</td>
       <td  align=right x:num>840</td>
@@ -20371,7 +20371,7 @@ $connexionBD->ferme();
   x:num="38116">9-mai</td>
       <td >Boilevin</td>
       <td >2E203-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >&nbsp;</td>
       <td >Vautour - Rouffignac</td>
       <td  align=right x:num>755</td>
@@ -20383,11 +20383,11 @@ $connexionBD->ferme();
   x:num="40117">31-oct</td>
       <td class=xl4220222>Audouin</td>
       <td class=xl4220222>2E126-20</td>
-      <td class=xl4220222>Angoulême</td>
+      <td class=xl4220222>Angoul&ecircme</td>
       <td class=xl4220222>Vente</td>
       <td class=xl4220222>Marquis de Charras</td>
       <td class=xl4220222 align=right x:num>1365</td>
-      <td class=xl3620222>de métairie</td>
+      <td class=xl3620222>de m&eacutetairie</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1705</td>
@@ -20417,21 +20417,21 @@ $connexionBD->ferme();
       <td  align=right x:num="38624">29-sept</td>
       <td >Porcheron</td>
       <td >2E1087-200</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >Jean PINASSEAU à Michel et Jean BOITEAU</td>
+      <td >Jean PINASSEAU &agrave Michel et Jean BOITEAU</td>
       <td  align=right x:num>840</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1706</td>
       <td  align=right
-  x:num="38567">3-août</td>
+  x:num="38567">3-ao&ucirct</td>
       <td >Gauvry</td>
       <td >2E4299-10</td>
       <td >Mornac</td>
       <td >Mariage</td>
-      <td >Léonard ROY et Marguerite BRISSAUD</td>
+      <td >L&eacuteonard ROY et Marguerite BRISSAUD</td>
       <td  align=right x:num>865</td>
       <td >&nbsp;</td>
     </tr>
@@ -20441,9 +20441,9 @@ $connexionBD->ferme();
   x:num="38531">28-juin</td>
       <td >Porcheron</td>
       <td >2E1087-180</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Nomination</td>
-      <td >Des syndics des maîtres sergiers d'Angoulême</td>
+      <td >Des syndics des ma&icirctres sergiers d'Angoul&ecircme</td>
       <td  align=right x:num>840</td>
       <td >Jean BOITEAU et autres</td>
     </tr>
@@ -20465,7 +20465,7 @@ $connexionBD->ferme();
   x:num="38621">26-sept</td>
       <td >Porcheron</td>
       <td >2E1087-190</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Pierre LIZEE et les femmes BARBARY</td>
       <td  align=right x:num>840</td>
@@ -20477,35 +20477,35 @@ $connexionBD->ferme();
   x:num="38428">17-mars</td>
       <td >Porcheron</td>
       <td >2E1087-170</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >Jean BOITEAU et Marie BOILEVIN et autres</td>
       <td  align=right x:num>840</td>
-      <td >à Pierre GILLIBERT</td>
+      <td >&agrave Pierre GILLIBERT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1706</td>
       <td  align=right
-  x:num="38384">1-févr</td>
+  x:num="38384">1-f&eacutevr</td>
       <td >Porcheron</td>
       <td >2E1087-160</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >Jacques BASSET à Pierre CLOCHARD</td>
+      <td >Jacques BASSET &agrave Pierre CLOCHARD</td>
       <td  align=right x:num>840</td>
       <td >Fils de Guillaume BASSET</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1706</td>
       <td  align=right
-  x:num="39678">18-août</td>
+  x:num="39678">18-ao&ucirct</td>
       <td >Aigre</td>
       <td >2E110-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
-      <td >François SIMARD et Louis ROY</td>
+      <td >Fran&ccedilois SIMARD et Louis ROY</td>
       <td  align=right x:num>1120</td>
-      <td >chez François ROY père</td>
+      <td >chez Fran&ccedilois ROY p&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1706</td>
@@ -20513,7 +20513,7 @@ $connexionBD->ferme();
   x:num="39512">05-mars</td>
       <td >Aigre</td>
       <td >2E110-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Charles COSTE Me tailleur d'habits</td>
       <td  align=right x:num>1120</td>
@@ -20525,7 +20525,7 @@ $connexionBD->ferme();
   x:num="39713">22-sept</td>
       <td >Aigre</td>
       <td >2E111-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Mathieu SIMARD et Louise FLEURANCEAU</td>
       <td  align=right x:num>1120</td>
@@ -20537,7 +20537,7 @@ $connexionBD->ferme();
   x:num="38280">20-oct</td>
       <td >Boilevin</td>
       <td >&nbsp;</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean YRVOIX</td>
       <td  align=right x:num>755</td>
@@ -20549,7 +20549,7 @@ $connexionBD->ferme();
   x:num="38292">1-nov</td>
       <td >Boilevin</td>
       <td >2E203-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Nicolas Basset</td>
       <td  align=right x:num>755</td>
@@ -20583,11 +20583,11 @@ $connexionBD->ferme();
       <td height=17 class=xl4220222 align=right x:num>1709</td>
       <td class=xl4320222 align=right
   x:num="38106">29-avr</td>
-      <td class=xl4220222>Jéheu</td>
+      <td class=xl4220222>J&eacuteheu</td>
       <td class=xl4420222>2E819-20</td>
-      <td class=xl4220222>Angoulême</td>
-      <td class=xl4220222>Procès verbal</td>
-      <td class=xl4220222>Métairie de la plaigne</td>
+      <td class=xl4220222>Angoul&ecircme</td>
+      <td class=xl4220222>Proc&egraves verbal</td>
+      <td class=xl4220222>M&eacutetairie de la plaigne</td>
       <td class=xl4220222 align=right x:num>710</td>
       <td class=xl3620222>&nbsp;</td>
     </tr>
@@ -20595,23 +20595,23 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1709</td>
       <td  align=right
   x:num="38144">6-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E942-70</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
-      <td >Jean et Berthomé DAUVEAU</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
+      <td >Jean et Berthom&eacute DAUVEAU</td>
       <td  align=right x:num>714</td>
-      <td >Frères</td>
+      <td >Fr&egraveres</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1709</td>
       <td  align=right
-  x:num="38224">25-août</td>
-      <td >Mancié</td>
+  x:num="38224">25-ao&ucirct</td>
+      <td >Manci&eacute</td>
       <td >2E942-80</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
-      <td >MONBOEUF Françoise</td>
+      <td >MONBOEUF Fran&ccediloise</td>
       <td  align=right x:num>713</td>
       <td >Jacques TULLIER</td>
     </tr>
@@ -20621,7 +20621,7 @@ $connexionBD->ferme();
   x:num="39471">24-janv</td>
       <td >Aigre</td>
       <td >2E111-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td 
   x:str="Mathurin ROUHIER et Antoinette CHERBONNEAU ">Mathurin ROUHIER et Antoinette 
@@ -20635,7 +20635,7 @@ $connexionBD->ferme();
   x:num="38378">26-janv</td>
       <td >Porcheron</td>
       <td >2E1089-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre ESCOUPEAU et Jeanne NOBLET</td>
       <td  align=right x:num>837</td>
@@ -20644,24 +20644,24 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1710</td>
       <td  align=right
-  x:num="38395">12-févr</td>
+  x:num="38395">12-f&eacutevr</td>
       <td >Porcheron</td>
       <td >2E1089-110</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François PORCHERON et Magdelaine ROY</td>
+      <td >Fran&ccedilois PORCHERON et Magdelaine ROY</td>
       <td  align=right x:num>837</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1710</td>
       <td  align=right
-  x:num="38335">14-déc</td>
-      <td >Mancié</td>
+  x:num="38335">14-d&eacutec</td>
+      <td >Manci&eacute</td>
       <td >2E942-120</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
-      <td >MONBOEUF Françoise</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
+      <td >MONBOEUF Fran&ccediloise</td>
       <td  align=right x:num>714</td>
       <td >Marie DAUVEAU</td>
     </tr>
@@ -20683,7 +20683,7 @@ $connexionBD->ferme();
   x:num="38467">25-avr</td>
       <td >Porcheron</td>
       <td >2E1089-130</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >Jean BOISTEAU et Jean BOILEVIN</td>
       <td  align=right x:num>837</td>
@@ -20693,9 +20693,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1710</td>
       <td  align=right
   x:num="38309">18-nov</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E942-110</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >TUILLIER Jacques</td>
       <td  align=right x:num>714</td>
@@ -20707,9 +20707,9 @@ $connexionBD->ferme();
   x:num="38653">28-oct</td>
       <td >Porcheron</td>
       <td >2E1089-140</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Pierre JALLET à Antoine ROUFFIGNAC</td>
+      <td >Pierre JALLET &agrave Antoine ROUFFIGNAC</td>
       <td  align=right x:num>837</td>
       <td >de Balzac</td>
     </tr>
@@ -20719,9 +20719,9 @@ $connexionBD->ferme();
   x:num="38435">24-mars</td>
       <td >Porcheron</td>
       <td >2E1089-120</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Jacques JANDRON à Michel JOUANNET</td>
+      <td >Jacques JANDRON &agrave Michel JOUANNET</td>
       <td  align=right x:num>837</td>
       <td >et Marg. GILLIBERT</td>
     </tr>
@@ -20754,7 +20754,7 @@ $connexionBD->ferme();
       <td  align=right x:num="38449">7-avr</td>
       <td >Porcheron</td>
       <td >2E1089-150</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Damien DURET et Marie SURREAU</td>
       <td  align=right x:num>837</td>
@@ -20780,17 +20780,17 @@ $connexionBD->ferme();
       <td >2E321-240</td>
       <td >Lhoumeau</td>
       <td >Mariage</td>
-      <td >Barthélémy OLLIVIER et Catherine ROY</td>
+      <td >Barth&eacutel&eacutemy OLLIVIER et Catherine ROY</td>
       <td  align=right x:num>801</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1711</td>
       <td  align=right
-  x:num="38589">25-août</td>
+  x:num="38589">25-ao&ucirct</td>
       <td >Porcheron</td>
       <td >2E1089-160</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean ROUFFIGNAC et Marguerite PETITBOIS</td>
       <td  align=right x:num>837</td>
@@ -20804,19 +20804,19 @@ $connexionBD->ferme();
       <td >2E321-230</td>
       <td >Lhoumeau</td>
       <td >Procuration</td>
-      <td >(Ratification) de Pierre à Jean JOUANNET</td>
+      <td >(Ratification) de Pierre &agrave Jean JOUANNET</td>
       <td  align=right x:num>801</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1712</td>
       <td  align=right
-  x:num="38708">22-déc</td>
+  x:num="38708">22-d&eacutec</td>
       <td >Porcheron</td>
       <td >2E1089-220</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François DURANDEAU et Marg. BOISSEAU</td>
+      <td >Fran&ccedilois DURANDEAU et Marg. BOISSEAU</td>
       <td  align=right x:num>837</td>
       <td >&nbsp;</td>
     </tr>
@@ -20826,9 +20826,9 @@ $connexionBD->ferme();
   x:num="38491">19-mai</td>
       <td >Porcheron</td>
       <td >2E1089-190</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Pierre ROY et Jeanne PERROT à frères PERROT</td>
+      <td >Pierre ROY et Jeanne PERROT &agrave fr&egraveres PERROT</td>
       <td  align=right x:num>837</td>
       <td >Jean SIMARD et Louise ROY</td>
     </tr>
@@ -20840,21 +20840,21 @@ $connexionBD->ferme();
       <td >2E2587-30</td>
       <td >La Couronne</td>
       <td >Mariage</td>
-      <td >François GORICHON et Anne LIET</td>
+      <td >Fran&ccedilois GORICHON et Anne LIET</td>
       <td  align=right x:num>825</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17 class=xl4620222 align=right x:num>1712</td>
       <td class=xl4720222 align=right
-  x:num="38577">13-août</td>
+  x:num="38577">13-ao&ucirct</td>
       <td class=xl4620222>Meslier</td>
       <td class=xl4820222>2E2587-40</td>
       <td class=xl4620222>La Couronne</td>
       <td class=xl4620222>Procuration</td>
-      <td class=xl4620222>Marie MASQUET à Denis DEBUSSAC</td>
+      <td class=xl4620222>Marie MASQUET &agrave Denis DEBUSSAC</td>
       <td class=xl4620222 align=right x:num>825</td>
-      <td class=xl4620222>Pour plainte suite à un viol</td>
+      <td class=xl4620222>Pour plainte suite &agrave un viol</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1712</td>
@@ -20862,9 +20862,9 @@ $connexionBD->ferme();
   x:num="38550">17-juil</td>
       <td >Porcheron</td>
       <td >2E1089-210</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
-      <td >Jean ROUFFIGNAC à François PETITBOIS</td>
+      <td >Jean ROUFFIGNAC &agrave Fran&ccedilois PETITBOIS</td>
       <td  align=right x:num>837</td>
       <td >et Marguerite PETITBOIS</td>
     </tr>
@@ -20874,11 +20874,11 @@ $connexionBD->ferme();
   x:num="38363">11-janv</td>
       <td >Porcheron</td>
       <td >2E1089-180</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean LURAT et Catherine GILLIBERT</td>
       <td  align=right x:num>837</td>
-      <td >Fils de Jean et Frçse CARRE</td>
+      <td >Fils de Jean et Fr&ccedilse CARRE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1712</td>
@@ -20888,19 +20888,19 @@ $connexionBD->ferme();
       <td >2E322-10</td>
       <td >Lhoumeau</td>
       <td >Quittance</td>
-      <td >Jean JOUANNET à Marguerite CASTAIGNE</td>
+      <td >Jean JOUANNET &agrave Marguerite CASTAIGNE</td>
       <td  align=right x:num>825</td>
       <td >Vente d'une gabarre</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1712</td>
       <td  align=right
-  x:num="38411">28-févr</td>
+  x:num="38411">28-f&eacutevr</td>
       <td >Meslier</td>
       <td >2E2587-20</td>
       <td >La Couronne</td>
       <td >Mariage</td>
-      <td >Clément LIZEE et Marie PRAUD</td>
+      <td >Cl&eacutement LIZEE et Marie PRAUD</td>
       <td  align=right x:num>825</td>
       <td >&nbsp;</td>
     </tr>
@@ -20908,11 +20908,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1712</td>
       <td  align=right
   x:num="38653">28-oct</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E825-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
-      <td >Ant. et Jacques ROUFFIGNAC à Pierre DAVID</td>
+      <td >Ant. et Jacques ROUFFIGNAC &agrave Pierre DAVID</td>
       <td  align=right x:num>710</td>
       <td >&nbsp;</td>
     </tr>
@@ -20922,7 +20922,7 @@ $connexionBD->ferme();
   x:num="38492">20-mai</td>
       <td >Porcheron</td>
       <td >2E1090-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean LAVAL et Marie PERROT</td>
       <td  align=right x:num>838</td>
@@ -20934,9 +20934,9 @@ $connexionBD->ferme();
   x:num="38513">10-juin</td>
       <td >Porcheron</td>
       <td >2E1090-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
-      <td >François ROY  et Jean SIMARD et Louise ROY</td>
+      <td >Fran&ccedilois ROY  et Jean SIMARD et Louise ROY</td>
       <td  align=right x:num>838</td>
       <td >&nbsp;</td>
     </tr>
@@ -20946,9 +20946,9 @@ $connexionBD->ferme();
   x:num="38376">24-janv</td>
       <td >Porcheron</td>
       <td >2E1090-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Jean COQUAUD et Geneviève CHAUVET</td>
+      <td >Jean COQUAUD et Genevi&egraveve CHAUVET</td>
       <td  align=right x:num>838</td>
       <td >Fille de Nicolas CHAUVET</td>
     </tr>
@@ -20958,19 +20958,19 @@ $connexionBD->ferme();
   x:num="38667">11-nov</td>
       <td >Porcheron</td>
       <td >2E1090-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Rente</td>
       <td >Jean SIMARD ET Louise ROY</td>
       <td  align=right x:num>838</td>
-      <td >de François HERAUD</td>
+      <td >de Fran&ccedilois HERAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1714</td>
       <td  align=right
   x:num="38551">18-juil</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E823-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Catherine MARTIN - BRISSAUD - SURRAUD</td>
       <td  align=right x:num>780</td>
@@ -20979,10 +20979,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1714</td>
       <td  align=right
-  x:num="38206">7-août</td>
-      <td >Mancié</td>
+  x:num="38206">7-ao&ucirct</td>
+      <td >Manci&eacute</td>
       <td >2E944-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >PV</td>
       <td >TUILLIER Jacques</td>
       <td  align=right x:num>733</td>
@@ -20994,7 +20994,7 @@ $connexionBD->ferme();
   x:num="39778">26-nov</td>
       <td >Bessac</td>
       <td >2E3893-10</td>
-      <td >Mazières</td>
+      <td >Mazi&egraveres</td>
       <td >Mariage</td>
       <td >Jean DORT et Marguerite ROUX</td>
       <td  align=right x:num>1115</td>
@@ -21003,10 +21003,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1715</td>
       <td  align=right
-  x:num="38687">1-déc</td>
+  x:num="38687">1-d&eacutec</td>
       <td >Porcheron</td>
       <td >2E1091-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Michel BOITEAU et Marie BASSET</td>
       <td  align=right x:num>841</td>
@@ -21015,22 +21015,22 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1715</td>
       <td  align=right
-  x:num="38691">5-déc</td>
+  x:num="38691">5-d&eacutec</td>
       <td >Porcheron</td>
       <td >2E1091-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >Jean BOITEAU et Marie BOILEVIN</td>
       <td  align=right x:num>841</td>
-      <td >à J. AUDOUIN et L. RESNIER</td>
+      <td >&agrave J. AUDOUIN et L. RESNIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1715</td>
       <td  align=right
   x:num="38146">8-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E945-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Pierre Papin - Raymond Delegaud</td>
       <td  align=right x:num>733</td>
@@ -21040,9 +21040,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1715</td>
       <td  align=right
   x:num="38251">21-sept</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E945-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >Pierre CHAUVET et Marie THINON</td>
       <td  align=right x:num>733</td>
@@ -21054,7 +21054,7 @@ $connexionBD->ferme();
   x:num="38682">26-nov</td>
       <td >Deroullede</td>
       <td >2E453-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >LHUILLIER - Pierre CHAUVET</td>
       <td  align=right x:num>769</td>
@@ -21067,14 +21067,14 @@ $connexionBD->ferme();
       <td >2E2795-10</td>
       <td >Echallat</td>
       <td >Mariage</td>
-      <td >Jean HERAUX et Françoise BOISDON</td>
+      <td >Jean HERAUX et Fran&ccediloise BOISDON</td>
       <td  align=right x:num>1423</td>
       <td class=xl3520222>fille de Jacques et Marie GONTIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1715</td>
       <td  align=right
-  x:num="40534">22-déc</td>
+  x:num="40534">22-d&eacutec</td>
       <td >Bire</td>
       <td class=xl4920222>2E3471-20</td>
       <td >Mansle</td>
@@ -21085,10 +21085,10 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1716</td>
-      <td  align=right x:num="38019">2-févr</td>
-      <td >Mancié</td>
+      <td  align=right x:num="38019">2-f&eacutevr</td>
+      <td >Manci&eacute</td>
       <td >2E946-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre Delaglaye et Catherine Roche</td>
       <td  align=right x:num>739</td>
@@ -21100,7 +21100,7 @@ $connexionBD->ferme();
   x:num="38484">12-mai</td>
       <td >Porcheron</td>
       <td >2E1091-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre FROMENTIN et Jeanne ROY</td>
       <td  align=right x:num>841</td>
@@ -21112,9 +21112,9 @@ $connexionBD->ferme();
   x:num="39198">26-avr</td>
       <td >Rouhier</td>
       <td >2E1144-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Jean MAIGNAN et Françoise DAUVEAU</td>
+      <td >Jean MAIGNAN et Fran&ccediloise DAUVEAU</td>
       <td  align=right x:num>775</td>
       <td >&nbsp;</td>
     </tr>
@@ -21124,9 +21124,9 @@ $connexionBD->ferme();
   x:num="38466">24-avr</td>
       <td >Porcheron</td>
       <td >2E1091-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François PRADEAU et Jeanne NOBLET</td>
+      <td >Fran&ccedilois PRADEAU et Jeanne NOBLET</td>
       <td  align=right x:num>841</td>
       <td >&nbsp;</td>
     </tr>
@@ -21136,9 +21136,9 @@ $connexionBD->ferme();
   x:num="39757">05-nov</td>
       <td >Aigre</td>
       <td >2E113-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Jean ROY et Françoise LECLERC</td>
+      <td >Jean ROY et Fran&ccediloise LECLERC</td>
       <td  align=right x:num>1122</td>
       <td >fils de Marguerite CASTAIGNE</td>
     </tr>
@@ -21146,9 +21146,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1716</td>
       <td  align=right
   x:num="38138">31-mai</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E825-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >Julien Imbert - Jonction</td>
       <td  align=right x:num>710</td>
@@ -21158,9 +21158,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1716</td>
       <td  align=right
   x:num="38288">28-oct</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E825-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
       <td >David - Rouffignac</td>
       <td  align=right x:num>710</td>
@@ -21170,21 +21170,21 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1716</td>
       <td  align=right
   x:num="38653">28-oct</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E825-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Sommation</td>
-      <td >Pierre DAVID à Antoine et Jacq. ROUFFIGNAC</td>
+      <td >Pierre DAVID &agrave Antoine et Jacq. ROUFFIGNAC</td>
       <td  align=right x:num>710</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1716</td>
       <td  align=right
-  x:num="38210">11-août</td>
-      <td >Mancié</td>
+  x:num="38210">11-ao&ucirct</td>
+      <td >Manci&eacute</td>
       <td >2E946-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >Jean Chesnaud - Jean Boisteau</td>
       <td  align=right x:num>739</td>
@@ -21196,21 +21196,21 @@ $connexionBD->ferme();
   x:num="38461">19-avr</td>
       <td >Porcheron</td>
       <td >2E1091-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Jean DURANT et Catherine LURAT</td>
       <td  align=right x:num>841</td>
-      <td >à Jean LURAT</td>
+      <td >&agrave Jean LURAT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1716</td>
       <td  align=right
-  x:num="38045">28-févr</td>
-      <td >Mancié</td>
+  x:num="38045">28-f&eacutevr</td>
+      <td >Manci&eacute</td>
       <td >2E946-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >André BONNORONT et Marie GIBAUD</td>
+      <td >Andr&eacute BONNORONT et Marie GIBAUD</td>
       <td  align=right x:num>739</td>
       <td >Antoine DAUDET</td>
     </tr>
@@ -21218,9 +21218,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1716</td>
       <td  align=right
   x:num="38162">24-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E946-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >TUILLIER Jacques</td>
       <td  align=right x:num>739</td>
@@ -21234,19 +21234,19 @@ $connexionBD->ferme();
       <td >2E1145-30</td>
       <td >Lhoumeau</td>
       <td >Arrentement</td>
-      <td >Jean BOISTEAU à E. RICHON et M. DECLIDE</td>
+      <td >Jean BOISTEAU &agrave E. RICHON et M. DECLIDE</td>
       <td  align=right x:num>790</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1717</td>
       <td  align=right
-  x:num="38582">18-août</td>
+  x:num="38582">18-ao&ucirct</td>
       <td >Chauvin</td>
       <td >2E322-20</td>
       <td >Lhoumeau</td>
       <td >Quittance</td>
-      <td >Marie BARBARY à Jean ROY</td>
+      <td >Marie BARBARY &agrave Jean ROY</td>
       <td  align=right x:num>825</td>
       <td >Vente d'une gabarre</td>
     </tr>
@@ -21256,7 +21256,7 @@ $connexionBD->ferme();
   x:num="39550">12-avr</td>
       <td >Aigre</td>
       <td >2E113-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >entre BENESTEAU (et COUPEAU)</td>
       <td  align=right x:num>1122</td>
@@ -21265,7 +21265,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1717</td>
       <td  align=right
-  x:num="38572">8-août</td>
+  x:num="38572">8-ao&ucirct</td>
       <td >Rouhier</td>
       <td >2E1145-10</td>
       <td >Lhoumeau</td>
@@ -21277,22 +21277,22 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1717</td>
       <td  align=right
-  x:num="38200">1-août</td>
-      <td >Mancié</td>
+  x:num="38200">1-ao&ucirct</td>
+      <td >Manci&eacute</td>
       <td >2E947-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
-      <td >Léonard RIFFAUD et Louise LIZEE</td>
+      <td >L&eacuteonard RIFFAUD et Louise LIZEE</td>
       <td  align=right x:num>741</td>
       <td >et J. TRICOINE et Marie LIZEE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1717</td>
       <td  align=right
-  x:num="38692">6-déc</td>
-      <td >Jéheu</td>
+  x:num="38692">6-d&eacutec</td>
+      <td >J&eacuteheu</td>
       <td >2E826-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Maurice DESCARSELLE - BOISTEAU</td>
       <td  align=right x:num>783</td>
@@ -21311,7 +21311,7 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17 class=xl4220222 align=right x:num>1718</td>
-      <td class=xl4320222 align=right x:num="38336">15-déc</td>
+      <td class=xl4320222 align=right x:num="38336">15-d&eacutec</td>
       <td class=xl4220222>Lalande</td>
       <td class=xl4420222>2E4959-10</td>
       <td class=xl4220222>Ruelle</td>
@@ -21326,7 +21326,7 @@ $connexionBD->ferme();
   x:num="38666">10-nov</td>
       <td >Porcheron</td>
       <td >2E1092-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Denis BASSET et Louise CHABOT</td>
       <td  align=right x:num>842</td>
@@ -21338,22 +21338,22 @@ $connexionBD->ferme();
       <td >Baudet</td>
       <td >2E2795-30</td>
       <td >Echallat</td>
-      <td >Procès verbal</td>
+      <td >Proc&egraves verbal</td>
       <td >Jacques BOISDON, Pierre CAUTE</td>
       <td  align=right x:num>1423</td>
-      <td >reçus avec des pierres...</td>
+      <td >re&ccedilus avec des pierres...</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1719</td>
       <td  align=right x:num="39051">30-nov</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E828-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td 
   x:str="Jean BOISTEAU et Marie BOILEVIN ">Jean BOISTEAU et Marie BOILEVIN </td>
       <td  align=right x:num>885</td>
-      <td >à Jean COUTURIER</td>
+      <td >&agrave Jean COUTURIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1719</td>
@@ -21361,8 +21361,8 @@ $connexionBD->ferme();
   x:num="38369">17-janv</td>
       <td >Porcheron</td>
       <td >2E1092-20</td>
-      <td >Angoulême</td>
-      <td >Procès-verbal</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves-verbal</td>
       <td >Michel ROY et autres</td>
       <td  align=right x:num>842</td>
       <td >Vente d'une gabarre</td>
@@ -21373,7 +21373,7 @@ $connexionBD->ferme();
   x:num="38482">10-mai</td>
       <td >Porcheron</td>
       <td >2E1092-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >Marguerite CASTAGNE veuve de Jean ROY</td>
       <td  align=right x:num>842</td>
@@ -21383,14 +21383,14 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1719</td>
       <td  align=right
   x:num="38892">24-juin</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E828-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Jean BENESTEAU et Jeanne BOILEVIN de Fléac</td>
+      <td >Jean BENESTEAU et Jeanne BOILEVIN de Fl&eacuteac</td>
       <td  align=right x:num>885</td>
       <td 
-  x:str="à Antoine DAUDET ">à Antoine DAUDET </td>
+  x:str="&agrave Antoine DAUDET ">&agrave Antoine DAUDET </td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1719</td>
@@ -21398,8 +21398,8 @@ $connexionBD->ferme();
   x:num="38424">13-mars</td>
       <td >Porcheron</td>
       <td >2E1092-40</td>
-      <td >Angoulême</td>
-      <td >Procès-verbal</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves-verbal</td>
       <td >Michel ROY et autres</td>
       <td  align=right x:num>842</td>
       <td >Vente d'une gabarre</td>
@@ -21410,31 +21410,31 @@ $connexionBD->ferme();
   x:num="38381">29-janv</td>
       <td >Porcheron</td>
       <td >2E1092-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François GALOCHIER et Marie ROUHIER</td>
+      <td >Fran&ccedilois GALOCHIER et Marie ROUHIER</td>
       <td  align=right x:num>842</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1720</td>
       <td  align=right
-  x:num="38943">14-août</td>
-      <td >Jéheu</td>
+  x:num="38943">14-ao&ucirct</td>
+      <td >J&eacuteheu</td>
       <td >2E829-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Offre</td>
       <td >Pierre ROUHIER et Marie FOUGERAT (Balzac)</td>
       <td  align=right x:num>885</td>
-      <td >à Dlle. DUMERGUE</td>
+      <td >&agrave Dlle. DUMERGUE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1720</td>
       <td  align=right
   x:num="38990">30-sept</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E829-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jeanne JOUANNET et Jean DESMAISONS</td>
       <td  align=right x:num>885</td>
@@ -21444,13 +21444,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1720</td>
       <td  align=right
   x:num="39011">21-oct</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E829-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Jean AUDOUIN aux LIZEE</td>
       <td  align=right x:num>885</td>
-      <td class=xl5020222>Personnes  à enregistrer</td>
+      <td class=xl5020222>Personnes  &agrave enregistrer</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1720</td>
@@ -21467,12 +21467,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1720</td>
       <td  align=right
-  x:num="38943">14-août</td>
-      <td >Jéheu</td>
+  x:num="38943">14-ao&ucirct</td>
+      <td >J&eacuteheu</td>
       <td >2E829-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Marie Anne DUMERGUE à ROUHIER (Balzac)</td>
+      <td >Marie Anne DUMERGUE &agrave ROUHIER (Balzac)</td>
       <td  align=right x:num>885</td>
       <td >&nbsp;</td>
     </tr>
@@ -21481,7 +21481,7 @@ $connexionBD->ferme();
       <td  align=right x:num="39917">14-avr</td>
       <td >Audouin</td>
       <td >2E126-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre RIFFAUD et Catherine ROSSIGNOL</td>
       <td  align=right x:num>1365</td>
@@ -21501,10 +21501,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1721</td>
       <td  align=right
-  x:num="38397">14-févr</td>
-      <td >Jéheu</td>
+  x:num="38397">14-f&eacutevr</td>
+      <td >J&eacuteheu</td>
       <td >2E843-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Pierre LIZEE et Marie DAVID</td>
       <td  align=right x:num>768</td>
@@ -21513,12 +21513,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1721</td>
       <td  align=right
-  x:num="38410">27-févr</td>
+  x:num="38410">27-f&eacutevr</td>
       <td >Chauvin</td>
       <td >2E323-10</td>
       <td >Lhoumeau</td>
       <td >Quittance</td>
-      <td >Menaud ROY à Michel JOUANNET</td>
+      <td >Menaud ROY &agrave Michel JOUANNET</td>
       <td  align=right x:num>842</td>
       <td >&nbsp;</td>
     </tr>
@@ -21528,7 +21528,7 @@ $connexionBD->ferme();
   x:num="38637">12-oct</td>
       <td >Porcheron</td>
       <td >2E1092-80</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Guillaume MATHIEU et Louise BASSET</td>
       <td  align=right x:num>842</td>
@@ -21541,7 +21541,7 @@ $connexionBD->ferme();
       <td >2E3472-30</td>
       <td >Mansle</td>
       <td >Mariage</td>
-      <td >Jacques GUIMARD et Françoise AUDOIN</td>
+      <td >Jacques GUIMARD et Fran&ccediloise AUDOIN</td>
       <td  align=right x:num>1491</td>
       <td class=xl3520222>fils Pierre et Marguerite FOUILLADE</td>
     </tr>
@@ -21550,9 +21550,9 @@ $connexionBD->ferme();
       <td  align=right x:num="38436">25-mars</td>
       <td >Porcheron</td>
       <td >2E1092-90</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >Jean BOITEAU à Jean BERNIER</td>
+      <td >Jean BOITEAU &agrave Jean BERNIER</td>
       <td  align=right x:num>842</td>
       <td >&nbsp;</td>
     </tr>
@@ -21572,9 +21572,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1722</td>
       <td  align=right
   x:num="38133">26-mai</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E831-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Vincent MESNARD et Marie BOUHIER</td>
       <td  align=right x:num>731</td>
@@ -21584,9 +21584,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1722</td>
       <td  align=right
   x:num="38105">28-avr</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E831-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Barreau - Croizet - Croizet - Barreau</td>
       <td  align=right x:num>730</td>
@@ -21596,11 +21596,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1722</td>
       <td  align=right
   x:num="38664">8-nov</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E831-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Jean ROUYER  (St Yrieix) à Jean ROY (Lhoumea<span
+      <td >Jean ROUYER  (St Yrieix) &agrave Jean ROY (Lhoumea<span
   style='display:none'>u)</span></td>
       <td  align=right x:num>731</td>
       <td >&nbsp;</td>
@@ -21609,9 +21609,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1722</td>
       <td  align=right
   x:num="38299">8-nov</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E831-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Rouyer de Marsat - Roy Guillard</td>
       <td  align=right x:num>731</td>
@@ -21621,9 +21621,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1722</td>
       <td  align=right
   x:num="38470">28-avr</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E831-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >BAREAU - CROIZET et CROIZET - BAREAU</td>
       <td  align=right x:num>730</td>
@@ -21632,7 +21632,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1722</td>
       <td  align=right
-  x:num="38565">1-août</td>
+  x:num="38565">1-ao&ucirct</td>
       <td >Chauvin</td>
       <td >2E323-20</td>
       <td >Lhoumeau</td>
@@ -21669,11 +21669,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1724</td>
       <td  align=right
   x:num="38359">7-janv</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E954-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Jean FRELANT à Laurent DAVID</td>
+      <td >Jean FRELANT &agrave Laurent DAVID</td>
       <td  align=right x:num>590</td>
       <td >&nbsp;</td>
     </tr>
@@ -21681,11 +21681,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1724</td>
       <td  align=right
   x:num="38359">7-janv</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E954-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Jean FROLANT à Laurent DAVID</td>
+      <td >Jean FROLANT &agrave Laurent DAVID</td>
       <td  align=right x:num>590</td>
       <td >&nbsp;</td>
     </tr>
@@ -21693,9 +21693,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1725</td>
       <td  align=right
   x:num="38530">27-juin</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E834-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Laurent DAVID et Marie CHENEVIERE</td>
       <td  align=right x:num>788</td>
@@ -21705,9 +21705,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1725</td>
       <td  align=right
   x:num="38608">13-sept</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E834-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ratification</td>
       <td >Pierre JOUANNET et Michel JOUANNET</td>
       <td  align=right x:num>788</td>
@@ -21717,9 +21717,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1725</td>
       <td  align=right
   x:num="38490">18-mai</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E834-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >Jean BOYTEAU, Jean MALLAGOU et Cath. BOY<span style='display:none'>TEAU</span></td>
       <td  align=right x:num>788</td>
@@ -21729,11 +21729,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1725</td>
       <td  align=right
   x:num="38428">17-mars</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E834-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >BOURDEIX et CHARRAUD à Jean ROUFFIGNAT</td>
+      <td >BOURDEIX et CHARRAUD &agrave Jean ROUFFIGNAT</td>
       <td  align=right x:num>788</td>
       <td >&nbsp;</td>
     </tr>
@@ -21741,11 +21741,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1725</td>
       <td  align=right
   x:num="38428">17-mars</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E834-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Jean  à Antoine et Jacques ROUFFIGNAC (Balza<span
+      <td >Jean  &agrave Antoine et Jacques ROUFFIGNAC (Balza<span
   style='display:none'>c)</span></td>
       <td  align=right x:num>788</td>
       <td >&nbsp;</td>
@@ -21754,9 +21754,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1726</td>
       <td  align=right
   x:num="38305">14-nov</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E835-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >Pierre CHAUVET Marg. DESPLANCHES</td>
       <td  align=right x:num>572</td>
@@ -21766,11 +21766,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1726</td>
       <td  align=right
   x:num="38157">19-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E955-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François CHERADE et Marie GABORIT</td>
+      <td >Fran&ccedilois CHERADE et Marie GABORIT</td>
       <td  align=right x:num>590</td>
       <td >Fille Jean et Magd. TOURNIER</td>
     </tr>
@@ -21789,12 +21789,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1727</td>
       <td  align=right
-  x:num="38220">21-août</td>
+  x:num="38220">21-ao&ucirct</td>
       <td >Caillaud</td>
       <td >&nbsp;</td>
-      <td >Angoulême</td>
-      <td >Procès-verbal</td>
-      <td >Barthélémy Dauveau-Rose Jean</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves-verbal</td>
+      <td >Barth&eacutel&eacutemy Dauveau-Rose Jean</td>
       <td  align=right x:num>576</td>
       <td >&nbsp;</td>
     </tr>
@@ -21802,9 +21802,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1728</td>
       <td  align=right
   x:num="37997">11-janv</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >&nbsp;</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jacques Boyteau-Antoinette Blandeau</td>
       <td  align=right x:num>576</td>
@@ -21816,7 +21816,7 @@ $connexionBD->ferme();
   x:num="38152">14-juin</td>
       <td >Caillaud</td>
       <td > </td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Gillibert Vve Jouannet</td>
       <td  align=right x:num>576</td>
@@ -21826,17 +21826,17 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1728</td>
       <td  align=right
   x:num="37997">11-janv</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >&nbsp;</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François Boyteau-Marie Blandeau</td>
+      <td >Fran&ccedilois Boyteau-Marie Blandeau</td>
       <td  align=right x:num>576</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1728</td>
-      <td  align=right x:num="40054">29-août</td>
+      <td  align=right x:num="40054">29-ao&ucirct</td>
       <td >Chauvin</td>
       <td >2E324-20</td>
       <td >L'Houmeau</td>
@@ -21848,7 +21848,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1728</td>
       <td  align=right
-  x:num="40029">4-août</td>
+  x:num="40029">4-ao&ucirct</td>
       <td >Chauvin</td>
       <td >2E324-10</td>
       <td >L'Houmeau</td>
@@ -21859,22 +21859,22 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1729</td>
-      <td  align=right x:num="38213">14-août</td>
+      <td  align=right x:num="38213">14-ao&ucirct</td>
       <td >Lalande</td>
       <td >2E4960-50</td>
       <td >Ruelle</td>
       <td >Arrentement</td>
       <td >Jean et Philippe DELAURIERE</td>
       <td  align=right x:num>750</td>
-      <td >à Philippe SEGUIN</td>
+      <td >&agrave Philippe SEGUIN</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1729</td>
       <td  align=right
-  x:num="38701">15-déc</td>
-      <td >Mancié</td>
+  x:num="38701">15-d&eacutec</td>
+      <td >Manci&eacute</td>
       <td >2E957-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean VIAUD et Marie JOLLY</td>
       <td  align=right x:num>781</td>
@@ -21884,9 +21884,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1729</td>
       <td  align=right
   x:num="38447">5-avr</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E957-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Inventaire</td>
       <td >Catherine FESTIS - DESCARSELLE</td>
       <td  align=right x:num>781</td>
@@ -21902,15 +21902,15 @@ $connexionBD->ferme();
       <td >Quittance</td>
       <td >Jean GIBEAU  et  Marie DELAURIERE</td>
       <td  align=right x:num>750</td>
-      <td >à Jean et Jean DELAURIERE</td>
+      <td >&agrave Jean et Jean DELAURIERE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1729</td>
       <td  align=right
-  x:num="38347">26-déc</td>
-      <td >Jéheu</td>
+  x:num="38347">26-d&eacutec</td>
+      <td >J&eacuteheu</td>
       <td >2E838-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >Rouffignac Rouhier</td>
       <td  align=right x:num>573</td>
@@ -21918,12 +21918,12 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1729</td>
-      <td  align=right x:num="39853">9-févr</td>
+      <td  align=right x:num="39853">9-f&eacutevr</td>
       <td >Chauvin</td>
       <td >2E324-30</td>
       <td >L'Houmeau</td>
       <td >Mariage</td>
-      <td >Jean RIFFAUD et Françoise COLLAIN</td>
+      <td >Jean RIFFAUD et Fran&ccediloise COLLAIN</td>
       <td  align=right x:num>1328</td>
       <td >&nbsp;</td>
     </tr>
@@ -21932,7 +21932,7 @@ $connexionBD->ferme();
       <td  align=right x:num="38278">18-oct</td>
       <td >Caillaud</td>
       <td >2E230-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Jacques Rouffignac - Jean Rouffignac</td>
       <td  align=right x:num>591</td>
@@ -21942,9 +21942,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1730</td>
       <td  align=right
   x:num="38563">30-juil</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E957-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jacques ROUHIER et Jeanne SURREAU</td>
       <td  align=right x:num>781</td>
@@ -21952,7 +21952,7 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1730</td>
-      <td  align=right x:num="40040">15-août</td>
+      <td  align=right x:num="40040">15-ao&ucirct</td>
       <td >Chauvin</td>
       <td >2E324-40</td>
       <td >L'Houmeau</td>
@@ -21964,11 +21964,11 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1731</td>
       <td  align=right x:num="38686">30-nov</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E958-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Jeanne ALLEMAND à Jean COLLIN</td>
+      <td >Jeanne ALLEMAND &agrave Jean COLLIN</td>
       <td  align=right x:num>783</td>
       <td >&nbsp;</td>
     </tr>
@@ -21976,9 +21976,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1731</td>
       <td  align=right
   x:num="38654">29-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E958-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Mathieu ROUHIER et Jeanne LURAT</td>
       <td  align=right x:num>783</td>
@@ -21990,7 +21990,7 @@ $connexionBD->ferme();
   x:num="38286">26-oct</td>
       <td >Caillaud</td>
       <td >2E232-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Bail</td>
       <td >Pierre Chauvet - Besmier</td>
       <td  align=right x:num>709</td>
@@ -22000,9 +22000,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1732</td>
       <td  align=right
   x:num="38421">10-mars</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E958-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >Pierre GIBERT - Simon COUPEAU</td>
       <td  align=right x:num>783</td>
@@ -22012,9 +22012,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1733</td>
       <td  align=right
   x:num="38489">17-mai</td>
-      <td >Jéheu</td>
+      <td >J&eacuteheu</td>
       <td >2E842-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre TUILLIER et Elizabeth DURAND</td>
       <td  align=right x:num>776</td>
@@ -22023,7 +22023,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1733</td>
       <td  align=right
-  x:num="38393">10-févr</td>
+  x:num="38393">10-f&eacutevr</td>
       <td >Lalande</td>
       <td >2E4961-10</td>
       <td >Ruelle</td>
@@ -22038,7 +22038,7 @@ $connexionBD->ferme();
   x:num="38089">12-avr</td>
       <td >Caillaud</td>
       <td >2E233-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Cybard Caillaud - Jeanne Dars</td>
       <td  align=right x:num>709</td>
@@ -22048,11 +22048,11 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1733</td>
       <td  align=right
   x:num="38364">12-janv</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E959-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
-      <td >Cath. ARONDEAU à Sim COUPEAU et M. LIZEE</td>
+      <td >Cath. ARONDEAU &agrave Sim COUPEAU et M. LIZEE</td>
       <td  align=right x:num>785</td>
       <td >&nbsp;</td>
     </tr>
@@ -22062,7 +22062,7 @@ $connexionBD->ferme();
   x:num="38180">12-juil</td>
       <td >Caillaud</td>
       <td >2E233-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Nicolas Grattereau - Marie Surraud</td>
       <td  align=right x:num>709</td>
@@ -22077,15 +22077,15 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >Joseph DE LA BRUGIERE DU VIGNAUD</td>
       <td  align=right x:num>1328</td>
-      <td >et Françoise RIFFAUD</td>
+      <td >et Fran&ccediloise RIFFAUD</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1734</td>
       <td  align=right x:num="38636">11-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E959-40</td>
-      <td >Angoulême</td>
-      <td >Procès-verbal</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves-verbal</td>
       <td >Jacques BOYTEAU et Marie Rose BASSET</td>
       <td  align=right x:num>785</td>
       <td >&nbsp;</td>
@@ -22094,9 +22094,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1734</td>
       <td  align=right
   x:num="38415">4-mars</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E959-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Hugues DELAURIERE et Marie AURY</td>
       <td  align=right x:num>785</td>
@@ -22108,7 +22108,7 @@ $connexionBD->ferme();
   x:num="38277">17-oct</td>
       <td >Caillaud</td>
       <td >2E234-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >Rouhier Gautereau</td>
       <td  align=right x:num>554</td>
@@ -22120,8 +22120,8 @@ $connexionBD->ferme();
   x:num="38153">15-juin</td>
       <td >Caillaud</td>
       <td >2E234-40</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
       <td >Combois Saunier Combois</td>
       <td  align=right x:num>554</td>
       <td >&nbsp;</td>
@@ -22132,9 +22132,9 @@ $connexionBD->ferme();
   x:num="38362">10-janv</td>
       <td >Caillaud</td>
       <td >2E234-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Guillaume DAVID à Jean DAVID</td>
+      <td >Guillaume DAVID &agrave Jean DAVID</td>
       <td  align=right x:num>710</td>
       <td >&nbsp;</td>
     </tr>
@@ -22144,7 +22144,7 @@ $connexionBD->ferme();
   x:num="38153">15-juin</td>
       <td >Caillaud</td>
       <td >2E234-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >Combois Saunier Combois</td>
       <td  align=right x:num>554</td>
@@ -22156,7 +22156,7 @@ $connexionBD->ferme();
   x:num="37996">10-janv</td>
       <td >Caillaud</td>
       <td >2E234-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >David - David Degorces</td>
       <td  align=right x:num>710</td>
@@ -22168,9 +22168,9 @@ $connexionBD->ferme();
   x:num="38663">7-nov</td>
       <td >Caillaud</td>
       <td >2E234-80</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
-      <td >Mrs du Séminaire et Laurent et Léonard DAVID</td>
+      <td >Mrs du S&eacuteminaire et Laurent et L&eacuteonard DAVID</td>
       <td  align=right x:num>711</td>
       <td >&nbsp;</td>
     </tr>
@@ -22180,19 +22180,19 @@ $connexionBD->ferme();
   x:num="38267">7-oct</td>
       <td >Caillaud</td>
       <td >2E234-80</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
-      <td >Séminaire - Laurent et Léonard David</td>
+      <td >S&eacuteminaire - Laurent et L&eacuteonard David</td>
       <td  align=right x:num>711</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1734</td>
       <td  align=right
-  x:num="38024">7-févr</td>
+  x:num="38024">7-f&eacutevr</td>
       <td >Caillaud</td>
       <td >2E234-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >Girard Bibaud - Cybard Caillaud Jeanne Dars</td>
       <td  align=right x:num>554</td>
@@ -22204,9 +22204,9 @@ $connexionBD->ferme();
   x:num="38643">18-oct</td>
       <td >Caillaud</td>
       <td >2E234-90</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Etienne RICHON à Pierre TEXIER</td>
+      <td >Etienne RICHON &agrave Pierre TEXIER</td>
       <td  align=right x:num>711</td>
       <td >&nbsp;</td>
     </tr>
@@ -22216,7 +22216,7 @@ $connexionBD->ferme();
   x:num="38278">18-oct</td>
       <td >Caillaud</td>
       <td >2E234-90</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >Richon - Pierre Texier</td>
       <td  align=right x:num>711</td>
@@ -22224,7 +22224,7 @@ $connexionBD->ferme();
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1734</td>
-      <td  align=right x:num="40211">2-févr</td>
+      <td  align=right x:num="40211">2-f&eacutevr</td>
       <td >Bire</td>
       <td >2E3476-10</td>
       <td >Mansle</td>
@@ -22236,7 +22236,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1734</td>
       <td  align=right
-  x:num="40212">3-févr</td>
+  x:num="40212">3-f&eacutevr</td>
       <td >Cousseaud</td>
       <td >2E1635-10</td>
       <td >Bunzac</td>
@@ -22248,9 +22248,9 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1735</td>
       <td  align=right x:num="38522">19-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E960-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jacques MARTEAU et Madeleine DAVID</td>
       <td  align=right x:num>786</td>
@@ -22260,9 +22260,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1735</td>
       <td  align=right
   x:num="38480">8-mai</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E960-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >Philippe BERGER - Laurent DAVID</td>
       <td  align=right x:num>786</td>
@@ -22271,11 +22271,11 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1735</td>
       <td  align=right
-  x:num="38322">1-déc</td>
+  x:num="38322">1-d&eacutec</td>
       <td >Caillaud</td>
       <td >2E235-10</td>
-      <td >Angoulême</td>
-      <td >Délaissement</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacutelaissement</td>
       <td >DAUVEAU Elizabeth</td>
       <td  align=right x:num>566</td>
       <td >TULLIER</td>
@@ -22286,7 +22286,7 @@ $connexionBD->ferme();
   x:num="38506">3-juin</td>
       <td >Marchadier</td>
       <td >2E969-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean DECLIDE et Marguerite DARS</td>
       <td  align=right x:num>802</td>
@@ -22295,10 +22295,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1736</td>
       <td  align=right
-  x:num="38022">5-févr</td>
+  x:num="38022">5-f&eacutevr</td>
       <td >Caillaud</td>
       <td >2E236-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean Lameau Denise Rouhier</td>
       <td  align=right x:num>566</td>
@@ -22307,22 +22307,22 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1736</td>
       <td  align=right
-  x:num="38398">15-févr</td>
-      <td >Mancié</td>
+  x:num="38398">15-f&eacutevr</td>
+      <td >Manci&eacute</td>
       <td >2E960-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Apprentissage</td>
-      <td >François COUPEAU chez François LIZEE</td>
+      <td >Fran&ccedilois COUPEAU chez Fran&ccedilois LIZEE</td>
       <td  align=right x:num>786</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1737</td>
       <td  align=right
-  x:num="38041">24-févr</td>
+  x:num="38041">24-f&eacutevr</td>
       <td >Caillaud</td>
       <td >2E237-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Guy Saunier</td>
       <td  align=right x:num>730</td>
@@ -22331,12 +22331,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1737</td>
       <td  align=right
-  x:num="38716">30-déc</td>
+  x:num="38716">30-d&eacutec</td>
       <td >Marchadier</td>
       <td >2E969-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transport</td>
-      <td >Michel DECLIDE à Jean DECLIDE et Marg. DARS</td>
+      <td >Michel DECLIDE &agrave Jean DECLIDE et Marg. DARS</td>
       <td  align=right x:num>802</td>
       <td >&nbsp;</td>
     </tr>
@@ -22346,7 +22346,7 @@ $connexionBD->ferme();
   x:num="38197">29-juil</td>
       <td >Caillaud</td>
       <td >2E237-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Fermage</td>
       <td >Madeleine Rouffignac - Billac</td>
       <td  align=right x:num>730</td>
@@ -22368,13 +22368,13 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1738</td>
       <td  align=right
   x:num="38449">7-avr</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E961-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Mad. FONTENAILLE à Jacques BONNAURON</td>
+      <td >Mad. FONTENAILLE &agrave Jacques BONNAURON</td>
       <td  align=right x:num>789</td>
-      <td >et Françoise DEGUDE</td>
+      <td >et Fran&ccediloise DEGUDE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1738</td>
@@ -22382,7 +22382,7 @@ $connexionBD->ferme();
   x:num="38122">15-mai</td>
       <td >Caillaud</td>
       <td >2E237-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >DAUVEAU Elizabeth</td>
       <td  align=right x:num>730</td>
@@ -22391,12 +22391,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1738</td>
       <td  align=right
-  x:num="38716">30-déc</td>
-      <td >Mancié</td>
+  x:num="38716">30-d&eacutec</td>
+      <td >Manci&eacute</td>
       <td >2E961-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Pier. PAPIN et L. CHERADE à Fran. CHERADE</td>
+      <td >Pier. PAPIN et L. CHERADE &agrave Fran. CHERADE</td>
       <td  align=right x:num>789</td>
       <td >&nbsp;</td>
     </tr>
@@ -22404,9 +22404,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1738</td>
       <td  align=right
   x:num="38456">14-avr</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E961-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Hugues DELAURIERE et Jeanne BACHELLIER</td>
       <td  align=right x:num>789</td>
@@ -22415,10 +22415,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1739</td>
       <td  align=right
-  x:num="38397">14-févr</td>
-      <td >Mancié</td>
+  x:num="38397">14-f&eacutevr</td>
+      <td >Manci&eacute</td>
       <td >2E961-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
       <td >Jean LAGLAYE et Catherine ROCHE</td>
       <td  align=right x:num>789</td>
@@ -22433,23 +22433,23 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >Jean SAUVAGE et Antoinette DARS</td>
       <td  align=right x:num>1406</td>
-      <td >DARS de Rivières</td>
+      <td >DARS de Rivi&egraveres</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1740</td>
       <td  align=right x:num="38533">30-juin</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E962-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Licitation</td>
-      <td >Laurent et Léon. DAVID et DUHAMEL-LAUZET</td>
+      <td >Laurent et L&eacuteon. DAVID et DUHAMEL-LAUZET</td>
       <td  align=right x:num>791</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1740</td>
       <td  align=right
-  x:num="38715">29-déc</td>
+  x:num="38715">29-d&eacutec</td>
       <td >Lalande</td>
       <td >2E4963-20</td>
       <td >Ruelle</td>
@@ -22465,7 +22465,7 @@ $connexionBD->ferme();
   x:num="38537">4-juil</td>
       <td class=xl4220222>Caillaud</td>
       <td class=xl4220222>2E239-20</td>
-      <td class=xl4220222>Angoulême</td>
+      <td class=xl4220222>Angoul&ecircme</td>
       <td class=xl4220222>Acte obligatoire</td>
       <td class=xl4220222>Au profit du Marquis de Charras</td>
       <td class=xl4220222 align=right x:num>763</td>
@@ -22477,11 +22477,11 @@ $connexionBD->ferme();
   x:num="38362">10-janv</td>
       <td >Marchadier</td>
       <td >2E969-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >François AUGEAUD à Pierre AUBOUIN</td>
+      <td >Fran&ccedilois AUGEAUD &agrave Pierre AUBOUIN</td>
       <td  align=right x:num>802</td>
-      <td >et Franç. MOSQUET sa femme</td>
+      <td >et Fran&ccedil. MOSQUET sa femme</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1740</td>
@@ -22489,7 +22489,7 @@ $connexionBD->ferme();
   x:num="38669">13-nov</td>
       <td >Caillaud</td>
       <td >2E239-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean JOLLY et Philippe SURRAUD</td>
       <td  align=right x:num>763</td>
@@ -22499,9 +22499,9 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1740</td>
       <td  align=right
   x:num="38630">5-oct</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E962-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Titre</td>
       <td >Jean BRETON et Laurent DAVID</td>
       <td  align=right x:num>791</td>
@@ -22513,7 +22513,7 @@ $connexionBD->ferme();
   x:num="38678">22-nov</td>
       <td >Caillaud</td>
       <td >2E239-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >Nicolas CHAUVET - Antoine DURANDEAU</td>
       <td  align=right x:num>763</td>
@@ -22522,12 +22522,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1741</td>
       <td  align=right
-  x:num="38699">13-déc</td>
+  x:num="38699">13-d&eacutec</td>
       <td >Marchadier</td>
       <td >2E969-60</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >CORLIEU et Jacques DELAURIERE à COLLAIN</td>
+      <td >CORLIEU et Jacques DELAURIERE &agrave COLLAIN</td>
       <td  align=right x:num>802</td>
       <td >&nbsp;</td>
     </tr>
@@ -22537,7 +22537,7 @@ $connexionBD->ferme();
   x:num="38676">20-nov</td>
       <td >Caillaud</td>
       <td >2E240-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >Jean ROUHIER - Nic. CHAUVET et Cath R.</td>
       <td  align=right x:num>768</td>
@@ -22546,10 +22546,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1742</td>
       <td  align=right
-  x:num="38717">31-déc</td>
+  x:num="38717">31-d&eacutec</td>
       <td >Caillaud</td>
       <td >2E241-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre JOUANNET et Catherine CHASSAIN</td>
       <td  align=right x:num>760</td>
@@ -22558,7 +22558,7 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1742</td>
       <td  align=right
-  x:num="38388">5-févr</td>
+  x:num="38388">5-f&eacutevr</td>
       <td >Lalande</td>
       <td >2E4963-30</td>
       <td >Ruelle</td>
@@ -22585,7 +22585,7 @@ $connexionBD->ferme();
   x:num="38358">6-janv</td>
       <td >Caillaud</td>
       <td >2E242-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean DE NEUVILLE et Marie ROUFFIGNAC</td>
       <td  align=right x:num>760</td>
@@ -22594,10 +22594,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1743</td>
       <td  align=right
-  x:num="38715">29-déc</td>
+  x:num="38715">29-d&eacutec</td>
       <td >Caillaud</td>
       <td >2E242-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Etienne DURANDEAU et Louise DAUVEAU</td>
       <td  align=right x:num>760</td>
@@ -22607,23 +22607,23 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1744</td>
       <td  align=right
   x:num="38555">22-juil</td>
-      <td >Mancié</td>
+      <td >Manci&eacute</td>
       <td >2E963-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >Michel BOITEAU à Antoinette GIBAUD sa femme</td>
+      <td >Michel BOITEAU &agrave Antoinette GIBAUD sa femme</td>
       <td  align=right x:num>801</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1745</td>
       <td  align=right
-  x:num="38395">12-févr</td>
+  x:num="38395">12-f&eacutevr</td>
       <td >Lalande</td>
       <td >2E4963-60</td>
       <td >Ruelle</td>
       <td >Vente</td>
-      <td >André IRRONDEAU - Jean BONNAURON</td>
+      <td >Andr&eacute IRRONDEAU - Jean BONNAURON</td>
       <td  align=right x:num>759</td>
       <td >&nbsp;</td>
     </tr>
@@ -22635,17 +22635,17 @@ $connexionBD->ferme();
       <td >2E4963-70</td>
       <td >Ruelle</td>
       <td >Quittance</td>
-      <td >André IRRONDEAU - Jean BONNAURON</td>
+      <td >Andr&eacute IRRONDEAU - Jean BONNAURON</td>
       <td  align=right x:num>759</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1746</td>
       <td  align=right
-  x:num="38578">14-août</td>
+  x:num="38578">14-ao&ucirct</td>
       <td >Caillaud</td>
       <td >2E246-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Jeanne TEXIER  femme de Jean GABORIT</td>
       <td  align=right x:num>770</td>
@@ -22657,9 +22657,9 @@ $connexionBD->ferme();
   x:num="38557">24-juil</td>
       <td >Caillaud</td>
       <td >2E246-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Rente</td>
-      <td >Jérôme JOUANNET</td>
+      <td >J&eacuterôme JOUANNET</td>
       <td  align=right x:num>770</td>
       <td >&nbsp;</td>
     </tr>
@@ -22669,19 +22669,19 @@ $connexionBD->ferme();
   x:num="38673">17-nov</td>
       <td >Caillaud</td>
       <td >2E246-70</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Léonard ROUYER et Jeanne AUDIER</td>
+      <td >L&eacuteonard ROUYER et Jeanne AUDIER</td>
       <td  align=right x:num>770</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1746</td>
       <td  align=right
-  x:num="38707">21-déc</td>
+  x:num="38707">21-d&eacutec</td>
       <td >Caillaud</td>
       <td >2E246-80</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
       <td >MALAGOUX - GRELIER et LIET</td>
       <td  align=right x:num>770</td>
@@ -22693,9 +22693,9 @@ $connexionBD->ferme();
   x:num="38358">6-janv</td>
       <td >Caillaud</td>
       <td >2E245-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François MICHEAU et Marg. ROUHIER</td>
+      <td >Fran&ccedilois MICHEAU et Marg. ROUHIER</td>
       <td  align=right x:num>760</td>
       <td >&nbsp;</td>
     </tr>
@@ -22705,9 +22705,9 @@ $connexionBD->ferme();
   x:num="38353">1-janv</td>
       <td >Caillaud</td>
       <td >2E247-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Pierre DARS et Françoise AUDIER</td>
+      <td >Pierre DARS et Fran&ccediloise AUDIER</td>
       <td  align=right x:num>776</td>
       <td >&nbsp;</td>
     </tr>
@@ -22715,7 +22715,7 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1748</td>
       <td  align=right
   x:num="37990">4-janv</td>
-      <td >Thénevot</td>
+      <td >Th&eacutenevot</td>
       <td >2E4967-20</td>
       <td >Ruelle</td>
       <td >Mariage</td>
@@ -22729,7 +22729,7 @@ $connexionBD->ferme();
   x:num="38686">30-nov</td>
       <td >Caillaud</td>
       <td >2E251-100</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td > TEXIER - Jean GABORIT et Jeanne TEXIER …</td>
       <td  align=right x:num>779</td>
@@ -22738,12 +22738,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1749</td>
       <td  align=right
-  x:num="38337">16-déc</td>
-      <td >Thénevot</td>
+  x:num="38337">16-d&eacutec</td>
+      <td >Th&eacutenevot</td>
       <td >2E4967-30</td>
       <td >Ruelle</td>
       <td >Inventaire</td>
-      <td >Françoise DARS, Jacques DELAGE</td>
+      <td >Fran&ccediloise DARS, Jacques DELAGE</td>
       <td  align=right x:num>746</td>
       <td >&nbsp;</td>
     </tr>
@@ -22753,7 +22753,7 @@ $connexionBD->ferme();
   x:num="39397">11-nov</td>
       <td >Caillaud</td>
       <td >2E253-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Guillaume PAPIN et Marie CLOCHARD</td>
       <td  align=right x:num>756</td>
@@ -22762,10 +22762,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1750</td>
       <td  align=right
-  x:num="38384">1-févr</td>
+  x:num="38384">1-f&eacutevr</td>
       <td >Caillaud</td>
       <td >2E252-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre LABOUREUR et Catherine ROUFFIGNAT</td>
       <td  align=right x:num>781</td>
@@ -22777,7 +22777,7 @@ $connexionBD->ferme();
   x:num="38527">24-juin</td>
       <td >Caillaud</td>
       <td >2E254-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >GABORIT - MARANDAT</td>
       <td  align=right x:num>783</td>
@@ -22789,9 +22789,9 @@ $connexionBD->ferme();
   x:num="39244">11-juin</td>
       <td >Caillaud</td>
       <td >2E254-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >Marie BARREAU veuve André JAYET</td>
+      <td >Marie BARREAU veuve Andr&eacute JAYET</td>
       <td  align=right x:num>783</td>
       <td >&nbsp;</td>
     </tr>
@@ -22801,7 +22801,7 @@ $connexionBD->ferme();
   x:num="38446">4-avr</td>
       <td >Caillaud</td>
       <td >2E254-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean MESNARD et Catherine BARREAU</td>
       <td  align=right x:num>783</td>
@@ -22813,7 +22813,7 @@ $connexionBD->ferme();
   x:num="38497">25-mai</td>
       <td >Caillaud</td>
       <td >2E254-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Jean et Jacques DELAURIERE - BORDAGE</td>
       <td  align=right x:num>783</td>
@@ -22822,10 +22822,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1751</td>
       <td  align=right
-  x:num="39137">24-févr</td>
+  x:num="39137">24-f&eacutevr</td>
       <td >Caillaud</td>
       <td >2E254-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >entre COUPEAU</td>
       <td  align=right x:num>783</td>
@@ -22837,9 +22837,9 @@ $connexionBD->ferme();
   x:num="38661">5-nov</td>
       <td >Caillaud</td>
       <td >2E257-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Guillaume PAPIN à Claude BOUCHAUD</td>
+      <td >Guillaume PAPIN &agrave Claude BOUCHAUD</td>
       <td  align=right x:num>813</td>
       <td >et Mg. PAPIN fe. de Claude B.</td>
     </tr>
@@ -22849,9 +22849,9 @@ $connexionBD->ferme();
   x:num="38683">27-nov</td>
       <td >Caillaud</td>
       <td >2E257-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Jean FLEURANCEAU à Jean DECLIDE</td>
+      <td >Jean FLEURANCEAU &agrave Jean DECLIDE</td>
       <td  align=right x:num>813</td>
       <td >Mari de Marguerite DARS</td>
     </tr>
@@ -22861,9 +22861,9 @@ $connexionBD->ferme();
   x:num="38377">25-janv</td>
       <td >Caillaud</td>
       <td >2E256-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Pierre MEUSNIER et Françoise TULLIER</td>
+      <td >Pierre MEUSNIER et Fran&ccediloise TULLIER</td>
       <td  align=right x:num>789</td>
       <td >Fille Pierre et Fce DUMERGUE</td>
     </tr>
@@ -22873,9 +22873,9 @@ $connexionBD->ferme();
   x:num="38378">26-janv</td>
       <td >Caillaud</td>
       <td >2E256-20</td>
-      <td >Angoulême</td>
-      <td >Procès-verbal</td>
-      <td >Léonard ROUHIER</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves-verbal</td>
+      <td >L&eacuteonard ROUHIER</td>
       <td  align=right x:num>789</td>
       <td >des MESNARD et CHAUVIN</td>
     </tr>
@@ -22885,11 +22885,11 @@ $connexionBD->ferme();
   x:num="38430">19-mars</td>
       <td >Caillaud</td>
       <td >2E260-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
       <td >Antoine LIZEE et Jeanne SURRAUD</td>
       <td  align=right x:num>863</td>
-      <td >à Mr. DELAPLACE</td>
+      <td >&agrave Mr. DELAPLACE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1754</td>
@@ -22897,7 +22897,7 @@ $connexionBD->ferme();
   x:num="38380">28-janv</td>
       <td >Caillaud</td>
       <td >2E260-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Marc ROUHIER et Luce SEIGNEURET</td>
       <td  align=right x:num>863</td>
@@ -22909,7 +22909,7 @@ $connexionBD->ferme();
   x:num="38673">17-nov</td>
       <td >Caillaud</td>
       <td >2E261-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Antoine DURANDEAU et M. Philippe CHAUVET</td>
       <td  align=right x:num>865</td>
@@ -22921,23 +22921,23 @@ $connexionBD->ferme();
   x:num="38554">21-juil</td>
       <td >Caillaud</td>
       <td >2E261-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
-      <td >Jean MESNARD à P. et F. BARREAU frères</td>
+      <td >Jean MESNARD &agrave P. et F. BARREAU fr&egraveres</td>
       <td  align=right x:num>865</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1754</td>
       <td  align=right
-  x:num="38580">16-août</td>
+  x:num="38580">16-ao&ucirct</td>
       <td >Caillaud</td>
       <td >2E261-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Echange</td>
       <td >Pierre RULLIER et Jean ROUFFIGNAC</td>
       <td  align=right x:num>865</td>
-      <td >et pour Jacq.  ROUFF. son père</td>
+      <td >et pour Jacq.  ROUFF. son p&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1754</td>
@@ -22945,7 +22945,7 @@ $connexionBD->ferme();
   x:num="38535">2-juil</td>
       <td >Caillaud</td>
       <td >2E261-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jacques MIGNOT et Antoinette DELAURIERE</td>
       <td  align=right x:num>865</td>
@@ -22957,21 +22957,21 @@ $connexionBD->ferme();
   x:num="38443">1-avr</td>
       <td >Caillaud</td>
       <td >2E262-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Vente</td>
-      <td >Pierre COUPEAU à Antoine AUDOIN</td>
+      <td >Pierre COUPEAU &agrave Antoine AUDOIN</td>
       <td  align=right x:num>868</td>
-      <td >et Françoise COUPEAU sa fille</td>
+      <td >et Fran&ccediloise COUPEAU sa fille</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1755</td>
       <td  align=right
-  x:num="39059">8-déc</td>
+  x:num="39059">8-d&eacutec</td>
       <td >Caillaud</td>
       <td >2E263-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Bail</td>
-      <td >François TULLIER à Jean TULLIER son frère</td>
+      <td >Fran&ccedilois TULLIER &agrave Jean TULLIER son fr&egravere</td>
       <td  align=right x:num>873</td>
       <td >&nbsp;</td>
     </tr>
@@ -22981,11 +22981,11 @@ $connexionBD->ferme();
   x:num="38455">13-avr</td>
       <td >Caillaud</td>
       <td >2E262-40</td>
-      <td >Angoulême</td>
-      <td >Déclaration</td>
+      <td >Angoul&ecircme</td>
+      <td >D&eacuteclaration</td>
       <td >Charles TEXIER et Marguerite ROUHIER</td>
       <td  align=right x:num>868</td>
-      <td >à Antoine CIVADIER Curé</td>
+      <td >&agrave Antoine CIVADIER Cur&eacute</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1755</td>
@@ -22993,9 +22993,9 @@ $connexionBD->ferme();
   x:num="38426">15-mars</td>
       <td >Caillaud</td>
       <td >2E262-10</td>
-      <td >Angoulême</td>
-      <td >Procès-verbal</td>
-      <td >Léonard ROUYER et Jeanne AUDIER</td>
+      <td >Angoul&ecircme</td>
+      <td >Proc&egraves-verbal</td>
+      <td >L&eacuteonard ROUYER et Jeanne AUDIER</td>
       <td  align=right x:num>868</td>
       <td >Charles TEXIER</td>
     </tr>
@@ -23005,9 +23005,9 @@ $connexionBD->ferme();
   x:num="38971">11-sept</td>
       <td >Caillaud</td>
       <td >2E263-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Bail</td>
-      <td >Jean GABORIT fils à Jean TULLIER</td>
+      <td >Jean GABORIT fils &agrave Jean TULLIER</td>
       <td  align=right x:num>873</td>
       <td >Jean  et Marie GABORIT</td>
     </tr>
@@ -23017,11 +23017,11 @@ $connexionBD->ferme();
   x:num="38988">28-sept</td>
       <td >Caillaud</td>
       <td >2E263-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Jean AUDIER et Margurtite BIBAUD</td>
       <td  align=right x:num>873</td>
-      <td >à F. IMBERT, M.  RABLETTE</td>
+      <td >&agrave F. IMBERT, M.  RABLETTE</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1755</td>
@@ -23029,11 +23029,11 @@ $connexionBD->ferme();
   x:num="38996">6-oct</td>
       <td >Caillaud</td>
       <td >2E263-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
       <td >Marg. BRETON Vve AUDOUIN et BAZIN</td>
       <td  align=right x:num>873</td>
-      <td >à Jean FAURE, M. BERTHO.</td>
+      <td >&agrave Jean FAURE, M. BERTHO.</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1756</td>
@@ -23041,31 +23041,31 @@ $connexionBD->ferme();
   x:num="38737">20-janv</td>
       <td >Caillaud</td>
       <td >2E264-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François CLOCHARD et Margte BERNARD</td>
+      <td >Fran&ccedilois CLOCHARD et Margte BERNARD</td>
       <td  align=right x:num>1016</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1756</td>
       <td  align=right
-  x:num="38954">25-août</td>
+  x:num="38954">25-ao&ucirct</td>
       <td >Caillaud</td>
       <td >2E 265-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Arrentement</td>
-      <td >Rose JEAN à Pierre TULLIER</td>
+      <td >Rose JEAN &agrave Pierre TULLIER</td>
       <td  align=right x:num>1020</td>
       <td >et Marie ROUYER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1756</td>
       <td  align=right
-  x:num="38749">01-févr</td>
+  x:num="38749">01-f&eacutevr</td>
       <td >Caillaud</td>
       <td >2E264-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean BORDEREAU et Magdelaine TULLIER</td>
       <td  align=right x:num>1016</td>
@@ -23077,11 +23077,11 @@ $connexionBD->ferme();
   x:num="38841">04-mai</td>
       <td >Caillaud</td>
       <td >2E264-50</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Quittance</td>
       <td >Guillaume PAPIN et Marie CLOCHARD</td>
       <td  align=right x:num>1016</td>
-      <td >à François CLOCHARD père</td>
+      <td >&agrave Fran&ccedilois CLOCHARD p&egravere</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1756</td>
@@ -23089,11 +23089,11 @@ $connexionBD->ferme();
   x:num="38746">29-janv</td>
       <td >Caillaud</td>
       <td >2E264-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre TULLIER et Marie ROUYER</td>
       <td  align=right x:num>1016</td>
-      <td >Fille  Léonard et M. COUPEAU</td>
+      <td >Fille  L&eacuteonard et M. COUPEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1756</td>
@@ -23101,7 +23101,7 @@ $connexionBD->ferme();
   x:num="38777">01-mars</td>
       <td >Caillaud</td>
       <td >2E264-40</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean CHAIGNEAU et Catherine AUBOUIN</td>
       <td  align=right x:num>1016</td>
@@ -23110,12 +23110,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1756</td>
       <td  align=right
-  x:num="38954">25-août</td>
+  x:num="38954">25-ao&ucirct</td>
       <td >Caillaud</td>
       <td >2E 265-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Ferme</td>
-      <td >Louise DAUVEAU à Pierre TULLIER</td>
+      <td >Louise DAUVEAU &agrave Pierre TULLIER</td>
       <td  align=right x:num>1020</td>
       <td >et Marie ROUYER</td>
     </tr>
@@ -23125,21 +23125,21 @@ $connexionBD->ferme();
   x:num="38924">26-juil</td>
       <td >Caillaud</td>
       <td >2E266-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Jean CLOCHARD et Françe GRATTEREAU</td>
+      <td >Jean CLOCHARD et Fran&ccedile GRATTEREAU</td>
       <td  align=right x:num>1022</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1757</td>
       <td  align=right
-  x:num="39078">27-déc</td>
+  x:num="39078">27-d&eacutec</td>
       <td >Caillaud</td>
       <td >2E266-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >François CAILLAUD et Jeanne GAUTHIER</td>
+      <td >Fran&ccedilois CAILLAUD et Jeanne GAUTHIER</td>
       <td  align=right x:num>1022</td>
       <td >Fils de Jeanne DARS</td>
     </tr>
@@ -23147,19 +23147,19 @@ $connexionBD->ferme();
       <td height=17  align=right x:num>1757</td>
       <td  align=right
   x:num="38526">23-juin</td>
-      <td >Thénevot</td>
+      <td >Th&eacutenevot</td>
       <td >2E4969-20</td>
       <td >Ruelle</td>
       <td >Cession</td>
-      <td >Jeanne DOR à Pierre BRISSON</td>
+      <td >Jeanne DOR &agrave Pierre BRISSON</td>
       <td  align=right x:num>781</td>
       <td >&nbsp;</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1757</td>
       <td  align=right
-  x:num="38386">3-févr</td>
-      <td >Thénevot</td>
+  x:num="38386">3-f&eacutevr</td>
+      <td >Th&eacutenevot</td>
       <td >2E4969-10</td>
       <td >Ruelle</td>
       <td >Mariage</td>
@@ -23173,7 +23173,7 @@ $connexionBD->ferme();
   x:num="39015">25-oct</td>
       <td >Caillaud</td>
       <td >2E266-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Testament</td>
       <td >Marie Philippe CHAUVET</td>
       <td  align=right x:num>1022</td>
@@ -23182,8 +23182,8 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1759</td>
       <td  align=right
-  x:num="38699">13-déc</td>
-      <td >Thénevot</td>
+  x:num="38699">13-d&eacutec</td>
+      <td >Th&eacutenevot</td>
       <td >2E4969-30</td>
       <td >Ruelle</td>
       <td >Transaction</td>
@@ -23194,10 +23194,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1759</td>
       <td  align=right
-  x:num="38569">5-août</td>
+  x:num="38569">5-ao&ucirct</td>
       <td >Bernard</td>
       <td >2E147-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Transaction</td>
       <td >PLANTINET - Jean BONNORON - LAQUAIRE</td>
       <td  align=right x:num>788</td>
@@ -23206,10 +23206,10 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1759</td>
       <td  align=right
-  x:num="38569">5-août</td>
+  x:num="38569">5-ao&ucirct</td>
       <td >Bernard</td>
       <td >2E147-30</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Mathurin BIGET et Louise PAPIN</td>
       <td  align=right x:num>788</td>
@@ -23221,7 +23221,7 @@ $connexionBD->ferme();
   x:num="38373">21-janv</td>
       <td >Bernard</td>
       <td >2E147-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean PAULET et Marie DELAURIERE</td>
       <td  align=right x:num>788</td>
@@ -23236,26 +23236,26 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >Charles DARS et Jeanne JOURDE</td>
       <td  align=right x:num>1468</td>
-      <td >DARS de Rivières</td>
+      <td >DARS de Rivi&egraveres</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1765</td>
       <td  align=right x:num="39105">23-janv</td>
       <td >Caillaud</td>
       <td >2E281-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Cession</td>
       <td >GADOFFRE, BARETTE, ROCHIER</td>
       <td  align=right x:num>758</td>
-      <td >à Denise ROUHIER</td>
+      <td >&agrave Denise ROUHIER</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1765</td>
       <td  align=right
-  x:num="38390">7-févr</td>
+  x:num="38390">7-f&eacutevr</td>
       <td >Caillaud</td>
       <td >2E281-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Antoine CAILLAUD et Louis RICHON</td>
       <td  align=right x:num>758</td>
@@ -23264,12 +23264,12 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17 class=xl4220222 align=right x:num>1766</td>
       <td class=xl4320222 align=right
-  x:num="38583">19-août</td>
+  x:num="38583">19-ao&ucirct</td>
       <td class=xl4220222>Caillaud</td>
       <td class=xl4220222>2E284-10</td>
-      <td class=xl4220222>Angoulême</td>
-      <td class=xl4220222>Démission</td>
-      <td class=xl4220222>Pierre GOYAUD curé de Charras</td>
+      <td class=xl4220222>Angoul&ecircme</td>
+      <td class=xl4220222>D&eacutemission</td>
+      <td class=xl4220222>Pierre GOYAUD cur&eacute de Charras</td>
       <td class=xl4220222 align=right x:num>758</td>
       <td class=xl3620222>&nbsp;</td>
     </tr>
@@ -23279,9 +23279,9 @@ $connexionBD->ferme();
   x:num="38678">22-nov</td>
       <td >Caillaud</td>
       <td >2E286-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Reconnaissance</td>
-      <td >François DELAURIERE - Pierre DARS</td>
+      <td >Fran&ccedilois DELAURIERE - Pierre DARS</td>
       <td  align=right x:num>759</td>
       <td >&nbsp;</td>
     </tr>
@@ -23291,7 +23291,7 @@ $connexionBD->ferme();
   x:num="38650">25-oct</td>
       <td >Caillaud</td>
       <td >2E286-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Pierre TEXIER et Catherine VEILLON</td>
       <td  align=right x:num>759</td>
@@ -23303,7 +23303,7 @@ $connexionBD->ferme();
   x:num="38013">27-janv</td>
       <td >Caillaud</td>
       <td >2E285-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Partage</td>
       <td >Audier - Pierre Dars</td>
       <td  align=right x:num>752</td>
@@ -23312,14 +23312,14 @@ $connexionBD->ferme();
     <tr height=17> 
       <td height=17  align=right x:num>1768</td>
       <td  align=right
-  x:num="38019">2-févr</td>
+  x:num="38019">2-f&eacutevr</td>
       <td >Caillaud</td>
       <td >2E287-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
-      <td >Etienne Rouyer x Jeanne Cudelé</td>
+      <td >Etienne Rouyer x Jeanne Cudel&eacute</td>
       <td  align=right x:num>751</td>
-      <td >Fils Léona. et Marg. COUPEAU</td>
+      <td >Fils L&eacuteona. et Marg. COUPEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1771</td>
@@ -23328,7 +23328,7 @@ $connexionBD->ferme();
       <td >2E15971-10</td>
       <td >La Rochef.</td>
       <td >Ferme</td>
-      <td >Jean DARS à François BRUN</td>
+      <td >Jean DARS &agrave Fran&ccedilois BRUN</td>
       <td  align=right x:num>1490</td>
       <td >mineur</td>
     </tr>
@@ -23340,7 +23340,7 @@ $connexionBD->ferme();
       <td >2E4599-10</td>
       <td >La Rochef.</td>
       <td >Vente</td>
-      <td >MATHIEU et autres à Jean MATHIEU</td>
+      <td >MATHIEU et autres &agrave Jean MATHIEU</td>
       <td  align=right x:num>1489</td>
       <td >&nbsp;</td>
     </tr>
@@ -23349,7 +23349,7 @@ $connexionBD->ferme();
       <td  align=right x:num="38552">19-juil</td>
       <td >Caillaud</td>
       <td >2E298-10</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Compte</td>
       <td >Nicolas CHAUVET et Marie BOURINET sa fe.</td>
       <td  align=right x:num>816</td>
@@ -23361,7 +23361,7 @@ $connexionBD->ferme();
   x:num="38438">27-mars</td>
       <td >Caillaud</td>
       <td >2E298-20</td>
-      <td >Angoulême</td>
+      <td >Angoul&ecircme</td>
       <td >Mariage</td>
       <td >Jean JAYET et Marie LAFAURIE</td>
       <td  align=right x:num>816</td>
@@ -23376,7 +23376,7 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >Jean DARS et Jeanne DAUDET</td>
       <td  align=right x:num>1468</td>
-      <td >DARS de Rivières</td>
+      <td >DARS de Rivi&egraveres</td>
     </tr>    
   </table>
 </div>
