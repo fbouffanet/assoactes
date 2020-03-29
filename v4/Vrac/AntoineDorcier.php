@@ -5,7 +5,7 @@ require_once('../Commun/constantes.php');
 require_once('../Commun/ConnexionBD.php');
 
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=cp1252" />');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />');
 print('<meta http-equiv="content-language" content="fr" /> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -35,7 +35,7 @@ $connexionBD->ferme();
 		<A HREF="#table6">IMBERT (CM)</A><BR>
 		
 	</CENTER></P>
-<H3><FONT FACE="Times New Roman" color=red>NB: Les r&eacute;f&eacute;rences sont issues du répertoire des notaires et non directement des liasses. Cela n'implique pas que l'acte nous soit parvenu car certaines liasses ou minutes peuvent avoir disparu  ou s'&ecirc;tre &eacute;gar&eacute;es </FONT></H3>	
+<H3><FONT FACE="Times New Roman" color=red>NB: Les r&eacute;f&eacute;rences sont issues du r&eacutepertoire des notaires et non directement des liasses. Cela n'implique pas que l'acte nous soit parvenu car certaines liasses ou minutes peuvent avoir disparu  ou s'&ecirc;tre &eacute;gar&eacute;es </FONT></H3>	
 	
 <HR>
 <A NAME="table0"><H1>Feuille 1: <EM>CAILLETEAU CM</EM></H1></A>
