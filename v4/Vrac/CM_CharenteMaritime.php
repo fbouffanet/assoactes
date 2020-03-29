@@ -5,7 +5,7 @@ require_once('../Commun/constantes.php');
 require_once('../Commun/ConnexionBD.php');
 
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />');
 print('<meta http-equiv="content-language" content="fr" /> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -275,7 +275,7 @@ et ROUHAULT Marguerite<span style='color:red'>. Montignac 16.<o:p></o:p></span><
 </ul>
 
 <p class=MsoNormal style='tab-stops:390.75pt'><span style='font-size:10.0pt'>RATIER
-Fran&ccedil.ois ( veuf RAFFIN Anne )<span style='mso-spacerun:yes'>  </span>de + Jean
+Fran&ccedil.ois ( veuf RAFFIN Anne )<span style='mso-spacerun:yes'> </span>de + Jean
 et FREMON Jeanne. <span style='color:red'>Chassenon 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='tab-stops:390.75pt'><span style='font-size:10.0pt'>ALLIS
@@ -328,7 +328,7 @@ Jeanne de Jean et MOUNIER Marie. Dompierre / Boutonne 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal style='tab-stops:390.75pt'><span style='font-size:10.0pt'>RATIER
-Fran&ccedil.ois ( veuf RAFFIN Anne )<span style='mso-spacerun:yes'>  </span>de + Jean
+Fran&ccedil.ois ( veuf RAFFIN Anne )<span style='mso-spacerun:yes'> </span>de + Jean
 et FREMON Jeanne. <span style='color:red'>Chassenon 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='tab-stops:390.75pt'><span style='font-size:10.0pt'>ALLIS
@@ -427,7 +427,7 @@ Martin 17.<o:p></o:p></span></b></p>
 VARACHE Jeanne.  <span style='color:red'>Montignac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSIGNOL Anne de
-Honoral<span style='mso-spacerun:yes'>  </span>et MOTHU Jeanne. Lozay 17.<o:p></o:p></span></p>
+Honoral<span style='mso-spacerun:yes'> </span>et MOTHU Jeanne. Lozay 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l23 level1 lfo8;tab-stops:list 36.0pt'><span
@@ -474,7 +474,7 @@ PARIS Jeanne. Courant 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NICOLLAS Jean de Heslie et
-+<span style='mso-spacerun:yes'>  </span>DESVARENNES Suzanne<span
++<span style='mso-spacerun:yes'> </span>DESVARENNES Suzanne<span
 style='color:red'>. St Claud 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MASSE Marguerite de Jean et
@@ -528,7 +528,7 @@ Etude &agrave. Villeneuve la Comtesse 17.<o:p></o:p></span></b></p>
 et BOURSIER Marguerite.  <span style='color:red'>St Fraigne 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MURZEAU Jeanne ( veuve
-LIADOUZE Simon ) de Phelippe et<span style='mso-spacerun:yes'> 
+LIADOUZE Simon ) de Phelippe et<span style='mso-spacerun:yes'>
 </span>ARCHAMBAUD Jeanne. Coivert 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire BEGAUD Fran&ccedil.ois et
@@ -677,7 +677,7 @@ GABORIT Philippe ) . Aigrefeuille 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THURON Jean ( veuf JANNEAU
-Jeanne ) de + Jacques et XX<span style='mso-spacerun:yes'>  </span>Catherine. 
+Jeanne ) de + Jacques et XX<span style='mso-spacerun:yes'> </span>Catherine.
 <span style='color:red'>Villognon 16.</span> dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRAUD Jeanne de + Jacques et
@@ -750,7 +750,7 @@ et REGNAUD Marie. Ballon 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
-     style='font-size:10.0pt'>3 E 45/79. CM<span style='mso-spacerun:yes'> 
+     style='font-size:10.0pt'>3 E 45/79. CM<span style='mso-spacerun:yes'>
      </span>27/04/1756. X 03/05/1756 Ballon 17.<o:p></o:p></span></li>
 </ul>
 
@@ -807,7 +807,7 @@ SAUVIGNON Marie.  <span style='color:red'>Brie / Chalais 16</span>.<o:p></o:p></
 et PLAINEAU Marie Anne. Ballon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire MILLET<span
-style='mso-spacerun:yes'>  </span>XX. Etude &agrave. Aigrefeuille 17.<o:p></o:p></span></b></p>
+style='mso-spacerun:yes'> </span>XX. Etude &agrave. Aigrefeuille 17.<o:p></o:p></span></b></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -831,7 +831,7 @@ Etude &agrave. Surg&egrave.res 17.<o:p></o:p></span></b></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUGERON Ren&eacute. de Ren&eacute. et
 MANIANT Anne.  <span style='color:red'>St Fraigne 16</span>. dt Surg&egrave.res<span
-style='mso-spacerun:yes'>  </span>St Pierre 17.<o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span>St Pierre 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BIRAUD Marie Marthe de +
 Pierre et TAROT Madeleine. dt Surg&egrave.res St Pierre 17.<o:p></o:p></span></p>
@@ -854,7 +854,7 @@ AUDET Jean Thomas ) . dt Surg&egrave.res St Pierre 17.<o:p></o:p></span></p>
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
      style='font-size:10.0pt'>3 E 45/113. CM 05/07/1773. X 05/07/1773 Angoulins
-     17.<span style='mso-spacerun:yes'>    </span><o:p></o:p></span></li>
+     17.<span style='mso-spacerun:yes'> </span><o:p></o:p></span></li>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUET Charles Louis de Louis
@@ -865,7 +865,7 @@ Angoulins 17.<o:p></o:p></span></p>
 veuve COCHET Etienne ) . dt Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire PICARD<span
-style='mso-spacerun:yes'>  </span>XX. Etude &agrave. St Jean de Liversay 17.<o:p></o:p></span></b></p>
+style='mso-spacerun:yes'> </span>XX. Etude &agrave. St Jean de Liversay 17.<o:p></o:p></span></b></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -911,7 +911,7 @@ CLEMANCEAU Marguerite. <span style='color:red'> Etriac 16</span>.<o:p></o:p></sp
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAVIER ( QUAVIER ) Jacques de
-Simon et SICARD Marie. <span style='mso-spacerun:yes'>  </span><span
+Simon et SICARD Marie. <span style='mso-spacerun:yes'> </span><span
 style='color:red'>Salles ( Lavalette&nbsp;? ) 16</span>. dt Nantilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARCHUSSEAU Marie de + Jehan
@@ -1043,7 +1043,7 @@ PELISSON Jean ) . Salles 17.<o:p></o:p></span></p>
 style='color:red'>St Sixte en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOILEAU<span
-style='mso-spacerun:yes'>  </span>XX ( veuve VALLON Daniel ). La Jarrie 17.<o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span>XX ( veuve VALLON Daniel ). La Jarrie 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1138,7 +1138,7 @@ GAIGNIER Ren&eacute. )de + Abel et AUBOYNEAU Marguerite.  et dt La Rochelle 17.<
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUSTURIER Jehan<span
-style='mso-spacerun:yes'>  </span>( veuf MILLASSEAU Marguerite ) de + Jehan et
+style='mso-spacerun:yes'> </span>( veuf MILLASSEAU Marguerite ) de + Jehan et
 ROY Guyonne.  <span style='color:red'>Natrice en</span> <span
 style='color:red'>Angoumois 16.</span> dt La Rochelle 17.<o:p></o:p></span></p>
 
@@ -1250,7 +1250,7 @@ RAFFOU Marie.  et dt La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DESFORGES Louis de + Pierre
 et ORGEREAU&nbsp;? Fran&ccedil.oise  Rompsay. dt <span
-style='mso-spacerun:yes'> </span>La Rochelle 17.<o:p></o:p></span></p>
+style='mso-spacerun:yes'></span>La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUITTON Marie de + Charles et
 BUREAU Andr&eacute.e  <span style='color:red'>Chalais 16</span>. dt La Rochelle 17.<o:p></o:p></span></p>
@@ -1281,7 +1281,7 @@ PINET Jehanne.  <span style='color:red'>Villefagnan 16.<o:p></o:p></span></span>
 TOURLET Marie. St M&eacute.dard 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire CHARDON<span
-style='mso-spacerun:yes'>  </span>XXX .Etude &agrave. V&eacute.rines 17<o:p></o:p></span></b></p>
+style='mso-spacerun:yes'> </span>XXX .Etude &agrave. V&eacute.rines 17<o:p></o:p></span></b></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1386,12 +1386,12 @@ Fran&ccedil.ois et PARET Anne.  <span style='color:red'>St Amant de Nou&egrave.r
 dt La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JACOB Anne de Simon et +
-COLDEROY Jacquette. dt<span style='mso-spacerun:yes'>  </span>Dompierre / Mer
+COLDEROY Jacquette. dt<span style='mso-spacerun:yes'> </span>Dompierre / Mer
 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
-     style='font-size:10.0pt'>3 E 59/<span style='mso-spacerun:yes'>   
+     style='font-size:10.0pt'>3 E 59/<span style='mso-spacerun:yes'>
      </span>. CM 05/07/1688. X 09/08/1688 Dompierre / Mer 17.<o:p></o:p></span></li>
 </ul>
 
@@ -1493,7 +1493,7 @@ et + BALLANGER Perrine. ) Dompierre / Mer 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RUPPIN Pierre ( veuf COSSON
-Elisabeth ) .  <span style='mso-spacerun:yes'> </span><span style='color:red'>Salles
+Elisabeth ) .  <span style='mso-spacerun:yes'></span><span style='color:red'>Salles
 en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>OLLEREAU Gabrielle de Jean et
@@ -1512,7 +1512,7 @@ Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
 style='color:red'>Genac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GODEAU Marguerite de + Pierre
-et MOULLAIN Marguerite. St Christophe 17.<span style='mso-spacerun:yes'> 
+et MOULLAIN Marguerite. St Christophe 17.<span style='mso-spacerun:yes'>
 </span><o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -1579,7 +1579,7 @@ BELOTTEAU Fran&ccedil.ois ) . dt Marsilly 17.<o:p></o:p></span></p>
 et BROUILLIN Marguerite.  <span style='color:red'>Garde en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TURGNIER&nbsp;? Jeanne<span
-style='mso-spacerun:yes'>  </span>( veuve ROUSSEAU Pierre ) . dt St Xandre 17.<o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span>( veuve ROUSSEAU Pierre ) . dt St Xandre 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1702,7 +1702,7 @@ Rochelle St Sauveur 17.<o:p></o:p></span></p>
 MACAUT Marie.  et dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAZEAU Jeanne de + Jean et
-DUBOIS Ozanne.<span style='mso-spacerun:yes'>  </span> <span style='color:
+DUBOIS Ozanne.<span style='mso-spacerun:yes'> </span> <span style='color:
 red'>en Angoumois 16</span>. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -1725,7 +1725,7 @@ style='color:red'><o:p></o:p></span></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUBLAN Jean<span
-style='mso-spacerun:yes'>  </span>( veuf RANGER Suzanne ). dt La Rochelle Notre
+style='mso-spacerun:yes'> </span>( veuf RANGER Suzanne ). dt La Rochelle Notre
 Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>REIGNER Marie de Jean et
@@ -1752,7 +1752,7 @@ JEAN Toinette.  Migr&eacute. 17. dt La Rochelle St Barth&egrave.l&egrave.my 17.<
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'><span
-style='mso-spacerun:yes'> </span>FRAIGNEAU Jacques de + Jean et PRENUREAU
+style='mso-spacerun:yes'></span>FRAIGNEAU Jacques de + Jean et PRENUREAU
 Ren&eacute.e.  <span style='color:red'>en Angoumois 16</span>. dt La Rochelle Notre
 Dame 17.<o:p></o:p></span></p>
 
@@ -1782,7 +1782,7 @@ et JOUBERT Toinette.  <span style='color:red'>Luce en Angoumois 16</span>. dt
 St Vivien 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VINECEAU Marie ( veuve XXX
-Mathieu<span style='mso-spacerun:yes'>  </span>et DOUMEAU Jean ). dt St Vivien
+Mathieu<span style='mso-spacerun:yes'> </span>et DOUMEAU Jean ). dt St Vivien
 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -1874,7 +1874,7 @@ GUYON Mathurine. dt St M&eacute.dard 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GORRY Jean<span
-style='mso-spacerun:yes'>  </span>( veuf GASDREAU Marie ). <span
+style='mso-spacerun:yes'> </span>( veuf GASDREAU Marie ). <span
 style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PROUET Marie ( veuve
@@ -2057,7 +2057,7 @@ Etude &agrave. Bourgneuf 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span lang=DE style='font-size:
 10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol;mso-ansi-language:DE'><span style='mso-list:Ignore'>·<span
+Symbol;mso-ansi-language:DE'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=DE style='font-size:10.0pt;
 mso-ansi-language:DE'>3 E 59/902. CM 20/11/1732. X 16/02/1733 Ste Soulle 17.<o:p></o:p></span></p>
@@ -2074,7 +2074,7 @@ Etude &agrave. Bourgneuf 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/945. CM
 30/11/1750. X 16/02/1751 V&eacute.rines 17.<o:p></o:p></span></p>
 
@@ -2091,7 +2091,7 @@ Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/989. CM
 29/04/1771.<o:p></o:p></span></p>
 
@@ -2118,7 +2118,7 @@ et + THEULLE Marie. Thair&eacute. d&acute;Aunis 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'><span
-style='mso-spacerun:yes'> </span>CHAPRON Jacques de Pierre et RULLIER Jeanne<span
+style='mso-spacerun:yes'></span>CHAPRON Jacques de Pierre et RULLIER Jeanne<span
 style='color:red'>. Mainxe 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUHAUD Marie Jeanne de
@@ -2258,7 +2258,7 @@ Fran&ccedil.ois. Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RAJONON&nbsp;? Pierre ( veuf
 PERAUD Elisabeth )  <span style='color:red'>Piasse<span
-style='mso-spacerun:yes'>  </span>en Angoumois 16</span>. dt St Christophe 17.<o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span>en Angoumois 16</span>. dt St Christophe 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DORNAS&nbsp;? Marguerite. (
 veuve DESCHAMPS Pierre ). dt St Christophe 17.<o:p></o:p></span></p>
@@ -2280,7 +2280,7 @@ MAUPETIT Daniel ) . Voutron / Yves 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1007. CM
 05/05/1737.<o:p></o:p></span></p>
 
@@ -2293,7 +2293,7 @@ FAUREAU Marie. Thair&eacute. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1026. CM
 19/02/1756.<o:p></o:p></span></p>
 
@@ -2306,7 +2306,7 @@ CAILLAUD Jeanne. Thair&eacute. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1009. CM
 13/09/1739.<o:p></o:p></span></p>
 
@@ -2319,7 +2319,7 @@ et AUBINAUD Marguerite. Cir&eacute. d&acute;Aunis 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1026. CM
 27/06/1756.<o:p></o:p></span></p>
 
@@ -2332,7 +2332,7 @@ BLAIS Marie. Ardilleux 79.<span style='color:red'><o:p></o:p></span></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1024. CM
 29/12/1754. <o:p></o:p></span></p>
 
@@ -2345,7 +2345,7 @@ Antoine et MICHO Marguerite. Marans 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1026. CM
 14/11/1756.<o:p></o:p></span></p>
 
@@ -2358,7 +2358,7 @@ GIRAUD Jean )de Antoine et BOURDIN Anne. Thair&eacute. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1026. CM
 25/01/1756.<o:p></o:p></span></p>
 
@@ -2371,7 +2371,7 @@ Pierre ) de Jacques et + PICOT H&eacute.l&egrave.ne. Thair&eacute. 17.<o:p></o:p
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1022. CM
 10/09/1752.<o:p></o:p></span></p>
 
@@ -2384,7 +2384,7 @@ BOURDIN Marie. Cir&eacute. d&acute;Aunis 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1024. CM
 04/05/1754.<o:p></o:p></span></p>
 
@@ -2400,7 +2400,7 @@ Etude &agrave. Bourgneuf 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1057. CM 08/06/1768.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BUROLLEAU Jean de + Jean et +
@@ -2412,7 +2412,7 @@ BRUN Jacquette. St Christophe 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1049. CM
 19/10/1760.<o:p></o:p></span></p>
 
@@ -2425,7 +2425,7 @@ Fran&ccedil.ois et GILLEBERT Marie. Montroy 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1055. CM
 11/02/1766.<o:p></o:p></span></p>
 
@@ -2438,11 +2438,11 @@ et + ANCELLAIN Elisabeth. Bourgneuf 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1051. CM
 07/01/1762.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>PETIT de la CONFRETT…….de +
+<p class=MsoNormal><span style='font-size:10.0pt'>PETIT de la CONFRETT.de +
 Jacques et + DAVESON Marie Magdeleine. <span style='color:red'>Gourville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FROMENT Henriette ( veuve
@@ -2454,7 +2454,7 @@ Etude &agrave. Dompierre / Mer 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1085. CM
 25/08/1769. X 10/10/1769 Ste Soulle 17.<o:p></o:p></span></p>
 
@@ -2468,7 +2468,7 @@ ANDRE Anne.  et dt Ste Soulle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1084. CM
 31/05/1768. X 31/05/1768 La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
@@ -2482,7 +2482,7 @@ Jacques et BONNEST Magdeleine.  Aytr&eacute. 17. dt La Rochelle Notre Dame 17.<o
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1090. CM
 07/01/1770. X 29/01/1770 Dompierre / Mer 17.<o:p></o:p></span></p>
 
@@ -2496,7 +2496,7 @@ et FOUBERT Marguerite.  et dt Dompierre / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1066. CM
 16/08/1750.<o:p></o:p></span></p>
 
@@ -2523,7 +2523,7 @@ Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-GB style='font-size:
 10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>·<span
+Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-GB style='font-size:10.0pt;
 mso-ansi-language:EN-GB'>3 E 59/1106. CM 09/02/1754. X 26/02/1754 St Christophe
@@ -2539,7 +2539,7 @@ BEGAUD Jeanne.  et dt St Christophe 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-GB style='font-size:
 10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>·<span
+Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-GB style='font-size:10.0pt;
 mso-ansi-language:EN-GB'>3 E 59/1123. CM 30/04/1771. X 27/05/1771 St Christophe
@@ -2554,7 +2554,7 @@ Jean et MOREAU&nbsp;? Magdeleine.  et dt St Christophe 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1125. CM
 28/06/1773. X 12/07/1773 Bourgneuf 17.<o:p></o:p></span></p>
 
@@ -2571,7 +2571,7 @@ Isaac. Etude &agrave. St Xandre et La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
-mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>·<span
+mso-bidi-font-weight:bold'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1143. CM
 31/03/1761. X 31/03/1761 Marsilly 17.<b><o:p></o:p></b></span></p>
@@ -2580,13 +2580,13 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 RICHARD Marguerite ) . dt Marsilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRETON Jeanne de Jean et
-BOUHIER Marie.  <span style='mso-spacerun:yes'> </span><span style='color:
+BOUHIER Marie.  <span style='mso-spacerun:yes'></span><span style='color:
 red'>St Sulpice pr&egrave.s Cognac 16</span>. dt Marsilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
-mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>·<span
+mso-bidi-font-weight:bold'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1144. CM
 21/06/1762. X 21/06/1762 Marsilly 17.<b><o:p></o:p></b></span></p>
@@ -2600,7 +2600,7 @@ et GAGNET Fran&ccedil.oise.  et dt Marsilly 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1145. CM
 02/01/1763. X 01/02/1763 Nieul / Mer 17.<o:p></o:p></span></p>
 
@@ -2617,7 +2617,7 @@ Andr&eacute.. Etude &agrave. Bourgneuf et V&eacute.rines 17.<o:p></o:p></span></
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1211. CM 06/01/1801.
 X 29/01/1801 V&eacute.rines 17.<o:p></o:p></span></p>
 
@@ -2634,7 +2634,7 @@ Jacques. Etude &agrave. La Jarrie et Clavette 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1245. CM 19/01/1796.
 X 19/01/1796 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -2647,7 +2647,7 @@ FERJOT Marie.  <span style='color:red'>Foussignac 16</span>.dt Salles 17.<o:p></
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1222. CM
 05/09/1773. X 06/09/1773 Montroy 17.<o:p></o:p></span></p>
 
@@ -2664,12 +2664,12 @@ Etude &agrave. Salles / Mer 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1255. CM
 14/01/1777.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOISSELIER Fran&ccedil.ois de +
-Charles et +<span style='mso-spacerun:yes'>  </span>COURIVEAU Marie<span
+Charles et +<span style='mso-spacerun:yes'> </span>COURIVEAU Marie<span
 style='color:red'>. Oradour Fanais 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MACHETEAU F&eacute.licit&eacute. de Jean et
@@ -2678,7 +2678,7 @@ BOISFREAU Marguerite. Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1262. CM
 24/11/1784.<o:p></o:p></span></p>
 
@@ -2691,7 +2691,7 @@ Nicolas et POTONNIER Marie Jeanne. Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1262. CM
 23/02/1784.<o:p></o:p></span></p>
 
@@ -2704,7 +2704,7 @@ et FEUILLET Jeanne. Mortagne la Vieille 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1263. CM
 15/06/1785.<o:p></o:p></span></p>
 
@@ -2720,7 +2720,7 @@ veuve CAILLAUD Andr&eacute. ) St M&eacute.dard d&acute;Aunis 17.<o:p></o:p></spa
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1264. CM
 17/05/1772.<o:p></o:p></span></p>
 
@@ -2734,7 +2734,7 @@ GOULARD F&eacute.lix )de + Louis et BOUTET Suzanne. dt Montroy 17.<o:p></o:p></s
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1267. CM
 27/04/1775. X 31/05/1775 Rochefort St Louis 17.<o:p></o:p></span></p>
 
@@ -2747,7 +2747,7 @@ et LEGROS Jeanne. dt Rochefort 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1265. CM
 30/04/1773.<o:p></o:p></span></p>
 
@@ -2836,7 +2836,7 @@ GARRAUD Jeanne.  et dt St Christophe 17.<o:p></o:p></span></p>
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l8 level1 lfo3;tab-stops:list 36.0pt'><span
      lang=EN-GB style='font-size:10.0pt;mso-ansi-language:EN-GB'>3 E 59/1371.
-     Promesse 27/06/1800. X 20/09/1800<span style='mso-spacerun:yes'> 
+     Promesse 27/06/1800. X 20/09/1800<span style='mso-spacerun:yes'>
      </span>St Christophe 17.<o:p></o:p></span></li>
 </ul>
 
@@ -2855,7 +2855,7 @@ CAILLETEAU Jeanne.  Le Langon 85. dt St Christophe 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROY Simon de + Ren&eacute. dit
 DANJOU et + NICOLAS Marie.  <span style='color:red'>Beaulieu canton<span
-style='mso-spacerun:yes'>  </span>St Claud 16</span>.dt St Christophe 17.<o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span>St Claud 16</span>.dt St Christophe 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DURAND Marie de David
 Fran&ccedil.ois Bruno et MAILLOCHEAU Jeanne. dt St Christophe 17.<o:p></o:p></span></p>
@@ -2870,7 +2870,7 @@ Joseph. Etude &agrave. La Jarrie 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHARTIER Pierre ( veuf COLLIN
-Marie ) de Jacques et SERVANT Fran&ccedil.oise. <span style='color:red'> Sur……16.</span>
+Marie ) de Jacques et SERVANT Fran&ccedil.oise. <span style='color:red'> Sur16.</span>
 dt Mortagne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BELIN Marie Magdeleine. (
@@ -2883,7 +2883,7 @@ dt Mortagne 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/34. CM
 10/09/1714. X 20/11/1714 Clavette 17.<o:p></o:p></span></p>
 
@@ -2899,8 +2899,8 @@ Toussaint. Etude &agrave. Croix Chapeau 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/113 – 115.
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/113  115.
 CM 19/06/1746. X 06/02/1747 La Jarrie 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUDOYER Louis de + Pierre et
@@ -2912,8 +2912,8 @@ MARTIN Anne. Chambon 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/98 – 99.
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/98  99.
 CM 11/06/1730. X 03/07/1730 Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BILLAUD Simon de + Simon et
@@ -2925,8 +2925,8 @@ et + BERTON Magdeleine <span style='color:red'>. Jensac 16.<o:p></o:p></span></s
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/126 – 127.
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/126  127.
 CM 21/09/1758. X 30/10/1758 Aigrefeuille 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BLOUIN Jean de + Fran&ccedil.ois et
@@ -2938,8 +2938,8 @@ JEAN Pierre ).<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/ 110 –
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/ 110
 112. Promesse 26/05/1744. CM 10/11/1744. X 10/11/1744 Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAIGNEAU Pierre de + Pierre
@@ -2951,8 +2951,8 @@ Antoine et + DOUSSET Marguerite. Le Thou 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/ 110 –
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/ 110
 112. CM 04/07/1743. X 29/07/1743 La Jarrie 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GARNAUD Jacques de + Fran&ccedil.ois
@@ -2964,8 +2964,8 @@ GARRAUD Marie. La Jarrie 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/105 – 106.
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/105  106.
 CM 27/011738. X 27/01/1738 Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JEANNET Jeande Jean et +
@@ -2977,7 +2977,7 @@ Michel ) <o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/122. CM
 24/011754. X 21/01/1754 Croix Chapeau 17.<o:p></o:p></span></p>
 
@@ -2990,8 +2990,8 @@ BARILLON Marie. Croix Chapeau 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/102 – 104.
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/102  104.
 CM 06/05/1736. X 07/05/1736 La Jarrie 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NADEAU Etienne de + Fran&ccedil.ois
@@ -3003,8 +3003,8 @@ et GIGET Catherine. <o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/ 113 –
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/ 113
 115. CM 23/10/1747. X 20/11/1747 Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PEROT Pierre de Antoine et
@@ -3016,7 +3016,7 @@ POIRAUD Louis ). Le Thou 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/ 116.
 Promesse 25/02/1748.<o:p></o:p></span></p>
 
@@ -3029,8 +3029,8 @@ SEGUIN Fran&ccedil.ois ) . Croix Chapeau 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/107 – 109.
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/107  109.
 CM 06/12/1741. X 6/12/1741 Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SEGUIN Fran&ccedil.ois de + Pierre
@@ -3042,7 +3042,7 @@ Estienne et BILLEAU Fran&ccedil.oise. Croix Chapeau 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/120. CM
 26/11/1752. X 00/03/1753 Croix Chapeau 17.<o:p></o:p></span></p>
 
@@ -3055,7 +3055,7 @@ Michel ) Croix Chapeau 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/117. CM
 07/04/1749. X 06/05/1749 Croix Chapeau 17.<o:p></o:p></span></p>
 
@@ -3068,8 +3068,8 @@ FOUCHER Louise. Forges 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/107 – 109.
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/107  109.
 CM 15/11/1741.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VIOLLET Pierre de Pierre et
@@ -3081,8 +3081,8 @@ MARTINEAU Michel ).<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/ 110 –
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/ 110
 112. CM 26/03/1742. X 28/04/1742 Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>YVON Pierre de Jean et +
@@ -3097,7 +3097,7 @@ Toussaint. Etude &agrave. La Jarrie 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/182. CM
 09/11/1794. X 17/11/1794 Croix Chapeau 17.<o:p></o:p></span></p>
 
@@ -3110,7 +3110,7 @@ DURAND Marie.  et dt Aigrefeuille 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/190. CM
 26/12/1802.<o:p></o:p></span></p>
 
@@ -3124,7 +3124,7 @@ et RAVON Marie.  et dt Croix Chapeau 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/177. CM
 08/01/1790. X 09/02/1790 Croix Chapeau 17.<o:p></o:p></span></p>
 
@@ -3138,7 +3138,7 @@ Catherine. dt Croix Chapeau 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/184.
 Promesse 31/01/1797. X 12/02/1797 La Jarrie 17.<o:p></o:p></span></p>
 
@@ -3151,7 +3151,7 @@ et GIGAULT Marie.  et dt La Jarrie 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/177.
 Promesse 02/02/1790.<o:p></o:p></span></p>
 
@@ -3165,13 +3165,13 @@ PINET Marianne.  Bouet 17. dt Croix Chapeau 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/186. CM
 10/01/1799. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DESMOTTES Barth&eacute.l&eacute.my ( veuf
-BILLAUD Jeanne ) de<span style='mso-spacerun:yes'>  </span>Jacques et +<span
-style='mso-spacerun:yes'>  </span>DANIAU Marie. <span style='color:red'>Ste
+BILLAUD Jeanne ) de<span style='mso-spacerun:yes'> </span>Jacques et +<span
+style='mso-spacerun:yes'> </span>DANIAU Marie. <span style='color:red'>Ste
 S&eacute.v&eacute.re 16</span>. dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GARNIER Th&eacute.r&eacute.se ( veuve
@@ -3180,7 +3180,7 @@ ROUSSET Louis ) de + Pierre et BRAUD Marieanne.  La Jarrie 17. dt Thair&eacute. 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/179. CM
 26/07/1792. X 24/09/1792 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -3194,7 +3194,7 @@ LAMOUREUX Pierre ) . dt Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/187. CM
 18/04/1800. X 20/05/1800 La Jarrie 17.<o:p></o:p></span></p>
 
@@ -3208,7 +3208,7 @@ ROYAUD Elisabeth.  CroiX Chapeau 17. dt La Jarrie 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/188. CM 27/12/1800.
 X 29/12/1800 Croix Chapeau 17.<o:p></o:p></span></p>
 
@@ -3222,7 +3222,7 @@ JANVRET Fran&ccedil.oise.  Clavette 17. dt Aigrefeuille 17.<o:p></o:p></span></p
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/190. CM
 23/11/1802.<o:p></o:p></span></p>
 
@@ -3236,7 +3236,7 @@ Gabriel et RAVRON Marie Anne.  Salles / Mer 17. dt Croix Chapeau 17.<o:p></o:p><
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/176. CM
 11/05/1789. X 06/06/1789 Croix Chapeau 17. <o:p></o:p></span></p>
 
@@ -3250,7 +3250,7 @@ ROY Anne.dt Croix Chapeau 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 64/174. CM
 19/05/1787. X 23/05/1787 La Jarrie 17.<o:p></o:p></span></p>
 
@@ -3267,7 +3267,7 @@ Cir&eacute. 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 77/2. CM
 01/06/1782. X 10/08/1782 Cir&eacute. 17.<o:p></o:p></span></p>
 
@@ -3283,7 +3283,7 @@ Etude &agrave. Cir&eacute. 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 77/6. CM
 16/06/1783. X 15/06/1783 Ballon 17.<o:p></o:p></span></p>
 
@@ -3297,7 +3297,7 @@ TREZORIER Elisabeth.  St Crepin 17. dt Ballon 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 77/12.
 Promesse 07/02/1801. CM 16/02/1801. X 16/02/1801 Cir&eacute. 17.<o:p></o:p></span></p>
 
@@ -3310,7 +3310,7 @@ MALNOIRE Pierre ) . dt Cir&eacute. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 77/12.
 Promesse 26/12/1800. CM 16/02/1801. X 16/02/1801 Cir&eacute. 17.<o:p></o:p></span></p>
 
@@ -3323,7 +3323,7 @@ veuve GOURDON Jacques ). dt Cir&eacute. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 77/11.
 Promesse 16/07/1799. CM 24/09/1799. X 24/09/1799 Cir&eacute. 17.<o:p></o:p></span></p>
 
@@ -3340,7 +3340,7 @@ Etude &agrave. Cir&eacute. 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 77/16. CM
 22/06/1789. X 22/06/1789 Cir&eacute. 17.<o:p></o:p></span></p>
 
@@ -3353,7 +3353,7 @@ et + CUIT Fran&ccedil.oise. La Roche Enard 79.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 77/19. CM 17/01/1792.
 X 17/01/1792 Cir&eacute. 17.<o:p></o:p></span></p>
 
@@ -3366,7 +3366,7 @@ et + GUERIN Jeanne.  Ardilli&eacute.res 17. dt Cir&eacute. 17.<o:p></o:p></span>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 77/24.
 Promesse 17/06/1798. CM 26/06/1798. X 26/06/1798 Le Thou 17.<o:p></o:p></span></p>
 
@@ -3380,7 +3380,7 @@ Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 77/18. CM
 06/06/1791. X 06/06/1791 Ardilli&eacute.res 17.<o:p></o:p></span></p>
 
@@ -3394,7 +3394,7 @@ MESNARD Marie.  et dt Ardilli&eacute.res 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 77/16.
 Promesse 23/03/1789.<o:p></o:p></span></p>
 
@@ -3408,7 +3408,7 @@ et DANIAUD Marie Anne.  Yves 17. dt Ballon 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 77/18.
 Promesse 30/05/1791.<o:p></o:p></span></p>
 
@@ -3420,12 +3420,12 @@ CLEMENT Elisabeth.  <span style='color:red'>St Sornin 16</span>. dt Rochefort
 FOIREAU Marie Anne.  Le Thou 17. dt Rochefort Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire POCHON<span
-style='mso-spacerun:yes'>  </span>X X. Etude &agrave. Salles / Mer 17.<o:p></o:p></span></b></p>
+style='mso-spacerun:yes'> </span>X X. Etude &agrave. Salles / Mer 17.<o:p></o:p></span></b></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 445. CM
 30/11/1721.<o:p></o:p></span></p>
 
@@ -3442,7 +3442,7 @@ Etude &agrave. Ch&acirc.telaillon 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 876. CM
 12/04/1761.<o:p></o:p></span></p>
 
@@ -3456,7 +3456,7 @@ et + LEQUIN Anne  et dt Salles 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 892. CM
 30/06/1777. X 30/06/1777 Salles / mer 17.<o:p></o:p></span></p>
 
@@ -3469,7 +3469,7 @@ et MIGAUD Catherine.  Beauvoir / Niort 79. dt Salles 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 900. CM
 11/01/1785. X 11/01/1785 Salles 17.<o:p></o:p></span></p>
 
@@ -3482,7 +3482,7 @@ VIGIER Marie. dt St M&eacute.dard 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 890. CM
 06/06/1675. X 06/06/1675 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -3495,7 +3495,7 @@ et + GADRAUD Marie.  et dt Salles 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 908. CM
 31/08/1793. X 02/09/1793 Salles 17.<o:p></o:p></span></p>
 
@@ -3509,7 +3509,7 @@ Marie.  et dt Salles17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 900. CM
 30/01/1785. X 04/02/1785 Angoulins 17.<o:p></o:p></span></p>
 
@@ -3523,7 +3523,7 @@ Fran&ccedil.ois et + POITU Marianne.  La Rochelle Notre Dame 17. dt Angoulins 17
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 903. CM
 21/01/1788. X 21/01/1788 La Jarne 17.<o:p></o:p></span></p>
 
@@ -3537,7 +3537,7 @@ et + DURET Jeanne.  Salles 17. dt La Jarne 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 874. CM
 04/051759. X 28/06/1760 Clavette 17.<o:p></o:p></span></p>
 
@@ -3546,13 +3546,13 @@ VILLENEUVE Marie  <span style='color:red'>Roudray , en Angoumois 16</span>.dt
 Clavette 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PIGEONNIER Catherine ( veuve
-MUIN Pierre et <span style='mso-spacerun:yes'> </span>MOYNET L&eacute.on ) de Claude
+MUIN Pierre et <span style='mso-spacerun:yes'></span>MOYNET L&eacute.on ) de Claude
 et LABARCHE Jeanne. dt Clavette 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 882. CM
 24/05/1767. <o:p></o:p></span></p>
 
@@ -3565,7 +3565,7 @@ et + DUQUERROIS Anne.  <span style='color:red'>Bess&eacute. 16</span>. dt Salles
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 907. CM
 05/02/1792. X 13/02/1792 Angoulins 17.<o:p></o:p></span></p>
 
@@ -3579,7 +3579,7 @@ MAROT Elisabeth.  et dt Angoulins 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 886. CM
 21/10/1771. X 21/10/1771 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -3592,7 +3592,7 @@ Fran&ccedil.ois et LEVEQUE Andr&eacute.e.  et dt Salles 17.<o:p></o:p></span></p
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 899. CM
 05/07/1784. X 05/07/1784 Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
@@ -3605,7 +3605,7 @@ POIVRE Fran&ccedil.ois ) . dt Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 895. CM
 19/06/1780. X 19/06/1780 Salles 17.<o:p></o:p></span></p>
 
@@ -3621,7 +3621,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1089. CM
 17/09/1806. X 25/11/1806 La Jarne 17.<o:p></o:p></span></p>
 
@@ -3635,7 +3635,7 @@ Simon ) de Jean et COUTANT Marie. La Rochelle Notre Dame 17. dt La Jarne 17.<o:p
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1131. CM
 27/04/1801. X 28/04/1801 La Rochelle 17.<o:p></o:p></span></p>
 
@@ -3649,7 +3649,7 @@ Joseph et + BADIOU Marguerite.  et dt La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1085. CM
 10/12/1797. X 19/12/1797 Aytr&eacute. 17.<o:p></o:p></span></p>
 
@@ -3665,7 +3665,7 @@ Philippe. Etude &agrave. Esnandes 17 et Andilly 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1751. CM
 01/01/1790. X 27/01/1790 Andilly 17.<o:p></o:p></span></p>
 
@@ -3682,7 +3682,7 @@ Etude &agrave. Ch&acirc.telaillon 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1832. CM
 16/06/1697.<o:p></o:p></span></p>
 
@@ -3695,7 +3695,7 @@ ROBINET Marie. Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1834. CM
 10/02/1720.<o:p></o:p></span></p>
 
@@ -3711,7 +3711,7 @@ Etude &agrave. Ch&acirc.telaillon 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1912. CM
 01/07/1753. X 12/11/1753 La Jarne 17.<o:p></o:p></span></p>
 
@@ -3725,7 +3725,7 @@ GUILIER Anne. dt La Jarne 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1913. CM
 06/02/1758. <o:p></o:p></span></p>
 
@@ -3739,7 +3739,7 @@ Pierre et + MALLET Catherine. dt Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1914.
 Promesse 06/01/1760. CM 21/04/1760. X 21/04/1760 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -3753,7 +3753,7 @@ et FOUCHE Jeanne.  et dt Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-GB style='font-size:
 10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>·<span
+Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-GB style='font-size:10.0pt;
 mso-ansi-language:EN-GB'>3 E <st1:metricconverter ProductID="1914. CM" w:st="on">1914.
@@ -3769,7 +3769,7 @@ CHEVRIER Andr&eacute. ) dt St Vivien 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1914. CM
 21/04/1761. X 19/05/1761 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -3783,12 +3783,12 @@ SCILLET&nbsp;? Jeanne.  Ste Soulle 17. dt Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1913. CM
 30/08/1756. X 30/08/1756 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BROUSSARD Jean<span
-style='mso-spacerun:yes'>  </span>Baptiste de + Jean et + DUCOU Catherine.  <span
+style='mso-spacerun:yes'> </span>Baptiste de + Jean et + DUCOU Catherine.  <span
 style='color:red'>Champniers 16.</span> dt Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NEAU Magdeleine de Daniel et GEZEUX&nbsp;?
@@ -3797,7 +3797,7 @@ Ren&eacute.e. dt Salles 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1912. CM
 30/09/1752. X 03/10/1752 P&eacute.rigny 17.<o:p></o:p></span></p>
 
@@ -3811,7 +3811,7 @@ MATHIEU Marie.  et dt P&eacute.rigny 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1912. CM
 27/06/1751. X 05/07/1751 La Jarne 17.<o:p></o:p></span></p>
 
@@ -3824,7 +3824,7 @@ COINTRE&nbsp;? Jeanne<span style='color:red'>. Paizay Naudouin 16.<o:p></o:p></s
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1909. CM
 28/07/1737. X 17/02/1737 La Jarne 17.<o:p></o:p></span></p>
 
@@ -3837,7 +3837,7 @@ GROLLEAU Anne. <span style='color:red'> St Fragne 16.<o:p></o:p></span></span></
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1911.
 Promesse 13/08/1747. CM 07/01/1748. X 08/01/1748 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -3850,7 +3850,7 @@ et MALBEUF Magdeleine.  et dt Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1915. CM
 02/01/1765. X 21/01/1765 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -3864,7 +3864,7 @@ et LEQUIN Anne.  et dt Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1907. CM
 30/04/1727. X 26/05/1727. Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
@@ -3878,7 +3878,7 @@ La Jarne 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1914. CM
 05/09/1762. X 06/09/1762 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -3892,7 +3892,7 @@ et ROUSSAU Marguerite.  La Jarne 17. dt Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1911. CM
 07/07/1749. X 22/09/1749 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -3905,7 +3905,7 @@ LESPINNE Marie. <span style='color:red'> Cherve 16</span>. dt Salles / Mer 17.<o
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1909.
 Promesse 05/08/1736.<o:p></o:p></span></p>
 
@@ -3918,7 +3918,7 @@ et JAUFFRIAU Marye. dt Angoulins 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1907. CM
 30/03/1726. X 02/07/1726. Angoulins 17.<o:p></o:p></span></p>
 
@@ -3932,7 +3932,7 @@ Marye.  et dt Angoulins 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-GB style='font-size:
 10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>·<span
+Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-GB style='font-size:10.0pt;
 mso-ansi-language:EN-GB'>3 E <st1:metricconverter ProductID="1908. CM" w:st="on">1908.
@@ -3948,7 +3948,7 @@ dt St Vivien 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1914. CM
 22/11/1763. X 22/11/1763 Clavette 17.<o:p></o:p></span></p>
 
@@ -3961,7 +3961,7 @@ Pierre Andr&eacute. ) . dt Clavette 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1911. CM
 31/01/1749.<o:p></o:p></span></p>
 
@@ -3974,7 +3974,7 @@ veuve XX Jean ). dt Angoulins 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1915. CM
 06/01/1765. X 07/01/1765 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -3988,7 +3988,7 @@ Pierre ). dt Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1916. CM
 18/01/1768. X 01/02/1768 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -4002,7 +4002,7 @@ Louis ) . dt Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1913. CM
 29/05/1755. X 23/06/1755 Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
@@ -4016,7 +4016,7 @@ et + ARTAU Marie.  et dt Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1912. CM
 24/06/1754. X 14/11/1754 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -4029,7 +4029,7 @@ et + GROUSSEAU Marie.  et dt Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1909. CM
 07/03/1737. X 05/03/1737 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -4043,7 +4043,7 @@ RENAUD Magdeleine. dt Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-GB style='font-size:
 10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>·<span
+Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-GB style='font-size:10.0pt;
 mso-ansi-language:EN-GB'>3 E <st1:metricconverter ProductID="1914. CM" w:st="on">1914.
@@ -4059,7 +4059,7 @@ CADY Barth&eacute.l&eacute.my ) dt St Vivien 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1911. CM
 20/10/1746. X 03/07/1747 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -4073,7 +4073,7 @@ Pierre et MAYNOT Elisabeth.  Salles / Mer 17. dt La Rochelle Notre Dame 17.<o:p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1913. CM
 30/11/1755. X 12/01/1756 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -4087,7 +4087,7 @@ et AVRARD Fran&ccedil.oise.  La Jarrie 17. dt Salles / Mer 17.<o:p></o:p></span>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1915. CM
 12/06/1764. X 12/06/1764 Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
@@ -4101,7 +4101,7 @@ GABORIT Jeanne. dt Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1915. CM
 25/08/1764. X 06/11/1764 La Jarrie 17.<o:p></o:p></span></p>
 
@@ -4115,7 +4115,7 @@ CAILLAUD Estienne ) . dt La jarrie 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1912. CM
 03/09/1754. X 01/10/1754 Aytr&eacute. 17.<o:p></o:p></span></p>
 
@@ -4129,7 +4129,7 @@ et FOUILLOU Marguerite. <span style='color:red'> Angoul&ecirc.me 16</span>. dt A
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1914. CM
 10/05/1762. X 02/05/1762 Salles / Mer 17.<o:p></o:p></span></p>
 
@@ -4143,7 +4143,7 @@ DELAUNAY Jeanne. dt Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 1910. CM
 28/03/1741. X 03/07/1741 La Jarne 17.<o:p></o:p></span></p>
 
@@ -4159,7 +4159,7 @@ Jean et + BONNIN Jeanne. Bernay 17. dt La Jarne 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2070. CM
 05/10/1683.<o:p></o:p></span></p>
 
@@ -4172,7 +4172,7 @@ BOULETREAU Catherine. Niort 79.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2071. CM
 31/03/1686.<o:p></o:p></span></p>
 
@@ -4185,7 +4185,7 @@ PERTUIS Marie. Cherbonni&egrave.res 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2070. CM
 13/06/1683.<o:p></o:p></span></p>
 
@@ -4198,7 +4198,7 @@ ROFFINAULT Madeleine. La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2070. CM
 26/10/1681. <o:p></o:p></span></p>
 
@@ -4211,7 +4211,7 @@ ARDY Anne. La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2071. CM
 04/05/1687.<o:p></o:p></span></p>
 
@@ -4227,7 +4227,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
-mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>·<span
+mso-bidi-font-weight:bold'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2085. CM
 04/04/1693.<b><o:p></o:p></b></span></p>
@@ -4241,7 +4241,7 @@ BOITREAU Mathurine . La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
-mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>·<span
+mso-bidi-font-weight:bold'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2086. CM
 26/06/1701.<b><o:p></o:p></b></span></p>
@@ -4255,7 +4255,7 @@ JAMAIN Perrine. La Jarrie 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2085. CM
 12/07/1691.<o:p></o:p></span></p>
 
@@ -4268,7 +4268,7 @@ Fran&ccedil.ois et RICHARD Henriette. La Bataille 79.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2086. CM
 30/10/1702.<o:p></o:p></span></p>
 
@@ -4281,12 +4281,12 @@ et + TETRON Marguerite. P&eacute.rigny 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2086. CM
 26/01/1700.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DEGORCE<span
-style='mso-spacerun:yes'>  </span>Jean de + Louis et DELAFARGE Jeanne . <span
+style='mso-spacerun:yes'> </span>Jean de + Louis et DELAFARGE Jeanne . <span
 style='color:red'>Chadurie 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TEXIER Madeleine de Pierre et
@@ -4295,7 +4295,7 @@ SALMON Elisabeth. Ile d&acute;Aix 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2086. CM
 10/01/1700.<o:p></o:p></span></p>
 
@@ -4308,7 +4308,7 @@ Marie. Beauvais / Matha 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2082.
 Promesse 25/07/1722 -----3 E 2089. CM 14/07/1722.<o:p></o:p></span></p>
 
@@ -4321,7 +4321,7 @@ Pierre et COUBRAIS Marguerite. La Rochelle St Barth&eacute.l&eacute.my 17.<o:p><
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2086. CM 11/11/1699.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LEGRAND Guillaume de +
@@ -4333,7 +4333,7 @@ DUMOULLIN Louise. <span style='color:red'>Ruffec 16.</span><o:p></o:p></span></p
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2088. CM
 23/09/1714.<o:p></o:p></span></p>
 
@@ -4346,7 +4346,7 @@ GENINE&nbsp;? Ester. Angoulins 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2086. CM
 02/05/1700.<o:p></o:p></span></p>
 
@@ -4359,7 +4359,7 @@ Anne. <span style='color:red'>Ruffec 16.<o:p></o:p></span></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
-mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>·<span
+mso-bidi-font-weight:bold'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2089. CM
 03/06/1725.<b><o:p></o:p></b></span></p>
@@ -4373,7 +4373,7 @@ BON Judith. Nieul / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2087. CM
 18/09/1707.<o:p></o:p></span></p>
 
@@ -4386,7 +4386,7 @@ PAPINEAU Gabriel ) . La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2086. CM
 03/05/1704.<o:p></o:p></span></p>
 
@@ -4399,7 +4399,7 @@ et ROY Jeanne. La Rochelle St Sauveur 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2085. CM
 29/01/1696.<o:p></o:p></span></p>
 
@@ -4412,7 +4412,7 @@ DAMIEN Louise.  <span style='color:red'>Bonneuil 16.<o:p></o:p></span></span></p
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2087. CM
 30/01/1706.<o:p></o:p></span></p>
 
@@ -4425,20 +4425,20 @@ Pierre ) . La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2085. CM
 27/01/1697.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROY Pierre de + Jean et
-TEXIER L&eacute.onarde.  <span style='color:red'>Mazi&eacute.res en Basse ……16&nbsp;?<o:p></o:p></span></span></p>
+TEXIER L&eacute.onarde.  <span style='color:red'>Mazi&eacute.res en Basse 16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PENARD Ren&eacute.e. St Georges <span
-style='mso-spacerun:yes'> </span>du Bois 17.<o:p></o:p></span></p>
+style='mso-spacerun:yes'></span>du Bois 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2086. CM
 05/06/1701.<o:p></o:p></span></p>
 
@@ -4454,7 +4454,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2120. CM
 08/01/1730.<o:p></o:p></span></p>
 
@@ -4467,7 +4467,7 @@ DAUBIGEON Pierre ). Aytr&eacute. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2120. CM
 12/06/1717.<o:p></o:p></span></p>
 
@@ -4480,7 +4480,7 @@ et GOT Marguerite. La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2118. CM
 15/12/1737.<o:p></o:p></span></p>
 
@@ -4494,7 +4494,7 @@ GUITON Jeanne. La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2115. CM
 27/06/1723.<o:p></o:p></span></p>
 
@@ -4510,7 +4510,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2155. CM
 26/11/1584. Protestant.<o:p></o:p></span></p>
 
@@ -4523,7 +4523,7 @@ GUYON Simon ).<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2150. CM
 07/03/1570.<o:p></o:p></span></p>
 
@@ -4535,7 +4535,7 @@ VERTIT Louise.  <span style='color:red'>Montigny 16.<o:p></o:p></span></span></p
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2150. CM
 12/08/1570.<o:p></o:p></span></p>
 
@@ -4548,7 +4548,7 @@ Etienne et CHAPPRON Anne. La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2154. CM
 25/11/1583.<o:p></o:p></span></p>
 
@@ -4561,9 +4561,9 @@ POUPIN Jean ) Fontenay le Comte 85.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2154.
-Promesse<span style='mso-spacerun:yes'>  </span>02/05/1783.<o:p></o:p></span></p>
+Promesse<span style='mso-spacerun:yes'> </span>02/05/1783.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHATILLOT Louis . <span
 style='color:red'>Juille en Angoumois 16.<o:p></o:p></span></span></p>
@@ -4573,7 +4573,7 @@ style='color:red'>Juille en Angoumois 16.<o:p></o:p></span></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2151. CM
 19/04/1572.<o:p></o:p></span></p>
 
@@ -4586,7 +4586,7 @@ GUILLET Fran&ccedil.oise. Lhoumeau 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2153. CM
 13/05/1582 Protestant.<o:p></o:p></span></p>
 
@@ -4599,7 +4599,7 @@ POMPONNET Pierre) Flay&nbsp;?<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2153. CM
 17/04/1582.<o:p></o:p></span></p>
 
@@ -4612,7 +4612,7 @@ BRODU Perrine. St Denis de la Chevasse 85.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2150. CM
 31/07/1570.<o:p></o:p></span></p>
 
@@ -4625,7 +4625,7 @@ et GARNIER Ren&eacute.e. La Chaulme .<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2150. CM
 22/04/1570.<o:p></o:p></span></p>
 
@@ -4638,7 +4638,7 @@ Pierre et METORLE&nbsp;? Catherine. <span style='color:red'>St Cibardeau 16.<o:p
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
-mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>·<span
+mso-bidi-font-weight:bold'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2153. CM
 05/06/1582.<b><o:p></o:p></b></span></p>
@@ -4652,7 +4652,7 @@ et PAPILLET Catherine.  <span style='color:red'>Garat 16.<o:p></o:p></span></spa
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2154. CM
 04/10/1853.<o:p></o:p></span></p>
 
@@ -4665,7 +4665,7 @@ DESMOLLINS X ) . Dompierre / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2153. CM
 23/04/1582.<o:p></o:p></span></p>
 
@@ -4678,7 +4678,7 @@ MOUSSOT Marguerite.  <span style='color:red'>Aigre 16.<o:p></o:p></span></span><
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2151. CM
 01/05/1572.<o:p></o:p></span></p>
 
@@ -4691,7 +4691,7 @@ SEMUR Pierre ) .  <span style='color:red'>Ruffec 16.<o:p></o:p></span></span></p
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2155. CM
 08/06/1584.<o:p></o:p></span></p>
 
@@ -4704,7 +4704,7 @@ et REGNETEAU Jeanne. Laleu = La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2150. CM
 17/10/1570.<o:p></o:p></span></p>
 
@@ -4717,7 +4717,7 @@ COUTINEAU Louis ).  <span style='color:red'>Brettes 16.<o:p></o:p></span></span>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2157. CM
 01/06/1589.<o:p></o:p></span></p>
 
@@ -4730,7 +4730,7 @@ GUIRAN Catherine. St Genuzeau&nbsp;?<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2155. CM
 08/05/1584.<o:p></o:p></span></p>
 
@@ -4743,7 +4743,7 @@ Jean ).  <span style='color:red'>Alignac en Angoumois 16.<o:p></o:p></span></spa
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2153. CM
 30/04/1582.<o:p></o:p></span></p>
 
@@ -4756,7 +4756,7 @@ et GROMAIN Bastienne. <span style='color:red'>Pr&egrave.s l&acute;Auberti&eacute
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2154. CM
 19/10/1583 Protestant.<o:p></o:p></span></p>
 
@@ -4769,7 +4769,7 @@ Etienne ) . La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2154. CM
 22/06/1583 Protestant.<o:p></o:p></span></p>
 
@@ -4782,7 +4782,7 @@ LAUDEY Jean ). La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2150. CM
 26/12/1570.<o:p></o:p></span></p>
 
@@ -4795,7 +4795,7 @@ et LIBEAU Huguette. Ste Soulle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2153. CM
 10/01/1582.<o:p></o:p></span></p>
 
@@ -4808,7 +4808,7 @@ et VYREMEND&nbsp;? Jeanne. La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2153. CM
 06/01/1582.<o:p></o:p></span></p>
 
@@ -4821,7 +4821,7 @@ Etienne&nbsp;? et VERGIER Marguerite. Laleu = La Rochelle 17.<o:p></o:p></span><
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2150. CM
 05/05/1570.<o:p></o:p></span></p>
 
@@ -4834,12 +4834,12 @@ NORMANDIN Jean ) . Lagord 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2157. CM
 27/01/1589. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROMAN<span
-style='mso-spacerun:yes'>  </span>de Nicolas de Jean et BERNARD Armande.  <span
+style='mso-spacerun:yes'> </span>de Nicolas de Jean et BERNARD Armande.  <span
 style='color:red'>Cognac 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DEGARDIN Marie de Guillaume
@@ -4848,7 +4848,7 @@ et BERTAUD Marie. La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2157. CM
 03/03/1589.<o:p></o:p></span></p>
 
@@ -4861,7 +4861,7 @@ CHASSELOUP X ) . en Poitou.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2154. CM
 15/08/1583.<o:p></o:p></span></p>
 
@@ -4874,7 +4874,7 @@ RILLOT Guillemette. La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2152. CM 26/01/1580.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SCAVIN&nbsp;? Mand&eacute. de + Jean
@@ -4886,7 +4886,7 @@ Jean et SYMOT Marguerite. Nieul / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2153. CM
 13/01/1582.<o:p></o:p></span></p>
 
@@ -4899,7 +4899,7 @@ COULDRET Marie. Nieul / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2151. CM
 03/02/1572.<o:p></o:p></span></p>
 
@@ -4912,7 +4912,7 @@ et BONPAIN&nbsp;? Marguerite. Buray en Saintonge 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2150. CM
 15/09/1570.<o:p></o:p></span></p>
 
@@ -4928,7 +4928,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2161<b>. </b>CM
 23/11/1614.<o:p></o:p></span></p>
 
@@ -4941,7 +4941,7 @@ NEPVEU Catherine. La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2158. CM
 21/05/1605.<o:p></o:p></span></p>
 
@@ -4954,7 +4954,7 @@ Guillaume ) de Jacques et DEVERAT Marguerite. La Rochelle 17.<o:p></o:p></span><
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2159. CM
 29/10/1609.<o:p></o:p></span></p>
 
@@ -4967,7 +4967,7 @@ et THEBAULT Lyonne.  <span style='color:red'>en Angoumois 16.<o:p></o:p></span><
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2162. CM
 29/05/1617.<o:p></o:p></span></p>
 
@@ -4980,7 +4980,7 @@ ORGERON Jean ) .  <span style='color:red'>Rampville 16.<o:p></o:p></span></span>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2159. CM
 26/04/1609.<o:p></o:p></span></p>
 
@@ -4993,7 +4993,7 @@ et CARTAULT Gilette. La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2161. CM
 04/05/1613.<o:p></o:p></span></p>
 
@@ -5009,7 +5009,7 @@ Vespasien. Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2165. CM
 07/07/1647.<o:p></o:p></span></p>
 
@@ -5021,7 +5021,7 @@ TAPON Marie. <span style='color:red'>St Amand en Poitou 16/79.<o:p></o:p></span>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2165. CM
 19/10/1642.<o:p></o:p></span></p>
 
@@ -5034,13 +5034,13 @@ BOUSSAUD Mathurine. St Denis la Chevasse 85.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2165. CM
 24/06/1643.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRIANCEAU/BRIANERE<span
-style='mso-spacerun:yes'>  </span>X. de + Etienne et ROUSSEAU Catherine. St
-Etienne de Bassern…<o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span>X. de + Etienne et ROUSSEAU Catherine. St
+Etienne de Bassern<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERTRAND Marie de Jean et
 TASTAUD Simonne. <span style='color:red'>Vars 16.<o:p></o:p></span></span></p>
@@ -5048,9 +5048,9 @@ TASTAUD Simonne. <span style='color:red'>Vars 16.<o:p></o:p></span></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'><span
-style='mso-spacerun:yes'> </span>3 E 2166. CM 10/05/1648.<o:p></o:p></span></p>
+style='mso-spacerun:yes'></span>3 E 2166. CM 10/05/1648.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUILLEBAUD Fran&ccedil.ois ( veuf PIGNON
 Marie ) . La Jarrie 17.<o:p></o:p></span></p>
@@ -5061,7 +5061,7 @@ CHASTAGNIER X  <span style='color:red'>Gourville 16.<o:p></o:p></span></span></p
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2167. CM
 20/04/1653.<o:p></o:p></span></p>
 
@@ -5074,7 +5074,7 @@ Benjamin et DABILLON Marie. La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2165. CM
 06/06/1645.<o:p></o:p></span></p>
 
@@ -5082,13 +5082,13 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 PETIT Perette. St Sauveur d&acute;Aunis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SALOMON Catherine de Antoine
-et VINET Catherine. <span style='mso-spacerun:yes'> </span><span
+et VINET Catherine. <span style='mso-spacerun:yes'></span><span
 style='color:red'>Salles Pr&egrave.s Cognac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
-mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>·<span
+mso-bidi-font-weight:bold'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2165. CM
 18/10/1645.<b><o:p></o:p></b></span></p>
@@ -5102,7 +5102,7 @@ COUPRIE Jean ) . Nieul / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2165. CM
 02/09/1646.<o:p></o:p></span></p>
 
@@ -5115,7 +5115,7 @@ BIZET Marguerite. La Chastaigneraie 85.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2166. CM
 13/02/1650.<o:p></o:p></span></p>
 
@@ -5131,7 +5131,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2169. CM
 26/12/1646.<o:p></o:p></span></p>
 
@@ -5144,7 +5144,7 @@ MAILLET Perrine. <span style='color:red'>Rouillard 16.<o:p></o:p></span></span><
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2171. CM
 27/06/1655.<o:p></o:p></span></p>
 
@@ -5157,7 +5157,7 @@ LAVERGNE Abel ) de Pierre et CORNU Marie. St Dizand de Conac 17.<o:p></o:p></spa
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2171. CM
 14/04/1653.<o:p></o:p></span></p>
 
@@ -5165,12 +5165,12 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 + SEGUIN&nbsp;? Jeanne&nbsp;?.  <span style='color:red'>en Angoumois 16<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FROCADE Marie de X X<span
-style='mso-spacerun:yes'>  </span>et ROCOT XX. St Augustin 17.<o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span>et ROCOT XX. St Augustin 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2171. CM
 08/08/1654.<o:p></o:p></span></p>
 
@@ -5183,7 +5183,7 @@ Jacques et MERCASSIN&nbsp;? Anne. Lu&ccedil.on 85.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2170. CM
 02/03/1650.<o:p></o:p></span></p>
 
@@ -5196,7 +5196,7 @@ VILLENAUD Marie. <span style='color:red'>Coudat en Angoumois 16.<o:p></o:p></spa
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2169. CM
 06/12/1646.<o:p></o:p></span></p>
 
@@ -5224,7 +5224,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2179. CM
 08/12/1658.<o:p></o:p></span></p>
 
@@ -5238,7 +5238,7 @@ HERISSON Nicolas ) de Pierre et MARTINEAU Jeanne. <span style='color:red'>Cognac
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2180. CM
 25/04/1661.<o:p></o:p></span></p>
 
@@ -5251,7 +5251,7 @@ AUTAIN Jacques ) de Louis et BARRE Ester . La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2180. CM
 03/07/1661 Protestant.<o:p></o:p></span></p>
 
@@ -5267,7 +5267,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2185. CM
 16/09/1683.<o:p></o:p></span></p>
 
@@ -5275,12 +5275,12 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 GAUTREL Elisabeth. <span style='color:red'>Montign&eacute. 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SIMON Fleurance ( veuve
-BRAGUEROU<span style='mso-spacerun:yes'>  </span>X ) La Rochelle 17.<o:p></o:p></span></p>
+BRAGUEROU<span style='mso-spacerun:yes'> </span>X ) La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2185. CM 24/02/1683.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNEAU Andr&eacute. de + Jean et
@@ -5292,7 +5292,7 @@ RULLEAU Jacquette. La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2181.
 Promesse 2/10/1680. CM 26/01/1681.<o:p></o:p></span></p>
 
@@ -5305,7 +5305,7 @@ et GUERIN Marie. La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2184. CM
 01/05/1689.<o:p></o:p></span></p>
 
@@ -5321,7 +5321,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2190. CM
 04/01/1775.<o:p></o:p></span></p>
 
@@ -5334,7 +5334,7 @@ Elisabeth de Pierre Henry et + BARBOT Marie. P&eacute.rigny 17.<o:p></o:p></span
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2194. CM
 12/01/1783.<o:p></o:p></span></p>
 
@@ -5347,7 +5347,7 @@ ALBERT Marie. <span style='color:red'>Ruffec 16.<o:p></o:p></span></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2186. CM
 13/11/1761.<o:p></o:p></span></p>
 
@@ -5362,7 +5362,7 @@ style='color:red'> 16.<o:p></o:p></span></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2191. CM
 05/06/1776.<o:p></o:p></span></p>
 
@@ -5375,7 +5375,7 @@ Charles et LANDREAU Marie. St Maixent 79.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2192. CM
 21/05/1779.<o:p></o:p></span></p>
 
@@ -5389,7 +5389,7 @@ et OUALLE Marie jeanne. La Rochelle17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2186. CM
 30/06/1760.<o:p></o:p></span></p>
 
@@ -5402,21 +5402,21 @@ et COLLE Anne. LaRochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'><span
-style='mso-spacerun:yes'> </span>3 E 2188. CM 20/07/1766.<o:p></o:p></span></p>
+style='mso-spacerun:yes'></span>3 E 2188. CM 20/07/1766.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PHILIPPE Andr&eacute. Joseph de +
 Jean et JACQUIN Paule. Montargis.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'><span
-style='mso-spacerun:yes'> </span>MATIGNON Marguerite de Fran&ccedil.ois et BERTIN
+style='mso-spacerun:yes'></span>MATIGNON Marguerite de Fran&ccedil.ois et BERTIN
 Marguerite. <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2196. CM
 29/01/1785.<o:p></o:p></span></p>
 
@@ -5429,7 +5429,7 @@ FERRAUD Marie. <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2186. CM
 22/06/1762.<o:p></o:p></span></p>
 
@@ -5442,7 +5442,7 @@ Jeanne. <span style='color:red'>Bourg / Charente 16<o:p></o:p></span></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2186. CM
 27/05/1759.<o:p></o:p></span></p>
 
@@ -5458,7 +5458,7 @@ Nicolas. Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2208. CM
 02/02/1774.<o:p></o:p></span></p>
 
@@ -5467,12 +5467,12 @@ Louise ) de Guillaume et ROULLET Jeanne. St Etienne de Manacq.<o:p></o:p></span>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARGORIE Cl&eacute.mence ( veuve
 BLANCHET Jean ) de Allexis et BUREAU Jeanne. <span
-style='mso-spacerun:yes'> </span> <span style='color:red'>St S&eacute.verin 16.<o:p></o:p></span></span></p>
+style='mso-spacerun:yes'></span> <span style='color:red'>St S&eacute.verin 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2207. CM
 10/10/1773.<o:p></o:p></span></p>
 
@@ -5485,7 +5485,7 @@ TORIGNE Marie. <span style='color:red'>St S&eacute.verin 16.</span><o:p></o:p></
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2200. CM
 05/03/1758.<o:p></o:p></span></p>
 
@@ -5498,7 +5498,7 @@ Antoine et JOUSSEAUME Marie. Dompierre / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2213. CM
 31/05/1781.<o:p></o:p></span></p>
 
@@ -5512,7 +5512,7 @@ CHEVALIER Marguerite. St Pierre d&acute;Ol&eacute.ron 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2218.
 Promesse 11/06/1787. CM 04/07/1787.<o:p></o:p></span></p>
 
@@ -5526,7 +5526,7 @@ David et + BERNARDEAU Th&eacute.r&egrave.se. La Rochelle St Barth&eacute.l&eacut
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2218. CM
 07/01/1787.<o:p></o:p></span></p>
 
@@ -5539,7 +5539,7 @@ RAFFIE Mathurin ) de Pierre et TOURNY Suzanne. La Rochelle Notre Dame 17.<o:p></
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2199. CM
 24/01/1755.<o:p></o:p></span></p>
 
@@ -5553,12 +5553,12 @@ et GILBERT Marguerite. Moutier / Le Lay 85.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2219. CM
 08/09/1789.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOURIAUD Pierre de +
-Fran&ccedil.ois<span style='mso-spacerun:yes'>  </span>et BEAU Jeanne. <span
+Fran&ccedil.ois<span style='mso-spacerun:yes'> </span>et BEAU Jeanne. <span
 style='color:red'>Marcillacq Oradour 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MESNARD Louise Marie de
@@ -5567,7 +5567,7 @@ Fran&ccedil.ois et PAPONNEAU Marie Louise. P&eacute.rigny 17.<o:p></o:p></span><
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2199. CM 09/07/1754.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CATHERINAUD Gabriel de +
@@ -5580,7 +5580,7 @@ BOUQUE&nbsp;? Jeanne. Niort 79.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2208. CM
 01/05/1774.<o:p></o:p></span></p>
 
@@ -5594,7 +5594,7 @@ et BROSSET Jeanne. La Rochelle St Sauveur 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2220. CM
 13/06/1790.<o:p></o:p></span></p>
 
@@ -5607,7 +5607,7 @@ et MARGOTON Anne. La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2202/2. CM
 19/03/1765.<o:p></o:p></span></p>
 
@@ -5620,7 +5620,7 @@ et PILLOT Elisabeth. Mauz&eacute. / Mignon 79.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2229. CM
 27/10/1803.<o:p></o:p></span></p>
 
@@ -5633,7 +5633,7 @@ Pierre ) de Jean et BRUNOT Th&eacute.r&egrave.se. <span style='color:red'>Celett
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2216. CM
 05/11/1785.<o:p></o:p></span></p>
 
@@ -5646,7 +5646,7 @@ MOYNIER Marie. La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2209. CM
 04/01/1776.<o:p></o:p></span></p>
 
@@ -5659,7 +5659,7 @@ TORNIE Marie. <span style='color:red'>St S&eacute.verin 16.<o:p></o:p></span></s
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2214. CM
 19/01/1782.<o:p></o:p></span></p>
 
@@ -5672,7 +5672,7 @@ MESNARD Fran&ccedil.oise. La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2210. CM
 19/11/1777. <o:p></o:p></span></p>
 
@@ -5685,7 +5685,7 @@ SAINTON Denis ) de Pierre et PERDRIAU Marie. La Flotte en R&eacute. 17.<o:p></o:
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2201. CM
 05/09/1762.<o:p></o:p></span></p>
 
@@ -5698,7 +5698,7 @@ et CHAUVEAU Louise. La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2202/2. CM
 29/03/1765.<o:p></o:p></span></p>
 
@@ -5711,7 +5711,7 @@ ROCHET Jacques ) de Pierre et SAGOT Marie. Auzay 85.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2219. CM
 26/04/1789.<o:p></o:p></span></p>
 
@@ -5727,7 +5727,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2235. CM
 03/11/1714.<o:p></o:p></span></p>
 
@@ -5740,7 +5740,7 @@ Nicolas et JAY Catherine. Marans 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt left 333.0pt'><![if !supportLists]><span
 style='font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2238. CM
 29/12/1699.<o:p></o:p></span></p>
@@ -5754,7 +5754,7 @@ Louise de Vincent et BONNET Jacquette. La Laigne 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt left 333.0pt'><![if !supportLists]><span
 style='font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
-mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2238. CM
 12/09/1705.<o:p></o:p></span></p>
@@ -5767,12 +5767,12 @@ Pierre de + Pierre et THOMMEAU Marie. <span style='color:red'>La Rochefoucauld
 Jeanne de David et BOUDET Anne. La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire BEAUCHAMPS X<span
-style='mso-spacerun:yes'>  </span>.Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
+style='mso-spacerun:yes'> </span>.Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2241. CM 19/05/1698.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MANDAY Pierre de Jean et
@@ -5787,7 +5787,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2252. CM
 23/05/1735.<o:p></o:p></span></p>
 
@@ -5800,7 +5800,7 @@ NOREMENT Fran&ccedil.oise. Aytr&eacute. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2246. CM
 04/07/1729.<o:p></o:p></span></p>
 
@@ -5813,7 +5813,7 @@ BRISSEAU Jean ) La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2268. CM
 10/10/1723.<o:p></o:p></span></p>
 
@@ -5826,7 +5826,7 @@ Jeanne de Pierre et BOUAUT Catherine . Venanceau 85<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2258.
 Promesse 16/12/1741. CM 16/12/1741.<o:p></o:p></span></p>
 
@@ -5839,7 +5839,7 @@ CHERBONNIER Fran&ccedil.oise. <span style='color:red'>Angoul&ecirc.me 16.<o:p></
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2252. CM
 11/05/1735.<o:p></o:p></span></p>
 
@@ -5852,12 +5852,12 @@ Jacob et + COUSSEAU Marie. La Rochelle St Nicolas 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2269. CM
 17/02/1726.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHABARNEAU Jean de S&eacute.bastien
-et DELACAUD Grace. <span style='color:red'>Leschi……..en Angoumois 16.<o:p></o:p></span></span></p>
+et DELACAUD Grace. <span style='color:red'>Leschi..en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PORCQ Anne ( veuve NANGE Jean
 ) . La Rochelle 17.<o:p></o:p></span></p>
@@ -5865,7 +5865,7 @@ et DELACAUD Grace. <span style='color:red'>Leschi……..en Angoumois 16.<o:p></o:p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2265. CM
 28/09/1750.<o:p></o:p></span></p>
 
@@ -5878,7 +5878,7 @@ CONNIL Marguerite. La Rochelle St Nicolas 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2247. CM
 23/04/1730.<o:p></o:p></span></p>
 
@@ -5891,7 +5891,7 @@ AUDINEAU Marie Anne. Le Gu&eacute. de Velluire 85.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2255. CM
 06/03/1738.<o:p></o:p></span></p>
 
@@ -5904,7 +5904,7 @@ AURIAUD Jeanne. La Rochelle St Sauveur 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2251. CM
 11/07/1734.<o:p></o:p></span></p>
 
@@ -5917,7 +5917,7 @@ et LAROUCHE Fran&ccedil.oise. Beaulieu / Mareuil 85.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2252. CM
 28/05/1735.<o:p></o:p></span></p>
 
@@ -5926,12 +5926,12 @@ Marguerite. Cram en Aunis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THILLOU Marie de Mathurin et
 RESTEAU Jeanne. <span style='color:red'>St Germain en Poitou<span
-style='mso-spacerun:yes'>  </span>16&nbsp;?<o:p></o:p></span></span></p>
+style='mso-spacerun:yes'> </span>16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2270. CM
 08/01/1731.<o:p></o:p></span></p>
 
@@ -5944,7 +5944,7 @@ Marie. <span style='color:red'>Ligue en Angoumois 16.<o:p></o:p></span></span></
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2270. CM
 17/05/1728.<o:p></o:p></span></p>
 
@@ -5957,7 +5957,7 @@ et RAOULT&nbsp;? Madeleine. La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2251. CM
 07/10/1734.<o:p></o:p></span></p>
 
@@ -5970,7 +5970,7 @@ et DEGORSE Jeanne<span style='color:red'>.  Chadurie 16.<o:p></o:p></span></span
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2251. CM
 21/05/1734.<o:p></o:p></span></p>
 
@@ -5983,7 +5983,7 @@ BOUQUINET Charlotte. <span style='color:red'>Cellete 16.<o:p></o:p></span></span
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2265. CM
 03/10/1750.<o:p></o:p></span></p>
 
@@ -5996,7 +5996,7 @@ HILLAIREAU Marie Anne. Salles / Mer 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2244. CM
 20/06/1726.<o:p></o:p></span></p>
 
@@ -6009,7 +6009,7 @@ et SIMONNET Marie. Niort Notre Dame 79.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2244. CM 14/10/1725.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>REGNAUD Hillaire de + Jacques
@@ -6021,7 +6021,7 @@ et DIGOTE Jeanne<span style='color:red'>.  Barbezieux 16.<o:p></o:p></span></spa
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2270. CM
 19/12/1731.<o:p></o:p></span></p>
 
@@ -6034,7 +6034,7 @@ et DESCHAMPS Marie. <span style='color:red'>Champagn&eacute. en Poitou 16.<o:p><
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2266. CM
 11/02/1753.<o:p></o:p></span></p>
 
@@ -6047,7 +6047,7 @@ BERNARD Marie Anne. La Rochelle 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2255. CM
 26/05/1738.<o:p></o:p></span></p>
 
@@ -6060,7 +6060,7 @@ JUTEAU Marie. La Rochelle St Barth&eacute.l&eacute.my. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2264. CM
 15/07/1749.<o:p></o:p></span></p>
 
@@ -6073,7 +6073,7 @@ ORSEAULT Marie. St Martin de R&eacute. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2249. CM 20/07/1732.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VERGUIN Antoine de + Elie et
@@ -6088,7 +6088,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2273. CM
 06/04/1682.<o:p></o:p></span></p>
 
@@ -6104,12 +6104,12 @@ fran&ccedil.ois. Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2326. CM
 29/06/1794.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUGER Louis ( veuf RIVALON
-Pa……….) de + Jean et BLANCHARD Fran&ccedil.oise. Marsilly 17.<o:p></o:p></span></p>
+Pa.) de + Jean et BLANCHARD Fran&ccedil.oise. Marsilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRENIER Marie de XX et RAUD
 Ang&eacute.lique.  <span style='color:red'>Paizay en Audouin 16.</span><o:p></o:p></span></p>
@@ -6117,7 +6117,7 @@ Ang&eacute.lique.  <span style='color:red'>Paizay en Audouin 16.</span><o:p></o:
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2322. CM
 30/04/1788.<o:p></o:p></span></p>
 
@@ -6131,7 +6131,7 @@ Charles et LANDREAU Marie. St Maixent 79.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2335. CM
 20/05/1806.<o:p></o:p></span></p>
 
@@ -6144,7 +6144,7 @@ Fran&ccedil.ois et ALBARET Th&eacute.r&egrave.se. <span style='color:red'>Aloux 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2335. CM
 09/06/1806.<o:p></o:p></span></p>
 
@@ -6157,12 +6157,12 @@ et RIVIERE Marie. St Cir . ( Manche )<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2323. CM
 16/08/1789.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DORIN Pierre ( veuf ROCHEFORT
-G………..) Dompierre / Mer 17.<o:p></o:p></span></p>
+G..) Dompierre / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERNARD Marie de Pierre et
 LAURENT Jeanne. <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
@@ -6170,7 +6170,7 @@ LAURENT Jeanne. <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2335. CM
 22/12/1806.<o:p></o:p></span></p>
 
@@ -6183,7 +6183,7 @@ RIVIERE Marguerite. <span style='color:red'>Segonzac 16.<o:p></o:p></span></span
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2333. CM
 05/02/1804.<o:p></o:p></span></p>
 
@@ -6196,7 +6196,7 @@ COINDREAU Fran&ccedil.oise. <span style='color:red'>Charme 16.<o:p></o:p></span>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2335. CM
 25/11/1805.<o:p></o:p></span></p>
 
@@ -6210,7 +6210,7 @@ Louis et GOUSSAUD Ren&eacute.e. Charron 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2343. CM
 20/08/1814.<o:p></o:p></span></p>
 
@@ -6223,7 +6223,7 @@ FOURCADE Marie. Libourne 33.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2321. CM
 22/04/1786.<o:p></o:p></span></p>
 
@@ -6239,7 +6239,7 @@ Claude. Etude &agrave. Esnandes 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2347. CM
 25/12/1762.<o:p></o:p></span></p>
 
@@ -6250,12 +6250,12 @@ CAILLAU Marie<span style='color:red'>. La Sigogne 16.<o:p></o:p></span></span></
 et CHAILLE Jeanne. Esnandes 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire GUYONNET<span
-style='mso-spacerun:yes'>  </span>XX. Etude &agrave. Esnandes 17.<o:p></o:p></span></b></p>
+style='mso-spacerun:yes'> </span>XX. Etude &agrave. Esnandes 17.<o:p></o:p></span></b></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2352.
 Promesse 15/08/1756. CM 13/09/1756.<o:p></o:p></span></p>
 
@@ -6271,7 +6271,7 @@ Fr&eacute.d&eacute.ric. Etude &agrave. Forges 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
-mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>·<span
+mso-bidi-font-weight:bold'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4231. CM
 21/04/1771. X 21/05/1771 Le Thou 17.<b><o:p></o:p></b></span></p>
@@ -6286,7 +6286,7 @@ POINTIER Jean ) de Pierre et + BARON Jeanne.  Ardilli&eacute.res 17. dt Le Thou 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4236. CM
 22/11/1790. X 22/11/1790 Le Thou 17.<o:p></o:p></span></p>
 
@@ -6300,7 +6300,7 @@ LOUIS Marie.  et dt Le Thou 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4233. CM
 09/05/1780. X 09/05/1780 Forges 17.<o:p></o:p></span></p>
 
@@ -6313,7 +6313,7 @@ TRILLEAU Marie. <span style='color:red'> Anville 16</span>. dt Forges 17.<o:p></
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4235. CM
 29/02/1788. X 05/05/1788 Mauz&eacute. / Mignon 79.<o:p></o:p></span></p>
 
@@ -6326,7 +6326,7 @@ Jean et DELACROIX Rose.  et dt Mauz&eacute. / Mignon 79.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4238. CM
 06/06/1802. X 15/06/1802 Forges 17.<o:p></o:p></span></p>
 
@@ -6340,7 +6340,7 @@ et + GUERIN Magdeleine.  et dt Forges 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4233.
 CM31/01/1780. X 31/01/1780 Aigrefeuille 17.<o:p></o:p></span></p>
 
@@ -6354,7 +6354,7 @@ JOLLY Marie.  et dt Aigrefeuille 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4238. CM
 22/09/1800.<o:p></o:p></span></p>
 
@@ -6367,7 +6367,7 @@ veuve BOURDON Gabriel ) de Henry et MONET Ren&eacute.e. dt La Rochelle 17.<o:p><
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4232. CM
 21/08/1777. X 27/08/1777 Puyravault 17.<o:p></o:p></span></p>
 
@@ -6382,7 +6382,7 @@ dt Vouh&eacute. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4236. CM
 12/02/1792. X 13/02/1792 Forges 17.<o:p></o:p></span></p>
 
@@ -6396,7 +6396,7 @@ BONNIN Marie.  et dt Forges 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4230. CM
 26/03/1766. X 09/04/1766 Le Thou 17.<o:p></o:p></span></p>
 
@@ -6411,7 +6411,7 @@ dt Le Thou 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4231. CM
 22/11/1773. X 10/01/1774 Le Thou 17.<o:p></o:p></span></p>
 
@@ -6428,7 +6428,7 @@ et THAUNAY Marguerite. dt Le Thou 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4299.
 Promesse 27/10/1749. CM 29/11/1749.<o:p></o:p></span></p>
 
@@ -6443,7 +6443,7 @@ MICHEL Elie ) de Michel et + MONTAGNE Marie Jeanne. Puyravault 17. dt Surg&egrav
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4298. CM
 30/09/1747. X 06/11/1747 Breuil la R&eacute.orte 17. <o:p></o:p></span></p>
 
@@ -6457,7 +6457,7 @@ ROBION Marie. dt Breuil la R&eacute.orte 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4299. CM
 02/08/1751. X 02/08/1751 Surg&egrave.res Notre Dame 17.<o:p></o:p></span></p>
 
@@ -6473,7 +6473,7 @@ Etude &agrave. Surg&egrave.res 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4301. CM
 08/12/1756.<o:p></o:p></span></p>
 
@@ -6487,13 +6487,13 @@ ROSSIGNOL Marguerite. dt Surg&egrave.res 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4301. CM
 01/06/1755. X 30/06/1755 St Germain de Marencennes 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAMUS Pierre de Ren&eacute. et PEULTIN
 Marguerite.  <span style='color:red'><span
-style='mso-spacerun:yes'> </span>Sigogne 16</span>. dt St Germain de
+style='mso-spacerun:yes'></span>Sigogne 16</span>. dt St Germain de
 Marencennes 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARTEAU Suzanne de + Jean et
@@ -6502,7 +6502,7 @@ Marencennes 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4303. CM
 17/01/1769. X 17/01/1769 St Saturnin du Bois 17.<o:p></o:p></span></p>
 
@@ -6516,7 +6516,7 @@ Ang&eacute.lique de Philippe et + BENOIST Fran&ccedil.oise. dt St Saturnin du Bo
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4304. CM
 27/09/1766. X 27/11/1766 Surg&egrave.res Notre Dame 17.<o:p></o:p></span></p>
 
@@ -6529,7 +6529,7 @@ Charles Fran&ccedil.ois et BORGARD Ester . dt Surg&egrave.res Notre Dame 17.<o:p
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-GB style='font-size:
 10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>·<span
+Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-GB style='font-size:10.0pt;
 mso-ansi-language:EN-GB'>3 E <st1:metricconverter ProductID="4304. CM" w:st="on">4304.
@@ -6545,7 +6545,7 @@ MARCHAND Marie. dt St Mard 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4307. CM
 25/04/1784. X 05/07/1784 Surg&egrave.res St Pierre 17.<o:p></o:p></span></p>
 
@@ -6559,7 +6559,7 @@ Michel et + MINGUET Jeanne. Muron 17. dt Surg&egrave.res St Pierre 17.<o:p></o:p
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4304. CM
 09/05/1764. X 21/05/1764 Le Thou 17.<o:p></o:p></span></p>
 
@@ -6572,7 +6572,7 @@ et BOULERNE Marguerite. dt Le Thou 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4302. CM 22/08/1760.
 X 10/09/1760 Le Thou 17.<o:p></o:p></span></p>
 
@@ -6585,7 +6585,7 @@ et LEPINE Catherine. dt Le Thou 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4308. CM
 30/05/1779. X 30/06/1779 Surg&egrave.res Notre Dame 17.<o:p></o:p></span></p>
 
@@ -6602,7 +6602,7 @@ Etude &agrave. P&eacute.r&eacute. 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4341. CM
 21/02/1803. X 22/01/1803&nbsp;? St Germain de Marencennes 17.<o:p></o:p></span></p>
 
@@ -6618,7 +6618,7 @@ Etude &agrave. Surg&egrave.res 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4377. CM
 10/02/1783.<o:p></o:p></span></p>
 
@@ -6631,7 +6631,7 @@ et GIRODEAU Marianne. dt Surg&egrave.res St Pierre 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4383.
 Promesse 06/06/1793.<o:p></o:p></span></p>
 
@@ -6645,7 +6645,7 @@ et LARELLE Louise.  St M&eacute.dard 17. dt Rochefort / Mer 17.<o:p></o:p></span
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4364. CM
 08/01/1760.<o:p></o:p></span></p>
 
@@ -6658,7 +6658,7 @@ ARCHAMBAUD Marie Anne. Surg&egrave.res St Pierre 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4364. CM
 13/11/1761. X 17/11/1761 Vandr&eacute. 17.<o:p></o:p></span></p>
 
@@ -6671,7 +6671,7 @@ Pierre et SENOLLET Marie Henriette. Vandr&eacute. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4383. CM
 05/08/1794.<o:p></o:p></span></p>
 
@@ -6682,18 +6682,18 @@ ROULLAND Marie.  <span style='color:red'>St Andr&eacute. des Combes 16.<o:p></o:
 + XXX Catherine. Breuill&eacute. 17<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire LEVALLOIS<span
-style='mso-spacerun:yes'>  </span>XX. Etude &agrave. Surg&egrave.res 17.<o:p></o:p></span></b></p>
+style='mso-spacerun:yes'> </span>XX. Etude &agrave. Surg&egrave.res 17.<o:p></o:p></span></b></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4505. CM
 18/11/1795.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HIVON Jean Pierre ( divorc&eacute.
 de FOURNIER Marguerite &agrave. <span style='color:red'>Cognac 16</span> )de + Pierre
-et VIELLE<span style='mso-spacerun:yes'>  </span>Marguerite. <span
+et VIELLE<span style='mso-spacerun:yes'> </span>Marguerite. <span
 style='color:red'><o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt;color:red'> Cognac 16</span><span
@@ -6705,7 +6705,7 @@ et + BENET Charlotte. dt Surg&egrave.res St Pierre 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4500. CM
 13/06/1791. X 27/06/1791 Vouh&eacute. 17.<o:p></o:p></span></p>
 
@@ -6718,12 +6718,12 @@ et PAILLE Marie. St Cymphorien 79. dt Vouh&eacute. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4501. CM
 09/07/1792. X 09/07/1792 Cur&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MORIN Pierre de + Jean et
-(<span style='mso-spacerun:yes'>  </span>LENE Marie + <span style='color:red'>&agrave.
+(<span style='mso-spacerun:yes'> </span>LENE Marie + <span style='color:red'>&agrave.
 Rouillac</span> ). dt Cur&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>POUSIN Elisabeth de Jacques
@@ -6732,7 +6732,7 @@ et BONNIN Fran&ccedil.oise. dt Cur&eacute. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4498. CM
 06/12/1788. X 16/02/1789 Landrais 17.<o:p></o:p></span></p>
 
@@ -6748,7 +6748,7 @@ Etude &agrave. surg&egrave.res 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4525. CM
 16/08/1733. X 17/08/1733 Surg&egrave.res St Pierre 17.<o:p></o:p></span></p>
 
@@ -6764,7 +6764,7 @@ Etude &agrave. Surg&egrave.res 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4572. CM
 29/11/1762. X 11/01/1762 Muron 17.<o:p></o:p></span></p>
 
@@ -6777,7 +6777,7 @@ JULLIOT Augustin ). Muron 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4585. CM
 14/02/1779.<o:p></o:p></span></p>
 
@@ -6790,7 +6790,7 @@ JOUBERT Charles ) . Surg&egrave.res St Pierre 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4573. CM
 27/11/1763.<o:p></o:p></span></p>
 
@@ -6803,14 +6803,14 @@ GIRAUDEAU Marguerite.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-GB style='font-size:
 10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>·<span
+Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-GB style='font-size:10.0pt;
 mso-ansi-language:EN-GB'>3 E <st1:metricconverter ProductID="4579. CM" w:st="on">4579.
  CM</st1:metricconverter> 19/01/1769. X 18/04/1769 St Mard 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VRIGNEAUD Charles de +
-Fran&ccedil.ois et <span style='mso-spacerun:yes'> </span>BOUCHETEAU Catherine.  <span
+Fran&ccedil.ois et <span style='mso-spacerun:yes'></span>BOUCHETEAU Catherine.  <span
 style='color:red'>St Laurent de Lochau en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TETRON Jeanne de Jacques et +
@@ -6822,7 +6822,7 @@ Etude &agrave. St Georges du Bois 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4602. CM
 02/05/1735.<o:p></o:p></span></p>
 
@@ -6838,7 +6838,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4606. CM
 25/08/1768 X 26/10/1768 La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
@@ -6855,7 +6855,7 @@ Etude &agrave. Thair&eacute. d&acute;Aunis 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4891. CM
 09/04/1764 . X 15/07/1764 Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
@@ -6869,7 +6869,7 @@ RICHARD Fran&ccedil.oise. dt Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4892. CM
 13/04/1766. X 03/06/1766 Thair&eacute. 17.<o:p></o:p></span></p>
 
@@ -6881,12 +6881,12 @@ dt Angoulins 17.<o:p></o:p></span></p>
 GLENEAU Marguerite. dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire LEDOUX<span
-style='mso-spacerun:yes'>  </span>Antoine. Etude &agrave. Thair&eacute. 17.<o:p></o:p></span></b></p>
+style='mso-spacerun:yes'> </span>Antoine. Etude &agrave. Thair&eacute. 17.<o:p></o:p></span></b></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4953. CM
 10/07/1777. X 10/07/1777 Mortagne la Vieille 17.<o:p></o:p></span></p>
 
@@ -6900,7 +6900,7 @@ AUBERT Jean ) . dt Mortagne la Vieille 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4955. CM
 25/02/1778. X 25/02/1778 Mortagne la Vieille 17.<o:p></o:p></span></p>
 
@@ -6913,7 +6913,7 @@ Pierre ) . dt Mortagne la Vieille 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
-mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>·<span
+mso-bidi-font-weight:bold'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4897.
 Promesse 19/09/1759. CM 07/01/1760. X 05/01/1760 Thair&eacute. 17.<b><o:p></o:p></b></span></p>
@@ -6928,7 +6928,7 @@ PEPIN Michelle.  St Pierre Lauzay en Saintonge . dt Thair&eacute. 17.<o:p></o:p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4961. CM
 03/01/1784. X 26/01/1784 Thair&eacute. 17.<o:p></o:p></span></p>
 
@@ -6942,7 +6942,7 @@ GAUTIER&nbsp;? Marguerite. Sauz&eacute. 79. dt Thair&eacute. 17.<o:p></o:p></spa
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4946.
 Promesse 15/01/1769. CM 07/02/1769. X 07/02/1769 Thair&eacute. 17.<o:p></o:p></span></p>
 
@@ -6955,7 +6955,7 @@ NADEAU Catherine. <span style='color:red'>Chavenat 16.</span> dt Thair&eacute. 1
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4950.
 Promesse 08/08/1773. CM 20/09/1773. X 22/09/1773 Thair&eacute. 17.<o:p></o:p></span></p>
 
@@ -6968,7 +6968,7 @@ veuve GARNIER Jean et VILLAIN Jean )de + Pierre et TROU Marie.<o:p></o:p></span>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4953. CM
 27/01/177. X 27/01/1777 Thair&eacute. 17.<o:p></o:p></span></p>
 
@@ -6981,7 +6981,7 @@ LEGERON Catherine.  <span style='color:red'>Villognon 16</span>. dt Thair&eacute
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-GB style='font-size:
 10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>·<span
+Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-GB style='font-size:10.0pt;
 mso-ansi-language:EN-GB'>3 E <st1:metricconverter ProductID="4897. CM" w:st="on">4897.
@@ -6997,7 +6997,7 @@ DAVY&nbsp;? Jeanne. dt St Vivien 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4897. CM
 25/02/1761. X 20/04/1761 Thair&eacute. 17.<o:p></o:p></span></p>
 
@@ -7013,7 +7013,7 @@ Etude &agrave. Thair&eacute. 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
-mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>·<span
+mso-bidi-font-weight:bold'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4901. CM
 08/02/1802. X 09/02/1802 Thair&eacute. 17.<b><o:p></o:p></b></span></p>
@@ -7030,7 +7030,7 @@ Etude &agrave. Thair&eacute. 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4921.
 Promesse 05/07/1801. CM 27/07/1801. X 27/07/1801 Thair&eacute. 17.<o:p></o:p></span></p>
 
@@ -7046,7 +7046,7 @@ mso-ansi-language:EN-GB'> Clavette 17. dt Thair&eacute. 17.<o:p></o:p></span></p
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
-mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>·<span
+mso-bidi-font-weight:bold'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4914.
 Promesse 24/12/1788. X 08/06/1789 Thair&eacute. 17.<b><o:p></o:p></b></span></p>
@@ -7061,7 +7061,7 @@ RENAUD Louis ) de + Fran&ccedil.ois et + ROBINETTE Marie.  et dt Thair&eacute. 1
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4920. CM
 13/02/1797. X 11/02/1797 Thair&eacute. 17.<o:p></o:p></span></p>
 
@@ -7075,7 +7075,7 @@ FESTY Michelle ).  Croix Chapeau 17. dt Thair&eacute. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4916.
 Promesse 09/12/1791. CM 08/01/1792.<o:p></o:p></span></p>
 
@@ -7089,7 +7089,7 @@ Fran&ccedil.ois et BERTRAND Marguerite.  <span style='color:red'>St Etienne de B
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4920. CM
 07/02/1799. X 08/02/1799 Cir&eacute. 17.<o:p></o:p></span></p>
 
@@ -7106,7 +7106,7 @@ Fran&ccedil.ois. Etude &agrave. Thair&eacute. 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4940. CM
 27/05/1753. X 12/06/1753 Thair&eacute. 17.<o:p></o:p></span></p>
 
@@ -7119,7 +7119,7 @@ Jean ) de + Gabriel et REBIERRE Marie.  Thair&eacute. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-GB style='font-size:
 10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>·<span
+Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'><span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-GB style='font-size:10.0pt;
 mso-ansi-language:EN-GB'>3 E <st1:metricconverter ProductID="4944. CM" w:st="on">4944.
@@ -7134,7 +7134,7 @@ CARPENET Marie.  Surg&egrave.res 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4944.
 Promesse 14/10/1777. CM 17/11/1777. X 17/11/1777 Thair&eacute. 17.<o:p></o:p></span></p>
 
@@ -7147,7 +7147,7 @@ Etienne et + DERAIN Marie Anne.  Thair&eacute. 17.<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4942. CM
 27/11/1769. X 27/11/1769 Thair&eacute. 17.<o:p></o:p></span></p>
 
@@ -7163,7 +7163,7 @@ Etude &agrave. Angoulins 17.<o:p></o:p></span></b></p>
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
 font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>E 571. CM
 29/07/1629.<o:p></o:p></span></p>
 
@@ -7216,7 +7216,7 @@ Guillaume et TABAUD Andr&eacute.e. Brizambourg 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DELAROBERTIERE<span
-style='mso-spacerun:yes'>  </span>Jean de Etienne et MAIRE Pentecôte. <span
+style='mso-spacerun:yes'> </span>Jean de Etienne et MAIRE Pentecte. <span
 style='color:red'>St Sulpice de Cognac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARCHEGAY Jeanne de Issac et
@@ -7324,7 +7324,7 @@ style='color:red'>Echir&eacute. en Saintonge 79</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUMAS Pierre de + Pierre et +
 AUDRAUL Marguerite dt <span style='color:red'>Cussac paroisse de<span
-style='mso-spacerun:yes'>  </span>Rougnac 16</span>.<o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span>Rougnac 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TOUZEAU Anne de + Bertrand et
 GABOIS Michelle. dt Marans 17.<o:p></o:p></span></p>
@@ -7361,7 +7361,7 @@ GAULTEAU Marie. dt Marans 17.<o:p></o:p></span></p>
 style='color:red'>en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNET Marguerite de +
-Jacques et ………..dt Marans 17.<o:p></o:p></span></p>
+Jacques et ..dt Marans 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire FERRAND Andr&eacute..
 Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
@@ -7387,7 +7387,7 @@ et + MARLAUD Anne dt. Clavettes 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARTINEAU Pierre dt.
 L&acute;Auberti&eacute.re 17. de + Jehan et DELICQUET Jehanne dt. St Pierre de <span
-style='color:red'>Breillac 16</span>.<span style='mso-spacerun:yes'>  </span>.<o:p></o:p></span></p>
+style='color:red'>Breillac 16</span>.<span style='mso-spacerun:yes'> </span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FEUILLARD Marguerite veuve
 BREIGNAULT dt. l&acute;Auberti&eacute.re, paroisse de St M&eacute.dard 17.<o:p></o:p></span></p>
@@ -7438,7 +7438,7 @@ ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on">La Rochelle St Bar
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BESSON Jeanne de + Fran&ccedil.ois
-et<span style='mso-spacerun:yes'>  </span>NICOLAS Jeanne.  <span
+et<span style='mso-spacerun:yes'> </span>NICOLAS Jeanne.  <span
 style='color:red'>La Rochefoucaud 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Jean" w:st="on">La Rochelle St Jean</st1:PersonName>
 17.<o:p></o:p></span></p>
@@ -7472,7 +7472,7 @@ MEDEAU Jeanne. St Pierre de l&acute;+le 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
-     style='font-size:10.0pt'>3 E<span style='mso-spacerun:yes'> 
+     style='font-size:10.0pt'>3 E<span style='mso-spacerun:yes'>
      </span>105/60. CM 30/01/1831.<o:p></o:p></span></li>
 </ul>
 
@@ -7488,7 +7488,7 @@ GUIONNET Marie. Villemorin 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRISSONNEAU Pierre veuf<span
-style='mso-spacerun:yes'>  </span>HIDREAU Louise de + Charles et LAIDET Jeanne.
+style='mso-spacerun:yes'> </span>HIDREAU Louise de + Charles et LAIDET Jeanne.
 Dampierre sur Boutonne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ARRAMY Marie de Jean et
@@ -7566,7 +7566,7 @@ Marie Elisabeth de Elie et LANDRY Marie. Nuaill&eacute. sur Boutonne 17.<o:p></o
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BAILLARGE Marthial de Jean
-et<span style='mso-spacerun:yes'>  </span>DEMOND Magdeleine.  <span
+et<span style='mso-spacerun:yes'> </span>DEMOND Magdeleine.  <span
 style='color:red'>Negrat en Angoumois 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CLARTON Marie Annede Mathurin
@@ -7698,7 +7698,7 @@ Etude &agrave. <st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
      style='font-size:10.0pt;mso-bidi-font-weight:bold'>3 E/ 356.<span
-     style='mso-spacerun:yes'>  </span>CM 16/02/1681. X 03/11/1681 <st1:PersonName
+     style='mso-spacerun:yes'> </span>CM 16/02/1681. X 03/11/1681 <st1:PersonName
      ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
       ProductID="La Rochelle St" w:st="on"><st1:PersonName
        ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName>
@@ -7772,7 +7772,7 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></s
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ALLARD Fran&ccedil.ois jardinier de
 Fran&ccedil.ois laboureur et LESCHALLE Fran&ccedil.oize.  <span style='color:red'>St Amand
-de B…en</span> <span style='color:red'>Angoumois 16</span>. dt <st1:PersonName
+de Ben</span> <span style='color:red'>Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Barth&eacute.l&eacute.my</st1:PersonName>
@@ -7872,7 +7872,7 @@ FONTENEAU Marguerite.  <st1:PersonName ProductID="La Jarrie Audouin" w:st="on"><
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
-     style='font-size:10.0pt'>3 E/473. CM<span style='mso-spacerun:yes'> 
+     style='font-size:10.0pt'>3 E/473. CM<span style='mso-spacerun:yes'>
      </span>fin 1696. x 07/01/1697 <st1:PersonName
      ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
       ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
@@ -7880,7 +7880,7 @@ FONTENEAU Marguerite.  <st1:PersonName ProductID="La Jarrie Audouin" w:st="on"><
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JAUBRUT Pierre de + Daniel
-laboureur &agrave. b&oelig.ufs et AYMARD Marie.  <span style='color:red'>Villiers le……..en
+laboureur &agrave. b&oelig.ufs et AYMARD Marie.  <span style='color:red'>Villiers le..en
 Angoumois 16</span>. dt <st1:PersonName ProductID="La Rochelle Notre Dame"
 w:st="on"><st1:PersonName ProductID="La Rochelle Notre" w:st="on">La Rochelle
   Notre</st1:PersonName> Dame</st1:PersonName> 17<o:p></o:p></span></p>
@@ -7960,12 +7960,12 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOILEVIN Jean sargier de +
-Jean<span style='mso-spacerun:yes'>  </span>charpentier de gros &oelig.uvres et +
+Jean<span style='mso-spacerun:yes'> </span>charpentier de gros &oelig.uvres et +
 TRUAU Perrine.  <span style='color:red'>Fryat en Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAPEAU Ren&eacute.e de + Michel
-mareschal et L….Marie.  Longeville en Poitou 85. dt <st1:PersonName
+mareschal et L.Marie.  Longeville en Poitou 85. dt <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -7979,7 +7979,7 @@ dt <st1:PersonName ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>GUYBERT………de + Louis et +
+<p class=MsoNormal><span style='font-size:10.0pt'>GUYBERTde + Louis et +
 GEORGET Jeanne.  <st1:PersonName ProductID="La Gotterie Isle" w:st="on"><st1:PersonName
  ProductID="La Gotterie" w:st="on">La Gotterie</st1:PersonName> Isle</st1:PersonName>
 d&acute;Oll&eacute.ron 17. dt <st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName>
@@ -8105,8 +8105,8 @@ ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TAIZARD Ren&eacute. mercier de +
-Ren&eacute. et&nbsp;<span style='mso-spacerun:yes'>   </span>?<span
-style='mso-spacerun:yes'>   </span>sa 1 femme.  <span style='color:red'>Paiz&eacute.
+Ren&eacute. et&nbsp;<span style='mso-spacerun:yes'> </span>?<span
+style='mso-spacerun:yes'> </span>sa 1 femme.  <span style='color:red'>Paiz&eacute.
 Audouin en Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -8183,7 +8183,7 @@ ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RENOLLEAU Jean jardinier de
-Jean jardinier et COMBAUD Anne.  <span style='color:red'>FOU……en Angoumois 16</span>.dT
+Jean jardinier et COMBAUD Anne.  <span style='color:red'>FOUen Angoumois 16</span>.dT
 Montroy 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROGE Jeanne de + Jean et
@@ -8356,7 +8356,7 @@ ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRAUDEAU Fran&ccedil.ois serviteur
-domestique de + Jean<span style='mso-spacerun:yes'>  </span>et + BOUCHET Anne.
+domestique de + Jean<span style='mso-spacerun:yes'> </span>et + BOUCHET Anne.
  et dt Aytr&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TARAUDEAU Louise servante
@@ -8414,7 +8414,7 @@ Saintonge&nbsp;16 ? <o:p></o:p></span></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSELOT Germain laboureur
-veuf de<span style='mso-spacerun:yes'>  </span>AUCHER Marie. dt Angoulin 17.<o:p></o:p></span></p>
+veuf de<span style='mso-spacerun:yes'> </span>AUCHER Marie. dt Angoulin 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GODART Marie servante
 domestique de + Louis et ROUHAULT Marie.  <span style='color:red'>Verdille en
@@ -8521,7 +8521,7 @@ ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MESNARD Jacques matelot de +
 Jacques farinier et MENU Marie.  <span style='color:red'>Aigre en Saintonge 16</span>.<span
-style='mso-spacerun:yes'>  </span>dt <st1:PersonName
+style='mso-spacerun:yes'> </span>dt <st1:PersonName
 ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName> Jean</st1:PersonName>
 17.<o:p></o:p></span></p>
@@ -8564,7 +8564,7 @@ ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MIGAUD Jacques cocher veuf de
-PELLETIER Thomasse. <span style='color:red'> St Romand de N….en Poitou</span>.
+PELLETIER Thomasse. <span style='color:red'> St Romand de N.en Poitou</span>.
 dt <st1:PersonName ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Barth&eacute.l&eacute.my</st1:PersonName>
@@ -8713,7 +8713,7 @@ w:st="on"><st1:PersonName ProductID="La Rochelle Notre" w:st="on">La Rochelle
   Notre</st1:PersonName> Dame</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PELLETIER Marie Anne de +
-Fran&ccedil.ois et + DAUCHER Magdeleine.  et<span style='mso-spacerun:yes'> 
+Fran&ccedil.ois et + DAUCHER Magdeleine.  et<span style='mso-spacerun:yes'>
 </span>dt <st1:PersonName ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Barth&eacute.l&eacute.my</st1:PersonName>
@@ -8734,7 +8734,7 @@ style='color:red'>Genouillac en Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUDRAN Fran&ccedil.oise de + Paul
-marchand et + DUSSAUD Marie.  et<span style='mso-spacerun:yes'>  </span>dt <st1:PersonName
+marchand et + DUSSAUD Marie.  et<span style='mso-spacerun:yes'> </span>dt <st1:PersonName
 ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName> Jean</st1:PersonName>
 17.<o:p></o:p></span></p>
@@ -8786,7 +8786,7 @@ journalier et GERBIER Marie.  Vallans en Saintonge 79. dt Angoulins 17.<o:p></o:
 <p class=MsoNormal><span style='font-size:10.0pt'>BOURABIER Fran&ccedil.ois domestique
 de Fran&ccedil.ois laboureur et + VARACHE Marguerite.  <span style='color:red'>Puymoyen
 en</span> <span style='color:red'>Angoumois 16.</span> dt<span
-style='mso-spacerun:yes'>  </span>ND hors les murs <st1:PersonName
+style='mso-spacerun:yes'> </span>ND hors les murs <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRAVAT Elisabeth 25 ans
@@ -8799,11 +8799,11 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FORESTIER Jacques Etienne
-gar&ccedil.on cordonnier veuf de BOUGEOIS Marie de + Jacques et + MAILLET Agn&egrave.s. 
+gar&ccedil.on cordonnier veuf de BOUGEOIS Marie de + Jacques et + MAILLET Agn&egrave.s.
 Paris St Sauveur. dt <st1:PersonName ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Sauveur</st1:PersonName><span
-style='mso-spacerun:yes'>  </span>17.<o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span>17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUQUEROIS Jeanne 37 ans de +
 Jacques laboureur &agrave. bras et LACROIX Anne sa seconde femme.  <span
@@ -8872,7 +8872,7 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> hors les murs
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MATHE L&eacute.onard jardinier &agrave.
-l&acute;hôpital de <st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName>
+l&acute;hpital de <st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName>
 de M Guillaume notaire et procureur et AUGEREAU Anne.  <span
 style='color:red'>Marthon en Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
@@ -8910,7 +8910,7 @@ ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
      lang=EN-GB style='font-size:10.0pt;mso-ansi-language:EN-GB'>3 <span
-     style='mso-spacerun:yes'> </span>E/2005. CM 16 Prairial An XI. <o:p></o:p></span></li>
+     style='mso-spacerun:yes'></span>E/2005. CM 16 Prairial An XI. <o:p></o:p></span></li>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PHELIPPON Fran&ccedil.ois tonnelier
@@ -8924,7 +8924,7 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></s
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
      lang=EN-GB style='font-size:10.0pt;mso-ansi-language:EN-GB'>3 <span
-     style='mso-spacerun:yes'> </span>E/2004. CM 12 Prairial An IX. X 11
+     style='mso-spacerun:yes'></span>E/2004. CM 12 Prairial An IX. X 11
      Messidor An IX Aytr&eacute. 17.<o:p></o:p></span></li>
 </ul>
 
@@ -8943,7 +8943,7 @@ gar&ccedil.on cordonnier de + Jean cordonnier et MOREAU Marguerite.  <span
 style='color:red'>Ch&acirc.teauneuf en Angoumois 16</span>. dt Nieul 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'><span
-style='mso-spacerun:yes'> </span>BOBIN Louise 23 ans de + Andr&eacute. boucher et
+style='mso-spacerun:yes'></span>BOBIN Louise 23 ans de + Andr&eacute. boucher et
 BRUNET Marie.  et dt Nieul 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
@@ -9023,7 +9023,7 @@ style='font-size:10.0pt'>Notaire BOUGEAUD Ren&eacute.. Etude &agrave. Rochefort 
 Jeanne. Rochefort , 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MENARD Catherine de Morice et
-…………….<span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
+.<span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -9048,7 +9048,7 @@ veuf de LONGUEPEE Jeanne. Rochefort 17.<o:p></o:p></span></p>
 et + DESIRE Marguerite. <span style='color:red'>Baignes Ste Rad&eacute.gonde 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'><span
-style='mso-spacerun:yes'> </span><b style='mso-bidi-font-weight:normal'>Notaire
+style='mso-spacerun:yes'></span><b style='mso-bidi-font-weight:normal'>Notaire
 DEMONTREAU Alexandre. Etude &agrave. Rochefort 17.</b><o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -9097,7 +9097,7 @@ PINASSEAU Marie. <span style='color:red'>Asni&eacute.res sur Noue 16.</span><o:p
 
 <p class=MsoNormal><st1:PersonName ProductID="BONNIN Pierre" w:st="on"><span
  style='font-size:10.0pt'>BONNIN Pierre</span></st1:PersonName><span
-style='font-size:10.0pt'> de Jacques et RULLIN…….<span style='color:red'>Chalais
+style='font-size:10.0pt'> de Jacques et RULLIN.<span style='color:red'>Chalais
 16.&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MESNIER Jeanne de Jacques et
@@ -9131,7 +9131,7 @@ TOURNAT Ren&eacute.e. Tonnay Charente 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUILLOU&nbsp;? Pierre
-journalier veuf de PICONNET Ge….Rochefort 17&nbsp;?<o:p></o:p></span></p>
+journalier veuf de PICONNET Ge.Rochefort 17&nbsp;?<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>QUILLET Jeanne de Charles et
 DEJARNAC Marie. <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
@@ -9145,7 +9145,7 @@ DEJARNAC Marie. <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p
 GANDOBERT Anne. <span style='color:red'>Chateauneuf sur Charente 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROSSIGNOL Catherine Veuve de
-DUSSEAU J……………..Rochefort 17&nbsp;?<o:p></o:p></span></p>
+DUSSEAU J..Rochefort 17&nbsp;?<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -9189,7 +9189,7 @@ style='font-size:10.0pt'>Notaire HEURTEMATE Mathieu. Etude &agrave. Rochefort 17
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BARBOTIN Jacques<span
-style='mso-spacerun:yes'>  </span>charpentier de navire de + Fran&ccedil.ois et LHOUMMEAU&nbsp;?
+style='mso-spacerun:yes'> </span>charpentier de navire de + Fran&ccedil.ois et LHOUMMEAU&nbsp;?
 Catherine<span style='color:red'>. St Brie sur Charente 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRISSOT Marie veuve de VALLAT
@@ -9225,7 +9225,7 @@ et DARTON Jeanne. Grezac 17.<o:p></o:p></span></p>
 <p class=MsoNormal><span style='font-size:10.0pt'>DURET Guillaume marchand de +
 Jean notaire Royal et HUET Guillemine. <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>PROU Fran&ccedil.oise de ……………et +
+<p class=MsoNormal><span style='font-size:10.0pt'>PROU Fran&ccedil.oise de et +
 RICHE Marguerite. Orl&eacute.ans 45.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -9343,7 +9343,7 @@ ROY Catherine. <st1:PersonName ProductID="La Rochefoucauld" w:st="on"><span
 style='color:red'> 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHABOT Jeanne<span
-style='mso-spacerun:yes'>  </span>veuve de TOULUIRE A……….Rochefort St Louis 17.<o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span>veuve de TOULUIRE A.Rochefort St Louis 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -9362,7 +9362,7 @@ MARTIN Elisabeth. Tonnay Charente 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUCHERON Joseph de +jean et
-CAILLAUD………<span style='color:red'>Jeuniat&nbsp;? en Angoumois 16.<o:p></o:p></span></span></p>
+CAILLAUD<span style='color:red'>Jeuniat&nbsp;? en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BABINOT Marie Magdeleine de
 Joachim et CHEVALLIER Fran&ccedil.oise. Rochefort St Louis 17.<o:p></o:p></span></p>
@@ -9376,7 +9376,7 @@ Joachim et CHEVALLIER Fran&ccedil.oise. Rochefort St Louis 17.<o:p></o:p></span>
 et + DAVID Michelle. <span style='color:red'>Mosnac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUERRY Jeanne veuve
-GIRON&nbsp;?<span style='mso-spacerun:yes'>  </span>Mo&euml;ze 17.<o:p></o:p></span></p>
+GIRON&nbsp;?<span style='mso-spacerun:yes'> </span>Mo&euml;ze 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -9387,7 +9387,7 @@ GIRON&nbsp;?<span style='mso-spacerun:yes'>  </span>Mo&euml;ze 17.<o:p></o:p></s
 et + LAVERGNE Fran&ccedil.oise. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HERAUD Jeanne de Martial et
-DUTET Anne. St Amand en Bourbou….<o:p></o:p></span></p>
+DUTET Anne. St Amand en Bourbou.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -9410,7 +9410,7 @@ Marie de + Paul et BERTRAND Catherine. <span style='color:red'>Lignieres
 Sonneville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THIBAUD Anne veuve de
-MONNEREAU A……de ……et DAUDONNET Fran&ccedil.oise. Rochefort St Louis 17.<o:p></o:p></span></p>
+MONNEREAU Ade et DAUDONNET Fran&ccedil.oise. Rochefort St Louis 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -9451,7 +9451,7 @@ ROLLAND Fran&ccedil.oise. <span style='color:red'>Sireuil 16&nbsp;?</span><o:p><
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COMBE Guillaume de + Jean
-et<span style='mso-spacerun:yes'>  </span>CELLIER Louise. Tulle 19.<o:p></o:p></span></p>
+et<span style='mso-spacerun:yes'> </span>CELLIER Louise. Tulle 19.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAURANT Magdelaine de Renaud
 et BERNARD Liette. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
@@ -9539,7 +9539,7 @@ DESMOULIN Elisabeth. Tonnay Charente 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DULACQ Pierre de Fran&ccedil.ois et
-MAINGAULD Martine. St Maquere&nbsp;? en Bo…….<o:p></o:p></span></p>
+MAINGAULD Martine. St Maquere&nbsp;? en Bo.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GABELOTEAU Jeanne de Piere et
 DELAVIE Anne. <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
@@ -9572,7 +9572,7 @@ GABRIEL Marie. <span style='color:red'>Mareuil 16&nbsp;?<o:p></o:p></span></span
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FAURES Antoine &eacute.crivain veuf
-de LELONG Mart……… Rochefort St Louis 17<o:p></o:p></span></p>
+de LELONG Mart Rochefort St Louis 17<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRUN Marie de Claude et
 DELAGARDE Perrine. <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
@@ -9646,7 +9646,7 @@ veuf de DORNAT Fran&ccedil.oise. Rochefort St Louis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUDAIN Marie Magdelaine de
 Fran&ccedil.ois et NAU Catherine. <span style='color:red'>Chaslat&nbsp;? sur<span
-style='mso-spacerun:yes'>  </span>Angoul&euml;me 16.<o:p></o:p></span></span></p>
+style='mso-spacerun:yes'> </span>Angoul&euml;me 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -9808,7 +9808,7 @@ Charles et + THOMAS Marianne. Rochefort St Louis 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAUANY Jean de + Jean et<span
-style='mso-spacerun:yes'>  </span>PRINCE Marie. <span style='color:red'>Baignes
+style='mso-spacerun:yes'> </span>PRINCE Marie. <span style='color:red'>Baignes
 Ste Rad&eacute.gonde 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIROUD Fran&ccedil.oise de Fran&ccedil.ois
@@ -9933,7 +9933,7 @@ Antoine. Rochefort N D 17.<o:p></o:p></span></p>
 BERNARD Jeanne. <span style='color:red'>Confolens 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DAVID Marguerite veuve de
-GUYONNET Ju…….. Rochefort St Louis 17.<o:p></o:p></span></p>
+GUYONNET Ju.. Rochefort St Louis 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -9944,7 +9944,7 @@ GUYONNET Ju…….. Rochefort St Louis 17.<o:p></o:p></span></p>
 Jeanne. <span style='color:red'>Fouqueure 16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PEZERON Jeanne veuve de
-RAGUENEAU J……….. Rochefort St Louis 17.<o:p></o:p></span></p>
+RAGUENEAU J.. Rochefort St Louis 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -10019,7 +10019,7 @@ et BECAUD Marguerite. Landrais 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RAGODY Pierre gardien du
-port<span style='mso-spacerun:yes'>  </span>veuf de LAFRAIGNEE. Rochefort St
+port<span style='mso-spacerun:yes'> </span>veuf de LAFRAIGNEE. Rochefort St
 Louis 17<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MESNARD Marianne de Cl&eacute.ment
@@ -10090,7 +10090,7 @@ Jean. Rochefort St Louis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TIBONNET&nbsp;? Charles
 instructeur de jeunesse veuf de BRULON Fran&ccedil.oise.<span
-style='mso-spacerun:yes'>  </span>Rochefort St Louis 17<o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span>Rochefort St Louis 17<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FLEURANT Jeanne veuve de
 MIGNON Jean<span style='color:red'>. Cognac 16&nbsp;?<o:p></o:p></span></span></p>
@@ -10257,7 +10257,7 @@ RANCE Jean. <st1:PersonName ProductID="La Rochelle N D" w:st="on"><st1:PersonNam
 
 <p class=MsoNormal style='tab-stops:311.25pt'><span style='font-size:10.0pt'>CHRESTIEN
 Joseph marchand veuf de BUJARD Fran&ccedil.oise. <span style='color:red'>Cognac 16.<span
-style='mso-tab-count:1'>        </span></span><o:p></o:p></span></p>
+style='mso-tab-count:1'> </span></span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THOMAS Marie Anne veuve de
 CHEMINEAU A. Rochefort 17&nbsp;?<o:p></o:p></span></p>
@@ -10290,10 +10290,10 @@ DEZARIE Jacquette .<span style='color:red'>Chateauneuf sur Charente 16.<o:p></o:
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DEDE Jean de + Jacques et +
-ROBERT ………..<span style='color:red'>Cognac 16</span>.<o:p></o:p></span></p>
+ROBERT ..<span style='color:red'>Cognac 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GABORIT Jeanne veuve de
-POUPIN Louis de ………….et BOURDIN Marie. Rochefort 17.<o:p></o:p></span></p>
+POUPIN Louis de .et BOURDIN Marie. Rochefort 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -10395,7 +10395,7 @@ et BAUDEAU Jeanne. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></
 + MICHEAU Jeanne. <span style='color:red'>Turgon 16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MESTIVIER Marie de Pierre et
-+ HERAUD Anne. Chev….&nbsp;? en Poitou.<o:p></o:p></span></p>
++ HERAUD Anne. Chev.&nbsp;? en Poitou.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -10494,7 +10494,7 @@ w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on"><st1:PersonName
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
-     style='font-size:10.0pt'>3 E<span style='mso-spacerun:yes'>  </span>21/62.
+     style='font-size:10.0pt'>3 E<span style='mso-spacerun:yes'> </span>21/62.
      CM 16/07/1730.<o:p></o:p></span></li>
 </ul>
 
@@ -10520,7 +10520,7 @@ MARTIN Louise. <st1:PersonName ProductID="La Rochenard" w:st="on">La Rochenard</
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
-     style='font-size:10.0pt'>3 E<span style='mso-spacerun:yes'>  </span>21/62.
+     style='font-size:10.0pt'>3 E<span style='mso-spacerun:yes'> </span>21/62.
      CM 04/01/1730.<o:p></o:p></span></li>
 </ul>
 
@@ -10532,7 +10532,7 @@ BOURGEOIS J. Rochefort 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
-     style='font-size:10.0pt'>3 E<span style='mso-spacerun:yes'>  </span>21/62.
+     style='font-size:10.0pt'>3 E<span style='mso-spacerun:yes'> </span>21/62.
      CM 06/02/1730.<o:p></o:p></span></li>
 </ul>
 
@@ -10582,7 +10582,7 @@ PELUCHON Catherine. Breuil Magn&eacute. 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NEUVILLE Pierre de Guillaume
-et<span style='mso-spacerun:yes'>  </span>TESSE Jeanne. <span style='color:
+et<span style='mso-spacerun:yes'> </span>TESSE Jeanne. <span style='color:
 red'>Ars 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RENAUD Catherine de Jacques
@@ -10707,7 +10707,7 @@ BOUTIN Jeanne. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TEXIER<span
-style='mso-spacerun:yes'>  </span>Jean de + Pierre et DEVERS Charlotte .<span
+style='mso-spacerun:yes'> </span>Jean de + Pierre et DEVERS Charlotte .<span
 style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DURET Marguerite de Jean et
@@ -10733,7 +10733,7 @@ Charles et + PERE Marguerite. Rochefort 17. <o:p></o:p></span></p>
 journalier veuf de NOURRY Marie. Rochefort 17&nbsp;?<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SURRAUD Jeanne d&acute;Etienne et
-TOU……….Suzanne. <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
+TOU.Suzanne. <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -10855,7 +10855,7 @@ et CHABINEAU Jeanne. Aujac 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FAVRY Pierre marchand de
-Guillaume et AUBINEAU Jeanne. <span style='color:red'>Villeneuve de Mon……..16<o:p></o:p></span></span></p>
+Guillaume et AUBINEAU Jeanne. <span style='color:red'>Villeneuve de Mon..16<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERTHELLOT Marie d&acute;Antoine et
 + DURAN Marguerite. Genouill&eacute. 17.<o:p></o:p></span></p>
@@ -10877,7 +10877,7 @@ CASCAUD Elisabeth. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRESSY Pierre de + Pierre et
-BRIGOT Catherine. <span style='color:red'>Her…..&nbsp;? en Angoumois 16.<o:p></o:p></span></span></p>
+BRIGOT Catherine. <span style='color:red'>Her..&nbsp;? en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RETORE Elisabeth de Jean et +
 RAZE&nbsp;? Marguerite. Rochefort 17.<o:p></o:p></span></p>
@@ -10944,11 +10944,11 @@ MELLAUD&nbsp;? Ester. Surg&egrave.res 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARTINEAU Mathurin veuf de
-DUCHONNET&nbsp;?<span style='mso-spacerun:yes'>  </span><span style='color:
+DUCHONNET&nbsp;?<span style='mso-spacerun:yes'> </span><span style='color:
 red'>St Fraigne 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HIMBERT Anne veuve de
-SAU………Ilaire. Rochefort 17.<o:p></o:p></span></p>
+SAUIlaire. Rochefort 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -10978,7 +10978,7 @@ Fran&ccedil.ois et GUILLOT Jeanne. St Hippolyte 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NAIMONT Jean tisserand de
-Pierre et RI…….AUD Gabrielle. <span style='color:red'>Juillac le COQ 16.<o:p></o:p></span></span></p>
+Pierre et RI.AUD Gabrielle. <span style='color:red'>Juillac le COQ 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAQUIN Anne d&acute;Antoine et
 PREAU Anne. St Martin de R&eacute. 17.<o:p></o:p></span></p>
@@ -11065,7 +11065,7 @@ BOUCHIER&nbsp;? Jeanne. <span style='color:red'>Baille&nbsp;? en Angoumois 16.<o
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
-     style='font-size:10.0pt'>3 E<span style='mso-spacerun:yes'>  </span>34/4.
+     style='font-size:10.0pt'>3 E<span style='mso-spacerun:yes'> </span>34/4.
      CM 04/06/1686.<o:p></o:p></span></li>
 </ul>
 
@@ -11081,7 +11081,7 @@ DARABON&nbsp;? Sarah. Hiers Brouage 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SARRAUD&nbsp;? Pierre caporal
-veuf de MAMBAU&nbsp;? Gui…….Rochefort 17.<o:p></o:p></span></p>
+veuf de MAMBAU&nbsp;? Gui.Rochefort 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TAIZAUD Jacquette de Jacques
 et MAUROUX Esp&eacute.rance. <span style='color:red'>Cherves en Angoumois 16.<o:p></o:p></span></span></p>
@@ -11106,7 +11106,7 @@ FRANCOIS Marie. St Martin de R&eacute. 17.<o:p></o:p></span></p>
 Louis et + LOREAU Toinette. <span style='color:red'>Couture 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUPRY Marie veuve de PIERRE
-Cosm………de Raymond et …………..Rochefort 17.<o:p></o:p></span></p>
+Cosmde Raymond et ..Rochefort 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -11242,7 +11242,7 @@ LAMY Jacquette. <span style='color:red'>Cognac 16.</span><o:p></o:p></span></p>
 LOGE Marie. <span style='color:red'>St Front 16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAUVRY&nbsp;? Marie de Jean
-et BŒUF Catherine. Rochefort 17.<o:p></o:p></span></p>
+et BUF Catherine. Rochefort 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -11323,7 +11323,7 @@ VIAUD Jeanne. <st1:PersonName ProductID="La Couronne" w:st="on"><span
 Salomon et BONENFAN Antoinette<span style='color:red'>. Reignac 16&nbsp;?</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SERRE Catherine de S&eacute.bastien
-et<span style='mso-spacerun:yes'>  </span>BŒUF Jeanne. St Simon&nbsp;? en
+et<span style='mso-spacerun:yes'> </span>BUF Jeanne. St Simon&nbsp;? en
 Saintonge 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -11519,7 +11519,7 @@ BOUCHET Jeanne. Les Nouillers 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CLEMENT Antoine de + Pierre
-et GAUTIER Jeanne. Chalon sur Saône.<o:p></o:p></span></p>
+et GAUTIER Jeanne. Chalon sur Sane.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BARRET Elisabeth de Pierre et
 ROBIN Elisabeth. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
@@ -11567,7 +11567,7 @@ VASLET Jeanne. <span style='color:red'>Criteuil <st1:PersonName
 ProductID="la Madeleine" w:st="on">la Madeleine</st1:PersonName> 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUTET Anne veuve de AYRAULT
-Mar…….Rochefort 17&nbsp;?<o:p></o:p></span></p>
+Mar.Rochefort 17&nbsp;?<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -11679,7 +11679,7 @@ BROSSET Gabriel. Rochefort 17&nbsp;?<o:p></o:p></span></p>
 + GENEUVRE Hyvonne. <span style='color:red'>Courcome 16&nbsp;?</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NEIRAUD Judith veuve de
-GEOFFROY Ma………Rochefort 17&nbsp;?<o:p></o:p></span></p>
+GEOFFROY MaRochefort 17&nbsp;?<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -11687,7 +11687,7 @@ GEOFFROY Ma………Rochefort 17&nbsp;?<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FOUGNET Fran&ccedil.ois de + Jean et
-BLINE&nbsp;? Fran&ccedil.oise. G……..&nbsp;? en Poitou<o:p></o:p></span></p>
+BLINE&nbsp;? Fran&ccedil.oise. G..&nbsp;? en Poitou<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHEVALLIER Gabrielle de
 Pierre et + GORROS Jeanne. <span style='color:red'>Chateauneuf sur Charente 16.<o:p></o:p></span></span></p>
@@ -11734,7 +11734,7 @@ Louis. Rochefort 17&nbsp;?<o:p></o:p></span></p>
 DOUSSET Marie. Rochefort N D 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BELLOT Jeanne de Denis et
-ME……AUD&nbsp;? Marie. <span style='color:red'>Villars 16.<o:p></o:p></span></span></p>
+MEAUD&nbsp;? Marie. <span style='color:red'>Villars 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -11790,7 +11790,7 @@ sur Charente 16.<o:p></o:p></span></span></p>
 <p class=MsoNormal><span style='font-size:10.0pt'>GUESPAIN Jacques journalier
 veuf de BODIN Marie. Rochefort 17&nbsp;?<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>MAGNAN Jeanne de Jean et …………<span
+<p class=MsoNormal><span style='font-size:10.0pt'>MAGNAN Jeanne de Jean et <span
 style='color:red'>Lign&eacute. 16&nbsp;?<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -11821,7 +11821,7 @@ PINEAU Marie. Les Nouillers 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HILLERET Jean de + Jean et +
-GALARD Perine&nbsp;?. <span style='color:red'>BOU………..&nbsp;? en Angoumois 16.<o:p></o:p></span></span></p>
+GALARD Perine&nbsp;?. <span style='color:red'>BOU..&nbsp;? en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GABAUD Catherine de Jacques
 et LERITTEAU Elisabeth. Rochefort 17.<o:p></o:p></span></p>
@@ -11898,7 +11898,7 @@ et + LAFON Jeanne. <span style='color:red'>Juillac le Coq 16.&nbsp;?<o:p></o:p><
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAFOND Fran&ccedil.ois de Fran&ccedil.ois
-et +………Marie. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
+et +Marie. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUGREAU Magdelaine d&acute;Etienne
 et + FRADIN Marie. Rochefort17<o:p></o:p></span></p>
@@ -12245,7 +12245,7 @@ GARRAUD Elisabeth. Cande=Cabariot 17.<o:p></o:p></span></p>
 MATHIEU Jeanne. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BALLAY Catherine veuve de
-HERARD Louis. Rochefort 17&nbsp;?<span style='mso-tab-count:1'>             </span><o:p></o:p></span></p>
+HERARD Louis. Rochefort 17&nbsp;?<span style='mso-tab-count:1'> </span><o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -12432,7 +12432,7 @@ Jean. Rochefort 17&nbsp;?<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TOMBERAUD Barth&eacute.l&eacute.my<span
-style='mso-spacerun:yes'>  </span>1646 cordonnier. Aix en Provence 13.<o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span>1646 cordonnier. Aix en Provence 13.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VALTEAU Marie de Charles et +
 PAIRON Fran&ccedil.oise. <span style='color:red'>Ambleville 16.<o:p></o:p></span></span></p>
@@ -12454,7 +12454,7 @@ BODIN Suzanne. Rochefort 17&nbsp;?<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VAIRET Nicolas de +
-Louis<span style='mso-spacerun:yes'>  </span>et + DUTEUIL Marie. <st1:PersonName
+Louis<span style='mso-spacerun:yes'> </span>et + DUTEUIL Marie. <st1:PersonName
 ProductID="La Rochefoucauld" w:st="on"><span style='color:red'>La Rochefoucauld</span></st1:PersonName><span
 style='color:red'> 16</span>.<o:p></o:p></span></p>
 
@@ -12654,7 +12654,7 @@ ProductID="La Rochelle N D" w:st="on"><st1:PersonName ProductID="La Rochelle N"
   N</st1:PersonName> D</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUENOT Marie Catherine veuve
-de BULTEL Jean capitaine de navire.de + Joseph marchand et ROZE Fran&ccedil.oise. 
+de BULTEL Jean capitaine de navire.de + Joseph marchand et ROZE Fran&ccedil.oise.
 des Iles Fran&ccedil.aises d&acute;Am&eacute.rique. dt <st1:PersonName ProductID="La Rochelle N D"
 w:st="on"><st1:PersonName ProductID="La Rochelle N" w:st="on"><st1:PersonName
   ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> N</st1:PersonName>
@@ -12730,7 +12730,7 @@ RULLIER Marie. dt <st1:PersonName ProductID="La Rochelle St Nicolas" w:st="on"><
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAUTIER Charles matelot de +
 Michel journalier et + DUDOGNIN Catherine. <span style='color:red'> Enjac
-Charente<span style='mso-spacerun:yes'>  </span>en</span> <span
+Charente<span style='mso-spacerun:yes'> </span>en</span> <span
 style='color:red'>Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -12738,7 +12738,7 @@ ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>IMBERT Madelaigne de +
-Guillaume journalier et BAUDRIER Louise.  et<span style='mso-spacerun:yes'> 
+Guillaume journalier et BAUDRIER Louise.  et<span style='mso-spacerun:yes'>
 </span>dt <st1:PersonName ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Nicolas</st1:PersonName>
@@ -12766,7 +12766,7 @@ Angoumois 16</span>. dt Aytr&eacute. 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JAUD Jean paveur&nbsp; de
-……………laboureur &agrave. bras et + BUHARNE Marie.  <span style='color:red'>Marsillac
+laboureur &agrave. bras et + BUHARNE Marie.  <span style='color:red'>Marsillac
 dioc&egrave.se d&acute;Angoul&ecirc.me</span> <span style='color:red'>16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -12846,7 +12846,7 @@ w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on">La Rochelle St</s
  Nicolas</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FAILLOFAIS Catherine veuve de
-COUPRIE Antoine boucher.<span style='mso-spacerun:yes'>  </span>dt <st1:PersonName
+COUPRIE Antoine boucher.<span style='mso-spacerun:yes'> </span>dt <st1:PersonName
 ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName> Nicolas</st1:PersonName>
 17.<o:p></o:p></span></p>
@@ -12972,7 +12972,7 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> et dt <st1:Person
 ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Jean</st1:PersonName><span
-style='mso-spacerun:yes'>  </span>17.<o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span>17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'><o:p>&nbsp;</o:p></span></p>
 
