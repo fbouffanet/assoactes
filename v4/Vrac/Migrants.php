@@ -77,14 +77,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Jeanne Th&eacute.r&egrave.se</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 04/08/1763</span> <span style='mso-no-proof:
-yes'>&agrave. Calais 62193</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Calais 62193</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CANTELEUX</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Louis Laurent</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de VILLIEZ</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de VILLIEZ</span>
 <span style='mso-no-proof:yes'>Marie Jeanne Noele</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -132,7 +132,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Georgette
 Gabrielle</span> <span style='mso-no-proof:yes'>n&eacute.e le 20/05/1857</span> <span
 style='mso-no-proof:yes'>&agrave. Bordeaux 33063</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -247,7 +247,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LHOMMAIS</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Adrien Henri</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de TABARD</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de TABARD</span>
 <span style='mso-no-proof:yes'>Eug&eacute.nie Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -296,7 +296,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Justine
 Estelle</span> <span style='mso-no-proof:yes'>n&eacute.e le 16/05/1818</span> <span
 style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me 16015</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -330,7 +330,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Mathurin</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me 16015</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -349,14 +349,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>SEGUIN</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de SEGUIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de LIBOUREAU</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -411,7 +411,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BEAULIEU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BRELON</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BRELON</span>
 <span style='mso-no-proof:yes'>Marie Rosalie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -460,14 +460,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Louise
 Marguerite Nelly</span> <span style='mso-no-proof:yes'>n&eacute.e le 26/11/1841</span>
 <span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me 16015</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHANTRE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Firmin</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de VERRIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de VERRIER</span>
 <span style='mso-no-proof:yes'>Marie Estelle Antoinette</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -515,13 +515,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marguerite Elo&iuml.se</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 27/05/1848</span> <span style='mso-no-proof:
-yes'>&agrave. Langeais 37123</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Langeais 37123</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHANVRET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Casimir</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Casimir</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BESNARD</span> <span style='mso-no-proof:yes'>Marguerite
 Victoire</span><o:p></o:p></span></p>
 
@@ -680,14 +680,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Anne Augustine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 30/08/1880</span> <span style='mso-no-proof:
-yes'>&agrave. Beaumont-la-Ronce 37021</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Beaumont-la-Ronce 37021</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PORCHERON</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois Louis</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BAILLOU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BAILLOU</span>
 <span style='mso-no-proof:yes'>Marie Madeleine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -740,7 +740,7 @@ yes'>&agrave. Sorigny 37250</span> <span style='mso-no-proof:yes'>Couturi&egrave
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GIRARD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Antoine</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Antoine</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de FOURNIOU</span> <span style='mso-no-proof:yes'>Sylvine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -751,7 +751,7 @@ line-height:115%;font-family:"Times New Roman","serif"'>X <span
 style='mso-no-proof:yes'>Epeign&eacute.-les-Bois</span> <span style='mso-no-proof:
 yes'>37100</span> le <span style='mso-no-proof:yes'>27/04/1885</span> <b
 style='mso-bidi-font-weight:normal'><span style='mso-no-proof:yes'>BAILLET</span>
-</b><span style='mso-no-proof:yes'>Marie Nol</span> et <b style='mso-bidi-font-weight:
+</b><span style='mso-no-proof:yes'>Marie Noël</span> et <b style='mso-bidi-font-weight:
 normal'><span style='mso-no-proof:yes'>MONTAUZIER</span> </b><span
 style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
@@ -765,7 +765,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-size:
 10.0pt;line-height:115%;font-family:"Times New Roman","serif"'> </span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif";mso-no-proof:yes'>Marie Nol</span><span
+"Times New Roman","serif";mso-no-proof:yes'>Marie Noël</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>n&eacute. le25/12/1862</span>
 <span style='mso-no-proof:yes'>&agrave. Lihons 80481</span> <span style='mso-no-proof:
@@ -794,7 +794,7 @@ yes'>&agrave. Gurat 16162</span> <span style='mso-no-proof:yes'>institutrice</sp
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MONTAUZIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de MATHIEU</span> <span style='mso-no-proof:yes'>Marguerite</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -820,7 +820,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Pierre</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Villefagnan 16409</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -839,14 +839,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>BEUGNET</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jeanne</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BEUGNET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Henri</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Henri</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BONNE</span> <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -901,7 +901,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de COQUERY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de CONIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de CONIER</span>
 <span style='mso-no-proof:yes'>Colombe</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -1009,7 +1009,7 @@ yes'>&agrave. Saumur 49328</span> <span style='mso-no-proof:yes'>Modiste</span> 
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GUERIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de LEBAIN DE LA SOUCHE</span> <span
 style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
@@ -1065,7 +1065,7 @@ yes'>&agrave. Ch&acirc.teau-Renault 37063</span> <span style='mso-no-proof:yes'>
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de JOURDIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GERMAIN</span> <span style='mso-no-proof:yes'>Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -1121,7 +1121,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MAGNIEN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Charles Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de MARGUERON</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de MARGUERON</span>
 <span style='mso-no-proof:yes'>Zozine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -1176,7 +1176,7 @@ yes'>&agrave. Rouziers-de-Touraine 37204</span> <span style='mso-no-proof:yes'>C
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BARAT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Antoine</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Antoine</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BOMBARD</span> <span style='mso-no-proof:yes'>Madeleine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -1224,14 +1224,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jeanne Marie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 04/03/1863</span> <span style='mso-no-proof:
-yes'>&agrave. La Haye-Descartes 37115</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. La Haye-Descartes 37115</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ROBIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jules Pierre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de LHERITIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de LHERITIER</span>
 <span style='mso-no-proof:yes'>Marie Berthe</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -1285,7 +1285,7 @@ yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-no-proof:yes'>Modist
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BERRUER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Antoine</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Antoine</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de ROUX</span> <span style='mso-no-proof:yes'>Marie
 Eulalie</span><o:p></o:p></span></p>
 
@@ -1340,7 +1340,7 @@ yes'>&agrave. Richemont 16278</span> <span style='mso-no-proof:yes'>Papetier</sp
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GACHINIAS</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GILBERT</span> <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -1394,7 +1394,7 @@ yes'>&agrave. Richemont 16278</span> <span style='mso-no-proof:yes'>Papetier</sp
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GACHINIAS</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GILBERT</span> <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -1449,7 +1449,7 @@ yes'>&agrave. La Couronne 16113</span> <span style='mso-no-proof:yes'>papeti&egr
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ARNAUD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GRELON</span> <span style='mso-no-proof:yes'>Azoline</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -1504,7 +1504,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DUSSERT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Baptiste</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de GLASSIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de GLASSIER</span>
 <span style='mso-no-proof:yes'>Fran&ccedil.oise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -1559,7 +1559,7 @@ yes'>&agrave. St-Aulais-la-Chapelle 16301</span> <span style='mso-no-proof:yes'>
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CLOUET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DROUILLARD</span> <span style='mso-no-proof:
 yes'>Ulalie</span><o:p></o:p></span></p>
 
@@ -1614,7 +1614,7 @@ yes'>&agrave. Villentrois 36244</span> <span style='mso-no-proof:yes'>Gagiste</s
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de NIVET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BODIN</span> <span style='mso-no-proof:yes'>Marie
 Louise</span><o:p></o:p></span></p>
 
@@ -1642,7 +1642,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Fran&ccedil.ois</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Mazi&egrave.res 16214</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -1661,8 +1661,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>BOUTARD</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Catherine</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'><o:p>&nbsp;</o:p></span></p>
@@ -1709,7 +1709,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Louise</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 18/01/1818</span> <span style='mso-no-proof:
-yes'>&agrave. Vouvray 37281</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Vouvray 37281</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -1764,14 +1764,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Ad&egrave.le G&eacute.n&eacute.reuse</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 10/01/1858</span> <span style='mso-no-proof:
-yes'>&agrave. Vernou/Brenne 37270</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Vernou/Brenne 37270</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BONNEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BONNEAU</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -1819,7 +1819,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Ham&eacute.lie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 30/10/1865</span> <span style='mso-no-proof:
-yes'>&agrave. Courcme 16110</span> <span style='mso-no-proof:yes'>Institutrice</span>
+yes'>&agrave. Courcôme 16110</span> <span style='mso-no-proof:yes'>Institutrice</span>
 <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -1827,7 +1827,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CAILLER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Pierre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de GAUTHIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de GAUTHIER</span>
 <span style='mso-no-proof:yes'>Bathilde</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -1882,7 +1882,7 @@ yes'>&agrave. Auzouer-en-Touraine 37010</span> <span style='mso-no-proof:yes'>Jo
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LANSIGU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CHEREAU</span> <span style='mso-no-proof:yes'>Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -1929,13 +1929,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Henriette Louise</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 12/03/1859</span> <span style='mso-no-proof:
-yes'>&agrave. Sonzay 37249</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Sonzay 37249</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BARRIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Ren&eacute.</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Ren&eacute.</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de SAUVE</span> <span style='mso-no-proof:yes'>Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -1990,7 +1990,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de COUTURIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DEPLAIX</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DEPLAIX</span>
 <span style='mso-no-proof:yes'>Catherine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -2037,7 +2037,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Rose</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 11/03/1862</span> <span style='mso-no-proof:
-yes'>&agrave. Cornusse 18072</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Cornusse 18072</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -2098,7 +2098,7 @@ yes'>&agrave. Ch&acirc.tellerault 86066</span> <span style='mso-no-proof:yes'>Ga
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PAJARD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Paul</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Paul</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DUPUY</span> <span style='mso-no-proof:yes'>Augustine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -2146,14 +2146,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Berthe C&eacute.lestine
 Alexandrine</span> <span style='mso-no-proof:yes'>n&eacute.e le 05/05/1857</span> <span
 style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me 16015</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FOREST</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Joseph Alexandre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de CHAVASSE</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de CHAVASSE</span>
 <span style='mso-no-proof:yes'>Madelaine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -2260,7 +2260,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BOUREAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Auguste Antoine</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de TRINSON</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de TRINSON</span>
 <span style='mso-no-proof:yes'>Louise Pauline</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -2350,7 +2350,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fils
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
@@ -2532,7 +2532,7 @@ yes'>&agrave. Montbazon 37154</span> <span style='mso-no-proof:yes'>couturi&egra
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BERGEOT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Am&eacute.d&eacute.e</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Am&eacute.d&eacute.e</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de RAGUENEAU</span> <span style='mso-no-proof:yes'>Julienne
 Jos&eacute.phine</span><o:p></o:p></span></p>
 
@@ -2559,7 +2559,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Charles</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Charentilly 37059</span> <span style='mso-no-proof:
 yes'>Journalier</span><o:p></o:p></span></p>
 
@@ -2698,7 +2698,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DUBOIS</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Maurice</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BARENAUD</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BARENAUD</span>
 <span style='mso-no-proof:yes'>Anne Julie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -2752,7 +2752,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Couturi&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BROSSAY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Auguste</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Auguste</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CHEVET</span> <span style='mso-no-proof:yes'>Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -2800,14 +2800,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Magdeleine</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 30/05/1768</span> <span style='mso-no-proof:
-yes'>&agrave. St-Paterne-Racan 37231</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. St-Paterne-Racan 37231</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de VIVIAN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Mathurin</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de CHARTIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de CHARTIER</span>
 <span style='mso-no-proof:yes'>Magdelaine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -2860,7 +2860,7 @@ yes'>&agrave. Monts 37159</span> <span style='mso-no-proof:yes'>couturi&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LOYAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GILLET</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -2914,7 +2914,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MOREAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de ANSAULT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de ANSAULT</span>
 <span style='mso-no-proof:yes'>H&eacute.l&egrave.ne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -3020,7 +3020,7 @@ yes'>&agrave. Tourriers 16383</span> <span style='mso-no-proof:yes'>Couturi&egra
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ROUSSEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CHALUTEAU</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -3074,7 +3074,7 @@ yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-no-proof:yes'>Coutur
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FROUX</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Charles</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Charles</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de PICHON</span> <span style='mso-no-proof:yes'>Pauline</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -3129,7 +3129,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BORDEREAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Armand Jean</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de AUTIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de AUTIER</span>
 <span style='mso-no-proof:yes'>Justine Elisabeth</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -3178,14 +3178,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Louise
 Madelaine</span> <span style='mso-no-proof:yes'>n&eacute.e le 26/07/1860</span> <span
 style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me 16015</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de VIRON</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Louis Charles</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de CAILLARD</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de CAILLARD</span>
 <span style='mso-no-proof:yes'>Marie Madelaine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -3232,14 +3232,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Louise</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 02/03/1872</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FOURRE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Louis</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de LECLERC</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de LECLERC</span>
 <span style='mso-no-proof:yes'>Rose</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -3266,7 +3266,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Jean Baptiste</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. St-Pons Tour? ?</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -3285,14 +3285,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>BOISSE</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jeanne</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
-16015</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
+16015</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BOISSE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BERTEAU</span> <span style='mso-no-proof:yes'>Fran&ccedil.oise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -3345,7 +3345,7 @@ yes'>&agrave. Ruffec 16292</span> <span style='mso-no-proof:yes'>Satineuse</span
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DUPONT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de HERVIOT</span> <span style='mso-no-proof:yes'>Jos&eacute.phine
 Marguerite</span><o:p></o:p></span></p>
 
@@ -3372,7 +3372,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Jacques</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me 16015</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -3391,8 +3391,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>PAINPARE</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Fran&ccedil.oise</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'><o:p>&nbsp;</o:p></span></p>
@@ -3446,7 +3446,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de LAFONT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de LAFONT</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -3608,7 +3608,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHEVALIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Jacques</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de FERRAND</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de FERRAND</span>
 <span style='mso-no-proof:yes'>Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -3635,8 +3635,8 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Fran&ccedil.ois</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
@@ -3647,8 +3647,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>LETRUGEON</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Catherine</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. St-Bonnet
-16303</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. St-Bonnet
+16303</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'><o:p>&nbsp;</o:p></span></p>
@@ -3703,7 +3703,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DUCHAMP</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Sylvain Louis</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de CHANTELOUP</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de CHANTELOUP</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -3729,7 +3729,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Pierre</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Villefagnan 16409</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -3748,8 +3748,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>GUILLOCHE</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'><o:p>&nbsp;</o:p></span></p>
@@ -3803,7 +3803,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHICOINE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Benoit Pierre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BOUREAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BOUREAU</span>
 <span style='mso-no-proof:yes'>Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -3886,7 +3886,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>n&eacute. le23/03/1860</span>
 <span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-no-proof:
-yes'>Contrleur Ch.de Fer</span><o:p></o:p></span></p>
+yes'>Contrôleur Ch.de Fer</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fils
@@ -3905,14 +3905,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Aline Sophie Eug&eacute.nie</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 26/08/1867</span> <span style='mso-no-proof:
-yes'>&agrave. Ch&acirc.teaudun 28088</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Ch&acirc.teaudun 28088</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHEVALLIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>L&eacute.on Eug&egrave.ne</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BOUDET</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BOUDET</span>
 <span style='mso-no-proof:yes'>Sophie Alexandrine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -3959,14 +3959,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Jos&eacute.phine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 20/06/1838</span> <span style='mso-no-proof:
-yes'>&agrave. Luynes 37139</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Luynes 37139</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MONMOUSSEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BESNARDEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BESNARDEAU</span>
 <span style='mso-no-proof:yes'>Marie Jos&eacute.phine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -4130,7 +4130,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CRUCHET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de JODEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de JODEAU</span>
 <span style='mso-no-proof:yes'>Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -4197,7 +4197,7 @@ le <span style='mso-no-proof:yes'>16/01/1886</span> <b style='mso-bidi-font-weig
 normal'><span style='mso-no-proof:yes'>CAMPOYER</span> </b><span
 style='mso-no-proof:yes'>Sylvain</span> et <b style='mso-bidi-font-weight:normal'><span
 style='mso-no-proof:yes'>SALLE</span> </b><span style='mso-no-proof:yes'>Aim&eacute.e
-Nomie</span><o:p></o:p></span></p>
+Noëmie</span><o:p></o:p></span></p>
 
 <p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
@@ -4230,7 +4230,7 @@ style='mso-list:Ignore'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>SALLE</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-no-proof:yes'>Aim&eacute.e Nomie</span> <span
+"Times New Roman","serif"'> <span style='mso-no-proof:yes'>Aim&eacute.e Noëmie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 26/12/1853</span> <span style='mso-no-proof:
 yes'>&agrave. St-Amant-de-Boixe 16295</span> <span style='mso-no-proof:yes'>Relieuse</span>
 <o:p></o:p></span></p>
@@ -4239,7 +4239,7 @@ yes'>&agrave. St-Amant-de-Boixe 16295</span> <span style='mso-no-proof:yes'>Reli
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de SALLE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BLOUINT</span> <span style='mso-no-proof:yes'>Aim&eacute.e
 Am&eacute.lie</span><o:p></o:p></span></p>
 
@@ -4286,13 +4286,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 20/04/1861</span> <span style='mso-no-proof:
-yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BRUNEL</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Antoine</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Antoine</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de TAFFET</span> <span style='mso-no-proof:yes'>Am&eacute.lie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -4338,13 +4338,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 20/04/1861</span> <span style='mso-no-proof:
-yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BRUNEL</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Antoine</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Antoine</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de TAFFET</span> <span style='mso-no-proof:yes'>Am&eacute.lie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -4371,7 +4371,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Simon</span><span style='font-size:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif"'>
-<span style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Oradour
+<span style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Oradour
 16248</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -4390,14 +4390,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>GAVEL</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marguerite</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GAVEL</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Simon</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Simon</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de TROCHON</span> <span style='mso-no-proof:yes'>Catherine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -4506,7 +4506,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GUIGOU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de PINARD</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de PINARD</span>
 <span style='mso-no-proof:yes'>Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -4663,13 +4663,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 16/11/1818</span> <span style='mso-no-proof:
-yes'>&agrave. Ch&acirc.teau-Renault 37063</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Ch&acirc.teau-Renault 37063</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de TAILLANDIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de LENVINE</span> <span style='mso-no-proof:yes'>Marguerite</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -4716,7 +4716,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Malvina</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 25/11/1834</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -4778,7 +4778,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'><o:p>&nbsp;</o:p></span></p>
@@ -4833,7 +4833,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LOISEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Aimable</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de FREMONT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de FREMONT</span>
 <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -4938,14 +4938,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Emilie Elisabeth
 Gabrielle</span> <span style='mso-no-proof:yes'>n&eacute.e le 06/08/1827</span> <span
 style='mso-no-proof:yes'>&agrave. Tours 37261</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MERRUAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Victor J&eacute.rme</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de MOREAU
+style='mso-no-proof:yes'>Victor J&eacute.rôme</span> <span
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de MOREAU
 DES BREUX</span> <span style='mso-no-proof:yes'>Emilie Pauline Marceline</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -4998,7 +4998,7 @@ yes'>&agrave. Blois 41018</span> <span style='mso-no-proof:yes'>Blanchisseuse</s
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BOIZEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Claude</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Claude</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GILOPPE</span> <span style='mso-no-proof:yes'>Marie
 Calice</span><o:p></o:p></span></p>
 
@@ -5053,7 +5053,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Couturi&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de RENARD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GIRARD</span> <span style='mso-no-proof:yes'>Fran&ccedil.oise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -5108,7 +5108,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BATARD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de CHAUVIN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de CHAUVIN</span>
 <span style='mso-no-proof:yes'>Marie Julie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -5156,14 +5156,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Ursule Mathilde</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 24/02/1830</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DUCOUDRAY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Etienne Nicolas</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DE PERSON</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DE PERSON</span>
 <span style='mso-no-proof:yes'>Elisabeth Charlotte Marie Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -5216,7 +5216,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ROUMAUD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Besson Alexandre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DEMERE</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DEMERE</span>
 <span style='mso-no-proof:yes'>Constance</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -5269,7 +5269,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ROUMAUD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Besson Alexandre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DEMERE</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DEMERE</span>
 <span style='mso-no-proof:yes'>Constance</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -5380,7 +5380,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de COCHET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Joseph Thomas</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de NN...</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de NN...</span>
 <span style='mso-no-proof:yes'>Silvine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -5428,7 +5428,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Augustine</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 20/12/1841</span> <span style='mso-no-proof:
-yes'>&agrave. Richelieu 37196</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Richelieu 37196</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -5490,7 +5490,7 @@ yes'>&agrave. Perrusson 37183</span> <span style='mso-no-proof:yes'>Femme de cha
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BERCHERY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CELLIER</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -5543,7 +5543,7 @@ yes'>&agrave. Bl&eacute.r&eacute. 37027</span> <span style='mso-no-proof:yes'>li
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LECOLIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DUBOIS</span> <span style='mso-no-proof:yes'>Modeste</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -5632,7 +5632,7 @@ yes'>instituteur</span><o:p></o:p></span></p>
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fils
 de CHIBOUT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Magloire J&eacute.rme</span> <span style='mso-no-proof:yes'>et
+style='mso-no-proof:yes'>Magloire J&eacute.rôme</span> <span style='mso-no-proof:yes'>et
 de BELAY</span> <span style='mso-no-proof:yes'>Marguerite Juliette Thomas</span><o:p></o:p></span></p>
 
 <p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
@@ -5645,14 +5645,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Pauline Honorine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 24/11/1841</span> <span style='mso-no-proof:
-yes'>&agrave. Chan&ccedil.ay 37052</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Chan&ccedil.ay 37052</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FILLET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DECHESNEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DECHESNEAU</span>
 <span style='mso-no-proof:yes'>Charlotte Appoline Fran&ccedil.oise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -5701,7 +5701,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Ad&eacute.la&iuml.de Josephine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 26/01/1842</span> <span style='mso-no-proof:
 yes'>&agrave. Montreuil-en-Touraine 37158</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -5762,7 +5762,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LAGRANGE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de GIRE</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de GIRE</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -5866,14 +5866,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Emile Honorine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 01/11/1854</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BRUNEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>L&eacute.on Michel</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BOUCHAND</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BOUCHAND</span>
 <span style='mso-no-proof:yes'>Pauline Antoinette</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -5974,13 +5974,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jos&eacute.phine</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 08/07/1858</span> <span style='mso-no-proof:
-yes'>&agrave. Bl&eacute.r&eacute. 37027</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Bl&eacute.r&eacute. 37027</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CROSNIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Paul</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Paul</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de JACQUELIN</span> <span style='mso-no-proof:yes'>Marie
 Clotilde</span><o:p></o:p></span></p>
 
@@ -6036,7 +6036,7 @@ yes'>&agrave. Le Blanc 36018</span> <span style='mso-no-proof:yes'>Femme de cham
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PAILLER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Silvain</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Silvain</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CHAPELLE</span> <span style='mso-no-proof:yes'>Madeleine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -6090,7 +6090,7 @@ yes'>&agrave. Francueil 37110</span> <span style='mso-no-proof:yes'>Cuisini&egra
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PILLET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Silvain</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Silvain</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BAILLARGET</span> <span style='mso-no-proof:
 yes'>Victorine</span><o:p></o:p></span></p>
 
@@ -6145,7 +6145,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de COULLEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de COULLEAU</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -6192,7 +6192,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>MariA</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 29/12/1848</span> <span style='mso-no-proof:
-yes'>&agrave. St-Angeau 16300</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. St-Angeau 16300</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -6246,7 +6246,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>MariA</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 29/12/1848</span> <span style='mso-no-proof:
-yes'>&agrave. St-Angeau 16300</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. St-Angeau 16300</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -6300,13 +6300,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>L&eacute.onie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 30/07/1869</span> <span style='mso-no-proof:
-yes'>&agrave. Luz&eacute. 37140</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Luz&eacute. 37140</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ROBERT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Vincent</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Vincent</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de PICHET</span> <span style='mso-no-proof:yes'>Rose</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -6354,14 +6354,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 18/12/1834</span> <span style='mso-no-proof:
-yes'>&agrave. Les Adjots 16002</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Les Adjots 16002</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DEBENAIS</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DEBENAIS</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -6417,7 +6417,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GOYER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de PLOUX</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de PLOUX</span>
 <span style='mso-no-proof:yes'>Elisabeth Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -6472,7 +6472,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MONMOUSSEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Etienne Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de MEUNIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de MEUNIER</span>
 <span style='mso-no-proof:yes'>Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -6527,7 +6527,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de THIMON</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Antoine Louis</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de ESNAULT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de ESNAULT</span>
 <span style='mso-no-proof:yes'>Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -6575,7 +6575,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Rosalie Augustine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 17/11/1821</span> <span style='mso-no-proof:
-yes'>&agrave. St-Ouen 41226</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. St-Ouen 41226</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -6686,7 +6686,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie L&eacute.ontine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 19/07/1862</span> <span style='mso-no-proof:
 yes'>&agrave. Courcelles-de-Touraine 37086</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -6746,7 +6746,7 @@ style='mso-no-proof:yes'>&agrave. Cognac 16102</span> <span style='mso-no-proof:
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ROUX</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Alfred</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Alfred</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CHAIGNAUD</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -6793,7 +6793,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Justine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 24/09/1865</span> <span style='mso-no-proof:
-yes'>&agrave. Villognon 16414</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Villognon 16414</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -6902,13 +6902,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jos&eacute.phine</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 15/07/1841</span> <span style='mso-no-proof:
-yes'>&agrave. Tauxigny 37254</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tauxigny 37254</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHRISTOPHE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BLOT</span> <span style='mso-no-proof:yes'>Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -6955,7 +6955,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Magdelaine</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 24/03/1852</span> <span style='mso-no-proof:
-yes'>&agrave. Villefranche/Sane 69264</span> <span style='mso-no-proof:yes'>M&eacute.canicienne</span>
+yes'>&agrave. Villefranche/Saône 69264</span> <span style='mso-no-proof:yes'>M&eacute.canicienne</span>
 <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -7073,7 +7073,7 @@ yes'>&agrave. Louans 37134</span> <span style='mso-no-proof:yes'>Journali&egrave
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MORAND</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DROUAULT</span> <span style='mso-no-proof:yes'>Julie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -7126,7 +7126,7 @@ yes'>&agrave. Louans 37134</span> <span style='mso-no-proof:yes'>Journali&egrave
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MORAND</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DROUAULT</span> <span style='mso-no-proof:yes'>Julie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -7228,14 +7228,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marguerite</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 06/04/1825</span> <span style='mso-no-proof:
 yes'>&agrave. St-Maurice-des-Lions 16337</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de SUDRE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de AUTHIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de AUTHIER</span>
 <span style='mso-no-proof:yes'>Marguerite</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -7283,14 +7283,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marguerite</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 06/04/1825</span> <span style='mso-no-proof:
 yes'>&agrave. St-Maurice-des-Lions 16337</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de SUDRE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de AUTHIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de AUTHIER</span>
 <span style='mso-no-proof:yes'>Marguerite</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -7338,7 +7338,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>C&eacute.linie Ursule</span>
 <span style='mso-no-proof:yes'>n&eacute.e le //1820</span> <span style='mso-no-proof:
-yes'>&agrave. Argentan 61006</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Argentan 61006</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -7393,13 +7393,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Marguerite</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 20/04/1803</span> <span style='mso-no-proof:
-yes'>&agrave. Etats-Unis 99404</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Etats-Unis 99404</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MORIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de ARMAIGNAC</span> <span style='mso-no-proof:yes'>Marie
 Anne Victoire</span><o:p></o:p></span></p>
 
@@ -7411,7 +7411,7 @@ line-height:115%;font-family:"Times New Roman","serif"'>X <span
 style='mso-no-proof:yes'>Tours</span> <span style='mso-no-proof:yes'>37261</span>
 le <span style='mso-no-proof:yes'>21/06/1849</span> <b style='mso-bidi-font-weight:
 normal'><span style='mso-no-proof:yes'>DE DIAZ</span> </b><span
-style='mso-no-proof:yes'>Raphal</span> et <b style='mso-bidi-font-weight:normal'><span
+style='mso-no-proof:yes'>Raphaël</span> et <b style='mso-bidi-font-weight:normal'><span
 style='mso-no-proof:yes'>AUMAISTRE</span> </b><span style='mso-no-proof:yes'>Az&eacute.ma
 Cl&eacute.mentine</span><o:p></o:p></span></p>
 
@@ -7425,7 +7425,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-size:
 10.0pt;line-height:115%;font-family:"Times New Roman","serif"'> </span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif";mso-no-proof:yes'>Raphal</span><span
+"Times New Roman","serif";mso-no-proof:yes'>Raphaël</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>n&eacute. le05/11/1815</span>
 <span style='mso-no-proof:yes'>&agrave. Espagne 99134</span> <span style='mso-no-proof:
@@ -7448,14 +7448,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Az&eacute.ma Cl&eacute.mentine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 09/07/1831</span> <span style='mso-no-proof:
-yes'>&agrave. Bayers 16033</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Bayers 16033</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de AUMAISTRE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de LAMBERT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de LAMBERT</span>
 <span style='mso-no-proof:yes'>Julie Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -7504,13 +7504,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Ana&iuml.s Monique
 Augustine</span> <span style='mso-no-proof:yes'>n&eacute.e le 06/01/1811</span> <span
 style='mso-no-proof:yes'>&agrave. Paris-10 75110</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BARBIN DE LA MARTINIE</span><span style='font-size:9.0pt;mso-bidi-font-size:
 10.0pt;line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de THIEBAULT</span> <span style='mso-no-proof:yes'>Auguste
 Monique Suzanne</span><o:p></o:p></span></p>
 
@@ -7537,7 +7537,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Silvain</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Abzac 16001</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -7556,8 +7556,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>CROYER</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jeanne</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -7611,14 +7611,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Lidie L&eacute.ocadie</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 24/02/1862</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MAUJALLON</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Pierre Eug&egrave.ne Constant</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BOYER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BOYER</span>
 <span style='mso-no-proof:yes'>Elisabeth C&eacute.cile</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -7665,14 +7665,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Eug&eacute.nie</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 10/12/1867</span> <span style='mso-no-proof:
-yes'>&agrave. La Rochelle 17300</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. La Rochelle 17300</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de POIRIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois Eug&egrave.ne</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de TROPLONG</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de TROPLONG</span>
 <span style='mso-no-proof:yes'>Marie Zo&eacute.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -7777,13 +7777,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Emilie
 Victoria</span> <span style='mso-no-proof:yes'>n&eacute.e le 06/03/1868</span> <span
 style='mso-no-proof:yes'>&agrave. Paris 75056</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de STUART</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Fran&ccedil.ois Gatan</span> <span style='mso-no-proof:yes'>+</span>
+style='mso-no-proof:yes'>Fran&ccedil.ois Gaëtan</span> <span style='mso-no-proof:yes'>+</span>
 <span style='mso-no-proof:yes'>et de LAMBERT</span> <span style='mso-no-proof:
 yes'>Honorine Jos&eacute.phine</span><o:p></o:p></span></p>
 
@@ -7792,7 +7792,7 @@ line-height:115%;font-family:"Times New Roman","serif"'><o:p>&nbsp;</o:p></span>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'>X <span
-style='mso-no-proof:yes'>Villedmain</span> <span style='mso-no-proof:yes'>37275</span>
+style='mso-no-proof:yes'>Villedômain</span> <span style='mso-no-proof:yes'>37275</span>
 le <span style='mso-no-proof:yes'>16/07/1662</span> <b style='mso-bidi-font-weight:
 normal'><span style='mso-no-proof:yes'>DEGAUGE</span> </b><span
 style='mso-no-proof:yes'>Daniel</span> et <b style='mso-bidi-font-weight:normal'><span
@@ -7810,14 +7810,14 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Daniel</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fils
 de DEGAUGE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>NN...</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-no-proof:yes'>NN...</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
@@ -7828,15 +7828,15 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>VOBOEUF</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Louise</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Angoumois
-16000?</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Angoumois
+16000?</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de VODOEUF</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>NN...</span> <span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-no-proof:yes'>NN...</span> <span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'><o:p>&nbsp;</o:p></span></p>
@@ -7881,7 +7881,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Mathurine</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 18/04/1851</span> <span style='mso-no-proof:
-yes'>&agrave. Guern 56076</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Guern 56076</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -7914,7 +7914,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Jean</span><span style='font-size:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif"'>
-<span style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Montemboeuf
+<span style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Montemboeuf
 16225</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -7933,14 +7933,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>BELLONERE</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BELLONERE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Nicolas</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Nicolas</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BRICET</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -8098,14 +8098,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jos&eacute.phine Marguerite</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 07/12/1846</span> <span style='mso-no-proof:
-yes'>&agrave. St-Symphorien 37239</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. St-Symphorien 37239</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de VERNA</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Gabriel Ren&eacute.</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de CHAUVEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de CHAUVEAU</span>
 <span style='mso-no-proof:yes'>Jos&eacute.phine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -8159,7 +8159,7 @@ yes'>&agrave. Sepmes 37247</span> <span style='mso-no-proof:yes'>Couturi&egrave.
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BAUDICHON</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Maurice</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Maurice</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CATROU</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -8241,7 +8241,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Denis</span><span style='font-size:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif"'>
-<span style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
+<span style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
 16015</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -8260,14 +8260,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>GODERT</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GODERT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Martial</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Martial</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de NORMANDIN</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -8321,7 +8321,7 @@ yes'>&agrave. Loches 37132</span> <span style='mso-no-proof:yes'>Caissi&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MARTIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de MOREAU</span> <span style='mso-no-proof:yes'>Marie
 El&eacute.onore</span><o:p></o:p></span></p>
 
@@ -8369,13 +8369,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jos&eacute.phine</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 23/11/1837</span> <span style='mso-no-proof:
-yes'>&agrave. Bourgueil 37031</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Bourgueil 37031</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MACE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Etienne</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Etienne</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de ANNOTTE</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -8534,7 +8534,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Honorine
 Augustine</span> <span style='mso-no-proof:yes'>n&eacute.e le 09/06/1845</span> <span
 style='mso-no-proof:yes'>&agrave. St-Jean-d'Ang&eacute.ly 17347</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -8596,7 +8596,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FORTIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Andr&eacute. Eug&egrave.ne</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de VOUCHAIR</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de VOUCHAIR</span>
 <span style='mso-no-proof:yes'>Augustine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -8707,7 +8707,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FRAPPIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Th&eacute.ophile</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DAUMAIN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DAUMAIN</span>
 <span style='mso-no-proof:yes'>Octavie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -8734,7 +8734,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>L&eacute.onard</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Oradour 16248</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -8753,8 +8753,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>GUILLON</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jeanne</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Perrusson
-37183</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Perrusson
+37183</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -8807,7 +8807,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie-Anne</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 25/05/1780</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -8868,7 +8868,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de TULASNE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Alexandre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de RUAULT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de RUAULT</span>
 <span style='mso-no-proof:yes'>D&eacute.sir&eacute.e</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -8923,7 +8923,7 @@ chaussures ambulante</span> <o:p></o:p></span></p>
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de COMBEAUD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GOUAUX</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -8950,7 +8950,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Guillaume</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. St-S&eacute.verin 16350</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -8958,7 +8958,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fils
 de DORVALLE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Guillaume+</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
@@ -8969,8 +8969,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>BILLAUD</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -9030,7 +9030,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FAURE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Alexandre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de ESTEVE</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de ESTEVE</span>
 <span style='mso-no-proof:yes'>Fran&ccedil.oise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -9085,7 +9085,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FAURE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Alexandre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de ESTEVE</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de ESTEVE</span>
 <span style='mso-no-proof:yes'>Fran&ccedil.oise Alexandrine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -9140,7 +9140,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de NAUX</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Alexandre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de GERARD</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de GERARD</span>
 <span style='mso-no-proof:yes'>Annette</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -9167,7 +9167,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Estienne</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Montign&eacute. 16228</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -9186,8 +9186,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>BERGERIN</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Ren&eacute.e</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -9240,13 +9240,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Agate</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 16/02/1752</span> <span style='mso-no-proof:
-yes'>&agrave. Chinon 37072</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Chinon 37072</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de TORTREAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Ren&eacute.</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Ren&eacute.</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de MESSEAU</span> <span style='mso-no-proof:yes'>Genevi&egrave.ve</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -9273,7 +9273,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Abraham</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Charente-Maritime 16000?</span> <o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
@@ -9285,15 +9285,15 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>MARTINEAU</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jehanne</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MARTINEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Martin</span> <span style='mso-no-proof:yes'>+</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'><o:p>&nbsp;</o:p></span></p>
@@ -9401,7 +9401,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Gileti&egrave.re
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHARRIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Bazile</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Bazile</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de ROUSSELET</span> <span style='mso-no-proof:yes'>Rosalie
 Ad&eacute.la&iuml.de</span><o:p></o:p></span></p>
 
@@ -9458,7 +9458,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ANDRE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Pierre D&eacute.sir&eacute.</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de LIMOUZIN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de LIMOUZIN</span>
 <span style='mso-no-proof:yes'>Coralie Madeleine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -9512,7 +9512,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Couturi&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MONTIGAUD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de ERGOT</span> <span style='mso-no-proof:yes'>Marie
 Emilie</span><o:p></o:p></span></p>
 
@@ -9702,7 +9702,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Bonnet</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. St-Bonnet 16303</span> <o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
@@ -9714,14 +9714,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>DE LA ROCHE</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marthe</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DE LA ROCHE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Ren&eacute.</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Ren&eacute.</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de PERROT</span> <span style='mso-no-proof:yes'>Andr&eacute.e</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -9769,13 +9769,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Aline L&eacute.ontine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 25/04/1866</span> <span style='mso-no-proof:
-yes'>&agrave. St-Branchs 37211</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. St-Branchs 37211</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BOUCHAUD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Andr&eacute.</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Andr&eacute.</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BOURGARDAY</span> <span style='mso-no-proof:
 yes'>Marie Caroline</span><o:p></o:p></span></p>
 
@@ -9825,7 +9825,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jeanne Marie
 Marguerite</span> <span style='mso-no-proof:yes'>n&eacute.e le 02/05/1870</span> <span
 style='mso-no-proof:yes'>&agrave. Blois 41018</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -9885,7 +9885,7 @@ yes'>&agrave. Bl&eacute.r&eacute. 37027</span> <span style='mso-no-proof:yes'>Co
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de NERET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CERCLEUX</span> <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -9941,7 +9941,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ROBINEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de LEGER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de LEGER</span>
 <span style='mso-no-proof:yes'>Agn&egrave.s</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10094,7 +10094,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Julien Emilia</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 20/05/1847</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -10155,7 +10155,7 @@ yes'>&agrave. La Haye-Descartes 37115</span> <span style='mso-no-proof:yes'>cout
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DANIOT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de MOREAU</span> <span style='mso-no-proof:yes'>Rose</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10208,7 +10208,7 @@ yes'>&agrave. Gourg&eacute. 79135</span> <span style='mso-no-proof:yes'>Journali
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ARNAULT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de ROUX</span> <span style='mso-no-proof:yes'>Magdeleine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10256,14 +10256,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>F&eacute.lixine Marie</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 26/02/1882</span> <span style='mso-no-proof:
-yes'>&agrave. Nantes 44109</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Nantes 44109</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de HODET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>F&eacute.lix Marcelin</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de MURAILLE</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de MURAILLE</span>
 <span style='mso-no-proof:yes'>Prudence Constance Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10312,14 +10312,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Gabrielle Marie
 Ad&egrave.le</span> <span style='mso-no-proof:yes'>n&eacute.e le 14/05/1781</span> <span
 style='mso-no-proof:yes'>&agrave. Azay/Cher 37015</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de JUCHEREAU DE ST-DENYS</span><span style='font-size:9.0pt;mso-bidi-font-size:
 10.0pt;line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Louis Barbe</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DE
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DE
 BARBANCOIS</span> <span style='mso-no-proof:yes'>H&eacute.l&egrave.ne M&eacute.lanie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10345,7 +10345,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Pierre</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Chalais 16000?</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10364,8 +10364,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>FOUSSARD</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'><o:p>&nbsp;</o:p></span></p>
@@ -10418,7 +10418,7 @@ yes'>&agrave. Aunac 16023</span> <span style='mso-no-proof:yes'>Couturi&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MOULINIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Flavien</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Flavien</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de LAMBERT</span> <span style='mso-no-proof:yes'>Andr&eacute.e</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10445,7 +10445,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Fran&ccedil.ois</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Montbron 16223</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10464,14 +10464,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>DOUESNEL</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Ren&eacute.e</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DOUESNEL</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Alain</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Alain</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GALARD</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10520,14 +10520,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Mathilde
 Ad&eacute.la&iuml.de</span> <span style='mso-no-proof:yes'>n&eacute.e le 11/04/1863</span> <span
 style='mso-no-proof:yes'>&agrave. Yzeures/Creuse 37282</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FALAVANTOUR</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Eug&egrave.ne Constantin</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DELAVEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DELAVEAU</span>
 <span style='mso-no-proof:yes'>Marie Az&eacute.lie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10582,7 +10582,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CVOC</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Joseph Justin</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de COURTOIS</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de COURTOIS</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10608,7 +10608,7 @@ normal'><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif";
 mso-no-proof:yes'>Etienne</span><span style='font-size:9.0pt;mso-bidi-font-size:
 10.0pt;line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
 16015</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10627,14 +10627,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>PATIN</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Anne</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PATIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Georges</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Georges</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de PETIBON</span> <span style='mso-no-proof:yes'>Fran&ccedil.oise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10686,7 +10686,7 @@ yes'>&agrave. Pillac 16260</span> <span style='mso-no-proof:yes'>Gagiste</span> 
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de VIAUD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BERGER</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10697,8 +10697,8 @@ line-height:115%;font-family:"Times New Roman","serif"'>X <span
 style='mso-no-proof:yes'>Tours</span> <span style='mso-no-proof:yes'>37261</span>
 le <span style='mso-no-proof:yes'>21/06/1849</span> <b style='mso-bidi-font-weight:
 normal'><span style='mso-no-proof:yes'>FAUGERON<span
-style='mso-spacerun:yes'> </span><span
-style='mso-spacerun:yes'></span>D</span> </b><span style='mso-no-proof:
+style='mso-spacerun:yes'>                 </span><span
+style='mso-spacerun:yes'>    </span>D</span> </b><span style='mso-no-proof:
 yes'>Michel</span> et <b style='mso-bidi-font-weight:normal'><span
 style='mso-no-proof:yes'>GUERIVE</span> </b><span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
@@ -10709,8 +10709,8 @@ style='mso-list:Ignore'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>FAUGERON<span
-style='mso-spacerun:yes'> </span><span
-style='mso-spacerun:yes'></span>D</span></b><b style='mso-bidi-font-weight:
+style='mso-spacerun:yes'>                 </span><span
+style='mso-spacerun:yes'>    </span>D</span></b><b style='mso-bidi-font-weight:
 normal'><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:
 115%;font-family:"Times New Roman","serif"'> </span></b><span style='font-size:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif";
@@ -10721,7 +10721,7 @@ Ussel 19275</span> <span style='mso-no-proof:yes'>Rentier</span><o:p></o:p></spa
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fils
-de FAUGERON<span style='mso-spacerun:yes'> </span>D</span><span
+de FAUGERON<span style='mso-spacerun:yes'>                     </span>D</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jean</span> <span
 style='mso-no-proof:yes'>et de LEBOUCHEIX</span> <span style='mso-no-proof:
@@ -10737,13 +10737,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 24/10/1798</span> <span style='mso-no-proof:
-yes'>&agrave. St-Preuil 16343</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. St-Preuil 16343</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GUERIVE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GIRARDEAU</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10789,13 +10789,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 23/12/1872</span> <span style='mso-no-proof:
-yes'>&agrave. Vouvray 37281</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Vouvray 37281</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ROYER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Michel</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Michel</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de VRIGNAUD</span> <span style='mso-no-proof:yes'>D&eacute.sir&eacute.e</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10850,7 +10850,7 @@ commerce</span> <o:p></o:p></span></p>
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PINET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DUBRAY</span> <span style='mso-no-proof:yes'>C&eacute.lestine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -10903,7 +10903,7 @@ yes'>&agrave. Ch&acirc.teaulin 29026</span> <span style='mso-no-proof:yes'>Ling&
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ROUDIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de PURER</span> <span style='mso-no-proof:yes'>Marie
 Jos&eacute.phine</span><o:p></o:p></span></p>
 
@@ -10952,14 +10952,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Fran&ccedil.oise Victorine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 05/10/1822</span> <span style='mso-no-proof:
-yes'>&agrave. Amboise 37003</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Amboise 37003</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BEUTARD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jacques Urbain</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de FERRANT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de FERRANT</span>
 <span style='mso-no-proof:yes'>Marie Madelaine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -11013,7 +11013,7 @@ yes'>&agrave. Maretay 16000?</span> <span style='mso-no-proof:yes'>Ling&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MAIRE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BATARD</span> <span style='mso-no-proof:yes'>Genevi&egrave.ve</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -11060,13 +11060,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Victorine</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 08/02/1854</span> <span style='mso-no-proof:
-yes'>&agrave. Ruffec 16292</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Ruffec 16292</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DUPONT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de HERVIOT</span> <span style='mso-no-proof:yes'>Jos&eacute.phine
 Marguerite</span><o:p></o:p></span></p>
 
@@ -11122,7 +11122,7 @@ yes'>&agrave. Beaumont-la-Ronce 37021</span> <span style='mso-no-proof:yes'>Ling
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CATILLON</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DUCHESNE</span> <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -11223,14 +11223,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Valentine</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 13/04/1856</span> <span style='mso-no-proof:
-yes'>&agrave. Tauxigny 37254</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tauxigny 37254</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BOUHOURDIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois Louis</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de GERMAIN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de GERMAIN</span>
 <span style='mso-no-proof:yes'>Rosalie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -11284,7 +11284,7 @@ yes'>&agrave. Fondettes 37109</span> <span style='mso-no-proof:yes'>Femme de cha
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MALHERBE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Julien</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Julien</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de TRAVAILLARD</span> <span style='mso-no-proof:
 yes'>Madelaine Alexandrine</span><o:p></o:p></span></p>
 
@@ -11312,7 +11312,7 @@ normal'><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:
 mso-no-proof:yes'>Pierre</span><span style='font-size:9.0pt;mso-bidi-font-size:
 10.0pt;line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>n&eacute. le21/01/1862</span> <span style='mso-no-proof:yes'>&agrave.
-Gondeville 16153</span> <span style='mso-no-proof:yes'>Gar&ccedil.on d'htel</span><o:p></o:p></span></p>
+Gondeville 16153</span> <span style='mso-no-proof:yes'>Gar&ccedil.on d'hôtel</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fils
@@ -11339,7 +11339,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ALLIAS</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de GAULTIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de GAULTIER</span>
 <span style='mso-no-proof:yes'>Rosalie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -11392,7 +11392,7 @@ yes'>&agrave. Chinon 37072</span> <span style='mso-no-proof:yes'>Couturi&egrave.
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DALUZEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de MASSACRY</span> <span style='mso-no-proof:yes'>Margueritte</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -11441,14 +11441,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Madeleine</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 31/03/1777</span> <span style='mso-no-proof:
 yes'>&agrave. Luynes (Ste-Genevi&egrave.ve) 37139A</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de NICOD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Antoine</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de AUTIAT DE
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de AUTIAT DE
 LA SERVE</span> <span style='mso-no-proof:yes'>Marguerite Jeanne Suzanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -11504,7 +11504,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FAUTRAS</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Joseph Pierre Mathieu</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de COHIN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de COHIN</span>
 <span style='mso-no-proof:yes'>Alexandrine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -11587,7 +11587,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Jean</span><span style='font-size:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif"'>
-<span style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Confolens
+<span style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Confolens
 16106</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -11606,8 +11606,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>ROUJOU</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Anne</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Chinon
-(St-Louans) 37072C</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Chinon
+(St-Louans) 37072C</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -11668,7 +11668,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de TALLEGAULT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Alexandre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DAVID</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DAVID</span>
 <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -11714,7 +11714,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Magdeleine</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 14/07/1825</span> <span style='mso-no-proof:
-yes'>&agrave. Cellefrouin 16068</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Cellefrouin 16068</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -11768,13 +11768,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Rose Elodie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 16/04/1846</span> <span style='mso-no-proof:
-yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BERRUER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Antoine</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Antoine</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de ROUX</span> <span style='mso-no-proof:yes'>Marie
 Eulalie</span><o:p></o:p></span></p>
 
@@ -11802,8 +11802,8 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Jean Andr&eacute.</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fils
@@ -11821,8 +11821,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>THIBAULT</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Margueritte</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Vignolles
-16405</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Vignolles
+16405</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -11854,7 +11854,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Jacques</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me 16015</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -11873,8 +11873,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>DUMEE</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Catherine</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -11937,7 +11937,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PELLETREAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Baptiste</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de REDON</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de REDON</span>
 <span style='mso-no-proof:yes'>Marie Rose</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -11965,7 +11965,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Stanislas</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>n&eacute. le08/05/1808</span>
-<span style='mso-no-proof:yes'>&agrave. Mouthiers/Bome 16236</span> <span
+<span style='mso-no-proof:yes'>&agrave. Mouthiers/Boëme 16236</span> <span
 style='mso-no-proof:yes'>fabricant de papier</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -11985,7 +11985,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Rose</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 07/02/1794</span> <span style='mso-no-proof:
-yes'>&agrave. Luzill&eacute. 37141</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Luzill&eacute. 37141</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -12040,14 +12040,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Justine</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 13/03/1845</span> <span style='mso-no-proof:
-yes'>&agrave. Issoudun 36088</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Issoudun 36088</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DURIAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Charles Victor</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de GARCIA</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de GARCIA</span>
 <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -12095,13 +12095,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 12/09/1821</span> <span style='mso-no-proof:
-yes'>&agrave. Nersac 16244</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Nersac 16244</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DELAGE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de ANDOUARD</span> <span style='mso-no-proof:yes'>Marguerite</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -12209,7 +12209,7 @@ yes'>&agrave. La Celle-Guenand 37044</span> <span style='mso-no-proof:yes'>Domes
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LACROIX</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CAMAIN</span> <span style='mso-no-proof:yes'>Madeleine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -12263,7 +12263,7 @@ yes'>&agrave. Manthelan 37143</span> <span style='mso-no-proof:yes'>ling&egrave.
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MOREAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Silvain</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Silvain</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de MOURU</span> <span style='mso-no-proof:yes'>Silvine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -12309,14 +12309,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 11/11/1825</span> <span style='mso-no-proof:
-yes'>&agrave. Ruffec 16292</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Ruffec 16292</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BOUMIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BOUMIER</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -12362,14 +12362,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 11/11/1825</span> <span style='mso-no-proof:
-yes'>&agrave. Ruffec 16292</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Ruffec 16292</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BOUMIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BOUMIER</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -12421,7 +12421,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Gagiste</span> <
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BOUCHE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Martin</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Martin</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BELON</span> <span style='mso-no-proof:yes'>Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -12475,7 +12475,7 @@ de m&eacute.nage</span> <o:p></o:p></span></p>
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BESNARD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Eus&egrave.be</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Eus&egrave.be</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de MONTET</span> <span style='mso-no-proof:yes'>F&eacute.licit&eacute.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -12530,7 +12530,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHARLES</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Philippe Alexandre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de SAUGER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de SAUGER</span>
 <span style='mso-no-proof:yes'>Germaine Elisabeth</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -12584,7 +12584,7 @@ yes'>&agrave. Poursac 16268</span> <span style='mso-no-proof:yes'>Gagiste</span>
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MAGNAN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BOUSINOT</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -12693,7 +12693,7 @@ yes'>&agrave. Etagnac 16132</span> <span style='mso-no-proof:yes'>Ganti&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BURBAUD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BEAULIEU</span> <span style='mso-no-proof:yes'>Madeleine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -12748,7 +12748,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DERE</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DERE</span>
 <span style='mso-no-proof:yes'>Anne Cl&eacute.mentine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -12796,14 +12796,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Louise</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 26/07/1861</span> <span style='mso-no-proof:
-yes'>&agrave. Lux&eacute. 16196</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Lux&eacute. 16196</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de THIBAULT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de THIBAULT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de THIBAULT</span>
 <span style='mso-no-proof:yes'>Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -12851,14 +12851,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Charlotte Herminie
 L&eacute.onie</span> <span style='mso-no-proof:yes'>n&eacute.e le 14/12/1857</span> <span
 style='mso-no-proof:yes'>&agrave. Bess&eacute./Braye 72035</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ROLLAND</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>L&eacute.on Cyprien</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de LEROUX</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de LEROUX</span>
 <span style='mso-no-proof:yes'>Louise Maximilienne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -12906,14 +12906,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Pauline</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 09/09/1859</span> <span style='mso-no-proof:
-yes'>&agrave. Mer 41136</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Mer 41136</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de COUTARD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Alexandre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de COLLIOT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de COLLIOT</span>
 <span style='mso-no-proof:yes'>Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -12979,7 +12979,7 @@ line-height:115%;font-family:"Times New Roman","serif"'>X <span
 style='mso-no-proof:yes'>Tours</span> <span style='mso-no-proof:yes'>37261</span>
 le <span style='mso-no-proof:yes'>15/12/1857</span> <b style='mso-bidi-font-weight:
 normal'><span style='mso-no-proof:yes'>GOIS</span> </b><span style='mso-no-proof:
-yes'>Jean Raphal</span> et <b style='mso-bidi-font-weight:normal'><span
+yes'>Jean Raphaël</span> et <b style='mso-bidi-font-weight:normal'><span
 style='mso-no-proof:yes'>GUELIN</span> </b><span style='mso-no-proof:yes'>Delphine</span><o:p></o:p></span></p>
 
 <p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
@@ -12992,7 +12992,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 normal'><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:
 115%;font-family:"Times New Roman","serif"'> </span></b><span style='font-size:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif";
-mso-no-proof:yes'>Jean Raphal</span><span style='font-size:9.0pt;mso-bidi-font-size:
+mso-no-proof:yes'>Jean Raphaël</span><span style='font-size:9.0pt;mso-bidi-font-size:
 10.0pt;line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>n&eacute. le12/09/1829</span> <span style='mso-no-proof:yes'>&agrave.
 Montchaude 16224</span> <span style='mso-no-proof:yes'>Menuisier</span><o:p></o:p></span></p>
@@ -13014,13 +13014,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Delphine</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 03/02/1837</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GUELIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de PROVOST</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -13068,14 +13068,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Catherine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 11/03/1820</span> <span style='mso-no-proof:
-yes'>&agrave. Nouzilly 37175</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Nouzilly 37175</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FAGU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Baptiste</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de GALLEAUNNE</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de GALLEAUNNE</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -13130,7 +13130,7 @@ yes'>&agrave. Azay-le-Rideau 37014</span> <span style='mso-no-proof:yes'>gagiste
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DUVEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de LEMESLE</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -13185,7 +13185,7 @@ yes'>&agrave. Br&eacute.h&eacute.mont 37038</span> <span style='mso-no-proof:yes
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ANDOCHES</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Fiacre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Fiacre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de LACOQUE</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -13238,7 +13238,7 @@ yes'>&agrave. Crotelles 37092</span> <span style='mso-no-proof:yes'>Frangi&egrav
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GODEFFROI</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de FOUSSEREAU</span> <span style='mso-no-proof:
 yes'>Marie</span><o:p></o:p></span></p>
 
@@ -13288,13 +13288,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Fran&ccedil.ois F&eacute.licit&eacute.
 Marie</span> <span style='mso-no-proof:yes'>n&eacute.e le 30/08/1859</span> <span
 style='mso-no-proof:yes'>&agrave. Cormery 37083</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BURON</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>F&eacute.lix</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>F&eacute.lix</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DREUX</span> <span style='mso-no-proof:yes'>Fran&ccedil.oise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -13342,7 +13342,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie L&eacute.ontine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 22/04/1849</span> <span style='mso-no-proof:
-yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -13457,7 +13457,7 @@ yes'>&agrave. St-Paterne-Racan 37231</span> <span style='mso-no-proof:yes'>Ling&
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BOUSSARD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DUDOIT</span> <span style='mso-no-proof:yes'>Madelaine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -13511,7 +13511,7 @@ yes'>&agrave. Montr&eacute.sor 37157</span> <span style='mso-no-proof:yes'>Cuisi
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CAMBERT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Alexis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Alexis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de LECATTE</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -13566,7 +13566,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PELLETREAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Baptiste</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de REDEN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de REDEN</span>
 <span style='mso-no-proof:yes'>Marie Rose</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -13622,7 +13622,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BOILEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Louis Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de JOURDAIN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de JOURDAIN</span>
 <span style='mso-no-proof:yes'>Jeanne Marguerite</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -13670,7 +13670,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Adrienne</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 21/02/1861</span> <span style='mso-no-proof:
-yes'>&agrave. Tournon-St-Pierre 37259</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tournon-St-Pierre 37259</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span class=GramE><span style='font-size:9.0pt;mso-bidi-font-size:
 10.0pt;line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:
@@ -13678,7 +13678,7 @@ yes'>Fille de EMERY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Baptiste</span> </span></span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'><span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'><span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DUBOIS</span> <span style='mso-no-proof:yes'>Fran&ccedil.oise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -13733,7 +13733,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PHILIPPEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BERNUCHOT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BERNUCHOT</span>
 <span style='mso-no-proof:yes'>Rose Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -13788,7 +13788,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BALZEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Pierre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de GIRARD</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de GIRARD</span>
 <span style='mso-no-proof:yes'>Magdelaine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -13843,7 +13843,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de METTAIREAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Augustin</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de MAHOT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de MAHOT</span>
 <span style='mso-no-proof:yes'>Ad&egrave.le</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -13951,7 +13951,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Couturi&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PERRET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de PODEVIN</span> <span style='mso-no-proof:yes'>Henritte</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -14054,13 +14054,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Appoline</span> <span
 style='mso-no-proof:yes'>n&eacute.e le //1825</span> <span style='mso-no-proof:yes'>&agrave. Richelieu
-37196</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+37196</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BEGUIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Charles</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Charles</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de ROLLAND</span> <span style='mso-no-proof:yes'>Genevi&egrave.ve
 Jeanne Marie</span><o:p></o:p></span></p>
 
@@ -14107,14 +14107,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Fran&ccedil.oise</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 23/03/1793</span> <span style='mso-no-proof:
-yes'>&agrave. Avesnes/Helpe 59036</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Avesnes/Helpe 59036</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DECAUDIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Antoine J&eacute.rme</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DUVIVIER</span>
+style='mso-no-proof:yes'>Antoine J&eacute.rôme</span> <span
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DUVIVIER</span>
 <span style='mso-no-proof:yes'>Marie Joseph</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -14170,7 +14170,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FRICARD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Bonaventure</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de ROLLAND</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de ROLLAND</span>
 <span style='mso-no-proof:yes'>Clotilde Bathilde Henriette</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -14224,7 +14224,7 @@ yes'>&agrave. Roumazi&egrave.res-Loubert 16192</span> <span style='mso-no-proof:
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MARTIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>L&eacute.onard</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>L&eacute.onard</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de MICHAUD</span> <span style='mso-no-proof:yes'>Marguerite</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -14278,7 +14278,7 @@ yes'>&agrave. Segonzac 16366</span> <span style='mso-no-proof:yes'>Ling&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FAUGOUT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DENIS</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -14326,14 +14326,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Nancy Agla&eacute.e</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 24/02/1852</span> <span style='mso-no-proof:
-yes'>&agrave. Ligueil 37130</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Ligueil 37130</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GAULTIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jacques Michel</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de FAULCON</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de FAULCON</span>
 <span style='mso-no-proof:yes'>Pulch&eacute.rie Antoinette</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -14381,7 +14381,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Louise</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 27/02/1852</span> <span style='mso-no-proof:
-yes'>&agrave. Montemboeuf 16225</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Montemboeuf 16225</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -14436,7 +14436,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Louise</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 27/02/1852</span> <span style='mso-no-proof:
-yes'>&agrave. Montemboeuf 16225</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Montemboeuf 16225</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -14498,7 +14498,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BABOU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Marie Adrien</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de PERREAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de PERREAU</span>
 <span style='mso-no-proof:yes'>Marie Ad&eacute.la&iuml.de</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -14554,7 +14554,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DOISTEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Armand Maurice</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BUINEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BUINEAU</span>
 <span style='mso-no-proof:yes'>Henriette</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -14608,7 +14608,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Ling&egrave.re</
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHARLES</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BOUCHET</span> <span style='mso-no-proof:yes'>Eulalie
 Madeleine</span><o:p></o:p></span></p>
 
@@ -14664,7 +14664,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de SABOURE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Denis Philippe</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BESSANT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BESSANT</span>
 <span style='mso-no-proof:yes'>F&eacute.licit&eacute.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -14710,7 +14710,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Louise</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 11/01/1849</span> <span style='mso-no-proof:
-yes'>&agrave. Ste-Marie 16333</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Ste-Marie 16333</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -14771,7 +14771,7 @@ style='mso-no-proof:yes'>Couturi&egrave.re</span> <o:p></o:p></span></p>
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de VOISIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Maxime</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Maxime</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de FREULON</span> <span style='mso-no-proof:yes'>Armande</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -14797,7 +14797,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Pierre</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Cognac (St-Leger) 16102A</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -14816,15 +14816,15 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>CHEROUVRIER</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Claude</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHEROUVRIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BERANGER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BERANGER</span>
 <span style='mso-no-proof:yes'>Claude</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -14872,14 +14872,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Clotilde Hortense</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 20/05/1803</span> <span style='mso-no-proof:
-yes'>&agrave. Aubeterre/Dronne 16020</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Aubeterre/Dronne 16020</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ARCHAMBAULT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Auguste Gabriel</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DELTOUS</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DELTOUS</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -14934,7 +14934,7 @@ yes'>&agrave. St-Saturnin 16348</span> <span style='mso-no-proof:yes'>institutri
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BAILLOUT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BOILLEVIN</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -14989,7 +14989,7 @@ yes'>&agrave. St-Saturnin 16348</span> <span style='mso-no-proof:yes'>institutri
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BAILLOUT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BOILLEVIN</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -15037,14 +15037,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jos&eacute.phine Sara</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 04/12/1869</span> <span style='mso-no-proof:
-yes'>&agrave. La Haye-Descartes 37115</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. La Haye-Descartes 37115</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de COTTEREAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Baptiste</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de MOREAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de MOREAU</span>
 <span style='mso-no-proof:yes'>Jos&eacute.phine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -15091,13 +15091,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Louise</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 01/07/1860</span> <span style='mso-no-proof:
-yes'>&agrave. Luz&eacute. 37140</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Luz&eacute. 37140</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ROBERT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Vincent</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Vincent</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de PICHET</span> <span style='mso-no-proof:yes'>Rose</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -15145,7 +15145,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marguerite Am&eacute.lie</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 23/08/1867</span> <span style='mso-no-proof:
-yes'>&agrave. La Rochefoucauld 16281</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. La Rochefoucauld 16281</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -15207,7 +15207,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CAPET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Louis Th&eacute.ophile</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de RICHER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de RICHER</span>
 <span style='mso-no-proof:yes'>Henriette Modeste</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -15253,14 +15253,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>F&eacute.licit&eacute.</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 05/12/1815</span> <span style='mso-no-proof:
-yes'>&agrave. St-Cyr/Loire 37214</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. St-Cyr/Loire 37214</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GRAITIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Cyr Silvain Etienne</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de ROUGER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de ROUGER</span>
 <span style='mso-no-proof:yes'>Marie F&eacute.licit&eacute.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -15367,7 +15367,7 @@ yes'>&agrave. Bassac 16032</span> <span style='mso-no-proof:yes'>Instituteur</sp
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de HERVE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CROUBY</span> <span style='mso-no-proof:yes'>Catherine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -15422,7 +15422,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DEGAILLE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de RENAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de RENAU</span>
 <span style='mso-no-proof:yes'>Virginie Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -15470,13 +15470,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Victorine</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 30/03/1852</span> <span style='mso-no-proof:
-yes'>&agrave. Lux&eacute. 16196</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Lux&eacute. 16196</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de AUTHIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CHARDON</span> <span style='mso-no-proof:yes'>Rosalie
 H&eacute.l&egrave.ne</span><o:p></o:p></span></p>
 
@@ -15506,7 +15506,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>n&eacute. le24/03/1859</span>
 <span style='mso-no-proof:yes'>&agrave. Taiz&eacute.-Aizie 16378</span> <span
-style='mso-no-proof:yes'>Gar&ccedil.on d'htel</span><o:p></o:p></span></p>
+style='mso-no-proof:yes'>Gar&ccedil.on d'hôtel</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fils
@@ -15586,7 +15586,7 @@ yes'>&agrave. Le Dorat 87059</span> <span style='mso-no-proof:yes'>Femme de conf
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BREGEAT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>L&eacute.onard</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>L&eacute.onard</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CHAINTIOUX</span> <span style='mso-no-proof:
 yes'>Genevi&egrave.ve</span><o:p></o:p></span></p>
 
@@ -15640,7 +15640,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Passementi&egrav
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ROY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:
 115%;font-family:"Times New Roman","serif"'> <span style='mso-no-proof:yes'>Fran&ccedil.ois</span>
-<span style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de GOUJON</span>
+<span style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de GOUJON</span>
 <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -15687,13 +15687,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Elisabeth</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 23/03/1812</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de SOLAVILLE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de ALOUIS</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -15747,7 +15747,7 @@ style='mso-no-proof:yes'>n&eacute.e le //1849</span> <span style='mso-no-proof:y
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BOIRY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Etienne</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Etienne</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de JOULIN</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -15906,14 +15906,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Ad&eacute.la&iuml.de</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 19/10/1791</span> <span style='mso-no-proof:
-yes'>&agrave. St-Martin-le-Beau 37225</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. St-Martin-le-Beau 37225</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DUBOIS</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BRISASSIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BRISASSIER</span>
 <span style='mso-no-proof:yes'>Madeleine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -15940,7 +15940,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Jean</span><span style='font-size:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif"'>
-<span style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
+<span style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
 16015</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -15959,14 +15959,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>GOURY</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Anne Th&eacute.r&egrave.se</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GOURY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GAUDRY</span> <span style='mso-no-proof:yes'>Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -16021,7 +16021,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille d
 INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BECHEMIN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BECHEMIN</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -16077,7 +16077,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de JACQUET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois Jules</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DUBOIS</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DUBOIS</span>
 <span style='mso-no-proof:yes'>Marie H&eacute.l&egrave.ne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -16103,7 +16103,7 @@ normal'><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif";
 mso-no-proof:yes'>Pierre Louis</span><span style='font-size:9.0pt;mso-bidi-font-size:
 10.0pt;line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
 16015</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -16122,14 +16122,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>CLOUSTIER</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Catherine</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CLOUSTIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de JALLEAU</span> <span style='mso-no-proof:yes'>Marie
 Anne</span><o:p></o:p></span></p>
 
@@ -16178,14 +16178,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Henriette Rose</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 24/09/1819</span> <span style='mso-no-proof:
-yes'>&agrave. Az&eacute. 41010</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Az&eacute. 41010</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FREDUREAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Antoine Guillaume</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de HUBERT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de HUBERT</span>
 <span style='mso-no-proof:yes'>Marie Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -16294,7 +16294,7 @@ yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-no-proof:yes'>Sans</
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ANDRE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jules</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jules</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BERLANE</span> <span style='mso-no-proof:yes'>Louise
 Virginie</span><o:p></o:p></span></p>
 
@@ -16395,14 +16395,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>H&eacute.l&egrave.ne Clarisse</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 28/04/1830</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PIOT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Pierre Hippolyte</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de SAULAY</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de SAULAY</span>
 <span style='mso-no-proof:yes'>Marie Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -16457,7 +16457,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de THAMORE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de RUCHER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de RUCHER</span>
 <span style='mso-no-proof:yes'>Elisabeth</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -16621,7 +16621,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de HUSSONNAIS</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Louis Florentin</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BOULAY</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BOULAY</span>
 <span style='mso-no-proof:yes'>Flavie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -16676,7 +16676,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHAMPION</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de VALLEE</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de VALLEE</span>
 <span style='mso-no-proof:yes'>Jos&eacute.phine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -16758,7 +16758,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif"'>
 <span style='mso-no-proof:yes'>n&eacute. le06/09/1860</span> <span style='mso-no-proof:
 yes'>&agrave. Verteuil/Charente 16400</span> <span style='mso-no-proof:yes'>Mar&eacute.chal
-ferrant<span style='mso-spacerun:yes'> </span>A&iuml.eux d&eacute.c&eacute.d&eacute.s</span><o:p></o:p></span></p>
+ferrant<span style='mso-spacerun:yes'>   </span>A&iuml.eux d&eacute.c&eacute.d&eacute.s</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fils
@@ -16777,14 +16777,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Florentine Silvine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 19/08/1863</span> <span style='mso-no-proof:
-yes'>&agrave. Villedmer 37276</span> <span style='mso-no-proof:yes'>Cuisini&egrave.re</span>
+yes'>&agrave. Villedômer 37276</span> <span style='mso-no-proof:yes'>Cuisini&egrave.re</span>
 <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de RIGAULT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de PELTIER</span> <span style='mso-no-proof:yes'>Florentine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -16885,13 +16885,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Fanny Armantine
 Marie Louise</span> <span style='mso-no-proof:yes'>n&eacute.e le 04/06/1858</span> <span
 style='mso-no-proof:yes'>&agrave. Tours 37261</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FIERDEPIED</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DURAND</span> <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -16945,7 +16945,7 @@ yes'>&agrave. Mouzon 16239</span> <span style='mso-no-proof:yes'>Institutrice</s
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de JARLANT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Henri</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Henri</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de LAJUGIE</span> <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -16993,7 +16993,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 06/01/1850</span> <span style='mso-no-proof:
 yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Couturi&egrave.re<span
-style='mso-spacerun:yes'> </span>A&iuml.eux d&eacute.c&eacute.d&eacute.s</span> <o:p></o:p></span></p>
+style='mso-spacerun:yes'>     </span>A&iuml.eux d&eacute.c&eacute.d&eacute.s</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -17100,14 +17100,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Eglantine Marie</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 30/05/1870</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LAURY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Alexandre C&eacute.saire</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DULION</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DULION</span>
 <span style='mso-no-proof:yes'>Victorine Eglantine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -17156,7 +17156,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Victorine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 06/02/1840</span> <span style='mso-no-proof:
 yes'>&agrave. Paizay-Naudouin-Embourie 16253</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -17173,7 +17173,7 @@ line-height:115%;font-family:"Times New Roman","serif"'>X <span
 style='mso-no-proof:yes'>Tours</span> <span style='mso-no-proof:yes'>37261</span>
 le <span style='mso-no-proof:yes'>19/07/1858</span> <b style='mso-bidi-font-weight:
 normal'><span style='mso-no-proof:yes'>LUBINEAU</span> </b><span
-style='mso-no-proof:yes'>Auguste J&eacute.rme</span> et <b style='mso-bidi-font-weight:
+style='mso-no-proof:yes'>Auguste J&eacute.rôme</span> et <b style='mso-bidi-font-weight:
 normal'><span style='mso-no-proof:yes'>RIFFAULT</span> </b><span
 style='mso-no-proof:yes'>Marie C&eacute.leste</span><o:p></o:p></span></p>
 
@@ -17187,7 +17187,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-size:
 10.0pt;line-height:115%;font-family:"Times New Roman","serif"'> </span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif";mso-no-proof:yes'>Auguste J&eacute.rme</span><span
+"Times New Roman","serif";mso-no-proof:yes'>Auguste J&eacute.rôme</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>n&eacute. le26/12/1834</span>
 <span style='mso-no-proof:yes'>&agrave. Parign&eacute.-l'Ev&ecirc.que 72231</span> <span
@@ -17211,7 +17211,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie C&eacute.leste</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 12/01/1837</span> <span style='mso-no-proof:
 yes'>&agrave. Paizay-Naudouin-Embourie 16253</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -17353,7 +17353,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Michel Louis</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>n&eacute. le12/01/1861</span>
-<span style='mso-no-proof:yes'>&agrave. Mouthiers/Bome 16236</span> <span
+<span style='mso-no-proof:yes'>&agrave. Mouthiers/Boëme 16236</span> <span
 style='mso-no-proof:yes'>Tailleur d'habits</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -17380,7 +17380,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de RABIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Georges Michel</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BROTTIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BROTTIER</span>
 <span style='mso-no-proof:yes'>Rose Marthe</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -17435,7 +17435,7 @@ yes'>&agrave. Channay/Lathan 37055</span> <span style='mso-no-proof:yes'>Couturi
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LHUILLIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GERMAIN</span> <span style='mso-no-proof:yes'>Marcel</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -17446,7 +17446,7 @@ line-height:115%;font-family:"Times New Roman","serif"'>X <span
 style='mso-no-proof:yes'>Tours</span> <span style='mso-no-proof:yes'>37261</span>
 le <span style='mso-no-proof:yes'>07/01/1873</span> <b style='mso-bidi-font-weight:
 normal'><span style='mso-no-proof:yes'>MAILLIER</span> </b><span
-style='mso-no-proof:yes'>Yves Nol</span> et <b style='mso-bidi-font-weight:
+style='mso-no-proof:yes'>Yves Noël</span> et <b style='mso-bidi-font-weight:
 normal'><span style='mso-no-proof:yes'>LHUILLIER</span> </b><span
 style='mso-no-proof:yes'>Marie Madeleine</span><o:p></o:p></span></p>
 
@@ -17460,7 +17460,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-size:
 10.0pt;line-height:115%;font-family:"Times New Roman","serif"'> </span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif";mso-no-proof:yes'>Yves Nol</span><span
+"Times New Roman","serif";mso-no-proof:yes'>Yves Noël</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>n&eacute. le24/12/1842</span>
 <span style='mso-no-proof:yes'>&agrave. Asni&egrave.res/Nou&egrave.re 16019</span> <span
@@ -17489,7 +17489,7 @@ yes'>&agrave. Thoir&eacute./Dinan 72356</span> <span style='mso-no-proof:yes'>Li
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LHUILLIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GERMAIN</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -17537,7 +17537,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jeanne</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 07/04/1856</span> <span style='mso-no-proof:
-yes'>&agrave. Tendu 36219</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tendu 36219</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -17599,7 +17599,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BAUDOUIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de OUVRARD</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de OUVRARD</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -17647,14 +17647,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Berthe Claire</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 04/11/1846</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DURAND</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Urbain Jules</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de NIATEL</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de NIATEL</span>
 <span style='mso-no-proof:yes'>Nathalie Claire</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -17710,7 +17710,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GOUGEON</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Auguste Victor</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de CHATELAIN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de CHATELAIN</span>
 <span style='mso-no-proof:yes'>Catherine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -17759,7 +17759,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Louise Ad&egrave.le
 Adrienne</span> <span style='mso-no-proof:yes'>n&eacute.e le 12/08/1857</span> <span
 style='mso-no-proof:yes'>&agrave. Chartres 28085</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -17814,13 +17814,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Eloyse No&eacute.mie
 Victoire</span> <span style='mso-no-proof:yes'>n&eacute.e le 23/12/1863</span> <span
 style='mso-no-proof:yes'>&agrave. Chenonceaux 37070</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BERGEAULT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GASCONNE</span> <span style='mso-no-proof:yes'>Adela&iuml.de</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -17924,14 +17924,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Blanche Marguerite</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 04/09/1872</span> <span style='mso-no-proof:
-yes'>&agrave. Tournon-St-Pierre 37259</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tournon-St-Pierre 37259</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GANGNEUX</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>L&eacute.on Achille</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de ROBIN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de ROBIN</span>
 <span style='mso-no-proof:yes'>Marie L&eacute.ontine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -17986,7 +17986,7 @@ yes'>&agrave. Chalais 16073</span> <span style='mso-no-proof:yes'>Piqueuse de bo
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de COUET DIT COIZY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de COCHET</span> <span style='mso-no-proof:yes'>Louise
 Isabelle</span><o:p></o:p></span></p>
 
@@ -18042,7 +18042,7 @@ yes'>&agrave. Preuilly/Claise 37189</span> <span style='mso-no-proof:yes'>coutur
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHARANDEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Octave</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Octave</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CHAIGNOT</span> <span style='mso-no-proof:yes'>Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -18097,7 +18097,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BEAUVAIS</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BLEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BLEAU</span>
 <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -18201,14 +18201,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Alphonsine</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 10/08/1857</span> <span style='mso-no-proof:
-yes'>&agrave. Chisseaux 37073</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Chisseaux 37073</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PELLE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Paul Auguste</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DANGE</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DANGE</span>
 <span style='mso-no-proof:yes'>Anne Silvine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -18260,7 +18260,7 @@ yes'>&agrave. St-Mary 16336</span> <span style='mso-no-proof:yes'>Couturi&egrave
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GRENET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DELAGE</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -18573,7 +18573,7 @@ yes'>&agrave. Br&eacute.ville 16060</span> <span style='mso-no-proof:yes'>Gagist
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MALMANCHE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de SUREAU</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -18628,7 +18628,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BERGER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Pierre Auguste</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BOUSSARD</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BOUSSARD</span>
 <span style='mso-no-proof:yes'>Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -18682,7 +18682,7 @@ yes'>&agrave. La Croix-en-Touraine 37091</span> <span style='mso-no-proof:yes'>g
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BOISSE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Laurent</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Laurent</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GIRARD</span> <span style='mso-no-proof:yes'>Henriette</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -18738,7 +18738,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de VILLARD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BOUCHERIT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BOUCHERIT</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -18792,7 +18792,7 @@ style='mso-no-proof:yes'>&agrave. Marray 37149</span> <span style='mso-no-proof:
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BEZ</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:
 115%;font-family:"Times New Roman","serif"'> <span style='mso-no-proof:yes'>Etienne</span>
-<span style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de MANUEL</span>
+<span style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de MANUEL</span>
 <span style='mso-no-proof:yes'>Alphonsine Ad&eacute.la&iuml.de Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -18840,14 +18840,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie El&eacute.onore</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 17/10/1832</span> <span style='mso-no-proof:
-yes'>&agrave. Channay/Lathan 37055</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Channay/Lathan 37055</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BOURDAIS</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Auguste Etienne</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de PINEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de PINEAU</span>
 <span style='mso-no-proof:yes'>Marie Honor&eacute.e</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -18902,7 +18902,7 @@ yes'>&agrave. Courcelles-de-Touraine 37086</span> <span style='mso-no-proof:yes'
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de HUBERT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Urbain</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Urbain</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GROSSIN</span> <span style='mso-no-proof:yes'>Rose
 Madelaine</span><o:p></o:p></span></p>
 
@@ -18951,13 +18951,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Louise</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 22/06/1876</span> <span style='mso-no-proof:
-yes'>&agrave. Buxeuil 86042</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Buxeuil 86042</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PHILIPPONNEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Anatole</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Anatole</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BRUNEAU</span> <span style='mso-no-proof:yes'>Marie
 Louise</span><o:p></o:p></span></p>
 
@@ -18984,7 +18984,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Jean</span><span style='font-size:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif"'>
-<span style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Sireuil
+<span style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Sireuil
 16370</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -19003,8 +19003,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>BERRUER</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Catherine</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'><o:p>&nbsp;</o:p></span></p>
@@ -19056,7 +19056,7 @@ yes'>&agrave. Abilly 37001</span> <span style='mso-no-proof:yes'>couturi&egrave.
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BERTRAND</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Julien</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Julien</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DELAUNAY</span> <span style='mso-no-proof:yes'>Ad&egrave.le</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -19111,7 +19111,7 @@ yes'>&agrave. La Celle-Guenand 37044</span> <span style='mso-no-proof:yes'>domes
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GALLAND</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>F&eacute.lix</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>F&eacute.lix</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BENIER</span> <span style='mso-no-proof:yes'>Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -19160,14 +19160,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Blanche D&eacute.sir&eacute.e
 Berthe</span> <span style='mso-no-proof:yes'>n&eacute.e le 24/08/1868</span> <span
 style='mso-no-proof:yes'>&agrave. Ch&acirc.teau-Renault 37063</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LAFOND</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Benoist Alexandre Jules</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de GODEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de GODEAU</span>
 <span style='mso-no-proof:yes'>Marie D&eacute.sir&eacute.e</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -19220,7 +19220,7 @@ yes'>&agrave. St-Lubin-en-Vergonnois 41223</span> <span style='mso-no-proof:yes'
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de COUDRAY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de LEROUX</span> <span style='mso-no-proof:yes'>Marie
 Jos&eacute.phine</span><o:p></o:p></span></p>
 
@@ -19331,7 +19331,7 @@ yes'>&agrave. N&eacute.gron 37164</span> <span style='mso-no-proof:yes'>Couturi&
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BRILLANT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BILLAULT</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -19485,7 +19485,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 11/04/1826</span> <span style='mso-no-proof:
-yes'>&agrave. Puymoyen 16271</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Puymoyen 16271</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -19541,14 +19541,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Louise Euph&eacute.mie
 Eug&eacute.nie</span> <span style='mso-no-proof:yes'>n&eacute.e le 07/12/1858</span> <span
 style='mso-no-proof:yes'>&agrave. Tours 37261</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GUILLONNEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Louis</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BROSSSILLON</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BROSSSILLON</span>
 <span style='mso-no-proof:yes'>Louise Rose</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -19559,7 +19559,7 @@ line-height:115%;font-family:"Times New Roman","serif"'>X <span
 style='mso-no-proof:yes'>Tours</span> <span style='mso-no-proof:yes'>37261</span>
 le <span style='mso-no-proof:yes'>14/05/1856</span> <b style='mso-bidi-font-weight:
 normal'><span style='mso-no-proof:yes'>MOLINA</span> </b><span
-style='mso-no-proof:yes'>Isral</span> et <b style='mso-bidi-font-weight:normal'><span
+style='mso-no-proof:yes'>Israël</span> et <b style='mso-bidi-font-weight:normal'><span
 style='mso-no-proof:yes'>ROY</span> </b><span style='mso-no-proof:yes'>Fran&ccedil.oise
 Jos&eacute.phine</span><o:p></o:p></span></p>
 
@@ -19573,7 +19573,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-size:
 10.0pt;line-height:115%;font-family:"Times New Roman","serif"'> </span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif";mso-no-proof:yes'>Isral</span><span
+"Times New Roman","serif";mso-no-proof:yes'>Israël</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>n&eacute. le25/03/1818</span>
 <span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-no-proof:
@@ -19650,14 +19650,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Rachel</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 05/04/1864</span> <span style='mso-no-proof:
-yes'>&agrave. Le Grand-Pressigny 37113</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Le Grand-Pressigny 37113</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LACOSTE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Alphonse Auguste L&eacute.on</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de CELLERIN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de CELLERIN</span>
 <span style='mso-no-proof:yes'>Louise Perp&eacute.tue</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -19739,7 +19739,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Jean</span><span style='font-size:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif"'>
-<span style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
+<span style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
 16015</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -19758,14 +19758,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>GANDOY</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Perrine</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GANDOY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Lezin</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Lezin</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de ROUER</span> <span style='mso-no-proof:yes'>Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -19813,7 +19813,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Henriette</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 03/03/1794</span> <span style='mso-no-proof:
 yes'>&agrave. Ste-Catherine-de-Fierbois 37212</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -19867,13 +19867,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Louise</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 30/05/1864</span> <span style='mso-no-proof:
-yes'>&agrave. Chambon 37048</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Chambon 37048</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CLEMENT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de PAGE</span> <span style='mso-no-proof:yes'>Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -20086,7 +20086,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Juliette</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 16/03/1854</span> <span style='mso-no-proof:
-yes'>&agrave. Jarnac 16167</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Jarnac 16167</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -20147,7 +20147,7 @@ yes'>&agrave. Le Mans 72181</span> <span style='mso-no-proof:yes'>Ling&egrave.re
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PRIVARD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de AUGEREAU</span> <span style='mso-no-proof:yes'>Anne
 Augustine</span><o:p></o:p></span></p>
 
@@ -20202,7 +20202,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Couturi&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BROSSAY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Auguste</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Auguste</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CHENET</span> <span style='mso-no-proof:yes'>Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -20258,7 +20258,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHESNEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Louis Vincent</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de FRESNAY</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de FRESNAY</span>
 <span style='mso-no-proof:yes'>Virginie Andr&eacute.e Honorine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -20312,7 +20312,7 @@ yes'>&agrave. Cour&ccedil.ay 37085</span> <span style='mso-no-proof:yes'>papeti&
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CAMON</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de VIAUD</span> <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -20366,7 +20366,7 @@ yes'>&agrave. Esvres/Indre 37104</span> <span style='mso-no-proof:yes'>Couturi&e
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de SAULQUIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CHARDON</span> <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -20421,7 +20421,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GENIE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois Nicolas</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BRUSSIN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BRUSSIN</span>
 <span style='mso-no-proof:yes'>Marie Sophie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -20529,7 +20529,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de DURAND</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de DURAND</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -20555,7 +20555,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Pierre</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Montign&eacute. 16228</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -20574,8 +20574,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>BERGERIN</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Elisabeth</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -20629,7 +20629,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Adela&iuml.de</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 05/03/1804</span> <span style='mso-no-proof:
-yes'>&agrave. Chaveignes 37065</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Chaveignes 37065</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -20690,7 +20690,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de CAMU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de CAMU</span>
 <span style='mso-no-proof:yes'>Marguerite</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -20791,14 +20791,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marguerite</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 15/03/1877</span> <span style='mso-no-proof:
-yes'>&agrave. Mouthiers/Bome 16236</span> <span style='mso-no-proof:yes'>couturi&egrave.re</span>
+yes'>&agrave. Mouthiers/Boëme 16236</span> <span style='mso-no-proof:yes'>couturi&egrave.re</span>
 <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de VIROLLAUD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CHAGNAUD</span> <span style='mso-no-proof:yes'>Catherine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -20854,7 +20854,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DANIAUD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BERNARD</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BERNARD</span>
 <span style='mso-no-proof:yes'>Am&eacute.lie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -20900,13 +20900,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marguerite</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 12/04/1793</span> <span style='mso-no-proof:
-yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de RIFFAUD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BASLIER</span> <span style='mso-no-proof:yes'>Margueritte</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -20954,14 +20954,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Elisabeth Marie</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 07/01/1856</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de SEIGNEUR</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Julien Pierre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de PETIT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de PETIT</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -21043,7 +21043,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Prad&egrave.le</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>n&eacute. le23/11/1846</span>
-<span style='mso-no-proof:yes'>&agrave. Mouthiers/Bome 16236</span> <span
+<span style='mso-no-proof:yes'>&agrave. Mouthiers/Boëme 16236</span> <span
 style='mso-no-proof:yes'>tailleur de pierres</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -21069,7 +21069,7 @@ yes'>&agrave. Rill&eacute. 37198</span> <span style='mso-no-proof:yes'>couturi&e
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LOFFFICIO</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de LELU</span> <span style='mso-no-proof:yes'>Julie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -21125,7 +21125,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PENOT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Casimir Thomas</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de AUGER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de AUGER</span>
 <span style='mso-no-proof:yes'>Marie Fran&ccedil.oise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -21314,7 +21314,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Jean</span><span style='font-size:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif"'>
-<span style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
+<span style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
 16015</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -21333,14 +21333,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>PARISY</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Catherine</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PARISY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Laurent</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Laurent</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de MARAIL</span> <span style='mso-no-proof:yes'>Suzanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -21394,7 +21394,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BORDIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BRUNET</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BRUNET</span>
 <span style='mso-no-proof:yes'>Rose</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -21420,7 +21420,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Pierre</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Alloue 16007</span> <o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
@@ -21432,15 +21432,15 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>DESME</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Andr&eacute.e</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DESME</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Alexandre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BOITEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BOITEAU</span>
 <span style='mso-no-proof:yes'>Andr&eacute.e</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -21493,7 +21493,7 @@ yes'>&agrave. Parnac 36150</span> <span style='mso-no-proof:yes'>Gagiste</span> 
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MORET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DHYVERT</span> <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -21592,7 +21592,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marguerite</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 16/01/1771</span> <span style='mso-no-proof:
-yes'>&agrave. Richelieu 37196</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Richelieu 37196</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -21607,7 +21607,7 @@ line-height:115%;font-family:"Times New Roman","serif"'><o:p>&nbsp;</o:p></span>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'>X <span
-style='mso-no-proof:yes'>Villedmer</span> <span style='mso-no-proof:yes'>37276</span>
+style='mso-no-proof:yes'>Villedômer</span> <span style='mso-no-proof:yes'>37276</span>
 le <span style='mso-no-proof:yes'>12/02/1863</span> <b style='mso-bidi-font-weight:
 normal'><span style='mso-no-proof:yes'>PETIT</span> </b><span style='mso-no-proof:
 yes'>Ren&eacute.</span> et <b style='mso-bidi-font-weight:normal'><span
@@ -21646,13 +21646,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Augustine Virginie</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 28/08/1840</span> <span style='mso-no-proof:
-yes'>&agrave. Ch&acirc.teau-Renault 37063</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Ch&acirc.teau-Renault 37063</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DESVAUX</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GIRAULT</span> <span style='mso-no-proof:yes'>Elise
 Virginie</span><o:p></o:p></span></p>
 
@@ -21701,14 +21701,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Louise</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 28/10/1882</span> <span style='mso-no-proof:
-yes'>&agrave. Paris 75056</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Paris 75056</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LIVET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Casimir Admire</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BROSSARD</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BROSSARD</span>
 <span style='mso-no-proof:yes'>Augustine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -21734,7 +21734,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Pierre</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Ste-S&eacute.v&egrave.re 16349</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -21753,8 +21753,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>DESCHAMPS</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Anne</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -21815,7 +21815,7 @@ yes'>&agrave. Pleumartin 86193</span> <span style='mso-no-proof:yes'>Cuisini&egr
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LUNET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de THEVENET</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -21923,7 +21923,7 @@ yes'>&agrave. Segonzac 16366</span> <span style='mso-no-proof:yes'>Gagiste</span
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LABBE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DUBOIS</span> <span style='mso-no-proof:yes'>Catherine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -22087,7 +22087,7 @@ yes'>&agrave. Azay-le-Rideau 37014</span> <span style='mso-no-proof:yes'>Couturi
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de AUDIGER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GOUMARD</span> <span style='mso-no-proof:yes'>Silvine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -22135,7 +22135,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Florentine
 Adeline</span> <span style='mso-no-proof:yes'>n&eacute.e le 16/02/1850</span> <span
 style='mso-no-proof:yes'>&agrave. St-Angeau 16300</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -22191,14 +22191,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marceline Augustine
 Berthe</span> <span style='mso-no-proof:yes'>n&eacute.e le 12/05/1846</span> <span
 style='mso-no-proof:yes'>&agrave. Tours 37261</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BOIREAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Augustin</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de MASSON</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de MASSON</span>
 <span style='mso-no-proof:yes'>Marceline</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -22225,8 +22225,8 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Fran&ccedil.ois</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fils
@@ -22244,14 +22244,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>BAGUELIN</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jeanne</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Couture 16114</span>
-<span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Couture 16114</span>
+<span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BAGUELIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GUILLON</span> <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -22299,13 +22299,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Madelaine Sophie</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 03/06/1793</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DELAUNAY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GILLE</span> <span style='mso-no-proof:yes'>Anne
 Catherine</span><o:p></o:p></span></p>
 
@@ -22354,13 +22354,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Rosalie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 16/08/1766</span> <span style='mso-no-proof:
-yes'>&agrave. Loches 37132</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Loches 37132</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GUERINEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de MUREAU</span> <span style='mso-no-proof:yes'>Duandr&eacute.e?</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -22472,7 +22472,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de RAPEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de RAPEAU</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -22583,7 +22583,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de POIL</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois Em&eacute.d&eacute.e</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BRISSON</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BRISSON</span>
 <span style='mso-no-proof:yes'>Fran&ccedil.oise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -22629,7 +22629,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marguerite</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 21/06/1858</span> <span style='mso-no-proof:
-yes'>&agrave. Orival 16252</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Orival 16252</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -22683,14 +22683,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Cl&eacute.mence Ang&eacute.lique</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 25/12/1824</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MONDON</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Paul Martin</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de CARRE</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de CARRE</span>
 <span style='mso-no-proof:yes'>Fran&ccedil.oise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -22745,7 +22745,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LEVESQUE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Andr&eacute. Constant</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BRETONNEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BRETONNEAU</span>
 <span style='mso-no-proof:yes'>Jos&eacute.phine Madelaine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -22800,7 +22800,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DEMOSAY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Th&eacute.ophile</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de RIDEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de RIDEAU</span>
 <span style='mso-no-proof:yes'>Marcelline</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -22856,7 +22856,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ANGUILLE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Louis Julien</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de PLANCHER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de PLANCHER</span>
 <span style='mso-no-proof:yes'>Aim&eacute.e Elisabeth</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -22912,7 +22912,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ANGUILLE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Louis Julien</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de PLANCHER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de PLANCHER</span>
 <span style='mso-no-proof:yes'>Aim&eacute.e Elisabeth</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -22966,7 +22966,7 @@ yes'>&agrave. Ruan/Egvonne 41196</span> <span style='mso-no-proof:yes'>Couturi&e
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MATRAS</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Denis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Denis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de COURSIMAULT</span> <span style='mso-no-proof:
 yes'>Fran&ccedil.oise</span><o:p></o:p></span></p>
 
@@ -23020,7 +23020,7 @@ yes'>&agrave. Ste-Maure-de-Touraine 37226</span> <span style='mso-no-proof:yes'>
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PLOQUIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Vincent</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Vincent</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GOURAULT</span> <span style='mso-no-proof:yes'>Ad&eacute.la&iuml.de</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -23076,7 +23076,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CORMERY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de GUIGNIEN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de GUIGNIEN</span>
 <span style='mso-no-proof:yes'>Fran&ccedil.oise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -23124,13 +23124,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Cl&eacute.mence</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 21/01/1847</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de RAFFET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de MONDUN</span> <span style='mso-no-proof:yes'>Cl&eacute.mence
 Ang&eacute.lique</span><o:p></o:p></span></p>
 
@@ -23183,7 +23183,7 @@ yes'>&agrave. St-Mary 16336</span> <span style='mso-no-proof:yes'>Institutrice</
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FETY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de FERRAND</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -23195,7 +23195,7 @@ style='mso-no-proof:yes'>Tours</span> <span style='mso-no-proof:yes'>37261</span
 le <span style='mso-no-proof:yes'>12/06/1869</span> <b style='mso-bidi-font-weight:
 normal'><span style='mso-no-proof:yes'>RIDEAU</span> </b><span
 style='mso-no-proof:yes'>Alcide</span> et <b style='mso-bidi-font-weight:normal'><span
-style='mso-no-proof:yes'>ALUCE</span> </b><span style='mso-no-proof:yes'>Zo</span><o:p></o:p></span></p>
+style='mso-no-proof:yes'>ALUCE</span> </b><span style='mso-no-proof:yes'>Zoë</span><o:p></o:p></span></p>
 
 <p class=MsoListParagraph style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
@@ -23228,7 +23228,7 @@ style='mso-list:Ignore'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>ALUCE</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-no-proof:yes'>Zo</span> <span
+"Times New Roman","serif"'> <span style='mso-no-proof:yes'>Zoë</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 05/07/1850</span> <span style='mso-no-proof:
 yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Couturi&egrave.re</span> <o:p></o:p></span></p>
 
@@ -23284,14 +23284,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Julie Elisabeth</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 20/04/1841</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de LETOURMY</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de LETOURMY</span>
 <span style='mso-no-proof:yes'>Marie El&eacute.onore</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -23345,7 +23345,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Couturi&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHARLES</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>NN...</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>NN...</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DORE</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -23394,13 +23394,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Eug&eacute.nie Marie
 Jos&eacute.phine</span> <span style='mso-no-proof:yes'>n&eacute.e le 06/08/1861</span> <span
 style='mso-no-proof:yes'>&agrave. Richelieu 37196</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de THOMAS</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Eug&egrave.ne</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Eug&egrave.ne</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de PIMBERT</span> <span style='mso-no-proof:yes'>Jos&eacute.phine
 Octavie</span><o:p></o:p></span></p>
 
@@ -23455,7 +23455,7 @@ yes'>&agrave. Leugny 86130</span> <span style='mso-no-proof:yes'>ling&egrave.re<
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de POUPEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de ROUX</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -23483,7 +23483,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Henry</span><span style='font-size:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif"'>
 <span style='mso-no-proof:yes'>n&eacute. le30/11/1861</span> <span style='mso-no-proof:
-yes'>&agrave. Pranzac 16269</span> <span style='mso-no-proof:yes'>Pr&eacute.vt d'escrime</span><o:p></o:p></span></p>
+yes'>&agrave. Pranzac 16269</span> <span style='mso-no-proof:yes'>Pr&eacute.vôt d'escrime</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fils
@@ -23510,7 +23510,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ROTTIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>F&eacute.lix Isidore</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de AUCANTE</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de AUCANTE</span>
 <span style='mso-no-proof:yes'>Emilie Flumince</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -23558,13 +23558,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Madelaine Jeanne</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 03/05/1796</span> <span style='mso-no-proof:
-yes'>&agrave. Neuvy-le-Roi 37170</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Neuvy-le-Roi 37170</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MARION</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de MAHOUDEAU</span> <span style='mso-no-proof:yes'>Madelaine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -23619,7 +23619,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BONNIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de CHEVALLIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de CHEVALLIER</span>
 <span style='mso-no-proof:yes'>Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -23672,7 +23672,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Tapissi&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MATHIEU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BRAILLARD</span> <span style='mso-no-proof:yes'>Marie
 Jeanne L&eacute.ger</span><o:p></o:p></span></p>
 
@@ -23727,7 +23727,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Ling&egrave.re</
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PAGEOT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BENARD</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -23775,14 +23775,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Louise</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 19/06/1848</span> <span style='mso-no-proof:
-yes'>&agrave. Orl&eacute.ans 45234</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Orl&eacute.ans 45234</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MONCEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Louis</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de MORIN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de MORIN</span>
 <span style='mso-no-proof:yes'>Marie Euphrosine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -23834,7 +23834,7 @@ yes'>&agrave. Mettray 37152</span> <span style='mso-no-proof:yes'>Epici&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MINIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de LEMAIN</span> <span style='mso-no-proof:yes'>Catherine
 Marie</span><o:p></o:p></span></p>
 
@@ -23944,7 +23944,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LURET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jacques Justin</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de PLUMERAULT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de PLUMERAULT</span>
 <span style='mso-no-proof:yes'>Jos&eacute.phine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -23997,7 +23997,7 @@ yes'>&agrave. Ath&eacute.e/Cher 37008</span> <span style='mso-no-proof:yes'>gagi
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de VIOLEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jacques</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de MOREAU</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -24216,7 +24216,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BRUNEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de PROUST</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de PROUST</span>
 <span style='mso-no-proof:yes'>Marie Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -24427,14 +24427,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marguerite</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 12/09/1845</span> <span style='mso-no-proof:
-yes'>&agrave. Monts 37159</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Monts 37159</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MARIOU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean M&eacute.dard</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de SIMON</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de SIMON</span>
 <span style='mso-no-proof:yes'>Marguerite</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -24482,14 +24482,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Cl&eacute.mence</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 07/07/1857</span> <span style='mso-no-proof:
-yes'>&agrave. Poitiers 86194</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Poitiers 86194</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de ROBIN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de ROBIN</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -24536,7 +24536,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Elisabeth</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 11/10/1836</span> <span style='mso-no-proof:
-yes'>&agrave. Mauz&eacute./le-Mignon 79170</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Mauz&eacute./le-Mignon 79170</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -24591,7 +24591,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jeanne Louise</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 24/03/1760</span> <span style='mso-no-proof:
-yes'>&agrave. Talensac 35331</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Talensac 35331</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -24650,7 +24650,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Compositrice</sp
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de FENNETEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DAVID</span> <span style='mso-no-proof:yes'>Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -24703,7 +24703,7 @@ yes'>&agrave. Ligueil 37130</span> <span style='mso-no-proof:yes'>Modiste</span>
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GUITARD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Paul</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Paul</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GILLET</span> <span style='mso-no-proof:yes'>Victorine
 Chantale</span><o:p></o:p></span></p>
 
@@ -24759,7 +24759,7 @@ yes'>&agrave. Azay-le-Rideau 37014</span> <span style='mso-no-proof:yes'>Couturi
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de LIENARD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BRIZARD</span> <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -24813,7 +24813,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de RABIT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de RABIT</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -24894,7 +24894,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Matthieu</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Ruelle/Touvre 16291</span> <span style='mso-no-proof:
 yes'>caporal</span><o:p></o:p></span></p>
 
@@ -24915,7 +24915,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le //1773</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -24970,13 +24970,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Estelle</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 27/04/1853</span> <span style='mso-no-proof:
-yes'>&agrave. Brie-s/s-Chalais 16063</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Brie-s/s-Chalais 16063</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PROUZAT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de GEAY</span> <span style='mso-no-proof:yes'>Adeline</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -25024,13 +25024,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Fran&ccedil.ois D&eacute.sir&eacute.e</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 07/10/1795</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BLIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Fidel</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Fidel</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de ROCHARD</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -25136,7 +25136,7 @@ yes'>&agrave. Rouillac 16286</span> <span style='mso-no-proof:yes'>M&eacute.cani
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DEBENAY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de COSTE</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -25191,7 +25191,7 @@ yes'>&agrave. Le Petit-Pressigny 37184</span> <span style='mso-no-proof:yes'>Lin
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BRAULT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Silvain</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Silvain</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de SIBILEAU</span> <span style='mso-no-proof:yes'>Rose</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -25348,14 +25348,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Barbara</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 24/03/1827</span> <span style='mso-no-proof:
-yes'>&agrave. Cuba 99407</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Cuba 99407</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PAYSANT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois Brutus</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de OZENNE</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de OZENNE</span>
 <span style='mso-no-proof:yes'>Pauline Jos&eacute.phine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -25403,13 +25403,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie D&eacute.sir&eacute.e</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 09/12/1816</span> <span style='mso-no-proof:
-yes'>&agrave. Montbazon 37154</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Montbazon 37154</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MOREAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DESNEUX</span> <span style='mso-no-proof:yes'>Marie
 Anne</span><o:p></o:p></span></p>
 
@@ -25465,7 +25465,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de HENRI</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>F&eacute.lix Henri</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BRUN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BRUN</span>
 <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -25519,7 +25519,7 @@ yes'>&agrave. Plou 18181</span> <span style='mso-no-proof:yes'>couturi&egrave.re
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHAMPFRAULT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Ren&eacute.</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Ren&eacute.</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de PERRIOT</span> <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -25545,7 +25545,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Jean</span><span style='font-size:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif"'>
-<span style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Allou&eacute.-en-Poitou
+<span style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Allou&eacute.-en-Poitou
 16490</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -25564,8 +25564,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>GARNIER</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Jeanne</span> <span
-style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -25675,7 +25675,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Sylvine Fran&ccedil.oise
 Ang&egrave.le</span> <span style='mso-no-proof:yes'>n&eacute.e le 24/05/1866</span> <span
 style='mso-no-proof:yes'>&agrave. Reugny 37194</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -25794,7 +25794,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BARBE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Ange Marie</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de IDRIS</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de IDRIS</span>
 <span style='mso-no-proof:yes'>Reine Fran&ccedil.oise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -25842,13 +25842,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Clotilde</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 03/11/1845</span> <span style='mso-no-proof:
-yes'>&agrave. St-Paterne-Racan 37231</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. St-Paterne-Racan 37231</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de ROBLIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>L&eacute.on</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>L&eacute.on</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de JOUVEAU</span> <span style='mso-no-proof:yes'>D&eacute.sir&eacute.e</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -25902,7 +25902,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CITERNE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Barth&eacute.lemy</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de LENOIR</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de LENOIR</span>
 <span style='mso-no-proof:yes'>Elisabeth</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -25929,8 +25929,8 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Fran&ccedil.ois</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
@@ -25941,14 +25941,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>CHOLLET</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marguerite</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
-16015</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
+16015</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHOLLET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DUMAINE</span> <span style='mso-no-proof:yes'>Anne
 Catherine</span><o:p></o:p></span></p>
 
@@ -25976,7 +25976,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Fran&ccedil.ois</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Tours (St-Venant) 37261R</span> <o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
@@ -25988,8 +25988,8 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>CHOLLET</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marguerite</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
-16015</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Angoul&ecirc.me
+16015</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -26044,14 +26044,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Louise</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 06/09/1862</span> <span style='mso-no-proof:
-yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Angoul&ecirc.me 16015</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de JACQUES</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de JACQUES</span>
 <span style='mso-no-proof:yes'>Suzanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -26106,7 +26106,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>D&eacute.videuse
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de NEMETCH</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Victor</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Victor</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DANSAULT</span> <span style='mso-no-proof:yes'>Jeanne
 Cl&eacute.mence</span><o:p></o:p></span></p>
 
@@ -26161,7 +26161,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Ouvri&egrave.re 
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de GRANDIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de SOUMANNE</span> <span style='mso-no-proof:yes'>Fran&ccedil.oise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -26188,7 +26188,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Fran&ccedil.ois</span><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
-"Times New Roman","serif"'> <span style='mso-spacerun:yes'></span><span
+"Times New Roman","serif"'> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>&agrave. Ch&acirc.tellerault 86066</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -26207,14 +26207,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>SAUVET</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marguerite</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. St-Amand de
-Boixe 16000?</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. St-Amand de
+Boixe 16000?</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de SAUVET</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de BRUNELIERE</span> <span style='mso-no-proof:
 yes'>Marie</span><o:p></o:p></span></p>
 
@@ -26270,7 +26270,7 @@ Chaussures</span> <o:p></o:p></span></p>
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BELY</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Ren&eacute.</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Ren&eacute.</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de PAUBY</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -26323,7 +26323,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Couturi&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BOUTIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Etienne</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Etienne</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de FOURNIER</span> <span style='mso-no-proof:yes'>Rosalie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -26377,7 +26377,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Ling&egrave.re</
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de CHARLOT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de LAGORGETTE</span> <span style='mso-no-proof:
 yes'>Fran&ccedil.oise</span><o:p></o:p></span></p>
 
@@ -26432,7 +26432,7 @@ yes'>&agrave. Ruffec 16292</span> <span style='mso-no-proof:yes'>Sans</span> <o:
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de RAYMOND</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DIOT</span> <span style='mso-no-proof:yes'>Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -26480,7 +26480,7 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 19/04/1843</span> <span style='mso-no-proof:
-yes'>&agrave. Marsac 16210</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Marsac 16210</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
@@ -26513,7 +26513,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Jean</span><span style='font-size:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif"'>
-<span style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Dioc&eacute.se
+<span style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Dioc&eacute.se
 d'Angoul&ecirc.me 16000?</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -26532,14 +26532,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>BRECHOUERE</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Fran&ccedil.oise</span>
-<span style='mso-spacerun:yes'></span><span style='mso-spacerun:yes'></span><span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+<span style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BRECHOUERE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Joseph</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de LEFEVRE</span> <span style='mso-no-proof:yes'>Louise</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -26592,7 +26592,7 @@ yes'>&agrave. Jou&eacute.-les-Tours 37122</span> <span style='mso-no-proof:yes'>
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BROSSEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de PERRAULT</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -26645,7 +26645,7 @@ yes'>&agrave. Nantes 44109</span> <span style='mso-no-proof:yes'>Gagiste</span> 
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PESNEAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Jean</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de DENIAU</span> <span style='mso-no-proof:yes'>Isabelle</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -26698,7 +26698,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de DELAITRE</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Jean Pierre</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de HARDONNEAU</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de HARDONNEAU</span>
 <span style='mso-no-proof:yes'>Marie Victoire</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -26754,7 +26754,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de LAFORGUE</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de LAFORGUE</span>
 <span style='mso-no-proof:yes'>Jeanne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -26803,14 +26803,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Alphonsine
 Esther</span> <span style='mso-no-proof:yes'>n&eacute.e le 06/03/1855</span> <span
 style='mso-no-proof:yes'>&agrave. La Haye-Descartes 37115</span> <span
-style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PAPILLAULT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Alphonse</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de BESNIER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de BESNIER</span>
 <span style='mso-no-proof:yes'>Marie Julienne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -26858,14 +26858,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>L&eacute.onie Clarisse</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 07/04/1835</span> <span style='mso-no-proof:
-yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Tours 37261</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de QUENTIN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois Aignan</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de HUET</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de HUET</span>
 <span style='mso-no-proof:yes'>Anne Madeleine</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -26919,7 +26919,7 @@ yes'>&agrave. Tours 37261</span> <span style='mso-no-proof:yes'>Calotti&egrave.r
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PETIT</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Auguste</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Auguste</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de NICOLET</span> <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -26967,13 +26967,13 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marie Berthe</span> <span
 style='mso-no-proof:yes'>n&eacute.e le 03/07/1870</span> <span style='mso-no-proof:
-yes'>&agrave. Azay-le-Rideau 37014</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Azay-le-Rideau 37014</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de TAILLANDIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de PLUMEREAU</span> <span style='mso-no-proof:yes'>Elisabeth
 D&eacute.sir&eacute.e</span><o:p></o:p></span></p>
 
@@ -27021,14 +27021,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Marguerite Eliza</span>
 <span style='mso-no-proof:yes'>n&eacute.e le 13/04/1847</span> <span style='mso-no-proof:
-yes'>&agrave. Chinon 37072</span> <span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+yes'>&agrave. Chinon 37072</span> <span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de TALIBON</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Louis Th&eacute.odore</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de ROCHER</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de ROCHER</span>
 <span style='mso-no-proof:yes'>Marguerite Eliza</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -27082,7 +27082,7 @@ yes'>Couturi&egrave.re</span> <o:p></o:p></span></p>
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MARINIER</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Louis</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de JOURDAIN</span> <span style='mso-no-proof:yes'>Marthe</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -27135,7 +27135,7 @@ chambre</span> <o:p></o:p></span></p>
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de PAUL</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Antoine</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Antoine</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de ROUX</span> <span style='mso-no-proof:yes'>Antoinette</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -27161,7 +27161,7 @@ style='mso-bidi-font-weight:normal'><span style='font-size:9.0pt;mso-bidi-font-s
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>Andr&eacute.</span><span style='font-size:
 9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:"Times New Roman","serif"'>
-<span style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Tours
+<span style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Tours
 (St-Saturnin) 37261N</span> <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -27180,14 +27180,14 @@ style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif";mso-no-proof:yes'>RENAUD</span></b><span
 style='font-size:9.0pt;mso-bidi-font-size:10.0pt;line-height:115%;font-family:
 "Times New Roman","serif"'> <span style='mso-no-proof:yes'>Louise</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>&agrave. Cognac 16102</span>
-<span style='mso-spacerun:yes'></span><o:p></o:p></span></p>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>&agrave. Cognac 16102</span>
+<span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de RENAUD</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Pierre</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de FERRAND</span> <span style='mso-no-proof:yes'>Marie
 Anne</span><o:p></o:p></span></p>
 
@@ -27243,7 +27243,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de MARECHAU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>Fran&ccedil.ois</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de IMBERT</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de IMBERT</span>
 <span style='mso-no-proof:yes'>Marie</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -27298,7 +27298,7 @@ yes'>&agrave. Ste-Maure-de-Touraine 37226</span> <span style='mso-no-proof:yes'>
 line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de BASTIEN</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
-style='mso-no-proof:yes'>Auguste</span> <span style='mso-spacerun:yes'></span><span
+style='mso-no-proof:yes'>Auguste</span> <span style='mso-spacerun:yes'> </span><span
 style='mso-no-proof:yes'>et de CHESNEAU</span> <span style='mso-no-proof:yes'>Anne</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -27353,7 +27353,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de HENAIN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de HENAIN</span>
 <span style='mso-no-proof:yes'>Estelle</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
@@ -27408,7 +27408,7 @@ line-height:115%;font-family:"Times New Roman","serif";mso-no-proof:yes'>Fille
 de INCONNU</span><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
 line-height:115%;font-family:"Times New Roman","serif"'> <span
 style='mso-no-proof:yes'>(Inconnu, indiqu&eacute. sur l'acte)</span> <span
-style='mso-spacerun:yes'></span><span style='mso-no-proof:yes'>et de HENAIN</span>
+style='mso-spacerun:yes'> </span><span style='mso-no-proof:yes'>et de HENAIN</span>
 <span style='mso-no-proof:yes'>Estelle</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:9.0pt;mso-bidi-font-size:10.0pt;
