@@ -2408,7 +2408,7 @@ $connexionBD->ferme();
       <td >Transaction</td>
       <td >COUPEAU Jacques</td>
       <td  align=right x:num>842</td>
-      <td >Fr. LIZEE, Simon COUPEAU,  Julienne COUPEAU</td>
+      <td >Fr. LIZEE, Simon COUPEAU, Julienne COUPEAU</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1708</td>
@@ -3147,7 +3147,7 @@ $connexionBD->ferme();
       <td >Echange</td>
       <td >DELAURIERE Jacques</td>
       <td  align=right x:num>778</td>
-      <td >Catherine  MARTIN - Jean ROUSSELOT</td>
+      <td >Catherine MARTIN - Jean ROUSSELOT</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1723</td>
@@ -3180,10 +3180,10 @@ $connexionBD->ferme();
       <td >Juilhard</td>
       <td >2E861-10</td>
       <td >Angoul&ecircme</td>
-      <td >Rôle</td>
+      <td >R&ocirc;le</td>
       <td >DENEUVILLE Fran&ccedil;oise</td>
       <td  align=right x:num>1138</td>
-      <td >Rôle de Puymoyen</td>
+      <td >R&ocirc;le de Puymoyen</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1653</td>
@@ -3192,10 +3192,10 @@ $connexionBD->ferme();
       <td >Juilhard</td>
       <td >2E861-50</td>
       <td >Angoul&ecircme</td>
-      <td >Rôle</td>
+      <td >R&ocirc;le</td>
       <td >DENEUVILLE Fran&ccedil;oise</td>
       <td  align=right x:num>1138</td>
-      <td >Rôle de Puymoyen</td>
+      <td >R&ocirc;le de Puymoyen</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1679</td>
@@ -4490,10 +4490,10 @@ $connexionBD->ferme();
       <td >Huguet Jean</td>
       <td >2E793-300</td>
       <td >Angoul&ecircme</td>
-      <td >Rôle</td>
+      <td >R&ocirc;le</td>
       <td >LAMOUR M&eacutery</td>
       <td  align=right x:num>1203</td>
-      <td class=xl4015333>Rôle de Sers</td>
+      <td class=xl4015333>R&ocirc;le de Sers</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1662</td>
@@ -6460,10 +6460,10 @@ $connexionBD->ferme();
       <td >Juilhard</td>
       <td >2E862-40</td>
       <td >Angoul&ecircme</td>
-      <td >Rôle</td>
+      <td >R&ocirc;le</td>
       <td >SIMARD Antoine</td>
       <td  align=right x:num>1136</td>
-      <td >Rôle de Puymoyen</td>
+      <td >R&ocirc;le de Puymoyen</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1664</td>
@@ -6472,10 +6472,10 @@ $connexionBD->ferme();
       <td >Gibaud</td>
       <td >2E664-40</td>
       <td >Angoul&ecircme</td>
-      <td >Rôle</td>
+      <td >R&ocirc;le</td>
       <td >SIMARD Antoine</td>
       <td  align=right x:num>911</td>
-      <td >Rôle de la paroisse de Puymoyen</td>
+      <td >R&ocirc;le de la paroisse de Puymoyen</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1685</td>
@@ -7128,10 +7128,10 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5926-90</td>
       <td >Vaux-Rouillac</td>
-      <td >Rôle</td>
+      <td >R&ocirc;le</td>
       <td >&nbsp;</td>
       <td >&nbsp;</td>
-      <td >Rôle d'Echallat</td>
+      <td >R&ocirc;le d'Echallat</td>
     </tr>
   </table>
 </div>
@@ -9474,7 +9474,7 @@ $connexionBD->ferme();
       <td class=xl3620222>Huguet Jean</td>
       <td class=xl3620222>2E790-30</td>
       <td class=xl3620222>Angoul&ecircme</td>
-      <td class=xl3620222>Rôle</td>
+      <td class=xl3620222>R&ocirc;le</td>
       <td class=xl3620222>Charras</td>
       <td class=xl3620222 align=right x:num>1200</td>
       <td class=xl3620222>&nbsp;</td>
@@ -11494,7 +11494,7 @@ $connexionBD->ferme();
       <td >Chifflet</td>
       <td >2E4529-10</td>
       <td >La Rochef.</td>
-      <td >Rôle</td>
+      <td >R&ocirc;le</td>
       <td >St Projet St Constant</td>
       <td  align=right x:num>1251</td>
       <td >Guillaume et Jean DARS</td>
@@ -11697,7 +11697,7 @@ $connexionBD->ferme();
       <td >Daniaud</td>
       <td >2E5926-90</td>
       <td >Vaux-Rouillac</td>
-      <td >Rôle</td>
+      <td >R&ocirc;le</td>
       <td >d'Echallat: Guil. PELEGAY, Berth. IZAMBARD</td>
       <td  align=right x:num>1168</td>
       <td >et Jean DARS conseiller du roi</td>
@@ -22659,7 +22659,7 @@ $connexionBD->ferme();
       <td >2E246-20</td>
       <td >Angoul&ecircme</td>
       <td >Rente</td>
-      <td >J&eacuterôme JOUANNET</td>
+      <td >J&eacuter&ocirc;me JOUANNET</td>
       <td  align=right x:num>770</td>
       <td >&nbsp;</td>
     </tr>
