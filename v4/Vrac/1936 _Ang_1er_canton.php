@@ -5,7 +5,7 @@ require_once('../Commun/constantes.php');
 require_once('../Commun/ConnexionBD.php');
 
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=cp1252" />');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8 />');
 print('<meta http-equiv="content-language" content="fr" /> ');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
@@ -27,7 +27,7 @@ $connexionBD->ferme();
 	<colgroup width="472"></colgroup>
 	<colgroup width="85"></colgroup>
 	<tr>
-		<td height="50" align="left"><strong>Recensement d'Angoulême 1939 </strong></td>
+		<td height="50" align="left"><strong>Recensement d'Angoul&ecirc;me 1939 </strong></td>
 		<td align="left"><i><u><br></u></i></td>
 	</tr>
 	<tr>
