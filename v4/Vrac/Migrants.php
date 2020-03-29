@@ -13,6 +13,21 @@ print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print('<title>Actes en vrac Cercle Genealogique de Touraine: Migrants Indre-et-Loire</title>');
+<?php
+require_once('../Commun/Identification.php');
+require_once('../Commun/commun.php');
+require_once('../Commun/constantes.php');
+require_once('../Commun/ConnexionBD.php');
+
+print("<head>");
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />');
+print('<meta http-equiv="content-language" content="fr" /> ');
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
+print('<title>Actes en vrac AGC: Philippe Nexon</title>');
 print("</head>");
 
 print("<body>");
@@ -22,6 +37,7 @@ print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("../Commun/menu.php");
 $connexionBD->ferme();
+
 ?>
 
 <div class=Section1>
