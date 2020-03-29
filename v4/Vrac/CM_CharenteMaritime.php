@@ -40,7 +40,7 @@ marier en Charente Inf&eacute.rieure.</span></u></i></b><span style='font-size:1
  style='text-decoration:none'>&nbsp;</span></o:p></span></u></p>
 
 <p class=MsoNormal><u><span style='font-size:10.0pt'>Contrats de mariages
-relev&eacute.s par les b&eacute.n&eacute.voles de Charente Maritime dont Joëlle DESHOUX,
+relev&eacute.s par les b&eacute.n&eacute.voles de Charente Maritime dont Jo&euml;lle DESHOUX,
 Viviane Bachelier et Jean Pierre CHAMBERY<o:p></o:p></span></u></p>
 
 <p class=MsoNormal><u><span style='font-size:10.0pt'>Tri&eacute.s et saisis par Ren&eacute.
@@ -59,12 +59,12 @@ Etienne. Etude &agrave. St Jean de Liversay 17.<o:p></o:p></span></b></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l3 level1 lfo13;tab-stops:list 36.0pt'><span
-     style='font-size:10.0pt'>3 E 17/14. CM 14/11/1706 Nuaill&eacute. d’Aunis 17. X
+     style='font-size:10.0pt'>3 E 17/14. CM 14/11/1706 Nuaill&eacute. d&acute;Aunis 17. X
      10/12/1706 Nuaill&eacute. 17.<o:p></o:p></span></li>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERNARD Pierre de Bertrand et
-+ DAGNAR Anne<span style='color:red'>.Ý village de Daignes / Exideuil 16.<o:p></o:p></span></span></p>
++ DAGNAR Anne<span style='color:red'>. village de Daignes / Exideuil 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SOLLAE Elisabeth de Mathurin
 et + PETIT Marie. dt Suir&eacute. = St Jean de Liversay 17.<o:p></o:p></span></p>
@@ -76,20 +76,20 @@ et + PETIT Marie. dt Suir&eacute. = St Jean de Liversay 17.<o:p></o:p></span></p
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CARTRON Pierre de + Denis et
-RONDEAU Jeanne<b>. Ý </b><span style='color:red'>St Vincent de Puymoyen 16</span>.
-dt St Sauveur d’Aunis 17.<o:p></o:p></span></p>
+RONDEAU Jeanne<b>.  </b><span style='color:red'>St Vincent de Puymoyen 16</span>.
+dt St Sauveur d&acute;Aunis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PETIT Anne ( veuve RECHUS
 Jean ) . dt St Sauveur 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l8 level1 lfo3;tab-stops:list 36.0pt'><span
-     style='font-size:10.0pt'>3 E 17/12. CM 29/05/1756 St Sauveur d’Aunis 17. X
+     style='font-size:10.0pt'>3 E 17/12. CM 29/05/1756 St Sauveur d&acute;Aunis 17. X
      14/06/1756 St Sauveur 17.<o:p></o:p></span></li>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RIVIERE Jean dit VILLARD de Michel
-et BROUSSE Louise.Ý <span style='color:red'>St Claud 16.</span><o:p></o:p></span></p>
+et BROUSSE Louise. <span style='color:red'>St Claud 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SIVADIER Marie Jeanne de
 Andr&eacute. et MERCIER Jeanne. dt St Sauveur 17.<o:p></o:p></span></p>
@@ -103,7 +103,7 @@ Etude &agrave. Benon 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VEAUTOUR Laurent ( veuf
-RIBEYRES Isabeau ) . Ý <span style='color:red'>Roussine 16</span>. dt Benon 17.<o:p></o:p></span></p>
+RIBEYRES Isabeau ) .  <span style='color:red'>Roussine 16</span>. dt Benon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BABIN Elisabeth ( veuve PETIT
 Jean ) dt Benon 17.<o:p></o:p></span></p>
@@ -114,11 +114,11 @@ Etude &agrave. Benon 17.<o:p></o:p></span></b></p>
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l8 level1 lfo3;tab-stops:list 36.0pt'><span
      style='font-size:10.0pt'>3 E 17/63. CM 28/03/1790. X 03/03/1790 le Gu&eacute.
-     d’Aller&eacute. 17.<o:p></o:p></span></li>
+     d&acute;Aller&eacute. 17.<o:p></o:p></span></li>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAILLETEAU Jean de + Fran&ccedil.ois
-et + POIRIER Marie. Ý <span style='color:red'>Villejoubert 16</span>. dt Virson
+et + POIRIER Marie.  <span style='color:red'>Villejoubert 16</span>. dt Virson
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SEJA Marie Catherine ( veuve
@@ -134,7 +134,7 @@ THIBAUD Jean et JOUBERT Pierre ) de + Pierre et VINCONNEAU Marie.<o:p></o:p></sp
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUQUINET Jean de Jean et
-DEBORDE Marie. <span style='color:red'>Ý Mansle 16.</span> dt Ferri&egrave.res 17.<o:p></o:p></span></p>
+DEBORDE Marie. <span style='color:red'> Mansle 16.</span> dt Ferri&egrave.res 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PINET Marie Magdeleine de +
 Antoine et + MASSON Anne. Vouh&eacute. 17.<o:p></o:p></span></p>
@@ -149,7 +149,7 @@ Etude &agrave. Cour&ccedil.on 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BIROT Pascal de Joseph et
-MATHIEU Marie.Ý <span style='color:red'>Gourville 16.<o:p></o:p></span></span></p>
+MATHIEU Marie. <span style='color:red'>Gourville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TEXIER Elisabeth de + Nicolas
 et SERIS Magdeleine. Cour&ccedil.on 17.<o:p></o:p></span></p>
@@ -163,23 +163,23 @@ Etude &agrave. Cour&ccedil.on 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUTERTRE Fran&ccedil.ois de Fran&ccedil.ois
-et + COSTE Marie. Ý <span style='color:red'>St Pierre Rouillac 16</span>.dt
+et + COSTE Marie.  <span style='color:red'>St Pierre Rouillac 16</span>.dt
 Mortagne la Vieille 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DELMOND Catherine Elisabeth
-de Pierre et BOURDEAU Marie. Ý Thair&eacute. d’Aunis 17. dt Cour&ccedil.on 17<o:p></o:p></span></p>
+de Pierre et BOURDEAU Marie.  Thair&eacute. d&acute;Aunis 17. dt Cour&ccedil.on 17<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l8 level1 lfo3;tab-stops:list 36.0pt'><span
      style='font-size:10.0pt'>3 E 17/145. Promesse 05/06/1791. X 26/01/1792 Le
-     Gu&eacute. d’Aller&eacute. 17.<o:p></o:p></span></li>
+     Gu&eacute. d&acute;Aller&eacute. 17.<o:p></o:p></span></li>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAZEROLLE Jean de Pierre et
-RIVET Marie. <span style='color:red'>Ý Manot 16</span>. dt Le Gu&eacute. d’Aller&eacute. 17.<o:p></o:p></span></p>
+RIVET Marie. <span style='color:red'> Manot 16</span>. dt Le Gu&eacute. d&acute;Aller&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LUNEAU Marie Anne de +
-Jacques et PLANSON Jeanne. Ý et dt Le Gu&eacute. d’Aller&eacute. 17.<o:p></o:p></span></p>
+Jacques et PLANSON Jeanne.  et dt Le Gu&eacute. d&acute;Aller&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire GALLARD Charles.
 Etude &agrave. Aulnay 17.<o:p></o:p></span></b></p>
@@ -190,7 +190,7 @@ Etude &agrave. Aulnay 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BAUDIN Jacques de + Jacques
-et + BOURGUE Marie.Ý <span style='color:red'>Longr&eacute. 16.<o:p></o:p></span></span></p>
+et + BOURGUE Marie. <span style='color:red'>Longr&eacute. 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHOUTEAU Marguerite de Daniel
 et MARTIN Marie. Cherbonni&eacute.res 17.<o:p></o:p></span></p>
@@ -201,7 +201,7 @@ et MARTIN Marie. Cherbonni&eacute.res 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNAUD Fran&ccedil.ois de Henry
-Auguste et MERLAUT Jeanne.Ý <span style='color:red'>Pleuville 16.<o:p></o:p></span></span></p>
+Auguste et MERLAUT Jeanne. <span style='color:red'>Pleuville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ARNAUD Catherine Cl&eacute.mence de
 Jean et + BONNAUD Catherine. Aulnay 17.<o:p></o:p></span></p>
@@ -212,7 +212,7 @@ Jean et + BONNAUD Catherine. Aulnay 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PERDRIAU Pierre de Jean et +
-SAUVAGE Catherine<span style='color:red'>. Ý Courbillac 16.<o:p></o:p></span></span></p>
+SAUVAGE Catherine<span style='color:red'>.  Courbillac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BAFFERON Marie de Antoine et
 PAPILLAUD Jeanne. Villemorin 17.<o:p></o:p></span></p>
@@ -226,7 +226,7 @@ Etude &agrave. Dompierre / Boutonne 17.</span></b><span style='font-size:10.0pt'
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FABUREAU Antoine de + Jean et
-BRUHERE Michelle.Ý <span style='color:red'>Isle d’Espagnac 16.<o:p></o:p></span></span></p>
+BRUHERE Michelle. <span style='color:red'>Isle d&acute;Espagnac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROBERT Marye de Jean et
 ROUSSEAU Catherine. Dompierre / Boutonne 17.<o:p></o:p></span></p>
@@ -238,7 +238,7 @@ ROUSSEAU Catherine. Dompierre / Boutonne 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FABUREAU Jacques ( veuf
-ROBERT Jeanne ) <span style='color:red'>.Ý Isle d’Espagnac 16.<o:p></o:p></span></span></p>
+ROBERT Jeanne ) <span style='color:red'>. Isle d&acute;Espagnac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MUREAU Louise ( veuve
 CHAUSSEPIED XX ) de Jacques et GERFEAU Marie. La Villedieux 17.<o:p></o:p></span></p>
@@ -250,7 +250,7 @@ CHAUSSEPIED XX ) de Jacques et GERFEAU Marie. La Villedieux 17.<o:p></o:p></span
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LOTTES Jacques ( veuf
-NOURIGEON Jeanne ) de + Louis et ROUSSEAU Fran&ccedil.oise. Ý <span style='color:red'>Lign&eacute.
+NOURIGEON Jeanne ) de + Louis et ROUSSEAU Fran&ccedil.oise.  <span style='color:red'>Lign&eacute.
 79.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VESDEAU Claude ( veuve PINEAU
@@ -266,7 +266,7 @@ Michelle ) de Fran&ccedil.ois et DEVEZIN Louise. St S&eacute.verin / Boutonne 17
 Fran&ccedil.ois et + RUTIN Catherine. Dompierre / Boutonne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LHERILEAU Louise de Fran&ccedil.ois
-et ROUHAULT Marguerite<span style='color:red'>.Ý Montignac 16.<o:p></o:p></span></span></p>
+et ROUHAULT Marguerite<span style='color:red'>. Montignac 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt left 390.75pt'><span
@@ -276,7 +276,7 @@ et ROUHAULT Marguerite<span style='color:red'>.Ý Montignac 16.<o:p></o:p></span>
 
 <p class=MsoNormal style='tab-stops:390.75pt'><span style='font-size:10.0pt'>RATIER
 Fran&ccedil.ois ( veuf RAFFIN Anne )<span style='mso-spacerun:yes'>  </span>de + Jean
-et FREMON Jeanne. Ý<span style='color:red'>Chassenon 16.<o:p></o:p></span></span></p>
+et FREMON Jeanne. <span style='color:red'>Chassenon 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='tab-stops:390.75pt'><span style='font-size:10.0pt'>ALLIS
 Marie de Jacques et BOUHIN Marie. St Georges de Longuepierre 17.<o:p></o:p></span></p>
@@ -288,7 +288,7 @@ Marie de Jacques et BOUHIN Marie. St Georges de Longuepierre 17.<o:p></o:p></spa
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RESMOND Jacques Louis de
-Pierre et CHAUVEAU Jeanne<span style='color:red'>.Ý Lign&eacute. 16.<o:p></o:p></span></span></p>
+Pierre et CHAUVEAU Jeanne<span style='color:red'>. Lign&eacute. 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUIN Louise ( veuve DHE
 Etienne ) de Michel et MURZEAU Antoinette. Blanzay / Boutonne 17.<o:p></o:p></span></p>
@@ -303,7 +303,7 @@ Etude &agrave. Dompierre / Boutonne 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAILLE Pierre de + Gabriel et
-+ MARTIN Marguerite. Ý <span style='color:red'>Rouillac 16.<o:p></o:p></span></span></p>
++ MARTIN Marguerite.  <span style='color:red'>Rouillac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VESDEAU Marie de Pierre et
 NAZET Jeanne. St Georges de Longuepierre 17.<o:p></o:p></span></p>
@@ -315,7 +315,7 @@ NAZET Jeanne. St Georges de Longuepierre 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal style='tab-stops:390.75pt'><span style='font-size:10.0pt'>MOULINIER
-L&eacute.onard de + Mathias et + LEMBERT Marguerite. Ý <span style='color:red'>Exideuil
+L&eacute.onard de + Mathias et + LEMBERT Marguerite.  <span style='color:red'>Exideuil
 16<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='tab-stops:390.75pt'><span style='font-size:10.0pt'>COYNAUD
@@ -329,7 +329,7 @@ Jeanne de Jean et MOUNIER Marie. Dompierre / Boutonne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='tab-stops:390.75pt'><span style='font-size:10.0pt'>RATIER
 Fran&ccedil.ois ( veuf RAFFIN Anne )<span style='mso-spacerun:yes'>  </span>de + Jean
-et FREMON Jeanne.Ý <span style='color:red'>Chassenon 16.<o:p></o:p></span></span></p>
+et FREMON Jeanne. <span style='color:red'>Chassenon 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='tab-stops:390.75pt'><span style='font-size:10.0pt'>ALLIS
 Marie de Jacques et BOUHIN Marie. St Georges de Longuepierre 17.<o:p></o:p></span></p>
@@ -344,7 +344,7 @@ Etude &agrave. Dompierre / Boutonne 17<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUBOUIN Morice de + Fran&ccedil.ois
-et + GROUX Catherine.Ý <span style='color:red'>Bonneville 16.<o:p></o:p></span></span></p>
+et + GROUX Catherine. <span style='color:red'>Bonneville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PARION Catherine de Jean et
 MAYE Jeanne. St Martial 17.<o:p></o:p></span></p>
@@ -356,7 +356,7 @@ MAYE Jeanne. St Martial 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHATAGNIER Fran&ccedil.ois de + Ren&eacute.
-et + CHEVALLEAU Catherine. Ý <span style='color:red'>Brettes 16.<o:p></o:p></span></span></p>
+et + CHEVALLEAU Catherine.  <span style='color:red'>Brettes 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DE VERTEUIL Marie Ang&eacute.lique
 de Fran&ccedil.ois et DE VERTEUIL Ang&eacute.lique. Coivert 17.<o:p></o:p></span></p>
@@ -368,7 +368,7 @@ de Fran&ccedil.ois et DE VERTEUIL Ang&eacute.lique. Coivert 17.<o:p></o:p></span
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAILDRAT Pierre de Etienne et
-BRUNETEAU Jeannette<span style='color:red'>.Ý St Bonnet 16.<o:p></o:p></span></span></p>
+BRUNETEAU Jeannette<span style='color:red'>. St Bonnet 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOISSEAU Jeanne de Antoine et
 + BAILLIF Charlotte. Villeneuve la Comtesse 17.<o:p></o:p></span></p>
@@ -380,7 +380,7 @@ BRUNETEAU Jeannette<span style='color:red'>.Ý St Bonnet 16.<o:p></o:p></span></s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MORICE Jean de + Jean et +
-JANEAU Ren&eacute.e. Ý <span style='color:red'>St Laurent des Combes 16.<o:p></o:p></span></span></p>
+JANEAU Ren&eacute.e.  <span style='color:red'>St Laurent des Combes 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOINE Marie de Pierre et
 PARIS Marie. St Martial 17.<o:p></o:p></span></p>
@@ -394,7 +394,7 @@ Alexandre. Etude &agrave. Coivert 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ITHYER Fran&ccedil.ois de Nicolas et
-+ LACLORIS Suzanne.Ý <span style='color:red'>Aigre 16.<o:p></o:p></span></span></p>
++ LACLORIS Suzanne. <span style='color:red'>Aigre 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAUVERGNAT Marie de Jacques
 et JOULAIN Louize. Dampierre / Boutonne 17.<o:p></o:p></span></p>
@@ -408,7 +408,7 @@ et JOULAIN Louize. Dampierre / Boutonne 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHARRUYAU Pierre ( veuf
-BONHOMME Marie ) <span style='color:red'>.Ý Verteuil / Charente 16.<o:p></o:p></span></span></p>
+BONHOMME Marie ) <span style='color:red'>. Verteuil / Charente 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNIOT Perrine ( veuve
 DUSSON Pierre ) . Le Tablier 85&nbsp;?<o:p></o:p></span></p>
@@ -424,7 +424,7 @@ Martin 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DELAAGE Pierre de + Jean et
-VARACHE Jeanne. Ý <span style='color:red'>Montignac 16.<o:p></o:p></span></span></p>
+VARACHE Jeanne.  <span style='color:red'>Montignac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSIGNOL Anne de
 Honoral<span style='mso-spacerun:yes'>  </span>et MOTHU Jeanne. Lozay 17.<o:p></o:p></span></p>
@@ -435,7 +435,7 @@ Honoral<span style='mso-spacerun:yes'>  </span>et MOTHU Jeanne. Lozay 17.<o:p></
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PAILLE Pierre de + Pierre et
-+ BOURGEOIS Catherine<span style='color:red'>.Ý St Bonnet 16.<o:p></o:p></span></span></p>
++ BOURGEOIS Catherine<span style='color:red'>. St Bonnet 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PERRIER Jeanne de Adam et +
 BONNAUD Catherine. Migr&eacute. 17.<o:p></o:p></span></p>
@@ -449,7 +449,7 @@ Etude &agrave. Courant 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BON Jean de + Pierre et +
-VALLANTIN Fran&ccedil.oise.Ý <span style='color:red'>Orgedeuil 16.<o:p></o:p></span></span></p>
+VALLANTIN Fran&ccedil.oise. <span style='color:red'>Orgedeuil 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JONCHERE Marie de Joseph et +
 GRAVOUIL Marie. Courant 17.<o:p></o:p></span></p>
@@ -460,7 +460,7 @@ GRAVOUIL Marie. Courant 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUYER Fran&ccedil.ois de + Fran&ccedil.ois
-et + JUDE Suzanne.Ý <span style='color:red'>St Amant 16.<o:p></o:p></span></span></p>
+et + JUDE Suzanne. <span style='color:red'>St Amant 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PUREAU Marie de Jacques et
 PARIS Jeanne. Courant 17.<o:p></o:p></span></p>
@@ -475,7 +475,7 @@ PARIS Jeanne. Courant 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NICOLLAS Jean de Heslie et
 +<span style='mso-spacerun:yes'>  </span>DESVARENNES Suzanne<span
-style='color:red'>.Ý St Claud 16.</span><o:p></o:p></span></p>
+style='color:red'>. St Claud 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MASSE Marguerite de Jean et
 BAILLIF Catherine. La Croix Comtesse 17.<o:p></o:p></span></p>
@@ -486,7 +486,7 @@ BAILLIF Catherine. La Croix Comtesse 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VERDON Jean de + Jean et
-BARREAU Jeanne<span style='color:red'>.Ý Segonzac 16.<o:p></o:p></span></span></p>
+BARREAU Jeanne<span style='color:red'>. Segonzac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PEREAUD Louise de Jean et
 COMPTE Jeanne. St Loup 17.<o:p></o:p></span></p>
@@ -500,7 +500,7 @@ Etude &agrave. La Croix Comtesse 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ANDRE Joseph Arnaud de +
-Gabriel et DUPUY Elizabeth. Ý<span style='color:red'>Fontenille 16 ou 79&nbsp;?<o:p></o:p></span></span></p>
+Gabriel et DUPUY Elizabeth. <span style='color:red'>Fontenille 16 ou 79&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DE HAUTEFOYE Th&eacute.r&egrave.se de S&eacute.bastien
 et + PROVOST Anne. Villeneuve la Comtesse 17.<o:p></o:p></span></p>
@@ -511,7 +511,7 @@ et + PROVOST Anne. Villeneuve la Comtesse 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SERVANT Mathias de + Louis et
-BERNARD Jeanne<span style='color:red'>.Ý St Bonnet 16&nbsp;?.<o:p></o:p></span></span></p>
+BERNARD Jeanne<span style='color:red'>. St Bonnet 16&nbsp;?.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COCHET Marie de Pierre et
 MICHEAU Elizabeth. Vergne 17.<o:p></o:p></span></p>
@@ -525,7 +525,7 @@ Etude &agrave. Villeneuve la Comtesse 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FOUCAULT Jean de + Anthoine
-et BOURSIER Marguerite. Ý <span style='color:red'>St Fraigne 16.<o:p></o:p></span></span></p>
+et BOURSIER Marguerite.  <span style='color:red'>St Fraigne 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MURZEAU Jeanne ( veuve
 LIADOUZE Simon ) de Phelippe et<span style='mso-spacerun:yes'> 
@@ -540,10 +540,10 @@ Michel. Etude &agrave. Aigrefeuille 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LELON L&eacute.onard de + Pierre et
-MOREAU L&eacute.onarde. Ý Haute Marche, Limouzin. dt St Christophe 17.<o:p></o:p></span></p>
+MOREAU L&eacute.onarde.  Haute Marche, Limouzin. dt St Christophe 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOREAU Jeanne ( veuve MOREAU
-Pierre ) de Abraham et MARTEAU Catherine. Ý <span style='color:red'>Treuil
+Pierre ) de Abraham et MARTEAU Catherine.  <span style='color:red'>Treuil
 Robin en Angoumois 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -556,7 +556,7 @@ Robin en Angoumois 16.<o:p></o:p></span></span></p>
 BRIZARD Suzanne ) dt St M&eacute.dard 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CISTY Marie de Jean et
-BISLEAU Marie. <span style='color:red'>Ý Barbezieux 16</span>. dt Aigrefeuille
+BISLEAU Marie. <span style='color:red'> Barbezieux 16</span>. dt Aigrefeuille
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire FAURIE Pierre,
@@ -569,7 +569,7 @@ grand p&egrave.re, p&egrave.re et fils. Etude &agrave. Aigrefeuille 17.<o:p></o:
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ALLARD Fran&ccedil.ois de Jean et
-COURRAUX Magdeleine. Ý <span style='color:red'>Maine de Boixe 16</span>. dt
+COURRAUX Magdeleine.  <span style='color:red'>Maine de Boixe 16</span>. dt
 Landray 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NORMANDIN Jeanne de + Jean et
@@ -582,7 +582,7 @@ GIRAUD Marye. Landray 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ANCELIN Fran&ccedil.ois de Jean et
-SESAC Jeanne. Ý <span style='color:red'>Torsac 16.<o:p></o:p></span></span></p>
+SESAC Jeanne.  <span style='color:red'>Torsac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAULTIER Jeanne de + Claude
 et + DAVID Marie Anne. dt Aigrefeuille 17.<o:p></o:p></span></p>
@@ -594,7 +594,7 @@ et + DAVID Marie Anne. dt Aigrefeuille 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BENESTEAU Pierre de Pierre et
-PETIT Marguerite. Ý <span style='color:red'>Moulidar 16</span>. dt Ardilli&eacute.res
+PETIT Marguerite.  <span style='color:red'>Moulidar 16</span>. dt Ardilli&eacute.res
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RABIET Marie Marguerite de +
@@ -607,7 +607,7 @@ Fran&ccedil.ois et + BAUDOUIN Marie. dt Landrais 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BUSSEROLLE Jean de Jean et +
-YRVOIX Magdeleine<span style='color:red'>.Ý Champniers 16.</span> dt
+YRVOIX Magdeleine<span style='color:red'>. Champniers 16.</span> dt
 Aigrefeuille 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAPITRAUD Suzanne ( veuve
@@ -619,7 +619,7 @@ RONDARD Pierre ).<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHERANSAC Fran&ccedil.ois de +
-Fran&ccedil.ois et BRAUD Magdeleine.Ý <span style='color:red'>Lux&eacute. 16.<o:p></o:p></span></span></p>
+Fran&ccedil.ois et BRAUD Magdeleine. <span style='color:red'>Lux&eacute. 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NAULLET Marie Anne Elisabeth
 de + Jean et CAILLAUD Marie Anne. Forges 17. dt Aigrefeuille 17.<o:p></o:p></span></p>
@@ -631,7 +631,7 @@ de + Jean et CAILLAUD Marie Anne. Forges 17. dt Aigrefeuille 17.<o:p></o:p></spa
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUIDET Jean de Jean et LUCAS
-Marie<span style='color:red'>. Ý Villej&eacute.sus 16</span>. dt Aigrefeuille 17.<o:p></o:p></span></p>
+Marie<span style='color:red'>.  Villej&eacute.sus 16</span>. dt Aigrefeuille 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERNARD Marguerite ( veuve
 BOUCHERIE Pierre ) . dt Aigrefeuille 17.<o:p></o:p></span></p>
@@ -642,7 +642,7 @@ BOUCHERIE Pierre ) . dt Aigrefeuille 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LEDOUX Pierre de + Antoine et
-+ THIBAUD Marie. Ý <span style='color:red'>Voulgezac 16.<o:p></o:p></span></span></p>
++ THIBAUD Marie.  <span style='color:red'>Voulgezac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MORIN Jeanne Marguerite de +
 Pierre et + CHATEAU Marguerite. Le Thou 17.<o:p></o:p></span></p>
@@ -653,7 +653,7 @@ Pierre et + CHATEAU Marguerite. Le Thou 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PARIOT Fran&ccedil.ois de L&eacute.onard et
-DUCQ Marie. Ý <span style='color:red'>Montignac 16.<o:p></o:p></span></span></p>
+DUCQ Marie.  <span style='color:red'>Montignac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GELLE Marguerite ( veuve
 BENESTEAU Jean ) . dt Ballon 17.<o:p></o:p></span></p>
@@ -665,7 +665,7 @@ BENESTEAU Jean ) . dt Ballon 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>POIRIER Martin de + Pierre et
-FAURE Marguerite.Ý <span style='color:red'>St Martin de Jauldes 16</span>.<o:p></o:p></span></p>
+FAURE Marguerite. <span style='color:red'>St Martin de Jauldes 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARTIN Suzanne ( veuve
 GABORIT Philippe ) . Aigrefeuille 17.<o:p></o:p></span></p>
@@ -673,15 +673,15 @@ GABORIT Philippe ) . Aigrefeuille 17.<o:p></o:p></span></p>
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
      lang=EN-GB style='font-size:10.0pt;mso-ansi-language:EN-GB'>3 E 45/42. CM
-     18/01/1785. X 18/01/1785 Thair&eacute. d’Aunis 17.<o:p></o:p></span></li>
+     18/01/1785. X 18/01/1785 Thair&eacute. d&acute;Aunis 17.<o:p></o:p></span></li>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THURON Jean ( veuf JANNEAU
-Jeanne ) de + Jacques et XX<span style='mso-spacerun:yes'>  </span>Catherine. Ý
+Jeanne ) de + Jacques et XX<span style='mso-spacerun:yes'>  </span>Catherine. 
 <span style='color:red'>Villognon 16.</span> dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRAUD Jeanne de + Jacques et
-RICHAUME Marguerite. Ý Aigrefeuille 17. dt Thair&eacute. 17.<o:p></o:p></span></p>
+RICHAUME Marguerite.  Aigrefeuille 17. dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -690,7 +690,7 @@ RICHAUME Marguerite. Ý Aigrefeuille 17. dt Thair&eacute. 17.<o:p></o:p></span></
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VINSONNEAU Jean de Pierre et
-+ LAMBERT Catherine. Ý <span style='color:red'>Chaign&eacute. 16.</span> dt
++ LAMBERT Catherine.  <span style='color:red'>Chaign&eacute. 16.</span> dt
 Aigrefeuille 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARCHAND Marie de Fran&ccedil.ois et
@@ -705,7 +705,7 @@ Pierre. Etude &agrave. Aigrefeuille 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARTIN Jean de Jean et BESSON
-Anne. <span style='color:red'>Ý Moulidars 16.</span> dt Forges 17.<o:p></o:p></span></p>
+Anne. <span style='color:red'> Moulidars 16.</span> dt Forges 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUBOINEAU Marie C&eacute.leste de +
 Jacques Mathurin et THOMAS Marguerite Ang&egrave.le. dt Forges 17.<o:p></o:p></span></p>
@@ -717,7 +717,7 @@ Jacques Mathurin et THOMAS Marguerite Ang&egrave.le. dt Forges 17.<o:p></o:p></s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RENAUDON Pierre de + Jacques
-et CORNU Suzanne. Ý <span style='color:red'>Mouzon 16&nbsp;?.<o:p></o:p></span></span></p>
+et CORNU Suzanne.  <span style='color:red'>Mouzon 16&nbsp;?.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RENAUD Jeanne de + Jean et
 COUTINOT Catherine. dt Aigrefeuille 17.<o:p></o:p></span></p>
@@ -732,7 +732,7 @@ Etude &agrave. Ballon 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DESLAURIERS Fran&ccedil.ois de +
-Jean et + ROUYER Elisabeth.Ý <span style='color:red'>Ruelle 16.<o:p></o:p></span></span></p>
+Jean et + ROUYER Elisabeth. <span style='color:red'>Ruelle 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BURGAUD Suzanne de + Andr&eacute. et
 CORLIEU Marguerite. Ardilli&egrave.res 17.<o:p></o:p></span></p>
@@ -743,7 +743,7 @@ CORLIEU Marguerite. Ardilli&egrave.res 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FAILLY Louis de + Guillaume
-et DANY Marie. Ý <span style='color:red'>Genouillac 16.</span><o:p></o:p></span></p>
+et DANY Marie.  <span style='color:red'>Genouillac 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SERVANT Marguerite de Antoine
 et REGNAUD Marie. Ballon 17.<o:p></o:p></span></p>
@@ -755,10 +755,10 @@ et REGNAUD Marie. Ballon 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LEGRAND Pierre de Pierre et
-ROUCHER Marie. <span style='color:red'>Ý Bret 16.<o:p></o:p></span></span></p>
+ROUCHER Marie. <span style='color:red'> Bret 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAULTIER Marguerite de +
-Pierre et + GAUDIN Marie. Ý Ballon 17.<o:p></o:p></span></p>
+Pierre et + GAUDIN Marie.  Ballon 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -766,7 +766,7 @@ Pierre et + GAUDIN Marie. Ý Ballon 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAQUET Pierre de + Pierre et
-+ MICHEAU Florence. Ý <span style='color:red'>Villej&eacute.sus 16.<o:p></o:p></span></span></p>
++ MICHEAU Florence.  <span style='color:red'>Villej&eacute.sus 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RACAUD Jeanne. de + Estienne
 et + RAYNETEAU Jeanne. Le Thou 17.<o:p></o:p></span></p>
@@ -778,7 +778,7 @@ et + RAYNETEAU Jeanne. Le Thou 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MATIGNON Jean de + Jean et
-JANNEAU Marguerite. Ý<span style='color:red'>Ligni&eacute.res 16.<o:p></o:p></span></span></p>
+JANNEAU Marguerite. <span style='color:red'>Ligni&eacute.res 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BARBREAUD Marie Th&eacute.r&egrave.se de
 Charles et + MAGNEN Marie. Ardilli&egrave.res 17.<o:p></o:p></span></p>
@@ -790,7 +790,7 @@ Charles et + MAGNEN Marie. Ardilli&egrave.res 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NICOLET Jean de + Jean et
-TEXIER Roze. Ý <span style='color:red'>Torsac 16.<o:p></o:p></span></span></p>
+TEXIER Roze.  <span style='color:red'>Torsac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUPEAU Jeanne ( veuve RACAUD
 Jean ). Le Thou 17.<o:p></o:p></span></p>
@@ -801,7 +801,7 @@ Jean ). Le Thou 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RAYTEAU Jean de + Jean et
-SAUVIGNON Marie. Ý <span style='color:red'>Brie / Chalais 16</span>.<o:p></o:p></span></p>
+SAUVIGNON Marie.  <span style='color:red'>Brie / Chalais 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOYNET Elisabeth de + Jacques
 et PLAINEAU Marie Anne. Ballon 17.<o:p></o:p></span></p>
@@ -815,10 +815,10 @@ style='mso-spacerun:yes'>  </span>XX. Etude &agrave. Aigrefeuille 17.<o:p></o:p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUX Jean de + Fran&ccedil.ois et
-PELOQUIN Marguerite. Ý <span style='color:red'>Villiers en Lairon 16.<o:p></o:p></span></span></p>
+PELOQUIN Marguerite.  <span style='color:red'>Villiers en Lairon 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSEAU Marie Jeanne de Ren&eacute.
-et BRANDAIS Suzanne. Ý et dt Forges 17.<o:p></o:p></span></p>
+et BRANDAIS Suzanne.  et dt Forges 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire BONNIN Louis.
 Etude &agrave. Surg&egrave.res 17.<o:p></o:p></span></b></p>
@@ -830,7 +830,7 @@ Etude &agrave. Surg&egrave.res 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUGERON Ren&eacute. de Ren&eacute. et
-MANIANT Anne. Ý <span style='color:red'>St Fraigne 16</span>. dt Surg&egrave.res<span
+MANIANT Anne.  <span style='color:red'>St Fraigne 16</span>. dt Surg&egrave.res<span
 style='mso-spacerun:yes'>  </span>St Pierre 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BIRAUD Marie Marthe de +
@@ -842,7 +842,7 @@ Pierre et TAROT Madeleine. dt Surg&egrave.res St Pierre 17.<o:p></o:p></span></p
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>REIGNIER Jean de + GUILLAUME
-ET ROUHET XX. <span style='color:red'>Ý St Amant de Boixe 16</span>. dt
+ET ROUHET XX. <span style='color:red'> St Amant de Boixe 16</span>. dt
 Surg&egrave.res 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BAYLE Marguerite ( veuve
@@ -858,7 +858,7 @@ AUDET Jean Thomas ) . dt Surg&egrave.res St Pierre 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUET Charles Louis de Louis
-et JOYAUD Marie Th&eacute.r&egrave.se. Ý <span style='color:red'>Villej&eacute.sus 16. </span>dt
+et JOYAUD Marie Th&eacute.r&egrave.se.  <span style='color:red'>Villej&eacute.sus 16. </span>dt
 Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAYNAT Marie Elisabeth (
@@ -873,7 +873,7 @@ style='mso-spacerun:yes'>  </span>XX. Etude &agrave. St Jean de Liversay 17.<o:p
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PIERRE Jean de Jean dit Denis
-et BOILETREAU Marie. Ý <span style='color:red'>Bouteville 16</span>. dt St Jean
+et BOILETREAU Marie.  <span style='color:red'>Bouteville 16</span>. dt St Jean
 de Liversay 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOISSONNET Fran&ccedil.oise ( veuve
@@ -886,10 +886,10 @@ PETIT Jacques ) . dt Luch&eacute. 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VAURY Jacques de + Jean et +
-JOUSSOUME Catherine<span style='color:red'>.Ý Taiz&eacute. 16.</span><o:p></o:p></span></p>
+JOUSSOUME Catherine<span style='color:red'>. Taiz&eacute. 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAUTRONNEAU Marie Anne de Guy
-et + HILAIREAU Louise. Ý et dt Luch&eacute. 17.<o:p></o:p></span></p>
+et + HILAIREAU Louise.  et dt Luch&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire YVONNET Jean p&egrave.re
 et fils. Etude &agrave. La Rochelle et Marsilly 17.<o:p></o:p></span></b></p>
@@ -900,10 +900,10 @@ et fils. Etude &agrave. La Rochelle et Marsilly 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ARNAULT Gabriel de Arnault et
-GAILLICHER Marguerite. Ý Cros en Auvergne 63.<o:p></o:p></span></p>
+GAILLICHER Marguerite.  Cros en Auvergne 63.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COCUAU Jehanne de + Michel et
-CLEMANCEAU Marguerite. <span style='color:red'>Ý Etriac 16</span>.<o:p></o:p></span></p>
+CLEMANCEAU Marguerite. <span style='color:red'> Etriac 16</span>.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -911,11 +911,11 @@ CLEMANCEAU Marguerite. <span style='color:red'>Ý Etriac 16</span>.<o:p></o:p></s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAVIER ( QUAVIER ) Jacques de
-Simon et SICARD Marie. Ý<span style='mso-spacerun:yes'>  </span><span
+Simon et SICARD Marie. <span style='mso-spacerun:yes'>  </span><span
 style='color:red'>Salles ( Lavalette&nbsp;? ) 16</span>. dt Nantilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARCHUSSEAU Marie de + Jehan
-et + TAILLIFAIT Jeanne. Ý Nantilly 17.<o:p></o:p></span></p>
+et + TAILLIFAIT Jeanne.  Nantilly 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -923,11 +923,11 @@ et + TAILLIFAIT Jeanne. Ý Nantilly 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CRESTIEN Jehan de + Jehan et
-PONTIER&nbsp;? Marie. Ý <span style='color:red'>Longr&eacute. 16</span>. dt Marsilly
+PONTIER&nbsp;? Marie.  <span style='color:red'>Longr&eacute. 16</span>. dt Marsilly
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRISSEAU Barth&eacute.l&eacute.mie de
-Jacques et OGRIL Michelle. Ý Marsilly 17.<o:p></o:p></span></p>
+Jacques et OGRIL Michelle.  Marsilly 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -935,11 +935,11 @@ Jacques et OGRIL Michelle. Ý Marsilly 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DEMAZIERE Jehan de Jean et
-JOYEUSE Marie. Ý <span style='color:red'>Paizay Naudoin 16</span>.dt Nantilly
+JOYEUSE Marie.  <span style='color:red'>Paizay Naudoin 16</span>.dt Nantilly
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOLTAS Marie de + Fran&ccedil.ois et
-+ BRUNET Jehanne. Ý La Sauzaye / St Xandre 17. dt Nantilly 17.<o:p></o:p></span></p>
++ BRUNET Jehanne.  La Sauzaye / St Xandre 17. dt Nantilly 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -947,10 +947,10 @@ JOYEUSE Marie. Ý <span style='color:red'>Paizay Naudoin 16</span>.dt Nantilly
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUBOIS Jehan de Sornin et
-PASSEREAU Marie. Ý <span style='color:red'>Angoul&ecirc.me 16</span>.dt Esnandes 17.<o:p></o:p></span></p>
+PASSEREAU Marie.  <span style='color:red'>Angoul&ecirc.me 16</span>.dt Esnandes 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THIRTON Marie de Pierre et
-MARSEAU Marie. Ý Esnandes 17.<o:p></o:p></span></p>
+MARSEAU Marie.  Esnandes 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -958,7 +958,7 @@ MARSEAU Marie. Ý Esnandes 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GOYAUX Mathurin de + Jehan et
-SEGUINAULT Fran&ccedil.oise. <span style='color:red'>Ý Nonanville 16.<o:p></o:p></span></span></p>
+SEGUINAULT Fran&ccedil.oise. <span style='color:red'> Nonanville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSEAU Marie ( veuve
 ARNOULT Jehan ). dt Long&egrave.ves 17.<o:p></o:p></span></p>
@@ -969,10 +969,10 @@ ARNOULT Jehan ). dt Long&egrave.ves 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LEJEULNE Antoine de Paul et
-GAULTIER Estelle. Ý <span style='color:red'>Sonneville 16.</span><o:p></o:p></span></p>
+GAULTIER Estelle.  <span style='color:red'>Sonneville 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MESCHIN Marie de + Pierre et
-GERMAIN Marie. Ý Nieul / Mer 17.<o:p></o:p></span></p>
+GERMAIN Marie.  Nieul / Mer 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -980,7 +980,7 @@ GERMAIN Marie. Ý Nieul / Mer 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOREAU Jehan de Jehan et +
-CAFILLE&nbsp;? Jehanne. Ý <span style='color:red'>Londigny 16.</span> dt
+CAFILLE&nbsp;? Jehanne.  <span style='color:red'>Londigny 16.</span> dt
 Marsilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRAUD Michelle ( veuve
@@ -992,10 +992,10 @@ BARBOT Fran&ccedil.ois ) . dt Marsilly 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PELLOQUIN Jacques de + Andr&eacute.
-et PETIT Marguerite. Ý L’Isle Bouchard 37. dt St Xandre 17.<o:p></o:p></span></p>
+et PETIT Marguerite.  L&acute;Isle Bouchard 37. dt St Xandre 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COCUAU Marguerite de + Michel
-et + CLEMENCEAU Marguerite<span style='color:red'>. Ý Estiac 16</span>. dt
+et + CLEMENCEAU Marguerite<span style='color:red'>.  Estiac 16</span>. dt
 Nantilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire DE SAINT
@@ -1006,11 +1006,11 @@ CHRISTOPHE Pierre. Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
      style='font-size:10.0pt'>3 E 59/150. CM 23/04/1623. <o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>COMPAIN Jacques. Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>COMPAIN Jacques.  <span
 style='color:red'>St Fragne en Saintonge 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUILLOT Tiffaine ( veuve
-MOUSNIER Noël ) . St M&eacute.dard 17.<o:p></o:p></span></p>
+MOUSNIER No&euml;l ) . St M&eacute.dard 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1018,7 +1018,7 @@ MOUSNIER Noël ) . St M&eacute.dard 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUSY Jean. <span
-style='color:red'>Ý St Est&egrave.phe 16.<o:p></o:p></span></span></p>
+style='color:red'> St Est&egrave.phe 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAILLON Marie ( veuve OGER
 Michel ). La Jarrie 17.<o:p></o:p></span></p>
@@ -1028,7 +1028,7 @@ Michel ). La Jarrie 17.<o:p></o:p></span></p>
      style='font-size:10.0pt'>3 E 59/150. CM 21/04/1622.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>GODEAU Mathurin.Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>GODEAU Mathurin. <span
 style='color:red'>St Luc en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MASSE Marguerite ( veuve
@@ -1039,7 +1039,7 @@ PELISSON Jean ) . Salles 17.<o:p></o:p></span></p>
      style='font-size:10.0pt'>3 E 59/150. CM 18/04/1622.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>MALHERBE Mathurin .Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>MALHERBE Mathurin . <span
 style='color:red'>St Sixte en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOILEAU<span
@@ -1051,7 +1051,7 @@ style='mso-spacerun:yes'>  </span>XX ( veuve VALLON Daniel ). La Jarrie 17.<o:p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RENIER Pierre de + Jehan et +
-PORTAIS Anne<span style='color:red'>.Ý Prignacq 16.<o:p></o:p></span></span></p>
+PORTAIS Anne<span style='color:red'>. Prignacq 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOUILLERON Mathurine de +
 Marsillacq et + PINET Marguerite. St Christophe 17.<o:p></o:p></span></p>
@@ -1062,7 +1062,7 @@ Marsillacq et + PINET Marguerite. St Christophe 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SAUVESTRE Joachim<span
-style='color:red'>.Ý St Cybardeau 16.</span><o:p></o:p></span></p>
+style='color:red'>. St Cybardeau 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GABORIT Marie ( veuve SIGNOT
 Charles ). Breuil la R&eacute.orte 17.<o:p></o:p></span></p>
@@ -1080,7 +1080,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 et FOURNIER Jehanne. dt La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PARIER / PARIS Catherine de +
-Pierre et MARTIN Jehanne. Ý <span style='color:red'>Villiers paroisse de Ruffec
+Pierre et MARTIN Jehanne.  <span style='color:red'>Villiers paroisse de Ruffec
 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -1089,11 +1089,11 @@ Pierre et MARTIN Jehanne. Ý <span style='color:red'>Villiers paroisse de Ruffec
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOISSON Jehan de + Mathurin et
-+ GUILLON Julienne. Ý <span style='color:red'>Barret 16</span>. dt La Rochelle
++ GUILLON Julienne.  <span style='color:red'>Barret 16</span>. dt La Rochelle
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MORET Giraude ( veuve BERNARD
-Jacques ) de + Jean et GAYE Louise. Ý St L&eacute.on 33. dt La Rochelle 17.<o:p></o:p></span></p>
+Jacques ) de + Jean et GAYE Louise.  St L&eacute.on 33. dt La Rochelle 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1102,7 +1102,7 @@ Jacques ) de + Jean et GAYE Louise. Ý St L&eacute.on 33. dt La Rochelle 17.<o:p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUCHARD Gabriel de + Michel
-et + COYTEUX Marthe. Ý <span style='color:red'>Villefagnan 16. <o:p></o:p></span></span></p>
+et + COYTEUX Marthe.  <span style='color:red'>Villefagnan 16. <o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COULTRET Ozanne ( veuve
 RULLET Antoine et VREDON Fran&ccedil.ois ) dt La Rochelle 17.<o:p></o:p></span></p>
@@ -1114,10 +1114,10 @@ RULLET Antoine et VREDON Fran&ccedil.ois ) dt La Rochelle 17.<o:p></o:p></span><
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHARTRON Jehan de + Robin et
-+ BOUHIER Marie. Ý Montpellier.<o:p></o:p></span></p>
++ BOUHIER Marie.  Montpellier.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PIGOIZARD Jehanne ( veuve
-FUMAT Pierre ) de + Oz&eacute.r&eacute. et DUCANDAT Judith. Ý et dt <span style='color:red'>Jarnacq
+FUMAT Pierre ) de + Oz&eacute.r&eacute. et DUCANDAT Judith.  et dt <span style='color:red'>Jarnacq
 16</span>.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -1126,10 +1126,10 @@ FUMAT Pierre ) de + Oz&eacute.r&eacute. et DUCANDAT Judith. Ý et dt <span style=
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAUSSON Julien de + Denis et
-+ MARTIN Catherine. Ý <span style='color:red'>Chille pr&egrave.s d’Aigre 16&nbsp;?<o:p></o:p></span></span></p>
++ MARTIN Catherine.  <span style='color:red'>Chille pr&egrave.s d&acute;Aigre 16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROLLAND Suzanne ( veuve
-GAIGNIER Ren&eacute. )de + Abel et AUBOYNEAU Marguerite. Ý et dt La Rochelle 17.<o:p></o:p></span></p>
+GAIGNIER Ren&eacute. )de + Abel et AUBOYNEAU Marguerite.  et dt La Rochelle 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1139,11 +1139,11 @@ GAIGNIER Ren&eacute. )de + Abel et AUBOYNEAU Marguerite. Ý et dt La Rochelle 17.
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUSTURIER Jehan<span
 style='mso-spacerun:yes'>  </span>( veuf MILLASSEAU Marguerite ) de + Jehan et
-ROY Guyonne. Ý <span style='color:red'>Natrice en</span> <span
+ROY Guyonne.  <span style='color:red'>Natrice en</span> <span
 style='color:red'>Angoumois 16.</span> dt La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRIMAUD Suzanne de Jacques et
-GODEFROY Jacquette. Ý Lardilli&eacute.re 85.<o:p></o:p></span></p>
+GODEFROY Jacquette.  Lardilli&eacute.re 85.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1154,7 +1154,7 @@ GODEFROY Jacquette. Ý Lardilli&eacute.re 85.<o:p></o:p></span></p>
 JOLLY Catherine. dt La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THERESE L&eacute.onarde de +
-Berthoum&eacute. et MESLIER Catherine. Ý<span style='color:red'>Bournet&nbsp;? en
+Berthoum&eacute. et MESLIER Catherine. <span style='color:red'>Bournet&nbsp;? en
 Angoumois 16</span>.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -1163,10 +1163,10 @@ Angoumois 16</span>.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FROUIN Jehan de + Fiacre et
-ALLEBERT Marguerite. Ý <span style='color:red'>Vars 16.<o:p></o:p></span></span></p>
+ALLEBERT Marguerite.  <span style='color:red'>Vars 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GENTILZ Guillemette de
-Nicolas et + MAYNARD Jehanne. Ý Tanzac 17. dt La Rochelle 17.<o:p></o:p></span></p>
+Nicolas et + MAYNARD Jehanne.  Tanzac 17. dt La Rochelle 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1175,10 +1175,10 @@ Nicolas et + MAYNARD Jehanne. Ý Tanzac 17. dt La Rochelle 17.<o:p></o:p></span><
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAU Nicolas de + Jehan et +
-ROBICHON Marie. Ý Daubredu&nbsp;? en Bretagne. dt La Rochelle 17.<o:p></o:p></span></p>
+ROBICHON Marie.  Daubredu&nbsp;? en Bretagne. dt La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>QUANTIN Marguerite de + Jehan
-et DEYSOMMEAUX Michelle. <span style='color:red'>Ý Cougnat 16.</span> dt La
+et DEYSOMMEAUX Michelle. <span style='color:red'> Cougnat 16.</span> dt La
 Rochelle 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -1188,10 +1188,10 @@ Rochelle 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HAY Jean de Alexandre&nbsp;?
-et CARRE XXX. Ý <span style='color:red'>Angoulesme 16.<o:p></o:p></span></span></p>
+et CARRE XXX.  <span style='color:red'>Angoulesme 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NORMANDIN Ren&eacute.e de Jacques et
-DANIAU Marie. Ý Dompierre / Mer 17. dt La Rochelle 17.<o:p></o:p></span></p>
+DANIAU Marie.  Dompierre / Mer 17. dt La Rochelle 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1199,10 +1199,10 @@ DANIAU Marie. Ý Dompierre / Mer 17. dt La Rochelle 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HERISSON Nicolas de+ Nicolas
-et + GRIER Perrette. Ý Rouen. dt La Rochelle 17.<o:p></o:p></span></p>
+et + GRIER Perrette.  Rouen. dt La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GINDRAT Jeanne de Pierre et
-MARTYNEAU Jehanne.Ý <span style='color:red'>Cougnat 16.<o:p></o:p></span></span></p>
+MARTYNEAU Jehanne. <span style='color:red'>Cougnat 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1211,7 +1211,7 @@ MARTYNEAU Jehanne.Ý <span style='color:red'>Cougnat 16.<o:p></o:p></span></span>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>POURRAGEAU Fran&ccedil.ois de Pierre
-et + MARTIN Fran&ccedil.oise.Ý <span style='color:red'>Villefagnan 16</span>. dt La
+et + MARTIN Fran&ccedil.oise. <span style='color:red'>Villefagnan 16</span>. dt La
 Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHESNEAU Marie de + Fran&ccedil.ois
@@ -1223,7 +1223,7 @@ et BRUN Jehanne. Nalliers 85. dt La Rochelle 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSEAU Pierre de + Fran&ccedil.ois
-et + PETIT Jehanne. Ý <span style='color:red'>Tusson 16.<o:p></o:p></span></span></p>
+et + PETIT Jehanne.  <span style='color:red'>Tusson 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DESCHAMPS Pasques de +
 Fran&ccedil.ois et BEAU Catherine. Echir&eacute. 79.dt La Rochelle 17.<o:p></o:p></span></p>
@@ -1238,10 +1238,10 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COLLESSON Isaacq de Pierre et
-RIVIERE Marthe. <span style='color:red'>Ý Tonnins&nbsp;? en Angoumois 16.<o:p></o:p></span></span></p>
+RIVIERE Marthe. <span style='color:red'> Tonnins&nbsp;? en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BURETEL Ester de + Pierre et
-RAFFOU Marie. Ý et dt La Rochelle 17.<o:p></o:p></span></p>
+RAFFOU Marie.  et dt La Rochelle 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1249,11 +1249,11 @@ RAFFOU Marie. Ý et dt La Rochelle 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DESFORGES Louis de + Pierre
-et ORGEREAU&nbsp;? Fran&ccedil.oise Ý Rompsay. dt <span
+et ORGEREAU&nbsp;? Fran&ccedil.oise  Rompsay. dt <span
 style='mso-spacerun:yes'> </span>La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUITTON Marie de + Charles et
-BUREAU Andr&eacute.e Ý <span style='color:red'>Chalais 16</span>. dt La Rochelle 17.<o:p></o:p></span></p>
+BUREAU Andr&eacute.e  <span style='color:red'>Chalais 16</span>. dt La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire DE SAINT
 CHRISTOPHE Charles. Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
@@ -1267,7 +1267,7 @@ CHRISTOPHE Charles. Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
 NEBAULD Perrine.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUILLON Perrine de Joseph et
-BILLAUDEAU Perrine. Ý <span style='color:red'>Bernac 16.<o:p></o:p></span></span></p>
+BILLAUDEAU Perrine.  <span style='color:red'>Bernac 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1275,7 +1275,7 @@ BILLAUDEAU Perrine. Ý <span style='color:red'>Bernac 16.<o:p></o:p></span></span
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSEAU Daniel de Jehan et
-PINET Jehanne. Ý <span style='color:red'>Villefagnan 16.<o:p></o:p></span></span></p>
+PINET Jehanne.  <span style='color:red'>Villefagnan 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAGUERRE Marie de + Jean et
 TOURLET Marie. St M&eacute.dard 17.<o:p></o:p></span></p>
@@ -1289,7 +1289,7 @@ style='mso-spacerun:yes'>  </span>XXX .Etude &agrave. V&eacute.rines 17<o:p></o:
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>POUGNAN Charles de + Charles
-et + DAVID Catherine. Ý <span style='color:red'>Verdille 16</span>. dt Croix
+et + DAVID Catherine.  <span style='color:red'>Verdille 16</span>. dt Croix
 Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VEILLON Marthe de + Joachim
@@ -1304,7 +1304,7 @@ Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SIRAUD Jean de Jean et +
-BOSSELET Fran&ccedil.oise. Ý <span style='color:red'>Montmoreau 16.<o:p></o:p></span></span></p>
+BOSSELET Fran&ccedil.oise.  <span style='color:red'>Montmoreau 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DECOURT Marguerite de Vincent
 et PASCAUD Marie. St Christophe 17.<o:p></o:p></span></p>
@@ -1318,7 +1318,7 @@ Etude &agrave. La Jarrie 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LOGAY Fran&ccedil.ois de Pierre et +
-ALBERT Ren&eacute.e. Ý <span style='color:red'>St Amant 16 ou 79</span>. dt La Jarie
+ALBERT Ren&eacute.e.  <span style='color:red'>St Amant 16 ou 79</span>. dt La Jarie
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PISQUET Jeanne de Etienne et
@@ -1330,7 +1330,7 @@ ALBERT Ren&eacute.e. Ý <span style='color:red'>St Amant 16 ou 79</span>. dt La J
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUET Jean de + Fran&ccedil.ois et +
-PIVEAU Marie. Ý <span style='color:red'>St Amant Boisse 16</span>. dt La Jarrie.<o:p></o:p></span></p>
+PIVEAU Marie.  <span style='color:red'>St Amant Boisse 16</span>. dt La Jarrie.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAUTHIER Marie de Etienne et
 FAYE Catherine. La Jarrie 17.<o:p></o:p></span></p>
@@ -1342,7 +1342,7 @@ FAYE Catherine. La Jarrie 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>UZEREAU Louis de + Gabriel et
-+ DUBOIS Perrine. Ý <span style='color:red'>Chalinne en Angoumois 16.<o:p></o:p></span></span></p>
++ DUBOIS Perrine.  <span style='color:red'>Chalinne en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOISSARD Marie de + Pierre et
 GUILLOT Marie. dt La Jarrie 17.<o:p></o:p></span></p>
@@ -1353,7 +1353,7 @@ GUILLOT Marie. dt La Jarrie 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VOIX Jean ( veuf NEAU
-Marguerite ).Ý <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
+Marguerite ). <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRUNET Marie de + Martial et
 + VIOLLEAU Anne.<o:p></o:p></span></p>
@@ -1368,10 +1368,10 @@ Pierre. Etude &agrave. Fontpatour et St Coux 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CRAIPEAU Jean ( veuf THIBAULT
-Ren&eacute.e ). Ý <span style='color:red'>La Chaise en Poitou 16.<o:p></o:p></span></span></p>
+Ren&eacute.e ).  <span style='color:red'>La Chaise en Poitou 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SURBAILLAU Catherine ( veuve
-GOT Jean ). Ý St M&eacute.dard 17.<o:p></o:p></span></p>
+GOT Jean ).  St M&eacute.dard 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire BONNET Pierre.
 Etude &agrave. Dompierre / Mer 17.<o:p></o:p></span></b></p>
@@ -1382,7 +1382,7 @@ Etude &agrave. Dompierre / Mer 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ARRENAUD Fran&ccedil.ois de +
-Fran&ccedil.ois et PARET Anne. Ý <span style='color:red'>St Amant de Nou&egrave.re 16</span>.
+Fran&ccedil.ois et PARET Anne.  <span style='color:red'>St Amant de Nou&egrave.re 16</span>.
 dt La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JACOB Anne de Simon et +
@@ -1396,7 +1396,7 @@ COLDEROY Jacquette. dt<span style='mso-spacerun:yes'>  </span>Dompierre / Mer
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BILLOCHON Jean de Jean et
-BERTAUD Marie. Ý <span style='color:red'>Aigre 16.</span><o:p></o:p></span></p>
+BERTAUD Marie.  <span style='color:red'>Aigre 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRAUD Anne de + Abel et
 DURET Marie ( xx GILBERT Fran&ccedil.ois )<o:p></o:p></span></p>
@@ -1410,7 +1410,7 @@ DURET Marie ( xx GILBERT Fran&ccedil.ois )<o:p></o:p></span></p>
 GRIFFON Marie. dt Dompierre / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THIBAUDEAU Marie de +
-Fran&ccedil.ois et + CHAUVET Marie. Ý <span style='color:red'>La Chaise 16.</span><o:p></o:p></span></p>
+Fran&ccedil.ois et + CHAUVET Marie.  <span style='color:red'>La Chaise 16.</span><o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1418,7 +1418,7 @@ Fran&ccedil.ois et + CHAUVET Marie. Ý <span style='color:red'>La Chaise 16.</spa
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAULTIER Jacques de Gabriel
-et + CAILLE Anne. Ý <span style='color:red'>Verteuil 16.<o:p></o:p></span></span></p>
+et + CAILLE Anne.  <span style='color:red'>Verteuil 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PALLET Ren&eacute.e de + Jullien et
 + NESSIN Paulette.<o:p></o:p></span></p>
@@ -1430,7 +1430,7 @@ et + CAILLE Anne. Ý <span style='color:red'>Verteuil 16.<o:p></o:p></span></span
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAULTIER Jacques de Gabriel
-et + CAILLE Anne. Ý <span style='color:red'>Verteuil 16.<o:p></o:p></span></span></p>
+et + CAILLE Anne.  <span style='color:red'>Verteuil 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUDRIN XX de + Jean et +
 DUPUY Jeanne. dt Dompierre / Mer 17.<o:p></o:p></span></p>
@@ -1441,7 +1441,7 @@ DUPUY Jeanne. dt Dompierre / Mer 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RULLIER Jean de + Jean et +
-DELAROCHE Marie. Ý <span style='color:red'>Criteuil en Angoumois 16.<o:p></o:p></span></span></p>
+DELAROCHE Marie.  <span style='color:red'>Criteuil en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SEGUIN Magdeleine de +
 Fran&ccedil.ois et + MOLLEAU Elisabeth. dt St Laurent de la Pr&eacute.e 17.<o:p></o:p></span></p>
@@ -1456,7 +1456,7 @@ Etude &agrave. St Xandre 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DALLINIER Jean de Jean et
-DELAVAULT Michelle. Ý <span style='color:red'>en Angoumois 16.<o:p></o:p></span></span></p>
+DELAVAULT Michelle.  <span style='color:red'>en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FOURESTIER Magdeleine de +
 Hellie et + RIVAULT Marie. St Xandre 17.<o:p></o:p></span></p>
@@ -1468,7 +1468,7 @@ Hellie et + RIVAULT Marie. St Xandre 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MASSIOT Anthoine ( veuf
-MOUGEON Marguerite ) de + Martin et MALVAUD Berthomm&eacute.e. Ý <span
+MOUGEON Marguerite ) de + Martin et MALVAUD Berthomm&eacute.e.  <span
 style='color:red'>Salles en</span> <span style='color:red'>Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MASSON Marthe ( veuve HERAULT
@@ -1481,7 +1481,7 @@ Jean ) de + Jean et GABORIT Anne. Dompierre / Mer 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RUPPIN Pierre de + Jean et +
-CAILLE Jeanne<span style='color:red'>.Ý Salles en Angoumois 16.<o:p></o:p></span></span></p>
+CAILLE Jeanne<span style='color:red'>. Salles en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COSSON Elisabeth de Fran&ccedil.ois
 et + BALLANGER Perrine. ) Dompierre / Mer 17.<o:p></o:p></span></p>
@@ -1493,11 +1493,11 @@ et + BALLANGER Perrine. ) Dompierre / Mer 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RUPPIN Pierre ( veuf COSSON
-Elisabeth ) . Ý <span style='mso-spacerun:yes'> </span><span style='color:red'>Salles
+Elisabeth ) .  <span style='mso-spacerun:yes'> </span><span style='color:red'>Salles
 en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>OLLEREAU Gabrielle de Jean et
-BRINCAISTE Catherine. Ý Dompierre / Mer 17.<o:p></o:p></span></p>
+BRINCAISTE Catherine.  Dompierre / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire DELAUNAY Charles.
 Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
@@ -1508,7 +1508,7 @@ Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
      07/03/1678. X 16/01/1679 St M&eacute.dard 17.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>CATHERINEAU Gr&eacute.goire. Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>CATHERINEAU Gr&eacute.goire.  <span
 style='color:red'>Genac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GODEAU Marguerite de + Pierre
@@ -1522,7 +1522,7 @@ et MOULLAIN Marguerite. St Christophe 17.<span style='mso-spacerun:yes'> 
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MALNAUD Jean de + L&eacute.onard et
-+ BOUQUINET Marguerite. Ý <span style='color:red'>St Amant de Boixe 16.<o:p></o:p></span></span></p>
++ BOUQUINET Marguerite.  <span style='color:red'>St Amant de Boixe 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERNARDIN Marie de + Jacques
 et CROUE Catherine.<o:p></o:p></span></p>
@@ -1537,10 +1537,10 @@ Etude &agrave. St Xandre 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CLERTEAU Nicolas de + Jean et
-REGUINDEAU Marguerite. Ý St Xandre 17.<o:p></o:p></span></p>
+REGUINDEAU Marguerite.  St Xandre 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RALUIT Jeanne de + Mathurin
-et MARIONNEAU Louise.Ý <span style='color:red'>La Ch&eacute.ze en Poitou 16.<o:p></o:p></span></span></p>
+et MARIONNEAU Louise. <span style='color:red'>La Ch&eacute.ze en Poitou 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1548,10 +1548,10 @@ et MARIONNEAU Louise.Ý <span style='color:red'>La Ch&eacute.ze en Poitou 16.<o:p
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RAGOT Henry de Pierre et +
-BARBON Marie<span style='color:red'>. Ý Salle en Poitou 16.<o:p></o:p></span></span></p>
+BARBON Marie<span style='color:red'>.  Salle en Poitou 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BAZIN Esther de + Fran&ccedil.ois et
-+ BREAU Suzanne. Ý Marsilly 17.<o:p></o:p></span></p>
++ BREAU Suzanne.  Marsilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire TASSIN Pierre.
 Etude &agrave. St Xandre 17.<o:p></o:p></span></b></p>
@@ -1563,7 +1563,7 @@ Etude &agrave. St Xandre 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAROT Jacques de Pierre et
-AURICHE Fran&ccedil.oise. Ý <span style='color:red'>en Angoumois 16</span>. dt
+AURICHE Fran&ccedil.oise.  <span style='color:red'>en Angoumois 16</span>. dt
 Marsilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAILLET Marie ( veuve
@@ -1576,7 +1576,7 @@ BELOTTEAU Fran&ccedil.ois ) . dt Marsilly 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RALLE Guillaume de + Pierre
-et BROUILLIN Marguerite. Ý <span style='color:red'>Garde en Angoumois 16.<o:p></o:p></span></span></p>
+et BROUILLIN Marguerite.  <span style='color:red'>Garde en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TURGNIER&nbsp;? Jeanne<span
 style='mso-spacerun:yes'>  </span>( veuve ROUSSEAU Pierre ) . dt St Xandre 17.<o:p></o:p></span></p>
@@ -1587,11 +1587,11 @@ style='mso-spacerun:yes'>  </span>( veuve ROUSSEAU Pierre ) . dt St Xandre 17.<o
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUCHE Pierre de + Pierre et
-NIGOT Jeanne. Ý <span style='color:red'>en Angoumois 16</span>. dt St Xandre
+NIGOT Jeanne.  <span style='color:red'>en Angoumois 16</span>. dt St Xandre
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ARRENAUD Perrine de +
-Mathurin et MERCIER Jacquette. Ý La R&eacute.orte en Poitou . dt St Xandre 17.<o:p></o:p></span></p>
+Mathurin et MERCIER Jacquette.  La R&eacute.orte en Poitou . dt St Xandre 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1603,7 +1603,7 @@ Mathurin et MERCIER Jacquette. Ý La R&eacute.orte en Poitou . dt St Xandre 17.<o
 DUPAS Marie. St Xandre 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUCHERIE Marie de + Louis et
-+ MESNARD Fran&ccedil.oise.Ý <span style='color:red'>St Fraigne 16.<o:p></o:p></span></span></p>
++ MESNARD Fran&ccedil.oise. <span style='color:red'>St Fraigne 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire DINET Salomon.
 Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
@@ -1614,7 +1614,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOREAU Pierre de + Pierre et
-+ SAUTREAU Fran&ccedil.oise.Ý <span style='color:red'>Villefagnan 16</span>. dt
++ SAUTREAU Fran&ccedil.oise. <span style='color:red'>Villefagnan 16</span>. dt
 P&eacute.rigny 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FRAIGNEAU Anne de + Fran&ccedil.ois
@@ -1630,7 +1630,7 @@ Mathurin. Etude &agrave. V&eacute.rines 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FLAUX Pierre de + Denis et +
-LAVOISSIERE Fran&ccedil.oise. Ý <span style='color:red'>Courcome 16</span>. dt V&eacute.rines
+LAVOISSIERE Fran&ccedil.oise.  <span style='color:red'>Courcome 16</span>. dt V&eacute.rines
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MORISSET Fran&ccedil.oise ( veuve
@@ -1646,7 +1646,7 @@ JOUINEAU Jean ). dt V&eacute.rines 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRUAU Jacques de + Pierre et
-NOMMION&nbsp;? Catherine.Ý <span style='color:red'>Faye en Angoumois 16</span>.
+NOMMION&nbsp;? Catherine. <span style='color:red'>Faye en Angoumois 16</span>.
 dt St Christophe 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BODON Jeanne de Nicolas et +
@@ -1659,7 +1659,7 @@ PATRE Anne.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RANON Pierre de Jacques et
-MEREAU Anne. Ý <span style='color:red'>St Amand 16.<o:p></o:p></span></span></p>
+MEREAU Anne.  <span style='color:red'>St Amand 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GOUBAN Catherine de Jean et
 AUVINET Marie. dt Croix Chapeau 17.<o:p></o:p></span></p>
@@ -1673,10 +1673,10 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BILLAUD Jean de Pierre et +
-Toinette&nbsp;? . Ý Chabosse en Dauphin&eacute.. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
+Toinette&nbsp;? .  Chabosse en Dauphin&eacute.. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JARNYGOY Marie de Pierre et +
-BOTIN&nbsp;? Catherine. Ý <span style='color:red'>Ruffec 16.<o:p></o:p></span></span></p>
+BOTIN&nbsp;? Catherine.  <span style='color:red'>Ruffec 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1685,11 +1685,11 @@ BOTIN&nbsp;? Catherine. Ý <span style='color:red'>Ruffec 16.<o:p></o:p></span></
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNET Estienne de + Jacques
-et XXX Fran&ccedil.oise. Ý <span style='color:red'>Rufecq en Poitou 16</span>. dt La
+et XXX Fran&ccedil.oise.  <span style='color:red'>Rufecq en Poitou 16</span>. dt La
 Rochelle St Sauveur 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DURAND Anne de + Louis et
-COUCHE&nbsp;? Marguerite. Ý <span style='color:red'>Rufecq16</span>. dt La
+COUCHE&nbsp;? Marguerite.  <span style='color:red'>Rufecq16</span>. dt La
 Rochelle St Sauveur 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -1699,10 +1699,10 @@ Rochelle St Sauveur 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAPPEAU Andr&eacute. de Fran&ccedil.ois et
-MACAUT Marie. Ý et dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
+MACAUT Marie.  et dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAZEAU Jeanne de + Jean et
-DUBOIS Ozanne.<span style='mso-spacerun:yes'>  </span>Ý <span style='color:
+DUBOIS Ozanne.<span style='mso-spacerun:yes'>  </span> <span style='color:
 red'>en Angoumois 16</span>. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -1712,11 +1712,11 @@ red'>en Angoumois 16</span>. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DESCHAIZE Jean veuf (
-FAUNAREY Marie ) de + Louis et XX Marie. Ý <span style='color:red'>en Angoumois
+FAUNAREY Marie ) de + Louis et XX Marie.  <span style='color:red'>en Angoumois
 16</span>. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MESTAYER Marie de + Ren&eacute. et
-PENIGAUD Thomasse. Ý Loiz&eacute. 79. dt La Rochelle Notre Dame 17.<span
+PENIGAUD Thomasse.  Loiz&eacute. 79. dt La Rochelle Notre Dame 17.<span
 style='color:red'><o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -1729,7 +1729,7 @@ style='mso-spacerun:yes'>  </span>( veuf RANGER Suzanne ). dt La Rochelle Notre
 Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>REIGNER Marie de Jean et
-FUMON Thoinette. Ý <span style='color:red'>du Roulet en Angoumois 16</span>. dt
+FUMON Thoinette.  <span style='color:red'>du Roulet en Angoumois 16</span>. dt
 La Rochelle St Jean 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -1739,11 +1739,11 @@ La Rochelle St Jean 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ESTIER Michel de
-Germain&nbsp;? et DUPOND Marguerite. Ý <span style='color:red'>en Angoumois 16</span>.
+Germain&nbsp;? et DUPOND Marguerite.  <span style='color:red'>en Angoumois 16</span>.
 dt La Rochelle St Barth&egrave.l&egrave.my 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHOLLET Marie de Mathurin et
-JEAN Toinette. Ý Migr&eacute. 17. dt La Rochelle St Barth&egrave.l&egrave.my 17.<o:p></o:p></span></p>
+JEAN Toinette.  Migr&eacute. 17. dt La Rochelle St Barth&egrave.l&egrave.my 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1753,7 +1753,7 @@ JEAN Toinette. Ý Migr&eacute. 17. dt La Rochelle St Barth&egrave.l&egrave.my 17.
 
 <p class=MsoNormal><span style='font-size:10.0pt'><span
 style='mso-spacerun:yes'> </span>FRAIGNEAU Jacques de + Jean et PRENUREAU
-Ren&eacute.e. Ý <span style='color:red'>en Angoumois 16</span>. dt La Rochelle Notre
+Ren&eacute.e.  <span style='color:red'>en Angoumois 16</span>. dt La Rochelle Notre
 Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FANEAU Marguerite (veuve
@@ -1766,11 +1766,11 @@ BARTHELEMY Jacques et THINNEAU Nicolas). dt La Rochelle Notre Dame 17.<o:p></o:p
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HUBERT Jean de + Fran&ccedil.ois et
-RIGAUD Marie. Ý <span style='color:red'>Paizay Naudouin 16</span>. dt La
+RIGAUD Marie.  <span style='color:red'>Paizay Naudouin 16</span>. dt La
 Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUILLAUD Catherine de + Jean
-et MONJAULT Judith. Ý Loir&eacute. en Aunix 17. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
+et MONJAULT Judith.  Loir&eacute. en Aunix 17. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1778,7 +1778,7 @@ et MONJAULT Judith. Ý Loir&eacute. en Aunix 17. dt La Rochelle Notre Dame 17.<o:
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAGNEN Fran&ccedil.ois de Barth&egrave.l&egrave.my
-et JOUBERT Toinette. Ý <span style='color:red'>Luce en Angoumois 16</span>. dt
+et JOUBERT Toinette.  <span style='color:red'>Luce en Angoumois 16</span>. dt
 St Vivien 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VINECEAU Marie ( veuve XXX
@@ -1792,10 +1792,10 @@ Mathieu<span style='mso-spacerun:yes'>  </span>et DOUMEAU Jean ). dt St Vivien
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARTIN Jean de + Jean et
-BOUHIER Fran&ccedil.oise. Ý et dt Lagord 17.<o:p></o:p></span></p>
+BOUHIER Fran&ccedil.oise.  et dt Lagord 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DELABROUSSE Suzanne de + Jacques
-et CLAIREFEUILLE Laurence.Ý <span style='color:red'>en Angoumois 16</span>. dt La
+et CLAIREFEUILLE Laurence. <span style='color:red'>en Angoumois 16</span>. dt La
 Rochelle Notre Dame 17. <o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -1805,11 +1805,11 @@ Rochelle Notre Dame 17. <o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PENIGAUD Pierre de Izacq et +
-JUSMOND Elisabeth. Ý <span style='color:red'>Londigny 16</span>. dt La Rochelle
+JUSMOND Elisabeth.  <span style='color:red'>Londigny 16</span>. dt La Rochelle
 Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRELLET Fran&ccedil.oise de + Pierre
-et BOURCIQUIN Cathrine. Ý St Jean en l’Isle d’Ol&eacute.ron 17. dt La Rochelle Notre
+et BOURCIQUIN Cathrine.  St Jean en l&acute;Isle d&acute;Ol&eacute.ron 17. dt La Rochelle Notre
 Dame 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -1819,11 +1819,11 @@ Dame 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SEILLIER Jean de + Bernard et
-VIDAL Toinette. Ý <span style='color:red'>St Martin en Angoumois 16</span>. dt
+VIDAL Toinette.  <span style='color:red'>St Martin en Angoumois 16</span>. dt
 La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAILLIER Elisabeth de + Mo&iuml.se
-et JAQUE Elisabeth. Ý et dt La Rochelle St Sauveur 17.<o:p></o:p></span></p>
+et JAQUE Elisabeth.  et dt La Rochelle St Sauveur 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -1832,11 +1832,11 @@ et JAQUE Elisabeth. Ý et dt La Rochelle St Sauveur 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TEXIER Jean de + Marcq et
-DAVID Marie. Ý <span style='color:red'>en Angoumois 16</span>. dt La Rochelle
+DAVID Marie.  <span style='color:red'>en Angoumois 16</span>. dt La Rochelle
 Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUITTON Michelle de Fran&ccedil.ois
-et + BAJETEAU Ren&eacute.e. Ý La R&eacute.orte en Bas Poitou 17. dt La Rochelle Notre Dame
+et + BAJETEAU Ren&eacute.e.  La R&eacute.orte en Bas Poitou 17. dt La Rochelle Notre Dame
 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -1846,10 +1846,10 @@ et + BAJETEAU Ren&eacute.e. Ý La R&eacute.orte en Bas Poitou 17. dt La Rochelle 
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THEROUDE Pierre de G&eacute.d&eacute.on et
-+ ROYER Marie. Ý Coivert 17. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
++ ROYER Marie.  Coivert 17. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SALAIZE Catherine de + Annet
-et JOUHOT Genevi&egrave.ve. Ý <span style='color:red'>en Angoumois 16</span>. dt La
+et JOUHOT Genevi&egrave.ve.  <span style='color:red'>en Angoumois 16</span>. dt La
 Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire DEBEDIANT Salomon.
@@ -1862,7 +1862,7 @@ Etude &agrave. Andilly 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COCQ Jean de + Antoine et +
-GOURY Marie. Ý <span style='color:red'>Chasseneuil 16.<o:p></o:p></span></span></p>
+GOURY Marie.  <span style='color:red'>Chasseneuil 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUPEAU Jeanne de + Jean et +
 GUYON Mathurine. dt St M&eacute.dard 17.<o:p></o:p></span></p>
@@ -1874,7 +1874,7 @@ GUYON Mathurine. dt St M&eacute.dard 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GORRY Jean<span
-style='mso-spacerun:yes'>  </span>( veuf GASDREAU Marie ).Ý <span
+style='mso-spacerun:yes'>  </span>( veuf GASDREAU Marie ). <span
 style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PROUET Marie ( veuve
@@ -1889,7 +1889,7 @@ DEBOUDHIER Pierre ).<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAROT Ren&eacute. de Jean et +
-SAITPON Jeanne.Ý <span style='color:red'>Paizay Naudouin 16.<o:p></o:p></span></span></p>
+SAITPON Jeanne. <span style='color:red'>Paizay Naudouin 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FOIREAU Marguerite ( veuve
 LEVECQUE Daniel ). St Xandre 17.<o:p></o:p></span></p>
@@ -1900,7 +1900,7 @@ LEVECQUE Daniel ). St Xandre 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TILLARD Jean de + Pierre et +
-MENENTEAU Mathurine. Ý <span style='color:red'>St Marseau de Challais 16.<o:p></o:p></span></span></p>
+MENENTEAU Mathurine.  <span style='color:red'>St Marseau de Challais 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>METEREAU Marie ( veuve
 RENLEAU Jullien ). Lusson 85.<o:p></o:p></span></p>
@@ -1915,7 +1915,7 @@ Etude &agrave. Andilly, La Rochelle, Dompierre / Mer 17.<o:p></o:p></span></b></
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DIET Mathurin de + Fran&ccedil.ois
-et + RIPEAU Marie. Ý <span style='color:red'>Ligni&eacute.re 16.<o:p></o:p></span></span></p>
+et + RIPEAU Marie.  <span style='color:red'>Ligni&eacute.re 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VRIGNEAU Fran&ccedil.oise ( veuve
 ANCELIN Jean ). dt Nieul / Mer 17.<o:p></o:p></span></p>
@@ -1926,7 +1926,7 @@ ANCELIN Jean ). dt Nieul / Mer 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TRANCHET Louis de + Jean et +
-ASSISE Ren&eacute.e. Ý <span style='color:red'>St Fraigne 16.</span><o:p></o:p></span></p>
+ASSISE Ren&eacute.e.  <span style='color:red'>St Fraigne 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ACAUD Catherine de + Ren&eacute. et
 DESCHAMPS Louise. Ste Soulle 17.<o:p></o:p></span></p>
@@ -1941,7 +1941,7 @@ Charles. Etude &agrave. Montroy et St M&eacute.dard 17.<o:p></o:p></span></b></p
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THOMAS Jean de + Cybard et +
-GRANGER Elisabeth. Ý <span style='color:red'>Biracq 16.</span><o:p></o:p></span></p>
+GRANGER Elisabeth.  <span style='color:red'>Biracq 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GROS Marie de + Isaac et
 GILBERT Anne. dt St Christophe 17.<o:p></o:p></span></p>
@@ -1956,7 +1956,7 @@ GILBERT Anne. dt St Christophe 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BECHADE Jean de Jean et PANIER&nbsp;?
-Marguerite. Ý <span style='color:red'>Angoul&ecirc.me St Maurice 16.<o:p></o:p></span></span></p>
+Marguerite.  <span style='color:red'>Angoul&ecirc.me St Maurice 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>POUNIANT Fran&ccedil.oise de Alexis
 et + ROY Marie. Fontenay le Comte Notre Dame 85.<o:p></o:p></span></p>
@@ -1971,7 +1971,7 @@ et + ROY Marie. Fontenay le Comte Notre Dame 85.<o:p></o:p></span></p>
 MORIN Catherine ) . dt Clavette 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CLEMENSEAU XX de + Jean et +
-GAILLANT Marie. Ý <span style='color:red'>en Angoumois 16</span>. dt Clavette
+GAILLANT Marie.  <span style='color:red'>en Angoumois 16</span>. dt Clavette
 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -1981,7 +1981,7 @@ GAILLANT Marie. Ý <span style='color:red'>en Angoumois 16</span>. dt Clavette
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUHYER Jacquesde + Jacques
-et FAY Jeanne. Ý <span style='color:red'>Teil Rabier 16.<o:p></o:p></span></span></p>
+et FAY Jeanne.  <span style='color:red'>Teil Rabier 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSEAU Catherine ( veuve
 PASQUIER Estienne ) . dt Clavette 17.<o:p></o:p></span></p>
@@ -1993,7 +1993,7 @@ PASQUIER Estienne ) . dt Clavette 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MONDION Jean de + Jean et +
-MONDION Marie. Ý <span style='color:red'>La Faye en Angoumois 16.<o:p></o:p></span></span></p>
+MONDION Marie.  <span style='color:red'>La Faye en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUPPEAU Marianne de + Pierre
 et + PICARD Suzanne. dt Montroy 17.<o:p></o:p></span></p>
@@ -2008,10 +2008,10 @@ Jacques. Etude &agrave. St Xandre 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUCHET Pierre de + Jean et
-GABORIT XX . Ý en Poitou. dt Marsilly 17.<o:p></o:p></span></p>
+GABORIT XX .  en Poitou. dt Marsilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BECHOIS Jeanne de + Jullien
-et GENDRON Marie.Ý <span style='color:red'>Fay en Poitou 16</span>. dt Marsilly
+et GENDRON Marie. <span style='color:red'>Fay en Poitou 16</span>. dt Marsilly
 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -2021,7 +2021,7 @@ et GENDRON Marie.Ý <span style='color:red'>Fay en Poitou 16</span>. dt Marsilly
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHERBONNEAU Jean de +
-Toussaint et + CORBIERRE Jeanne. <span style='color:red'>Ý Marsaq 16</span>. dt
+Toussaint et + CORBIERRE Jeanne. <span style='color:red'> Marsaq 16</span>. dt
 Dompierre / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRARD Marie Marguerite
@@ -2034,11 +2034,11 @@ Charlotte ( veuve ETIEN Antoine ) . dt St Xandre 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PINAUD Charles de Jean et +
-GARNIER Catherine. <span style='color:red'>Ý St Sulpice en Angoumois 16</span>.
+GARNIER Catherine. <span style='color:red'> St Sulpice en Angoumois 16</span>.
 dt Marsilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROBAIN Marie de + Jean et
-CHAGNEAU Marie. Ý Vix 85.dt Marsilly 17.<o:p></o:p></span></p>
+CHAGNEAU Marie.  Vix 85.dt Marsilly 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -2046,10 +2046,10 @@ CHAGNEAU Marie. Ý Vix 85.dt Marsilly 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROY Jean de + Jacques et
-LASUR Marie.Ý <span style='color:red'>Jarnacq 16</span>. dt Ste Soulle 17.<o:p></o:p></span></p>
+LASUR Marie. <span style='color:red'>Jarnacq 16</span>. dt Ste Soulle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CONTANT Marie de + Jacques et
-BRUN Marie. Ý Le Boup&egrave.re 85. dt Ste Soulle 17.<o:p></o:p></span></p>
+BRUN Marie.  Le Boup&egrave.re 85. dt Ste Soulle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire DINET Charles.
 Etude &agrave. Bourgneuf 17.<o:p></o:p></span></b></p>
@@ -2063,10 +2063,10 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 mso-ansi-language:DE'>3 E 59/902. CM 20/11/1732. X 16/02/1733 Ste Soulle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TASTEBOIS Pierre de Jacques
-et + BIGOT Marguerite. Ý <span style='color:red'>Juillac 16</span>.<o:p></o:p></span></p>
+et + BIGOT Marguerite.  <span style='color:red'>Juillac 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOTHET Catherine de + Louis
-et CHERBONNEAU Marie. Ý et dt Ste Soulle 17.<o:p></o:p></span></p>
+et CHERBONNEAU Marie.  et dt Ste Soulle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire PELLIGNEAU XX.
 Etude &agrave. Bourgneuf 17.<o:p></o:p></span></b></p>
@@ -2079,7 +2079,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/11/1750. X 16/02/1751 V&eacute.rines 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PEZEAU Jean Cl&eacute.ment de +
-Pierre et + PEREAU Magdeleine. Ý <span style='color:red'>en Angoumois 16</span>.
+Pierre et + PEREAU Magdeleine.  <span style='color:red'>en Angoumois 16</span>.
 dt V&eacute.rines 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PETIT Marie de + Pierre et +
@@ -2096,7 +2096,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 29/04/1771.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ANGIBEAU Pierre de + Jean et
-RASSET Fran&ccedil.oise<span style='color:red'>. Ý Herpes 16.<o:p></o:p></span></span></p>
+RASSET Fran&ccedil.oise<span style='color:red'>.  Herpes 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUET Elisabeth de Gabriel et
 CHAIGNEAU Jeanne. La Jarrie 17.<o:p></o:p></span></p>
@@ -2107,10 +2107,10 @@ CHAIGNEAU Jeanne. La Jarrie 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERNARD Pierre de + Charles
-et + GREAUD Marie.Ý <span style='color:red'>Bayers 16.<o:p></o:p></span></span></p>
+et + GREAUD Marie. <span style='color:red'>Bayers 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERNARDEAU Jeanne de Gabriel
-et + THEULLE Marie. Thair&eacute. d’Aunis 17.<o:p></o:p></span></p>
+et + THEULLE Marie. Thair&eacute. d&acute;Aunis 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l8 level1 lfo3;tab-stops:list 36.0pt'><span
@@ -2119,7 +2119,7 @@ et + THEULLE Marie. Thair&eacute. d’Aunis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'><span
 style='mso-spacerun:yes'> </span>CHAPRON Jacques de Pierre et RULLIER Jeanne<span
-style='color:red'>.Ý Mainxe 16.<o:p></o:p></span></span></p>
+style='color:red'>. Mainxe 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUHAUD Marie Jeanne de
 Pierre et BRILLOUET Jeanne . Anais 17.<o:p></o:p></span></p>
@@ -2130,7 +2130,7 @@ Pierre et BRILLOUET Jeanne . Anais 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHERBONNIER Pierre de Jacques
-et BODY Catherine. Ý <span style='color:red'>Ch&acirc.teauneuf / Charente 16</span>.<o:p></o:p></span></p>
+et BODY Catherine.  <span style='color:red'>Ch&acirc.teauneuf / Charente 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHARRAUD Louise de Louis
 Fran&ccedil.ois et + GIRARD Marie. Virson 17.<o:p></o:p></span></p>
@@ -2141,10 +2141,10 @@ Fran&ccedil.ois et + GIRARD Marie. Virson 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FROMENTIN Pierre de +
-Fran&ccedil.ois et + LABARDE Antoinette.Ý <span style='color:red'>St Gourson 16.<o:p></o:p></span></span></p>
+Fran&ccedil.ois et + LABARDE Antoinette. <span style='color:red'>St Gourson 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUGEON Marianne de Fran&ccedil.ois
-et + BOUTIER Anne. St M&eacute.dars d’Aunis 17.<o:p></o:p></span></p>
+et + BOUTIER Anne. St M&eacute.dars d&acute;Aunis 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l8 level1 lfo3;tab-stops:list 36.0pt'><span
@@ -2152,10 +2152,10 @@ et + BOUTIER Anne. St M&eacute.dars d’Aunis 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GOUIN Pierre de + Pierre et
-ARNAUD Marie.Ý <span style='color:red'>Gensac la Pallue 16.<o:p></o:p></span></span></p>
+ARNAUD Marie. <span style='color:red'>Gensac la Pallue 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PENEAU Marianne de Gabriel et
-+ ANCELAIN Louise. St M&eacute.dard d’Aunis 17.<o:p></o:p></span></p>
++ ANCELAIN Louise. St M&eacute.dard d&acute;Aunis 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l8 level1 lfo3;tab-stops:list 36.0pt'><span
@@ -2163,7 +2163,7 @@ ARNAUD Marie.Ý <span style='color:red'>Gensac la Pallue 16.<o:p></o:p></span></s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARTINEAU Antoine de Jean et
-SORILLET Jeanne<span style='color:red'>.Ý Moulidars 16.<o:p></o:p></span></span></p>
+SORILLET Jeanne<span style='color:red'>. Moulidars 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARTINEAU Anne de Charles et
 PIGEONNIER Anne. La Jarrie 17.<o:p></o:p></span></p>
@@ -2174,10 +2174,10 @@ PIGEONNIER Anne. La Jarrie 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOURRIER Philippe de +
-Philippe et MARCHAND Marie.Ý <span style='color:red'>La Chapelle 16.<o:p></o:p></span></span></p>
+Philippe et MARCHAND Marie. <span style='color:red'>La Chapelle 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUPEAU Marie Jeanne ( veuve
-MAZEL Jacques ) . St M&eacute.dard d’Aunis 17.<o:p></o:p></span></p>
+MAZEL Jacques ) . St M&eacute.dard d&acute;Aunis 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l8 level1 lfo3;tab-stops:list 36.0pt'><span
@@ -2185,7 +2185,7 @@ MAZEL Jacques ) . St M&eacute.dard d’Aunis 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NEVEUR Jean de + Jean et +
-PINETEAU Jeanne.Ý <span style='color:red'>St Est&egrave.phe 16.<o:p></o:p></span></span></p>
+PINETEAU Jeanne. <span style='color:red'>St Est&egrave.phe 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GEFFARD Marie de Jean et +
 OLLEREAU Elisabeth. Voutron / Yves 17.<o:p></o:p></span></p>
@@ -2196,7 +2196,7 @@ OLLEREAU Elisabeth. Voutron / Yves 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NEVEUR Jean ( veuf GEFFARD
-Marie ) .Ý <span style='color:red'>St Est&egrave.phe 16.</span><o:p></o:p></span></p>
+Marie ) . <span style='color:red'>St Est&egrave.phe 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAUPETIT Louise de Jean et
 DURANDET Fran&ccedil.oise. Mortagne la Vieille 17.<o:p></o:p></span></p>
@@ -2207,7 +2207,7 @@ DURANDET Fran&ccedil.oise. Mortagne la Vieille 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PINEAU Fran&ccedil.ois de + Pierre
-et + ROUGIER Jeanne. Ý <span style='color:red'>Barro 16.<o:p></o:p></span></span></p>
+et + ROUGIER Jeanne.  <span style='color:red'>Barro 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>REGNOU Suzanne de Pierre et
 PENAUD Marie. St Christophe 17.<o:p></o:p></span></p>
@@ -2218,10 +2218,10 @@ PENAUD Marie. St Christophe 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SABIRON Jean de Antoine et
-GASTIGNOLLE Marie. Le Gu&eacute. d’Aller&eacute. 17.<o:p></o:p></span></p>
+GASTIGNOLLE Marie. Le Gu&eacute. d&acute;Aller&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TERRA Jeanne de Jean et +
-NORRIGEON Jeanne.Ý <span style='color:red'>Villej&eacute.sus 16.</span><o:p></o:p></span></p>
+NORRIGEON Jeanne. <span style='color:red'>Villej&eacute.sus 16.</span><o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l8 level1 lfo3;tab-stops:list 36.0pt'><span
@@ -2229,7 +2229,7 @@ NORRIGEON Jeanne.Ý <span style='color:red'>Villej&eacute.sus 16.</span><o:p></o:
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SICARD Jean de + Jean et
-MIAUD Marie.Ý <span style='color:red'>La Magdeleine 16.<o:p></o:p></span></span></p>
+MIAUD Marie. <span style='color:red'>La Magdeleine 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GEFFARD Catherine de Jean et
 + OLLEREAU Elisabeth. Voutron / Yves 17.<o:p></o:p></span></p>
@@ -2241,12 +2241,12 @@ MIAUD Marie.Ý <span style='color:red'>La Magdeleine 16.<o:p></o:p></span></span>
 
 <p class=MsoNormal><span lang=EN-GB style='font-size:10.0pt;mso-ansi-language:
 EN-GB'>SICARD Jean ( veuf GEFFARD Catherine ). </span><span style='font-size:
-10.0pt'>Ý <st1:PersonName ProductID="La Magdeleine" w:st="on"><span
+10.0pt'> <st1:PersonName ProductID="La Magdeleine" w:st="on"><span
  style='color:red'>La Magdeleine</span></st1:PersonName><span style='color:
 red'> 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GOUGAUD Marie de Jean et + BE
-Jeanne. Thair&eacute. d’Aunis 17.<o:p></o:p></span></p>
+Jeanne. Thair&eacute. d&acute;Aunis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire DINET Jean
 Fran&ccedil.ois. Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
@@ -2257,14 +2257,14 @@ Fran&ccedil.ois. Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RAJONON&nbsp;? Pierre ( veuf
-PERAUD Elisabeth ) Ý <span style='color:red'>Piasse<span
+PERAUD Elisabeth )  <span style='color:red'>Piasse<span
 style='mso-spacerun:yes'>  </span>en Angoumois 16</span>. dt St Christophe 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DORNAS&nbsp;? Marguerite. (
 veuve DESCHAMPS Pierre ). dt St Christophe 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire RULLIER Jean le
-jeune. Etude &agrave. Thair&eacute. d’Aunis 17.<o:p></o:p></span></b></p>
+jeune. Etude &agrave. Thair&eacute. d&acute;Aunis 17.<o:p></o:p></span></b></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l8 level1 lfo3;tab-stops:list 36.0pt'><span
@@ -2272,7 +2272,7 @@ jeune. Etude &agrave. Thair&eacute. d’Aunis 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ALLITON Fran&ccedil.ois de Fran&ccedil.ois
-et PERROT Fran&ccedil.oise<span style='color:red'>.Ý Manot 16.<o:p></o:p></span></span></p>
+et PERROT Fran&ccedil.oise<span style='color:red'>. Manot 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRAUDET Anne ( veuve
 MAUPETIT Daniel ) . Voutron / Yves 17.<o:p></o:p></span></p>
@@ -2285,7 +2285,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 05/05/1737.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BILLARD Jean de + Pierre et
-COLLIN Marie.Ý <span style='color:red'>Balzac 16.<o:p></o:p></span></span></p>
+COLLIN Marie. <span style='color:red'>Balzac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAINE Suzanne de Jean et
 FAUREAU Marie. Thair&eacute. 17.<o:p></o:p></span></p>
@@ -2298,7 +2298,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 19/02/1756.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRUNET Jean de + Jean et +
-SICARD Ren&eacute.e.Ý <span style='color:red'>Embourie 16.<o:p></o:p></span></span></p>
+SICARD Ren&eacute.e. <span style='color:red'>Embourie 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BENOIST Marie de Jacques et +
 CAILLAUD Jeanne. Thair&eacute. 17.<o:p></o:p></span></p>
@@ -2311,10 +2311,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 13/09/1739.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUDOIGNON Pierre de Jacob et
-DURAND Jeanne.Ý <span style='color:red'>Bassac 16.<o:p></o:p></span></span></p>
+DURAND Jeanne. <span style='color:red'>Bassac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUDOIGNON Henriette de Jean
-et AUBINAUD Marguerite. Cir&eacute. d’Aunis 17.<o:p></o:p></span></p>
+et AUBINAUD Marguerite. Cir&eacute. d&acute;Aunis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -2324,7 +2324,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 27/06/1756.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FORNOU Etienne de + Jean et
-THOMAS Marie.Ý <span style='color:red'>Mouthier / Boëme 16.</span><o:p></o:p></span></p>
+THOMAS Marie. <span style='color:red'>Mouthier / Bo&euml;me 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAGNANT Marie de Pierre et +
 BLAIS Marie. Ardilleux 79.<span style='color:red'><o:p></o:p></span></span></p>
@@ -2337,7 +2337,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 29/12/1754. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GALMON Jean de + Charles et
-BIDET Fran&ccedil.oise.Ý <span style='color:red'>St M&eacute.dard Barbezieux 16.<o:p></o:p></span></span></p>
+BIDET Fran&ccedil.oise. <span style='color:red'>St M&eacute.dard Barbezieux 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BELLINEAU Marie Marguerite de
 Antoine et MICHO Marguerite. Marans 17.<o:p></o:p></span></p>
@@ -2350,7 +2350,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 14/11/1756.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GODINEAU Pierre de Pierre et
-GILLOT Jeanne.Ý <span style='color:red'>Mallaville 16.<o:p></o:p></span></span></p>
+GILLOT Jeanne. <span style='color:red'>Mallaville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROBERT Marianne ( veuve
 GIRAUD Jean )de Antoine et BOURDIN Anne. Thair&eacute. 17.<o:p></o:p></span></p>
@@ -2363,7 +2363,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 25/01/1756.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LOT Pierre de + Pierre et
-SAUVETERRE Marie.Ý <span style='color:red'>Bessac 16.<o:p></o:p></span></span></p>
+SAUVETERRE Marie. <span style='color:red'>Bessac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ANGEVIN Marie ( veuve GOUJAUD
 Pierre ) de Jacques et + PICOT H&eacute.l&egrave.ne. Thair&eacute. 17.<o:p></o:p></span></p>
@@ -2376,10 +2376,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 10/09/1752.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MONTEXIER Jacques de +
-Jacques et LEUREAU Marie<span style='color:red'>.Ý Gondeville 16</span>.<o:p></o:p></span></p>
+Jacques et LEUREAU Marie<span style='color:red'>. Gondeville 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JARRY Marie de Henry et +
-BOURDIN Marie. Cir&eacute. d’Aunis 17.<o:p></o:p></span></p>
+BOURDIN Marie. Cir&eacute. d&acute;Aunis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -2389,7 +2389,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 04/05/1754.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VILLAIN Pierre de + Nicolas
-et + BONVALET Marguerite. Ý <span style='color:red'>Balzac 16.<o:p></o:p></span></span></p>
+et + BONVALET Marguerite.  <span style='color:red'>Balzac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUGE Jeanne ( veuve MAUPETIT
 Daniel ) Thair&eacute. 17.<o:p></o:p></span></p>
@@ -2404,7 +2404,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 59/1057. CM 08/06/1768.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BUROLLEAU Jean de + Jean et +
-BERGER Marie. Ý <span style='color:red'>Villefagnan 16.<o:p></o:p></span></span></p>
+BERGER Marie.  <span style='color:red'>Villefagnan 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AVRARD Marie de Jean et +
 BRUN Jacquette. St Christophe 17.<o:p></o:p></span></p>
@@ -2417,7 +2417,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 19/10/1760.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUCAS Jacques de + Fran&ccedil.ois
-et + CHAIGNE Marie.Ý <span style='color:red'>St Amant de Boixe 16.<o:p></o:p></span></span></p>
+et + CHAIGNE Marie. <span style='color:red'>St Amant de Boixe 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JANVRET Marie Anne de
 Fran&ccedil.ois et GILLEBERT Marie. Montroy 17.<o:p></o:p></span></p>
@@ -2430,7 +2430,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 11/02/1766.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JOUMIER Pierre de Jean et +
-GONTIER Marie.Ý <span style='color:red'>Echalat 16.<o:p></o:p></span></span></p>
+GONTIER Marie. <span style='color:red'>Echalat 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUITTON Catherine de Pierre
 et + ANCELLAIN Elisabeth. Bourgneuf 17.<o:p></o:p></span></p>
@@ -2443,7 +2443,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 07/01/1762.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PETIT de la CONFRETT…….de +
-Jacques et + DAVESON Marie Magdeleine.Ý <span style='color:red'>Gourville 16.<o:p></o:p></span></span></p>
+Jacques et + DAVESON Marie Magdeleine. <span style='color:red'>Gourville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FROMENT Henriette ( veuve
 LEYMARIE XX ). Bourgneuf 17.<o:p></o:p></span></p>
@@ -2459,11 +2459,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 25/08/1769. X 10/10/1769 Ste Soulle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BIAIS Jacques de Pierre et +
-BOINARD Elisabeth. <span style='color:red'>Ý St Cibardeau 16</span>. dt Ste
+BOINARD Elisabeth. <span style='color:red'> St Cibardeau 16</span>. dt Ste
 Soulle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PETIT Louise de + Jean et
-ANDRE Anne. Ý et dt Ste Soulle 17.<o:p></o:p></span></p>
+ANDRE Anne.  et dt Ste Soulle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -2473,11 +2473,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 31/05/1768. X 31/05/1768 La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUILLON Jean de Andr&eacute. et
-CREMON Marie. <span style='color:red'>Ý St Front 16</span>. dt La Rochelle
+CREMON Marie. <span style='color:red'> St Front 16</span>. dt La Rochelle
 Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARTIN Magdeleine de +
-Jacques et BONNEST Magdeleine. Ý Aytr&eacute. 17. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
+Jacques et BONNEST Magdeleine.  Aytr&eacute. 17. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -2487,11 +2487,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 07/01/1770. X 29/01/1770 Dompierre / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MASSONNET Jean de + Louis et
-ROBIN Catherine. <span style='color:red'>Ý Ste Mary en Angoumois 16</span>. dt
+ROBIN Catherine. <span style='color:red'> Ste Mary en Angoumois 16</span>. dt
 Dompierre / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHARIAUD Elisabeth de + Louis
-et FOUBERT Marguerite. Ý et dt Dompierre / Mer 17.<o:p></o:p></span></p>
+et FOUBERT Marguerite.  et dt Dompierre / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -2501,7 +2501,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 16/08/1750.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MENU Fran&ccedil.ois de + Fran&ccedil.ois
-et + BARREAU Catherine. Ý <span style='color:red'>Derausau&nbsp;? en Angoumois
+et + BARREAU Catherine.  <span style='color:red'>Derausau&nbsp;? en Angoumois
 16</span>. dt Dompierre / Mer 17<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOUSNIER Magdeleine ( veuve
@@ -2511,11 +2511,11 @@ RATEAU Jean ) dt Ste Soulle 17.<o:p></o:p></span></p>
 02/10/1770 La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PALLAT Estienne de Paul et +
-MALIN Marie. Ý <span style='color:red'>Gourville 16</span>. dt Dompierre / Mer
+MALIN Marie.  <span style='color:red'>Gourville 16</span>. dt Dompierre / Mer
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MERCIER Olive de Estienne et
-BORIT Jeanne. Ý St Etienne d’Ars , &icirc.le de R&eacute. 17. dt La Rochelle Notre Dame 17<o:p></o:p></span></p>
+BORIT Jeanne.  St Etienne d&acute;Ars , &icirc.le de R&eacute. 17. dt La Rochelle Notre Dame 17<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire PIRAULT Fran&ccedil.ois.
 Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
@@ -2530,11 +2530,11 @@ mso-ansi-language:EN-GB'>3 E 59/1106. CM 09/02/1754. X 26/02/1754 St Christophe
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BECHADE L&eacute.onard de + Louis et
-+ VIPPE&nbsp;? Marie. <span style='color:red'>Ý Marillac 16.</span> dt St
++ VIPPE&nbsp;? Marie. <span style='color:red'> Marillac 16.</span> dt St
 Christophe 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LIGNERON Anne de + Jean et
-BEGAUD Jeanne. Ý et dt St Christophe 17.<o:p></o:p></span></p>
+BEGAUD Jeanne.  et dt St Christophe 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-GB style='font-size:
@@ -2546,10 +2546,10 @@ mso-ansi-language:EN-GB'>3 E 59/1123. CM 30/04/1771. X 27/05/1771 St Christophe
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRIMAUD Pierre de + Jean et
-BENET Jeanne. <span style='color:red'>Ý St Romain d’Aubeterre 16.<o:p></o:p></span></span></p>
+BENET Jeanne. <span style='color:red'> St Romain d&acute;Aubeterre 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARLANGEON Marie Anne de +
-Jean et MOREAU&nbsp;? Magdeleine. Ý et dt St Christophe 17.<o:p></o:p></span></p>
+Jean et MOREAU&nbsp;? Magdeleine.  et dt St Christophe 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -2559,11 +2559,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 28/06/1773. X 12/07/1773 Bourgneuf 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAYNARD Jean de + Jacques et
-MICHELLE Catherine. Ý <span style='color:red'>Tiss&eacute. la For&ecirc.t 16</span>.dt
+MICHELLE Catherine.  <span style='color:red'>Tiss&eacute. la For&ecirc.t 16</span>.dt
 Montroy 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JUTTEAU Marie de + Louis et
-BENETEAU Elisabeth. Ý Clavette 17. dt Bourgneuf 17.<o:p></o:p></span></p>
+BENETEAU Elisabeth.  Clavette 17. dt Bourgneuf 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire DESAYVRE Jean
 Isaac. Etude &agrave. St Xandre et La Rochelle 17.<o:p></o:p></span></b></p>
@@ -2580,7 +2580,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 RICHARD Marguerite ) . dt Marsilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRETON Jeanne de Jean et
-BOUHIER Marie. Ý <span style='mso-spacerun:yes'> </span><span style='color:
+BOUHIER Marie.  <span style='mso-spacerun:yes'> </span><span style='color:
 red'>St Sulpice pr&egrave.s Cognac 16</span>. dt Marsilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
@@ -2592,10 +2592,10 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 21/06/1762. X 21/06/1762 Marsilly 17.<b><o:p></o:p></b></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MESNARD Pierre de + Pierre et
-NAUDIN Anne<span style='color:red'>.Ý Rouillac 16.<o:p></o:p></span></span></p>
+NAUDIN Anne<span style='color:red'>. Rouillac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NAUDON Jeanne de + Fran&ccedil.ois
-et GAGNET Fran&ccedil.oise. Ý et dt Marsilly 17.<o:p></o:p></span></p>
+et GAGNET Fran&ccedil.oise.  et dt Marsilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -2605,7 +2605,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 02/01/1763. X 01/02/1763 Nieul / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PRIOLEAU Pierre de + Pierre
-et MORIN Jeanne. <span style='color:red'>Ý St Cybardeaux 16</span>. dt St
+et MORIN Jeanne. <span style='color:red'> St Cybardeaux 16</span>. dt St
 Xandre 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BARANGER Jeanne ( veuve
@@ -2622,11 +2622,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 X 29/01/1801 V&eacute.rines 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUTILLIER Jean de Fran&ccedil.ois
-et + MELLANGE Fran&ccedil.oise. Ý <span style='color:red'>Brie 16.</span> dt La
+et + MELLANGE Fran&ccedil.oise.  <span style='color:red'>Brie 16.</span> dt La
 Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BENOIST Louise de + Jean et +
-Gaborit marie. Ý et dt V&eacute.rines 17.<o:p></o:p></span></p>
+Gaborit marie.  et dt V&eacute.rines 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire LAMBERT Jean
 Jacques. Etude &agrave. La Jarrie et Clavette 17.<o:p></o:p></span></b></p>
@@ -2639,10 +2639,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 X 19/01/1796 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PERRIN Jean de Jacques et
-RIFFAUD Jeanne. Ý Taugon / La Ronde 17. dt Salles 17.<o:p></o:p></span></p>
+RIFFAUD Jeanne.  Taugon / La Ronde 17. dt Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MASSICOT Marie de + Jean et
-FERJOT Marie. Ý <span style='color:red'>Foussignac 16</span>.dt Salles 17.<o:p></o:p></span></p>
+FERJOT Marie.  <span style='color:red'>Foussignac 16</span>.dt Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -2652,7 +2652,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 05/09/1773. X 06/09/1773 Montroy 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SORLIN Jean de Pierre
-Fran&ccedil.ois et BOUSSIRON Marie Anne. Ý <span style='color:red'>Ste Rad&eacute.gonde en le
+Fran&ccedil.ois et BOUSSIRON Marie Anne.  <span style='color:red'>Ste Rad&eacute.gonde en le
 Petit Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SAUDILLAUD de la COURT Marie
@@ -2670,7 +2670,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOISSELIER Fran&ccedil.ois de +
 Charles et +<span style='mso-spacerun:yes'>  </span>COURIVEAU Marie<span
-style='color:red'>.Ý Oradour Fanais 16.<o:p></o:p></span></span></p>
+style='color:red'>. Oradour Fanais 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MACHETEAU F&eacute.licit&eacute. de Jean et
 BOISFREAU Marguerite. Salles / Mer 17.<o:p></o:p></span></p>
@@ -2683,7 +2683,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 24/11/1784.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HOSPITET Jacques de Jean et
-MENAINGE Catherine<span style='color:red'>.Ý St Fort / N&eacute. 16</span>.<o:p></o:p></span></p>
+MENAINGE Catherine<span style='color:red'>. St Fort / N&eacute. 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FERCHAUD Suzanne de Jean
 Nicolas et POTONNIER Marie Jeanne. Salles / Mer 17.<o:p></o:p></span></p>
@@ -2696,7 +2696,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 23/02/1784.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PERROQUIN Cosme de Rocq et
-PILLORGE Marie.Ý <span style='color:red'>Ste Colombe 16.<o:p></o:p></span></span></p>
+PILLORGE Marie. <span style='color:red'>Ste Colombe 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRASSET Catherine de Jacques
 et FEUILLET Jeanne. Mortagne la Vieille 17.<o:p></o:p></span></p>
@@ -2709,10 +2709,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 15/06/1785.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROBERT Jacques de + Charles et
-BERTON Marie .Ý <span style='color:red'>Villej&eacute.sus 16.<o:p></o:p></span></span></p>
+BERTON Marie . <span style='color:red'>Villej&eacute.sus 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHARAUD Marianne Louise (
-veuve CAILLAUD Andr&eacute. ) St M&eacute.dard d’Aunis 17.<o:p></o:p></span></p>
+veuve CAILLAUD Andr&eacute. ) St M&eacute.dard d&acute;Aunis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire SORLIN Jean. Etude
 &agrave. Bourgneuf 17.<o:p></o:p></span></b></p>
@@ -2725,7 +2725,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 17/05/1772.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FENIOU Jean dit DUJARDIN de +
-R&eacute.mond et FROMANTIN Anne. Ý <span style='color:red'>en Angoumois 16</span>. dt
+R&eacute.mond et FROMANTIN Anne.  <span style='color:red'>en Angoumois 16</span>. dt
 Montroy 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAUFITE Suzanne ( veuve
@@ -2739,7 +2739,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 27/04/1775. X 31/05/1775 Rochefort St Louis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GORICHON Jean de Jean et
-DEVIGNE Marie. <span style='color:red'>Ý St Est&egrave.ve 16</span>. dt Rochefort 17.<o:p></o:p></span></p>
+DEVIGNE Marie. <span style='color:red'> St Est&egrave.ve 16</span>. dt Rochefort 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAILLAUD Marie Anne de Louis
 et LEGROS Jeanne. dt Rochefort 17.<o:p></o:p></span></p>
@@ -2752,10 +2752,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/04/1773.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HOSPITEL Jean de Jean et +
-HOSPITEL Jeanne. Ý <span style='color:red'>St Fort 16.<o:p></o:p></span></span></p>
+HOSPITEL Jeanne.  <span style='color:red'>St Fort 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUX Henriette Magdeleine de
-Fran&ccedil.ois et BLANCHARD Catherine.Ý Cougnes / La Rochelle 17.dt Bourgneuf 17.<o:p></o:p></span></p>
+Fran&ccedil.ois et BLANCHARD Catherine. Cougnes / La Rochelle 17.dt Bourgneuf 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire CHAUVET Louis
 Magdeleine. Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
@@ -2770,7 +2770,7 @@ Magdeleine. Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
 Anne Th&eacute.r&egrave.se ) . dt Dompierre / Boutonne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PIRAUD L&eacute.onarde de + Jean et
-LAMBERT Marie. Ý <span style='color:red'>Montmoreau 16.</span> dt St Christophe
+LAMBERT Marie.  <span style='color:red'>Montmoreau 16.</span> dt St Christophe
 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -2780,7 +2780,7 @@ LAMBERT Marie. Ý <span style='color:red'>Montmoreau 16.</span> dt St Christophe
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VIVIEN Pierre Philippe de +
-Philippe et TESSEREAU Marie.Ý <span style='color:red'>Pesay Audouin 16</span>.
+Philippe et TESSEREAU Marie. <span style='color:red'>Pesay Audouin 16</span>.
 dt Ste Soulle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GASTEAU Marie de Fran&ccedil.ois et
@@ -2795,7 +2795,7 @@ Etude &agrave. Ste Soulle 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VIVIEN Pierre Philippe de +
-Philippe et TESSEREAU Marie. Ý <span style='color:red'>Paizay Naudouin 16.</span><o:p></o:p></span></p>
+Philippe et TESSEREAU Marie.  <span style='color:red'>Paizay Naudouin 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GASTEAU Marie de Fran&ccedil.ois et
 GUYENNET Anne. dt Ste Soulle 17.<o:p></o:p></span></p>
@@ -2810,11 +2810,11 @@ Fran&ccedil.ois. Etude &agrave. St Xandre 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOISSEAU Daniel de Jean et
-BOURDEAU Catherine. Ý <span style='color:red'>St Laurent des Combes 16</span>.
+BOURDEAU Catherine.  <span style='color:red'>St Laurent des Combes 16</span>.
 dt Nieul 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JOUINEAU Magdeleine de
-Jacques et + BUSSEAU Marie Anne. Ý et d Ste Soulle 17.<o:p></o:p></span></p>
+Jacques et + BUSSEAU Marie Anne.  et d Ste Soulle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire BECHAUD Jean.
 Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
@@ -2827,11 +2827,11 @@ Etude &agrave. St Christophe 17.<o:p></o:p></span></b></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CRETE Jean de Jacques et
 THOURIN&nbsp;? </span><span lang=EN-GB style='font-size:10.0pt;mso-ansi-language:
-EN-GB'>Marguerite. Ý <span style='color:red'>Echallat 16.</span> dt St
+EN-GB'>Marguerite.  <span style='color:red'>Echallat 16.</span> dt St
 Christophe 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BENOIT Marie de + Pierre et +
-GARRAUD Jeanne. Ý et dt St Christophe 17.<o:p></o:p></span></p>
+GARRAUD Jeanne.  et dt St Christophe 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l8 level1 lfo3;tab-stops:list 36.0pt'><span
@@ -2841,11 +2841,11 @@ GARRAUD Jeanne. Ý et dt St Christophe 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MENOCHEAU Jean de + Pierre et
-ROUSSEAU Marie. Ý <span style='color:red'>Sambre / Charente&nbsp;? 16</span>.
+ROUSSEAU Marie.  <span style='color:red'>Sambre / Charente&nbsp;? 16</span>.
 dt St Christophe 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOURNEAU Marie de + Jean et
-CAILLETEAU Jeanne. Ý Le Langon 85. dt St Christophe 17.<o:p></o:p></span></p>
+CAILLETEAU Jeanne.  Le Langon 85. dt St Christophe 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l8 level1 lfo3;tab-stops:list 36.0pt'><span
@@ -2854,7 +2854,7 @@ CAILLETEAU Jeanne. Ý Le Langon 85. dt St Christophe 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROY Simon de + Ren&eacute. dit
-DANJOU et + NICOLAS Marie. Ý <span style='color:red'>Beaulieu canton<span
+DANJOU et + NICOLAS Marie.  <span style='color:red'>Beaulieu canton<span
 style='mso-spacerun:yes'>  </span>St Claud 16</span>.dt St Christophe 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DURAND Marie de David
@@ -2870,11 +2870,11 @@ Joseph. Etude &agrave. La Jarrie 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHARTIER Pierre ( veuf COLLIN
-Marie ) de Jacques et SERVANT Fran&ccedil.oise. <span style='color:red'>Ý Sur……16.</span>
+Marie ) de Jacques et SERVANT Fran&ccedil.oise. <span style='color:red'> Sur……16.</span>
 dt Mortagne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BELIN Marie Magdeleine. (
-veuve CHAURAY Pierre ) de Mathurin et BONNIN Marie. Ý Aigrefeuille d’Aunis 17.
+veuve CHAURAY Pierre ) de Mathurin et BONNIN Marie.  Aigrefeuille d&acute;Aunis 17.
 dt Mortagne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire PUGEAU Jean. Etude
@@ -2891,7 +2891,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Fran&ccedil.oise ) . Clavette 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PARIS Marguerite de + Jean et
-XX .Ý <span style='color:red'>Villaigneau en Angoumois 16.<o:p></o:p></span></span></p>
+XX . <span style='color:red'>Villaigneau en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire COLLONIER
 Toussaint. Etude &agrave. Croix Chapeau 17.<o:p></o:p></span></b></p>
@@ -2904,7 +2904,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 CM 19/06/1746. X 06/02/1747 La Jarrie 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUDOYER Louis de + Pierre et
-+ JOUSSEAULME Marie. Ý <span style='color:red'>en Angoumois 16.<o:p></o:p></span></span></p>
++ JOUSSEAULME Marie.  <span style='color:red'>en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERTET Marie de Charles et
 MARTIN Anne. Chambon 17.<o:p></o:p></span></p>
@@ -2920,7 +2920,7 @@ CM 11/06/1730. X 03/07/1730 Croix Chapeau 17.<o:p></o:p></span></p>
 POINTHIER Anne. Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUICHARD Catherine de + Jean
-et + BERTON Magdeleine <span style='color:red'>.Ý Jensac 16.<o:p></o:p></span></span></p>
+et + BERTON Magdeleine <span style='color:red'>. Jensac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -2930,7 +2930,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 CM 21/09/1758. X 30/10/1758 Aigrefeuille 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BLOUIN Jean de + Fran&ccedil.ois et
-+ RAYMOND Antoinette. Ý <span style='color:red'>Jaulde 16.<o:p></o:p></span></span></p>
++ RAYMOND Antoinette.  <span style='color:red'>Jaulde 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THIBAULT Marie Anne ( veuve
 JEAN Pierre ).<o:p></o:p></span></p>
@@ -2943,7 +2943,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 112. Promesse 26/05/1744. CM 10/11/1744. X 10/11/1744 Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAIGNEAU Pierre de + Pierre
-et BOUCHE Marie. <span style='color:red'>Ý Challignac 16</span>. dt Le Thou 17.<o:p></o:p></span></p>
+et BOUCHE Marie. <span style='color:red'> Challignac 16</span>. dt Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHASTAGNER Catherine de +
 Antoine et + DOUSSET Marguerite. Le Thou 17.<o:p></o:p></span></p>
@@ -2956,7 +2956,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 112. CM 04/07/1743. X 29/07/1743 La Jarrie 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GARNAUD Jacques de + Fran&ccedil.ois
-et + LABORDE Marie. <span style='color:red'>Ý St Groux 16.<o:p></o:p></span></span></p>
+et + LABORDE Marie. <span style='color:red'> St Groux 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JOUSSE Marie de + Pierre t
 GARRAUD Marie. La Jarrie 17.<o:p></o:p></span></p>
@@ -2969,7 +2969,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 CM 27/011738. X 27/01/1738 Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JEANNET Jeande Jean et +
-DAVID Catherine.Ý <span style='color:red'>Chavenat 16.<o:p></o:p></span></span></p>
+DAVID Catherine. <span style='color:red'>Chavenat 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNEAU Louise ( veuve XXX
 Michel ) <o:p></o:p></span></p>
@@ -2982,7 +2982,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 24/011754. X 21/01/1754 Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAROT Jean de Charles et
-BRUNEAU Elisabeth. Ý <span style='color:red'>Selette 16.<o:p></o:p></span></span></p>
+BRUNEAU Elisabeth.  <span style='color:red'>Selette 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRIGOU Marie de Pierre et
 BARILLON Marie. Croix Chapeau 17.<o:p></o:p></span></p>
@@ -2995,7 +2995,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 CM 06/05/1736. X 07/05/1736 La Jarrie 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NADEAU Etienne de + Fran&ccedil.ois
-et PALLUT Mrie Anne.Ý <span style='color:red'>Faille en Angoumois 16.<o:p></o:p></span></span></p>
+et PALLUT Mrie Anne. <span style='color:red'>Faille en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FIZEUNE Fran&ccedil.oise de + Denis
 et GIGET Catherine. <o:p></o:p></span></p>
@@ -3008,7 +3008,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 115. CM 23/10/1747. X 20/11/1747 Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PEROT Pierre de Antoine et
-BOUFINIER Marie.Ý <span style='color:red'>Chadurie 16.<o:p></o:p></span></span></p>
+BOUFINIER Marie. <span style='color:red'>Chadurie 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOISSARD Marie ( veuve
 POIRAUD Louis ). Le Thou 17.<o:p></o:p></span></p>
@@ -3021,7 +3021,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 25/02/1748.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROCHE Antoine de + Pierre et
-+ CORNEAU Jeanne.Ý <span style='color:red'>Vindelle 16.<o:p></o:p></span></span></p>
++ CORNEAU Jeanne. <span style='color:red'>Vindelle 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUFFARD Fran&ccedil.oise ( veuve
 SEGUIN Fran&ccedil.ois ) . Croix Chapeau 17.<o:p></o:p></span></p>
@@ -3034,7 +3034,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 CM 06/12/1741. X 6/12/1741 Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SEGUIN Fran&ccedil.ois de + Pierre
-et BOISMIER Marguerite.Ý <span style='color:red'>Rouillac 16.<o:p></o:p></span></span></p>
+et BOISMIER Marguerite. <span style='color:red'>Rouillac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUFFARD Fran&ccedil.oise de +
 Estienne et BILLEAU Fran&ccedil.oise. Croix Chapeau 17.<o:p></o:p></span></p>
@@ -3047,7 +3047,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 26/11/1752. X 00/03/1753 Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TRIBOT Antoine de + Fran&ccedil.ois
-et + TESSEREAU Nicole.Ý <span style='color:red'>Exideuil 16.<o:p></o:p></span></span></p>
+et + TESSEREAU Nicole. <span style='color:red'>Exideuil 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FAURAIS Anne ( veuve BOUCARD
 Michel ) Croix Chapeau 17.<o:p></o:p></span></p>
@@ -3060,7 +3060,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 07/04/1749. X 06/05/1749 Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VIAUD Simon de Jean et
-COUPRIE Suzanne. <span style='color:red'>Ý Mainfonds 16.</span><o:p></o:p></span></p>
+COUPRIE Suzanne. <span style='color:red'> Mainfonds 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOURGET Marie de Charles et
 FOUCHER Louise. Forges 17.<o:p></o:p></span></p>
@@ -3073,7 +3073,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 CM 15/11/1741.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VIOLLET Pierre de Pierre et
-ROUGIER Antoinette. <span style='color:red'>Ý St Groux 16.<o:p></o:p></span></span></p>
+ROUGIER Antoinette. <span style='color:red'> St Groux 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BARDON Magdeleine ( veuve
 MARTINEAU Michel ).<o:p></o:p></span></p>
@@ -3086,7 +3086,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 112. CM 26/03/1742. X 28/04/1742 Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>YVON Pierre de Jean et +
-JOUBERT Marie.Ý <span style='color:red'>St Laurent des Combes 16.<o:p></o:p></span></span></p>
+JOUBERT Marie. <span style='color:red'>St Laurent des Combes 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAUTIER Marie ( veuve
 BOUFFARD Michel ) . Croix Chapeau 17.<b><o:p></o:p></b></span></p>
@@ -3102,10 +3102,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 09/11/1794. X 17/11/1794 Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUBINNEAU Jean de + Fran&ccedil.ois
-et SIMON Anne. <span style='color:red'>Ý Marsac 16.</span> dt Croix Chapeau 17.<o:p></o:p></span></p>
+et SIMON Anne. <span style='color:red'> Marsac 16.</span> dt Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TETRON Catherine de + Jean et
-DURAND Marie. Ý et dt Aigrefeuille 17.<o:p></o:p></span></p>
+DURAND Marie.  et dt Aigrefeuille 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3115,11 +3115,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 26/12/1802.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERNARD Laurand de Laurant et
-TINGAUD Marguerite. Ý <span style='color:red'>St Marc 16</span>. dt Croix
+TINGAUD Marguerite.  <span style='color:red'>St Marc 16</span>. dt Croix
 Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUFFARD Marieanne de Louiqs
-et RAVON Marie. Ý et dt Croix Chapeau 17.<o:p></o:p></span></p>
+et RAVON Marie.  et dt Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3129,7 +3129,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 08/01/1790. X 09/02/1790 Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BESSON Jean ( veuf CHAILLOU
-Marie ) de Pierre et LEVEQUE Marie. Ý <span style='color:red'>Ligni&eacute.res 16</span>.
+Marie ) de Pierre et LEVEQUE Marie.  <span style='color:red'>Ligni&eacute.res 16</span>.
 dt Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JOLLIT Elisabeth de Jean et SAVIN
@@ -3143,10 +3143,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 31/01/1797. X 12/02/1797 La Jarrie 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BINNET Pierre de Jean et
-BERNARD Marie. Ý et dt <span style='color:red'>Lachaise 16.<o:p></o:p></span></span></p>
+BERNARD Marie.  et dt <span style='color:red'>Lachaise 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SIMON Magdeleine de + L&eacute.onard
-et GIGAULT Marie. Ý et dt La Jarrie 17.<o:p></o:p></span></p>
+et GIGAULT Marie.  et dt La Jarrie 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3156,11 +3156,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 02/02/1790.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAILLAUD Jean de + Jean et
-LATREUILLE Marie. Ý <span style='color:red'>Villej&eacute.sus 16.</span> dt Croix
+LATREUILLE Marie.  <span style='color:red'>Villej&eacute.sus 16.</span> dt Croix
 Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOREAU Marie de + Jean e
-PINET Marianne. Ý Bouet 17. dt Croix Chapeau 17.<o:p></o:p></span></p>
+PINET Marianne.  Bouet 17. dt Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3171,11 +3171,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DESMOTTES Barth&eacute.l&eacute.my ( veuf
 BILLAUD Jeanne ) de<span style='mso-spacerun:yes'>  </span>Jacques et +<span
-style='mso-spacerun:yes'>  </span>DANIAU Marie.Ý <span style='color:red'>Ste
+style='mso-spacerun:yes'>  </span>DANIAU Marie. <span style='color:red'>Ste
 S&eacute.v&eacute.re 16</span>. dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GARNIER Th&eacute.r&eacute.se ( veuve
-ROUSSET Louis ) de + Pierre et BRAUD Marieanne. Ý La Jarrie 17. dt Thair&eacute. 17.<o:p></o:p></span></p>
+ROUSSET Louis ) de + Pierre et BRAUD Marieanne.  La Jarrie 17. dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3185,7 +3185,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 26/07/1792. X 24/09/1792 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRENET Anthoine ( veuf
-FAVREAU Marie ) de + Pierre et CHALET Marguerite. Ý <span style='color:red'>P&eacute.z&eacute.
+FAVREAU Marie ) de + Pierre et CHALET Marguerite.  <span style='color:red'>P&eacute.z&eacute.
 Naudouin 16</span>.dt Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARGAT Marie ( veuve
@@ -3199,11 +3199,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 18/04/1800. X 20/05/1800 La Jarrie 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MENADEAU Fran&ccedil.ois de +
-Fran&ccedil.ois et GRATEAU Marie. Ý <span style='color:red'>Moullidars 16.</span> dt
+Fran&ccedil.ois et GRATEAU Marie.  <span style='color:red'>Moullidars 16.</span> dt
 Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAGOT Eug&eacute.nie de + Pierre et
-ROYAUD Elisabeth. Ý CroiX Chapeau 17. dt La Jarrie 17.<o:p></o:p></span></p>
+ROYAUD Elisabeth.  CroiX Chapeau 17. dt La Jarrie 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3213,11 +3213,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 X 29/12/1800 Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOTARD F&eacute.lix de Michel et
-PINEAU Marie. Ý <span style='color:red'>Rouillac 16</span>. dt Croix Chapeau
+PINEAU Marie.  <span style='color:red'>Rouillac 16</span>. dt Croix Chapeau
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHANSON Th&eacute.r&eacute.se de Pierre et
-JANVRET Fran&ccedil.oise. Ý Clavette 17. dt Aigrefeuille 17.<o:p></o:p></span></p>
+JANVRET Fran&ccedil.oise.  Clavette 17. dt Aigrefeuille 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3227,11 +3227,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 23/11/1802.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NORMAND Armand de + Anthoine
-et BERGERON Jeanne. <span style='color:red'>Ý Moulidar 16</span>. dt La Jarrie
+et BERGERON Jeanne. <span style='color:red'> Moulidar 16</span>. dt La Jarrie
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CREUGNET Marguerite de +
-Gabriel et RAVRON Marie Anne. Ý Salles / Mer 17. dt Croix Chapeau 17.<o:p></o:p></span></p>
+Gabriel et RAVRON Marie Anne.  Salles / Mer 17. dt Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3241,7 +3241,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 11/05/1789. X 06/06/1789 Croix Chapeau 17. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PENEAU F&eacute.lix ( veuf JOLLIT
-Catherine ) de Pierre et ROBERT Anne. Ý <span style='color:red'>Rouillac 16</span>.
+Catherine ) de Pierre et ROBERT Anne.  <span style='color:red'>Rouillac 16</span>.
 dt Croix Chapeau 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROYAUD Marie de Michel et +
@@ -3255,7 +3255,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 19/05/1787. X 23/05/1787 La Jarrie 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SEVELIT Jean ( veuf VERT
-Th&eacute.r&eacute.se Marie )de + Jacques et BERGE Fran&ccedil.oiseÝ <span style='color:red'>Aigre
+Th&eacute.r&eacute.se Marie )de + Jacques et BERGE Fran&ccedil.oise <span style='color:red'>Aigre
 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BENOIST Magdeleine ( veuve
@@ -3272,7 +3272,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 01/06/1782. X 10/08/1782 Cir&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAULTIER Jacques de +
-Fran&ccedil.ois et SUIRE Suzanne. <span style='color:red'>Ý Aigre 16.</span><o:p></o:p></span></p>
+Fran&ccedil.ois et SUIRE Suzanne. <span style='color:red'> Aigre 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROYAUX Marie ( veuve
 PELLETIER Antoine ). dt Cir&eacute. 17.<o:p></o:p></span></p>
@@ -3288,11 +3288,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 16/06/1783. X 15/06/1783 Ballon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNAUD Fran&ccedil.ois de Fran&ccedil.ois
-et + VIRE d’Ary XX. Ý <span style='color:red'>Etaignen en Angoumois 16</span>.
+et + VIRE d&acute;Ary XX.  <span style='color:red'>Etaignen en Angoumois 16</span>.
 dt Ballon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRAUD Jeanne de + Etienne et
-TREZORIER Elisabeth. Ý St Crepin 17. dt Ballon 17.<o:p></o:p></span></p>
+TREZORIER Elisabeth.  St Crepin 17. dt Ballon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3302,7 +3302,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 07/02/1801. CM 16/02/1801. X 16/02/1801 Cir&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MONDION Charles de Louis et +
-AUBINEAU Marie. Ý <span style='color:red'>Lign&eacute. les Bois 16</span>. dt Cir&eacute. 17.<o:p></o:p></span></p>
+AUBINEAU Marie.  <span style='color:red'>Lign&eacute. les Bois 16</span>. dt Cir&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAILLE Th&eacute.r&egrave.se ( veuve
 MALNOIRE Pierre ) . dt Cir&eacute. 17.<o:p></o:p></span></p>
@@ -3315,7 +3315,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 26/12/1800. CM 16/02/1801. X 16/02/1801 Cir&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PRIOU Louis de Jean et GUERIN
-Marie. <span style='color:red'>Ý St Coutant 16.</span> dt Ballon 17.<o:p></o:p></span></p>
+Marie. <span style='color:red'> St Coutant 16.</span> dt Ballon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUIMBERTEAU Marie Anne (
 veuve GOURDON Jacques ). dt Cir&eacute. 17.<o:p></o:p></span></p>
@@ -3328,11 +3328,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 16/07/1799. CM 24/09/1799. X 24/09/1799 Cir&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VIELLEFOND Philippe de
-Fran&ccedil.ois et GANOT Catherine<span style='color:red'>.Ý Moulidar 16</span>. dt
+Fran&ccedil.ois et GANOT Catherine<span style='color:red'>. Moulidar 16</span>. dt
 Ardilli&eacute.res 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROIFFIN Magdeleine de +
-Pierre et BOUJU Marguerite. Ý et dt Breuil Marais 17.<o:p></o:p></span></p>
+Pierre et BOUJU Marguerite.  et dt Breuil Marais 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire PINAUD Jacques.
 Etude &agrave. Cir&eacute. 17.<o:p></o:p></span></b></p>
@@ -3345,7 +3345,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 22/06/1789. X 22/06/1789 Cir&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUSSOT Philippe de Philippe
-et PETIT Fran&ccedil.oise. Ý <span style='color:red'>Fouqueure 16.</span> dt Cir&eacute. 17.<o:p></o:p></span></p>
+et PETIT Fran&ccedil.oise.  <span style='color:red'>Fouqueure 16.</span> dt Cir&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUIGNEBERT Ren&eacute.e de + Jacques
 et + CUIT Fran&ccedil.oise. La Roche Enard 79.<o:p></o:p></span></p>
@@ -3358,10 +3358,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 X 17/01/1792 Cir&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LANDREAU Pierre de Jean et
-LANDREAU Fran&ccedil.oise. Ý <span style='color:red'>Roufiac 16.</span> dt Cir&eacute. 17.<o:p></o:p></span></p>
+LANDREAU Fran&ccedil.oise.  <span style='color:red'>Roufiac 16.</span> dt Cir&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAURRAY Marie de + Nicolas
-et + GUERIN Jeanne. Ý Ardilli&eacute.res 17. dt Cir&eacute. 17.<o:p></o:p></span></p>
+et + GUERIN Jeanne.  Ardilli&eacute.res 17. dt Cir&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3371,11 +3371,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 17/06/1798. CM 26/06/1798. X 26/06/1798 Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAURIN Etienne de + Jean et
-REVEILLAUD Marie. Ý <span style='color:red'>Anville 16</span>. dt Rochefort /
+REVEILLAUD Marie.  <span style='color:red'>Anville 16</span>. dt Rochefort /
 Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>POINTIER Marie Catherine. de
-+ Pierre et AUDRY Marie. Ý Le Thou 17. dt Aigrefeuille 17.<o:p></o:p></span></p>
++ Pierre et AUDRY Marie.  Le Thou 17. dt Aigrefeuille 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3385,11 +3385,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 06/06/1791. X 06/06/1791 Ardilli&eacute.res 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSELOT Pierre de + Jean et
-+ GARRAUD Marie. Ý <span style='color:red'>Villefagnan 16.</span> dt
++ GARRAUD Marie.  <span style='color:red'>Villefagnan 16.</span> dt
 Ardilli&eacute.res 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOINET Suzanne de Jean et
-MESNARD Marie. Ý et dt Ardilli&eacute.res 17.<o:p></o:p></span></p>
+MESNARD Marie.  et dt Ardilli&eacute.res 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3399,11 +3399,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 23/03/1789.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TEXIER Jean Alexandre de Jean
-Alexandre et DELABROUSSE Marie. Ý <span style='color:red'>Rouillac 16.</span>
+Alexandre et DELABROUSSE Marie.  <span style='color:red'>Rouillac 16.</span>
 dt Cir&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BABONNEAU Suzanne de + Pierre
-et DANIAUD Marie Anne. Ý Yves 17. dt Ballon 17.<o:p></o:p></span></p>
+et DANIAUD Marie Anne.  Yves 17. dt Ballon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3413,11 +3413,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 30/05/1791.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VIDEAU Elie de + L&eacute.onard et +
-CLEMENT Elisabeth. Ý <span style='color:red'>St Sornin 16</span>. dt Rochefort
+CLEMENT Elisabeth.  <span style='color:red'>St Sornin 16</span>. dt Rochefort
 / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VINET Fran&ccedil.oise de Jean et
-FOIREAU Marie Anne. Ý Le Thou 17. dt Rochefort Notre Dame 17.<o:p></o:p></span></p>
+FOIREAU Marie Anne.  Le Thou 17. dt Rochefort Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire POCHON<span
 style='mso-spacerun:yes'>  </span>X X. Etude &agrave. Salles / Mer 17.<o:p></o:p></span></b></p>
@@ -3430,7 +3430,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/11/1721.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BAUCHAREAU&nbsp;? Fran&ccedil.ois de
-+ Fran&ccedil.ois et MESMIN Marie. Ý <span style='color:red'>Coude en Angoulois 16</span>.
++ Fran&ccedil.ois et MESMIN Marie.  <span style='color:red'>Coude en Angoulois 16</span>.
 dt Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TAVAU&nbsp;? Suzanne de +
@@ -3447,11 +3447,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 12/04/1761.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BROUSSARD Jean de + Jean et
-DECOUET Catherine. Ý <span style='color:red'>Champniers 16.</span> dt Salles /
+DECOUET Catherine.  <span style='color:red'>Champniers 16.</span> dt Salles /
 Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BACHELIER Th&eacute.r&egrave.se de Pierre
-et + LEQUIN Anne Ý et dt Salles 17.<o:p></o:p></span></p>
+et + LEQUIN Anne  et dt Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3461,10 +3461,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/06/1777. X 30/06/1777 Salles / mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DORT Fran&ccedil.ois de + Pierre et
-PAIGAUD Louise. Ý <span style='color:red'>Charme 16. </span>dt Salles 17.<o:p></o:p></span></p>
+PAIGAUD Louise.  <span style='color:red'>Charme 16. </span>dt Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BURGAUD Marthe de + Fran&ccedil.ois
-et MIGAUD Catherine. Ý Beauvoir / Niort 79. dt Salles 17.<o:p></o:p></span></p>
+et MIGAUD Catherine.  Beauvoir / Niort 79. dt Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3474,7 +3474,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 11/01/1785. X 11/01/1785 Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUMONT Jean de + Pierre et
-FERRANT Marie. Ý <span style='color:red'>Segonzac 16</span>. dt Salles 17.<o:p></o:p></span></p>
+FERRANT Marie.  <span style='color:red'>Segonzac 16</span>. dt Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHOLLET Marie de + Louis et
 VIGIER Marie. dt St M&eacute.dard 17.<o:p></o:p></span></p>
@@ -3487,10 +3487,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 06/06/1675. X 06/06/1675 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FERJOT Pierre de + Pierre et
-DUMIN Marie. <span style='color:red'>Ý Preuil 16</span>.<o:p></o:p></span></p>
+DUMIN Marie. <span style='color:red'> Preuil 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JOBET Marie Marthe de Pierre
-et + GADRAUD Marie. Ý et dt Salles 17.<o:p></o:p></span></p>
+et + GADRAUD Marie.  et dt Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3500,11 +3500,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 31/08/1793. X 02/09/1793 Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GERMONNEAU Jean ( veuf
-POITEVIN Catherine ) de + Jean et NERILLAC Anne. Ý <span style='color:red'>Brillac
+POITEVIN Catherine ) de + Jean et NERILLAC Anne.  <span style='color:red'>Brillac
 16</span>. dt Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PEROT Louise de Jean et NEAU
-Marie. Ý et dt Salles17.<o:p></o:p></span></p>
+Marie.  et dt Salles17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3514,11 +3514,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/01/1785. X 04/02/1785 Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GREFFIER Pierre ( veuf
-MARSAULT Marie Fran&ccedil.oise ) Ý <span style='color:red'>Fouquebrune 16</span>. dt
+MARSAULT Marie Fran&ccedil.oise )  <span style='color:red'>Fouquebrune 16</span>. dt
 Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUIBERT Elisabeth. de +
-Fran&ccedil.ois et + POITU Marianne. Ý La Rochelle Notre Dame 17. dt Angoulins 17.<o:p></o:p></span></p>
+Fran&ccedil.ois et + POITU Marianne.  La Rochelle Notre Dame 17. dt Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3528,11 +3528,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 21/01/1788. X 21/01/1788 La Jarne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUSTIN Jean de Charles et
-SIRET Catherine. Ý <span style='color:red'>St S&eacute.verain 16</span>. dt La Jarrie
+SIRET Catherine.  <span style='color:red'>St S&eacute.verain 16</span>. dt La Jarrie
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MALBOEUF Genevi&egrave.ve de Pierre
-et + DURET Jeanne. Ý Salles 17. dt La Jarne 17.<o:p></o:p></span></p>
+et + DURET Jeanne.  Salles 17. dt La Jarne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3542,7 +3542,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 04/051759. X 28/06/1760 Clavette 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HERAUD Jean de + Jean et
-VILLENEUVE Marie Ý <span style='color:red'>Roudray , en Angoumois 16</span>.dt
+VILLENEUVE Marie  <span style='color:red'>Roudray , en Angoumois 16</span>.dt
 Clavette 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PIGEONNIER Catherine ( veuve
@@ -3557,10 +3557,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 24/05/1767. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAIRE Pierre de + Jacques et
-AUDOUIN Marguerite. Ý La Benate 17. dt Salles 17.<o:p></o:p></span></p>
+AUDOUIN Marguerite.  La Benate 17. dt Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUQUERROIS Jeanne de Jacques
-et + DUQUERROIS Anne. Ý <span style='color:red'>Bess&eacute. 16</span>. dt Salles 17.<o:p></o:p></span></p>
+et + DUQUERROIS Anne.  <span style='color:red'>Bess&eacute. 16</span>. dt Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3570,11 +3570,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 05/02/1792. X 13/02/1792 Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MORISSET Jean de Fran&ccedil.ois et
-+ PETIT Marie. Ý <span style='color:red'>Villefagnan 16</span>. dt Angoulins
++ PETIT Marie.  <span style='color:red'>Villefagnan 16</span>. dt Angoulins
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GILBERT Marie de Ren&eacute. et
-MAROT Elisabeth. Ý et dt Angoulins 17.<o:p></o:p></span></p>
+MAROT Elisabeth.  et dt Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3584,10 +3584,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 21/10/1771. X 21/10/1771 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PINEAU Pierre de + Marc et +
-PASQUIER Marie. Ý <span style='color:red'>Montignac 16</span>. dt Salles 17.<o:p></o:p></span></p>
+PASQUIER Marie.  <span style='color:red'>Montignac 16</span>. dt Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JOBLET Catherine de +
-Fran&ccedil.ois et LEVEQUE Andr&eacute.e. Ý et dt Salles 17.<o:p></o:p></span></p>
+Fran&ccedil.ois et LEVEQUE Andr&eacute.e.  et dt Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3597,7 +3597,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 05/07/1784. X 05/07/1784 Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RANGER Pierre de + Louis et
-DAVID Jeanne. Ý <span style='color:red'>Verdille 16.</span> dt Salles 17.<o:p></o:p></span></p>
+DAVID Jeanne.  <span style='color:red'>Verdille 16.</span> dt Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DANIAUD Marie Anne ( veuve
 POIVRE Fran&ccedil.ois ) . dt Ch&acirc.telaillon 17.<o:p></o:p></span></p>
@@ -3610,10 +3610,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 19/06/1780. X 19/06/1780 Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VEAU Louis de + Michel et
-BERGER Fran&ccedil.oise. Ý <span style='color:red'>Gourville 16</span>. dt Salles 17.<o:p></o:p></span></p>
+BERGER Fran&ccedil.oise.  <span style='color:red'>Gourville 16</span>. dt Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VEQUES Elisabeth de Antoine
-et + RAFFIN Jeanne. Ý et dt Salles 17.<span style='color:red'><o:p></o:p></span></span></p>
+et + RAFFIN Jeanne.  et dt Salles 17.<span style='color:red'><o:p></o:p></span></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire AUNEVEUX Jean.
 Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
@@ -3626,11 +3626,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 17/09/1806. X 25/11/1806 La Jarne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAPOPILIERE Pierre enfant
-naturel ni p&egrave.re ni m&egrave.re ( veuf THARNAUD Marie )Ý <span style='color:red'>au
+naturel ni p&egrave.re ni m&egrave.re ( veuf THARNAUD Marie ) <span style='color:red'>au
 Cheurge 16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRENOT Marie ( veuve BOUQUARD
-Simon ) de Jean et COUTANT Marie.Ý La Rochelle Notre Dame 17. dt La Jarne 17.<o:p></o:p></span></p>
+Simon ) de Jean et COUTANT Marie. La Rochelle Notre Dame 17. dt La Jarne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3640,11 +3640,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 27/04/1801. X 28/04/1801 La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROLLIN Jean Vincent de +
-Fran&ccedil.ois et VEZIN Marie. Ý <span style='color:red'>Boissac 16.</span> dt La
+Fran&ccedil.ois et VEZIN Marie.  <span style='color:red'>Boissac 16.</span> dt La
 Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CLAUDOT Marie Madeleine de +
-Joseph et + BADIOU Marguerite. Ý et dt La Rochelle 17.<o:p></o:p></span></p>
+Joseph et + BADIOU Marguerite.  et dt La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3654,10 +3654,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 10/12/1797. X 19/12/1797 Aytr&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SOUBILLEAU Pierre de +
-Jacques et + GADINET Marguerite. Ý et dt Aytr&eacute. 17.<o:p></o:p></span></p>
+Jacques et + GADINET Marguerite.  et dt Aytr&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MENARD H&eacute.l&eacute.ne de Pierre et
-LEPOIRIER Ren&eacute.e. Ý <span style='color:red'>Embourie 16</span>. dt Aytr&eacute. 17.<o:p></o:p></span></p>
+LEPOIRIER Ren&eacute.e.  <span style='color:red'>Embourie 16</span>. dt Aytr&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire GUIMBAIL Fran&ccedil.ois
 Philippe. Etude &agrave. Esnandes 17 et Andilly 17.<o:p></o:p></span></b></p>
@@ -3670,7 +3670,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 01/01/1790. X 27/01/1790 Andilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAUVEAU Fran&ccedil.ois de +
-Fran&ccedil.ois et BORDAGE Marie. Ý <span style='color:red'>St Fraigne 16</span>. dt
+Fran&ccedil.ois et BORDAGE Marie.  <span style='color:red'>St Fraigne 16</span>. dt
 Andilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HERVE Marie Anne ( veuve
@@ -3687,7 +3687,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 16/06/1697.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHABANE Michel de + L&eacute.onard
-et COURIVEAU Fran&ccedil.oise. Ý <span style='color:red'>Oradour Fanais 16</span>.<o:p></o:p></span></p>
+et COURIVEAU Fran&ccedil.oise.  <span style='color:red'>Oradour Fanais 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HUBERT Marie de H&eacute.lie et
 ROBINET Marie. Salles / Mer 17.<o:p></o:p></span></p>
@@ -3700,7 +3700,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 10/02/1720.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAILLARD Jacques de Pierre et
-PERRIN Roze.Ý <span style='color:red'>Cognac 16.</span><o:p></o:p></span></p>
+PERRIN Roze. <span style='color:red'>Cognac 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHEVALIER Marie Anne de Elie
 et DIORE Rachel. Salles / Mer 17.<o:p></o:p></span></p>
@@ -3716,7 +3716,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 01/07/1753. X 12/11/1753 La Jarne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERNARD Jean de + Fran&ccedil.ois et
-LESBON Marguerite . <span style='color:red'>Ý Monbron 16</span>. dt La Jarne
+LESBON Marguerite . <span style='color:red'> Monbron 16</span>. dt La Jarne
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAGOT Jeanne de Jean et
@@ -3730,7 +3730,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 06/02/1758. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERTRAND Jacques de + Jacques
-et COUPRIE Marguerite.Ý <span style='color:red'>Champniers 16.</span> dt Salles
+et COUPRIE Marguerite. <span style='color:red'>Champniers 16.</span> dt Salles
 / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERGERAT Marie Anne de +
@@ -3744,11 +3744,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 06/01/1760. CM 21/04/1760. X 21/04/1760 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOISSEAU Jean de + Jean et
-DAVID Michelle. Ý <span style='color:red'>Courbillac 16</span>. dt St Vivien
+DAVID Michelle.  <span style='color:red'>Courbillac 16</span>. dt St Vivien
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUITREAU Elisabeth de + Jean
-et FOUCHE Jeanne. Ý et dt Salles / Mer 17.<o:p></o:p></span></p>
+et FOUCHE Jeanne.  et dt Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-GB style='font-size:
@@ -3760,7 +3760,7 @@ mso-ansi-language:EN-GB'>3 E <st1:metricconverter ProductID="1914. CM" w:st="on"
  CM</st1:metricconverter> 06/12/1763. X 06/02/1764 St Vivien 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRISSONNEAU Pierre de Jacques
-et LAURENT Jeanne. Ý <span style='color:red'>Villiers en Angoumois 16</span>.
+et LAURENT Jeanne.  <span style='color:red'>Villiers en Angoumois 16</span>.
 dt Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUPPAUD Marie ( veuve
@@ -3774,11 +3774,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 21/04/1761. X 19/05/1761 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BROSSARD Jacques de + Jean et
-DELAY&nbsp;? Catherine. Ý <span style='color:red'>Chagn&eacute. en Angoumois 16</span>.
+DELAY&nbsp;? Catherine.  <span style='color:red'>Chagn&eacute. en Angoumois 16</span>.
 dt Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BEUF Catherine de + Jean et
-SCILLET&nbsp;? Jeanne. Ý Ste Soulle 17. dt Salles / Mer 17.<o:p></o:p></span></p>
+SCILLET&nbsp;? Jeanne.  Ste Soulle 17. dt Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3788,7 +3788,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/08/1756. X 30/08/1756 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BROUSSARD Jean<span
-style='mso-spacerun:yes'>  </span>Baptiste de + Jean et + DUCOU Catherine. Ý <span
+style='mso-spacerun:yes'>  </span>Baptiste de + Jean et + DUCOU Catherine.  <span
 style='color:red'>Champniers 16.</span> dt Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NEAU Magdeleine de Daniel et GEZEUX&nbsp;?
@@ -3802,11 +3802,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/09/1752. X 03/10/1752 P&eacute.rigny 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAILLE Martial de + Antoine
-et PERRY Fran&ccedil.oise. Ý <span style='color:red'>Confollan 16</span>. dt P&eacute.rigny
+et PERRY Fran&ccedil.oise.  <span style='color:red'>Confollan 16</span>. dt P&eacute.rigny
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DESFARGE Louise de + Jean et
-MATHIEU Marie. Ý et dt P&eacute.rigny 17.<o:p></o:p></span></p>
+MATHIEU Marie.  et dt P&eacute.rigny 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3816,7 +3816,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 27/06/1751. X 05/07/1751 La Jarne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAGNAUD Jean de + Jean et
-COINTRE&nbsp;? Jeanne<span style='color:red'>.Ý Paizay Naudouin 16.<o:p></o:p></span></span></p>
+COINTRE&nbsp;? Jeanne<span style='color:red'>. Paizay Naudouin 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CLOCHARD Anne de + Pierre et
 + CHEBINEAU Marie. dt La Jarne 17.<o:p></o:p></span></p>
@@ -3829,10 +3829,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 28/07/1737. X 17/02/1737 La Jarne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHOLLET Pierre de + Pierre et
-LAURENT Jeanne. Ý et dt La Jarne 17.<o:p></o:p></span></p>
+LAURENT Jeanne.  et dt La Jarne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GENESTE Louise de + Pierre et
-GROLLEAU Anne. <span style='color:red'>Ý St Fragne 16.<o:p></o:p></span></span></p>
+GROLLEAU Anne. <span style='color:red'> St Fragne 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3842,10 +3842,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 13/08/1747. CM 07/01/1748. X 08/01/1748 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CLAVAUD Jean de + Fran&ccedil.ois et
-+ BOUFFENIE Marie. Ý <span style='color:red'>Chadurie16</span>. dt Salles 17.<o:p></o:p></span></p>
++ BOUFFENIE Marie.  <span style='color:red'>Chadurie16</span>. dt Salles 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RENAUD Magdeleine de + David
-et MALBEUF Magdeleine. Ý et dt Salles / Mer 17.<o:p></o:p></span></p>
+et MALBEUF Magdeleine.  et dt Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3855,11 +3855,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 02/01/1765. X 21/01/1765 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CLEROUIN Philippe de + Pierre
-et LAVERGNE Catherine. Ý <span style='color:red'>Brie 16</span>. dt Salles /
+et LAVERGNE Catherine.  <span style='color:red'>Brie 16</span>. dt Salles /
 Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BACHELIER Th&eacute.r&egrave.se de + Pierre
-et LEQUIN Anne. Ý et dt Salles / Mer 17.<o:p></o:p></span></p>
+et LEQUIN Anne.  et dt Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3869,10 +3869,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/04/1727. X 26/05/1727. Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CONTRE Louis de + Pierre et
-JOYEUSE Marguerite. Ý Luch&eacute. 79. dt Ch&acirc.telaillon 17.<o:p></o:p></span></p>
+JOYEUSE Marguerite.  Luch&eacute. 79. dt Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHERBONNEAU Fran&ccedil.oise de +
-Jean et MAIGRET Fran&ccedil.oise. Ý <span style='color:red'>Chagne en Angoumois 16</span>.dt
+Jean et MAIGRET Fran&ccedil.oise.  <span style='color:red'>Chagne en Angoumois 16</span>.dt
 La Jarne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
@@ -3883,11 +3883,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 05/09/1762. X 06/09/1762 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DEMOINNAZE Jean de + Jacques
-et DAVID Jeanne.Ý <span style='color:red'>Marillac 16</span>. dt Salles / Mer
+et DAVID Jeanne. <span style='color:red'>Marillac 16</span>. dt Salles / Mer
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BAUDIN Marieanne de Estienne
-et ROUSSAU Marguerite. Ý La Jarne 17. dt Salles / Mer 17.<o:p></o:p></span></p>
+et ROUSSAU Marguerite.  La Jarne 17. dt Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3897,10 +3897,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 07/07/1749. X 22/09/1749 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DENIS L&eacute.onard de + Jean et +
-LESPINNE Marie. <span style='color:red'>Ý Cherve 16</span>. dt Salles / Mer 17.<o:p></o:p></span></p>
+LESPINNE Marie. <span style='color:red'> Cherve 16</span>. dt Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHOTTARD Louise Henriette de
-+ Pierre et + POCHON Marie. Ý et dt Salles / Mer 17.<o:p></o:p></span></p>
++ Pierre et + POCHON Marie.  et dt Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -3910,7 +3910,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 05/08/1736.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUMONT Pierre de + Pierre et
-ANDRE Marguerite. <span style='color:red'>Ý Sigogne 16.</span> dt Angoulins 17.<o:p></o:p></span></p>
+ANDRE Marguerite. <span style='color:red'> Sigogne 16.</span> dt Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BLANCHET Catherine de Daniel
 et JAUFFRIAU Marye. dt Angoulins 17.<o:p></o:p></span></p>
@@ -3923,11 +3923,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/03/1726. X 02/07/1726. Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FRAIGNE Jacques de + Jacques
-et BRIDEAU Marguerite. <span style='color:red'>Ý Longr&eacute. 16..</span> dt
+et BRIDEAU Marguerite. <span style='color:red'> Longr&eacute. 16..</span> dt
 Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BESSON Anne de Pierre et AUGE
-Marye. Ý et dt Angoulins 17.<o:p></o:p></span></p>
+Marye.  et dt Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-GB style='font-size:
@@ -3939,10 +3939,10 @@ mso-ansi-language:EN-GB'>3 E <st1:metricconverter ProductID="1908. CM" w:st="on"
  CM</st1:metricconverter> 22/01/1730. X 20/02/1730 St Vivien 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GARINEAU Jean de + Jean et
-JAMOT Fleurance. Ý Clussay 79. dt St Vivien 17.<o:p></o:p></span></p>
+JAMOT Fleurance.  Clussay 79. dt St Vivien 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAGNAN Jeanne de + Pierre et
-DEFAYE Marie. Ý <span style='color:red'>Lusse Laterne en Angoumois 16</span>.
+DEFAYE Marie.  <span style='color:red'>Lusse Laterne en Angoumois 16</span>.
 dt St Vivien 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
@@ -3953,7 +3953,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 22/11/1763. X 22/11/1763 Clavette 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAUDIN Pierre de Jacques et
-MARQUAIS Anne. <span style='color:red'>Ý Eschallat 16</span>. dt Clavette 17.<o:p></o:p></span></p>
+MARQUAIS Anne. <span style='color:red'> Eschallat 16</span>. dt Clavette 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TAYAU Jeanne ( veuve DRAPRON
 Pierre Andr&eacute. ) . dt Clavette 17.<o:p></o:p></span></p>
@@ -3966,7 +3966,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 31/01/1749.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GINNE Jean de + Fran&ccedil.ois et
-LURAT Anne. Ý <span style='color:red'>Verteuil 16</span>.dt Angoulins 17.<o:p></o:p></span></p>
+LURAT Anne.  <span style='color:red'>Verteuil 16</span>.dt Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRAYE du PAVILLON Gabrielle (
 veuve XX Jean ). dt Angoulins 17.<o:p></o:p></span></p>
@@ -3979,7 +3979,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 06/01/1765. X 07/01/1765 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRARD Pierre de + Louis et
-RAVAUD Jeanne. <span style='color:red'>Ý Gondeville 16</span>. dt Salles / Mer
+RAVAUD Jeanne. <span style='color:red'> Gondeville 16</span>. dt Salles / Mer
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRAUD Andr&eacute.e ( veuve MALLET
@@ -3993,7 +3993,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 18/01/1768. X 01/02/1768 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GOIZET Jean de + Louis et
-BLOUIN Michelle.Ý <span style='color:red'>Jeriat en Angoumois 16</span>. dt
+BLOUIN Michelle. <span style='color:red'>Jeriat en Angoumois 16</span>. dt
 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHOLLET Louise ( veuve CHERBONNEAU
@@ -4007,11 +4007,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 29/05/1755. X 23/06/1755 Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAGOTTRIE Fran&ccedil.ois de + Jean
-et + VERGNAUD Magdeleine. Ý <span style='color:red'>Aussac 16</span>. dt
+et + VERGNAUD Magdeleine.  <span style='color:red'>Aussac 16</span>. dt
 Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COFFINAUD Marie de + Pierre
-et + ARTAU Marie. Ý et dt Ch&acirc.telaillon 17.<o:p></o:p></span></p>
+et + ARTAU Marie.  et dt Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4021,10 +4021,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 24/06/1754. X 14/11/1754 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LEVESQUE Jean de Jean et
-MESNIER Marie. Ý <span style='color:red'>Cherves 16</span>. dt Salles / Mer 17.<o:p></o:p></span></p>
+MESNIER Marie.  <span style='color:red'>Cherves 16</span>. dt Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CALLAUD Magdeleine de Pierre
-et + GROUSSEAU Marie. Ý et dt Salles / Mer 17.<o:p></o:p></span></p>
+et + GROUSSEAU Marie.  et dt Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4034,7 +4034,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 07/03/1737. X 05/03/1737 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARTINET Louis de + Jean et
-LANGLARD Anne. Ý <span style='color:red'>en Angoumois 16</span>. dt Salles /
+LANGLARD Anne.  <span style='color:red'>en Angoumois 16</span>. dt Salles /
 Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RENAUD Marye de + Jean et
@@ -4050,7 +4050,7 @@ mso-ansi-language:EN-GB'>3 E <st1:metricconverter ProductID="1914. CM" w:st="on"
  CM</st1:metricconverter> 19/09/1762. X 28/09/1762 St Vivien 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PAILLAT Fran&ccedil.ois de + Louis
-et + DUPUY Fran&ccedil.oise. Ý <span style='color:red'>Poussac Pr&egrave.s Vertheuil 16</span>.
+et + DUPUY Fran&ccedil.oise.  <span style='color:red'>Poussac Pr&egrave.s Vertheuil 16</span>.
 dt St Vivien 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HILLEREAU Elisabeth ( veuve
@@ -4064,11 +4064,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 20/10/1746. X 03/07/1747 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PERROT Jean de Jean et +
-COUPRIE Antoinette. Ý <span style='color:red'>Prussiau&nbsp;? en Angoumois 16</span>.dt
+COUPRIE Antoinette.  <span style='color:red'>Prussiau&nbsp;? en Angoumois 16</span>.dt
 La Jarne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MALBEUF Marie Anne de +
-Pierre et MAYNOT Elisabeth. Ý Salles / Mer 17. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
+Pierre et MAYNOT Elisabeth.  Salles / Mer 17. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4078,11 +4078,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/11/1755. X 12/01/1756 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PERROT Jean de Jean et
-SARRAZIN Fran&ccedil.oise. Ý <span style='color:red'>Puyr&eacute.aux 16</span>. dt Salles /
+SARRAZIN Fran&ccedil.oise.  <span style='color:red'>Puyr&eacute.aux 16</span>. dt Salles /
 Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAMBERT Elisabeth de + Michel
-et AVRARD Fran&ccedil.oise. Ý La Jarrie 17. dt Salles / Mer 17.<o:p></o:p></span></p>
+et AVRARD Fran&ccedil.oise.  La Jarrie 17. dt Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4092,7 +4092,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 12/06/1764. X 12/06/1764 Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PETIOT Jean dit Michel de Jean
-et GIRARD Elisabeth. <span style='color:red'>Ý Mallaville 16.</span> dt
+et GIRARD Elisabeth. <span style='color:red'> Mallaville 16.</span> dt
 Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRUNET Jeanne de + Louis et
@@ -4106,7 +4106,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 25/08/1764. X 06/11/1764 La Jarrie 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>POUSSARD Jean de Georges et +
-RAFFIGNET Marie. Ý <span style='color:red'>Fouquebrune 16</span>. dt La Jarrie
+RAFFIGNET Marie.  <span style='color:red'>Fouquebrune 16</span>. dt La Jarrie
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FRESCHET Jeanne ( veuve
@@ -4120,10 +4120,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 03/09/1754. X 01/10/1754 Aytr&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PUZILLON X de L&eacute.onard et +
-BARDAU Jeanne. Ý St Andr&eacute. d’Objat en P&eacute.rigord. dt V&eacute.rines 17.<o:p></o:p></span></p>
+BARDAU Jeanne.  St Andr&eacute. d&acute;Objat en P&eacute.rigord. dt V&eacute.rines 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LESTOILJE Marie de + Pierre
-et FOUILLOU Marguerite. <span style='color:red'>Ý Angoul&ecirc.me 16</span>. dt Aytr&eacute.
+et FOUILLOU Marguerite. <span style='color:red'> Angoul&ecirc.me 16</span>. dt Aytr&eacute.
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
@@ -4134,7 +4134,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 10/05/1762. X 02/05/1762 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THOMAS Fran&ccedil.ois de F&eacute.lix et +
-MOREAU Jeanne. Ý <span style='color:red'>Au breuille&nbsp;? en Angoumois 16</span>.
+MOREAU Jeanne.  <span style='color:red'>Au breuille&nbsp;? en Angoumois 16</span>.
 dt St Vivien 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RIGALLAUD Marie de + Jean et
@@ -4148,7 +4148,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 28/03/1741. X 03/07/1741 La Jarne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VILLAIN Jacques de Ren&eacute. et +
-DESCHAMPS Jeanne. Ý <span style='color:red'>Gourville 16.</span> dt La Jarne 17.<o:p></o:p></span></p>
+DESCHAMPS Jeanne.  <span style='color:red'>Gourville 16.</span> dt La Jarne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PINSONNEAU Marguerite. de +
 Jean et + BONNIN Jeanne. Bernay 17. dt La Jarne 17.<o:p></o:p></span></p>
@@ -4164,7 +4164,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 05/10/1683.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAN Jacques de + Isaac et
-RIPAUD Jeanne. Ý <span style='color:red'>Salles en Poitou 16&nbsp;?.<o:p></o:p></span></span></p>
+RIPAUD Jeanne.  <span style='color:red'>Salles en Poitou 16&nbsp;?.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NAULEAU Ren&eacute.e de Nicolas et
 BOULETREAU Catherine. Niort 79.<o:p></o:p></span></p>
@@ -4177,7 +4177,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 31/03/1686.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LIMOUZIN Mathieu de + Andr&eacute.
-et POIGNEAU Marie. Ý <span style='color:red'>Villej&eacute.sus 16.<o:p></o:p></span></span></p>
+et POIGNEAU Marie.  <span style='color:red'>Villej&eacute.sus 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GABORIT Marie de Michel et
 PERTUIS Marie. Cherbonni&egrave.res 17.<o:p></o:p></span></p>
@@ -4190,7 +4190,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 13/06/1683.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PENOT Gabriel de Nicolas et
-DEUXOL Jacquette. Ý <span style='color:red'>Tusson 16.<o:p></o:p></span></span></p>
+DEUXOL Jacquette.  <span style='color:red'>Tusson 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LECLAIR Marie de Andr&eacute. et
 ROFFINAULT Madeleine. La Rochelle 17.<o:p></o:p></span></p>
@@ -4203,7 +4203,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 26/10/1681. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSEAU Daniel de + Jacques
-et + PREVOST Marie. Ý <span style='color:red'>Villefagnant 16.<o:p></o:p></span></span></p>
+et + PREVOST Marie.  <span style='color:red'>Villefagnant 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUIBOT Anne de Fran&ccedil.ois et
 ARDY Anne. La Rochelle 17.<o:p></o:p></span></p>
@@ -4216,7 +4216,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 04/05/1687.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SILLON Pierre de + Isaac et
-PASQUIER Catherine. Ý <span style='color:red'>Souvign&eacute.16.<o:p></o:p></span></span></p>
+PASQUIER Catherine.  <span style='color:red'>Souvign&eacute.16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LASNIER Suzanne de Jean et
 LIGNOT&nbsp;? Elisabeth. Aytr&eacute. 17.<o:p></o:p></span></p>
@@ -4233,7 +4233,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 04/04/1693.<b><o:p></o:p></b></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERNARD Jacques de + Jean et
-BONNEMAIN Fran&ccedil.oise. Ý <span style='color:red'>Villej&eacute.sus 16.<o:p></o:p></span></span></p>
+BONNEMAIN Fran&ccedil.oise.  <span style='color:red'>Villej&eacute.sus 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PIBERT Jeanne de Mathurin et
 BOITREAU Mathurine . La Rochelle 17.<o:p></o:p></span></p>
@@ -4247,7 +4247,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 26/06/1701.<b><o:p></o:p></b></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNET Guillaume de + Charles
-et SURAULT Catherine.Ý <span style='color:red'>Jeuillez 16.<o:p></o:p></span></span></p>
+et SURAULT Catherine. <span style='color:red'>Jeuillez 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUBRY Suzanne. de Antoine et
 JAMAIN Perrine. La Jarrie 17.<o:p></o:p></span></p>
@@ -4260,7 +4260,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 12/07/1691.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CORNU Louis de Paul et
-GRIGNON Anne. Ý <span style='color:red'>Ruffec 16.<o:p></o:p></span></span></p>
+GRIGNON Anne.  <span style='color:red'>Ruffec 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PLASTREAU Fran&ccedil.oise de
 Fran&ccedil.ois et RICHARD Henriette. La Bataille 79.<o:p></o:p></span></p>
@@ -4273,7 +4273,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/10/1702.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DEDINEAU Etienne de + Jean et
-DELEZEAU Marie. Ý <span style='color:red'>Lonnes 16.<o:p></o:p></span></span></p>
+DELEZEAU Marie.  <span style='color:red'>Lonnes 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BROUSSET Catherine de Andr&eacute.
 et + TETRON Marguerite. P&eacute.rigny 17.<o:p></o:p></span></p>
@@ -4286,11 +4286,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 26/01/1700.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DEGORCE<span
-style='mso-spacerun:yes'>  </span>Jean de + Louis et DELAFARGE Jeanne .Ý <span
+style='mso-spacerun:yes'>  </span>Jean de + Louis et DELAFARGE Jeanne . <span
 style='color:red'>Chadurie 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TEXIER Madeleine de Pierre et
-SALMON Elisabeth. Ile d’Aix 17.<o:p></o:p></span></p>
+SALMON Elisabeth. Ile d&acute;Aix 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4299,8 +4299,8 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2086. CM
 10/01/1700.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>DELESMERIE Noël de + Jean et
-DEROULEDE Madeleine. Ý <span style='color:red'>Liver en Angoumois 16.<o:p></o:p></span></span></p>
+<p class=MsoNormal><span style='font-size:10.0pt'>DELESMERIE No&euml;l de + Jean et
+DEROULEDE Madeleine.  <span style='color:red'>Liver en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GENTY Suzanne de Etienne et BRUMEREAU
 Marie. Beauvais / Matha 17.<o:p></o:p></span></p>
@@ -4313,7 +4313,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 25/07/1722 -----3 E 2089. CM 14/07/1722.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GILBERT Jean de Arnaud et
-BRUN Marie. Ý <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
+BRUN Marie.  <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DEMOUTIER Jeanne Madeleine de
 Pierre et COUBRAIS Marguerite. La Rochelle St Barth&eacute.l&eacute.my 17.<o:p></o:p></span></p>
@@ -4328,7 +4328,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Jacques et COINDE Lucasse. Frossay 44.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOCHERAT Marie de Fran&ccedil.ois et
-DUMOULLIN Louise.Ý <span style='color:red'>Ruffec 16.</span><o:p></o:p></span></p>
+DUMOULLIN Louise. <span style='color:red'>Ruffec 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4338,7 +4338,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 23/09/1714.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NEVEU Jean de + Jean et
-VINCENT Anne.Ý <span style='color:red'>St Andr&eacute. de Ruffec 16</span>.<o:p></o:p></span></p>
+VINCENT Anne. <span style='color:red'>St Andr&eacute. de Ruffec 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FUNET Jeanne de Jean et
 GENINE&nbsp;? Ester. Angoulins 17.<o:p></o:p></span></p>
@@ -4354,7 +4354,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 ) . La Rochelle St Jean 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CORNU Anne de Paul et GRIGNON
-Anne.Ý <span style='color:red'>Ruffec 16.<o:p></o:p></span></span></p>
+Anne. <span style='color:red'>Ruffec 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4365,7 +4365,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 03/06/1725.<b><o:p></o:p></b></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PERSIGAUD Antoine de +
-L&eacute.onard et MOUTON Anne. Ý <span style='color:red'>Agry 16.<o:p></o:p></span></span></p>
+L&eacute.onard et MOUTON Anne.  <span style='color:red'>Agry 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GILBERT Jeanne de Pierre et
 BON Judith. Nieul / Mer 17.<o:p></o:p></span></p>
@@ -4378,7 +4378,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 18/09/1707.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>REBEYRAT L&eacute.onard de + Pierre
-et FAYAU Catherine<span style='color:red'>.Ý Mazi&eacute.res 16.<o:p></o:p></span></span></p>
+et FAYAU Catherine<span style='color:red'>. Mazi&eacute.res 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GILLET Jeanne ( veuve
 PAPINEAU Gabriel ) . La Rochelle Notre Dame 17.<o:p></o:p></span></p>
@@ -4391,7 +4391,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 03/05/1704.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>REGNAUD Fran&ccedil.ois de + Jean et
-DELAAGE Marguerite.Ý <span style='color:red'>Chabanais 16.<o:p></o:p></span></span></p>
+DELAAGE Marguerite. <span style='color:red'>Chabanais 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNIN Madeleine de Guillaume
 et ROY Jeanne. La Rochelle St Sauveur 17.<o:p></o:p></span></p>
@@ -4407,7 +4407,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 COUTURIER Gabrielle. Chasteaunay en Poitou .<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHABREAU Marie de Jean et
-DAMIEN Louise. Ý <span style='color:red'>Bonneuil 16.<o:p></o:p></span></span></p>
+DAMIEN Louise.  <span style='color:red'>Bonneuil 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4417,7 +4417,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/01/1706.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROY Michel de Jean et +
-PREVOST Fran&ccedil.oise . Ý <span style='color:red'>Douzat 16.<o:p></o:p></span></span></p>
+PREVOST Fran&ccedil.oise .  <span style='color:red'>Douzat 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JOUSSE Louise ( veuve RAIX
 Pierre ) . La Rochelle Notre Dame 17.<o:p></o:p></span></p>
@@ -4430,7 +4430,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 27/01/1697.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROY Pierre de + Jean et
-TEXIER L&eacute.onarde. Ý <span style='color:red'>Mazi&eacute.res en Basse ……16&nbsp;?<o:p></o:p></span></span></p>
+TEXIER L&eacute.onarde.  <span style='color:red'>Mazi&eacute.res en Basse ……16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PENARD Ren&eacute.e. St Georges <span
 style='mso-spacerun:yes'> </span>du Bois 17.<o:p></o:p></span></p>
@@ -4446,7 +4446,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 MAGNEROLLE Marthe. La Rochelle St Barth&eacute.l&eacute.my 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COITEUX Anne de Pierre et
-BALLAN Marguerite. Ý <span style='color:red'>Verteuil 16.<o:p></o:p></span></span></p>
+BALLAN Marguerite.  <span style='color:red'>Verteuil 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire JAROSSON X X .
 Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
@@ -4459,7 +4459,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 08/01/1730.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MONTEROUX Jean de + Simon et
-GANTREAU Marie.Ý <span style='color:red'>Pr&egrave.s de Cognac 16</span>.<o:p></o:p></span></p>
+GANTREAU Marie. <span style='color:red'>Pr&egrave.s de Cognac 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARCOU Madeleine ( veuve
 DAUBIGEON Pierre ). Aytr&eacute. 17.<o:p></o:p></span></p>
@@ -4472,7 +4472,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 12/06/1717.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSEAU Jean de + Pierre et
-BOYER Marie .Ý <span style='color:red'>Dirac 16.<o:p></o:p></span></span></p>
+BOYER Marie . <span style='color:red'>Dirac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GILBERT Elisabeth de Pierre
 et GOT Marguerite. La Rochelle 17.<o:p></o:p></span></p>
@@ -4485,7 +4485,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 15/12/1737.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSEAU Ren&eacute. de + Pierre et
-QUEROY&nbsp;? Fran&ccedil.oise. Ý <span style='color:red'>La Foray en Poitou 16&nbsp;?</span>
+QUEROY&nbsp;? Fran&ccedil.oise.  <span style='color:red'>La Foray en Poitou 16&nbsp;?</span>
 .<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MASSE Jeanne de Jacques et
@@ -4499,7 +4499,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 27/06/1723.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SOULLAT Jean de + Jean et +
-TRILLAUD Jeanne. Ý <span style='color:red'>Oradour 16.<o:p></o:p></span></span></p>
+TRILLAUD Jeanne.  <span style='color:red'>Oradour 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHABOT Fran&ccedil.oise ( veuve
 MILLET Jacques ) Laleu = La Rochelle 17.<o:p></o:p></span></p>
@@ -4514,7 +4514,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2155. CM
 26/11/1584. Protestant.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>BIGOT Jean . Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>BIGOT Jean .  <span
 style='color:red'>Barbezieux 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THIBAULT Guillemette ( veuve
@@ -4530,7 +4530,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 <p class=MsoNormal><span style='font-size:10.0pt'>BLONDEAU Jean. Pr&egrave.s Matha 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THIFON Jacquette de Louis et
-VERTIT Louise. Ý <span style='color:red'>Montigny 16.<o:p></o:p></span></span></p>
+VERTIT Louise.  <span style='color:red'>Montigny 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4540,7 +4540,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 12/08/1570.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOYVASLOT Jacques<span
-style='color:red'>. Ý La Rochefoucault 16.</span><o:p></o:p></span></p>
+style='color:red'>.  La Rochefoucault 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BLANDIN Gratienne de +
 Etienne et CHAPPRON Anne. La Rochelle 17.<o:p></o:p></span></p>
@@ -4553,7 +4553,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 25/11/1583.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BYRON Louis ( veuf VALLIN
-Nicolle ) .Ý <span style='color:red'>Tusson 16.<o:p></o:p></span></span></p>
+Nicolle ) . <span style='color:red'>Tusson 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAGAY Mathurine ( veuve
 POUPIN Jean ) Fontenay le Comte 85.<o:p></o:p></span></p>
@@ -4565,7 +4565,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2154.
 Promesse<span style='mso-spacerun:yes'>  </span>02/05/1783.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>CHATILLOT Louis .Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>CHATILLOT Louis . <span
 style='color:red'>Juille en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VINARD Louise . Bouin 79.<o:p></o:p></span></p>
@@ -4577,7 +4577,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2151. CM
 19/04/1572.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>CHIRON Jean. Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>CHIRON Jean.  <span
 style='color:red'>Ventouze 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SUAUD Fran&ccedil.oise de Jean et
@@ -4591,7 +4591,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 13/05/1582 Protestant.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUDIN Micheau de + Louis et
-VRENT&nbsp;? Marguerite<span style='color:red'>.Ý St Lorent pr&egrave.s Cognac 16.<o:p></o:p></span></span></p>
+VRENT&nbsp;? Marguerite<span style='color:red'>. St Lorent pr&egrave.s Cognac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LABORIE Vincende ( veuve
 POMPONNET Pierre) Flay&nbsp;?<o:p></o:p></span></p>
@@ -4604,7 +4604,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 17/04/1582.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DELAGARDE Micheau de + Pierre
-et VALLET Jeanne. Ý <span style='color:red'>Chatel de Ruffec 16.<o:p></o:p></span></span></p>
+et VALLET Jeanne.  <span style='color:red'>Chatel de Ruffec 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUSSET Jeanne de Lucas et
 BRODU Perrine. St Denis de la Chevasse 85.<o:p></o:p></span></p>
@@ -4617,7 +4617,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 31/07/1570.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DOUSSET Simon de + Marsault
-et FINEREAU Louise<span style='color:red'>.Ý Pr&egrave.s de La Rochefoucault 16.<o:p></o:p></span></span></p>
+et FINEREAU Louise<span style='color:red'>. Pr&egrave.s de La Rochefoucault 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DELAVEAU Catherine de Denis
 et GARNIER Ren&eacute.e. La Chaulme .<o:p></o:p></span></p>
@@ -4630,10 +4630,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 22/04/1570.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FAVART Etienne de + Jean et
-MOREAU Barbe. Le Ch&acirc.teau d’Ol&eacute.ron 17.<o:p></o:p></span></p>
+MOREAU Barbe. Le Ch&acirc.teau d&acute;Ol&eacute.ron 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PRIOLLEAU Marguerite de
-Pierre et METORLE&nbsp;? Catherine.Ý <span style='color:red'>St Cibardeau 16.<o:p></o:p></span></span></p>
+Pierre et METORLE&nbsp;? Catherine. <span style='color:red'>St Cibardeau 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4644,10 +4644,10 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 05/06/1582.<b><o:p></o:p></b></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FOUCQUET Jacques de
-Foruh&nbsp;? et + TABUSTEAU Perette.Ý <span style='color:red'>Mosnac 16.<o:p></o:p></span></span></p>
+Foruh&nbsp;? et + TABUSTEAU Perette. <span style='color:red'>Mosnac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUCHAZEAU Jeanne de L&eacute.onard
-et PAPILLET Catherine. Ý <span style='color:red'>Garat 16.<o:p></o:p></span></span></p>
+et PAPILLET Catherine.  <span style='color:red'>Garat 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4656,7 +4656,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2154. CM
 04/10/1853.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>GIBAULT Jean.Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>GIBAULT Jean. <span
 style='color:red'>La Madeleine 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ACHARD Mathurine ( veuve
@@ -4670,10 +4670,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 23/04/1582.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRAULT Pierre de + Louis et
-MAZOT Louise. Ý Loubill&eacute. 79.<o:p></o:p></span></p>
+MAZOT Louise.  Loubill&eacute. 79.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THIBAUD Hillaire de Martin et
-MOUSSOT Marguerite. Ý <span style='color:red'>Aigre 16.<o:p></o:p></span></span></p>
+MOUSSOT Marguerite.  <span style='color:red'>Aigre 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4686,7 +4686,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 CANTINEAU Isabeau. La Jarne 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MALHERBE Marguerite ( veuve
-SEMUR Pierre ) . Ý <span style='color:red'>Ruffec 16.<o:p></o:p></span></span></p>
+SEMUR Pierre ) .  <span style='color:red'>Ruffec 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4696,7 +4696,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 08/06/1584.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUILLEBOT Julien de Jean et
-BYARD Marie.Ý <span style='color:red'>Massillac 16.<o:p></o:p></span></span></p>
+BYARD Marie. <span style='color:red'>Massillac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RIVIERE&nbsp;? Marie de Lucas
 et REGNETEAU Jeanne. Laleu = La Rochelle 17.<o:p></o:p></span></p>
@@ -4712,7 +4712,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 TREMOT Perrine. Nantes 44.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COYTON&nbsp;? Jeanne ( veuve
-COUTINEAU Louis ). Ý <span style='color:red'>Brettes 16.<o:p></o:p></span></span></p>
+COUTINEAU Louis ).  <span style='color:red'>Brettes 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4722,7 +4722,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 01/06/1589.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAURENCIN&nbsp;? Pierre de +
-Mathurin et GENYNEAU Catherine.Ý <span style='color:red'>Marsac 16.<o:p></o:p></span></span></p>
+Mathurin et GENYNEAU Catherine. <span style='color:red'>Marsac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DURAN Marie de Jacques et
 GUIRAN Catherine. St Genuzeau&nbsp;?<o:p></o:p></span></p>
@@ -4738,7 +4738,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Jean et + RABIN Jeanne. Angers 49.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ARNAULT Marie ( veuve REGNIER
-Jean ). Ý <span style='color:red'>Alignac en Angoumois 16.<o:p></o:p></span></span></p>
+Jean ).  <span style='color:red'>Alignac en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4748,10 +4748,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/04/1582.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAINAULT Antoine de + Romain
-et ARNAULT Catherine. Ý <span style='color:red'>Bignac 16.<o:p></o:p></span></span></p>
+et ARNAULT Catherine.  <span style='color:red'>Bignac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PICHON Thoinette de Micheau
-et GROMAIN Bastienne.Ý <span style='color:red'>Pr&egrave.s l’Auberti&eacute.re 16.&nbsp;?<o:p></o:p></span></span></p>
+et GROMAIN Bastienne. <span style='color:red'>Pr&egrave.s l&acute;Auberti&eacute.re 16.&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4760,7 +4760,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2154. CM
 19/10/1583 Protestant.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>MORIN Blaise. Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>MORIN Blaise.  <span
 style='color:red'>Rouillac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUMONT Ren&eacute.e ( veuve POTHIER
@@ -4773,7 +4773,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2154. CM
 22/06/1583 Protestant.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>MOSNIER Guillaume. Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>MOSNIER Guillaume.  <span
 style='color:red'>Ruffec 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SAUVESTRE Mathurine ( veuve
@@ -4787,7 +4787,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 26/12/1570.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NADAULT X X de + Simon et VYNELLE
-Catherine. Ý <span style='color:red'>Pr&egrave.s Montignac 16.<o:p></o:p></span></span></p>
+Catherine.  <span style='color:red'>Pr&egrave.s Montignac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUBOURG Perrette de Jacques
 et LIBEAU Huguette. Ste Soulle 17.<o:p></o:p></span></p>
@@ -4800,7 +4800,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 10/01/1582.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PANETIER Gabriel de +
-Hillaire et FROMENTIN Thomas&eacute.e. Ý <span style='color:red'>Pr&egrave.s de Ruffec 16.<o:p></o:p></span></span></p>
+Hillaire et FROMENTIN Thomas&eacute.e.  <span style='color:red'>Pr&egrave.s de Ruffec 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSEAU Gabrielle de Colas
 et VYREMEND&nbsp;? Jeanne. La Rochelle 17.<o:p></o:p></span></p>
@@ -4813,7 +4813,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 06/01/1582.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PELLOQUIN Adrien de Micheau
-et PETIT H&eacute.l&eacute.ne<span style='color:red'>.Ý Salles 16.<o:p></o:p></span></span></p>
+et PETIT H&eacute.l&eacute.ne<span style='color:red'>. Salles 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DELAFOND Suzanne de
 Etienne&nbsp;? et VERGIER Marguerite. Laleu = La Rochelle 17.<o:p></o:p></span></p>
@@ -4826,7 +4826,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 05/05/1570.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PICARD Romain de + Jean et
-TOURNAUD Jeanne.Ý <span style='color:red'>Villeognon 16.<o:p></o:p></span></span></p>
+TOURNAUD Jeanne. <span style='color:red'>Villeognon 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUDUREAU Mathurine ( veuve
 NORMANDIN Jean ) . Lagord 17.<o:p></o:p></span></p>
@@ -4839,7 +4839,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 27/01/1589. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROMAN<span
-style='mso-spacerun:yes'>  </span>de Nicolas de Jean et BERNARD Armande. Ý <span
+style='mso-spacerun:yes'>  </span>de Nicolas de Jean et BERNARD Armande.  <span
 style='color:red'>Cognac 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DEGARDIN Marie de Guillaume
@@ -4853,7 +4853,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 03/03/1589.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSIGNOL Fran&ccedil.ois de + Elie
-et GUILLAUD Jeanne. Ý <span style='color:red'>Pr&egrave.s Ruffec 16.<o:p></o:p></span></span></p>
+et GUILLAUD Jeanne.  <span style='color:red'>Pr&egrave.s Ruffec 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PYNETEAU Marie ( veuve
 CHASSELOUP X ) . en Poitou.<o:p></o:p></span></p>
@@ -4866,7 +4866,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 15/08/1583.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROY Jean de + Jean et BISET
-Marie. Ý <span style='color:red'>Cyroil&nbsp;? en Angoumois 16.<o:p></o:p></span></span></p>
+Marie.  <span style='color:red'>Cyroil&nbsp;? en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUVERGER Marie de X X ET
 RILLOT Guillemette. La Rochelle 17.<o:p></o:p></span></p>
@@ -4878,7 +4878,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2152. CM 26/01/1580.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SCAVIN&nbsp;? Mand&eacute. de + Jean
-et BOUTHIER Perette. Ý <span style='color:red'>La Fay en Poitou 16.<o:p></o:p></span></span></p>
+et BOUTHIER Perette.  <span style='color:red'>La Fay en Poitou 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NANTOIS&nbsp;? Catherine de
 Jean et SYMOT Marguerite. Nieul / Mer 17.<o:p></o:p></span></p>
@@ -4891,7 +4891,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 13/01/1582.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SIBILLE Jean de Jacques et
-BERNIER Claire. Ý <span style='color:red'>Champaigne en Angoumois 16.<o:p></o:p></span></span></p>
+BERNIER Claire.  <span style='color:red'>Champaigne en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RIANT Perrine de Vincent et
 COULDRET Marie. Nieul / Mer 17.<o:p></o:p></span></p>
@@ -4903,7 +4903,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2151. CM
 03/02/1572.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>SOUCHET Jean. Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>SOUCHET Jean.  <span
 style='color:red'>Purignac&nbsp;? en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUHIER Thifaine de Jullien
@@ -4920,7 +4920,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAUTIER Laurence ( veuve
-DANYAU Michel ) . Ý <span style='color:red'>Enveau Pr&egrave.s Jarnac 16&nbsp;? .</span><o:p></o:p></span></p>
+DANYAU Michel ) .  <span style='color:red'>Enveau Pr&egrave.s Jarnac 16&nbsp;? .</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire MASSET Jean .
 Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
@@ -4933,7 +4933,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 23/11/1614.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BARREAU Gabriel de Jean et
-VITET Marguerite. Ý <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
+VITET Marguerite.  <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VAUGONE Marie de Mathurin et
 NEPVEU Catherine. La Rochelle 17.<o:p></o:p></span></p>
@@ -4946,7 +4946,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 21/05/1605.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BILLOCHON Mathieu de +
-Jacques et MAYNIN Colette. Ý <span style='color:red'>Villej&eacute.sus 16.<o:p></o:p></span></span></p>
+Jacques et MAYNIN Colette.  <span style='color:red'>Villej&eacute.sus 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRAULT Marie ( veuve BART
 Guillaume ) de Jacques et DEVERAT Marguerite. La Rochelle 17.<o:p></o:p></span></p>
@@ -4962,7 +4962,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 BRYAULT Jeanne. Boullogne en Poitou.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BROUSSEAU Fran&ccedil.oise de Pierre
-et THEBAULT Lyonne. Ý <span style='color:red'>en Angoumois 16.<o:p></o:p></span></span></p>
+et THEBAULT Lyonne.  <span style='color:red'>en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4975,7 +4975,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 RASCAUD Marguerite. Thoulac.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DETAMPVILLE Jeanne ( veuve
-ORGERON Jean ) . Ý <span style='color:red'>Rampville 16.<o:p></o:p></span></span></p>
+ORGERON Jean ) .  <span style='color:red'>Rampville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -4985,7 +4985,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 26/04/1609.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MICHEL Christophe de Robert
-et FOURNIER Perine.Ý <span style='color:red'>Jarnac 16.<o:p></o:p></span></span></p>
+et FOURNIER Perine. <span style='color:red'>Jarnac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LANGLOIS Suzanne de Germain
 et CARTAULT Gilette. La Rochelle 17.<o:p></o:p></span></p>
@@ -4998,7 +4998,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 04/05/1613.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NOYRAULD Andr&eacute. de + Martin et
-PEPIN Perette. Ý <span style='color:red'>Barbezieux 16.<o:p></o:p></span></span></p>
+PEPIN Perette.  <span style='color:red'>Barbezieux 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BIDAULT Jeanne ( veuve
 POTTARD Antoine ). La Rochelle17.<o:p></o:p></span></p>
@@ -5016,7 +5016,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 <p class=MsoNormal><span style='font-size:10.0pt'>BAUDRAN Jean. La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUILLOU Anne de Antoine et
-TAPON Marie.Ý <span style='color:red'>St Amand en Poitou 16/79.<o:p></o:p></span></span></p>
+TAPON Marie. <span style='color:red'>St Amand en Poitou 16/79.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5026,7 +5026,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 19/10/1642.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUDARD Jean de Fran&ccedil.ois et +
-JOUQUET Catherine.Ý <span style='color:red'>Ruelle 16.<o:p></o:p></span></span></p>
+JOUQUET Catherine. <span style='color:red'>Ruelle 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MERCIER Catherine de Jean et
 BOUSSAUD Mathurine. St Denis la Chevasse 85.<o:p></o:p></span></p>
@@ -5043,7 +5043,7 @@ style='mso-spacerun:yes'>  </span>X. de + Etienne et ROUSSEAU Catherine. St
 Etienne de Bassern…<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERTRAND Marie de Jean et
-TASTAUD Simonne.Ý <span style='color:red'>Vars 16.<o:p></o:p></span></span></p>
+TASTAUD Simonne. <span style='color:red'>Vars 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5056,7 +5056,7 @@ style='mso-spacerun:yes'> </span>3 E 2166. CM 10/05/1648.<o:p></o:p></span></p>
 Marie ) . La Jarrie 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERSIAULT Marguerite ( veuve
-CHASTAGNIER X Ý <span style='color:red'>Gourville 16.<o:p></o:p></span></span></p>
+CHASTAGNIER X  <span style='color:red'>Gourville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5066,7 +5066,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 20/04/1653.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HORSON Jean de Fran&ccedil.ois et
-ROUSSEAU Anne. Ý <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
+ROUSSEAU Anne.  <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MEURGUIER Fran&ccedil.oise de
 Benjamin et DABILLON Marie. La Rochelle 17.<o:p></o:p></span></p>
@@ -5079,10 +5079,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 06/06/1645.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JOLLET Pierre de Vincent et +
-PETIT Perette. St Sauveur d’Aunis 17.<o:p></o:p></span></p>
+PETIT Perette. St Sauveur d&acute;Aunis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SALOMON Catherine de Antoine
-et VINET Catherine.Ý <span style='mso-spacerun:yes'> </span><span
+et VINET Catherine. <span style='mso-spacerun:yes'> </span><span
 style='color:red'>Salles Pr&egrave.s Cognac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
@@ -5094,7 +5094,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 18/10/1645.<b><o:p></o:p></b></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PERAUDEAU Jean ( veuf
-COUILLERON X ).Ý <span style='color:red'>Rouillac 16.<o:p></o:p></span></span></p>
+COUILLERON X ). <span style='color:red'>Rouillac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DURET Laurence ( veuve
 COUPRIE Jean ) . Nieul / Mer 17.<o:p></o:p></span></p>
@@ -5106,7 +5106,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2165. CM
 02/09/1646.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>PICARD Jean. Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>PICARD Jean.  <span
 style='color:red'>Veret en Angoumois 16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BASSOT Fran&ccedil.oise de Jean et
@@ -5120,7 +5120,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 13/02/1650.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUHAULT Jamet ( veuf DURVILLE
-Marie ) .Ý <span style='color:red'>Aigre 16.<o:p></o:p></span></span></p>
+Marie ) . <span style='color:red'>Aigre 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>POIRIER Catherine de Jean et
 JOLIVET Anne. Nieul / Mer 17.<o:p></o:p></span></p>
@@ -5136,10 +5136,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 26/12/1646.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUDOY Jean de + Daniel et
-RAUFY&nbsp;? Anne. Ý <span style='color:red'>Villefagnan 16.</span><o:p></o:p></span></p>
+RAUFY&nbsp;? Anne.  <span style='color:red'>Villefagnan 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ABELARD Louise de Mathurin et
-MAILLET Perrine.Ý <span style='color:red'>Rouillard 16.<o:p></o:p></span></span></p>
+MAILLET Perrine. <span style='color:red'>Rouillard 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5149,7 +5149,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 27/06/1655.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOULEAU Ren&eacute. de + Charles et
-GOUIN Jacquette. Ý <span style='color:red'>Coussay en Angoumois 16.<o:p></o:p></span></span></p>
+GOUIN Jacquette.  <span style='color:red'>Coussay en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BENESTEAU Marie ( veuve
 LAVERGNE Abel ) de Pierre et CORNU Marie. St Dizand de Conac 17.<o:p></o:p></span></p>
@@ -5162,7 +5162,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 14/04/1653.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LACHASSE Gabriel de Pierre et
-+ SEGUIN&nbsp;? Jeanne&nbsp;?. Ý <span style='color:red'>en Angoumois 16<o:p></o:p></span></span></p>
++ SEGUIN&nbsp;? Jeanne&nbsp;?.  <span style='color:red'>en Angoumois 16<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FROCADE Marie de X X<span
 style='mso-spacerun:yes'>  </span>et ROCOT XX. St Augustin 17.<o:p></o:p></span></p>
@@ -5175,7 +5175,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 08/08/1654.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LACHAUSSEE Gabriel de Pierre
-et SEGUIN Jeanne. Ý <span style='color:red'>en Angoumois 16<o:p></o:p></span></span></p>
+et SEGUIN Jeanne.  <span style='color:red'>en Angoumois 16<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PHELIPEAU Jacquette de
 Jacques et MERCASSIN&nbsp;? Anne. Lu&ccedil.on 85.<o:p></o:p></span></p>
@@ -5188,7 +5188,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 02/03/1650.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MICHEL Mathias de + GUIOT ET
-VILLENAUD Marie.Ý <span style='color:red'>Coudat en Angoumois 16.<o:p></o:p></span></span></p>
+VILLENAUD Marie. <span style='color:red'>Coudat en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ANNEREAU Jeanne de Pierre et
 + FOUCAUD Marguerite. La Rochelle Notre Dame 17.<o:p></o:p></span></p>
@@ -5201,7 +5201,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 06/12/1646.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SARRAULT Jean de Aman , et
-BUZAC Jacquette.Ý <span style='color:red'>Coulonge 16.<o:p></o:p></span></span></p>
+BUZAC Jacquette. <span style='color:red'>Coulonge 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAPON Jeanne de X X et BRODU
 Ren&eacute.e. Chaill&egrave.re enPoitou.<o:p></o:p></span></p>
@@ -5213,7 +5213,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 20/04/1678.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PIGOISARD Paul de + Fran&ccedil.ois
-Auguste et DELUSSAC Marie .Ý <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
+Auguste et DELUSSAC Marie . <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUILLOT Marie Anne de Jean et
 COURSON&nbsp;? Marie. La Rochelle17.<o:p></o:p></span></p>
@@ -5232,7 +5232,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 DUPRIN Marie. Bordeaux 33.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GENDRUT Jeanne ( veuve
-HERISSON Nicolas ) de Pierre et MARTINEAU Jeanne.Ý <span style='color:red'>Cognac
+HERISSON Nicolas ) de Pierre et MARTINEAU Jeanne. <span style='color:red'>Cognac
 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
@@ -5243,7 +5243,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 25/04/1661.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GOUILLARD Jean de + Etienne
-et ALBERT Ren&eacute.e.Ý <span style='color:red'>Marignac 16.<o:p></o:p></span></span></p>
+et ALBERT Ren&eacute.e. <span style='color:red'>Marignac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BLANCHARD Marie ( veuve
 AUTAIN Jacques ) de Louis et BARRE Ester . La Rochelle 17.<o:p></o:p></span></p>
@@ -5256,7 +5256,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 03/07/1661 Protestant.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUERIN Andr&nbsp;&eacute. de + Jean
-et FELIX Marguerite.Ý <span style='color:red'>en Angoumois 16.<o:p></o:p></span></span></p>
+et FELIX Marguerite. <span style='color:red'>en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PERRINET Ester ( veuve DUMOND
 Jean ) de Luc et FRADIN Gabrielle. La Rochelle 17.<o:p></o:p></span></p>
@@ -5272,7 +5272,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 16/09/1683.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BAUD Jean de + Arnaud et
-GAUTREL Elisabeth.Ý <span style='color:red'>Montign&eacute. 16.<o:p></o:p></span></span></p>
+GAUTREL Elisabeth. <span style='color:red'>Montign&eacute. 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SIMON Fleurance ( veuve
 BRAGUEROU<span style='mso-spacerun:yes'>  </span>X ) La Rochelle 17.<o:p></o:p></span></p>
@@ -5284,7 +5284,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2185. CM 24/02/1683.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNEAU Andr&eacute. de + Jean et
-BOISSEAU Catherine.Ý <span style='color:red'>Challais 16.<o:p></o:p></span></span></p>
+BOISSEAU Catherine. <span style='color:red'>Challais 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PELLETIER Jeanne de Samuel et
 RULLEAU Jacquette. La Rochelle 17.<o:p></o:p></span></p>
@@ -5297,7 +5297,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 2/10/1680. CM 26/01/1681.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MORICE Jean (veuf BODIN Marie
-).Ý <span style='color:red'>La Jarne en Angoumois 16&nbsp;?</span><o:p></o:p></span></p>
+). <span style='color:red'>La Jarne en Angoumois 16&nbsp;?</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSEAU Fran&ccedil.oise de Andr&eacute.
 et GUERIN Marie. La Rochelle 17.<o:p></o:p></span></p>
@@ -5310,7 +5310,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 01/05/1689.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RAVAUD Jacques de + Jacques
-et LEPINNE Perrine.Ý <span style='color:red'>St Martin du Clocher 16.<o:p></o:p></span></span></p>
+et LEPINNE Perrine. <span style='color:red'>St Martin du Clocher 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MILLION Fran&ccedil.oise de Jean et
 RAOULT Marie. Nieul / Mer 17.<o:p></o:p></span></p>
@@ -5326,7 +5326,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 04/01/1775.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AVRIL Jean de + Fran&ccedil.ois et
-DESMIER Elisabeth.Ý <span style='color:red'>Bernac 16.<o:p></o:p></span></span></p>
+DESMIER Elisabeth. <span style='color:red'>Bernac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DEPONT DE GAULT Marie
 Elisabeth de Pierre Henry et + BARBOT Marie. P&eacute.rigny 17.<o:p></o:p></span></p>
@@ -5342,7 +5342,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 BRUNET Marie. P&eacute.rigny 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MEMAIN Fran&ccedil.oise de Jean et
-ALBERT Marie.Ý <span style='color:red'>Ruffec 16.<o:p></o:p></span></span></p>
+ALBERT Marie. <span style='color:red'>Ruffec 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5355,7 +5355,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Elisabeth ) La Rochelle St Jean 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-GB style='font-size:10.0pt;mso-ansi-language:
-EN-GB'>GERGAUD Catherine de Simon et GIRAUD Catherine.Ý <st1:place w:st="on"><st1:City
+EN-GB'>GERGAUD Catherine de Simon et GIRAUD Catherine. <st1:place w:st="on"><st1:City
  w:st="on"><span style='color:red'>Cognac</span></st1:City></st1:place><span
 style='color:red'> 16.<o:p></o:p></span></span></p>
 
@@ -5367,7 +5367,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 05/06/1776.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FOURNIER Michel de + Pierre
-et DAVID Jeanne.Ý <span style='color:red'>Rivi&egrave.re 16</span>.<o:p></o:p></span></p>
+et DAVID Jeanne. <span style='color:red'>Rivi&egrave.re 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHEBASSIER Marie Jeanne de
 Charles et LANDREAU Marie. St Maixent 79.<o:p></o:p></span></p>
@@ -5380,7 +5380,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 21/05/1779.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GARNIER Jean Charles de Jean
-Louis et CHAUVIN Marie Madeleine.Ý <span style='color:red'>Chasson en Angoumois
+Louis et CHAUVIN Marie Madeleine. <span style='color:red'>Chasson en Angoumois
 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOULLANGER Marie Suzanne de Josne
@@ -5394,7 +5394,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/06/1760.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUILLAUD Pierre de + Andr&eacute. et
-MAUMON Marie.Ý <span style='color:red'>Villegars 16.<o:p></o:p></span></span></p>
+MAUMON Marie. <span style='color:red'>Villegars 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAQUINEAU Louise de Jacques
 et COLLE Anne. LaRochelle 17.<o:p></o:p></span></p>
@@ -5411,7 +5411,7 @@ Jean et JACQUIN Paule. Montargis.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'><span
 style='mso-spacerun:yes'> </span>MATIGNON Marguerite de Fran&ccedil.ois et BERTIN
-Marguerite.Ý <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
+Marguerite. <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5424,7 +5424,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 et BRIGALLEA Bondo Vall. Bondo Suisse.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SAUVAGET Elisabeth de Jean et
-FERRAUD Marie.Ý <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
+FERRAUD Marie. <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5437,7 +5437,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 JOUAMIEN Catherine. Basse Goulenne.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUE Jeanne de Jean et NEAU
-Jeanne.Ý <span style='color:red'>Bourg / Charente 16<o:p></o:p></span></span></p>
+Jeanne. <span style='color:red'>Bourg / Charente 16<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5447,7 +5447,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 27/05/1759.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VILLENEUVE Jean de + Jacques
-et + TOUART Marie. Ý<span style='color:red'>Villegas 16.<o:p></o:p></span></span></p>
+et + TOUART Marie. <span style='color:red'>Villegas 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LEBEAU Suzanne de Charles et
 GUITEAU Madeleine. La Rochelle 17.<o:p></o:p></span></p>
@@ -5467,7 +5467,7 @@ Louise ) de Guillaume et ROULLET Jeanne. St Etienne de Manacq.<o:p></o:p></span>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARGORIE Cl&eacute.mence ( veuve
 BLANCHET Jean ) de Allexis et BUREAU Jeanne. <span
-style='mso-spacerun:yes'> </span>Ý <span style='color:red'>St S&eacute.verin 16.<o:p></o:p></span></span></p>
+style='mso-spacerun:yes'> </span> <span style='color:red'>St S&eacute.verin 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5480,7 +5480,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Marie ) de + Mathurin et LEBAIN Marguerite. Auverne&nbsp;?<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RAOULT Jeanne de X X et
-TORIGNE Marie.Ý <span style='color:red'>St S&eacute.verin 16.</span><o:p></o:p></span></p>
+TORIGNE Marie. <span style='color:red'>St S&eacute.verin 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5490,7 +5490,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 05/03/1758.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUTHIER Jacques de + Charles
-et TESSEREAU Anne.Ý <span style='color:red'>Torsacq 16.<o:p></o:p></span></span></p>
+et TESSEREAU Anne. <span style='color:red'>Torsacq 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PENIER Marie Marguerite de
 Antoine et JOUSSEAUME Marie. Dompierre / Mer 17.<o:p></o:p></span></p>
@@ -5503,11 +5503,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 31/05/1781.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUTHIER Jacques ( veuf PEIGNE
-Marie Madeleine ) de + Jacques et TESSEREAU Anne.Ý <span style='color:red'>Torsacq
+Marie Madeleine ) de + Jacques et TESSEREAU Anne. <span style='color:red'>Torsacq
 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DOUSSIN Ren&eacute.e de Charles et
-CHEVALIER Marguerite. St Pierre d’Ol&eacute.ron 17.<o:p></o:p></span></p>
+CHEVALIER Marguerite. St Pierre d&acute;Ol&eacute.ron 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5517,7 +5517,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 11/06/1787. CM 04/07/1787.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BARREAU Michel ( veuf
-COUTURIER Andr&eacute. ) de L&eacute.onard et MATIGNON Catherine.Ý <span style='color:red'>Angoul&ecirc.me
+COUTURIER Andr&eacute. ) de L&eacute.onard et MATIGNON Catherine. <span style='color:red'>Angoul&ecirc.me
 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VERRON Marguerite de Jean
@@ -5531,7 +5531,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 07/01/1787.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERGE Roch de Gilbert et
-ROUDAUT Fran&ccedil.oise.Ý <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
+ROUDAUT Fran&ccedil.oise. <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SERRE Madeleine ( veuve
 RAFFIE Mathurin ) de Pierre et TOURNY Suzanne. La Rochelle Notre Dame 17.<o:p></o:p></span></p>
@@ -5544,7 +5544,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 24/01/1755.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNET Ren&eacute. ( veuf THOMAS
-Fran&ccedil.oise ) de + Simon et GARNIER Jeanne.Ý <span style='color:red'>Beaulieu en
+Fran&ccedil.oise ) de + Simon et GARNIER Jeanne. <span style='color:red'>Beaulieu en
 Poitou 16/79.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOURGEOIS Marie de Mathurin
@@ -5558,7 +5558,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 08/09/1789.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOURIAUD Pierre de +
-Fran&ccedil.ois<span style='mso-spacerun:yes'>  </span>et BEAU Jeanne.Ý <span
+Fran&ccedil.ois<span style='mso-spacerun:yes'>  </span>et BEAU Jeanne. <span
 style='color:red'>Marcillacq Oradour 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MESNARD Louise Marie de
@@ -5571,7 +5571,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2199. CM 09/07/1754.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CATHERINAUD Gabriel de +
-Fran&ccedil.ois et MINIERE Jeanne.Ý <span style='color:red'>Nonnacq&nbsp; en Angoumois
+Fran&ccedil.ois et MINIERE Jeanne. <span style='color:red'>Nonnacq&nbsp; en Angoumois
 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHENU Catherine de Jean et
@@ -5585,7 +5585,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 01/05/1774.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GORAUD Jean Baptiste ( veuf
-MILLIEN Madeleine ) de + Guillaume et CHARLES Anne.Ý <span style='color:red'>Angoul&ecirc.me
+MILLIEN Madeleine ) de + Guillaume et CHARLES Anne. <span style='color:red'>Angoul&ecirc.me
 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PERNEL Marie Anne. de Nicolas
@@ -5599,7 +5599,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 13/06/1790.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRASILLIER Jacques de Pierre
-et AUBINAUD Jeanne.Ý <span style='color:red'>M&eacute.rignac 16.<o:p></o:p></span></span></p>
+et AUBINAUD Jeanne. <span style='color:red'>M&eacute.rignac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOURGEVIN Elisabeth de Jean
 et MARGOTON Anne. La Rochelle Notre Dame 17.<o:p></o:p></span></p>
@@ -5612,7 +5612,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 19/03/1765.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JOLLAYS Pierre de + Jean et
-GAULTIER Elisabeth.Ý <span style='color:red'>St Preuil 16.<o:p></o:p></span></span></p>
+GAULTIER Elisabeth. <span style='color:red'>St Preuil 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LEGRAND Fran&ccedil.oise de Fran&ccedil.ois
 et PILLOT Elisabeth. Mauz&eacute. / Mignon 79.<o:p></o:p></span></p>
@@ -5628,7 +5628,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 COUTURIER Marie ) de Pierre et BOBRY Marie. St Coutant 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DENIS Marie ( veuve BORDAIX
-Pierre ) de Jean et BRUNOT Th&eacute.r&egrave.se.Ý <span style='color:red'>Celette 16.<o:p></o:p></span></span></p>
+Pierre ) de Jean et BRUNOT Th&eacute.r&egrave.se. <span style='color:red'>Celette 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5638,7 +5638,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 05/11/1785.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LOTTE Antoine de Jean et
-GAUDY Marguerite.Ý <span style='color:red'>Salles 16.</span><o:p></o:p></span></p>
+GAUDY Marguerite. <span style='color:red'>Salles 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOUSNIER Jeanne de Jean et
 MOYNIER Marie. La Rochelle Notre Dame 17.<o:p></o:p></span></p>
@@ -5654,7 +5654,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 ALLAISE Marie Anne. La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RAUX Jeanne de Louis et
-TORNIE Marie.Ý <span style='color:red'>St S&eacute.verin 16.<o:p></o:p></span></span></p>
+TORNIE Marie. <span style='color:red'>St S&eacute.verin 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5664,7 +5664,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 19/01/1782.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MATHAS Vincent de + Jean et
-PERRONNAUD Madeleine.Ý <span style='color:red'>Champniers 16.</span><o:p></o:p></span></p>
+PERRONNAUD Madeleine. <span style='color:red'>Champniers 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PINET Marguerite de Pierre et
 MESNARD Fran&ccedil.oise. La Rochelle Notre Dame 17.<o:p></o:p></span></p>
@@ -5677,7 +5677,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 19/11/1777. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MESTAYER Pierre Paul de +
-Paul et PROU Jeanne.Ý <span style='color:red'>St S&eacute.verin 16.<o:p></o:p></span></span></p>
+Paul et PROU Jeanne. <span style='color:red'>St S&eacute.verin 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUYON Marguerite ( veuve
 SAINTON Denis ) de Pierre et PERDRIAU Marie. La Flotte en R&eacute. 17.<o:p></o:p></span></p>
@@ -5690,7 +5690,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 05/09/1762.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MORISSET Jean de + Louis et
-GIRAUD Fran&ccedil.oise.Ý <span style='color:red'>Salles 16.<o:p></o:p></span></span></p>
+GIRAUD Fran&ccedil.oise. <span style='color:red'>Salles 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PORCHERON Louise. de Nicolas
 et CHAUVEAU Louise. La Rochelle Notre Dame 17.<o:p></o:p></span></p>
@@ -5703,7 +5703,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 29/03/1765.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PETITON Jean de + Jean et
-REGNIER Marguerite.Ý <span style='color:red'>Periaud en Angoumois 16.<o:p></o:p></span></span></p>
+REGNIER Marguerite. <span style='color:red'>Periaud en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FILLONNEAU Marie ( veuve
 ROCHET Jacques ) de Pierre et SAGOT Marie. Auzay 85.<o:p></o:p></span></p>
@@ -5716,7 +5716,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 26/04/1789.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PHELIPON Fran&ccedil.ois de + Pierre
-et Rivi&egrave.re Marguerite.Ý <span style='color:red'>Jarnac 16.<o:p></o:p></span></span></p>
+et Rivi&egrave.re Marguerite. <span style='color:red'>Jarnac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LABOEUF Marie ( veuve
 REIGNIER Pierre ) de X X et BARBUREAU Fran&ccedil.oise. La Rochelle Notre Dame 17.<o:p></o:p></span></p>
@@ -5732,7 +5732,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 03/11/1714.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DOUX Jean de Louis et + PIET
-Jeanne.Ý <span style='color:red'>Villej&eacute.sus 16.<o:p></o:p></span></span></p>
+Jeanne. <span style='color:red'>Villej&eacute.sus 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERJONNEAU Catherine de
 Nicolas et JAY Catherine. Marans 17.<o:p></o:p></span></p>
@@ -5746,7 +5746,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 29/12/1699.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='tab-stops:333.0pt'><span style='font-size:10.0pt'>ROUSCHIE
-Daniel de Pierre et PELLOQUIN Antoinette.Ý <span style='color:red'>Empur&eacute. 16.<o:p></o:p></span></span></p>
+Daniel de Pierre et PELLOQUIN Antoinette. <span style='color:red'>Empur&eacute. 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='tab-stops:333.0pt'><span style='font-size:10.0pt'>BARREAU
 Louise de Vincent et BONNET Jacquette. La Laigne 17.<o:p></o:p></span></p>
@@ -5760,7 +5760,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 12/09/1705.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='tab-stops:333.0pt'><span style='font-size:10.0pt'>SIBILLET
-Pierre de + Pierre et THOMMEAU Marie.Ý <span style='color:red'>La Rochefoucauld
+Pierre de + Pierre et THOMMEAU Marie. <span style='color:red'>La Rochefoucauld
 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='tab-stops:333.0pt'><span style='font-size:10.0pt'>PARE
@@ -5776,7 +5776,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2241. CM 19/05/1698.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MANDAY Pierre de Jean et
-CHAIGNEAU Jeanne.Ý <span style='color:red'>Dignac 16.<o:p></o:p></span></span></p>
+CHAIGNEAU Jeanne. <span style='color:red'>Dignac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHANAUDRAY Marguerite ( veuve
 BERTHET Pierre ) La Rochelle St Bath&eacute.l&eacute.my 17.<o:p></o:p></span></p>
@@ -5792,7 +5792,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 23/05/1735.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AYMARD Henry de + Fran&ccedil.ois et
-TEXIER Marie.Ý <span style='color:red'>Villefayant 16.<o:p></o:p></span></span></p>
+TEXIER Marie. <span style='color:red'>Villefayant 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MACHETEAU Jeanne de Morice et
 NOREMENT Fran&ccedil.oise. Aytr&eacute. 17.<o:p></o:p></span></p>
@@ -5805,7 +5805,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 04/07/1729.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BARON Fran&ccedil.ois de Jean et +
-MARTIN Jeanne.Ý <span style='color:red'>St Andr&eacute. 16</span>.<o:p></o:p></span></p>
+MARTIN Jeanne. <span style='color:red'>St Andr&eacute. 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAILLE Fran&ccedil.oise ( veuve
 BRISSEAU Jean ) La Rochelle 17.<o:p></o:p></span></p>
@@ -5818,7 +5818,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 10/10/1723.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERGER Jean de Raymond et +
-AUDOUIN Anne<span style='color:red'>.Ý Pillac 16.<o:p></o:p></span></span></p>
+AUDOUIN Anne<span style='color:red'>. Pillac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:36.0pt'><span style='font-size:10.0pt'>PORCHER
 Jeanne de Pierre et BOUAUT Catherine . Venanceau 85<o:p></o:p></span></p>
@@ -5834,7 +5834,7 @@ Promesse 16/12/1741. CM 16/12/1741.<o:p></o:p></span></p>
 Fran&ccedil.oise ) La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BUSSAT Marie de L&eacute.onard et
-CHERBONNIER Fran&ccedil.oise.Ý <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
+CHERBONNIER Fran&ccedil.oise. <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5844,7 +5844,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 11/05/1735.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOURDREAU Jean de + Antoine
-et BALIATRE&nbsp;? Catherine.Ý <span style='color:red'>St Cybardeau 16.<o:p></o:p></span></span></p>
+et BALIATRE&nbsp;? Catherine. <span style='color:red'>St Cybardeau 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERNARD Marie Elisabeth de
 Jacob et + COUSSEAU Marie. La Rochelle St Nicolas 17.<o:p></o:p></span></p>
@@ -5857,7 +5857,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 17/02/1726.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHABARNEAU Jean de S&eacute.bastien
-et DELACAUD Grace.Ý <span style='color:red'>Leschi……..en Angoumois 16.<o:p></o:p></span></span></p>
+et DELACAUD Grace. <span style='color:red'>Leschi……..en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PORCQ Anne ( veuve NANGE Jean
 ) . La Rochelle 17.<o:p></o:p></span></p>
@@ -5870,7 +5870,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 28/09/1750.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHATAIN Fran&ccedil.ois de Jacques
-et ILHIER&nbsp;? Anne.Ý <span style='color:red'>Tusson 16.<o:p></o:p></span></span></p>
+et ILHIER&nbsp;? Anne. <span style='color:red'>Tusson 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DERAIN Suzanne de Louis et
 CONNIL Marguerite. La Rochelle St Nicolas 17.<o:p></o:p></span></p>
@@ -5883,7 +5883,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 23/04/1730.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUSTARD Fran&ccedil.ois de Jean et
-LEVEQUE Fran&ccedil.oise.Ý <span style='color:red'>Sonneville 16.<o:p></o:p></span></span></p>
+LEVEQUE Fran&ccedil.oise. <span style='color:red'>Sonneville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DIEUMEGARD Louise de XX et
 AUDINEAU Marie Anne. Le Gu&eacute. de Velluire 85.<o:p></o:p></span></p>
@@ -5896,7 +5896,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 06/03/1738.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DAVIAUD Paul de + Paul et
-DELABARDE Anne.Ý <span style='color:red'>Monchaude 16.<o:p></o:p></span></span></p>
+DELABARDE Anne. <span style='color:red'>Monchaude 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERNARD Marie de Antoine et
 AURIAUD Jeanne. La Rochelle St Sauveur 17.<o:p></o:p></span></p>
@@ -5909,7 +5909,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 11/07/1734.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DESFIEUX Benoist de + Antoine
-et SOUBIRAN Fran&ccedil.oise.Ý <span style='color:red'>St Aman 16.<o:p></o:p></span></span></p>
+et SOUBIRAN Fran&ccedil.oise. <span style='color:red'>St Aman 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOUNIER C&eacute.leste de Baltazar
 et LAROUCHE Fran&ccedil.oise. Beaulieu / Mareuil 85.<o:p></o:p></span></p>
@@ -5925,7 +5925,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Marguerite. Cram en Aunis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THILLOU Marie de Mathurin et
-RESTEAU Jeanne.Ý <span style='color:red'>St Germain en Poitou<span
+RESTEAU Jeanne. <span style='color:red'>St Germain en Poitou<span
 style='mso-spacerun:yes'>  </span>16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
@@ -5939,7 +5939,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 TEXIER Jeanne. en Aunis.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRIE Marie de Ren&eacute. et GUILLON
-Marie.Ý <span style='color:red'>Ligue en Angoumois 16.<o:p></o:p></span></span></p>
+Marie. <span style='color:red'>Ligue en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5949,7 +5949,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 17/05/1728.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GEORGET Pierre de Pierre et +
-PAIN Anne.Ý <span style='color:red'>Roullet 16</span>.<o:p></o:p></span></p>
+PAIN Anne. <span style='color:red'>Roullet 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARCHADIER Fran&ccedil.oise de Jean
 et RAOULT&nbsp;? Madeleine. La Rochelle Notre Dame 17.<o:p></o:p></span></p>
@@ -5965,7 +5965,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 BOISNARD Suzanne. Coze 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAULTIER Marguerite de Jean
-et DEGORSE Jeanne<span style='color:red'>. Ý Chadurie 16.<o:p></o:p></span></span></p>
+et DEGORSE Jeanne<span style='color:red'>.  Chadurie 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5978,7 +5978,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 BERNARD Suzanne. Allevert en Saintonge 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROULLET Suzanne de Jean et
-BOUQUINET Charlotte.Ý <span style='color:red'>Cellete 16.<o:p></o:p></span></span></p>
+BOUQUINET Charlotte. <span style='color:red'>Cellete 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -5988,7 +5988,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 03/10/1750.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAURANS Pierre de + Jean et
-TRUSANDIER Jeanne.Ý <span style='color:red'>St Germain 16.</span><o:p></o:p></span></p>
+TRUSANDIER Jeanne. <span style='color:red'>St Germain 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CANTINEAU Jeanne de Pierre et
 HILLAIREAU Marie Anne. Salles / Mer 17.<o:p></o:p></span></p>
@@ -6001,7 +6001,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 20/06/1726.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NEAU Jean de Jacques et +
-IZAMBARD Jeanne.Ý <span style='color:red'>St S&eacute.verin 16.<o:p></o:p></span></span></p>
+IZAMBARD Jeanne. <span style='color:red'>St S&eacute.verin 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GERBIER Fran&ccedil.oise de Fran&ccedil.ois
 et SIMONNET Marie. Niort Notre Dame 79.<o:p></o:p></span></p>
@@ -6016,7 +6016,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 et RAYNAU Suzanne. Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAULTIER Marguerite de Jean
-et DIGOTE Jeanne<span style='color:red'>. Ý Barbezieux 16.<o:p></o:p></span></span></p>
+et DIGOTE Jeanne<span style='color:red'>.  Barbezieux 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6029,7 +6029,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 JANNE Marie. Chaux en Ardennes.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MONBERGER Louise de Nicolas
-et DESCHAMPS Marie.Ý <span style='color:red'>Champagn&eacute. en Poitou 16.<o:p></o:p></span></span></p>
+et DESCHAMPS Marie. <span style='color:red'>Champagn&eacute. en Poitou 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6039,7 +6039,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 11/02/1753.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RIFFAULT Jean de + Antoine et
-CLEMENT Fran&ccedil.oise.Ý <span style='color:red'>Mornac 16.<o:p></o:p></span></span></p>
+CLEMENT Fran&ccedil.oise. <span style='color:red'>Mornac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERTRAND Henriette de Ren&eacute. et
 BERNARD Marie Anne. La Rochelle 17.<o:p></o:p></span></p>
@@ -6052,7 +6052,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 26/05/1738.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RONDRAILH Charles de +
-Fran&ccedil.ois et FOUCHE Jeanne.Ý <span style='color:red'>Cristeuil 16.<o:p></o:p></span></span></p>
+Fran&ccedil.ois et FOUCHE Jeanne. <span style='color:red'>Cristeuil 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRUNEAU Marie de Etienne et
 JUTEAU Marie. La Rochelle St Barth&eacute.l&eacute.my. 17.<o:p></o:p></span></p>
@@ -6065,7 +6065,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 15/07/1749.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SIBILLEAU Michel de Louis et
-FRAGNAUD Anne.Ý <span style='color:red'>Ligne 16.</span><o:p></o:p></span></p>
+FRAGNAUD Anne. <span style='color:red'>Ligne 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VILLIE Suzanne de Mathurin et
 ORSEAULT Marie. St Martin de R&eacute. 17.<o:p></o:p></span></p>
@@ -6077,7 +6077,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 2249. CM 20/07/1732.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VERGUIN Antoine de + Elie et
-BOUILLAU Marie. Ý <span style='color:red'>Angoul&ecirc.me St Paul 16.<o:p></o:p></span></span></p>
+BOUILLAU Marie.  <span style='color:red'>Angoul&ecirc.me St Paul 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAGARDE Marie de Barth&eacute.l&eacute.my
 et MATHE Marie. La Rochelle 17.<o:p></o:p></span></p>
@@ -6096,7 +6096,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 et GAZEAU Suzanne. La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FORT Marguerite de P ierre et
-FOUSGERE Catherine.Ý <span style='color:red'>St Laurent en Angoumois 16.<o:p></o:p></span></span></p>
+FOUSGERE Catherine. <span style='color:red'>St Laurent en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire BONNEAU Pierre
 fran&ccedil.ois. Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
@@ -6112,7 +6112,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Pa……….) de + Jean et BLANCHARD Fran&ccedil.oise. Marsilly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRENIER Marie de XX et RAUD
-Ang&eacute.lique. Ý <span style='color:red'>Paizay en Audouin 16.</span><o:p></o:p></span></p>
+Ang&eacute.lique.  <span style='color:red'>Paizay en Audouin 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6122,7 +6122,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/04/1788.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BARGE Andr&eacute. ( veuf BORDAS
-Anne ) de + Gilbert et RONDEAU Fran&ccedil.oise. Ý <span style='color:red'>Angoul&ecirc.me
+Anne ) de + Gilbert et RONDEAU Fran&ccedil.oise.  <span style='color:red'>Angoul&ecirc.me
 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHEBECIER Marie Anne de
@@ -6139,7 +6139,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 et FERRAND Marguerite. Corniac. ( Dordogne )<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VRILLAC Marie de Jacques
-Fran&ccedil.ois et ALBARET Th&eacute.r&egrave.se. Ý<span style='color:red'>Aloux 16.<o:p></o:p></span></span></p>
+Fran&ccedil.ois et ALBARET Th&eacute.r&egrave.se. <span style='color:red'>Aloux 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6149,7 +6149,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 09/06/1806.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BURNEL Pierre de Jean et
-DUPRE Anne.Ý <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
+DUPRE Anne. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MINOCHET Marie Anne de Pierre
 et RIVIERE Marie. St Cir . ( Manche )<o:p></o:p></span></p>
@@ -6165,7 +6165,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 G………..) Dompierre / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERNARD Marie de Pierre et
-LAURENT Jeanne.Ý <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
+LAURENT Jeanne. <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6178,7 +6178,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Elisabeth ) Saintes St Palais 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUGER Marie de Jean et
-RIVIERE Marguerite.Ý <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
+RIVIERE Marguerite. <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6191,7 +6191,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Elisabeth ) Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FORGET Anne de Fran&ccedil.ois et
-COINDREAU Fran&ccedil.oise.Ý <span style='color:red'>Charme 16.<o:p></o:p></span></span></p>
+COINDREAU Fran&ccedil.oise. <span style='color:red'>Charme 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6201,7 +6201,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 25/11/1805.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JOURDAIN Pierre ( veuf CHEMINET
-Marie ) de + Fran&ccedil.ois et MORAN Catherine.Ý <span style='color:red'>Confolens
+Marie ) de + Fran&ccedil.ois et MORAN Catherine. <span style='color:red'>Confolens
 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PETIT Marie H&nbsp;&eacute.l&eacute.ne de
@@ -6215,7 +6215,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 20/08/1814.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>QUILLARD Louis de + Louis et
-ALINEAU Louise. Ý <span style='color:red'>Aussac Vadalle 16.<o:p></o:p></span></span></p>
+ALINEAU Louise.  <span style='color:red'>Aussac Vadalle 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUVERGER Jeanne de Jean et
 FOURCADE Marie. Libourne 33.<o:p></o:p></span></p>
@@ -6228,7 +6228,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 22/04/1786.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TEUNEZEN Fran&ccedil.ois de + Andr&eacute.
-et CHASTIER Marie. Ý <span style='color:red'>Champagn&eacute. en Poitou 16&nbsp;?<o:p></o:p></span></span></p>
+et CHASTIER Marie.  <span style='color:red'>Champagn&eacute. en Poitou 16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RICHER Madeleine Fran&ccedil.oise de
 Jacques et DUBEIGNON Elisabeth. La Rochelle Notre Dame 17.<o:p></o:p></span></p>
@@ -6244,7 +6244,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 25/12/1762.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRISSET Jean de Pierre et
-CAILLAU Marie<span style='color:red'>.Ý La Sigogne 16.<o:p></o:p></span></span></p>
+CAILLAU Marie<span style='color:red'>. La Sigogne 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LEGEAU Marie Anne de Etienne
 et CHAILLE Jeanne. Esnandes 17.<o:p></o:p></span></p>
@@ -6260,7 +6260,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 15/08/1756. CM 13/09/1756.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LOMMIERE Pierre de + Pierre
-et CHAPPELET Jeanne<span style='color:red'>.Ý Don&nbsp;? en Angoumois 16.<o:p></o:p></span></span></p>
+et CHAPPELET Jeanne<span style='color:red'>. Don&nbsp;? en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAILLAUD Marie ( veuve
 GAILLARD Jean ) Esnandes 17.<o:p></o:p></span></p>
@@ -6277,11 +6277,11 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 21/04/1771. X 21/05/1771 Le Thou 17.<b><o:p></o:p></b></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERGIER Arnault de + Michel
-et DELAFONT Marie<span style='color:red'>.Ý Magnac / Touvre 16</span>.dt Le
+et DELAFONT Marie<span style='color:red'>. Magnac / Touvre 16</span>.dt Le
 Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DAUBY Fran&ccedil.oise ( veuve
-POINTIER Jean ) de Pierre et + BARON Jeanne. Ý Ardilli&eacute.res 17. dt Le Thou 17.<o:p></o:p></span></p>
+POINTIER Jean ) de Pierre et + BARON Jeanne.  Ardilli&eacute.res 17. dt Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6291,11 +6291,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 22/11/1790. X 22/11/1790 Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOISSEAU Pierre de + Jean et
-PELLERIN Marie. Ý <span style='color:red'>Herpes en Angoumois 16</span>. dt Le Thou
+PELLERIN Marie.  <span style='color:red'>Herpes en Angoumois 16</span>. dt Le Thou
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROCHE Marie de + Fran&ccedil.ois et
-LOUIS Marie. Ý et dt Le Thou 17.<o:p></o:p></span></p>
+LOUIS Marie.  et dt Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6305,10 +6305,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 09/05/1780. X 09/05/1780 Forges 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNEAU Mathurin de Jean et
-CHARRON Jeanne Gabrielle. Ý et dt Forges 17.<o:p></o:p></span></p>
+CHARRON Jeanne Gabrielle.  et dt Forges 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RIVAUD Marie de Louis et +
-TRILLEAU Marie. <span style='color:red'>Ý Anville 16</span>. dt Forges 17.<o:p></o:p></span></p>
+TRILLEAU Marie. <span style='color:red'> Anville 16</span>. dt Forges 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6321,7 +6321,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 et + RODIER Anne Suzanne. juge Royal de <span style='color:red'>Ruffec 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CONTANCIN Fran&ccedil.oise Julie de
-Jean et DELACROIX Rose. Ý et dt Mauz&eacute. / Mignon 79.<o:p></o:p></span></p>
+Jean et DELACROIX Rose.  et dt Mauz&eacute. / Mignon 79.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6331,11 +6331,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 06/06/1802. X 15/06/1802 Forges 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DELAGE Fran&ccedil.ois ( veuf
-GABORIT Anne ) de + Jean et + PETIT Anne. Ý <span style='color:red'>St Martin
+GABORIT Anne ) de + Jean et + PETIT Anne.  <span style='color:red'>St Martin
 de Marthon 16</span>. dt La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERNARD Marguerite de + Jean
-et + GUERIN Magdeleine. Ý et dt Forges 17.<o:p></o:p></span></p>
+et + GUERIN Magdeleine.  et dt Forges 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6345,11 +6345,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 CM31/01/1780. X 31/01/1780 Aigrefeuille 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUIDET Fran&ccedil.ois de Jean et
-LUCAS Marie. Ý <span style='color:red'>Villej&eacute.sus 16</span>. dt Aigrefeuille
+LUCAS Marie.  <span style='color:red'>Villej&eacute.sus 16</span>. dt Aigrefeuille
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RAMPILLON Marie de Jean et +
-JOLLY Marie. Ý et dt Aigrefeuille 17.<o:p></o:p></span></p>
+JOLLY Marie.  et dt Aigrefeuille 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6358,7 +6358,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span style='font-size:10.0pt'>3 E 4238. CM
 22/09/1800.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>MARCHAND Joseph Philippe. Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>MARCHAND Joseph Philippe.  <span
 style='color:red'>Aigre 16.</span>dt La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOURDIN Magdeleine Emelie (
@@ -6376,7 +6376,7 @@ AUBOYNEAU Marie Anne de + Mathurin et CRAMENEILLE Marie Catherine. dt Forges
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MONTAUBANT Jeanne de Pierre
-et+ GROLLIER Michelle . Ý <span style='color:red'>Chateauneuf / Charente 16</span>.
+et+ GROLLIER Michelle .  <span style='color:red'>Chateauneuf / Charente 16</span>.
 dt Vouh&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
@@ -6387,11 +6387,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 12/02/1792. X 13/02/1792 Forges 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>POINFERRE Fran&ccedil.ois de +
-Gabriel et + BOUTELAUT Jeanne. Ý <span style='color:red'>Le Bouchage 16</span>.
+Gabriel et + BOUTELAUT Jeanne.  <span style='color:red'>Le Bouchage 16</span>.
 dt Forges 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VACHE Genevi&eacute.ve de Pierre et
-BONNIN Marie. Ý et dt Forges 17.<o:p></o:p></span></p>
+BONNIN Marie.  et dt Forges 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6401,11 +6401,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 26/03/1766. X 09/04/1766 Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUX Jean de + Jean et
-CORNUAUD Jeanne. Ý <span style='color:red'>Flaye en Angoumois 16</span>. dt Le
+CORNUAUD Jeanne.  <span style='color:red'>Flaye en Angoumois 16</span>. dt Le
 Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>OZAINNEAU Marie Marguerite
-Genevi&eacute.ve de + Jean et THIBAULT Marguerite. Ý St Loup de Montreau dioc&egrave.se de Sens.
+Genevi&eacute.ve de + Jean et THIBAULT Marguerite.  St Loup de Montreau dioc&egrave.se de Sens.
 dt Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
@@ -6416,7 +6416,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 22/11/1773. X 10/01/1774 Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUX Jean ( veuf AUZAINNEAU
-Marie Marguerite ) de + Jean et CORNEAU Jeanne. Ý <span style='color:red'>Flat
+Marie Marguerite ) de + Jean et CORNEAU Jeanne.  <span style='color:red'>Flat
 en Angoumois</span> <span style='color:red'>16</span>. dt Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VERNEUIL Jeanne de + Jacques
@@ -6433,7 +6433,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 27/10/1749. CM 29/11/1749.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BECQUET Jean de + NICOLAS et
-+ CHEMINADE Fran&ccedil.oise. Ý <span style='color:red'>Cellefrouin 16</span>. dt
++ CHEMINADE Fran&ccedil.oise.  <span style='color:red'>Cellefrouin 16</span>. dt
 Surg&egrave.res 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRIMAUD Marguerite ( veuve
@@ -6448,7 +6448,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/09/1747. X 06/11/1747 Breuil la R&eacute.orte 17. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHEDAUTEAU Pierre de + Pierre
-et + JOUBERT Anne.Ý <span style='color:red'>St Laurent de C&eacute.ris 16</span>. dt
+et + JOUBERT Anne. <span style='color:red'>St Laurent de C&eacute.ris 16</span>. dt
 Charentenay 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RENOU Marie de + Jacques et
@@ -6462,10 +6462,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 02/08/1751. X 02/08/1751 Surg&egrave.res Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MATIGNON Pierre de Pierre et
-DELAVERGNE Marie.Ý <span style='color:red'>Ligni&eacute.res 16</span>. dt Surg&egrave.res 17.<o:p></o:p></span></p>
+DELAVERGNE Marie. <span style='color:red'>Ligni&eacute.res 16</span>. dt Surg&egrave.res 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SEGUIN Marthe Fran&ccedil.oise de
-Jean et + HERAULT Elisabeth. Ý La Rochelle 17. dt Surg&egrave.res 17.<o:p></o:p></span></p>
+Jean et + HERAULT Elisabeth.  La Rochelle 17. dt Surg&egrave.res 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire BUARD Fran&ccedil.ois.
 Etude &agrave. Surg&egrave.res 17.<o:p></o:p></span></b></p>
@@ -6478,7 +6478,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 08/12/1756.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRUN Jacques de + Pierre et +
-DE BEAULIEU Catherine. Ý <span style='color:red'>St Michel de Confolant 16</span>.
+DE BEAULIEU Catherine.  <span style='color:red'>St Michel de Confolant 16</span>.
 dt Rochefort / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BARBAT Jeanne de + Jean et
@@ -6492,7 +6492,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 01/06/1755. X 30/06/1755 St Germain de Marencennes 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAMUS Pierre de Ren&eacute. et PEULTIN
-Marguerite. Ý <span style='color:red'><span
+Marguerite.  <span style='color:red'><span
 style='mso-spacerun:yes'> </span>Sigogne 16</span>. dt St Germain de
 Marencennes 17.<o:p></o:p></span></p>
 
@@ -6507,7 +6507,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 17/01/1769. X 17/01/1769 St Saturnin du Bois 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GADIOUX Pierre de Fran&ccedil.ois et
-DUBOUX&nbsp;? Madeleine. Ý <span style='color:red'>Villefanan 16</span>. dt St
+DUBOUX&nbsp;? Madeleine.  <span style='color:red'>Villefanan 16</span>. dt St
 Saturnin du Bois 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GROUSSEAU Jeanne Fran&ccedil.oise
@@ -6521,7 +6521,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 27/09/1766. X 27/11/1766 Surg&egrave.res Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRARDIN Jean de + Fran&ccedil.ois
-et MESNARD Madeleine. <span style='color:red'>Ý Paizay Naudouin 16.<o:p></o:p></span></span></p>
+et MESNARD Madeleine. <span style='color:red'> Paizay Naudouin 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DOUVRY Marie P&eacute.lagie de +
 Charles Fran&ccedil.ois et BORGARD Ester . dt Surg&egrave.res Notre Dame 17.<o:p></o:p></span></p>
@@ -6536,7 +6536,7 @@ mso-ansi-language:EN-GB'>3 E <st1:metricconverter ProductID="4304. CM" w:st="on"
  CM</st1:metricconverter> 11/11/1766. X 24/11/1766 St Mard 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUILLEBOT Jean de + Guillaume
-et + GEOFFROY Marie<span style='color:red'>.Ý Champmillon 16</span>. dt Surg&egrave.res
+et + GEOFFROY Marie<span style='color:red'>. Champmillon 16</span>. dt Surg&egrave.res
 St Pierre 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRILLAUD Marie de + Jean et
@@ -6550,7 +6550,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 25/04/1784. X 05/07/1784 Surg&egrave.res St Pierre 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LABROUSSE Fran&ccedil.ois de + Louis
-et BRILLIAC Catherine. Ý <span style='color:red'>Manot 16.</span> dt St Mard
+et BRILLIAC Catherine.  <span style='color:red'>Manot 16.</span> dt St Mard
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PINSONNEAU Catherine de +
@@ -6564,7 +6564,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 09/05/1764. X 21/05/1764 Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LEAUD Jacques de + Jean et
-ARRONDEAU Marguerite.Ý <span style='color:red'>Bayers 16.</span> dt Forges 17.<o:p></o:p></span></p>
+ARRONDEAU Marguerite. <span style='color:red'>Bayers 16.</span> dt Forges 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LEPINE Catherine de + Pierre
 et BOULERNE Marguerite. dt Le Thou 17.<o:p></o:p></span></p>
@@ -6577,7 +6577,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 X 10/09/1760 Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PLANTEVIGNE Jean de Pierre et
-BAUD Marie. <span style='color:red'>Ý Villej&eacute.sus 16</span>. dt Le Thou 17.<o:p></o:p></span></p>
+BAUD Marie. <span style='color:red'> Villej&eacute.sus 16</span>. dt Le Thou 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUDRY Madeleine de + Fran&ccedil.ois
 et LEPINE Catherine. dt Le Thou 17.<o:p></o:p></span></p>
@@ -6590,11 +6590,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 30/05/1779. X 30/06/1779 Surg&egrave.res Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RABANIER Jacques ( veuf DORAY
-Marie ) de + Charles et + DAVID Jeanne. Ý <span style='color:red'>Ranville 16.</span>
+Marie ) de + Charles et + DAVID Jeanne.  <span style='color:red'>Ranville 16.</span>
 dt Surg&egrave.res 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUILLEBON Marguerite de +
-Jacques et + BUFFETEAU Marguerite. Ý Migr&eacute. 17. dt Surg&egrave.res 17.<o:p></o:p></span></p>
+Jacques et + BUFFETEAU Marguerite.  Migr&eacute. 17. dt Surg&egrave.res 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire GIURAUD Louis.
 Etude &agrave. P&eacute.r&eacute. 17.<o:p></o:p></span></b></p>
@@ -6607,7 +6607,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 21/02/1803. X 22/01/1803&nbsp;? St Germain de Marencennes 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAURIN Fran&ccedil.ois de Jacques et
-+ JOUSSAUME Jeanne.Ý <span style='color:red'>St Hamand de Boixe 16.<o:p></o:p></span></span></p>
++ JOUSSAUME Jeanne. <span style='color:red'>St Hamand de Boixe 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRAUD Marie de + Louis et +
 BILLAUD Marie. dt St Germain de Marencennes 17.<o:p></o:p></span></p>
@@ -6623,7 +6623,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 10/02/1783.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DELAGE Louis de Jean et PETIT
-Anne. Ý <span style='color:red'>Marthon 16</span>. dt Ferri&egrave.re d’Aunis 17.<o:p></o:p></span></p>
+Anne.  <span style='color:red'>Marthon 16</span>. dt Ferri&egrave.re d&acute;Aunis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PARY Marguerite de Marc Henry
 et GIRODEAU Marianne. dt Surg&egrave.res St Pierre 17.<o:p></o:p></span></p>
@@ -6636,11 +6636,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 06/06/1793.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GILBERT Jean de + Jacques et
-VEDEAU Jeanne. Ý <span style='color:red'>St Maurice de Moinxe 16</span>. dt La
+VEDEAU Jeanne.  <span style='color:red'>St Maurice de Moinxe 16</span>. dt La
 Rochelle St Louis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUILLOT Catherine de Pierre
-et LARELLE Louise. Ý St M&eacute.dard 17. dt Rochefort / Mer 17.<o:p></o:p></span></p>
+et LARELLE Louise.  St M&eacute.dard 17. dt Rochefort / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6650,7 +6650,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 08/01/1760.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GINDREAU Fran&ccedil.ois de Jean et
-GANDELIN Anne.Ý <span style='color:red'>Les Trois Pally 16.<o:p></o:p></span></span></p>
+GANDELIN Anne. <span style='color:red'>Les Trois Pally 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JAY Jacquette de + Pierre et
 ARCHAMBAUD Marie Anne. Surg&egrave.res St Pierre 17.<o:p></o:p></span></p>
@@ -6663,7 +6663,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 13/11/1761. X 17/11/1761 Vandr&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HUMIER Philippe de Jacques et
-NIMIER Marguerite.Ý <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
+NIMIER Marguerite. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAPPANE Genevi&egrave.ve de +
 Pierre et SENOLLET Marie Henriette. Vandr&eacute. 17.<o:p></o:p></span></p>
@@ -6676,7 +6676,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 05/08/1794.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RIORT Jean de + Jean et
-ROULLAND Marie. Ý <span style='color:red'>St Andr&eacute. des Combes 16.<o:p></o:p></span></span></p>
+ROULLAND Marie.  <span style='color:red'>St Andr&eacute. des Combes 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BARBAUD Marianne de Simon et
 + XXX Catherine. Breuill&eacute. 17<o:p></o:p></span></p>
@@ -6696,7 +6696,7 @@ de FOURNIER Marguerite &agrave. <span style='color:red'>Cognac 16</span> )de + P
 et VIELLE<span style='mso-spacerun:yes'>  </span>Marguerite. <span
 style='color:red'><o:p></o:p></span></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt;color:red'>Ý Cognac 16</span><span
+<p class=MsoNormal><span style='font-size:10.0pt;color:red'> Cognac 16</span><span
 style='font-size:10.0pt'>. dt Puyravault 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THOMAS Elisabeth de Charles
@@ -6710,10 +6710,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 13/06/1791. X 27/06/1791 Vouh&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAIDET Joseph de Louis et
-NEAU Jeanne.Ý <span style='color:red'>Br&eacute.ville 16.<o:p></o:p></span></span></p>
+NEAU Jeanne. <span style='color:red'>Br&eacute.ville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DAMOUR Catherine de Fran&ccedil.ois
-et PAILLE Marie.Ý St Cymphorien 79. dt Vouh&eacute. 17.<o:p></o:p></span></p>
+et PAILLE Marie. St Cymphorien 79. dt Vouh&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6737,10 +6737,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 06/12/1788. X 16/02/1789 Landrais 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VALLEE Jacques de Louis et +
-PRAT Marie. <span style='color:red'>Ý Londigny 16.<o:p></o:p></span></span></p>
+PRAT Marie. <span style='color:red'> Londigny 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BIROT Marie de Jacques et
-VRET Anne. Ý Landrais 17.<o:p></o:p></span></p>
+VRET Anne.  Landrais 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire POMMIER Fran&ccedil.ois.
 Etude &agrave. surg&egrave.res 17.<o:p></o:p></span></b></p>
@@ -6753,7 +6753,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 16/08/1733. X 17/08/1733 Surg&egrave.res St Pierre 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FANIER Antoine de Fran&ccedil.ois et
-+ GABORIT H&eacute.l&eacute.ne.Ý <span style='color:red'>Paizay Naudouin 16.<o:p></o:p></span></span></p>
++ GABORIT H&eacute.l&eacute.ne. <span style='color:red'>Paizay Naudouin 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHEVRIER Marianne de
 Guillaume et + BONNET Jeanne. Surg&egrave.res St Pierre 17.<o:p></o:p></span></p>
@@ -6769,7 +6769,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 29/11/1762. X 11/01/1762 Muron 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUDOUIN Pierre de Pierre et
-BOURGNET Gabrielle. <span style='color:red'>Ý Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
+BOURGNET Gabrielle. <span style='color:red'> Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JOLLIVET Marguerite ( veuve
 JULLIOT Augustin ). Muron 17.<o:p></o:p></span></p>
@@ -6782,7 +6782,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 14/02/1779.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SAUVIGNON Fran&ccedil.ois de +
-Jacques et TOUCHET Jeanne. Ý <span style='color:red'>Les Gours en Poitou 16</span>.<o:p></o:p></span></p>
+Jacques et TOUCHET Jeanne.  <span style='color:red'>Les Gours en Poitou 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GARNAULT Suzanne ( veuve
 JOUBERT Charles ) . Surg&egrave.res St Pierre 17.<o:p></o:p></span></p>
@@ -6795,7 +6795,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 27/11/1763.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SOURISSEAU Jean ( veuf
-RIBREAU Anne ).Ý <span style='color:red'>Br&eacute.ville 16.<o:p></o:p></span></span></p>
+RIBREAU Anne ). <span style='color:red'>Br&eacute.ville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUITEAU Louise de Louis et
 GIRAUDEAU Marguerite.<o:p></o:p></span></p>
@@ -6810,7 +6810,7 @@ mso-ansi-language:EN-GB'>3 E <st1:metricconverter ProductID="4579. CM" w:st="on"
  CM</st1:metricconverter> 19/01/1769. X 18/04/1769 St Mard 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VRIGNEAUD Charles de +
-Fran&ccedil.ois et <span style='mso-spacerun:yes'> </span>BOUCHETEAU Catherine. Ý <span
+Fran&ccedil.ois et <span style='mso-spacerun:yes'> </span>BOUCHETEAU Catherine.  <span
 style='color:red'>St Laurent de Lochau en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TETRON Jeanne de Jacques et +
@@ -6827,7 +6827,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 02/05/1735.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DAUNIX Jacques de + Fran&ccedil.ois
-et BLANCHET Marie.Ý <span style='color:red'>Orgedeuil 16.<o:p></o:p></span></span></p>
+et BLANCHET Marie. <span style='color:red'>Orgedeuil 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DROUNEAU Marie de P ierre et
 + CHENAUD Jeanne. Bouhet 17.<o:p></o:p></span></p>
@@ -6843,14 +6843,14 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 25/08/1768 X 26/10/1768 La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAMY Jacques de Jacques et
-POITEVIN Jeanne. Ý <span style='color:red'>St Coutant 16&nbsp;?.</span> dt La Rochelle
+POITEVIN Jeanne.  <span style='color:red'>St Coutant 16&nbsp;?.</span> dt La Rochelle
 Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RIVAUD Jeanne de Jacques et
-MERLET Marie. Ý Chail 79. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
+MERLET Marie.  Chail 79. dt La Rochelle Notre Dame 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire CUDORGE Ren&eacute..
-Etude &agrave. Thair&eacute. d’Aunis 17.<o:p></o:p></span></b></p>
+Etude &agrave. Thair&eacute. d&acute;Aunis 17.<o:p></o:p></span></b></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6860,7 +6860,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 09/04/1764 . X 15/07/1764 Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MALARD Jean de + Jean et +
-FUREAU&nbsp;? Marie. Ý <span style='color:red'>Chagnais en Angoumois 16.</span>
+FUREAU&nbsp;? Marie.  <span style='color:red'>Chagnais en Angoumois 16.</span>
 dt Ch&acirc.telaillon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAGNON Marie de + Pierre et +
@@ -6874,7 +6874,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 13/04/1766. X 03/06/1766 Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RAIMOND Jean Baptiste de
-Emery et + LABBEE Marguerite. <span style='color:red'>Ý en Angoumois 16.</span>
+Emery et + LABBEE Marguerite. <span style='color:red'> en Angoumois 16.</span>
 dt Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARTIN Marie de Jean et +
@@ -6891,7 +6891,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 10/07/1777. X 10/07/1777 Mortagne la Vieille 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BETO_IL Pierre de + Etienne
-et + CHARON Jeanne. Ý <span style='color:red'>Rouvre 16.</span> dt Mortagne la
+et + CHARON Jeanne.  <span style='color:red'>Rouvre 16.</span> dt Mortagne la
 Vieille 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUPPEAU Fran&ccedil.oise ( veuve
@@ -6905,7 +6905,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 25/02/1778. X 25/02/1778 Mortagne la Vieille 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOISSEAU Pierre de + Jean et
-+ DAVID Michelle. Ý <span style='color:red'>Courbillac 16.</span> dt Thair&eacute. 17.<o:p></o:p></span></p>
++ DAVID Michelle.  <span style='color:red'>Courbillac 16.</span> dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAUDIN Marie ( veuve NAUD
 Pierre ) . dt Mortagne la Vieille 17.<o:p></o:p></span></p>
@@ -6919,11 +6919,11 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 Promesse 19/09/1759. CM 07/01/1760. X 05/01/1760 Thair&eacute. 17.<b><o:p></o:p></b></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FLEURIEAUD Jacques ( veuf
-PENO&nbsp;? Magdeleine) . Ý <span style='color:red'>Charmant 16.</span> dt
+PENO&nbsp;? Magdeleine) .  <span style='color:red'>Charmant 16.</span> dt
 Salles / Mer 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ALLEAU Marguerite de Jean et
-PEPIN Michelle. Ý St Pierre Lauzay en Saintonge . dt Thair&eacute. 17.<o:p></o:p></span></p>
+PEPIN Michelle.  St Pierre Lauzay en Saintonge . dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6933,7 +6933,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 03/01/1784. X 26/01/1784 Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUIGNARD Pierre de + Jean
-Pierre et THONARD Jeanne. <span style='color:red'>Ý Segonzac 16</span>. dt La
+Pierre et THONARD Jeanne. <span style='color:red'> Segonzac 16</span>. dt La
 Rochelle St Jean 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GASCHET Anne de Pierre et +
@@ -6947,10 +6947,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 15/01/1769. CM 07/02/1769. X 07/02/1769 Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LABATTU Jean de + Jean et
-NADEAU Catherine.Ý <span style='color:red'>Chavenat 16.</span> dt Thair&eacute. 17.<o:p></o:p></span></p>
+NADEAU Catherine. <span style='color:red'>Chavenat 16.</span> dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FOUBERT Fran&ccedil.oise de Jean et
-+ ROUSSEAU Marie. Ý St F&eacute.lix 17. dt Thair&eacute. 17.<o:p></o:p></span></p>
++ ROUSSEAU Marie.  St F&eacute.lix 17. dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -6960,7 +6960,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 08/08/1773. CM 20/09/1773. X 22/09/1773 Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LANDAIS Jean de + Jean et
-TRIGEAU Marthe. Ý <span style='color:red'>Tornac 16.</span> dt Thair&eacute. 17.<o:p></o:p></span></p>
+TRIGEAU Marthe.  <span style='color:red'>Tornac 16.</span> dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRUNET Marie Marguerite (
 veuve GARNIER Jean et VILLAIN Jean )de + Pierre et TROU Marie.<o:p></o:p></span></p>
@@ -6973,7 +6973,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 27/01/177. X 27/01/1777 Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LURAND Jean de + Jacques et
-LEGERON Catherine. Ý <span style='color:red'>Villognon 16</span>. dt Thair&eacute. 17.<o:p></o:p></span></p>
+LEGERON Catherine.  <span style='color:red'>Villognon 16</span>. dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JANNEAU Jeanne de Mathurin et
 + DUGUE Marie. dt Thair&eacute. 17.<o:p></o:p></span></p>
@@ -6988,7 +6988,7 @@ mso-ansi-language:EN-GB'>3 E <st1:metricconverter ProductID="4897. CM" w:st="on"
  CM</st1:metricconverter> 28/10/1762. X 10/01/1763 St Vivien 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOUSSET Fran&ccedil.ois de Jacques
-et + MARTINAUD Catherine. Ý <span style='color:red'>St Etienne en Angoumois 16.</span>
+et + MARTINAUD Catherine.  <span style='color:red'>St Etienne en Angoumois 16.</span>
 dt St Vivien 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BENESTEAU Marie de Jacques et
@@ -7002,7 +7002,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 25/02/1761. X 20/04/1761 Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SUIRE Louis de + Pierre et +
-LAMARCHE Magdeleine. Ý <span style='color:red'>St Germain en Poitou 16&nbsp;?<o:p></o:p></span></span></p>
+LAMARCHE Magdeleine.  <span style='color:red'>St Germain en Poitou 16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CLEROUIN Marie de + Simon et
 + GUILLORIT Marie .dt Marsay 17. dt Thair&eacute. 17.<o:p></o:p></span></p>
@@ -7019,7 +7019,7 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 08/02/1802. X 09/02/1802 Thair&eacute. 17.<b><o:p></o:p></b></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GALLOIS Jean de + Jean et
-PERROTIN Marie. Ý <span style='color:red'>Ste Colombe 16</span>. dt Thair&eacute. 17.<o:p></o:p></span></p>
+PERROTIN Marie.  <span style='color:red'>Ste Colombe 16</span>. dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RABANNIER Elizabeth ( veuve
 GABORIT Mathurin ). dt Thair&eacute. 17.<o:p></o:p></span></p>
@@ -7035,13 +7035,13 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 05/07/1801. CM 27/07/1801. X 27/07/1801 Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUTET Jean de Jean et MERMIN
-Jeanne.Ý </span><span lang=EN-GB style='font-size:10.0pt;color:red;mso-ansi-language:
+Jeanne. </span><span lang=EN-GB style='font-size:10.0pt;color:red;mso-ansi-language:
 EN-GB'>St Sulpice de Cognac 16</span><span lang=EN-GB style='font-size:10.0pt;
 mso-ansi-language:EN-GB'>. dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PIGEONNIER Marie Catherine de
 Jacques et RIBIERE Marie Anne. </span><span lang=EN-GB style='font-size:10.0pt;
-mso-ansi-language:EN-GB'>Ý Clavette 17. dt Thair&eacute. 17.<o:p></o:p></span></p>
+mso-ansi-language:EN-GB'> Clavette 17. dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -7052,11 +7052,11 @@ style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 Promesse 24/12/1788. X 08/06/1789 Thair&eacute. 17.<b><o:p></o:p></b></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUILLEMEAU Louis de + Pierre
-dit La GROYE et + BALLOTEAU Anne. <span style='color:red'>Ý Mansle 16.</span>
+dit La GROYE et + BALLOTEAU Anne. <span style='color:red'> Mansle 16.</span>
 dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VRILLAUD Catherine ( veuve
-RENAUD Louis ) de + Fran&ccedil.ois et + ROBINETTE Marie. Ý et dt Thair&eacute. 17.<o:p></o:p></span></p>
+RENAUD Louis ) de + Fran&ccedil.ois et + ROBINETTE Marie.  et dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -7066,11 +7066,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 13/02/1797. X 11/02/1797 Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUHAUD Louis de Louis et +
-BOISSEAU Marguerite. <span style='color:red'>Ý Villej&eacute.sus 16</span>. dt Thair&eacute.
+BOISSEAU Marguerite. <span style='color:red'> Villej&eacute.sus 16</span>. dt Thair&eacute.
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUMET Marie Anne ( veuve
-FESTY Michelle ). Ý Croix Chapeau 17. dt Thair&eacute. 17.<o:p></o:p></span></p>
+FESTY Michelle ).  Croix Chapeau 17. dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -7080,11 +7080,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 09/12/1791. CM 08/01/1792.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SEIGNEUR Fran&ccedil.ois de +
-Fran&ccedil.ois et BERTRAND Marguerite. Ý <span style='color:red'>St Etienne de Barre
+Fran&ccedil.ois et BERTRAND Marguerite.  <span style='color:red'>St Etienne de Barre
 16</span>. dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FAVEREAU Louise de + Louis et
-+ DIEU Magdeleine. Ý et dt Thair&eacute. 17.<o:p></o:p></span></p>
++ DIEU Magdeleine.  et dt Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -7094,7 +7094,7 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 07/02/1799. X 08/02/1799 Cir&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THIBAUD Guillaume de Jacques
-et + COUTINE Elisabeth. Ý <span style='color:red'>St Cloud 16</span>. dt
+et + COUTINE Elisabeth.  <span style='color:red'>St Cloud 16</span>. dt
 Voutron 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FROUIN Elisabeth ( veuve
@@ -7111,10 +7111,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 27/05/1753. X 12/06/1753 Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRUNET Pierre de + Jean et
-CICARD Ren&eacute.e. <span style='color:red'>Ý Ambourie 16.<o:p></o:p></span></span></p>
+CICARD Ren&eacute.e. <span style='color:red'> Ambourie 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TROU Marie ( veuve GARNIER
-Jean ) de + Gabriel et REBIERRE Marie. Ý Thair&eacute. 17.<o:p></o:p></span></p>
+Jean ) de + Gabriel et REBIERRE Marie.  Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span lang=EN-GB style='font-size:
@@ -7126,10 +7126,10 @@ mso-ansi-language:EN-GB'>3 E <st1:metricconverter ProductID="4944. CM" w:st="on"
  CM</st1:metricconverter> 29/01/1776. X 29/01/1776 St Vivien 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JONQUET Jacques de + Fran&ccedil.ois
-et + CAILLAUD Suzanne. Ý <span style='color:red'>Champniers 16.<o:p></o:p></span></span></p>
+et + CAILLAUD Suzanne.  <span style='color:red'>Champniers 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RAMBAUD Anne de + Pierre et +
-CARPENET Marie. Ý Surg&egrave.res 17.<o:p></o:p></span></p>
+CARPENET Marie.  Surg&egrave.res 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -7139,10 +7139,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 Promesse 14/10/1777. CM 17/11/1777. X 17/11/1777 Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VALLET Louis de Pierre et +
-CHEVALIER Suzanne. Ý <span style='color:red'>Cherves 16.</span><o:p></o:p></span></p>
+CHEVALIER Suzanne.  <span style='color:red'>Cherves 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JOUVE Marie Catherine de +
-Etienne et + DERAIN Marie Anne. Ý Thair&eacute. 17.<o:p></o:p></span></p>
+Etienne et + DERAIN Marie Anne.  Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-left:54.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo2;
 tab-stops:list 54.0pt'><![if !supportLists]><span style='font-size:10.0pt;
@@ -7152,10 +7152,10 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 27/11/1769. X 27/11/1769 Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VILLAIN Fran&ccedil.ois de + Nicolas
-et BONVALLET Marguerite. Ý <span style='color:red'>Balzac 16.<o:p></o:p></span></span></p>
+et BONVALLET Marguerite.  <span style='color:red'>Balzac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAMBAUD Anne Magdeleine de +
-Antoine et SABOURAUD Fran&ccedil.oise. Ý Thair&eacute. 17.<o:p></o:p></span></p>
+Antoine et SABOURAUD Fran&ccedil.oise.  Thair&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire OCLER Toussaint.
 Etude &agrave. Angoulins 17.<o:p></o:p></span></b></p>
@@ -7168,11 +7168,11 @@ style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 29/07/1629.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MESTAYER Denis de +
-Christophe et + CARDINEAU Marye. Ý <span style='color:red'>St Germin en
+Christophe et + CARDINEAU Marye.  <span style='color:red'>St Germin en
 Angoumois 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FARINEAU Marye de + Fran&ccedil.ois
-et + GUIRAULT Marye. Ý La Rochelle 17.<o:p></o:p></span></p>
+et + GUIRAULT Marye.  La Rochelle 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire HUTEAU XX . Etude
 &agrave. Brizambourg 17.<o:p></o:p></span></b></p>
@@ -7183,7 +7183,7 @@ et + GUIRAULT Marye. Ý La Rochelle 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DEJUIGNON&nbsp;? Simon de
-Jehan et ROUX&nbsp;? Marie.Ý <span style='color:red'>Nonac 16.<o:p></o:p></span></span></p>
+Jehan et ROUX&nbsp;? Marie. <span style='color:red'>Nonac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VILLAIN Mathurine de Fran&ccedil.ois
 et PINAUD Michelle. Nantill&eacute. 17.<o:p></o:p></span></p>
@@ -7194,7 +7194,7 @@ et PINAUD Michelle. Nantill&eacute. 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOUDGUERRE&nbsp;? Louis +
-Pierre et GIRAUD Louise<span style='color:red'>.Ý St Laurent des Combes 16.<o:p></o:p></span></span></p>
+Pierre et GIRAUD Louise<span style='color:red'>. St Laurent des Combes 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BENOIST Fran&ccedil.oise de Jean et
 CHARRON&nbsp;? Jeanne. Brizambourg 17.<o:p></o:p></span></p>
@@ -7205,7 +7205,7 @@ CHARRON&nbsp;? Jeanne. Brizambourg 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOREAU Anthoine de Louis et
-PAYAN Vincende.Ý <span style='color:red'>St Sulpice de Cognac 16.<o:p></o:p></span></span></p>
+PAYAN Vincende. <span style='color:red'>St Sulpice de Cognac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VITET&nbsp;? Perrine de
 Guillaume et TABAUD Andr&eacute.e. Brizambourg 17.<o:p></o:p></span></p>
@@ -7216,7 +7216,7 @@ Guillaume et TABAUD Andr&eacute.e. Brizambourg 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DELAROBERTIERE<span
-style='mso-spacerun:yes'>  </span>Jean de Etienne et MAIRE Pentecôte.Ý <span
+style='mso-spacerun:yes'>  </span>Jean de Etienne et MAIRE Pentecôte. <span
 style='color:red'>St Sulpice de Cognac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARCHEGAY Jeanne de Issac et
@@ -7231,10 +7231,10 @@ style='color:red'>St Sulpice de Cognac 16.<o:p></o:p></span></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOISSON Cl&eacute.man de + Jean et
-PAUTRE&nbsp;? Catherine.Ý <span style='color:red'>Bouteville 16.<o:p></o:p></span></span></p>
+PAUTRE&nbsp;? Catherine. <span style='color:red'>Bouteville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>THOMAS Marguerite de Pierre
-et + PARANTEAU Jeanne.Ý <span style='color:red'>en Angoumois 16.<o:p></o:p></span></span></p>
+et + PARANTEAU Jeanne. <span style='color:red'>en Angoumois 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l8 level1 lfo3;tab-stops:list 36.0pt'><span
@@ -7242,7 +7242,7 @@ et + PARANTEAU Jeanne.Ý <span style='color:red'>en Angoumois 16.<o:p></o:p></spa
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HELI&nbsp;? Jean de Jean et
-JACQUES Marie.Ý <span style='color:red'>St Sulpice de Cognac 16.<o:p></o:p></span></span></p>
+JACQUES Marie. <span style='color:red'>St Sulpice de Cognac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DOUSSAIN&nbsp;? Mathurine de
 Jacques et XX Marguerite. Bercloux 17.<o:p></o:p></span></p>
@@ -7256,7 +7256,7 @@ Etude &agrave. Nantill&eacute. et Taillebourg 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DECOURSELLE Pierre de
-Guillaume et BOUT Cl&eacute.mance.Ý <span style='color:red'>Sonneville 16.<o:p></o:p></span></span></p>
+Guillaume et BOUT Cl&eacute.mance. <span style='color:red'>Sonneville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BASTEAU Jacquette de Fran&ccedil.ois
 et + JACQUES Mathurine . Authon / Eb&eacute.on 17.<o:p></o:p></span></p>
@@ -7270,7 +7270,7 @@ et + JACQUES Mathurine . Authon / Eb&eacute.on 17.<o:p></o:p></span></p>
 BASTEAU Jacquette. Nantill&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DECOURSELLE Gabrielle de
-Guillaume et BOUT Cl&eacute.mance.Ý <span style='color:red'>Sonneville 16.<o:p></o:p></span></span></p>
+Guillaume et BOUT Cl&eacute.mance. <span style='color:red'>Sonneville 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire BOURDIN Jacques.
 Etude &agrave. Marans 17.<o:p></o:p></span></b></p>
@@ -7281,12 +7281,12 @@ Etude &agrave. Marans 17.<o:p></o:p></span></b></p>
      03/12/1628 pass&eacute. au ch&acirc.teau.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-weight:bold'>MÝ
-BEAUMENOIR Jehan greffier de la ch&acirc.tellenie de Charron dt &agrave. l’+le d’Elle. de +
+<p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-weight:bold'>M
+BEAUMENOIR Jehan greffier de la ch&acirc.tellenie de Charron dt &agrave. l&acute;+le d&acute;Elle. de +
 Cl&eacute.ment et ROUSSEAU Magdeleine.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-weight:bold'>AYRAULT
-Marie de + Simon et + BRANCHIER Marie. Ý <span style='color:red'>Giret&nbsp;?
+Marie de + Simon et + BRANCHIER Marie.  <span style='color:red'>Giret&nbsp;?
 en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire SEILLE Pierre.
@@ -7297,7 +7297,7 @@ Etude &agrave. Marans 17.<o:p></o:p></span></b></p>
      style='font-size:10.0pt'>3 E 31/27. CM 20/01/1624.<b><o:p></o:p></b></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>PREVOT Louis Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>PREVOT Louis  <span
 style='color:red'>Ronsenat en Angoumois 16</span>. dt &agrave. Marans 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOUNIER Marthe veuve VEILLET
@@ -7311,10 +7311,10 @@ Marans 17.<o:p></o:p></span></b></p>
      style='font-size:10.0pt'>3 E 31/51. CM Catholique 03/06/1653.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>BESSAU Jehan Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>BESSAU Jehan  <span
 style='color:red'>St Cybard en Angoul&ecirc.me 16</span>.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>TASTE Jehanne Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>TASTE Jehanne  <span
 style='color:red'>Echir&eacute. en Saintonge 79</span>.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -7346,7 +7346,7 @@ Bernard. dt. <span style='color:red'>Cougnat 16.</span><o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARILLET Maingot <span
-style='color:red'>d’Angoul&ecirc.me 16</span>. de Jehan et GUILLON Colette.<o:p></o:p></span></p>
+style='color:red'>d&acute;Angoul&ecirc.me 16</span>. de Jehan et GUILLON Colette.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRIER Marie de Mathurin et +
 GAULTEAU Marie. dt Marans 17.<o:p></o:p></span></p>
@@ -7357,7 +7357,7 @@ GAULTEAU Marie. dt Marans 17.<o:p></o:p></span></p>
      Marans 17.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>MOTTE Pierre Ý <span
+<p class=MsoNormal><span style='font-size:10.0pt'>MOTTE Pierre  <span
 style='color:red'>en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNET Marguerite de +
@@ -7373,7 +7373,7 @@ Etude &agrave. La Rochelle 17.<o:p></o:p></span></b></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUSSE Pierre dt .Clavetes en
 Aulnis 17 de Jehan et NERAULT Jehanne dts. <span style='color:red'>Moussans en
-dioc&egrave.ze</span> <span style='color:red'>d’Angoulmoys16.<o:p></o:p></span></span></p>
+dioc&egrave.ze</span> <span style='color:red'>d&acute;Angoulmoys16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DOULCET Phelippes de + Jehan
 et + MARLAUD Anne dt. Clavettes 17.<o:p></o:p></span></p>
@@ -7386,15 +7386,15 @@ et + MARLAUD Anne dt. Clavettes 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARTINEAU Pierre dt.
-L’Auberti&eacute.re 17. de + Jehan et DELICQUET Jehanne dt. St Pierre de <span
+L&acute;Auberti&eacute.re 17. de + Jehan et DELICQUET Jehanne dt. St Pierre de <span
 style='color:red'>Breillac 16</span>.<span style='mso-spacerun:yes'>  </span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FEUILLARD Marguerite veuve
-BREIGNAULT dt. l’Auberti&eacute.re, paroisse de St M&eacute.dard 17.<o:p></o:p></span></p>
+BREIGNAULT dt. l&acute;Auberti&eacute.re, paroisse de St M&eacute.dard 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>de + Benoist et VIGNET
 Guillete dt. <span style='color:red'>Dussac dioc&egrave.ze</span> <span
-style='color:red'>d’Angoumois 16</span>. <o:p></o:p></span></p>
+style='color:red'>d&acute;Angoumois 16</span>. <o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire ROY Charles. Etude
 &agrave. Saint Christophe 17.<o:p></o:p></span></b></p>
@@ -7416,7 +7416,7 @@ GAULTHIER Catherine. dt St Christophe 17.<o:p></o:p></span></p>
      style='font-size:10.0pt'>3 E 59/8. CM 13/03/1611.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>DELATOUCHE Micheau d’Anthoyne
+<p class=MsoNormal><span style='font-size:10.0pt'>DELATOUCHE Micheau d&acute;Anthoyne
 et AFFESTE Raimonde. dt <span style='color:red'>Aigre 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GASTINEAU Marye de + Yzaac et
@@ -7433,12 +7433,12 @@ Etude &agrave. Marans 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOURGOUIN Gabriel Erasme de +
-Pierre et PLANSON Marie. Ý et dt <st1:PersonName
+Pierre et PLANSON Marie.  et dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on">La Rochelle St Barth&eacute.l&eacute.my</st1:PersonName>
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BESSON Jeanne de + Fran&ccedil.ois
-et<span style='mso-spacerun:yes'>  </span>NICOLAS Jeanne. Ý <span
+et<span style='mso-spacerun:yes'>  </span>NICOLAS Jeanne.  <span
 style='color:red'>La Rochefoucaud 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Jean" w:st="on">La Rochelle St Jean</st1:PersonName>
 17.<o:p></o:p></span></p>
@@ -7450,11 +7450,11 @@ ProductID="La Rochelle St Jean" w:st="on">La Rochelle St Jean</st1:PersonName>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GARNIER Pierre de + Pierre et
-POINSET Ren&eacute.e. <span style='color:red'>Ý Paizay Naudouin 16</span>. dt Marans
+POINSET Ren&eacute.e. <span style='color:red'> Paizay Naudouin 16</span>. dt Marans
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAISSAY Marie de Nicolas et
-+ GAUDEFFROY Marie. Ý Fontenay le Comte St Nicolas 85. dt Marans 17.<o:p></o:p></span></p>
++ GAUDEFFROY Marie.  Fontenay le Comte St Nicolas 85. dt Marans 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
 style='font-size:10.0pt'>Notaire PINEAU Jean Julien. Etude &agrave. Aulnay 79.<o:p></o:p></span></b></p>
@@ -7468,7 +7468,7 @@ style='font-size:10.0pt'>Notaire PINEAU Jean Julien. Etude &agrave. Aulnay 79.<o
 MORIN Marie. <span style='color:red'>Villefagnan 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MICHEAU Fran&ccedil.oise de Jean et
-MEDEAU Jeanne. St Pierre de l’+le 17.<o:p></o:p></span></p>
+MEDEAU Jeanne. St Pierre de l&acute;+le 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -7526,10 +7526,10 @@ Marie de Fran&ccedil.ois et VILLENEUVE Marie. <span style='color:red'>Charme 16.
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-weight:bold'>GUERRIN
-Etienne Joseph d’ Etienne et QUERON Marie. Villemorin 17.<o:p></o:p></span></p>
+Etienne Joseph d&acute; Etienne et QUERON Marie. Villemorin 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-weight:bold'>CAILLAUD
-Marie Ý 1822 de Fran&ccedil.ois et CHEVALIER Madeleine. <span style='color:red'>Les
+Marie  1822 de Fran&ccedil.ois et CHEVALIER Madeleine. <span style='color:red'>Les
 Gours 16</span>.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -7539,7 +7539,7 @@ Gours 16</span>.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-weight:bold'>RANGEARD
-Louis Ý1813 de Jean et DEVEZAUD Marie. <span style='color:red'>Lonnes 16.<o:p></o:p></span></span></p>
+Louis 1813 de Jean et DEVEZAUD Marie. <span style='color:red'>Lonnes 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-weight:bold'>MERCIER
 Fran&ccedil.oise de Ren&eacute. et GUERIN Louise. Saleignes 17.<o:p></o:p></span></p>
@@ -7566,11 +7566,11 @@ Marie Elisabeth de Elie et LANDRY Marie. Nuaill&eacute. sur Boutonne 17.<o:p></o
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BAILLARGE Marthial de Jean
-et<span style='mso-spacerun:yes'>  </span>DEMOND Magdeleine. Ý <span
+et<span style='mso-spacerun:yes'>  </span>DEMOND Magdeleine.  <span
 style='color:red'>Negrat en Angoumois 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CLARTON Marie Annede Mathurin
-et POUPART Marie Anne. Ý Charron 17.<o:p></o:p></span></p>
+et POUPART Marie Anne.  Charron 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire GYOT Jean. Etude &agrave.
 Marans 17.<o:p></o:p></span></b></p>
@@ -7582,7 +7582,7 @@ Marans 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIBAUD Michel de Michel et
-MONTEAUBAN Antoinette. Ý <span style='color:red'>Chateauneuf 16.<o:p></o:p></span></span></p>
+MONTEAUBAN Antoinette.  <span style='color:red'>Chateauneuf 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LUCAS Jeanne veuve BOUCHET
 Alexandre. dt Marans 17.<o:p></o:p></span></p>
@@ -7597,11 +7597,11 @@ Etude au Comt&eacute. de Marans 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHATEFAU Jean de + Louis et +
-LAROZE Jeanne. Ý <span style='color:red'>Dange Duc en Angoumois 16</span>. dt
+LAROZE Jeanne.  <span style='color:red'>Dange Duc en Angoumois 16</span>. dt
 Marans 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BINNEAU Marie Jeanne de +
-Mathurin et MOUNIER Marie.Ý Le Gu&eacute. de Velluire 85. dt Marans 17.<o:p></o:p></span></p>
+Mathurin et MOUNIER Marie. Le Gu&eacute. de Velluire 85. dt Marans 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire JONON Anthoine
 Victor. Etude &agrave. Marans 17.<o:p></o:p></span></b></p>
@@ -7631,7 +7631,7 @@ et BRUNEAU Marie. <span style='color:red'>Seillette 16</span>. dt Aligre
 (Marans) 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NERAUD Fran&ccedil.oise de + Pierre
-et SUIRE Magdeleine. Ý et dt Aligre 17.<o:p></o:p></span></p>
+et SUIRE Magdeleine.  et dt Aligre 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b><span style='font-size:10.0pt'>Notaire BAUGA Jean Pierre.
 Etude &agrave. Andilly et Marans 17.<o:p></o:p></span></b></p>
@@ -7644,11 +7644,11 @@ Etude &agrave. Andilly et Marans 17.<o:p></o:p></span></b></p>
 
 <p class=MsoNormal><st1:PersonName ProductID="GIRAUDEAU Pierre" w:st="on"><span
  style='font-size:10.0pt'>GIRAUDEAU Pierre</span></st1:PersonName><span
-style='font-size:10.0pt'> de Marc et BRIGNOUX&nbsp;? Marguerite. Ý <span
+style='font-size:10.0pt'> de Marc et BRIGNOUX&nbsp;? Marguerite.  <span
 style='color:red'>Vars 16.</span> dt Marans 17. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BENOIST Marie Roze, veuve
-DORIDON Andr&eacute.. Ý et dt Marans 17.<o:p></o:p></span></p>
+DORIDON Andr&eacute..  et dt Marans 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -7657,7 +7657,7 @@ DORIDON Andr&eacute.. Ý et dt Marans 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAURANT Jean de Martial et +
-ROY Marie. Ý <span style='color:red'>St Laurant de la Chaux dioc&eacute.ze d’Angoul&ecirc.me
+ROY Marie.  <span style='color:red'>St Laurant de la Chaux dioc&eacute.ze d&acute;Angoul&ecirc.me
 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRANGE Marie, veuve DENIS
@@ -7673,7 +7673,7 @@ Etude &agrave. Marans 17.<o:p></o:p></span></b></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUDOUIT Pierre de + Jacques
-et BAUDRY Jeanne. Ý Benet 85. dt Fontenay le Peuple 85.<o:p></o:p></span></p>
+et BAUDRY Jeanne.  Benet 85. dt Fontenay le Peuple 85.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MENUET Jeanne de + Pierre et
 JOBET Marie. <span style='color:red'>Bourg sur Charente 16</span>. dt Marans
@@ -7686,7 +7686,7 @@ JOBET Marie. <span style='color:red'>Bourg sur Charente 16</span>. dt Marans
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BROUTIER Charles de + Jacques
-et RAVIN Marie. Ý <span style='color:red'>Oradour 16</span>. dt Aligre 17.<o:p></o:p></span></p>
+et RAVIN Marie.  <span style='color:red'>Oradour 16</span>. dt Aligre 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NERON H&eacute.lenne de + Pierre et
 + FAVREAU Jeanne. dt Aligre 17.<o:p></o:p></span></p>
@@ -7706,7 +7706,7 @@ Etude &agrave. <st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-weight:bold'>FLEAU
-Isaac marchand de + Allain marchand et + PINET Toinette. Ý <span
+Isaac marchand de + Allain marchand et + PINET Toinette.  <span
 style='color:red'>St Faigne en Saintonge 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -7714,7 +7714,7 @@ ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-weight:bold'>PELLOQIN
-Catherine veuve de BRISSON Charles tailleur d’habits. dt <st1:PersonName
+Catherine veuve de BRISSON Charles tailleur d&acute;habits. dt <st1:PersonName
 ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Sauveur</st1:PersonName>
@@ -7738,7 +7738,7 @@ ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-weight:bold'>PELLUCHON
-Jeanne de Jean laboureur et + GANAUD&nbsp;? Marie. Ý <span style='color:red'>en
+Jeanne de Jean laboureur et + GANAUD&nbsp;? Marie.  <span style='color:red'>en
 Angoumois 16</span>. dt <st1:PersonName ProductID="La Rochelle St Sauveur"
 w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on"><st1:PersonName
   ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName>
@@ -7750,14 +7750,14 @@ w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-weight:bold'>VIOLLET
-Fran&ccedil.ois laboureur de + Louis et + DUBOIS Catherine. Ý <span style='color:red'>Pougn&eacute.
+Fran&ccedil.ois laboureur de + Louis et + DUBOIS Catherine.  <span style='color:red'>Pougn&eacute.
 en Angoumois 16</span>. dt <st1:PersonName ProductID="La Rochelle Notre Dame"
 w:st="on"><st1:PersonName ProductID="La Rochelle Notre" w:st="on"><st1:PersonName
   ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-weight:bold'>VASLIN
-Jeanne de + Fran&ccedil.ois et COUTRET Jeanne. Ý Dompierre 17. dt <st1:PersonName
+Jeanne de + Fran&ccedil.ois et COUTRET Jeanne.  Dompierre 17. dt <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> hors les murs
 17.<o:p></o:p></span></p>
 
@@ -7771,7 +7771,7 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></s
 17<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ALLARD Fran&ccedil.ois jardinier de
-Fran&ccedil.ois laboureur et LESCHALLE Fran&ccedil.oize. Ý <span style='color:red'>St Amand
+Fran&ccedil.ois laboureur et LESCHALLE Fran&ccedil.oize.  <span style='color:red'>St Amand
 de B…en</span> <span style='color:red'>Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -7779,7 +7779,7 @@ ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
 17<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNET Fran&ccedil.oise de + Andr&eacute.
-farinier et COUHET Fran&ccedil.oise. Ý Villefollet en Poitou 79. dt <st1:PersonName
+farinier et COUHET Fran&ccedil.oise.  Villefollet en Poitou 79. dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Barth&eacute.l&eacute.my</st1:PersonName>
@@ -7791,14 +7791,14 @@ ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-weight:bold'>AUDOUIN
-Jean soldat en garnison de + Jean meusnier et VILLAIN Perrinne. Ý du faubourg
+Jean soldat en garnison de + Jean meusnier et VILLAIN Perrinne.  du faubourg
 des dames pr&egrave.s Xaintes 17. </span><span style='font-size:10.0pt'>dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-weight:bold'>MICHAUD
-Fran&ccedil.oise de Jullien portefaix et DEBAU Ren&eacute.e. Ý <span style='color:red'>Ruffec
+Fran&ccedil.oise de Jullien portefaix et DEBAU Ren&eacute.e.  <span style='color:red'>Ruffec
 en Poitou 16</span>. </span><span style='font-size:10.0pt'>dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
@@ -7814,14 +7814,14 @@ ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOULLOUGNE Fran&ccedil.ois
-cordonnier Ý Varaize en Xaintonge. dt <st1:PersonName
+cordonnier  Varaize en Xaintonge. dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Barth&eacute.l&eacute.my</st1:PersonName>
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JOLLY Jeanne de Jean maitre
-tailleur d’habits et PINEAU Fran&ccedil.oise. Ý <span style='color:red'>Cougnat en
+tailleur d&acute;habits et PINEAU Fran&ccedil.oise.  <span style='color:red'>Cougnat en
 Xaintonge 16</span>. dt <st1:PersonName ProductID="La Rochelle St Barth&eacute.l&eacute.my"
 w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on"><st1:PersonName
   ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName>
@@ -7833,7 +7833,7 @@ w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CONSTANTIN Anthoine laboureur
-de + Anthoine laboureur et + BERTHOMMEE Marie. Ý <span style='color:red'>St
+de + Anthoine laboureur et + BERTHOMMEE Marie.  <span style='color:red'>St
 Esteffe en</span> <span style='color:red'>Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></span></p>
 
@@ -7850,14 +7850,14 @@ Martin marinier. dt <st1:PersonName ProductID="La Rochelle" w:st="on">La
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CONSTANTIN Anthoine laboureur
-de + Anthoine laboureur et BERTHOMME Marie. Ý <span style='color:red'>St
+de + Anthoine laboureur et BERTHOMME Marie.  <span style='color:red'>St
 Esteffe en Angoumois</span> <span style='color:red'>16</span>. dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DOUCET Marie de Louis et
-FONTENEAU Marguerite. Ý <st1:PersonName ProductID="La Jarrie Audouin" w:st="on"><st1:PersonName
+FONTENEAU Marguerite.  <st1:PersonName ProductID="La Jarrie Audouin" w:st="on"><st1:PersonName
  ProductID="La Jarrie" w:st="on">La Jarrie</st1:PersonName> Audouin</st1:PersonName>
 17. dt <st1:PersonName ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
@@ -7880,13 +7880,13 @@ FONTENEAU Marguerite. Ý <st1:PersonName ProductID="La Jarrie Audouin" w:st="on">
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JAUBRUT Pierre de + Daniel
-laboureur &agrave. b&oelig.ufs et AYMARD Marie. Ý <span style='color:red'>Villiers le……..en
+laboureur &agrave. b&oelig.ufs et AYMARD Marie.  <span style='color:red'>Villiers le……..en
 Angoumois 16</span>. dt <st1:PersonName ProductID="La Rochelle Notre Dame"
 w:st="on"><st1:PersonName ProductID="La Rochelle Notre" w:st="on">La Rochelle
   Notre</st1:PersonName> Dame</st1:PersonName> 17<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MIMET Marie de H&eacute.lie
-cherpentier et FOUCHER Mathurine. Ý N&nbsp;?/Chis&eacute. en Poitou 79. dt <st1:PersonName
+cherpentier et FOUCHER Mathurine.  N&nbsp;?/Chis&eacute. en Poitou 79. dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17<o:p></o:p></span></p>
@@ -7901,7 +7901,7 @@ ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LARDEAU Isaacq marchand
-voiturier de + Isaacq marchand + MAROT Fran&ccedil.oise. Ý <span style='color:red'>Villefagnan
+voiturier de + Isaacq marchand + MAROT Fran&ccedil.oise.  <span style='color:red'>Villefagnan
 en Angoumois</span> <span style='color:red'>16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -7909,7 +7909,7 @@ ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRARD Fran&ccedil.oise de +
-Fran&ccedil.ois maitre menuisier et + LEFOR Ren&eacute.e. Ý <st1:PersonName
+Fran&ccedil.ois maitre menuisier et + LEFOR Ren&eacute.e.  <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName>17. dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -7926,7 +7926,7 @@ ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MILAN Jacques, buhandier de +
-Jacques marchand et + BEGOUIN Marthe. Ý <span style='color:red'>Villej&eacute.sus en
+Jacques marchand et + BEGOUIN Marthe.  <span style='color:red'>Villej&eacute.sus en
 Poitou 16</span>. dt <st1:PersonName ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> Notre</st1:PersonName> Dame</st1:PersonName>
@@ -7944,11 +7944,11 @@ w:st="on"><st1:PersonName ProductID="La Rochelle Notre" w:st="on">La Rochelle
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VILLEGE L&eacute.onard laboureur de
-Pierre marchand et + BARBAIGNACQ Ester. Ý <span style='color:red'>Confollan en
+Pierre marchand et + BARBAIGNACQ Ester.  <span style='color:red'>Confollan en
 Poitou 16</span>. dt Nieul 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CAILLE Marie de + Hellie
-thonnelier et + BIZIERE Judith. Ý et dt &agrave. Nieul 17.<o:p></o:p></span></p>
+thonnelier et + BIZIERE Judith.  et dt &agrave. Nieul 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
 style='font-size:10.0pt'>Notaire THIRE Michel. Etude &agrave. <st1:PersonName
@@ -7961,11 +7961,11 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></s
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOILEVIN Jean sargier de +
 Jean<span style='mso-spacerun:yes'>  </span>charpentier de gros &oelig.uvres et +
-TRUAU Perrine. Ý <span style='color:red'>Fryat en Angoumois 16</span>. dt <st1:PersonName
+TRUAU Perrine.  <span style='color:red'>Fryat en Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAPEAU Ren&eacute.e de + Michel
-mareschal et L….Marie. Ý Longeville en Poitou 85. dt <st1:PersonName
+mareschal et L….Marie.  Longeville en Poitou 85. dt <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -7974,15 +7974,15 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17<o:p></o:p></sp
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUSSOT Jean de + Jacques
-laboureur et GIRAUD Jeanne. Ý <span style='color:red'>Tusson en Poitou 16</span>.
+laboureur et GIRAUD Jeanne.  <span style='color:red'>Tusson en Poitou 16</span>.
 dt <st1:PersonName ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUYBERT………de + Louis et +
-GEORGET Jeanne. Ý <st1:PersonName ProductID="La Gotterie Isle" w:st="on"><st1:PersonName
+GEORGET Jeanne.  <st1:PersonName ProductID="La Gotterie Isle" w:st="on"><st1:PersonName
  ProductID="La Gotterie" w:st="on">La Gotterie</st1:PersonName> Isle</st1:PersonName>
-d’Oll&eacute.ron 17. dt <st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName>
+d&acute;Oll&eacute.ron 17. dt <st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName>
 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -7991,7 +7991,7 @@ d’Oll&eacute.ron 17. dt <st1:PersonName ProductID="La Rochelle" w:st="on">La Roc
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRELLET Louis de + Jullien
-laboureur et + OCLERQ Magdeleine. Ý <span style='color:red'>St Fronq en
+laboureur et + OCLERQ Magdeleine.  <span style='color:red'>St Fronq en
 Angoumois 16</span>. dt <st1:PersonName ProductID="La Rochelle" w:st="on">La
  Rochelle</st1:PersonName> <o:p></o:p></span></p>
 
@@ -8009,7 +8009,7 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRIMET Pierre garson
-raffineur d’Andr&eacute. marchand et ROBAIN Marguerite. Ý <span style='color:red'>Aubeterre
+raffineur d&acute;Andr&eacute. marchand et ROBAIN Marguerite.  <span style='color:red'>Aubeterre
 en Angoumois 16</span>. dt <st1:PersonName ProductID="La Rochelle Notre Dame"
 w:st="on"><st1:PersonName ProductID="La Rochelle Notre" w:st="on">La Rochelle
   Notre</st1:PersonName> Dame</st1:PersonName> 17<o:p></o:p></span></p>
@@ -8029,7 +8029,7 @@ ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LESCHELLE Fran&ccedil.ois journalier
-de Philippe charpentier de gros &oelig.uvres et COLLET Marie. Ý <st1:PersonName
+de Philippe charpentier de gros &oelig.uvres et COLLET Marie.  <st1:PersonName
 ProductID="La Faye" w:st="on"><span style='color:red'>La Faye</span></st1:PersonName><span
 style='color:red'> en</span> <span style='color:red'>Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
@@ -8037,7 +8037,7 @@ ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  Dame</st1:PersonName> 17<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DELALANDE Marie de Jean
-laboureur et PERAUDEAU Jeanne. Ý Sansay en Poitou 79. <o:p></o:p></span></p>
+laboureur et PERAUDEAU Jeanne.  Sansay en Poitou 79. <o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -8048,7 +8048,7 @@ laboureur et PERAUDEAU Jeanne. Ý Sansay en Poitou 79. <o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PERAUD Michel laboureur de
-Jean laboureur et BRIOT L&eacute.onarde. Ý <span style='color:red'>N D d’Aloue en
+Jean laboureur et BRIOT L&eacute.onarde.  <span style='color:red'>N D d&acute;Aloue en
 Poitou 16</span>. dt St Maurice 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARAY Marie veuve de GRENOT
@@ -8065,13 +8065,13 @@ Jean laboureur. dt <st1:PersonName ProductID="La Rochelle Notre Dame" w:st="on">
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RANGE Pierre laboureur de +
-Fran&ccedil.ois laboureur et COMPAGNON Louize. Ý <span style='color:red'>Verdille en
+Fran&ccedil.ois laboureur et COMPAGNON Louize.  <span style='color:red'>Verdille en
 Saintonge 16</span>. dt <st1:PersonName ProductID="La Rochelle Notre Dame"
 w:st="on"><st1:PersonName ProductID="La Rochelle Notre" w:st="on">La Rochelle
   Notre</st1:PersonName> Dame</st1:PersonName> 17<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAURENT Marie veuve de DAVID
-Fran&ccedil.ois laboureur. Ý Souch&eacute. en Poitou 79.dt <st1:PersonName
+Fran&ccedil.ois laboureur.  Souch&eacute. en Poitou 79.dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
@@ -8086,7 +8086,7 @@ ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RANGE Jean garson thonnellier
-de + Jean charpentier de gros &oelig.uvres et GAUDAUBERT Michelle. Ý <span
+de + Jean charpentier de gros &oelig.uvres et GAUDAUBERT Michelle.  <span
 style='color:red'>Verdille en Xaintonge 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -8106,7 +8106,7 @@ ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TAIZARD Ren&eacute. mercier de +
 Ren&eacute. et&nbsp;<span style='mso-spacerun:yes'>   </span>?<span
-style='mso-spacerun:yes'>   </span>sa 1Ý femme. Ý <span style='color:red'>Paiz&eacute.
+style='mso-spacerun:yes'>   </span>sa 1 femme.  <span style='color:red'>Paiz&eacute.
 Audouin en Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -8114,7 +8114,7 @@ ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOURGEOIS Louise de + Jacques
-et TEXIER Jeanne. Ý Lermenaud en Poitou 85. dt <st1:PersonName
+et TEXIER Jeanne.  Lermenaud en Poitou 85. dt <st1:PersonName
 ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Sauveur</st1:PersonName>
@@ -8153,7 +8153,7 @@ w:st="on"><span style='color:red'>La Faye</span></st1:PersonName><span
 style='color:red'>&nbsp;? en Angoumois 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FAUREAU Marie de + Jacques
-sargettier et PELLETIER Jeanne. Ý et dt <st1:PersonName ProductID="La Jarrie"
+sargettier et PELLETIER Jeanne.  et dt <st1:PersonName ProductID="La Jarrie"
 w:st="on">La Jarrie</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -8165,14 +8165,14 @@ w:st="on">La Jarrie</st1:PersonName> 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LECLERC Pierre marchand
-droguiste de Gabriel marchand et GALLAIS Antoinette. Ý <span style='color:red'>Angoul&ecirc.me
+droguiste de Gabriel marchand et GALLAIS Antoinette.  <span style='color:red'>Angoul&ecirc.me
 16</span>. dt <st1:PersonName ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Sauveur</st1:PersonName>
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MORANCY Marie Magdeleinne de
-+ George entrepreneur travaux du Roy et DAVIET Jeanne. Ý et dt <st1:PersonName
++ George entrepreneur travaux du Roy et DAVIET Jeanne.  et dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
@@ -8183,11 +8183,11 @@ ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RENOLLEAU Jean jardinier de
-Jean jardinier et COMBAUD Anne. Ý <span style='color:red'>FOU……en Angoumois 16</span>.dT
+Jean jardinier et COMBAUD Anne.  <span style='color:red'>FOU……en Angoumois 16</span>.dT
 Montroy 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROGE Jeanne de + Jean et
-BOITTAU Marie. Ý Ste Hermine en Bas Poitou 85. dt <st1:PersonName
+BOITTAU Marie.  Ste Hermine en Bas Poitou 85. dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Barth&eacute.l&eacute.my</st1:PersonName>
@@ -8207,7 +8207,7 @@ w:st="on"><st1:PersonName ProductID="La Rochelle Notre" w:st="on">La Rochelle
   Notre</st1:PersonName> Dame</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BUSSAC Marie de + L&eacute.onard
-charpentier et CHERBONNIER Fran&ccedil.oise. Ý <span style='color:red'>St Andr&eacute.
+charpentier et CHERBONNIER Fran&ccedil.oise.  <span style='color:red'>St Andr&eacute.
 Angoul&ecirc.me 16</span>. dt <st1:PersonName ProductID="La Rochelle Notre Dame"
 w:st="on"><st1:PersonName ProductID="La Rochelle Notre" w:st="on">La Rochelle
   Notre</st1:PersonName> Dame</st1:PersonName> 17.<o:p></o:p></span></p>
@@ -8222,7 +8222,7 @@ w:st="on"><st1:PersonName ProductID="La Rochelle Notre" w:st="on">La Rochelle
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SURAUD LAMORANDE Fran&ccedil.ois
-gar&ccedil.on orf&egrave.vre de + Jacques marchand et + LIEGE Elisabeth. Ý <span
+gar&ccedil.on orf&egrave.vre de + Jacques marchand et + LIEGE Elisabeth.  <span
 style='color:red'>Ruffecq en Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -8230,7 +8230,7 @@ ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BROSSAT Jeanne Th&eacute.r&eacute.se de +
-Joseph et + RAUX Marie Magdeleine. Ý et dt <st1:PersonName
+Joseph et + RAUX Marie Magdeleine.  et dt <st1:PersonName
 ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Sauveur</st1:PersonName>
@@ -8250,14 +8250,14 @@ Etude &agrave. <st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BACHELIER H&eacute.lie journalier de
-+ L&eacute.onard et + FILLASTREAU Suzanne. <span style='color:red'>Ý St S&eacute.verin en
++ L&eacute.onard et + FILLASTREAU Suzanne. <span style='color:red'> St S&eacute.verin en
 Angoumois 16</span>. dt <st1:PersonName ProductID="La Rochelle St Barth&eacute.l&eacute.my"
 w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on"><st1:PersonName
   ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName>
  Barth&eacute.l&eacute.my</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MOREAU Marie Jeanne de +
-Simon et + GABORIT Anne. Ý Esnandes 17. dt <st1:PersonName
+Simon et + GABORIT Anne.  Esnandes 17. dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Barth&eacute.l&eacute.my</st1:PersonName>
@@ -8272,13 +8272,13 @@ ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAPELLE L&eacute.onard journalier
-d’Etienne laboureur et DURAND Catherine. Ý <span style='color:red'>Ecuras en
+d&acute;Etienne laboureur et DURAND Catherine.  <span style='color:red'>Ecuras en
 Angoumois 16</span>. dt <st1:PersonName ProductID="La Rochelle Notre Dame"
 w:st="on"><st1:PersonName ProductID="La Rochelle Notre" w:st="on">La Rochelle
   Notre</st1:PersonName> Dame</st1:PersonName> 17<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RAGAUDY Marie Anne de Simon
-laboureur et RECOQUILLON Marie. Ý St Denis Isle d’Oll&eacute.ron 17. dt <st1:PersonName
+laboureur et RECOQUILLON Marie.  St Denis Isle d&acute;Oll&eacute.ron 17. dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17<o:p></o:p></span></p>
@@ -8292,13 +8292,13 @@ ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FORESTIER Jean gar&ccedil.on
-tonnelier de + Mathieu et + HUBERT Marie. Ý <span style='color:red'>Sonneville
+tonnelier de + Mathieu et + HUBERT Marie.  <span style='color:red'>Sonneville
 et Montignac 16</span>. dt <st1:PersonName ProductID="La Rochelle Notre Dame"
 w:st="on"><st1:PersonName ProductID="La Rochelle Notre" w:st="on">La Rochelle
   Notre</st1:PersonName> Dame</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SICARD Marguerite servante
-domestique de + Pierre laboureur &agrave. b&oelig.ufs et CHAPT Marie. Ý St Hilaire de
+domestique de + Pierre laboureur &agrave. b&oelig.ufs et CHAPT Marie.  St Hilaire de
 Nantill&eacute.. dt <st1:PersonName ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
@@ -8318,7 +8318,7 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CLEMENT Louis marchand de +
-Davinien&nbsp;? marchand et + CHAUVET Louise.Ý <span style='color:red'>Longr&eacute.
+Davinien&nbsp;? marchand et + CHAUVET Louise. <span style='color:red'>Longr&eacute.
 en</span> <span style='color:red'>Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -8339,7 +8339,7 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COURTABLEAU Jean tonnelier de
-+ Pierre tonnelier et LABROUSSE Jeanne. Ý <span style='color:red'>St Jacques
++ Pierre tonnelier et LABROUSSE Jeanne.  <span style='color:red'>St Jacques
 Cougnac 16</span>. dt <st1:PersonName ProductID="La Rochelle" w:st="on">La
  Rochelle</st1:PersonName> 17.<o:p></o:p></span></p>
 
@@ -8357,10 +8357,10 @@ ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRAUDEAU Fran&ccedil.ois serviteur
 domestique de + Jean<span style='mso-spacerun:yes'>  </span>et + BOUCHET Anne.
-Ý et dt Aytr&eacute. 17.<o:p></o:p></span></p>
+ et dt Aytr&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TARAUDEAU Louise servante
-domestique de Jean et + PAILLAUD Ren&eacute.e. Ý <span style='color:red'>Villej&eacute.sus
+domestique de Jean et + PAILLAUD Ren&eacute.e.  <span style='color:red'>Villej&eacute.sus
 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -8369,7 +8369,7 @@ domestique de Jean et + PAILLAUD Ren&eacute.e. Ý <span style='color:red'>Villej&
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LERIDEAU Pierre laboureur de
-Jean laboureur et GARNIER Madelaine<span style='color:red'>. Ý Brott&eacute. en
+Jean laboureur et GARNIER Madelaine<span style='color:red'>.  Brott&eacute. en
 Angoumois 16. </span>dt Aytr&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PRINSAULT Madelaine de +
@@ -8385,12 +8385,12 @@ Jacques et BERGERE Elizabeth.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LHERMITTET Lucas laboureur de
-+ Jean et LANDAIN Thomasse. Ý du <span style='color:red'>Plassat en Angoumois
++ Jean et LANDAIN Thomasse.  du <span style='color:red'>Plassat en Angoumois
 16</span>. dt Tasdon 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PELETIER Marie de + Nicolas
-et NICOLAS Magdeleinne. Ý <st1:PersonName ProductID="La Couarde" w:st="on">La
- Couarde</st1:PersonName> en l’Ile de R&eacute. 17.<span style='color:red'><o:p></o:p></span></span></p>
+et NICOLAS Magdeleinne.  <st1:PersonName ProductID="La Couarde" w:st="on">La
+ Couarde</st1:PersonName> en l&acute;Ile de R&eacute. 17.<span style='color:red'><o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -8401,7 +8401,7 @@ et NICOLAS Magdeleinne. Ý <st1:PersonName ProductID="La Couarde" w:st="on">La
 de + Charles laboureur et GENDRON Catherine. dt Aytr&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARCHASSEAU Marie servante de
-+ Jacques laboureur et + COCHET Catherine. Ý <span style='color:red'>Cognac en
++ Jacques laboureur et + COCHET Catherine.  <span style='color:red'>Cognac en
 Saintonge&nbsp;16 ? <o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -8417,7 +8417,7 @@ Saintonge&nbsp;16 ? <o:p></o:p></span></span></p>
 veuf de<span style='mso-spacerun:yes'>  </span>AUCHER Marie. dt Angoulin 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GODART Marie servante
-domestique de + Louis et ROUHAULT Marie. Ý <span style='color:red'>Verdille en
+domestique de + Louis et ROUHAULT Marie.  <span style='color:red'>Verdille en
 Xaintonge 16</span>. dt <st1:PersonName ProductID="La Rochelle St Nicolas"
 w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on"><st1:PersonName
   ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName>
@@ -8437,11 +8437,11 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUPRIE Pierre laboureur &agrave.
-bras de + Jean et + BRUN Catherine. Ý <span style='color:red'>St Pierre Garat
-dioc&egrave.se d’Angoul&ecirc.me 16</span>. dt Aitr&eacute. 17.<o:p></o:p></span></p>
+bras de + Jean et + BRUN Catherine.  <span style='color:red'>St Pierre Garat
+dioc&egrave.se d&acute;Angoul&ecirc.me 16</span>. dt Aitr&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAGNEAU Suzanne de + Pierre
-laboureur et + TURPEAU Catherine. Ý Aitr&eacute. 17. dt <st1:PersonName
+laboureur et + TURPEAU Catherine.  Aitr&eacute. 17. dt <st1:PersonName
 ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Nicolas</st1:PersonName>
@@ -8457,13 +8457,13 @@ ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAILLARD Jacques journalier
-de + Jacques tisserant et + FETU&nbsp;? Fran&ccedil.oise. Ý Coullonge les Royaux en Poitou
+de + Jacques tisserant et + FETU&nbsp;? Fran&ccedil.oise.  Coullonge les Royaux en Poitou
 79. dt <st1:PersonName ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BAILLARGE Marie de + Fran&ccedil.ois
-laboureur et SIMON Fran&ccedil.oise. Ý <span style='color:red'>en Angoumois 16</span>.
+laboureur et SIMON Fran&ccedil.oise.  <span style='color:red'>en Angoumois 16</span>.
 . dt <st1:PersonName ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
@@ -8478,7 +8478,7 @@ laboureur et SIMON Fran&ccedil.oise. Ý <span style='color:red'>en Angoumois 16</
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GALLOCHEAU Jean matellot de
-Jean laboureur et + GARENE Marguerite. Ý <span style='color:red'>Agnes&nbsp;?
+Jean laboureur et + GARENE Marguerite.  <span style='color:red'>Agnes&nbsp;?
 en Angoumois</span> <span style='color:red'>16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -8486,7 +8486,7 @@ ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRON Marie de Charles
-journalier et MARCHAY Catherine. Ý Egrefeuille 17. dt <st1:PersonName
+journalier et MARCHAY Catherine.  Egrefeuille 17. dt <st1:PersonName
 ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Sauveur</st1:PersonName>
@@ -8502,14 +8502,14 @@ ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GIBAUD Jean gar&ccedil.on
-charpentier de navires de Jean laboureur &agrave. bras et RUORD Jeanne. Ý <span
+charpentier de navires de Jean laboureur &agrave. bras et RUORD Jeanne.  <span
 style='color:red'>Balzat en</span> <span style='color:red'>Angoumois 16</span>.
 dt <st1:PersonName ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAUVIN Magdeleine de + Jean
-marinier et + COUTURIER&nbsp;? Jeanne. Ý Royan en Saintonge 17. dt <st1:PersonName
+marinier et + COUTURIER&nbsp;? Jeanne.  Royan en Saintonge 17. dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
@@ -8520,14 +8520,14 @@ ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MESNARD Jacques matelot de +
-Jacques farinier et MENU Marie. Ý <span style='color:red'>Aigre en Saintonge 16</span>.<span
+Jacques farinier et MENU Marie.  <span style='color:red'>Aigre en Saintonge 16</span>.<span
 style='mso-spacerun:yes'>  </span>dt <st1:PersonName
 ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName> Jean</st1:PersonName>
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUMAS Marie de + Jean et +
-POISPARANT Anne. Ý Villefagnan 16. dt <st1:PersonName
+POISPARANT Anne.  Villefagnan 16. dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Barth&eacute.l&eacute.my</st1:PersonName>
@@ -8543,13 +8543,13 @@ ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MEUNIER Jacques matellot de +
-Jean farinier et MENU Marie. Ý Saint Sibard de Laplaud dioc&egrave.se de Poitiers . dt
+Jean farinier et MENU Marie.  Saint Sibard de Laplaud dioc&egrave.se de Poitiers . dt
 <st1:PersonName ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName> Jean</st1:PersonName>
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUMAS Marie de + Jean et +
-POIPARANT Anne. Ý <span style='color:red'>Vilefagnan 16.</span> dt <st1:PersonName
+POIPARANT Anne.  <span style='color:red'>Vilefagnan 16.</span> dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Barth&eacute.l&eacute.my</st1:PersonName>
@@ -8564,7 +8564,7 @@ ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MIGAUD Jacques cocher veuf de
-PELLETIER Thomasse. <span style='color:red'>Ý St Romand de N….en Poitou</span>.
+PELLETIER Thomasse. <span style='color:red'> St Romand de N….en Poitou</span>.
 dt <st1:PersonName ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Barth&eacute.l&eacute.my</st1:PersonName>
@@ -8585,13 +8585,13 @@ w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NADEAU Jean jardinier de +
-Jean sergier et + JOUBERT Marie. Ý <span style='color:red'>Amb&eacute.rac en Angoumois
+Jean sergier et + JOUBERT Marie.  <span style='color:red'>Amb&eacute.rac en Angoumois
 16.</span> dt <st1:PersonName ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RANGER Catherine de Philippe
-laboureur et MOUSSEAU Marie. Ý Marsilly 17. dt <st1:PersonName
+laboureur et MOUSSEAU Marie.  Marsilly 17. dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
@@ -8610,7 +8610,7 @@ red'>St Amant en Poitou 16</span>. dt <st1:PersonName ProductID="La Rochelle"
 w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MATHE Anne de + Michel maitre
-cordier et TROUVE Louise Fran&ccedil.oise. Ý et dt <st1:PersonName
+cordier et TROUVE Louise Fran&ccedil.oise.  et dt <st1:PersonName
 ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName> Nicolas</st1:PersonName>
 17.<o:p></o:p></span></p>
@@ -8626,14 +8626,14 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BESSON Antoine gar&ccedil.on
-orph&eacute.vre de + Marc et GARDRAT Marguerite. Ý <span style='color:red'>Angoul&ecirc.me
+orph&eacute.vre de + Marc et GARDRAT Marguerite.  <span style='color:red'>Angoul&ecirc.me
 16</span>. dt <st1:PersonName ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Barth&eacute.l&eacute.my</st1:PersonName>
 17.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>MOREAU Victoire de Pierre mÝ
-en fait d’armes et BAZIL Marie. Ý et dt <st1:PersonName
+<p class=MsoNormal><span style='font-size:10.0pt'>MOREAU Victoire de Pierre m
+en fait d&acute;armes et BAZIL Marie.  et dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Barth&eacute.l&eacute.my</st1:PersonName>
@@ -8648,13 +8648,13 @@ ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNAUD Pierre Fran&ccedil.ois
-notaire de Fran&ccedil.ois bourgeois et POURAJAUD Jeanne. Ý <span style='color:red'>Villiers
+notaire de Fran&ccedil.ois bourgeois et POURAJAUD Jeanne.  <span style='color:red'>Villiers
 en Angoumois 16</span>. dt <st1:PersonName ProductID="La Rochelle Notre Dame"
 w:st="on"><st1:PersonName ProductID="La Rochelle Notre" w:st="on">La Rochelle
   Notre</st1:PersonName> Dame</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HUGONIS Marguerite Magdeleine
-de Jacques bourgeois et FOUCHE Marie. Ý et dt <st1:PersonName
+de Jacques bourgeois et FOUCHE Marie.  et dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
@@ -8668,13 +8668,13 @@ ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUMAINE Jean Jacques Martin
-facteur de la poste aux lettres veuf de PELLETIER Marie Anne. Ý <span
+facteur de la poste aux lettres veuf de PELLETIER Marie Anne.  <span
 style='color:red'>Aigre en</span> <span style='color:red'>Saintonge 16</span>.
 dt <st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName>
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BAUDET Ang&eacute.lique de + Jean
-Paul serrurier et LEZEAU Jeanne. Ý et dt <st1:PersonName
+Paul serrurier et LEZEAU Jeanne.  et dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
@@ -8689,14 +8689,14 @@ ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GABORIAU Antoine jardinier de
-Jacques et +TRANCHET Marie. Ý <span style='color:red'>St Fraigne dioc&egrave.se de
+Jacques et +TRANCHET Marie.  <span style='color:red'>St Fraigne dioc&egrave.se de
 Poitiers 16</span>. dt <st1:PersonName ProductID="La Rochelle Notre Dame"
 w:st="on"><st1:PersonName ProductID="La Rochelle Notre" w:st="on">La Rochelle
   Notre</st1:PersonName> Dame</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><st1:PersonName w:st="on"><span style='font-size:10.0pt'>PETIT</span></st1:PersonName><span
 style='font-size:10.0pt'> Marie Catherine 44 ans de + Nicolas laboureur et +
-CAILLAUD Marie. Ý St M&eacute.dard 17. dt <st1:PersonName
+CAILLAUD Marie.  St M&eacute.dard 17. dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
@@ -8707,13 +8707,13 @@ ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARTIN Jacques marchand de
-Pierre et MASTEAU Marie Anne. Ý <span style='color:red'>Aigre dioc&egrave.se
-d’Angoul&ecirc.me 16</span>. dt <st1:PersonName ProductID="La Rochelle Notre Dame"
+Pierre et MASTEAU Marie Anne.  <span style='color:red'>Aigre dioc&egrave.se
+d&acute;Angoul&ecirc.me 16</span>. dt <st1:PersonName ProductID="La Rochelle Notre Dame"
 w:st="on"><st1:PersonName ProductID="La Rochelle Notre" w:st="on">La Rochelle
   Notre</st1:PersonName> Dame</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PELLETIER Marie Anne de +
-Fran&ccedil.ois et + DAUCHER Magdeleine. Ý et<span style='mso-spacerun:yes'> 
+Fran&ccedil.ois et + DAUCHER Magdeleine.  et<span style='mso-spacerun:yes'> 
 </span>dt <st1:PersonName ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Barth&eacute.l&eacute.my</st1:PersonName>
@@ -8729,12 +8729,12 @@ Fran&ccedil.ois et + DAUCHER Magdeleine. Ý et<span style='mso-spacerun:yes'> 
 
 <p class=MsoNormal><span style='font-size:10.0pt'>POITEVIN Fran&ccedil.ois vapitaine
 des quais &agrave. <st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName>
-veuf de GODET Jeanne. de Pierre et + DUPRADEAU Michelle. Ý <span
+veuf de GODET Jeanne. de Pierre et + DUPRADEAU Michelle.  <span
 style='color:red'>Genouillac en Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUDRAN Fran&ccedil.oise de + Paul
-marchand et + DUSSAUD Marie. Ý et<span style='mso-spacerun:yes'>  </span>dt <st1:PersonName
+marchand et + DUSSAUD Marie.  et<span style='mso-spacerun:yes'>  </span>dt <st1:PersonName
 ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName> Jean</st1:PersonName>
 17.<o:p></o:p></span></p>
@@ -8748,11 +8748,11 @@ ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SAVARY Jean receveur ferme du
-Roy &agrave. Angoulins de + Jean bourgeois et DELANOTTE Marie. Ý <span
+Roy &agrave. Angoulins de + Jean bourgeois et DELANOTTE Marie.  <span
 style='color:red'>St Hillaire pr&egrave.s de Barbezieux en Saintonge 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BRAUD Victoire Ad&eacute.la&iuml.de de +
-Denis corr&eacute.gidor et + LEMELLE Jeanne. Ý <st1:PersonName
+Denis corr&eacute.gidor et + LEMELLE Jeanne.  <st1:PersonName
 ProductID="La Nouvelle Orl&#65513;ans" w:st="on"><st1:PersonName
  ProductID="La Nouvelle" w:st="on">La Nouvelle</st1:PersonName> Orl&eacute.ans</st1:PersonName>
 en Louisiane. dt <st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName>
@@ -8769,11 +8769,11 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ALBERT Pierre laboureur &agrave. bras
-de + Fran&ccedil.ois laboureur &agrave. bras et + MOSSIN Jeanne. Ý <span style='color:red'>Marsillac
+de + Fran&ccedil.ois laboureur &agrave. bras et + MOSSIN Jeanne.  <span style='color:red'>Marsillac
 en Saintonge</span> <span style='color:red'>16.</span> dt Angoulins 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GABRIAU Marie de + Pierre
-journalier et GERBIER Marie. Ý Vallans en Saintonge 79. dt Angoulins 17.<o:p></o:p></span></p>
+journalier et GERBIER Marie.  Vallans en Saintonge 79. dt Angoulins 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -8784,13 +8784,13 @@ journalier et GERBIER Marie. Ý Vallans en Saintonge 79. dt Angoulins 17.<o:p></o
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOURABIER Fran&ccedil.ois domestique
-de Fran&ccedil.ois laboureur et + VARACHE Marguerite. Ý <span style='color:red'>Puymoyen
+de Fran&ccedil.ois laboureur et + VARACHE Marguerite.  <span style='color:red'>Puymoyen
 en</span> <span style='color:red'>Angoumois 16.</span> dt<span
 style='mso-spacerun:yes'>  </span>ND hors les murs <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GRAVAT Elisabeth 25 ans
-pass&eacute.s d’Andr&eacute. Jardinier et COUTANT Marguerite. Ý et dt ND hors les murs <st1:PersonName
+pass&eacute.s d&acute;Andr&eacute. Jardinier et COUTANT Marguerite.  et dt ND hors les murs <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -8799,14 +8799,14 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FORESTIER Jacques Etienne
-gar&ccedil.on cordonnier veuf de BOUGEOIS Marie de + Jacques et + MAILLET Agn&egrave.s. Ý
+gar&ccedil.on cordonnier veuf de BOUGEOIS Marie de + Jacques et + MAILLET Agn&egrave.s. 
 Paris St Sauveur. dt <st1:PersonName ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Sauveur</st1:PersonName><span
 style='mso-spacerun:yes'>  </span>17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUQUEROIS Jeanne 37 ans de +
-Jacques laboureur &agrave. bras et LACROIX Anne sa seconde femme. Ý <span
+Jacques laboureur &agrave. bras et LACROIX Anne sa seconde femme.  <span
 style='color:red'>Bess&eacute. en</span> <span style='color:red'>Angoumois 16</span>.
 dt <st1:PersonName ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -8820,7 +8820,7 @@ dt <st1:PersonName ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HUGUET Louis gar&ccedil.on
-cordonnier de + Mathurin cordonnier et GUINEBERT Suzanne. Ý <span
+cordonnier de + Mathurin cordonnier et GUINEBERT Suzanne.  <span
 style='color:red'>St L&eacute.ger Cognac 16</span>. dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
@@ -8842,7 +8842,7 @@ Michelle. dt <st1:PersonName ProductID="La Rochelle Notre Dame" w:st="on"><st1:P
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MASSONNEAU Louis gar&ccedil.on
-serrurier de Louis huissier et TOUZINEAU Catherine. Ý <span style='color:red'>Cognac
+serrurier de Louis huissier et TOUZINEAU Catherine.  <span style='color:red'>Cognac
 16</span>. dt <st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName>
 17.<o:p></o:p></span></p>
 
@@ -8855,11 +8855,11 @@ MERLAN Andr&eacute. serrurier.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARTIN Jean 38ans tonnelier
-de + Jean laboureur &agrave. bras et GENTY Catherine. Ý <span style='color:red'>M&eacute.rignac
+de + Jean laboureur &agrave. bras et GENTY Catherine.  <span style='color:red'>M&eacute.rignac
 en Angoumois 16</span>. dt P&eacute.rigny 17<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LABRUSSE Marie Anne 22 ans de
-Louis tonnelier et CHAUVEAU Catherine. Ý P&eacute.rigni 17. dt <st1:PersonName
+Louis tonnelier et CHAUVEAU Catherine.  P&eacute.rigni 17. dt <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> hors les murs
 17.<o:p></o:p></span></p>
 
@@ -8872,8 +8872,8 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> hors les murs
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MATHE L&eacute.onard jardinier &agrave.
-l’hôpital de <st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName>
-de MÝ Guillaume notaire et procureur et AUGEREAU Anne. Ý <span
+l&acute;hôpital de <st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName>
+de M Guillaume notaire et procureur et AUGEREAU Anne.  <span
 style='color:red'>Marthon en Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
@@ -8894,13 +8894,13 @@ ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PERRIN Charles Ren&eacute. 30 ans
-gar&ccedil.on raffineur de Jean et + TIZON Elisabeth. Ý <span style='color:red'>Javrezac
+gar&ccedil.on raffineur de Jean et + TIZON Elisabeth.  <span style='color:red'>Javrezac
 16</span>. dt <st1:PersonName ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
  ProductID="La Rochelle Notre" w:st="on">La Rochelle Notre</st1:PersonName>
  Dame</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BEAU Marguerite Rose de +
-Fran&ccedil.ois marchand et FELIN Jeanne. Ý <st1:PersonName
+Fran&ccedil.ois marchand et FELIN Jeanne.  <st1:PersonName
 ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName> Jean</st1:PersonName>
 17. dt <st1:PersonName ProductID="La Rochelle Notre Dame" w:st="on"><st1:PersonName
@@ -8914,11 +8914,11 @@ ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PHELIPPON Fran&ccedil.ois tonnelier
-veuf de LEBEUF Marie. Ý <span style='color:red'>Jarnac 16.</span> dt <st1:PersonName
+veuf de LEBEUF Marie.  <span style='color:red'>Jarnac 16.</span> dt <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHESSE Louise 36 ans de +
-Fran&ccedil.ois et + THIBAUDEAU Marie. Ý Li&eacute. pr&egrave.s de Maillezais 85. dt <st1:PersonName
+Fran&ccedil.ois et + THIBAUDEAU Marie.  Li&eacute. pr&egrave.s de Maillezais 85. dt <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -8932,19 +8932,19 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></s
 de MOUSSET Marie Jeanne. dt Aytr&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SUREAU Marie de + Fran&ccedil.ois et
-+ FAUX Marie. Ý le 22/10/1776 &agrave. <span style='color:red'>Chalais 16</span>. dt
++ FAUX Marie.  le 22/10/1776 &agrave. <span style='color:red'>Chalais 16</span>. dt
 Aytr&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>3 E/2003. CM 7 Frimaire An
 VI. X 14 Frimaire An VI Nieul 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ROUSSEAU Fran&ccedil.ois 32 ans
-gar&ccedil.on cordonnier de + Jean cordonnier et MOREAU Marguerite. Ý <span
+gar&ccedil.on cordonnier de + Jean cordonnier et MOREAU Marguerite.  <span
 style='color:red'>Ch&acirc.teauneuf en Angoumois 16</span>. dt Nieul 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'><span
 style='mso-spacerun:yes'> </span>BOBIN Louise 23 ans de + Andr&eacute. boucher et
-BRUNET Marie. Ý et dt Nieul 17.<o:p></o:p></span></p>
+BRUNET Marie.  et dt Nieul 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
 style='font-size:10.0pt'>Notaire PALLARD Louis. Etude &agrave. Villeneuve <st1:PersonName
@@ -9008,7 +9008,7 @@ ARNAUD Marie. <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></spa
 jean et HERON&nbsp;? Jeanne. dioc&egrave.se de Tours.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DESBRANDES Catherine
-d’Antoine et GAUTIER Marguerite. <span style='color:red'>St Yriex sur Charente
+d&acute;Antoine et GAUTIER Marguerite. <span style='color:red'>St Yriex sur Charente
 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
@@ -9249,7 +9249,7 @@ Fran&ccedil.ois et + BERNARDIN Catherine. Rochefort 17.<o:p></o:p></span></p>
 ProductID="la Pallue" w:st="on">la Pallue</st1:PersonName> 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BOUYER Elisabeth de Jean t
-GASCHET Marie. St Denis d’Ol&eacute.ron 17.<o:p></o:p></span></p>
+GASCHET Marie. St Denis d&acute;Ol&eacute.ron 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -9376,7 +9376,7 @@ Joachim et CHEVALLIER Fran&ccedil.oise. Rochefort St Louis 17.<o:p></o:p></span>
 et + DAVID Michelle. <span style='color:red'>Mosnac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUERRY Jeanne veuve
-GIRON&nbsp;?<span style='mso-spacerun:yes'>  </span>Moëze 17.<o:p></o:p></span></p>
+GIRON&nbsp;?<span style='mso-spacerun:yes'>  </span>Mo&euml;ze 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -9439,7 +9439,7 @@ CONVERD Louise. Rochefort St Louis 17<o:p></o:p></span></p>
      style='font-size:10.0pt'>3 E 21/60. CM 01/07/1727.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>CHEVALLIER Louis de Joël et
+<p class=MsoNormal><span style='font-size:10.0pt'>CHEVALLIER Louis de Jo&euml;l et
 PASCAUD Elisabeth. Soubise 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUITON Ustelle de Jean et
@@ -9464,7 +9464,7 @@ et BERNARD Liette. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></
 <p class=MsoNormal><span style='font-size:10.0pt'>CONQUET Guillaume de Jean et
 LACOMBE Louise. Tulle 19.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>LAURAND Magdelaine d’Arnaud
+<p class=MsoNormal><span style='font-size:10.0pt'>LAURAND Magdelaine d&acute;Arnaud
 et BERNARD Liette. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -9497,7 +9497,7 @@ ROCHETEAU Catherine. Guire&nbsp;?<o:p></o:p></span></p>
 <p class=MsoNormal><span style='font-size:10.0pt'>DELION Jean journalier veuf
 de ROUX Marie. Rochefort St Louis 17.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>BOUCHERIE Marie d’Etienne et
+<p class=MsoNormal><span style='font-size:10.0pt'>BOUCHERIE Marie d&acute;Etienne et
 + RAZE Marie. <span style='color:red'>Ste Souline 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -9527,7 +9527,7 @@ FOUCHER Marie. <span style='color:red'>Ruffec 16.<o:p></o:p></span></span></p>
      style='font-size:10.0pt'>3 E 21/72. CM 05/04/1739.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>DUBUTEL Jean d’Augustin et +
+<p class=MsoNormal><span style='font-size:10.0pt'>DUBUTEL Jean d&acute;Augustin et +
 VERGNAUD Marie. <span style='color:red'>Angoul&ecirc.me 16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PARIONNEAU Fran&ccedil.ois de
@@ -9646,7 +9646,7 @@ veuf de DORNAT Fran&ccedil.oise. Rochefort St Louis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>AUDAIN Marie Magdelaine de
 Fran&ccedil.ois et NAU Catherine. <span style='color:red'>Chaslat&nbsp;? sur<span
-style='mso-spacerun:yes'>  </span>Angoulëme 16.<o:p></o:p></span></span></p>
+style='mso-spacerun:yes'>  </span>Angoul&euml;me 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -9667,7 +9667,7 @@ GASCHET Jeanne. <span style='color:red'>Barbezieux St Hilaire 16.<o:p></o:p></sp
 <p class=MsoNormal><span style='font-size:10.0pt'>GIRARD Guillaume de +
 Berthom&eacute. et FOUCAUD Marie. Authon Eb&eacute.on 17.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>LAVERGNE Fran&ccedil.oise d’Antoine
+<p class=MsoNormal><span style='font-size:10.0pt'>LAVERGNE Fran&ccedil.oise d&acute;Antoine
 et GINEL Toinette. <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -9775,7 +9775,7 @@ ACHLIN&nbsp;? Sara. . Rochefort St Louis 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JUCHEREAU Jean de + Jean et
-BRANDY Magdelaine. Cir&eacute. d’Aunis 17.<o:p></o:p></span></p>
+BRANDY Magdelaine. Cir&eacute. d&acute;Aunis 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RAYMOND Jeanne de Fran&ccedil.ois et
 LORAND Marthe. <span style='color:red'>St Laurent des Combes 16.<o:p></o:p></span></span></p>
@@ -10200,7 +10200,7 @@ J&eacute.rosme et + PETIOT Jeanne. <span style='color:red'>Charmant 16&nbsp;?</s
 <p class=MsoNormal><span style='font-size:10.0pt'>BRUELLE Jean de Pierre et
 THOMAS Marie. St M&eacute.dard&nbsp;?<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>MEREAN Henriette d’Andr&eacute. et
+<p class=MsoNormal><span style='font-size:10.0pt'>MEREAN Henriette d&acute;Andr&eacute. et
 SEIGNE Anne. <span style='color:red'>Montchaude 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -10313,7 +10313,7 @@ style='color:red'> 16.<o:p></o:p></span></span></p>
      style='font-size:10.0pt'>3 E 21/88. CM 29/06/1734.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>DELAFOND Noël d’Antoine et +
+<p class=MsoNormal><span style='font-size:10.0pt'>DELAFOND No&euml;l d&acute;Antoine et +
 GERBAUD Anne. <span style='color:red'>Montmoreau St Cybard 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SECHAR DE <st1:PersonName
@@ -10328,7 +10328,7 @@ MESMA Marie. Rochefort&nbsp; 17 ?<o:p></o:p></span></p>
 <p class=MsoNormal><span style='font-size:10.0pt'>DELAFONT Fran&ccedil.ois de + Jean
 et + GANDOBERT Lucr&egrave.ce. <span style='color:red'>Chavenat 16.<o:p></o:p></span></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>TOUZAIN Catherine veuve d’ANCELLAIN
+<p class=MsoNormal><span style='font-size:10.0pt'>TOUZAIN Catherine veuve d&acute;ANCELLAIN
 J. Rochefort&nbsp; 17 ?<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -10340,7 +10340,7 @@ J. Rochefort&nbsp; 17 ?<o:p></o:p></span></p>
 SANSON Catherine. <span style='color:red'>Anville 16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ALLEAU Marie Marguerite de
-Jean et DRAONNET Marie. St Jean d’Ang&eacute.ly 17<o:p></o:p></span></p>
+Jean et DRAONNET Marie. St Jean d&acute;Ang&eacute.ly 17<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -10561,7 +10561,7 @@ PARTONNEAU Anne. <span style='color:red'>Merpins 16.</span><o:p></o:p></span></p
 <p class=MsoNormal><span style='font-size:10.0pt'>NAVARRE Mathurin journalier
 veuf de ROZIER Marie. Rochefort 17&nbsp;?<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>SURREAU Jeanne d’Etienne er
+<p class=MsoNormal><span style='font-size:10.0pt'>SURREAU Jeanne d&acute;Etienne er
 TOUZELET Suzanne. <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -10675,7 +10675,7 @@ Marguerite. <span style='color:red'>Jarnac 16.<o:p></o:p></span></span></p>
 <p class=MsoNormal><span style='font-size:10.0pt'>SARRASIN Jean charpentier
 veuf de ROBELIN Anne. Rochefort 17&nbsp;?<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>HIBLE Marie d’Andr&eacute. et +
+<p class=MsoNormal><span style='font-size:10.0pt'>HIBLE Marie d&acute;Andr&eacute. et +
 GIRARD Marguerite. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -10698,7 +10698,7 @@ LORTIE Marie. <st1:PersonName ProductID="La Tremblade" w:st="on">La Tremblade</s
 <p class=MsoNormal><span style='font-size:10.0pt'>SIMARD Fran&ccedil.ois de Louis et
 GAUDIN Jeanne. <span style='color:red'>St Cibard en Angoumois 16.<o:p></o:p></span></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>BERNARD Marie d’Andr&eacute. et
+<p class=MsoNormal><span style='font-size:10.0pt'>BERNARD Marie d&acute;Andr&eacute. et
 BOUTIN Jeanne. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -10732,7 +10732,7 @@ Charles et + PERE Marguerite. Rochefort 17. <o:p></o:p></span></p>
 <p class=MsoNormal><span style='font-size:10.0pt'>TOUR&nbsp;NEUR Pierre
 journalier veuf de NOURRY Marie. Rochefort 17&nbsp;?<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>SURRAUD Jeanne d’Etienne et
+<p class=MsoNormal><span style='font-size:10.0pt'>SURRAUD Jeanne d&acute;Etienne et
 TOU……….Suzanne. <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -10778,7 +10778,7 @@ style='font-size:10.0pt'>Notaire TESSON Jacques. Etude &agrave. Rochefort 17.<o:
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ARAINE&nbsp;? Louis tailleur
-d’habits veuf de GARNIER Gabrielle .Rochefort 17.<o:p></o:p></span></p>
+d&acute;habits veuf de GARNIER Gabrielle .Rochefort 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BLANCHARD Ester de Pierre et
 DUBOIS Marthe. <span style='color:red'>Chassors 16.<o:p></o:p></span></span></p>
@@ -10813,7 +10813,7 @@ BLESSEBOIS. Rochefort 17&nbsp;?<o:p></o:p></span></p>
 <p class=MsoNormal><span style='font-size:10.0pt'>BONNET Andr&eacute. de + Nicolas et
 MARGUINAUD&nbsp;? Marie. <span style='color:red'>Oradour Fanais 16</span>.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>TAMPLEREAU Jeanne d’Etienne
+<p class=MsoNormal><span style='font-size:10.0pt'>TAMPLEREAU Jeanne d&acute;Etienne
 et PREVE&nbsp;? Jeanne. Rochefort 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -10857,7 +10857,7 @@ et CHABINEAU Jeanne. Aujac 17.<o:p></o:p></span></p>
 <p class=MsoNormal><span style='font-size:10.0pt'>FAVRY Pierre marchand de
 Guillaume et AUBINEAU Jeanne. <span style='color:red'>Villeneuve de Mon……..16<o:p></o:p></span></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>BERTHELLOT Marie d’Antoine et
+<p class=MsoNormal><span style='font-size:10.0pt'>BERTHELLOT Marie d&acute;Antoine et
 + DURAN Marguerite. Genouill&eacute. 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -10935,7 +10935,7 @@ SUIRE Pierre. Chef Boutonne 79.<o:p></o:p></span></p>
 <p class=MsoNormal><span style='font-size:10.0pt'>MARTIN Pierre de Jean et
 MORREAU Catherine. <span style='color:red'>Guimps 16.<o:p></o:p></span></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>PHELLIPON Marie d’Isaac et
+<p class=MsoNormal><span style='font-size:10.0pt'>PHELLIPON Marie d&acute;Isaac et
 MELLAUD&nbsp;? Ester. Surg&egrave.res 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -10980,7 +10980,7 @@ Fran&ccedil.ois et GUILLOT Jeanne. St Hippolyte 17.<o:p></o:p></span></p>
 <p class=MsoNormal><span style='font-size:10.0pt'>NAIMONT Jean tisserand de
 Pierre et RI…….AUD Gabrielle. <span style='color:red'>Juillac le COQ 16.<o:p></o:p></span></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>MAQUIN Anne d’Antoine et
+<p class=MsoNormal><span style='font-size:10.0pt'>MAQUIN Anne d&acute;Antoine et
 PREAU Anne. St Martin de R&eacute. 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -10999,11 +10999,11 @@ TESTEAU Suzanne. <span style='color:red'>Verdille 16.<o:p></o:p></span></span></
      style='font-size:10.0pt'>3 E 34/2. CM 08/01/1684.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>PINASSEAU Jean Ý 1654
+<p class=MsoNormal><span style='font-size:10.0pt'>PINASSEAU Jean  1654
 jardinier de Pierre et BLANCHETEAU Marguerite. <span style='color:red'>Champniers
 16&nbsp;?<o:p></o:p></span></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>BAUMARRAN Jeanne Ý 1644 DE
+<p class=MsoNormal><span style='font-size:10.0pt'>BAUMARRAN Jeanne  1644 DE
 Pierre et GOUZELLE Rose. Rochefort 17&nbsp;?<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -11060,7 +11060,7 @@ NUGUE&nbsp;? Michel. Rochefort 17.<o:p></o:p></span></p>
 <p class=MsoNormal><span style='font-size:10.0pt'>ROY Pierre de Gabriel et +
 PARANT Catherine. Tonnay Charente 17.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>FAUGER Anne d’Antoine et
+<p class=MsoNormal><span style='font-size:10.0pt'>FAUGER Anne d&acute;Antoine et
 BOUCHIER&nbsp;? Jeanne. <span style='color:red'>Baille&nbsp;? en Angoumois 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -11175,7 +11175,7 @@ Jean et + RECOQUILLE Anne. Rochefort 17.<o:p></o:p></span></p>
 <p class=MsoNormal><span style='font-size:10.0pt'>BARIL Antoine de + Jean et
 CHAUSSEROUGE Marie. <span style='color:red'>St Laurent des Combes 16.<o:p></o:p></span></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>LORRAIN Marie d’Etienne et
+<p class=MsoNormal><span style='font-size:10.0pt'>LORRAIN Marie d&acute;Etienne et
 SERRE Marguerite. Rochefort 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -11217,7 +11217,7 @@ DELAVERGNE Silvie. Pons St Martin 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERNIER Jacques de + Louis et
-CANTAIN Lidie. St Jean d’Ang&eacute.ly 17.<o:p></o:p></span></p>
+CANTAIN Lidie. St Jean d&acute;Ang&eacute.ly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAUVERGNE Marie de Fran&ccedil.ois
 et + ROLLANDEAU Marie. <span style='color:red'>Cognac 16.</span><o:p></o:p></span></p>
@@ -11269,7 +11269,7 @@ GIRAUD Marguerite<span style='color:red'>. Cherves 16.&nbsp;?<o:p></o:p></span><
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
-     style='font-size:10.0pt'>3 E 34/13. CM 00/02/1694. acte nÝ 83.<o:p></o:p></span></li>
+     style='font-size:10.0pt'>3 E 34/13. CM 00/02/1694. acte n 83.<o:p></o:p></span></li>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BLANCHARD Michel de Martial
@@ -11474,7 +11474,7 @@ Jacques. Rochefort N D 17.<o:p></o:p></span></p>
      style='font-size:10.0pt'>3 E 34/32. CM 19/08/1704.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>CHESNEL D’ECOYEUX Pierre de
+<p class=MsoNormal><span style='font-size:10.0pt'>CHESNEL D&acute;ECOYEUX Pierre de
 Louis et DEJOIGNY Marie Elisa. <span style='color:red'>Cherves en Angoumois 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAILLARD Aline de Mathieu et
@@ -11489,14 +11489,14 @@ MARTIN Anne. Rochefort 17.<o:p></o:p></span></p>
 et SAUVAGET Jeanne. <span style='color:red'>Segonzac 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAFITTE Marie de Pierre et +
-ROUSSEAU Marie. Moëze 17.<o:p></o:p></span></p>
+ROUSSEAU Marie. Mo&euml;ze 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
      style='font-size:10.0pt'>3 E 34/19. CM 17/01/1697.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>CHOTARD Elie d’Antoine et
+<p class=MsoNormal><span style='font-size:10.0pt'>CHOTARD Elie d&acute;Antoine et
 DURANDEAU Antoinette. <span style='color:red'>Cognac 16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MESTAY Fran&ccedil.oise de Thomas et
@@ -11589,7 +11589,7 @@ GRELIER Marie. <span style='color:red'>Chateauneuf sur Charente 16.<o:p></o:p></
 NOUBLET Marguerite. <span style='color:red'>Marcillac le Franc 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LAURANT Mathurine de Mathurin
-et FRAIGNEAU Marguerite. Cir&eacute. d’Aunis 17.<o:p></o:p></span></p>
+et FRAIGNEAU Marguerite. Cir&eacute. d&acute;Aunis 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -11607,7 +11607,7 @@ Fran&ccedil.ois. Rochefort 17&nbsp;?<o:p></o:p></span></p>
      style='font-size:10.0pt'>3 E 34/19. CM 20/04/1697.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>DIRIGOYEN Jean d’Etienne et
+<p class=MsoNormal><span style='font-size:10.0pt'>DIRIGOYEN Jean d&acute;Etienne et
 DENCIBURU&nbsp;? Jeanne. Bayonne 64.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MALLAT Marguerite de Jean et
@@ -11642,7 +11642,7 @@ de DURAND Catherine. Rochefort 17&nbsp;?<o:p></o:p></span></p>
      style='font-size:10.0pt'>3 E 34/31. CM 05/08/1703. r&eacute.sili&eacute. le 07/02/1706.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>DUBOIS Joseph d’Etienne et +
+<p class=MsoNormal><span style='font-size:10.0pt'>DUBOIS Joseph d&acute;Etienne et +
 MASQUET Perrine. <span style='color:red'>Sigogne 16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MALLERIT Marie de Jean et
@@ -11711,7 +11711,7 @@ et + AUFRAY Jeanne. <span style='color:red'>St Laurent des Combes 16.<o:p></o:p>
 <p class=MsoNormal><span style='font-size:10.0pt'>GADREAU Etienne de Louis et +
 BORET Marie. <span style='color:red'>Mareuil 16.</span><o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>HAURAIN Fran&ccedil.oise d’Etienne
+<p class=MsoNormal><span style='font-size:10.0pt'>HAURAIN Fran&ccedil.oise d&acute;Etienne
 et SENNE Marguerite. Rochefort 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -11744,7 +11744,7 @@ ME……AUD&nbsp;? Marie. <span style='color:red'>Villars 16.<o:p></o:p></span></spa
 <p class=MsoNormal><span style='font-size:10.0pt'>GAUTIER Andr&eacute. de + Jean et
 TAUNAY Fran&ccedil.oise. Brouage 17.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>GUERIN Catherine d’Arnaud et
+<p class=MsoNormal><span style='font-size:10.0pt'>GUERIN Catherine d&acute;Arnaud et
 BAUDRY Marie<span style='color:red'>. Cognac 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -11798,7 +11798,7 @@ style='color:red'>Lign&eacute. 16&nbsp;?<o:p></o:p></span></span></p>
      style='font-size:10.0pt'>3 E 34/37. CM 08/05/1709.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>HELYNE Andr&eacute. d’Andr&eacute. et
+<p class=MsoNormal><span style='font-size:10.0pt'>HELYNE Andr&eacute. d&acute;Andr&eacute. et
 MESTAY Louise. <span style='color:red'>Cherves 16&nbsp;?<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PEROUNEAU Jeanne veuve de
@@ -11900,7 +11900,7 @@ et + LAFON Jeanne. <span style='color:red'>Juillac le Coq 16.&nbsp;?<o:p></o:p><
 <p class=MsoNormal><span style='font-size:10.0pt'>LAFOND Fran&ccedil.ois de Fran&ccedil.ois
 et +………Marie. <span style='color:red'>Cognac 16.<o:p></o:p></span></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>AUGREAU Magdelaine d’Etienne
+<p class=MsoNormal><span style='font-size:10.0pt'>AUGREAU Magdelaine d&acute;Etienne
 et + FRADIN Marie. Rochefort17<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -11941,7 +11941,7 @@ SOLLAUD Marguerite. Loir&eacute. les Marais 17.<o:p></o:p></span></p>
      style='font-size:10.0pt'>3 E 34/33. CM 01/10/1705.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>LEFEBURE Toussaint de + Noël
+<p class=MsoNormal><span style='font-size:10.0pt'>LEFEBURE Toussaint de + No&euml;l
 et SAIN Jacotte. Dourlan&nbsp;? en Picardie.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JACQUEMIN Marie de Jean et +
@@ -11998,8 +11998,8 @@ BLANCHE Jeanne. Biron 17.<o:p></o:p></span></p>
      style='font-size:10.0pt'>3 E 34/37. CM 05/07/1709.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>MARTINAUD Jean d’Antoine et
-RAUD Marie. St Jean d’Ang&eacute.ly 17.<o:p></o:p></span></p>
+<p class=MsoNormal><span style='font-size:10.0pt'>MARTINAUD Jean d&acute;Antoine et
+RAUD Marie. St Jean d&acute;Ang&eacute.ly 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JOUANE Marie de Fran&ccedil.ois et +
 COUSTEAU Marie. <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
@@ -12101,7 +12101,7 @@ HAURU&nbsp;? Marie. Les Touches de P&eacute.rigny 17.<o:p></o:p></span></p>
 + COUTINEAU Fran&ccedil.oise<span style='color:red'>. St Claud 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PINET Anne de Jean et +
-SALNEUVE Jeanne. Ch&acirc.teau d’Ol&eacute.ron 17.<o:p></o:p></span></p>
+SALNEUVE Jeanne. Ch&acirc.teau d&acute;Ol&eacute.ron 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -12145,7 +12145,7 @@ PAGOT&nbsp;? Jeanne. Rochefort 17.<o:p></o:p></span></p>
 SERINGUET Catherine. <span style='color:red'>Nieul en Angoumois 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MARCHAND Marie Marthe
-d’Etienne et CAILLE Marie. Rochefort 17.<o:p></o:p></span></p>
+d&acute;Etienne et CAILLE Marie. Rochefort 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -12177,7 +12177,7 @@ et + POUGNARD Catherine. <span style='color:red'>Villej&eacute.sus 16</span>.<o:
 <p class=MsoNormal><span style='font-size:10.0pt'>PIQUARD Antoine journalier
 veuf de CHAIN Elisabeth. Mervant 85&nbsp;?<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>CHATIFEAUD Marguerite d’Etienne
+<p class=MsoNormal><span style='font-size:10.0pt'>CHATIFEAUD Marguerite d&acute;Etienne
 et + GOT Julienne. <span style='color:red'>Barbezieres 16&nbsp;?<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -12255,7 +12255,7 @@ HERARD Louis. Rochefort 17&nbsp;?<span style='mso-tab-count:1'>             </sp
 <p class=MsoNormal><span style='font-size:10.0pt'>RELET&nbsp;? Etienne de +
 Jean et VILLIER Louise. Ars en R&eacute. 17.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>RIVIERE Jeanne d’Etienne et +
+<p class=MsoNormal><span style='font-size:10.0pt'>RIVIERE Jeanne d&acute;Etienne et +
 CATIGNON Fleurie. <span style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -12368,7 +12368,7 @@ veuve de REGNAUD Louis. Rochefort 17&nbsp;?<o:p></o:p></span></p>
 DAVID Guionne. St Amant de <span style='color:red'>Bonnieure 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>ANDRE Ren&eacute.e de Pierre et +
-LAMBERT Jeanne. St Martin d’Entraigues 79.<o:p></o:p></span></p>
+LAMBERT Jeanne. St Martin d&acute;Entraigues 79.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='mso-list:l11 level1 lfo5;tab-stops:list 36.0pt'><span
@@ -12378,7 +12378,7 @@ LAMBERT Jeanne. St Martin d’Entraigues 79.<o:p></o:p></span></p>
 <p class=MsoNormal><span style='font-size:10.0pt'>TESTU Jacques boucher veuf de
 DEMIEL&nbsp;? Magdelaine. <span style='color:red'>Barbezieux St Hilaire 16.<o:p></o:p></span></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>BARGEAUD Jeanne d’Etienne et
+<p class=MsoNormal><span style='font-size:10.0pt'>BARGEAUD Jeanne d&acute;Etienne et
 + POIREAU Louise. Pressigny 79&nbsp;?<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -12432,7 +12432,7 @@ Jean. Rochefort 17&nbsp;?<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TOMBERAUD Barth&eacute.l&eacute.my<span
-style='mso-spacerun:yes'>  </span>Ý1646 cordonnier. Aix en Provence 13.<o:p></o:p></span></p>
+style='mso-spacerun:yes'>  </span>1646 cordonnier. Aix en Provence 13.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VALTEAU Marie de Charles et +
 PAIRON Fran&ccedil.oise. <span style='color:red'>Ambleville 16.<o:p></o:p></span></span></p>
@@ -12493,13 +12493,13 @@ ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> 17.<o:p></o:p></s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BERTAUD Pierre marchand en
-d&eacute.tail de Jacques marchand et VIVIEN Anne. Ý <span style='color:red'>Villefagnan
+d&eacute.tail de Jacques marchand et VIVIEN Anne.  <span style='color:red'>Villefagnan
 16.</span> dt <st1:PersonName ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName> Sauveur</st1:PersonName>
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SERRE Marie Charlotte de +
-Jean Pierre marchand et MARIOCHAUD Marie Anne. Ý <st1:PersonName
+Jean Pierre marchand et MARIOCHAUD Marie Anne.  <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> dt <st1:PersonName
 ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName> Jean</st1:PersonName>
@@ -12514,7 +12514,7 @@ ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BO_ET Michel huissier et
-procureur de Pierre bourgeois et THEVENIN Marie. Ý <span style='color:red'>Bellejoye
+procureur de Pierre bourgeois et THEVENIN Marie.  <span style='color:red'>Bellejoye
 paroisse de Chassin</span> <span style='color:red'>en Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -12522,7 +12522,7 @@ ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DORE Fran&ccedil.oise veuve de
-LEMBERT Charles marchand de + Etienne et MASSE Fran&ccedil.oise. Ý Rennes capitale de <st1:PersonName
+LEMBERT Charles marchand de + Etienne et MASSE Fran&ccedil.oise.  Rennes capitale de <st1:PersonName
 ProductID="la Bretagne." w:st="on">la Bretagne.</st1:PersonName> dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -12539,7 +12539,7 @@ ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CHAUMET Louis gar&ccedil.on tailleur
-d’habits de + Jean maitre tailleur d’habits et PORCHERAT&nbsp;? Marie. Ý <span
+d&acute;habits de + Jean maitre tailleur d&acute;habits et PORCHERAT&nbsp;? Marie.  <span
 style='color:red'>Aubeterre en Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName>
@@ -12560,14 +12560,14 @@ w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on">La Rochelle St</s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COURTEAU Michel gar&ccedil.on
-coutellier de + Jean bouch&eacute. et FOUCAUD Marguerite. Ý <span style='color:red'>Angoul&ecirc.me
+coutellier de + Jean bouch&eacute. et FOUCAUD Marguerite.  <span style='color:red'>Angoul&ecirc.me
 16</span>. dt <st1:PersonName ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Sauveur</st1:PersonName>
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RENETEAU Louise de + Louis
-maitre mar&eacute.chal et BABOU Marie. Ý <st1:PersonName ProductID="La Rochelle"
+maitre mar&eacute.chal et BABOU Marie.  <st1:PersonName ProductID="La Rochelle"
 w:st="on">La Rochelle</st1:PersonName> dt <st1:PersonName
 ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName> Sauveur</st1:PersonName>
@@ -12583,7 +12583,7 @@ ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>COUTIN Fran&ccedil.ois loueur de
-chevaux de + Fran&ccedil.ois journalier et MORIE&nbsp;? Catherine. Ý <span
+chevaux de + Fran&ccedil.ois journalier et MORIE&nbsp;? Catherine.  <span
 style='color:red'>Paizay en Angoumois</span> <span style='color:red'>16</span>.
 dt <st1:PersonName ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName> Sauveur</st1:PersonName>
@@ -12591,7 +12591,7 @@ dt <st1:PersonName ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RAUX Catherine de + Jean
 laboureur &agrave. b&oelig.ufs et + <st1:PersonName w:st="on">PETIT</st1:PersonName> Louise.
-Ý St Georges du Bois 17. dt <st1:PersonName ProductID="La Rochelle St Sauveur"
+ St Georges du Bois 17. dt <st1:PersonName ProductID="La Rochelle St Sauveur"
 w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName>
  Sauveur</st1:PersonName> 17.<o:p></o:p></span></p>
 
@@ -12605,14 +12605,14 @@ w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on">La Rochelle St</s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CROIZET Fran&ccedil.ois avocat au
-parlement de Bordeaux de Fran&ccedil.ois et PERROT Marguerite. Ý <span
+parlement de Bordeaux de Fran&ccedil.ois et PERROT Marguerite.  <span
 style='color:red'>P&eacute.rignac en</span> <span style='color:red'>Angoumois 16</span>.
 dt <st1:PersonName ProductID="La Rochelle ND" w:st="on"><st1:PersonName
  ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> ND</st1:PersonName>
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LEBEUF Jeanne Catherine de
-Joseph n&eacute.gociant et POITOU Catherine. Ý <st1:PersonName ProductID="La Rochelle"
+Joseph n&eacute.gociant et POITOU Catherine.  <st1:PersonName ProductID="La Rochelle"
 w:st="on">La Rochelle</st1:PersonName> dt <st1:PersonName
 ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName>
@@ -12627,11 +12627,11 @@ ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DE BUSSAC Jean licenci&eacute. en
-loix de MÝ Daniel conseiller du Roy et FOURRAUD de LACOSTE Marthe. Ý et dt <span
+loix de M Daniel conseiller du Roy et FOURRAUD de LACOSTE Marthe.  et dt <span
 style='color:red'>Angoul&ecirc.me 16.<o:p></o:p></span></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>MICHELET Marie d’Urbain
-marchand et DELPRAT Louise. Ý <st1:PersonName ProductID="La Rochelle" w:st="on">La
+<p class=MsoNormal><span style='font-size:10.0pt'>MICHELET Marie d&acute;Urbain
+marchand et DELPRAT Louise.  <st1:PersonName ProductID="La Rochelle" w:st="on">La
  Rochelle</st1:PersonName> dt <st1:PersonName ProductID="La Rochelle St Sauveur"
 w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName>
  Sauveur</st1:PersonName> 17.<o:p></o:p></span></p>
@@ -12647,15 +12647,15 @@ w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on">La Rochelle St</s
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DE JOUSSERANT Pierre
-capitaine d’infanterie d’Etienne &eacute.cuyer et COYTEU Anne. <span style='color:
+capitaine d&acute;infanterie d&acute;Etienne &eacute.cuyer et COYTEU Anne. <span style='color:
 red'>Bouchage en Poitou 16</span>. dt <st1:PersonName
 ProductID="La Rochelle N D" w:st="on"><st1:PersonName ProductID="La Rochelle N"
  w:st="on"><st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName>
   N</st1:PersonName> D</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GUENOT Marie Catherine veuve
-de BULTEL Jean capitaine de navire.de + Joseph marchand et ROZE Fran&ccedil.oise. Ý
-des Iles Fran&ccedil.aises d’Am&eacute.rique. dt <st1:PersonName ProductID="La Rochelle N D"
+de BULTEL Jean capitaine de navire.de + Joseph marchand et ROZE Fran&ccedil.oise. 
+des Iles Fran&ccedil.aises d&acute;Am&eacute.rique. dt <st1:PersonName ProductID="La Rochelle N D"
 w:st="on"><st1:PersonName ProductID="La Rochelle N" w:st="on"><st1:PersonName
   ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> N</st1:PersonName>
  D</st1:PersonName> 17.<o:p></o:p></span></p>
@@ -12667,14 +12667,14 @@ w:st="on"><st1:PersonName ProductID="La Rochelle N" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DESBORDES Jean Adam marchand
-en d&eacute.tail de Jean Adam marchand et + HERODEAU Jeanne. Ý <span style='color:
+en d&eacute.tail de Jean Adam marchand et + HERODEAU Jeanne.  <span style='color:
 red'>Jarnac en</span> <span style='color:red'>Charente 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName> Jean</st1:PersonName>
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>MAYNARD Marie Elizabethde +
-Antoine marchand et MARIOCHAUD Suzanne. Ý <st1:PersonName
+Antoine marchand et MARIOCHAUD Suzanne.  <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> dt <st1:PersonName
 ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -12687,11 +12687,11 @@ ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FAURE Jean Fran&ccedil.ois marchand
-veuf de FAURE Marie de Fran&ccedil.ois bourgeois et + LIARD Jeanne. Ý et dt &agrave. <span
+veuf de FAURE Marie de Fran&ccedil.ois bourgeois et + LIARD Jeanne.  et dt &agrave. <span
 style='color:red'>Jarnac 16.</span><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>BARGEAUD Marie Jeanne de
-Jacques marchand voillier et RENAUDIN Marguerite Henriette. Ý <st1:PersonName
+Jacques marchand voillier et RENAUDIN Marguerite Henriette.  <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> dt <st1:PersonName
 ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
@@ -12704,7 +12704,7 @@ ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>FAYE Jacques journalier de
-Fran&ccedil.ois laboureur et + PIET Catherine. Ý <st1:PersonName
+Fran&ccedil.ois laboureur et + PIET Catherine.  <st1:PersonName
 ProductID="La Couronne" w:st="on"><span style='color:red'>La Couronne</span></st1:PersonName><span
 style='color:red'> 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
@@ -12729,7 +12729,7 @@ RULLIER Marie. dt <st1:PersonName ProductID="La Rochelle St Nicolas" w:st="on"><
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>GAUTIER Charles matelot de +
-Michel journalier et + DUDOGNIN Catherine. <span style='color:red'>Ý Enjac
+Michel journalier et + DUDOGNIN Catherine. <span style='color:red'> Enjac
 Charente<span style='mso-spacerun:yes'>  </span>en</span> <span
 style='color:red'>Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
@@ -12738,7 +12738,7 @@ ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>IMBERT Madelaigne de +
-Guillaume journalier et BAUDRIER Louise. Ý et<span style='mso-spacerun:yes'> 
+Guillaume journalier et BAUDRIER Louise.  et<span style='mso-spacerun:yes'> 
 </span>dt <st1:PersonName ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Nicolas</st1:PersonName>
@@ -12750,10 +12750,10 @@ Guillaume journalier et BAUDRIER Louise. Ý et<span style='mso-spacerun:yes'> 
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>HERAUD Pierre gar&ccedil.on farinier
-de + Jean et COMBAUD Olive. Ý Vue dioc&egrave.se de Montoir. dt Aytr&eacute. 17.<o:p></o:p></span></p>
+de + Jean et COMBAUD Olive.  Vue dioc&egrave.se de Montoir. dt Aytr&eacute. 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DUQUERROY Marie de Jacques
-laboureur &agrave. bras et + DUQUERROY Jeanne. Ý <span style='color:red'>Bass&eacute. en
+laboureur &agrave. bras et + DUQUERROY Jeanne.  <span style='color:red'>Bass&eacute. en
 Angoumois 16</span>. dt Aytr&eacute. 17.<o:p></o:p></span></p>
 
 <ul style='margin-top:0cm' type=disc>
@@ -12766,15 +12766,15 @@ Angoumois 16</span>. dt Aytr&eacute. 17.<o:p></o:p></span></p>
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>JAUD Jean paveur&nbsp; de
-……………laboureur &agrave. bras et + BUHARNE Marie. Ý <span style='color:red'>Marsillac
-dioc&egrave.se d’Angoul&ecirc.me</span> <span style='color:red'>16</span>. dt <st1:PersonName
+……………laboureur &agrave. bras et + BUHARNE Marie.  <span style='color:red'>Marsillac
+dioc&egrave.se d&acute;Angoul&ecirc.me</span> <span style='color:red'>16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Nicolas</st1:PersonName>
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LABBE Marie de + Jean
-cordonnier et + RIPPE Jeanne. Ý St Romain dioc&egrave.se de Saintes 17. dt <st1:PersonName
+cordonnier et + RIPPE Jeanne.  St Romain dioc&egrave.se de Saintes 17. dt <st1:PersonName
 ProductID="La Rochelle N D" w:st="on"><st1:PersonName ProductID="La Rochelle N"
  w:st="on"><st1:PersonName ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName>
   N</st1:PersonName> D</st1:PersonName> 17.<o:p></o:p></span></p>
@@ -12789,15 +12789,15 @@ ProductID="La Rochelle N D" w:st="on"><st1:PersonName ProductID="La Rochelle N"
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NO-L Andr&eacute. gar&ccedil.on perruquier
-de + Etienne maitre graveur en armoiries et MASSIAS Th&eacute.r&egrave.se. Ý <span
+de + Etienne maitre graveur en armoiries et MASSIAS Th&eacute.r&egrave.se.  <span
 style='color:red'>Chateauneuf en Angoumois 16</span>. dt <st1:PersonName
 ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Sauveur</st1:PersonName>
 17.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>SALLENEUVE Jeanne d’Elie et +
-ROY Marie. Ý Niort ND 79. dt <st1:PersonName ProductID="La Rochelle St Nicolas"
+<p class=MsoNormal><span style='font-size:10.0pt'>SALLENEUVE Jeanne d&acute;Elie et +
+ROY Marie.  Niort ND 79. dt <st1:PersonName ProductID="La Rochelle St Nicolas"
 w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on"><st1:PersonName
   ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName>
  Nicolas</st1:PersonName> 17.<o:p></o:p></span></p>
@@ -12813,14 +12813,14 @@ w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on"><st1:PersonName
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NO-L Andr&eacute. perruquier sous
 privil&eacute.ge veuf de SALLENEUVE Jeanne de + Etienne maitre graveur et armurier et
-MASSIAS Th&eacute.r&egrave.se. Ý <span style='color:red'>Chateauneuf en Angoumois 16</span>.
+MASSIAS Th&eacute.r&egrave.se.  <span style='color:red'>Chateauneuf en Angoumois 16</span>.
 dt <st1:PersonName ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Nicolas</st1:PersonName>
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>REMY Louise de Fran&ccedil.ois
-maitre d’&eacute.quipage et GUILLON Marie. Ý <st1:PersonName ProductID="La Rochelle"
+maitre d&acute;&eacute.quipage et GUILLON Marie.  <st1:PersonName ProductID="La Rochelle"
 w:st="on">La Rochelle</st1:PersonName> et dt <st1:PersonName
 ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName> Nicolas</st1:PersonName>
@@ -12836,7 +12836,7 @@ ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>NORMAND Jacques gar&ccedil.on
-thonnellier de + Jean et BIRAUD Aline. Ý <st1:PersonName
+thonnellier de + Jean et BIRAUD Aline.  <st1:PersonName
 ProductID="La Faye St Vincent" w:st="on"><st1:PersonName ProductID="La Faye St"
  w:st="on"><st1:PersonName ProductID="La Faye" w:st="on"><span
    style='color:red'>La Faye</span></st1:PersonName><span style='color:red'> St</span></st1:PersonName><span
@@ -12859,14 +12859,14 @@ ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
       Nicolas</st1:PersonName> 17.<o:p></o:p></span></li>
 </ul>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>PITTRE Pierre praticien de MÝ
-Cl&eacute.ment notaire Royal et + BUSSAC Catherine. Ý <span style='color:red'>Angoul&ecirc.me
+<p class=MsoNormal><span style='font-size:10.0pt'>PITTRE Pierre praticien de M
+Cl&eacute.ment notaire Royal et + BUSSAC Catherine.  <span style='color:red'>Angoul&ecirc.me
 16</span>. dt <st1:PersonName ProductID="La Rochelle St Barth&eacute.l&eacute.my" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName>
  Barth&eacute.l&eacute.my</st1:PersonName> 17.<o:p></o:p></span></p>
 
-<p class=MsoNormal><span style='font-size:10.0pt'>BARRE Louise de + MÝ Jean
-huissier et DAGUERRE Louise. Ý et dt <st1:PersonName
+<p class=MsoNormal><span style='font-size:10.0pt'>BARRE Louise de + M Jean
+huissier et DAGUERRE Louise.  et dt <st1:PersonName
 ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName> Nicolas</st1:PersonName>
 17.<o:p></o:p></span></p>
@@ -12881,10 +12881,10 @@ ProductID="La Rochelle St Nicolas" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>PRAUD Jean de + Pierre et +
-MERCERON Claude. Ý <span style='color:red'>Puymoyen Angoullesme 16</span>.<o:p></o:p></span></p>
+MERCERON Claude.  <span style='color:red'>Puymoyen Angoullesme 16</span>.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>CARTEAU Jeanne de Louis
-laboureur et PEROTIN Jeanne. Ý Dompierre 17. dt <st1:PersonName
+laboureur et PEROTIN Jeanne.  Dompierre 17. dt <st1:PersonName
 ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Sauveur</st1:PersonName>
@@ -12900,11 +12900,11 @@ ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>RULLIER Pierre notaire &agrave.
-Mornac de Fran&ccedil.ois conseiller du Roy et PIGORNET Marie. Ý <span
+Mornac de Fran&ccedil.ois conseiller du Roy et PIGORNET Marie.  <span
 style='color:red'>Angoul&ecirc.me St Andr&eacute. 16.<o:p></o:p></span></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VALLARDON Marguerite de Ren&eacute.
-marchand et BRUNEAU Marie. Ý et dt <st1:PersonName
+marchand et BRUNEAU Marie.  et dt <st1:PersonName
 ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> St</st1:PersonName> Sauveur</st1:PersonName>
@@ -12920,14 +12920,14 @@ ProductID="La Rochelle St Sauveur" w:st="on"><st1:PersonName
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>SIMON Jean gar&ccedil.on chirurgien
-de + MÝ Jean procureur et TIBERGE Marie Anne. Ý <span style='color:red'>Verteuil
+de + M Jean procureur et TIBERGE Marie Anne.  <span style='color:red'>Verteuil
 en Angoumois 16</span>. dt <st1:PersonName ProductID="La Rochelle N D" w:st="on"><st1:PersonName
  ProductID="La Rochelle N" w:st="on"><st1:PersonName ProductID="La Rochelle"
   w:st="on">La Rochelle</st1:PersonName> N</st1:PersonName> D</st1:PersonName>
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>LEZEAU Marie Anne de + Marc
-maitre cordonnier et (FABRY Marie Anne remari&eacute.e avec PHOCTU Jean) Ý <st1:PersonName
+maitre cordonnier et (FABRY Marie Anne remari&eacute.e avec PHOCTU Jean)  <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> et dt <st1:PersonName
 ProductID="La Rochelle N D" w:st="on"><st1:PersonName ProductID="La Rochelle N"
  w:st="on">La Rochelle N</st1:PersonName> D</st1:PersonName> 17.<o:p></o:p></span></p>
@@ -12942,13 +12942,13 @@ ProductID="La Rochelle N D" w:st="on"><st1:PersonName ProductID="La Rochelle N"
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>TACHET Jean gar&ccedil.on thonnelier
-de + Jean et + CAROT Marguerite. Ý <span style='color:red'>St Sulpice en
+de + Jean et + CAROT Marguerite.  <span style='color:red'>St Sulpice en
 Angoumois 16</span>. dt <st1:PersonName ProductID="La Rochelle N D" w:st="on"><st1:PersonName
  ProductID="La Rochelle N" w:st="on">La Rochelle N</st1:PersonName> D</st1:PersonName>
 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VERON Louise de + Pierre et +
-LAVERGNE Anne. Ý St Martin Ile de R&eacute. 17. dt <st1:PersonName
+LAVERGNE Anne.  St Martin Ile de R&eacute. 17. dt <st1:PersonName
 ProductID="La Rochelle N D" w:st="on"><st1:PersonName ProductID="La Rochelle N"
  w:st="on">La Rochelle N</st1:PersonName> D</st1:PersonName> 17.<o:p></o:p></span></p>
 
@@ -12961,13 +12961,13 @@ ProductID="La Rochelle N D" w:st="on"><st1:PersonName ProductID="La Rochelle N"
 </ul>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>VOYS Jacques chirurgien sur
-les vaisseaux marchands de Jean et + BOUET Anne. Ý <span style='color:red'>Cognac
+les vaisseaux marchands de Jean et + BOUET Anne.  <span style='color:red'>Cognac
 en Angoumois 16</span>. dt <st1:PersonName ProductID="La Rochelle St Jean"
 w:st="on"><st1:PersonName ProductID="La Rochelle St" w:st="on">La Rochelle St</st1:PersonName>
  Jean</st1:PersonName> 17.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='font-size:10.0pt'>DESJAN Marie Anne de + Jean
-maitre thailleur d’habits et VIBERT Marguerite. Ý et <st1:PersonName
+maitre thailleur d&acute;habits et VIBERT Marguerite.  et <st1:PersonName
 ProductID="La Rochelle" w:st="on">La Rochelle</st1:PersonName> et dt <st1:PersonName
 ProductID="La Rochelle St Jean" w:st="on"><st1:PersonName
  ProductID="La Rochelle St" w:st="on"><st1:PersonName ProductID="La Rochelle"
