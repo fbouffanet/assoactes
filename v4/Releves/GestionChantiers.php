@@ -312,19 +312,19 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu,$pi_idf_releveur_visu)
    {
       $i_session_initiale = isset($_SESSION['initiale_statcom']) ? $_SESSION['initiale_statcom'] : $a_initiales_communes[0];
       $gc_initiale = empty($_GET['initiale_statcom']) ? $i_session_initiale : $_GET['initiale_statcom'];   
-      if (!in_array($gc_initiale,$a_initiales_communes))
+      if (!in_array(utf8_vers_cp1252($gc_initiale),$a_initiales_communes))
         $gc_initiale=$a_initiales_communes[0];
       $_SESSION['initiale_statcom'] = $gc_initiale;
       print('<div class="text-center"><ul class="pagination">');
       foreach ($a_initiales_communes as $c_initiale)
       {
         if ($c_initiale==$gc_initiale)
-           print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
+           print("<li class=\"page-item active\"><span class=\"page-link\">".cp1252_vers_utf8($c_initiale)."<span class=\"sr-only\">(current)</span></span></li>");
         else
-           print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=$c_initiale&idf_statut_visu=$pi_idf_statut_visu\" class=\"page-item\">$c_initiale</a></li>");
+           print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=".cp1252_vers_utf8($c_initiale)."&idf_statut_visu=$pi_idf_statut_visu\" class=\"page-item\">".cp1252_vers_utf8($c_initiale)."</a></li>");
       }
       print("</ul></div>");
-      $st_requete = "select ch.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relev&eacute; papier' end), concat(ad.nom,'  ',ad.prenom,' (',ad.idf,')') from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) join `adherent` ad on (ch.id_releveur = ad.idf) where ca.nom like '$gc_initiale%'";
+      $st_requete = "select ch.idf, ca.nom, r.fourchette, (select case r.support when 1 then 'Acte authentique' when 2 then 'Photo' when 3 then 'Relev&eacute; papier' end), concat(ad.nom,'  ',ad.prenom,' (',ad.idf,')') from `chantiers` ch join `documents` r on (ch.id_document = r.idf) join `commune_acte` ca  on (r.id_commune = ca.idf ) join `adherent` ad on (ch.id_releveur = ad.idf) where ca.nom like '".utf8_vers_cp1252($gc_initiale)."%'";
       $a_clauses =array();
       if (!empty($pi_idf_statut_visu))
 	     $a_clauses[] = "ch.statut=$pi_idf_statut_visu";
@@ -336,7 +336,7 @@ function menu_liste($rconnexionBD,$pi_idf_statut_visu,$pi_idf_releveur_visu)
 	     $st_requete .= " and  $st_clauses";
       } 
       $st_requete.= " order by ca.nom, ad.nom";   
-      $a_liste_chantiers = $rconnexionBD->liste_valeur_par_clef($st_requete);
+	  $a_liste_chantiers = $rconnexionBD->liste_valeur_par_clef($st_requete);
       print("</form><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"suppression_chantiers\">"); 
       $i_nb_chantiers = count($a_liste_chantiers);
        
@@ -472,8 +472,7 @@ function menu_edition($pi_id_document,$pi_id_releveur,$pi_type_acte,$pst_convent
 	print("<span class=\"input-group-btn\"><button type=\"button\" id=aujourdhui class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-calendar\"></span> Aujourd'hui</button></span>");
 	print('</div>');
 	print('</div>');
-	print('</div>');
-	
+	print('</div>');	
 	
 	$pst_fin = ($pst_fin != '00/00/0000') ? $pst_fin : '';
 	print('<div class="form-group row">');   
