@@ -118,7 +118,7 @@ $connexionBD->ferme();
       <td >Cession</td>
       <td >AUBOIN Catherine</td>
       <td  align=right x:num>823</td>
-      <td >Jean DOMMET, L&eacuteonard AUBOIN et Frse DOMMET…</td>
+      <td >Jean DOMMET, L&eacuteonard AUBOIN et Frse DOMMET. . .</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1710</td>
@@ -236,7 +236,7 @@ $connexionBD->ferme();
       <td >Proc&egraves verbal</td>
       <td >AUBOIN L&eacuteonard</td>
       <td  align=right x:num>1141</td>
-      <td >contre Pierre IRVOIX (histoire de b&oeligufs…)</td>
+      <td >contre Pierre IRVOIX (histoire de b&oelig;ufs. . .)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
@@ -474,7 +474,7 @@ $connexionBD->ferme();
       <td >Partage</td>
       <td >BARREAU Marie</td>
       <td  align=right x:num>749</td>
-      <td >Jean ROUFFIGNAC et Suzanne BASSET…</td>
+      <td >Jean ROUFFIGNAC et Suzanne BASSET. . .</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1693</td>
@@ -1682,7 +1682,7 @@ $connexionBD->ferme();
       <td >Ferme</td>
       <td >BRISSAUD Antoine</td>
       <td  align=right x:num>870</td>
-      <td >et Jeanne MARTIN de P. DUBOIS (agriers, terrages…)</td>
+      <td >et Jeanne MARTIN de P. DUBOIS (agriers, terrages. . .)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1677</td>
@@ -3217,7 +3217,7 @@ $connexionBD->ferme();
       <td >Partage</td>
       <td >DUPUY Helie</td>
       <td  align=right x:num>778</td>
-      <td >Jacques COUPEAU et Marguerite JAYET …</td>
+      <td >Jacques COUPEAU et Marguerite JAYET . . .</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1704</td>
@@ -5306,7 +5306,7 @@ $connexionBD->ferme();
       <td >Reconnaissance</td>
       <td >PAPIN Jean</td>
       <td  align=right x:num>863</td>
-      <td >et Marie BOUCHAUD, et autres BOUCHAUD…</td>
+      <td >et Marie BOUCHAUD, et autres BOUCHAUD. . .</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1690</td>
@@ -5378,7 +5378,7 @@ $connexionBD->ferme();
       <td >Proc&egraves verbal</td>
       <td >PAPIN Michel</td>
       <td  align=right x:num>1120</td>
-      <td >et Jean son fils (terre de raves et coups…)</td>
+      <td >et Jean son fils (terre de raves et coups. . .)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1703</td>
@@ -6061,7 +6061,7 @@ $connexionBD->ferme();
       <td >Inventaire</td>
       <td >ROUHIER Pierre</td>
       <td  align=right x:num>776</td>
-      <td >Fran&ccediloise SURRAUD - Jacques ROUHIER,  JOLLY…</td>
+      <td >Fran&ccediloise SURRAUD - Jacques ROUHIER,  JOLLY. . .</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1750</td>
@@ -6989,7 +6989,7 @@ $connexionBD->ferme();
       <td >Transaction</td>
       <td >TOURNIER Jean le jeune</td>
       <td  align=right x:num>917</td>
-      <td >et Marie RAVEAU, Jean RIVAUD, NOBLESSE…</td>
+      <td >et Marie RAVEAU, Jean RIVAUD, NOBLESSE. . .</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1636</td>
@@ -9251,7 +9251,7 @@ $connexionBD->ferme();
       <td >Ferme</td>
       <td >Guillaume DARS et Geremie MARANTIN</td>
       <td  align=right x:num>1030</td>
-      <td >aux BARRIEREs (de noix…)</td>
+      <td >aux BARRIEREs (de noix. . .)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1656</td>
@@ -11258,7 +11258,7 @@ $connexionBD->ferme();
       <td >Arrentement</td>
       <td >FAURE, COUPRIE, PEYRONNET</td>
       <td  align=right x:num>874</td>
-      <td class=xl4020222>cf les FAURE-PEYRONNET…</td>
+      <td class=xl4020222>cf les FAURE-PEYRONNET. . .</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1666</td>
@@ -11366,7 +11366,7 @@ $connexionBD->ferme();
       <td >March&eacute</td>
       <td >Louis DESCARSELLE et David CLERGEAU</td>
       <td  align=right x:num>1135</td>
-      <td >cheaux de bas…</td>
+      <td >cheaux de bas. . .</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1666</td>
@@ -11450,7 +11450,7 @@ $connexionBD->ferme();
       <td >Cession</td>
       <td >&agrave Martial SIMARD des h&eacuter. de Pierre SIMARD</td>
       <td  align=right x:num>1141</td>
-      <td >Coupillauds, Bigets, Girauds…</td>
+      <td >Coupillauds, Bigets, Girauds. . .</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1666</td>
@@ -12070,7 +12070,7 @@ $connexionBD->ferme();
       <td >March&eacute</td>
       <td >Fran&ccedilois DECARSELLE et Pierre CLAUZURE</td>
       <td  align=right x:num>1136</td>
-      <td >cheaux de bas…</td>
+      <td >cheaux de bas. . .</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1668</td>
@@ -12496,7 +12496,7 @@ $connexionBD->ferme();
       <td >2E1111-230</td>
       <td >Angoul&ecircme</td>
       <td >D&eacutelaissement</td>
-      <td >Jean LIZEE &agrave Jacques LIZEE, COQUIAUD…</td>
+      <td >Jean LIZEE &agrave Jacques LIZEE, COQUIAUD. . .</td>
       <td  align=right x:num>962</td>
       <td >et Jeanne LIZEE sa femme</td>
     </tr>
@@ -15229,7 +15229,7 @@ $connexionBD->ferme();
       <td >Sommation</td>
       <td >Pierre GONTIER &agrave Pierre HERAUDEAU</td>
       <td  align=right x:num>1165</td>
-      <td >d&icircme de vigne…</td>
+      <td >d&icircme de vigne. . .</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1678</td>
@@ -16523,7 +16523,7 @@ $connexionBD->ferme();
       <td >2E4296-20</td>
       <td >Mornac</td>
       <td >Mariage</td>
-      <td >Jehan et Fran&ccediloise ESCOUPEAU et…</td>
+      <td >Jehan et Fran&ccediloise ESCOUPEAU et. . .</td>
       <td  align=right x:num>881</td>
       <td >Jehanne et Pierre SEGUIN</td>
     </tr>
@@ -18469,7 +18469,7 @@ $connexionBD->ferme();
       <td >Transaction</td>
       <td >Fran&ccediloise LARMAT et Fran&ccedilois IMBERT</td>
       <td  align=right x:num>921</td>
-      <td >Hommicide…</td>
+      <td >Hommicide. . .</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1692</td>
@@ -18671,7 +18671,7 @@ $connexionBD->ferme();
       <td >Transaction</td>
       <td >DESCARSELLE, BOITEAU</td>
       <td  align=right x:num>918</td>
-      <td >MARCHAT, GOUGNET…</td>
+      <td >MARCHAT, GOUGNET. . .</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1693</td>
@@ -19545,7 +19545,7 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >Jean CONTE et Jacquette TALLON</td>
       <td  align=right x:num>1148</td>
-      <td >(Claude GUILHAUMEAU…)</td>
+      <td >(Claude GUILHAUMEAU. . .)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1699</td>
@@ -19984,7 +19984,7 @@ $connexionBD->ferme();
       <td >Mariage</td>
       <td >Guillaume GEMONT et Jeanne COMBRET</td>
       <td  align=right x:num>801</td>
-      <td >Cath. ROY voir Arnaud ROY…</td>
+      <td >Cath. ROY voir Arnaud ROY. . .</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1702</td>
@@ -20008,7 +20008,7 @@ $connexionBD->ferme();
       <td >Vente</td>
       <td >Jean DARS et Jeanne PAPONNET</td>
       <td  align=right x:num>1016</td>
-      <td >(Joseph DARS oncle…)</td>
+      <td >(Joseph DARS oncle. . .)</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1702</td>
@@ -20184,7 +20184,7 @@ $connexionBD->ferme();
       <td >Proc&egraves-verbal</td>
       <td >Etienne MAYOU</td>
       <td  align=right x:num>1016</td>
-      <td >et SURRAUDs…</td>
+      <td >et SURRAUDs. . .</td>
     </tr>
     <tr height=17> 
       <td height=17  align=right x:num>1703</td>
@@ -22731,7 +22731,7 @@ $connexionBD->ferme();
       <td >2E251-100</td>
       <td >Angoul&ecircme</td>
       <td >Partage</td>
-      <td > TEXIER - Jean GABORIT et Jeanne TEXIER …</td>
+      <td > TEXIER - Jean GABORIT et Jeanne TEXIER . . .</td>
       <td  align=right x:num>779</td>
       <td >&nbsp;</td>
     </tr>
