@@ -386,7 +386,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
     $i_nb_temoins=0;
     $i_nb_personnes=0;
     foreach ($a_personnes as $i_idf_personne => $a_personne)
-    {
+    { 
 
       list($i_idf_type_presence,$c_sexe,$st_patronyme,$st_prenom,$i_idf_origine,$st_date_naissance,$st_age,$i_idf_profession,$st_commentaires,$i_idf_pere,$i_idf_mere,$i_est_decede) = $a_personne;
 
