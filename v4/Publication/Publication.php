@@ -132,8 +132,8 @@ function export_nai_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 	*/
 
 
-
-   print "Publication des naissances de la commune <b> $st_nom_commune</b> <br>";
+   $st_nom_commune1 = utf8_encode ($st_nom_commune);
+   print "Publication des naissances de la commune <b> $st_nom_commune1</b> <br>";
 
 }
 
