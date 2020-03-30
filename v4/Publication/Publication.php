@@ -132,8 +132,8 @@ function export_nai_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 	*/
 
 
-
-   print "Publication des naissances de la commune <b> $st_nom_commune</b> <br>";
+   $st_nom_commune1 = utf8_encode ($st_nom_commune);
+   print "Publication des naissances de la commune <b> $st_nom_commune1</b> <br>";
 
 }
 
@@ -242,7 +242,8 @@ function export_dec_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
       fwrite($pf,(implode(';',$a_champs)));
       fwrite($pf,"\r\n");
    }
-    print "Publication des d&egrave;c&eacute;s de la commune $st_nom_commune<br> <br>";
+    $st_nom_commune1 = utf8_encode ($st_nom_commune);
+    print "Publication des d&egrave;c&eacute;s de la commune $st_nom_commune1<br> <br>";
 }
 
 /**
@@ -356,7 +357,8 @@ function export_mar_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
   fwrite($pf,(implode(';',$a_champs)));
   fwrite($pf,"\r\n");
   }
-  print "Publication des mariages de la commune $st_nom_commune<br> <br>";
+  $st_nom_commune1 = utf8_encode ($st_nom_commune);
+  print "Publication des mariages de la commune $st_nom_commune1<br> <br>";
 }
 
 
@@ -384,7 +386,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
     $i_nb_temoins=0;
     $i_nb_personnes=0;
     foreach ($a_personnes as $i_idf_personne => $a_personne)
-    {
+    { 
 
       list($i_idf_type_presence,$c_sexe,$st_patronyme,$st_prenom,$i_idf_origine,$st_date_naissance,$st_age,$i_idf_profession,$st_commentaires,$i_idf_pere,$i_idf_mere,$i_est_decede) = $a_personne;
 
@@ -481,7 +483,8 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   fwrite($pf,(implode(';',$a_champs)));
   fwrite($pf,"\r\n");
   }
-  print "Publication des divers de la commune $st_nom_commune<br> <br>";
+  $st_nom_commune1 = utf8_encode ($st_nom_commune);
+  print "Publication des divers de la commune $st_nom_commune1<br> <br>";
 
 }
 
