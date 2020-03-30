@@ -237,7 +237,7 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
 		print('<div class="text-center"><ul class="pagination">');
 		foreach ($a_initiales_communes as $c_initiale)
 		{
-			if ($c_initiale==$gc_initiale)
+			if ($c_initiale==utf8_vers_cp1252($gc_initiale))
 				print("<li class=\"page-item active\"><span class=\"page-link\">".cp1252_vers_utf8($c_initiale)."<span class=\"sr-only\">(current)</span></span></li>");
 			else
 				print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_com=".cp1252_vers_utf8($c_initiale)."\" class=\"page-item\">".cp1252_vers_utf8($c_initiale)."</a></li>");
