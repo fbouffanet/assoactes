@@ -163,7 +163,7 @@ foreach ($a_communes as $i_insee => $a_infos)
      else
         $i_min_reg=0;
      $i_min_dep = min3val($i_min_bap,$i_min_mar,$i_min_sep);
-     $st_info_bulle.=cp1252_vers_utf8($st_commune' ';
+     $st_info_bulle.=cp1252_vers_utf8($st_commune.' ';
      $st_depouillements.= chaine_intervalle('B',$i_min_bap,$i_max_bap) . ' * ';
      $st_depouillements.= chaine_intervalle('M',$i_min_mar,$i_max_mar) . ' * ';
      $st_depouillements.= chaine_intervalle('S',$i_min_sep,$i_max_sep);
