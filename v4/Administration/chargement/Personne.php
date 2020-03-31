@@ -569,7 +569,7 @@ class Personne
 																 if ( !empty( $this -> st_patronyme ) )
 																				 $st_chaine .= sprintf( "%s %s", self::cp1252_vers_utf8($this -> st_patronyme), self::cp1252_vers_utf8($this -> st_prenom) );
 																 if ( !empty( $this -> st_profession ) )
-																				 $st_chaine .= sprintf( " Profession de %s", $this -> st_profession );
+																				 $st_chaine .= sprintf( " Profession de %s", self::cp1252_vers_utf8($this -> st_profession) );
 																 $st_chaine .= ' ' . self::cp1252_vers_utf8($this -> st_commentaire);
 																 $st_chaine .= "\n";
 																 $i_nb_lignes = 1;
