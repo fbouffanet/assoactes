@@ -257,14 +257,14 @@ function menu_liste($pconnexionBD)
    $_SESSION['initiale'] = $gc_initiale;   
    foreach ($a_initiales_communes as $c_initiale)
    {
-     if ($c_initiale==$gc_initiale)
+     if ($c_initiale==utf8_vers_cp1252($gc_initiale))
         print("<li class=\"page-item active\"><span class=\"page-link\">".cp1252_vers_utf8($c_initiale)."<span class=\"sr-only\">(current)</span></span></li>");
      else
-        print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale=$c_initiale\">".cp1252_vers_utf8($c_initiale)."</a></li>");
+        print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale=".cp1252_vers_utf8($c_initiale)."\">".cp1252_vers_utf8($c_initiale)."</a></li>");
    }
    print("</ul></div></div>");
    
-   $st_requete = "select idf,nom from commune_acte where nom like '$gc_initiale%' order by nom";
+   $st_requete = "select idf,nom from commune_acte where nom like '".utf8_vers_cp1252($gc_initiale)."%' order by nom";
    $a_liste_communes = $pconnexionBD->liste_valeur_par_clef($st_requete);
    $i_nb_communes=count($a_liste_communes);
    if ($i_nb_communes!=0)

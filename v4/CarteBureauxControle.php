@@ -100,6 +100,7 @@
 require_once 'Commun/config.php';
 require_once 'Commun/constantes.php';
 require_once 'Commun/ConnexionBD.php';
+require_once('Commun/commun.php');
 
 $a_communes = array();
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
@@ -119,10 +120,10 @@ foreach ($a_communes as $i_idf_commune => $a_infos)
     if ($st_bureau_controle=='O')
     {
         $st_est_bureau = true;
-        $st_info_bulle .= "$st_commune - Bureau de contrôle du $st_date_min_controle au $st_date_max_controle<br>\n";    
+        $st_info_bulle .= cp1252_vers_utf8($st_commune)." - Bureau de contrôle du $st_date_min_controle au $st_date_max_controle<br>\n";    
     }
     else
-       $st_info_bulle .= "$st_commune - Pas de bureau de contrôle<br>\n"; 
+       $st_info_bulle .= cp1252_vers_utf8($st_commune)." - Pas de bureau de contrôle<br>\n"; 
   }
   if ($st_est_bureau)
     print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"coral\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
