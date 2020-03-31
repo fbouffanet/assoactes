@@ -206,9 +206,9 @@ function affiche_actes_saisis($pconnexionBD,$pi_idf_repertoire,$pi_format,$pi_pa
 		    {
 			   list($i_idf_acte,$i_jour,$st_date_rep,$st_type,$st_nom1,$st_prenom1,$st_nom2,$st_prenom2,$st_paroisse,$st_commentaires)=$a_acte;
          if ($pi_mois_courant==0)
-           print sprintf("<tr><td>%4d</td><td>Sans Mois</td><td>%d</td><td>&nbsp;</td><td>%s</td>",$pi_annee_courante,$i_jour,$st_date_rep,$st_type);
+           print sprintf("<tr><td>%4d</td><td>Sans Mois</td><td>%d</td><td>&nbsp;</td><td>%s</td>",$pi_annee_courante,$i_jour,$st_date_rep,cp1252_vers_utf8($st_type));
          else
-			     print sprintf("<tr><td>%4d</td><td>%s</td><td>%d</td><td>%s</td><td>%s</td>",$pi_annee_courante,$ga_mois[$pi_mois_courant],$i_jour,$st_date_rep,$st_type);
+			     print sprintf("<tr><td>%4d</td><td>%s</td><td>%d</td><td>%s</td><td>%s</td>",$pi_annee_courante,$ga_mois[$pi_mois_courant],$i_jour,$st_date_rep,cp1252_vers_utf8($st_type));
 			   switch ($pi_format)
 			   {
 				    case 0:
