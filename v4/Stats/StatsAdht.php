@@ -248,7 +248,7 @@ if (isset($gi_idf_adherent ))
             if (array_key_exists($i_idf_acte,$a_liste_actes))
             {
               list($st_date_acte,$st_parties)=$a_liste_actes[$i_idf_acte];
-              $a_tableau_affichage[] = array($st_date_dde,$st_adresse_ip,$st_date_acte,cp1252_vers_utf8($st_parties));
+              $a_tableau_affichage[] = array($st_date_dde,$st_adresse_ip,$st_date_acte,$st_parties);
             }
             else
             {
@@ -324,7 +324,7 @@ if (isset($gi_idf_adherent ))
             if (array_key_exists($i_idf_acte,$a_liste_actes))
             {
               list($st_date_acte,$st_parties)=$a_liste_actes[$i_idf_acte];
-              $a_tableau_affichage[] = array($st_date_dde,$st_adresse_ip,cp1252_vers_utf8($st_commune),$st_date_acte,cp1252_vers_utf8($st_parties));
+              $a_tableau_affichage[] = array($st_date_dde,$st_adresse_ip,$st_commune,$st_date_acte,$st_parties);
             }
             else
             {
