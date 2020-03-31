@@ -169,7 +169,7 @@ if (isset($gi_idf_adherent ))
               $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page_recherches_adht',$nb,100,DELTA_NAVIGATION,$ga_fichiers_logs[$gi_idf_journal][2]);          
               $pagination->init_page_cour($gi_num_page);
               $pagination->affiche_entete_liste_select('RecherchesAdherents');
-              $pagination->affiche_tableau_simple($a_resultats);
+              $pagination->affiche_tableau_simple($a_resultats,false);
               $pagination->affiche_entete_liste_select('RecherchesAdherents');
               print("<input type=hidden name=mode value='AFFICHE_JOURNAL'>");
               print("</form>");  
