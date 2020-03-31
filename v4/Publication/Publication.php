@@ -265,7 +265,6 @@ function export_mar_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
   $a_conjoint_h=$pconnexionBD->liste_valeur_par_clef("select idf_epoux, idf_epouse from `union` join `personne` on (idf_epouse=idf) where idf_commune=$pi_idf_commune_acte and idf_source=$pi_idf_source and idf_type_acte=$pc_idf_type_acte and `personne`.idf_type_presence=".IDF_PRESENCE_EXCJT);
   $a_conjoint_f=$pconnexionBD->liste_valeur_par_clef("select idf_epouse, idf_epoux from `union` join `personne` on (idf_epoux=idf) where idf_commune=$pi_idf_commune_acte and idf_source=$pi_idf_source and idf_type_acte=$pc_idf_type_acte and `personne`.idf_type_presence=".IDF_PRESENCE_EXCJT);
-   print "$a_conjoint_f";
   foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
   {
     $a_champs = array();
@@ -380,9 +379,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
   $a_type_acte=$pconnexionBD->sql_select_multiple_par_idf("select idf, nom,sigle_nimegue from type_acte");
   $a_conjoint_h=$pconnexionBD->liste_valeur_par_clef("select idf_epoux, idf_epouse from `union` join `personne` on (idf_epouse=idf) where idf_commune=$pi_idf_commune_acte and idf_source=$pi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENSEMENT.") and idf_type_presence=".IDF_PRESENCE_EXCJT);
-  print "$a_conjoint_h";
   $a_conjoint_f=$pconnexionBD->liste_valeur_par_clef("select idf_epouse, idf_epoux from `union` join `personne` on (idf_epoux=idf) where idf_commune=$pi_idf_commune_acte and idf_source=$pi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENSEMENT.") and idf_type_presence=".IDF_PRESENCE_EXCJT);
-  print "$a_conjoint_f";
   foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
   {
     $a_champs = array();
