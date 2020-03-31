@@ -374,7 +374,8 @@ function export_mar_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 
 function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-  list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
+  
+list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
   $a_commune_personne=$pconnexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
   $a_type_acte=$pconnexionBD->sql_select_multiple_par_idf("select idf, nom,sigle_nimegue from type_acte");
@@ -615,9 +616,9 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 
 // Rajout PL sur les dates ***********************************************************
 // PL 23/04/2014  pour n'avoir que les CM, remplacement de
-//$sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENSEMENT.")";
+$sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENSEMENT.")";
 // par
-$sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte = 2";		// CM --> 2
+//$sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte = 2";		// CM --> 2
 
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
 if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= $g_pl_date_fin";
