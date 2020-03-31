@@ -174,10 +174,10 @@ else if ($gi_idf_type_acte==-1)
     
 	// Calcul de la liste des initiales
 	if ($gst_patronyme=='')
-		$st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf) where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune  having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z') ORDER BY init";
+		$st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf) where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune  ORDER BY init";
 	else
-		$st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune  and p.libelle $gst_clause_patronyme having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')  ORDER BY init";	
-	$connexionBD->initialise_params(array(":patro"=>$gst_patronyme));   
+		$st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune  and p.libelle $gst_clause_patronyme  ORDER BY init";	
+	$connexionBD->initialise_params(array(":patro"=>utf8_vers_cp1252($gst_patronyme)));   
 	//print("Req=$st_requete< br>");
 	$a_initiales_patronymes = $connexionBD->sql_select($st_requete);
 	if (count($a_initiales_patronymes)>0)
@@ -192,7 +192,7 @@ else if ($gi_idf_type_acte==-1)
 			$gc_initiale = $_GET['initiale_patcom'];
 			$gi_num_page=1;
 		}		
-		if (!in_array($gc_initiale,$a_initiales_patronymes)) 
+		if (!in_array(utf8_vers_cp1252($gc_initiale),$a_initiales_patronymes)) 
 		{
 			$gc_initiale=array_key_exists(0,$a_initiales_patronymes) ? $a_initiales_patronymes[0]:'A';
 			$gi_num_page=1;
@@ -202,21 +202,21 @@ else if ($gi_idf_type_acte==-1)
 		// Affichage de la liste des initiales des patronymes  
 		foreach ($a_initiales_patronymes as $c_initiale)
 		{
-			if ($c_initiale==$gc_initiale)
-				print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
+			if ($c_initiale==utf8_vers_cp1252($gc_initiale))
+				print("<li class=\"page-item active\"><span class=\"page-link\">".cp1252_vers_utf8($c_initiale)."<span class=\"sr-only\">(current)</span></span></li>");
 			else
-				print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_patcom=$c_initiale\">$c_initiale</a></li>");
+				print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_patcom=".cp1252_vers_utf8($c_initiale)."\">".cp1252_vers_utf8($c_initiale)."</a></li>");
 		}
 		print("</ul></div>");
 	}
 	else 
 		$gc_initiale="\%";
 	if ($gst_patronyme=='')
-		$st_requete="select p.libelle,sp.idf_type_acte,ta.nom, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and p.libelle like '$gc_initiale%' order by p.libelle,ta.nom";
+		$st_requete="select p.libelle,sp.idf_type_acte,ta.nom, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and p.libelle like '".utf8_vers_cp1252($gc_initiale)."%' order by p.libelle,ta.nom";
     else
     {
-      $st_requete="select p.libelle,sp.idf_type_acte,ta.nom, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and p.libelle like '$gc_initiale%'  and p.libelle $gst_clause_patronyme order by p.libelle,ta.nom";
-      $connexionBD->initialise_params(array(":patro"=>$gst_patronyme)); 
+      $st_requete="select p.libelle,sp.idf_type_acte,ta.nom, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and p.libelle like '".utf8_vers_cp1252($gc_initiale)."%'  and p.libelle $gst_clause_patronyme order by p.libelle,ta.nom";
+      $connexionBD->initialise_params(array(":patro"=>utf8_vers_cp1252($gst_patronyme))); 
 	}
 	$a_liste_stats = $connexionBD->sql_select_multiple($st_requete);
    
@@ -243,11 +243,11 @@ else
 {
    // Calcul de la liste des initiales
    if ($gst_patronyme=='')
-     $st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')  ORDER BY init";
+     $st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte  ORDER BY init";
    else
    {
-     $st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle $gst_clause_patronyme having init in ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')  ORDER BY init";
-     $connexionBD->initialise_params(array(":patro"=>$gst_patronyme)); 
+     $st_requete = "SELECT DISTINCT (left( p.libelle, 1 )) AS init FROM `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle $gst_clause_patronyme   ORDER BY init";
+     $connexionBD->initialise_params(array(":patro"=>utf8_vers_cp1252($gst_patronyme))); 
    }
 	$a_initiales_patronymes = $connexionBD->sql_select($st_requete);
 	if (count($a_initiales_patronymes)>0)
@@ -261,7 +261,7 @@ else
 			$gc_initiale =$_GET['initiale_patcom'];
 			$gi_num_page=1;
 		}
-		if (!in_array($gc_initiale,$a_initiales_patronymes))
+		if (!in_array(utf8_vers_cp1252($gc_initiale),$a_initiales_patronymes))
 		{
 			$gc_initiale=$a_initiales_patronymes[0];
 			$gi_num_page=1;
@@ -272,21 +272,21 @@ else
 		// Affichage de la liste des initiales des patronymes  
 		foreach ($a_initiales_patronymes as $c_initiale)
 		{
-			if ($c_initiale==$gc_initiale)
-				print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
+			if ($c_initiale==utf8_vers_cp1252($gc_initiale))
+				print("<li class=\"page-item active\"><span class=\"page-link\">".cp1252_vers_utf8($c_initiale)."<span class=\"sr-only\">(current)</span></span></li>");
 			else
-				print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_patcom=$c_initiale\">$c_initiale</a></li>");
+				print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_patcom=".cp1252_vers_utf8($c_initiale)."\">".cp1252_vers_utf8($c_initiale)."</a></li>");
 		}
 		print("</ul></div>");
 	}
 	else
 		$gc_initiale="\%";
 	if ($gst_patronyme=='')
-		$st_requete="select p.libelle, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle like '$gc_initiale%' order by p.libelle";
+		$st_requete="select p.libelle, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle like '".utf8_vers_cp1252($gc_initiale)."%' order by p.libelle";
 	else
 	{		
-		$st_requete="select p.libelle, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle like '$gc_initiale%' and p.libelle $gst_clause_patronyme order by p.libelle";
-		$connexionBD->initialise_params(array(":patro"=>$gst_patronyme)); 
+		$st_requete="select p.libelle, sp.annee_min,sp.annee_max,sp.nb_personnes from stats_patronyme sp join `patronyme` p on (sp.idf_patronyme=p.idf)  where sp.idf_source=$gi_idf_source and sp.idf_commune=$gi_idf_commune and sp.idf_type_acte=$gi_idf_type_acte and p.libelle like '".utf8_vers_cp1252($gc_initiale)."%' and p.libelle $gst_clause_patronyme order by p.libelle";
+		$connexionBD->initialise_params(array(":patro"=>utf8_vers_cp1252($gst_patronyme))); 
 	}
 	$a_liste_stats = $connexionBD->sql_select_multiple($st_requete);
 	$i_nb_stats= count($a_liste_stats);
