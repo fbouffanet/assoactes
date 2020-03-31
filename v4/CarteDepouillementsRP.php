@@ -18,7 +18,7 @@
 </head> 
 <body>
 <div class="container">
-<?php print('<?xml version="1.0" encoding="windows-1252"?>'); ?>
+<?php print('<?xml version="1.0" encoding="UTF-8"?>'); ?>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"

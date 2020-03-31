@@ -17,7 +17,7 @@
 <body>
 <div class="container">
 <div>Les bureaux de Burie, Chaux, Chevanceau, Montauziers, Saint-Aigulin et La Barde situ&eacute;s dans l'actuel d&eacute;partement de la Charente Maritime ne figurent pas sur cette carte</div>
-<?php print('<?xml version="1.0" encoding="windows-1252"?>'); ?>
+<?php print('<?xml version="1.0" encoding="UTF-8"?>'); ?>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -92,9 +92,9 @@
 
 <g class="communes">
 <?php
-// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association Généalogique de la Charente)
+// Copyright (C) : Fabrice Bouffanet 2010-2019 (Association GÃ©nÃ©alogique de la Charente)
 // Ce programme est libre, vous pouvez le redistribuer et/ou le modifier selon les termes de la
-// Licence Publique Générale GPL GNU publiée par la Free Software Foundation
+// Licence Publique GÃ©nÃ©rale GPL GNU publiÃ©e par la Free Software Foundation
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 require_once 'Commun/config.php';
@@ -120,10 +120,10 @@ foreach ($a_communes as $i_idf_commune => $a_infos)
     if ($st_bureau_controle=='O')
     {
         $st_est_bureau = true;
-        $st_info_bulle .= cp1252_vers_utf8($st_commune)." - Bureau de contrôle du $st_date_min_controle au $st_date_max_controle<br>\n";    
+        $st_info_bulle .= cp1252_vers_utf8($st_commune)." - Bureau de contrÃ´le du $st_date_min_controle au $st_date_max_controle<br>\n";    
     }
     else
-       $st_info_bulle .= cp1252_vers_utf8($st_commune)." - Pas de bureau de contrôle<br>\n"; 
+       $st_info_bulle .= cp1252_vers_utf8($st_commune)." - Pas de bureau de contrÃ´le<br>\n"; 
   }
   if ($st_est_bureau)
     print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"coral\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
