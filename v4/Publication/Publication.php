@@ -379,8 +379,8 @@ list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select co
   $a_commune_personne=$pconnexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
   $a_type_acte=$pconnexionBD->sql_select_multiple_par_idf("select idf, nom,sigle_nimegue from type_acte");
-  $a_conjoint_h=$pconnexionBD->liste_valeur_par_clef("select idf_epoux, idf_epouse from `union` join `personne` on (idf_epouse=idf) where idf_commune=$pi_idf_commune_acte and idf_source=$pi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENSEMENT.") and idf_type_presence=".IDF_PRESENCE_EXCJT);
-  $a_conjoint_f=$pconnexionBD->liste_valeur_par_clef("select idf_epouse, idf_epoux from `union` join `personne` on (idf_epoux=idf) where idf_commune=$pi_idf_commune_acte and idf_source=$pi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENSEMENT.") and idf_type_presence=".IDF_PRESENCE_EXCJT);
+  $a_conjoint_h=$pconnexionBD->liste_valeur_par_clef("select idf_epoux, idf_epouse from `union` join `personne` on (idf_epouse=idf) where idf_commune=$pi_idf_commune_acte and idf_source=$pi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENS.") and idf_type_presence=".IDF_PRESENCE_EXCJT);
+  $a_conjoint_f=$pconnexionBD->liste_valeur_par_clef("select idf_epouse, idf_epoux from `union` join `personne` on (idf_epoux=idf) where idf_commune=$pi_idf_commune_acte and idf_source=$pi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENS.") and idf_type_presence=".IDF_PRESENCE_EXCJT);
   foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
   {
     $a_champs = array();
@@ -616,7 +616,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 
 // Rajout PL sur les dates ***********************************************************
 // PL 23/04/2014  pour n'avoir que les CM, remplacement de
-$sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENSEMENT.")";
+$sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENS.")";
 print "$sqltmp";
 
 // par
@@ -630,7 +630,7 @@ $results= $connexionBD->liste_valeur_par_clef($sqltmp);
 $nb_rows = count($results);
 // pour r?cup?rer l'ann?e mini et maxi
 // PL 23/04/2014  pour n'avoir que les CM, remplacement de
-$sqltmp = "select min(annee) as annee_deb, max(annee) as annee_fin from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENSEMENT.")";
+$sqltmp = "select min(annee) as annee_deb, max(annee) as annee_fin from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENS.")";
 //  par
 //$sqltmp = "select min(annee) as annee_deb, max(annee) as annee_fin from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte = 2";		// CM --> 2
 
