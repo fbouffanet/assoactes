@@ -520,11 +520,11 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
    if ($pst_nom_a_chercher=='')
    {
      $i_session_initiale = isset($_SESSION['initiale_adh']) ? $_SESSION['initiale_adh'] : $a_initiales_adherents[0];
-     $gc_initiale = empty($_GET['initiale_adh']) ? $i_session_initiale : utf8_vers_cp1252($_GET['initiale_adh']);
+     $gc_initiale = empty($_GET['initiale_adh']) ? $i_session_initiale : $_GET['initiale_adh'];
    }
    else
    {
-      $gc_initiale = strtoupper(substr(utf8_vers_cp1252($pst_nom_a_chercher),0,1));
+      $gc_initiale = strtoupper(substr($pst_nom_a_chercher,0,1));
       if ($gc_initiale=='*') $gc_initiale = $a_initiales_adherents[0];
    }
    if (!in_array($gc_initiale,$a_initiales_adherents))
@@ -534,9 +534,9 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
    {
 	 $c_initiale = cp1252_vers_utf8($c_initiale);  
      if ($c_initiale==$gc_initiale)
-        print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
+        print("<li class=\"page-item active\"><span class=\"page-link\">".cp1252_vers_utf8($c_initiale)."<span class=\"sr-only\">(current)</span></span></li>");
      else
-        print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_adh=$c_initiale\">$c_initiale</a></li>");
+        print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_adh=".cp1252_vers_utf8($c_initiale)."\">".cp1252_vers_utf8($c_initiale)."</a></li>");
    }
    print("</ul></div>");
    print("</div>");
@@ -555,10 +555,10 @@ function menu_liste($pconnexionBD,$pst_ident,$pst_nom_a_chercher,$pc_statut)
       $a_champs_recherche[':nom_a_chercher']=utf8_vers_cp1252($pst_nom_a_chercher);
    if (a_droits($pst_ident,DROIT_GESTION_ADHERENT))
    { 
-      $st_requete = ($pst_nom_a_chercher=='') ? "select adherent.idf,concat(prenom, ' ',adherent.nom),adherent.ident, email_perso, DATE_FORMAT(derniere_connexion,'%d/%m/%Y'),sa.nom from adherent join statut_adherent sa on (sa.idf=adherent.statut) where adherent.nom like '$gc_initiale%' $st_clause_statut" : "select adherent.idf,concat(prenom, ' ',adherent.nom),adherent.ident, email_perso, DATE_FORMAT(derniere_connexion,'%d/%m/%Y'),sa.nom from adherent join statut_adherent sa on (sa.idf=adherent.statut) where (adherent.nom like :nom_a_chercher or adherent.email_forum like :nom_a_chercher or adherent.email_perso like :nom_a_chercher or adherent.ip_connexion like :nom_a_chercher) $st_clause_statut";
+      $st_requete = ($pst_nom_a_chercher=='') ? "select adherent.idf,concat(prenom, ' ',adherent.nom),adherent.ident, email_perso, DATE_FORMAT(derniere_connexion,'%d/%m/%Y'),sa.nom from adherent join statut_adherent sa on (sa.idf=adherent.statut) where adherent.nom like '".utf8_vers_cp1252($gc_initiale)."%' $st_clause_statut" : "select adherent.idf,concat(prenom, ' ',adherent.nom),adherent.ident, email_perso, DATE_FORMAT(derniere_connexion,'%d/%m/%Y'),sa.nom from adherent join statut_adherent sa on (sa.idf=adherent.statut) where (adherent.nom like :nom_a_chercher or adherent.email_forum like :nom_a_chercher or adherent.email_perso like :nom_a_chercher or adherent.ip_connexion like :nom_a_chercher) $st_clause_statut";
    }
    else
-      $st_requete = ($pst_nom_a_chercher=='') ? "select concat(prenom, ' ',adherent.nom),adherent.idf, email_forum,site from adherent join statut_adherent sa on (sa.idf=adherent.statut) where adherent.nom like '$gc_initiale%' and statut in ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."','".ADHESION_HONNEUR."')" : "select concat(prenom, ' ',adherent.nom),adherent.idf, email_forum,site from adherent where adherent.nom like :nom_a_chercher and statut in ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."','".ADHESION_HONNEUR."')";
+      $st_requete = ($pst_nom_a_chercher=='') ? "select concat(prenom, ' ',adherent.nom),adherent.idf, email_forum,site from adherent join statut_adherent sa on (sa.idf=adherent.statut) where adherent.nom like '".utf8_vers_cp1252($gc_initiale)."%' and statut in ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."','".ADHESION_HONNEUR."')" : "select concat(prenom, ' ',adherent.nom),adherent.idf, email_forum,site from adherent where adherent.nom like :nom_a_chercher and statut in ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."','".ADHESION_HONNEUR."')";
     
    $st_requete .= ' order by adherent.nom,prenom';
    //print("Req=$st_requete<br>");
