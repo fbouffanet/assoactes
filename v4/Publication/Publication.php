@@ -243,7 +243,7 @@ function export_dec_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
       fwrite($pf,"\r\n");
    }
     $st_nom_commune1 = utf8_encode ($st_nom_commune);
-    print "Publication des d&egrave;c&eacute;s de la commune $st_nom_commune1<br> <br>";
+    print "Publication des d&egrave;c&eacute;s de la commune <b>   $st_nom_commune1</b> <br>";
 }
 
 /**
@@ -358,7 +358,7 @@ function export_mar_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
   fwrite($pf,"\r\n");
   }
   $st_nom_commune1 = utf8_encode ($st_nom_commune);
-  print "Publication des mariages de la commune $st_nom_commune1<br> <br>";
+  print "Publication des mariages de la commune <b> $st_nom_commune1</b> <br>";
 }
 
 
@@ -485,7 +485,7 @@ list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select co
   fwrite($pf,"\r\n");
   }
   $st_nom_commune1 = utf8_encode ($st_nom_commune);
-  print "Publication des divers de la commune $st_nom_commune1<br> <br>";
+  print "Publication des divers de la commune <b> $st_nom_commune1</b> <br>";
 
 }
 
@@ -617,9 +617,9 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 // Rajout PL sur les dates ***********************************************************
 // PL 23/04/2014  pour n'avoir que les CM, remplacement de
 $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENS.")";
-print "$sqltmp";
 
 // par
+
 //$sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte = 2";		// CM --> 2
 
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
