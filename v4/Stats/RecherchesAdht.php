@@ -142,7 +142,7 @@ if (isset($gi_idf_adherent ))
               if (!is_null($i_col_paroisse))
               {
                  if (array_key_exists($a_ligne[$i_col_paroisse],$a_communes_acte))
-                    $a_ligne[$i_col_paroisse]= $a_communes_acte[$a_ligne[$i_col_paroisse]];
+                    $a_ligne[$i_col_paroisse]= cp1252_vers_utf8($a_communes_acte[$a_ligne[$i_col_paroisse]]);
                  else
                     $a_ligne[$i_col_paroisse]= '';      
               }
