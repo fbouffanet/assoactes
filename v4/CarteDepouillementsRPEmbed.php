@@ -167,6 +167,7 @@ foreach ($a_communes as $i_insee => $a_infos)
      $st_depouillements.= chaine_intervalle('B',$i_min_bap,$i_max_bap) . ' * ';
      $st_depouillements.= chaine_intervalle('M',$i_min_mar,$i_max_mar) . ' * ';
      $st_depouillements.= chaine_intervalle('S',$i_min_sep,$i_max_sep);
+	 $st_info_bulle.="<br>";
 
      $st_info_bulle .= $st_depouillements;
 
