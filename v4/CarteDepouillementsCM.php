@@ -110,6 +110,7 @@
 require_once 'Commun/config.php';
 require_once 'Commun/constantes.php';
 require_once 'Commun/ConnexionBD.php';
+require_once('Commun/commun.php');
 
 $a_communes = array();
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
@@ -138,14 +139,14 @@ foreach ($a_communes as $i_idf_commune => $a_infos)
        {
           $i_nb_liasses_releves = $a_nb_liasses_cm[$i_idf_commune][$i_num_paroisse][0];
           $i_nb_tot_liasses_cm+= $i_nb_liasses_releves;
-          $st_info_bulle .= "$st_commune - $i_nb_liasses_releves/$i_nb_liasses liasses relevees<br>\n"; 
+          $st_info_bulle .= cp1252_vers_utf8($st_commune)." - $i_nb_liasses_releves/$i_nb_liasses liasses relevees<br>\n"; 
        }
        else   
-          $st_info_bulle .= "$st_commune - $i_nb_liasses liasses<br>\n"; 
+          $st_info_bulle .= cp1252_vers_utf8($st_commune)." - $i_nb_liasses liasses<br>\n"; 
     }
     else
     {
-      $st_info_bulle .= "$st_commune - pas de liasses<br>\n";            
+      $st_info_bulle .= cp1252_vers_utf8($st_commune)." - pas de liasses<br>\n";            
     }
   }
   if ($i_nb_tot_liasses==0)

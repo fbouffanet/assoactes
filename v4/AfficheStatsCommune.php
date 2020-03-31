@@ -174,8 +174,7 @@ switch ($gst_mode) {
         if (!empty($gst_commune_a_chercher))
         {
             $st_requete .= " where ca.nom like :recherche";
-			$gst_commune_a_chercher=utf8_vers_cp1252($gst_commune_a_chercher);
-            $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher));       
+            $connexionBD->initialise_params(array(":recherche"=>utf8_vers_cp1252($gst_commune_a_chercher)));       
         }
      }
      else
@@ -184,8 +183,7 @@ switch ($gst_mode) {
         if (!empty($gst_commune_a_chercher))
         {
             $st_requete .= " and ca.nom like :recherche";
-			$gst_commune_a_chercher=utf8_vers_cp1252($gst_commune_a_chercher);
-            $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher)); 
+            $connexionBD->initialise_params(array(":recherche"=>utf8_vers_cp1252($gst_commune_a_chercher))); 
         }
      }
      $st_requete .= " ORDER BY init";
