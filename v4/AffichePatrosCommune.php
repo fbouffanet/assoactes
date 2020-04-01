@@ -164,7 +164,6 @@ print("<label for=\"patro_patcom\" class=\"col-form-label col-md-2 col-md-offset
 print("<div class=\"col-md-4\"><input type=text id=patro_patcom name=patro_patcom size=15 maxlength=30 value=\"$gst_patronyme\" class=\"form-control\" aria-describedby=\"aideCommune\">");
 print('<small id="aideCommune" class="form-text text-muted">laisser * si aucun patronyme choisi</small></div><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Chercher</button></div>');
 
-$gst_patronyme=utf8_vers_cp1252($gst_patronyme);
 if (empty($gi_idf_commune))
 {
    print("<div class=\"form-row col-md-12\"><div class=\"text-center alert alert-danger\">Pas de donn&eacute;es</div></div>");
