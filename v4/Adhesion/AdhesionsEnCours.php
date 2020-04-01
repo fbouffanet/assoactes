@@ -74,11 +74,11 @@ function menu_liste($pconnexionBD)
    print('<div class="panel-body">');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    
-   $st_requete = "select idf,ins_nom,ins_prenom,ins_token,DATE_FORMAT(ins_date_paiement, \"%d/%m/%Y %H:%m\")  from inscription_prov order by idf desc";
+   $st_requete = "select idf,ins_nom,ins_prenom,ins_email_perso,ins_token,DATE_FORMAT(ins_date_paiement, \"%d/%m/%Y %H:%m\")  from inscription_prov order by idf desc";
    $a_liste_adhesions = $pconnexionBD->sql_select_multiple_par_idf($st_requete);   
    if (count($a_liste_adhesions)!=0)
    {        
-      $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_liste_adhesions),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Idf Adhesion','Nom','Pr&eacute;nom','Transaction','Date de paiement'));
+      $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_liste_adhesions),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Idf Adhesion','Nom','Pr&eacute;nom','Email','Transaction','Date de paiement'));
       $pagination->init_param_bd($pconnexionBD,$st_requete);
       $pagination->init_page_cour($gi_num_page_cour);
       $pagination->affiche_entete_liens_navigation();
@@ -86,9 +86,9 @@ function menu_liste($pconnexionBD)
      
       foreach ($a_liste_adhesions as $i_idf => $a_tab)
       {
-         list($st_nom,$st_prenom,$st_jeton,$st_date_paiement) = $a_tab;
+         list($st_nom,$st_prenom,$st_email,$st_jeton,$st_date_paiement) = $a_tab;
          $st_cmd = $st_jeton!=''? "<a class=\"btn btn-primary lien_edition\" href=\"".$_SERVER['PHP_SELF']."?jeton=$st_jeton\">Afficher</a>" : "Attente paiement";
-         $a_tableau_visualisation[]=array($i_idf,$st_nom,$st_prenom,$st_cmd,$st_date_paiement);
+         $a_tableau_visualisation[]=array($i_idf,$st_nom,$st_prenom,"<a href=mailto:$st_email>$st_email</a>",$st_cmd,$st_date_paiement);
       }
       $pagination->affiche_tableau_simple($a_tableau_visualisation);
      
