@@ -9,6 +9,6 @@ CREATE TABLE IF NOT EXISTS `demandes_adherent` (
   `idf_commune` smallint(5) unsigned NOT NULL COMMENT 'Commune de l''acte',
   `idf_acte` mediumint(11) unsigned DEFAULT NULL,
   `idf_type_acte` smallint(5) unsigned DEFAULT NULL,
-  `date_demande` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Date de la demande',
+  `date_demande` datetime NOT NULL COMMENT 'Date de la demande',
   PRIMARY KEY (`idf`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
