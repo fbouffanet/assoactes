@@ -684,7 +684,7 @@ class Acte {
          if ($this -> st_date_rep != '')
              $st_chaine .= sprintf(" (%s)", $this -> st_date_rep);
          $i_nb_lignes = 1;
-         $st_chaine .= sprintf(" %s %s\n", $this -> st_cote, $this -> st_libre);
+         $st_chaine .= sprintf(" %s %s\n", cp1252_vers_utf8($this -> st_cote), cp1252_vers_utf8($this -> st_libre));
          $c_sexe_intv = null;
          $b_pere_defini = false;
          foreach ($this -> a_liste_personnes as $o_pers)

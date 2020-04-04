@@ -18,7 +18,7 @@
 </head> 
 <body>
 <div class="container">
-<?php print('<?xml version="1.0" encoding="windows-1252"?>'); ?>
+<?php print('<?xml version="1.0" encoding="UTF-8"?>'); ?>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -101,6 +101,7 @@
 require_once 'Commun/config.php';
 require_once 'Commun/constantes.php';
 require_once 'Commun/ConnexionBD.php';
+require_once('Commun/commun.php');
 
 /*
 * Renvoie le minimum des 3 valeurs (vide si une des valeurs n'est pas définie)
@@ -173,7 +174,7 @@ foreach ($a_communes as $i_insee => $a_infos)
      else
         $i_min_reg=0;       
      $i_min_dep = min3val($i_min_bap,$i_min_mar,$i_min_sep);
-     $st_info_bulle.="$st_commune";
+     $st_info_bulle.= cp1252_vers_utf8($st_commune);
      $st_info_bulle.=chaine_intervalle('B',$i_min_bap,$i_max_bap);
      $st_info_bulle.=chaine_intervalle('M',$i_min_mar,$i_max_mar);
      $st_info_bulle.=chaine_intervalle('S',$i_min_sep,$i_max_sep);

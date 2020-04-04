@@ -174,8 +174,7 @@ switch ($gst_mode) {
         if (!empty($gst_commune_a_chercher))
         {
             $st_requete .= " where ca.nom like :recherche";
-			$gst_commune_a_chercher=utf8_vers_cp1252($gst_commune_a_chercher);
-            $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher));       
+            $connexionBD->initialise_params(array(":recherche"=>utf8_vers_cp1252($gst_commune_a_chercher)));       
         }
      }
      else
@@ -184,8 +183,7 @@ switch ($gst_mode) {
         if (!empty($gst_commune_a_chercher))
         {
             $st_requete .= " and ca.nom like :recherche";
-			$gst_commune_a_chercher=utf8_vers_cp1252($gst_commune_a_chercher);
-            $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher)); 
+            $connexionBD->initialise_params(array(":recherche"=>utf8_vers_cp1252($gst_commune_a_chercher))); 
         }
      }
      $st_requete .= " ORDER BY init";
@@ -200,15 +198,15 @@ switch ($gst_mode) {
 		    print('<ul class="pagination">'); 
         $i_session_initiale = isset($_SESSION['initiale_statcom']) ? $_SESSION['initiale_statcom'] : $a_initiales_communes[0];
         $gc_initiale = empty($_GET['initiale_statcom']) ? $i_session_initiale : $_GET['initiale_statcom'];   
-        if (!in_array($gc_initiale,$a_initiales_communes))
+        if (!in_array(utf8_vers_cp1252($gc_initiale),$a_initiales_communes))
           $gc_initiale=$a_initiales_communes[0];
         $_SESSION['initiale_statcom'] = $gc_initiale;
         foreach ($a_initiales_communes as $c_initiale)
         {
-          if ($c_initiale==$gc_initiale)
+          if ($c_initiale==utf8_vers_cp1252($gc_initiale))
             print("<li class=\"page-item active\"><span class=\"page-link\">".cp1252_vers_utf8($c_initiale)."<span class=\"sr-only\">(current)</span></span></li>");
           else
-           print("<li class=\"page-item\"><a class=\"page-link\" href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=$c_initiale&amp;idf_source=$gi_idf_source\">".cp1252_vers_utf8($c_initiale)."</a></li>");
+           print("<li class=\"page-item\"><a class=\"page-link\" href=\"".$_SERVER['PHP_SELF']."?initiale_statcom=".cp1252_vers_utf8($c_initiale)."&amp;idf_source=$gi_idf_source\">".cp1252_vers_utf8($c_initiale)."</a></li>");
         }
         print("</ul>");
         print('</div>');
@@ -218,21 +216,21 @@ switch ($gst_mode) {
      if (empty($gi_idf_source))
      {
        if (empty($gst_commune_a_chercher))
-          $st_requete="select ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca  where ca.nom like '$gc_initiale%' order by ca.nom";
+          $st_requete="select ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca  where ca.nom like '".utf8_vers_cp1252($gc_initiale)."%' order by ca.nom";
        else
        {
           $st_requete="select ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca  where ca.nom like :recherche order by ca.nom";
-          $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher));    
+          $connexionBD->initialise_params(array(":recherche"=>utf8_vers_cp1252($gst_commune_a_chercher)));    
        }
      }
      else
        if (empty($gst_commune_a_chercher))
-          $st_requete="select distinct ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca join `stats_commune` sc on (ca.idf=sc.idf_commune) where sc.idf_source=$gi_idf_source and ca.nom like '$gc_initiale%' order by ca.nom";     
+          $st_requete="select distinct ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca join `stats_commune` sc on (ca.idf=sc.idf_commune) where sc.idf_source=$gi_idf_source and ca.nom like '".utf8_vers_cp1252($gc_initiale)."%' order by ca.nom";     
        else
        {
           $st_requete ="select distinct ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca join `stats_commune` sc on (ca.idf=sc.idf_commune) where sc.idf_source=$gi_idf_source and ca.nom like :recherche order by ca.nom";
-          $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher)); 
-       } 
+          $connexionBD->initialise_params(array(":recherche"=>utf8_vers_cp1252($gst_commune_a_chercher))); 
+       }   
      $a_liste_communes= $connexionBD->sql_select_multiple_par_idf($st_requete);    
      $i_nb_lignes =  count($a_liste_communes);
      $i_nb_pages= empty($gst_commune_a_chercher) ? ceil($i_nb_lignes/NB_LIGNES_PAR_PAGE): 1;
@@ -247,21 +245,21 @@ switch ($gst_mode) {
      if (empty($gi_idf_source))
      {
         if (empty($gst_commune_a_chercher))
-           $st_requete = "select ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca where ca.nom like '$gc_initiale%' order by ca.nom limit $i_limite_inf,".NB_LIGNES_PAR_PAGE;
+           $st_requete = "select ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca where ca.nom like '".utf8_vers_cp1252($gc_initiale)."%' order by ca.nom limit $i_limite_inf,".NB_LIGNES_PAR_PAGE;
         else
         {
           $st_requete = "select ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca where ca.nom like :recherche order by ca.nom";
-          $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher));
+          $connexionBD->initialise_params(array(":recherche"=>utf8_vers_cp1252($gst_commune_a_chercher)));
         }   
      }
      else
      {
        if (empty($gst_commune_a_chercher))
-          $st_requete = "select distinct ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca join `stats_commune` sc on (ca.idf=sc.idf_commune) where sc.idf_source=$gi_idf_source and ca.nom like '$gc_initiale%' order by ca.nom limit $i_limite_inf,".NB_LIGNES_PAR_PAGE;
+          $st_requete = "select distinct ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca join `stats_commune` sc on (ca.idf=sc.idf_commune) where sc.idf_source=$gi_idf_source and ca.nom like '".utf8_vers_cp1252($gc_initiale)."%' order by ca.nom limit $i_limite_inf,".NB_LIGNES_PAR_PAGE;
        else
        {
           $st_requete ="select distinct ca.idf,ca.nom,ca.debut_communale,ca.debut_greffe from `commune_acte` ca join `stats_commune` sc on (ca.idf=sc.idf_commune) where sc.idf_source=$gi_idf_source and ca.nom like :recherche order by ca.nom";
-          $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher));
+          $connexionBD->initialise_params(array(":recherche"=>utf8_vers_cp1252($gst_commune_a_chercher)));
         }
      }
      $a_liste_communes = $connexionBD->sql_select_multiple_par_idf($st_requete);
@@ -271,21 +269,21 @@ switch ($gst_mode) {
      if (empty($gi_idf_source))
      {
        if (empty($gst_commune_a_chercher))
-        $st_requete = "select stats_commune.idf_commune,stats_commune.idf_type_acte,min(stats_commune.annee_min),max(stats_commune.annee_max),sum(stats_commune.nb_actes) from stats_commune join commune_acte on (stats_commune.idf_commune=commune_acte.idf) where commune_acte.nom like '$gc_initiale%' group by stats_commune.idf_commune,stats_commune.idf_type_acte";
+        $st_requete = "select stats_commune.idf_commune,stats_commune.idf_type_acte,min(stats_commune.annee_min),max(stats_commune.annee_max),sum(stats_commune.nb_actes) from stats_commune join commune_acte on (stats_commune.idf_commune=commune_acte.idf) where commune_acte.nom like '".utf8_vers_cp1252($gc_initiale)."%' group by stats_commune.idf_commune,stats_commune.idf_type_acte";
        else
        {
         $st_requete = "select stats_commune.idf_commune,stats_commune.idf_type_acte,min(stats_commune.annee_min),max(stats_commune.annee_max),sum(stats_commune.nb_actes) from stats_commune join commune_acte on (stats_commune.idf_commune=commune_acte.idf) where commune_acte.nom like :recherche group by stats_commune.idf_commune,stats_commune.idf_type_acte";
-         $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher));
+         $connexionBD->initialise_params(array(":recherche"=>utf8_vers_cp1252($gst_commune_a_chercher)));
        }
      }
      else
      {
         if (empty($gst_commune_a_chercher))
-         $st_requete = "select stats_commune.idf_commune,stats_commune.idf_type_acte,stats_commune.annee_min,stats_commune.annee_max,stats_commune.nb_actes from stats_commune join commune_acte on (stats_commune.idf_commune=commune_acte.idf and commune_acte.nom like '$gc_initiale%' and stats_commune.idf_source=$gi_idf_source) ";
+         $st_requete = "select stats_commune.idf_commune,stats_commune.idf_type_acte,stats_commune.annee_min,stats_commune.annee_max,stats_commune.nb_actes from stats_commune join commune_acte on (stats_commune.idf_commune=commune_acte.idf and commune_acte.nom like '".utf8_vers_cp1252($gc_initiale)."%' and stats_commune.idf_source=$gi_idf_source) ";
          else
          {
           $st_requete = "select stats_commune.idf_commune,stats_commune.idf_type_acte,stats_commune.annee_min,stats_commune.annee_max,stats_commune.nb_actes from stats_commune join commune_acte on (stats_commune.idf_commune=commune_acte.idf and commune_acte.nom like :recherche and stats_commune.idf_source=$gi_idf_source) ";
-           $connexionBD->initialise_params(array(":recherche"=>$gst_commune_a_chercher));
+           $connexionBD->initialise_params(array(":recherche"=>utf8_vers_cp1252($gst_commune_a_chercher)));
           }
       }
       $a_stats_communes=$connexionBD->liste_valeur_par_doubles_clefs($st_requete);

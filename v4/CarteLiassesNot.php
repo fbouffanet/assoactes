@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,21 +13,21 @@
 			})
 		});
 	});	
-</script>
+</script> 
 </head> 
 <body>
 <div class="container">
 <table border=1>
 <tr><th>Nombre de liasses</th></tr>
 <tr><td bgcolor="lightgrey">Pas de liasses</td></tr>
-<tr><td bgcolor="MediumOrchid">Aucun relev&eacute; AGC</td></tr>
-<tr><td bgcolor="LemonChiffon">Entre  et 5 % relev&eacute;s</td></tr>
-<tr><td bgcolor="yellow">Entre 6 et 10 % relev&eacute;s</td></tr>
-<tr><td bgcolor="Tomato">Entre 11 et 30 % relev&eacute;s</td></tr>
-<tr><td bgcolor="coral">Entre 31 et 60 % relev&eacute;s</td></tr>
-<tr><td bgcolor="brown">Entre 61 et 80 % relev&eacute;s</td></tr>
-<tr><td bgcolor="maroon"><font color="white">Plus de 80% relev&eacute;s</font></td></tr>
+<tr><td bgcolor="LemonChiffon">Entre 1 et 5 liasses</td></tr>
+<tr><td bgcolor="yellow">Entre 6 et 10 liasses</td></tr>
+<tr><td bgcolor="Tomato">Entre 11 et 30 liasses</td></tr>
+<tr><td bgcolor="coral">Entre 31 et 80 liasses</td></tr>
+<tr><td bgcolor="brown">Entre 81 et 150 liasses</td></tr>
+<tr><td bgcolor="maroon"><font color="white">Plus de 150 liasses</font></td></tr>
 </table>
+<div>Les libell&eacute;s sont positionn&eacute;s correctement uniquement sous Chrome</div>
 <?php print('<?xml version="1.0" encoding="windows-1252"?>'); ?>
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -89,7 +90,7 @@
 	stroke-width   : 0.002;
 }
 
-</style>>
+</style>
 
 <g transform="translate(0,46.13896469) scale(1,-1) translate(0,-45.19163256)">
     <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
@@ -112,68 +113,57 @@ require_once 'Commun/constantes.php';
 require_once 'Commun/ConnexionBD.php';
 require_once('Commun/commun.php');
 
+$a_nb_liasses= array();
 $a_communes = array();
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
-$st_requete="SELECT ca.code_insee,ca.numero_paroisse,count(DISTINCT replace(cote,' ','')) FROM commune_acte ca join `acte` on (acte.idf_commune=ca.idf) WHERE annee<=1792 and idf_type_acte=".IDF_CM." group by ca.code_insee,ca.numero_paroisse";
-$a_nb_liasses_cm= $connexionBD->liste_valeur_par_doubles_clefs($st_requete);
-
-$st_requete="select ca.code_insee,ca.numero_paroisse, count(*) as nb_liasses from commune_acte ca left join liasse_notaire ln on (ln.idf_commune_etude=ca.idf) left join liasse_dates ld on (ln.idf=ld.idf) where ld.annee_fin_periode<=1792 group by ca.code_insee,ca.numero_paroisse";
+$st_requete="select ca.code_insee,ca.numero_paroisse, count(*) as nb_liasses from commune_acte ca left join liasse_notaire ln on (ca.idf=ln.idf_commune_etude) left join liasse_dates ld on (ln.idf=ld.idf) where ld.annee_fin_periode<=1792 group by ca.code_insee, ca.numero_paroisse order by ca.idf,ca.numero_paroisse";
 $a_nb_liasses=  $connexionBD->liste_valeur_par_doubles_clefs($st_requete);
 
 $st_requete="select code_insee,numero_paroisse, nom,points_svg from commune_acte where code_insee like '16%' order by code_insee,numero_paroisse";
 $a_communes=  $connexionBD->liste_valeur_par_doubles_clefs($st_requete);
+
+$fp = fopen("journal_carte_liasses_not.txt","w");
+
 foreach ($a_communes as $i_idf_commune => $a_infos)
 {
   $st_info_bulle ='';
   $i_nb_tot_liasses = 0;
-  $i_nb_tot_liasses_cm = 0;
   foreach ($a_infos as $i_num_paroisse => $a_infos_commune)
   {
     list($st_commune,$st_points)=$a_infos_commune;    
     if (isset($a_nb_liasses[$i_idf_commune][$i_num_paroisse]))
     {
        $i_nb_liasses =$a_nb_liasses[$i_idf_commune][$i_num_paroisse][0];
+       fwrite($fp," $st_commune - $i_nb_liasses liasses\n");
        $i_nb_tot_liasses+=$i_nb_liasses;
-       if (isset($a_nb_liasses_cm[$i_idf_commune][$i_num_paroisse]))
-       {
-          $i_nb_liasses_releves = $a_nb_liasses_cm[$i_idf_commune][$i_num_paroisse][0];
-          $i_nb_tot_liasses_cm+= $i_nb_liasses_releves;
-          $st_info_bulle .= cp1252_vers_utf8($st_commune)." - $i_nb_liasses_releves/$i_nb_liasses liasses relevees<br>\n"; 
-       }
-       else   
-          $st_info_bulle .= cp1252_vers_utf8($st_commune)." - $i_nb_liasses liasses<br>\n"; 
+       $st_info_bulle .= cp1252_vers_utf8($st_commune)." - $i_nb_liasses liasses<br>\n"; 
     }
     else
     {
       $st_info_bulle .= cp1252_vers_utf8($st_commune)." - pas de liasses<br>\n";            
+      fwrite($fp," $st_commune - pas de liasses\n");
     }
   }
   if ($i_nb_tot_liasses==0)
-    print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"lightgrey\" class=\"tooltip\" title=\"$st_info_bulle\"></polygon>\n");
+    print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"lightgrey\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
   else
   {  
-     if ($i_nb_tot_liasses_cm==0)
-        print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"MediumOrchid\" class=\"tooltip\" title=\"$st_info_bulle\"></polygon>\n");
-     else
-     {
-        $f_perc = $i_nb_tot_liasses_cm/$i_nb_tot_liasses*100;
-        if ($f_perc<=5)  
-          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"LemonChiffon\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
-        else if ($f_perc<=10)
-          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"yellow\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
-        else if ($f_perc<=30)
-          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"Tomato\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
-        else if ($f_perc<=60)
-          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"coral\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
-        else if ($f_perc<=80)
-          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"brown\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");   
-        else 
-          print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"maroon\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
-     }        
+    if ($i_nb_tot_liasses<=5)  
+       print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"LemonChiffon\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
+    else if ($i_nb_tot_liasses<=10)
+       print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"yellow\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
+    else if ($i_nb_tot_liasses<=30)
+         print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"Tomato\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
+    else if ($i_nb_tot_liasses<=80)
+       print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"coral\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");
+    else if ($i_nb_tot_liasses<=150)
+       print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"brown\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");   
+    else 
+       print("<polygon id=\"$i_idf_commune\" points=\"$st_points\" fill=\"maroon\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" title=\"$st_info_bulle\"></polygon>\n");      
   }  
 }
-	
+fclose($fp);		
 ?>
 </g>
 

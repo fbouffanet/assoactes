@@ -230,24 +230,24 @@ function menu_liste($pconnexionBD,$pst_commune_a_chercher)
 			$gc_initiale = strtoupper(substr($pst_commune_a_chercher,0,1));
 			if ($gc_initiale=='*') $gc_initiale = $a_initiales_communes[0];
 		}
-		if (!in_array($gc_initiale,$a_initiales_communes))
+		if (!in_array(utf8_vers_cp1252($gc_initiale),$a_initiales_communes))
 		$gc_initiale = $a_initiales_communes[0];
 		$_SESSION['initiale_com'] = $gc_initiale;
 		$_SESSION['num_page_photos']= $gi_num_page_cour;   
 		print('<div class="text-center"><ul class="pagination">');
 		foreach ($a_initiales_communes as $c_initiale)
 		{
-			if ($c_initiale==$gc_initiale)
-				print("<li class=\"page-item active\"><span class=\"page-link\">$c_initiale<span class=\"sr-only\">(current)</span></span></li>");
+			if ($c_initiale==utf8_vers_cp1252($gc_initiale))
+				print("<li class=\"page-item active\"><span class=\"page-link\">".cp1252_vers_utf8($c_initiale)."<span class=\"sr-only\">(current)</span></span></li>");
 			else
-				print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_com=$c_initiale\" class=\"page-item\">$c_initiale</a></li>");
+				print("<li class=\"page-item\"><a href=\"".$_SERVER['PHP_SELF']."?initiale_com=".cp1252_vers_utf8($c_initiale)."\" class=\"page-item\">".cp1252_vers_utf8($c_initiale)."</a></li>");
 		}
 		print("</ul></div>");
 	}
 	else	
 		$gc_initiale='%';
 	$pst_commune_a_chercher = str_replace('*','%',$pst_commune_a_chercher);  
-	$st_requete = ($pst_commune_a_chercher=='') ? "select p.idf,ca.nom,p.fourchette,ca2.libelle from `photos` p join `commune_acte` ca  on (p.id_commune=ca.idf ) join `collection_acte` ca2 on (p.id_collection=ca2.idf) where ca.nom like '$gc_initiale%' order by ca.nom,p.fourchette,ca2.libelle" : "select p.idf,ca.nom,p.fourchette,ca2.libelle from `photos` p join `commune_acte` ca  on (p.id_commune=ca.idf ) join `collection_acte` ca2 on (p.id_collection=ca2.idf) where ca.nom like '$pst_commune_a_chercher' order by ca.nom,p.fourchette,ca2.libelle";
+	$st_requete = ($pst_commune_a_chercher=='') ? "select p.idf,ca.nom,p.fourchette,ca2.libelle from `photos` p join `commune_acte` ca  on (p.id_commune=ca.idf ) join `collection_acte` ca2 on (p.id_collection=ca2.idf) where ca.nom like '".utf8_vers_cp1252($gc_initiale)."%' order by ca.nom,p.fourchette,ca2.libelle" : "select p.idf,ca.nom,p.fourchette,ca2.libelle from `photos` p join `commune_acte` ca  on (p.id_commune=ca.idf ) join `collection_acte` ca2 on (p.id_collection=ca2.idf) where ca.nom like '".utf8_vers_cp1252($pst_commune_a_chercher)."' order by ca.nom,p.fourchette,ca2.libelle";
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" >");
 	print("<input type=hidden name=mode value=\"LISTE\">");
     print('<div class="form-row col-md-12">');
