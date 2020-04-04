@@ -9,6 +9,13 @@ require_once("../Commun/constantes.php");
 require_once("../Commun/ConnexionBD.php");
 require_once("../Commun/commun.php");
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../PHPMailer/src/Exception.php';
+require '../PHPMailer/src/PHPMailer.php';
+require '../PHPMailer/src/SMTP.php';
+
 $gst_chemin = ($_SERVER['HTTP_HOST']=='inscription.genea16.net')? "https://adherents.genea16.net": '..';
 $cryptinstall="$gst_chemin/Commun/crypt/cryptographp.fct.php";
 
@@ -162,16 +169,12 @@ if ($st_erreur!="")
 */
 function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_email_perso, $pst_ins_idf_agc, $pst_ins_alea, $int_idf_prov)
 {
-  global $_SERVER,$gst_url_validation;
+  global $_SERVER,$gst_url_validation,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp;
   
   $gst_url = basename($_SERVER['PHP_SELF']);
-  $jour = sprintf ("%02s/%02s/%4s", substr($dt_ins_date,8,2), substr($dt_ins_date,5,2), substr($dt_ins_date,0,4)); 
-  $st_entete = 'MIME-Version: 1.0' . "\r\n";
-  $st_entete .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
-  $st_entete .= "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\r\n>";
-  $st_entete .= "Return-Path: ".EMAIL_DIRASSO."\r\n";   
+  $jour = sprintf ("%02s/%02s/%4s", substr($dt_ins_date,8,2), substr($dt_ins_date,5,2), substr($dt_ins_date,0,4));  
   $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "a l'": "au " ;
-  $sujet    = "Pre-inscription $st_prefixe_asso".SIGLE_ASSO;
+  $st_sujet    = "Pre-inscription $st_prefixe_asso".SIGLE_ASSO;
   $st_message_html  = "Bonjour ". cp1252_vers_utf8($pst_ins_prenom). " " . cp1252_vers_utf8($pst_ins_nom) . ", \n\n";
   $st_message_html .= "Vous vous &ecirc;tes pr&eacute;-inscrit ce jour, le " .$jour. " $st_prefixe_asso".SIGLE_ASSO."\n";
   $st_message_html .= "Nous vous remercions et vous demandons de nous confirmer votre inscription en cliquant sur ce lien suivant: \n\n";
@@ -183,8 +186,32 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   }
   $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ;
   $st_message_html .= "\n\n Les responsables $st_prefixe_asso".SIGLE_ASSO;
-  $st_message_html = nl2br($st_message_html); 
-  return mail($pst_ins_email_perso, $sujet, $st_message_html, $st_entete);
+  $st_message_html = nl2br($st_message_html);
+  $mail = new PHPmailer();
+  try {
+	if (!empty($gst_serveur_smtp) && !empty($gst_utilisateur_smtp) && (!empty($gst_mdp_smtp) ) 
+    {
+		$mail->isSMTP();                                 
+		$mail->Host       = $gst_serveur_smtp;
+		$mail->SMTPAuth   = true;                                   
+		$mail->Username   = $gst_utilisateur_smtp;                     
+		$mail->Password   = $gst_mdp_smtp;                               
+		$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
+		$mail->Port       = 587;                                    
+	}
+	$mail->addAddress($pst_ins_email_perso,"$pst_ins_prenom $pst_ins_nom");
+	$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+	$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);
+	$mail->isHTML(true);                                  
+	$mail->Subject = $st_sujet;
+	$mail->Body    = $st_message_html;
+	$mail->send();
+	return true;
+  }	
+  catch (Exception $e) {
+    print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$mail->ErrorInfo}</div>");
+	return false;
+  }
 }
 
 /**
