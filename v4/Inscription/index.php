@@ -9,12 +9,12 @@ require_once("../Commun/constantes.php");
 require_once("../Commun/ConnexionBD.php");
 require_once("../Commun/commun.php");
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
 require '../PHPMailer/src/Exception.php';
 require '../PHPMailer/src/PHPMailer.php';
 require '../PHPMailer/src/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 $gst_chemin = ($_SERVER['HTTP_HOST']=='inscription.genea16.net')? "https://adherents.genea16.net": '..';
 $cryptinstall="$gst_chemin/Commun/crypt/cryptographp.fct.php";
