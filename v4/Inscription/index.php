@@ -202,7 +202,7 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
 		$mail->Port       = 587;                                    
 	}
 	$mail->addAddress($pst_ins_email_perso,"$pst_ins_prenom $pst_ins_nom");
-	print("<div class=\"alert alert-warning\">Envoi à $pst_ins_prenom $pst_ins_nom depuis ".EMAIL_DIRASSO."</div>");
+	print("<div class=\"alert alert-warning\">Envoi à $pst_ins_prenom $pst_ins_nom ($pst_ins_email_perso) depuis ".EMAIL_DIRASSO."</div>");
 	$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
 	$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);
 	$mail->isHTML(true);                                  
