@@ -191,6 +191,8 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   try {
 	if (!empty($gst_serveur_smtp) && !empty($gst_utilisateur_smtp) && !empty($gst_mdp_smtp) ) 
     {
+		print("<div class=\"alert alert-warning\">Utilisation de SMTP</div>");
+		$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 		$mail->isSMTP();                                 
 		$mail->Host       = $gst_serveur_smtp;
 		$mail->SMTPAuth   = true;                                   
