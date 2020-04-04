@@ -189,7 +189,7 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   $st_message_html = nl2br($st_message_html);
   $mail = new PHPmailer();
   try {
-	if (!empty($gst_serveur_smtp) && !empty($gst_utilisateur_smtp) && (!empty($gst_mdp_smtp) ) 
+	if (!empty($gst_serveur_smtp) && !empty($gst_utilisateur_smtp) && !empty($gst_mdp_smtp) ) 
     {
 		$mail->isSMTP();                                 
 		$mail->Host       = $gst_serveur_smtp;
