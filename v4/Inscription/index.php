@@ -200,12 +200,19 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
 		$mail->Username   = $gst_utilisateur_smtp;                     
 		$mail->Password   = $gst_mdp_smtp;                               
 		$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
-		$mail->Port       = $gi_port_smtp;                                    
+		$mail->Port       = $gi_port_smtp;
+        $mail->SMTPOptions = array(
+                    'ssl' => array(
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => true
+                    )
+                );		
 	}
 	$mail->addAddress($pst_ins_email_perso,"$pst_ins_prenom $pst_ins_nom");
 	$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
 	$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);
-	$mail->isHTML(true);                                  
+	$mail->isHTML(true);	
 	$mail->Subject = $st_sujet;
 	$mail->Body    = $st_message_html;
 	$mail->send();
@@ -462,7 +469,6 @@ switch ($gst_mode) {
 	   $pst_ins_alea = mt_rand(1000,10000); 
      $dt_ins_date = date("Y-m-d");  
      if (chk_crypt($_POST['code']))	
-	 //if (true) 
      {
         preinscrit_adherent($dt_ins_date,$pst_ins_nom,$pst_ins_prenom,$pst_ins_adr1,$pst_ins_adr2,$pst_ins_cp,$pst_ins_commune,$pst_ins_pays,$pst_ins_email_perso,$pst_ins_site_web,$pst_ins_telephone,$pst_ins_cache,$pst_ins_idf_agc,$pst_ins_alea);
         if (envoie_mail($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_email_perso, $pst_ins_idf_agc, $pst_ins_alea, $connexionBD->dernier_idf_insere()))
