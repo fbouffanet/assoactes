@@ -169,7 +169,7 @@ if ($st_erreur!="")
 */
 function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_email_perso, $pst_ins_idf_agc, $pst_ins_alea, $int_idf_prov)
 {
-  global $_SERVER,$gst_url_validation,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp;
+  global $_SERVER,$gst_url_validation,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp;
   
   $gst_url = basename($_SERVER['PHP_SELF']);
   $jour = sprintf ("%02s/%02s/%4s", substr($dt_ins_date,8,2), substr($dt_ins_date,5,2), substr($dt_ins_date,0,4));  
@@ -189,7 +189,7 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   $st_message_html = nl2br($st_message_html);
   $mail = new PHPmailer();
   try {
-	if (!empty($gst_serveur_smtp) && !empty($gst_utilisateur_smtp) && !empty($gst_mdp_smtp) ) 
+	if (!empty($gst_serveur_smtp) && !empty($gst_utilisateur_smtp) && !empty($gst_mdp_smtp) && !empty($gi_port_smtp)) 
     {
 		print("<div class=\"alert alert-warning\">Utilisation de SMTP</div>");
 		//$mail->SMTPDebug = SMTP::DEBUG_SERVER;
@@ -199,7 +199,7 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
 		$mail->Username   = $gst_utilisateur_smtp;                     
 		$mail->Password   = $gst_mdp_smtp;                               
 		$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
-		$mail->Port       = 587;                                    
+		$mail->Port       = $gi_port_smtp;                                    
 	}
 	$mail->addAddress($pst_ins_email_perso,"$pst_ins_prenom $pst_ins_nom");
 	print("<div class=\"alert alert-warning\">Envoi à $pst_ins_prenom $pst_ins_nom ($pst_ins_email_perso) depuis ".EMAIL_DIRASSO."</div>");
@@ -461,7 +461,7 @@ switch ($gst_mode) {
      mt_srand ((float) microtime() * 1000000);
 	   $pst_ins_alea = mt_rand(1000,10000); 
      $dt_ins_date = date("Y-m-d");  
-     if (chk_crypt($_POST['code']))
+     if (chk_crypt($_POST['code']))	 
      {
         preinscrit_adherent($dt_ins_date,$pst_ins_nom,$pst_ins_prenom,$pst_ins_adr1,$pst_ins_adr2,$pst_ins_cp,$pst_ins_commune,$pst_ins_pays,$pst_ins_email_perso,$pst_ins_site_web,$pst_ins_telephone,$pst_ins_cache,$pst_ins_idf_agc,$pst_ins_alea);
         if (envoie_mail($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_email_perso, $pst_ins_idf_agc, $pst_ins_alea, $connexionBD->dernier_idf_insere()))
