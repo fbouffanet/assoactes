@@ -15,6 +15,7 @@ require '../PHPMailer/src/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
 $gst_chemin = ($_SERVER['HTTP_HOST']=='inscription.genea16.net')? "https://adherents.genea16.net": '..';
 $cryptinstall="$gst_chemin/Commun/crypt/cryptographp.fct.php";
@@ -192,7 +193,7 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
 	if (!empty($gst_serveur_smtp) && !empty($gst_utilisateur_smtp) && !empty($gst_mdp_smtp) && !empty($gi_port_smtp)) 
     {
 		print("<div class=\"alert alert-warning\">Utilisation de SMTP</div>");
-		//$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+		$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 		$mail->isSMTP();                                 
 		$mail->Host       = $gst_serveur_smtp;
 		$mail->SMTPAuth   = true;                                   
@@ -202,7 +203,6 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
 		$mail->Port       = $gi_port_smtp;                                    
 	}
 	$mail->addAddress($pst_ins_email_perso,"$pst_ins_prenom $pst_ins_nom");
-	print("<div class=\"alert alert-warning\">Envoi à $pst_ins_prenom $pst_ins_nom ($pst_ins_email_perso) depuis ".EMAIL_DIRASSO."</div>");
 	$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
 	$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);
 	$mail->isHTML(true);                                  
@@ -461,7 +461,8 @@ switch ($gst_mode) {
      mt_srand ((float) microtime() * 1000000);
 	   $pst_ins_alea = mt_rand(1000,10000); 
      $dt_ins_date = date("Y-m-d");  
-     if (chk_crypt($_POST['code']))	 
+     if (chk_crypt($_POST['code']))	
+	 //if (true) 
      {
         preinscrit_adherent($dt_ins_date,$pst_ins_nom,$pst_ins_prenom,$pst_ins_adr1,$pst_ins_adr2,$pst_ins_cp,$pst_ins_commune,$pst_ins_pays,$pst_ins_email_perso,$pst_ins_site_web,$pst_ins_telephone,$pst_ins_cache,$pst_ins_idf_agc,$pst_ins_alea);
         if (envoie_mail($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_email_perso, $pst_ins_idf_agc, $pst_ins_alea, $connexionBD->dernier_idf_insere()))
