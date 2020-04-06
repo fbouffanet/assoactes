@@ -927,7 +927,8 @@ class Adherent
   function envoie_message_adherent() {
     global $gst_url_site,$gst_administrateur_gbk;
     $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ; 
-    $st_message_html  = sprintf("Bonjour <font><strong>%s %s</strong></font>\n\n",self::cp1252_vers_utf8($this->st_prenom),self::cp1252_vers_utf8($this->st_nom));
+	$st_nom_destinataire = self::cp1252_vers_utf8($this->st_prenom). " ". self::cp1252_vers_utf8($this->st_nom);
+    $st_message_html  = sprintf("Bonjour <font><strong>%s</strong></font>\n\n",$st_nom_destinataire);
 	if (!empty($gst_administrateur_gbk))
 		$st_message_html .= "Vous venez d'&ecirc;tre inscrit(e) sur le site $st_prefixe_asso".SIGLE_ASSO." et &agrave; G&eacute;n&eacute;abank.\n";
     else
@@ -955,29 +956,25 @@ class Adherent
     $st_message_html .= "Les gestionnaires du site\n";
     $st_message_html = nl2br($st_message_html);
     $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
-  
-    $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
-  
-    $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
-    $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
-    $st_entete .= "Cc: ".EMAIL_DIRASSO."\n";
-    $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
-    $st_entete .= "Disposition-Notification-To: ".SIGLE_ASSO."<".EMAIL_DIRASSO.">\n";
-	  $st_entete .= 'MIME-Version: 1.0' . "\n"; 
-    $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
-    $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n"; 
-    $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/plain; charset="UTF-8"'."\n";
-    $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-    $st_message .= $st_message_texte."\n\n";
-    $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/html; charset="UTF-8"'."\n";
-    $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-    $st_message .= $st_message_html."\n\n";
-    $st_message .= '--'.$st_frontiere."--\n";
-	$st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "a l'": "au " ;
     $st_sujet = "Inscription $st_prefixe_asso".SIGLE_ASSO." - ".LIB_ASSO;
-    return (@mail($this->st_email_perso,$st_sujet,$st_message, $st_entete));
+	
+    $mail = new PHPmailer();
+	try {
+		$mail->addAddress($this->st_email_perso,$st_nom_destinataire);
+		$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+		$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$mail->addCC(EMAIL_DIRASSO);
+		$mail->isHTML(true);	
+		$mail->Subject = $st_sujet;
+		$mail->Body    = $st_message_html;
+		$mail->AltBody = $st_message_texte;
+		$mail->send();
+		return true;
+	}
+	catch (Exception $e) {
+		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$mail->ErrorInfo}</div>");
+		return false;
+	}
   }
   
   /** Envoie un message de réadhesion 
@@ -986,7 +983,8 @@ class Adherent
  */
   function envoie_message_readhesion() {
     global $gst_url_site;
-    $st_message_html  = sprintf("Bonjour <font><strong>%s %s</strong></font>\n\n",self::cp1252_vers_utf8($this->st_prenom),self::cp1252_vers_utf8($this->st_nom));
+	$st_nom_destinataire = self::cp1252_vers_utf8($this->st_prenom). " ". self::cp1252_vers_utf8($this->st_nom);
+    $st_message_html  = sprintf("Bonjour <font><strong>%s</strong></font>\n\n",$st_nom_destinataire);
     $st_message_html .= sprintf("Nous accusons r&eacute;ception de votre paiement, votre inscription est valid&eacute;e pour l'ann&eacute;e %d\n",$this->i_annee_cotisation);
     $st_message_html .= "Afin de mettre &agrave; jour vos informations, il vous suffit, pour cela, de vous rendre &agrave; l'adresse suivante:\n";
     $st_message_html .= "<a href=\"$gst_url_site\">$gst_url_site</a>\n\n";
@@ -997,30 +995,26 @@ class Adherent
   
     $st_message_html = nl2br($st_message_html);
     $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
-  
-    $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
-  
-    $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
-    $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
-    $st_entete .= "Cc: ".EMAIL_DIRASSO."\n";
-    $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
-    $st_entete .= "Disposition-Notification-To: ".SIGLE_ASSO."<".EMAIL_DIRASSO.">\n";
-    $st_entete .= 'MIME-Version: 1.0' . "\n"; 
-    $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
     $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "l'": "au " ;
     $st_sujet = "Re-inscription a $st_prefixe_asso".SIGLE_ASSO." - ". LIB_ASSO;
 
-    $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
-    $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/plain; charset="UTF-8"'."\n";
-    $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-    $st_message .= $st_message_texte."\n\n";
-    $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/html; charset="UTF-8"'."\n";
-    $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-    $st_message .= $st_message_html."\n\n";
-    $st_message .= '--'.$st_frontiere."--\n";
-    return (@mail($this->st_email_perso,$st_sujet,$st_message, $st_entete));
+    $mail = new PHPmailer();
+	try {
+		$mail->addAddress($this->st_email_perso,$st_nom_destinataire);
+		$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+		$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$mail->addCC(EMAIL_DIRASSO);
+		$mail->isHTML(true);	
+		$mail->Subject = $st_sujet;
+		$mail->Body    = $st_message_html;
+		$mail->AltBody = $st_message_texte;
+		$mail->send();
+		return true;
+	}
+	catch (Exception $e) {
+		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$mail->ErrorInfo}</div>");
+		return false;
+	}
   }
   
   /** Envoie un message d'inscription généabank à l'admin geneabank
@@ -1039,25 +1033,23 @@ class Adherent
   
     $st_sujet = "Erreur lors de l'inscription pour GeneaBank";
   
-    $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
-  
-    $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
-    $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
-    $st_entete .= "Cc: ".EMAIL_DIRASSO."\n";
-    $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
-    $st_entete .= 'MIME-Version: 1.0' . "\n"; 
-    $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
-    $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n"; 
-    $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/plain; charset="UTF-8"'."\n";
-    $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-    $st_message .= $st_message_texte."\n\n";
-    $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/html; charset="UTF-8"'."\n";
-    $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-    $st_message .= $st_message_html."\n\n";
-    $st_message .= '--'.$st_frontiere."--\n";
-    return (@mail(EMAIL_GBKADMIN,$st_sujet, $st_message , $st_entete));
+    $mail = new PHPmailer();
+    try {
+		$mail->addAddress(EMAIL_GBKADMIN);
+		$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+		$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$mail->addCC(EMAIL_DIRASSO);
+		$mail->isHTML(true);	
+		$mail->Subject = $st_sujet;
+		$mail->Body    = $st_message_html;
+		$mail->AltBody = $st_message_texte;
+		$mail->send();
+		return true;
+	}
+	catch (Exception $e) {
+		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$mail->ErrorInfo}</div>");
+		return false;
+	}
   }
   
   /** Envoie un message de changement de mot de passe généabank à l'admin geneabank
@@ -1068,7 +1060,8 @@ class Adherent
   * @return boolean Le message a été envoyé ou pas  
   */ 
   function envoie_message_geneabank_erreur_changement_mdp() {
-    $st_texte  = sprintf("Erreur lors du changement de mot de passe GénéaBank de <font><strong>%s %s</strong></font>\n\n",$this->st_prenom,$this->st_nom);
+	$st_nom_destinataire = self::cp1252_vers_utf8($this->st_prenom). " ". self::cp1252_vers_utf8($this->st_nom);
+    $st_texte  = sprintf("Erreur lors du changement de mot de passe GénéaBank de <font><strong>%s</strong></font>\n\n",$st_nom_destinataire);
     $st_texte .= "<font color=\"red\">";
     $st_texte .= self::$st_erreur_gbk;
     $st_texte .= "</font>";
@@ -1076,12 +1069,22 @@ class Adherent
     $st_texte .= sprintf("register ".PREFIXE_ADH_GBK."%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
     $st_texte .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
     $st_sujet = "Changement de mot de passe GeneaBank";
-    $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
-    $st_entete .= "Content-type: text/html; charset=UTF-8 \r\n";
-    $st_entete .= "From: ".EMAIL_DIRASSO."\r\n";
-    $st_entete .= "Cc: ".EMAIL_DIRASSO."\r\n";
-    $st_entete .= "Reply-to: ".EMAIL_DIRASSO."\r\n";
-    return (@mail(EMAIL_GBKADMIN,$st_sujet, nl2br(stripslashes($st_texte)), $st_entete));
+	$mail = new PHPmailer();
+    try {
+		$mail->addAddress(EMAIL_GBKADMIN);
+		$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+		$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$mail->addCC(EMAIL_DIRASSO);
+		$mail->isHTML(true);	
+		$mail->Subject = $st_sujet;
+		$mail->Body    = $st_texte;
+		$mail->send();
+		return true;
+	}
+	catch (Exception $e) {
+		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$mail->ErrorInfo}</div>");
+		return false;
+	}
   }
   
   /** Envoie un message de changement de mot de passe généabank à l'admin geneabank
@@ -1114,8 +1117,22 @@ class Adherent
     $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
     $st_entete .= "Content-type: text/html; charset=UTF-8\r\n";
     $st_entete .= "From: ".EMAIL_DIRASSO."\r\n";
-    return (@mail($this->st_email_perso,$st_sujet, nl2br(stripslashes($st_texte)), $st_entete));
-
+	$mail = new PHPmailer();
+    try {
+		$mail->addAddress($this->st_email_perso);
+		$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+		$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$mail->addCC(EMAIL_DIRASSO);
+		$mail->isHTML(true);	
+		$mail->Subject = $st_sujet;
+		$mail->Body    = $st_texte;
+		$mail->send();
+		return true;
+	}
+	catch (Exception $e) {
+		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$mail->ErrorInfo}</div>");
+		return false;
+	}
   }
   
   /** Envoie un message d'inscription généabank à l'admin geneabank 
@@ -1131,23 +1148,22 @@ class Adherent
     $st_message_html = nl2br($st_message_html);
     $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
     $st_sujet = "Nouvelle inscription ".SIGLE_ASSO;
-  
-    $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
-  
-    $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
-    $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
-    $st_entete .= 'MIME-Version: 1.0' . "\n"; 
-    $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
-    $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
-    $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/plain; charset="UTF-8"'."\n";
-    $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-    $st_message .= $st_message_texte."\n\n";
-    $st_message .= '--'.$st_frontiere."\n";
-    $st_message .= 'Content-Type: text/html; charset="UTF-8"'."\n";
-    $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-    $st_message .= $st_message_html."\n\n";
-    $st_message .= '--'.$st_frontiere."--\n";
+	$mail = new PHPmailer();
+    try {
+		$mail->addAddress(EMAIL_PRESASSO);
+		$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+		$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$mail->isHTML(true);	
+		$mail->Subject = $st_sujet;
+		$mail->Body    = $st_message_html;
+		$mail->AltBody = $st_message_texte;
+		$mail->send();
+		return true;
+	}
+	catch (Exception $e) {
+		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$mail->ErrorInfo}</div>");
+		return false;
+	}
     return (@mail(EMAIL_PRESASSO,$st_sujet, $st_message, $st_entete));
   }
   

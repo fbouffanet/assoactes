@@ -13,7 +13,15 @@ require_once("$gst_chemin/Commun/constantes.php");
 require_once("$gst_chemin/Commun/ConnexionBD.php");
 require_once("$gst_chemin/Commun/commun.php");
 require_once("$gst_chemin/Commun/GestionAdherents.php");
-require_once("$gst_chemin/Commun/Adherent.php");  
+require_once("$gst_chemin/Commun/Adherent.php"); 
+
+require "$gst_chemin/PHPMailer/src/Exception.php";
+require "$gst_chemin/PHPMailer/src/PHPMailer.php";
+require "$gst_chemin/PHPMailer/src/SMTP.php";
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP; 
 // INITIALIZE
 //FBO
 require_once("include.php");

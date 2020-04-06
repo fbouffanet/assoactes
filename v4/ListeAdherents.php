@@ -13,6 +13,14 @@ require_once('Commun/PaginationTableau.php');
 require_once('Commun/commun.php');
 require_once('Commun/Adherent.php');
 
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
 if(!isset($_SESSION['ident']))
    die("<div class=\"alert alert-danger\"> Identifiant non reconnu</div>");
 $gst_ident = $_SESSION['ident'];
