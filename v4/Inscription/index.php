@@ -201,13 +201,15 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
 		$mail->Password   = $gst_mdp_smtp;                               
 		$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
 		$mail->Port       = $gi_port_smtp;
-        $mail->SMTPOptions = array(
+        // pour désactiver la vérification du certificat décommenter les lignes ci-dessous
+		/*$mail->SMTPOptions = array(
                     'ssl' => array(
                         'verify_peer' => false,
                         'verify_peer_name' => false,
                         'allow_self_signed' => true
                     )
-                );		
+                );
+		*/		
 	}
 	$mail->addAddress($pst_ins_email_perso,"$pst_ins_prenom $pst_ins_nom");
 	$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
