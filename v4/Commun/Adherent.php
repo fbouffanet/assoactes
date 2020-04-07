@@ -6,8 +6,16 @@
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
+
 class Adherent
 {
+
+	/*
+    use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\Exception;
+	use PHPMailer\PHPMailer\SMTP;	
+	*/
+	
 	/*
 	* Renvoie une chaine encodée en cp1252 en UTF8
 	* @param string $st_valeur chaine cp1252 à convertir
@@ -75,12 +83,22 @@ class Adherent
      
    public function __construct($pconnexionBD,$pi_idf_adherent)
    {
-      global $gst_nom_bd,$gst_time_zone;
-      date_default_timezone_set($gst_time_zone);
+      global $gst_nom_bd,$gst_time_zone,$gst_rep_site;
+	  require str_replace("/", DIRECTORY_SEPARATOR,"$gst_rep_site/PHPMailer/src/Exception.php");
+	  require str_replace("/", DIRECTORY_SEPARATOR,"$gst_rep_site/PHPMailer/src/PHPMailer.php");
+      require str_replace("/", DIRECTORY_SEPARATOR,"$gst_rep_site/PHPMailer/src/SMTP.php");
+	  /*
+	  require "PHPMailer/src/Exception.php";
+	  require "PHPMailer/src/PHPMailer.php";
+      require "PHPMailer/src/SMTP.php";
+      */
+	  date_default_timezone_set($gst_time_zone);
       $this -> connexionBD = $pconnexionBD;
       $this->st_ident_modificateur = isset($_SESSION['ident']) ?  $_SESSION['ident'] : '';
       $this->a_filtres_parametres = array();
       $this->a_droits_adherents = array();
+	  $this->mailer=new PHPMailer\PHPMailer\PHPMailer();	  
+	
       if (empty($pi_idf_adherent))
       {
          $i_idf_dernier_adherent = $this -> connexionBD->sql_select1("select max(idf) from adherent");
@@ -958,21 +976,20 @@ class Adherent
     $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
     $st_sujet = "Inscription $st_prefixe_asso".SIGLE_ASSO." - ".LIB_ASSO;
 	
-    $mail = new PHPmailer();
 	try {
-		$mail->addAddress($this->st_email_perso,$st_nom_destinataire);
-		$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
-		$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
-		$mail->addCC(EMAIL_DIRASSO);
-		$mail->isHTML(true);	
-		$mail->Subject = $st_sujet;
-		$mail->Body    = $st_message_html;
-		$mail->AltBody = $st_message_texte;
-		$mail->send();
+		$this->mailer->addAddress($this->st_email_perso,$st_nom_destinataire);
+		$this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+		$this->mailer->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$this->mailer->addCC(EMAIL_DIRASSO);
+		$this->mailer->isHTML(true);	
+		$this->mailer->Subject = $st_sujet;
+		$this->mailer->Body    = $st_message_html;
+		$this->mailer->AltBody = $st_message_texte;
+		$this->mailer->send();
 		return true;
 	}
 	catch (Exception $e) {
-		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$mail->ErrorInfo}</div>");
+		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$this->mailer->ErrorInfo}</div>");
 		return false;
 	}
   }
@@ -998,21 +1015,20 @@ class Adherent
     $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "l'": "au " ;
     $st_sujet = "Re-inscription a $st_prefixe_asso".SIGLE_ASSO." - ". LIB_ASSO;
 
-    $mail = new PHPmailer();
 	try {
-		$mail->addAddress($this->st_email_perso,$st_nom_destinataire);
-		$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
-		$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
-		$mail->addCC(EMAIL_DIRASSO);
-		$mail->isHTML(true);	
-		$mail->Subject = $st_sujet;
-		$mail->Body    = $st_message_html;
-		$mail->AltBody = $st_message_texte;
-		$mail->send();
+		$this->mailer->addAddress($this->st_email_perso,$st_nom_destinataire);
+		$this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+		$this->mailer->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$this->mailer->addCC(EMAIL_DIRASSO);
+		$this->mailer->isHTML(true);	
+		$this->mailer->Subject = $st_sujet;
+		$this->mailer->Body    = $st_message_html;
+		$this->mailer->AltBody = $st_message_texte;
+		$this->mailer->send();
 		return true;
 	}
 	catch (Exception $e) {
-		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$mail->ErrorInfo}</div>");
+		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$this->mailer->ErrorInfo}</div>");
 		return false;
 	}
   }
@@ -1033,21 +1049,20 @@ class Adherent
   
     $st_sujet = "Erreur lors de l'inscription pour GeneaBank";
   
-    $mail = new PHPmailer();
     try {
-		$mail->addAddress(EMAIL_GBKADMIN);
-		$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
-		$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
-		$mail->addCC(EMAIL_DIRASSO);
-		$mail->isHTML(true);	
-		$mail->Subject = $st_sujet;
-		$mail->Body    = $st_message_html;
-		$mail->AltBody = $st_message_texte;
-		$mail->send();
+		$this->mailer->addAddress(EMAIL_GBKADMIN);
+		$this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+		$this->mailer->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$this->mailer->addCC(EMAIL_DIRASSO);
+		$this->mailer->isHTML(true);	
+		$this->mailer->Subject = $st_sujet;
+		$this->mailer->Body    = $st_message_html;
+		$this->mailer->AltBody = $st_message_texte;
+		$this->mailer->send();
 		return true;
 	}
 	catch (Exception $e) {
-		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$mail->ErrorInfo}</div>");
+		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$this->mailer->ErrorInfo}</div>");
 		return false;
 	}
   }
@@ -1069,20 +1084,19 @@ class Adherent
     $st_texte .= sprintf("register ".PREFIXE_ADH_GBK."%d %s %s %s %s\n",$this->i_idf,$this->st_mdp,$this->st_email_perso,$this->st_nom,$this->st_prenom);
     $st_texte .= "set ".PREFIXE_ADH_GBK.$this->i_idf." ".NB_POINTS_GBK."  Inscription\n";
     $st_sujet = "Changement de mot de passe GeneaBank";
-	$mail = new PHPmailer();
     try {
-		$mail->addAddress(EMAIL_GBKADMIN);
-		$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
-		$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
-		$mail->addCC(EMAIL_DIRASSO);
-		$mail->isHTML(true);	
-		$mail->Subject = $st_sujet;
-		$mail->Body    = $st_texte;
-		$mail->send();
+		$this->mailer->addAddress(EMAIL_GBKADMIN);
+		$this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+		$this->mailer->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$this->mailer->addCC(EMAIL_DIRASSO);
+		$this->mailer->isHTML(true);	
+		$this->mailer->Subject = $st_sujet;
+		$this->mailer->Body    = $st_texte;
+		$this->mailer->send();
 		return true;
 	}
 	catch (Exception $e) {
-		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$mail->ErrorInfo}</div>");
+		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$this->mailer->ErrorInfo}</div>");
 		return false;
 	}
   }
@@ -1114,23 +1128,19 @@ class Adherent
 	$st_texte .="</table>\n";
     $st_texte .= "Cordialement,\n\nLes responsables du site";
     $st_sujet = "Votre nouveau mot de passe du site ".SIGLE_ASSO;
-    $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
-    $st_entete .= "Content-type: text/html; charset=UTF-8\r\n";
-    $st_entete .= "From: ".EMAIL_DIRASSO."\r\n";
-	$mail = new PHPmailer();
     try {
-		$mail->addAddress($this->st_email_perso);
-		$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
-		$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
-		$mail->addCC(EMAIL_DIRASSO);
-		$mail->isHTML(true);	
-		$mail->Subject = $st_sujet;
-		$mail->Body    = $st_texte;
-		$mail->send();
+		$this->mailer->addAddress($this->st_email_perso);
+		$this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+		$this->mailer->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$this->mailer->addCC(EMAIL_DIRASSO);
+		$this->mailer->isHTML(true);	
+		$this->mailer->Subject = $st_sujet;
+		$this->mailer->Body    = $st_texte;
+		$this->mailer->send();
 		return true;
 	}
 	catch (Exception $e) {
-		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$mail->ErrorInfo}</div>");
+		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$this->mailer->ErrorInfo}</div>");
 		return false;
 	}
   }
@@ -1148,23 +1158,21 @@ class Adherent
     $st_message_html = nl2br($st_message_html);
     $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
     $st_sujet = "Nouvelle inscription ".SIGLE_ASSO;
-	$mail = new PHPmailer();
     try {
-		$mail->addAddress(EMAIL_PRESASSO);
-		$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
-		$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
-		$mail->isHTML(true);	
-		$mail->Subject = $st_sujet;
-		$mail->Body    = $st_message_html;
-		$mail->AltBody = $st_message_texte;
-		$mail->send();
+		$this->mailer->addAddress(EMAIL_PRESASSO);
+		$this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+		$this->mailer->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$this->mailer->isHTML(true);	
+		$this->mailer->Subject = $st_sujet;
+		$this->mailer->Body    = $st_message_html;
+		$this->mailer->AltBody = $st_message_texte;
+		$this->mailer->send();
 		return true;
 	}
 	catch (Exception $e) {
-		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$mail->ErrorInfo}</div>");
+		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$this->mailer->ErrorInfo}</div>");
 		return false;
 	}
-    return (@mail(EMAIL_PRESASSO,$st_sujet, $st_message, $st_entete));
   }
   
   /*
