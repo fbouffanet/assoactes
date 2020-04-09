@@ -6,9 +6,9 @@
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
-use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\PHPMailer;
 
 class Adherent
 {
@@ -82,9 +82,9 @@ class Adherent
    public function __construct($pconnexionBD,$pi_idf_adherent)
    {
       global $gst_nom_bd,$gst_time_zone,$gst_rep_site;
-	  require str_replace("/", DIRECTORY_SEPARATOR,"$gst_rep_site/PHPMailer/src/Exception.php");
-	  require str_replace("/", DIRECTORY_SEPARATOR,"$gst_rep_site/PHPMailer/src/SMTP.php");
-	  require str_replace("/", DIRECTORY_SEPARATOR,"$gst_rep_site/PHPMailer/src/PHPMailer.php");
+	  require_once str_replace("/", DIRECTORY_SEPARATOR,"$gst_rep_site/PHPMailer/src/Exception.php");
+	  require_once str_replace("/", DIRECTORY_SEPARATOR,"$gst_rep_site/PHPMailer/src/SMTP.php");
+	  require_once str_replace("/", DIRECTORY_SEPARATOR,"$gst_rep_site/PHPMailer/src/PHPMailer.php");
      
 	  date_default_timezone_set($gst_time_zone);
       $this -> connexionBD = $pconnexionBD;
