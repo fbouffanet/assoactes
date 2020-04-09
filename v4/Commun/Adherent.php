@@ -944,7 +944,7 @@ class Adherent
 	global $gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp;
 	if (!empty($gst_serveur_smtp) && !empty($gst_utilisateur_smtp) && !empty($gst_mdp_smtp) && !empty($gi_port_smtp)) 
     {
-		print("<div class=\"alert alert-warning\">Utilisation de SMTP</div>");
+		//print("<div class=\"alert alert-warning\">Utilisation de SMTP</div>");
 		//$this->mailer->->SMTPDebug = SMTP::DEBUG_SERVER;
 		$this->mailer->isSMTP();                                 
 		$this->mailer->Host       = $gst_serveur_smtp;
