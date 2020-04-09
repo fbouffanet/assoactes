@@ -1302,27 +1302,23 @@ class Adherent
           
           $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
           $st_sujet = "Demande d'un nouveau mot de passe ".SIGLE_ASSO;
-  
-          $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
-  
-          $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
-          $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
-          $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
-          $st_entete .= 'MIME-Version: 1.0' . "\n"; 
-          $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
-          $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
-          $st_message .= '--'.$st_frontiere."\n";
-          $st_message .= 'Content-Type: text/plain; charset="UTF-8"'."\n";
-          $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-          $st_message .= $st_message_texte."\n\n";
-          $st_message .= '--'.$st_frontiere."\n";
-          $st_message .= 'Content-Type: text/html; charset="UTF-8"'."\n";
-          $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-          $st_message .= $st_message_html."\n\n";
-          $st_message .= '--'.$st_frontiere."--\n";
-          return (mail($this->st_email_perso,$st_sujet, $st_message, $st_entete));
-          default:
-            return false;
+ 
+		  try {
+			$this->mailer->addAddress($this->st_email_perso);
+			$this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+			$this->mailer->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+			$this->mailer->isHTML(true);	
+			$this->mailer->Subject = $st_sujet;
+			$this->mailer->Body    = $st_message_html;
+			$this->mailer->AltBody = $st_message_texte;
+			$this->initialise_SMTP();
+			$this->mailer->send();
+			return true;
+		}
+		catch (Exception $e) {
+			print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$this->mailer->ErrorInfo}</div>");
+			return false;
+		}
       }
    }
    
