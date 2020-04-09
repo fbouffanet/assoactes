@@ -6,15 +6,13 @@
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
 class Adherent
 {
 
-	/*
-    use PHPMailer\PHPMailer\PHPMailer;
-	use PHPMailer\PHPMailer\Exception;
-	use PHPMailer\PHPMailer\SMTP;	
-	*/
 	
 	/*
 	* Renvoie une chaine encodée en cp1252 en UTF8
@@ -85,19 +83,15 @@ class Adherent
    {
       global $gst_nom_bd,$gst_time_zone,$gst_rep_site;
 	  require str_replace("/", DIRECTORY_SEPARATOR,"$gst_rep_site/PHPMailer/src/Exception.php");
+	  require str_replace("/", DIRECTORY_SEPARATOR,"$gst_rep_site/PHPMailer/src/SMTP.php");
 	  require str_replace("/", DIRECTORY_SEPARATOR,"$gst_rep_site/PHPMailer/src/PHPMailer.php");
-      require str_replace("/", DIRECTORY_SEPARATOR,"$gst_rep_site/PHPMailer/src/SMTP.php");
-	  /*
-	  require "PHPMailer/src/Exception.php";
-	  require "PHPMailer/src/PHPMailer.php";
-      require "PHPMailer/src/SMTP.php";
-      */
+     
 	  date_default_timezone_set($gst_time_zone);
       $this -> connexionBD = $pconnexionBD;
       $this->st_ident_modificateur = isset($_SESSION['ident']) ?  $_SESSION['ident'] : '';
       $this->a_filtres_parametres = array();
       $this->a_droits_adherents = array();
-	  $this->mailer=new PHPMailer\PHPMailer\PHPMailer();	  
+	  $this->mailer=new PHPMailer(true);	  
 	
       if (empty($pi_idf_adherent))
       {
@@ -938,6 +932,38 @@ class Adherent
     return $st_mdp;
   }
   
+  /*
+  * Initialise les paramètres SMTP
+  * @global string $gst_serveur_smtp serveur SMTP
+  * @global string $gst_utilisateur_smtp Utilisateur SMTP
+  * @global string $gst_mdp_smtp Mot de passe SMTP
+  * @global string $gi_port_smtp port SMPT
+  */
+  private function initialise_SMTP()
+  {
+	global $gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp;
+	if (!empty($gst_serveur_smtp) && !empty($gst_utilisateur_smtp) && !empty($gst_mdp_smtp) && !empty($gi_port_smtp)) 
+    {
+		print("<div class=\"alert alert-warning\">Utilisation de SMTP</div>");
+		//$this->mailer->->SMTPDebug = SMTP::DEBUG_SERVER;
+		$this->mailer->isSMTP();                                 
+		$this->mailer->Host       = $gst_serveur_smtp;
+		$this->mailer->SMTPAuth   = true;                                   
+		$this->mailer->Username   = $gst_utilisateur_smtp;                     
+		$this->mailer->Password   = $gst_mdp_smtp;                               
+		$this->mailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
+		$this->mailer->Port       = $gi_port_smtp;
+        // pour réactiver la vérification du certificat, commenter les lignes ci-dessous
+		$this->mailer->SMTPOptions = array(
+                    'ssl' => array(
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => true
+                    )
+                );		
+	}
+  }
+  
   /** Envoie une message d'inscription à l'adhérent
  * @global string $gst_url_site Adresse du site
  * @global string $gst_administrateur_gbk Administrateur Geneabank 
@@ -978,13 +1004,14 @@ class Adherent
 	
 	try {
 		$this->mailer->addAddress($this->st_email_perso,$st_nom_destinataire);
-		$this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+		$this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);	
 		$this->mailer->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
 		$this->mailer->addCC(EMAIL_DIRASSO);
 		$this->mailer->isHTML(true);	
 		$this->mailer->Subject = $st_sujet;
 		$this->mailer->Body    = $st_message_html;
 		$this->mailer->AltBody = $st_message_texte;
+		$this->initialise_SMTP();
 		$this->mailer->send();
 		return true;
 	}
@@ -1024,6 +1051,7 @@ class Adherent
 		$this->mailer->Subject = $st_sujet;
 		$this->mailer->Body    = $st_message_html;
 		$this->mailer->AltBody = $st_message_texte;
+		$this->initialise_SMTP();
 		$this->mailer->send();
 		return true;
 	}
@@ -1058,6 +1086,7 @@ class Adherent
 		$this->mailer->Subject = $st_sujet;
 		$this->mailer->Body    = $st_message_html;
 		$this->mailer->AltBody = $st_message_texte;
+		$this->initialise_SMTP();
 		$this->mailer->send();
 		return true;
 	}
@@ -1092,6 +1121,7 @@ class Adherent
 		$this->mailer->isHTML(true);	
 		$this->mailer->Subject = $st_sujet;
 		$this->mailer->Body    = $st_texte;
+		$this->initialise_SMTP();
 		$this->mailer->send();
 		return true;
 	}
@@ -1136,6 +1166,7 @@ class Adherent
 		$this->mailer->isHTML(true);	
 		$this->mailer->Subject = $st_sujet;
 		$this->mailer->Body    = $st_texte;
+		$this->initialise_SMTP();
 		$this->mailer->send();
 		return true;
 	}
@@ -1166,6 +1197,7 @@ class Adherent
 		$this->mailer->Subject = $st_sujet;
 		$this->mailer->Body    = $st_message_html;
 		$this->mailer->AltBody = $st_message_texte;
+		$this->initialise_SMTP();
 		$this->mailer->send();
 		return true;
 	}
