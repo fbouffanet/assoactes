@@ -91,7 +91,11 @@ class Adherent
       $this->st_ident_modificateur = isset($_SESSION['ident']) ?  $_SESSION['ident'] : '';
       $this->a_filtres_parametres = array();
       $this->a_droits_adherents = array();
-	  $this->mailer=new PHPMailer(true);	  
+	  $this->mailer=new PHPMailer(true);
+	  $this->mailer->CharSet = 'UTF-8';
+	  $this->mailer->Encoding = 'base64';
+	  $this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);
+	  $this->mailer->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);
 	
       if (empty($pi_idf_adherent))
       {
@@ -1003,9 +1007,7 @@ class Adherent
     $st_sujet = "Inscription $st_prefixe_asso".SIGLE_ASSO." - ".LIB_ASSO;
 	
 	try {
-		$this->mailer->addAddress($this->st_email_perso,$st_nom_destinataire);
-		$this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);	
-		$this->mailer->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$this->mailer->addAddress($this->st_email_perso,$st_nom_destinataire);	
 		$this->mailer->addCC(EMAIL_DIRASSO);
 		$this->mailer->isHTML(true);	
 		$this->mailer->Subject = $st_sujet;
@@ -1043,9 +1045,7 @@ class Adherent
     $st_sujet = "Re-inscription a $st_prefixe_asso".SIGLE_ASSO." - ". LIB_ASSO;
 
 	try {
-		$this->mailer->addAddress($this->st_email_perso,$st_nom_destinataire);
-		$this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);
-		$this->mailer->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$this->mailer->addAddress($this->st_email_perso,$st_nom_destinataire);	
 		$this->mailer->addCC(EMAIL_DIRASSO);
 		$this->mailer->isHTML(true);	
 		$this->mailer->Subject = $st_sujet;
@@ -1078,9 +1078,7 @@ class Adherent
     $st_sujet = "Erreur lors de l'inscription pour GeneaBank";
   
     try {
-		$this->mailer->addAddress(EMAIL_GBKADMIN);
-		$this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);
-		$this->mailer->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$this->mailer->addAddress(EMAIL_GBKADMIN);	
 		$this->mailer->addCC(EMAIL_DIRASSO);
 		$this->mailer->isHTML(true);	
 		$this->mailer->Subject = $st_sujet;
@@ -1115,8 +1113,6 @@ class Adherent
     $st_sujet = "Changement de mot de passe GeneaBank";
     try {
 		$this->mailer->addAddress(EMAIL_GBKADMIN);
-		$this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);
-		$this->mailer->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
 		$this->mailer->addCC(EMAIL_DIRASSO);
 		$this->mailer->isHTML(true);	
 		$this->mailer->Subject = $st_sujet;
@@ -1159,9 +1155,7 @@ class Adherent
     $st_texte .= "Cordialement,\n\nLes responsables du site";
     $st_sujet = "Votre nouveau mot de passe du site ".SIGLE_ASSO;
     try {
-		$this->mailer->addAddress($this->st_email_perso);
-		$this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);
-		$this->mailer->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$this->mailer->addAddress($this->st_email_perso);	
 		$this->mailer->addCC(EMAIL_DIRASSO);
 		$this->mailer->isHTML(true);	
 		$this->mailer->Subject = $st_sujet;
@@ -1190,9 +1184,7 @@ class Adherent
     $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
     $st_sujet = "Nouvelle inscription ".SIGLE_ASSO;
     try {
-		$this->mailer->addAddress(EMAIL_PRESASSO);
-		$this->mailer->setFrom(EMAIL_DIRASSO,LIB_ASSO);
-		$this->mailer->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);	
+		$this->mailer->addAddress(EMAIL_PRESASSO);	
 		$this->mailer->isHTML(true);	
 		$this->mailer->Subject = $st_sujet;
 		$this->mailer->Body    = $st_message_html;
