@@ -189,11 +189,12 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   $st_message_html .= "\n\n Les responsables $st_prefixe_asso".SIGLE_ASSO;
   $st_message_html = nl2br($st_message_html);
   $mail = new PHPmailer();
+  $mail->CharSet = 'UTF-8';
+  $mail->Encoding = 'base64';
   try {
 	if (!empty($gst_serveur_smtp) && !empty($gst_utilisateur_smtp) && !empty($gst_mdp_smtp) && !empty($gi_port_smtp)) 
     {
-		print("<div class=\"alert alert-warning\">Utilisation de SMTP</div>");
-		$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+		//$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 		$mail->isSMTP();                                 
 		$mail->Host       = $gst_serveur_smtp;
 		$mail->SMTPAuth   = true;                                   
