@@ -1238,7 +1238,7 @@ class Adherent
           $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
           $st_sujet = "Demande d'un nouveau mot de passe ".SIGLE_ASSO;
 		  
-		  $this->courriel->setDestinataire($$this->st_email_perso,$st_nom_destinataire);
+		  $this->courriel->setDestinataire($this->st_email_perso,$st_nom_destinataire);
 		  $this->courriel->setSujet($st_sujet);
 	      $this->courriel->setTexte($st_message_html);
 	      $this->courriel->setTexteBrut($st_message_texte);
