@@ -159,11 +159,12 @@ if ($st_erreur!="")
 * @param string $pst_ins_alea alea
 * @param string $int_idf_prov Identifiant provisoire
 * @global string $gst_url_validation URL de validation
+* @global string $gst_rep_site Répertoire du site 
 * @return retour de l'envoi de mail
 */
 function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_email_perso, $pst_ins_idf_agc, $pst_ins_alea, $int_idf_prov)
 {
-  global $_SERVER,$gst_url_validation,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp;
+  global $_SERVER,$gst_url_validation,$gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp;
   
   $gst_url = basename($_SERVER['PHP_SELF']);
   $jour = sprintf ("%02s/%02s/%4s", substr($dt_ins_date,8,2), substr($dt_ins_date,5,2), substr($dt_ins_date,0,4));  
@@ -181,15 +182,15 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ;
   $st_message_html .= "\n\n Les responsables $st_prefixe_asso".SIGLE_ASSO;
   $st_message_html = nl2br($st_message_html);
-  $this->courriel = new Courriel($gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
-  $this->courriel->setExpediteur(EMAIL_DIRASSO,LIB_ASSO);
-  $this->courriel->setAdresseRetour(EMAIL_DIRASSO);
-  $this->courriel->setDestinataire($pst_ins_email_perso,"$pst_ins_prenom $pst_ins_nom");
-  $this->courriel->setSujet($st_sujet);
-  $this->courriel->setTexte($st_message_html);
-  if (!$this->courriel->envoie())
+  $courriel = new Courriel($gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
+  $courriel->setExpediteur(EMAIL_DIRASSO,LIB_ASSO);
+  $courriel->setAdresseRetour(EMAIL_DIRASSO);
+  $courriel->setDestinataire($pst_ins_email_perso,"$pst_ins_prenom $pst_ins_nom");
+  $courriel->setSujet($st_sujet);
+  $courriel->setTexte($st_message_html);
+  if (!$courriel->envoie())
   {
-	 print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: ".$this->courriel->get_erreur()."</div>");
+	 print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: ".$courriel->get_erreur()."</div>");
 	 return false;
   }
   return true;
@@ -439,7 +440,8 @@ switch ($gst_mode) {
      mt_srand ((float) microtime() * 1000000);
 	   $pst_ins_alea = mt_rand(1000,10000); 
      $dt_ins_date = date("Y-m-d");  
-     if (chk_crypt($_POST['code']))	
+     //if (chk_crypt($_POST['code']))	
+	 if (true)	 
      {
         preinscrit_adherent($dt_ins_date,$pst_ins_nom,$pst_ins_prenom,$pst_ins_adr1,$pst_ins_adr2,$pst_ins_cp,$pst_ins_commune,$pst_ins_pays,$pst_ins_email_perso,$pst_ins_site_web,$pst_ins_telephone,$pst_ins_cache,$pst_ins_idf_agc,$pst_ins_alea);
         if (envoie_mail($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_email_perso, $pst_ins_idf_agc, $pst_ins_alea, $connexionBD->dernier_idf_insere()))
