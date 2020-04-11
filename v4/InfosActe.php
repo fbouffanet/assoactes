@@ -9,6 +9,7 @@ require_once('Commun/constantes.php');
 require_once('Commun/commun.php');
 require_once('Commun/ConnexionBD.php');
 require_once('Commun/phonex.cls.php');
+require_once('Commun/Courriel.php');
 require_once('Administration/chargement/Acte.php');
 require_once('Administration/chargement/CompteurActe.php');
 require_once('Administration/chargement/Personne.php');
@@ -210,11 +211,11 @@ else
   $st_permalien=  $o_acte->getUrl();
   $st_releve_html = str_replace(array("\r","\n"),'',nl2br(htmlentities($st_description_acte,ENT_COMPAT,'UTF-8')));
 
-  $st_frontiere = '-----=' . md5(uniqid(mt_rand()));
   $st_commentaire = $_POST['commentaire'];
+  
+  $st_prenom_adht = cp1252_vers_utf8($st_prenom_adht);
+  $st_nom_adht = cp1252_vers_utf8($st_nom_adht);
   setlocale(LC_CTYPE, 'fr_FR.UTF8');
-  $st_prenom_adht = strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_prenom_adht));
-  $st_nom_adht = strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_nom_adht));
   $st_titre = strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_titre));
 
   $st_debut_msg_html  = "Bonjour<br /><br />";
@@ -226,35 +227,29 @@ else
   $st_message_html =   $st_debut_msg_html.$st_releve_html.$st_fin_msg_html;
   $st_message_texte = html_entity_decode(str_ireplace(array("<br>","<br />"),"\r\n",$st_message_html),ENT_COMPAT,'UTF-8');
   $st_message_texte = strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_message_texte));
-  $st_entete = "From: $st_prenom_adht $st_nom_adht <$st_email_adht>\n";
-  $st_entete .= "Reply-to: $st_prenom_adht $st_nom_adht <$st_email_adht>\n";
-  $st_entete .= 'MIME-Version: 1.0' . "\n";
-  $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
-  $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
-  $st_message .= '--'.$st_frontiere."\n";
-  $st_message .= 'Content-Type: text/plain; charset="us-ascii"'."\n";
-  $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-  $st_message .= $st_message_texte."\n\n";
-  $st_message .= '--'.$st_frontiere."\n";
-  $st_message .= 'Content-Type: text/html; charset="UTF-8"'."\n";
-  $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-  $st_message .= $st_message_html."\n\n";
-  $st_message .= '--'.$st_frontiere."--\n";
-  if (mail(EMAIL_FORUM,"DI: $st_titre", $st_message, $st_entete))
-      print('<div class="alert alert-success">La demande d\'information a &eacute;t&eacute; envoy&eacute;e</div>');
-  else
-  {
-    print('<div class="alert alert-danger">La demande d\'information n\'a pas &eacute;t&eacute; envoy&eacute;e</div>');
-    $pf=@fopen("$gst_rep_logs/di_non_envoyees.log",'a');
-    date_default_timezone_set($gst_time_zone);
-    list($i_sec,$i_min,$i_heure,$i_jmois,$i_mois,$i_annee,$i_j_sem,$i_j_an,$b_hiver)=localtime();
-    $i_mois++;
-    $i_annee+=1900;
-    $st_date_log = sprintf("%02d/%02d/%04d %02d:%02d:%02d",$i_jmois,$i_mois,$i_annee,$i_heure,$i_min,$i_sec);
-    $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$gst_adresse_ip,$st_prenom_adht,$st_nom_adht,$st_email_adht));
-    @fwrite($pf,"$st_chaine_log\n");
-    @fclose($pf);
-  }
+  
+   $courriel = new Courriel($gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
+   $courriel->setExpediteur($st_email_adht,"$st_prenom_adht $st_nom_adht");
+   $courriel->setAdresseRetour($st_email_adht);
+   $courriel->setDestinataire(EMAIL_FORUM,"Forum ".SIGLE_ASSO);
+   $courriel->setSujet("DI: $st_titre");
+   $courriel->setTexte($st_message_html);
+   $courriel->setTexteBrut($st_message_texte);
+   if ($courriel->envoie())
+	   print('<div class="alert alert-success">La demande d\'information a &eacute;t&eacute; envoy&eacute;e</div>');
+   else
+   {   
+	   print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: ".$courriel->get_erreur()."</div>");
+       $pf=@fopen("$gst_rep_logs/di_non_envoyees.log",'a');
+       date_default_timezone_set($gst_time_zone);
+       list($i_sec,$i_min,$i_heure,$i_jmois,$i_mois,$i_annee,$i_j_sem,$i_j_an,$b_hiver)=localtime();
+       $i_mois++;
+       $i_annee+=1900;
+       $st_date_log = sprintf("%02d/%02d/%04d %02d:%02d:%02d",$i_jmois,$i_mois,$i_annee,$i_heure,$i_min,$i_sec);
+       $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$gst_adresse_ip,$st_prenom_adht,$st_nom_adht,$st_email_adht));
+       @fwrite($pf,"$st_chaine_log\n");
+       @fclose($pf);
+    }
 }
 
 print('<div class="btn-group-vertical btn-group-xs col-xs-8 col-xs-offset-2" role="group" aria-label="Groupe de demandes">');
