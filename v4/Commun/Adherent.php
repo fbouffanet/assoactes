@@ -938,7 +938,7 @@ class Adherent
  */ 
   function envoie_message_adherent() {
     global $gst_url_site,$gst_administrateur_gbk;
-    $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ; 
+    $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "à l'": "du " ; 
 	$st_nom_destinataire = self::cp1252_vers_utf8($this->st_prenom). " ". self::cp1252_vers_utf8($this->st_nom);
     $st_message_html  = sprintf("Bonjour <font><strong>%s</strong></font>\n\n",$st_nom_destinataire);
 	if (!empty($gst_administrateur_gbk))
