@@ -8,14 +8,7 @@ require_once("../Commun/config.php");
 require_once("../Commun/constantes.php");
 require_once("../Commun/ConnexionBD.php");
 require_once("../Commun/commun.php");
-
-require '../PHPMailer/src/Exception.php';
-require '../PHPMailer/src/PHPMailer.php';
-require '../PHPMailer/src/SMTP.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
+require_once("../Commun/Courriel.php");
 
 $gst_chemin = ($_SERVER['HTTP_HOST']=='inscription.genea16.net')? "https://adherents.genea16.net": '..';
 $cryptinstall="$gst_chemin/Commun/crypt/cryptographp.fct.php";
@@ -188,43 +181,18 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ;
   $st_message_html .= "\n\n Les responsables $st_prefixe_asso".SIGLE_ASSO;
   $st_message_html = nl2br($st_message_html);
-  $mail = new PHPmailer();
-  $mail->CharSet = 'UTF-8';
-  $mail->Encoding = 'base64';
-  try {
-	if (!empty($gst_serveur_smtp) && !empty($gst_utilisateur_smtp) && !empty($gst_mdp_smtp) && !empty($gi_port_smtp)) 
-    {
-		//$mail->SMTPDebug = SMTP::DEBUG_SERVER;
-		$mail->isSMTP();                                 
-		$mail->Host       = $gst_serveur_smtp;
-		$mail->SMTPAuth   = true;                                   
-		$mail->Username   = $gst_utilisateur_smtp;                     
-		$mail->Password   = $gst_mdp_smtp;                               
-		$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
-		$mail->Port       = $gi_port_smtp;
-        // pour réactiver la vérification du certificat, commenter les lignes ci-dessous
-		$mail->SMTPOptions = array(
-                    'ssl' => array(
-                        'verify_peer' => false,
-                        'verify_peer_name' => false,
-                        'allow_self_signed' => true
-                    )
-                );
-				
-	}
-	$mail->addAddress($pst_ins_email_perso,"$pst_ins_prenom $pst_ins_nom");
-	$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
-	$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);
-	$mail->isHTML(true);	
-	$mail->Subject = $st_sujet;
-	$mail->Body    = $st_message_html;
-	$mail->send();
-	return true;
-  }	
-  catch (Exception $e) {
-    print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$mail->ErrorInfo}</div>");
-	return false;
+  $this->courriel = new Courriel($gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
+  $this->courriel->setExpediteur(EMAIL_DIRASSO,LIB_ASSO);
+  $this->courriel->setAdresseRetour(EMAIL_DIRASSO);
+  $this->courriel->setDestinataire($pst_ins_email_perso,"$pst_ins_prenom $pst_ins_nom");
+  $this->courriel->setSujet($st_sujet);
+  $this->courriel->setTexte($st_message_html);
+  if (!$this->courriel->envoie())
+  {
+	 print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: ".$this->courriel->get_erreur()."</div>");
+	 return false;
   }
+  return true;
 }
 
 /**

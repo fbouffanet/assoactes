@@ -36,10 +36,11 @@ class Courriel
 		$this->courriel=new PHPMailer(true);
 		$this->courriel->CharSet = 'UTF-8';
 		$this->courriel->Encoding = 'base64';
+		$this->courriel->isHTML(true);
 		if (!empty($pst_serveur_smtp) && !empty($pst_utilisateur_smtp) && !empty($pst_mdp_smtp) && !empty($pi_port_smtp)) 
 		{
 			//print("<div class=\"alert alert-warning\">Utilisation de SMTP</div>");
-			//$this->courriel->->SMTPDebug = SMTP::DEBUG_SERVER;
+			//$this->courriel->SMTPDebug = SMTP::DEBUG_SERVER;
 			$this->courriel->isSMTP();                                 
 			$this->courriel->Host       = $pst_serveur_smtp;
 			$this->courriel->SMTPAuth   = true;                                   
@@ -103,7 +104,7 @@ class Courriel
 	*/
 	public function setSujet($pst_sujet)
 	{
-		$this->courriel->Subject($pst_sujet);
+		$this->courriel->Subject=$pst_sujet;
 	}
 	
 	/*
@@ -112,7 +113,7 @@ class Courriel
 	*/
 	public function setTexte($pst_texte)
 	{
-		$this->courriel->Body($pst_texte);
+		$this->courriel->Body=$pst_texte;
 	}
 
 	/*
@@ -121,7 +122,7 @@ class Courriel
 	*/
 	public function setTexteBrut($pst_texte)
 	{
-		$this->courriel->AltBody($pst_texte);
+		$this->courriel->AltBody=$pst_texte;
 	}
 	
 	/*
