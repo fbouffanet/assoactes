@@ -1103,7 +1103,7 @@ class Adherent
 	$st_message_html .="</table>\n";
     $st_message_html .= "Cordialement,\n\nLes responsables du site";
 	$st_message_html = nl2br($st_message_html);
-    $st_sujet = "Votre nouveau mot de passe du site ".SIGLE_ASSO;
+    $st_sujet = "Votre nouveau mot de passe au site ".SIGLE_ASSO;
 	
 	$this->courriel->setDestinataire($this->st_email_perso,$st_nom_destinataire);
 	$this->courriel->setEnCopie(EMAIL_DIRASSO);
