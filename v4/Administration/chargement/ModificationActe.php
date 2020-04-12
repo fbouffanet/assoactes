@@ -45,12 +45,11 @@ class ModificationActe extends Acte {
          require_once $class_name . '.php';
          } 
     
-    public function __construct($pconnexionBD, $pi_idf_acte, $pi_idf_modification)
+    public function __construct($pconnexionBD, $pi_idf_acte, $pi_idf_modification,$pst_rep_site,$pst_serveur_smtp,$pst_utilisateur_smtp,$pst_mdp_smtp,$pi_port_smtp)
     
     
     {
-         global $gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp;
-		 require_once str_replace("/", DIRECTORY_SEPARATOR,"$gst_rep_site/Commun/Courriel.php");
+		 require_once str_replace("/", DIRECTORY_SEPARATOR,"$pst_rep_site/Commun/Courriel.php");
 		 $this -> connexionBD = $pconnexionBD;
          $this -> i_idf_type_acte = null;
          if (!is_null($pi_idf_acte))
@@ -85,7 +84,7 @@ class ModificationActe extends Acte {
          $this -> st_ip_demandeur = $_SERVER['REMOTE_ADDR'];
          $this -> st_nom_demandeur = '';
          $this -> st_prenom_demandeur = '';
-		 $this->courriel=new Courriel($gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
+		 $this->courriel=new Courriel($pst_rep_site,$pst_serveur_smtp,$pst_utilisateur_smtp,$pst_mdp_smtp,$pi_port_smtp);
          } 
     
     public function getNbPhotos()

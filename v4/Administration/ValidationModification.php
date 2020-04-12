@@ -90,7 +90,7 @@ $gst_adresse_retour = isset($_REQUEST['adresse_retour']) ?  $_REQUEST['adresse_r
 if (isset($_REQUEST['idf_modification']) )
 {
   $gi_idf_modification= (int) $_REQUEST['idf_modification'];
-  $go_acte = new ModificationActe($connexionBD,null,$gi_idf_modification);
+  $go_acte = new ModificationActe($connexionBD,null,$gi_idf_modification,$gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
   $go_acte->charge($gi_idf_modification);
   if (empty($gst_mode))
   {  
