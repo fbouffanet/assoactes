@@ -12,6 +12,7 @@ require_once 'config.php';
 require_once 'constantes.php';
 require_once 'ConnexionBD.php';
 require_once 'commun.php';
+require_once 'Courriel.php';
 
 $gst_url_retour = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
 $gst_adresse_ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
@@ -65,11 +66,22 @@ if (isset($_POST['ident']))
       else
       {
           $st_sujet = "Base V4 - Refus de connexion";
-          $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
-          $st_entete .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
-          $st_entete .= "From: BASE ".SIGLE_ASSO." <".EMAIL_INFOASSO.">\r\n";
           $st_texte = "L'adh&eacute;rent $st_ident a tent&eacute; de se connecter depuis l'adresse ip $gst_adresse_ip qui n'est pas autoris&eacute;e<br>";
-          mail($gst_emails_gestbase, $st_sujet, $st_texte, $st_entete);
+		  $courriel = new Courriel($gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
+          $courriel->setExpediteur(EMAIL_INFOASSO,"BASE ".SIGLE_ASSO);
+          $courriel->setAdresseRetour(EMAIL_INFOASSO);
+		  $a_destinataires = explode(',',$gst_emails_gestbase);
+		  foreach ($a_destinataires as $st_email_destinataire)
+		  {
+			print("Envoi à $st_email_destinataire<br>");  
+			$courriel->setDestinataire($st_email_destinataire,'');
+          }
+		  $courriel->setSujet($st_sujet);
+          $courriel->setTexte($st_texte);
+          if (!$courriel->envoie())
+          {
+	         print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: ".$courriel->get_erreur()."</div>");
+          }
           affiche_menu_refus();   		    
       }
 
