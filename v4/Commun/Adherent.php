@@ -1085,29 +1085,30 @@ class Adherent
   function envoie_message_geneabank_changement_mdp() {
 	global $gst_administrateur_gbk;
 	$st_nom_destinataire = self::cp1252_vers_utf8($this->st_prenom). " ". self::cp1252_vers_utf8($this->st_nom);
-    $st_texte = sprintf("Bonjour <strong>%s</strong>\n\n",$st_nom_destinataire);
+    $st_message_html = sprintf("Bonjour <strong>%s</strong>\n\n",$st_nom_destinataire);
 	if (empty($gst_administrateur_gbk))
-		$st_texte .= "Voici votre identifiant et mot de passe d'acc&egrave;s &agrave; la base <strong>".SIGLE_ASSO."</strong>\n\n";
+		$st_message_html .= "Voici votre identifiant et mot de passe d'acc&egrave;s &agrave; la base <strong>".SIGLE_ASSO."</strong>\n\n";
 	else
-		$st_texte .= "Voici votre identifiant et mot de passe d'acc&egrave;s &agrave; la base <strong>".SIGLE_ASSO."</strong> et &agrave; G&eacute;n&eacute;aBank\n\n";
+		$st_message_html .= "Voici votre identifiant et mot de passe d'acc&egrave;s &agrave; la base <strong>".SIGLE_ASSO."</strong> et &agrave; G&eacute;n&eacute;aBank\n\n";
 	if (!empty(EMAIL_FORUM))
-		$st_texte .= "N'oubliez pas! votre adresse e-mail doit-&ecirc;tre la m&ecirc;me sur la base GENEA16 et sur Yahoo\n\n";
-    $st_texte .="<table border=1>";
-    $st_texte .= sprintf("<tr><td bgcolor=\"lightblue\">Votre identifiant ".SIGLE_ASSO.":</td><th>%s</th></tr>",$this->st_ident);
-	$st_texte .= sprintf("<tr><td bgcolor=\"lightblue\">Votre mot de passe:</td><th>%s</th></tr>",$this->st_mdp);    
+		$st_message_html .= "N'oubliez pas! votre adresse e-mail doit-&ecirc;tre la m&ecirc;me sur la base GENEA16 et sur Yahoo\n\n";
+    $st_message_html .="<table border=1>";
+    $st_message_html .= sprintf("<tr><td bgcolor=\"lightblue\">Votre identifiant ".SIGLE_ASSO.":</td><th>%s</th></tr>",$this->st_ident);
+	$st_message_html .= sprintf("<tr><td bgcolor=\"lightblue\">Votre mot de passe:</td><th>%s</th></tr>",$this->st_mdp);    
 	if (!empty($gst_administrateur_gbk))
     {		
-		$st_texte .= sprintf("<tr><td bgcolor=\"coral\">Votre identifiant G&eacute;n&eacute;aBank:</td><th>".PREFIXE_ADH_GBK."%d</th></tr>",$this->i_idf);
-		$st_texte .= sprintf("<tr><td bgcolor=\"coral\">Votre mot de passe G&eacute;n&eacute;aBank:</td><th>%s</th></tr>",$this->st_mdp); 
+		$st_message_html .= sprintf("<tr><td bgcolor=\"coral\">Votre identifiant G&eacute;n&eacute;aBank:</td><th>".PREFIXE_ADH_GBK."%d</th></tr>",$this->i_idf);
+		$st_message_html .= sprintf("<tr><td bgcolor=\"coral\">Votre mot de passe G&eacute;n&eacute;aBank:</td><th>%s</th></tr>",$this->st_mdp); 
     }
-	$st_texte .="</table>\n";
-    $st_texte .= "Cordialement,\n\nLes responsables du site";
+	$st_message_html .="</table>\n";
+    $st_message_html .= "Cordialement,\n\nLes responsables du site";
+	$st_message_html = nl2br($st_message_html);
     $st_sujet = "Votre nouveau mot de passe du site ".SIGLE_ASSO;
 	
 	$this->courriel->setDestinataire($this->st_email_perso,$st_nom_destinataire);
 	$this->courriel->setEnCopie(EMAIL_DIRASSO);
 	$this->courriel->setSujet($st_sujet);
-	$this->courriel->setTexte($st_texte);
+	$this->courriel->setTexte($st_message_html);
 	if (!$this->courriel->envoie())
 	{
 		print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: ".$this->courriel->get_erreur()."</div>");
