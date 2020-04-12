@@ -99,6 +99,15 @@ class Courriel
 	}
 	
 	/*
+	* Setter EnCopieCachée
+	* @param string $pst_adresse_copie email en copie
+	*/
+	public function setEnCopieCachee($pst_adresse_copie)
+	{
+		$this->courriel->addBCC($pst_adresse_copie);
+	}
+	
+	/*
 	* Setter Sujet
 	* @param string $pst_suject sujet
 	*/
@@ -135,7 +144,7 @@ class Courriel
 			return true;
 		}
 		catch (Exception $e) {
-			$this->courriel->st_erreur=$this->mailer->ErrorInfo;
+			$this->courriel->st_erreur=$this->courriel->ErrorInfo;
 			return false;
 		}
 	}
