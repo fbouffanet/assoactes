@@ -70,10 +70,8 @@ if (isset($_POST['ident']))
 		  $courriel = new Courriel($gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
           $courriel->setExpediteur(EMAIL_INFOASSO,"BASE ".SIGLE_ASSO);
           $courriel->setAdresseRetour(EMAIL_INFOASSO);
-		  $a_destinataires = explode(',',$gst_emails_gestbase);
-		  foreach ($a_destinataires as $st_email_destinataire)
+		  foreach ($ga_emails_gestbase as $st_email_destinataire)
 		  {
-			print("Envoi à $st_email_destinataire<br>");  
 			$courriel->setDestinataire($st_email_destinataire,'');
           }
 		  $courriel->setSujet($st_sujet);
