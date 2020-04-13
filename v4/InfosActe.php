@@ -201,7 +201,7 @@ else
 {
   $st_requete = "select a.date,ta.nom,ca.nom,GROUP_CONCAT(concat(prn.libelle,' ',p.patronyme) order by p.idf separator ' X ') from acte a join commune_acte ca on (a.idf_commune=ca.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join personne p on (p.idf_acte=a.idf) join prenom prn on (p.idf_prenom=prn.idf)  where a.idf=$gi_idf_acte and p.idf_type_presence=".IDF_PRESENCE_INTV." group by a.idf";
   list($st_date,$st_type_acte,$st_commune,$st_personnes)=$connexionBD->sql_select_liste($st_requete);
-  $st_titre = cp1252_vers_utf8("$st_personnes le $st_date à $st_commune");
+  $st_titre = cp1252_vers_utf8($st_personnes)." le $st_date à ".cp1252_vers_utf8($st_commune);
   $a_commune_personne=$connexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
   $a_type_acte=$connexionBD->liste_valeur_par_clef("select idf, nom from type_acte");
   $o_acte = new Acte($connexionBD, null, null, null, null, null, null);
