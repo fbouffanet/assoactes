@@ -201,7 +201,7 @@ else
 {
   $st_requete = "select a.date,ta.nom,ca.nom,GROUP_CONCAT(concat(prn.libelle,' ',p.patronyme) order by p.idf separator ' X ') from acte a join commune_acte ca on (a.idf_commune=ca.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join personne p on (p.idf_acte=a.idf) join prenom prn on (p.idf_prenom=prn.idf)  where a.idf=$gi_idf_acte and p.idf_type_presence=".IDF_PRESENCE_INTV." group by a.idf";
   list($st_date,$st_type_acte,$st_commune,$st_personnes)=$connexionBD->sql_select_liste($st_requete);
-  $st_titre = "$st_personnes le $st_date a $st_commune";
+  $st_titre = cp1252_vers_utf8("$st_personnes le $st_date à $st_commune");
   $a_commune_personne=$connexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
   $a_type_acte=$connexionBD->liste_valeur_par_clef("select idf, nom from type_acte");
   $o_acte = new Acte($connexionBD, null, null, null, null, null, null);
@@ -215,8 +215,6 @@ else
   
   $st_prenom_adht = cp1252_vers_utf8($st_prenom_adht);
   $st_nom_adht = cp1252_vers_utf8($st_nom_adht);
-  setlocale(LC_CTYPE, 'fr_FR.UTF8');
-  $st_titre = strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_titre));
 
   $st_debut_msg_html  = "Bonjour<br /><br />";
   $st_debut_msg_html .= "Demande d'information ";
@@ -226,7 +224,6 @@ else
   $st_fin_msg_html .= "<br />\nMerci<br />";
   $st_message_html =   $st_debut_msg_html.$st_releve_html.$st_fin_msg_html;
   $st_message_texte = html_entity_decode(str_ireplace(array("<br>","<br />"),"\r\n",$st_message_html),ENT_COMPAT,'UTF-8');
-  $st_message_texte = strip_tags(iconv("UTF-8", "ASCII//TRANSLIT", $st_message_texte));
   
    $courriel = new Courriel($gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
    $courriel->setExpediteur($st_email_adht,"$st_prenom_adht $st_nom_adht");
