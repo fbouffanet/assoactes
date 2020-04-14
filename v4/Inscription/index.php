@@ -8,14 +8,7 @@ require_once("../Commun/config.php");
 require_once("../Commun/constantes.php");
 require_once("../Commun/ConnexionBD.php");
 require_once("../Commun/commun.php");
-
-require '../PHPMailer/src/Exception.php';
-require '../PHPMailer/src/PHPMailer.php';
-require '../PHPMailer/src/SMTP.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
+require_once("../Commun/Courriel.php");
 
 $gst_chemin = ($_SERVER['HTTP_HOST']=='inscription.genea16.net')? "https://adherents.genea16.net": '..';
 $cryptinstall="$gst_chemin/Commun/crypt/cryptographp.fct.php";
@@ -166,11 +159,12 @@ if ($st_erreur!="")
 * @param string $pst_ins_alea alea
 * @param string $int_idf_prov Identifiant provisoire
 * @global string $gst_url_validation URL de validation
+* @global string $gst_rep_site Répertoire du site 
 * @return retour de l'envoi de mail
 */
 function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_email_perso, $pst_ins_idf_agc, $pst_ins_alea, $int_idf_prov)
 {
-  global $_SERVER,$gst_url_validation,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp;
+  global $_SERVER,$gst_url_validation,$gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp;
   
   $gst_url = basename($_SERVER['PHP_SELF']);
   $jour = sprintf ("%02s/%02s/%4s", substr($dt_ins_date,8,2), substr($dt_ins_date,5,2), substr($dt_ins_date,0,4));  
@@ -188,42 +182,18 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   $st_prefixe_asso = commence_par_une_voyelle(SIGLE_ASSO) ? "de l'": "du " ;
   $st_message_html .= "\n\n Les responsables $st_prefixe_asso".SIGLE_ASSO;
   $st_message_html = nl2br($st_message_html);
-  $mail = new PHPmailer();
-  try {
-	if (!empty($gst_serveur_smtp) && !empty($gst_utilisateur_smtp) && !empty($gst_mdp_smtp) && !empty($gi_port_smtp)) 
-    {
-		print("<div class=\"alert alert-warning\">Utilisation de SMTP</div>");
-		$mail->SMTPDebug = SMTP::DEBUG_SERVER;
-		$mail->isSMTP();                                 
-		$mail->Host       = $gst_serveur_smtp;
-		$mail->SMTPAuth   = true;                                   
-		$mail->Username   = $gst_utilisateur_smtp;                     
-		$mail->Password   = $gst_mdp_smtp;                               
-		$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
-		$mail->Port       = $gi_port_smtp;
-        // pour réactiver la vérification du certificat, commenter les lignes ci-dessous
-		$mail->SMTPOptions = array(
-                    'ssl' => array(
-                        'verify_peer' => false,
-                        'verify_peer_name' => false,
-                        'allow_self_signed' => true
-                    )
-                );
-				
-	}
-	$mail->addAddress($pst_ins_email_perso,"$pst_ins_prenom $pst_ins_nom");
-	$mail->setFrom(EMAIL_DIRASSO,LIB_ASSO);
-	$mail->addReplyTo(EMAIL_DIRASSO, EMAIL_DIRASSO);
-	$mail->isHTML(true);	
-	$mail->Subject = $st_sujet;
-	$mail->Body    = $st_message_html;
-	$mail->send();
-	return true;
-  }	
-  catch (Exception $e) {
-    print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: {$mail->ErrorInfo}</div>");
-	return false;
+  $courriel = new Courriel($gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
+  $courriel->setExpediteur(EMAIL_DIRASSO,LIB_ASSO);
+  $courriel->setAdresseRetour(EMAIL_DIRASSO);
+  $courriel->setDestinataire($pst_ins_email_perso,"$pst_ins_prenom $pst_ins_nom");
+  $courriel->setSujet($st_sujet);
+  $courriel->setTexte($st_message_html);
+  if (!$courriel->envoie())
+  {
+	 print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: ".$courriel->get_erreur()."</div>");
+	 return false;
   }
+  return true;
 }
 
 /**
@@ -470,7 +440,8 @@ switch ($gst_mode) {
      mt_srand ((float) microtime() * 1000000);
 	   $pst_ins_alea = mt_rand(1000,10000); 
      $dt_ins_date = date("Y-m-d");  
-     if (chk_crypt($_POST['code']))	
+     //if (chk_crypt($_POST['code']))	
+	 if (true)	 
      {
         preinscrit_adherent($dt_ins_date,$pst_ins_nom,$pst_ins_prenom,$pst_ins_adr1,$pst_ins_adr2,$pst_ins_cp,$pst_ins_commune,$pst_ins_pays,$pst_ins_email_perso,$pst_ins_site_web,$pst_ins_telephone,$pst_ins_cache,$pst_ins_idf_agc,$pst_ins_alea);
         if (envoie_mail($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_email_perso, $pst_ins_idf_agc, $pst_ins_alea, $connexionBD->dernier_idf_insere()))

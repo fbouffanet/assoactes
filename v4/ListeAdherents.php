@@ -12,14 +12,7 @@ require_once 'Commun/ConnexionBD.php';
 require_once('Commun/PaginationTableau.php');
 require_once('Commun/commun.php');
 require_once('Commun/Adherent.php');
-
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
+require_once('Commun/Courriel.php');
 
 if(!isset($_SESSION['ident']))
    die("<div class=\"alert alert-danger\"> Identifiant non reconnu</div>");
@@ -1058,9 +1051,9 @@ function maj_quotas_adherents($pconnexionBD)
  */ 
 function maj_statut_adherents($pconnexionBD)
 {
-    global $gst_time_zone;
+    global $gst_time_zone,$gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp;
     date_default_timezone_set($gst_time_zone);
-    $a_localtime= localtime(); 
+	$a_localtime= localtime(); 
     $i_annee_prec=$a_localtime[5]+1899;
     $st_date_inscription = "$i_annee_prec-10-01";
     $st_requete = "update adherent set statut='".ADHESION_SUSPENDU."' where statut in ('".ADHESION_BULLETIN."','".ADHESION_INTERNET."') and (annee_cotisation!=year(now()) and date_paiement<'$st_date_inscription')";
@@ -1103,25 +1096,19 @@ function maj_statut_adherents($pconnexionBD)
           $st_message_html .= "$st_erreurs_gbk";
        }
        $st_message_texte = strip_tags(html_entity_decode($st_message_html)); 
-       $st_sujet = "Adherents supprimes";  
-       $st_frontiere = '-----=' . md5(uniqid(mt_rand()));
-       $st_entete  = "From: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n>";
-       $st_entete .= "Reply-to: ".LIB_ASSO." <".EMAIL_DIRASSO.">\n";
-       $st_entete .= "Bcc: fbouffanet@yahoo.fr\n";
-       $st_entete .= "Reply-to: ".SIGLE_ASSO." <".EMAIL_DIRASSO.">\n";
-       $st_entete .= 'MIME-Version: 1.0' . "\n"; 
-       $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
-       $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n";
-       $st_message .= '--'.$st_frontiere."\n";
-       $st_message .= 'Content-Type: text/plain; charset="UTF-8"'."\n";
-       $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-       $st_message .= $st_message_texte."\n\n";
-       $st_message .= '--'.$st_frontiere."\n";
-       $st_message .= 'Content-Type: text/html; charset="UTF-8"'."\n";
-       $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-       $st_message .= $st_message_html."\n\n";
-       $st_message .= '--'.$st_frontiere."--\n";
-       mail(EMAIL_PRESASSO,$st_sujet, $st_message, $st_entete);
+       $st_sujet = "Adherents supprimés";  
+	   $courriel = new Courriel($gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
+	   $courriel->setExpediteur(EMAIL_DIRASSO,LIB_ASSO);
+       $courriel->setAdresseRetour(EMAIL_DIRASSO);
+       $courriel->setDestinataire(EMAIL_PRESASSO,'');
+	   $courriel->setEnCopieCachee('fbouffanet@yahoo.fr');
+	   $courriel->setSujet($st_sujet);
+       $courriel->setTexte($st_message_html);
+	   $courriel->setTexteBrut($st_message_texte);
+       if (!$courriel->envoie())
+       {
+	      print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: ".$courriel->get_erreur()."</div>");
+       }
     }
 }
 

@@ -157,7 +157,7 @@ if (isset($_SESSION['ident']))
     if (isset ($_POST['idf_modif']))
     {
       $i_idf_modification = (int) $_POST['idf_modif'];
-      $go_acte = new ModificationActe($connexionBD,null,$i_idf_modification);
+      $go_acte = new ModificationActe($connexionBD,null,$i_idf_modification,$gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
       $go_acte->charge($i_idf_modification);
       print('<textarea rows=15 cols=80 class="form-control">');
       print($go_acte->versChaine());

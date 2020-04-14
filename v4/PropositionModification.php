@@ -254,7 +254,7 @@ else
       // Modification de TD => une vérification du captch doit être faite
       if (chk_crypt($_POST['code']))
       {
-        $go_acte = new ModificationActe($connexionBD,$gi_idf_acte,null);
+        $go_acte = new ModificationActe($connexionBD,$gi_idf_acte,null,$gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
         $go_acte->initialise_depuis_formulaire($gi_idf_acte);            
         $go_acte->cree();
         $go_acte->detruit_variables_sessions();
@@ -262,7 +262,7 @@ else
       }
       else
       {
-        $go_acte = new ModificationActe($connexionBD,$gi_idf_acte,null);
+        $go_acte = new ModificationActe($connexionBD,$gi_idf_acte,null,$gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
         $go_acte->initialise_depuis_formulaire($gi_idf_acte);
         //print $go_acte->versTableauHTML();
         $go_acte->intialise_variables_sessions();
@@ -277,7 +277,7 @@ else
     else
     {
       // La modification vient d'un adhérent => pas de captcha
-      $go_acte = new ModificationActe($connexionBD,$gi_idf_acte,null);
+      $go_acte = new ModificationActe($connexionBD,$gi_idf_acte,null,$gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
       $go_acte->initialise_depuis_formulaire($gi_idf_acte); 
       $go_acte->setEmailDemandeur($gst_email_demandeur);            
       $go_acte->cree();

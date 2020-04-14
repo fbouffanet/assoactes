@@ -90,7 +90,7 @@ $gst_adresse_retour = isset($_REQUEST['adresse_retour']) ?  $_REQUEST['adresse_r
 if (isset($_REQUEST['idf_modification']) )
 {
   $gi_idf_modification= (int) $_REQUEST['idf_modification'];
-  $go_acte = new ModificationActe($connexionBD,null,$gi_idf_modification);
+  $go_acte = new ModificationActe($connexionBD,null,$gi_idf_modification,$gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
   $go_acte->charge($gi_idf_modification);
   if (empty($gst_mode))
   {  
@@ -255,6 +255,8 @@ else
    $gst_adresse_retour = isset($_SESSION['adresse_retour']) ? $_SESSION['adresse_retour'] : '';
    unset($_SESSION['adresse_retour']);
    list($i_idf_valideur,$st_nom_valideur,$st_prenom_valideur,$st_email_valideur) =$connexionBD->sql_select_liste("select idf,nom,prenom,email_perso from adherent where ident='".$_SESSION['ident']."'");
+   $st_nom_valideur=cp1252_vers_utf8($st_nom_valideur);
+   $st_prenom_valideur=cp1252_vers_utf8($st_prenom_valideur);
    switch ($gst_mode)
    {
       case 'VALIDATION':

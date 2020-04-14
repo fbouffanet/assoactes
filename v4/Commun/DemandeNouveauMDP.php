@@ -158,7 +158,7 @@ function verifie_demande($pst_email)
   }
   print('</div></div></div>');
   print('<div class="row">');
-  print('<button type="button" id="ferme" class="btn btn-warning col-xs-4 col-xs-offset-4"><span class="glyphicon glyphicon-remove"></span> Annuler</button>');
+  print('<button type="button" id="ferme" class="btn btn-warning col-xs-4 col-xs-offset-4"><span class="glyphicon glyphicon-remove"></span> Fermer la  fenêtre</button>');
   print('</div>'); 
 } 
 
