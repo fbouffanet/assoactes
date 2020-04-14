@@ -146,7 +146,7 @@ if(isset($result) && $result['result']['code'] == '00000' )
         if (empty($st_jeton_ins))
 		{
 		   $connexionBD->initialise_params(array(':statut'=>$gst_statut,':tarif'=>$i_tarif,':aides'=>$gst_aides,':i_origine'=>$gi_origine,':s_origine'=>utf8_vers_cp1252($gst_origine),':token'=>$st_token,':idf_prov'=>$gi_idf_prov));
-           $st_requete = "update `inscription_prov` set ins_date_paiement=now(),ins_statut=:status, ins_prix=:tarif, ins_aide = :aides, ins_type_origine=:i_origine,ins_description_origine=:s_origine,ins_type='".TYPE_INSCRIPTION."',ins_token=:token where idf = :idf_prov";  
+           $st_requete = "update `inscription_prov` set ins_date_paiement=now(),ins_statut=:statut, ins_prix=:tarif, ins_aide = :aides, ins_type_origine=:i_origine,ins_description_origine=:s_origine,ins_type='".TYPE_INSCRIPTION."',ins_token=:token where idf = :idf_prov";  
         }
 		else
 		{
