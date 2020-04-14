@@ -1171,6 +1171,8 @@ function fusionner($pconnexionBD,$pi_idf_adh1,$pi_idf_adh2)
       $pconnexionBD->execute_requete($st_requete); 
       $adherent = new Adherent($pconnexionBD,$i_nouveau_numero);
       $adherent->supprime();
+	  $adherent = new Adherent($pconnexionBD,$i_ancien_numero);
+	  $adherent->reactive();
    }  
 }
 
