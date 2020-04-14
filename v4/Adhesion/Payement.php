@@ -38,7 +38,8 @@ switch ($gst_type)
 {
   case TYPE_INSCRIPTION:
       $gi_idf_prov = (int) $_POST['idf_prov'];    
-      $st_requete = "select ins_nom, ins_prenom,ins_email_perso,ins_cp,ins_pays,ins_token from inscription_prov where idf = $gi_idf_prov";
+      $st_requete = "select ins_nom, ins_prenom,ins_email_perso,ins_cp,ins_pays,ins_token from inscription_prov where idf = :idf_prov";
+	  $connexionBD->initialise_params(array(':idf_prov'=>$gi_idf_prov)); 
       $a_adh = $connexionBD->sql_select_liste($st_requete);
       if (count($a_adh)==0)
         die("Identifiant provisoire inconnu: $gi_idf_prov<br>"); 
@@ -71,7 +72,8 @@ switch ($gst_type)
       if(!isset($_SESSION['ident']))
          die("<div class=\"alert alert-danger\"> Identifiant non reconnu</div>");
       $gst_ident = $_SESSION['ident'];
-      $a_adh_agc= $connexionBD->sql_select_liste("select idf,nom,prenom,email_perso,cp,pays,annee_cotisation,jeton_paiement from adherent where ident='$gst_ident'");
+	  $connexionBD->initialise_params(array(':ident'=>$gst_ident)); 
+      $a_adh_agc= $connexionBD->sql_select_liste("select idf,nom,prenom,email_perso,cp,pays,annee_cotisation,jeton_paiement from adherent where ident=:ident");
       if (empty($a_adh_agc))
          die("<div class=\"alert alert-danger\"> Identifiant ".SIGLE_ASSO." non retrouv&eacute;</div>");
       list($i_idf_agc,$st_nom_adh,$st_prenom_adh,$st_email_adh,$st_cp_adh,$st_pays_adh,$i_annee_cotisation_adh)= $a_adh_agc;
@@ -142,15 +144,22 @@ if(isset($result) && $result['result']['code'] == '00000' )
     {
       case TYPE_INSCRIPTION:
         if (empty($st_jeton_ins))
-           $st_requete = "update `inscription_prov` set ins_date_paiement=now(),ins_statut='$gst_statut', ins_prix=$i_tarif, ins_aide = $gst_aides, ins_type_origine=$gi_origine,ins_description_origine='$gst_origine',ins_type='".TYPE_INSCRIPTION."',ins_token= '$st_token' where idf = $gi_idf_prov";  
-        else
+		{
+		   $connexionBD->initialise_params(array(':statut'=>$gst_statut,':tarif'=>$i_tarif,':aides'=>$gst_aides,':i_origine'=>$gi_origine,':s_origine'=>utf8_vers_cp1252($gst_origine),':token'=>$st_token,':idf_prov'=>$gi_idf_prov));
+           $st_requete = "update `inscription_prov` set ins_date_paiement=now(),ins_statut=:status, ins_prix=:tarif, ins_aide = :aides, ins_type_origine=:i_origine,ins_description_origine=:s_origine,ins_type='".TYPE_INSCRIPTION."',ins_token=:token where idf = :idf_prov";  
+        }
+		else
+		{
+		   $connexionBD->initialise_params(array(':statut'=>$gst_statut,':tarif'=>$i_tarif,':aides'=>$gst_aides,':i_origine'=>$gi_origine,':s_origine'=>utf8_vers_cp1252($gst_origine),':token'=>$st_token,':idf_prov'=>$gi_idf_prov));
            $st_requete = "
            insert into `inscription_prov`(ins_date_paiement,ins_date, ins_nom, ins_prenom, ins_adr1, ins_adr2, ins_cp, ins_commune, ins_pays, ins_email_perso, ins_site_web, ins_telephone, ins_cache, ins_idf_agc, ins_alea, ins_valid,ins_mdp,ins_statut,ins_prix,ins_aide,ins_type_origine,ins_description_origine,ins_type,ins_token) 
-           select now(),ins_date, ins_nom, ins_prenom, ins_adr1, ins_adr2, ins_cp, ins_commune, ins_pays, ins_email_perso, ins_site_web, ins_telephone, ins_cache, ins_idf_agc, ins_alea, ins_valid,ins_mdp,'$gst_statut',$i_tarif,$gst_aides,$gi_origine,'$gst_origine','".TYPE_INSCRIPTION."','$st_token' from `inscription_prov` where idf=$gi_idf_prov";  
+           select now(),ins_date, ins_nom, ins_prenom, ins_adr1, ins_adr2, ins_cp, ins_commune, ins_pays, ins_email_perso, ins_site_web, ins_telephone, ins_cache, ins_idf_agc, ins_alea, ins_valid,ins_mdp,:statut,$:tarif,:aides,:i_origine,:s_origine,'".TYPE_INSCRIPTION."',:token from `inscription_prov` where idf=:idf_prov";
+		}
         $connexionBD->execute_requete($st_requete);
       break;    
       case TYPE_READHESION:
-        $st_requete = "insert `inscription_prov`(ins_date_paiement,ins_idf_agc,ins_nom,ins_prenom,ins_email_perso,ins_mdp,ins_statut,ins_prix,ins_aide,ins_type_origine,ins_description_origine,ins_type,ins_token) select now(),$i_idf_agc,'$st_nom_adh','$st_prenom_adh','$st_email_adh',mdp,'$gst_statut',$i_tarif,$gst_aides,$gi_origine,'$gst_origine','".TYPE_READHESION."','$st_token' from adherent where idf=$i_idf_agc";  
+	    $connexionBD->initialise_params(array(':idf_agc'=>$i_idf_agc,':nom_adh'=>$st_nom_adh,':prenom_adh'=>$st_prenom_adh,':email_adh'=>$st_email_adh,':statut'=>$gst_statut,':tarif'=>$i_tarif,':aides'=>$gst_aides,':i_origine'=>$gi_origine,':s_origine'=>utf8_vers_cp1252($gst_origine),':token'=>$st_token,':idf_prov'=>$gi_idf_prov));
+        $st_requete = "insert `inscription_prov`(ins_date_paiement,ins_idf_agc,ins_nom,ins_prenom,ins_email_perso,ins_mdp,ins_statut,ins_prix,ins_aide,ins_type_origine,ins_description_origine,ins_type,ins_token) select now(),:idf_agc,:nom_adh,:prenom_adh,:email_adh,mdp,:statut,:tarif,:aides,:i_origine,:s_origine,'".TYPE_READHESION."',:token from adherent where idf=:idf_agc";  
         $connexionBD->execute_requete($st_requete);
       break;
       default:
