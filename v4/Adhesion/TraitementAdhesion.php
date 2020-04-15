@@ -15,13 +15,6 @@ require_once("$gst_chemin/Commun/commun.php");
 require_once("$gst_chemin/Commun/GestionAdherents.php");
 require_once("$gst_chemin/Commun/Adherent.php"); 
 
-require "$gst_chemin/PHPMailer/src/Exception.php";
-require "$gst_chemin/PHPMailer/src/PHPMailer.php";
-require "$gst_chemin/PHPMailer/src/SMTP.php";
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP; 
 // INITIALIZE
 //FBO
 require_once("include.php");
@@ -55,7 +48,8 @@ $response = $payline->get_webPaymentDetails($st_token,$a_res);
 if ($response['result']['code'] == '00000' )
 //FBOif (true)
 {
-  $st_requete = "select i_p.idf,i_p.ins_idf_agc,i_p.ins_type,adht.statut as ancien_statut from `inscription_prov` i_p left join `adherent` adht on (i_p.ins_idf_agc=adht.idf) where i_p.ins_token = '$st_token'";
+  $connexionBD->initialise_params(array(':token'=>$st_token));
+  $st_requete = "select i_p.idf,i_p.ins_idf_agc,i_p.ins_type,adht.statut as ancien_statut from `inscription_prov` i_p left join `adherent` adht on (i_p.ins_idf_agc=adht.idf) where i_p.ins_token = :token";
   list($i_idf_ins_prov,$i_idf_agc,$st_type_adhesion,$st_ancien_statut) = $connexionBD->sql_select_liste($st_requete);
   if (empty($st_ancien_statut))
   {
@@ -76,7 +70,8 @@ if ($response['result']['code'] == '00000' )
 	   $adherent->envoie_message_readhesion();
   }
   $st_chaine_log = sprintf("%s;%s;%s;%d;%s",$st_date_log,$_SERVER['REQUEST_URI'],$st_token,$i_idf_agc,$st_type_adhesion);
-  $st_requete = "delete from `inscription_prov` where ins_token='$st_token'";
+  $connexionBD->initialise_params(array(':token'=>$st_token));
+  $st_requete = "delete from `inscription_prov` where ins_token=:token";
   $connexionBD->execute_requete($st_requete);
 }
 else

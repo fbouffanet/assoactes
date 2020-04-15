@@ -23,9 +23,9 @@ require_once("$gst_chemin/Commun/Adherent.php");
   Démarrage du programme
   ---------------------------------------------------------------------------*/
 
-$alea = isset( $_GET['alea'])? $_GET['alea'] : '0';
-$idf_agc = isset( $_GET['idf_agc'])? $_GET['idf_agc'] : '0';
-$idf_prov = isset( $_GET['idf_prov'])? $_GET['idf_prov'] : '0';
+$alea = isset( $_GET['alea'])? (int) $_GET['alea'] : '0';
+$idf_agc = isset( $_GET['idf_agc'])? (int) $_GET['idf_agc'] : '0';
+$idf_prov = isset( $_GET['idf_prov'])? (int) $_GET['idf_prov'] : '0';
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
@@ -35,7 +35,8 @@ On va vérifier que le clef de la table correspond à la clef fournie
 par l'adhérent (clef + numéro d'adhérent).
 Si c'est le cas, on poursuit l'inscription sinon, on affiche un message d'erreur.
 */
-$st_requete = "select idf, ins_nom, ins_prenom,ins_cp,ins_pays,ins_email_perso from inscription_prov where idf = '$idf_prov' and ins_alea = '$alea'";
+$connexionBD->initialise_params(array(':idf_prov'=>$idf_prov,':alea'=>$alea));
+$st_requete = "select idf, ins_nom, ins_prenom,ins_cp,ins_pays,ins_email_perso from inscription_prov where idf = :idf_prov and ins_alea = :alea";
 $a_retour_prov = $connexionBD->sql_select_liste($st_requete);
 if (empty($a_retour_prov))   // Pas d'enregistrement
 {
@@ -70,12 +71,14 @@ else
    // Essaye de récupérer l'ancien numéro de l'adhérent si le numéro n'est pas saisie et son adresse email correspond à un adhérent connu
    if (empty($idf_agc))   
 	 {
-        $st_requete = "select idf,mdp from adherent where email_perso='$gst_email_ins'";
+		$connexionBD->initialise_params(array(':email'=>$gst_email_ins)); 
+        $st_requete = "select idf,mdp from adherent where email_perso=:email";
         $a_retour = $connexionBD->sql_select_liste($st_requete);
         if (count($a_retour)>0)
         {
             list($idf_agc,$st_mdp) = $a_retour;
-		        $st_requete = "update `inscription_prov` set ins_idf_agc = '$idf_agc',ins_mdp='$st_mdp' where idf = $idf_prov";
+		    $connexionBD->initialise_params(array(':idf_agc'=>$idf_agc,':mdp'=>$st_mdp,':idf_prov'=>$idf_prov)); 
+			$st_requete = "update `inscription_prov` set ins_idf_agc = :idf_agc,ins_mdp=:mdp where idf = :idf_prov";
             $connexionBD->execute_requete($st_requete);
         }    
    }
@@ -84,7 +87,8 @@ else
 	 {
       $st_requete = "select max(idf) from adherent";
       $i_max_idf = $connexionBD->sql_select1($st_requete);
-      $st_requete = "select idf, nom, prenom, statut,annee_cotisation, cp,pays from adherent where idf = $idf_agc";
+	  $connexionBD->initialise_params(array(':idf_agc'=>$idf_agc)); 
+      $st_requete = "select idf, nom, prenom, statut,annee_cotisation, cp,pays from adherent where idf = :idf_agc";
       $a_retour_adh = $connexionBD->sql_select_liste($st_requete);
 	  /*
 	  Si l'ancien numéro d'inscription est défini mais n'existe pas
@@ -106,9 +110,10 @@ else
          */
          if ($gst_status != 'S' && $aujourdhui['mon']<=9)  // Statut de l'adhérent non suspendu --> on remet à 0 dans l'inscription provisoire
          {
-	         $st_requete = "update `inscription_prov` set ins_idf_agc = '0' where idf = $idf_prov";
-           $connexionBD->execute_requete($st_requete);
-				   $mess = "Votre inscription sera valid&eacute;e avec un nouveau num&eacute;ro (3)\n";
+			$connexionBD->initialise_params(array(':idf_prov'=>$idf_prov)); 
+	        $st_requete = "update `inscription_prov` set ins_idf_agc = '0' where idf = :idf_prov";
+			$connexionBD->execute_requete($st_requete);
+			$mess = "Votre inscription sera valid&eacute;e avec un nouveau num&eacute;ro (3)\n";
          }
          /*
          Si l'ancien numéro d'inscription est défini et correspond à un
@@ -127,15 +132,17 @@ else
 	            $st_prenom_ins == $st_prenom)
 	          {
 			        $mess = "Votre inscription sera valid&eacute;e avec le num&eacute;ro ".$idf_agc." que vous avez saisi ou que nous avons retrouv&eacute; (4)";
-              $st_requete = "update  `inscription_prov` i_p join `adherent` adh on (i_p.ins_idf_agc=adh.idf) set i_p.ins_mdp=adh.mdp where i_p.ins_idf_agc=$idf_agc ";
+					$connexionBD->initialise_params(array(':idf_agc'=>$idf_agc));
+              $st_requete = "update  `inscription_prov` i_p join `adherent` adh on (i_p.ins_idf_agc=adh.idf) set i_p.ins_mdp=adh.mdp where i_p.ins_idf_agc=:idf_agc ";
               $connexionBD->execute_requete($st_requete); 
 			      }
 			      else
 			      {
               // on remet à 0 dans l'inscription provisoire
-		          $st_requete = "update `inscription_prov` set ins_idf_agc = '0' where idf = $idf_prov";
-              $connexionBD->execute_requete($st_requete);
-				      $mess = "Votre inscription sera valid&eacute;e avec un nouveau num&eacute;ro (5)\n";
+		          $st_requete = "update `inscription_prov` set ins_idf_agc = '0' where idf = :idf_prov";
+				  $connexionBD->initialise_params(array(':idf_prov'=>$idf_prov));
+				  $connexionBD->execute_requete($st_requete);
+				  $mess = "Votre inscription sera valid&eacute;e avec un nouveau num&eacute;ro (5)\n";
 	          }
          }
 	    }
