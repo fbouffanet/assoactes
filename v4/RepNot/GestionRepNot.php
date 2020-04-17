@@ -418,7 +418,7 @@ function menu_liste($pconnexionBD)
 	foreach($a_liste_rep_not as $i_idf_rep => $a_ligne)
 	{
       list($st_notaire,$st_paroisse,$st_cote) = $a_ligne;
-      print("<option value=\"$i_idf_rep\">$st_notaire - $st_paroisse ($st_cote)</option>");
+      print("<option value=\"$i_idf_rep\">".cp1252_vers_utf8($st_notaire)." - ".cp1252_vers_utf8($st_paroisse)." (".cp1252_vers_utf8($st_cote).")</option>");
 	}
 	print("</select></div>"); 
 	print('<input type="hidden" name="mode" value="EXPORT" />');
