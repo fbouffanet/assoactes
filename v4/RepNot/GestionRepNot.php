@@ -440,7 +440,7 @@ function menu_liste($pconnexionBD)
 	foreach($a_liste_rep_not as $i_idf_rep => $a_ligne)
 	{
       list($st_notaire,$st_paroisse,$st_cote) = $a_ligne;
-      print("<option value=\"$i_idf_rep\">$st_notaire - $st_paroisse ($st_cote)</option>");
+      print("<option value=\"$i_idf_rep\">".cp1252_vers_utf8($st_notaire)." - ".cp1252_vers_utf8($st_paroisse)." (".cp1252_vers_utf8($st_cote).")</option>");
 	}
 	print("</select></div>");
 	print('<input type="hidden" name="mode" value="IMPORT" >');
@@ -462,14 +462,14 @@ function menu_liste($pconnexionBD)
 	print("<label for=\"type_acte_orig\">Remplacer le type:</label><select name=\"type_acte_orig\" id=\"type_acte_orig\" class=\"form-control js-select-avec-recherche\"><option></option>");
 	foreach ($a_types as $st_type)
 	{
-		print("<option>$st_type</option>\n");
+		print("<option>".cp1252_vers_utf8($st_type)."</option>\n");
 	}
 	print("</select></div>");
 	print('<div class="form-group col-md-5">');
 	print("<label for\"type_acte_dest\">par le type:</label><select name=\"type_acte_dest\" id=\"type_acte_dest\" class=\"form-control js-select-avec-recherche\"><option></option>");	
 	foreach ($a_types as $st_type)
    {
-		print("<option>$st_type</option>\n");
+		print("<option>".cp1252_vers_utf8($st_type)."</option>\n");
 	}
    print("</select>\n");
 	print("</div>");
@@ -559,7 +559,7 @@ function menu_modifier($pconnexionBD,$pi_idf_repertoire,$pa_communes,$pa_releveu
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" id=\"modifie_rep_not\">");
    print("<input type=hidden name=mode value=MODIFIER>");
    print("<input type=hidden name=idf_repertoire value=$pi_idf_repertoire>");
-   menu_edition($pa_communes,$pa_releveurs,$pi_idf_repertoire,$st_nom_notaire,$st_cote,$idf_commune,$idf_releveur,$c_publication);
+   menu_edition($pa_communes,$pa_releveurs,$pi_idf_repertoire,cp1252_vers_utf8($st_nom_notaire),cp1252_vers_utf8($st_cote),$idf_commune,$idf_releveur,$c_publication);
    print('<div class="form-row col-md-12">');
    print("<button type=submit class=\"col-md-offset-4 col-md-4 btn btn-primary\"><span class=\"glyphicon glyphicon-ok\"></span> Modifier</button>");
    print('</div>');
@@ -778,7 +778,7 @@ switch ($gst_mode) {
 		$i_idf_commune = (int) ($_POST['idf_commune']);
 		$i_idf_releveur = (int) ($_POST['idf_releveur']);
 		$c_publication = isset ($_POST['publication']) ? 'O' : 'N';
-		$connexionBD->initialise_params(array(':notaire'=>$st_notaire,':cote'=>$st_cote,':idf_commune'=>$i_idf_commune,':idf_releveur'=>$i_idf_releveur,':publication'=>$c_publication,':idf_repertoire'=>$i_idf_repertoire));
+		$connexionBD->initialise_params(array(':notaire'=>utf8_vers_cp1252($st_notaire),':cote'=>utf8_vers_cp1252($st_cote),':idf_commune'=>$i_idf_commune,':idf_releveur'=>$i_idf_releveur,':publication'=>$c_publication,':idf_repertoire'=>$i_idf_repertoire));
 		$st_requete = "update `rep_not_desc` set nom_notaire=:notaire, cote=:cote,idf_commune=:idf_commune,idf_releveur=:idf_releveur,publication=:publication where idf_repertoire=:idf_repertoire";
 		$connexionBD->execute_requete($st_requete);
 	}
@@ -804,7 +804,7 @@ switch ($gst_mode) {
 		$i_idf_commune = (int) ($_POST['idf_commune']);
 		$i_idf_releveur = (int) ($_POST['idf_releveur']);
 		$c_publication = isset ($_POST['publication']) ? 'O' : 'N';
-    $connexionBD->initialise_params(array(':notaire'=>$st_notaire,':cote'=>$st_cote,':idf_commune'=>$i_idf_commune,':idf_releveur'=>$i_idf_releveur,':publication'=>$c_publication));
+    $connexionBD->initialise_params(array(':notaire'=>utf8_vers_cp1252($st_notaire),':cote'=>utf8_vers_cp1252($st_cote),':idf_commune'=>$i_idf_commune,':idf_releveur'=>$i_idf_releveur,':publication'=>$c_publication));
 		$st_requete = "insert into `rep_not_desc`(nom_notaire,cote,idf_commune,idf_releveur,publication) values(:notaire,:cote,:idf_commune,:idf_releveur,:publication)";
 		$connexionBD->execute_requete($st_requete);
      menu_liste($connexionBD);
