@@ -14,6 +14,7 @@ require_once('../Commun/VerificationDroits.php');
 verifie_privilege(DROIT_CHARGEMENT);
 require_once '../Commun/ConnexionBD.php';
 require_once('../Commun/commun.php');
+require_once('../Commun/Courriel.php');
 
 print('<!DOCTYPE html>');
 print("<Head>\n");
@@ -177,6 +178,7 @@ function AfficheEditionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commune
  * @global string $gst_url_site adresse du site  
  */
 function EnvoieNotification($pconnexionBD,$pi_idf_commune,$pi_idf_type_acte,$pst_msg_html) {
+	global $gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp;
    $st_commune = $pconnexionBD->sql_select1("select nom from commune_acte where idf=$pi_idf_commune");
    $st_type_acte = $pconnexionBD->sql_select1("select nom from type_acte where idf=$pi_idf_type_acte");
    switch($pi_idf_type_acte)
@@ -188,30 +190,26 @@ function EnvoieNotification($pconnexionBD,$pi_idf_commune,$pi_idf_type_acte,$pst
      default: $st_sujet = "MAJ Base ".SIGLE_ASSO.": Actes divers de la commune de ".cp1252_vers_utf8($st_commune);
    }        
    
-   list($gst_nom,$gst_prenom,$gst_email) =$pconnexionBD->sql_select_liste("select nom,prenom,email_forum from adherent where ident='".$_SESSION['ident']."'");
-   $st_frontiere = '-----=' . md5(uniqid(mt_rand())); 
-   $st_entete = "From: $gst_prenom $gst_nom <$gst_email>\n";
-   $st_entete .= 'MIME-Version: 1.0' . "\n"; 
-   $st_entete .= 'Content-Type: multipart/alternative; boundary="'.$st_frontiere.'"';
+   list($st_nom,$st_prenom,$st_email) =$pconnexionBD->sql_select_liste("select nom,prenom,email_forum from adherent where ident='".$_SESSION['ident']."'");
+   $st_nom_expediteur = cp1252_vers_utf8($st_prenom). " ". cp1252_vers_utf8($st_nom);
+   
    // Remplacement des adresses HTTP par un lien HTML
    $pst_msg_html = preg_replace('/(http\:\/\/\S+)\ /','<a href="$1">$1</a>',nl2br($pst_msg_html));
    $st_message_texte = html_entity_decode(str_ireplace(array("<br>","<br />","<hr />","<hr>"),"\r\n",$pst_msg_html),ENT_COMPAT,'UTF-8');
-   setlocale(LC_CTYPE, 'fr_FR.UTF8');
-   $st_message_texte = strip_tags(iconv("UTF8", "ASCII//TRANSLIT", $st_message_texte));
-   $st_message = 'Votre messagerie doit etre compatible MIME.'."\n\n"; 
-   $st_message .= '--'.$st_frontiere."\n";
-   $st_message .= 'Content-Type: text/plain; charset="utf8"'."\n";
-   $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-   $st_message .= $st_message_texte."\n\n";
-   $st_message .= '--'.$st_frontiere."\n";
-   $st_message .= 'Content-Type: text/html; charset="utf8"'."\n";
-   $st_message .= 'Content-Transfer-Encoding: 8bit'."\n\n";
-   $st_message .= $pst_msg_html."\n\n";
-   $st_message .= '--'.$st_frontiere."--\n"; 
-   if (mail(EMAIL_FORUM, $st_sujet, $st_message, $st_entete))    	
-	    print('<div class="alert alert-success">R&eacute;ponse envoy&eacute;e avec succ&egrave;s sur le forum</div>');
+   //setlocale(LC_CTYPE, 'fr_FR.UTF8');
+   //$st_message_texte = strip_tags(iconv("UTF8", "ASCII//TRANSLIT", $st_message_texte));
+   
+   $courriel = new Courriel($gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
+   $courriel->setExpediteur($st_email,$st_nom_expediteur);
+   $courriel->setDestinataire(EMAIL_FORUM,"Forum ".SIGLE_ASSO);
+   $courriel->setSujet($st_sujet);
+   $courriel->setTexte($pst_msg_html);
+   $courriel->setTexteBrut($st_message_texte);
+   if ($courriel->envoie())
+	   print('<div class="alert alert-success">Notification envoy&eacute;e avec succ&egrave;s sur le forum</div>');
    else
-	    print('<div class="alert alert-danger">La r&eacute;ponse n\'a pu &ecirc;tre envoy&eacute;e sur le forum</div>');
+	   print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: ".$courriel->get_erreur()."</div>");
+
 }
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);

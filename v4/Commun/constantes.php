@@ -413,4 +413,21 @@ define('NB_ACTES_BLOC_CHGMT',2000);
 define('PAGE_RECHERCHE','index.php');
 
 
+
+define('LIB_ASSO',"AssoActes");
+define('LIB_ASSO_AVEC',"l'AssoActes");
+define('SIGLE_ASSO','AO');
+
+define('EMAIL_DIRASSO','dir@ao.fr');
+define('EMAIL_INFOASSO','info@ao.fr');
+define('EMAIL_PRESASSO','pres@ao.fr');
+
+define('EMAIL_INSCRIPTION_FORUM','inscription@forum-ao.fr');
+define('EMAIL_FORUM','membres@forum-ao.fr');
+
+define('EMAIL_GBKADMIN','');
+define('IDF_ASSO_GBK','');
+define('PREFIXE_ADH_GBK','');
+define('NB_POINTS_GBK',0);
+define('CLEF_API_GEOPORTAIL','');
 ?>
