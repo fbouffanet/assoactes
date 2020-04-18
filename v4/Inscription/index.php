@@ -440,8 +440,8 @@ switch ($gst_mode) {
      mt_srand ((float) microtime() * 1000000);
 	   $pst_ins_alea = mt_rand(1000,10000); 
      $dt_ins_date = date("Y-m-d");  
-     //if (chk_crypt($_POST['code']))	
-	 if (true)	 
+     if (chk_crypt($_POST['code']))	
+	 //if (true)	 
      {
         preinscrit_adherent($dt_ins_date,$pst_ins_nom,$pst_ins_prenom,$pst_ins_adr1,$pst_ins_adr2,$pst_ins_cp,$pst_ins_commune,$pst_ins_pays,$pst_ins_email_perso,$pst_ins_site_web,$pst_ins_telephone,$pst_ins_cache,$pst_ins_idf_agc,$pst_ins_alea);
         if (envoie_mail($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_email_perso, $pst_ins_idf_agc, $pst_ins_alea, $connexionBD->dernier_idf_insere()))

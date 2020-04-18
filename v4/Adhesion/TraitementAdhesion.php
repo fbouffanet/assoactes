@@ -46,7 +46,8 @@ $st_date_log = sprintf("%02d/%02d/%04d %02d:%02d:%02d",$i_jmois,$i_mois,$i_annee
 $response = $payline->get_webPaymentDetails($st_token,$a_res);
 //FBO
 if ($response['result']['code'] == '00000' )
-//FBOif (true)
+//FBO
+//if (true)
 {
   $connexionBD->initialise_params(array(':token'=>$st_token));
   $st_requete = "select i_p.idf,i_p.ins_idf_agc,i_p.ins_type,adht.statut as ancien_statut from `inscription_prov` i_p left join `adherent` adht on (i_p.ins_idf_agc=adht.idf) where i_p.ins_token = :token";

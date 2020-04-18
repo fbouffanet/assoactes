@@ -11,10 +11,8 @@ $gst_chemin = "../";
 //$gst_chemin = "";
 require_once("$gst_chemin/Commun/config.php");
 require_once("$gst_chemin/Commun/constantes.php");
-//require_once("$gst_chemin/Commun/Identification.php");
 
 // La page est reservee uniquement aux gens ayant les droits utilitaires
-//require_once("$gst_chemin/Commun/VerificationDroits.php");
 require_once("$gst_chemin/Commun/ConnexionBD.php");
 require_once("$gst_chemin/Commun/commun.php");                    
 require_once("$gst_chemin/Commun/Adherent.php"); 
@@ -74,7 +72,7 @@ else
 		$connexionBD->initialise_params(array(':email'=>$gst_email_ins)); 
         $st_requete = "select idf,mdp from adherent where email_perso=:email";
         $a_retour = $connexionBD->sql_select_liste($st_requete);
-        if (count($a_retour)>0)
+        if (is_array($a_retour) && count($a_retour)>0)
         {
             list($idf_agc,$st_mdp) = $a_retour;
 		    $connexionBD->initialise_params(array(':idf_agc'=>$idf_agc,':mdp'=>$st_mdp,':idf_prov'=>$idf_prov)); 
