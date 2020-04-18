@@ -11,6 +11,7 @@ require_once("Commun/commun.php");
 require_once("Commun/constantes.php");
 require_once("Commun/ConnexionBD.php");
 require_once("Commun/PaginationTableau.php");
+require_once("Commun/Courriel.php");
 require_once("RequeteRecherche.php");
 
 $gi_seuil_connexions = 15;
@@ -415,14 +416,23 @@ switch ($gst_mode)
     $i_nb_cnx=$connexionBD->sql_select1("select count(*) from `connexions_tdm` where adresse_ip='$gst_adresse_ip' and `date`>=date_sub(now(),INTERVAL 5 MINUTE)");
     if ($i_nb_cnx>$gi_seuil_connexions)
     {
-       $st_sujet = "Vitrine TDM - Trop de connexions depuis $gst_adresse_ip";
-       $st_entete  = 'MIME-Version: 1.0' . "\r\n";    
-       $st_entete .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
-       $st_entete .= "From: BASE ".SIGLE_ASSO." <".EMAIL_INFOASSO.">\r\n";
-       $st_texte = "L'adresse ip $gst_adresse_ip a fait $i_nb_cnx demandes en 5 minutes et a été temporairement bloquée<br>";
-       $st_texte = "Voir les logs dans <a href=\"$gst_url_site/logs/$gst_fichier_log\">$gst_url_site/logs/$gst_fichier_log</a><br>";
-       mail($gst_emails_gestbase, $st_sujet, $st_texte, $st_entete);
-       die("Trop de connexions");
+        $st_sujet = "Vitrine TDM - Trop de connexions depuis $gst_adresse_ip";
+	    $st_texte = "L'adresse ip $gst_adresse_ip a fait $i_nb_cnx demandes en 5 minutes et a été temporairement bloquée<br>";
+        $st_texte = "Voir les logs dans <a href=\"$gst_url_site/logs/$gst_fichier_log\">$gst_url_site/logs/$gst_fichier_log</a><br>";
+	    $courriel = new Courriel($gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
+		$courriel->setExpediteur(EMAIL_INFOASSO,"BASE ".SIGLE_ASSO);
+		$courriel->setAdresseRetour(EMAIL_INFOASSO);
+		foreach ($ga_emails_gestbase as $st_email_destinataire)
+		{
+			$courriel->setDestinataire($st_email_destinataire,'');
+        }
+		$courriel->setSujet($st_sujet);
+		$courriel->setTexte($st_texte);
+		if (!$courriel->envoie())
+		{
+			print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: ".$courriel->get_erreur()."</div>");
+		}       
+        die("Trop de connexions");
     }
     $connexionBD->execute_requete("insert into connexions_tdm(date,adresse_ip) values(now(),'$gst_adresse_ip')");   
     affiche_page_resultats($connexionBD,$gi_idf_commune,$gi_rayon,$gi_annee_min,$gi_annee_max,$gst_nom_epx,$gst_prenom_epx,$gst_variantes_epx,$gst_nom_epse,$gst_prenom_epse,$gst_variantes_epse,$gi_num_page);     

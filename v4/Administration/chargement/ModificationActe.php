@@ -36,6 +36,7 @@ class ModificationActe extends Acte {
      protected $st_type_acte;
      public static $i_nb_photos = 4;
      protected $a_params_completion_auto;
+	 protected $courriel;
     
      function __autoload($class_name)
     
@@ -44,11 +45,12 @@ class ModificationActe extends Acte {
          require_once $class_name . '.php';
          } 
     
-    public function __construct($pconnexionBD, $pi_idf_acte, $pi_idf_modification)
+    public function __construct($pconnexionBD, $pi_idf_acte, $pi_idf_modification,$pst_rep_site,$pst_serveur_smtp,$pst_utilisateur_smtp,$pst_mdp_smtp,$pi_port_smtp)
     
     
     {
-         $this -> connexionBD = $pconnexionBD;
+		 require_once str_replace("/", DIRECTORY_SEPARATOR,"$pst_rep_site/Commun/Courriel.php");
+		 $this -> connexionBD = $pconnexionBD;
          $this -> i_idf_type_acte = null;
          if (!is_null($pi_idf_acte))
              $st_requete = "select a.idf_type_acte,ta.nom,a.idf_commune,ca.nom,concat(ca.nom,' (',lpad(ca.code_insee,5,'0'),')') from acte a join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) where a.idf=$pi_idf_acte";
@@ -82,6 +84,7 @@ class ModificationActe extends Acte {
          $this -> st_ip_demandeur = $_SERVER['REMOTE_ADDR'];
          $this -> st_nom_demandeur = '';
          $this -> st_prenom_demandeur = '';
+		 $this->courriel=new Courriel($pst_rep_site,$pst_serveur_smtp,$pst_utilisateur_smtp,$pst_mdp_smtp,$pi_port_smtp);
          } 
     
     public function getNbPhotos()
@@ -557,35 +560,39 @@ public function refuse($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valideur
 
 {
      global $gst_url_site;
-     $st_requete = sprintf("update modification_acte set idf_valideur=%d,date_validation=now(),statut='R',motif_refus='%s' where idf=%d", $pi_idf_valideur, utf8_vers_cp1252($pst_motif_refus), $this -> i_idf);
+     $st_requete = "update modification_acte set idf_valideur=:idf_valideur,date_validation=now(),statut='R',motif_refus=:motif where idf=:idf";
+	 $this->connexionBD->initialise_params(array(':idf_valideur'=>$pi_idf_valideur,':motif'=>utf8_vers_cp1252($pst_motif_refus),':idf'=>$this->i_idf));
      $this -> connexionBD -> execute_requete($st_requete);
      print("<div class=\"alert alert-danger\">La modification a &eacute;t&eacute; refus&eacute;e</div>");
-     // print(sprintf("%s %s (%s) =>%s <br>",$pst_prenom_valideur,$pst_nom_valideur,$pst_email_valideur,$this->st_email_demandeur));
     $st_description_acte = $this -> versChaine();
      if (!empty($this -> st_email_demandeur))
          {
-        $st_entete = 'MIME-Version: 1.0' . "\r\n";
-         $st_entete .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
-         $st_entete .= "From: $pst_prenom_valideur $pst_nom_valideur <$pst_email_valideur>\n";
-         $st_entete .= "Bcc: $pst_prenom_valideur $pst_nom_valideur <$pst_email_valideur>\n";
-         $st_entete .= "Return-Path: $pst_email_valideur\n";
-         $st_message = 'Bonjour,<br><br>';
-         $st_message .= 'Merci de votre proposition de modification:<br><br>';
-         $st_message .= "<pre>$st_description_acte</pre>";
-         $st_message .= "Celle-ci n'a malheureusement pas &eacute;t&eacute; accept&eacute;e pour la raison suivante:<br><br>";
-         $st_message .= "<font color=red>$pst_motif_refus</font>";
-         $st_message .= "<br><br>Nous vous invitons &agrave; renouveler votre demande en respectant les remarques qui vous sont indiqu&eacute;es<br><br>";
-         $st_message .= sprintf("<a href=\"$gst_url_site/PropositionModification.php?idf_acte=%d\">$gst_url_site/PropositionModification.php?idf_acte=%d</a><br>", $gst_url_site, $this -> i_idf_acte, $gst_url_site, $this -> i_idf_acte);
-         $st_message .= "Merci encore pour votre d&eacute;marche<br>";
-         $st_message .= "<br>Cordialement<br>";
-         $st_message .= "$pst_prenom_valideur $pst_nom_valideur";
-         // print("<pre>Entete=$st_entete\nMsg=$st_message</pre>");
-        if (!mail($this -> st_email_demandeur, 'Base '.SIGLE_ASSO.': Votre demande de modification', $st_message, $st_entete))
-             {
-            print("<div class=\"alert alert-danger\">Le mail n'a pu &ecirc;tre envoy&eacute;e</div>");
-             } 
-        } 
-    } 
+		 $this->courriel->setExpediteur($pst_email_valideur,"$pst_prenom_valideur $pst_nom_valideur");
+	     $this->courriel->setAdresseRetour($pst_email_valideur);
+	     $this->courriel->setEnCopieCachee($pst_email_valideur);
+	     $this->courriel->setDestinataire($this -> st_email_demandeur,'');
+		 $this->courriel->setSujet('Base '.SIGLE_ASSO.': Votre demande de modification');
+         $st_message_html = 'Bonjour,<br><br>';
+         $st_message_html .= 'Merci de votre proposition de modification:<br><br>';
+         $st_message_html .= "<pre>$st_description_acte</pre>";
+         $st_message_html .= "Celle-ci n'a malheureusement pas &eacute;t&eacute; accept&eacute;e pour la raison suivante:<br><br>";
+         $st_message_html .= "<font color=red>$pst_motif_refus</font>";
+         $st_message_html .= "<br><br>Nous vous invitons &agrave; renouveler votre demande en respectant les remarques qui vous sont indiqu&eacute;es<br><br>";
+         $st_message_html .= sprintf("<a href=\"$gst_url_site/PropositionModification.php?idf_acte=%d\">$gst_url_site/PropositionModification.php?idf_acte=%d</a><br>", $gst_url_site, $this -> i_idf_acte, $gst_url_site, $this -> i_idf_acte);
+         $st_message_html .= "Merci encore pour votre d&eacute;marche<br>";
+         $st_message_html .= "<br>Cordialement<br>";
+         $st_message_html .= "$pst_prenom_valideur $pst_nom_valideur";
+		 $this->courriel->setTexte($st_message_html);
+        if ($this->courriel->envoie())
+         {
+        print("<div class=\"alert alert-success\">L'email a &eacute;t&eacute; envoy&eacute; avec succ&egrave;s</div>");
+         } 
+    else
+         {
+        print("<div class=\"alert alert-danger\">La modification a &eacute;t&eacute; accept&eacute;e mais l'envoi du mail a &eacute;chou&eacute;". $this->courriel->get_erreur()."</div>");
+         }
+		 }
+	} 
 
 /**
  * Accepte la modification (changement du statut + envoil d'un email au demandeur)
@@ -620,29 +627,31 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
      print("<div class=\"alert alert-success\">Modification effectu&eacute;e</div>\n");
      $st_requete = sprintf("update modification_acte set idf_valideur=%d,date_validation=now(),statut='A' where idf=%d", $pi_idf_valideur, $this -> i_idf);
      $this -> connexionBD -> execute_requete($st_requete);
-     $st_entete = 'MIME-Version: 1.0' . "\r\n";
-     $st_entete .= 'Content-type: text/html; charset=UTF-8' . "\r\n"; 
-     $st_entete .= "From: $pst_prenom_valideur $pst_nom_valideur <$pst_email_valideur>\n";
-     $st_entete .= "Bcc: $pst_prenom_valideur $pst_nom_valideur <$pst_email_valideur>\n";
-     $st_entete .= "Return-Path: $pst_email_valideur\n";
-     $st_message = 'Bonjour,<br><br>';
-     $st_message .= "Votre proposition de modification d'un acte de la base ".SIGLE_ASSO." vient d'&ecirc;tre accept&eacute;e<br>";
-     $st_message .= "Vous pouvez consulter l'acte &agrave l'adresse suivante:<br>";
-     $st_message .= sprintf("<a href=\"%s/InfosActe.php?idf_acte=%d\">$gst_url_site/InfosActe.php?idf_acte=%d</a><br>", $gst_url_site, $this -> i_idf_acte, $this -> i_idf_acte);
+	 $this->courriel->setExpediteur($pst_email_valideur,"$pst_prenom_valideur $pst_nom_valideur");
+	 $this->courriel->setAdresseRetour($pst_email_valideur);
+	 $this->courriel->setEnCopieCachee($pst_email_valideur);
+	 $this->courriel->setDestinataire($this -> st_email_demandeur,'');
+	 $this->courriel->setSujet('Base '.SIGLE_ASSO.': Demande de modification de relevé de la base '.SIGLE_ASSO);
+     $st_message_html = 'Bonjour,<br><br>';
+     $st_message_html .= "Votre proposition de modification d'un acte de la base ".SIGLE_ASSO." vient d'&ecirc;tre accept&eacute;e<br>";
+     $st_message_html .= "Vous pouvez consulter l'acte &agrave l'adresse suivante:<br>";
+     $st_message_html .= sprintf("<a href=\"%s/InfosActe.php?idf_acte=%d\">$gst_url_site/InfosActe.php?idf_acte=%d</a><br>", $gst_url_site, $this -> i_idf_acte, $this -> i_idf_acte);
      if (! empty($pst_cmt_valideur))
          {
-        $st_message .= "<br>Commentaires du valideur: $pst_cmt_valideur<br>";
+        $st_message_html .= "<br>Commentaires du valideur: $pst_cmt_valideur<br>";
          } 
-    $st_message .= "<br>Merci de votre contribution<br>";
-     $st_message .= "<br>Cordialement<br>";
-     $st_message .= "$pst_prenom_valideur $pst_nom_valideur";
-     if (mail($this -> st_email_demandeur, 'Base '.SIGLE_ASSO.': Demande de modification de releve de la base '.SIGLE_ASSO, $st_message, $st_entete))
+     $st_message_html .= "<br>Merci de votre contribution<br>";
+     $st_message_html .= "<br>Cordialement<br>";
+     $st_message_html .= "$pst_prenom_valideur $pst_nom_valideur";
+	 $this->courriel->setTexte($st_message_html);
+	 
+     if ($this->courriel->envoie())
          {
         print("<div class=\"alert alert-success\">L'email a &eacute;t&eacute; envoy&eacute; avec succ&egrave;s</div>");
          } 
     else
          {
-        print("<div class=\"alert alert-danger\">La modification a &eacute;t&eacute; accept&eacute;e mais l'envoi du mail a &eacute;chou&eacute;</div>");
+        print("<div class=\"alert alert-danger\">La modification a &eacute;t&eacute; accept&eacute;e mais l'envoi du mail a &eacute;chou&eacute;". $this->courriel->get_erreur()."</div>");
          } 
     } 
 
