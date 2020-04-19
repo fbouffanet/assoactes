@@ -32,10 +32,10 @@ function menu_liste($pconnexionBD)
 	      "<select name=serie_liasse id='serie_liasse' onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
 		  chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select></div><br>");
 	if( $st_serie_liasse == "L") {
-		print("<div align=center>Ces répertoires sont issus de la série L qui regroupe tous les actes de l’administration entre 1789 et l’an VIII. ");
-		print("Nous n’avons saisi que les numéros de la série L ayant traits à des répertoires notariés. <br>");
-		print("La recherche se fait donc entre des bornes précises, selon 6 groupes : ");
-		print(" 2197 à 2263, 2328 à 2393, 2433 à 2492,< 2552 à 2596, 2607 à 2668, 2683 à 2732.</div><br>");
+		print("<div align=center>Ces rÃ©pertoires sont issus de la sÃ©rie L qui regroupe tous les actes de l'administration entre 1789 et l'an VIII. ");
+		print("Nous n'avons saisi que les numÃ©ros de la sÃ©rie L ayant traits Ã  des rÃ©pertoires notariÃ©s. <br>");
+		print("La recherche se fait donc entre des bornes prÃ©cises, selon 6 groupes : ");
+		print(" 2197 Ã  2263, 2328 Ã  2393, 2433 Ã  2492,< 2552 Ã  2596, 2607 Ã  2668, 2683 Ã  2732.</div><br>");
 	}
 	print("<table border=0 cellpadding=0 cellspacing=0><caption>S&eacute;lection des cotes<br></caption>");
 	print('<tr class=ligne_paire><td align="center" width="200">dizaines de milliers</td><td>');
@@ -127,7 +127,7 @@ function menu_liste($pconnexionBD)
 }
 
 /**
- * Affiche la liste des relevés d'une liasse
+ * Affiche la liste des relevÃ©s d'une liasse
  * @param object	$pconnexionBD
  */ 
 function menu_liste_releve($pconnexionBD)
@@ -320,16 +320,16 @@ function menu_gerer($pconnexionBD)
 	print("<div align=center><input type=hidden name=mode value=\"LISTE\"><br><input type=submit value=\"Retour\"></div>");
 	print('</form>');
 }
-/** --------------------------------------- relevés ----------------------------------- **/
+/** --------------------------------------- relevÃ©s ----------------------------------- **/
 /**
- * Affiche de la table d'édition d'un relevé
+ * Affiche de la table d'Ã©dition d'un relevÃ©
  * @param object	$pconnexionBD				Identifiant de la connexion de base
  * @param array		$pa_releveur				Tableau des releveurs
- * @param integer	$pi_idf_releve				Identifiant du relevé à modifier
+ * @param integer	$pi_idf_releve				Identifiant du relevÃ© Ã  modifier
  * @param integer	$pi_idf_releveur			Identifiant du releveur 
- * @param string	$pst_date_fin_releve		Date de fin de relevé
- * @param integer	$pi_publication_numerique	booleen publication numérique Oui/Non
- * @param string	$pst_info_compl				Informations complémentaires sur le relevé
+ * @param string	$pst_date_fin_releve		Date de fin de relevÃ©
+ * @param integer	$pi_publication_numerique	booleen publication numÃ©rique Oui/Non
+ * @param string	$pst_info_compl				Informations complÃ©mentaires sur le relevÃ©
  */ 
 function menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $pi_idf_releveur,
                              $pst_date_fin_releve, $pi_publication_numerique, $pst_info_compl)
@@ -349,9 +349,9 @@ function menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $pi_id
 	print("</table>");
 }
 
-/** Affiche le menu de modification d'un relevé
+/** Affiche le menu de modification d'un relevÃ©
  * @param object	$pconnexionBD		Identifiant de la connexion de base
- * @param integer	$pi_idf_releve		Identifiant du revelée à modifier 
+ * @param integer	$pi_idf_releve		Identifiant du revelÃ©e Ã  modifier 
  * @param array		$pa_releveur		Tableau des releveurs
  */ 
 function menu_modifier_releve($pconnexionBD, $pi_idf_releve, $pa_releveur)
@@ -380,7 +380,7 @@ function menu_modifier_releve($pconnexionBD, $pi_idf_releve, $pa_releveur)
 	print('</form>');
 }
 
-/** Affiche le menu d'ajout d'un relevé
+/** Affiche le menu d'ajout d'un relevÃ©
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  * @param array		$pa_releveur		Tableau des releveurs
  */ 
@@ -427,7 +427,7 @@ function menu_ajouter_releveur($pconnexionBD)
 
 /** --------------------------------------- publication papier ----------------------------------- **/
 /**
- * Affiche de la table d'édition d'un lien publication papier
+ * Affiche de la table d'Ã©dition d'un lien publication papier
  * @param object	$pconnexionBD				Identifiant de la connexion de base
  * @param array		$pa_publication				Tableau des publications papier
  * @param integer	$pi_idf_publication				Identifiant d'une publication papier
@@ -548,11 +548,11 @@ function menu_gerer_publication($pconnexionBD)
 }
 
 /**
- * Affiche de la table d'édition d'une publication
+ * Affiche de la table d'Ã©dition d'une publication
  * @param object	$pconnexionBD				Identifiant de la connexion de base
  * @param string	$pst_nom					Titre de la publication
  * @param string	$pst_date_publication		Date de la publication
- * @param string	$pst_info_compl				Informations complémentaires sur le relevé
+ * @param string	$pst_info_compl				Informations complÃ©mentaires sur le relevÃ©
  */ 
 function menu_edition_publication($pconnexionBD, $pst_nom, $pst_date_publication, $pst_info_compl)
 {
@@ -594,7 +594,7 @@ function menu_modifier_publication($pconnexionBD, $pi_idf_publication)
 	print('</form>');
 }
 
-/** Affiche le menu d'ajout d'un relevé
+/** Affiche le menu d'ajout d'un relevÃ©
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  */ 
 function menu_ajouter_publication($pconnexionBD)
@@ -615,15 +615,15 @@ function menu_ajouter_publication($pconnexionBD)
 
 /** --------------------------------------- photos ----------------------------------- **/
 /**
- * Affiche de la table d'édition d'une photo
+ * Affiche de la table d'Ã©dition d'une photo
  * @param object	$pconnexionBD				Identifiant de la connexion de base
  * @param array		$pa_reveleur				Tableau des releveurs
- * @param integer	$pi_idf_photo				Identifiant de la prise de photo à modifier
+ * @param integer	$pi_idf_photo				Identifiant de la prise de photo Ã  modifier
  * @param integer	$pi_idf_photographe			Identifiant du photographe 
  * @param string	$pst_date_photo				Date de photo
  * @param integer	$pi_couverture_photo	code couverture photo
  * @param integer	$pi_codif_photo			codif photo
- * @param string	$pst_info_compl				Informations complémentaires sur la prise de photo
+ * @param string	$pst_info_compl				Informations complÃ©mentaires sur la prise de photo
  */ 
 function menu_edition_photo($pconnexionBD, $pa_reveleur, $pi_idf_photo, $pi_idf_photographe,
                              $pst_date_photo, $pi_couverture_photo, $pi_codif_photo, $pst_info_compl, $pa_couverture_photo, $pa_codif_photo)
@@ -644,7 +644,7 @@ function menu_edition_photo($pconnexionBD, $pa_reveleur, $pi_idf_photo, $pi_idf_
 
 /** Affiche le menu de modification d'une photo
  * @param object	$pconnexionBD		Identifiant de la connexion de base
- * @param integer	$pi_idf_photo		Identifiant de la prise de photo à modifier 
+ * @param integer	$pi_idf_photo		Identifiant de la prise de photo Ã  modifier 
  * @param array		$pa_reveleur		Tableau des releveurs
  */ 
 function menu_modifier_photo($pconnexionBD, $pi_idf_photo, $pa_reveleur, $pa_couverture_photo, $pa_codif_photo)
@@ -695,16 +695,16 @@ function menu_ajouter_photo($pconnexionBD, $pa_reveleur, $pa_couverture_photo, $
 
 /** --------------------------------------- programmation ----------------------------------- **/
 /**
- * Affiche de la table d'édition d'une programmation
+ * Affiche de la table d'Ã©dition d'une programmation
  * @param object	$pconnexionBD				Identifiant de la connexion de base
  * @param array		$pa_reveleur				Tableau des releveurs
- * @param integer	$pi_idf_program				Identifiant de la programmation à modifier
- * @param integer	$pi_idf_intervenant			Identifiant de l'intervenant (la personne programmée) 
- * @param string	$pst_date_creation			Date de création de la programmation
- * @param string	$pst_date_reelle_fin		Date réelle de fin de l'action programmée
- * @param integer	$pi_program_releve			booleen programmation d'un relevé Oui/Non
+ * @param integer	$pi_idf_program				Identifiant de la programmation Ã  modifier
+ * @param integer	$pi_idf_intervenant			Identifiant de l'intervenant (la personne programmÃ©e) 
+ * @param string	$pst_date_creation			Date de crÃ©ation de la programmation
+ * @param string	$pst_date_reelle_fin		Date rÃ©elle de fin de l'action programmÃ©e
+ * @param integer	$pi_program_releve			booleen programmation d'un relevÃ© Oui/Non
  * @param integer	$pi_program_photo			booleen programmation de photos Oui/Non
- * @param string	$pst_info_compl				Informations complémentaires sur le relevé
+ * @param string	$pst_info_compl				Informations complÃ©mentaires sur le relevÃ©
  */ 
 function menu_edition_program($pconnexionBD, $pa_reveleur, $pi_idf_program, $pi_idf_intervenant, $pi_priorite_program, 
                               $pst_date_creation, $pst_date_echeance, $pst_date_reelle_fin, 
@@ -733,15 +733,15 @@ function menu_edition_program($pconnexionBD, $pa_reveleur, $pi_idf_program, $pi_
 	      "<textarea rows='3' cols='80' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></td></tr>");
 	print("<tr><th>Date de fin r&eacute;elle de l'action programm&eacute;e</th><td>".
 	      "<input type=\"text\" maxlength=10 size=10 name=date_reelle_fin value=\"$pst_date_reelle_fin\">".
-		  "<br>Si vous renseignez cette date, la programmation disparaîtra de la liste, sans être supprim&eacute;e</td></tr>");
+		  "<br>Si vous renseignez cette date, la programmation disparaÃ®tra de la liste, sans Ãªtre supprim&eacute;e</td></tr>");
 	print("</table>");
 }
 
-/** Affiche le menu de modification d'un relevé
+/** Affiche le menu de modification d'un relevÃ©
  * @param object	$pconnexionBD			Identifiant de la connexion de base
- * @param integer	$pi_idf_program			Identifiant de la programmation à modifier 
+ * @param integer	$pi_idf_program			Identifiant de la programmation Ã  modifier 
  * @param array		$pa_reveleur			Tableau des releveurs
- * @param array		$pa_priorite_program	Tableau des priorités de programmation
+ * @param array		$pa_priorite_program	Tableau des prioriÃ©s de programmation
  */ 
 function menu_modifier_program($pconnexionBD, $pi_idf_program, $pa_reveleur, $pa_priorite_program)
 {
@@ -778,7 +778,7 @@ function menu_modifier_program($pconnexionBD, $pi_idf_program, $pa_reveleur, $pa
 /** Affiche le menu d'ajout d'une programmation
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  * @param array		$pa_reveleur			Tableau des releveurs
- * @param array		$pa_priorite_program	Tableau des priorités de programmation
+ * @param array		$pa_priorite_program	Tableau des prioritÃ©s de programmation
  */ 
 function menu_ajouter_program($pconnexionBD, $pa_reveleur, $pa_priorite_program)
 {
@@ -796,8 +796,8 @@ function menu_ajouter_program($pconnexionBD, $pa_reveleur, $pa_priorite_program)
 	print('</form>');
 }
 
-/** Elimine les éventuels \ du texte et remplace les ' par \'
- * @param string	$pst_texte			Le texte à traiter
+/** Elimine les Ã©ventuels \ du texte et remplace les ' par \'
+ * @param string	$pst_texte			Le texte Ã  traiter
  */ 
 function escape_apostrophe($pst_texte)
 {

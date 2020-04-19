@@ -18,8 +18,8 @@ print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
-//print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
-//print('<meta http-equiv="content-language" content="fr">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
+print('<meta http-equiv="content-language" content="fr">');
 print("<script src='./VerifieChampsGestionLiasseNot.js' type='text/javascript'></script>");
 print('</head>');
 print("<body>");
@@ -58,9 +58,9 @@ $a_depts_depose_ad[''] = '';
 $a_formes_liasses = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM forme_liasse order by nom");
 $a_mois = array("", "01"=>"01", "02"=>"02", "03"=>"03", "04"=>"04", "05"=>"05", "06"=>"06", 
                     "07"=>"07", "08"=>"08", "09"=>"09", "10"=>"10", "11"=>"11", "12"=>"12",
-                    "Vendémiaire"=>"Vendémiaire", "Brumaire"=>"Brumaire", "Frimaire"=>"Frimaire", 
-					"Nivôse"=>"Nivôse", "Pluviôse"=>"Pluviôse", "Ventôse"=>"Ventôse",
-                    "Germinal"=>"Germinal", "Floréal"=>"Floréal", "Prairial"=>"Prairial", 
+                    "VendÃ©miaire"=>"VendÃ©miaire", "Brumaire"=>"Brumaire", "Frimaire"=>"Frimaire", 
+					"NivÃ´se"=>"NivÃ´se", "PluviÃ´se"=>"PluviÃ´se", "VentÃ´se"=>"VentÃ´se",
+                    "Germinal"=>"Germinal", "FlorÃ©al"=>"FlorÃ©al", "Prairial"=>"Prairial", 
 					"Messidor"=>"Messidor", "Thermidor"=>"Thermidor", "Fructidor"=>"Fructidor");
 $a_communes = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM commune_acte order by nom");
 $a_communes[0] = '';
@@ -143,7 +143,7 @@ switch ($gst_mode) {
 		}
 		menu_liste($connexionBD);
 		break;
-	// gestion des périodes
+	// gestion des pÃ©riodes
 	case 'LISTE_PERIODE' : 
 		menu_liste_periode($connexionBD, $gst_cote_liasse); 
 		break;
