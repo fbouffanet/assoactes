@@ -194,16 +194,15 @@ function EnvoieNotification($pconnexionBD,$pi_idf_commune,$pi_idf_type_acte,$pst
    $st_nom_expediteur = cp1252_vers_utf8($st_prenom). " ". cp1252_vers_utf8($st_nom);
    
    // Remplacement des adresses HTTP par un lien HTML
-   $pst_msg_html = preg_replace('/(http\:\/\/\S+)\ /','<a href="$1">$1</a>',nl2br($pst_msg_html));
+   $st_msg_html = preg_replace('/(https*\:\/\/\S+)\ /','<a href="$1">$1</a>',$pst_msg_html);
+   $st_msg_html = nl2br($st_msg_html);
    $st_message_texte = html_entity_decode(str_ireplace(array("<br>","<br />","<hr />","<hr>"),"\r\n",$pst_msg_html),ENT_COMPAT,'UTF-8');
-   //setlocale(LC_CTYPE, 'fr_FR.UTF8');
-   //$st_message_texte = strip_tags(iconv("UTF8", "ASCII//TRANSLIT", $st_message_texte));
    
    $courriel = new Courriel($gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
    $courriel->setExpediteur($st_email,$st_nom_expediteur);
    $courriel->setDestinataire(EMAIL_FORUM,"Forum ".SIGLE_ASSO);
    $courriel->setSujet($st_sujet);
-   $courriel->setTexte($pst_msg_html);
+   $courriel->setTexte($st_msg_html);
    $courriel->setTexteBrut($st_message_texte);
    if ($courriel->envoie())
 	   print('<div class="alert alert-success">Notification envoy&eacute;e avec succ&egrave;s sur le forum</div>');
