@@ -52,7 +52,8 @@ $i_annee+=1900;
 
 //FBO: à décommenter lorsque validé
 if (($i_mois>10 && $i_annee_cotisation==$i_annee) ||  $i_annee_cotisation+1==$i_annee) 
-//FBOif (true)
+//FBO
+//if (true)
 {
    print('<div class="panel panel-primary">');
    print('<div class="panel-heading">R&eacute;-Adh&eacute;sion</div>');
