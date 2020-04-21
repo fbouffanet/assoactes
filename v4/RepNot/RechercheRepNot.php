@@ -307,8 +307,9 @@ function requete_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_idf_reper
   }
   if (!empty($pst_commentaires))
   {
-		$a_clauses[]="commentaires like ':commentaires'"; 
-    $pconnexionBD->ajoute_params(array(':commentaires'=>utf8_vers_cp1252("%$pst_commentaires%"))); 
+	    $st_commentaires='%'.utf8_vers_cp1252($pst_commentaires).'%';
+		$a_clauses[]="commentaires like :commentaires"; 
+		$pconnexionBD->ajoute_params(array(':commentaires'=>$st_commentaires)); 
 	}
 	if (count($a_clauses)>0)
 	{
