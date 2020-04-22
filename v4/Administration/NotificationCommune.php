@@ -130,7 +130,7 @@ function AfficheEditionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commune
     $st_texte .= "La source '$st_source' de la commune/paroisse <b>".cp1252_vers_utf8($st_commune)."</b> ".cp1252_vers_utf8($st_libelle_canton)." a &eacute;t&eacute; mise &agrave; jour sur la p&eacute;riode: ";
     $st_texte .= "<u>$i_annee_min</u>-<u>$i_annee_max</u><br />";
     $st_texte .= "La commune comporte d&eacute;sormais $i_nb_actes actes de type: ".cp1252_vers_utf8($st_type_acte)."<br />";
-    $st_texte .= "Le d&eacute;tail des ann&eacute;es disponibles est consultable &agrave; l'adresse $gst_url_site/AfficheStatsCommune.php?idf_source=$pi_idf_source&idf_commune=$pi_idf_commune&idf_type_acte=$pi_idf_type_acte <br /><br />";  
+    $st_texte .= "Le d&eacute;tail des ann&eacute;es disponibles est consultable &agrave; l'adresse $gst_url_site/AfficheStatsCommune.php?idf_source=$pi_idf_source&idf_commune=$pi_idf_commune&idf_type_acte=$pi_idf_type_acte<br /><br />";  
   }
   else
   {
@@ -138,21 +138,21 @@ function AfficheEditionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commune
 	  list ($st_source,$st_commune,$st_canton,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_actes)  = $pconnexionBD->sql_select_liste($st_requete);
      $a_stats_type_acte = $pconnexionBD->sql_select_multiple("select ta.idf,ta.nom, sc.annee_min,sc.annee_max,sc.nb_actes from stats_commune sc join type_acte ta on (sc.idf_type_acte=ta.idf)  where sc.idf_source=$pi_idf_source and sc.idf_commune=$pi_idf_commune and sc.idf_type_acte not in (".IDF_MARIAGE.",".IDF_NAISSANCE.",".IDF_DECES.") order by ta.nom");
      $st_texte .= "Les actes divers de la commune/paroisse de <b>".cp1252_vers_utf8($st_commune)."</b> (Source: ".cp1252_vers_utf8($st_source).") sont maintenant disponibles: <br /><br />";
-     $st_texte .= "<table border=1><tr><th>Type d'acte</th> <th>Ann&eacute;es</th> <th>Nombre d'actes</th> <th>D&eacute;tail des ann&eacute;es</th></tr>";
+     $st_texte .= "<table border=1><tr bgcolor=\"#2980b9\"><th><font color=\"white\">Type d'acte</font></th><th><font color=\"white\">Ann&eacute;es</font></th> <th><font color=\"white\">Nombre d'actes</font></th> <th><font color=\"white\">D&eacute;tail des ann&eacute;es</font></th></tr>";
      foreach ($a_stats_type_acte as $a_ligne)
      {
         $st_texte .= "<tr>";
         list($i_idf_type_acte,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_actes) = $a_ligne;
         // les td sont séparés par des espaces pour qu'une séparation soit visible dans le message au format texte (suppression des balises HTML)
         if ($i_annee_min==$i_annee_max)
-           $st_texte .="<td>".cp1252_vers_utf8($st_type_acte)."</td> <td>$i_annee_min</td> <td>$i_nb_actes actes</td><td>$gst_url_site/AfficheStatsCommune.php?idf_source=$pi_idf_source&idf_commune=$pi_idf_commune&idf_type_acte=$i_idf_type_acte </td>";
+           $st_texte .="<td>".cp1252_vers_utf8($st_type_acte)."</td> <td>$i_annee_min</td> <td>$i_nb_actes actes</td><td>$gst_url_site/AfficheStatsCommune.php?idf_source=$pi_idf_source&idf_commune=$pi_idf_commune&idf_type_acte=$i_idf_type_acte</td>";
         else     
-           $st_texte .="<td>".cp1252_vers_utf8($st_type_acte)."</td> <td>$i_annee_min-$i_annee_max</td> <td>$i_nb_actes actes</td> <td> $gst_url_site/AfficheStatsCommune.php?idf_source=$pi_idf_source&idf_commune=$pi_idf_commune&idf_type_acte=$i_idf_type_acte </td>";
+           $st_texte .="<td>".cp1252_vers_utf8($st_type_acte)."</td> <td>$i_annee_min-$i_annee_max</td> <td>$i_nb_actes actes</td> <td> $gst_url_site/AfficheStatsCommune.php?idf_source=$pi_idf_source&idf_commune=$pi_idf_commune&idf_type_acte=$i_idf_type_acte</td>";
         $st_texte .= "</tr>\n";   
      }
      $st_texte .= "</table><br />";
   }
-  $st_texte .= "Pour rappel, la liste compl&egrave;te des d&eacute;pouillements se trouve &agrave; l'adresse: $gst_url_site/AfficheStatsCommune.php <br /><br />";
+  $st_texte .= "Pour rappel, la liste compl&egrave;te des d&eacute;pouillements se trouve &agrave; l'adresse: $gst_url_site/AfficheStatsCommune.php<br /><br />";
   $st_texte .= "Cordialement <br /><br />";
   $st_texte .= "	Les responsables de la base ".SIGLE_ASSO;
   print('<textarea name="texte" id="texte" class="jqte_edit form-control" rows=20 cols=80>'.$st_texte.'</textarea>');
@@ -194,7 +194,7 @@ function EnvoieNotification($pconnexionBD,$pi_idf_commune,$pi_idf_type_acte,$pst
    $st_nom_expediteur = cp1252_vers_utf8($st_prenom). " ". cp1252_vers_utf8($st_nom);
    
    // Remplacement des adresses HTTP par un lien HTML
-   $st_msg_html = preg_replace('/(https*\:\/\/[\w\&\=\?\/\.]+)\s/','<a href="$1">$1</a>',$pst_msg_html);
+   $st_msg_html = preg_replace('/(https*\:\/\/[\w\&\=\?\/\.-]+)/','<a href="$1">$1</a>',$pst_msg_html);
    //$st_msg_html = nl2br($st_msg_html);
    
    $st_message_texte = html_entity_decode(str_ireplace(array("<br>","<br />","<hr />","<hr>"),"\r\n",$pst_msg_html),ENT_COMPAT,'UTF-8');
