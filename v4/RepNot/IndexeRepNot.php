@@ -115,7 +115,7 @@ function affiche_grille_saisie($pi_format,$pi_idf_repertoire,$pi_page_courante,$
 	print("<form id=saisie name=grille_saisie>");	
 	print("<table class=\"table table-bordered\">\n");
 	print("<tr><th>Ann&eacute;e</th><td class=\"lib_erreur\"><input type=\"text\" id=\"annee\" name=\"annee\" value=\"$pi_annee_courante\" class=\"form-control\"></td>\n");
-	print("<th>Mois</th><td class=\"lib_erreur\"><select id=\"mois\" name=\"mois\" class=\"form-control\">".chaine_select_options($pi_mois_courant,$a_mois_rep_not)."</select></td><th>Jour</th><td><input type=\"textfield\" id=\"jour\" name=\"jour\"></td><th>Sans date</th><td><input type=\"checkbox\" name=\"sans_date\" value=\"1\" id=\"sans_date\"></td></tr></tr>\n");
+	print("<th>Mois</th><td class=\"lib_erreur\"><select id=\"mois\" name=\"mois\" class=\"form-control\">".chaine_select_options($pi_mois_courant,$a_mois_rep_not,false)."</select></td><th>Jour</th><td><input type=\"textfield\" id=\"jour\" name=\"jour\"></td><th>Sans date</th><td><input type=\"checkbox\" name=\"sans_date\" value=\"1\" id=\"sans_date\"></td></tr></tr>\n");
 	print("<tr><th >Type d'acte</th><td class=\"lib_erreur\"><input type=\"text\" id=\"type_acte\" name=\"type_acte\" maxlength=40 size=20 style=\"text-transform: capitalize;\" class=\"form-control\"></td><td colspan=6>&nbsp;</td></tr>\n");
 	switch ($pi_format)
 	{

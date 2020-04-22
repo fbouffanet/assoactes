@@ -346,17 +346,17 @@ $ga_tarifs = array('internet'=>15,
                    'bulletin_etranger'=>43);
 
 $ga_mois = array(1=>'Janvier',
-                 2=> 'Fevrier',
+                 2=> 'Février',
                  3=>'Mars',
                  4=>'Avril',
                  5=> 'Mai',
                  6=> 'Juin',
                  7=>'Juillet',
-                 8=>'Aout',
+                 8=>'Août',
                  9=> 'Septembre',
                  10=> 'Octobre',
                  11=> 'Novembre',
-                 12=> 'Decembre');
+                 12=> 'Décembre');
 
 $ga_mois_revolutionnaires       = array(                          
                                 1=> 'Vendémiaire',                 

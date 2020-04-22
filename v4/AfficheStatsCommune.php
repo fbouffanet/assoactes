@@ -356,7 +356,7 @@ switch ($gst_mode) {
      print('<div class="panel-heading">');
      print("Liste des ann&eacute;es disponibles de: ".cp1252_vers_utf8($gst_nom_commune)." (".cp1252_vers_utf8($gst_type_acte).")");
      if  ($gst_canton!='')
-        print("<br> Canton de $gst_canton");
+        print("<br> Canton de ".cp1252_vers_utf8($gst_canton));
      print("<br>Source: $a_sources[$gi_idf_source]");   
      print("</div>");
      

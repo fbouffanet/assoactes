@@ -307,8 +307,9 @@ function requete_recherche($pconnexionBD,$pi_idf_commune,$pi_rayon,$pi_idf_reper
   }
   if (!empty($pst_commentaires))
   {
-		$a_clauses[]="commentaires like ':commentaires'"; 
-    $pconnexionBD->ajoute_params(array(':commentaires'=>utf8_vers_cp1252("%$pst_commentaires%"))); 
+	    $st_commentaires='%'.utf8_vers_cp1252($pst_commentaires).'%';
+		$a_clauses[]="commentaires like :commentaires"; 
+		$pconnexionBD->ajoute_params(array(':commentaires'=>$st_commentaires)); 
 	}
 	if (count($a_clauses)>0)
 	{
@@ -614,30 +615,27 @@ switch ($gst_mode)
 		$i_session_annee_max         = isset($_SESSION['annee_max_rep_not']) && !empty($_SESSION['annee_max_rep_not'])? $_SESSION['annee_max_rep_not']: '';
 		$i_annee_max = isset($_POST['annee_max']) ? (int) $_POST['annee_max'] : $i_session_annee_max;
 		$st_session_type_acte  		 = isset($_SESSION['type_acte_rep_not']) ? $_SESSION['type_acte_rep_not']: '';
-		//$st_type_acte = isset($_POST['type_acte']) ? substr(utf8_decode($_POST['type_acte']),0,40) : $st_session_type_acte;
-    $st_type_acte = isset($_POST['type_acte']) ? substr($_POST['type_acte'],0,40) : $st_session_type_acte;
+		$st_type_acte = isset($_POST['type_acte']) ? substr($_POST['type_acte'],0,40) : $st_session_type_acte;
 		$i_session_idf_repertoire 	 = isset($_SESSION['idf_repertoire']) ? (int) $_SESSION['idf_repertoire'] : '';
 		$i_idf_repertoire = isset($_POST['idf_rep']) ? (int) $_POST['idf_rep'] : $i_session_idf_repertoire;
 		$st_session_nom1         	 = isset($_SESSION['nom1']) ? $_SESSION['nom1']: '';
-		//$st_nom1 = isset($_POST['nom1']) ? utf8_decode(substr($_POST['nom1'],0,40)) : $st_session_nom1;
-    $st_nom1 = isset($_POST['nom1']) ? substr($_POST['nom1'],0,40) : $st_session_nom1;
+		$st_nom1 = isset($_POST['nom1']) ? substr($_POST['nom1'],0,40) : $st_session_nom1;
 		$st_session_prenom1         	 = isset($_SESSION['prenom1']) ? $_SESSION['prenom1']: '';
-		$st_prenom1 = isset($_POST['prenom1']) ? utf8_decode(substr($_POST['prenom1'],0,30)) : $st_session_prenom1;
+		$st_prenom1 = isset($_POST['prenom1']) ? substr($_POST['prenom1'],0,30) : $st_session_prenom1;
 		$st_session_nom2        	 = isset($_SESSION['nom2']) ? $_SESSION['nom2']: '';
-		//$st_nom2 = isset($_POST['nom2']) ? utf8_decode(substr($_POST['nom2'],0,40)) : $st_session_nom2;
-    $st_nom2 = isset($_POST['nom2']) ? substr($_POST['nom2'],0,40) : $st_session_nom2;
+		$st_nom2 = isset($_POST['nom2']) ? substr($_POST['nom2'],0,40) : $st_session_nom2;
 		$st_session_prenom2         	 = isset($_SESSION['prenom2']) ? $_SESSION['prenom2']: '';
-		$st_prenom2 = isset($_POST['prenom2']) ? utf8_decode(substr($_POST['prenom2'],0,30)) : '';
+		$st_prenom2 = isset($_POST['prenom2']) ? substr($_POST['prenom2'],0,30) : '';
 		$st_session_paroisse         = isset($_SESSION['paroisse']) ? $_SESSION['paroisse']: '';
-		//$st_paroisse = isset($_POST['paroisse']) ? utf8_decode(substr($_POST['paroisse'],0,40)) : $st_session_paroisse;
-    $st_paroisse = isset($_POST['paroisse']) ? substr($_POST['paroisse'],0,40) : $st_session_paroisse;
-    $st_session_commentaires         = isset($_SESSION['commentaires']) ? $_SESSION['commentaires']: '';
-    $st_commentaires = isset($_POST['commentaires']) ? utf8_decode(substr($_POST['commentaires'],0,40)) : $st_session_commentaires;
-    $b_session_rech_phonetique         = isset($_SESSION['rech_phonetique']) ? $_SESSION['rech_phonetique']: false;
-    if (empty($_REQUEST['ancienne_page']))
-      $b_rech_phonetique = isset($_POST['rech_phonetique'])? true : $b_session_rech_phonetique;
-    else
-      $b_rech_phonetique = isset($_POST['rech_phonetique'])? true : false; 
+
+		$st_paroisse = isset($_POST['paroisse']) ? substr($_POST['paroisse'],0,40) : $st_session_paroisse;
+		$st_session_commentaires         = isset($_SESSION['commentaires']) ? $_SESSION['commentaires']: '';
+		$st_commentaires = isset($_POST['commentaires']) ? substr($_POST['commentaires'],0,40) : $st_session_commentaires;
+		$b_session_rech_phonetique         = isset($_SESSION['rech_phonetique']) ? $_SESSION['rech_phonetique']: false;
+		if (empty($_REQUEST['ancienne_page']))
+			$b_rech_phonetique = isset($_POST['rech_phonetique'])? true : $b_session_rech_phonetique;
+		else
+			$b_rech_phonetique = isset($_POST['rech_phonetique'])? true : false; 
 		$_SESSION['idf_commune_notaire']    = $i_idf_commune_notaire;
 		$_SESSION['idf_repertoire']    		= $i_idf_repertoire;
 		$_SESSION['rayon_rep_not']                  = $i_rayon;
@@ -649,19 +647,19 @@ switch ($gst_mode)
 		$_SESSION['nom2'] 					= $st_nom2;
 		$_SESSION['prenom2'] 				= $st_prenom2;
 		$_SESSION['paroisse'] 				= $st_paroisse;
-    $_SESSION['commentaires'] 		= $st_commentaires;
+		$_SESSION['commentaires'] 		= $st_commentaires;
 		$_SESSION['rech_phonetique'] 	= $b_rech_phonetique;
-    $_SESSION['num_page_rep_not'] 		= $i_num_page;
-    $gst_adresse_ip = $_SERVER['REMOTE_ADDR'];
-    $pf=@fopen("$gst_rep_logs/requetes_rep_not.log",'a');
-    date_default_timezone_set($gst_time_zone);
-    list($i_sec,$i_min,$i_heure,$i_jmois,$i_mois,$i_annee,$i_j_sem,$i_j_an,$b_hiver)=localtime();
-    $i_mois++;
-    $i_annee+=1900;
-    $st_date_log = sprintf("%02d/%02d/%04d %02d:%02d:%02d",$i_jmois,$i_mois,$i_annee,$i_heure,$i_min,$i_sec);
-    $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$gst_adresse_ip,$i_idf_commune_notaire,$i_rayon,$i_idf_repertoire,$st_type_acte,$i_annee_min,$i_annee_max,$st_nom1,$st_prenom1,$st_nom2,$st_prenom2,$st_paroisse));
-    @fwrite($pf,"$st_chaine_log\n"); 
-    @fclose($pf);  
+		$_SESSION['num_page_rep_not'] 		= $i_num_page;
+		$gst_adresse_ip = $_SERVER['REMOTE_ADDR'];
+		$pf=@fopen("$gst_rep_logs/requetes_rep_not.log",'a');
+		date_default_timezone_set($gst_time_zone);
+		list($i_sec,$i_min,$i_heure,$i_jmois,$i_mois,$i_annee,$i_j_sem,$i_j_an,$b_hiver)=localtime();
+		$i_mois++;
+		$i_annee+=1900;
+		$st_date_log = sprintf("%02d/%02d/%04d %02d:%02d:%02d",$i_jmois,$i_mois,$i_annee,$i_heure,$i_min,$i_sec);
+		$st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$gst_adresse_ip,$i_idf_commune_notaire,$i_rayon,$i_idf_repertoire,$st_type_acte,$i_annee_min,$i_annee_max,$st_nom1,$st_prenom1,$st_nom2,$st_prenom2,$st_paroisse));
+		@fwrite($pf,"$st_chaine_log\n"); 
+		@fclose($pf);  
 		affiche_resultats_recherche($connexionBD,$i_idf_commune_notaire,$i_rayon,$i_idf_repertoire,$st_type_acte,$i_annee_min,$i_annee_max,$st_nom1,$st_prenom1,$st_nom2,$st_prenom2,$st_paroisse,$st_commentaires,$b_rech_phonetique,$i_num_page);	
 	break;
 	default:
