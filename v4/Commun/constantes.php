@@ -405,25 +405,23 @@ $ga_annees_revolutionnaires      = array(
                                 13=>'An XIII',                    
                                 14=>'An XIV'                      
                                 );
-define('IDF_SOURCE_RELEVES_AGC',1); 
-define('IDF_SOURCE_TD',4);
+
 define('SEUIL_RETENTION_ADHTS',5);                   
 define('NB_PERSONNES_BLOC_CHGMT',1000);
 define('NB_ACTES_BLOC_CHGMT',2000);
 define('PAGE_RECHERCHE','index.php');
 
 
+define('LIB_ASSO',"");
+define('LIB_ASSO_AVEC',"");
+define('SIGLE_ASSO','');
 
-define('LIB_ASSO',"AssoActes");
-define('LIB_ASSO_AVEC',"l'AssoActes");
-define('SIGLE_ASSO','AO');
+define('EMAIL_DIRASSO','');
+define('EMAIL_INFOASSO','');
+define('EMAIL_PRESASSO','');
 
-define('EMAIL_DIRASSO','dir@ao.fr');
-define('EMAIL_INFOASSO','info@ao.fr');
-define('EMAIL_PRESASSO','pres@ao.fr');
-
-define('EMAIL_INSCRIPTION_FORUM','inscription@forum-ao.fr');
-define('EMAIL_FORUM','membres@forum-ao.fr');
+define('EMAIL_INSCRIPTION_FORUM','');
+define('EMAIL_FORUM','');
 
 define('EMAIL_GBKADMIN','');
 define('IDF_ASSO_GBK','');
