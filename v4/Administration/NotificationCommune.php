@@ -128,9 +128,9 @@ function AfficheEditionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commune
   list ($st_source,$st_commune,$st_canton,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_actes)  = $pconnexionBD->sql_select_liste($st_requete);
     $st_libelle_canton = ($st_canton!='') ? "(canton de $st_canton)" : ''; 
     $st_texte .= "La source '$st_source' de la commune/paroisse <b>".cp1252_vers_utf8($st_commune)."</b> ".cp1252_vers_utf8($st_libelle_canton)." a &eacute;t&eacute; mise &agrave; jour sur la p&eacute;riode: ";
-    $st_texte .= "<u>$i_annee_min</u>-<u>$i_annee_max</u><br />";
-    $st_texte .= "La commune comporte d&eacute;sormais $i_nb_actes actes de type: ".cp1252_vers_utf8($st_type_acte)."<br />";
-    $st_texte .= "Le d&eacute;tail des ann&eacute;es disponibles est consultable &agrave; l'adresse: <a href=\"$gst_url_site/AfficheStatsCommune.php?idf_source=$pi_idf_source&idf_commune=$pi_idf_commune&idf_type_acte=$pi_idf_type_acte\">$gst_url_site/AfficheStatsCommune.php?idf_source=$pi_idf_source&idf_commune=$pi_idf_commune&idf_type_acte=$pi_idf_type_acte</a><br /><br />";  
+    $st_texte .= "<u><a href=\"$gst_url_site/AfficheStatsCommune.php?idf_source=$pi_idf_source&idf_commune=$pi_idf_commune&idf_type_acte=$pi_idf_type_acte\">$i_annee_min</u>-<u>$i_annee_max</a></u><br />";
+	$st_texte .= "Le d&eacute;tail des ann&eacute;es disponibles est consultable en cliquant sur l'intervalle des années sur-ligné en bleu ci-dessus.<br /><br />";
+    $st_texte .= "La commune comporte d&eacute;sormais $i_nb_actes actes de type: ".cp1252_vers_utf8($st_type_acte)."<br />";      
   }
   else
   {
@@ -145,12 +145,13 @@ function AfficheEditionNotification($pconnexionBD,$pi_idf_source,$pi_idf_commune
         list($i_idf_type_acte,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_actes) = $a_ligne;
         // les td sont séparés par des espaces pour qu'une séparation soit visible dans le message au format texte (suppression des balises HTML)
         if ($i_annee_min==$i_annee_max)
-           $st_texte .="<td><a href=\"$gst_url_site/AfficheStatsCommune.php?idf_source=$pi_idf_source&idf_commune=$pi_idf_commune&idf_type_acte=$i_idf_type_acte\">".cp1252_vers_utf8($st_type_acte)."</a></td> <td>$i_annee_min</td> <td>$i_nb_actes actes</td>";
+           $st_texte .="<td>".cp1252_vers_utf8($st_type_acte)."</td> <td><a href=\"$gst_url_site/AfficheStatsCommune.php?idf_source=$pi_idf_source&idf_commune=$pi_idf_commune&idf_type_acte=$i_idf_type_acte\">$i_annee_min</a></td> <td>$i_nb_actes actes</td>";
         else     
-           $st_texte .="<td><a href=\"$gst_url_site/AfficheStatsCommune.php?idf_source=$pi_idf_source&idf_commune=$pi_idf_commune&idf_type_acte=$i_idf_type_acte\">".cp1252_vers_utf8($st_type_acte)."</td> <td>$i_annee_min-$i_annee_max</td> <td>$i_nb_actes actes</td>";
+           $st_texte .="<td>".cp1252_vers_utf8($st_type_acte)."</td> <td><a href=\"$gst_url_site/AfficheStatsCommune.php?idf_source=$pi_idf_source&idf_commune=$pi_idf_commune&idf_type_acte=$i_idf_type_acte\">$i_annee_min-$i_annee_max</a></td> <td>$i_nb_actes actes</td>";
         $st_texte .= "</tr>\n";   
      }
      $st_texte .= "</table><br />";
+	 $st_texte .= "Le d&eacute;tail des ann&eacute;es disponibles est consultable en cliquant sur les intervalle des années sur-lignés en bleu ci-dessus<br /><br />";
   }
   $st_texte .= "Pour rappel, la liste compl&egrave;te des d&eacute;pouillements se trouve &agrave; l'adresse: <a href=\"$gst_url_site/AfficheStatsCommune.php\">$gst_url_site/AfficheStatsCommune.php</a><br /><br />";
   $st_texte .= "Cordialement <br /><br />";
