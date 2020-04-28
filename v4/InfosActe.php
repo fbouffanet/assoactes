@@ -236,14 +236,15 @@ else
 	   print('<div class="alert alert-success">La demande d\'information a &eacute;t&eacute; envoy&eacute;e</div>');
    else
    {   
-	   print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: ".$courriel->get_erreur()."</div>");
+	   $st_erreur = $courriel->get_erreur();
+	   print("<div class=\"alert alert-danger\">Le message n'a pu être envoyé. Erreur: $st_erreur</div>");
        $pf=@fopen("$gst_rep_logs/di_non_envoyees.log",'a');
        date_default_timezone_set($gst_time_zone);
        list($i_sec,$i_min,$i_heure,$i_jmois,$i_mois,$i_annee,$i_j_sem,$i_j_an,$b_hiver)=localtime();
        $i_mois++;
        $i_annee+=1900;
        $st_date_log = sprintf("%02d/%02d/%04d %02d:%02d:%02d",$i_jmois,$i_mois,$i_annee,$i_heure,$i_min,$i_sec);
-       $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$gst_adresse_ip,$st_prenom_adht,$st_nom_adht,$st_email_adht));
+       $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$gst_adresse_ip,$st_prenom_adht,$st_nom_adht,$st_email_adht,$st_erreur));
        @fwrite($pf,"$st_chaine_log\n");
        @fclose($pf);
     }
