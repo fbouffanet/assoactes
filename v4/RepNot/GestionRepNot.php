@@ -32,7 +32,7 @@ switch ($gst_mode) {
    exit();
  break;
  case 'LISTE_REP':
-   $st_requete = "SELECT rnd.nom_notaire,ca.nom,rnd.cote,rnd.publication, concat(adht.prenom,' ',adht.nom), count(rna.idf_acte) FROM rep_not_desc rnd join commune_acte ca on (rnd.idf_commune=ca.idf) left join rep_not_actes rna on (rnd.idf_repertoire=rna.idf_repertoire) left join adherent adht on (rnd.idf_releveur=adht.idf) group by rnd.idf_repertoire order by rnd.nom_notaire,ca.nom";
+   $st_requete = "SELECT rnd.nom_notaire,ca.nom,rnd.cote,rnd.publication, concat(adht.prenom,' ',adht.nom),min(rna.annee),max(rna.annee), count(rna.idf_acte) FROM rep_not_desc rnd join commune_acte ca on (rnd.idf_commune=ca.idf) left join rep_not_actes rna on (rnd.idf_repertoire=rna.idf_repertoire) left join adherent adht on (rnd.idf_releveur=adht.idf) where rna.annee!=9999 and rna.annee!=0 group by rnd.idf_repertoire order by rnd.nom_notaire,ca.nom";
    header("Content-type: text/csv");
    header("Expires: 0");
    header("Pragma: public");
@@ -41,7 +41,7 @@ switch ($gst_mode) {
    $fh = @fopen('php://output', 'w' );       
    if (count($a_liste_rep)>0)
    {
-     fputcsv($fh, array("Notaire","Commune","Cote","Publication","Releveur","Nb actes"),SEP_CSV); 
+     fputcsv($fh, array("Notaire","Commune","Cote","Publication","Releveur","Annee de debut","Annee de fin","Nb actes"),SEP_CSV); 
      foreach ($a_liste_rep as $a_ligne)
      {
        fputcsv($fh, $a_ligne,SEP_CSV);           

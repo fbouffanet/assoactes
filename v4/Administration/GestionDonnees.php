@@ -204,11 +204,11 @@ function export_nai_nimv2($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
       {
          array_push($a_champs,"","","");
       }
-      $st_commentaires = preg_replace('/\r\n/','ง',$st_commentaires);
+      $st_commentaires = preg_replace('/\r\n/','ยง',$st_commentaires);
       if (!empty($st_url))
       {
          if (strpos($st_commentaires,$st_url)===false)
-            $st_commentaires.="ง$st_url";               
+            $st_commentaires.="ยง$st_url";               
       }
       $a_champs[]=$st_commentaires;
       $no_enregistrement=$no_enregistrement+1;
