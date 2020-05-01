@@ -53,11 +53,15 @@ $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
                    DROIT_UTILITAIRES => 'Acces aux utilitaires',
                    DROIT_VARIANTES => 'Gestion des variantes',
                    DROIT_RELEVES => 'Suivi des relevés',
-                   DROIT_STATS => 'Accès aux statistiques',
+                   DROIT_STATS => 'Acces aux statistiques',
 				   DROIT_GENEABANK => 'Gestion des points GeneaBank'
                   );
 define('NB_LIGNES_PAR_PAGE',25);
 define('DELTA_NAVIGATION',5);
+
+define('IDF_ASSO_GBK','');
+define('PREFIXE_ADH_GBK','');
+define('NB_POINTS_GBK',100);
 
 define('TOUS_ADHERENTS','T');
 define('ADHESION_BULLETIN','B');
@@ -322,8 +326,8 @@ $ga_pays = array(
 "Zimbabwe",
 );
 
-$ga_scripts_demande=array('InfosActe.php');
-$ga_icones_source=array('infos.png','ninfos.png','td.png','tdv.png','tdi.png','idx.png','nidx.png');
+$ga_scripts_demande=array('InfosActe.php','InfosTD.php');
+$ga_icones_source=array('infos.png','ninfos.png','td.png','tdv.png','rnot.png','tdi.png','idx.png','nidx.png');
 $ga_booleen_oui_non=array(true=>'oui',false=>'non');
 
 define('AIDE_RELEVES',1);
@@ -405,27 +409,24 @@ $ga_annees_revolutionnaires      = array(
                                 13=>'An XIII',                    
                                 14=>'An XIV'                      
                                 );
-
+define('IDF_SOURCE_RELEVES_AGC',1); 
+define('IDF_SOURCE_TD',4);
 define('SEUIL_RETENTION_ADHTS',5);                   
 define('NB_PERSONNES_BLOC_CHGMT',1000);
 define('NB_ACTES_BLOC_CHGMT',2000);
 define('PAGE_RECHERCHE','index.php');
 
-
 define('LIB_ASSO',"");
 define('LIB_ASSO_AVEC',"");
 define('SIGLE_ASSO','');
 
-define('EMAIL_DIRASSO','');
 define('EMAIL_INFOASSO','');
-define('EMAIL_PRESASSO','');
-
 define('EMAIL_INSCRIPTION_FORUM','');
 define('EMAIL_FORUM','');
-
+define('EMAIL_DIRASSO','');
 define('EMAIL_GBKADMIN','');
-define('IDF_ASSO_GBK','');
-define('PREFIXE_ADH_GBK','');
-define('NB_POINTS_GBK',0);
+define('EMAIL_PRESASSO','');
+
 define('CLEF_API_GEOPORTAIL','');
+
 ?>

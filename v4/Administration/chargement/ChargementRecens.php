@@ -94,7 +94,7 @@ function charge_recensement($pst_fichier,$pi_idf_commune,$pi_annee,$pi_idf_sourc
 		 $st_commentaires .= sprintf("N° maison: %d\n",$i_maison_ligne);
 		 $st_commentaires .= sprintf("N° ménage: %d\n",$i_menage_ligne);
 		 $st_commentaires .= sprintf("N° de page: %d",$i_page_ligne);
-		 $acte->setCommentaires($st_commentaires);
+		 $acte->setCommentaires(utf8_vers_cp1252($st_commentaires));
          $acte->setDetailSupp(1);
 		 $acte->setUrl($st_permalien);
 		 $a_liste_actes[] = $acte;
