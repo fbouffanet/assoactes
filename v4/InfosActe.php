@@ -29,7 +29,7 @@ function getRecapitulatifMessage($pst_type, $pi_max, $pi_compteur){
     default:            $pst_type = "mariages et actes divers";
     break;
   }
-  return sprintf("<div class=\"row text-center\">Il vous reste <div class=\"badge badge-warning\">%d</div> demandes de $pst_type dans ce mois</div>", $pi_max-$pi_compteur);
+  return sprintf("<br><div class=\"row text-center\">Il vous reste <div class=\"badge badge-warning\">%d</div> demandes de $pst_type dans ce mois</div>", $pi_max-$pi_compteur);
 }
 
 function getContentBottom($pst_type, $pst_email_adht, $pi_idf_acte){
@@ -183,7 +183,7 @@ if (empty($_POST['mode']))
     print($st_description_acte);
     print("</textarea>");
     if(!empty($st_permalien))
-      print("<a href=\"$st_permalien\" target=\"_blank\" class=\"btn btn-primary col-xs-4 col-xs-offset-4\"><span class=\"glyphicon glyphicon-picture\"></span>Lien vers les AD<a>");
+      print("<br><a href=\"$st_permalien\" target=\"_blank\" class=\"btn btn-primary col-xs-4 col-xs-offset-4\"><span class=\"glyphicon glyphicon-picture\"></span>Lien vers les AD</a><br>");
     print("</div>");
 
     if($i_nb_ddes_acte == 0){
