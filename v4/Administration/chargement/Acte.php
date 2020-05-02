@@ -13,7 +13,8 @@ class Acte {
      protected $i_idf_commune;
      protected $st_type_acte;
      protected $i_idf_source;
-     protected $i_idf_releveur;
+     protected $st_source;
+	 protected $i_idf_releveur;
      protected $st_date;
      protected $i_jour;
      protected $i_mois;
@@ -79,6 +80,7 @@ class Acte {
          $this -> i_idf_type_acte = $this -> typeActe -> vers_idf($this -> st_type_acte);
          $this -> typeActe -> ajoute($pst_type_acte, $pst_sigle_acte);
          $this -> i_idf_source = $pi_idf_source;
+		 $this -> st_source = '';
          $this -> st_date = $pst_date;
          $this -> i_idf_releveur = $pi_idf_releveur;
          list($i_jour, $i_mois, $i_annee) = $this -> date_vers_triplet($pst_date);
@@ -239,6 +241,12 @@ class Acte {
          return $this -> i_annee;
          } 
     
+	public function getSource()
+    
+    {
+         return $this -> st_source;
+         } 
+		 
     public function getListePersonnes()
     
     {
@@ -410,9 +418,9 @@ class Acte {
     
     
     {
-         $st_requete = "select a.idf_commune,concat(lpad(ca.code_insee,5,'0'),lpad(numero_paroisse,2,'0')),ca.nom,concat(ca.nom,' (',lpad(ca.code_insee,5,'0'),')'),left(lpad(ca.code_insee,5,'0'),2),ta.nom,ta.idf,ta.sigle_nimegue,a.idf_source,a.idf_releveur,a.date,a.jour,a.mois,a.annee,a.date_rep,a.cote,a.libre,a.commentaires,a.url,a.details_supplementaires from acte a left join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca  on (a.idf_commune=ca.idf) where a.idf=$pi_idf_acte";
+         $st_requete = "select a.idf_commune,concat(lpad(ca.code_insee,5,'0'),lpad(numero_paroisse,2,'0')),ca.nom,concat(ca.nom,' (',lpad(ca.code_insee,5,'0'),')'),left(lpad(ca.code_insee,5,'0'),2),ta.nom,ta.idf,ta.sigle_nimegue,a.idf_source,a.idf_releveur,a.date,a.jour,a.mois,a.annee,a.date_rep,a.cote,a.libre,a.commentaires,a.url,a.details_supplementaires,s.nom from acte a left join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca  on (a.idf_commune=ca.idf) join source s on (a.idf_source=s.idf) where a.idf=$pi_idf_acte";
          // print("Req=$st_requete<br>");
-        list($i_idf_commune, $i_code_commune, $st_commune, $st_commune_insee, $i_dept, $st_type_acte, $i_idf_type_acte, $st_sigle_type_acte_nimegue, $i_idf_source, $i_idf_releveur, $st_date, $i_jour, $i_mois, $i_annee, $st_date_rep, $st_cote, $st_libre, $st_commentaires, $st_url, $i_details_supplementaires) = $this -> connexionBD -> sql_select_liste($st_requete);
+        list($i_idf_commune, $i_code_commune, $st_commune, $st_commune_insee, $i_dept, $st_type_acte, $i_idf_type_acte, $st_sigle_type_acte_nimegue, $i_idf_source, $i_idf_releveur, $st_date, $i_jour, $i_mois, $i_annee, $st_date_rep, $st_cote, $st_libre, $st_commentaires, $st_url, $i_details_supplementaires,$st_source) = $this -> connexionBD -> sql_select_liste($st_requete);
          $this -> i_idf = $pi_idf_acte;
          $this -> i_idf_commune = $i_idf_commune;
          $this -> i_code_commune = $i_code_commune;
@@ -445,6 +453,7 @@ class Acte {
              $this -> st_commentaires = $st_commentaires;
              }			 
         $this -> i_details_supplementaires = $i_details_supplementaires;
+		 $this->st_source = $st_source;
          $this -> a_liste_personnes = array();
          $st_requete = "select idf from personne where idf_acte=$pi_idf_acte order by idf";
          $a_liste_personnes = $this -> connexionBD -> sql_select($st_requete);

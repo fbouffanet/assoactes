@@ -176,6 +176,8 @@ if (empty($_POST['mode']))
     $st_description_acte = $o_acte -> versChaine();
     $i_nb_lignes = $o_acte ->getNbLignes();
     $st_permalien=  $o_acte->getUrl();
+	$st_source=$o_acte ->getSource();
+	print("<h3>Source: $st_source</h3>");
     print('<div id="texte_acte" class="text-center">');
     print("<textarea rows=$i_nb_lignes cols=80 class=\"form-control\">");
     print($st_description_acte);
