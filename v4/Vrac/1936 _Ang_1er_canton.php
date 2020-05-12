@@ -25,9 +25,9 @@ $connexionBD->ferme();
 ?>
 <table cellspacing="0" border="0">
 	<colgroup width="472"></colgroup>
-	<colgroup width="85"></colgroup>
+	<colgroup width="85"></colgroup> 
 	<tr>
-		<td height="50" align="left"><strong>Recensement d'Angoul&ecirc;me 1° canton 1936 </strong></td>
+		<td height="50" align="left"><strong>Recensement d'Angoul&ecirc;me 1er canton 1936 </strong></td>
 		<td align="left"><i><u><br></u></i></td>
 	</tr>
 	<tr>
