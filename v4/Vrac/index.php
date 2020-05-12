@@ -50,8 +50,7 @@ $connexionBD->ferme();
 <h2 align=left style="text-align:left">Ils se sont mari&eacutes en <a href="Migrants.php">Indre & Loire</a></h2>
 <h1><p class="bg-info">Recensement</p></h1>
 <h2 style="text-align:left">Recensement d'Angoul&ecircme 1er canton 1936 <a href="1936 _Ang_1er_canton.php">1936 _Ang_1er_canton</a></h2>
-<h1><p class="bg-info">Recensement</p></h1>
-<h2 style="text-align:left">Recensement d'Angoul&ecircme 2ieme canton 1936 <a href="1936 _Ang_2er_canton.php">1936 _Ang_2er_canton</a></h2>
+<h2 style="text-align:left">Recensement d'Angoul&ecircme 2eme canton 1936 <a href="1936 _Ang_2eme_canton.php">1936 _Ang_2eme_canton</a></h2>
 <dir>
 <li>Recensement relev&eacute par Jean Patrick BAZILLE</li>
 </dir>
