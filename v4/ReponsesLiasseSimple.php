@@ -307,7 +307,7 @@ if (count(array_values($requeteRecherche->communes_voisines()))>1)
       print("(avec recherches dans un rayon de $gi_rayon km)\n");
       $st_criteres .= " (avec recherches dans un rayon de $gi_rayon km)\n";
    }
-   print("<textarea rows=6 cols=40>$st_communes_voisines</textarea>");  
+   print("<textarea rows=6 cols=40>".cp1252_vers_utf8($st_communes_voisines)."</textarea>");  
 }
 print("</div>");  
 print("</div>"); 
