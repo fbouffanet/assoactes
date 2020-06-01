@@ -7,7 +7,7 @@ require_once('Commun/ConnexionBD.php');
 
 print('<!DOCTYPE html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr"> ');
 /* ------------------- modif title */
 print('<title>Base '.SIGLE_ASSO.': Vos recherches de liasses notariales</title>');
