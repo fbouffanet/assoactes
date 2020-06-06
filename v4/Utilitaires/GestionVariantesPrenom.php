@@ -504,7 +504,7 @@ switch ($gst_mode) {
   affiche_menu($connexionBD,$gi_idf_groupe);
  break;
  case 'CREER':
-   $st_variantes = isset($_POST['variantes']) ? utf8_vers_cp1252(trim($_POST['variantes'])) : '';
+   $st_variantes = isset($_POST['variantes']) ? trim($_POST['variantes']) : '';
    $a_variantes = explode("\n",$st_variantes);
    $i_idf_groupe = $connexionBD->sql_select1("select max(idf_groupe) from variantes_prenom");
    $i_idf_groupe++;  
@@ -513,7 +513,7 @@ switch ($gst_mode) {
    affiche_menu($connexionBD,$i_idf_groupe);
  break;
  case 'MODIFIER':
-   $st_variantes = isset($_POST['variantes']) ? utf8_vers_cp1252(trim($_POST['variantes'])) : '';
+   $st_variantes = isset($_POST['variantes']) ? trim($_POST['variantes']) : '';
    $a_variantes = explode("\n",$st_variantes);
    $i_idf_groupe = isset($_POST['idf_groupe']) ? (int) $_POST['idf_groupe'] : null;
    if (isset($i_idf_groupe))
