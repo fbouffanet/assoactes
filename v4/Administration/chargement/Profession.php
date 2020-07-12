@@ -7,14 +7,17 @@
 
 class Profession {
   private static $profession;
-  private $a_profession;
   protected $connexionBD;
   private $a_idf_par_profession;
+  private $a_profession_a_ajouter;
    
   private function __construct ($pconnexionBD) {
       $this->connexionBD = $pconnexionBD;
       $this->a_profession = array();
-      $this->a_idf_par_profession = null;  
+	  $this->a_profession_a_ajouter = array();
+      $this->a_idf_par_profession = null;
+	  $this->charge_liste_idf_par_nom();
+	 
   }
    
   public static function singleton($pconnexionBD) {
@@ -26,20 +29,20 @@ class Profession {
   }
   
   public function ajoute($pst_profession) {
-     $pst_profession = ucfirst(strtolower(trim($pst_profession)));
-     if ($pst_profession !='' && !in_array(strval($pst_profession),$this->a_profession ))
-         $this->a_profession[]=strval($pst_profession);
+     $st_profession = ucfirst(strtolower(trim($pst_profession)));
+     if ($st_profession !='' && !array_key_exists(strval($st_profession),$this->a_idf_par_profession ) && !in_array(strval($st_profession),$this->a_profession_a_ajouter))
+         $this->a_profession_a_ajouter[]=strval($st_profession);
   }
   
   public function sauve($pst_rep_tmp='') {
      $a_params_precs=$this->connexionBD->params();
 	 $a_professions_a_creer = array();
-	 if (count($this->a_profession)>0)
+	 if (count($this->a_profession_a_ajouter)>0)
      {
-	   $st_requete = "insert ignore INTO `profession` (nom) values ";
+	   $st_requete = "insert INTO `profession` (nom) values ";
        $a_colonnes = array();
 	   $i=0;
-	   foreach ($this->a_profession as $st_elem)
+	   foreach ($this->a_profession_a_ajouter as $st_elem)
        {
          $a_colonnes[] = "(:prof$i)";
 		 $a_professions_a_creer[":prof$i"]=$st_elem;
@@ -55,20 +58,19 @@ class Profession {
        }
        catch (Exception $e) {
          die('Sauvegarde profession impossible: ' . $e->getMessage().": $st_requete");
-      }      	  
+      }
+      $this->charge_liste_idf_par_nom();	  
     }
 
    }
    
    public function charge_liste_idf_par_nom() {
-     if (is_null($this->a_idf_par_profession))
         $this->a_idf_par_profession = $this->connexionBD->liste_clef_par_valeur("select idf,nom from `profession`");
    }
    
    public function vers_idf($pst_nom) {
      $pst_nom = ucfirst(strtolower(trim($pst_nom)));
      if (empty($pst_nom)) return 0;
-     if (is_null($this->a_idf_par_profession)) $this->charge_liste_idf_par_nom();
      if (array_key_exists(strval($pst_nom),$this->a_idf_par_profession))
         return $this->a_idf_par_profession[strval($pst_nom)];
      else
