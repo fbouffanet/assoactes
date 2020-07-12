@@ -7,14 +7,15 @@
 
 class Prenom {
   private static $prenom;
-  private $a_prenom;
+  private $a_prenom_a_creer;
   protected $connexionBD;
   private $a_idf_par_prenom;
    
   private function __construct ($pconnexionBD) {
       $this->connexionBD = $pconnexionBD;
-      $this->a_prenom = array();
+	  $this->a_prenom_a_creer = array();
       $this->a_idf_par_prenom = null;
+	  $this->charge_liste_idf_par_nom();
   }
    
   public static function singleton($pconnexionBD) {
@@ -27,21 +28,21 @@ class Prenom {
   
   public function ajoute($pst_prenom) {
      $pst_prenom = trim($pst_prenom);
-     if ($pst_prenom !='' && !in_array(strval($pst_prenom),$this->a_prenom))
+     if ($pst_prenom !='' && !array_key_exists(strval($pst_prenom),$this->a_idf_par_prenom) && !in_array(strval($pst_prenom),$this->a_prenom_a_creer) )
      {       
-        $this->a_prenom[]=strval($pst_prenom);
+        $this->a_prenom_a_creer[]=strval($pst_prenom);
      }
   }
   
   public function sauve() {
 	 $a_params_precs=$this->connexionBD->params();
 	 $a_prenoms_a_creer = array();
-	 if (count($this->a_prenom)>0)
+	 if (count($this->a_prenom_a_creer)>0)
      {
-	   $st_requete = "insert ignore INTO `prenom` (libelle) values ";
+	   $st_requete = "insert INTO `prenom` (libelle) values ";
        $a_colonnes = array();
 	   $i=0;
-	   foreach ($this->a_prenom as $st_prenom)
+	   foreach ($this->a_prenom_a_creer as $st_prenom)
        {
          $a_colonnes[] = "(:prenom$i)";
 		 $a_prenoms_a_creer[":prenom$i"]=$st_prenom;
@@ -58,6 +59,7 @@ class Prenom {
        catch (Exception $e) {
          die('Sauvegarde Prenom impossible: ' . $e->getMessage().": $st_requete");
       }
+	  $this->charge_liste_idf_par_nom();
 	 }
      $st_requete = "select idf,libelle from prenom left join groupe_prenoms on (idf=idf_prenom) where idf_prenom is null and libelle regexp('[ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿA-Za-z]+')"; 
      $a_prenoms= $this->connexionBD->liste_valeur_par_clef($st_requete);
@@ -162,13 +164,11 @@ class Prenom {
    }
    
    public function charge_liste_idf_par_nom() {
-     if (is_null($this->a_idf_par_prenom))
         $this->a_idf_par_prenom = $this->connexionBD->liste_clef_par_valeur("select idf,libelle from `prenom`");
    }
    
    public function vers_idf($pst_nom) {
      if (empty($pst_nom)) return 0;
-     if (is_null($this->a_idf_par_prenom)) $this->charge_liste_idf_par_nom();
      if (array_key_exists(strval($pst_nom),$this->a_idf_par_prenom))
         return $this->a_idf_par_prenom[strval($pst_nom)];
      else
