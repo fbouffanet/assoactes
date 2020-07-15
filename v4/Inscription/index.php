@@ -185,6 +185,7 @@ function envoie_mail ($dt_ins_date, $pst_ins_nom, $pst_ins_prenom, $pst_ins_emai
   $courriel = new Courriel($gst_rep_site,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
   $courriel->setExpediteur(EMAIL_DIRASSO,LIB_ASSO);
   $courriel->setAdresseRetour(EMAIL_DIRASSO);
+  $courriel->setEnCopieCachee(EMAIL_DIRASSO);
   $courriel->setDestinataire($pst_ins_email_perso,"$pst_ins_prenom $pst_ins_nom");
   $courriel->setSujet($st_sujet);
   $courriel->setTexte($st_message_html);
