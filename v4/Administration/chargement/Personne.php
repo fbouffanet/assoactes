@@ -203,6 +203,7 @@ class Personne
 				
 				
 				{
+								 $pst_origine=trim($pst_origine);
 								 if ( !empty( $pst_origine ) )
 												 {
 												$this -> st_origine = trim($pst_origine);
@@ -216,6 +217,7 @@ class Personne
 				
 				
 				{
+							    $pst_residence=trim($pst_residence);
 								 if ( !empty( $pst_residence ) )
 												 {
 												$this -> st_residence = trim($pst_residence);
@@ -321,6 +323,7 @@ class Personne
 				
 				{
 								
+								 $pst_profession=trim($pst_profession);
 								 $this -> st_profession = $pst_profession;
 								 $this -> profession -> ajoute( $pst_profession );
 								 } 
@@ -651,6 +654,7 @@ class Personne
 				
 				
 				{
+								 $pst_prenom = trim($pst_prenom);
 								 $a_prns = array_map( "strtolower", preg_split( "/\s/", $pst_prenom ) );
 								 $pst_prenom = join( ' ', array_map( "ucfirst", $a_prns ) );
 								 $a_prns = array_map( "ucfirst", preg_split( "/-/", $pst_prenom ) );
@@ -670,7 +674,7 @@ class Personne
 				
 				
 				{
-								 return strtoupper( $pst_nom );
+								 return strtoupper( trim($pst_nom) );
 								 } 
 				
 				/**
