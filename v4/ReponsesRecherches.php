@@ -316,7 +316,7 @@ date_default_timezone_set($gst_time_zone);
       {
            $a_clauses[] = "prn_simple_epse$i_nb_prenoms_epse.libelle ".$requeteRecherche->clause_droite_prenom($st_prenom,$gst_variantes_epse,$i_nb_prenoms_epse);
             $st_variantes_prenoms_epse.=join("\n",$requeteRecherche->variantes_prenoms());
-           $st_tables_prenom_epse .= " join `groupe_prenoms` gp$i_nb_prenoms_epx on (prn_p2.idf=gp$i_nb_prenoms_epx.idf_prenom) join `prenom_simple` prn_simple_epse$i_nb_prenoms_epse on (gp$i_nb_prenoms_epx.idf_prenom_simple=prn_simple_epse$i_nb_prenoms_epse.idf) ";
+           $st_tables_prenom_epse .= " join `groupe_prenoms` gp$i_nb_prenoms_epse on (prn_p2.idf=gp$i_nb_prenoms_epse.idf_prenom) join `prenom_simple` prn_simple_epse$i_nb_prenoms_epse on (gp$i_nb_prenoms_epse.idf_prenom_simple=prn_simple_epse$i_nb_prenoms_epse.idf) ";
            $i_nb_prenoms_epse++; 
       }
     }
@@ -494,6 +494,8 @@ date_default_timezone_set($gst_time_zone);
 
     $start = $current_page * $_SESSION['per_page'];
     $gst_requete_actes = "$gst_requete_nb_actes $st_clauses group by a.idf order by annee,mois,jour LIMIT " .  $start . "," . $_SESSION['per_page'];
+	
+
 
     if (!empty($gst_variantes) || !empty($st_variantes_prenoms))
     {
@@ -526,7 +528,7 @@ date_default_timezone_set($gst_time_zone);
 }
 
 $etape_prec = getmicrotime();
-
+//FBO	print("Req actes=$gst_requete_actes<br>");
 $a_actes=$connexionBD->sql_select_multiple($gst_requete_actes);
 $a_actes_total = $connexionBD->sql_select("SELECT FOUND_ROWS() AS count");
 $a_actes_total = (isset($a_actes_total[0]) && $a_actes_total[0] >= 0)? $a_actes_total[0] : 0;

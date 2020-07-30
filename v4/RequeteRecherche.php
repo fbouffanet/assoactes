@@ -95,7 +95,7 @@ class RequeteRecherche {
            $a_params_precedents=$this->connexionBD->params();
            $pst_prenom=ucfirst(strtolower(trim($pst_prenom))); 
            $this->connexionBD->initialise_params(array(":prn"=>$pst_prenom));
-           $st_requete = "select vp1.libelle from variantes_prenom vp1, variantes_prenom vp2 where vp2.libelle = :prn COLLATE latin1_general_cs and vp1.idf_groupe=vp2.idf_groupe";
+           $st_requete = "select vp1$pi_num_param.libelle from variantes_prenom vp1$pi_num_param, variantes_prenom vp2$pi_num_param where vp2$pi_num_param.libelle = :prn COLLATE latin1_general_cs and vp1$pi_num_param.idf_groupe=vp2$pi_num_param.idf_groupe";
            
            $a_variantes=$this->connexionBD->sql_select($st_requete);
            $this->connexionBD->initialise_params($a_params_precedents);
