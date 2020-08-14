@@ -543,7 +543,7 @@ if ($i_temps_recherche>10000)
    // enregistre les requêtes de plus de 10s
    $pf=@fopen("$gst_rep_logs/requetes_lentes.log",'a');
    $st_date_log = sprintf("%02d/%02d/%04d %02d:%02d:%02d",$i_jmois,$i_mois,$i_annee,$i_heure,$i_min,$i_sec);
-   $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$gst_requete_actes,$i_temps_recherche);
+   $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$gst_requete_actes,$i_temps_recherche));
    @fwrite($pf,"$st_chaine_log\n");
    fclose($pf);
 }
