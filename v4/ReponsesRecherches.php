@@ -202,7 +202,6 @@ function getFinDateReleve($mois, $annee){
 $a_requetes           = array();
 $a_clauses            = array();
 
-
 $gst_type_recherche     = param_chaine('type_recherche',8);
 $gi_idf_source          = param_entier('idf_source_recherche',0);
 $gi_idf_commune         = param_entier('idf_commune_recherche',0);
@@ -217,7 +216,6 @@ $gi_releve_mois_max       = param_entier('releve_mois_max','');
 $gi_releve_annee_min        = param_entier('releve_annee_min','');
 $gi_releve_annee_max        = param_entier('releve_annee_max','');
 $releve_type        	= param_entier('releve_type','');
-
 
 $_SESSION['releve_mois_min']       = $gi_releve_mois_min;
 $_SESSION['releve_mois_max']       = $gi_releve_mois_max;
@@ -543,7 +541,9 @@ if ($i_temps_recherche>10000)
    // enregistre les requêtes de plus de 10s
    $pf=@fopen("$gst_rep_logs/requetes_lentes.log",'a');
    $st_date_log = sprintf("%02d/%02d/%04d %02d:%02d:%02d",$i_jmois,$i_mois,$i_annee,$i_heure,$i_min,$i_sec);
-   $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$gst_requete_actes,$i_temps_recherche));
+   $st_parties = ($gst_type_recherche='couple') ? "$gst_nom_epx $gst_prenom_epx X $gst_nom_epse,$gst_prenom_epse" : "$gst_nom $gst_prenom";
+   //$gst_nom_epx,$gst_prenom_epx,$gst_nom_epse,$gst_prenom_epse,$gi_idf_commune,$gi_rayon,$gi_annee_min,$gi_annee_max
+   $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$gst_type_recherche,$st_parties,$gi_idf_commune,$gi_rayon,$gi_annee_min,$gi_annee_max,$i_temps_recherche,$gst_requete_actes));
    @fwrite($pf,"$st_chaine_log\n");
    fclose($pf);
 }
