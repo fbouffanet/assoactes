@@ -541,7 +541,7 @@ if ($i_temps_recherche>10000)
    // enregistre les requêtes de plus de 10s
    $pf=@fopen("$gst_rep_logs/requetes_lentes.log",'a');
    $st_date_log = sprintf("%02d/%02d/%04d %02d:%02d:%02d",$i_jmois,$i_mois,$i_annee,$i_heure,$i_min,$i_sec);
-   $st_parties = ($gst_type_recherche='couple') ? "$gst_nom_epx $gst_prenom_epx X $gst_nom_epse,$gst_prenom_epse" : "$gst_nom $gst_prenom";
+   $st_parties = ($gst_type_recherche='couple') ? "$gst_nom_epx $gst_prenom_epx X $gst_nom_epse $gst_prenom_epse" : "$gst_nom $gst_prenom";
    //$gst_nom_epx,$gst_prenom_epx,$gst_nom_epse,$gst_prenom_epse,$gi_idf_commune,$gi_rayon,$gi_annee_min,$gi_annee_max
    $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$gst_type_recherche,$st_parties,$gi_idf_commune,$gi_rayon,$gi_annee_min,$gi_annee_max,$i_temps_recherche,$gst_requete_actes));
    @fwrite($pf,"$st_chaine_log\n");
