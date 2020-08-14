@@ -529,12 +529,26 @@ date_default_timezone_set($gst_time_zone);
 
 $etape_prec = getmicrotime();
 //FBO	print("Req actes=$gst_requete_actes<br>");
+
+
 $a_actes=$connexionBD->sql_select_multiple($gst_requete_actes);
 $a_actes_total = $connexionBD->sql_select("SELECT FOUND_ROWS() AS count");
 $a_actes_total = (isset($a_actes_total[0]) && $a_actes_total[0] >= 0)? $a_actes_total[0] : 0;
 
 $ga_sources=$connexionBD->sql_select_multiple_par_idf("select idf,script_demande,utilise_ds,icone_info,icone_ninfo,icone_index from source");
-print benchmark("Temps de recherche");
+
+$i_temps_recherche = temps_ecoule_en_ms("Temps de recherche");
+if ($i_temps_recherche>10000)
+{
+   // enregistre les requêtes de plus de 10s
+   $pf=@fopen("$gst_rep_logs/requetes_lentes.log",'a');
+   $st_date_log = sprintf("%02d/%02d/%04d %02d:%02d:%02d",$i_jmois,$i_mois,$i_annee,$i_heure,$i_min,$i_sec);
+   $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$gst_requete_actes,$i_temps_recherche);
+   @fwrite($pf,"$st_chaine_log\n");
+   fclose($pf);
+}
+$retour = '<div class="text-center row col-md-12">' . $nom_etape . ' : ' . $i_temps_recherche . 'ms</div>';
+
 
 $i_nb_actes = count($a_actes);
 print("<div class=\"row col-md-12 text-center\"><span class=\"badge\">$a_actes_total</span> occurrence(s) trouv&eacute;e(s). ");
