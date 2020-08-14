@@ -547,7 +547,7 @@ if ($i_temps_recherche>10000)
    @fwrite($pf,"$st_chaine_log\n");
    fclose($pf);
 }
-$retour = '<div class="text-center row col-md-12">' . $nom_etape . ' : ' . $i_temps_recherche . 'ms</div>';
+print('<div class="text-center row col-md-12">' . $nom_etape . ' : ' . $i_temps_recherche . 'ms</div>');
 
 
 $i_nb_actes = count($a_actes);
