@@ -264,6 +264,20 @@ $(document).ready(function() {
                 required: true,
                 patro_recherche: true,
                 libelle_joker: true
+            },
+            prenom_epx: {
+                required: {
+                   depends: function(element) {
+                         return $("#nom_epx").val() =='*';
+                   }
+                }
+            },
+            prenom_epse: {
+                required: {
+                   depends: function(element) {
+                         return $("#nom_epse").val() =='*';
+                   }
+                }
             }
         },
         messages: {
@@ -272,6 +286,12 @@ $(document).ready(function() {
             },
             nom_epse: {
                 required: "Le nom de l'épouse est obligatoire"
+            },
+            prenom_epx: {
+                required: "Le prénom de l'époux est obligatoire si son patronyme est vide"
+            },
+            prenom_epse: {
+                required: "Le prénom de l'épouse est obligatoire si son patronyme est vide"
             }
         },
 		errorElement: "em",
