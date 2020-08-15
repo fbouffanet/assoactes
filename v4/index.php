@@ -21,6 +21,21 @@ print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
+
+//script Google Analytics -- debut
+print('<script type="text/javascript">');
+  print("var _gaq = _gaq || [];");
+  print("_gaq.push(['_setAccount', 'UA-9306738-3']);");
+  print("_gaq.push(['_trackPageview']);");
+  print("(function() {");
+    print("var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;");
+    print("ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';");
+    print("var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);");
+  print("})();");
+print('</script>');
+//script Google Analytics -- fin
+
+
 print("</head>");
 
 print("<body>");
