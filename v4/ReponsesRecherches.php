@@ -544,11 +544,10 @@ if ($i_temps_recherche>10000)
    $st_adherent = $connexionBD->sql_select1("SELECT concat(prenom,' ',nom,' (',idf,')') FROM adherent where ident=:ident");
    $pf=@fopen("$gst_rep_logs/requetes_lentes.log",'a');
    $st_date_log = sprintf("%02d/%02d/%04d %02d:%02d:%02d",$i_jmois,$i_mois,$i_annee,$i_heure,$i_min,$i_sec);
-   $st_parties = ($gst_type_recherche=='couple') ? "$gst_nom_epx $gst_prenom_epx X $gst_nom_epse $gst_prenom_epse (Var pat epx=$gst_variantes_epx, Var pat epse=$gst_variantes_epse)" : "$gst_nom $gst_prenom (Var=$$gst_variantes)";
-   //$gst_nom_epx,$gst_prenom_epx,$gst_nom_epse,$gst_prenom_epse,$gi_idf_commune,$gi_rayon,$gi_annee_min,$gi_annee_max
+   $st_parties = ($gst_type_recherche=='couple') ? "$gst_nom_epx $gst_prenom_epx X $gst_nom_epse $gst_prenom_epse (Var pat epx=$gst_variantes_epx, Var pat epse=$gst_variantes_epse)" : "$gst_nom $gst_prenom (Var=$gst_variantes)";
    $st_commune = array_key_exists($gi_idf_commune,$a_communes_acte) ? $a_communes_acte[$gi_idf_commune] : '';
    
-   $st_chaine_log = join(';',array($st_date_log,$st_adherent,$gst_type_recherche,$st_parties,$gi_idf_commune,$gi_rayon,$gi_annee_min,$gi_annee_max,$i_temps_recherche));
+   $st_chaine_log = join(';',array($st_date_log,$st_adherent,$gst_type_recherche,$st_parties,$st_commune,$gi_rayon,$gi_annee_min,$gi_annee_max,$i_temps_recherche));
    @fwrite($pf,"$st_chaine_log\n");
    fclose($pf);
 }
