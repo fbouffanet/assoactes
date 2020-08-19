@@ -62,7 +62,7 @@ function Affiche_noms($type, $sconnexionBD)
          $session_numero = isset($_SESSION['rubrique']) ? $_SESSION['rubrique'] : '';
          $numero = isset($_POST['rubrique']) ? $_POST['rubrique'] : $session_numero;
          $_SESSION['rubrique']= $numero;
-			$titre = "Sommaire du numéro ".$numero;
+			$titre = "Sommaire du num&eacute;ro ".$numero;
       break;
       case 'ART' :
          $session_article = isset($_SESSION['article'])? $_SESSION['article'] : '';
@@ -74,7 +74,7 @@ function Affiche_noms($type, $sconnexionBD)
          $session_famille = isset($_SESSION['famille'])? $_SESSION['famille'] : '';
          $auteur = isset($_POST['famille']) ?  $_POST['famille'] : $session_famille;
          $_SESSION['famille']= $auteur;
-			$titre = "Famille étudiée de ".$auteur;
+			$titre = "Famille &eacute;tudi&eacute;e de ".$auteur;
       break;
       case 'ASC' :
          $session_ascendance = isset($_SESSION['ascendance'])? $_SESSION['ascendance'] : '';
@@ -179,7 +179,7 @@ function Saisie_recherche($connexionBD)
 	print('<div class="col-md-4">');
 	print('<button class="btn btn-primary" type=submit id="rub_recherche" name="valide_rub"><span class="glyphicon glyphicon-search"></span> Recherche</button>');
     print('</div>');
-	print('<label for="rub" class="col-form-label col-md-4">Les rubriques d\'un numéro</label>');
+	print('<label for="rub" class="col-form-label col-md-4">Les rubriques d\'un num&eacute;ro</label>');
     print('<div class="col-md-4">');
 	print('<select id="rub" name="rubrique" class="form-control">'.Select_rubrique($connexionBD).'</select>');
     print("<input type=hidden name=mode value=\"RUBRIQUE\">");
@@ -203,7 +203,7 @@ function Saisie_recherche($connexionBD)
 	print('<div class="col-md-4">');
 	print('<button class="btn btn-primary" type=submit  name="valide_fam"><span class="glyphicon glyphicon-search"></span> Recherche</button>');
     print('</div>');
-    print('<label for="fam" class="col-form-label col-md-4">Familles étudiée</label>');
+    print('<label for="fam" class="col-form-label col-md-4">Familles &eacute;tudi&eacute;e</label>');
 	print('<div class="col-md-4">');
 	print('<select id="fam" name=famille class="form-control">'.Select_nom('FAM',$connexionBD).'</select>');
 	print("<input type=hidden name=mode value=\"FAMILLE\">");
@@ -215,7 +215,7 @@ function Saisie_recherche($connexionBD)
 	print('<div class="col-md-4">');
 	print('<button class="btn btn-primary" type=submit name="valide_asc"><span class="glyphicon glyphicon-search"></span>  Recherche</button>');
     print('</div>');
-	print('<label for="asc" class="col-form-label col-md-4">Ascendance d\'un adhérent</label>');
+	print('<label for="asc" class="col-form-label col-md-4">Ascendance d\'un adh&eacute;rent</label>');
 	print('<div class="col-md-4">');
 	print('<select id="asc" name=ascendance class="form-control">'.Select_nom('ASC',$connexionBD).'</select>');
     print("<input type=hidden name=mode value=\"ASCEND\">");
@@ -227,7 +227,7 @@ function Saisie_recherche($connexionBD)
 	print('<div class="col-md-4">');
 	print('<button class="btn btn-primary" type=submit name="valide_des"><span class="glyphicon glyphicon-search"></span>  Recherche</button>');
     print('</div>');
-	print('<label for="des" class="col-form-label col-md-4">Descendance d\'un adhérent</label>');
+	print('<label for="des" class="col-form-label col-md-4">Descendance d\'un adh&eacute;rent</label>');
 	print('<div class="col-md-4">');
 	print('<select id="des" name=descendance class="form-control">'.Select_nom('DES',$connexionBD).'</select>');
 	print("<input type=hidden name=mode value=\"DESCEND\">");
