@@ -541,11 +541,11 @@ if ($i_temps_recherche>10000)
    // enregistre les requêtes de plus de 10s
    $a_communes_acte = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM commune_acte order by nom");
    $connexionBD->initialise_params(array(':ident'=>$_SESSION['ident']));
-   $st_adherent = $connexionBD->sql_select1("SELECT concat(prenom,' ',nom,' (',idf,')') FROM adherent where ident=:ident");
+   $st_adherent = cp1252_vers_utf8($connexionBD->sql_select1("SELECT concat(prenom,' ',nom,' (',idf,')') FROM adherent where ident=:ident"));
    $pf=@fopen("$gst_rep_logs/requetes_lentes.log",'a');
    $st_date_log = sprintf("%02d/%02d/%04d %02d:%02d:%02d",$i_jmois,$i_mois,$i_annee,$i_heure,$i_min,$i_sec);
-   $st_parties = ($gst_type_recherche=='couple') ? "$gst_nom_epx $gst_prenom_epx X $gst_nom_epse $gst_prenom_epse (Var pat epx=$gst_variantes_epx, Var pat epse=$gst_variantes_epse)" : "$gst_nom $gst_prenom (Var=$gst_variantes)";
-   $st_commune = array_key_exists($gi_idf_commune,$a_communes_acte) ? $a_communes_acte[$gi_idf_commune] : '';
+   $st_parties = ($gst_type_recherche=='couple') ? cp1252_vers_utf8($gst_nom_epx)." ".cp1252_vers_utf8($gst_prenom_epx)." X ".cp1252_vers_utf8($gst_nom_epse)." ".cp1252_vers_utf8($gst_prenom_epse)." (Var pat epx=$gst_variantes_epx, Var pat epse=$gst_variantes_epse)" : cp1252_vers_utf8($gst_nom)." ".cp1252_vers_utf8($gst_prenom)." (Var=$gst_variantes)";
+   $st_commune = array_key_exists($gi_idf_commune,$a_communes_acte) ? cp1252_vers_utf8($a_communes_acte[$gi_idf_commune]) : '';
    
    $st_chaine_log = join(';',array($st_date_log,$st_adherent,$gst_type_recherche,$st_parties,$st_commune,$gi_rayon,$gi_annee_min,$gi_annee_max,$i_temps_recherche));
    @fwrite($pf,"$st_chaine_log\n");
