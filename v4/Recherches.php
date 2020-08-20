@@ -129,10 +129,14 @@ $(document).ready(function() {
     }, "la date maximale doit être plus grande que la date minimale");
 
     jQuery.validator.addMethod("libelle_joker", function(value, element) {
-        // allow any non-whitespace characters as the host part
         var libelle = value.replace(/\*+/g, '*');
         return (libelle != '*' && libelle != '!') || ((libelle == '*' || libelle == '!') && $("#idf_commune_recherches_communes").val() != '');
     }, 'La commune doit être spécifiée quand le caractère joker ou ! est utilisé');
+
+    jQuery.validator.addMethod("joker_interdit", function(value, element) {
+        var libelle = value.replace(/\*+/g, '*');
+        return libelle != '*' ;
+    }, 'Le joker est interdit');
 
     //validation rules
     $("#recherches_communes").validate({
@@ -270,14 +274,16 @@ $(document).ready(function() {
                    depends: function(element) {
                          return $("#nom_epx").val() =='*';
                    }
-                }
+                },
+				joker_interdit: true
             },
             prenom_epse: {
                 required: {
                    depends: function(element) {
                          return $("#nom_epse").val() =='*';
                    }
-                }
+                },
+				joker_interdit: true
             }
         },
         messages: {
@@ -288,10 +294,12 @@ $(document).ready(function() {
                 required: "Le nom de l'épouse est obligatoire"
             },
             prenom_epx: {
-                required: "Le prénom de l'époux est obligatoire si son patronyme est vide"
+                required: "Le prénom de l'époux est obligatoire si son patronyme est vide",
+				joker_interdit: "Un joker sans autre chaine de recherche est interdit. Utiliser la recherche par personne pour rechercher une seule personne"
             },
             prenom_epse: {
-                required: "Le prénom de l'épouse est obligatoire si son patronyme est vide"
+                required: "Le prénom de l'épouse est obligatoire si son patronyme est vide",
+				joker_interdit: "Un joker sans autre chaine de recherche est interdit. Utiliser la recherche par personne pour rechercher une seule personne"
             }
         },
 		errorElement: "em",
