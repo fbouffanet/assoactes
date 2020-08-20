@@ -295,11 +295,11 @@ $(document).ready(function() {
             },
             prenom_epx: {
                 required: "Le prénom de l'époux est obligatoire si son patronyme est vide",
-				joker_interdit: "Un joker sans autre chaine de recherche est interdit. Utiliser la recherche par personne pour rechercher une seule personne"
+				joker_interdit: "Un joker unique de recherche est interdit. Préciser au moins une partie du prénom ou utiliser la recherche par personne si la recherche porte sur une seule personne"
             },
             prenom_epse: {
                 required: "Le prénom de l'épouse est obligatoire si son patronyme est vide",
-				joker_interdit: "Un joker sans autre chaine de recherche est interdit. Utiliser la recherche par personne pour rechercher une seule personne"
+				joker_interdit: "Un joker unique de recherche est interdit. Préciser au moins une partie du prénom ou utiliser la recherche par personne si la recherche porte sur une seule personne"
             }
         },
 		errorElement: "em",
