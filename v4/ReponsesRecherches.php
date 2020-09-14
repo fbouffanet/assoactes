@@ -318,7 +318,8 @@ date_default_timezone_set($gst_time_zone);
            $i_nb_prenoms_epse++; 
       }
     }
-    $gst_requete_nb_actes= "select SQL_CALC_FOUND_ROWS distinct u.idf_acte,ta.nom,ca.nom,if (a.idf_type_acte=".IDF_RECENS.",GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',parties.patronyme) order by parties.idf separator '<br>'),GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',parties.patronyme) order by parties.idf separator ' X ')) as parties,concat(IFNULL(prn_p1.libelle,''),' ',u.patronyme_epoux,' (',tp1.nom,') x ',IFNULL(prn_p2.libelle,''),' ',u.patronyme_epouse,' (',tp2.nom,')'),a.date,a.idf_type_acte,a.cote,u.idf_source,a.details_supplementaires,m_a.statut,a.annee,a.mois,a.jour,a.created,a.changed from `union` u join `acte` a on (u.idf_acte=a.idf) join `personne` p1 on (u.idf_epoux=p1.idf) left join `prenom` prn_p1 on (p1.idf_prenom=prn_p1.idf)  $st_tables_prenom_epx join `personne` p2 on (u.idf_epouse=p2.idf) left join `prenom` prn_p2 on (p2.idf_prenom=prn_p2.idf) $st_tables_prenom_epse  join `personne` parties on (a.idf=parties.idf_acte and parties.idf_type_presence=".IDF_PRESENCE_INTV.") left join prenom prn_parties on (parties.idf_prenom=prn_parties.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (u.idf_commune=ca.idf) join `type_presence` tp1 on (p1.idf_type_presence=tp1.idf) join `type_presence` tp2 on (p2.idf_type_presence=tp2.idf) left join modification_acte m_a on (a.idf=m_a.idf_acte and m_a.statut='A') where ";
+    $gst_requete_nb_actes= "select count(distinct u.idf_acte) from `union` u join `acte` a on (u.idf_acte=a.idf) join `personne` p1 on (u.idf_epoux=p1.idf) left join `prenom` prn_p1 on (p1.idf_prenom=prn_p1.idf)  $st_tables_prenom_epx join `personne` p2 on (u.idf_epouse=p2.idf) left join `prenom` prn_p2 on (p2.idf_prenom=prn_p2.idf) $st_tables_prenom_epse join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (u.idf_commune=ca.idf) join `type_presence` tp1 on (p1.idf_type_presence=tp1.idf) join `type_presence` tp2 on (p2.idf_type_presence=tp2.idf) where ";
+	 $gst_requete_actes= "select distinct u.idf_acte,ta.nom,ca.nom,if (a.idf_type_acte=".IDF_RECENS.",GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',parties.patronyme) order by parties.idf separator '<br>'),GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',parties.patronyme) order by parties.idf separator ' X ')) as parties,concat(IFNULL(prn_p1.libelle,''),' ',u.patronyme_epoux,' (',tp1.nom,') x ',IFNULL(prn_p2.libelle,''),' ',u.patronyme_epouse,' (',tp2.nom,')'),a.date,a.idf_type_acte,a.cote,u.idf_source,a.details_supplementaires,m_a.statut,a.annee,a.mois,a.jour,a.created,a.changed from `union` u join `acte` a on (u.idf_acte=a.idf) join `personne` p1 on (u.idf_epoux=p1.idf) left join `prenom` prn_p1 on (p1.idf_prenom=prn_p1.idf)  $st_tables_prenom_epx join `personne` p2 on (u.idf_epouse=p2.idf) left join `prenom` prn_p2 on (p2.idf_prenom=prn_p2.idf) $st_tables_prenom_epse  join `personne` parties on (a.idf=parties.idf_acte and parties.idf_type_presence=".IDF_PRESENCE_INTV.") left join prenom prn_parties on (parties.idf_prenom=prn_parties.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (u.idf_commune=ca.idf) join `type_presence` tp1 on (p1.idf_type_presence=tp1.idf) join `type_presence` tp2 on (p2.idf_type_presence=tp2.idf) left join modification_acte m_a on (a.idf=m_a.idf_acte and m_a.statut='A') where ";
     if (!empty($gi_idf_source)) $a_clauses[]="a.idf_source=$gi_idf_source" ;
     if (!empty($gi_idf_type_acte)) $a_clauses[]="a.idf_type_acte=$gi_idf_type_acte" ;
     if (!empty($gi_annee_min)) $a_clauses[]="a.annee>=$gi_annee_min" ;
@@ -341,7 +342,8 @@ date_default_timezone_set($gst_time_zone);
     $st_clauses = implode(" and ",$a_clauses);
 
     $start = $current_page * $_SESSION['per_page'];
-    $gst_requete_actes = "$gst_requete_nb_actes $st_clauses group by a.idf order by annee,mois,jour LIMIT " .  $start . "," . $_SESSION['per_page'];
+	$gst_requete_nb_actes = "$gst_requete_nb_actes $st_clauses";
+    $gst_requete_actes = "$gst_requete_actes $st_clauses group by a.idf order by annee,mois,jour LIMIT " .  $start . "," . $_SESSION['per_page'];
     //FBOprint("Req=$gst_requete_actes<br>");
 
     if (!empty($gst_variantes_epx) || !empty($st_variantes_prenoms_epx))
@@ -463,7 +465,8 @@ date_default_timezone_set($gst_time_zone);
         }
 		  }
     }
-   $gst_requete_nb_actes= "select SQL_CALC_FOUND_ROWS distinct a.idf,ta.nom,ca.nom,if (a.idf_type_acte=".IDF_RECENS.",GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',parties.patronyme) order by parties.idf separator '<br>'),GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',parties.patronyme) order by parties.idf separator ' X ')) as parties,concat(ifnull(prn.libelle,''),' ',p.patronyme,' (',tp.nom,')'),a.date,a.idf_type_acte,a.cote,a.idf_source,a.details_supplementaires,m_a.statut,a.annee,a.mois,a.jour,a.created,a.changed from `personne` p left join `prenom` prn on (p.idf_prenom=prn.idf) $st_tables_prenom left  join `acte` a on (p.idf_acte=a.idf) join `personne` parties on (a.idf=parties.idf_acte and parties.idf_type_presence=".IDF_PRESENCE_INTV.") left join prenom prn_parties on (parties.idf_prenom=prn_parties.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join `type_presence` tp on (p.idf_type_presence=tp.idf) left join modification_acte m_a on (a.idf=m_a.idf_acte and m_a.statut='A') where "; 
+   $gst_requete_nb_actes= "select count(distinct idf_acte) from `personne` p left join `prenom` prn on (p.idf_prenom=prn.idf) $st_tables_prenom left  join `acte` a on (p.idf_acte=a.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join `type_presence` tp on (p.idf_type_presence=tp.idf) where ";
+   $gst_requete_actes= "select distinct a.idf,ta.nom,ca.nom,if (a.idf_type_acte=".IDF_RECENS.",GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',parties.patronyme) order by parties.idf separator '<br>'),GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',parties.patronyme) order by parties.idf separator ' X ')) as parties,concat(ifnull(prn.libelle,''),' ',p.patronyme,' (',tp.nom,')'),a.date,a.idf_type_acte,a.cote,a.idf_source,a.details_supplementaires,m_a.statut,a.annee,a.mois,a.jour,a.created,a.changed from `personne` p left join `prenom` prn on (p.idf_prenom=prn.idf) $st_tables_prenom left  join `acte` a on (p.idf_acte=a.idf) join `personne` parties on (a.idf=parties.idf_acte and parties.idf_type_presence=".IDF_PRESENCE_INTV.") left join prenom prn_parties on (parties.idf_prenom=prn_parties.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join `type_presence` tp on (p.idf_type_presence=tp.idf) left join modification_acte m_a on (a.idf=m_a.idf_acte and m_a.statut='A') where ";    
     if (!empty($gst_sexe)) $a_clauses[] = "p.sexe='$gst_sexe'";
     if ($gi_idf_source !=0) $a_clauses[]="a.idf_source=$gi_idf_source" ;
     if ($gi_idf_type_acte ==IDF_UNION)
@@ -488,11 +491,9 @@ date_default_timezone_set($gst_time_zone);
 	if (!empty($gi_releve_mois_max) && !empty($gi_releve_annee_max)) $a_clauses[]=" a.". $releve_col ."<=" . getFinDateReleve($gi_releve_mois_max, $gi_releve_annee_max) ;
 
     $st_clauses = implode(" and ",$a_clauses);
-    $gst_requete_actes = "$gst_requete_nb_actes $st_clauses group by a.idf order by annee,mois,jour";
-
+    $gst_requete_nb_actes = "$gst_requete_nb_actes $st_clauses";
     $start = $current_page * $_SESSION['per_page'];
-    $gst_requete_actes = "$gst_requete_nb_actes $st_clauses group by a.idf order by annee,mois,jour LIMIT " .  $start . "," . $_SESSION['per_page'];
-	
+    $gst_requete_actes = "$gst_requete_actes $st_clauses group by a.idf order by annee,mois,jour LIMIT " .  $start . "," . $_SESSION['per_page'];
 
 
     if (!empty($gst_variantes) || !empty($st_variantes_prenoms))
@@ -527,11 +528,18 @@ date_default_timezone_set($gst_time_zone);
 
 $etape_prec = getmicrotime();
 //FBO	print("Req actes=$gst_requete_actes<br>");
-
-
+$a_params_precedents=$connexionBD->params();
 $a_actes=$connexionBD->sql_select_multiple($gst_requete_actes);
-$a_actes_total = $connexionBD->sql_select("SELECT FOUND_ROWS() AS count");
-$a_actes_total = (isset($a_actes_total[0]) && $a_actes_total[0] >= 0)? $a_actes_total[0] : 0;
+$connexionBD->initialise_params($a_params_precedents);
+$i_nb_reponses = isset($_SESSION['nb_reponses']) ? (int) $_SESSION['nb_reponses'] : null; 
+if (!isset($i_nb_reponses))
+{	
+	// ne recalcule pas le nombres de réponses si on change de page car la requête ne change pas
+	$a_params_precedents=$connexionBD->params();
+	$i_nb_reponses = $connexionBD->sql_select1($gst_requete_nb_actes);
+	$connexionBD->initialise_params($a_params_precedents);
+	$_SESSION['nb_reponses'] = $i_nb_reponses;
+}
 
 $ga_sources=$connexionBD->sql_select_multiple_par_idf("select idf,script_demande,utilise_ds,icone_info,icone_ninfo,icone_index from source");
 
@@ -544,7 +552,7 @@ if ($i_temps_recherche>10000)
    $st_adherent = cp1252_vers_utf8($connexionBD->sql_select1("SELECT concat(prenom,' ',nom,' (',idf,')') FROM adherent where ident=:ident"));
    $pf=@fopen("$gst_rep_logs/requetes_lentes.log",'a');
    $st_date_log = sprintf("%02d/%02d/%04d %02d:%02d:%02d",$i_jmois,$i_mois,$i_annee,$i_heure,$i_min,$i_sec);
-   $st_parties = ($gst_type_recherche=='couple') ? cp1252_vers_utf8($gst_nom_epx)." ".cp1252_vers_utf8($gst_prenom_epx)." X ".cp1252_vers_utf8($gst_nom_epse)." ".cp1252_vers_utf8($gst_prenom_epse)." (Var pat epx=$gst_variantes_epx, Var pat epse=$gst_variantes_epse)" : cp1252_vers_utf8($gst_nom)." ".cp1252_vers_utf8($gst_prenom)." (Var=$gst_variantes)";
+   $st_parties = ($gst_type_recherche=='couple') ? "$gst_nom_epx $gst_prenom_epx X $gst_nom_epse $gst_prenom_epse (Var pat epx=$gst_variantes_epx, Var pat epse=$gst_variantes_epse)" : "$gst_nom $gst_prenom (Var=$gst_variantes)";
    $st_commune = array_key_exists($gi_idf_commune,$a_communes_acte) ? cp1252_vers_utf8($a_communes_acte[$gi_idf_commune]) : '';
    
    $st_chaine_log = join(';',array($st_date_log,$st_adherent,$gst_type_recherche,$st_parties,$st_commune,$gi_rayon,$gi_annee_min,$gi_annee_max,$i_temps_recherche));
@@ -554,8 +562,8 @@ if ($i_temps_recherche>10000)
 print('<div class="text-center row col-md-12">' . "Temps de la recherche" . ' : ' . $i_temps_recherche . 'ms</div>');
 
 
-$i_nb_actes = count($a_actes);
-print("<div class=\"row col-md-12 text-center\"><span class=\"badge\">$a_actes_total</span> occurrence(s) trouv&eacute;e(s). ");
+
+print("<div class=\"row col-md-12 text-center\"><span class=\"badge\">$i_nb_reponses</span> occurrence(s) trouv&eacute;e(s). ");
 print('<div id="curseur" class="infobulle"></div>');
 print("<div class='form-group col-md-2 col-md-offset-5'>");
 print '<label for="per-page">Nombre de r&eacute;sultats par page</label>';
@@ -567,7 +575,7 @@ foreach ($per_page_options as $key => $value) {
 print '</select>';
 print("</div></div>");
 
-if ($i_nb_actes>0)
+if ($i_nb_reponses>0)
 {
   foreach ($a_actes as $a_acte)
   {
@@ -642,7 +650,7 @@ else
   $pagination->init_page_cour($gi_num_page);
   $pagination->affiche_entete_liens_navigation();
   $pagination->affiche_tableau_simple($a_tableau);
-  print $pagination->get_pagination($a_actes_total, $_SESSION['per_page'], $current_page);
+  print $pagination->get_pagination($i_nb_reponses, $_SESSION['per_page'], $current_page);
 }
 else
 {
