@@ -640,6 +640,7 @@ unset($_SESSION['releve_mois_max']);
 unset($_SESSION['releve_annee_max']);
 unset($_SESSION['releve_type']);
 unset($_SESSION['releve_tous_patronymes']);
+unset($_SESSION['nb_reponses']);
 
 $a_communes_acte = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM commune_acte order by nom");
 $a_types_acte = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM type_acte order by nom");
