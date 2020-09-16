@@ -244,8 +244,9 @@ else
         $connexionBD->execute_requete("DELETE FROM `acte` where idf=$gi_idf_acte");
 		print benchmark("Suppression des donn&eacute;es");
         $stats_patronyme->maj_stats($go_acte->getIdfTypeActe(),null);
+		print benchmark("Mise &agrave jour des statistiques des patronymes");
         $stats_commune->maj_stats($go_acte->getIdfTypeActe());
-		print benchmark("Mise &agrave jour des statistiques");
+		print benchmark("Mise &agrave jour des statistiques des communes");
         $connexionBD->execute_requete("UNLOCK TABLES");
         print("<div class=\"alert alert-success\">Acte supprim&eacute;</div>");
       break;
