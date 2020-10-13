@@ -217,7 +217,7 @@ function affiche_menu_auth($pst_message)
 		print(",
    submitHandler: function(form) {
 	    reponse = confirm(\"");
-		$st_texte=preg_replace('/\r\n/','\n',file_get_contents("$gst_rep_site/Notification.txt"));
+		$st_texte=preg_replace('/\n/','\n',file_get_contents("$gst_rep_site/Notification.txt"));
 		print($st_texte);
 		print("\");
         if(reponse == true){
