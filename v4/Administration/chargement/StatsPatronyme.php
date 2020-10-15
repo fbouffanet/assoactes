@@ -21,7 +21,9 @@ class StatsPatronyme {
        $this->patronyme = Patronyme::singleton($pconnexionBD);
 	   $this->type_acte = TypeActe::singleton($pconnexionBD);
        $this->a_type_acte = array();
-       $this->a_stat=$this->connexionBD->liste_valeur_par_doubles_clefs("select p.libelle,ta.nom,annee_min,annee_max,nb_personnes from `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf) join `type_acte` as ta on (sp.idf_type_acte=ta.idf) where sp.idf_commune=$pi_idf_commune and sp.idf_source=$pi_idf_source");
+	   $st_requete = "select p.libelle,ta.nom,annee_min,annee_max,nb_personnes from `stats_patronyme` sp join `patronyme` p on (sp.idf_patronyme=p.idf) join `type_acte` as ta on (sp.idf_type_acte=ta.idf) where sp.idf_commune=$pi_idf_commune and sp.idf_source=$pi_idf_source";
+       $this->a_stat=$this->connexionBD->liste_valeur_par_doubles_clefs($st_requete);
+	   
   }
   
   public function sauvePatronyme() {
