@@ -471,7 +471,7 @@ class Adherent
       $st_coche = ($this->i_aide & AIDE_RELEVES) ? 'checked' : '';
       $st_chaine .= "<div class=\"checkbox\"><label><input type=checkbox name=\"aide[]\" value=".AIDE_RELEVES." id=\"".AIDE_RELEVES."\" class=\"form-check-input\" $st_coche>Effectuant des relev&eacute;s</label></div>\n";
       $st_coche = ($this->i_aide & AIDE_INFORMATIQUE) ? 'checked' : '';
-      $st_chaine .= "<div class=\"checkbox\"><label><input type=checkbox name=\"aide[]\" value=".AIDE_INFORMATIQUE." id=\"".AIDE_INFORMATIQUE."\" class=\"form-check-input\" $st_coche>Participant &agrave; l'informatique</label></div>\n";
+      $st_chaine .= "<div class=\"checkbox\"><label><input type=checkbox name=\"aide[]\" value=".AIDE_INFORMATIQUE." id=\"".AIDE_INFORMATIQUE."\" class=\"form-check-input\" $st_coche>Participant &agrave; l'informatique (développement, administration du site)</label></div>\n";
       $st_coche = ($this->i_aide & AIDE_AD) ? 'checked' : '';
       $st_chaine .= "<div class=\"checkbox\"><label><input type=checkbox name=\"aide[]\" value=".AIDE_AD." id=\"".AIDE_AD."\" class=\"form-check-input\" $st_coche>Faisant de l'entraide aux AD</label></div>\n";
       $st_coche = ($this->i_aide & AIDE_BULLETIN) ? 'checked' : '';
