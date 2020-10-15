@@ -526,7 +526,7 @@ function menu_modifier($rconnexionBD,$pi_idf_chantier,$pa_documents,$pa_adherent
    print("<input type=hidden name=mode value=MODIFIER>");
    print("<input type=hidden name=idf_chantier value=$pi_idf_chantier>");
 
-   menu_edition($i_id_document,$i_id_releveur,$i_type_acte,$st_convention,$st_envoi,$st_retour,$st_fin,$st_comment_envoi,$st_comment_retour,$i_statut,$pa_documents,$pa_adherents);   
+   menu_edition($i_id_document,$i_id_releveur,$i_type_acte,$st_convention,$st_envoi,$st_retour,$st_fin,cp1252_vers_utf8($st_comment_envoi),cp1252_vers_utf8($st_comment_retour),$i_statut,$pa_documents,$pa_adherents);   
    print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');   
    print('<button type=submit class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Modifier</button>'); 
    print('<button type=button id=annuler class="btn btn-primary"><span class="glyphicon glyphicon-remove"> Annuler</button>');
@@ -643,7 +643,7 @@ switch ($gst_mode) {
      $st_comment_retour = trim($_POST['comment_retour']);
 	   }
     $i_statut = (int) $_POST['statut'];
-    $connexionBD->initialise_params(array(':comment_envoi'=>$st_comment_envoi,':comment_retour'=>$st_comment_retour));
+    $connexionBD->initialise_params(array(':comment_envoi'=>utf8_vers_cp1252($st_comment_envoi),':comment_retour'=>utf8_vers_cp1252($st_comment_retour)));
     $connexionBD->execute_requete("update `chantiers` set id_document=$i_id_document, id_releveur=$i_id_releveur, type_acte=$i_type_acte, date_convention='$c_date_convention', date_envoi='$c_date_envoi', date_retour='$c_date_retour',date_fin='$c_date_fin', comment_envoi=:comment_envoi, comment_retour=:comment_retour, statut=$i_statut where idf=$gi_idf_chantier"); 
      menu_liste($connexionBD,$gi_idf_statut,$gi_idf_releveur);  
   break;
@@ -694,7 +694,7 @@ switch ($gst_mode) {
      $st_comment_retour = trim($_POST['comment_retour']);
 	 }
    $i_statut = (int) $_POST['statut'];
-   $connexionBD->initialise_params(array(':comment_envoi'=>$st_comment_envoi,':comment_retour'=>$st_comment_retour));
+   $connexionBD->initialise_params(array(':comment_envoi'=>utf8_vers_cp1252($st_comment_envoi),':comment_retour'=>utf8_vers_cp1252($st_comment_retour)));
    $st_requete = "insert into chantiers (id_document, id_releveur, type_acte, date_convention, date_envoi, date_retour, date_fin,comment_envoi, comment_retour, statut) values ($i_id_document, $i_id_releveur, $i_type_acte, '$c_date_convention', '$c_date_envoi', '$c_date_retour','$c_date_fin',:comment_envoi , :comment_retour, $i_statut)";   
    $connexionBD->execute_requete($st_requete);
    menu_liste($connexionBD,$gi_idf_statut,$gi_idf_releveur);
