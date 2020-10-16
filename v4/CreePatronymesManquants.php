@@ -5,10 +5,11 @@
 // Texte de la licence : http://www.gnu.org/copyleft/gpl.html
 //-------------------------------------------------------------------
 
-require_once '../Commun/config.php';
-require_once '../Commun/constantes.php';
-require_once '../Commun/ConnexionBD.php';
-require_once './chargement/Patronyme.php';
+require_once 'Commun/config.php';
+require_once 'Commun/constantes.php';
+require_once 'Commun/ConnexionBD.php';
+require_once('Commun/phonex.cls.php');
+require_once 'Administration/chargement/Patronyme.php';
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 $requete = 'select patronyme from personne where patronyme not in (select libelle from patronyme)';
@@ -19,5 +20,4 @@ foreach ($a_patronymes as $st_patronyme)
 	$o_patronyme->ajoute($st_patronyme);
 }
 $o_patronyme -> sauve();
-
 ?>
