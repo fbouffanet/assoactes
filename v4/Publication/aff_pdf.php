@@ -19,7 +19,7 @@ publication, faite sans le consentement de l’A.G. C. 16, est illicite et constit
 Art. L. 122-4 et 5 L. 335-2 & s. du Code de la propriété intellectuelle.";
 $today = date("M-y"); 
 $message1 =  isset($_POST['message']) ? $_POST['message']: '';
-$message = utf8_decode($message1);
+$message = utf8_vers_cp1252($message1);
 $TypeActe =  isset($_POST['TypeActe']) ? $_POST['TypeActe'] : '' ;
 
 
