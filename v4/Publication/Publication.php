@@ -481,8 +481,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   fwrite($pf,(implode(';',$a_champs)));
   fwrite($pf,"\r\n");
   }
-  $st_nom_commune1 = utf8_decode($st_nom_commune);
-  print "Publication des divers de la commune $st_nom_commune1<br> <br>";
+  print "Publication des divers de la commune $st_nom_commune<br> <br>";
 
 }
 
