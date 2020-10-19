@@ -18,7 +18,7 @@ Toute reproduction ou représentation intégrale, ou partielle, par quelque procéd
 publication, faite sans le consentement de l’A.G. C. 16, est illicite et constitue une contrefaçon.
 Art. L. 122-4 et 5 L. 335-2 & s. du Code de la propriété intellectuelle.";
 $today = date("M-y"); 
-$message =  isset($_POST['message']) ? $_POST['message']: '';
+utf8_encode($message) =  isset($_POST['message']) ? $_POST['message']: '';
 $TypeActe =  isset($_POST['TypeActe']) ? $_POST['TypeActe'] : '' ;
 
 
