@@ -18,8 +18,10 @@ Toute reproduction ou représentation intégrale, ou partielle, par quelque procéd
 publication, faite sans le consentement de l’A.G. C. 16, est illicite et constitue une contrefaçon.
 Art. L. 122-4 et 5 L. 335-2 & s. du Code de la propriété intellectuelle.";
 $today = date("M-y"); 
-$message =  isset($_POST['message']) ? $_POST['message']: '';
-$TypeActe =  isset($_POST['TypeActe']) ? $_POST['TypeActe'] : '' ;
+$message1 =  isset($_POST['message']) ? $_POST['message']: '';
+$message = iconv('UTF-8', 'windows-1252', $message1);
+$TypeActe1 =  isset($_POST['TypeActe']) ? $_POST['TypeActe'] : '' ;
+$TypeActe = iconv('UTF-8', 'windows-1252', $TypeActe1);
 
 
 function Mois_Annee ()  // PL 23/04/2014  Function pour affichage du mois en français
