@@ -1,5 +1,5 @@
 <?php
-require_once '../Commun/config.php';
+require_once '../Commun/config.php'; 
 require_once '../Commun/constantes.php';
 require_once('../Commun/Identification.php');
 require_once('../Commun/VerificationDroits.php');
