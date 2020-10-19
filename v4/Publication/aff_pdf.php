@@ -7,7 +7,6 @@ verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
 require_once '../Commun/commun.php';
 require_once '../Publication/fpdf/fpdf.php';
-print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 
 ob_start();// Enclenche la temporisation de sortie
 
