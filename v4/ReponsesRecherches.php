@@ -449,7 +449,7 @@ date_default_timezone_set($gst_time_zone);
     if($gst_type_recherche == 'personne')
     { 
       $gst_nom  = str_replace('*','%', $gst_nom);
-		  $a_clauses[]="p.patronyme ".$requeteRecherche->clause_droite_patronyme($gst_nom ,$gst_variantes,1); 
+		  $a_clauses[]="pat.libelle ".$requeteRecherche->clause_droite_patronyme($gst_nom ,$gst_variantes,1); 
       if ($gst_prenom!='')
 		  {
         $gst_prenom=str_replace('*','%',$gst_prenom);
@@ -465,8 +465,8 @@ date_default_timezone_set($gst_time_zone);
         }
 		  }
     }
-   $gst_requete_nb_actes= "select count(distinct idf_acte) from `personne` p left join `prenom` prn on (p.idf_prenom=prn.idf) $st_tables_prenom left  join `acte` a on (p.idf_acte=a.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join `type_presence` tp on (p.idf_type_presence=tp.idf) where ";
-   $gst_requete_actes= "select distinct a.idf,ta.nom,ca.nom,if (a.idf_type_acte=".IDF_RECENS.",GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',parties.patronyme) order by parties.idf separator '<br>'),GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',parties.patronyme) order by parties.idf separator ' X ')) as parties,concat(ifnull(prn.libelle,''),' ',p.patronyme,' (',tp.nom,')'),a.date,a.idf_type_acte,a.cote,a.idf_source,a.details_supplementaires,m_a.statut,a.annee,a.mois,a.jour,a.created,a.changed from `personne` p left join `prenom` prn on (p.idf_prenom=prn.idf) $st_tables_prenom left  join `acte` a on (p.idf_acte=a.idf) join `personne` parties on (a.idf=parties.idf_acte and parties.idf_type_presence=".IDF_PRESENCE_INTV.") left join prenom prn_parties on (parties.idf_prenom=prn_parties.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join `type_presence` tp on (p.idf_type_presence=tp.idf) left join modification_acte m_a on (a.idf=m_a.idf_acte and m_a.statut='A') where ";    
+   $gst_requete_nb_actes= "select count(distinct idf_acte) from `personne` p join patronyme pat on (p.idf_patronyme=pat.idf) left join `prenom` prn on (p.idf_prenom=prn.idf) $st_tables_prenom left  join `acte` a on (p.idf_acte=a.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join `type_presence` tp on (p.idf_type_presence=tp.idf) where ";
+   $gst_requete_actes= "select distinct a.idf,ta.nom,ca.nom,if (a.idf_type_acte=".IDF_RECENS.",GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',patro_parties.libelle) order by parties.idf separator '<br>'),GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',patro_parties.libelle) order by parties.idf separator ' X ')) as parties,concat(ifnull(prn.libelle,''),' ',pat.libelle,' (',tp.nom,')'),a.date,a.idf_type_acte,a.cote,a.idf_source,a.details_supplementaires,m_a.statut,a.annee,a.mois,a.jour,a.created,a.changed from `personne` p join patronyme pat on (p.idf_patronyme=pat.idf) left join `prenom` prn on (p.idf_prenom=prn.idf) $st_tables_prenom left  join `acte` a on (p.idf_acte=a.idf) join `personne` parties on (a.idf=parties.idf_acte and parties.idf_type_presence=".IDF_PRESENCE_INTV.") join patronyme patro_parties on (parties.idf_patronyme=patro_parties.idf) left join prenom prn_parties on (parties.idf_prenom=prn_parties.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join `type_presence` tp on (p.idf_type_presence=tp.idf) left join modification_acte m_a on (a.idf=m_a.idf_acte and m_a.statut='A') where ";    
     if (!empty($gst_sexe)) $a_clauses[] = "p.sexe='$gst_sexe'";
     if ($gi_idf_source !=0) $a_clauses[]="a.idf_source=$gi_idf_source" ;
     if ($gi_idf_type_acte ==IDF_UNION)
