@@ -7,6 +7,7 @@ verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
 require_once '../Commun/commun.php';
 require_once '../Publication/fpdf/fpdf.php';
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
 
 ob_start();// Enclenche la temporisation de sortie
 
@@ -18,8 +19,7 @@ Toute reproduction ou représentation intégrale, ou partielle, par quelque procéd
 publication, faite sans le consentement de l’A.G. C. 16, est illicite et constitue une contrefaçon.
 Art. L. 122-4 et 5 L. 335-2 & s. du Code de la propriété intellectuelle.";
 $today = date("M-y"); 
-$message1 =  isset($_POST['message']) ? $_POST['message']: '';
-$message = utf8_vers_cp1252($message1);
+$message =  isset($_POST['message']) ? $_POST['message']: '';
 $TypeActe =  isset($_POST['TypeActe']) ? $_POST['TypeActe'] : '' ;
 
 
