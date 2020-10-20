@@ -242,7 +242,8 @@ function export_dec_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
       fwrite($pf,(implode(';',$a_champs)));
       fwrite($pf,"\r\n");
    }
-    print "Publication des d&egrave;c&eacute;s de la commune $st_nom_commune<br> <br>";
+    $st_nom_commune1 = utf8_encode ($st_nom_commune);
+    print "Publication des d&egrave;c&eacute;s de la commune $st_nom_commune1<br> <br>";
 }
 
 /**
@@ -356,7 +357,8 @@ function export_mar_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
   fwrite($pf,(implode(';',$a_champs)));
   fwrite($pf,"\r\n");
   }
-  print "Publication des mariages de la commune $st_nom_commune<br> <br>";
+  $st_nom_commune1 = utf8_encode ($st_nom_commune);
+  print "Publication des mariages de la commune $st_nom_commune1<br> <br>";
 }
 
 
@@ -481,7 +483,8 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   fwrite($pf,(implode(';',$a_champs)));
   fwrite($pf,"\r\n");
   }
-  print "Publication des divers de la commune $st_nom_commune<br> <br>";
+  $st_nom_commune1 = utf8_encode ($st_nom_commune);
+  print "Publication des divers de la commune $st_nom_commune1<br> <br>";
 
 }
 
