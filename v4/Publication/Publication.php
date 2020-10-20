@@ -132,7 +132,7 @@ function export_nai_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 	*/
 
 
-
+   $st_nom_commune = iconv('UTF-8', 'windows-1252', $st_nom_commune);
    print "Publication des naissances de la commune <b> $st_nom_commune</b> <br>";
 
 }
