@@ -158,7 +158,7 @@ $st_criteres .= "\n";
 if ($gi_idf_type_acte!=0)
 {
   $st_type_acte = ($gi_idf_type_acte==IDF_UNION) ? 'Mariage/CM': $ga_types_acte[$gi_idf_type_acte]; 
-  $st_criteres .= "Type d'acte: $st_type_acte";
+  $st_criteres .= "Type d'acte: ".cp1252_vers_utf8($st_type_acte);
 }
 if ($gi_annee_min!='' && $gi_annee_max!='')
   $st_criteres .= " de $gi_annee_min &agrave; $gi_annee_max";
