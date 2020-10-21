@@ -128,10 +128,10 @@ if ($gi_annee_max != '') $a_clauses[]="a.annee<=$gi_annee_max" ;
 if ($gi_idf_canton!=0)
    $a_clauses[]= "ca.idf_canton=$gi_idf_canton";
 
-$a_clauses[]="p.patronyme ".$requeteRecherche->clause_droite_patronyme($gst_nom ,$gst_variantes);
+$a_clauses[]="p.patronyme ".$requeteRecherche->clause_droite_patronyme(utf8_vers_cp1252($gst_nom),$gst_variantes);
 $st_variantes_trouvees=join("\n",$requeteRecherche->variantes_trouvees());   
 if ($gst_prenom!='')
-   $a_clauses[]="prenom.libelle ".$requeteRecherche->clause_droite_prenom($gst_prenom,1);
+   $a_clauses[]="prenom.libelle ".$requeteRecherche->clause_droite_prenom(utf8_vers_cp1252($gst_prenom),1);
 if (!empty($gi_idf_type_presence)) $a_clauses[]="p.idf_type_presence=$gi_idf_type_presence" ;
 
 $st_clauses = implode(" and ",$a_clauses);
@@ -142,7 +142,7 @@ if ($gst_variantes !='')
 {
     print("<div id=col_variantes class=\"gauche\">");
     if ($st_variantes_trouvees!="")
-print("<div>Variantes trouv&eacute;es pour le patronyme</div><br><textarea rows=8 cols=30> $st_variantes_trouvees</textarea>");
+print("<div>Variantes trouv&eacute;es pour le patronyme</div><br><textarea rows=8 cols=30> ".cp1252_vers_utf8($st_variantes_trouvees)."</textarea>");
 else
    print("Pas de variantes connues");
    print("</div>"); 
@@ -158,7 +158,7 @@ $st_criteres .= "\n";
 if ($gi_idf_type_acte!=0)
 {
   $st_type_acte = ($gi_idf_type_acte==IDF_UNION) ? 'Mariage/CM': $ga_types_acte[$gi_idf_type_acte]; 
-  $st_criteres .= "Type d'acte: $st_type_acte";
+  $st_criteres .= "Type d'acte: ".cp1252_vers_utf8($st_type_acte);
 }
 if ($gi_annee_min!='' && $gi_annee_max!='')
   $st_criteres .= " de $gi_annee_min &agrave; $gi_annee_max";
@@ -169,7 +169,7 @@ else if ($gi_annee_max!='')
 $st_criteres .= "\n"; 
 
   
-$st_criteres .= "Canton : $st_nom_canton\n";
+$st_criteres .= "Canton : ".cp1252_vers_utf8($st_nom_canton)."\n";
 print(nl2br($st_criteres));
 
 print("</div>");  

@@ -431,7 +431,8 @@ define('LIB_ASSO_AVEC',"L'Association Généalogique de la Charente");
 define('SIGLE_ASSO','AGC');
 
 define('EMAIL_INFOASSO','info@assoactes.fr');
-define('EMAIL_INSCRIPTION_FORUM','geneagc16-subscribe@yahoogroupes.fr');
+//define('EMAIL_INSCRIPTION_FORUM','geneagc16-subscribe@yahoogroupes.fr');
+define('EMAIL_INSCRIPTION_FORUM','');
 //define('EMAIL_FORUM','geneagc16@yahoogroupes.fr');
 define('EMAIL_FORUM','agc16-forum@googlegroups.com');
 define('EMAIL_DIRASSO','agc-dir@genea16.net');
