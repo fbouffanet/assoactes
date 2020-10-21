@@ -152,14 +152,14 @@ if ($gi_idf_canton!=0)
    $a_clauses[]= "ca.idf_canton=$gi_idf_canton";
 
 
-$a_clauses[]="u.patronyme_epoux ".$requeteRecherche->clause_droite_patronyme($gst_nom_epx ,$gst_variantes_epx);
+$a_clauses[]="u.patronyme_epoux ".$requeteRecherche->clause_droite_patronyme(utf8_vers_cp1252($gst_nom_epx),$gst_variantes_epx);
 $st_variantes_epx_trouvees=join("\n",$requeteRecherche->variantes_trouvees());
-$a_clauses[]="u.patronyme_epouse ".$requeteRecherche->clause_droite_patronyme($gst_nom_epse,$gst_variantes_epse);
+$a_clauses[]="u.patronyme_epouse ".$requeteRecherche->clause_droite_patronyme(utf8_vers_cp1252($gst_nom_epse),$gst_variantes_epse);
 $st_variantes_epse_trouvees=join("\n",$requeteRecherche->variantes_trouvees());
 if ($gst_prenom_epx!='')
-   $a_clauses[]="prenom_p1.libelle ".$requeteRecherche->clause_droite_prenom($gst_prenom_epx,1);
+   $a_clauses[]="prenom_p1.libelle ".$requeteRecherche->clause_droite_prenom(utf8_vers_cp1252($gst_prenom_epx),1);
 if ($gst_prenom_epse!='')
-   $a_clauses[]="prenom_p2.libelle ".$requeteRecherche->clause_droite_prenom($gst_prenom_epse,2);
+   $a_clauses[]="prenom_p2.libelle ".$requeteRecherche->clause_droite_prenom(utf8_vers_cp1252($gst_prenom_epse),2);
    
 $st_clauses = implode(" and ",$a_clauses);
 
@@ -168,7 +168,7 @@ if ($gst_variantes_epx !='')
 {
     print("<div id=col_variantes_epoux class=\"gauche\">");
     if ($st_variantes_epx_trouvees!="")
-print("<div>Variantes connues pour le patronyme de l'&eacute;poux</div><br><textarea rows=8 cols=30>$st_variantes_epx_trouvees</textarea>");
+print("<div>Variantes connues pour le patronyme de l'&eacute;poux</div><br><textarea rows=8 cols=30>".cp1252_vers_utf8($st_variantes_epx_trouvees)."</textarea>");
 else
    print("Pas de variantes connues pour le nom de l'&eacute;poux");
    print("</div>"); 
@@ -177,7 +177,7 @@ if ($gst_variantes_epse !='' )
 {
     print("<div id=col_variantes_epouse class=\"droite\">");
     if ($st_variantes_epse_trouvees!="")
-       print("<div>Variantes connues pour le patronyme de l'&eacute;pouse</div><br><textarea rows=8 cols=30>$st_variantes_epse_trouvees</textarea>"
+       print("<div>Variantes connues pour le patronyme de l'&eacute;pouse</div><br><textarea rows=8 cols=30>".cp1252_vers_utf8($st_variantes_epse_trouvees)."</textarea>"
 );
     else
        print("Pas de variantes connues pour le nom de l'&eacute;pouse");
@@ -204,7 +204,7 @@ if ($gi_idf_canton!=0)
 }
 else
   $st_nom_canton = 'Pas de canton selectionn&eacute;';   
-$st_criteres .= "Canton : $st_nom_canton\n";
+$st_criteres .= "Canton :".cp1252_vers_utf8($st_nom_canton)."\n";
 print(nl2br($st_criteres));
 print("</div>");
 
