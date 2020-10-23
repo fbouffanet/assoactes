@@ -12,19 +12,19 @@ function VerifieChampsRecherche(Formulaire,Mode)
                      var nom_epse	= document.forms[Formulaire].nom_epse.value;
                      if (nom_epx=="")
                      {
-                        ListeErreurs+= "Le nom de l'époux est vide\n";
+                        ListeErreurs+= "Le nom de l'Ã©poux est vide\n";
                      }
                      else if (nom_epx.length<3)
                      {
-                        ListeErreurs+= "Le nom de l'époux doit comporter au moins trois caractères\n";
+                        ListeErreurs+= "Le nom de l'Ã©poux doit comporter au moins trois caractÃ¨res\n";
                      }
                      if (nom_epse=="")
                      {
-                        ListeErreurs+= "Le nom de l'épouse est vide\n";
+                        ListeErreurs+= "Le nom de l'Ã©pouse est vide\n";
                      }                     
                      else if (nom_epse.length<3)
                      {
-                        ListeErreurs+= "Le nom de l'épouse doit comporter au moins trois caractères\n";
+                        ListeErreurs+= "Le nom de l'Ã©pouse doit comporter au moins trois caractÃ¨res\n";
                      } 
                      break;
       case 'RecherchePersonne' :
@@ -36,7 +36,7 @@ function VerifieChampsRecherche(Formulaire,Mode)
                       }
                       else if (nom.length<3)
                       {
-                        ListeErreurs+= "Le nom doit comporter au moins trois caractères\n";
+                        ListeErreurs+= "Le nom doit comporter au moins trois caractÃ¨res\n";
                       }
                       break;                
       default: alert('Type de recherche inconnu :' + document.forms[Formulaire].recherche.value); 
