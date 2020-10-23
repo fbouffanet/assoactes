@@ -236,13 +236,17 @@ else
         
       break;
       case 'SUPPRESSION':
-        $st_requete = "LOCK TABLES `personne` write, `patronyme` as pat write,`acte` write, `profession` write, `commune_personne` write, `union` write, `stats_patronyme` write,`stats_commune` write,`acte` as a read,`personne` as p read, `type_acte` read, `type_acte` as ta read";
+        $st_requete = "LOCK TABLES `personne` write,`acte` write, `patronyme` as pat read,`union` write, `stats_patronyme` write,`stats_commune` write,`acte` as a read,`personne` as p read,`type_acte` as ta read,`stats_patronyme` as sp read";
+		$etape_prec = getmicrotime();
         $connexionBD->execute_requete($st_requete);
         $connexionBD->execute_requete("DELETE FROM `personne` where idf_acte=$gi_idf_acte");
 		$connexionBD->execute_requete("DELETE FROM `union` where idf_acte=$gi_idf_acte");
         $connexionBD->execute_requete("DELETE FROM `acte` where idf=$gi_idf_acte");
+		print benchmark("Suppression des donn&eacute;es");
         $stats_patronyme->maj_stats($go_acte->getIdfTypeActe(),null);
+		print benchmark("Mise &agrave jour des statistiques des patronymes");
         $stats_commune->maj_stats($go_acte->getIdfTypeActe());
+		print benchmark("Mise &agrave jour des statistiques des communes");
         $connexionBD->execute_requete("UNLOCK TABLES");
         print("<div class=\"alert alert-success\">Acte supprim&eacute;</div>");
       break;

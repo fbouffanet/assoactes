@@ -134,7 +134,7 @@ function verifie_utilisateur($pst_ident,$pst_mdp)
 */
 function affiche_menu_auth($pst_message)
 {
-  global $gst_url_site,$gst_logo_association;
+  global $gst_url_site,$gst_logo_association,$gst_rep_site;
   print("<!DOCTYPE html>");
   print("<head>\n");
 
@@ -211,7 +211,24 @@ function affiche_menu_auth($pst_message)
   unhighlight: function ( element, errorClass, validClass ) {
 	$( element ).parents( \".col-md-4\" ).addClass( \"has-success\" ).removeClass( \"has-error\" );
 	$( element ).next( \"span\" ).addClass( \"glyphicon-ok\" ).removeClass( \"glyphicon-remove\" );
-  }   
+  }");
+  if (file_exists("$gst_rep_site/Notification.txt"))
+  {
+		print(",
+   submitHandler: function(form) {
+	    reponse = confirm(\"");
+		$st_texte=preg_replace('/\n/','\n',file_get_contents("$gst_rep_site/Notification.txt"));
+		print($st_texte);
+		print("\");
+        if(reponse == true){
+           form.submit( );
+		}
+        else{
+            return false;
+        }
+   }");
+  }
+print("  
   });
 });
  ");
@@ -253,7 +270,7 @@ function affiche_menu_auth($pst_message)
   print("</div>\n");
   
   print('<div class="btn-group-vertical col-md-offset-3 col-md-6" role="group" >');
-  print('<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Se connecter</button>');  
+  print('<button type="submit" id="bouton_soumission" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Se connecter</button>');  
   print("<button class=\"form-row col-md-offset-2 col-md-8 btn btn-warning\" id=\"DemandeNouveauMDP\"><span class=\"glyphicon glyphicon-warning-sign\"></span> J'ai oubli&eacute; mon mot de passe</button>");
   print("</div>\n");
 

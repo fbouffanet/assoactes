@@ -4,7 +4,7 @@ session_start();
 
 //http://127.0.0.1:8888/Recherche_Sommaire.php
 /*
-Programme de recherche des éléments du sommaire des bulletins AGC
+Programme de recherche des ï¿½lï¿½ments du sommaire des bulletins AGC
 PL 06/13
 */
 
@@ -38,14 +38,14 @@ $gi_num_page_cour = empty($_GET['num_page']) ? $i_session_num_page : $_GET['num_
 
 /*
 CREATE TABLE IF NOT EXISTS `sommaire`
-( 
+(
   `idf` smallint(5) unsigned NOT NULL auto_increment,
-  `numero` smallint(3),        numéro du bulletin
-  `moisannee` varchar(30),     mois et année du bulletin
+  `numero` smallint(3),        numï¿½ro du bulletin
+  `moisannee` varchar(30),     mois et annï¿½e du bulletin
   `rubrique` text,             rubrique du sommaire
   `auteur` varchar(50),        auteur de la rubrique correspondante
   `type` varchar(5),           art pour article, asc pour ascendance, fam pour famille, cou pour cousins, des pour descendance
-  `flag` enum ('O', 'N'),      pour utilisation ultèrieure
+  `flag` enum ('O', 'N'),      pour utilisation ultï¿½rieure
    PRIMARY KEY (`idf`)
 );
 */
@@ -55,14 +55,14 @@ CREATE TABLE IF NOT EXISTS `sommaire`
 function Affiche_noms($type, $sconnexionBD)
 {
    global $gi_num_page_cour,$gst_mode;
-	
-   switch ($type) 
+
+   switch ($type)
    {
       case 'RUB' :
          $session_numero = isset($_SESSION['rubrique']) ? $_SESSION['rubrique'] : '';
          $numero = isset($_POST['rubrique']) ? $_POST['rubrique'] : $session_numero;
          $_SESSION['rubrique']= $numero;
-			$titre = "Sommaire du numéro ".$numero;
+			$titre = "Sommaire du num&eacute;ro ".$numero;
       break;
       case 'ART' :
          $session_article = isset($_SESSION['article'])? $_SESSION['article'] : '';
@@ -71,19 +71,19 @@ function Affiche_noms($type, $sconnexionBD)
 			$titre = "Articles de ".$auteur;
       break;
       case 'FAM' :
-         $session_famille = isset($_SESSION['famille'])? $_SESSION['famille'] : ''; 
+         $session_famille = isset($_SESSION['famille'])? $_SESSION['famille'] : '';
          $auteur = isset($_POST['famille']) ?  $_POST['famille'] : $session_famille;
          $_SESSION['famille']= $auteur;
-			$titre = "Famille étudiée de ".$auteur;
+			$titre = "Famille &eacute;tudi&eacute;e de ".$auteur;
       break;
       case 'ASC' :
-         $session_ascendance = isset($_SESSION['ascendance'])? $_SESSION['ascendance'] : ''; 
+         $session_ascendance = isset($_SESSION['ascendance'])? $_SESSION['ascendance'] : '';
          $auteur = isset($_POST['ascendance']) ? $_POST['ascendance'] : $session_ascendance;
          $_SESSION['ascendance']= $auteur;
 			$titre = "Ascendance de ".$auteur;
       break;
       case 'DES' :
-         $session_descendance = isset($_SESSION['descendance'])? $_SESSION['descendance'] : '';  
+         $session_descendance = isset($_SESSION['descendance'])? $_SESSION['descendance'] : '';
          $auteur = isset($_POST['descendance']) ? $_POST['descendance'] : $session_descendance;
          $_SESSION['descendance']= $auteur;
 			$titre = "Descendance de ".$auteur;
@@ -101,22 +101,22 @@ function Affiche_noms($type, $sconnexionBD)
       $st_requete = "select numero, moisannee, rubrique from `sommaire` where auteur like '%$auteur%' and type = '$type'";
 
      print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-   $_SESSION['num_page_som'] = $gi_num_page_cour; 
+   $_SESSION['num_page_som'] = $gi_num_page_cour;
    $a_liste_sommaire = $sconnexionBD->sql_select_multiple($st_requete);
    print('<div class="panel panel-primary">');
    print("<div class=\"panel-heading\">$titre</div>");
    print('<div class="panel-body">');
    $i_nb_sommaires = count($a_liste_sommaire);
    if ($i_nb_sommaires!=0)
-   {        
+   {
       $pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_sommaires,NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,array('Bulletin','Paru en','Sommaire'));
       $pagination->init_param_bd($sconnexionBD,$st_requete);
       $pagination->init_page_cour($gi_num_page_cour);
       $pagination->affiche_entete_liens_navigation();
 	  $pagination->affiche_tableau_simple_requete_sql();
-      $pagination->affiche_entete_liens_navigation();     
+      $pagination->affiche_entete_liens_navigation();
    }
-   print('</form>');  
+   print('</form>');
    print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
    print("<button type=\"submit\" class=\"btn btn-primary col-md-4 col-md-offset-4\"><span class=\"glyphicon glyphicon-home\"></span>  Retour &agrave; la recherche</button>");
    print('<input type=hidden name=mode value="DEPART">');
@@ -126,7 +126,7 @@ function Affiche_noms($type, $sconnexionBD)
 
 /* --- Remplit un select des rubriques --- */
 function Select_rubrique($connexionBD)
-{ 
+{
    $chaine_options = "";
    $st_requete = "select distinct numero FROM sommaire order by numero";
    $a_numeros=$connexionBD->sql_select($st_requete);
@@ -144,7 +144,7 @@ function Select_nom($type,$connexionBD)
 	if ($type == "ART")
 	    $a_auteurs=$connexionBD->sql_select("select distinct auteur FROM sommaire where type = '$type' order by upper(trim(auteur))");
    else		// FAM, ASC, DES, COU
-	   $a_auteurs=$connexionBD->sql_select("select distinct det_auteur FROM detail_nom where det_type = '$type' order by det_auteur");		
+	   $a_auteurs=$connexionBD->sql_select("select distinct det_auteur FROM detail_nom where det_type = '$type' order by det_auteur");
   foreach ($a_auteurs as $st_auteur)
    {
 	   $chaine_options .= "<option >$st_auteur</option>\n";
@@ -152,20 +152,20 @@ function Select_nom($type,$connexionBD)
    return $chaine_options;
 }
 
-/* --- Saisie des critères de recherche --- */
+/* --- Saisie des critï¿½res de recherche --- */
 /*
 +------------------------------------------------------+
-|   Les rubriques d'un numéro    =========    valider  |
+|   Les rubriques d'un numï¿½ro    =========    valider  |
 +------------------------------------------------------+
 |   Chaque article d'un auteur   =========    valider  |
 +------------------------------------------------------+
-|   Familles étudiées            =========    valider  |
+|   Familles ï¿½tudiï¿½es            =========    valider  |
 +------------------------------------------------------+
-|   Ascendance d'un adhérent     =========    valider  |
+|   Ascendance d'un adhï¿½rent     =========    valider  |
 +------------------------------------------------------+
-|   Descendance d'un adhérent    =========    valider  |
+|   Descendance d'un adhï¿½rent    =========    valider  |
 +------------------------------------------------------+
-|   Cousinage des adhérents      =========    valider  |
+|   Cousinage des adhï¿½rents      =========    valider  |
 +------------------------------------------------------+
 */
 function Saisie_recherche($connexionBD)
@@ -174,22 +174,22 @@ function Saisie_recherche($connexionBD)
     print('<div class="panel-heading">Recherche sur le sommaire des bulletins</div>');
 	print('<div class="panel-body">');
     print("<div id='sommaire'>");
-	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print('<div class="form-group row">');
 	print('<div class="col-md-4">');
 	print('<button class="btn btn-primary" type=submit id="rub_recherche" name="valide_rub"><span class="glyphicon glyphicon-search"></span> Recherche</button>');
-    print('</div>');	
-	print('<label for="rub" class="col-form-label col-md-4">Les rubriques d\'un numéro</label>');
+    print('</div>');
+	print('<label for="rub" class="col-form-label col-md-4">Les rubriques d\'un num&eacute;ro</label>');
     print('<div class="col-md-4">');
 	print('<select id="rub" name="rubrique" class="form-control">'.Select_rubrique($connexionBD).'</select>');
     print("<input type=hidden name=mode value=\"RUBRIQUE\">");
 	print('</div>');
 	print('</div>');
 	print("</form>");
-	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print('<div class="form-group row">');
 	print('<div class="col-md-4">');
-	print('<button class="btn btn-primary"  type=submit name="valide_art"><span class="glyphicon glyphicon-search"></span> Recherche</button>');  
+	print('<button class="btn btn-primary"  type=submit name="valide_art"><span class="glyphicon glyphicon-search"></span> Recherche</button>');
 	print('</div>');
 	print('<label for="art" class="col-form-label col-md-4">Chaque article d\'un auteur</label>');
 	print('<div class="col-md-4">');
@@ -198,90 +198,90 @@ function Saisie_recherche($connexionBD)
 	print('</div>');
 	print('</div>');
 	print("</form>");
-	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print('<div class="form-group row">');
 	print('<div class="col-md-4">');
 	print('<button class="btn btn-primary" type=submit  name="valide_fam"><span class="glyphicon glyphicon-search"></span> Recherche</button>');
-    print('</div>');	
-    print('<label for="fam" class="col-form-label col-md-4">Familles étudiées</label>');
+    print('</div>');
+    print('<label for="fam" class="col-form-label col-md-4">Familles &eacute;tudi&eacute;e</label>');
 	print('<div class="col-md-4">');
 	print('<select id="fam" name=famille class="form-control">'.Select_nom('FAM',$connexionBD).'</select>');
 	print("<input type=hidden name=mode value=\"FAMILLE\">");
 	print('</div>');
 	print('</div>');
 	print("</form>");
-	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print('<div class="form-group row">');
 	print('<div class="col-md-4">');
 	print('<button class="btn btn-primary" type=submit name="valide_asc"><span class="glyphicon glyphicon-search"></span>  Recherche</button>');
-    print('</div>');	
-	print('<label for="asc" class="col-form-label col-md-4">Ascendance d\'un adhérent</label>');
+    print('</div>');
+	print('<label for="asc" class="col-form-label col-md-4">Ascendance d\'un adh&eacute;rent</label>');
 	print('<div class="col-md-4">');
 	print('<select id="asc" name=ascendance class="form-control">'.Select_nom('ASC',$connexionBD).'</select>');
     print("<input type=hidden name=mode value=\"ASCEND\">");
     print('</div>');
-    print('</div>');	
-	print("</form>");	
-	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">"); 
+    print('</div>');
+	print("</form>");
+	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print('<div class="form-group row">');
 	print('<div class="col-md-4">');
 	print('<button class="btn btn-primary" type=submit name="valide_des"><span class="glyphicon glyphicon-search"></span>  Recherche</button>');
-    print('</div>');	
-	print('<label for="des" class="col-form-label col-md-4">Descendance d\'un adhérent</label>');
+    print('</div>');
+	print('<label for="des" class="col-form-label col-md-4">Descendance d\'un adh&eacute;rent</label>');
 	print('<div class="col-md-4">');
 	print('<select id="des" name=descendance class="form-control">'.Select_nom('DES',$connexionBD).'</select>');
 	print("<input type=hidden name=mode value=\"DESCEND\">");
 	print('</div>');
 	print('</div>');
-	print("</form>");	  
+	print("</form>");
 	print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print('<div class="form-group row">');
 	print('<div class="col-md-4">');
 	print('<button class="btn btn-primary" type=submit name="valide_cou"><span class="glyphicon glyphicon-search"></span> Recherche</button>');
-    print('</div>');	
-	print('<label for="cou" class="col-form-label col-md-4">Cousinage des adhérents UTF-8 </label>');
+    print('</div>');
+	print('<label for="cou" class="col-form-label col-md-4">Cousinage des adh&eacute;rents </label>');
 	print('<div class="col-md-4">');
 	print('<select id="cou" name=cousinage class="form-control">'.Select_nom('COU',$connexionBD).'</select>');
 	print("<input type=hidden name=mode value=\"COUSIN\">");
 	print('</div>');
 	print('</div>');
-	 
+
 	print('</form>');
 	print("</div>");
 }
 
-/* --- Début du programme --- */
+/* --- Dï¿½but du programme --- */
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("Commun/menu.php");
 
 
-$st_session_mode = empty($_SESSION['mode']) ? 'DEPART' : $_SESSION['mode']; 
+$st_session_mode = empty($_SESSION['mode']) ? 'DEPART' : $_SESSION['mode'];
 $gst_mode = isset($_POST['mode']) ? $_POST['mode'] : $st_session_mode;
-$_SESSION['mode']=$gst_mode;  
+$_SESSION['mode']=$gst_mode;
 
-switch ($gst_mode) 
+switch ($gst_mode)
 {
-   case 'DEPART' : 
-      Saisie_recherche($connexionBD); 
+   case 'DEPART' :
+      Saisie_recherche($connexionBD);
    break;
-   case 'RUBRIQUE' : 
-		Affiche_noms('RUB', $connexionBD); 
+   case 'RUBRIQUE' :
+		Affiche_noms('RUB', $connexionBD);
    break;
-   case 'ARTICLE' : 
-      Affiche_noms('ART', $connexionBD); 
+   case 'ARTICLE' :
+      Affiche_noms('ART', $connexionBD);
    break;
-   case 'FAMILLE' : 
-      Affiche_noms('FAM', $connexionBD); 
+   case 'FAMILLE' :
+      Affiche_noms('FAM', $connexionBD);
    break;
-   case 'ASCEND' : 
-      Affiche_noms('ASC', $connexionBD); 
+   case 'ASCEND' :
+      Affiche_noms('ASC', $connexionBD);
    break;
-   case 'DESCEND' : 
-      Affiche_noms('DES', $connexionBD); 
+   case 'DESCEND' :
+      Affiche_noms('DES', $connexionBD);
    break;
-   case 'COUSIN' : 
-      Affiche_noms('COU', $connexionBD); 
+   case 'COUSIN' :
+      Affiche_noms('COU', $connexionBD);
    break;
 }
 //unset($_SESSION['mode']);
@@ -290,5 +290,4 @@ $connexionBD->ferme();
 print ("</form>");
 print("</div></body></html>");
 
-?>	
-
+?>
