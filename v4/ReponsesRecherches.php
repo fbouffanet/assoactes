@@ -293,11 +293,17 @@ date_default_timezone_set($gst_time_zone);
     $st_variantes_prenoms_epx ='';
 	$a_clauses_recherche = array();
 	$gst_nom_epx  = str_replace('*','%', $gst_nom_epx);
-    $a_clauses_recherche[]="pat_epx.libelle ".$requeteRecherche->clause_droite_patronyme($gst_nom_epx ,$gst_variantes_epx,1);
-    $st_variantes_epx_trouvees=join("\n",$requeteRecherche->variantes_trouvees());
+	$a_patronymes_recherches_epoux = $requeteRecherche->liste_idf_patronymes($gst_nom_epx ,$gst_variantes_epx,1); 
+	if (count($a_patronymes_recherches_epoux)>0)
+	{
+		$a_clauses_recherche[] = "idf_patronyme_epoux in (".join(',',array_keys($a_patronymes_recherches_epoux)).")";
+	}
     $gst_nom_epse  = str_replace('*','%', $gst_nom_epse);
-    $a_clauses_recherche[]="pat_epse.libelle ".$requeteRecherche->clause_droite_patronyme($gst_nom_epse,$gst_variantes_epse,2);
-    $st_variantes_epse_trouvees=join("\n",$requeteRecherche->variantes_trouvees());
+	$a_patronymes_recherches_epouse = $requeteRecherche->liste_idf_patronymes($gst_nom_epse,$gst_variantes_epse,2); 
+	if (count($a_patronymes_recherches_epouse)>0)
+	{
+		$a_clauses_recherche[] = "idf_patronyme_epouse in (".join(',',array_keys($a_patronymes_recherches_epouse)).")";
+	}
     if (!empty($gst_prenom_epx))
     {
        $gst_prenom_epx  = str_replace('*','%', $gst_prenom_epx);
@@ -343,17 +349,22 @@ date_default_timezone_set($gst_time_zone);
     $gst_requete_actes = "$gst_requete_actes $st_clauses_actes order by annee,mois,jour";
     //FBOprint("Req=$gst_requete_actes<br>");
 
-    if (!empty($gst_variantes_epx) || !empty($st_variantes_prenoms_epx))
+    if (count($a_patronymes_recherches_epoux)>0 || !empty($st_variantes_prenoms_epx))
     {
       print("<div class=\"panel panel-primary col-md-4\">");
 	  print("<div class=\"panel-heading\">Variantes connues pour l'&eacute;poux</div>");
       print("<div class=\"panel-body\">");
 	  print('<form>'); 
 	  print('<div class="form-row">');
-	  if ($st_variantes_epx_trouvees!="")
-        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epx\">Patronyme:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_patros_epx\">".cp1252_vers_utf8($st_variantes_epx_trouvees)."</textarea></div>");
-      else
-        print("<div class=\"col-md-4\">Pas de variantes patronymiques connues</div>");
+	  if (count($a_patronymes_recherches_epoux)>0)
+	  {
+	     $st_variantes_trouvees_epx=join("\n",array_values($a_patronymes_recherches_epoux));
+		 print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epx\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros_epx\" rows=8 cols=20>".cp1252_vers_utf8($st_variantes_trouvees_epx)."</textarea></div>");
+	  }
+	  else
+	  {
+		 print("<div class=\"col-md-6\">Ce patronyme n'est pas connu</div>");
+	  } 
       if ($st_variantes_prenoms_epx!="")
         print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms_epx\">Pr&eacute;nom:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_prenoms_epx\">".cp1252_vers_utf8($st_variantes_prenoms_epx)."</textarea></div>");
       else
@@ -366,17 +377,22 @@ date_default_timezone_set($gst_time_zone);
 	else
 	  print("<div class=\"row col-md-4\"></div>");
 	print(rappel_recherches_communes($connexionBD,"Recherche du couple: $gst_prenom_epx $gst_nom_epx X $gst_prenom_epse $gst_nom_epse",$gi_idf_type_acte,$gi_annee_min,$gi_annee_max,$gi_idf_source,$gi_idf_commune,$gi_rayon));
-    if (!empty($gst_variantes_epse) ||  !empty($st_variantes_prenoms_epse))
+    if (count($a_patronymes_recherches_epouse)>0||  !empty($st_variantes_prenoms_epse))
     { 
       print("<div class=\"panel panel-primary col-md-4\">");
 	  print("<div class=\"panel-heading\">Variantes connues pour l'&eacute;pouse</div>");
       print("<div class=\"panel-body\">");
 	  print('<form>');
 	  print('<div class="form-row">');
-      if ($st_variantes_epse_trouvees!="")
-        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epse\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros_epse\" rows=8 cols=20>".cp1252_vers_utf8($st_variantes_epse_trouvees)."</textarea></div>");
-      else
-        print("<div class=\"col-md-6\">Pas de variantes patronymiques connues</div>");
+	  if (count($a_patronymes_recherches_epouse)>0)
+	  {
+	     $st_variantes_trouvees_epse=join("\n",array_values($a_patronymes_recherches_epouse));
+		 print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros_epse\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros_epse\" rows=8 cols=20>".cp1252_vers_utf8($st_variantes_trouvees_epse)."</textarea></div>");
+	  }
+	  else
+	  {
+		 print("<div class=\"col-md-6\">Ce patronyme n'est pas connu</div>");
+	  }
       if ($st_variantes_prenoms_epse!="")
         print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms_epse\">Pr&eacute;nom:</label><textarea class=\"form-control\" rows=8 cols=20 id=\"variantes_prenoms_epse\">".cp1252_vers_utf8($st_variantes_prenoms_epse)."</textarea></div>");
       else
@@ -443,10 +459,15 @@ date_default_timezone_set($gst_time_zone);
     $st_tables_prenom = '';
     $st_variantes_prenoms= '';
 	$a_clauses_recherche = array();
+	$a_patronymes_recherches = array();
     if($gst_type_recherche == 'personne')
     { 
       $gst_nom  = str_replace('*','%', $gst_nom);
-		  $a_clauses_recherche[]="pat.libelle ".$requeteRecherche->clause_droite_patronyme($gst_nom ,$gst_variantes,1); 
+	  $a_patronymes_recherches = $requeteRecherche->liste_idf_patronymes($gst_nom ,$gst_variantes,1); 
+	  if (count($a_patronymes_recherches)>0)
+	  {
+		  $a_clauses_recherche[] = "idf_patronyme in (".join(',',array_keys($a_patronymes_recherches)).")";
+	  }
       if ($gst_prenom!='')
 		  {
         $gst_prenom=str_replace('*','%',$gst_prenom);
@@ -478,28 +499,32 @@ date_default_timezone_set($gst_time_zone);
 	$releve_col = ($releve_type == 0)? 'created' : 'changed';
 	if (!empty($gi_releve_mois_min) && !empty($gi_releve_annee_min)) $a_clauses_recherche[]=" a.". $releve_col .">=" . getDebutDateReleve($gi_releve_mois_min, $gi_releve_annee_min); 
 	if (!empty($gi_releve_mois_max) && !empty($gi_releve_annee_max)) $a_clauses_recherche[]=" a.". $releve_col ."<=" . getFinDateReleve($gi_releve_mois_max, $gi_releve_annee_max) ;
-   $gst_requete_actes= "select distinct idf_acte,concat(ifnull(prn.libelle,''),' ',pat.libelle,' (',tp.nom,')') from `personne` p left join `prenom` prn on (p.idf_prenom=prn.idf) $st_tables_prenom join patronyme pat on (p.idf_patronyme=pat.idf) left  join `acte` a on (p.idf_acte=a.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join `type_presence` tp on (p.idf_type_presence=tp.idf) where ";
+   $gst_requete_actes= "select distinct idf_acte,concat(ifnull(prn.libelle,''),' ',pat.libelle,' (',tp.nom,')') from `personne` p join patronyme pat on (p.idf_patronyme=pat.idf)join `prenom` prn on (p.idf_prenom=prn.idf) $st_tables_prenom  left  join `acte` a on (p.idf_acte=a.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) join `type_presence` tp on (p.idf_type_presence=tp.idf) where ";
    
    $gst_requete_parties= "select distinct a.idf,ta.nom,ca.nom,if (a.idf_type_acte=".IDF_RECENS.",GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',pat_parties.libelle) order by parties.idf separator '<br>'),GROUP_CONCAT(distinct concat(IFNULL(prn_parties.libelle,''),' ',pat_parties.libelle) order by parties.idf separator ' X ')) as parties,a.date,a.idf_type_acte,a.cote,a.idf_source,a.details_supplementaires,m_a.statut,a.annee,a.mois,a.jour,a.created,a.changed from `acte` a join `personne` parties on (a.idf=parties.idf_acte and parties.idf_type_presence=".IDF_PRESENCE_INTV.") left join prenom prn_parties on (parties.idf_prenom=prn_parties.idf) join patronyme pat_parties on (parties.idf_patronyme=pat_parties.idf) join type_acte ta on (a.idf_type_acte=ta.idf) join commune_acte ca on (a.idf_commune=ca.idf) left join modification_acte m_a on (a.idf=m_a.idf_acte and m_a.statut='A') where ";        
 
-	if($gst_type_recherche == 'personne'){
-		$st_variantes_trouvees=join("\n",$requeteRecherche->variantes_trouvees());	
-	}
-   
     $st_clauses_actes = implode(" and ",$a_clauses_recherche);
     $gst_requete_actes = "$gst_requete_actes $st_clauses_actes order by annee,mois,jour";
-    if (!empty($gst_variantes) || !empty($st_variantes_prenoms))
+    if (count($a_patronymes_recherches)>0 || !empty($st_variantes_prenoms))
     {
        print("<div class=\"panel panel-primary col-md-4\">");
 	   print("<div class=\"panel-heading\">Variantes connues</div>");
        print("<div class=\"panel-body\">");
 	   print('<form>');
 	   print('<div class="form-row">');
-        
-      if ($st_variantes_trouvees!="")
-        print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros\" rows=8 cols=20>".cp1252_vers_utf8($st_variantes_trouvees)."</textarea></div>");
-      else
-        print("<div class=\"col-md-6\">Pas de variantes connues</div>");
+       if($gst_type_recherche == 'personne')
+	   {
+		 if (count($a_patronymes_recherches)>0)
+	     {
+			 $st_variantes_trouvees=join("\n",array_values($a_patronymes_recherches));
+			 print("<div class=\"form-group col-md-6\"><label for=\"variantes_patros\">Patronyme:</label><textarea class=\"form-control\" id=\"variantes_patros\" rows=8 cols=20>".cp1252_vers_utf8($st_variantes_trouvees)."</textarea></div>");
+		 }
+		 else
+	     {
+			 print("<div class=\"col-md-6\">Ce patronyme n'est pas connu</div>");
+		 }	
+	   }  
+	
       if ($st_variantes_prenoms!="")
 		print("<div class=\"form-group col-md-6\"><label for=\"variantes_prenoms\">Pr&eacute;nom:</label><textarea class=\"form-control\" id=\"variantes_prenoms\" rows=8 cols=20>".cp1252_vers_utf8($st_variantes_prenoms)."</textarea></div>");
       else
@@ -517,27 +542,26 @@ date_default_timezone_set($gst_time_zone);
 }
 
 $etape_prec = getmicrotime();
-//FBO
-print("Req actes=$gst_requete_actes<br>");
+//FBOprint("Req actes=$gst_requete_actes<br>");
 $a_params_precedents=$connexionBD->params();
-$a_actes_recherches=$connexionBD->sql_select_multiple($gst_requete_actes);
+$a_actes_trouves=$connexionBD->sql_select_multiple($gst_requete_actes);
 $connexionBD->initialise_params($a_params_precedents);
+$i_temps_recherche = temps_ecoule_en_ms("Temps de recherche");
 
-$a_acte_vers_recherche = array();	
-foreach ($a_actes_recherches as $a_recherche)
+$a_acte_vers_recherche = array();
+foreach ($a_actes_trouves as $a_recherche)
 {
-	list($i_idf_acte,$st_recherche)=$a_recherche;
-	if (array_key_exists($i_idf_acte,$a_acte_vers_recherche))
-		$a_acte_vers_recherche[$i_idf_acte].="<br>$st_recherche";
+    list($i_idf_acte,$st_recherche)=$a_recherche;
+    if (array_key_exists($i_idf_acte,$a_acte_vers_recherche))
+		  $a_acte_vers_recherche[$i_idf_acte].="<br>$st_recherche";
 	else
 		$a_acte_vers_recherche[$i_idf_acte]=$st_recherche;
 }
+
 $a_actes_trouves = array_keys($a_acte_vers_recherche);
 $i_nb_reponses = count($a_actes_trouves);
 $a_actes_page_courante = array_splice($a_actes_trouves,$current_page * $_SESSION['per_page'],$_SESSION['per_page']);
 $ga_sources=$connexionBD->sql_select_multiple_par_idf("select idf,script_demande,utilise_ds,icone_info,icone_ninfo,icone_index from source");
-
-$i_temps_recherche = temps_ecoule_en_ms("Temps de recherche");
 if ($i_temps_recherche>10000)
 {
    // enregistre les requêtes de plus de 10s
