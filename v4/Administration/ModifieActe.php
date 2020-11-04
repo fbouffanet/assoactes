@@ -211,7 +211,7 @@ else
   }
   else
   {  
-    $stats_patronyme = new StatsPatronyme($connexionBD,$go_acte->getIdfCommune(),$go_acte->getIdfSource());
+
     $stats_commune = new StatsCommune($connexionBD,$go_acte->getIdfCommune(),$go_acte->getIdfSource());
     $unions = Union::singleton($connexionBD);
     switch($gst_mode)
@@ -222,7 +222,6 @@ else
         $connexionBD->execute_requete($st_requete);
         $go_acte->maj_liste_personnes($go_acte->getIdfSource(),$go_acte->getIdfCommune(),$unions);
 		$go_acte->sauve();
-        $stats_patronyme->maj_stats($go_acte->getIdfTypeActe(),$gi_idf_acte);
         $stats_commune->maj_stats($go_acte->getIdfTypeActe());
         $connexionBD->execute_requete("UNLOCK TABLES");
         print("<div class=\"text-center\"><textarea rows=40 cols=80>\n");
@@ -239,12 +238,21 @@ else
         $st_requete = "LOCK TABLES `personne` write,`acte` write, `patronyme` as pat read,`union` write, `stats_patronyme` write,`stats_commune` write,`acte` as a read,`personne` as p read,`type_acte` as ta read,`stats_patronyme` as sp read";
 		$etape_prec = getmicrotime();
         $connexionBD->execute_requete($st_requete);
+		$a_params_precs=$this->connexionBD->params();
+		$a_patronymes_supprimes = $this -> connexionBD ->liste_valeur_par_clef("select pat.idf,pat.libelle from `personne` pers join `patronyme` pat on (pers.patronyme=pat.libelle) where idf_acte=$gi_idf_acte");
+		foreach ($a_patronymes_supprimes as $idf_patronyme => $st_patronyme)
+		{
+			//Recalcul des statistiques de patronymes
+			$st_requete = sprintf("delete from `stats_patronyme` where idf_commune=%d and idf_type_acte=%d and idf_source=%d and idf_patronyme=%d",$go_acte->getIdfCommune(),$go_acte->getIdfTypeActe(),$go_acte->getIdfSource(),$idf_patronyme);
+			$connexionBD -> execute_requete($st_requete);
+			$st_requete = sprintf("insert into `stats_patronyme` (idf_patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes) select pat.idf,%d,%d,%d,min(a.annee),max(a.annee),count(p.patronyme) from acte a on (p.idf_acte=a.idf) join personne p join patronyme pat on (p.patronyme=pat.libelle) where a.idf_commune=%d and a.idf_type_acte=%d and a.idf_source=%d and a.annee!=0 and a.annee!=9999 and p.patronyme=:patronyme group by p.patronyme,a.idf_commune,a.idf_type_acte,a.idf_source",$go_acte->getIdfSource(),$go_acte->getIdfTypeActe(),$go_acte->getIdfSource(),$go_acte->getIdfCommune(),$$go_acte->getIdfTypeActe(),$go_acte->getIdfCommune());
+			$connexionBD->initialise_params(array(':patronyme '=> $st_patronyme));
+			$connexionBD->execute_requete($st_requete);
+		}
         $connexionBD->execute_requete("DELETE FROM `personne` where idf_acte=$gi_idf_acte");
 		$connexionBD->execute_requete("DELETE FROM `union` where idf_acte=$gi_idf_acte");
         $connexionBD->execute_requete("DELETE FROM `acte` where idf=$gi_idf_acte");
 		print benchmark("Suppression des donn&eacute;es");
-        $stats_patronyme->maj_stats($go_acte->getIdfTypeActe(),null);
-		print benchmark("Mise &agrave jour des statistiques des patronymes");
         $stats_commune->maj_stats($go_acte->getIdfTypeActe());
 		print benchmark("Mise &agrave jour des statistiques des communes");
         $connexionBD->execute_requete("UNLOCK TABLES");
