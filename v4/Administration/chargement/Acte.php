@@ -890,19 +890,7 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
      $i = 0;
      $a_liste_personnes = array();
      // suppression des précédentes personnes et unions
-	 $a_params_precs=$this->connexionBD->params();
-	 $a_patronymes_supprimes = $this -> connexionBD ->liste_valeur_par_clef("select pat.idf,pat.libelle from `personne` pers join `patronyme` pat on (pers.patronyme=pat.libelle) where idf_acte=" . $this -> i_idf);
-	 foreach ($a_patronymes_supprimes as $idf_patronyme => $st_patronyme)
-	 {
-		 //Recalcul des statistiques de patronymes
-		 $st_requete = sprintf("delete from `stats_patronyme` where idf_commune=%d and idf_type_acte=%d and idf_source=%d and idf_patronyme=%d",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source,$idf_patronyme);
-		 $this -> connexionBD -> execute_requete($st_requete);
-		 $st_requete = sprintf("insert into `stats_patronyme` (idf_patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes) select pat.idf,%d,%d,%d,min(a.annee),max(a.annee),count(p.patronyme) from acte a on (p.idf_acte=a.idf) join personne p join patronyme pat on (p.patronyme=pat.libelle) where a.idf_commune=%d and a.idf_type_acte=%d and a.idf_source=%d and a.annee!=0 and a.annee!=9999 and p.patronyme=:patronyme group by p.patronyme,a.idf_commune,a.idf_type_acte,a.idf_source",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source,$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source);
-		 $this->connexionBD->initialise_params(array(':patronyme '=> $st_patronyme));
-		 $this->connexionBD->execute_requete($st_requete);
-	 }
-     $this -> connexionBD -> execute_requete("DELETE FROM `personne` where idf_acte=" . $this -> i_idf);
-     $this -> connexionBD -> execute_requete("DELETE FROM `union` where idf_acte=" . $this -> i_idf);
+	 
      // création des personnes
     $c_sexe_intv = '';
 	 $stats_patronyme = new StatsPatronyme($this->connexionBD,$pi_idf_commune_acte,$pi_idf_source);
@@ -951,7 +939,7 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
 		$a_liste_personnes[0]->sauveCommunePersonne();
 		$a_liste_personnes[0]->sauveProfession();
 		$a_liste_personnes[0]->sauvePrenom();
-		$stats_patronyme-sauve();
+		$stats_patronyme->sauve();
 		
     }
 	// sauvegarde des personnes
@@ -1101,6 +1089,7 @@ public function charge_variables_sessions()
          } 
     } 
 
+
 /**
  * Supprimer les variables de session
  */
@@ -1125,5 +1114,24 @@ public function detruit_variables_sessions()
         $o_pers -> detruit_variables_sessions();
          } 
     } 
-} 
+
+/**
+* Supprimer les personnes de l'acte et met à jour la table des statistiques de patronyme
+*/
+public function supprime_personnes()
+{
+	$a_params_precs=$this->connexionBD->params();
+	$a_patronymes_a_supprimer = $this -> connexionBD ->liste_valeur_par_clef("select pat.idf,patronyme from personne p join patronyme pat on (p.patronyme=pat.libelle) where idf_acte=" . $this -> i_idf);
+	$stats_patronyme = new StatsPatronyme($this -> connexionBD ,$this -> i_idf_commune,$this -> i_idf_source);
+	foreach ($a_patronymes_a_supprimer as $i_idf_patronyme => $st_patronyme)
+	{
+		$stats_patronyme->enleve_patronyme($i_idf_patronyme,$st_patronyme);
+	}
+	$st_requete = "DELETE FROM `union` where idf_acte=" . $this -> i_idf;
+    $this -> connexionBD -> execute_requete($st_requete);
+	$st_requete = "DELETE FROM `personne` where idf_acte=" . $this -> i_idf;
+    $this -> connexionBD -> execute_requete($st_requete);	
+	$stats_patronyme->maj_stats_patronymes_supprimes($this -> i_idf_commune ,$this -> i_idf_source,$this -> i_idf_type_acte);
+}
+}
 ?>
