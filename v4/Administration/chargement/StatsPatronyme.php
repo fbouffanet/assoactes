@@ -144,32 +144,6 @@ class StatsPatronyme {
       return $this->a_type_acte;
    }
    
-	/**
-	Met à jour les statistiques des patronymes suite à une modification
-	@param integer $pi_idf_type_acte identifiant du type d'acte
-	@param integer $pi_idf_acte identifiant de l'acte modifié
-	*/
-	function maj_stats($pi_idf_type_acte,$pi_idf_acte=null) {
-		$st_requete = sprintf("delete from `stats_patronyme` where idf_commune=%d and idf_type_acte=%d and idf_source=%d",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source);
-		$this->connexionBD->execute_requete($st_requete);
-		// Création des éventuels nouveaux patronymes
-		if (!empty($pi_idf_acte))
-		{	  
-			$st_requete = sprintf("select p.patronyme from personne p where p.idf_acte=%d and p.patronyme not in (select libelle from patronyme)",$pi_idf_acte);
-			$a_nouveaux_patronymes = $this->connexionBD->sql_select($st_requete);
-			if (count($a_nouveaux_patronymes)>0)
-			{
-				foreach($a_nouveaux_patronymes as $st_patronyme)
-				{
-					$this->patronyme->ajoute($st_patronyme);			  
-				}
-				$this->patronyme->sauve();
-			}
-		}	
-		$st_requete = sprintf("insert into `stats_patronyme` (idf_patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes) select pat.idf,%d,%d,%d,min(a.annee),max(a.annee),count(p.patronyme) from personne p join patronyme pat on (p.patronyme=pat.libelle) join acte a on (p.idf_acte=a.idf) where a.idf_commune=%d and a.idf_type_acte=%d and a.idf_source=%d and a.annee!=0 and a.annee!=9999 group by p.patronyme,a.idf_commune,a.idf_type_acte,a.idf_source",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source,$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source);
-		$this->connexionBD->execute_requete($st_requete);   
-   }
-   
    /**
    * enleve le patronyme de la liste des patronymes
    * @param string $pi_idf_patronyme identifiant du patronyme à enlever
