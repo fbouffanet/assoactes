@@ -883,6 +883,7 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
 
 
 {
+	 $a_params_precs=$this->connexionBD->params();
      $i_idf_type_acte = $this -> typeActe -> vers_idf($this -> st_type_acte);
      $a_grille_personnes = array_key_exists($i_idf_type_acte, $this -> ga_grille_saisie) ? $this -> ga_grille_saisie[$i_idf_type_acte]: $this -> ga_grille_saisie[IDF_MARIAGE] ;
      $a_sexe_personne = array_key_exists($i_idf_type_acte, $this -> ga_sexe_personne) ? $this -> ga_sexe_personne[$i_idf_type_acte]: $this -> ga_sexe_personne[IDF_MARIAGE] ;
@@ -890,7 +891,7 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
      $i = 0;
      $a_liste_personnes = array();
      // suppression des précédentes personnes et unions
-	 
+	 $this->supprime_personnes();
      // création des personnes
     $c_sexe_intv = '';
 	 $stats_patronyme = new StatsPatronyme($this->connexionBD,$pi_idf_commune_acte,$pi_idf_source);
@@ -919,7 +920,7 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
         else
            $o_pers -> setSexe($a_sexe_personne[$i]);
 		 $st_patronyme = $o_pers ->getPatronyme();
-		 $stats_patronyme->maj_patro($st_patronyme,$this -> st_type_acte,$this -> i_annee );
+		 $stats_patronyme->ajoute_patronyme($st_patronyme);
          $a_liste_personnes[$i] = $o_pers;
          $i++;
          } 
@@ -939,8 +940,7 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
 		$a_liste_personnes[0]->sauveCommunePersonne();
 		$a_liste_personnes[0]->sauveProfession();
 		$a_liste_personnes[0]->sauvePrenom();
-		$stats_patronyme->sauve();
-		
+		$stats_patronyme->maj_stats_patronymes_ajoutes($pi_idf_commune_acte,$pi_idf_source,$i_idf_type_acte);
     }
 	// sauvegarde des personnes
     foreach ($a_liste_personnes as $o_pers)
