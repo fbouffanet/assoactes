@@ -940,7 +940,7 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
 		$a_liste_personnes[0]->sauveCommunePersonne();
 		$a_liste_personnes[0]->sauveProfession();
 		$a_liste_personnes[0]->sauvePrenom();
-		$stats_patronyme->maj_stats_patronymes_ajoutes($pi_idf_commune_acte,$pi_idf_source,$i_idf_type_acte);
+		
     }
 	// sauvegarde des personnes
     foreach ($a_liste_personnes as $o_pers)
@@ -965,8 +965,11 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
                  } 
             } 
         }
+		if (count($a_liste_personnes)>0)
+			$stats_patronyme->maj_stats_patronymes_ajoutes($pi_idf_commune_acte,$pi_idf_source,$i_idf_type_acte);
         $this->connexionBD->initialise_params($a_params_precs);		
-    } 
+	}
+    	
 
 /**
  * Renvoie l'entête de l'acte au format Nimègue V3

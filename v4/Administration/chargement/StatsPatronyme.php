@@ -212,41 +212,12 @@ class StatsPatronyme {
 	   }
 	   $this->patronyme->sauve();
 	   foreach ($this->a_patronymes_a_ajouter as $st_patronyme)
-	   {            
-			$st_requete = "select idf from patronyme where libelle=:patronyme";
-			$this->connexionBD->initialise_params(array(':patronyme'=>$st_patronyme));
-			$i_nouveau_patronyme = $this->connexionBD->sql_select1($st_requete);
-			print("$st_patronyme => $i_nouveau_patronyme<br>");
-	   }
-	   
-	   foreach ($this->a_patronymes_a_ajouter as $st_patronyme)
-	   {         		  	   
-		   $st_requete = "select pat.idf,:idf_commune,:idf_type_acte,:idf_source,min(a.annee),max(a.annee),count(p.patronyme) from acte a join personne p on (p.idf_acte=a.idf),patronyme pat where a.idf_commune=:idf_commune2 and a.idf_type_acte=:idf_type_acte2 and a.idf_source=:idf_source2 and p.patronyme=pat.libelle and a.annee!=0 and a.annee!=9999 and p.patronyme=:patronyme group by p.patronyme,a.idf_commune,a.idf_type_acte,a.idf_source";
-		   $a_params = array(':idf_commune'=>$pi_idf_commune,':idf_commune2'=>$pi_idf_commune,':idf_source'=>$pi_idf_source,':idf_source2'=>$pi_idf_source,':idf_type_acte'=>$pi_idf_type_acte,':idf_type_acte2'=>$pi_idf_type_acte,':patronyme'=>$st_patronyme);
-		   $this->connexionBD->initialise_params($a_params);
-		   print("Req=$st_requete<br>");
-		   print('<pre>');
-		   print_r($a_params);
-		   print('</pre>');
-		   $this->connexionBD->initialise_params($a_params);
-		   $a_resultats =$this->connexionBD->sql_select_multiple($st_requete);
-		   print('Resultats:<pre>');
-		   print_r($a_resultats);
-		   print('</pre>'); 
-	   }
-	   foreach ($this->a_patronymes_a_ajouter as $st_patronyme)
 	   {         		  	   
 		   $st_requete = "insert into `stats_patronyme`(idf_patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes) select pat.idf,:idf_commune,:idf_type_acte,:idf_source,min(a.annee),max(a.annee),count(p.patronyme) from acte a join personne p on (p.idf_acte=a.idf),patronyme pat where a.idf_commune=:idf_commune2 and a.idf_type_acte=:idf_type_acte2 and a.idf_source=:idf_source2 and p.patronyme=pat.libelle and a.annee!=0 and a.annee!=9999 and p.patronyme=:patronyme group by p.patronyme,a.idf_commune,a.idf_type_acte,a.idf_source";
 		   $a_params = array(':idf_commune'=>$pi_idf_commune,':idf_commune2'=>$pi_idf_commune,':idf_source'=>$pi_idf_source,':idf_source2'=>$pi_idf_source,':idf_type_acte'=>$pi_idf_type_acte,':idf_type_acte2'=>$pi_idf_type_acte,':patronyme'=>$st_patronyme);
-		   print("Req=$st_requete<br>");
-		   print('<pre>');
-		   print_r($a_params);
-		   print('</pre>');
 		   $this->connexionBD->initialise_params($a_params);
 		   $this->connexionBD->execute_requete($st_requete);
 		   $i_nb_lignes_modifiees=$this->connexionBD->nb_lignes_affectees();
-		   print("Lignes modifiées $i_nb_lignes_modifiees<br>");
-		   
 	   }
 	   $this->connexionBD->initialise_params($a_params_precs);
    }
