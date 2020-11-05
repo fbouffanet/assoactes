@@ -185,7 +185,7 @@ class StatsPatronyme {
    */
    public function ajoute_patronyme($pst_patronyme)
    {
-	 if (!in_array($pst_patronyme,$this->a_patroynmes_a_ajouter))
+	 if (!in_array($pst_patronyme,$this->a_patronymes_a_ajouter))
      {
 		 $this->a_patronymes_a_ajouter[]=$pst_patronyme;
      }		 
@@ -212,8 +212,7 @@ class StatsPatronyme {
 	   }
 	   $this->patronyme->sauve();   
 	   foreach ($this->a_patronymes_a_ajouter as $st_patronyme)
-	   {         
-		  	   
+	   {         		  	   
 		   $st_requete = "insert into `stats_patronyme`(idf_patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes) select pat.idf,:idf_commune,:idf_type_acte,:idf_source,min(a.annee),max(a.annee),count(p.patronyme) from acte a join personne p on (p.idf_acte=a.idf),patronyme pat where a.idf_commune=:idf_commune2 and a.idf_type_acte=:idf_type_acte2 and a.idf_source=:idf_source2 and p.patronyme=pat.libelle and a.annee!=0 and a.annee!=9999 and p.patronyme=:patronyme group by p.patronyme,a.idf_commune,a.idf_type_acte,a.idf_source";
 		   $a_params = array(':idf_commune'=>$pi_idf_commune,':idf_commune2'=>$pi_idf_commune,':idf_source'=>$pi_idf_source,':idf_source2'=>$pi_idf_source,':idf_type_acte'=>$pi_idf_type_acte,':idf_type_acte2'=>$pi_idf_type_acte,':patronyme'=>$st_patronyme);
 		   print("Req=$st_requete<br>");
