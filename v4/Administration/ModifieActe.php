@@ -220,9 +220,12 @@ else
         $go_acte->initialise_depuis_formulaire($gi_idf_acte);
         $st_requete = "LOCK TABLES `personne` write, `patronyme` as pat read, `patronyme` write, `prenom` write  ,`acte` write, `profession` write, `commune_personne` write, `union` write,`stats_patronyme` as sp read,`stats_patronyme` write,`stats_commune` write,`acte` as a read,`personne` as p read, `type_acte` read, `type_acte` as ta read,`prenom_simple` write, `groupe_prenoms` write";
         $connexionBD->execute_requete($st_requete);
+		$etape_prec = getmicrotime();
         $go_acte->maj_liste_personnes($go_acte->getIdfSource(),$go_acte->getIdfCommune(),$unions);
+		print benchmark("Mise à jour des personnes et statistiques de patronyme");
 		$go_acte->sauve();
         $stats_commune->maj_stats($go_acte->getIdfTypeActe());
+		print benchmark("Mise &agrave jour des statistiques des communes");
         $connexionBD->execute_requete("UNLOCK TABLES");
         print("<div class=\"text-center\"><textarea rows=40 cols=80>\n");
         print($go_acte->versChaine());
@@ -241,13 +244,13 @@ else
 		$etape_prec = getmicrotime();
         $connexionBD->execute_requete($st_requete);
 		$go_acte->supprime_personnes();
-		print benchmark("Suppression des personnes");
+		print benchmark("Suppression des personnes et mise à jour des statistiques de patronyme");
         $connexionBD->execute_requete("DELETE FROM `acte`where idf=$gi_idf_acte");
 		print benchmark("Suppression de l'acte");
         $stats_commune->maj_stats($go_acte->getIdfTypeActe());
 		print benchmark("Mise &agrave jour des statistiques des communes");
         $connexionBD->execute_requete("UNLOCK TABLES");
-        print("<div class=\"alert alert-success\">Acte supprim&eacute;</div>");
+        print("<div class=\"alert alert-success text-center\">Acte supprim&eacute;</div>");
       break;
     }  
   }
