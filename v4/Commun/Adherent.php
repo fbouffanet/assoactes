@@ -299,7 +299,7 @@ class Adherent
       $this->st_email_perso = isset($_POST['email_perso']) ? substr(trim($_POST['email_perso']),0,60): '';
       $this->st_email_forum = isset($_POST['email_forum']) ? substr(trim($_POST['email_forum']),0,60): '';
       $this->st_site = substr(trim($_POST['site_adht']),0,80);
-      $confidentiel=isset($_POST['confidentiel']) ? trim($_POST['confidentiel']) : 'O';      
+      $confidentiel=isset($_POST['confidentiel']) ? trim($_POST['confidentiel']) : 'N';      
       $this->b_confidentiel= ($confidentiel=='O')? true: false;
       if (isset($_POST['statut_adherent'])) $this->st_statut=$_POST['statut_adherent']; 
       $this->st_ident = isset($_POST['ident_adh']) ? substr(trim($_POST['ident_adh']),0,12):'';

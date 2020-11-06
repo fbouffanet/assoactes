@@ -612,16 +612,12 @@ public function accepte ($pi_idf_valideur, $pst_prenom_valideur, $pst_nom_valide
      $go_acte = new Acte($this -> connexionBD, null, null, null, null, null, null);
      $go_acte -> charge($this -> i_idf_acte);
      $go_acte -> initialise_depuis_formulaire($this -> i_idf_acte);
-	 $patronyme = Patronyme :: singleton($this -> connexionBD);
-     $stats_patronyme = new StatsPatronyme($this -> connexionBD, $go_acte -> getIdfCommune(), $go_acte -> getIdfSource());
      $stats_commune = new StatsCommune($this -> connexionBD, $go_acte -> getIdfCommune(), $go_acte -> getIdfSource());
      $unions = Union :: singleton($this -> connexionBD);
-     $st_requete = "LOCK TABLES `personne` write , `patronyme` write , `patronyme` as pat write ,`prenom` write ,`acte` write, `profession` write, `commune_personne` write, `union` write, `stats_patronyme` write,`stats_commune` write,`acte` as a read,`personne` as p read, `type_acte` read, `type_acte` as ta read,`prenom_simple` write, `groupe_prenoms` write";
+     $st_requete = "LOCK TABLES `personne` write , `patronyme` write , `patronyme` as pat read ,`prenom` write ,`acte` write, `profession` write, `commune_personne` write, `union` write, `stats_patronyme` as sp read,`stats_patronyme` write,`stats_commune` write,`acte` as a read,`personne` as p read, `type_acte` read, `type_acte` as ta read,`prenom_simple` write, `groupe_prenoms` write";
      $this -> connexionBD -> execute_requete($st_requete);
      $go_acte -> maj_liste_personnes($go_acte -> getIdfSource(), $go_acte -> getIdfCommune(), $unions);
      $go_acte -> sauve();
-	 $patronyme -> sauve();
-     $stats_patronyme -> maj_stats($go_acte -> getIdfTypeActe(),$this -> i_idf_acte);
      $stats_commune -> maj_stats($go_acte -> getIdfTypeActe());
      $this -> connexionBD -> execute_requete("UNLOCK TABLES");
      print("<div class=\"alert alert-success\">Modification effectu&eacute;e</div>\n");
