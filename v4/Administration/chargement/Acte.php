@@ -883,6 +883,7 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
 
 
 {
+	 $a_params_precs=$this->connexionBD->params();
      $i_idf_type_acte = $this -> typeActe -> vers_idf($this -> st_type_acte);
      $a_grille_personnes = array_key_exists($i_idf_type_acte, $this -> ga_grille_saisie) ? $this -> ga_grille_saisie[$i_idf_type_acte]: $this -> ga_grille_saisie[IDF_MARIAGE] ;
      $a_sexe_personne = array_key_exists($i_idf_type_acte, $this -> ga_sexe_personne) ? $this -> ga_sexe_personne[$i_idf_type_acte]: $this -> ga_sexe_personne[IDF_MARIAGE] ;
@@ -890,10 +891,10 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
      $i = 0;
      $a_liste_personnes = array();
      // suppression des précédentes personnes et unions
-    $this -> connexionBD -> execute_requete("DELETE FROM `personne` where idf_acte=" . $this -> i_idf);
-     $this -> connexionBD -> execute_requete("DELETE FROM `union` where idf_acte=" . $this -> i_idf);
+	 $this->supprime_personnes();
      // création des personnes
     $c_sexe_intv = '';
+	 $stats_patronyme = new StatsPatronyme($this->connexionBD,$pi_idf_commune_acte,$pi_idf_source);
      foreach ($a_grille_personnes as $i_idf_type_presence)
      {
         $o_pers = new Personne($this -> connexionBD, $this -> i_idf, $i_idf_type_presence, $a_sexe_personne[$i], null, null);
@@ -917,7 +918,9 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
                  } 
             } 
         else
-             $o_pers -> setSexe($a_sexe_personne[$i]);
+           $o_pers -> setSexe($a_sexe_personne[$i]);
+		 $st_patronyme = $o_pers ->getPatronyme();
+		 $stats_patronyme->ajoute_patronyme($st_patronyme);
          $a_liste_personnes[$i] = $o_pers;
          $i++;
          } 
@@ -937,6 +940,7 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
 		$a_liste_personnes[0]->sauveCommunePersonne();
 		$a_liste_personnes[0]->sauveProfession();
 		$a_liste_personnes[0]->sauvePrenom();
+		
     }
 	// sauvegarde des personnes
     foreach ($a_liste_personnes as $o_pers)
@@ -960,8 +964,12 @@ public function maj_liste_personnes($pi_idf_source, $pi_idf_commune_acte, $punio
                 $punion -> cree($this -> i_idf_source, $this -> i_idf_commune, $this -> i_idf, $this -> i_idf_type_acte, $a_liste_personnes[$i_idf_cjte] -> getIdf(), $a_liste_personnes[$i_idf_cjte] -> getPatronyme(), $a_liste_personnes[$i_idf_cjt] -> getIdf(), $a_liste_personnes[$i_idf_cjt] -> getPatronyme());
                  } 
             } 
-        } 
-    } 
+        }
+		if (count($a_liste_personnes)>0)
+			$stats_patronyme->maj_stats_patronymes_ajoutes($pi_idf_commune_acte,$pi_idf_source,$i_idf_type_acte);
+        $this->connexionBD->initialise_params($a_params_precs);		
+	}
+    	
 
 /**
  * Renvoie l'entête de l'acte au format Nimègue V3
@@ -1084,6 +1092,7 @@ public function charge_variables_sessions()
          } 
     } 
 
+
 /**
  * Supprimer les variables de session
  */
@@ -1108,5 +1117,24 @@ public function detruit_variables_sessions()
         $o_pers -> detruit_variables_sessions();
          } 
     } 
-} 
+
+/**
+* Supprimer les personnes de l'acte et met à jour la table des statistiques de patronyme
+*/
+public function supprime_personnes()
+{
+	$a_params_precs=$this->connexionBD->params();
+	$a_patronymes_a_supprimer = $this -> connexionBD ->liste_valeur_par_clef("select pat.idf,patronyme from personne p join patronyme pat on (p.patronyme=pat.libelle) where idf_acte=" . $this -> i_idf);
+	$stats_patronyme = new StatsPatronyme($this -> connexionBD ,$this -> i_idf_commune,$this -> i_idf_source);
+	foreach ($a_patronymes_a_supprimer as $i_idf_patronyme => $st_patronyme)
+	{
+		$stats_patronyme->enleve_patronyme($i_idf_patronyme,$st_patronyme);
+	}
+	$st_requete = "DELETE FROM `union` where idf_acte=" . $this -> i_idf;
+    $this -> connexionBD -> execute_requete($st_requete);
+	$st_requete = "DELETE FROM `personne` where idf_acte=" . $this -> i_idf;
+    $this -> connexionBD -> execute_requete($st_requete);	
+	$stats_patronyme->maj_stats_patronymes_supprimes($this -> i_idf_commune ,$this -> i_idf_source,$this -> i_idf_type_acte);
+}
+}
 ?>
