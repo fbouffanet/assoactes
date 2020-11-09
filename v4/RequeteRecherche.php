@@ -41,30 +41,41 @@ class RequeteRecherche {
       } 
       else
       {
-        $a_params_precedents=$this->connexionBD->params();
-        $this->connexionBD->initialise_params(array(":patro"=>$pst_patronyme));
-        $st_requete = "select vp1.patronyme from variantes_patro vp1, variantes_patro vp2 where vp2.patronyme = :patro COLLATE latin1_general_ci and vp1.idf_groupe=vp2.idf_groupe";
-        $a_variantes=$this->connexionBD->sql_select($st_requete);
-        $this->a_variantes_trouvees = $a_variantes;
-        $this->connexionBD->initialise_params($a_params_precedents);
-        if (count($a_variantes)==0)
-        {
-           $st_clause = "=:patro$pi_num_param";
-           $this->connexionBD->ajoute_params(array(":patro$pi_num_param"=>$pst_patronyme));
-        }
-        else
-        {
-           $i=0;
-           $a_params_variantes= array();
-           foreach($a_variantes as $st_variante)
-           {
-             $this->connexionBD->ajoute_params(array(":variante$pi_num_param$i"=>$st_variante));
-             $a_params_variantes[]=":variante$pi_num_param$i";
-             $i++; 
-           }
-           $st_variantes=join(',',$a_params_variantes);
-           $st_clause = "in ($st_variantes) ";
-        }
+		$a_params_precedents=$this->connexionBD->params();  
+		if ($pst_variantes=='oui')
+		{
+          $this->connexionBD->initialise_params(array(":patro"=>$pst_patronyme));
+          $st_requete = "select vp1.patronyme from variantes_patro vp1, variantes_patro vp2 where vp2.patronyme = :patro COLLATE latin1_general_ci and vp1.idf_groupe=vp2.idf_groupe";
+          $a_variantes=$this->connexionBD->sql_select($st_requete);
+          $this->a_variantes_trouvees = $a_variantes;   
+		}
+		else
+		{
+		  // variantes phonetiques
+		  $this->connexionBD->initialise_params(array(":patro"=>$pst_patronyme));
+          $st_requete = "select p2.libelle from `patronyme` p1 join `patronyme` p2 on (truncate(p1.phonex,7)=truncate(p2.phonex,7)) where p1.libelle=:patro COLLATE latin1_general_ci ";
+          $a_variantes=$this->connexionBD->sql_select($st_requete);
+          $this->a_variantes_trouvees = $a_variantes;
+		}
+		$this->connexionBD->initialise_params($a_params_precedents);
+          if (count($a_variantes)==0)
+          {
+            $st_clause = "=:patro$pi_num_param";
+            $this->connexionBD->ajoute_params(array(":patro$pi_num_param"=>$pst_patronyme));
+          }
+          else
+          {
+            $i=0;
+            $a_params_variantes= array();
+            foreach($a_variantes as $st_variante)
+            {
+              $this->connexionBD->ajoute_params(array(":variante$pi_num_param$i"=>$st_variante));
+              $a_params_variantes[]=":variante$pi_num_param$i";
+              $i++; 
+            }
+            $st_variantes=join(',',$a_params_variantes);
+            $st_clause = "in ($st_variantes) ";
+          }
       }
       return $st_clause;
    }
