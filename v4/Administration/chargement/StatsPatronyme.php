@@ -13,7 +13,8 @@ class StatsPatronyme {
   protected $a_stat;
   protected $type_acte;
   protected $a_type_acte;
-  protected $a_patroynmes_a_supprimer;
+  protected $a_patronymes_a_supprimer;
+  protected $a_patronymes_a_ajouter;
   
   public function __construct($pconnexionBD,$pi_idf_commune,$pi_idf_source) {
        $this->connexionBD = $pconnexionBD;
@@ -22,7 +23,8 @@ class StatsPatronyme {
        $this->patronyme = Patronyme::singleton($pconnexionBD);
 	   $this->type_acte = TypeActe::singleton($pconnexionBD);
        $this->a_type_acte = array();
-	   $this->a_patroynmes_a_supprimer=array();
+	   $this->a_patronymes_a_supprimer=array();
+	   $this->a_patronymes_a_ajouter=array();
 	   $st_requete = "select pat.libelle,ta.nom,annee_min,annee_max,nb_personnes from `stats_patronyme` sp join `patronyme` pat on (sp.idf_patronyme=pat.idf) join `type_acte` as ta on (sp.idf_type_acte=ta.idf) where sp.idf_commune=$pi_idf_commune and sp.idf_source=$pi_idf_source";
        $this->a_stat=$this->connexionBD->liste_valeur_par_doubles_clefs($st_requete);
 	   
@@ -142,32 +144,6 @@ class StatsPatronyme {
       return $this->a_type_acte;
    }
    
-	/**
-	Met à jour les statistiques des patronymes suite à une modification
-	@param integer $pi_idf_type_acte identifiant du type d'acte
-	@param integer $pi_idf_acte identifiant de l'acte modifié
-	*/
-	function maj_stats($pi_idf_type_acte,$pi_idf_acte=null) {
-		$st_requete = sprintf("delete from `stats_patronyme` where idf_commune=%d and idf_type_acte=%d and idf_source=%d",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source);
-		$this->connexionBD->execute_requete($st_requete);
-		// Création des éventuels nouveaux patronymes
-		if (!empty($pi_idf_acte))
-		{	  
-			$st_requete = sprintf("select p.patronyme from personne p where p.idf_acte=%d and p.patronyme not in (select libelle from patronyme)",$pi_idf_acte);
-			$a_nouveaux_patronymes = $this->connexionBD->sql_select($st_requete);
-			if (count($a_nouveaux_patronymes)>0)
-			{
-				foreach($a_nouveaux_patronymes as $st_patronyme)
-				{
-					$this->patronyme->ajoute($st_patronyme);			  
-				}
-				$this->patronyme->sauve();
-			}
-		}	
-		$st_requete = sprintf("insert into `stats_patronyme` (idf_patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes) select pat.idf,%d,%d,%d,min(a.annee),max(a.annee),count(p.patronyme) from personne p join patronyme pat on (p.patronyme=pat.libelle) join acte a on (p.idf_acte=a.idf) where a.idf_commune=%d and a.idf_type_acte=%d and a.idf_source=%d and a.annee!=0 and a.annee!=9999 group by p.patronyme,a.idf_commune,a.idf_type_acte,a.idf_source",$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source,$this->i_idf_commune,$pi_idf_type_acte,$this->i_idf_source);
-		$this->connexionBD->execute_requete($st_requete);   
-   }
-   
    /**
    * enleve le patronyme de la liste des patronymes
    * @param string $pi_idf_patronyme identifiant du patronyme à enlever
@@ -175,9 +151,9 @@ class StatsPatronyme {
    */
    public function enleve_patronyme($pi_idf_patronyme,$pst_patronyme)
    {
-	 if (!array_key_exists($pi_idf_patronyme,$this->a_patroynmes_a_supprimer))
+	 if (!array_key_exists($pi_idf_patronyme,$this->a_patronymes_a_supprimer))
      {
-		 $this->a_patroynmes_a_supprimer[$pi_idf_patronyme]=$pst_patronyme;
+		 $this->a_patronymes_a_supprimer[$pi_idf_patronyme]=$pst_patronyme;
      }		 
    }
    
@@ -190,7 +166,7 @@ class StatsPatronyme {
    public function maj_stats_patronymes_supprimes($pi_idf_commune,$pi_idf_source,$pi_idf_type_acte)
    {
 	   $a_params_precs=$this->connexionBD->params();
-	   foreach ($this->a_patroynmes_a_supprimer as $i_idf_patronyme => $st_patronyme)
+	   foreach ($this->a_patronymes_a_supprimer as $i_idf_patronyme => $st_patronyme)
 	   {
 		   $st_requete = "delete from `stats_patronyme` where idf_commune=:idf_commune and idf_source=:idf_source and idf_type_acte=:idf_type_acte and idf_patronyme=:idf_patronyme";
 		   $a_params = array(':idf_commune'=>$pi_idf_commune,':idf_source'=>$pi_idf_source,':idf_type_acte'=>$pi_idf_type_acte,':idf_patronyme'=>$i_idf_patronyme);
@@ -202,6 +178,49 @@ class StatsPatronyme {
 	   }
 	   $this->connexionBD->initialise_params($a_params_precs);
    }
-      
+    
+    /**
+   * ajoute le patronyme à la liste des patronymes à ajouter
+   * @param string $pst_patronyme patronyme à enlever
+   */
+   public function ajoute_patronyme($pst_patronyme)
+   {
+	 if (!in_array($pst_patronyme,$this->a_patronymes_a_ajouter))
+     {
+		 $this->a_patronymes_a_ajouter[]=$pst_patronyme;
+     }		 
+   }
+   
+   /**
+   * Met à jour les statistiques des paronymes ajoutés pour la commune, la source et le type d'acte spécifiés
+   * @param integer $pi_idf_commune identifiant de la commune
+   * @param integer $pi_idf_source identifiant de la source
+   * @param integer $pi_idf_type_acte identifiant du type d'acte
+   */
+   public function maj_stats_patronymes_ajoutes($pi_idf_commune,$pi_idf_source,$pi_idf_type_acte)
+   {
+	   $a_params_precs=$this->connexionBD->params();
+	   foreach ($this->a_patronymes_a_ajouter as $st_patronyme)
+	   {            
+			$st_requete = "select count(*) from patronyme where libelle=:patronyme";
+			$this->connexionBD->initialise_params(array(':patronyme'=>$st_patronyme));
+			$i_nouveau_patronyme = $this->connexionBD->sql_select1($st_requete);
+			if ($i_nouveau_patronyme==0)
+			{
+					$this->patronyme->ajoute($st_patronyme);
+			}
+	   }
+	   $this->patronyme->sauve();
+	   foreach ($this->a_patronymes_a_ajouter as $st_patronyme)
+	   {         		  	   
+		   $st_requete = "insert into `stats_patronyme`(idf_patronyme,idf_commune,idf_type_acte,idf_source,annee_min,annee_max,nb_personnes) select pat.idf,:idf_commune,:idf_type_acte,:idf_source,min(a.annee),max(a.annee),count(p.patronyme) from acte a join personne p on (p.idf_acte=a.idf),patronyme pat where a.idf_commune=:idf_commune2 and a.idf_type_acte=:idf_type_acte2 and a.idf_source=:idf_source2 and p.patronyme=pat.libelle and a.annee!=0 and a.annee!=9999 and p.patronyme=:patronyme group by p.patronyme,a.idf_commune,a.idf_type_acte,a.idf_source";
+		   $a_params = array(':idf_commune'=>$pi_idf_commune,':idf_commune2'=>$pi_idf_commune,':idf_source'=>$pi_idf_source,':idf_source2'=>$pi_idf_source,':idf_type_acte'=>$pi_idf_type_acte,':idf_type_acte2'=>$pi_idf_type_acte,':patronyme'=>$st_patronyme);
+		   $this->connexionBD->initialise_params($a_params);
+		   $this->connexionBD->execute_requete($st_requete);
+		   $i_nb_lignes_modifiees=$this->connexionBD->nb_lignes_affectees();
+	   }
+	   $this->connexionBD->initialise_params($a_params_precs);
+   }
+   
 }
 ?>
