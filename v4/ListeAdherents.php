@@ -832,7 +832,7 @@ function exporte_adresses_publipostage($pconnexionBD)
 		header("Content-Type: text/csv");
 		header('Content-disposition: attachment; filename="ListeBulletin'.SIGLE_ASSO.'.csv"');
 		$fichier = fopen('PHP://output', 'w');
-		fputcsv($fichier, array('Adhérent','N°','Email','Adresse1','Adresse2','CP','Ville','Pays'),SEP_CSV);     
+		fputcsv($fichier, array('AdhÃ©rent','NÂ°','Email','Adresse1','Adresse2','CP','Ville','Pays'),SEP_CSV);     
 		foreach ($a_liste_adherents as $a_ligne)
 		{
 			fputcsv($fichier,$a_ligne,SEP_CSV);

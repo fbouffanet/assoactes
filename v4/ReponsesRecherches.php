@@ -268,7 +268,7 @@ switch($gst_type_recherche)
     $_SESSION['idf_commune_recherche']    = $gi_idf_commune;
     $_SESSION['rayon']                    = $gi_rayon;
     $_SESSION['paroisses_rattachees']     = $gst_paroisses_rattachees;
-    $_SESSION['idf_type_acte_recherche']  = $gi_idf_type_acte;
+    $_SESSION['idf_type_acte_recherche']  = $gi_idf_type_acte; 
     $_SESSION['annee_min']                = $gi_annee_min;
     $_SESSION['annee_max']                = $gi_annee_max;
     $_SESSION['nom_epx']                  = $gst_nom_epx;
