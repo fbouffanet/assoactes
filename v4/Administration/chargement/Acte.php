@@ -839,7 +839,7 @@ public function affichage_image_permalien($pi_hauteur = 800, $pi_largeur = 800)
 
 
 {
-     $st_caveat = "<div class=\"text-center\" >Si un message indiquant qu'une  licence est én&eacute;cessaire, merci de l'accepter en cliquant sur \"J'ai pris connaissance des informations ci-dessus et j'accepte les conditions\" et rafra&icirc;chir la page en appuyant sur la touche F5 du clavier</div>";
+     $st_caveat = "<div class=\"text-center\" >Si un message indiquant qu'une  licence est n&eacute;cessaire, merci de l'accepter en cliquant sur \"J'ai pris connaissance des informations ci-dessus et j'accepte les conditions\" et rafra&icirc;chir la page en appuyant sur la touche F5 du clavier</div>";
      if (!empty($this -> st_url))
          {
         $st_chaine = '<div class="text-center">';
