@@ -89,21 +89,6 @@ $gst_sans_notaire					= empty($_POST['sans_notaire']) ? $st_session_sans_notaire
 $gst_sans_periode					= empty($_POST['sans_periode']) ? $st_session_sans_periode : trim($_POST['sans_periode']);
 $gst_liasse_releve					= empty($_POST['liasse_releve']) ? $st_session_liasse_releve : trim($_POST['liasse_releve']);
 
-if (get_magic_quotes_gpc()) {
-	if (ini_get('magic_quotes_sybase'))  {
-		$gst_nom        = empty($_POST['nom_notaire'])? $st_session_nom_notaire :str_replace("''", "'", substr(trim($_POST['nom_notaire']),0,30));
-		$gst_prenom     = empty($_POST['prenom_notaire'])? $st_session_prenom_notaire :str_replace("''", "'", substr(trim($_POST['prenom_notaire']),0,20));
-	} 
-	else {
-		$gst_nom        = empty($_POST['nom_notaire'])? $st_session_nom_notaire : stripslashes(substr(trim($_POST['nom_notaire']),0,30));
-		$gst_prenom     = empty($_POST['prenom_notaire'])? $st_session_prenom_notaire :stripslashes(substr(trim($_POST['prenom_notaire']),0,20));
-	}
-}
-else {
-	$gst_nom        = empty($_POST['nom_notaire'])? $st_session_nom_notaire :substr(trim($_POST['nom_notaire']),0,30);
-	$gst_prenom     = empty($_POST['prenom_notaire'])? $st_session_prenom_notaire :substr(trim($_POST['prenom_notaire']),0,20);
-}
-
 $gi_get_num_page = empty($_GET['num_page']) ? 1 : (int) $_GET['num_page'];
 $gi_num_page = empty($_POST['num_page']) ? $gi_get_num_page : (int) $_POST['num_page'];
 

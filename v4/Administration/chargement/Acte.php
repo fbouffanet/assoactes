@@ -526,36 +526,12 @@ class Acte {
     
     {
          $this -> i_idf = $pi_idf_acte;
-         if (get_magic_quotes_gpc())
-             {
-            if (ini_get('magic_quotes_sybase'))
-                 {
-                $this -> st_date = isset($_POST["date"])?substr(trim($_POST["date"]), 0, 10):'';
-                 $this -> st_date_rep = isset($_POST["date_rep"])?substr(trim($_POST["date_rep"]), 0, 25):'';
-                 $this -> st_cote = isset($_POST["cote"])?substr(trim($_POST["cote"]), 0, 40):'';
-                 $this -> st_libre = isset($_POST["libre"])?substr(trim($_POST["libre"]), 0, 50):'';
-                 $this -> st_commentaires = isset($_POST["cmt_acte"])?substr(trim($_POST["cmt_acte"]), 0, 1200):'';
-                 $this -> st_url = isset($_POST["permalien"])?substr(trim($_POST["permalien"]), 0, 100):'';
-                 } 
-            else
-                 {
-                $this -> st_date = isset($_POST["date"])?stripslashes(substr(trim($_POST["date"]), 0, 10)):'';
-                 $this -> st_date_rep = isset($_POST["date_rep"])?stripslashes(substr(trim($_POST["date_rep"]), 0, 25)):'';
-                 $this -> st_cote = isset($_POST["cote"])?stripslashes(substr(trim($_POST["cote"]), 0, 40)):'';
-                 $this -> st_libre = isset($_POST["libre"])?stripslashes(substr(trim($_POST["libre"]), 0, 50)):'';
-                 $this -> st_commentaires = isset($_POST["cmt_acte"])?stripslashes(substr(trim($_POST["cmt_acte"])), 0, 1200):'';
-                 $this -> st_url = isset($_POST["permalien"])?stripslashes(substr(trim($_POST["permalien"]), 0, 100)):'';
-                 } 
-            } 
-        else
-             {
-            $this -> st_date = isset($_POST["date"])?substr(trim($_POST["date"]), 0, 10):'';
-             $this -> st_date_rep = isset($_POST["date_rep"])?substr(trim($_POST["date_rep"]), 0, 25):'';
-             $this -> st_cote = isset($_POST["cote"])?substr(trim($_POST["cote"]), 0, 40):'';
-             $this -> st_libre = isset($_POST["libre"])?substr(trim($_POST["libre"]), 0, 50):'';
-             $this -> st_commentaires = isset($_POST["cmt_acte"])?substr(trim($_POST["cmt_acte"]), 0, 1200):'';
-             $this -> st_url = isset($_POST["permalien"])?substr(trim($_POST["permalien"]), 0, 100):'';
-             }
+        $this -> st_date = isset($_POST["date"])?substr(trim($_POST["date"]), 0, 10):'';
+        $this -> st_date_rep = isset($_POST["date_rep"])?substr(trim($_POST["date_rep"]), 0, 25):'';
+        $this -> st_cote = isset($_POST["cote"])?substr(trim($_POST["cote"]), 0, 40):'';
+        $this -> st_libre = isset($_POST["libre"])?substr(trim($_POST["libre"]), 0, 50):'';
+        $this -> st_commentaires = isset($_POST["cmt_acte"])?substr(trim($_POST["cmt_acte"]), 0, 1200):'';
+        $this -> st_url = isset($_POST["permalien"])?substr(trim($_POST["permalien"]), 0, 100):'';
         $this -> st_cote =self::utf8_vers_cp1252($this -> st_cote);
         $this -> st_libre =self::utf8_vers_cp1252($this -> st_libre);
         $this -> st_commentaires =self::utf8_vers_cp1252($this -> st_commentaires);			

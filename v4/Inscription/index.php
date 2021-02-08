@@ -136,13 +136,7 @@ print('<body>');
 print('<div class="container">');
 
 $gst_mode = empty($_POST['mode']) ? 'GRILLE': $_POST['mode'] ;
-if (get_magic_quotes_gpc())
-  if (ini_get('magic_quotes_sybase'))
-    $st_erreur = isset( $_GET['erreur']) ? $_GET['erreur'] : '';
-  else
-     $st_erreur = isset( $_GET['erreur']) ? stripslashes($_GET['erreur']) : '';
-else 
-    $st_erreur = isset( $_GET['erreur']) ? $_GET['erreur'] : ''; 
+$st_erreur = isset( $_GET['erreur']) ? $_GET['erreur'] : ''; 
 
 if ($st_erreur!="")
 {

@@ -320,26 +320,9 @@ public function initialise_depuis_formulaire($pi_idf_acte)
 
 
 {
-     parent :: initialise_depuis_formulaire($pi_idf_acte);
-     if (get_magic_quotes_gpc())
-         {
-        if (ini_get('magic_quotes_sybase'))
-             {
-            $this -> st_email_demandeur = isset($_POST["email_demandeur"])?substr(trim($_POST["email_demandeur"]), 0, 60):'';
-             $this -> st_cmt_modif = isset($_POST["cmt_modif"])?trim($_POST["cmt_modif"]):'';
-             } 
-        else
-             {
-            $this -> st_email_demandeur = isset($_POST["email_demandeur"])?stripslashes(substr(trim($_POST["email_demandeur"]), 0, 60)):'';
-             $this -> st_cmt_modif = isset($_POST["cmt_modif"])?stripslashes(trim($_POST["cmt_modif"])):'';
-             } 
-        } 
-    else
-         {
-        $this -> st_email_demandeur = isset($_POST["email_demandeur"])?substr(trim($_POST["email_demandeur"]), 0, 60):'';
-         $this -> st_cmt_modif = isset($_POST["cmt_modif"])?trim($_POST["cmt_modif"]):'';
-        
-         } 
+    parent :: initialise_depuis_formulaire($pi_idf_acte);
+    $this -> st_email_demandeur = isset($_POST["email_demandeur"])?substr(trim($_POST["email_demandeur"]), 0, 60):'';
+    $this -> st_cmt_modif = isset($_POST["cmt_modif"])?trim($_POST["cmt_modif"]):'';
 	$this -> st_cmt_modif =self::utf8_vers_cp1252($this -> st_cmt_modif);	 
     for ($i = 1;$i <= self :: $i_nb_photos;$i++)
      {

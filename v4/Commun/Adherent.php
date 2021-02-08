@@ -243,48 +243,16 @@ class Adherent
    public function initialise_depuis_formulaire()
    {
       $this->i_idf = isset($_POST['idf_adht']) ? (int) $_POST['idf_adht'] : 0;
-      if (get_magic_quotes_gpc())
-      {
-         if (ini_get('magic_quotes_sybase'))
-         {
-            $this->st_nom = substr(trim($_POST['nom']),0,40);
-            $this->st_prenom = substr(trim($_POST['prenom']),0,30);
-            $this->st_adresse1 = substr(trim($_POST['adresse1']),0,40);
-            $this->st_adresse2 = substr(trim($_POST['adresse2']),0,40);            
-            $this->st_code_postal = substr(trim($_POST['code_postal']),0,12);
-            $this->st_ville = substr(trim($_POST['ville']),0,40); 
-            $this->st_pays = substr(trim($_POST['pays']),0,40);   
-            $this->st_tel = substr(trim($_POST['tel']),0,15);            
-            $this->st_infos_agc = isset($_POST['infos_agc']) ? trim($_POST['infos_agc']) : '';
-            $this->st_origine = isset($_POST['description_origine']) ?   trim($_POST['description_origine']) : ''; 
-         }
-         else
-         {
-            $this->st_nom = stripslashes(substr(trim($_POST['nom']),0,40));
-            $this->st_prenom = stripslashes(substr(trim($_POST['prenom']),0,30));
-            $this->st_adresse1 = stripslashes(substr(trim($_POST['adresse1']),0,40));
-            $this->st_adresse2 = stripslashes(substr(trim($_POST['adresse2']),0,40));            
-            $this->st_code_postal = stripslashes(substr(trim($_POST['code_postal']),0,12));
-            $this->st_ville = stripslashes(substr(trim($_POST['ville']),0,40));    
-            $this->st_pays = stripslashes(substr(trim($_POST['pays']),0,40));
-            $this->st_tel = stripslashes(substr(trim($_POST['tel']),0,15));
-            $this->st_infos_agc = isset($_POST['infos_agc']) ? stripslashes(trim($_POST['infos_agc'])): '';
-            $this->st_origine = isset($_POST['description_origine']) ?   stripslashes(trim($_POST['description_origine'])) : '';  
-         }
-      }
-      else
-      { 
-         $this->st_nom = substr(trim($_POST['nom']),0,40);
-         $this->st_prenom = substr(trim($_POST['prenom']),0,30);
-         $this->st_adresse1 = substr(trim($_POST['adresse1']),0,40);
-         $this->st_adresse2 = substr(trim($_POST['adresse2']),0,40);            
-         $this->st_code_postal = substr(trim($_POST['code_postal']),0,12);
-         $this->st_ville = substr(trim($_POST['ville']),0,40); 
-         $this->st_pays = substr(trim($_POST['pays']),0,40);   
-         $this->st_tel = substr(trim($_POST['tel']),0,15);
-         $this->st_infos_agc = isset($_POST['infos_agc']) ?  trim($_POST['infos_agc']): '';
-         $this->st_origine = isset($_POST['description_origine']) ? trim($_POST['description_origine']) : '';    
-      }
+      $this->st_nom = substr(trim($_POST['nom']),0,40);
+      $this->st_prenom = substr(trim($_POST['prenom']),0,30);
+      $this->st_adresse1 = substr(trim($_POST['adresse1']),0,40);
+      $this->st_adresse2 = substr(trim($_POST['adresse2']),0,40);            
+      $this->st_code_postal = substr(trim($_POST['code_postal']),0,12);
+      $this->st_ville = substr(trim($_POST['ville']),0,40); 
+      $this->st_pays = substr(trim($_POST['pays']),0,40);   
+      $this->st_tel = substr(trim($_POST['tel']),0,15);
+      $this->st_infos_agc = isset($_POST['infos_agc']) ?  trim($_POST['infos_agc']): '';
+      $this->st_origine = isset($_POST['description_origine']) ? trim($_POST['description_origine']) : '';    
 	  $this -> st_nom =self::utf8_vers_cp1252($this -> st_nom);
 	  $this -> st_prenom =self::utf8_vers_cp1252($this -> st_prenom);
 	  $this -> st_adresse1 =self::utf8_vers_cp1252($this -> st_adresse1);

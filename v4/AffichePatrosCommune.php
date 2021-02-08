@@ -87,15 +87,7 @@ $gi_num_page = empty($_POST['num_page_patcom']) ?  $i_session_num_page: (integer
 
 $st_session_patro = isset($_SESSION['patro_patcom']) ? $_SESSION['patro_patcom'] : '';
 
-if (get_magic_quotes_gpc())
-{
-  if (ini_get('magic_quotes_sybase'))
-    $gst_patronyme        = empty($_POST['patro_patcom'])? $st_session_patro :str_replace("''", "'", substr(trim($_POST['patro_patcom']),0,30)); 
-  else
-     $gst_patronyme        = empty($_POST['patro_patcom'])? $st_session_patro : stripslashes(substr(trim($_POST['patro_patcom']),0,30));
-}
-else 
-  $gst_patronyme        = empty($_POST['patro_patcom'])? $st_session_patro :substr(trim($_POST['patro_patcom']),0,30);
+$gst_patronyme        = empty($_POST['patro_patcom'])? $st_session_patro :substr(trim($_POST['patro_patcom']),0,30);
 
 $_SESSION['idf_source_patcom'] = $gi_idf_source;
 $_SESSION['idf_commune_patcom'] = $gi_idf_commune;

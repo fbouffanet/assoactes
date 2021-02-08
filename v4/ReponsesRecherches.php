@@ -106,15 +106,7 @@ function param_chaine($pst_param,$pi_longueur)
 {
     global $_SESSION,$_REQUEST;
     $st_session_param       = empty($_SESSION[$pst_param]) ? '' : $_SESSION[$pst_param];
-    if (ini_get('magic_quotes_sybase'))
-    {
-      if (ini_get('magic_quotes_sybase'))
-        $st_param = empty($_REQUEST[$pst_param])? $st_session_param :str_replace("''", "'", substr(trim($_REQUEST[$pst_param]),0,$pi_longueur));
-      else
-        $st_param     = empty($_REQUEST[$pst_param])? $st_session_param :stripslashes(substr(trim($_REQUEST[$pst_param]),0,$pi_longueur));
-    }
-    else
-      $st_param        = empty($_REQUEST[$pst_param])? $st_session_param :substr(trim($_REQUEST[$pst_param]),0,$pi_longueur);
+    $st_param        = empty($_REQUEST[$pst_param])? $st_session_param :substr(trim($_REQUEST[$pst_param]),0,$pi_longueur);
     return $st_param;
 }
 

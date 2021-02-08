@@ -624,24 +624,9 @@ switch ($gst_mode) {
         list($i_jour,$i_mois,$i_annee)=explode('/',$_POST['date_fin'],3);
         $c_date_fin = join('-',array($i_annee,$i_mois,$i_jour));
 	   }
-    if (get_magic_quotes_gpc())
-    {
-      if (ini_get('magic_quotes_sybase'))
-      {
-         $st_comment_envoi = trim($_POST['comment_envoi']);
-         $st_comment_retour = trim($_POST['comment_retour']);
-      }
-      else
-      {
-         $st_comment_envoi = stripslashes(trim($_POST['comment_envoi']));
-         $st_comment_retour = stripslashes(trim($_POST['comment_retour']));
-      }
-    }
-    else
-    { 
-     $st_comment_envoi = trim($_POST['comment_envoi']);
-     $st_comment_retour = trim($_POST['comment_retour']);
-	   }
+ 
+    $st_comment_envoi = trim($_POST['comment_envoi']);
+    $st_comment_retour = trim($_POST['comment_retour']);
     $i_statut = (int) $_POST['statut'];
     $connexionBD->initialise_params(array(':comment_envoi'=>utf8_vers_cp1252($st_comment_envoi),':comment_retour'=>utf8_vers_cp1252($st_comment_retour)));
     $connexionBD->execute_requete("update `chantiers` set id_document=$i_id_document, id_releveur=$i_id_releveur, type_acte=$i_type_acte, date_convention='$c_date_convention', date_envoi='$c_date_envoi', date_retour='$c_date_retour',date_fin='$c_date_fin', comment_envoi=:comment_envoi, comment_retour=:comment_retour, statut=$i_statut where idf=$gi_idf_chantier"); 
@@ -675,24 +660,8 @@ switch ($gst_mode) {
         list($i_jour,$i_mois,$i_annee)=explode('/',$_POST['date_fin'],3);
         $c_date_fin = join('-',array($i_annee,$i_mois,$i_jour));
 	 }
- 	 if (get_magic_quotes_gpc())
-   {
-      if (ini_get('magic_quotes_sybase'))
-      {
-         $st_comment_envoi = trim($_POST['comment_envoi']);
-         $st_comment_retour = trim($_POST['comment_retour']);
-      }
-      else
-      {
-         $st_comment_envoi = stripslashes(trim($_POST['comment_envoi']));
-         $st_comment_retour = stripslashes(trim($_POST['comment_retour']));
-      }
-   }
-   else
-   { 
-     $st_comment_envoi = trim($_POST['comment_envoi']);
-     $st_comment_retour = trim($_POST['comment_retour']);
-	 }
+   $st_comment_envoi = trim($_POST['comment_envoi']);
+   $st_comment_retour = trim($_POST['comment_retour']);
    $i_statut = (int) $_POST['statut'];
    $connexionBD->initialise_params(array(':comment_envoi'=>utf8_vers_cp1252($st_comment_envoi),':comment_retour'=>utf8_vers_cp1252($st_comment_retour)));
    $st_requete = "insert into chantiers (id_document, id_releveur, type_acte, date_convention, date_envoi, date_retour, date_fin,comment_envoi, comment_retour, statut) values ($i_id_document, $i_id_releveur, $i_type_acte, '$c_date_convention', '$c_date_envoi', '$c_date_retour','$c_date_fin',:comment_envoi , :comment_retour, $i_statut)";   

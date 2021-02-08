@@ -260,27 +260,11 @@ else
    switch ($gst_mode)
    {
       case 'VALIDATION':
-        if (get_magic_quotes_gpc())
-        {
-          if (ini_get('magic_quotes_sybase'))
-            $st_cmt_valideur = isset($_POST['cmt_valideur']) ? $_POST['cmt_valideur']: 'ERREUR'; 
-          else
-            $st_cmt_valideur = isset($_POST['cmt_valideur']) ? stripslashes($_POST['cmt_valideur']): 'ERREUR';  
-        }   
-        else
-          $st_cmt_valideur = isset($_POST['cmt_valideur']) ? $_POST['cmt_valideur']: 'ERREUR';
+        $st_cmt_valideur = isset($_POST['cmt_valideur']) ? $_POST['cmt_valideur']: 'ERREUR';
         $go_acte->accepte($i_idf_valideur,$st_nom_valideur,$st_prenom_valideur,$st_email_valideur,$st_cmt_valideur);  
       break;
       case 'REFUS':
-        if (get_magic_quotes_gpc())
-        {
-          if (ini_get('magic_quotes_sybase'))
-            $st_motif_refus = isset($_POST['motif_refus']) ? $_POST['motif_refus']: 'ERREUR'; 
-          else
-            $st_motif_refus = isset($_POST['motif_refus']) ? stripslashes($_POST['motif_refus']): 'ERREUR';  
-        }   
-        else
-          $st_motif_refus = isset($_POST['motif_refus']) ? $_POST['motif_refus']: 'ERREUR';
+        $st_motif_refus = isset($_POST['motif_refus']) ? $_POST['motif_refus']: 'ERREUR';
         $go_acte->refuse($i_idf_valideur,$st_nom_valideur,$st_prenom_valideur,$st_email_valideur,$st_motif_refus);
       break;
       default:
