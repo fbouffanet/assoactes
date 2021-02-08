@@ -41,7 +41,7 @@ function getContentBottom($pst_type, $pst_email_adht, $pi_idf_acte){
       {
         case IDF_NAISSANCE: $st_msg = "";
         case IDF_DECES:     $st_msg = "";
-        default:            $st_msg = "<blockquote class=\"blockquote\"><p class=\"row text-justify\">Vous pouvez mettre vos commentaires dans la cellule ci-dessous qui paraitra sur le forum &agrave; la suite de la r&eacute;ponse de la base. Votre adresse <span class=\"label label-danger\">$pst_email_adht</span> doit &ecirc;tre inscrite sur le forum Yahoogroupes $st_prefixe_asso".SIGLE_ASSO."<br>
+        default:            $st_msg = "<blockquote class=\"blockquote\"><p class=\"row text-justify\">Vous pouvez mettre vos commentaires dans la cellule ci-dessous qui paraitra sur le forum &agrave; la suite de la r&eacute;ponse de la base. Votre adresse <span class=\"label label-danger\">$pst_email_adht</span> doit &ecirc;tre inscrite sur le forum Google Groupes $st_prefixe_asso".SIGLE_ASSO."<br>
                                 <span class=\"label label-danger\">Sans cela, votre demande ne pourra &ecirc;tre prise en compte</span></p></blockquote>
                                 <form id=\"envoi_forum\" method=post action=".$_SERVER['PHP_SELF'].">
                                 <input type=\"hidden\" name=\"mode\" value=\"ENVOI_FORUM\">

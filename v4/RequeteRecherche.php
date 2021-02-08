@@ -17,6 +17,7 @@ class RequeteRecherche {
      $this->connexionBD =  $pconnexionBD;
      $this->a_variantes_trouvees=array();
      $this->a_variantes_prenoms_trouvees =array(); 
+	 $this->a_patronymes_trouves=array();
      $this->a_communes_voisines=array();     
    }
    
@@ -78,6 +79,38 @@ class RequeteRecherche {
           }
       }
       return $st_clause;
+   }
+   
+    /**
+   * Renvoie la liste d'identifiants de patronymes correspondant à la recherche du patronyme donné (Gère le joker* ) 
+   * @param string $pst_patronyme : patronyme à chercher 
+   * @param string $pst_variantes : variantes à chercher (si non vide)
+   * @param integer $pi_num_param : numéro du paramètre
+   */
+   public function liste_idf_patronymes($pst_patronyme,$pst_variantes,$pi_num_param) {
+	  $pst_patronyme=utf8_vers_cp1252($pst_patronyme);
+      $a_patronymes_trouves = array();	  
+      if (($pst_variantes=='') || preg_match('/\%/',$pst_patronyme))
+      {      
+         if (preg_match('/\%/',$pst_patronyme))
+           $st_clause = " like :patro$pi_num_param";
+         else
+           $st_clause = "=:patro$pi_num_param";
+         $st_requete = "select idf,libelle from patronyme where libelle $st_clause";
+         $this->connexionBD->ajoute_params(array(":patro$pi_num_param"=>$pst_patronyme));
+		 $a_patronymes_trouves=$this->connexionBD->liste_valeur_par_clef($st_requete);
+		 $this->a_variantes_trouvees = array();
+      } 
+      else
+      {
+        $a_params_precedents=$this->connexionBD->params();
+        $this->connexionBD->initialise_params(array(":patro"=>$pst_patronyme));
+        $st_requete = "select pat.idf,pat.libelle from variantes_patro vp1 join patronyme pat on (vp1.patronyme=pat.libelle), variantes_patro vp2 where vp2.patronyme = :patro COLLATE latin1_general_ci and vp1.idf_groupe=vp2.idf_groupe";
+		$a_patronymes_trouves=$this->connexionBD->liste_valeur_par_clef($st_requete);
+        $this->a_variantes_trouvees=array_values($a_patronymes_trouves);
+        $this->connexionBD->initialise_params($a_params_precedents);
+      }
+	  return $a_patronymes_trouves;
    }
    
    /**
@@ -181,6 +214,7 @@ class RequeteRecherche {
    public function communes_voisines() {
      return $this->a_communes_voisines;
    }
+   
 
 }
 

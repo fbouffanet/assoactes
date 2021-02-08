@@ -526,36 +526,12 @@ class Acte {
     
     {
          $this -> i_idf = $pi_idf_acte;
-         if (get_magic_quotes_gpc())
-             {
-            if (ini_get('magic_quotes_sybase'))
-                 {
-                $this -> st_date = isset($_POST["date"])?substr(trim($_POST["date"]), 0, 10):'';
-                 $this -> st_date_rep = isset($_POST["date_rep"])?substr(trim($_POST["date_rep"]), 0, 25):'';
-                 $this -> st_cote = isset($_POST["cote"])?substr(trim($_POST["cote"]), 0, 40):'';
-                 $this -> st_libre = isset($_POST["libre"])?substr(trim($_POST["libre"]), 0, 50):'';
-                 $this -> st_commentaires = isset($_POST["cmt_acte"])?substr(trim($_POST["cmt_acte"]), 0, 1200):'';
-                 $this -> st_url = isset($_POST["permalien"])?substr(trim($_POST["permalien"]), 0, 100):'';
-                 } 
-            else
-                 {
-                $this -> st_date = isset($_POST["date"])?stripslashes(substr(trim($_POST["date"]), 0, 10)):'';
-                 $this -> st_date_rep = isset($_POST["date_rep"])?stripslashes(substr(trim($_POST["date_rep"]), 0, 25)):'';
-                 $this -> st_cote = isset($_POST["cote"])?stripslashes(substr(trim($_POST["cote"]), 0, 40)):'';
-                 $this -> st_libre = isset($_POST["libre"])?stripslashes(substr(trim($_POST["libre"]), 0, 50)):'';
-                 $this -> st_commentaires = isset($_POST["cmt_acte"])?stripslashes(substr(trim($_POST["cmt_acte"])), 0, 1200):'';
-                 $this -> st_url = isset($_POST["permalien"])?stripslashes(substr(trim($_POST["permalien"]), 0, 100)):'';
-                 } 
-            } 
-        else
-             {
-            $this -> st_date = isset($_POST["date"])?substr(trim($_POST["date"]), 0, 10):'';
-             $this -> st_date_rep = isset($_POST["date_rep"])?substr(trim($_POST["date_rep"]), 0, 25):'';
-             $this -> st_cote = isset($_POST["cote"])?substr(trim($_POST["cote"]), 0, 40):'';
-             $this -> st_libre = isset($_POST["libre"])?substr(trim($_POST["libre"]), 0, 50):'';
-             $this -> st_commentaires = isset($_POST["cmt_acte"])?substr(trim($_POST["cmt_acte"]), 0, 1200):'';
-             $this -> st_url = isset($_POST["permalien"])?substr(trim($_POST["permalien"]), 0, 100):'';
-             }
+        $this -> st_date = isset($_POST["date"])?substr(trim($_POST["date"]), 0, 10):'';
+        $this -> st_date_rep = isset($_POST["date_rep"])?substr(trim($_POST["date_rep"]), 0, 25):'';
+        $this -> st_cote = isset($_POST["cote"])?substr(trim($_POST["cote"]), 0, 40):'';
+        $this -> st_libre = isset($_POST["libre"])?substr(trim($_POST["libre"]), 0, 50):'';
+        $this -> st_commentaires = isset($_POST["cmt_acte"])?substr(trim($_POST["cmt_acte"]), 0, 1200):'';
+        $this -> st_url = isset($_POST["permalien"])?substr(trim($_POST["permalien"]), 0, 100):'';
         $this -> st_cote =self::utf8_vers_cp1252($this -> st_cote);
         $this -> st_libre =self::utf8_vers_cp1252($this -> st_libre);
         $this -> st_commentaires =self::utf8_vers_cp1252($this -> st_commentaires);			
@@ -626,7 +602,7 @@ class Acte {
 		 $st_chaine .= sprintf("<th>Cote</th><td colspan=2><input type=text name=cote value=\"%s\" maxlength=40 class=\"form-control\"></td>", self::cp1252_vers_utf8($this -> st_cote));
          $st_chaine .= sprintf("<th >Libre</th><td colspan=2><input type=text name=libre value=\"%s\" size=50 maxlength=70 class=\"form-control\"></td></tr>\n", self::cp1252_vers_utf8($this -> st_libre));
          
-         $st_chaine .= sprintf("<tr><th >Permalien <a target=\"_blank\" href=\"%s/Permalien_AD16.html\"><span class=\"glyphicon glyphicon-link\"></span></a></th><td colspan=7 class=\"lib_erreur\"><input type=text name=\"permalien\" id=\"permalien\" value=\"%s\" size=100 maxlength=100 class=\"form-control\"></td></tr>\n", $gst_url_site, $this -> st_url);
+         $st_chaine .= empty($this -> st_url) ? sprintf("<tr><th >Permalien <a target=\"_blank\" href=\"%s/Permalien_AD16.html\"><span class=\"glyphicon glyphicon-link\"></span></a></th><td colspan=7 class=\"lib_erreur\"><input type=text name=\"permalien\" id=\"permalien\" size=100 maxlength=100 class=\"form-control\"></td></tr>\n", $gst_url_site):sprintf("<tr><th ><a target=\"_blank\" href=\"%s\">Permalien</a> <a target=\"_blank\" href=\"%s/Permalien_AD16.html\"><span class=\"glyphicon glyphicon-link\"></span></a></th><td colspan=7 class=\"lib_erreur\"><input type=text name=\"permalien\" id=\"permalien\" value=\"%s\" size=100 maxlength=100 class=\"form-control\"></td></tr>\n", $this -> st_url, $gst_url_site, $this -> st_url);
          $this -> a_filtres_parametres["permalien"] = array(array("pattern", "/^https*\:\/\/[\w\.]+\/ark\:\/[\d]+\/[\w]+\/[\w]+$/", "Ce n'est pas un permalien. Merci de lire l'aide en cliquant sur le point d'interrogation"));
          $this -> a_filtres_parametres["date"] = array(array("required", "true", "La date est obligatoire"));
          return $st_chaine;
@@ -839,7 +815,7 @@ public function affichage_image_permalien($pi_hauteur = 800, $pi_largeur = 800)
 
 
 {
-     $st_caveat = "<div class=\"text-center\" >Si un message indiquant qu'une  licence est n&eacute;cessaire, merci de l'accepter en cliquant sur \"J'ai pris connaissance des informations ci-dessus et j'accepte les conditions\" et rafra&icirc;chir la page en appuyant sur la touche F5 du clavier</div>";
+     $st_caveat = "<div class=\"text-center\" >Si un message indiquant qu'une  licence est n&eacute;cessaire, merci de l'accepter en cliquant sur \"J'ai pris connaissance des informations ci-dessus et j'accepte les conditions\" et rafra&icirc;chir la page en appuyant sur la touche F5 du clavier. Vous pouvez également accéder à l'image dans un nouvel onglet en cliquant sur le mot \"Permalien\" suivi d'une icône <span class=\"glyphicon glyphicon-link\"></span> plus bas. Après avoir accepté les conditions dans le nouvel onglet, l'image devrait être visible après rafraichissement de cet onglet avec la touche F5</div>";
      if (!empty($this -> st_url))
          {
         $st_chaine = '<div class="text-center">';

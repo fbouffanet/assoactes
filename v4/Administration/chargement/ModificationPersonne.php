@@ -169,52 +169,19 @@ class ModificationPersonne extends Personne
     public function initialise_depuis_formulaire($pi_idf_acte, $pi_pi_idf_type_presence)
     
     {
-         $this -> i_idf_acte = $pi_idf_acte;
-         $this -> i_idf_type_presence = $pi_pi_idf_type_presence;
-         $i_num_parametre = $this -> i_num_param;
-         if (get_magic_quotes_gpc())
-             {
-            if (ini_get('magic_quotes_sybase'))
-                 {
-                if (isset($_POST["sexe$i_num_parametre"])) $this -> c_sexe = substr(trim($_POST["sexe$i_num_parametre"]), 0, 1);
-                 $this -> st_patronyme = isset($_POST["patro$i_num_parametre"])?substr(trim($_POST["patro$i_num_parametre"]), 0, 30):'';
-                 $this -> st_prenom = isset($_POST["prn$i_num_parametre"])?substr(trim($_POST["prn$i_num_parametre"]), 0, 30):'';
-                 $this -> st_surnom = isset($_POST["surnom$i_num_parametre"])?substr(trim($_POST["surnom$i_num_parametre"]), 0, 30):'';
-                 $this -> st_origine = isset($_POST["orig$i_num_parametre"])?substr(trim($_POST["orig$i_num_parametre"]), 0, 50):'';
-                 $this -> st_residence = isset($_POST["residence$i_num_parametre"])?substr(trim($_POST["residence$i_num_parametre"]), 0, 50):'';
-                 $this -> st_dnais = isset($_POST["dnais$i_num_parametre"])?substr(trim($_POST["dnais$i_num_parametre"]), 0, 10):'';
-                 $this -> st_age = !empty($_POST["age$i_num_parametre"])? substr(trim($_POST["age$i_num_parametre"], 0, 15)):'';
-                 $this -> st_profession = isset($_POST["prof$i_num_parametre"])?substr(trim($_POST["prof$i_num_parametre"]), 0, 35):'';
-                 $this -> st_commentaire = isset($_POST["cmt$i_num_parametre"])?substr(trim($_POST["cmt$i_num_parametre"]), 0, 70):'';
-                 } 
-            else
-                 {
-                if (isset($_POST["sexe$i_num_parametre"])) $this -> c_sexe = substr(trim($_POST["sexe$i_num_parametre"]), 0, 1);
-                 $this -> st_patronyme = isset($_POST["patro$i_num_parametre"])?stripslashes(substr(trim($_POST["patro$i_num_parametre"]), 0, 30)):'';
-                 $this -> st_prenom = isset($_POST["prn$i_num_parametre"])?stripslashes(substr(trim($_POST["prn$i_num_parametre"]), 0, 30)):'';
-                 $this -> st_surnom = isset($_POST["surnom$i_num_parametre"])?stripslashes(substr(trim($_POST["surnom$i_num_parametre"]), 0, 30)):'';
-                 $this -> st_origine = isset($_POST["orig$i_num_parametre"])?stripslashes(substr(trim($_POST["orig$i_num_parametre"]), 0, 50)):'';
-                 $this -> st_residence = isset($_POST["residence$i_num_parametre"])?stripslashes(substr(trim($_POST["residence$i_num_parametre"]), 0, 50)):'';
-                 $this -> st_dnais = isset($_POST["dnais$i_num_parametre"])?stripslashes(substr(trim($_POST["dnais$i_num_parametre"]), 0, 10)):'';
-                 $this -> st_age = !empty($_POST["age$i_num_parametre"])? stripslashes(substr(trim($_POST["age$i_num_parametre"]), 0, 15)):'';
-                 $this -> st_profession = isset($_POST["prof$i_num_parametre"])?stripslashes(substr(trim($_POST["prof$i_num_parametre"]), 0, 35)):'';
-                 $this -> st_commentaire = isset($_POST["cmt$i_num_parametre"])?stripslashes(substr(trim($_POST["cmt$i_num_parametre"]), 0, 70)):'';
-                '';
-                 } 
-            } 
-        else
-             {
-            if (isset($_POST["sexe$i_num_parametre"])) $this -> c_sexe = substr(trim($_POST["sexe$i_num_parametre"]), 0, 1);
-             $this -> st_patronyme = isset($_POST["patro$i_num_parametre"])?substr(trim($_POST["patro$i_num_parametre"]), 0, 30):'';
-             $this -> st_prenom = isset($_POST["prn$i_num_parametre"])?substr(trim($_POST["prn$i_num_parametre"]), 0, 30):'';
-             $this -> st_surnom = isset($_POST["surnom$i_num_parametre"])?substr(trim($_POST["surnom$i_num_parametre"]), 0, 30):'';
-             $this -> st_origine = isset($_POST["orig$i_num_parametre"])?substr(trim($_POST["orig$i_num_parametre"]), 0, 50):'';
-             $this -> st_residence = isset($_POST["residence$i_num_parametre"])?substr(trim($_POST["residence$i_num_parametre"]), 0, 50):'';
-             $this -> st_dnais = isset($_POST["dnais$i_num_parametre"])?substr(trim($_POST["dnais$i_num_parametre"]), 0, 10):'';
-             $this -> st_age = !empty($_POST["age$i_num_parametre"])? substr(trim($_POST["age$i_num_parametre"]), 0, 15):'';
-             $this -> st_profession = isset($_POST["prof$i_num_parametre"])?substr(trim($_POST["prof$i_num_parametre"]), 0, 35):'';
-             $this -> st_commentaire = isset($_POST["cmt$i_num_parametre"])?substr(trim($_POST["cmt$i_num_parametre"]), 0, 70):'';
-             } 
+        $this -> i_idf_acte = $pi_idf_acte;
+        $this -> i_idf_type_presence = $pi_pi_idf_type_presence;
+        $i_num_parametre = $this -> i_num_param;
+        if (isset($_POST["sexe$i_num_parametre"])) $this -> c_sexe = substr(trim($_POST["sexe$i_num_parametre"]), 0, 1);
+        $this -> st_patronyme = isset($_POST["patro$i_num_parametre"])?substr(trim($_POST["patro$i_num_parametre"]), 0, 30):'';
+        $this -> st_prenom = isset($_POST["prn$i_num_parametre"])?substr(trim($_POST["prn$i_num_parametre"]), 0, 30):'';
+        $this -> st_surnom = isset($_POST["surnom$i_num_parametre"])?substr(trim($_POST["surnom$i_num_parametre"]), 0, 30):'';
+        $this -> st_origine = isset($_POST["orig$i_num_parametre"])?substr(trim($_POST["orig$i_num_parametre"]), 0, 50):'';
+        $this -> st_residence = isset($_POST["residence$i_num_parametre"])?substr(trim($_POST["residence$i_num_parametre"]), 0, 50):'';
+        $this -> st_dnais = isset($_POST["dnais$i_num_parametre"])?substr(trim($_POST["dnais$i_num_parametre"]), 0, 10):'';
+        $this -> st_age = !empty($_POST["age$i_num_parametre"])? substr(trim($_POST["age$i_num_parametre"]), 0, 15):'';
+        $this -> st_profession = isset($_POST["prof$i_num_parametre"])?substr(trim($_POST["prof$i_num_parametre"]), 0, 35):'';
+        $this -> st_commentaire = isset($_POST["cmt$i_num_parametre"])?substr(trim($_POST["cmt$i_num_parametre"]), 0, 70):'';
         $this -> st_patronyme =self::utf8_vers_cp1252($this -> st_patronyme);
 		$this -> st_patronyme = self :: patronyme_propre( $this -> st_patronyme );
 		$this -> st_prenom =self::utf8_vers_cp1252($this -> st_prenom);
@@ -222,8 +189,8 @@ class ModificationPersonne extends Personne
 		$this -> st_origine = self :: utf8_vers_cp1252($this -> st_origine);
 		$this -> st_residence = self :: utf8_vers_cp1252($this -> st_residence);
 		$this -> st_profession = self :: utf8_vers_cp1252($this -> st_profession);
-         // met à jour le champ est_decede en même temps que le commentaire
-		 $this -> st_commentaire =self::utf8_vers_cp1252($this -> st_commentaire);
+        // met à jour le champ est_decede en même temps que le commentaire
+		$this -> st_commentaire =self::utf8_vers_cp1252($this -> st_commentaire);
         $this -> st_commentaire = self :: commentaire_propre($this -> st_commentaire);
          if (empty($this -> st_patronyme) && (!empty($this -> st_prenom) || !empty($this -> st_commentaire)))
              $this -> st_patronyme = LIB_MANQUANT;

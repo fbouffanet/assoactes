@@ -435,16 +435,7 @@ switch ($gst_mode) {
      $i_support = (int) $_POST['type_support'];
      $i_collection = (int) $_POST['collection'];
      $i_quantite = trim($_POST['quantite']);
-     if (get_magic_quotes_gpc())
-     {
-        if (ini_get('magic_quotes_sybase'))
-            $st_auteur = trim($_POST['auteur']);
-        else
-            $st_auteur = stripslashes(trim($_POST['auteur']));
-
-     }
-     else 
-       $st_auteur = trim($_POST['auteur']);  
+     $st_auteur = trim($_POST['auteur']);  
      $connexionBD->initialise_params(array(':auteur'=>$st_auteur));
 	 $st_requete = "update `documents` set id_commune=$i_id_commune, type_acte=$i_type_acte, nature_acte=$i_nature_acte, fourchette='$st_fourchette',support=$i_support, collection=$i_collection,quantite=$i_quantite, auteur=:auteur where idf=$gi_idf";
      $connexionBD->execute_requete($st_requete);
@@ -468,16 +459,7 @@ switch ($gst_mode) {
      $i_support = (int) $_POST['type_support'];
      $i_collection = (int) $_POST['collection'];
      $i_quantite = trim($_POST['quantite']);
-     if (get_magic_quotes_gpc())
-     {
-        if (ini_get('magic_quotes_sybase'))
-            $st_auteur = trim($_POST['auteur']);
-        else
-            $st_auteur = stripslashes(trim($_POST['auteur']));
-
-     }
-     else 
-       $st_auteur = trim($_POST['auteur']);
+     $st_auteur = trim($_POST['auteur']);
      $connexionBD->initialise_params(array(':auteur'=>$st_auteur));
      $connexionBD->execute_requete("insert into documents(id_commune,type_acte,nature_acte,fourchette,support,collection,quantite,auteur) values($i_id_commune, $i_type_acte, $i_nature_acte,'$st_fourchette',$i_support,$i_collection,$i_quantite,:auteur)");
      menu_liste($connexionBD,null);

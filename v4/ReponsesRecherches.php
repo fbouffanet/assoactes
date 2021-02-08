@@ -106,15 +106,7 @@ function param_chaine($pst_param,$pi_longueur)
 {
     global $_SESSION,$_REQUEST;
     $st_session_param       = empty($_SESSION[$pst_param]) ? '' : $_SESSION[$pst_param];
-    if (ini_get('magic_quotes_sybase'))
-    {
-      if (ini_get('magic_quotes_sybase'))
-        $st_param = empty($_REQUEST[$pst_param])? $st_session_param :str_replace("''", "'", substr(trim($_REQUEST[$pst_param]),0,$pi_longueur));
-      else
-        $st_param     = empty($_REQUEST[$pst_param])? $st_session_param :stripslashes(substr(trim($_REQUEST[$pst_param]),0,$pi_longueur));
-    }
-    else
-      $st_param        = empty($_REQUEST[$pst_param])? $st_session_param :substr(trim($_REQUEST[$pst_param]),0,$pi_longueur);
+    $st_param        = empty($_REQUEST[$pst_param])? $st_session_param :substr(trim($_REQUEST[$pst_param]),0,$pi_longueur);
     return $st_param;
 }
 
@@ -268,7 +260,7 @@ switch($gst_type_recherche)
     $_SESSION['idf_commune_recherche']    = $gi_idf_commune;
     $_SESSION['rayon']                    = $gi_rayon;
     $_SESSION['paroisses_rattachees']     = $gst_paroisses_rattachees;
-    $_SESSION['idf_type_acte_recherche']  = $gi_idf_type_acte;
+    $_SESSION['idf_type_acte_recherche']  = $gi_idf_type_acte; 
     $_SESSION['annee_min']                = $gi_annee_min;
     $_SESSION['annee_max']                = $gi_annee_max;
     $_SESSION['nom_epx']                  = $gst_nom_epx;

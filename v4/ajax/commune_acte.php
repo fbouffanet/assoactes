@@ -10,17 +10,8 @@ require_once('../Commun/ConnexionBD.php');
 
 $a_resultats = array();
 if (isset ($_GET['term']))
-{  
-  if (get_magic_quotes_gpc())
-  {
-    if (ini_get('magic_quotes_sybase'))
-       $st_rech = substr(trim($_GET['term']),0,30);
-    else
-      $st_rech = stripslashes(substr(trim($_GET['term']),0,30)); 
-  }   
-  else
-    $st_rech = substr(trim($_GET['term']),0,30);
-   
+{ 
+  $st_rech = substr(trim($_GET['term']),0,30); 
   $i_idf_source = isset($_GET['idf_source']) ? (int) $_GET['idf_source']: null;   
   $st_rech=utf8_decode($st_rech);  
   $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);

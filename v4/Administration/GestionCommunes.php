@@ -546,27 +546,9 @@ switch ($gst_mode) {
   menu_modifier($connexionBD,$gi_idf_commune,$a_cantons);
   break;
   case 'MODIFIER' :     
-     if (get_magic_quotes_gpc())
-     {
-        if (ini_get('magic_quotes_sybase'))
-        {
-          $st_nom_commune        =  trim($_POST['nom_commune']);
-          $st_date_min_controle = trim($_POST['date_min_controle']);
-          $st_date_max_controle = trim($_POST['date_max_controle']);
-        }
-        else
-        {
-          $st_nom_commune        = stripslashes(trim($_POST['nom_commune']));
-          $st_date_min_controle = stripslashes(trim($_POST['date_min_controle']));
-          $st_date_max_controle = stripslashes(trim($_POST['date_max_controle']));
-        }
-     }
-     else
-     { 
-         $st_nom_commune        =  trim($_POST['nom_commune']);
-         $st_date_min_controle = trim($_POST['date_min_controle']);
-         $st_date_max_controle = trim($_POST['date_max_controle']);
-     }
+     $st_nom_commune       =  trim($_POST['nom_commune']);
+     $st_date_min_controle = trim($_POST['date_min_controle']);
+     $st_date_max_controle = trim($_POST['date_max_controle']);
 	 $st_nom_commune=utf8_vers_cp1252($st_nom_commune);
      $i_code_insee = trim($_POST['code_insee']);
      $i_num_paroisse = trim($_POST['num_paroisse']);
@@ -598,27 +580,9 @@ switch ($gst_mode) {
   menu_ajouter($a_cantons);
   break;
   case 'AJOUTER':     
-     if (get_magic_quotes_gpc())
-     {
-        if (ini_get('magic_quotes_sybase'))
-        {
-          $st_nom_commune        =  trim($_POST['nom_commune']);
-          $st_date_min_controle = trim($_POST['date_min_controle']);
-          $st_date_max_controle = trim($_POST['date_max_controle']);
-        }
-        else
-        {
-          $st_nom_commune        = stripslashes(trim($_POST['nom_commune']));
-          $st_date_min_controle = stripslashes(trim($_POST['date_min_controle']));
-          $st_date_max_controle = stripslashes(trim($_POST['date_max_controle']));
-        }
-     }
-     else
-     { 
-         $st_nom_commune        =  trim($_POST['nom_commune']);
-         $st_date_min_controle = trim($_POST['date_min_controle']);
-         $st_date_max_controle = trim($_POST['date_max_controle']);
-     }
+     $st_nom_commune        =  trim($_POST['nom_commune']);
+     $st_date_min_controle = trim($_POST['date_min_controle']);
+     $st_date_max_controle = trim($_POST['date_max_controle']);
 	 $st_nom_commune=utf8_vers_cp1252($st_nom_commune);
      $i_code_insee = trim($_POST['code_insee']);
      $i_num_paroisse = trim($_POST['num_paroisse']);

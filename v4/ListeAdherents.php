@@ -832,7 +832,7 @@ function exporte_adresses_publipostage($pconnexionBD)
 		header("Content-Type: text/csv");
 		header('Content-disposition: attachment; filename="ListeBulletin'.SIGLE_ASSO.'.csv"');
 		$fichier = fopen('PHP://output', 'w');
-		fputcsv($fichier, array('Adhérent','N°','Email','Adresse1','Adresse2','CP','Ville','Pays'),SEP_CSV);     
+		fputcsv($fichier, array('AdhÃ©rent','NÂ°','Email','Adresse1','Adresse2','CP','Ville','Pays'),SEP_CSV);     
 		foreach ($a_liste_adherents as $a_ligne)
 		{
 			fputcsv($fichier,$a_ligne,SEP_CSV);
@@ -1174,23 +1174,7 @@ require_once("Commun/menu.php");
 
 $st_session_nom_a_chercher = isset($_SESSION['nom_a_chercher']) ? $_SESSION['nom_a_chercher']: '';
 $st_post_nom_a_chercher =isset($_POST['nom_a_chercher']) ? $_POST['nom_a_chercher']:'';
-if (get_magic_quotes_gpc())
-{
-   if (ini_get('magic_quotes_sybase'))
-   {
-      
-     $gst_nom_a_chercher = empty ($st_post_nom_a_chercher) && empty($_GET['initiale_adh'])? $st_session_nom_a_chercher : trim($st_post_nom_a_chercher); 
-   }
-   else
-   {
-      $gst_nom_a_chercher =  empty($st_post_nom_a_chercher) && empty($_GET['initiale_adh']) ? $st_session_nom_a_chercher :stripslashes(trim($st_post_nom_a_chercher));
-   }   
-}
-else
-{ 
-   $gst_nom_a_chercher =  empty($st_post_nom_a_chercher) && empty($_GET['initiale_adh']) ? $st_session_nom_a_chercher : trim($st_post_nom_a_chercher); 
-}
-
+$gst_nom_a_chercher =  empty($st_post_nom_a_chercher) && empty($_GET['initiale_adh']) ? $st_session_nom_a_chercher : trim($st_post_nom_a_chercher); 
 $c_session_statut =  isset($_SESSION['statut_listadh']) ? $_SESSION['statut_listadh'] : 'T';
 $gc_statut = isset($_POST['statut_listadh']) ? $_POST['statut_listadh']: $c_session_statut;
 $_SESSION['statut_listadh'] = $gc_statut;

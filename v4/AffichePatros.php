@@ -192,15 +192,8 @@ $gst_mode = empty($_POST['mode']) ? $st_session_mode: $_POST['mode'] ;
 $st_session_patronyme = empty($_SESSION['patronyme']) ?  '' :$_SESSION['patronyme'];
 $st_session_variantes = empty($_SESSION['variantes_pat']) ?  '' :$_SESSION['variantes_pat'];
 
-if (get_magic_quotes_gpc())
-{
-	if (ini_get('magic_quotes_sybase'))
-		$gst_patronyme        = empty($_POST['patronyme'])? $st_session_patronyme :str_replace("''", "'", substr(trim($_POST['patronyme']),0,30)); 
-	else
-		$gst_patronyme        = empty($_POST['patronyme'])? $st_session_patronyme : stripslashes(substr(trim($_POST['patronyme']),0,30));
-}
-else 
-	$gst_patronyme        = empty($_POST['patronyme'])? $st_session_patronyme :substr(trim($_POST['patronyme']),0,30);
+
+$gst_patronyme        = empty($_POST['patronyme'])? $st_session_patronyme :substr(trim($_POST['patronyme']),0,30);
 
 $st_variantes = empty($_POST['variantes_pat']) ?  $st_session_variantes :$_POST['variantes_pat'] ;
 
