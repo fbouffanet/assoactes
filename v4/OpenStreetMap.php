@@ -76,6 +76,8 @@ catch (Exception $e) {
                     minZoom: 1,
                     maxZoom: 20
                 }).addTo(macarte);
+                // Nous ajoutons un marqueur
+                var marker = L.marker([lat, lon]).addTo(macarte);
             }
             window.onload = function(){
 		// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
