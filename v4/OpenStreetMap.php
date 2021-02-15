@@ -50,8 +50,10 @@ catch (Exception $e) {
         <title>Carte</title>
     </head>
     <body>
+    <?php
     echo "latitude :".$f_lat_deg;
     echo "longitude :".$f_lon_deg;
+    ?>    
         <div id="map">
 	    <!-- Ici s'affichera la carte -->
 	</div>
@@ -60,8 +62,8 @@ catch (Exception $e) {
         <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
 	<script type="text/javascript">
             // On initialise la latitude et la longitude de Paris (centre de la carte)
-            var lat = $f_lat_deg;
-            var lon = $f_lon_deg;
+            var lat = <?php echo json_encode($f_lat_deg); ?>;
+            var lon = <?php echo json_encode($f_lon_deg); ?>;
             var macarte = null;
             // Fonction d'initialisation de la carte
             function initMap() {
