@@ -50,6 +50,8 @@ catch (Exception $e) {
         <title>Carte</title>
     </head>
     <body>
+    echo "latitude :".$f_lat_deg;
+    echo "longitude :".$f_lon_deg;
         <div id="map">
 	    <!-- Ici s'affichera la carte -->
 	</div>
