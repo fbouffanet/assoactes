@@ -39,17 +39,32 @@ catch (Exception $e) {
 <!DOCTYPE html>
 <html>
     <head>
+    <meta http-equiv="content-language" content="fr">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='css/styles.css' type='text/css' rel='stylesheet'>
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+    <script src='js/jquery-min.js' type='text/javascript'></script>
+    <script src='js/bootstrap.min.js' type='text/javascript'></script>
+    <script type='text/javascript'>
+    $(document).ready(function() {
+	$("#ferme").click(function(){
+		window.close();
+	});	
+});
+</script>
         <meta charset="utf-8">
         <!-- Nous chargeons les fichiers CDN de Leaflet. Le CSS AVANT le JS -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
         <style type="text/css">
             #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
-                height:400px;
+                width:800px;
+                height:600px;
             }
         </style>
-        <title>Carte</title>
+       <?php print("<title>API OpenStreeMap - $st_commune </title>");?>
     </head>
     <body>
+     <div class="container">
      <div class="text-center"><img src="<?php print($gst_logo_association); ?>"></div>
       <?php print("<div class=\"text-center\">".htmlentities($st_commune,ENT_COMPAT,'cp1252')."</div><br>\n");?> 
         
