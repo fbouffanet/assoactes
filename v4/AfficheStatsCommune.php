@@ -48,7 +48,7 @@ $('#liste_communes').click(function() {
 });
 
 $('a.lien_geoportail').click(function(){
-	window.open(this.href, 'GeoPortail', '_blank');
+	window.open(this.href, 'OpenStreetMap', '_blank');
     return false;
 });
 
