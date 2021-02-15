@@ -59,6 +59,7 @@ catch (Exception $e) {
             #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
                 width:800px;
                 height:600px;
+                background-position:center center;
             }
         </style>
        <?php print("<title>API OpenStreeMap - $st_commune </title>");?>
