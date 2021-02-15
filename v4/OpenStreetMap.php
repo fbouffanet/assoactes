@@ -50,13 +50,14 @@ catch (Exception $e) {
         <title>Carte</title>
     </head>
     <body>
-    <?php
-    echo "latitude :".$f_lat_deg;
-    echo "longitude :".$f_lon_deg;
-    ?>    
         <div id="map">
 	    <!-- Ici s'affichera la carte -->
 	</div>
+    <div class="text-center"><img src="<?php print($gst_logo_association); ?>"></div>
+<?php
+
+    print("<div class=\"text-center\">".htmlentities($st_commune,ENT_COMPAT,'cp1252')."</div><br>\n");
+?> 
 
         <!-- Fichiers Javascript -->
         <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
@@ -84,5 +85,8 @@ catch (Exception $e) {
 		initMap(); 
             };
         </script>
+      <div class="form-row">
+         <button type="button" id=ferme class="btn btn-warning col-xs-4 col-xs-offset-4">Fermer la fen&ecirc;tre</button>
+      </div>'
     </body>
 </html>
