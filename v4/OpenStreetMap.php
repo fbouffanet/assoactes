@@ -60,6 +60,7 @@ catch (Exception $e) {
                 width:800px;
                 height:600px;
                 background-position:center center;
+                background-repeat:no-repeat;
             }
         </style>
        <?php print("<title>API OpenStreeMap - $st_commune </title>");?>
