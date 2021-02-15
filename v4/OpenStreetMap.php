@@ -69,10 +69,10 @@ catch (Exception $e) {
      <div class="container">
      <div class="text-center"><img src="<?php print($gst_logo_association); ?>"></div>
       <?php print("<div class=\"text-center\">".htmlentities($st_commune,ENT_COMPAT,'cp1252')."</div><br>\n");?> 
-        
+       <div align=center>
         <div id="map">
 	    <!-- Ici s'affichera la carte -->
-	</div>
+	</div></div>
    
 
 
