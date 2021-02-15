@@ -50,14 +50,15 @@ catch (Exception $e) {
         <title>Carte</title>
     </head>
     <body>
+     <div class="text-center"><img src="<?php print($gst_logo_association); ?>"></div>
+      <?php print("<div class=\"text-center\">".htmlentities($st_commune,ENT_COMPAT,'cp1252')."</div><br>\n");?> 
+        
         <div id="map">
 	    <!-- Ici s'affichera la carte -->
 	</div>
-    <div class="text-center"><img src="<?php print($gst_logo_association); ?>"></div>
-<?php
+   
 
-    print("<div class=\"text-center\">".htmlentities($st_commune,ENT_COMPAT,'cp1252')."</div><br>\n");
-?> 
+
 
         <!-- Fichiers Javascript -->
         <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
