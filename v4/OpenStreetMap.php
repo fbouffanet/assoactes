@@ -83,6 +83,7 @@ catch (Exception $e) {
             // On initialise la latitude et la longitude de Paris (centre de la carte)
             var lat = <?php echo json_encode($f_lat_deg); ?>;
             var lon = <?php echo json_encode($f_lon_deg); ?>;
+            var ville = <?php echo json_encode($st_commune); ?>;
             var macarte = null;
             // Fonction d'initialisation de la carte
             function initMap() {
@@ -97,6 +98,7 @@ catch (Exception $e) {
                 }).addTo(macarte);
                 // Nous ajoutons un marqueur
                 var marker = L.marker([lat, lon]).addTo(macarte);
+                marker.bindPopup(ville);
             }
             window.onload = function(){
 		// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
