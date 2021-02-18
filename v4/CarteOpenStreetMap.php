@@ -43,21 +43,7 @@ else
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 try {
-    list($st_commune,$f_lat_rad,$f_lon_rad)=$connexionBD->sql_select_liste("select stats_commune.idf_commune,
-    commune_acte.nom AS 'Commune', 
-    type_acte.nom AS 'acte',
-    min(stats_commune.annee_min) AS 'Date mini',
-    max(stats_commune.annee_max) AS 'Date max',
-    sum(stats_commune.nb_actes) AS 'Nbrs actes',
-    commune_acte.latitude AS lat,
-    commune_acte.latitude AS lon
-from stats_commune 
-join commune_acte 
-on (stats_commune.idf_commune=commune_acte.idf) 
-join type_acte
-on (stats_commune.idf_type_acte=type_acte.idf) 
-where commune_acte.idf=$gi_idf_commune
-group by stats_commune.idf_commune,stats_commune.idf_type_acte");
+    list($st_commune,$f_lat_rad,$f_lon_rad)=$connexionBD->sql_select_liste("select nom, latitude,longitude from commune_acte where idf=$gi_idf_commune");
     if (is_null($st_commune))
     {
        $error = "Cette commune n'existe pas";
