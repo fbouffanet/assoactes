@@ -25,6 +25,11 @@ on (stats_commune.idf_type_acte=type_acte.idf)
 where commune_acte.idf=$gi_idf_commune
 group by stats_commune.idf_commune,stats_commune.idf_type_acte";
 
+
+$st_requete1="select nom, latitude,longitude from commune_acte where idf=$gi_idf_commune";
+
+
+
 $gf_pi=3.14159265359;
 
 if (isset($_GET['idf_commune']))
@@ -38,7 +43,7 @@ else
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 try {
-    list($st_commune,$f_lat_rad,$f_lon_rad)=$connexionBD->sql_select_liste("select nom, latitude,longitude from commune_acte where idf=$gi_idf_commune");
+    list($st_commune,$f_lat_rad,$f_lon_rad)=$connexionBD->sql_select_liste($st_requete);
     if (is_null($st_commune))
     {
        $error = "Cette commune n'existe pas";
