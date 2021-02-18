@@ -32,14 +32,14 @@ $st_requete1="select nom, latitude,longitude from commune_acte where idf=$gi_idf
 
 $gf_pi=3.14159265359;
 
-if (isset($_GET['idf_commune']))
+/*if (isset($_GET['idf_commune']))
 {
   $gi_idf_commune = (int) $_GET['idf_commune'];
 }
 
 else
  die("Erreur: L'identifiant de commune est manquant");
-
+*/
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 try {
