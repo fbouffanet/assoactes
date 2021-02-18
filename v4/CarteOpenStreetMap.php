@@ -26,7 +26,7 @@ where commune_acte.idf=$gi_idf_commune
 group by stats_commune.idf_commune,stats_commune.idf_type_acte";
 
 
-$st_requete1="select nom, latitude,longitude from commune_acte where idf=$gi_idf_commune"
+$st_requete1="select nom, latitude,longitude from commune_acte where idf=$gi_idf_commune";
 
 
 
