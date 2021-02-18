@@ -43,7 +43,7 @@ else
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 try {
-    list($st_commune,$f_lat_rad,$f_lon_rad)=$connexionBD->sql_select_liste("select nom,latitude,longitude from commune_acte where idf=%");
+    list($st_commune,$f_lat_rad,$f_lon_rad)=$connexionBD->sql_select_liste("select nom,latitude,longitude from commune_acte ");
 
     if (is_null($st_commune))
     {
