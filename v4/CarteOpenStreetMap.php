@@ -120,7 +120,7 @@ catch (Exception $e) {
                     minZoom: 1,
                     maxZoom: 20
                 }).addTo(macarte);
-				for (ville in ville){}
+				for (ville in villes){}
                 // Nous ajoutons un marqueur
                 var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
 				// Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
