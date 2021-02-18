@@ -43,7 +43,7 @@ else
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 try {
-    list($st_commune,$f_lat_rad,$f_lon_rad)=$connexionBD->sql_select_liste("select nom,latitude,longitude from commune_acte ");
+    list($st_commune,$f_lat_rad,$f_lon_rad)=$connexionBD->sql_select_multiple_par_idf("select nom,latitude,longitude from commune_acte ");
 
     $f_lat_deg=$f_lat_rad*180/$gf_pi;
     $f_lon_deg=$f_lon_rad*180/$gf_pi;
