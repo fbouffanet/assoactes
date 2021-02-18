@@ -86,6 +86,7 @@ catch (Exception $e) {
             var ville = <?php echo json_encode($st_commune); ?>;
             var macarte = null;
             // Fonction d'initialisation de la carte
+           
             function initMap() {
                 // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
                 macarte = L.map('map').setView([lat, lon], 11);
@@ -101,10 +102,12 @@ catch (Exception $e) {
                 // Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
 				marker.bindPopup(ville);
             }
+           
             window.onload = function(){
 		// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
 		initMap(); 
             };
+        
         </script>
       <div class="form-row">
          <button type="button" id=ferme class="btn btn-warning col-xs-4 col-xs-offset-4">Fermer la fen&ecirc;tre</button>
