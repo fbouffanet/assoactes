@@ -45,11 +45,6 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 try {
     list($st_commune,$f_lat_rad,$f_lon_rad)=$connexionBD->sql_select_liste("select nom,latitude,longitude from commune_acte ");
 
-    if (is_null($st_commune))
-    {
-       $error = "Cette commune n'existe pas";
-       throw new Exception($error);
-    }
     $f_lat_deg=$f_lat_rad*180/$gf_pi;
     $f_lon_deg=$f_lon_rad*180/$gf_pi;
     
@@ -104,7 +99,16 @@ catch (Exception $e) {
         <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
 	<script type="text/javascript">
             // On initialise la latitude et la longitude de Paris (centre de la carte)
-            var lat = <?php echo json_encode($f_lat_deg); ?>;
+           <?php list($st_commune,$f_lat_rad,$f_lon_rad)=$connexionBD->sql_select_liste("select nom,latitude,longitude from commune_acte ");
+
+    $f_lat_deg=$f_lat_rad*180/$gf_pi;
+    $f_lon_deg=$f_lon_rad*180/$gf_pi;
+	?>		
+			
+			
+			
+			
+			var lat = <?php echo json_encode($f_lat_deg); ?>;
             var lon = <?php echo json_encode($f_lon_deg); ?>;
 			var villes = <?php echo json_encode($st_commune); ?>;
             var macarte = null;
