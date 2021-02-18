@@ -8,8 +8,8 @@ require_once('Commun/config.php');
 require_once('Commun/constantes.php');
 require_once('Commun/ConnexionBD.php');
 
-/*
-$st_requete = select stats_commune.idf_commune,
+
+$st_requete = "select stats_commune.idf_commune,
        commune_acte.nom AS 'Commune', 
 	   type_acte.nom AS 'acte',
        min(stats_commune.annee_min) AS 'Date mini',
@@ -23,8 +23,8 @@ on (stats_commune.idf_commune=commune_acte.idf)
 join type_acte
 on (stats_commune.idf_type_acte=type_acte.idf) 
 where commune_acte.idf=$gi_idf_commune
-group by stats_commune.idf_commune,stats_commune.idf_type_acte;
-*/
+group by stats_commune.idf_commune,stats_commune.idf_type_acte";
+
 $gf_pi=3.14159265359;
 
 if (isset($_GET['idf_commune']))
