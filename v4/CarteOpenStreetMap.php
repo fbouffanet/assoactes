@@ -47,6 +47,9 @@ try {
 
     $f_lat_deg=$f_lat_rad*180/$gf_pi;
     $f_lon_deg=$f_lon_rad*180/$gf_pi;
+	
+	print $st_commune."-- ".$f_lat_rad."-- ".$f_lon_rad ;
+	
     
 }
 catch (Exception $e) {
