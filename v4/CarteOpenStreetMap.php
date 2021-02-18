@@ -45,12 +45,12 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 try {
     list($st_commune,$f_lat_rad,$f_lon_rad)=$connexionBD->sql_select_liste("select stats_commune.idf_commune,
     commune_acte.nom AS 'nom', 
+    commune_acte.latitude AS 'latitude',
+    commune_acte.longitude AS 'longitude',
     type_acte.nom AS 'acte',
     min(stats_commune.annee_min) AS 'Date mini',
     max(stats_commune.annee_max) AS 'Date max',
-    sum(stats_commune.nb_actes) AS 'Nbrs actes',
-    commune_acte.latitude AS latitude,
-    commune_acte.longitude AS longitude
+    sum(stats_commune.nb_actes) AS 'Nbrs actes'
 from stats_commune 
 join commune_acte 
 on (stats_commune.idf_commune=commune_acte.idf) 
