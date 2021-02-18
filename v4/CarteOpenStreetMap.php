@@ -106,7 +106,7 @@ catch (Exception $e) {
             // On initialise la latitude et la longitude de Paris (centre de la carte)
             var lat = <?php echo json_encode($f_lat_deg); ?>;
             var lon = <?php echo json_encode($f_lon_deg); ?>;
-			var ville = <?php echo json_encode($st_commune); ?>;
+			var villes = <?php echo json_encode($st_commune); ?>;
             var macarte = null;
           
 		    // Fonction d'initialisation de la carte
@@ -120,8 +120,9 @@ catch (Exception $e) {
                     minZoom: 1,
                     maxZoom: 20
                 }).addTo(macarte);
+				for (ville in ville){}
                 // Nous ajoutons un marqueur
-                var marker = L.marker([lat, lon]).addTo(macarte);
+                var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
 				// Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
 				marker.bindPopup(ville);
             }
