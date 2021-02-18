@@ -98,7 +98,8 @@ catch (Exception $e) {
                 }).addTo(macarte);
                 // Nous ajoutons un marqueur
                 var marker = L.marker([lat, lon]).addTo(macarte);
-                marker.bindPopup(ville);
+                // Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
+				marker.bindPopup(ville);
             }
             window.onload = function(){
 		// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
