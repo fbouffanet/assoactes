@@ -50,7 +50,7 @@ try {
     max(stats_commune.annee_max) AS 'Date max',
     sum(stats_commune.nb_actes) AS 'Nbrs actes',
     commune_acte.latitude AS latitude,
-    commune_acte.latitude AS longitude
+    commune_acte.longitude AS longitude
 from stats_commune 
 join commune_acte 
 on (stats_commune.idf_commune=commune_acte.idf) 
