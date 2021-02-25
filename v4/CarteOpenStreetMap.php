@@ -8,27 +8,48 @@ require_once('Commun/config.php');
 require_once('Commun/constantes.php');
 require_once('Commun/ConnexionBD.php');
 
+
+$st_requete = "select stats_commune.idf_commune,
+commune_acte.nom AS 'nom', 
+commune_acte.latitude AS 'latitude',
+commune_acte.longitude AS 'longitude',
+type_acte.nom AS 'acte',
+min(stats_commune.annee_min) AS 'Date mini',
+max(stats_commune.annee_max) AS 'Date max',
+sum(stats_commune.nb_actes) AS 'Nbrs actes'
+from stats_commune 
+join commune_acte 
+on (stats_commune.idf_commune=commune_acte.idf) 
+join type_acte
+on (stats_commune.idf_type_acte=type_acte.idf) 
+where commune_acte.idf=$gi_idf_commune
+group by stats_commune.idf_commune,stats_commune.idf_type_acte";
+
+
+$st_requete1="select nom, latitude,longitude from commune_acte where idf=$gi_idf_commune";
+
+
+
 $gf_pi=3.14159265359;
 
-if (isset($_GET['idf_commune']))
+/*if (isset($_GET['idf_commune']))
 {
   $gi_idf_commune = (int) $_GET['idf_commune'];
 }
 
 else
  die("Erreur: L'identifiant de commune est manquant");
-
+*/
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 try {
-    list($st_commune,$f_lat_rad,$f_lon_rad)=$connexionBD->sql_select_liste("select nom, latitude,longitude from commune_acte where idf=$gi_idf_commune");
-    if (is_null($st_commune))
-    {
-       $error = "Cette commune n'existe pas";
-       throw new Exception($error);
-    }
+    list($st_commune,$f_lat_rad,$f_lon_rad)=$connexionBD->sql_select_multiple_par_idf("select nom,latitude,longitude from commune_acte ");
+
     $f_lat_deg=$f_lat_rad*180/$gf_pi;
     $f_lon_deg=$f_lon_rad*180/$gf_pi;
+	
+	print $st_commune."-- ".$f_lat_rad."-- ".$f_lon_rad ;
+	
     
 }
 catch (Exception $e) {
@@ -80,13 +101,15 @@ catch (Exception $e) {
         <!-- Fichiers Javascript -->
         <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
 	<script type="text/javascript">
-            // On initialise la latitude et la longitude de Paris (centre de la carte)
-            var lat = <?php echo json_encode($f_lat_deg); ?>;
+            
+			// On initialise la latitude et la longitude de Paris (centre de la carte)
+       
+			var lat = <?php echo json_encode($f_lat_deg); ?>;
             var lon = <?php echo json_encode($f_lon_deg); ?>;
-            var ville = <?php echo json_encode($st_commune); ?>;
+			var villes = <?php echo json_encode($st_commune); ?>;
             var macarte = null;
-            // Fonction d'initialisation de la carte
-           
+          
+		    // Fonction d'initialisation de la carte
             function initMap() {
                 // Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
                 macarte = L.map('map').setView([lat, lon], 11);
@@ -97,17 +120,17 @@ catch (Exception $e) {
                     minZoom: 1,
                     maxZoom: 20
                 }).addTo(macarte);
+				for (ville in villes){}
                 // Nous ajoutons un marqueur
-                var marker = L.marker([lat, lon]).addTo(macarte);
-                // Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
+                var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
+				// Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
 				marker.bindPopup(ville);
             }
            
-            window.onload = function(){
+		   window.onload = function(){
 		// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
 		initMap(); 
             };
-        
         </script>
       <div class="form-row">
          <button type="button" id=ferme class="btn btn-warning col-xs-4 col-xs-offset-4">Fermer la fen&ecirc;tre</button>

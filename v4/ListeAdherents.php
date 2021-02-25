@@ -798,7 +798,7 @@ function exporte_adresses_par_statut($pconnexionBD,$pc_statut)
              if ($st_cellule=='')
                 print("<td>&nbsp;</td>");
              else
-                print("<td>$st_cellule</td>");   
+                print("<td>".cp1252_vers_utf8($st_cellule)."</td>");   
           }
           print("</tr>"); 
        }
@@ -894,7 +894,7 @@ function montre_aides_adherents($pconnexionBD)
         print("<tr>"); 
         foreach ($a_ligne as $st_cellule)
         {
-           print("<td>$st_cellule</td>");   
+           print("<td>".cp1252_vers_utf8($st_cellule)."</td>");   
         }
         print("</tr>"); 
      }
@@ -920,7 +920,7 @@ function montre_aides_adherents($pconnexionBD)
         print("<tr>"); 
         foreach ($a_ligne as $st_cellule)
         {
-           print("<td>$st_cellule</td>");   
+           print("<td>".cp1252_vers_utf8($st_cellule)."</td>");    
         }
         print("</tr>"); 
      }
@@ -946,7 +946,7 @@ function montre_aides_adherents($pconnexionBD)
         print("<tr>"); 
         foreach ($a_ligne as $st_cellule)
         {
-           print("<td>$st_cellule</td>");   
+           print("<td>".cp1252_vers_utf8($st_cellule)."</td>");    
         }
         print("</tr>"); 
      }
@@ -972,7 +972,7 @@ function montre_aides_adherents($pconnexionBD)
         print("<tr>"); 
         foreach ($a_ligne as $st_cellule)
         {
-           print("<td>$st_cellule</td>");   
+           print("<td>".cp1252_vers_utf8($st_cellule)."</td>");  
         }
         print("</tr>"); 
      }
