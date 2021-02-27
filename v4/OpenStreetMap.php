@@ -100,7 +100,7 @@ catch (Exception $e) {
                 // Nous ajoutons un marqueur
                 var marker = L.marker([lat, lon]).addTo(macarte);
                 // Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
-				marker.bindPopup(ville);
+				marker.bindPopup(ville,' Longitude : 'lon,' Latitude : 'lat);
             }
            
             window.onload = function(){
