@@ -662,7 +662,7 @@ if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debu
 if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= $g_pl_date_fin";
 $sqltmp = $sqltmp ." order by p.idf_acte,p.idf";
 print $sqltmp;
-print;
+
 $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 //**************************************************************
    }
