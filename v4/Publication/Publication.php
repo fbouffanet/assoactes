@@ -486,8 +486,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   }
   $st_nom_commune1 = utf8_encode ($st_nom_commune);
   print "Publication des divers de la commune $st_nom_commune1<br> <br>";
-  print $a_conjoint_h;
-
+  
 }
 
 
@@ -662,6 +661,7 @@ $sqltmp = "select p.idf_acte,p.idf,p.idf_type_presence,p.sexe, p.patronyme,ifnul
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
 if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= $g_pl_date_fin";
 $sqltmp = $sqltmp ." order by p.idf_acte,p.idf";
+print $sqltmp;
 $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 //**************************************************************
    }
