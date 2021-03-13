@@ -663,8 +663,6 @@ $sqltmp = "select p.idf_acte,p.idf,p.idf_type_presence,p.sexe, p.patronyme,ifnul
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
 if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= $g_pl_date_fin";
 $sqltmp = $sqltmp ." order by p.idf_acte,p.idf";
-print $sqltmp ;
-print "</br>";
 
 $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 //**************************************************************
@@ -714,8 +712,9 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 	print "<br><b>Compl&egrave;ment du type acte pour les actes divers expl=> Actes Notari&egrave;s</b></br>";
 	print ('<textarea name="TypeActe" rows="1" cols="45"></textarea><br><br>');
 	}
-	print $sqltmp ;
-    print "</br>";
+	print "</br>"; // 
+	print $sqltmp ;// affichage de la requête
+    print "</br>"; // 
 	print "<br><b>Info sur la publication expl=> Relev&egrave; par:</b></br>";
     print ('<textarea name="message" rows="8" cols="45"></textarea><br>');
     //print ('<input type="submit" value="Exportation du PDF" />');
