@@ -595,6 +595,8 @@ $date_fin = $row[1];
 if ($date_deb < 1500)
 {
    $sqltmp = "select annee from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte order by annee";
+   print $sqltmp ;
+   print "</br>";
 	while ($row = $connexionBD-> sql_select($sqltmp)) {
 	   if ($row[0] > 1500) {
 		   $date_deb = $row[0];
