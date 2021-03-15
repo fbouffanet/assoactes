@@ -489,8 +489,8 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   
 }
 
-
-function export_recensement($pi_idf_commune_acte)
+/*
+function export_recensement($pconnexionBD,$pi_idf_commune_acte)
 {
    $sql="select 
    cast(substring(a.commentaires,INSTR(a.commentaires,"N° de page:")+12,3) as INT) as Page,
@@ -518,10 +518,10 @@ function export_recensement($pi_idf_commune_acte)
    ENCLOSED BY '"'
    LINES TERMINATED BY '\n'";
     
-  // $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sql);
+   $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sql);
 
-   // $st_nom_commune1 = utf8_encode ($pi_idf_commune_acte);
-   // print "Publication des recensements de la commune $st_nom_commune1<br> <br>";
+    $st_nom_commune1 = utf8_encode ($pi_idf_commune_acte);
+    print "Publication des recensements de la commune $st_nom_commune1<br> <br>";
 
 }
 
