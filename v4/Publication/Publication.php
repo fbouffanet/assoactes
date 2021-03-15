@@ -515,14 +515,17 @@ function export_recensement($pconnexionBD,$pi_idf_commune_acte)
    join commune_personne c on (p.idf_origine =c.idf)
    join profession d on (p.idf_profession =d.idf)
    join acte a on (p.idf_acte=a.idf)
-   where a.idf_commune=208 and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, Ménage ASC"
+   where a.idf_commune=208 and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, Ménage ASC
+   INTO OUTFILE "$gst_repertoire_publication/ExportNimV3.csv"
+   FIELDS TERMINATED BY ':'
+   ENCLOSED BY '"'
+   LINES TERMINATED BY '\n'";
     
    $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sql);
-   fwrite($pf,(implode(';',$a_champs)));
-      fwrite($pf,"\r\n");
+
    
-    $st_nom_commune1 = utf8_encode ($st_nom_commune);
-    print "Publication des d&egrave;c&eacute;s de la commune $st_nom_commune1<br> <br>";
+    $st_nom_commune1 = utf8_encode ($pi_idf_commune_acte);
+    print "Publication des recensements de la commune $st_nom_commune1<br> <br>";
 }
 
 /*------------------------------------------------------------------------------
