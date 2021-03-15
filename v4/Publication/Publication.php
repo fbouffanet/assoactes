@@ -515,13 +515,15 @@ function export_recensement($pconnexionBD,$pi_idf_commune_acte)
    join profession d on (p.idf_profession =d.idf)
    join acte a on (p.idf_acte=a.idf)
    where a.idf_commune=208 and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, Ménage ASC";
-    
+   
+   $a_commune_personne=$pconnexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
+   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
    $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sql);
    fwrite($pf,(implode(';',$a_champs)));
       fwrite($pf,"\r\n");
    
     $st_nom_commune1 = utf8_encode ($st_nom_commune);
-    print "Publication des d&egrave;c&eacute;s de la commune $st_nom_commune1<br> <br>";
+    print "Publication des recesement de la commune $st_nom_commune1<br> <br>";
 }
 
 /*------------------------------------------------------------------------------
