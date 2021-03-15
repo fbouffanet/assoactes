@@ -499,7 +499,6 @@ function export_recensement($pconnexionBD,$pi_idf_commune_acte)
    substring(a.commentaires,INSTR(a.commentaires,"Nom de la Rue:")+14,10) as Rue,
    cast(substring(a.commentaires,INSTR(a.commentaires,"N° maison:")+10,3)as INT) as Maison,
    cast(substring(a.commentaires,INSTR(a.commentaires,"N° ménage:")+10,3)as INT) as Ménage,
-   
    p.patronyme as Nom,
    ifnull(prenom.libelle,'') as Prénom,
    ifnull(p.age,'') as Age,
@@ -515,17 +514,29 @@ function export_recensement($pconnexionBD,$pi_idf_commune_acte)
    join commune_personne c on (p.idf_origine =c.idf)
    join profession d on (p.idf_profession =d.idf)
    join acte a on (p.idf_acte=a.idf)
+<<<<<<< HEAD
    where a.idf_commune=208 and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, Ménage ASC
    INTO OUTFILE "$gst_repertoire_publication/ExportNimV3.csv"
    FIELDS TERMINATED BY ':'
    ENCLOSED BY '"'
    LINES TERMINATED BY '\n'";
     
+=======
+   where a.idf_commune=208 and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, Ménage ASC";
+   
+   $a_commune_personne=$pconnexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
+   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
+>>>>>>> 4a25f0e7f1a49f397a04fb7b2e38476b24595d55
    $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sql);
 
    
+<<<<<<< HEAD
     $st_nom_commune1 = utf8_encode ($pi_idf_commune_acte);
     print "Publication des recensements de la commune $st_nom_commune1<br> <br>";
+=======
+    $st_nom_commune1 = utf8_encode ($st_nom_commune);
+    print "Publication des recesement de la commune $st_nom_commune1<br> <br>";
+>>>>>>> 4a25f0e7f1a49f397a04fb7b2e38476b24595d55
 }
 
 /*------------------------------------------------------------------------------
