@@ -489,11 +489,10 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   
 }
 
+/*
 function export_recensement($pconnexionBD,$pi_idf_commune_acte)
 {
    $sql="select 
-   /*p.idf_acte,
-   p.idf,*/
    cast(substring(a.commentaires,INSTR(a.commentaires,"N° de page:")+12,3) as INT) as Page,
    substring(a.commentaires,INSTR(a.commentaires,"Quartier:")+9,10) as Quartier,
    substring(a.commentaires,INSTR(a.commentaires,"Nom de la Rue:")+14,10) as Rue,
@@ -504,7 +503,6 @@ function export_recensement($pconnexionBD,$pi_idf_commune_acte)
    ifnull(p.age,'') as Age,
    right(p.date_naissance,4) as Année°,
    c.nom as Lieu°,
-   /*d.profession as Profession,*/ 
    ifnull(p.commentaires,'') as Observation,
    a.url as Lien,
    a.details_supplementaires
