@@ -490,7 +490,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
 }
 
 
-function export_recensement($pconnexionBD,$pi_idf_commune_acte)
+function export_recensement($pi_idf_commune_acte)
 {
    $sql="select 
    cast(substring(a.commentaires,INSTR(a.commentaires,"N° de page:")+12,3) as INT) as Page,
