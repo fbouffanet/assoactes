@@ -23,13 +23,13 @@ function VerifieChampsRecherche(Formulaire,Mode)
 		default: alert('Type de recherche inconnu :' + document.forms[Formulaire].recherche.value); 
 	}
 	if ( idf_serie_liasse == '' )   {
-		ListeErreurs+="Sélectionner la série de liasses\n";
+		ListeErreurs+="SÃ©lectionner la sÃ©rie de liasses\n";
 	}
 	if( cote_debut != '' && isNaN(cote_debut ) ){
-		ListeErreurs+="La cote de début doit être un nombre\n";
+		ListeErreurs+="La cote de dÃ©but doit Ãªtre un nombre\n";
 	}
 	if( cote_fin != '' && isNaN(cote_fin ) ){
-		ListeErreurs+="La cote de fin doit être un nombre\n";
+		ListeErreurs+="La cote de fin doit Ãªtre un nombre\n";
 	}
 	if ( sans_notaire )   {
 		if (nom_notaire!="")   {
@@ -38,7 +38,7 @@ function VerifieChampsRecherche(Formulaire,Mode)
 	}
 	if ( sans_periode )   {
 		if (annee_min!="")   {
-			ListeErreurs+="Ne pas cocher 'liasses sans date' si vous saisissez une année\n";
+			ListeErreurs+="Ne pas cocher 'liasses sans date' si vous saisissez une annÃ©e\n";
 		}
 	}
 

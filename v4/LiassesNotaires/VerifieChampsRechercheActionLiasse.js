@@ -7,10 +7,10 @@ function VerifieChampsRechercheAction(Formulaire)
 		var cote_debut = document.forms['critere'].cote_debut.value;
 		var cote_fin   = document.forms['critere'].cote_fin.value;
 		if( cote_debut != '' && isNaN(cote_debut ) ){
-			ListeErreurs+="La cote de début doit être un nombre\n";
+			ListeErreurs+="La cote de dÃ©but doit Ãªtre un nombre\n";
 		}
 		if( cote_fin != '' && isNaN(cote_fin ) ){
-			ListeErreurs+="La cote de fin doit être un nombre\n";
+			ListeErreurs+="La cote de fin doit Ãªtre un nombre\n";
 		}
 	}
 	if( menu == 'sans' ){
@@ -18,7 +18,7 @@ function VerifieChampsRechercheAction(Formulaire)
 		var sans_periode = document.forms['critere'].sans_periode.checked;
 		var sans_lieu = document.forms['critere'].sans_lieu.checked;
 		if( ! sans_notaire  && ! sans_periode && ! sans_lieu ){
-			ListeErreurs+="Cochez au moins un critère\n";
+			ListeErreurs+="Cochez au moins un critÃ¨re\n";
 		}
 	}
 	if (ListeErreurs!= "")	{
