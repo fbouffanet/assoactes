@@ -489,7 +489,41 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   
 }
 
-
+function export_recensement($pconnexionBD,$pi_idf_commune_acte)
+{
+   $sql="select 
+   /*p.idf_acte,
+   p.idf,*/
+   cast(substring(a.commentaires,INSTR(a.commentaires,"N° de page:")+12,3) as INT) as Page,
+   substring(a.commentaires,INSTR(a.commentaires,"Quartier:")+9,10) as Quartier,
+   substring(a.commentaires,INSTR(a.commentaires,"Nom de la Rue:")+14,10) as Rue,
+   cast(substring(a.commentaires,INSTR(a.commentaires,"N° maison:")+10,3)as INT) as Maison,
+   cast(substring(a.commentaires,INSTR(a.commentaires,"N° ménage:")+10,3)as INT) as Ménage,
+   
+   p.patronyme as Nom,
+   ifnull(prenom.libelle,'') as Prénom,
+   ifnull(p.age,'') as Age,
+   right(p.date_naissance,4) as Année°,
+   c.nom as Lieu°,
+   /*d.profession as Profession,*/ 
+   ifnull(p.commentaires,'') as Observation,
+   a.url as Lien,
+   a.details_supplementaires
+   from 
+   personne p 
+   left join prenom on (p.idf_prenom=prenom.idf) 
+   join commune_personne c on (p.idf_origine =c.idf)
+   join profession d on (p.idf_profession =d.idf)
+   join acte a on (p.idf_acte=a.idf)
+   where a.idf_commune=208 and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, Ménage ASC"
+    
+   $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sql);
+   fwrite($pf,(implode(';',$a_champs)));
+      fwrite($pf,"\r\n");
+   
+    $st_nom_commune1 = utf8_encode ($st_nom_commune);
+    print "Publication des d&egrave;c&eacute;s de la commune $st_nom_commune1<br> <br>";
+}
 
 /*------------------------------------------------------------------------------
                             Corps du programme
@@ -713,7 +747,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 	print ('<textarea name="TypeActe" rows="1" cols="45"></textarea><br><br>');
 	}
 	print ('<div class="alert alert-warning">');
-	print $sqltmp ;// affichage de la requ�te
+	print $sqltmp ;// affichage de la requ�te
     print ('</div>'); // 
 	print "<br><b>Info sur la publication expl=> Relev&egrave; par:</b></br>";
     print ('<textarea name="message" rows="8" cols="45"></textarea><br>');
