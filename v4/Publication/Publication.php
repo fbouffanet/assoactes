@@ -499,7 +499,6 @@ function export_recensement($pconnexionBD,$pi_idf_commune_acte)
    substring(a.commentaires,INSTR(a.commentaires,"Nom de la Rue:")+14,10) as Rue,
    cast(substring(a.commentaires,INSTR(a.commentaires,"N° maison:")+10,3)as INT) as Maison,
    cast(substring(a.commentaires,INSTR(a.commentaires,"N° ménage:")+10,3)as INT) as Ménage,
-   
    p.patronyme as Nom,
    ifnull(prenom.libelle,'') as Prénom,
    ifnull(p.age,'') as Age,
@@ -515,7 +514,7 @@ function export_recensement($pconnexionBD,$pi_idf_commune_acte)
    join commune_personne c on (p.idf_origine =c.idf)
    join profession d on (p.idf_profession =d.idf)
    join acte a on (p.idf_acte=a.idf)
-   where a.idf_commune=208 and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, Ménage ASC"
+   where a.idf_commune=208 and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, Ménage ASC";
     
    $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sql);
    fwrite($pf,(implode(';',$a_champs)));
