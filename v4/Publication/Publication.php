@@ -490,7 +490,36 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   
 }
 function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf)
-{print $gi_idf_commune_acte ."   ";
+{
+  print "coucou". $gi_idf_commune_acte ." <br></br>  ";
+  print "coucou". $gi_idf_commune_acte ." <br></br>  ";
+  sql="select 
+/*p.idf_acte,
+p.idf,*/
+cast(substring(a.commentaires,INSTR(a.commentaires,"N° de page:")+12,3) as INT) as Page,
+substring(a.commentaires,INSTR(a.commentaires,"Quartier:")+9,10) as Quartier,
+substring(a.commentaires,INSTR(a.commentaires,"Nom de la Rue:")+14,10) as Rue,
+cast(substring(a.commentaires,INSTR(a.commentaires,"N° maison:")+10,3)as INT) as Maison,
+cast(substring(a.commentaires,INSTR(a.commentaires,"N° ménage:")+10,3)as INT) as Ménage,
+
+p.patronyme as Nom,
+ifnull(prenom.libelle,'') as Prénom,
+ifnull(p.age,'') as Age,
+right(p.date_naissance,4) as Année°,
+c.nom as Lieu°,
+/*d.profession as Profession,*/ 
+ifnull(p.commentaires,'') as Observation,
+a.url as Lien,
+a.details_supplementaires
+from 
+personne p 
+left join prenom on (p.idf_prenom=prenom.idf) 
+join commune_personne c on (p.idf_origine =c.idf)
+join profession d on (p.idf_profession =d.idf)
+join acte a on (p.idf_acte=a.idf)
+where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, Ménage ASC";
+
+
 }
 
 
@@ -576,7 +605,6 @@ switch($gst_mode)
       case IDF_NAISSANCE :
       case IDF_MARIAGE :
       case IDF_DECES :
-	    case IDF_RECENS :
 
 // Rajout PL sur les dates **********************************************
 $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
@@ -647,6 +675,43 @@ if ($date_deb < 1500)
 		}
    }
 }
+
+//======================================================================================
+
+case IDF_RECENS :
+  // Rajout PL sur les dates ***********************************************************
+  $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=147";
+  if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
+  if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= $g_pl_date_fin";
+  $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sqltmp);
+  // Nombre de lignes s?lect?es
+  $results= $connexionBD->liste_valeur_par_clef($sqltmp);
+  $nb_rows = count($results);
+  // pour r?cup?rer l'ann?e mini et maxi
+  $sqltmp = "select min(annee) as annee_deb, max(annee) as annee_fin from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENS.")";
+  
+  
+  if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
+  if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= $g_pl_date_fin";
+  // pour r?cup?rer les ann?es s?lectionn?es
+  $row = $connexionBD-> sql_select_liste($sqltmp);
+  $date_deb = $row[0];
+  $date_fin = $row[1];
+  // rajout test si date ? 0
+  if ($date_deb < 1500)
+  {
+     $sqltmp = "select min(annee) as annee_deb, max(annee) as annee_fin from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENS.")";
+    while ($row = $connexionBD-> sql_select($sqltmp)) {
+       if ($row[0] > 1500) {
+         $date_deb = $row[0];
+        break;
+      }
+     }
+  }
+
+
+
+
 
 // Rajout PL sur les dates
 $sqltmp = "select p.idf_acte,p.idf,p.idf_type_presence,p.sexe, p.patronyme,ifnull(prenom.libelle,''),p.idf_origine,p.date_naissance,p.age,p.idf_profession, p.commentaires,p.idf_pere,p.idf_mere,p.est_decede from personne p left join prenom on (p.idf_prenom=prenom.idf) join acte a on (p.idf_acte=a.idf) where a.idf_commune=$gi_idf_commune_acte and a.idf_source=$gi_idf_source and a.idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENS.")";
