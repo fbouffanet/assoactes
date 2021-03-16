@@ -150,8 +150,7 @@ function export_nai_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 
 function export_dec_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-	print $pi_idf_commune_acte;
-   // ? adapter pour prendre le champ code insee
+	   // ? adapter pour prendre le champ code insee
    list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
    $a_commune_personne=$pconnexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
    $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
