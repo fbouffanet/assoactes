@@ -489,8 +489,8 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   print "Publication des divers de la commune $st_nom_commune1<br> <br>";
   
 }
-function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf);
-{
+function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf)
+{print $gi_idf_commune_acte ."   ";
 }
 
 
@@ -576,7 +576,7 @@ switch($gst_mode)
       case IDF_NAISSANCE :
       case IDF_MARIAGE :
       case IDF_DECES :
-	  case IDF_RECENS :
+	    case IDF_RECENS :
 
 // Rajout PL sur les dates **********************************************
 $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
