@@ -489,6 +489,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   print "Publication des divers de la commune $st_nom_commune1<br> <br>";
   
 }
+<<<<<<< HEAD
 function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf)
 {
   print "coucou". $gi_idf_commune_acte ." <br></br>  ";
@@ -520,6 +521,10 @@ join acte a on (p.idf_acte=a.idf)
 where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, Ménage ASC";
 
 
+=======
+function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf);
+{
+>>>>>>> parent of b3b05f0a2 (Update Publication.php)
 }
 
 
@@ -605,6 +610,10 @@ switch($gst_mode)
       case IDF_NAISSANCE :
       case IDF_MARIAGE :
       case IDF_DECES :
+<<<<<<< HEAD
+=======
+	  case IDF_RECENS :
+>>>>>>> parent of b3b05f0a2 (Update Publication.php)
 
 // Rajout PL sur les dates **********************************************
 $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
