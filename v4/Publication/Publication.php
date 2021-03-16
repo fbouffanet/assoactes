@@ -489,18 +489,6 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   
 }
 
-
-function export_recensement($pconnexionBD,$pi_idf_commune_acte)
-{
-
-    
-   
-    //$a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sql);
-    //$st_nom_commune1 = utf8_encode ($pi_idf_commune_acte);
-    print "Publication des recensements de la commune $pi_idf_commune_acte<br> <br>";
-
-}
-
 /*------------------------------------------------------------------------------
                             Corps du programme
  -----------------------------------------------------------------------------*/
