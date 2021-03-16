@@ -93,7 +93,7 @@ $a_serie_liasse = $connexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom 
 print('<form id="recherche" method="post">');
 
 print('<div style="text-align:center">');
-print('   <br>S&eacute;rie liasses: ');
+print('   <br>S&eacute;rie liasses bip : ');
 print('   <select name="idf_serie_liasse" id="idf_serie_liasse">');
 print(    chaine_select_options($gst_idf_serie_liasse,$a_serie_liasse));
 print('   </select>');
