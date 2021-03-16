@@ -489,6 +489,18 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   
 }
 
+
+function export_recensement($pconnexionBD,$pi_idf_commune_acte)
+{
+
+    
+   
+    //$a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sql);
+    //$st_nom_commune1 = utf8_encode ($pi_idf_commune_acte);
+    print "Publication des recensements de la commune $pi_idf_commune_acte<br> <br>";
+
+}
+
 /*------------------------------------------------------------------------------
                             Corps du programme
  -----------------------------------------------------------------------------*/
@@ -601,7 +613,7 @@ if ($date_deb < 1500)
 		}
    }
 }
-;
+
 // Rajout PL sur les dates ***********************************************************
 $sqltmp = "select p.idf_acte,p.idf,p.idf_type_presence,p.sexe, p.patronyme,ifnull(prenom.libelle,''),p.idf_origine,p.date_naissance,p.age,p.idf_profession, p.commentaires,p.idf_pere,p.idf_mere,p.est_decede from personne p left join prenom  on (p.idf_prenom=prenom.idf) join acte a on (p.idf_acte=a.idf)where a.idf_commune=$gi_idf_commune_acte and a.idf_source=$gi_idf_source and a.idf_type_acte=$gc_idf_type_acte";
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
