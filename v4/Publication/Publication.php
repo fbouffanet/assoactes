@@ -491,8 +491,34 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
 }
 function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf)
 {
-  print "coucou". $gi_idf_commune_acte ." <br></br>  ";
-  print "coucou". $gi_idf_commune_acte ." <br></br>  ";
+  print "coucou ". $gi_idf_commune_acte ." <br></br>  ";
+  print "coucou ". $gi_idf_commune_acte ." <br></br>  ";
+  
+  $sqlrec="select 
+  /*p.idf_acte,
+  p.idf,*/
+  cast(substring(a.commentaires,INSTR(a.commentaires,"N° de page:")+12,3) as INT) as Page,
+  substring(a.commentaires,INSTR(a.commentaires,"Quartier:")+9,10) as Quartier,
+  substring(a.commentaires,INSTR(a.commentaires,"Nom de la Rue:")+14,10) as Rue,
+  cast(substring(a.commentaires,INSTR(a.commentaires,"N° maison:")+10,3)as INT) as Maison,
+  cast(substring(a.commentaires,INSTR(a.commentaires,"N° ménage:")+10,3)as INT) as Ménage,
+  
+  p.patronyme as Nom,
+  ifnull(prenom.libelle,'') as Prénom,
+  ifnull(p.age,'') as Age,
+  right(p.date_naissance,4) as Année°,
+  c.nom as Lieu°,
+  /*d.profession as Profession,*/ 
+  ifnull(p.commentaires,'') as Observation,
+  a.url as Lien,
+  a.details_supplementaires
+  from 
+  personne p 
+  left join prenom on (p.idf_prenom=prenom.idf) 
+  join commune_personne c on (p.idf_origine =c.idf)
+  join profession d on (p.idf_profession =d.idf)
+  join acte a on (p.idf_acte=a.idf)
+  where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, Ménage ASC";
   
  
 
@@ -581,7 +607,7 @@ switch($gst_mode)
       case IDF_NAISSANCE :
       case IDF_MARIAGE :
       case IDF_DECES :
-	    case IDF_RECENS :
+	    
 
 
 // Rajout PL sur les dates **********************************************
