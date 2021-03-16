@@ -576,6 +576,7 @@ switch($gst_mode)
       case IDF_NAISSANCE :
       case IDF_MARIAGE :
       case IDF_DECES :
+	  case IDF_RECENS :
 
 // Rajout PL sur les dates **********************************************
 $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
@@ -615,10 +616,6 @@ $sqltmp = $sqltmp ." order by p.idf_acte,p.idf";
 $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 //****************************************************************************
          break;
-		 
-	  case IDF_RECENS:
-	  break;
-	 
 
       case IDF_DIVERS :
 // Rajout PL sur les dates ***********************************************************
