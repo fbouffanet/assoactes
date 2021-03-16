@@ -491,9 +491,9 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
 }
 function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf)
 {
-  print "coucou". $gi_idf_commune_acte ." <br></br>  ";
-  print "coucou". $gi_idf_commune_acte ." <br></br>  ";
-  
+  print "coucou ". $gi_idf_commune_acte ." <br></br>  ";
+  print "coucou ". $gi_idf_commune_acte ." <br></br>  ";
+   
  
 
 }
@@ -581,7 +581,7 @@ switch($gst_mode)
       case IDF_NAISSANCE :
       case IDF_MARIAGE :
       case IDF_DECES :
-	    case IDF_RECENS :
+	    
 
 
 // Rajout PL sur les dates **********************************************
