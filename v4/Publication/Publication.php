@@ -682,10 +682,6 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 	     export_div_nimv3($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf);
 		 $menuDIV = "O";
       break;
-	  case IDF_RECENS
-		export_recensement($connexionBD,$gi_idf_commune_acte);
-	    $menuDIV = "N";
-      break;
    }
 
    fclose($pf);
