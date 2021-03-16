@@ -493,7 +493,7 @@ function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_
 {
   print "coucou". $gi_idf_commune_acte ." <br></br>  ";
   print "coucou". $gi_idf_commune_acte ." <br></br>  ";
-  sql="select 
+  $sql="select 
 /*p.idf_acte,
 p.idf,*/
 cast(substring(a.commentaires,INSTR(a.commentaires,"N° de page:")+12,3) as INT) as Page,
@@ -685,7 +685,7 @@ if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= $g_pl_date_fin";
 $sqltmp = $sqltmp ." order by p.idf_acte,p.idf";
 $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 
-
+   }
 //**************************************************************
    
    case IDF_RECENS :
