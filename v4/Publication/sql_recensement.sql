@@ -22,7 +22,7 @@ left join prenom on (p.idf_prenom=prenom.idf)
 join commune_personne c on (p.idf_origine =c.idf)
 join profession d on (p.idf_profession =d.idf)
 join acte a on (p.idf_acte=a.idf)
-where a.idf_commune=208 and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, Ménage ASC
+where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, Ménage ASC
 
 
 select 
