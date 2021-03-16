@@ -623,7 +623,8 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 //****************************************************************************
          break;
 
-//======================== RECENSEMENT DEB ============================================================
+/*
+         //======================== RECENSEMENT DEB ============================================================
       case IDF_RECENS :
         $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte =147)";
         if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
@@ -655,7 +656,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
           }
         
 //=============================  RECENSEMENT FIN ===============================================
-
+*/
 
       case IDF_DIVERS :
 // Rajout PL sur les dates ***********************************************************
