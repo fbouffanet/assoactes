@@ -656,6 +656,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
          //======================== RECENSEMENT DEB ============================================================
       case IDF_RECENS :
         $fichierrecensement=$gst_repertoire_publication/ExportNimV3.csv;
+        print "chemin du fichier". $fichierrecensement."<br></br>";
 
 $sqlrecensement= "select 
 /*p.idf_acte,
