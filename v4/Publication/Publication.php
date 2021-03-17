@@ -10,6 +10,7 @@ require_once('../Commun/PaginationTableau.php');
 require_once '../Commun/commun.php';
 
 $gst_repertoire_publication = $_SERVER['DOCUMENT_ROOT'].'/v4/Publication/telechargements';
+print $gst_repertoire_publication;
 
 print('<!DOCTYPE html>');
 print("<head>");
