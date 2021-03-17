@@ -488,7 +488,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   print "Publication des divers de la commune $st_nom_commune1<br> <br>";
   
 }
-function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf,$sqlrecensement,$fichierrecensement)
+function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf,$st_export_nimv3)
 {
   $fichierrecensement=$gst_repertoire_publication/ExportNimV3.csv;
 
