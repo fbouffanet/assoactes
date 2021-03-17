@@ -488,11 +488,11 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   print "Publication des divers de la commune $st_nom_commune1<br> <br>";
   
 }
-function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf)
+function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf,$sqlrecensement,$fichierrecensement)
 {
   print "N° de commune ". $gi_idf_commune_acte ." <br></br>  ";
-  print "fichier ". $fichier ." <br></br>  ";
-  print "sql". $sql."<br></br>" ;
+  print "fichier ". $fichierrecensement ." <br></br>  ";
+  print "sqlrecensement". $sqlrecensement."<br></br>" ;
    
  
 
@@ -626,9 +626,9 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 
          //======================== RECENSEMENT DEB ============================================================
       case IDF_RECENS :
-$fichier=$gst_repertoire_publication/ExportNimV3.csv;
+        $fichierrecensement=$gst_repertoire_publication/ExportNimV3.csv;
 
-$sql= "select 
+$sqlrecensement= "select 
 /*p.idf_acte,
 p.idf,*/
 cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page,
@@ -653,7 +653,7 @@ join profession d on (p.idf_profession =d.idf)
 join acte a on (p.idf_acte=a.idf)
 where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 
 order by Page ASC, Maison ASC, Ménage ASC , 
-into outfile '$fichier' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'LINES TERMINATED BY '\n'"; 
+into outfile '$fichierrecensement' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'LINES TERMINATED BY '\n'"; 
 
               break;
 
