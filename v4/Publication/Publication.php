@@ -490,8 +490,9 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
 }
 function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf)
 {
-  print "coucou ". $gi_idf_commune_acte ." <br></br>  ";
-  print "coucou ". $gi_idf_commune_acte ." <br></br>  ";
+  print "N° de commune ". $gi_idf_commune_acte ." <br></br>  ";
+  print "fichier ". $fichier ." <br></br>  ";
+  print "sql". $sql."<br></br>" ;
    
  
 
@@ -625,6 +626,8 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 
          //======================== RECENSEMENT DEB ============================================================
       case IDF_RECENS :
+$fichier=$gst_repertoire_publication/ExportNimV3.csv;
+
 $sql= "select 
 /*p.idf_acte,
 p.idf,*/
@@ -650,7 +653,7 @@ join profession d on (p.idf_profession =d.idf)
 join acte a on (p.idf_acte=a.idf)
 where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 
 order by Page ASC, Maison ASC, Ménage ASC , 
-into outfile '$gst_repertoire_publication/ExportNimV3.csv' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'LINES TERMINATED BY '\n'";
+into outfile '$fichier' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'LINES TERMINATED BY '\n'"; 
 
               break;
 
