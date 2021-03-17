@@ -491,7 +491,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
 }
 function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf,$st_export_nimv3)
 {
-  $fichierrecensement=$gst_repertoire_publication/ExportNimV3.csv;
+  $fichierrecensement="/var/www/clients/client1/web3/web/v4/Publication/telechargements/ExportNimV3.csv";
 
   $sqlrecensement= "select 
   /*p.idf_acte,
@@ -518,10 +518,10 @@ function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_
   join acte a on (p.idf_acte=a.idf)
   where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 
   order by Page ASC, Maison ASC, Ménage ASC , 
-  into outfile '$st_export_nimv3' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'LINES TERMINATED BY '\n'"; 
+  into outfile $fichierrecensement FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'LINES TERMINATED BY '\n'"; 
 
   print "N° de commune ". $gi_idf_commune_acte ." <br></br>  ";
-  print "fichier ". $st_export_nimv3 ." <br></br>  ";
+  print "fichier ". $fichierrecensement ." <br></br>  ";
   print "sqlrecensement". $sqlrecensement."<br></br>" ;
    
  
