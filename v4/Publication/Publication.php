@@ -688,9 +688,10 @@ $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sqlrecensement);
 // Nombre de lignes s?lect?es
 $results= $connexionBD->liste_valeur_par_clef($sqlrecensement);
 $nb_rows = count($results);
-$a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqlrecensement);
+
 print "nombres d\'actes :".$nb_rows ;
 
+//$a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqlrecensement);
               break;
 
 //=============================  RECENSEMENT FIN ===============================================
