@@ -1,17 +1,17 @@
 select 
 /*p.idf_acte,
 p.idf,*/
-cast(substring(a.commentaires,INSTR(a.commentaires,"N° de page:")+12,3) as INT) as Page,
+cast(substring(a.commentaires,INSTR(a.commentaires,"NÂ° de page:")+12,3) as INT) as Page,
 substring(a.commentaires,INSTR(a.commentaires,"Quartier:")+9,10) as Quartier,
 substring(a.commentaires,INSTR(a.commentaires,"Nom de la Rue:")+14,10) as Rue,
-cast(substring(a.commentaires,INSTR(a.commentaires,"N° maison:")+10,3)as INT) as Maison,
-cast(substring(a.commentaires,INSTR(a.commentaires,"N° ménage:")+10,3)as INT) as Ménage,
+cast(substring(a.commentaires,INSTR(a.commentaires,"NÂ° maison:")+10,3)as INT) as Maison,
+cast(substring(a.commentaires,INSTR(a.commentaires,"NÂ° mÃ©nage:")+10,3)as INT) as MÃ©nage,
 
 p.patronyme as Nom,
-ifnull(prenom.libelle,'') as Prénom,
+ifnull(prenom.libelle,'') as PrÃ©nom,
 ifnull(p.age,'') as Age,
-right(p.date_naissance,4) as Année°,
-c.nom as Lieu°,
+right(p.date_naissance,4) as AnnÃ©eÂ°,
+c.nom as LieuÂ°,
 /*d.profession as Profession,*/ 
 ifnull(p.commentaires,'') as Observation,
 a.url as Lien,
@@ -22,8 +22,11 @@ left join prenom on (p.idf_prenom=prenom.idf)
 join commune_personne c on (p.idf_origine =c.idf)
 join profession d on (p.idf_profession =d.idf)
 join acte a on (p.idf_acte=a.idf)
-where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, Ménage ASC
-
+where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, MÃ©nage ASC
+into outfile 'c:\data.csv' 
+FIELDS TERMINATED BY ',' 
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
 
 select 
 p.idf_acte,
