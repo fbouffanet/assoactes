@@ -657,8 +657,6 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 
          //======================== RECENSEMENT DEB ============================================================
       case IDF_RECENS :
-        $fichierrecensement=$gst_repertoire_publication/ExportNimV3.csv;
-        print "chemin du fichier". $fichierrecensement."<br></br>";
 
 $sqlrecensement= "select 
 /*p.idf_acte,
@@ -684,8 +682,14 @@ join commune_personne c on (p.idf_origine =c.idf)
 join profession d on (p.idf_profession =d.idf)
 join acte a on (p.idf_acte=a.idf)
 where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 
-order by Page ASC, Maison ASC, Ménage ASC , 
-into outfile '$fichierrecensement' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'LINES TERMINATED BY '\n'"; 
+order by Page ASC, Maison ASC, Ménage ASC"; 
+
+$a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sqlrecensement);
+// Nombre de lignes s?lect?es
+$results= $connexionBD->liste_valeur_par_clef($sqlrecensement);
+$nb_rows = count($results);
+$a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqlrecensement);
+print "nombres d\'actes :".$nb_rows ;
 
               break;
 
