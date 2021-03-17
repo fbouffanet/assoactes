@@ -524,6 +524,7 @@ function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_
   print "fichier ". $fichierrecensement ." <br></br>  ";
   print "sqlrecensement". $sqlrecensement."<br></br>" ;
    
+  $connexionBD->liste_valeur_par_clef($sqlrecensement);
  
 
 }
