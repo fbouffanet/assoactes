@@ -628,11 +628,11 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 $sql= "select 
 /*p.idf_acte,
 p.idf,*/
-cast(substring(a.commentaires,INSTR(a.commentaires,"N de page:")+12,3) as INT) as Page,
-substring(a.commentaires,INSTR(a.commentaires,"Quartier:")+9,10) as Quartier,
-substring(a.commentaires,INSTR(a.commentaires,"Nom de la Rue:")+14,10) as Rue,
-cast(substring(a.commentaires,INSTR(a.commentaires,"N° maison:")+10,3)as INT) as Maison,
-cast(substring(a.commentaires,INSTR(a.commentaires,"N° ménage:")+10,3)as INT) as M�nage,
+cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page,
+substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier,
+substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue,
+cast(substring(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)as INT) as Maison,
+cast(substring(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)as INT) as Ménage,
 p.patronyme as Nom,
 ifnull(prenom.libelle,'') as Prénom,
 ifnull(p.age,'') as Age,
@@ -649,7 +649,7 @@ join commune_personne c on (p.idf_origine =c.idf)
 join profession d on (p.idf_profession =d.idf)
 join acte a on (p.idf_acte=a.idf)
 where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 order by Page ASC, Maison ASC, Ménage ASC
-";
+into outfile '$gst_repertoire_publication/ExportNimV3.csv' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '""'LINES TERMINATED BY '\n'";
 
               break;
 
