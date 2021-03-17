@@ -10,7 +10,6 @@ require_once('../Commun/PaginationTableau.php');
 require_once '../Commun/commun.php';
 
 $gst_repertoire_publication = $_SERVER['DOCUMENT_ROOT'].'/v4/Publication/telechargements';
-print $gst_repertoire_publication;
 
 print('<!DOCTYPE html>');
 print("<head>");
@@ -151,7 +150,7 @@ function export_nai_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
 
 function export_dec_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-	   // ? adapter pour prendre le champ code insee
+   // ? adapter pour prendre le champ code insee
    list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
    $a_commune_personne=$pconnexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
    $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
@@ -489,45 +488,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   print "Publication des divers de la commune $st_nom_commune1<br> <br>";
   
 }
-function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf,$st_export_nimv3)
-{
-  $fichierrecensement="/var/www/clients/client1/web3/web/v4/Publication/telechargements/ExportNimV3.csv";
 
-  $sqlrecensement= "select 
-  /*p.idf_acte,
-  p.idf,*/
-  cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page,
-  substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier,
-  substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue,
-  cast(substring(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)as INT) as Maison,
-  cast(substring(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)as INT) as Ménage,
-  p.patronyme as Nom,
-  ifnull(prenom.libelle,'') as Prénom,
-  ifnull(p.age,'') as Age,
-  right(p.date_naissance,4) as Année°,
-  c.nom as Lieu°,
-  /*d.profession as Profession,*/ 
-  ifnull(p.commentaires,'') as Observation,
-  a.url as Lien,
-  a.details_supplementaires
-  from 
-  personne p 
-  left join prenom on (p.idf_prenom=prenom.idf) 
-  join commune_personne c on (p.idf_origine =c.idf)
-  join profession d on (p.idf_profession =d.idf)
-  join acte a on (p.idf_acte=a.idf)
-  where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 
-  order by Page ASC, Maison ASC, Ménage ASC , 
-  into outfile $fichierrecensement FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'LINES TERMINATED BY '\n'"; 
-
-  print "N° de commune ". $gi_idf_commune_acte ." <br></br>  ";
-  print "fichier ". $fichierrecensement ." <br></br>  ";
-  print "sqlrecensement". $sqlrecensement."<br></br>" ;
-   
-  $connexionBD->liste_valeur_par_clef($sqlrecensement);
- 
-
-}
 
 
 /*------------------------------------------------------------------------------
@@ -612,8 +573,7 @@ switch($gst_mode)
       case IDF_NAISSANCE :
       case IDF_MARIAGE :
       case IDF_DECES :
-	    
-
+//         $a_liste_actes= $connexionBD->sql_select_multiple_par_idf("select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte");
 
 // Rajout PL sur les dates **********************************************
 $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
@@ -635,8 +595,6 @@ $date_fin = $row[1];
 if ($date_deb < 1500)
 {
    $sqltmp = "select annee from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte order by annee";
-   print $sqltmp ;
-   print "</br>";
 	while ($row = $connexionBD-> sql_select($sqltmp)) {
 	   if ($row[0] > 1500) {
 		   $date_deb = $row[0];
@@ -644,8 +602,7 @@ if ($date_deb < 1500)
 		}
    }
 }
-
-// Rajout PL sur les dates ***********************************************************
+ //        $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs("select p.idf_acte,p.idf,p.idf_type_presence,p.sexe, p.patronyme,p.prenom,p.idf_origine,p.date_naissance,p.age,p.idf_profession, p.commentaires,p.idf_pere,p.idf_mere,p.est_decede from personne p join acte a on (p.idf_acte=a.idf)where a.idf_commune=$gi_idf_commune_acte and a.idf_source=$gi_idf_source and a.idf_type_acte=$gc_idf_type_acte order by p.idf_acte,p.idf");
 $sqltmp = "select p.idf_acte,p.idf,p.idf_type_presence,p.sexe, p.patronyme,ifnull(prenom.libelle,''),p.idf_origine,p.date_naissance,p.age,p.idf_profession, p.commentaires,p.idf_pere,p.idf_mere,p.est_decede from personne p left join prenom  on (p.idf_prenom=prenom.idf) join acte a on (p.idf_acte=a.idf)where a.idf_commune=$gi_idf_commune_acte and a.idf_source=$gi_idf_source and a.idf_type_acte=$gc_idf_type_acte";
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
 if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
@@ -654,50 +611,15 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 //****************************************************************************
          break;
 
-
-         //======================== RECENSEMENT DEB ============================================================
-      case IDF_RECENS :
-
-$sqlrecensement= "select 
-/*p.idf_acte,
-p.idf,*/
-cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page,
-substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier,
-substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue,
-cast(substring(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)as INT) as Maison,
-cast(substring(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)as INT) as Ménage,
-p.patronyme as Nom,
-ifnull(prenom.libelle,'') as Prénom,
-ifnull(p.age,'') as Age,
-right(p.date_naissance,4) as Année°,
-c.nom as Lieu°,
-/*d.profession as Profession,*/ 
-ifnull(p.commentaires,'') as Observation,
-a.url as Lien,
-a.details_supplementaires
-from 
-personne p 
-left join prenom on (p.idf_prenom=prenom.idf) 
-join commune_personne c on (p.idf_origine =c.idf)
-join profession d on (p.idf_profession =d.idf)
-join acte a on (p.idf_acte=a.idf)
-where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 
-order by Page ASC, Maison ASC, Ménage ASC"; 
-
-$a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sqlrecensement);
-// Nombre de lignes s?lect?es
-$results= $connexionBD->liste_valeur_par_clef($sqlrecensement);
-$nb_rows = count($results);
-
-print "nombres d\'actes :".$nb_rows ;
-
-//$a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqlrecensement);
-              break;
-
-//=============================  RECENSEMENT FIN ===============================================
       case IDF_DIVERS :
+//         $a_liste_actes= $connexionBD->sql_select_multiple_par_idf("select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.")");
+
 // Rajout PL sur les dates ***********************************************************
+// PL 23/04/2014  pour n'avoir que les CM, remplacement de
 $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENS.")";
+// par
+//$sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte = 2";		// CM --> 2
+
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
 if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= $g_pl_date_fin";
 $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sqltmp);
@@ -705,8 +627,10 @@ $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sqltmp);
 $results= $connexionBD->liste_valeur_par_clef($sqltmp);
 $nb_rows = count($results);
 // pour r?cup?rer l'ann?e mini et maxi
+// PL 23/04/2014  pour n'avoir que les CM, remplacement de
 $sqltmp = "select min(annee) as annee_deb, max(annee) as annee_fin from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENS.")";
-
+//  par
+//$sqltmp = "select min(annee) as annee_deb, max(annee) as annee_fin from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte = 2";		// CM --> 2
 
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
 if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= $g_pl_date_fin";
@@ -717,6 +641,7 @@ $date_fin = $row[1];
 // rajout test si date ? 0
 if ($date_deb < 1500)
 {
+   //$sqltmp = "select annee from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte = 2 order by annee";		// CM --> 2
    $sqltmp = "select min(annee) as annee_deb, max(annee) as annee_fin from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENS.")";
 	while ($row = $connexionBD-> sql_select($sqltmp)) {
 	   if ($row[0] > 1500) {
@@ -725,17 +650,22 @@ if ($date_deb < 1500)
 		}
    }
 }
-   
-//======================================================================================
+
+//         $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs("select p.idf_acte,p.idf,p.idf_type_presence,p.sexe, p.patronyme,p.prenom,p.idf_origine,p.date_naissance,p.age,p.idf_profession, p.commentaires,p.idf_pere,p.idf_mere,p.est_decede from personne p join acte a on (p.idf_acte=a.idf) where a.idf_commune=$gi_idf_commune_acte and a.idf_source=$gi_idf_source and a.idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.") order by p.idf_acte,p.idf");
 // Rajout PL sur les dates
+// PL 23/04/2014  pour n'avoir que les CM, remplacement de
 $sqltmp = "select p.idf_acte,p.idf,p.idf_type_presence,p.sexe, p.patronyme,ifnull(prenom.libelle,''),p.idf_origine,p.date_naissance,p.age,p.idf_profession, p.commentaires,p.idf_pere,p.idf_mere,p.est_decede from personne p left join prenom on (p.idf_prenom=prenom.idf) join acte a on (p.idf_acte=a.idf) where a.idf_commune=$gi_idf_commune_acte and a.idf_source=$gi_idf_source and a.idf_type_acte not in (".IDF_NAISSANCE.",".IDF_MARIAGE.",".IDF_DECES.",".IDF_RECENS.")";
+//  par
+//$sqltmp = "select p.idf_acte,p.idf,p.idf_type_presence,p.sexe, p.patronyme,p.prenom,p.idf_origine,p.date_naissance,p.age,p.idf_profession, p.commentaires,p.idf_pere,p.idf_mere,p.est_decede from personne p join acte a on (p.idf_acte=a.idf) where a.idf_commune=$gi_idf_commune_acte and a.idf_source=$gi_idf_source and a.idf_type_acte = 2";		// CM --> 2
 
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
 if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= $g_pl_date_fin";
 $sqltmp = $sqltmp ." order by p.idf_acte,p.idf";
+print $sqltmp ;
+print "</br>";
 
 $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
-
+//**************************************************************
    }
 
 // PL fichier des dates saisies pour le script aff_pdf ******************************
@@ -766,10 +696,6 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 	     export_div_nimv3($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf);
 		 $menuDIV = "O";
       break;
-	  case IDF_RECENS:
-	     export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf);
-		 $menuDIV = "N";
-	  break;	 
    }
 
    fclose($pf);
@@ -786,9 +712,6 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 	print "<br><b>Compl&egrave;ment du type acte pour les actes divers expl=> Actes Notari&egrave;s</b></br>";
 	print ('<textarea name="TypeActe" rows="1" cols="45"></textarea><br><br>');
 	}
-	print ('<div class="alert alert-warning">');
-	print $sqltmp ;// affichage de la requ�te
-    print ('</div>'); // 
 	print "<br><b>Info sur la publication expl=> Relev&egrave; par:</b></br>";
     print ('<textarea name="message" rows="8" cols="45"></textarea><br>');
     //print ('<input type="submit" value="Exportation du PDF" />');
