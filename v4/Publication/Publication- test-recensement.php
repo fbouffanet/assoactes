@@ -743,14 +743,14 @@ $nb_rows = count($results);
 print "case";
 print $nb_rows;
 break;
-
+/*
 // Rajout PL sur les dates ***********************************************************
 $sqltmp = "select p.idf_acte,p.idf,p.idf_type_presence,p.sexe, p.patronyme,ifnull(prenom.libelle,''),p.idf_origine,p.date_naissance,p.age,p.idf_profession, p.commentaires,p.idf_pere,p.idf_mere,p.est_decede from personne p left join prenom  on (p.idf_prenom=prenom.idf) join acte a on (p.idf_acte=a.idf)where a.idf_commune=$gi_idf_commune_acte and a.idf_source=$gi_idf_source and a.idf_type_acte=$gc_idf_type_acte";
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
 if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
 $sqltmp = $sqltmp ." order by p.idf_acte,p.idf";
 $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
-            
+ */           
 
 //=============================  RECENSEMENT FIN ===============================================
       case IDF_DIVERS :
