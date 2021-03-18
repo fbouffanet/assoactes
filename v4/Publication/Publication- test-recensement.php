@@ -476,51 +476,85 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   print "Publication des divers de la commune $st_nom_commune1<br> <br>";
   
 }
-function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf,$st_export_nimv3)
+function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-  print "    fonction  ";
   list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
-   
-  foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes);
+  foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
   {
-    $a_champs = array();
-    fwrite($pf,(implode(';',$a_champs)));
-    fwrite($pf,"\r\n");
- }
+     $a_champs = array();
+     $i_nb_temoins=0;
+     $b_parrain_initialise=false;
+     foreach ($a_personnes as $i_idf_personne => $a_personne)
+     {
+        list($i_idf_type_presence,$c_sexe,$st_patronyme,$st_prenom,$i_idf_origine,$st_date_naissance,$st_age,$i_idf_profession,$st_commentaires,$i_idf_pere,$i_idf_mere,$i_est_decede) = $a_personne;
 
- $st_nom_commune1 = utf8_encode ($st_nom_commune);
- print "Publication des naissances de la commune <b> $st_nom_commune1</b> <br>";
- /*
-  $fichierrecensement="/var/www/clients/client1/web3/web/v4/Publication/telechargements/ExportNimV3.csv";
-  $sqlrecensement= "select 
-  cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page,
-  substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier,
-  substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue,
-  cast(substring(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)as INT) as Maison,
-  cast(substring(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)as INT) as Ménage,
-  p.patronyme as Nom,
-  ifnull(prenom.libelle,'') as Prénom,
-  ifnull(p.age,'') as Age,
-  right(p.date_naissance,4) as Année°,
-  c.nom as Lieu°,
-  ifnull(p.commentaires,'') as Observation,
-  a.url as Lien,
-  a.details_supplementaires
-  from 
-  personne p 
-  left join prenom on (p.idf_prenom=prenom.idf) 
-  join commune_personne c on (p.idf_origine =c.idf)
-  join profession d on (p.idf_profession =d.idf)
-  join acte a on (p.idf_acte=a.idf)
-  where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 
-  order by Page ASC, Maison ASC, Ménage ASC , 
-  into outfile $fichierrecensement FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'LINES TERMINATED BY '\n'"; 
-  print "N° de commune ". $gi_idf_commune_acte ." <br></br>  ";
-  print "fichier ". $fichierrecensement ." <br></br>  ";
-  print "sqlrecensement". $sqlrecensement."<br></br>" ;
-  $connexionBD->liste_valeur_par_clef($sqlrecensement);*/
- 
+        switch($i_idf_type_presence) {
+        case IDF_PRESENCE_INTV:
+          $a_champs[] = $st_patronyme;
+          $a_champs[] = $st_prenom;
+          $a_champs[] = $c_sexe;
+          $a_champs[] = $st_commentaires;
+          if (!empty($i_idf_pere))
+          {
+            $a_champs[] = $a_personnes[$i_idf_pere][2];
+            $a_champs[] = $a_personnes[$i_idf_pere][3];
+            $a_champs[] = $a_personnes[$i_idf_pere][8];
+            $a_champs[] = empty($a_personnes[$i_idf_pere][7]) ? '' : $a_profession[$a_personnes[$i_idf_pere][7]];
+
+          }
+          else
+             array_push($a_champs,"","","","");
+          if (!empty($i_idf_mere))
+          {
+             $a_champs[] = $a_personnes[$i_idf_mere][2];
+             $a_champs[] = $a_personnes[$i_idf_mere][3];
+             $a_champs[] = $a_personnes[$i_idf_mere][8];
+             $a_champs[] = empty($a_personnes[$i_idf_mere][7]) ? '' : $a_profession[$a_personnes[$i_idf_mere][7]];
+          }
+          else
+             array_push($a_champs,"","","","");
+          break;
+          case IDF_PRESENCE_PARRAIN:
+            $a_champs[] = $st_patronyme;
+            $a_champs[] = $st_prenom;
+            $a_champs[] = $st_commentaires;
+            $b_parrain_initialise=true;
+            $i_nb_temoins++;
+          break;
+          case IDF_PRESENCE_MARRAINE:
+            // cas pour traiter les actes dont seule la marraine est connue
+            if (!$b_parrain_initialise)
+            {
+               array_push($a_champs,"","","");
+               $i_nb_temoins++;
+            }
+            $a_champs[] = $st_patronyme;
+            $a_champs[] = $st_prenom;
+            $a_champs[] = $st_commentaires;
+            $i_nb_temoins++;
+          break;
+          }
+     }
+     list($idf_commune_acte,$idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre,$st_commentaires) = $pa_liste_actes[$i_idf_acte];
+     array_unshift($a_champs,'N',$st_date,$st_date_rep,$st_cote,$st_libre);
+     array_unshift($a_champs,""); // nom d?partement  => ? am?liorer
+     array_unshift($a_champs,""); // code d?partement  => ? am?liorer
+     array_unshift($a_champs,"NIMEGUEV3",$i_code_insee,$st_nom_commune);
+     // Cr?e les t?moins manquants
+     for ($i=$i_nb_temoins;$i<2;$i++)
+     {
+        array_push($a_champs,"","","");
+     }
+     $a_champs[]=$st_commentaires;
+     $a_champs[]=''; // Num?ro d'enregistrement
+
+     fwrite($pf,(implode(';',$a_champs)));
+     fwrite($pf,"\r\n");
+  }
+
+  $st_nom_commune1 = utf8_encode ($st_nom_commune);
+  print "Publication des recensemts de la commune <b> $st_nom_commune1</b> <br>";
 
 }
 
@@ -702,7 +736,6 @@ if ($date_deb < 1500)
 	while ($row = $connexionBD-> sql_select($sqltmp)) {
 	   if ($row[0] > 1500) {
 		   $date_deb = $row[0];
-       print "ok";
 			break;
 		}
    }
