@@ -487,7 +487,7 @@ function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$p
      $b_parrain_initialise=false;
      foreach ($a_personnes as $i_idf_personne => $a_personne)
      {
-        list($i_idf_type_presence,$c_sexe,$st_patronyme,$st_prenom,$i_idf_origine,$st_date_naissance,$st_age,$i_idf_profession,$st_commentaires,$i_idf_pere,$i_idf_mere,$i_est_decede) = $a_personne;
+        list($i_idf_type_presence,$c_sexe,$st_patronyme,$st_prenom,$i_idf_origine,$st_date_naissance,$st_age,$i_idf_profession,$st_commentaires) = $a_personne;
 
         switch($i_idf_type_presence) {
         case IDF_PRESENCE_INTV:
@@ -495,57 +495,18 @@ function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$p
           $a_champs[] = $st_prenom;
           $a_champs[] = $c_sexe;
           $a_champs[] = $st_commentaires;
-          if (!empty($i_idf_pere))
-          {
-            $a_champs[] = $a_personnes[$i_idf_pere][2];
-            $a_champs[] = $a_personnes[$i_idf_pere][3];
-            $a_champs[] = $a_personnes[$i_idf_pere][8];
-            $a_champs[] = empty($a_personnes[$i_idf_pere][7]) ? '' : $a_profession[$a_personnes[$i_idf_pere][7]];
-
-          }
-          else
-             array_push($a_champs,"","","","");
-          if (!empty($i_idf_mere))
-          {
-             $a_champs[] = $a_personnes[$i_idf_mere][2];
-             $a_champs[] = $a_personnes[$i_idf_mere][3];
-             $a_champs[] = $a_personnes[$i_idf_mere][8];
-             $a_champs[] = empty($a_personnes[$i_idf_mere][7]) ? '' : $a_profession[$a_personnes[$i_idf_mere][7]];
-          }
-          else
-             array_push($a_champs,"","","","");
+          
           break;
-          case IDF_PRESENCE_PARRAIN:
-            $a_champs[] = $st_patronyme;
-            $a_champs[] = $st_prenom;
-            $a_champs[] = $st_commentaires;
-            $b_parrain_initialise=true;
-            $i_nb_temoins++;
-          break;
-          case IDF_PRESENCE_MARRAINE:
-            // cas pour traiter les actes dont seule la marraine est connue
-            if (!$b_parrain_initialise)
-            {
-               array_push($a_champs,"","","");
-               $i_nb_temoins++;
-            }
-            $a_champs[] = $st_patronyme;
-            $a_champs[] = $st_prenom;
-            $a_champs[] = $st_commentaires;
-            $i_nb_temoins++;
-          break;
+          
           }
      }
      list($idf_commune_acte,$idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre,$st_commentaires) = $pa_liste_actes[$i_idf_acte];
-     array_unshift($a_champs,'N',$st_date,$st_date_rep,$st_cote,$st_libre);
+     array_unshift($a_champs,'R',$st_date,$st_date_rep,$st_cote,$st_libre);
      array_unshift($a_champs,""); // nom d?partement  => ? am?liorer
      array_unshift($a_champs,""); // code d?partement  => ? am?liorer
      array_unshift($a_champs,"NIMEGUEV3",$i_code_insee,$st_nom_commune);
      // Cr?e les t?moins manquants
-     for ($i=$i_nb_temoins;$i<2;$i++)
-     {
-        array_push($a_champs,"","","");
-     }
+    
      $a_champs[]=$st_commentaires;
      $a_champs[]=''; // Num?ro d'enregistrement
 
