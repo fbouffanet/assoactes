@@ -740,8 +740,9 @@ $nb_rows = count($results);
 		}
    }
 }*/
-print "case";
-print $nb_rows;
+print "<br>case</br>";
+print $nb_rows."<br></br>";
+break;
 break;
 /*
 // Rajout PL sur les dates ***********************************************************
