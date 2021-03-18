@@ -478,6 +478,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
 }
 function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf,$st_export_nimv3)
 {
+  print "    fonction  ";
   list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
    
