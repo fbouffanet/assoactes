@@ -120,19 +120,6 @@ function export_nai_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
       fwrite($pf,"\r\n");
    }
 
-	/*
-	$sql = $connexionBD->sql_select_multiple ("select nom, annee_min,annee_max,nb_actes from stats_commune join type_acte on (idf_type_acte=idf) where idf_source=$pi_idf_source and idf_commune=$gi_idf_commune");
-	 //$req = mysql_query($sql);
-	 //$data = mysql_fetch_array($req);
-	 //mysql_free_result ($req);
-	 print $sql;
-	$dateminifp = $data['annee_min'];
-	$datemaxifp = $data['annee_max'];
-	$nbactesfp = $data['nb_actes'];
-	print "Publication des naissances de la commune <b>". $st_nom_commune." ann?e  ".$dateminifp. " - ".$datemaxifp."  ".$nbactesfp."  actes</b> <br>";
-	*/
-
-
    $st_nom_commune1 = utf8_encode ($st_nom_commune);
    print "Publication des naissances de la commune <b> $st_nom_commune1</b> <br>";
 
@@ -491,11 +478,21 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
 }
 function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_liste_personnes,$a_liste_actes,$pf,$st_export_nimv3)
 {
-  $fichierrecensement="/var/www/clients/client1/web3/web/v4/Publication/telechargements/ExportNimV3.csv";
+  list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
+  $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
+   
+  foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes);
+  {
+    $a_champs = array();
+    fwrite($pf,(implode(';',$a_champs)));
+    fwrite($pf,"\r\n");
+ }
 
+ $st_nom_commune1 = utf8_encode ($st_nom_commune);
+ print "Publication des naissances de la commune <b> $st_nom_commune1</b> <br>";
+ /*
+  $fichierrecensement="/var/www/clients/client1/web3/web/v4/Publication/telechargements/ExportNimV3.csv";
   $sqlrecensement= "select 
-  /*p.idf_acte,
-  p.idf,*/
   cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page,
   substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier,
   substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue,
@@ -506,7 +503,6 @@ function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_
   ifnull(p.age,'') as Age,
   right(p.date_naissance,4) as Année°,
   c.nom as Lieu°,
-  /*d.profession as Profession,*/ 
   ifnull(p.commentaires,'') as Observation,
   a.url as Lien,
   a.details_supplementaires
@@ -519,12 +515,10 @@ function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$a_
   where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 
   order by Page ASC, Maison ASC, Ménage ASC , 
   into outfile $fichierrecensement FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"'LINES TERMINATED BY '\n'"; 
-
   print "N° de commune ". $gi_idf_commune_acte ." <br></br>  ";
   print "fichier ". $fichierrecensement ." <br></br>  ";
   print "sqlrecensement". $sqlrecensement."<br></br>" ;
-   
-  $connexionBD->liste_valeur_par_clef($sqlrecensement);
+  $connexionBD->liste_valeur_par_clef($sqlrecensement);*/
  
 
 }
@@ -659,8 +653,6 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
       case IDF_RECENS :
 
 $sqlrecensement= "select 
-/*p.idf_acte,
-p.idf,*/
 cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page,
 substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier,
 substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue,
@@ -671,7 +663,6 @@ ifnull(prenom.libelle,'') as Prénom,
 ifnull(p.age,'') as Age,
 right(p.date_naissance,4) as Année°,
 c.nom as Lieu°,
-/*d.profession as Profession,*/ 
 ifnull(p.commentaires,'') as Observation,
 a.url as Lien,
 a.details_supplementaires
@@ -681,7 +672,7 @@ left join prenom on (p.idf_prenom=prenom.idf)
 join commune_personne c on (p.idf_origine =c.idf)
 join profession d on (p.idf_profession =d.idf)
 join acte a on (p.idf_acte=a.idf)
-where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=147 
+where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=$gc_idf_type_acte 
 order by Page ASC, Maison ASC, Ménage ASC"; 
 
 $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sqlrecensement);
