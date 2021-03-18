@@ -602,6 +602,7 @@ switch($gst_mode)
       case IDF_NAISSANCE :
       case IDF_MARIAGE :
       case IDF_DECES :
+      case IDF_RECENS :
 	    
 
 
@@ -646,7 +647,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 
 
          //======================== RECENSEMENT DEB ============================================================
-      case IDF_RECENS :
+      case IDF_RECENSREM :
 
 $sqltmp= "select 
 cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page,
