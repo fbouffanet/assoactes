@@ -515,15 +515,15 @@ order by Année_Recensement ASC,Page ASC, Maison ASC, Ménage ASC";
 
   list($Année_Recensement,$Page,$Quartier,$Rue,$Maison,$Ménage,$Nom,$Prénom,$Age,$Année°,$Lieu°,$Observation,$Lien,$st_nom_commune) = $pconnexionBD->sql_select_liste($sqltmp);
   //$a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
-  //foreach ($pa_liste_personnes as $i_idf_acte => $a_champs)
-  foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
-  { 
+  
+  foreach ($pa_liste_personnes as $i_idf_acte => $a_champs)
+  {
      $a_champs = array();
      //foreach ($a_personnes as $i_idf_personne => $a_personne)
      //{
     //list($Année_Recensement,$Page,$Quartier,$Rue,$Maison,$Ménage,$Nom,$Prénom,$Age,$Année°,$Lieu°,$Observation,$Lien,$st_nom_commune) = $a_champs;
      print $a_champs;
-    $a_champs[]= $Année_Recensement;
+     $a_champs[]= $Année_Recensement;
      $a_champs[]= $Page; 
      $a_champs[]= $Quartier;
      $a_champs[]= $Rue;
