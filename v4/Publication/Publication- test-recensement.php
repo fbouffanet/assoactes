@@ -477,7 +477,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   
 }
 function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
-{
+{ print "début de la fonction";
   list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
   foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
@@ -645,6 +645,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 
          //======================== RECENSEMENT DEB ============================================================
       case IDF_RECENS :
+        print "IDF_RECENS ligne 648 <br></br>_"
 
 $sqltmp= "select 
 cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page,
@@ -782,7 +783,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 		 $menuDIV = "O";
       break;
 	  case IDF_RECENS:
-        print "case IDF_RECENS: ligne 787" ;
+        print "case IDF_RECENS: ligne 787 <br></br>" ;
 	     export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$pa_liste_personnes,$gc_idf_type_acte,$a_liste_actes,$pf);
 		 $menuDIV = "N";
 	  break;	 
