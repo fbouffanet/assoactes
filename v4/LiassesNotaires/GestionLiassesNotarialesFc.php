@@ -19,7 +19,7 @@ function menu_liste($pconnexionBD)
 	$st_serie_liasse = $_SESSION['serie_liasse'];
 	unset($_SESSION['liasse']);
 	$a_numerotation_liasses = array("z","1","2","3","4","5","6","7","8","9"); 
-	print("<div class=TITRE>Gestion des liasses notariales</div>");
+	print("<div class=TITRE>Gestion des liasses notariales bip</div>");
 	print("<div align=center><br><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
 	print("<div>");
 	print('<div style="text-align:center">');
