@@ -519,9 +519,9 @@ order by Année_Recensement ASC,Page ASC, Maison ASC, Ménage ASC";
   foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
   { 
      $a_champs = array();
-     foreach ($a_personnes as $i_idf_personne => $a_personne)
-     {
-    list($Année_Recensement,$Page,$Quartier,$Rue,$Maison,$Ménage,$Nom,$Prénom,$Age,$Année°,$Lieu°,$Observation,$Lien,$st_nom_commune) = $a_champs;
+     //foreach ($a_personnes as $i_idf_personne => $a_personne)
+     //{
+    //list($Année_Recensement,$Page,$Quartier,$Rue,$Maison,$Ménage,$Nom,$Prénom,$Age,$Année°,$Lieu°,$Observation,$Lien,$st_nom_commune) = $a_champs;
      print $a_champs;
     $a_champs[]= $Année_Recensement;
      $a_champs[]= $Page; 
@@ -541,7 +541,7 @@ order by Année_Recensement ASC,Page ASC, Maison ASC, Ménage ASC";
      }
      fwrite($pf,(implode(';',$a_champs)));
      fwrite($pf,"\r\n");
-  }
+  
 
   $st_nom_commune1 = utf8_encode ($st_nom_commune);
   print "Publication des recensemts de la commune <b> $st_nom_commune1</b> <br>";
