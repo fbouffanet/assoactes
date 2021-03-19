@@ -516,8 +516,8 @@ order by Année_Recensement ASC,Page ASC, Maison ASC, Ménage ASC";
   //list($Année_Recensement,$Page,$Quartier,$Rue,$Maison,$Ménage,$Nom,$Prénom,$Age,$Année°,$Lieu°,$Observation,$Lien,$st_nom_commune) = $pconnexionBD->liste_valeur_par_clef($sqltmp);
   
   //$a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
-  $valeur=$pconnexionBD->liste_valeur_par_clef($sqltmp);
-  foreach ($valeur as $a_champs)
+  $a_resultat=$pconnexionBD->sql_select_multiple($sqltmp);
+  foreach ($a_resultat as $a_champs)
   {
      $a_champs = array();
      //foreach ($a_personnes as $i_idf_personne => $a_personne)
