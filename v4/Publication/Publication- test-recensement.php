@@ -517,7 +517,7 @@ order by Année_Recensement ASC,Page ASC, Maison ASC, Ménage ASC";
   //$a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
   foreach ($pa_liste_personnes as $i_idf_acte => $a_champs)
   {
-     //$a_champs = array();
+     $a_champs = array();
      $a_champs[]= $Année_Recensement;
      $a_champs[]= $Page; 
      $a_champs[]= $Quartier;
