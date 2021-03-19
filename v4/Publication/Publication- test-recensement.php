@@ -645,7 +645,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 
          //======================== RECENSEMENT DEB ============================================================
       case IDF_RECENS :
-        print "IDF_RECENS ligne 648 <br></br>_"
+        print "IDF_RECENS ligne 648 <br></br>_";
 
 $sqltmp= "select 
 cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page,
