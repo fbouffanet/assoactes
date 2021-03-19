@@ -476,8 +476,16 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   print "Publication des divers de la commune $st_nom_commune1<br> <br>";
   
 }
+//=========== Fonction EXPORT_RECENSEMENT ==== DEB =====================
 function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
-{ print "début de la fonction";
+{
+  print "début de la fonction";
+  print "$pi_idf_source".$pi_idf_source."<br></br>";
+  print "$pi_idf_commune_acte".$pi_idf_commune_acte."<br></br>";
+  print "$pc_idf_type_acte".$pc_idf_type_acte."<br></br>";
+  print "$pa_liste_personnes".$pa_liste_personnes."<br></br>";
+  print "$$pa_liste_actes".$pa_liste_actes."<br></br>";
+  print "$pf".$pf."<br></br>";
   list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
   foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
