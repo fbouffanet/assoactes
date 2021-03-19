@@ -526,6 +526,7 @@ order by Année_Recensement ASC,Page ASC, Maison ASC, Ménage ASC";
      $a_champs[]= $Ménage;
      $a_champs[]= $Nom;
      $a_champs[]= $Prénom;
+     $a_champs[]= $Age;
      $a_champs[]= $Année°;
      $a_champs[]= $Lieu°;
      $a_champs[]= $Observation;
