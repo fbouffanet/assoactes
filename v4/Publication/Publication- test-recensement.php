@@ -602,10 +602,7 @@ switch($gst_mode)
       case IDF_NAISSANCE :
       case IDF_MARIAGE :
       case IDF_DECES :
-      case IDF_RECENS :
-	    
-
-
+  
 // Rajout PL sur les dates **********************************************
 $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
@@ -647,7 +644,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 
 
          //======================== RECENSEMENT DEB ============================================================
-      case IDF_RECENSREM :
+      case IDF_RECENS :
 
 $sqltmp= "select 
 cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page,
@@ -669,12 +666,12 @@ left join prenom on (p.idf_prenom=prenom.idf)
 join commune_personne c on (p.idf_origine =c.idf)
 join profession d on (p.idf_profession =d.idf)
 join acte a on (p.idf_acte=a.idf)
-where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=$gc_idf_type_acte 
-order by Page ASC, Maison ASC, Ménage ASC"; 
+where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=$gc_idf_type_acte; 
+//order by Page ASC, Maison ASC, Ménage ASC"; 
 
 
 // Rajout PL sur les dates **********************************************
-$sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
+//$sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
 //if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
 //if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
 $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sqltmp);
