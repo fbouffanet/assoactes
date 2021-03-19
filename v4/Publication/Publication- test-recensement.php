@@ -700,7 +700,6 @@ $nb_rows = count($results);
 		}
    }
 }*/
-print "<br>case</br>";
 print $nb_rows."<br></br>";
 break;
 
@@ -711,6 +710,8 @@ if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_deb
 if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
 $sqltmp = $sqltmp ." order by p.idf_acte,p.idf";
 $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
+
+break;
        
 
 //=============================  RECENSEMENT FIN ===============================================
