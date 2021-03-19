@@ -519,11 +519,6 @@ order by Année_Recensement ASC,Page ASC, Maison ASC, Ménage ASC";
   $a_resultat=$pconnexionBD->sql_select1($sqltmp);
   foreach ($a_resultat as $a_champs)
   {
-     $a_champs = array();
-     //foreach ($a_personnes as $i_idf_personne => $a_personne)
-     //{
-    //list($Année_Recensement,$Page,$Quartier,$Rue,$Maison,$Ménage,$Nom,$Prénom,$Age,$Année°,$Lieu°,$Observation,$Lien,$st_nom_commune) = $a_champs;
-     print $a_champs;
      $a_champs[]= $Année_Recensement;
      $a_champs[]= $Page; 
      $a_champs[]= $Quartier;
