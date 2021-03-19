@@ -50,6 +50,7 @@ function export_nai_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_
   print "pi_idf_type_acte  ".$pi_idf_type_acte."<br>";
   print "pa_liste_personnes  ".$pa_liste_personnes."<br>";
   print "pa_liste_actes  ".$pa_liste_actes."<br>";
+  print "pf  ".$pf."<br></br>";
 
 // ? adapter pour prendre le champ code insee
    list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
