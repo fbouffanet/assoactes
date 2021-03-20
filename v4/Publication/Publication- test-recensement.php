@@ -516,8 +516,8 @@ order by Année_Recensement ASC,Page ASC, Maison ASC, Ménage ASC";
   //list($Année_Recensement,$Page,$Quartier,$Rue,$Maison,$Ménage,$Nom,$Prénom,$Age,$Année°,$Lieu°,$Observation,$Lien,$st_nom_commune) = $pconnexionBD->liste_valeur_par_clef($sqltmp);
   
   //$a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
-  $a_resultat=$pconnexionBD->sql_select1($sqltmp);
-  foreach ($a_resultat as $a_champs)
+  list($Année_Recensement,$Page,$Quartier,$Rue,$Maison,$Ménage,$Nom,$Prénom,$Age,$Année°,$Lieu°,$Observation,$Lien,$st_nom_commune)=$pconnexionBD->sql_select1($sqltmp);
+  foreach ($pa_liste__resultat as $a_champs)
   {
      $a_champs[]= $Année_Recensement;
      $a_champs[]= $Page; 
@@ -534,10 +534,10 @@ order by Année_Recensement ASC,Page ASC, Maison ASC, Ménage ASC";
      $a_champs[]= $Lien;
      $a_champs[]= $st_nom_commune;
      $a_champs[]='REC'; // Num?ro d'enregistrement
-     }
+    
      fwrite($pf,(implode(';',$a_champs)));
      fwrite($pf,"\r\n");
-  
+   }
 
   $st_nom_commune1 = utf8_encode ($st_nom_commune);
   print "Publication des recensemts de la commune <b> $st_nom_commune1</b> <br>";
