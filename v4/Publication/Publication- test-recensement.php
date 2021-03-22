@@ -500,7 +500,11 @@ join commune_personne c on (p.idf_origine =c.idf)
 join profession d on (p.idf_profession =d.idf)
 join acte a on (p.idf_acte=a.idf)
 where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=$pa_liste_personnes
-order by Année_Recensement ASC,Page ASC, Maison ASC, Ménage ASC"; 
+order by Année_Recensement ASC,Page ASC, Maison ASC, Ménage ASC
+into outfile '/var/www/clients/client1/web3/web/v4/Publication/telechargements/data.csv' 
+FIELDS TERMINATED BY ';' 
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'"; 
 
   print "début de la fonction<br>";
   print "pi_idf_source  ".$pi_idf_source."<br>";
