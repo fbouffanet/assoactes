@@ -517,7 +517,7 @@ order by Année_Recensement ASC,Page ASC, Maison ASC, Ménage ASC";
   
   //$a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
   list($Année_Recensement,$Page,$Quartier,$Rue,$Maison,$Ménage,$Nom,$Prénom,$Age,$Année°,$Lieu°,$Observation,$Lien,$st_nom_commune)=$pconnexionBD->sql_select_multiple($sqltmp);
-  foreach ($a_resultat as $a_champs)
+  foreach ($Nom as $i_idf_acte => $a_personnes)
   {
      $a_champs[]= $Année_Recensement;
      $a_champs[]= $Page; 
@@ -728,7 +728,7 @@ $nb_rows = count($results);
 print $nb_rows."<br></br>";
 break;
 
-
+print "entre les deux breaks";
 // Rajout PL sur les dates ***********************************************************
 $sqltmp = "select p.idf_acte,p.idf,p.idf_type_presence,p.sexe, p.patronyme,ifnull(prenom.libelle,''),p.idf_origine,p.date_naissance,p.age,p.idf_profession, p.commentaires,p.idf_pere,p.idf_mere,p.est_decede from personne p left join prenom  on (p.idf_prenom=prenom.idf) join acte a on (p.idf_acte=a.idf)where a.idf_commune=$gi_idf_commune_acte and a.idf_source=$gi_idf_source and a.idf_type_acte=$gc_idf_type_acte";
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
