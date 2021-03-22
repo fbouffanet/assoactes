@@ -503,7 +503,7 @@ where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=
 order by Année_Recensement ASC,Page ASC, Maison ASC, Ménage ASC
 into outfile '/var/www/clients/client1/web3/web/v4/Publication/telechargements/data.csv' 
 FIELDS TERMINATED BY ';' 
-OPTIONALLY ENCLOSED BY '"'
+OPTIONALLY ENCLOSED BY '\"'
 LINES TERMINATED BY '\n'"; 
 
   print "début de la fonction<br>";
