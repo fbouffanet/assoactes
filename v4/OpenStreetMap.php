@@ -72,7 +72,7 @@ catch (Exception $e) {
        <div align=center>
         <div id="map">
 	    <!-- Ici s'affichera la carte -->
-	</div></div>
+	</div>     </div>
    
 
 
