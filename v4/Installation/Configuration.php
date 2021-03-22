@@ -162,7 +162,7 @@ $gi_nb_points_gbk = 0;
 */
 function constantes($pst_fichier)
 {
-	global $gst_lib_asso,$gst_lib_asso_avec,$gst_sigle_asso,$gst_email_inscription_forum,$gst_email_forum,$gst_email_dir_asso,$gst_email_admin_gbk,$gst_email_pres_asso,$gst_email_info_asso,$gst_idf_asso_gbk,$gst_prefixe_adh_gbk,$gi_nb_points_gbk,$gst_clef_api_geoportail;
+	global $gst_lib_asso,$gst_lib_asso_avec,$gst_sigle_asso,$gst_email_inscription_forum,$gst_email_forum,$gst_email_dir_asso,$gst_email_admin_gbk,$gst_email_pres_asso,$gst_email_info_asso,$gst_idf_asso_gbk,$gst_prefixe_adh_gbk,$gi_nb_points_gbk;
 	$a_lignes =file($pst_fichier);
 	$st_chaine_constantes = '';
 	foreach ($a_lignes as $st_ligne)
@@ -191,8 +191,6 @@ function constantes($pst_fichier)
 			$gst_prefixe_adh_gbk = $a_correspondances[1];
 		else if (preg_match('/^define\(\'NB_POINTS_GBK\',([\d]*)\);/',$st_ligne,$a_correspondances))
 			$gi_nb_points_gbk = $a_correspondances[1];
-		else if (preg_match('/^define\(\'CLEF_API_GEOPORTAIL\',\'([\w]*)\'\);/',$st_ligne,$a_correspondances))
-			$gst_clef_api_geoportail = $a_correspondances[1];
 		else if (preg_match('/^\<\?php/',$st_ligne))
 			continue;
 		else if (preg_match('/^\?\>/',$st_ligne))
@@ -221,7 +219,6 @@ if (isset($_POST['lib_asso']))
 	$gst_idf_asso_gbk = trim($_POST['idf_asso_gbk']);
 	$gst_prefixe_adh_gbk = trim($_POST['prefixe_adh_gbk']);
 	$gi_nb_points_gbk = (int) trim($_POST['nb_points_gbk']);
-	$gst_clef_api_geoportail = trim($_POST['clef_api_geoportail']);
 	
 	$pf = fopen($gst_fichier_constantes, "w");
 	if ($pf===false)
@@ -249,7 +246,6 @@ if (isset($_POST['lib_asso']))
 		fwrite($pf,"define('IDF_ASSO_GBK','$gst_idf_asso_gbk');\n");
 		fwrite($pf,"define('PREFIXE_ADH_GBK','$gst_prefixe_adh_gbk');\n");
 		fwrite($pf,"define('NB_POINTS_GBK',$gi_nb_points_gbk);\n");
-		fwrite($pf,"define('CLEF_API_GEOPORTAIL','$gst_clef_api_geoportail');\n");
 		fwrite($pf,"?>\n");
 		print("<div class=\"alert alert-success\">$gst_fichier_constantes sauvegard&eacute;</div>");
 		print("<a href=\"$gst_url_site\" class=\"btn btn-info\" role=\"button\" target=\"_blank\">Acc&eacute;der au site</a>");
@@ -341,17 +337,7 @@ else
     print("<input type=text maxlength=40 size=40 name=nb_points_gbk id=nb_points_gbk value=\"$gi_nb_points_gbk\" class=\"form-control\">");
     print('</div></div>');
 	print('</div></div>');
-	
-	print('<div class="panel panel-primary">');
-	print("<div class=\"panel-heading\">Cartographie</div>");
-    print('<div class="panel-body">');
-	print('<div class="form-group row">');
-    print("<label for=\"nb_points_gbk\" class=\"col-md-4 col-form-label control-label\">Clef API G&eacute;portail (laisser vide si inutilis&eacute;e):</label>");
-    print('<div class="col-md-8">');
-    print("<input type=text maxlength=40 size=40 name=clef_api_geoportail id=clef_api_geoportail value=\"$gst_clef_api_geoportail\" class=\"form-control\">");
-    print('</div></div>');
-	print("</div></div>");
-	
+   	
 	print('<div class="form-row col-md-12">'); 
 	print('<button type="submit" class="btn btn-primary  col-md-offset-4 col-md-4""><span class="glyphicon glyphicon-wrench"></span> Sauvegarder les constantes</button>'); 
 	print('</div>');
