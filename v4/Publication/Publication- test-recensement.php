@@ -477,70 +477,48 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   
 }
 //=========== Fonction EXPORT_RECENSEMENT ==== DEB =====================
-function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pi_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
+function export_recensemet($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-  $sqltmp= "select 
-a.annee as Année_Recensement,
-cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page,
-substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier,
-substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue,
-cast(substring(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)as INT) as Maison,
-cast(substring(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)as INT) as Ménage,
-p.patronyme as Nom,
-ifnull(prenom.libelle,'') as Prénom,
-ifnull(p.age,'') as Age,
-right(p.date_naissance,4) as Année°,
-c.nom as Lieu°,
-ifnull(p.commentaires,'') as Observation,
-a.url as Lien
-from 
-personne p 
-left join prenom on (p.idf_prenom=prenom.idf) 
-join commune_personne c on (p.idf_origine =c.idf)
-join profession d on (p.idf_profession =d.idf)
-join acte a on (p.idf_acte=a.idf)
-where a.idf_commune=$pi_idf_commune_acte and a.idf_source=1 and a.idf_type_acte=$pa_liste_personnes
-order by Année_Recensement ASC,Page ASC, Maison ASC, Ménage ASC"; 
+// ? adapter pour prendre le champ code insee
+   list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
+   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
+   foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
+   {
+      $a_champs = array();
+      //$i_nb_temoins=0;
+      //$b_parrain_initialise=false;
+      foreach ($a_personnes as $i_idf_personne => $a_personne)
+      {
+         list($i_idf_type_presence,$c_sexe,$st_patronyme,$st_prenom,$i_idf_origine,$st_date_naissance,$st_age,$i_idf_profession,$st_commentaires) = $a_personne;
 
-  print "début de la fonction<br>";
-  print "pi_idf_source  ".$pi_idf_source."<br>";
-  print "pi_idf_commune_acte  ".$pi_idf_commune_acte."<br>";
-  print "pi_idf_type_acte  ".$pi_idf_type_acte."<br>";
-  print "pa_liste_personnes  ".$pa_liste_personnes."<br>";
-  print "pa_liste_actes  ".$pa_liste_actes."<br>";
-  print " sqltmp  ".$sqltmp."<br>";
-  print "pf  ".$pf."<br></br>";
+         switch($i_idf_type_presence) {
+         case IDF_PRESENCE_INTV:
+           $a_champs[] = $st_patronyme;
+           $a_champs[] = $st_prenom;
+           $a_champs[] = $c_sexe;
+           $a_champs[] = $st_commentaires;
+         break;
+            }
+      }
+      list($idf_commune_acte,$idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre,$st_commentaires) = $pa_liste_actes[$i_idf_acte];
+      array_unshift($a_champs,'R',$st_date,$st_date_rep,$st_cote,$st_libre);
+      array_unshift($a_champs,""); // nom d?partement  => ? am?liorer
+      array_unshift($a_champs,""); // code d?partement  => ? am?liorer
+      array_unshift($a_champs,"NIMEGUEV3",$i_code_insee,$st_nom_commune);
+      // Cr?e les t?moins manquants
+      for ($i=$i_nb_temoins;$i<2;$i++)
+      {
+         array_push($a_champs,"","","");
+      }
+      $a_champs[]=$st_commentaires;
+      $a_champs[]=''; // Num?ro d'enregistrement
 
-
-
-  //list($Année_Recensement,$Page,$Quartier,$Rue,$Maison,$Ménage,$Nom,$Prénom,$Age,$Année°,$Lieu°,$Observation,$Lien,$st_nom_commune) = $pconnexionBD->liste_valeur_par_clef($sqltmp);
-  
-  //$a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
-  list($Année_Recensement,$Page,$Quartier,$Rue,$Maison,$Ménage,$Nom,$Prénom,$Age,$Année°,$Lieu°,$Observation,$Lien,$st_nom_commune)=$pconnexionBD->execute_requete($sqltmp);
-  foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
-  {$a_champs = array();
-     $a_champs[]= $Année_Recensement;
-     $a_champs[]= $Page; 
-     $a_champs[]= $Quartier;
-     $a_champs[]= $Rue;
-     $a_champs[]= $Maison;
-     $a_champs[]= $Ménage;
-     $a_champs[]= $Nom;
-     $a_champs[]= $Prénom;
-     $a_champs[]= $Age;
-     $a_champs[]= $Année°;
-     $a_champs[]= $Lieu°;
-     $a_champs[]= $Observation;
-     $a_champs[]= $Lien;
-     $a_champs[]= $st_nom_commune;
-     $a_champs[]='REC'; // Num?ro d'enregistrement
-    
-     fwrite($pf,(implode(';',$a_champs)));
-     fwrite($pf,"\r\n");
+      fwrite($pf,(implode(';',$a_champs)));
+      fwrite($pf,"\r\n");
    }
 
-  $st_nom_commune1 = utf8_encode ($st_nom_commune);
-  print "Publication des recensemts de la commune <b> $st_nom_commune1</b> <br>";
+   $st_nom_commune1 = utf8_encode ($st_nom_commune);
+   print "Publication des recemsements de la commune <b> $st_nom_commune1</b> <br>";
 
 }
 
