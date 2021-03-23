@@ -477,7 +477,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   
 }
 //=========== Fonction EXPORT_RECENSEMENT ==== DEB =====================
-function export_recensemet($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
+function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
 // ? adapter pour prendre le champ code insee
    list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
@@ -605,7 +605,8 @@ switch($gst_mode)
       case IDF_NAISSANCE :
       case IDF_MARIAGE :
       case IDF_DECES :
-  
+      case IDF_RECENS :
+
 // Rajout PL sur les dates **********************************************
 $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
@@ -647,7 +648,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 
 
          //======================== RECENSEMENT DEB ============================================================
-      case IDF_RECENS :
+      case IDF_RECENSsss :
         print "IDF_RECENS ligne 648 <br></br>_";
 
 $sqltmp= "select 
@@ -788,7 +789,8 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
       break;
 	  case IDF_RECENS:
         print "case IDF_RECENS: ligne 787 <br></br>" ;
-	     export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$pa_liste_personnes,$gc_idf_type_acte,$a_liste_actes,$pf);
+	     //export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$pa_liste_personnes,$gc_idf_type_acte,$a_liste_actes,$pf);
+       export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$gc_idf_type_acte,$a_liste_personnes,$a_liste_actes,$pf);
 		 $menuDIV = "N";
 	  break;	 
    }
