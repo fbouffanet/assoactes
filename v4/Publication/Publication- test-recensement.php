@@ -552,17 +552,18 @@ function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$p
    Page ASC, 
    Maison ASC, 
    Ménage ASC";
-
+   $fichier="/var/www/clients/client1/web3/web/v4/Publication/telechargements/ExportNimV3.csv";
+   print $fichier;
      $st_nom_commune = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
      $req= $pconnexionBD->sql_select($req);
       // Boucle pour lire toutes les entrées retournées par la requête SQL et les écrire dans le fichier CSV
     while($donnees=$req->fetch())
     {
         // Écrire la ligne dans le fichier
-        fputcsv($pf,$donnees);
+        fputcsv($fichier,$donnees);
     }
       //fermeture du fichier
-        fclose($pf);
+        fclose($fichier);
    $st_nom_commune1 = utf8_encode ($st_nom_commune );
    print "Publication des recemsements de la commune <b> $st_nom_commune1</b> <br>";
 }
