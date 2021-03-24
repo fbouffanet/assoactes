@@ -537,7 +537,7 @@ function export_recensementssssss($pconnexionBD,$pi_idf_source,$pi_idf_commune_a
       foreach ($a_personnes as $i_idf_personne => $a_personne)
       {
          //list($i_idf_type_presence,$Annee_Recensement,$c_sexe,$st_patronyme,$st_prenom,$i_idf_origine,$st_date_naissance,$st_age,$i_idf_profession,$st_commentaires) = $a_personne;
-         list($i_idf_type_presence,$c_sexe,$st_patronyme,$st_prenom,$i_idf_origine,$st_date_naissance,$st_age,$i_idf_profession,$st_commentaires) = $a_personne;
+         list($i_idf_type_presence,$Annee_Recensement,$c_sexe,$st_patronyme,$st_prenom,$i_idf_origine,$st_date_naissance,$st_age,$i_idf_profession,$st_commentaires) = $a_personne;
 
          switch($i_idf_type_presence) {
          case IDF_PRESENCE_INTV:
