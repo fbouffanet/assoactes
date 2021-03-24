@@ -481,7 +481,6 @@ function export_recensementssssss($pconnexionBD,$pi_idf_source,$pi_idf_commune_a
 {
 // ? adapter pour prendre le champ code insee
    list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
-   print_r(list);
    $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
    foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
    {
@@ -554,22 +553,20 @@ function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$p
    Maison ASC, 
    Ménage ASC";
 
+     $st_nom_commune = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
      $req= $pconnexionBD->sql_select($req);
-     $ctr=0;
-     while($donnees=$req->fetch())
-     {
-         // Écrire les champs si c'est le premier tour de la boucle
-         if($ctr===0){
-             $champs=array_keys($donnees);
-
-      fwrite($pf,(implode(';',$champs)));
-      fwrite($pf,"\r\n");
-   }
-
-   $st_nom_commune1 = utf8_encode ($st_nom_commune);
+      // Boucle pour lire toutes les entrées retournées par la requête SQL et les écrire dans le fichier CSV
+    while($donnees=$req->fetch())
+    {
+        // Écrire la ligne dans le fichier
+        fputcsv($pf,$donnees);
+    }
+      //fermeture du fichier
+        fclose($pf);
+   $st_nom_commune1 = utf8_encode ($st_nom_commune );
    print "Publication des recemsements de la commune <b> $st_nom_commune1</b> <br>";
-
 }
+
 
 /*------------------------------------------------------------------------------
                             Corps du programme
