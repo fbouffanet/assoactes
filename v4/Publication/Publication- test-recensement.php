@@ -524,7 +524,7 @@ function export_recensementssssss($pconnexionBD,$pi_idf_source,$pi_idf_commune_a
 //==========================================================
 function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-   $st_nom_commune = $pconnexionBD->sql_select_liste("select nom from commune_acte where idf=$pi_idf_commune_acte"); 
+   $st_nom_commune = $pconnexionBD->sql_select("select nom from commune_acte where idf=$pi_idf_commune_acte"); 
    
    print $st_nom_commune;
   
