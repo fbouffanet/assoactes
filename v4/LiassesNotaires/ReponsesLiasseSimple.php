@@ -4,7 +4,7 @@ require_once('Commun/Identification.php');
 require_once('Commun/commun.php');
 require_once('Commun/constantes.php');
 require_once('Commun/config.php');
-require_once('Commun/ConnexionBD.php');
+require_once('Commun/ConnexionBDutf8.php');
 require_once('RequeteRecherche.php');
 require_once('Commun/PaginationTableau.php');
 require_once('Commun/Benchmark.inc');
@@ -12,6 +12,8 @@ require_once('Commun/VerificationDroits.php');
 
 print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
 print("<Head>\n");
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 print("<link href='Commun/Styles.css' type='text/css' rel='stylesheet'>");
@@ -24,13 +26,10 @@ print('<title>Base AGC: Reponses a une recherche de liasse</title>');
 print('</Head>');
 
 $a_clauses = array();
-//**pc**// ajout v2
-//**pc**// à remplacer par une image du site
 $st_icone_info = 'images/infos.png';
-//**pc**// fin ajout v2
 
 /* ------------------------------------------------------
-   récupération des critères de recherche 
+   rÃ©cupÃ©ration des critÃ¨res de recherche 
 */
 $i_session_idf_commune				= empty($_SESSION['idf_commune_recherche_rls']) ? '0' : $_SESSION['idf_commune_recherche_rls'];
 $i_session_rayon					= empty($_SESSION['rayon_rls']) ? '' : $_SESSION['rayon_rls'];
@@ -110,7 +109,7 @@ require_once("Commun/menu.php");
 $requeteRecherche = new RequeteRecherche($connexionBD);    
 
 /* ------------------------------------------------------
-   constitution de la requête
+   constitution de la requÃªte
 */   
 $a_communes_acte = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM commune_acte");
 
@@ -190,9 +189,8 @@ else
 $st_groupe = "group by l.cote_liasse,l.libelle_annees,f.nom,n.nom_notaire,n.prenom_notaire,n.idf_commune_etude";
 
 $gst_requete_liasses = "$gst_requete_nb_liasses $st_where $st_clauses $st_groupe $st_tri";
-//print($gst_requete_liasses);
 /* ------------------------------------------------------
-   affichage des critères de recherche 
+   affichage des critÃ¨res de recherche 
 */   
 print("<div id=col_paroisses class=\"centre\">");
 $st_criteres = "Recherche des liasses: ";

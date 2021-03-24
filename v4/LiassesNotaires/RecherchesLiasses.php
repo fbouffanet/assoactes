@@ -3,27 +3,23 @@
 require_once('../Commun/Identification.php');
 require_once('../Commun/commun.php');
 require_once('../Commun/constantes.php');
-require_once('../Commun/ConnexionBD.php');
+require_once('../Commun/ConnexionBDutf8.php');
 
 print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
-print('<meta http-equiv="content-language" content="fr"> ');
-/* ------------------- modif title */
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
+print('<meta http-equiv="content-language" content="fr">');
 print('<title>Base AGC: Vos recherches de liasses notariales</title>');
 print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
 print("<script src='VerifieChampsRechercheLiasse.js' type='text/javascript'></script>\n");
 print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../Commun/menu.js' type='text/javascript'></script>");//
 print('<link rel="shortcut icon" href="images/favicon.ico">');
-
 print("</head>");
-
 print("<body>");
-//print("Vous etes authentifi&eacute; :-)<br>");
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
-//require_once("Commun/menu.php");
 $gst_type_recherche         = isset($_GET['recherche']) ? $_GET['recherche'] : '';
 
 if ($gst_type_recherche=='nouvelle')
@@ -172,6 +168,5 @@ print('</div> ');
 print("</form>");
 print("</body>");
 print("</html>");
-//print_r($_SESSION);
 $connexionBD->ferme(); 
 ?>

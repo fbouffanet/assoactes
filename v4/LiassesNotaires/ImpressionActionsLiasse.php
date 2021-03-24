@@ -23,19 +23,19 @@ require('../Publication/fpdf/fpdf.php');
 
 class PDF extends FPDF
 {
-// En-tête
+// En-tÃªte
 function Header() {
     // Logo
     $this->Image('../images/LogoAGC.jpg',10,10,20);
     // Police Arial gras 15
     $this->SetFont('Arial','B',12);
-    // Décalage à droite
+    // DÃ©calage Ã  droite
     $this->Cell(80);
     // Titre
-    $this->Cell(30,8,str_replace("&eacute;", "é", $_SESSION['pdf']['titre']),0,1,'C');
+    $this->Cell(30,8,str_replace("&eacute;", "Ã©", $_SESSION['pdf']['titre']),0,1,'C');
     $this->SetFont('Arial','B',10);
     $this->Cell(80);
-    $this->Cell(30,6,str_replace("&eacute;", "é", $_SESSION['pdf']['sous_titre']),0,0,'C');
+    $this->Cell(30,6,str_replace("&eacute;", "Ã©", $_SESSION['pdf']['sous_titre']),0,0,'C');
    // Saut de ligne
     $this->Ln(20);
     $this->SetFont('Times','B',7);
@@ -44,12 +44,12 @@ function Header() {
 		case 'publication' :
 			$this->Cell(120,8,'Titre publication papier',1,0,'L',true);
 			$this->Cell(15,8,'Date',1,0,'C',true);
-			$this->Cell(137,8,'Informations compémentaires',1,1,'L',true);
+			$this->Cell(137,8,'Informations compÃ©mentaires',1,1,'L',true);
 			break;
 		case 'publi_pap' :
 			$this->Cell(100,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 			$this->Cell(72,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la série',0,1,'R',true);			
+			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la sÃ©rie',0,1,'R',true);			
 			$this->Cell(120,8,'Titre publication papier',1,0,'L',true);
 			$this->Cell(15,8,'Date',1,0,'C',true);
 			$this->Cell(17,8,'Cote',1,0,'C',true);
@@ -60,55 +60,55 @@ function Header() {
 		case 'program' :
 			$this->Cell(100,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 			$this->Cell(77,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la série',0,1,'R',true);			
+			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la sÃ©rie',0,1,'R',true);			
 			$this->Cell(15,8,'Cote',1,0,'C',true);
 			$this->Cell(80,8,'Notaire(commune)',1,0,'L',true);
-			$this->Cell(60,8,'Période',1,0,'L',true);
+			$this->Cell(60,8,'PÃ©riode',1,0,'L',true);
 			$this->Cell(30,8,'Forme liasse',1,0,'L',true);
 			$this->Cell(30,8,'Intervenant',1,0,'L',true);
-			$this->Cell(17,8,'Priorité',1,0,'L',true);
-			$this->Cell(15,8,'Echéance',1,0,'C',true);
-			$this->Cell(15,8,'Prog. relevé',1,0,'C',true);
+			$this->Cell(17,8,'PrioritÃ©',1,0,'L',true);
+			$this->Cell(15,8,'EchÃ©ance',1,0,'C',true);
+			$this->Cell(15,8,'Prog. relevÃ©',1,0,'C',true);
 			$this->Cell(15,8,'Prog. photo',1,1,'C',true);
 			break;
 		case 'releve' :
 			$this->Cell(100,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 			$this->Cell(80,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la série',0,1,'R',true);			
+			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la sÃ©rie',0,1,'R',true);			
 			$this->Cell(17,8,'Cote',1,0,'C',true);
 			$this->Cell(80,8,'Notaire(commune)',1,0,'L',true);
-			$this->Cell(50,8,'Période',1,0,'L',true);
+			$this->Cell(50,8,'PÃ©riode',1,0,'L',true);
 			$this->Cell(23,8,'Forme liasse',1,0,'L',true);
 			$this->Cell(15,8,'Consultable',1,0,'C',true);
 			$this->Cell(50,8,'Releveur',1,0,'C',true);
 			$this->Cell(15,8,'Papier',1,0,'C',true);
-			$this->Cell(15,8,'Numérique',1,0,'C',true);
-			$this->Cell(15,8,'Date relevé',1,1,'C',true);
+			$this->Cell(15,8,'NumÃ©rique',1,0,'C',true);
+			$this->Cell(15,8,'Date relevÃ©',1,1,'C',true);
 			break;
 		case 'publi_num' :
 			$this->Cell(100,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 			$this->Cell(50,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la série',0,1,'R',true);			
+			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la sÃ©rie',0,1,'R',true);			
 			$this->Cell(17,8,'Cote',1,0,'C',true);
 			$this->Cell(80,8,'Notaire(commune)',1,0,'L',true);
-			$this->Cell(50,8,'Période',1,0,'L',true);
+			$this->Cell(50,8,'PÃ©riode',1,0,'L',true);
 			$this->Cell(23,8,'Forme liasse',1,0,'L',true);
 			$this->Cell(15,8,'Consultable',1,0,'C',true);
 			$this->Cell(50,8,'Releveur',1,0,'C',true);
-			$this->Cell(15,8,'Date relevé',1,1,'C',true);
+			$this->Cell(15,8,'Date relevÃ©',1,1,'C',true);
 			break;
 		case 'photo' :
 			if( $_SESSION['avec_commentaire_rla'] != 'oui' ) {
 				$this->Cell(100,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 				$this->Cell(80,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-				$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la série',0,1,'R',true);			
+				$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la sÃ©rie',0,1,'R',true);			
 				$this->Cell(15,8,'Cote',1,0,'C',true);
 				$this->Cell(70,8,'Notaire(commune)',1,0,'L',true);
-				$this->Cell(46,8,'Période',1,0,'L',true);
+				$this->Cell(46,8,'PÃ©riode',1,0,'L',true);
 				$this->Cell(17,8,'Forme liasse',1,0,'L',true);
 				$this->Cell(14,8,'Consultable',1,0,'C',true);
 				$this->Cell(9,8,'Papier',1,0,'C',true);
-				$this->Cell(13,8,'Numérique',1,0,'C',true);
+				$this->Cell(13,8,'NumÃ©rique',1,0,'C',true);
 				$this->Cell(35,8,'Photographe',1,0,'L',true);
 				$this->Cell(15,8,'Date photo',1,0,'C',true);
 				$this->Cell(26,8,'Couverture',1,0,'L',true);
@@ -117,10 +117,10 @@ function Header() {
 			else {
 				$this->Cell(100,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 				$this->Cell(80,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-				$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la série',0,1,'R',true);			
+				$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la sÃ©rie',0,1,'R',true);			
 				$this->Cell(15,8,'Cote',1,0,'C',true);
 				$this->Cell(70,8,'Notaire(commune)',1,0,'L',true);
-				$this->Cell(46,8,'Période',1,0,'L',true);
+				$this->Cell(46,8,'PÃ©riode',1,0,'L',true);
 				$this->Cell(17,8,'Forme liasse',1,0,'L',true);
 				$this->Cell(26,8,'Couverture',1,0,'L',true);
 				$this->Cell(106,8,'Commentaires',1,1,'L',true);
@@ -131,10 +131,10 @@ function Header() {
 		default :
 			$this->Cell(61,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 			$this->Cell(65,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-			$this->Cell(61,6,$_SESSION['pdf']['pourc_tot'].' % de la série',0,1,'R',true);			
+			$this->Cell(61,6,$_SESSION['pdf']['pourc_tot'].' % de la sÃ©rie',0,1,'R',true);			
 			$this->Cell(17,8,'Cote',1,0,'C',true);
 			$this->Cell(80,8,'Notaire(commune)',1,0,'L',true);
-			$this->Cell(60,8,'Période',1,0,'L',true);
+			$this->Cell(60,8,'PÃ©riode',1,0,'L',true);
 			$this->Cell(30,8,'Forme liasse',1,1,'L',true);
 			break;
 	}
@@ -318,16 +318,16 @@ function Ligne_defaut($pa_liasse, $fond) {
 
 // Pied de page
 function Footer() {
-    // Positionnement à 1,5 cm du bas
+    // Positionnement Ã  1,5 cm du bas
     $this->SetY(-15);
     // Police Arial italique 8
     $this->SetFont('Arial','I',8);
-    // Numéro de page
+    // NumÃ©ro de page
     $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
 }
 }
 
-// Instanciation de la classe dérivée
+// Instanciation de la classe dÃ©rivÃ©e
 $pdf = new PDF();
 $pdf->AliasNbPages();
 if( $_SESSION['menu_rla'] == 'photo' || $_SESSION['menu_rla'] == 'publi_pap' || $_SESSION['menu_rla'] == 'releve' || 

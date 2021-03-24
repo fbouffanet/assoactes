@@ -64,11 +64,11 @@ function menu_gerer_publication($pconnexionBD)
 }
 
 /**
- * Affiche de la table d'édition d'une publication
+ * Affiche de la table d'Ã©dition d'une publication
  * @param object	$pconnexionBD				Identifiant de la connexion de base
  * @param string	$pst_nom					Titre de la publication
  * @param string	$pst_date_publication		Date de la publication
- * @param string	$pst_info_compl				Informations complémentaires sur le relevé
+ * @param string	$pst_info_compl				Informations complÃ©mentaires sur le relevÃ©
  */ 
 function menu_edition_publication($pconnexionBD, $pst_nom, $pst_date_publication, $pst_info_compl)
 {
@@ -110,7 +110,7 @@ function menu_modifier_publication($pconnexionBD, $pi_idf_publication)
 	print('</form>');
 }
 
-/** Affiche le menu d'ajout d'un relevé
+/** Affiche le menu d'ajout d'un relevÃ©
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  */ 
 function menu_ajouter_publication($pconnexionBD)
@@ -129,8 +129,8 @@ function menu_ajouter_publication($pconnexionBD)
 	print('</form>');
 }
 
-/** Elimine les éventuels \ du texte et remplace les ' par \'
- * @param string	$pst_texte			Le texte à traiter
+/** Elimine les Ã©ventuels \ du texte et remplace les ' par \'
+ * @param string	$pst_texte			Le texte Ã  traiter
  */ 
 function escape_apostrophe($pst_texte)
 {

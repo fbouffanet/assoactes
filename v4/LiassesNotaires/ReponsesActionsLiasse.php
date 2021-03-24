@@ -4,7 +4,7 @@ require_once('../Commun/Identification.php');
 require_once('../Commun/commun.php');
 require_once('../Commun/constantes.php');
 require_once('../Commun/config.php');
-require_once('../Commun/ConnexionBD.php');
+require_once('../Commun/ConnexionBDutf8.php');
 require_once('../RequeteRecherche.php');
 require_once('../Commun/PaginationTableau.php');
 require_once('../Commun/Benchmark.inc');
@@ -13,10 +13,11 @@ require_once('../Commun/VerificationDroits.php');
 print('<!DOCTYPE html>');
 print("<Head>\n");
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
+print('<meta http-equiv="content-language" content="fr">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
-//print('<meta http-equiv="content-language" content="fr">');
 print('<link rel="shortcut icon" href="../images/favicon.ico">');
 //print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
 print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
@@ -32,7 +33,7 @@ print("<title>Base AGC: Reponse &agrave; votre recherches d'actions sur les lias
 print('</Head>');
 
 /* ------------------------------------------------------
-   récupération des critères de recherche 
+   rÃ©cupÃ©ration des critÃ¨res de recherche 
 */
 if( isset($_SESSION['pdf']) ) 
 	unset($_SESSION['pdf']);
@@ -89,7 +90,7 @@ $a_communes = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM commune_a
 $a_forme_liasse = $connexionBD->liste_valeur_par_clef("SELECT idf, nom FROM forme_liasse order by nom");
 
 /* ------------------------------------------------------
-   constitution des requêtes
+   constitution des requÃªtes
 */   
 //-----------------------------clauses SELECT et FROM
 if( $_SESSION['menu_rla'] == 'publication' ) {
@@ -211,7 +212,7 @@ else {
 if( $_SESSION['commune_rla'] != '' ){
 	$st_from .= " left outer join liasse_notaire				on liasse_notaire.cote_liasse				= liasse.cote_liasse ";
 }
-//-----------------------------clause WHERE, compteur, titre, critères et log
+//-----------------------------clause WHERE, compteur, titre, critÃ¨res et log
 if( $_SESSION['menu_rla'] != 'publication' ){
 	$st_where = " where liasse.cote_liasse like '".$_SESSION['serie_liasse']."%'";
 	$st_criteres = "liasses de la s&eacute;rie ".$_SESSION['serie_liasse']."\n";
@@ -639,7 +640,7 @@ $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$_SESSION['menu_
 @fclose($pf);
 
 /* -------------------------------------------------------------------------------------------------------------------------
-   Constitution des requêtes et des compteurs
+   Constitution des requÃªtes et des compteurs
    ------------------------------------------
 */
 
@@ -673,7 +674,7 @@ $_SESSION['pdf']['pourc_tot'] = $i_pourc_tot;
 //**---------------------------pour test PC-------------------**//   require_once('../Commun/menu.php');
 
 /* ------------------------------------------------------
-   affichage de l'entête 
+   affichage de l'entÃªte 
 */   
 print("<body>");
 print('<div class="container">');

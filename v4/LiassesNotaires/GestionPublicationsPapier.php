@@ -6,7 +6,7 @@ require_once('../Commun/Identification.php');
 // La page est reservee uniquement aux gens ayant les droits d'import/export
 require_once('../Commun/VerificationDroits.php');
 verifie_privilege(DROIT_NOTAIRES);
-require_once '../Commun/ConnexionBD.php';
+require_once '../Commun/ConnexionBDutf8.php';
 require_once('../Commun/PaginationTableau.php');
 require_once('../Commun/commun.php');
 
@@ -15,12 +15,12 @@ print('<!DOCTYPE html>');
 print("<head>");
 print("<title>Gestion des publications papier de liasses notiariales</title>");
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
+print('<meta http-equiv="content-language" content="fr">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
-//print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
-//print('<meta http-equiv="content-language" content="fr">');
 print("<script src='./VerifieChampsGestionActionsLiasse.js' type='text/javascript'></script>");
 print('</head>');
 print("<body>");
@@ -67,6 +67,10 @@ switch ($gst_mode) {
 		$st_nom					= escape_apostrophe(trim($_POST['titre']));;
 		$st_date_publication	= $_POST['date_publication'];
 		$st_info_compl			= escape_apostrophe(trim($_POST['info_compl']));
+		//---- modif UTF8
+		$st_nom = mb_convert_encoding($st_nom, 'cp1252', 'UTF8');
+		$st_info_compl = mb_convert_encoding($st_info_compl, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_requete = "update publication_papier set ".
 		              "    nom='".$st_nom."',  ".
 		              "    date_publication=str_to_date('".$st_date_publication."', '%d/%m/%Y'), ".
@@ -82,6 +86,10 @@ switch ($gst_mode) {
 		$st_nom					= escape_apostrophe(trim($_POST['titre']));;
 		$st_date_publication	= $_POST['date_publication'];
 		$st_info_compl			= escape_apostrophe(trim($_POST['info_compl']));
+		//---- modif UTF8
+		$st_nom = mb_convert_encoding($st_nom, 'cp1252', 'UTF8');
+		$st_info_compl = mb_convert_encoding($st_info_compl, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_requete = "INSERT INTO `publication_papier`(`nom`, `date_publication`, `info_complementaires`) ".
 					  "VALUES ('".$st_nom."', str_to_date('".$st_date_publication."', '%d/%m/%Y'), '".$st_info_compl."')";
 		$connexionBD->execute_requete($st_requete);
