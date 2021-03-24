@@ -477,10 +477,11 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   
 }
 //=========== Fonction EXPORT_RECENSEMENT ==== DEB =====================
-function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
+function export_recensementssssss($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
 // ? adapter pour prendre le champ code insee
    list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
+   print_r(list);
    $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
    foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
    {
@@ -521,7 +522,52 @@ function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$p
    print "Publication des recemsements de la commune <b> $st_nom_commune1</b> <br>";
 
 }
+//==========================================================
+function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
+{
+// ? adapter pour prendre le champ code insee
+   list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
+   print_r(list);
+   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
+   foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
+   {
+      $a_champs = array();
+      //$i_nb_temoins=0;
+      //$b_parrain_initialise=false;
+      foreach ($a_personnes as $i_idf_personne => $a_personne)
+      {
+         list($i_idf_type_presence,$c_sexe,$st_patronyme,$st_prenom,$i_idf_origine,$st_date_naissance,$st_age,$i_idf_profession,$st_commentaires) = $a_personne;
 
+         switch($i_idf_type_presence) {
+         case IDF_PRESENCE_INTV:
+           $a_champs[] = $st_patronyme;
+           $a_champs[] = $st_prenom;
+           $a_champs[] = $c_sexe;
+           $a_champs[] = $st_commentaires;
+         break;
+            }
+      }
+      list($idf_commune_acte,$idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre,$st_commentaires) = $pa_liste_actes[$i_idf_acte];
+      array_unshift($a_champs,'R',$st_date,$st_date_rep,$st_cote,$st_libre);
+      array_unshift($a_champs,""); // nom d?partement  => ? am?liorer
+      array_unshift($a_champs,""); // code d?partement  => ? am?liorer
+      array_unshift($a_champs,"NIMEGUEV3",$i_code_insee,$st_nom_commune);
+      // Cr?e les t?moins manquants
+      for ($i=$i_nb_temoins;$i<2;$i++)
+      {
+         array_push($a_champs,"","","");
+      }
+      $a_champs[]=$st_commentaires;
+      $a_champs[]=''; // Num?ro d'enregistrement
+
+      fwrite($pf,(implode(';',$a_champs)));
+      fwrite($pf,"\r\n");
+   }
+
+   $st_nom_commune1 = utf8_encode ($st_nom_commune);
+   print "Publication des recemsements de la commune <b> $st_nom_commune1</b> <br>";
+
+}
 
 /*------------------------------------------------------------------------------
                             Corps du programme
