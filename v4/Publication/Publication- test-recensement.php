@@ -530,25 +530,24 @@ function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$p
    $fichier = fopen('/var/www/clients/client1/web3/web/v4/Publication/telechargements/ExportNimV3.csv','c+');
    ftruncate($fichier,0);
      if($fichier!=false)
-{
+   {
      $req= $pconnexionBD->sql_select($req);
      print $req ."br";
       // Boucle pour lire toutes les entrées retournées par la requête SQL et les écrire dans le fichier CSV
 
-    while($donnees=$req->fetch())
-    {
+          while($donnees=$req->fetch())
+      {
         // Écrire la ligne dans le fichier
         fputcsv($fichier,$donnees);
-    }
+      }
       //fermeture du fichier
         fclose($fichier);
-   }
-        else{
+   }else{
          print "Impossible d'ouvrir ou de créer le fichier.";
         }
    $st_nom_commune1 = utf8_encode ($st_nom_commune );
    print "Publication des recemsements de la commune <b> $st_nom_commune1</b> <br>";
-}
+} 
 
 
 /*------------------------------------------------------------------------------
