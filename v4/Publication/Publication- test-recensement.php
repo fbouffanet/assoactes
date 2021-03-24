@@ -8,7 +8,7 @@ verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
 require_once('../Commun/PaginationTableau.php');
 require_once '../Commun/commun.php';
-//error_reporting(E_ALL);
+error_reporting(E_ALL);
 $gst_repertoire_publication = $_SERVER['DOCUMENT_ROOT'].'/v4/Publication/telechargements';
 print $gst_repertoire_publication;
 
@@ -525,10 +525,15 @@ function export_recensementssssss($pconnexionBD,$pi_idf_source,$pi_idf_commune_a
 function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
    $st_nom_commune = $pconnexionBD->sql_select_liste("select nom from commune_acte where idf=$pi_idf_commune_acte"); 
+   
+   print $st_nom_commune;
   
    $req="select a.annee as Annee_Recensement, cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page, substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier, substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue, cast(substring(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)as INT) as Maison, cast(substring(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)as INT) as Menage, p.patronyme as Nom, ifnull(prenom.libelle,'') as Prenom, ifnull(p.age,'') as Age, right(p.date_naissance,4) as Annee°, c.nom as Lieu°, ifnull(p.commentaires,'') as Observation, b.nom as Commune from personne p left join prenom on (p.idf_prenom=prenom.idf) join commune_personne c on (p.idf_origine =c.idf) join acte a on (p.idf_acte=a.idf) join commune_acte b on (a.idf_commune=b.idf) where a.idf_commune=$pi_idf_commune_acte and a.idf_source=$pi_idf_source and a.idf_type_acte=$pc_idf_type_acte order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC";
+
    $fichier = fopen('/var/www/clients/client1/web3/web/v4/Publication/telechargements/ExportNimV3.csv','c+');
+
    ftruncate($fichier,0);
+
      if($fichier!=false)
    {
      $req= $pconnexionBD->sql_select($req);
