@@ -42,20 +42,20 @@ function menu_liste_notaire($pconnexionBD, $pst_cote_liasse, $pa_communes)
 	print("<form  action=\"".$_SERVER['PHP_SELF']."?cote_liasse='$pst_cote_liasse'\" method=\"post\">");  
 	print("<div align=center><br><input type=hidden name=mode value=\"MENU_MODIFIER\">");  
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
-	print("<input type=submit value=\"Revenir à la liasse\"></div>");  
+	print("<input type=submit value=\"Revenir Ã  la liasse\"></div>");  
 	print('</form>');
 	print('</div>');
 }
 
 /**
- * Affiche de la table d'édition
+ * Affiche de la table d'Ã©dition
  * @param string  $pst_cote					Cote de la liasse
  * @param integer $pi_idf					Identifiant du notaire pour la liasse
  * @param string  $pst_nom_notaire			Nom du notaire
- * @param string  $pst_prenom_notaire		Prénom du notaire
- * @param string  $pst_commentaire			Commentaire ou précision sur le notaire (sénior, le jeune, ...)
- * @param string  $pst_libelle_lieu			Nom du lieu de l'étude
- * @param integer $pi_commune_etude			Identifiant de la commune de rattachement de l'étude
+ * @param string  $pst_prenom_notaire		PrÃ©nom du notaire
+ * @param string  $pst_commentaire			Commentaire ou prÃ©cision sur le notaire (sÃ©nior, le jeune, ...)
+ * @param string  $pst_libelle_lieu			Nom du lieu de l'Ã©tude
+ * @param integer $pi_commune_etude			Identifiant de la commune de rattachement de l'Ã©tude
  * @param array   $pa_communes				Tableau des communes 
  */ 
 function menu_edition_notaire($pst_cote, $pi_idf, $pst_nom_notaire, $pst_prenom_notaire, $pst_commentaire, 
@@ -78,7 +78,7 @@ function menu_edition_notaire($pst_cote, $pi_idf, $pst_nom_notaire, $pst_prenom_
 /** Affiche le menu de modification d'une commune
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  * @param string	$pst_cote_liasse	Identifiant de la liasse porteuse du notaire
- * @param integer	$pi_idf_notaire		Identifiant du notaire à modifier
+ * @param integer	$pi_idf_notaire		Identifiant du notaire Ã  modifier
  * @param array		$pa_communes		Tableau des communes 
  */ 
 function menu_modifier_notaire($pconnexionBD, $pst_cote_liasse, $pi_idf_notaire, $pa_communes)
@@ -126,7 +126,7 @@ function menu_ajouter_notaire($pst_cote_liasse, $pa_communes)
 	print('</form>');
 }
 
-/** Met à jour le libellé notaires d'une liasse
+/** Met Ã  jour le libellÃ© notaires d'une liasse
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  * @param string	$pst_cote_liasse	Identifiant de la liasse porteuse du notaire
  */ 

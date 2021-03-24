@@ -44,16 +44,16 @@ function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 	print("<form  action=\"".$_SERVER['PHP_SELF']."?cote_liasse='$pst_cote_liasse'\" method=\"post\">");  
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
 	print("<div align=center><br><input type=hidden name=mode value=\"MENU_MODIFIER\">");  
-	print("<input type=submit value=\"Revenir à la liasse\"></div>");  
+	print("<input type=submit value=\"Revenir Ã  la liasse\"></div>");  
 	print('</form>');
 }
 
 /**
- * Affiche de la table d'édition
- * @param string	$pst_annee_debut	Année de début de la période
- * @param string	$pst_mois_debut		Mois de début de la période. si vide, année complète
- * @param string	$pst_annee_fin		Année de fin de la période. si vide, pas d'intervalle
- * @param string	$pst_mois_fin		Mois de fin de la période. si vide, année complète
+ * Affiche de la table d'Ã©dition
+ * @param string	$pst_annee_debut	AnnÃ©e de dÃ©but de la pÃ©riode
+ * @param string	$pst_mois_debut		Mois de dÃ©but de la pÃ©riode. si vide, annÃ©e complÃ¨te
+ * @param string	$pst_annee_fin		AnnÃ©e de fin de la pÃ©riode. si vide, pas d'intervalle
+ * @param string	$pst_mois_fin		Mois de fin de la pÃ©riode. si vide, annÃ©e complÃ¨te
  * @param array		$pa_mois			Tableau des mois
  */ 
 function menu_edition_periode($pst_annee_debut, $pst_mois_debut, $pst_annee_fin, $pst_mois_fin, $pa_mois)
@@ -70,10 +70,10 @@ function menu_edition_periode($pst_annee_debut, $pst_mois_debut, $pst_annee_fin,
 	print("</table>");
 }
 
-/** Affiche le menu de modification d'une période
+/** Affiche le menu de modification d'une pÃ©riode
  * @param object	$pconnexionBD		Identifiant de la connexion de base
- * @param string	$pst_cote_liasse	Identifiant de la liasse porteuse de la période  
- * @param integer	$pi_idf_periode		Identifiant de la période à modifier 
+ * @param string	$pst_cote_liasse	Identifiant de la liasse porteuse de la pÃ©riode  
+ * @param integer	$pi_idf_periode		Identifiant de la pÃ©riode Ã  modifier 
  * @param array		$pa_mois			Tableau des mois
  */ 
 function menu_modifier_periode($pconnexionBD, $pst_cote_liasse, $pi_idf_periode, $pa_mois)
@@ -100,8 +100,8 @@ function menu_modifier_periode($pconnexionBD, $pst_cote_liasse, $pi_idf_periode,
 	print('</form>');
 }
 
-/** Affiche le menu d'ajout d'une période
- * @param string	$pst_cote_liasse	Identifiant de la liasse porteuse de la période 
+/** Affiche le menu d'ajout d'une pÃ©riode
+ * @param string	$pst_cote_liasse	Identifiant de la liasse porteuse de la pÃ©riode 
  * @param array		$pa_mois			Tableau des mois
  */ 
 function menu_ajouter_periode($pst_cote_liasse, $pa_mois)
@@ -123,10 +123,10 @@ function menu_ajouter_periode($pst_cote_liasse, $pa_mois)
 	print('</form>');
 }
 
-/** Calcul la date de début d'une période
+/** Calcul la date de dÃ©but d'une pÃ©riode
  * @param object	$pconnexionBD		Identifiant de la connexion de base
- * @param string	$pst_annee_debut	Année de début de la période
- * @param string	$pst_mois_debut		Mois de début de la période. si vide, année complète
+ * @param string	$pst_annee_debut	AnnÃ©e de dÃ©but de la pÃ©riode
+ * @param string	$pst_mois_debut		Mois de dÃ©but de la pÃ©riode. si vide, annÃ©e complÃ¨te
  */
 function calculer_date_debut( $pconnexionBD, $pst_annee_debut, $pst_mois_debut)
 {
@@ -138,7 +138,7 @@ function calculer_date_debut( $pconnexionBD, $pst_annee_debut, $pst_mois_debut)
 		}
 	else {	
 		if( empty($pst_mois_debut) ) 
-			$st_mois_revol = 'Vendémiaire';
+			$st_mois_revol = 'VendÃ©miaire';
 		else
 			$st_mois_revol = $pst_mois_debut;
 		print($st_mois_revol);
@@ -149,12 +149,12 @@ function calculer_date_debut( $pconnexionBD, $pst_annee_debut, $pst_mois_debut)
 	return( $st_date_debut );
 }
 
-/** Calcul la date de fin d'une période
+/** Calcul la date de fin d'une pÃ©riode
  * @param object	$pconnexionBD		Identifiant de la connexion de base
- * @param string	$pst_annee_debut	Année de début de la période
- * @param string	$pst_mois_debut		Mois de début de la période. si vide, année complète
- * @param string	$pst_annee_fin		Année de fin de la période. si vide, pas d'intervalle
- * @param string	$pst_mois_fin		Mois de fin de la période. si vide, année complète
+ * @param string	$pst_annee_debut	AnnÃ©e de dÃ©but de la pÃ©riode
+ * @param string	$pst_mois_debut		Mois de dÃ©but de la pÃ©riode. si vide, annÃ©e complÃ¨te
+ * @param string	$pst_annee_fin		AnnÃ©e de fin de la pÃ©riode. si vide, pas d'intervalle
+ * @param string	$pst_mois_fin		Mois de fin de la pÃ©riode. si vide, annÃ©e complÃ¨te
  */
 function calculer_date_fin( $pconnexionBD, $pst_annee_debut, $pst_mois_debut, $pst_annee_fin, $pst_mois_fin)
 {
@@ -192,9 +192,9 @@ function calculer_date_fin( $pconnexionBD, $pst_annee_debut, $pst_mois_debut, $p
 	}
 	else {	
 		if( empty($pst_mois_fin) ) 
-			$st_mois_revol = 'Complémentaires';
+			$st_mois_revol = 'ComplÃ©mentaires';
 		else if( $pst_mois_fin == 'Fructidor' ) 
-			$st_mois_revol = 'Complémentaires';
+			$st_mois_revol = 'ComplÃ©mentaires';
 		else
 			$st_mois_revol = $pst_mois_fin;
 		$st_requete = "select date_format(dern_jour_greg, '%Y-%m-%d') from calendrier_revolutionaire ".
@@ -204,11 +204,11 @@ function calculer_date_fin( $pconnexionBD, $pst_annee_debut, $pst_mois_debut, $p
 	return( $st_date_fin );
 }
 
-/** Calcul le libellé d'une période
- * @param string	$pst_annee_debut	Année de début de la période
- * @param string	$pst_mois_debut		Mois de début de la période. si vide, année complète
- * @param string	$pst_annee_fin		Année de fin de la période. si vide, pas d'intervalle
- * @param string	$pst_mois_fin		Mois de fin de la période. si vide, année complète
+/** Calcul le libellÃ© d'une pÃ©riode
+ * @param string	$pst_annee_debut	AnnÃ©e de dÃ©but de la pÃ©riode
+ * @param string	$pst_mois_debut		Mois de dÃ©but de la pÃ©riode. si vide, annÃ©e complÃ¨te
+ * @param string	$pst_annee_fin		AnnÃ©e de fin de la pÃ©riode. si vide, pas d'intervalle
+ * @param string	$pst_mois_fin		Mois de fin de la pÃ©riode. si vide, annÃ©e complÃ¨te
  */
 function calculer_libelle_periode( $st_annee_debut, $st_mois_debut, $st_annee_fin, $st_mois_fin)
 {
@@ -229,7 +229,7 @@ function calculer_libelle_periode( $st_annee_debut, $st_mois_debut, $st_annee_fi
 	return( $st_libelle );
 }
 
-/** Met à jour le libellé périodes d'une liasse
+/** Met Ã  jour le libellÃ© pÃ©riodes d'une liasse
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  * @param string	$pst_cote_liasse	Identifiant de la liasse porteuse du notaire
  */ 

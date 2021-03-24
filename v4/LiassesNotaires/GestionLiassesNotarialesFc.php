@@ -28,10 +28,10 @@ function menu_liste($pconnexionBD)
 		  chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select>");
 	print('</div><br>');
 	if( $st_serie_liasse == "L") {
-		print("<div align=center>Ces répertoires sont issus de la série L qui regroupe tous les actes de l’administration entre 1789 et l’an VIII. ");
-		print("Nous n’avons saisi que les numéros de la série L ayant traits à des répertoires notariés. <br>");
-		print("La recherche se fait donc entre des bornes précises, selon 6 groupes : ");
-		print(" 2197 à 2263, 2328 à 2393, 2433 à 2492,< 2552 à 2596, 2607 à 2668, 2683 à 2732.</div><br>");
+		print("<div align=center>Ces rÃ©pertoires sont issus de la sÃ©rie L qui regroupe tous les actes de lâ€™administration entre 1789 et lâ€™an VIII. ");
+		print("Nous nâ€™avons saisi que les numÃ©ros de la sÃ©rie L ayant traits Ã  des rÃ©pertoires notariÃ©s. <br>");
+		print("La recherche se fait donc entre des bornes prÃ©cises, selon 6 groupes : ");
+		print(" 2197 Ã  2263, 2328 Ã  2393, 2433 Ã  2492,< 2552 Ã  2596, 2607 Ã  2668, 2683 Ã  2732.</div><br>");
 	}
 
 	print("<table border=0 cellpadding=0 cellspacing=0><caption>S&eacute;lection des cotes<br><br></caption>");
@@ -121,24 +121,24 @@ function menu_liste($pconnexionBD)
 }
 
 /**
- * Affiche de la table d'édition
+ * Affiche de la table d'Ã©dition
  * @param string	$pst_cote					Cote de la liasse
- * @param string	$pst_libelle				Libellé de la liasse
- * @param string	$pst_periodes				Libellé des années couvertes par la liasse
- * @param string	$pst_notaires				Libellé du(des) notaire(s)
- * @param integer	$pi_depose_ad				Indicateur liasse déposée aux AD
- * @param string	$pst_idf_dept_depose_ad		Département de dépose AD
- * @param array		$pa_depts_depose_ad			Tableau des départements de dépose AD
+ * @param string	$pst_libelle				LibellÃ© de la liasse
+ * @param string	$pst_periodes				LibellÃ© des annÃ©es couvertes par la liasse
+ * @param string	$pst_notaires				LibellÃ© du(des) notaire(s)
+ * @param integer	$pi_depose_ad				Indicateur liasse dÃ©posÃ©e aux AD
+ * @param string	$pst_idf_dept_depose_ad		DÃ©partement de dÃ©pose AD
+ * @param array		$pa_depts_depose_ad			Tableau des dÃ©partements de dÃ©pose AD
  * @param integer	$pi_liasse_consult			Indicateur liasse consultable
  * @param integer	$pi_idf_forme_liasse		Forme de la liasse 
  * @param array		$pa_depts_depose_ad			Tableau des formes de la liasse
- * @param integer	$pst_info_compl				Informations complémentaires
+ * @param integer	$pst_info_compl				Informations complÃ©mentaires
  */ 
 function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires, 
                       $pi_depose_ad, $pst_idf_dept_depose_ad, $pa_depts_depose_ad, 
 					  $pi_liasse_consult, $pi_idf_forme_liasse, $pa_formes_liasses, $pst_info_compl, $pst_mode)
 {
-	//**pc**// à remplacer par une image du site
+	//**pc**// Ã  remplacer par une image du site
 	$st_icone_info = 'images/PLUS.GIF';
 
 	print("<table border=1>");
@@ -184,8 +184,8 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 
 /** Affiche le menu de modification d'une commune
  * @param object	$pconnexionBD			Identifiant de la connexion de base
- * @param integer	$pst_cote_liasse		Cote de la liasse à modifier 
- * @param array		$pa_depts_depose_ad		Tableau des départements de dépose AD 
+ * @param integer	$pst_cote_liasse		Cote de la liasse Ã  modifier 
+ * @param array		$pa_depts_depose_ad		Tableau des dÃ©partements de dÃ©pose AD 
  * @param array		$pa_formes_liasses		Tableau des formes de liasses 
  */ 
 function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa_formes_liasses)
@@ -213,7 +213,7 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 }
 
 /** Affiche le menu d'ajout d'une liasse
- * @param array		$pa_depts_depose_ad		Tableau des départements de dépose AD 
+ * @param array		$pa_depts_depose_ad		Tableau des dÃ©partements de dÃ©pose AD 
  * @param array		$pa_formes_liasses		Tableau des formes de liasses 
  */ 
 function menu_ajouter($pconnexionBD, $pa_depts_depose_ad, $pa_formes_liasses)
@@ -231,8 +231,8 @@ function menu_ajouter($pconnexionBD, $pa_depts_depose_ad, $pa_formes_liasses)
 	print('</form>');
 }
 
-/** Elimine les éventuels \ du texte et remplace les ' par \'
- * @param string	$pst_texte			Le texte à traiter
+/** Elimine les Ã©ventuels \ du texte et remplace les ' par \'
+ * @param string	$pst_texte			Le texte Ã  traiter
  */ 
 function escape_apostrophe($pst_texte)
 {

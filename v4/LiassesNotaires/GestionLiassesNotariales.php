@@ -14,12 +14,12 @@ print('<!DOCTYPE html>');
 print("<head>");
 print("<title>Gestion des actions sur les liasses notariales</title>");
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
+print('<meta http-equiv="content-language" content="fr">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
-print('<meta http-equiv="content-language" content="fr">');
 print("<script src='./VerifieChampsGestionLiasseNot.js' type='text/javascript'></script>");
 print('</head>');
 print("<body>");
@@ -86,6 +86,12 @@ switch ($gst_mode) {
 		$st_idf_dept_depose_AD = empty($_POST['dept_depose_ad']) ? null: $_POST['dept_depose_ad'];
 		$st_in_liasse_consultable = empty($_POST['liasse_consult']) ? 0: $_POST['liasse_consult'];
 		$i_idf_forme_liasse = $_POST['forme_liasse'];
+		//---- modif UTF8
+		$st_info_compl = mb_convert_encoding($st_info_compl, 'cp1252', 'UTF8');
+		$st_in_liasse_depose_AD = mb_convert_encoding($st_in_liasse_depose_AD, 'cp1252', 'UTF8');
+		$st_idf_dept_depose_AD = mb_convert_encoding($st_idf_dept_depose_AD, 'cp1252', 'UTF8');
+		$st_in_liasse_consultable = mb_convert_encoding($st_in_liasse_consultable, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_requete = "update liasse set ".
 					  "in_liasse_depose_AD='$st_in_liasse_depose_AD', ".
 					  "idf_dept_depose_AD='$st_idf_dept_depose_AD', in_liasse_consultable='$st_in_liasse_consultable', ".
@@ -115,6 +121,13 @@ switch ($gst_mode) {
 			$st_idf_dept_depose_AD = empty($_POST['dept_depose_ad']) ? 0: $_POST['dept_depose_ad'];
 			$st_in_liasse_consultable = empty($_POST['liasse_consult']) ? 0: $_POST['liasse_consult'];
 			$i_idf_forme_liasse = $_POST['forme_liasse'];
+			//---- modif UTF8
+			$st_type_serie = mb_convert_encoding($st_type_serie, 'cp1252', 'UTF8');
+			$st_info_compl = mb_convert_encoding($st_info_compl, 'cp1252', 'UTF8');
+			$st_in_liasse_depose_AD = mb_convert_encoding($st_in_liasse_depose_AD, 'cp1252', 'UTF8');
+			$st_idf_dept_depose_AD = mb_convert_encoding($st_idf_dept_depose_AD, 'cp1252', 'UTF8');
+			$st_in_liasse_consultable = mb_convert_encoding($st_in_liasse_consultable, 'cp1252', 'UTF8');
+			//---- fin modif UTF8
 			$st_requete = "insert into liasse (`cote_liasse`, `type_serie`, `in_liasse_depose_AD`, `idf_dept_depose_AD`, `in_liasse_consultable`, ".
 						"                    `idf_forme_liasse`, `info_complementaires` ) ".
 						"VALUES ('".$st_cote."', '".$st_type_serie."', ".$st_in_liasse_depose_AD.", ".$st_idf_dept_depose_AD.", ".$st_in_liasse_consultable.", ".
@@ -159,6 +172,13 @@ switch ($gst_mode) {
 		$st_mois_debut = $a_mois[$_POST['mois_debut']];
 		$st_annee_fin = $_POST['annee_fin'];
 		$st_mois_fin = $a_mois[$_POST['mois_fin']];
+		//---- modif UTF8
+		$st_cote_liasse = mb_convert_encoding($st_cote_liasse, 'cp1252', 'UTF8');
+		$st_annee_debut = mb_convert_encoding($st_annee_debut, 'cp1252', 'UTF8');
+		$st_mois_debut = mb_convert_encoding($st_mois_debut, 'cp1252', 'UTF8');
+		$st_annee_fin = mb_convert_encoding($st_annee_fin, 'cp1252', 'UTF8');
+		$st_mois_fin = mb_convert_encoding($st_mois_fin, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_date_debut = calculer_date_debut( $connexionBD, $st_annee_debut, $st_mois_debut, $a_mois);
 		$st_date_fin = calculer_date_fin( $connexionBD, $st_annee_debut, $st_mois_debut, $st_annee_fin, $st_mois_fin, $a_mois);
 		$st_libelle = calculer_libelle_periode( $st_annee_debut, $st_mois_debut, $st_annee_fin, $st_mois_fin);
@@ -182,6 +202,13 @@ switch ($gst_mode) {
 		$st_mois_debut = $_POST['mois_debut'];
 		$st_annee_fin = $_POST['annee_fin'];
 		$st_mois_fin = $_POST['mois_fin'];
+		//---- modif UTF8
+		$st_cote_liasse = mb_convert_encoding($st_cote_liasse, 'cp1252', 'UTF8');
+		$st_annee_debut = mb_convert_encoding($st_annee_debut, 'cp1252', 'UTF8');
+		$st_mois_debut = mb_convert_encoding($st_mois_debut, 'cp1252', 'UTF8');
+		$st_annee_fin = mb_convert_encoding($st_annee_fin, 'cp1252', 'UTF8');
+		$st_mois_fin = mb_convert_encoding($st_mois_fin, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_date_debut = calculer_date_debut( $connexionBD, $st_annee_debut, $st_mois_debut);
 		$st_date_fin = calculer_date_fin( $connexionBD, $st_annee_debut, $st_mois_debut, $st_annee_fin, $st_mois_fin);
 		$st_libelle = calculer_libelle_periode( $st_annee_debut, $st_mois_debut, $st_annee_fin, $st_mois_fin);
@@ -222,6 +249,13 @@ switch ($gst_mode) {
 		$st_commentaire = empty($_POST['commentaire']) ? '': escape_apostrophe(trim($_POST['commentaire']));
 		$st_lieu		= ucwords(empty($_POST['lieu']) ? '': escape_apostrophe(trim($_POST['lieu'])));
 		$i_idf_commune	= $_POST['idf_commune'];
+		//---- modif UTF8
+		$st_cote_liasse = mb_convert_encoding($st_cote_liasse, 'cp1252', 'UTF8');
+		$st_nom = mb_convert_encoding($st_nom, 'cp1252', 'UTF8');
+		$st_prenom = mb_convert_encoding($st_prenom, 'cp1252', 'UTF8');
+		$st_commentaire = mb_convert_encoding($st_commentaire, 'cp1252', 'UTF8');
+		$st_lieu = mb_convert_encoding($st_lieu, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_requete = "update liasse_notaire set ".
 		              "nom_notaire='$st_nom', prenom_notaire='$st_prenom', commentaire='$st_commentaire', ".
 					  "libelle_lieu='$st_lieu',idf_commune_etude=$i_idf_commune ".
@@ -240,6 +274,13 @@ switch ($gst_mode) {
 		$st_commentaire = empty($_POST['commentaire']) ? '': escape_apostrophe(trim($_POST['commentaire']));
 		$st_lieu		= ucwords(empty($_POST['lieu']) ? '': escape_apostrophe(trim($_POST['lieu'])));
 		$i_idf_commune	= $_POST['idf_commune'];
+		//---- modif UTF8
+		$st_cote_liasse = mb_convert_encoding($st_cote_liasse, 'cp1252', 'UTF8');
+		$st_nom = mb_convert_encoding($st_nom, 'cp1252', 'UTF8');
+		$st_prenom = mb_convert_encoding($st_prenom, 'cp1252', 'UTF8');
+		$st_commentaire = mb_convert_encoding($st_commentaire, 'cp1252', 'UTF8');
+		$st_lieu = mb_convert_encoding($st_lieu, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_requete = "INSERT INTO `liasse_notaire`(`cote_liasse`, `nom_notaire`, `prenom_notaire`, ".
 		              "            `commentaire`, `libelle_lieu`, `idf_commune_etude`) ".
 					  "VALUES ('".$st_cote_liasse."', '".$st_nom."', '".$st_prenom."', '".$st_commentaire."', ".

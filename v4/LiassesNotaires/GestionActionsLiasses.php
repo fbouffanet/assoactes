@@ -6,7 +6,7 @@ require_once('../Commun/Identification.php');
 // La page est reservee uniquement aux gens ayant les droits d'import/export
 require_once('../Commun/VerificationDroits.php');
 verifie_privilege(DROIT_NOTAIRES);
-require_once '../Commun/ConnexionBD.php';
+require_once '../Commun/ConnexionBDutf8.php';
 require_once('../Commun/PaginationTableau.php');
 require_once('../Commun/commun.php');
 
@@ -14,13 +14,13 @@ require_once('../Commun/commun.php');
 print('<!DOCTYPE html>');
 print("<head>");
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
+print('<meta http-equiv="content-language" content="fr">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='./VerifieChampsGestionActionsLiasse.js' type='text/javascript'></script>");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
-// ancienne version  print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" >');
-// ancienne version  print('<meta http-equiv="content-language" content="fr">');
 print("<title>Gestion des actions sur les liasses notariales</title>");
 print('</head>');
 print('<body> <div class="container">');
@@ -103,7 +103,9 @@ switch ($gst_mode) {
 		$st_date_fin_releve	= $_POST['date_fin_releve'];
 		$i_publi_num		= empty($_POST['publi_num']) ? 0 : trim($_POST['publi_num']);
 		$st_info_compl		= escape_apostrophe(trim($_POST['info_compl']));
-
+		//---- modif UTF8
+		$st_info_compl = mb_convert_encoding($st_info_compl, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_requete = "update liasse_releve set ".
 		              "    idf_releveur=".$i_idf_releveur.", date_fin_releve=str_to_date('".$st_date_fin_releve."', '%d/%m/%Y'), ".
 					  "    in_publication_numerique=".$i_publi_num.", info_complementaires='".$st_info_compl."' ".
@@ -119,6 +121,9 @@ switch ($gst_mode) {
 		$st_date_fin_releve	= $_POST['date_fin_releve'];
 		$i_publi_num		= empty($_POST['publi_num']) ? 0 : trim($_POST['publi_num']);
 		$st_info_compl		= escape_apostrophe(trim($_POST['info_compl']));
+		//---- modif UTF8
+		$st_info_compl = mb_convert_encoding($st_info_compl, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_requete = "INSERT INTO `liasse_releve`(`cote_liasse`, `idf_releveur`, `date_fin_releve`, ".
 		              "            `in_publication_numerique`, `info_complementaires`) ".
 					  "VALUES ('".$_SESSION['cote_liasse_gal']."', ".$i_idf_releveur.", str_to_date('".$st_date_fin_releve."', '%d/%m/%Y'), ".
@@ -142,6 +147,10 @@ switch ($gst_mode) {
 		list($st_nom, $st_prenom) = $connexionBD->sql_select_liste("select nom, prenom from adherent where idf=".$i_idf_adherent);
 		$st_nom = escape_apostrophe(trim($st_nom));
 		$st_prenom = escape_apostrophe(trim($st_prenom));
+		//---- modif UTF8
+		$st_nom = mb_convert_encoding($st_nom, 'cp1252', 'UTF8');
+		$st_prenom = mb_convert_encoding($st_prenom, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_requete = "INSERT INTO `releveur`(`idf_adherent`, `nom`, `prenom`) ".
 					  "VALUES (".$i_idf_adherent.", '".$st_nom."', '".$st_prenom."')";
 		$connexionBD->execute_requete($st_requete);
@@ -189,6 +198,10 @@ switch ($gst_mode) {
 		$st_nom					= escape_apostrophe(trim($_POST['titre']));;
 		$st_date_publication	= $_POST['date_publication'];
 		$st_info_compl			= escape_apostrophe(trim($_POST['info_compl']));
+		//---- modif UTF8
+		$st_nom = mb_convert_encoding($st_nom, 'cp1252', 'UTF8');
+		$st_info_compl = mb_convert_encoding($st_info_compl, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_requete = "update publication_papier set ".
 		              "    nom='".$st_nom."',  ".
 		              "    date_publication=str_to_date('".$st_date_publication."', '%d/%m/%Y'), ".
@@ -204,6 +217,10 @@ switch ($gst_mode) {
 		$st_nom					= escape_apostrophe(trim($_POST['titre']));;
 		$st_date_publication	= $_POST['date_publication'];
 		$st_info_compl			= escape_apostrophe(trim($_POST['info_compl']));
+		//---- modif UTF8
+		$st_nom = mb_convert_encoding($st_nom, 'cp1252', 'UTF8');
+		$st_info_compl = mb_convert_encoding($st_info_compl, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_requete = "INSERT INTO `publication_papier`(`nom`, `date_publication`, `info_complementaires`) ".
 					  "VALUES ('".$st_nom."', str_to_date('".$st_date_publication."', '%d/%m/%Y'), '".$st_info_compl."')";
 		$connexionBD->execute_requete($st_requete);
@@ -234,6 +251,9 @@ switch ($gst_mode) {
 		$i_idf_couverture_photo		= empty($_POST['idf_couverture_photo']) ? 0 : trim($_POST['idf_couverture_photo']);
 		$i_idf_codif_photo			= empty($_POST['idf_codif_photo']) ? 0 : trim($_POST['idf_codif_photo']);
 		$st_info_compl				= escape_apostrophe(trim($_POST['info_compl']));
+		//---- modif UTF8
+		$st_info_compl = mb_convert_encoding($st_info_compl, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_requete = "update liasse_photo set ".
 		              "    idf_photographe=".$i_idf_photographe.", date_photo=str_to_date('".$st_date_photo."', '%d/%m/%Y'), ".
 					  "    idf_couverture_photo=".$i_idf_couverture_photo.", idf_codif_photo=".$i_idf_codif_photo.", info_complementaires='".$st_info_compl."' ".
@@ -250,6 +270,9 @@ switch ($gst_mode) {
 		$i_idf_couverture_photo		= empty($_POST['idf_couverture_photo']) ? 0 : trim($_POST['idf_couverture_photo']);
 		$i_idf_codif_photo			= empty($_POST['idf_codif_photo']) ? 0 : trim($_POST['idf_codif_photo']);
 		$st_info_compl				= escape_apostrophe(trim($_POST['info_compl']));
+		//---- modif UTF8
+		$st_info_compl = mb_convert_encoding($st_info_compl, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_requete = "INSERT INTO `liasse_photo`(`cote_liasse`, `idf_photographe`, `date_photo`, ".
 		              "            `idf_couverture_photo`, `idf_codif_photo`, `info_complementaires`) ".
 					  "VALUES ('".$_SESSION['cote_liasse_gal']."', ".$i_idf_photographe.", str_to_date('".$st_date_photo."', '%d/%m/%Y'), ".
@@ -279,6 +302,9 @@ switch ($gst_mode) {
 		$i_program_releve		= empty($_POST['program_releve']) ? 0 : trim($_POST['program_releve']);
 		$i_program_photo		= empty($_POST['program_photo']) ? 0 : trim($_POST['program_photo']);
 		$st_info_compl			= escape_apostrophe(trim($_POST['info_compl']));
+		//---- modif UTF8
+		$st_info_compl = mb_convert_encoding($st_info_compl, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_requete = "update liasse_programmation set ".
 		              "    idf_intervenant=".$i_idf_intervenant.", idf_priorite=".$i_idf_priorite.", ".
 					  "    date_creation=str_to_date('".$st_date_creation."', '%d/%m/%Y'), ".
@@ -301,6 +327,9 @@ switch ($gst_mode) {
 		$i_program_releve		= empty($_POST['program_releve']) ? 0 : trim($_POST['program_releve']);
 		$i_program_photo		= empty($_POST['program_photo']) ? 0 : trim($_POST['program_photo']);
 		$st_info_compl			= escape_apostrophe(trim($_POST['info_compl']));
+		//---- modif UTF8
+		$st_info_compl = mb_convert_encoding($st_info_compl, 'cp1252', 'UTF8');
+		//---- fin modif UTF8
 		$st_requete = "INSERT INTO `liasse_programmation`(`cote_liasse`, `idf_intervenant`, `idf_priorite`, `date_creation`, `date_echeance`, `date_reelle_fin`, ".
 		              "            `in_program_releve`, `in_program_photo`, `info_complementaires`) ".
 					  "VALUES ('".$_SESSION['cote_liasse_gal']."', ".$i_idf_intervenant.", ".$i_idf_priorite.", ".
