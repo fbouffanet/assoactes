@@ -3,7 +3,7 @@
 require_once('../Commun/Identification.php');
 require_once('../Commun/commun.php');
 require_once('../Commun/constantes.php');
-require_once('../Commun/ConnexionBDutf8.php');
+require_once('../Commun/ConnexionBD.php');
 
 print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
 print("<head>");

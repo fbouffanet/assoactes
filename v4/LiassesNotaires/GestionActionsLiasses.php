@@ -6,7 +6,7 @@ require_once('../Commun/Identification.php');
 // La page est reservee uniquement aux gens ayant les droits d'import/export
 require_once('../Commun/VerificationDroits.php');
 verifie_privilege(DROIT_NOTAIRES);
-require_once '../Commun/ConnexionBDutf8.php';
+require_once '../Commun/ConnexionBD.php';
 require_once('../Commun/PaginationTableau.php');
 require_once('../Commun/commun.php');
 

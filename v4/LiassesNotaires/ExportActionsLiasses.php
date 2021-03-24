@@ -4,7 +4,7 @@ require_once('../Commun/Identification.php');
 require_once('../Commun/commun.php');
 require_once('../Commun/constantes.php');
 require_once('../Commun/config.php');
-require_once('../Commun/ConnexionBDutf8.php');
+require_once('../Commun/ConnexionBD.php');
 require_once('../RequeteRecherche.php');
 require_once('../Commun/VerificationDroits.php');
 
