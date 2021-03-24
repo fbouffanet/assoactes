@@ -477,7 +477,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   
 }
 //=========== Fonction EXPORT_RECENSEMENT ==== DEB =====================
-function export_recensementssssss($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
+function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
 // ? adapter pour prendre le champ code insee
    list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
@@ -522,36 +522,52 @@ function export_recensementssssss($pconnexionBD,$pi_idf_source,$pi_idf_commune_a
 
 }
 //==========================================================
-function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
+function export_recensementssssss($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {
-   $st_nom_commune= $a_resultat = $pconnexionBD->sql_select("select nom from commune_acte where idf=$pi_idf_commune_acte"); 
-   
-   print $st_nom_commune;
-  
-   $req="select a.annee as Annee_Recensement, cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page, substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier, substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue, cast(substring(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)as INT) as Maison, cast(substring(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)as INT) as Menage, p.patronyme as Nom, ifnull(prenom.libelle,'') as Prenom, ifnull(p.age,'') as Age, right(p.date_naissance,4) as Annee°, c.nom as Lieu°, ifnull(p.commentaires,'') as Observation, b.nom as Commune from personne p left join prenom on (p.idf_prenom=prenom.idf) join commune_personne c on (p.idf_origine =c.idf) join acte a on (p.idf_acte=a.idf) join commune_acte b on (a.idf_commune=b.idf) where a.idf_commune=$pi_idf_commune_acte and a.idf_source=$pi_idf_source and a.idf_type_acte=$pc_idf_type_acte order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC";
+      $req="select a.annee as Annee_Recensement, cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page, substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier, substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue, cast(substring(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)as INT) as Maison, cast(substring(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)as INT) as Menage, p.patronyme as Nom, ifnull(prenom.libelle,'') as Prenom, ifnull(p.age,'') as Age, right(p.date_naissance,4) as Annee°, c.nom as Lieu°, ifnull(p.commentaires,'') as Observation, b.nom as Commune from personne p left join prenom on (p.idf_prenom=prenom.idf) join commune_personne c on (p.idf_origine =c.idf) join acte a on (p.idf_acte=a.idf) join commune_acte b on (a.idf_commune=b.idf) where a.idf_commune=$pi_idf_commune_acte and a.idf_source=$pi_idf_source and a.idf_type_acte=$pc_idf_type_acte order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC";
 
-   $fichier = fopen('/var/www/clients/client1/web3/web/v4/Publication/telechargements/ExportNimV3.csv','w');
-
-   ftruncate($fichier,0);
-
-     if($fichier!=false)
+   //list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
+   list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste($req);
+   $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
+   foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes)
    {
-     $req= $pconnexionBD->sql_select_liste($req);
-     //print $req ."br";
-      // Boucle pour lire toutes les entrées retournées par la requête SQL et les écrire dans le fichier CSV
-
-          while($donnees=$req->fetch())
+      $a_champs = array();
+      //$i_nb_temoins=0;
+      //$b_parrain_initialise=false;
+      foreach ($a_personnes as $i_idf_personne => $a_personne)
       {
-        // Écrire la ligne dans le fichier
-        fputcsv($fichier,$donnees,';');
+         list($i_idf_type_presence,$c_sexe,$st_patronyme,$st_prenom,$i_idf_origine,$st_date_naissance,$st_age,$i_idf_profession,$st_commentaires) = $a_personne;
+
+         switch($i_idf_type_presence) {
+         case IDF_PRESENCE_INTV:
+           $a_champs[] = $st_patronyme;
+           $a_champs[] = $st_prenom;
+           $a_champs[] = $c_sexe;
+           $a_champs[] = $st_commentaires;
+         break;
+            }
       }
-      //fermeture du fichier
-        $req->closeCursor();
-        fclose($fichier);
+      list($idf_commune_acte,$idf_type_acte,$st_date,$st_date_rep,$st_cote,$st_libre,$st_commentaires) = $pa_liste_actes[$i_idf_acte];
+      array_unshift($a_champs,'R',$st_date,$st_date_rep,$st_cote,$st_libre);
+      array_unshift($a_champs,""); // nom d?partement  => ? am?liorer
+      array_unshift($a_champs,""); // code d?partement  => ? am?liorer
+      array_unshift($a_champs,"NIMEGUEV3",$i_code_insee,$st_nom_commune);
+      // Cr?e les t?moins manquants
+      for ($i=$i_nb_temoins;$i<2;$i++)
+      {
+         array_push($a_champs,"","","");
+      }
+      $a_champs[]=$st_commentaires;
+      $a_champs[]=''; // Num?ro d'enregistrement
+
+      fwrite($pf,(implode(';',$a_champs)));
+      fwrite($pf,"\r\n");
    }
-   $st_nom_commune1 = utf8_encode ($st_nom_commune );
+
+   $st_nom_commune1 = utf8_encode ($st_nom_commune);
    print "Publication des recemsements de la commune <b> $st_nom_commune1</b> <br>";
-} 
+
+}
 
 
 /*------------------------------------------------------------------------------
