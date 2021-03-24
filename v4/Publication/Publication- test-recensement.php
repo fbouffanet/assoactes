@@ -8,7 +8,7 @@ verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
 require_once('../Commun/PaginationTableau.php');
 require_once '../Commun/commun.php';
-
+error_reporting(E_ALL);
 $gst_repertoire_publication = $_SERVER['DOCUMENT_ROOT'].'/v4/Publication/telechargements';
 print $gst_repertoire_publication;
 
