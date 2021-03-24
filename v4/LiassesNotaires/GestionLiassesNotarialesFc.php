@@ -6,7 +6,7 @@
 function menu_liste($pconnexionBD)
 {
 	global $gi_num_page_cour;
-	$a_serie_liasse = $pconnexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
+	$a_serie_liasse = $pconnexionBD->liste_valeur_par_clefUtf8("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 	if( isset($_POST['serie_liasse']) ) {
 		$_SESSION['serie_liasse'] = $_POST['serie_liasse'];
 	}
@@ -92,7 +92,7 @@ function menu_liste($pconnexionBD)
 	              "from liasse ".
 				  "where cote_liasse like '$st_serie_liasse-$numero%' ".
 				  "order by cote_liasse";
-	$a_liste_liasses = $pconnexionBD->sql_select_multiple($st_requete);
+	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
   $i_nb_liasses =count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
@@ -192,7 +192,7 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 {
 	list($st_cote, $st_libelle, $st_periodes, $st_notaires, $i_depose_ad, $st_idf_dept_depose_ad, $i_liasse_consult, 
 	     $i_idf_forme_liasse, $st_info_compl)
-	=$pconnexionBD->sql_select_liste("select cote_liasse, libelle_liasse, libelle_annees, libelle_notaires, ".
+	=$pconnexionBD->sql_select_listeUtf8("select cote_liasse, libelle_liasse, libelle_annees, libelle_notaires, ".
 	                                 "       in_liasse_depose_ad, idf_dept_depose_ad, in_liasse_consultable, ".
 									 "       idf_forme_liasse, info_complementaires ".
 									 "from liasse ".

@@ -61,20 +61,20 @@ if (isset($_GET['mod'])) {
 		$gst_mode='MENU_GERER';
 		$_SESSION['cote_liasse_gal'] = $_GET['mod'];
 		list($_SESSION['periodes_gal'], $_SESSION['notaires_gal'])
-		=$connexionBD->sql_select_liste("select libelle_annees, libelle_notaires from liasse where cote_liasse='".$_SESSION['cote_liasse_gal']."'");
+		=$connexionBD->sql_select_listeUtf8("select libelle_annees, libelle_notaires from liasse where cote_liasse='".$_SESSION['cote_liasse_gal']."'");
 	}
 }
 $gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 
-$a_releveur = $connexionBD->liste_valeur_par_clef("SELECT idf,concat(nom, ' ', prenom) as nom FROM releveur order by nom");
+$a_releveur = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf,concat(nom, ' ', prenom) as nom FROM releveur order by nom");
 $a_releveur[0] = 'Inconnu';
-$a_couverture_photo = $connexionBD->liste_valeur_par_clef("SELECT idf, nom FROM couverture_photo order by idf");
+$a_couverture_photo = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf, nom FROM couverture_photo order by idf");
 $a_couverture_photo[0] = '';
-$a_codif_photo = $connexionBD->liste_valeur_par_clef("SELECT idf, nom FROM codif_photo order by idf");
+$a_codif_photo = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf, nom FROM codif_photo order by idf");
 $a_codif_photo[0] = '';
-$a_priorite_program = $connexionBD->liste_valeur_par_clef("SELECT idf, nom FROM programmation_releve order by idf");
+$a_priorite_program = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf, nom FROM programmation_releve order by idf");
 $a_priorite_program[0] = '';
-$pa_publication = $connexionBD->liste_valeur_par_clef("SELECT idf, concat(nom, ', publi&eacute; le ', ".
+$pa_publication = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf, concat(nom, ', publi&eacute; le ', ".
                                                       "                   case when date_publication = str_to_date('0000/00/00', '%Y/%m/%d') then '' ".
                                                       "                        else date_format(date_publication, '%d/%m/%Y') ".
                                                       "                        end, ', ', ".
@@ -144,7 +144,7 @@ switch ($gst_mode) {
 		break;
 	case 'AJOUTER_RELEVEUR':
 		$i_idf_adherent		= $_POST['idf_adherent'];
-		list($st_nom, $st_prenom) = $connexionBD->sql_select_liste("select nom, prenom from adherent where idf=".$i_idf_adherent);
+		list($st_nom, $st_prenom) = $connexionBD->sql_select_listeUtf8("select nom, prenom from adherent where idf=".$i_idf_adherent);
 		$st_nom = escape_apostrophe(trim($st_nom));
 		$st_prenom = escape_apostrophe(trim($st_prenom));
 		//---- modif UTF8
@@ -230,7 +230,7 @@ switch ($gst_mode) {
 		$a_liste_publis = $_POST['supp'];
 		foreach ($a_liste_publis as $st_idf) {
 			$i_idf=substr($st_idf, 3, 6);
-			$a_liasses = $connexionBD->sql_select_multiple("select cote_liasse from liasse_publication_papier where idf_publication_papier=".$i_idf);
+			$a_liasses = $connexionBD->sql_select_multipleUtf8("select cote_liasse from liasse_publication_papier where idf_publication_papier=".$i_idf);
 			if (count($a_liasses)==0) {
 				$connexionBD->execute_requete("delete from publication_papier where idf=".$i_idf);
 			}

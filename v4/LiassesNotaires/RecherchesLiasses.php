@@ -77,14 +77,14 @@ unset($_SESSION['sans_notaire_rls']);
 unset($_SESSION['sans_periode_rls']);
 unset($_SESSION['liasse_releve_rls']);
 
-$a_dept = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM departement order by idf");
+$a_dept = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf,nom FROM departement order by idf");
 $a_dept[0] = 'Tous';
 
-$a_communes_acte = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM commune_acte order by nom");
+$a_communes_acte = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf,nom FROM commune_acte order by nom");
 $a_communes_acte[0] = 'Toutes';
 $a_communes_acte[-9] = 'Commune inconnue';
 
-$a_serie_liasse = $connexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
+$a_serie_liasse = $connexionBD->liste_valeur_par_clefUtf8("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 						 
 print('<form id="recherche" method="post">');
 

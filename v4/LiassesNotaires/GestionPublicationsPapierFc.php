@@ -39,7 +39,7 @@ function menu_gerer_publication($pconnexionBD)
 	              "from publication_papier ".
 				  "where nom like '".$gc_init."%' ".
 				  "order by nom, date_publication";
-	$a_liste_publis = $pconnexionBD->sql_select_multiple($st_requete);
+	$a_liste_publis = $pconnexionBD->sql_select_multipleUtf8($st_requete);
   $i_nb_publis = count($a_liste_publis);
 	if ($i_nb_publis!=0)
 	{        
@@ -89,7 +89,7 @@ function menu_edition_publication($pconnexionBD, $pst_nom, $pst_date_publication
 function menu_modifier_publication($pconnexionBD, $pi_idf_publication)
 {
 	list($st_nom, $st_date_publication, $st_info_compl)
-	=$pconnexionBD->sql_select_liste("select nom, ".
+	=$pconnexionBD->sql_select_listeUtf8("select nom, ".
 	                                 "       case when date_publication = str_to_date('0000/00/00', '%Y/%m/%d') then '' ".
 									 "            else date_format(date_publication, '%d/%m/%Y') ".
 									 "            end as date_publication, info_complementaires ".

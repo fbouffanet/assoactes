@@ -86,8 +86,8 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 
 $requeteRecherche = new RequeteRecherche($connexionBD);    
 
-$a_communes = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM commune_acte order by nom");
-$a_forme_liasse = $connexionBD->liste_valeur_par_clef("SELECT idf, nom FROM forme_liasse order by nom");
+$a_communes = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf,nom FROM commune_acte order by nom");
+$a_forme_liasse = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf, nom FROM forme_liasse order by nom");
 
 /* ------------------------------------------------------
    constitution des requêtes
@@ -645,14 +645,14 @@ $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],$_SESSION['menu_
 */
 
 if( $_SESSION['menu_rla'] != 'publication' &&  $_SESSION['menu_rla'] != 'complete' ) {
-	list($i_nb_liasse_liste, $i_nb_ligne_liste) = $connexionBD->sql_select_liste($st_count);	
-	list($i_nb_liasse_tot) = $connexionBD->sql_select_liste("select count(distinct cote_liasse) from liasse where cote_liasse like '".$_SESSION['serie_liasse']."%'");	
-	list($i_nb_liasse_extr) = $connexionBD->sql_select_liste("select count(distinct liasse.cote_liasse) $st_from $st_where");	
+	list($i_nb_liasse_liste, $i_nb_ligne_liste) = $connexionBD->sql_select_listeUtf8($st_count);	
+	list($i_nb_liasse_tot) = $connexionBD->sql_select_listeUtf8("select count(distinct cote_liasse) from liasse where cote_liasse like '".$_SESSION['serie_liasse']."%'");	
+	list($i_nb_liasse_extr) = $connexionBD->sql_select_listeUtf8("select count(distinct liasse.cote_liasse) $st_from $st_where");	
 }
 
 $gst_requete_liasses = "$st_select $st_from $st_where $st_order";
 $_SESSION['pdf']['requete'] = $gst_requete_liasses;
-$a_liasses=$connexionBD->sql_select_multiple($gst_requete_liasses);
+$a_liasses=$connexionBD->sql_select_multipleUtf8($gst_requete_liasses);
 $i_nb_ligne_extr = count($a_liasses);
 if( $i_nb_ligne_extr != 0 &&  $_SESSION['menu_rla'] != 'publication' &&  $_SESSION['menu_rla'] != 'complete' ) {
 	$i_pourc_liste = round($i_nb_liasse_extr / $i_nb_liasse_liste * 100,2);

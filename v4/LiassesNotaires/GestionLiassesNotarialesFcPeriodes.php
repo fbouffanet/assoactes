@@ -17,7 +17,7 @@ function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 	              "from (select idf, date_debut_periode, date_fin_periode, libelle_periode from liasse_dates ".
 				  "      where cote_liasse = '" . $pst_cote_liasse . "' ".
 				  "      order by 2, 1) SEL";
-	$a_liste_periodes = $pconnexionBD->sql_select_multiple($st_requete);
+	$a_liste_periodes = $pconnexionBD->sql_select_multipleUtf8($st_requete);
   $i_nb_periodes =count($a_liste_periodes);
 	if ($i_nb_periodes!=0)
 	{        
@@ -79,7 +79,7 @@ function menu_edition_periode($pst_annee_debut, $pst_mois_debut, $pst_annee_fin,
 function menu_modifier_periode($pconnexionBD, $pst_cote_liasse, $pi_idf_periode, $pa_mois)
 {
 	list($st_annee_debut, $st_mois_debut, $st_annee_fin, $st_mois_fin)
-	=$pconnexionBD->sql_select_liste("select annee_debut_periode, mois_debut_periode, ".
+	=$pconnexionBD->sql_select_listeUtf8("select annee_debut_periode, mois_debut_periode, ".
 	                                 "       annee_fin_periode, mois_fin_periode ".
 									 "from liasse_dates ".
 									 "where idf=$pi_idf_periode");
@@ -144,7 +144,7 @@ function calculer_date_debut( $pconnexionBD, $pst_annee_debut, $pst_mois_debut)
 		print($st_mois_revol);
 		$st_requete = "select date_format(prem_jour_greg, '%Y-%m-%d') from calendrier_revolutionaire ".
 		              "where an_revol='" . $pst_annee_debut . "' and mois_revol='" . $st_mois_revol . "'";
-		list($st_date_debut) = $pconnexionBD->sql_select_liste($st_requete);
+		list($st_date_debut) = $pconnexionBD->sql_select_listeUtf8($st_requete);
 	}
 	return( $st_date_debut );
 }
@@ -199,7 +199,7 @@ function calculer_date_fin( $pconnexionBD, $pst_annee_debut, $pst_mois_debut, $p
 			$st_mois_revol = $pst_mois_fin;
 		$st_requete = "select date_format(dern_jour_greg, '%Y-%m-%d') from calendrier_revolutionaire ".
 		              "where an_revol='" . $pst_annee_fin . "' and mois_revol='" . $st_mois_revol . "'";
-		list($st_date_fin) = $pconnexionBD->sql_select_liste($st_requete);
+		list($st_date_fin) = $pconnexionBD->sql_select_listeUtf8($st_requete);
 	}
 	return( $st_date_fin );
 }
@@ -239,7 +239,7 @@ function maj_libelle_periode($pconnexionBD, $pst_cote_liasse)
 	              "from (select libelle_periode, date_debut_periode, date_fin_periode  from liasse_dates ".
 				  "      where cote_liasse = '" . $pst_cote_liasse . "' ".
 				  "      order by 2, 3) SEL";
-	$a_liste_periodes = $pconnexionBD->sql_select($st_requete);
+	$a_liste_periodes = $pconnexionBD->sql_selectUtf8($st_requete);
 	if (count($a_liste_periodes)!=0)
 		$st_libelle = implode(",",$a_liste_periodes);
 	else

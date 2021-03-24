@@ -111,7 +111,7 @@ $requeteRecherche = new RequeteRecherche($connexionBD);
 /* ------------------------------------------------------
    constitution de la requête
 */   
-$a_communes_acte = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM commune_acte");
+$a_communes_acte = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf,nom FROM commune_acte");
 
 $gst_requete_nb_liasses= "SELECT l.cote_liasse, n.nom_notaire, n.prenom_notaire, ".
                          "       min(d.date_debut_periode) as date_tri, l.libelle_annees, ".
@@ -222,7 +222,7 @@ $st_criteres .= "\n";
 
 if ($gi_idf_commune!=0)
 {
-   $st_nom_commune = $connexionBD->sql_select1("select nom from commune_acte where idf=$gi_idf_commune");
+   $st_nom_commune = $connexionBD->sql_select1Utf8("select nom from commune_acte where idf=$gi_idf_commune");
    $st_criteres .= "Commune s&eacute;lectionn&eacute;e: ".$st_nom_commune;
 }
 else
@@ -254,7 +254,7 @@ print("</div>");
 $st_clauses = implode(" and ",$a_clauses);
 
 $etape_prec = getmicrotime();
-$a_liasses=$connexionBD->sql_select_multiple($gst_requete_liasses);
+$a_liasses=$connexionBD->sql_select_multipleUtf8($gst_requete_liasses);
 print benchmark("Recherche ");
 
 $i_nb_liasses = count($a_liasses);

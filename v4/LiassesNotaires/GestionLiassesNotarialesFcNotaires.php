@@ -16,7 +16,7 @@ function menu_liste_notaire($pconnexionBD, $pst_cote_liasse, $pa_communes)
 				  "     left outer join commune_acte on liasse_notaire.idf_commune_etude = commune_acte.idf ".
 				  "where liasse_notaire.cote_liasse = '" . $pst_cote_liasse . "' ".
 				  "order by liasse_notaire.nom_notaire, liasse_notaire.prenom_notaire";
-	$a_liste_dates = $pconnexionBD->sql_select_multiple($st_requete);
+	$a_liste_dates = $pconnexionBD->sql_select_multipleUtf8($st_requete);
   $i_nb_dates=count($a_liste_dates);
 	if ($i_nb_dates!=0)
 	{        
@@ -84,7 +84,7 @@ function menu_edition_notaire($pst_cote, $pi_idf, $pst_nom_notaire, $pst_prenom_
 function menu_modifier_notaire($pconnexionBD, $pst_cote_liasse, $pi_idf_notaire, $pa_communes)
 {
 	list($st_nom_notaire, $st_prenom_notaire, $st_commentaire, $st_libelle_lieu, $i_idf_commune_etude)
-	=$pconnexionBD->sql_select_liste("select nom_notaire, prenom_notaire, commentaire, libelle_lieu, idf_commune_etude  ".
+	=$pconnexionBD->sql_select_listeUtf8("select nom_notaire, prenom_notaire, commentaire, libelle_lieu, idf_commune_etude  ".
 	                                 "from liasse_notaire ".
 				                     "where idf = " . $pi_idf_notaire);
 	print("<div class=TITRE>Gestion des liasses notariales</div>");
@@ -137,7 +137,7 @@ function maj_libelle_notaire($pconnexionBD, $pst_cote_liasse)
 	              "from liasse_notaire ".
 				  "     left outer join commune_acte on liasse_notaire.idf_commune_etude = commune_acte.idf ".
 				  "where cote_liasse='" . $pst_cote_liasse . "'";
-	$a_liste_notaires = $pconnexionBD->sql_select($st_requete);
+	$a_liste_notaires = $pconnexionBD->sql_selectUtf8($st_requete);
 	if (count($a_liste_notaires)!=0)
 		$st_libelle = implode("/",$a_liste_notaires);
 	else

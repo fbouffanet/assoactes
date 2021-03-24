@@ -79,13 +79,13 @@ print("<input type='radio' name='menu' value='complete' ".$st_check_complete." o
 print("</td></tr></table></div>");
 print("</form>");
 
-$a_serie_liasse = $connexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
+$a_serie_liasse = $connexionBD->liste_valeur_par_clefUtf8("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 $a_serie_liasse[0] = '';
 
-$a_forme_liasse = $connexionBD->liste_valeur_par_clef("SELECT idf, nom FROM forme_liasse order by nom");
+$a_forme_liasse = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf, nom FROM forme_liasse order by nom");
 $a_forme_liasse[0] = '';
 
-$a_communes = $connexionBD->liste_valeur_par_clef("SELECT idf, nom FROM commune_acte order by nom");
+$a_communes = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf, nom FROM commune_acte order by nom");
 $a_communes[0] = 'Toutes';
 
 if( isset($_POST['serie_liasse']) ) {

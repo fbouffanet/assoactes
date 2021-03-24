@@ -5,7 +5,7 @@
  */ 
 function menu_liste($pconnexionBD)
 {
-	$a_serie_liasse = $pconnexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
+	$a_serie_liasse = $pconnexionBD->liste_valeur_par_clefUtf8("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 	if( isset($_POST['serie_liasse']) ) {
 		$_SESSION['serie_liasse'] = $_POST['serie_liasse'];
 	}
@@ -107,7 +107,7 @@ function menu_liste($pconnexionBD)
 				  "where liasse.cote_liasse like '".$st_serie_liasse."-".$numero."%' ".
 				  "group by liasse.cote_liasse, liasse.libelle_notaires, liasse.libelle_annees ".
 				  "order by liasse.cote_liasse";
-	$a_liste_liasses = $pconnexionBD->sql_select_multiple($st_requete);
+	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
   $i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
@@ -142,7 +142,7 @@ function menu_liste_releve($pconnexionBD)
 	              "     left outer join releveur on liasse_releve.idf_releveur = releveur.idf ".
 				  "where liasse_releve.cote_liasse = '".$_SESSION['cote_liasse_gal']."' ".
 				  "order by liasse_releve.date_fin_releve";
-	$a_liste_liasses = $pconnexionBD->sql_select_multiple($st_requete);
+	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print("<div align=center><form name='releve' action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
   $i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
@@ -185,7 +185,7 @@ function menu_liste_publication($pconnexionBD)
 	              "     left outer join publication_papier on liasse_publication_papier.idf_publication_papier = publication_papier.idf ".
 				  "where liasse_publication_papier.cote_liasse = '".$_SESSION['cote_liasse_gal']."' ".
 				  "order by publication_papier.date_publication";
-	$a_liste_liasses = $pconnexionBD->sql_select_multiple($st_requete);
+	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print("<div align=center><form name='publi' action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
   $i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
@@ -231,7 +231,7 @@ function menu_liste_photo($pconnexionBD)
 	              "     left outer join codif_photo on liasse_photo.idf_codif_photo = codif_photo.idf ".
 				  "where liasse_photo.cote_liasse = '".$_SESSION['cote_liasse_gal']."' ".
 				  "order by liasse_photo.date_photo";
-	$a_liste_liasses = $pconnexionBD->sql_select_multiple($st_requete);
+	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print("<div align=center><form name='photo' action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
   $i_nb_liasses=count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
@@ -277,7 +277,7 @@ function menu_liste_program($pconnexionBD)
 				  "where liasse_programmation.cote_liasse = '".$_SESSION['cote_liasse_gal']."' and".
 				  "      (liasse_programmation.date_reelle_fin is null or liasse_programmation.date_reelle_fin=str_to_date('0000/00/00', '%Y/%m/%d')) ".
 				  "order by liasse_programmation.date_creation";
-	$a_liste_liasses = $pconnexionBD->sql_select_multiple($st_requete);
+	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print("<div align=center><form name='program' action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
   $i_nb_liasses=count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
@@ -357,7 +357,7 @@ function menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $pi_id
 function menu_modifier_releve($pconnexionBD, $pi_idf_releve, $pa_releveur)
 {
 	list($i_idf_releveur, $st_date_fin_releve, $i_publication_numerique, $st_info_compl)
-	=$pconnexionBD->sql_select_liste("select idf_releveur, ".
+	=$pconnexionBD->sql_select_listeUtf8("select idf_releveur, ".
 	                                 "       case when date_fin_releve = str_to_date('0000/00/00', '%Y/%m/%d') then '' ".
 									 "            else date_format(date_fin_releve, '%d/%m/%Y') ".
 									 "            end as date_fin_releve, ".
@@ -408,7 +408,7 @@ function menu_ajouter_releveur($pconnexionBD)
 	$st_requete = "SELECT idf,concat(nom, ' ', prenom) as nom FROM adherent ".
 	              "where idf not in (select idf_adherent from releveur) ".
 				  "order by nom";
-	$a_adherent = $pconnexionBD->liste_valeur_par_clef($st_requete);
+	$a_adherent = $pconnexionBD->liste_valeur_par_clefUtf8($st_requete);
 	print("<div class=TITRE>Ajout d'un releveur</div><br><br>");
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsReleveur(0)\">");
 	print("<div align=center><input type=hidden name=mode value=\"AJOUTER_RELEVEUR\">");
@@ -448,7 +448,7 @@ function menu_edition_lien_publication($pconnexionBD, $pa_publication, $pi_idf_p
 function menu_modifier_lien_publication($pconnexionBD, $pi_idf_lien_publication, $pa_publication)
 {
 	list($i_idf_publication)
-	=$pconnexionBD->sql_select_liste("select idf_publication_papier from liasse_publication_papier where idf=".$pi_idf_lien_publication);
+	=$pconnexionBD->sql_select_listeUtf8("select idf_publication_papier from liasse_publication_papier where idf=".$pi_idf_lien_publication);
 	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
 	print("<div class=SOUSTITRE>Modification d'un lien publication papier</div><br><br>");
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsLienPubli(0)\">");
@@ -518,7 +518,7 @@ function menu_gerer_publication($pconnexionBD)
 	              "from publication_papier ".
 				  "where nom like '".$gc_init."%' ".
 				  "order by nom, date_publication";
-	$a_liste_publis = $pconnexionBD->sql_select_multiple($st_requete);
+	$a_liste_publis = $pconnexionBD->sql_select_multipleUtf8($st_requete);
   $i_nb_publis=count($a_liste_publis);
 	if ($i_nb_publis!=0)
 	{        
@@ -573,7 +573,7 @@ function menu_edition_publication($pconnexionBD, $pst_nom, $pst_date_publication
 function menu_modifier_publication($pconnexionBD, $pi_idf_publication)
 {
 	list($st_nom, $st_date_publication, $st_info_compl)
-	=$pconnexionBD->sql_select_liste("select nom, ".
+	=$pconnexionBD->sql_select_listeUtf8("select nom, ".
 	                                 "       case when date_publication = str_to_date('0000/00/00', '%Y/%m/%d') then '' ".
 									 "            else date_format(date_publication, '%d/%m/%Y') ".
 									 "            end as date_publication, info_complementaires ".
@@ -650,7 +650,7 @@ function menu_edition_photo($pconnexionBD, $pa_reveleur, $pi_idf_photo, $pi_idf_
 function menu_modifier_photo($pconnexionBD, $pi_idf_photo, $pa_reveleur, $pa_couverture_photo, $pa_codif_photo)
 {
 	list($i_idf_photographe, $st_date_photo, $pi_couverture_photo, $pi_codif_photo, $st_info_compl)
-	=$pconnexionBD->sql_select_liste("select idf_photographe, ".
+	=$pconnexionBD->sql_select_listeUtf8("select idf_photographe, ".
 	                                 "       case when date_photo = str_to_date('0000/00/00', '%Y/%m/%d') then '' ".
 									 "            else date_format(date_photo, '%d/%m/%Y') ".
 									 "            end as date_photo, ".
@@ -746,7 +746,7 @@ function menu_edition_program($pconnexionBD, $pa_reveleur, $pi_idf_program, $pi_
 function menu_modifier_program($pconnexionBD, $pi_idf_program, $pa_reveleur, $pa_priorite_program)
 {
 	list($i_idf_intervenant, $i_priorite_program, $st_date_creation, $pst_date_echeance, $st_date_reelle_fin, $i_program_releve, $i_program_photo, $st_info_compl)
-	=$pconnexionBD->sql_select_liste("select idf_intervenant, idf_priorite, ".
+	=$pconnexionBD->sql_select_listeUtf8("select idf_intervenant, idf_priorite, ".
 	                                 "       case when date_creation = str_to_date('0000/00/00', '%Y/%m/%d') then '' ".
 									 "            else date_format(date_creation, '%d/%m/%Y') ".
 									 "            end as date_creation, ".

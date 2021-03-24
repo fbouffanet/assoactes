@@ -42,7 +42,7 @@ $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode <
               "       count(distinct liasse.cote_liasse) as nb_tot ".
               "FROM   liasse join liasse_dates			on liasse_dates.cote_liasse	= liasse.cote_liasse ".
 		      "WHERE  liasse.cote_liasse like '2E%'";
-list($i_nb_2E_ante_1793, $i_nb_2E_post_1793, $i_nb_2E_total) = $connexionBD->sql_select_liste($st_requete);	
+list($i_nb_2E_ante_1793, $i_nb_2E_post_1793, $i_nb_2E_total) = $connexionBD->sql_select_listeUtf8($st_requete);	
 			 
 //-----------------------------Relevés 16-2E
 $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d') then liasse.cote_liasse else null end) as nb_ante_1793, ".
@@ -51,7 +51,7 @@ $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode <
               "FROM   liasse join liasse_dates			on liasse_dates.cote_liasse		= liasse.cote_liasse ".
 		      "              join liasse_releve			on liasse_releve.cote_liasse	= liasse.cote_liasse ".
 		      "WHERE  liasse.cote_liasse like '2E%'";
-list($i_nb_2E_releve_ante_1793, $i_nb_2E_releve_post_1793, $i_nb_2E_releve_total) = $connexionBD->sql_select_liste($st_requete);	
+list($i_nb_2E_releve_ante_1793, $i_nb_2E_releve_post_1793, $i_nb_2E_releve_total) = $connexionBD->sql_select_listeUtf8($st_requete);	
 			 
 //-----------------------------Publiés papier 16-2E
 $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d') then liasse.cote_liasse else null end) as nb_ante_1793, ".
@@ -60,7 +60,7 @@ $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode <
               "FROM   liasse join liasse_dates					on liasse_dates.cote_liasse					= liasse.cote_liasse ".
 			  "              join liasse_publication_papier		on liasse_publication_papier.cote_liasse	= liasse.cote_liasse ".
 		      "WHERE  liasse.cote_liasse like '2E%'";
-list($i_nb_2E_publi_ante_1793, $i_nb_2E_publi_post_1793, $i_nb_2E_publi_total) = $connexionBD->sql_select_liste($st_requete);	
+list($i_nb_2E_publi_ante_1793, $i_nb_2E_publi_post_1793, $i_nb_2E_publi_total) = $connexionBD->sql_select_listeUtf8($st_requete);	
 
 //-----------------------------Photographiés 16-2E
 $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d') then liasse.cote_liasse else null end) as nb_ante_1793, ".
@@ -69,7 +69,7 @@ $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode <
               "FROM   liasse join liasse_dates			on liasse_dates.cote_liasse		= liasse.cote_liasse ".
 			  "              join liasse_photo			on liasse_photo.cote_liasse		= liasse.cote_liasse ".
 		      "WHERE  liasse.cote_liasse like '2E%'";
-list($i_nb_2E_photo_ante_1793, $i_nb_2E_photo_post_1793, $i_nb_2E_photo_total) = $connexionBD->sql_select_liste($st_requete);	
+list($i_nb_2E_photo_ante_1793, $i_nb_2E_photo_post_1793, $i_nb_2E_photo_total) = $connexionBD->sql_select_listeUtf8($st_requete);	
 
 //-----------------------------Répertoires 16-2E
 $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d') then liasse.cote_liasse else null end) as nb_ante_1793, ".
@@ -77,7 +77,7 @@ $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode <
               "       count(distinct liasse.cote_liasse) as nb_tot ".
               "FROM   liasse join liasse_dates			on liasse_dates.cote_liasse	= liasse.cote_liasse ".
 		      "WHERE  liasse.cote_liasse like '2E%' and liasse.idf_forme_liasse = 9";
-list($i_nb_2E_repert_ante_1793, $i_nb_2E_repert_post_1793, $i_nb_2E_repert_total) = $connexionBD->sql_select_liste($st_requete);	
+list($i_nb_2E_repert_ante_1793, $i_nb_2E_repert_post_1793, $i_nb_2E_repert_total) = $connexionBD->sql_select_listeUtf8($st_requete);	
 			 
 //-----------------------------Répertoires relevés 16-2E
 $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d') then liasse.cote_liasse else null end) as nb_ante_1793, ".
@@ -86,7 +86,7 @@ $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode <
               "FROM   liasse join liasse_dates			on liasse_dates.cote_liasse		= liasse.cote_liasse ".
 		      "              join liasse_releve			on liasse_releve.cote_liasse	= liasse.cote_liasse ".
 		      "WHERE  liasse.cote_liasse like '2E%' and liasse.idf_forme_liasse = 9";
-list($i_nb_2E_repert_releve_ante_1793, $i_nb_2E_repert_releve_post_1793, $i_nb_2E_repert_releve_total) = $connexionBD->sql_select_liste($st_requete);	
+list($i_nb_2E_repert_releve_ante_1793, $i_nb_2E_repert_releve_post_1793, $i_nb_2E_repert_releve_total) = $connexionBD->sql_select_listeUtf8($st_requete);	
 			 
 //-----------------------------Répertoires publiés papier 16-2E
 $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d') then liasse.cote_liasse else null end) as nb_ante_1793, ".
@@ -95,7 +95,7 @@ $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode <
               "FROM   liasse join liasse_dates					on liasse_dates.cote_liasse					= liasse.cote_liasse ".
 			  "              join liasse_publication_papier		on liasse_publication_papier.cote_liasse	= liasse.cote_liasse ".
 		      "WHERE  liasse.cote_liasse like '2E%' and liasse.idf_forme_liasse = 9";
-list($i_nb_2E_repert_publi_ante_1793, $i_nb_2E_repert_publi_post_1793, $i_nb_2E_repert_publi_total) = $connexionBD->sql_select_liste($st_requete);	
+list($i_nb_2E_repert_publi_ante_1793, $i_nb_2E_repert_publi_post_1793, $i_nb_2E_repert_publi_total) = $connexionBD->sql_select_listeUtf8($st_requete);	
 			 
 //-----------------------------Répertoires photographiés 16-2E
 $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d') then liasse.cote_liasse else null end) as nb_ante_1793, ".
@@ -104,7 +104,7 @@ $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode <
               "FROM   liasse join liasse_dates			on liasse_dates.cote_liasse		= liasse.cote_liasse ".
 			  "              join liasse_photo			on liasse_photo.cote_liasse		= liasse.cote_liasse ".
 		      "WHERE  liasse.cote_liasse like '2E%' and liasse.idf_forme_liasse = 9";
-list($i_nb_2E_repert_photo_ante_1793, $i_nb_2E_repert_photo_post_1793, $i_nb_2E_repert_photo_total) = $connexionBD->sql_select_liste($st_requete);	
+list($i_nb_2E_repert_photo_ante_1793, $i_nb_2E_repert_photo_post_1793, $i_nb_2E_repert_photo_total) = $connexionBD->sql_select_listeUtf8($st_requete);	
 			 
 //-----------------------------Non communicables 16-2E
 $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d') then liasse.cote_liasse else null end) as nb_ante_1793, ".
@@ -112,7 +112,7 @@ $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode <
               "       count(distinct liasse.cote_liasse) as nb_tot ".
               "FROM   liasse join liasse_dates			on liasse_dates.cote_liasse	= liasse.cote_liasse ".
 		      "WHERE  liasse.cote_liasse like '2E%' and liasse.in_liasse_consultable = 0";
-list($i_nb_2E_non_comm_ante_1793, $i_nb_2E_non_comm_post_1793, $i_nb_2E_non_comm_total) = $connexionBD->sql_select_liste($st_requete);	
+list($i_nb_2E_non_comm_ante_1793, $i_nb_2E_non_comm_post_1793, $i_nb_2E_non_comm_total) = $connexionBD->sql_select_listeUtf8($st_requete);	
 			 
 //-----------------------------Non communicables relevés 16-2E
 $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d') then liasse.cote_liasse else null end) as nb_ante_1793, ".
@@ -121,7 +121,7 @@ $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode <
               "FROM   liasse join liasse_dates			on liasse_dates.cote_liasse		= liasse.cote_liasse ".
 		      "              join liasse_releve			on liasse_releve.cote_liasse	= liasse.cote_liasse ".
 		      "WHERE  liasse.cote_liasse like '2E%' and liasse.in_liasse_consultable = 0";
-list($i_nb_2E_non_comm_releve_ante_1793, $i_nb_2E_non_comm_releve_post_1793, $i_nb_2E_non_comm_releve_total) = $connexionBD->sql_select_liste($st_requete);	
+list($i_nb_2E_non_comm_releve_ante_1793, $i_nb_2E_non_comm_releve_post_1793, $i_nb_2E_non_comm_releve_total) = $connexionBD->sql_select_listeUtf8($st_requete);	
 			 
 //-----------------------------Non communicables publiés papier 16-2E
 $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d') then liasse.cote_liasse else null end) as nb_ante_1793, ".
@@ -130,7 +130,7 @@ $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode <
               "FROM   liasse join liasse_dates					on liasse_dates.cote_liasse					= liasse.cote_liasse ".
 			  "              join liasse_publication_papier		on liasse_publication_papier.cote_liasse	= liasse.cote_liasse ".
 		      "WHERE  liasse.cote_liasse like '2E%' and liasse.in_liasse_consultable = 0";
-list($i_nb_2E_non_comm_publi_ante_1793, $i_nb_2E_non_comm_publi_post_1793, $i_nb_2E_non_comm_publi_total) = $connexionBD->sql_select_liste($st_requete);	
+list($i_nb_2E_non_comm_publi_ante_1793, $i_nb_2E_non_comm_publi_post_1793, $i_nb_2E_non_comm_publi_total) = $connexionBD->sql_select_listeUtf8($st_requete);	
 			 
 //-----------------------------Non communicables photographiés 16-2E
 $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d') then liasse.cote_liasse else null end) as nb_ante_1793, ".
@@ -139,7 +139,7 @@ $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode <
               "FROM   liasse join liasse_dates			on liasse_dates.cote_liasse		= liasse.cote_liasse ".
 			  "              join liasse_photo			on liasse_photo.cote_liasse		= liasse.cote_liasse ".
 		      "WHERE  liasse.cote_liasse like '2E%' and liasse.in_liasse_consultable = 0";
-list($i_nb_2E_non_comm_photo_ante_1793, $i_nb_2E_non_comm_photo_post_1793, $i_nb_2E_non_comm_photo_total) = $connexionBD->sql_select_liste($st_requete);	
+list($i_nb_2E_non_comm_photo_ante_1793, $i_nb_2E_non_comm_photo_post_1793, $i_nb_2E_non_comm_photo_total) = $connexionBD->sql_select_listeUtf8($st_requete);	
 			 
 //-----------------------------Peu de pièces 16-2E
 $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d') then liasse.cote_liasse else null end) as nb_ante_1793, ".
@@ -147,7 +147,7 @@ $st_requete = "SELECT count(distinct case when liasse_dates.date_debut_periode <
               "       count(distinct liasse.cote_liasse) as nb_tot ".
               "FROM   liasse join liasse_dates			on liasse_dates.cote_liasse	= liasse.cote_liasse ".
 		      "WHERE  liasse.cote_liasse like '2E%' and liasse.idf_forme_liasse = 2";
-list($i_nb_2E_peu_ante_1793, $i_nb_2E_peu_post_1793, $i_nb_2E_peu_total) = $connexionBD->sql_select_liste($st_requete);	
+list($i_nb_2E_peu_ante_1793, $i_nb_2E_peu_post_1793, $i_nb_2E_peu_total) = $connexionBD->sql_select_listeUtf8($st_requete);	
 			 
 //-----------------------------Ensemble autres séries
 $st_requete = "SELECT substr(liasse.cote_liasse, 1, instr(liasse.cote_liasse, '-')-1) as serie, ".
@@ -157,7 +157,7 @@ $st_requete = "SELECT substr(liasse.cote_liasse, 1, instr(liasse.cote_liasse, '-
               "FROM   liasse join liasse_dates	on liasse_dates.cote_liasse	= liasse.cote_liasse ".
 		      "WHERE  liasse.cote_liasse not like '2E%' ".
 			  "GROUP BY substr(liasse.cote_liasse, 1, instr(liasse.cote_liasse, '-')-1)";
-$a_liasses=$connexionBD->sql_select_multiple($st_requete);
+$a_liasses=$connexionBD->sql_select_multipleUtf8($st_requete);
 			  
 /* ------------------------------------------------------
    constitution de la log 

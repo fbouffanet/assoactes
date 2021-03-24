@@ -53,19 +53,19 @@ $gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("../Commun/menu.php");
-$a_depts_depose_ad = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM departement order by nom");
+$a_depts_depose_ad = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf,nom FROM departement order by nom");
 $a_depts_depose_ad[''] = '';
-$a_formes_liasses = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM forme_liasse order by nom");
+$a_formes_liasses = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf,nom FROM forme_liasse order by nom");
 $a_mois = array("", "01"=>"01", "02"=>"02", "03"=>"03", "04"=>"04", "05"=>"05", "06"=>"06", 
                     "07"=>"07", "08"=>"08", "09"=>"09", "10"=>"10", "11"=>"11", "12"=>"12",
                     "Vendémiaire"=>"Vendémiaire", "Brumaire"=>"Brumaire", "Frimaire"=>"Frimaire", 
 					"Nivôse"=>"Nivôse", "Pluviôse"=>"Pluviôse", "Ventôse"=>"Ventôse",
                     "Germinal"=>"Germinal", "Floréal"=>"Floréal", "Prairial"=>"Prairial", 
 					"Messidor"=>"Messidor", "Thermidor"=>"Thermidor", "Fructidor"=>"Fructidor");
-$a_communes = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM commune_acte order by nom");
+$a_communes = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf,nom FROM commune_acte order by nom");
 $a_communes[0] = '';
 
-$a_serie_liasse = $connexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
+$a_serie_liasse = $connexionBD->liste_valeur_par_clefUtf8("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 $a_serie_liasse[0] = '';
 
 
@@ -110,7 +110,7 @@ switch ($gst_mode) {
 		$st_init_cent = $_SESSION['init_cent'] == 'z' ? '0' : $_SESSION['init_cent'];
 		$st_init_dix  = $_SESSION['init_dix'] == 'z' ? '0' : $_SESSION['init_dix'];
 		$st_cote = $_SESSION['serie_liasse']."-".$st_init_dixm.$st_init_mill.$st_init_cent.$st_init_dix.$st_numero;
-		$a_liasse = $connexionBD->sql_select_multiple("select cote_liasse from liasse where cote_liasse='".$st_cote."'");
+		$a_liasse = $connexionBD->sql_select_multipleUtf8("select cote_liasse from liasse where cote_liasse='".$st_cote."'");
 		if( count($a_liasse)!=0 ) {
 			print("<div align='center' class='IMPORTANT'>La liasse ".$st_cote." existe d&eacute;j&agrave;. Ajout impossible.</div><br>");
 		}
@@ -139,12 +139,12 @@ switch ($gst_mode) {
 	case 'SUPPRIMER':
 		$a_liste_liasses = $_POST['supp'];
 		foreach ($a_liste_liasses as $st_cote_liasse) {
-			$a_liasse_notaire = $connexionBD->sql_select_multiple("select cote_liasse from liasse_notaire where cote_liasse='".$st_cote_liasse."'");
-			$a_liasse_dates = $connexionBD->sql_select_multiple("select cote_liasse from liasse_dates where cote_liasse='".$st_cote_liasse."'");
-			$a_liasse_photo = $connexionBD->sql_select_multiple("select cote_liasse from liasse_photo where cote_liasse='".$st_cote_liasse."'");
-			$a_liasse_programmation = $connexionBD->sql_select_multiple("select cote_liasse from liasse_programmation where cote_liasse='".$st_cote_liasse."'");
-			$a_liasse_publication_papier = $connexionBD->sql_select_multiple("select cote_liasse from liasse_publication_papier where cote_liasse='".$st_cote_liasse."'");
-			$a_liasse_releve = $connexionBD->sql_select_multiple("select cote_liasse from liasse_releve where cote_liasse='".$st_cote_liasse."'");
+			$a_liasse_notaire = $connexionBD->sql_select_multipleUtf8("select cote_liasse from liasse_notaire where cote_liasse='".$st_cote_liasse."'");
+			$a_liasse_dates = $connexionBD->sql_select_multipleUtf8("select cote_liasse from liasse_dates where cote_liasse='".$st_cote_liasse."'");
+			$a_liasse_photo = $connexionBD->sql_select_multipleUtf8("select cote_liasse from liasse_photo where cote_liasse='".$st_cote_liasse."'");
+			$a_liasse_programmation = $connexionBD->sql_select_multipleUtf8("select cote_liasse from liasse_programmation where cote_liasse='".$st_cote_liasse."'");
+			$a_liasse_publication_papier = $connexionBD->sql_select_multipleUtf8("select cote_liasse from liasse_publication_papier where cote_liasse='".$st_cote_liasse."'");
+			$a_liasse_releve = $connexionBD->sql_select_multipleUtf8("select cote_liasse from liasse_releve where cote_liasse='".$st_cote_liasse."'");
 			if( count($a_liasse_notaire)==0 && count($a_liasse_dates)==0 && count($a_liasse_photo)==0 && 
 			    count($a_liasse_programmation)==0 && count($a_liasse_publication_papier)==0 && count($a_liasse_releve)==0 ) {
 				$connexionBD->execute_requete("delete from liasse where cote_liasse='".$st_cote_liasse."'");
@@ -162,7 +162,7 @@ switch ($gst_mode) {
 		break;
 	case 'MENU_MODIFIER_PERIODE' :
 		list($gst_cote_liasse) 
-		= $connexionBD->sql_select_liste("select cote_liasse from liasse_dates where idf = " . $gi_idf_periode);
+		= $connexionBD->sql_select_listeUtf8("select cote_liasse from liasse_dates where idf = " . $gi_idf_periode);
 		menu_modifier_periode($connexionBD, $gst_cote_liasse, $gi_idf_periode, $a_mois);
 		break;
 	case 'MODIFIER_PERIODE' :     
@@ -238,7 +238,7 @@ switch ($gst_mode) {
 		break;
 	case 'MENU_MODIFIER_NOTAIRE' :
 		list($gst_cote_liasse) 
-		= $connexionBD->sql_select_liste("select cote_liasse from liasse_notaire where idf = " . $gi_idf_notaire);
+		= $connexionBD->sql_select_listeUtf8("select cote_liasse from liasse_notaire where idf = " . $gi_idf_notaire);
 		menu_modifier_notaire($connexionBD, $gst_cote_liasse, $gi_idf_notaire, $a_communes);
 		break;
 	case 'MODIFIER_NOTAIRE' :     

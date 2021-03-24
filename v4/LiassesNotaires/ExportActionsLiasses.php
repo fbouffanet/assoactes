@@ -11,7 +11,7 @@ require_once('../Commun/VerificationDroits.php');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 $requeteRecherche = new RequeteRecherche($connexionBD);    
-$a_liasses=$connexionBD->sql_select_multiple($_SESSION['pdf']['requete']);
+$a_liasses=$connexionBD->sql_select_multipleUtf8($_SESSION['pdf']['requete']);
 
 $csv  = str_replace("&eacute;", "é", $_SESSION['pdf']['titre'])."\n";
 $csv .= $_SESSION['pdf']['sous_titre']."\n";
