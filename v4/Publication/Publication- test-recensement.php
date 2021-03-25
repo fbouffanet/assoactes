@@ -480,6 +480,9 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
 function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$gc_idf_type_acte,$a_liste_personnes,$a_liste_actes,$pf,$Commune)
 {  
    print "Commune :".$Commune."<br>";
+   print "$gi_idf_commune_acte = ".$gi_idf_commune_acte."<br></br>_";
+   print "$pi_idf_source = ".$pi_idf_source."<br></br>_";
+   print "$pc_idf_type_acte = ".$pc_idf_type_acte."<br></br>_";
 // ? adapter pour prendre le champ code insee
    list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
    $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
@@ -655,7 +658,7 @@ switch($gst_mode)
       case IDF_NAISSANCE :
       case IDF_MARIAGE :
       case IDF_DECES :
-      //case IDF_RECENS :
+      case IDF_RECENS :
 
 // Rajout PL sur les dates **********************************************
 $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
@@ -698,8 +701,11 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 
 
          //======================== RECENSEMENT DEB ============================================================
-      case IDF_RECENS :
-        print "IDF_RECENS ligne 648 <br></br>_";
+      case IDF_RECENSssss :
+        print "IDF_RECENS ligne 702 <br></br>_";
+        print "$gi_idf_commune_acte = ".$gi_idf_commune_acte."<br></br>_";
+        print "$pi_idf_source = ".$pi_idf_source."<br></br>_";
+        print "$pc_idf_type_acte = ".$pc_idf_type_acte."<br></br>_";
 
 $sqltmp="select a.annee as Annee_Recensement, cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page, substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier, substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue, cast(substring(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)as INT) as Maison, cast(substring(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)as INT) as Menage, p.patronyme as Nom, ifnull(prenom.libelle,'') as Prenom, ifnull(p.age,'') as Age, right(p.date_naissance,4) as Annee°, c.nom as Lieu°, ifnull(p.commentaires,'') as Observation, b.nom as Commune from personne p left join prenom on (p.idf_prenom=prenom.idf) join commune_personne c on (p.idf_origine =c.idf) join acte a on (p.idf_acte=a.idf) join commune_acte b on (a.idf_commune=b.idf) where a.idf_commune=$pi_idf_commune_acte and a.idf_source=$pi_idf_source and a.idf_type_acte=$pc_idf_type_acte order by Annee_Recensement ASC, Page ASC,";
 
