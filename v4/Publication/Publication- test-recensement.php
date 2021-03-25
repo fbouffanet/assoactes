@@ -487,23 +487,17 @@ function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$p
    print "pa_liste_actes = ".$pa_liste_actes."<br></br>_";
    print "pf = ".$pf."<br></br>_";
    
-   $req="select a.annee as Annee_Recensement, cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page, substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier, substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue, cast(substring(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)as INT) as Maison, cast(substring(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)as INT) as Menage, p.patronyme as Nom, ifnull(prenom.libelle,'') as Prenom, ifnull(p.age,'') as Age, right(p.date_naissance,4) as Annee°, c.nom as Lieu°, ifnull(p.commentaires,'') as Observation, b.nom as Commune from personne p left join prenom on (p.idf_prenom=prenom.idf) join commune_personne c on (p.idf_origine =c.idf) join acte a on (p.idf_acte=a.idf) join commune_acte b on (a.idf_commune=b.idf) where a.idf_commune=$pi_idf_commune_acte and a.idf_source=$pi_idf_source and a.idf_type_acte=$pc_idf_type_acte order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC limit 1";
+   $req="select a.annee as Annee_Recensement, cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page, substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier, substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue, cast(substring(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)as INT) as Maison, cast(substring(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)as INT) as Menage, p.patronyme as Nom, ifnull(prenom.libelle,'') as Prenom, ifnull(p.age,'') as Age, right(p.date_naissance,4) as Annee°, c.nom as Lieu°, ifnull(p.commentaires,'') as Observation, b.nom as Commune from personne p left join prenom on (p.idf_prenom=prenom.idf) join commune_personne c on (p.idf_origine =c.idf) join acte a on (p.idf_acte=a.idf) join commune_acte b on (a.idf_commune=b.idf) where a.idf_commune=$pi_idf_commune_acte and a.idf_source=$pi_idf_source and a.idf_type_acte=$pc_idf_type_acte order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC ";
 
 print $req;
-
-$a_resultat=$pconnexionBD->sql_select($req);
-
-   print "valeur $a_resultatr <br>";
-   
-
-
-     // fwrite($pf,(implode(';',$a_champs)));
-     // fwrite($pf,"\r\n");
-   
-
+$a_liste_recherches=$connexionBD->sql_select_multiple($st_req);
+if (count($a_liste_recherches)>0)
+   {
+     fwrite($pf,(implode(';',array($a_liste_recherches))));
+     fwrite($pf,"\r\n");
+   }
    $st_nom_commune1 = utf8_encode ($st_nom_commune);
    print "Publication des recemsements de la commune <b> $st_nom_commune1</b> <br>";
-
 }
 //==========================================================
 function export_recensementssssss($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
