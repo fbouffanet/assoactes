@@ -477,8 +477,9 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
   
 }
 //=========== Fonction EXPORT_RECENSEMENT ==== DEB =====================
-function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
-{
+function export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$gc_idf_type_acte,$a_liste_personnes,$a_liste_actes,$pf,$Commune)
+{  
+   print "Commune :".$Commune."<br>";
 // ? adapter pour prendre le champ code insee
    list($i_code_insee,$st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
    $a_profession=$pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
@@ -818,7 +819,7 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 	  case IDF_RECENS:
         print "case IDF_RECENS: ligne 787 <br></br>" ;
 	     //export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$pa_liste_personnes,$gc_idf_type_acte,$a_liste_actes,$pf);
-       export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$gc_idf_type_acte,$a_liste_personnes,$a_liste_actes,$pf);
+       export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$gc_idf_type_acte,$a_liste_personnes,$a_liste_actes,$pf,$Commune);
 		 $menuDIV = "N";
 	  break;	 
    }
