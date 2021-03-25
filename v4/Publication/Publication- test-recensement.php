@@ -491,8 +491,9 @@ function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$p
 
 print $req;
 
-   $valeur=$pconnexionBD->sql_select($req);
-   print "valeur $valeur <br>";
+$a_resultat=$pconnexionBD->sql_select($req);
+
+   print "valeur $a_resultatr <br>";
    
 
 
