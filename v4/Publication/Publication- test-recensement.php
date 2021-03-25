@@ -487,16 +487,9 @@ function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$p
    print "pa_liste_actes = ".$pa_liste_actes."<br></br>_";
    print "pf = ".$pf."<br></br>_";
    
-
-
-
-
-
-  
-
-      fwrite($pf,(implode(';',$a_champs)));
-      fwrite($pf,"\r\n");
-   }
+     // fwrite($pf,(implode(';',$a_champs)));
+     // fwrite($pf,"\r\n");
+   
 
    $st_nom_commune1 = utf8_encode ($st_nom_commune);
    print "Publication des recemsements de la commune <b> $st_nom_commune1</b> <br>";
