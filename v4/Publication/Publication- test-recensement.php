@@ -491,10 +491,15 @@ function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$p
 
 print $req;
 $a_liste_recherches=$connexionBD->sql_select_multiple($st_req);
+$fh = @fopen('php://output', 'w' );   
 if (count($a_liste_recherches)>0)
    {
-     fwrite($pf,(implode(';',array($a_liste_recherches))));
-     fwrite($pf,"\r\n");
+     fputcsv($pf,array($a_liste_recherches),SEP_CSV);
+     foreach ($a_liste_recherches as $a_ligne)
+     {
+      fputcsv($pf, $a_ligne,SEP_CSV); 
+     }
+     fclose($pf);
    }
    $st_nom_commune1 = utf8_encode ($st_nom_commune);
    print "Publication des recemsements de la commune <b> $st_nom_commune1</b> <br>";
