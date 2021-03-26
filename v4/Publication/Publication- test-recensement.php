@@ -704,12 +704,12 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
          break;
 
 
-         //======================== RECENSEMENT DEB ============================================================
+//======================== RECENSEMENT DEB ============================================================
       case IDF_RECENS :
-        print "IDF_RECENS ligne 702 <br></br>_";
-        print "gi_idf_commune_acte = ".$gi_idf_commune_acte."<br></br>_";
-        print "pi_idf_source = ".$pi_idf_source."<br></br>_";
-        print "pc_idf_type_acte = ".$pc_idf_type_acte."<br></br>_";
+        print "IDF_RECENS ligne 702 <br></br>";
+        print "gi_idf_commune_acte = ".$gi_idf_commune_acte."<br></br>";
+        print "pi_idf_source = ".$gi_idf_source."<br></br>";
+        print "pc_idf_type_acte = ".$gc_idf_type_acte."<br></br>";
 
        // Rajout PL sur les dates **********************************************
 $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
