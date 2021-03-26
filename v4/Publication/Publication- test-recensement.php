@@ -491,17 +491,17 @@ function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$p
 
   $sqltmp  = "select 
   a.annee as Annee_Recensement, 
-  cast(substring(a.commentaires,INSTR(a.commentaires,\'N de page:\')+12,3) as INT) as Page, 
-  substring(a.commentaires,INSTR(a.commentaires,\'Quartier\')+9,10) as Quartier, 
-  substring(a.commentaires,INSTR(a.commentaires,\'Nom de la Rue:\')+14,10) as Rue, 
-  cast(substring(a.commentaires,INSTR(a.commentaires,\'N° maison:\')+10,3)as INT) as Maison, 
-  cast(substring(a.commentaires,INSTR(a.commentaires,\'N° ménage:\')+10,3)as INT) as Menage, 
+  cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page, 
+  substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier, 
+  substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue, 
+  cast(substring(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)as INT) as Maison, 
+  cast(substring(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)as INT) as Menage, 
   p.patronyme as Nom, 
-  ifnull(prenom.libelle,\'\') as Prenom, 
-  ifnull(p.age,\'\') as Age, 
+  ifnull(prenom.libelle,'') as Prenom, 
+  ifnull(p.age,'') as Age, 
   right(p.date_naissance,4) as Annee°, 
   c.nom as Lieu°, 
-  ifnull(p.commentaires,\'\') as Observation, 
+  ifnull(p.commentaires,'') as Observation, 
   b.nom as Commune 
   from 
   personne p 
@@ -875,5 +875,3 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 }
 print('</form>');
 print('</body>');
-
-?>
