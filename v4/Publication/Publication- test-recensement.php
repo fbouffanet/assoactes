@@ -479,8 +479,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
 //=========== Fonction EXPORT_RECENSEMENT ==== DEB =====================
 function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {  
-   print "gi_idf_commune_acte = ".$gi_idf_commune_acte."<br></br>_";
-   print "pi_idf_source = ".$pi_idf_source."<br></br>_";
+    print "pi_idf_source = ".$pi_idf_source."<br></br>_";
    print "pi_idf_commune_acte = ".$pi_idf_commune_acte."<br></br>_";
    print "pc_idf_type_acte = ".$pc_idf_type_acte."<br></br>_";
    print "pa_liste_personnes = ".$pa_liste_personnes."<br></br>_";
@@ -493,7 +492,7 @@ function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$p
   print ('<div class="alert alert-info">');
 	print $sqltmp ;// affichage de la requ�te
   print ('</div>'); //  
-  $a_liste_recherches=$pconnexionBD->sql_select_multiple($sqltmp);
+  array($a_liste_recherches)=$pconnexionBD->sql_select_multiple($sqltmp);
    if (count($a_liste_recherches)>0)
    {
      foreach ($a_liste_recherches as $a_ligne)
