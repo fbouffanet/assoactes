@@ -479,14 +479,16 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
 //=========== Fonction EXPORT_RECENSEMENT ==== DEB =====================
 function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {  
-   //print "gi_idf_commune_acte = ".$gi_idf_commune_acte."<br></br>_";
-   print "pi_idf_source = ".$pi_idf_source."<br></br>_";
-   print "pi_idf_commune_acte = ".$pi_idf_commune_acte."<br></br>_";
-   print "pc_idf_type_acte = ".$pc_idf_type_acte."<br></br>_";
-   print "pa_liste_personnes = ".$pa_liste_personnes."<br></br>_";
-   print "pa_liste_actes = ".$pa_liste_actes."<br></br>_";
+  print ('<div class="alert alert-success">');
+  //print "gi_idf_commune_acte = ".$gi_idf_commune_acte."<br></br>_";
+   print "pi_idf_source = ".$pi_idf_source."<br>";
+   print "pi_idf_commune_acte = ".$pi_idf_commune_acte."<br>";
+   print "pc_idf_type_acte = ".$pc_idf_type_acte."<br>";
+   print "pa_liste_personnes = ".$pa_liste_personnes."<br>";
+   print "pa_liste_actes = ".$pa_liste_actes."<br>";
    print "pf = ".$pf."<br></br>";
-   
+   print ('</div>'); 
+
   $sqltmp  = "select 
   a.annee as Annee_Recensement, 
   cast(substring(a.commentaires,INSTR(a.commentaires,\'N de page:\')+12,3) as INT) as Page, 
