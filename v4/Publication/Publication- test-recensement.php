@@ -730,7 +730,6 @@ $row = $connexionBD-> sql_select_liste($sqltmp);
 $date_deb = $row[0];
 $date_fin = $row[1];
 // rajout test si date ? 0
-print "ligne 732";
 if ($date_deb < 1500)
 {
    $sqltmp = "select annee from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte order by annee";
@@ -770,7 +769,7 @@ where
 a.idf_commune= '$pi_idf_commune_acte' and a.idf_source='$pi_idf_source'and a.idf_type_acte='$pc_idf_type_acte'
 order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC";
 
-
+print "ligne 772";
 //if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
 //if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
 //$sqltmp = $sqltmp ." order by p.idf_acte,p.idf";
