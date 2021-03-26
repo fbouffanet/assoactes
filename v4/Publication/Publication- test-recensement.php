@@ -479,7 +479,7 @@ function export_div_nimv3($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pa_
 //=========== Fonction EXPORT_RECENSEMENT ==== DEB =====================
 function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$pc_idf_type_acte,$pa_liste_personnes,$pa_liste_actes,$pf)
 {  
-   print "gi_idf_commune_acte = ".$gi_idf_commune_acte."<br></br>_";
+   //print "gi_idf_commune_acte = ".$gi_idf_commune_acte."<br></br>_";
    print "pi_idf_source = ".$pi_idf_source."<br></br>_";
    print "pi_idf_commune_acte = ".$pi_idf_commune_acte."<br></br>_";
    print "pc_idf_type_acte = ".$pc_idf_type_acte."<br></br>_";
@@ -502,7 +502,8 @@ function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$p
   ifnull(p.commentaires,\'\') as Observation, 
   b.nom as Commune 
   from 
-  personne p left join prenom on (p.idf_prenom=prenom.idf) 
+  personne p 
+  left join prenom on (p.idf_prenom=prenom.idf) 
   join commune_personne c on (p.idf_origine =c.idf) 
   join acte a on (p.idf_acte=a.idf) 
   join commune_acte b on (p.idf_commune=b.idf) 
