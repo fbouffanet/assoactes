@@ -527,7 +527,9 @@ function export_recensement($pconnexionBD,$pi_idf_source,$pi_idf_commune_acte,$p
      }
    }
    else
-   {print "pas de donnée";}
+   {
+     print "pas de donnée";
+   }
    $st_nom_commune1 = utf8_encode ($st_nom_commune);
    print "Publication des recemsements de la commune <b> $st_nom_commune1</b> <br>";
 }
