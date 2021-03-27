@@ -756,7 +756,7 @@ cast(substring(commentaires,INSTR(commentaires,\'N de page:\')+12,3) as INT) as 
 substring(commentaires,INSTR(commentaires,\'Quartier\')+9,10) as Quartier, 
 substring(commentaires,INSTR(commentaires,\'Nom de la Rue:\')+14,10) as Rue, 
 cast(substring(commentaires,INSTR(commentaires,\'N° maison:\')+10,3)as INT) as Maison, 
-cast(substring(commentaires,INSTR(commentaires,\'N° ménage:\')+10,3)as INT) as Menage, 
+cast(substring(commentaires,INSTR(commentaires,\'N° ménage:\')+10,3)as INT) as Menage
 from acte  
 where 
 idf_commune= '$pi_idf_commune_acte' and idf_source='$pi_idf_source'and idf_type_acte='$pc_idf_type_acte'";
