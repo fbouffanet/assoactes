@@ -707,70 +707,84 @@ $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 
 
 //======================== RECENSEMENT DEB ============================================================
-      case IDF_RECENS :
+       case IDF_RECENS :
         print "IDF_RECENS ligne 711 <br></br>";
         print "gi_idf_commune_acte = ".$gi_idf_commune_acte."<br>";
         print "pi_idf_source = ".$gi_idf_source."<br>";
         print "pc_idf_type_acte = ".$gc_idf_type_acte."<br>";
 
        // Rajout PL sur les dates **********************************************
-$sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
-print "sqltmp : ".$sqltmp. "<br>";
-if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
-if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
-$a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sqltmp);
-// Nombre de lignes s?lect?es
-$results= $connexionBD->liste_valeur_par_clef($sqltmp);
-$nb_rows = count($results);
-print " nombres de lignes : ".$nb_rows. "<br>";
-// pour r?cup?rer l'ann?e mini et maxi
-$sqltmp = "select min(annee) as annee_deb, max(annee) as annee_fin from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
-if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
-if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= $g_pl_date_fin";
-// pour r?cup?rer les ann?es s?lectionn?es
-$row = $connexionBD-> sql_select_liste($sqltmp);
-$date_deb = $row[0];
-$date_fin = $row[1];
-print "sqltmp 2 : ".$sqltmp. "<br>";
-print "date_deb : ".$date_deb. "<br>";
-print "date_fin : ".$date_fin. "<br>";
+       $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and   idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
+       print "sqltmp : ".$sqltmp. "<br>";
+       if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
+       if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
+       $a_liste_actes= $connexionBD->sql_select_multiple_par_idf($sqltmp);
+       // Nombre de lignes s?lect?es
+       $results= $connexionBD->liste_valeur_par_clef($sqltmp);
+       $nb_rows = count($results);
+       print " nombres de lignes : ".$nb_rows. "<br>";
+        // pour r?cup?rer l'ann?e mini et maxi
+       $sqltmp = "select min(annee) as annee_deb, max(annee) as annee_fin from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and  idf_type_acte=$gc_idf_type_acte";
+       if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
+       if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= $g_pl_date_fin";
+       // pour r?cup?rer les ann?es s?lectionn?es
+       $row = $connexionBD-> sql_select_liste($sqltmp);
+       $date_deb = $row[0];
+       $date_fin = $row[1];
+       print "sqltmp 2 : ".$sqltmp. "<br>";
+       print "date_deb : ".$date_deb. "<br>";
+       print "date_fin : ".$date_fin. "<br>";
 
-// rajout test si date ? 0
-if ($date_deb < 1500)
-{
-   $sqltmp = "select annee from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte order by annee";
-   print "case IDF_RECENS :".$sqltmp."" ;
-   print "</br>";
-	while ($row = $connexionBD-> sql_select($sqltmp)) {
-	   if ($row[0] > 1500) {
-		   $date_deb = $row[0];
-			break;
-		}
-   }
-}
+       // rajout test si date ? 0
+        if ($date_deb < 1500)
+       {
+         $sqltmp = "select annee from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte order by  annee";
+         print "case IDF_RECENS :".$sqltmp."" ;
+         print "</br>";
+    	   while ($row = $connexionBD-> sql_select($sqltmp)) 
+         {
+	         if ($row[0] > 1500) 
+           {
+		         $date_deb = $row[0];
+			       break;
+		       }
+         }
+       }
+      // Rajout PL sur les dates ***********************************************************
+      $sqltmp  = "select  
+      p.idf_acte,
+      p.idf,
+      a.annee as Annee_Recensement, 
+      cast(substring(a.commentaires,INSTR(a.commentaires,\'N de page:\')+12,3) as INT) as Page, 
+      substring(a.commentaires,INSTR(a.commentaires,\'Quartier\')+9,10) as Quartier, 
+      substring(a.commentaires,INSTR(a.commentaires,\'Nom de la Rue:\')+14,10) as Rue, 
+      cast(substring(a.commentaires,INSTR(a.commentaires,\'N° maison:\')+10,3)as INT) as Maison, 
+      cast(substring(a.commentaires,INSTR(a.commentaires,\'N° ménage:\')+10,3)as INT) as Menage, 
+      p.patronyme as Nom, 
+      ifnull(prenom.libelle,\'\') as Prenom, 
+      ifnull(p.age,\'\') as Age, 
+      right(p.date_naissance,4) as Annee°, 
+      c.nom as Lieu°, 
+      ifnull(p.commentaires,\'\') as Observation, 
+      b.nom as Commune 
+      from 
+      personne p 
+      left join prenom on (p.idf_prenom=prenom.idf) 
+      join commune_personne c on (p.idf_origine =c.idf)
+      join profession d on (p.idf_profession =d.idf)
+      join acte a on (p.idf_acte=a.idf)
+      where a.idf_commune= '$gi_idf_commune_acte' and a.idf_source='$gi_idf_source'and a.idf_type_acte='$gc_idf_type_acte'";
 
-// Rajout PL sur les dates ***********************************************************
-$sqltmp  = "select 
-annee as Annee_Recensement, 
-cast(substring(commentaires,INSTR(commentaires,\'N de page:\')+12,3) as INT) as Page, 
-substring(commentaires,INSTR(commentaires,\'Quartier\')+9,10) as Quartier, 
-substring(commentaires,INSTR(commentaires,\'Nom de la Rue:\')+14,10) as Rue, 
-cast(substring(commentaires,INSTR(commentaires,\'N° maison:\')+10,3)as INT) as Maison, 
-cast(substring(commentaires,INSTR(commentaires,\'N° ménage:\')+10,3)as INT) as Menage
-from acte  
-where 
-idf_commune= '$gi_idf_commune_acte' and idf_source='$gi_idf_source'and idf_type_acte='$gc_idf_type_acte'";
-
-print "ligne 772";
-if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
-if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
-$sqltmp = $sqltmp ." order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC";
-print "$sqltmp";
-$a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
-print "ligne break 770";
+      print "ligne 778";
+      if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
+      if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
+      $sqltmp = $sqltmp ." order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC";
+        print "$sqltmp";
+        $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
+            print "ligne break 770";
          break;
-//=============================  RECENSEMENT FIN ===============================================
-//****************************************************************************      
+                //=============================  RECENSEMENT FIN ===============================================
+                //****************************************************************************      
 
 case IDF_DIVERS :
 // Rajout PL sur les dates ***********************************************************
