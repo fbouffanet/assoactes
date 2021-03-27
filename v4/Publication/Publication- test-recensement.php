@@ -765,6 +765,7 @@ print "ligne 772";
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
 if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
 $sqltmp = $sqltmp ." order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC";
+print "$sqltmp";
 $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
 print "ligne break 770";
          break;
