@@ -759,7 +759,7 @@ cast(substring(commentaires,INSTR(commentaires,\'N° maison:\')+10,3)as INT) as 
 cast(substring(commentaires,INSTR(commentaires,\'N° ménage:\')+10,3)as INT) as Menage
 from acte  
 where 
-idf_commune= '$pi_idf_commune_acte' and idf_source='$pi_idf_source'and idf_type_acte='$pc_idf_type_acte'";
+idf_commune= '$gi_idf_commune_acte' and idf_source='$gi_idf_source'and idf_type_acte='$gc_idf_type_acte'";
 
 print "ligne 772";
 if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
