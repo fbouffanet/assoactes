@@ -759,15 +759,14 @@ cast(substring(commentaires,INSTR(commentaires,\'N° maison:\')+10,3)as INT) as 
 cast(substring(commentaires,INSTR(commentaires,\'N° ménage:\')+10,3)as INT) as Menage, 
 from acte  
 where 
-idf_commune= '$pi_idf_commune_acte' and idf_source='$pi_idf_source'and idf_type_acte='$pc_idf_type_acte'
-order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC";
+idf_commune= '$pi_idf_commune_acte' and idf_source='$pi_idf_source'and idf_type_acte='$pc_idf_type_acte'";
 
 print "ligne 772";
-//if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
-//if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
-//$sqltmp = $sqltmp ." order by p.idf_acte,p.idf";
+if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
+if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
+$sqltmp = $sqltmp ." order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC";
 $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
-
+print "ligne break 770";
          break;
 //=============================  RECENSEMENT FIN ===============================================
 //****************************************************************************      
