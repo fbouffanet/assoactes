@@ -451,8 +451,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
       ifnull(p.age,\'\') as Age, 
       right(p.date_naissance,4) as Annee°, 
       c.nom as Lieu°, 
-      ifnull(p.commentaires,\'\') as Observation, 
-      b.nom as Commune 
+      ifnull(p.commentaires,\'\') as Observation 
       from 
       personne p 
       left join prenom on (p.idf_prenom=prenom.idf) 
