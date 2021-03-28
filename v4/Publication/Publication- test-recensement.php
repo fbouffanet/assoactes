@@ -684,7 +684,7 @@ switch ($gst_mode) {
           }
         }
         // Rajout PL sur les dates ***********************************************************
-        $sqltmp  = "select  
+      $sqltmp  = "select  
       p.idf_acte,
       p.idf,
       a.annee as Annee_Recensement, 
@@ -712,7 +712,8 @@ switch ($gst_mode) {
         if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
         if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
         $sqltmp = $sqltmp . " order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC";
-        print "requete ligne 715".$sqltmp."<br>";
+        $sqltmp= "select * from acte";  // requete de test
+        print "requete ligne 715".$sqltmp."<br>"; 
         $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
         print "<br>ligne break 718<br>";
         break;
