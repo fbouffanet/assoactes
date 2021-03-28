@@ -684,7 +684,7 @@ switch ($gst_mode) {
           }
         }
         // Rajout PL sur les dates ***********************************************************
-      $sqltmp111  = "select  
+      $sqltmp  = "select  
       p.idf_acte,
       p.idf,
       a.annee as Annee_Recensement, 
@@ -707,27 +707,11 @@ switch ($gst_mode) {
       join profession d on (p.idf_profession =d.idf)
       join acte a on (p.idf_acte=a.idf)
       where a.idf_commune= '$gi_idf_commune_acte' and a.idf_source='$gi_idf_source'and a.idf_type_acte='$gc_idf_type_acte'";
-      $sqltmp  = "select 
-      p.idf_acte,
-      p.idf,
-      a.annee as Annee_Recensement, 
-      a.commentaires, 
-      p.patronyme as Nom, 
-      ifnull(prenom.libelle,\'\') as Prenom, 
-      p.age,
-      b.nom as Commune 
-      from 
-      personne p 
-      left join prenom on (p.idf_prenom=prenom.idf) 
-      join commune_personne c on (p.idf_origine =c.idf)
-      join profession d on (p.idf_profession =d.idf)
-      join acte a on (p.idf_acte=a.idf)
-      where a.idf_commune= '$gi_idf_commune_acte' and a.idf_source='$gi_idf_source'and a.idf_type_acte='$gc_idf_type_acte'";
-       
+      
       print "ligne 711<br>";
         if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
         if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
-        $sqltmp = $sqltmp . " order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC";
+        $sqltmp = "select annee from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte order by annee";
         //$sqltmp= "select * from acte";  // requete de test
         print "requete ligne 715 ".$sqltmp."<br>"; 
         $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
