@@ -462,7 +462,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
       order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC";
 
 
-  //$sqltmp = "select * from adherent order by nom, prenom";
+  $sqltmp = "select * from adherent order by nom, prenom";
   print('<div class="alert alert-info">');
   print $sqltmp; // affichage de la requ�te
   print('</div>'); //  
