@@ -451,7 +451,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
       ifnull(p.age,\'\') as Age, 
       right(p.date_naissance,4) as Annee°, 
       c.nom as Lieu°, 
-      ifnull(p.commentaires,\'\') as Observation 
+      d.nom as Profession
       from 
       personne p 
       left join prenom on (p.idf_prenom=prenom.idf) 
@@ -715,7 +715,7 @@ switch ($gst_mode) {
         //$sqltmp= "select * from acte";  // requete de test
         print "requete ligne 715 ".$sqltmp."<br>"; 
         $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
-        print "<br>ligne break 718<br>";
+        print "<br>ligne break 718 <br>";
         break;
 
         //=============================  RECENSEMENT FIN ===============================================
@@ -788,9 +788,8 @@ switch ($gst_mode) {
         $menuDIV = "O";
         break;
       case IDF_RECENS:
-        print "case IDF_RECENS: ligne 787 <br></br>";
-        //export_recensement($connexionBD,$gi_idf_source,$gi_idf_commune_acte,$pa_liste_personnes,$gc_idf_type_acte,$a_liste_actes,$pf);
-        export_recensement($connexionBD, $gi_idf_source, $gi_idf_commune_acte, $gc_idf_type_acte, $a_liste_personnes, $a_liste_actes, $pf, $Commune);
+        print "case IDF_RECENS: ligne 791 <br>";
+        export_recensement($connexionBD, $gi_idf_source, $gi_idf_commune_acte, $gc_idf_type_acte, $a_liste_personnes, $a_liste_actes, $pf);
         $menuDIV = "N";
         break;
     }
