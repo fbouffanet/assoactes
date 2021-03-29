@@ -458,7 +458,8 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
       join commune_personne c on (p.idf_origine =c.idf)
       join profession d on (p.idf_profession =d.idf)
       join acte a on (p.idf_acte=a.idf)
-      where a.idf_commune= '$pi_idf_commune_acte' and a.idf_source='$pi_idf_source'and a.idf_type_acte='$pc_idf_type_acte'";
+      where a.idf_commune= '$pi_idf_commune_acte' and a.idf_source='$pi_idf_source'and a.idf_type_acte='$pc_idf_type_acte' 
+      order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC";
 
 
   //$sqltmp = "select * from adherent order by nom, prenom";
