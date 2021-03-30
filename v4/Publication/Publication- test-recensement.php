@@ -469,6 +469,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   $a_liste_recherches = $pconnexionBD->sql_select_multiple($sqltmp);
   if (count($a_liste_recherches) > 0) {
     foreach ($a_liste_recherches as $a_ligne) {
+      print "fwrite($pf, "\r\n")";
       fwrite($pf, $a_ligne);
       fwrite($pf, "\r\n");
     }
