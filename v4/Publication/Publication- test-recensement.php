@@ -462,7 +462,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
       order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC";
 
 
-  $sqltmp = "select * from acte where a.idf_commune=208 and a.idf_source=1 and a.idf_type_acte=147 ";
+  $sqltmp = "select * from acte where a.idf_commune='208' and a.idf_source='1' and a.idf_type_acte='147' ";
   print('<div class="alert alert-info">');
   print $sqltmp; // affichage de la requ�te
   print('</div>'); //  
