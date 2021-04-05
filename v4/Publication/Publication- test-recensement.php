@@ -468,7 +468,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   print('<div class="alert alert-info">');
   print $sqltmp; // affichage de la requ�te
   print('</div>'); //  
-  $a_liste_recherches = $pconnexionBD->liste_clef_par_valeur($sqltmp);
+  $a_liste_recherches = $pconnexionBD->sql_select($sqltmp);
   if (count($a_liste_recherches) > 0) {
     print count($a_liste_recherches);
     foreach ($a_liste_recherches as $a_ligne) {
