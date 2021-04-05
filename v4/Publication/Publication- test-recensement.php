@@ -437,6 +437,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   print "pf = " . $pf . "<br></br>";
   print('</div>');
 
+  /*
   $sqltmp  = "select  
       p.idf_acte,
       p.idf,
@@ -460,7 +461,30 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
       join acte a on (p.idf_acte=a.idf)
       where a.idf_commune= $pi_idf_commune_acte and a.idf_source=$pi_idf_source and a.idf_type_acte= $pc_idf_type_acte  
       order by 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
-
+  */
+   $sqltmp  = "SELECT  
+   p.idf_acte,
+   p.idf,
+   a.annee AS Annee_Recensement, 
+   CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) AS INT) AS Page, 
+   SUBSTRING(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) AS Quartier, 
+   SUBSTRING(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) AS Rue, 
+   CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)AS INT) AS Maison, 
+   CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)AS INT) AS Menage, 
+   p.patronyme AS Nom, 
+   IFNULL(prenom.libelle,'') AS Prenom, 
+   IFNULL(p.age,'') AS Age, 
+   RIGHT(p.date_naissance,4) AS Annee°, 
+   c.nom AS Lieu°, 
+   d.nom AS ProfessiON
+   FROM
+   personne p 
+   LEFT JOIN prenom ON (p.idf_prenom=prenom.idf) 
+   JOIN commune_personne c ON (p.idf_origine =c.idf)
+   JOIN professiON d ON (p.idf_professiON =d.idf)
+   JOIN acte a ON (p.idf_acte=a.idf)
+   WHERE a.idf_commune= $pi_idf_commune_acte AND a.idf_source=$pi_idf_source AND a.idf_type_acte= $pc_idf_type_acte  
+   ORDER BY 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
 
 
   //$sqltmp = "select p.idf_acte, p.idf, a.annee as Annee_Recensement, cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page, substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier, substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue, cast(substring(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)as INT) as Maison, cast(substring(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)as INT) as Menage, p.patronyme as Nom, ifnull(prenom.libelle,'') as Prenom, ifnull(p.age,'') as Age, right(p.date_naissance,4) as Annee°, c.nom as Lieu°, d.nom as Profession from personne p left join prenom on (p.idf_prenom=prenom.idf) join commune_personne c on (p.idf_origine =c.idf) join profession d on (p.idf_profession =d.idf) join acte a on (p.idf_acte=a.idf) where a.idf_commune= 208 and a.idf_source=1 and a.idf_type_acte= 147 order by 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
