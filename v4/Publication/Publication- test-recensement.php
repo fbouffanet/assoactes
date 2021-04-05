@@ -473,10 +473,9 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
     print count($a_liste_recherches);
     foreach ($a_liste_recherches as $a_ligne) {
       print 'fwrite($pf, "\r\n")';
-      fputcsv($pf, $a_ligne,SEP_CSV);
-      //fputcsv($pf, "\r\n");
+      fwrite($pf, $a_ligne);
+      fwrite($pf, "\r\n");
     }
-    fclose($pf);
   } else {
     print "pas de donnée";
   }
