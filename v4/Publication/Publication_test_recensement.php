@@ -512,6 +512,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   // ? adapter pour prendre le champ code insee
   list($i_code_insee, $st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
   $a_commune_personne = $pconnexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
+  print $a_commune_personne;
   $a_profession = $pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
   $a_conjoint_h = $pconnexionBD->liste_valeur_par_clef("select idf_epoux, idf_epouse from `union` where idf_commune=$pi_idf_commune_acte and idf_source=$pi_idf_source and idf_type_acte=$pc_idf_type_acte");
   $a_conjoint_f = array_flip($a_conjoint_h);
