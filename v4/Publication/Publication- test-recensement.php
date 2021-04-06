@@ -4,7 +4,7 @@ require_once '../Commun/config.php';
 require_once '../Commun/constantes.php';
 require_once('../Commun/Identification.php');
 require_once('../Commun/VerificationDroits.php');
-verifie_privilege(DROIT_PUBLICATION);
+//verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
 require_once('../Commun/PaginationTableau.php');
 require_once '../Commun/commun.php';
