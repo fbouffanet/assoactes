@@ -428,13 +428,15 @@ function export_div_nimv3($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $
 function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
 {
   print('<div class="alert alert-success">');
-  //print "gi_idf_commune_acte = ".$gi_idf_commune_acte."<br></br>_";
+  print "fonction export_recensement";
   print "pi_idf_source = " . $pi_idf_source . "<br>";
   print "pi_idf_commune_acte = " . $pi_idf_commune_acte . "<br>";
   print "pc_idf_type_acte = " . $pc_idf_type_acte . "<br>";
   print "pa_liste_personnes = " . $pa_liste_personnes . "<br>";
   print "pa_liste_actes = " . $pa_liste_actes . "<br>";
-  print "pf = " . $pf . "<br></br>";
+  print "pf = ";
+  print_r ( $pf);
+  print "<br></br>";
   print('</div>');
   list($i_code_insee, $st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
 
@@ -494,11 +496,11 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
 
   //$sqltmp = "select p.idf_acte, p.idf, a.annee as Annee_Recensement, cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page, substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier, substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue, cast(substring(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)as INT) as Maison, cast(substring(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)as INT) as Menage, p.patronyme as Nom, ifnull(prenom.libelle,'') as Prenom, ifnull(p.age,'') as Age, right(p.date_naissance,4) as Annee°, c.nom as Lieu°, d.nom as Profession from personne p left join prenom on (p.idf_prenom=prenom.idf) join commune_personne c on (p.idf_origine =c.idf) join profession d on (p.idf_profession =d.idf) join acte a on (p.idf_acte=a.idf) where a.idf_commune= 208 and a.idf_source=1 and a.idf_type_acte= 147 order by 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
   
-  print('<div class="alert alert-info">');
+  print('<div class="alert alert-info">');// affichage de la requ�te
   print $sqltmp; // affichage de la requ�te
-  print('</div>'); //  
+  print('</div>'); // affichage de la requ�te 
   $a_liste_recherches = $pconnexionBD->sql_select_liste($sqltmp);
-  print_r($a_liste_recherches);
+  print_r($a_liste_recherches);// affichage résultat de la requ�te
   if (count($a_liste_recherches) > 0) {
     print count($a_liste_recherches);
     foreach ($a_liste_recherches as $a_ligne) {
