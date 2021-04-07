@@ -44,6 +44,21 @@ print('<div class="container">');
 
 function export_nai_nimv3($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
 {
+  print('<div class="alert alert-success">');
+  print "fonction export_recensement";
+  print "pi_idf_source = " . $pi_idf_source . "<br>";
+  print "pi_idf_commune_acte = " . $pi_idf_commune_acte . "<br>";
+  print "pc_idf_type_acte = " . $pc_idf_type_acte . "<br>";
+  //print "pa_liste_personnes = ";
+  //print_r ($pa_liste_personnes);
+  //print "<br>";
+  //print "pa_liste_actes = ";
+  //print_r ($pa_liste_actes);
+  //print "<br>";
+  print "pf = ";
+  print_r ($pf);
+  print "<br></br>";
+  print('</div>');
   // ? adapter pour prendre le champ code insee
   list($i_code_insee, $st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
   $a_profession = $pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
