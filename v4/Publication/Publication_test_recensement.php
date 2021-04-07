@@ -768,7 +768,7 @@ switch ($gst_mode) {
         $row = $connexionBD->sql_select_liste($sqltmp);
         $date_deb = $row[0];
         $date_fin = $row[1];
-        print "sqltmp 2 : " . $sqltmp . "<br>";
+        print "sqltmp : " . $sqltmp . "<br>";
         print "date_deb : " . $date_deb . "<br>";
         print "date_fin : " . $date_fin . "<br>";
 
@@ -785,7 +785,7 @@ switch ($gst_mode) {
           }
         }
         // Rajout PL sur les dates ***********************************************************
-      $sqltmp  = "SELECT  
+      $sqltmptest  = "SELECT  
       p.idf_acte,
       p.idf,
       'R' as Sigle,
