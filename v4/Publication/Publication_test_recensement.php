@@ -509,9 +509,33 @@ function export_recensementsssss($pconnexionBD, $pi_idf_source, $pi_idf_commune_
 //==========================================================
 function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
 {
+  $sqltmp  = "select  
+      p.idf_acte,
+      p.idf,
+      a.annee as Annee_Recensement, 
+      cast(substring(a.commentaires,INSTR(a.commentaires,\'N de page:\')+12,3) as INT) as Page, 
+      substring(a.commentaires,INSTR(a.commentaires,\'Quartier\')+9,10) as Quartier, 
+      substring(a.commentaires,INSTR(a.commentaires,\'Nom de la Rue:\')+14,10) as Rue, 
+      cast(substring(a.commentaires,INSTR(a.commentaires,\'N° maison:\')+10,3)as INT) as Maison, 
+      cast(substring(a.commentaires,INSTR(a.commentaires,\'N° ménage:\')+10,3)as INT) as Menage, 
+      p.patronyme as Nom, 
+      ifnull(prenom.libelle,\'\') as Prenom, 
+      ifnull(p.age,\'\') as Age, 
+      right(p.date_naissance,4) as Annee°, 
+      c.nom as Lieu°, 
+      d.nom as Profession
+      from 
+      personne p 
+      left join prenom on (p.idf_prenom=prenom.idf) 
+      join commune_personne c on (p.idf_origine =c.idf)
+      join profession d on (p.idf_profession =d.idf)
+      join acte a on (p.idf_acte=a.idf)
+      where a.idf_commune= $pi_idf_commune_acte and a.idf_source=$pi_idf_source and a.idf_type_acte= $pc_idf_type_acte  
+      order by 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
+
   // ? adapter pour prendre le champ code insee
   list($i_code_insee, $st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
-  $a_commune_personne = $pconnexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
+  $a_commune_personne = $pconnexionBD->liste_valeur_par_clef($sqltmp);
   print_r($a_commune_personne);
   $a_profession = $pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
   $a_conjoint_h = $pconnexionBD->liste_valeur_par_clef("select idf_epoux, idf_epouse from `union` where idf_commune=$pi_idf_commune_acte and idf_source=$pi_idf_source and idf_type_acte=$pc_idf_type_acte");
