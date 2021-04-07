@@ -465,7 +465,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    $sqltmp  = "SELECT  
    p.idf_acte,
    p.idf,
-   f.nom AS Commune
+   f.nom AS Commune,
    a.annee AS Annee_Recensement, 
    CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) AS INT) AS Page, 
    SUBSTRING(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) AS Quartier, 
