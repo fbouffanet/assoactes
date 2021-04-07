@@ -785,7 +785,7 @@ switch ($gst_mode) {
           }
         }
         // Rajout PL sur les dates ***********************************************************
-      $sqltmp1  = "SELECT  
+      $sqltmp  = "SELECT  
       p.idf_acte,
       p.idf,
       'R' as Sigle,
@@ -816,10 +816,10 @@ switch ($gst_mode) {
       print "ligne 711<br>";
         if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
         if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
-        $sqltmp = "select annee from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte order by annee";
+        $sqltmp1 = "select annee from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte order by annee";
         //$sqltmp= "select * from acte";  // requete de test
         print "requete ligne 715 ".$sqltmp."<br>"; 
-        $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp1);
+        $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
         print "<br>ligne break 718 <br>";
         break;
 
