@@ -821,7 +821,7 @@ switch ($gst_mode) {
       print "<br></br>";
         if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
         if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
-        $sqltmp = $sqltmp . "order by 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
+        $sqltmp = $sqltmp . "order by Annee_Recensement ASC, Page ASC, Maison ASC, Menage ASC";
         //$sqltmp= "select * from acte";  // requete de test
         print "requete ligne 715 ".$sqltmp."<br>"; 
         $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
