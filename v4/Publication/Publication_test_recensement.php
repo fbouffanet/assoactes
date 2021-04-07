@@ -810,7 +810,7 @@ switch ($gst_mode) {
       JOIN profession d ON (p.idf_profession=d.idf)
       JOIN acte a ON (p.idf_acte=a.idf)
       JOIN commune_acte f ON (a.idf_commune=f.idf)
-      WHERE a.idf_commune= $pi_idf_commune_acte AND a.idf_source=$pi_idf_source AND a.idf_type_acte= $pc_idf_type_acte  
+      WHERE a.idf_commune= $gi_idf_commune_acte AND a.idf_source=$gi_idf_source AND a.idf_type_acte= $gc_idf_type_acte  
       ORDER BY 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
       
       print "ligne 711<br>";
