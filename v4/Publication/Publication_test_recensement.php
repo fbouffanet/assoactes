@@ -442,7 +442,9 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   print('</div>');
   list($i_code_insee, $st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
    
-  print "st_nom_commun =".$st_nom_commun."<br></br>";
+  print "st_nom_commun =";
+  print_r($st_nom_commun);
+  print "<br></br>";
   /*
   $sqltmp  = "select  
       p.idf_acte,
