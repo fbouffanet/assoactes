@@ -436,6 +436,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   print "pa_liste_actes = " . $pa_liste_actes . "<br>";
   print "pf = " . $pf . "<br></br>";
   print('</div>');
+  list($i_code_insee, $st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
 
   /*
   $sqltmp  = "select  
@@ -465,6 +466,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    $sqltmp  = "SELECT  
    p.idf_acte,
    p.idf,
+   'R' as Sigle,
    f.nom AS Commune,
    a.annee AS Annee_Recensement, 
    CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) AS INT) AS Page, 
