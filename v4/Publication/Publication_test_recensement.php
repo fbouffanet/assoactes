@@ -440,8 +440,7 @@ function export_div_nimv3($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $
   print "Publication des divers de la commune $st_nom_commune1<br> <br>";
 }
 //=========== Fonction EXPORT_RECENSEMENT ==== DEB =====================
-//function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
-function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pf)
+function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
 {
   print('<div class="alert alert-success">');
   print "fonction export_recensement";
@@ -786,29 +785,33 @@ switch ($gst_mode) {
           }
         }
         // Rajout PL sur les dates ***********************************************************
-      $sqltmp  = "select  
+      $sqltmp1  = "SELECT  
       p.idf_acte,
       p.idf,
-      a.annee as Annee_Recensement, 
-      cast(substring(a.commentaires,INSTR(a.commentaires,\'N de page:\')+12,3) as INT) as Page, 
-      substring(a.commentaires,INSTR(a.commentaires,\'Quartier\')+9,10) as Quartier, 
-      substring(a.commentaires,INSTR(a.commentaires,\'Nom de la Rue:\')+14,10) as Rue, 
-      cast(substring(a.commentaires,INSTR(a.commentaires,\'N° maison:\')+10,3)as INT) as Maison, 
-      cast(substring(a.commentaires,INSTR(a.commentaires,\'N° ménage:\')+10,3)as INT) as Menage, 
-      p.patronyme as Nom, 
-      ifnull(prenom.libelle,\'\') as Prenom, 
-      ifnull(p.age,\'\') as Age, 
-      right(p.date_naissance,4) as Annee°, 
-      c.nom as Lieu°, 
-      ifnull(p.commentaires,\'\') as Observation, 
-      b.nom as Commune 
-      from 
+      'R' as Sigle,
+      f.nom AS Commune,
+      a.annee AS Annee_Recensement, 
+      CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) AS INT) AS Page, 
+      SUBSTRING(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) AS Quartier, 
+      SUBSTRING(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) AS Rue, 
+      CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)AS INT) AS Maison, 
+      CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)AS INT) AS Menage, 
+      p.patronyme AS Nom, 
+      IFNULL(prenom.libelle,'') AS Prenom, 
+      IFNULL(p.commentaires,''),
+      IFNULL(p.age,'') AS Age, 
+      RIGHT(p.date_naissance,4) AS Annee°, 
+      c.nom AS Lieu°, 
+      d.nom AS Profession
+         FROM
       personne p 
-      left join prenom on (p.idf_prenom=prenom.idf) 
-      join commune_personne c on (p.idf_origine =c.idf)
-      join profession d on (p.idf_profession =d.idf)
-      join acte a on (p.idf_acte=a.idf)
-      where a.idf_commune= '$gi_idf_commune_acte' and a.idf_source='$gi_idf_source'and a.idf_type_acte='$gc_idf_type_acte'";
+      LEFT JOIN prenom ON (p.idf_prenom=prenom.idf) 
+      JOIN commune_personne c ON (p.idf_origine=c.idf)
+      JOIN profession d ON (p.idf_profession=d.idf)
+      JOIN acte a ON (p.idf_acte=a.idf)
+      JOIN commune_acte f ON (a.idf_commune=f.idf)
+      WHERE a.idf_commune= $pi_idf_commune_acte AND a.idf_source=$pi_idf_source AND a.idf_type_acte= $pc_idf_type_acte  
+      ORDER BY 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
       
       print "ligne 711<br>";
         if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
@@ -816,7 +819,7 @@ switch ($gst_mode) {
         $sqltmp = "select annee from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte order by annee";
         //$sqltmp= "select * from acte";  // requete de test
         print "requete ligne 715 ".$sqltmp."<br>"; 
-        $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
+        $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp1);
         print "<br>ligne break 718 <br>";
         break;
 
