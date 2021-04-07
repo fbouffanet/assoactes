@@ -465,6 +465,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    $sqltmp  = "SELECT  
    p.idf_acte,
    p.idf,
+   f.nom AS Commune
    a.annee AS Annee_Recensement, 
    CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) AS INT) AS Page, 
    SUBSTRING(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) AS Quartier, 
@@ -473,17 +474,18 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)AS INT) AS Menage, 
    p.patronyme AS Nom, 
    IFNULL(prenom.libelle,'') AS Prenom, 
+   IFNULL(p.commentaires,''),
    IFNULL(p.age,'') AS Age, 
    RIGHT(p.date_naissance,4) AS Annee°, 
    c.nom AS Lieu°, 
-   d.nom AS Profession,
-   p.commentaires 
-   FROM
+   d.nom AS Profession
+      FROM
    personne p 
    LEFT JOIN prenom ON (p.idf_prenom=prenom.idf) 
    JOIN commune_personne c ON (p.idf_origine=c.idf)
    JOIN profession d ON (p.idf_profession=d.idf)
    JOIN acte a ON (p.idf_acte=a.idf)
+   JOIN commmune_acte f ON (a.idf_commune=f.idf)
    WHERE a.idf_commune= $pi_idf_commune_acte AND a.idf_source=$pi_idf_source AND a.idf_type_acte= $pc_idf_type_acte  
    ORDER BY 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
 
