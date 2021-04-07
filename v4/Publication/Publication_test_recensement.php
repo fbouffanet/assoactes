@@ -432,14 +432,17 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   print "pi_idf_source = " . $pi_idf_source . "<br>";
   print "pi_idf_commune_acte = " . $pi_idf_commune_acte . "<br>";
   print "pc_idf_type_acte = " . $pc_idf_type_acte . "<br>";
-  print "pa_liste_personnes = " . $pa_liste_personnes . "<br>";
+  print "pa_liste_personnes = ";
+  print_r ($pa_liste_personnes);
+  print "<br>";
   print "pa_liste_actes = " . $pa_liste_actes . "<br>";
   print "pf = ";
-  print_r ( $pf);
+  print_r ($pf);
   print "<br></br>";
   print('</div>');
   list($i_code_insee, $st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
-
+   
+  print "st_nom_commun =".$st_nom_commun."<br></br>";
   /*
   $sqltmp  = "select  
       p.idf_acte,
