@@ -477,7 +477,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    RIGHT(p.date_naissance,4) AS Annee°, 
    c.nom AS Lieu°, 
    d.nom AS Profession,
-   a.details_supplementaires 
+   p.commentaires 
    FROM
    personne p 
    LEFT JOIN prenom ON (p.idf_prenom=prenom.idf) 
