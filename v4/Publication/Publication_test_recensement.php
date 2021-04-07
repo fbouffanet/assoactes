@@ -480,8 +480,8 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    FROM
    personne p 
    LEFT JOIN prenom ON (p.idf_prenom=prenom.idf) 
-   JOIN commune_personne c ON (p.idf_origine =c.idf)
-   JOIN professiON d ON (p.idf_professiON =d.idf)
+   JOIN commune_personne c ON (p.idf_origine=c.idf)
+   JOIN professiON d ON (p.idf_profession=d.idf)
    JOIN acte a ON (p.idf_acte=a.idf)
    WHERE a.idf_commune= $pi_idf_commune_acte AND a.idf_source=$pi_idf_source AND a.idf_type_acte= $pc_idf_type_acte  
    ORDER BY 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
