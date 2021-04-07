@@ -785,7 +785,7 @@ switch ($gst_mode) {
           }
         }
         // Rajout PL sur les dates ***********************************************************
-      $sqltmp  = "SELECT  
+      $sqltmp2  = "SELECT  
       p.idf_acte,
       p.idf,
       'R' as Sigle,
@@ -811,12 +811,14 @@ switch ($gst_mode) {
       JOIN acte a ON (p.idf_acte=a.idf)
       JOIN commune_acte f ON (a.idf_commune=f.idf)
       WHERE a.idf_commune= $gi_idf_commune_acte AND a.idf_source=$gi_idf_source AND a.idf_type_acte= $gc_idf_type_acte  
-      ORDER BY 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
+      ";
       
       print "ligne 711<br>";
+      print $sqltmp ;
+      print "<br></br>";
         if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
         if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
-        $sqltmp1 = "select annee from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte order by annee";
+        $sqltmp = "select annee from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte order by annee";
         //$sqltmp= "select * from acte";  // requete de test
         print "requete ligne 715 ".$sqltmp."<br>"; 
         $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
