@@ -425,7 +425,7 @@ function export_div_nimv3($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $
   print "Publication des divers de la commune $st_nom_commune1<br> <br>";
 }
 //=========== Fonction EXPORT_RECENSEMENT ==== DEB =====================
-function export_recensementsssss($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
+function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
 {
   print('<div class="alert alert-success">');
   //print "gi_idf_commune_acte = ".$gi_idf_commune_acte."<br></br>_";
@@ -493,6 +493,7 @@ function export_recensementsssss($pconnexionBD, $pi_idf_source, $pi_idf_commune_
   print $sqltmp; // affichage de la requ�te
   print('</div>'); //  
   $a_liste_recherches = $pconnexionBD->sql_select_liste($sqltmp);
+  print_r($a_liste_recherches);
   if (count($a_liste_recherches) > 0) {
     print count($a_liste_recherches);
     foreach ($a_liste_recherches as $a_ligne) {
@@ -507,7 +508,7 @@ function export_recensementsssss($pconnexionBD, $pi_idf_source, $pi_idf_commune_
   print "Publication des recemsements de la commune <b> $st_nom_commune1</b> <br>";
 }
 //==========================================================
-function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
+function export_recensementssssss($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
 {
   // ? adapter pour prendre le champ code insee
   list($i_code_insee, $st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
