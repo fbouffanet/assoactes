@@ -435,7 +435,9 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   print "pa_liste_personnes = ";
   print_r ($pa_liste_personnes);
   print "<br>";
-  print "pa_liste_actes = " . $pa_liste_actes . "<br>";
+  print "pa_liste_actes = ";
+  print_r ($pa_liste_actes);
+  print "<br>";
   print "pf = ";
   print_r ($pf);
   print "<br></br>";
