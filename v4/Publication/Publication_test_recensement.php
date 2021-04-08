@@ -458,15 +458,9 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   print "<br></br>";
   print('</div>');
   
-<<<<<<< HEAD
   $nom_commune = $pconnexionBD->sql_select("select nom from commune_acte where idf='$pi_idf_commune_acte'");
   print "nom_commun =";
   print $nom_commun;
-=======
-  list($i_code_insee, $st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
-  print "st_nom_commun =";
-  print_r($st_nom_commun);
->>>>>>> parent of 5ab2c4d70 (Update Publication_test_recensement.php)
   print "<br></br>";
   
    $sqltmp  = "SELECT
@@ -725,9 +719,7 @@ switch ($gst_mode) {
           }
         }
         // Rajout PL sur les dates ***********************************************************
-        $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and   idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
-           /*
-           ="SELECT
+           $sqltmp="SELECT
       p.idf_acte,
       p.idf,
       'R' AS Sigle,
@@ -795,7 +787,6 @@ switch ($gst_mode) {
       (a.idf_commune = f.idf)
   WHERE
       a.idf_commune= '$gi_idf_commune_acte' AND a.idf_source='$gi_idf_source' AND a.idf_type_acte= '$gc_idf_type_acte'";
-      */
       //============================================================================//
       
             print "ligne 711<br>";
