@@ -460,7 +460,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   
   $nom_commune = $pconnexionBD->sql_select("select nom from commune_acte where idf='$pi_idf_commune_acte'");
   print "nom_commun =";
-  print_r($nom_commun);
+  print $nom_commun;
   print "<br></br>";
   
    $sqltmp  = "SELECT
@@ -558,92 +558,6 @@ WHERE
   print "Publication des recensements de la commune <b> $st_nom_commune1</b> <br>";
 }
 //==========================================================
-function export_recensementssssss($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
-{
-  // ? adapter pour prendre le champ code insee
-  list($i_code_insee, $st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
-  $a_commune_personne = $pconnexionBD->liste_valeur_par_clef("select idf, nom from commune_personne");
-  print_r($a_commune_personne);
-  $a_profession = $pconnexionBD->liste_valeur_par_clef("select idf, nom from profession");
-  $a_conjoint_h = $pconnexionBD->liste_valeur_par_clef("select idf_epoux, idf_epouse from `union` where idf_commune=$pi_idf_commune_acte and idf_source=$pi_idf_source and idf_type_acte=$pc_idf_type_acte");
-  $a_conjoint_f = array_flip($a_conjoint_h);
-  foreach ($pa_liste_personnes as $i_idf_acte => $a_personnes) {
-    $a_champs = array();
-    $i_nb_temoins = 0;
-    foreach ($a_personnes as $i_idf_personne => $a_personne) {
-      list($i_idf_type_presence, $c_sexe, $st_patronyme, $st_prenom, $i_idf_origine, $st_date_naissance, $st_age, $i_idf_profession, $st_commentaires, $i_idf_pere, $i_idf_mere, $i_est_decede) = $a_personne;
-      switch ($i_idf_type_presence) {
-        case IDF_PRESENCE_INTV:
-          $a_champs[] = $st_patronyme;
-          $a_champs[] = $st_prenom;
-          $a_champs[] = empty($i_idf_origine) ? '' : $a_commune_personne[$i_idf_origine];
-          $a_champs[] = $st_date_naissance;
-          $a_champs[] = $c_sexe;
-          $a_champs[] = $st_age;
-          $a_champs[] = $st_commentaires;
-          $a_champs[] = empty($i_idf_profession) ? '' : $a_profession[$i_idf_profession];
-          switch ($c_sexe) {
-            case 'M':
-              if (array_key_exists($i_idf_personne, $a_conjoint_h)) {
-                $a_champs[] = $a_personnes[$a_conjoint_h[$i_idf_personne]][2];
-                $a_champs[] = $a_personnes[$a_conjoint_h[$i_idf_personne]][3];
-                $a_champs[] = $a_personnes[$a_conjoint_h[$i_idf_personne]][8];
-                $a_champs[] = empty($a_personnes[$a_conjoint_h[$i_idf_personne]][7]) ? '' : $a_profession[$a_personnes[$a_conjoint_h[$i_idf_personne]][7]];
-              } else
-                array_push($a_champs, "", "", "", "");
-              break;
-            case 'F':
-              if (array_key_exists($i_idf_personne, $a_conjoint_f)) {
-                $a_champs[] = $a_personnes[$a_conjoint_f[$i_idf_personne]][2];
-                $a_champs[] = $a_personnes[$a_conjoint_f[$i_idf_personne]][3];
-                $a_champs[] = $a_personnes[$a_conjoint_f[$i_idf_personne]][8];
-                $a_champs[] = empty($a_personnes[$a_conjoint_f[$i_idf_personne]][7]) ? '' : $a_profession[$a_personnes[$a_conjoint_f[$i_idf_personne]][7]];
-              } else
-                array_push($a_champs, "", "", "", "");
-              break;
-            default:
-              array_push($a_champs, "", "", "", "");
-          }
-          if (!empty($i_idf_pere)) {
-            $a_champs[] = $a_personnes[$i_idf_pere][2];
-            $a_champs[] = $a_personnes[$i_idf_pere][3];
-            $a_champs[] = $a_personnes[$i_idf_pere][8];
-            $a_champs[] = empty($a_personnes[$i_idf_pere][7]) ? '' : $a_profession[$a_personnes[$i_idf_pere][7]];
-          } else
-            array_push($a_champs, "", "", "", "");
-          if (!empty($i_idf_mere)) {
-            $a_champs[] = $a_personnes[$i_idf_mere][2];
-            $a_champs[] = $a_personnes[$i_idf_mere][3];
-            $a_champs[] = $a_personnes[$i_idf_mere][8];
-            $a_champs[] = empty($a_personnes[$i_idf_mere][7]) ? '' : $a_profession[$a_personnes[$i_idf_mere][7]];
-          } else
-            array_push($a_champs, "", "", "", "");
-          break;
-        case IDF_PRESENCE_TEMOIN:
-          $a_champs[] = $st_patronyme;
-          $a_champs[] = $st_prenom;
-          $a_champs[] = $st_commentaires;
-          $i_nb_temoins++;
-          break;
-      }
-    }
-    list($idf_commune_acte, $idf_type_acte, $st_date, $st_date_rep, $st_cote, $st_libre, $st_commentaires) = $pa_liste_actes[$i_idf_acte];
-    array_unshift($a_champs, 'D', $st_date, $st_date_rep, $st_cote, $st_libre);
-    array_unshift($a_champs, ""); // nom d?partement  => ? am?liorer
-    array_unshift($a_champs, ""); // code d?partement  => ? am?liorer
-    array_unshift($a_champs, "NIMEGUEV3", $i_code_insee, $st_nom_commune);
-    // Cr?e les t?moins manquants
-    for ($i = $i_nb_temoins; $i < 2; $i++) {
-      array_push($a_champs, "", "", "");
-    }
-    $a_champs[] = $st_commentaires;
-    $a_champs[] = ''; // Num?ro d'enregistrement
-    fwrite($pf, (implode(';', $a_champs)));
-    fwrite($pf, "\r\n");
-  }
-  $st_nom_commune1 = utf8_encode($st_nom_commune);
-  print "Publication des d&egrave;c&eacute;s de la commune $st_nom_commune1<br> <br>";
-}
 
 /*------------------------------------------------------------------------------
                             Corps du programme
