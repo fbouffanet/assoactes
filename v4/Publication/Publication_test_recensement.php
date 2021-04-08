@@ -880,7 +880,7 @@ switch ($gst_mode) {
   ON
       (a.idf_commune = f.idf)
   WHERE
-      a.idf_commune= $gi_idf_commune_acte AND a.idf_source=$gi_idf_source AND a.idf_type_acte= $gc_idf_type_acte";
+      a.idf_commune= '$gi_idf_commune_acte' AND a.idf_source='$gi_idf_source' AND a.idf_type_acte= '$gc_idf_type_acte'";
       //============================================================================//
       
       print "ligne 711<br>";
