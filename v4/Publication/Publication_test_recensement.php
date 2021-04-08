@@ -839,14 +839,14 @@ switch ($gst_mode) {
       CAST(
           SUBSTRING(
               a.commentaires,
-              INSTR(a.commentaires, 'N° maison:') +10,
+              INSTR(a.commentaires, 'N maison:') +10,
               3
           ) AS INT
       ) AS Maison,
       CAST(
           SUBSTRING(
               a.commentaires,
-              INSTR(a.commentaires, 'N° ménage:') +10,
+              INSTR(a.commentaires, 'N ménage:') +10,
               3
           ) AS INT
       ) AS Menage,
@@ -854,8 +854,8 @@ switch ($gst_mode) {
       IFNULL(prenom.libelle, '') AS Prenom,
       IFNULL(p.commentaires, '') AS Commentaires,
       IFNULL(p.age, '') AS Age,
-      RIGHT(p.date_naissance, 4) AS Annee°,
-      c.nom AS Lieu°,
+      RIGHT(p.date_naissance, 4) AS Annee,
+      c.nom AS Lieu,
       d.nom AS Profession
   FROM
       personne p
