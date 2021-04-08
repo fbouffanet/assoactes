@@ -458,9 +458,15 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   print "<br></br>";
   print('</div>');
   
+<<<<<<< HEAD
   $nom_commune = $pconnexionBD->sql_select("select nom from commune_acte where idf='$pi_idf_commune_acte'");
   print "nom_commun =";
   print $nom_commun;
+=======
+  list($i_code_insee, $st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
+  print "st_nom_commun =";
+  print_r($st_nom_commun);
+>>>>>>> parent of 5ab2c4d70 (Update Publication_test_recensement.php)
   print "<br></br>";
   
    $sqltmp  = "SELECT
