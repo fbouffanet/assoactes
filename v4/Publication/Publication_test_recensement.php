@@ -496,7 +496,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    CAST(
        SUBSTRING(
            a.commentaires,
-           INSTR(a.commentaires, 'N de page:') +12,
+           INSTR(a.commentaires, 'de page:') +12,
            3
        ) AS INT
    ) AS PAGE,
@@ -513,14 +513,14 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    CAST(
        SUBSTRING(
            a.commentaires,
-           INSTR(a.commentaires, 'N maison:') +10,
+           INSTR(a.commentaires, 'maison:') +10,
            3
        ) AS INT
    ) AS Maison,
    CAST(
        SUBSTRING(
            a.commentaires,
-           INSTR(a.commentaires, 'N ménage:') +10,
+           INSTR(a.commentaires, 'ménage:') +10,
            3
        ) AS INT
    ) AS Menage,
@@ -577,7 +577,7 @@ WHERE
   }
   $st_nom_commune = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
   $st_nom_commune1 = utf8_encode($st_nom_commune);
-  print "Publication des recemsements de la commune <b> $st_nom_commune1</b> <br>";
+  print "Publication des recensements de la commune <b> $st_nom_commune1</b> <br>";
 }
 //==========================================================
 function export_recensementssssss($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
@@ -833,17 +833,17 @@ switch ($gst_mode) {
       'R' as Sigle,
       f.nom AS Commune,
       a.annee AS Annee_Recensement, 
-      CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) AS INT) AS Page, 
+      CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'de page:')+12,3) AS INT) AS Page, 
       SUBSTRING(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) AS Quartier, 
       SUBSTRING(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) AS Rue, 
-      CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)AS INT) AS Maison, 
-      CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)AS INT) AS Menage, 
+      CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'maison:')+10,3)AS INT) AS Maison, 
+      CAST(SUBSTRING(a.commentaires,INSTR(a.commentaires,'ménage:')+10,3)AS INT) AS Menage, 
       p.patronyme AS Nom, 
       IFNULL(prenom.libelle,'') AS Prenom, 
       IFNULL(p.commentaires,''),
       IFNULL(p.age,'') AS Age, 
-      RIGHT(p.date_naissance,4) AS Annee°, 
-      c.nom AS Lieu°, 
+      RIGHT(p.date_naissance,4) AS Annee, 
+      c.nom AS Lieu, 
       d.nom AS Profession
          FROM
       personne p 
@@ -864,7 +864,7 @@ switch ($gst_mode) {
       CAST(
           SUBSTRING(
               a.commentaires,
-              INSTR(a.commentaires, 'N de page:') +12,
+              INSTR(a.commentaires, 'de page:') +12,
               3
           ) AS INT
       ) AS PAGE,
@@ -881,14 +881,14 @@ switch ($gst_mode) {
       CAST(
           SUBSTRING(
               a.commentaires,
-              INSTR(a.commentaires, 'N maison:') +10,
+              INSTR(a.commentaires, 'maison:') +10,
               3
           ) AS INT
       ) AS Maison,
       CAST(
           SUBSTRING(
               a.commentaires,
-              INSTR(a.commentaires, 'N ménage:') +10,
+              INSTR(a.commentaires, 'ménage:') +10,
               3
           ) AS INT
       ) AS Menage,
