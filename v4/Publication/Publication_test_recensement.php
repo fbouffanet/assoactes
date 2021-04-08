@@ -566,16 +566,20 @@ WHERE
   $a_liste_recherches = $pconnexionBD->sql_select_liste($sqltmp);
   print_r($a_liste_recherches);// affichage résultat de la requ�te
   if (count($a_liste_recherches) > 0) {
+    
     print count($a_liste_recherches);
+    print('<br></div>');
     foreach ($a_liste_recherches as $a_ligne) {
+      print('<div class="alert alert-info">');
       print $a_ligne;
+      print('<br></div>');
       fwrite($pf, $a_ligne);
       fwrite($pf, "\r\n");
     }
   } else {
     print "pas de donnée";
   }
-  $st_nom_commune = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
+  $st_nom_commune = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf='$pi_idf_commune_acte'");
   $st_nom_commune1 = utf8_encode($st_nom_commune);
   print "Publication des recensements de la commune <b> $st_nom_commune1</b> <br>";
 }
