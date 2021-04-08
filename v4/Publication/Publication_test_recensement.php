@@ -852,7 +852,7 @@ switch ($gst_mode) {
       ) AS Menage,
       p.patronyme AS Nom,
       IFNULL(prenom.libelle, '') AS Prenom,
-      IFNULL(p.commentaires, ''),
+      IFNULL(p.commentaires, '') AS Commentaires,
       IFNULL(p.age, '') AS Age,
       RIGHT(p.date_naissance, 4) AS Annee°,
       c.nom AS Lieu°,
@@ -884,7 +884,7 @@ switch ($gst_mode) {
       //============================================================================//
       
       print "ligne 711<br>";
-      print $sqltmp ;
+      //print $sqltmp ;
       print "<br></br>";
         if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
         if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
@@ -894,7 +894,7 @@ switch ($gst_mode) {
         Maison ASC,
         Menage ASC";
         //$sqltmp= "select * from acte";  // requete de test
-        print "requete ligne 715 ".$sqltmp."<br>"; 
+        print "requete ligne 715 <br></br> ".$sqltmp."<br>"; 
         $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
         print "<br>ligne break 718 <br>";
         break;
