@@ -457,36 +457,12 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   print_r ($pf);
   print "<br></br>";
   print('</div>');
-  //list($i_code_insee, $st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
-   
-  //print "st_nom_commun =";
-  //print_r($st_nom_commun);
- // print "<br></br>";
-  /*
-  $sqltmp  = "select  
-      p.idf_acte,
-      p.idf,
-      a.annee as Annee_Recensement, 
-      cast(substring(a.commentaires,INSTR(a.commentaires,\'N de page:\')+12,3) as INT) as Page, 
-      substring(a.commentaires,INSTR(a.commentaires,\'Quartier\')+9,10) as Quartier, 
-      substring(a.commentaires,INSTR(a.commentaires,\'Nom de la Rue:\')+14,10) as Rue, 
-      cast(substring(a.commentaires,INSTR(a.commentaires,\'N° maison:\')+10,3)as INT) as Maison, 
-      cast(substring(a.commentaires,INSTR(a.commentaires,\'N° ménage:\')+10,3)as INT) as Menage, 
-      p.patronyme as Nom, 
-      ifnull(prenom.libelle,\'\') as Prenom, 
-      ifnull(p.age,\'\') as Age, 
-      right(p.date_naissance,4) as Annee°, 
-      c.nom as Lieu°, 
-      d.nom as Profession
-      from 
-      personne p 
-      left join prenom on (p.idf_prenom=prenom.idf) 
-      join commune_personne c on (p.idf_origine =c.idf)
-      join profession d on (p.idf_profession =d.idf)
-      join acte a on (p.idf_acte=a.idf)
-      where a.idf_commune= $pi_idf_commune_acte and a.idf_source=$pi_idf_source and a.idf_type_acte= $pc_idf_type_acte  
-      order by 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
-  */
+  
+  list($i_code_insee, $st_nom_commune) = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf=$pi_idf_commune_acte");
+  print "st_nom_commun =";
+  print_r($st_nom_commun);
+  print "<br></br>";
+  
    $sqltmp  = "SELECT
    p.idf_acte,
    p.idf,
@@ -558,8 +534,7 @@ WHERE
    ORDER BY 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
 
 
-  //$sqltmp = "select p.idf_acte, p.idf, a.annee as Annee_Recensement, cast(substring(a.commentaires,INSTR(a.commentaires,'N de page:')+12,3) as INT) as Page, substring(a.commentaires,INSTR(a.commentaires,'Quartier')+9,10) as Quartier, substring(a.commentaires,INSTR(a.commentaires,'Nom de la Rue:')+14,10) as Rue, cast(substring(a.commentaires,INSTR(a.commentaires,'N° maison:')+10,3)as INT) as Maison, cast(substring(a.commentaires,INSTR(a.commentaires,'N° ménage:')+10,3)as INT) as Menage, p.patronyme as Nom, ifnull(prenom.libelle,'') as Prenom, ifnull(p.age,'') as Age, right(p.date_naissance,4) as Annee°, c.nom as Lieu°, d.nom as Profession from personne p left join prenom on (p.idf_prenom=prenom.idf) join commune_personne c on (p.idf_origine =c.idf) join profession d on (p.idf_profession =d.idf) join acte a on (p.idf_acte=a.idf) where a.idf_commune= 208 and a.idf_source=1 and a.idf_type_acte= 147 order by 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
-  
+ 
   print('<div class="alert alert-info">');// affichage de la requ�te
   print $sqltmp; // affichage de la requ�te
   print('</div>'); // affichage de la requ�te 
@@ -571,14 +546,13 @@ WHERE
     print('<br></div>');
     foreach ($a_liste_recherches as $a_ligne) {
       print('<div class="alert alert-info">');
-      print $a_ligne;
+      print "aprés foreach";
+      print_r ($a_ligne) ;
       print('<br></div>');
       fwrite($pf, $a_ligne);
       fwrite($pf, "\r\n");
     }
-  } else {
-    print "pas de donnée";
-  }
+  } 
   $st_nom_commune = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf='$pi_idf_commune_acte'");
   $st_nom_commune1 = utf8_encode($st_nom_commune);
   print "Publication des recensements de la commune <b> $st_nom_commune1</b> <br>";
