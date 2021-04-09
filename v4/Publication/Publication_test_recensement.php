@@ -540,11 +540,11 @@ $a_liste_recherches = $pconnexionBD->sql_select_multiple($sqltmp);
     print "nombre de ligne".$nbr."<br>";
     print('<br></div>');
     foreach ($a_liste_recherches as $a_ligne) {
-      print('<div class="alert alert-info">');
-      print "aprés foreach";
-      print_r ($a_ligne) ;
-      print('<br></div>');
-      fwrite($pf, array($a_ligne). "\r\n");
+      //print('<div class="alert alert-info">');
+      //print "aprés foreach";
+      //print_r ($a_ligne) ;
+      //print('<br></div>');
+      fwrite($pf, $a_ligne. "\r\n");
       //fwrite($pf, "\r\n");
     }
     fclose($fp);
