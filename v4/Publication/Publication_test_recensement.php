@@ -529,7 +529,7 @@ WHERE
    a.idf_commune= '$pi_idf_commune_acte' AND a.idf_source='$pi_idf_source' AND a.idf_type_acte= '$pc_idf_type_acte'  
    ORDER BY 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
 
-$a_liste_recherches1 = $pconnexionBD->sql_select($sqltmp);
+$a_liste_recherches1 = $pconnexionBD->sql_select_liste1($sqltmp);
 $nom_commune=$a_liste_recherches1[3] ;
 $a_liste_recherches = $pconnexionBD->sql_select_multiple($sqltmp);
   //$a_liste_recherches = $a_liste_recherches ('p.idf_acte','p.idf','R','Commune','Annee_Recensement','Sigle','Page','Quartier','Rue','Maison','Menage','nom','Prenom','Commentaire','Age','Annee','Lieu','Profession');
