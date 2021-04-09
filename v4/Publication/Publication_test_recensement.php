@@ -530,7 +530,7 @@ WHERE
    ORDER BY 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
 
   $a_liste_recherches = $pconnexionBD->sql_select_liste($sqltmp);
-  $a_liste_recherches = $a_liste_recherches ('p.idf_acte','p.idf','R','Commune','Annee_Recensement','Sigle','Page','Quartier','Rue','Maison','Menage','nom','Prenom','Commentaire','Age','Annee','Lieu','Profession');
+  //$a_liste_recherches = $a_liste_recherches ('p.idf_acte','p.idf','R','Commune','Annee_Recensement','Sigle','Page','Quartier','Rue','Maison','Menage','nom','Prenom','Commentaire','Age','Annee','Lieu','Profession');
   $nom_commune=$a_liste_recherches[3] ;
   print "<br>".$nom_commune."<br>";
   print_r($a_liste_recherches);// affichage résultat de la requ�te
