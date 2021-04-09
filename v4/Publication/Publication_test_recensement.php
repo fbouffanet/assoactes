@@ -532,17 +532,6 @@ WHERE
   $a_liste_recherches = $pconnexionBD->sql_select_liste($sqltmp);
   $a_liste_recherches = $a_liste_recherches ('p.idf_acte','p.idf','R','Commune','Annee_Recensement','Sigle','Page','Quartier','Rue','Maison','Menage','nom','Prenom','Commentaire','Age','Annee','Lieu','Profession');
   $nom_commune=$a_liste_recherches[3] ;
-<<<<<<< HEAD
-      foreach ($a_liste_recherches as $a_ligne) 
-      fwrite($pf, $a_ligne);
-      fwrite($pf, "\r\n");
-      
-    
-  
-  
-  
-
-=======
   print "<br>".$nom_commune."<br>";
   print_r($a_liste_recherches);// affichage résultat de la requ�te
   if (count($a_liste_recherches) > 0) {
@@ -558,7 +547,6 @@ WHERE
       fwrite($pf, "\r\n");
     }
   } 
->>>>>>> parent of b98fae2b7 (Update Publication_test_recensement.php)
   //$st_nom_commune = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf='$pi_idf_commune_acte'");
   $nom_commune1 = utf8_encode($nom_commune);
   print "Publication des recensements de la commune <b> $nom_commune1</b> <br>";
