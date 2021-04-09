@@ -443,7 +443,7 @@ function export_div_nimv3($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $
 function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
 {
   print('<div class="alert alert-success">');
-  print "fonction export_recensement";
+  print "fonction export_recensement <br>";
   print "pi_idf_source = " . $pi_idf_source . "<br>";
   print "pi_idf_commune_acte = " . $pi_idf_commune_acte . "<br>";
   print "pc_idf_type_acte = " . $pc_idf_type_acte . "<br>";
@@ -458,7 +458,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   print "<br></br>";
   print('</div>');
   
-  $nom_commune = $pconnexionBD->sql_select("select nom from commune_acte where idf='$pi_idf_commune_acte'");
+  $nom_commune = $pconnexionBD->sql_select1("select nom from commune_acte where idf='$pi_idf_commune_acte'");
   print "nom_commun =";
   print $nom_commun;
   print "<br></br>";
