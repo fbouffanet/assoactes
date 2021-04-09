@@ -544,7 +544,7 @@ $a_liste_recherches = $pconnexionBD->sql_select_multiple($sqltmp);
       print "aprés foreach";
       print_r ($a_ligne) ;
       print('<br></div>');
-      fwrite($pf, array($a_ligne));
+      fwrite($pf, array($a_ligne)."\r\n");
       //fwrite($pf, "\r\n");
     }
     fclose($fp);
