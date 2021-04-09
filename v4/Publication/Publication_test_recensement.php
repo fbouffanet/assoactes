@@ -547,6 +547,7 @@ $a_liste_recherches = $pconnexionBD->sql_select_multiple($sqltmp);
       fwrite($pf, $a_ligne);
       fwrite($pf, "\r\n");
     }
+    fclose($fp);
   } 
 
   //$st_nom_commune = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf='$pi_idf_commune_acte'");
