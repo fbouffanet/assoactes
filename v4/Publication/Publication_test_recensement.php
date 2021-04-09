@@ -457,12 +457,12 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   print_r ($pf);
   print "<br></br>";
   print('</div>');
-  
-  $nom_commune = $pconnexionBD->sql_select1("select nom from commune_acte where idf='$pi_idf_commune_acte'");
+  /*
+  $nom_commune[0] = $pconnexionBD->sql_select1("select nom from commune_acte where idf='$pi_idf_commune_acte'");
   print "nom_commun =";
   print $nom_commun;
   print "<br></br>";
-  
+  */
    $sqltmp  = "SELECT
    p.idf_acte,
    p.idf,
@@ -539,10 +539,12 @@ WHERE
   print $sqltmp; // affichage de la requ�te
   print('</div>'); // affichage de la requ�te 
   $a_liste_recherches = $pconnexionBD->sql_select_liste($sqltmp);
+  $nom_commune=$a_liste_recherches[3] ;
+  print "<br>".$nom_commune."<br>";
   print_r($a_liste_recherches);// affichage résultat de la requ�te
   if (count($a_liste_recherches) > 0) {
-    
-    print count($a_liste_recherches);
+    $nbr=count($a_liste_recherches);
+    print "count($a_liste_recherches)".$nbr."<br>";
     print('<br></div>');
     foreach ($a_liste_recherches as $a_ligne) {
       print('<div class="alert alert-info">');
