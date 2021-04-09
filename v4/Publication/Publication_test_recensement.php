@@ -457,7 +457,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   print_r ($pf);
   print "<br></br>";
   print('</div>');
-  
+  $file="/var/www/clients/client1/web3/web/v4/Publication/telechargements/ExportNimV3.csv";
    $sqltmp  = "SELECT
    p.idf_acte,
    p.idf,
@@ -545,10 +545,10 @@ $a_liste_recherches = $pconnexionBD->sql_select_multiple($sqltmp);
       print_r ($a_ligne) ;
       print('<br></div>');
       //fwrite($pf, array($a_ligne)."\r\n");
-      fputcsv($fp,$a_ligne,";");
+      fputcsv($file,$a_ligne,";");
       //fwrite($pf, "\r\n");
     }
-    fclose($fp);
+    fclose($file);
   } 
 
   //$st_nom_commune = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf='$pi_idf_commune_acte'");
