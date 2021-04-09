@@ -541,12 +541,12 @@ $a_liste_recherches = $pconnexionBD->sql_select_multiple($sqltmp);
     print('<br></div>');
     foreach ($a_liste_recherches as $a_ligne) {
       //print('<div class="alert alert-info">');
-      //print "aprés foreach";
+      //print "aprés foreach ";
       //print_r ($a_ligne) ;
       //print('<br></div>');
-      //fwrite($pf, array($a_ligne). "\r\n");
+      fwrite($pf, array($a_ligne));
       //fwrite($pf, "\r\n");
-      fputcsv($fp, $a_ligne, ';');
+      //fputcsv($fp, $a_ligne,';');
     }
     fclose($fp);
   } 
