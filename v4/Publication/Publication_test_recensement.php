@@ -555,9 +555,9 @@ WHERE
       fwrite($pf, "\r\n");
     }
   } 
-  $st_nom_commune = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf='$pi_idf_commune_acte'");
-  $st_nom_commune1 = utf8_encode($st_nom_commune);
-  print "Publication des recensements de la commune <b> $st_nom_commune1</b> <br>";
+  //$st_nom_commune = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf='$pi_idf_commune_acte'");
+  $nom_commune1 = utf8_encode($nom_commune);
+  print "Publication des recensements de la commune <b> $nom_commune1</b> <br>";
 }
 //==========================================================
 
