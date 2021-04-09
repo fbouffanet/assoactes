@@ -534,9 +534,9 @@ WHERE
   $nom_commune=$a_liste_recherches[3] ;
   print "<br>".$nom_commune."<br>";
   print_r($a_liste_recherches);// affichage résultat de la requ�te
-  if (count($a_liste_recherches) > 0) {
+  if (count($a_liste_recherches) > '0') {
     $nbr=count($a_liste_recherches);
-    print "count($a_liste_recherches)".$nbr."<br>";
+    print "nombre de ligne".$nbr."<br>";
     print('<br></div>');
     foreach ($a_liste_recherches as $a_ligne) {
       print('<div class="alert alert-info">');
