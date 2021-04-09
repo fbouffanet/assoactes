@@ -544,13 +544,14 @@ WHERE
     print('<br></div>');
     foreach ($a_liste_recherches as $a_ligne) {
       print('<div class="alert alert-info">');
-      print "aprés foreach";
-      print_r ($a_ligne) ;
+      //print "aprés foreach";
+      //print_r ($a_ligne) ;
       print('<br></div>');
       fwrite($pf, $a_ligne);
       fwrite($pf, "\r\n");
     }
   } 
+  
   //$st_nom_commune = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf='$pi_idf_commune_acte'");
   $nom_commune1 = utf8_encode($nom_commune);
   print "Publication des recensements de la commune <b> $nom_commune1</b> <br>";
