@@ -545,7 +545,7 @@ $a_liste_recherches = $pconnexionBD->sql_select_multiple($sqltmp);
       print_r ($a_ligne) ;
       print('<br></div>');
       //fwrite($pf, array($a_ligne)."\r\n");
-      fputcsv($file,$a_ligne,";");
+      fputcsv($st_export_nimv3,$a_ligne,";");
       //fwrite($pf, "\r\n");
     }
     fclose($file);
