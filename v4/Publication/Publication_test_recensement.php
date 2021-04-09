@@ -457,18 +457,14 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   print_r ($pf);
   print "<br></br>";
   print('</div>');
-  /*
-  $nom_commune[0] = $pconnexionBD->sql_select1("select nom from commune_acte where idf='$pi_idf_commune_acte'");
-  print "nom_commun =";
-  print $nom_commun;
-  print "<br></br>";
-  */
+  
    $sqltmp  = "SELECT
    p.idf_acte,
    p.idf,
    'R' AS Sigle,
    f.nom AS Commune,
    a.annee AS Annee_Recensement,
+   'R' AS Sigle,
    CAST(
        SUBSTRING(
            a.commentaires,
