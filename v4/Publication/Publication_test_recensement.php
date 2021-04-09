@@ -531,20 +531,12 @@ WHERE
 
   $a_liste_recherches = $pconnexionBD->sql_select_liste($sqltmp);
   $nom_commune=$a_liste_recherches[3] ;
-  if (count($a_liste_recherches) < 0) 
-  {
-    print("<div class=\"alert alert-danger\">");
-		print("Pas de données");
-		print("</div>");
-	}
-	else
-	{
-      foreach ($a_liste_recherches as $a_ligne) {
+      foreach ($a_liste_recherches as $a_ligne) 
       fwrite($pf, $a_ligne);
       fwrite($pf, "\r\n");
       
-    }
-  } 
+    
+  
   
   
 
