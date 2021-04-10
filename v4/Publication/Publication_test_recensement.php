@@ -465,11 +465,11 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    f.nom AS Commune,
    a.annee AS Annee_Recensement,
    'R' AS Sigle,
-  TRIM(a.commentaires),
+   a.commentaires,
    CAST(
        SUBSTRING(
            a.commentaires,
-           INSTR(a.commentaires, 'de page:') +12,
+           INSTR(a.commentaires, 'de page:') +8,
            3
        ) AS INT
    ) AS Page,
@@ -487,14 +487,14 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
        SUBSTRING(
            a.commentaires,
            INSTR(a.commentaires, 'maison:') +7,
-           5
+           3
        ) AS INT
    ) AS Maison,
    CAST(
        SUBSTRING(
            a.commentaires,
            INSTR(a.commentaires, 'ménage:') +7,
-           5
+           3
        ) AS INT
    ) AS Menage,
    p.patronyme AS Nom,
