@@ -465,14 +465,13 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    f.nom AS Commune,
    a.annee AS Annee_Recensement,
    'R' AS Sigle,
-   a.commentaires,
    CAST(
        SUBSTRING(
            a.commentaires,
            INSTR(a.commentaires, 'de page:') +8,
            3
        ) AS INT
-   ) AS Page,
+   ) AS NPage,
    SUBSTRING(
        a.commentaires,
        INSTR(a.commentaires, 'Quartier')+9,
@@ -528,7 +527,7 @@ ON
    (a.idf_commune = f.idf)
 WHERE
    a.idf_commune= '$pi_idf_commune_acte' AND a.idf_source='$pi_idf_source' AND a.idf_type_acte= '$pc_idf_type_acte'  
-   ORDER BY 'Annee_Recensement' ASC, 'Page' ASC, 'Maison' ASC, 'Menage' ASC";
+   ORDER BY 'Annee_Recensement' ASC, 'NPage' ASC, 'Maison' ASC, 'Menage' ASC";
 
 $a_liste_recherches1 = $pconnexionBD->sql_select_liste($sqltmp);
 print $sqltmp;
