@@ -491,8 +491,8 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    ) AS Maison,
     SUBSTRING(
            a.commentaires,
-           INSTR(a.commentaires, 'ménage:') +7,
-           4
+           INSTR(a.commentaires, 'ménage:') +6,
+           3
    ) AS Menage,
    p.patronyme AS Nom,
    IFNULL(prenom.libelle, '') AS Prenom,
