@@ -475,7 +475,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    TRIM(SUBSTRING(
        a.commentaires,
        INSTR(a.commentaires, 'Quartier:')+9,
-       INSTR(a.commentaires, 'maison:') -37
+       INSTR(a.commentaires, 'maison:') -38
    )) AS Quartier,
    TRIM(SUBSTRING(
        a.commentaires,
