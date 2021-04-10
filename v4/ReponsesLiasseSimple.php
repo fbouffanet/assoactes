@@ -13,6 +13,7 @@ require_once('Commun/VerificationDroits.php');
 print('<!DOCTYPE html>');
 print("<Head>\n");
 print('<meta http-equiv="content-language" content="fr">');
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<link rel="shortcut icon" href="images/favicon.ico">');
 print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
