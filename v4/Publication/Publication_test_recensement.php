@@ -475,12 +475,12 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    TRIM('\n' FROM SUBSTRING(
        a.commentaires,
        INSTR(a.commentaires, 'Quartier')+8,
-       10
+       (LOCATE(a.commentaires,Char(13)))
    )) AS Quartier,
    TRIM('\n' FROM SUBSTRING(
        a.commentaires,
        INSTR(a.commentaires, 'Nom de la Rue:') +14,
-       10
+       LOCATE(a.commentaires,CHAR(13))
    )) AS Rue,
    CAST(
        SUBSTRING(
