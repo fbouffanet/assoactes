@@ -465,7 +465,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    f.nom AS Commune,
    a.annee AS Annee_Recensement,
    'R' AS Sigle,
-   CAST(TRIM('\n' FROM 
+   CAST(
        SUBSTRING(
            a.commentaires,
            INSTR(a.commentaires, 'de page:') +12,
@@ -482,7 +482,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
        INSTR(a.commentaires, 'Nom de la Rue:') +14,
        10
    )) AS Rue,
-   CAST(TRIM('\n' FROM 
+   CAST(
        SUBSTRING(
            a.commentaires,
            INSTR(a.commentaires, 'maison:') +10,
