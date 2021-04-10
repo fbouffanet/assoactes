@@ -480,7 +480,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    TRIM(SUBSTRING(
        a.commentaires,
        INSTR(a.commentaires, 'Nom de la Rue:') +15,
-       INSTR(a.commentaires, 'Quartier:')-16
+       INSTR(a.commentaires, 'Quartier:')-17
    )) AS Rue,
    CAST(
        SUBSTRING(
