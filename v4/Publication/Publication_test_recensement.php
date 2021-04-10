@@ -465,6 +465,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    f.nom AS Commune,
    a.annee AS Annee_Recensement,
    'R' AS Sigle,
+   a.commentaires,
    CAST(
        SUBSTRING(
            a.commentaires,
@@ -475,7 +476,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    TRIM('\n' FROM SUBSTRING(
        a.commentaires,
        INSTR(a.commentaires, 'Quartier')+9,
-       10
+       INSTR(a.commentaires, 'N\°')
    )) AS Quartier,
    TRIM('\n' FROM SUBSTRING(
        a.commentaires,
