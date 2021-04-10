@@ -489,12 +489,10 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
            4
        ) AS INT
    ) AS Maison,
-   CAST(
-       SUBSTRING(
+    SUBSTRING(
            a.commentaires,
            INSTR(a.commentaires, 'ménage:') +7,
            4
-       ) AS INT
    ) AS Menage,
    p.patronyme AS Nom,
    IFNULL(prenom.libelle, '') AS Prenom,
