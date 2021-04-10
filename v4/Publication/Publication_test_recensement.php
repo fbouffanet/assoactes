@@ -465,7 +465,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    f.nom AS Commune,
    a.annee AS Annee_Recensement,
    'R' AS Sigle,
-   REPLACE(a.commentaires,char(13),';'),
+   REPLACE(a.commentaires,'\r',';'),
    CAST(
        SUBSTRING(
            a.commentaires,
