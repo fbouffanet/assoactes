@@ -472,7 +472,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
            3
        ) AS INT
    ) AS Page,
-   TRIM(SUBSTRING(
+   TRIM('\n',SUBSTRING(
        a.commentaires,
        INSTR(a.commentaires, 'Quartier') +9,
        10
