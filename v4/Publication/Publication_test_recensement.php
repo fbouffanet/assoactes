@@ -467,34 +467,41 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    'R' AS Sigle,
    a.annee AS Annee_Recensement,
    CAST(
-       SUBSTRING(
-           a.commentaires,
-           INSTR(a.commentaires, 'de page:') +8,
-           3
-       ) AS INT
-   ) AS NPage,
-   TRIM(SUBSTRING(
-       a.commentaires,
-       INSTR(a.commentaires, 'Quartier:')+9,
-       INSTR(a.commentaires, 'maison:') -38
-   )) AS Quartier,
-   TRIM(SUBSTRING(
-       a.commentaires,
-       INSTR(a.commentaires, 'Nom de la Rue:') +15,
-       INSTR(a.commentaires, 'Quartier:')-17
-   )) AS Rue,
-   CAST(
-       SUBSTRING(
-           a.commentaires,
-           INSTR(a.commentaires, 'maison:') +7,
-           4
-       ) AS INT
-   ) AS Maison,
-    SUBSTRING(
-           a.commentaires,
-           INSTR(a.commentaires, 'ménage:') +6,
-           3
-   ) AS Menage,
+     SUBSTRING(
+               REPLACE(`a.commentaires`,char(10),' '),
+               (INSTR(REPLACE(`a.commentaires`,char(10),' '), 'de page:')+8),
+		       (LENGTH(REPLACE(`a.commentaires`,char(10),' ')))-(INSTR(REPLACE(`a.commentaires`,char(10),' '), 'de page:')+6)
+              ) AS INT
+    ) AS NPage,
+
+SUBSTRING(
+          REPLACE(`a.commentaires`,char(10),' '),
+               (INSTR(REPLACE(`a.commentaires`,char(10),' ') , 'Quartier:') +9),
+               (INSTR(REPLACE(`a.commentaires`,char(10),' ') , 'maison:')-4)-(INSTR(REPLACE(`a.commentaires`,char(10),' '), 'Quartier:')+9)
+         ) AS Quartier,
+
+SUBSTRING(
+          REPLACE(`a.commentaires`,char(10),' '),
+               INSTR(REPLACE(`a.commentaires`,char(10),' ') , 'Nom de la Rue:') +15,
+              (INSTR(REPLACE(`a.commentaires`,char(10),' ') , 'Quartier:'))-(INSTR(REPLACE(`a.commentaires`,char(10),' '), 'Nom de la Rue:')+14)
+         ) AS Rue,
+
+CAST(
+     SUBSTRING(
+			  REPLACE(`a.commentaires`,char(10),' '),
+              (INSTR(REPLACE(`a.commentaires`,char(10),' '), 'maison:')+7),
+              (INSTR(REPLACE(`a.commentaires`,char(10),' '), 'ménage:'))- (INSTR(REPLACE(`a.commentaires`,char(10),' '), 'maison:')+7)
+         ) AS INT
+        ) AS Maison,
+
+
+    CAST(
+         SUBSTRING(
+		 REPLACE(`a.commentaires`,char(10),' '),
+         (INSTR(REPLACE(`a.commentaires`,char(10),' '), 'ménage:')+7),
+         (INSTR(REPLACE(`a.commentaires`,char(10),' '), 'de page:'))- (INSTR(REPLACE(`a.commentaires`,char(10),' '), 'ménage:')+7)
+         ) AS INT
+        ) AS Menage,
    p.patronyme AS Nom,
    IFNULL(prenom.libelle, '') AS Prenom,
    IFNULL(p.commentaires, '') AS Commentaires,
