@@ -463,7 +463,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    p.idf_commune_acte AS Num_Commune,
    f.nom AS Commune,
    'codeDep',
-   'Dep'
+   'Dep',
    'R' AS Sigle,
    a.annee AS Annee_Recensement,
    CAST(
