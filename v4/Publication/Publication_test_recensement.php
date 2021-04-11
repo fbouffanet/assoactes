@@ -460,55 +460,162 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   $file="/var/www/clients/client1/web3/web/v4/Publication/telechargements/ExportNimV3.csv";
    $sqltmp  = "SELECT
    'NIMEGUEV3',
-   p.idf_commune_acte AS Num_Commune,
+   f.code_insee AS Num_Commune,
    f.nom AS Commune,
    'codeDep',
    'Dep',
    'R' AS Sigle,
    a.annee AS Annee_Recensement,
    CAST(
-     SUBSTRING(
-               REPLACE(`a.commentaires`,char(10),' '),
-               (INSTR(REPLACE(`a.commentaires`,char(10),' '), 'de page:')+8),
-		       (LENGTH(REPLACE(`a.commentaires`,char(10),' ')))-(INSTR(REPLACE(`a.commentaires`,char(10),' '), 'de page:')+6)
-              ) AS INT
-    ) AS NPage,
-
+       SUBSTRING(
+       REPLACE
+           (a.commentaires, CHAR(10),
+           ' '),
+           (
+               INSTR(
+               REPLACE
+                   (a.commentaires, CHAR(10),
+                   ' '),
+                   'de page:'
+           ) +8
+           ),
+           (
+               LENGTH(
+               REPLACE
+                   (a.commentaires, CHAR(10),
+                   ' ')
+           )
+           ) -(
+               INSTR(
+               REPLACE
+                   (a.commentaires, CHAR(10),
+                   ' '),
+                   'de page:'
+           ) +6
+           )
+   ) AS INT
+   ) AS NPage,
+   SUBSTRING(
+   REPLACE
+       (a.commentaires, CHAR(10),
+       ' '),
+       (
+           INSTR(
+           REPLACE
+               (a.commentaires, CHAR(10),
+               ' '),
+               'Quartier:'
+       ) +9
+       ),
+       (
+           INSTR(
+           REPLACE
+               (a.commentaires, CHAR(10),
+               ' '),
+               'maison:'
+       ) -4
+       ) -(
+           INSTR(
+           REPLACE
+               (a.commentaires, CHAR(10),
+               ' '),
+               'Quartier:'
+       ) +9
+       )
+) AS Quartier,
 SUBSTRING(
-          REPLACE(`a.commentaires`,char(10),' '),
-               (INSTR(REPLACE(`a.commentaires`,char(10),' ') , 'Quartier:') +9),
-               (INSTR(REPLACE(`a.commentaires`,char(10),' ') , 'maison:')-4)-(INSTR(REPLACE(`a.commentaires`,char(10),' '), 'Quartier:')+9)
-         ) AS Quartier,
-
-SUBSTRING(
-          REPLACE(`a.commentaires`,char(10),' '),
-               INSTR(REPLACE(`a.commentaires`,char(10),' ') , 'Nom de la Rue:') +15,
-              (INSTR(REPLACE(`a.commentaires`,char(10),' ') , 'Quartier:'))-(INSTR(REPLACE(`a.commentaires`,char(10),' '), 'Nom de la Rue:')+14)
-         ) AS Rue,
-
+REPLACE
+   (a.commentaires, CHAR(10),
+   ' '),
+   INSTR(
+   REPLACE
+       (a.commentaires, CHAR(10),
+       ' '),
+       'Nom de la Rue:'
+) +15,
+(
+   INSTR(
+   REPLACE
+       (a.commentaires, CHAR(10),
+       ' '),
+       'Quartier:'
+)
+) -(
+   INSTR(
+   REPLACE
+       (a.commentaires, CHAR(10),
+       ' '),
+       'Nom de la Rue:'
+) +14
+)
+) AS Rue,
 CAST(
-     SUBSTRING(
-			  REPLACE(`a.commentaires`,char(10),' '),
-              (INSTR(REPLACE(`a.commentaires`,char(10),' '), 'maison:')+7),
-              (INSTR(REPLACE(`a.commentaires`,char(10),' '), 'ménage:'))- (INSTR(REPLACE(`a.commentaires`,char(10),' '), 'maison:')+7)
-         ) AS INT
-        ) AS Maison,
-
-
-    CAST(
-         SUBSTRING(
-		 REPLACE(`a.commentaires`,char(10),' '),
-         (INSTR(REPLACE(`a.commentaires`,char(10),' '), 'ménage:')+7),
-         (INSTR(REPLACE(`a.commentaires`,char(10),' '), 'de page:'))- (INSTR(REPLACE(`a.commentaires`,char(10),' '), 'ménage:')+7)
-         ) AS INT
-        ) AS Menage,
-   p.patronyme AS Nom,
-   IFNULL(prenom.libelle, '') AS Prenom,
-   IFNULL(p.commentaires, '') AS Commentaires,
-   IFNULL(p.age, '') AS Age,
-   RIGHT(p.date_naissance, 4) AS Annee,
-   c.nom AS Lieu,
-   d.nom AS Profession
+   SUBSTRING(
+   REPLACE
+       (a.commentaires, CHAR(10),
+       ' '),
+       (
+           INSTR(
+           REPLACE
+               (a.commentaires, CHAR(10),
+               ' '),
+               'maison:'
+       ) +7
+       ),
+       (
+           INSTR(
+           REPLACE
+               (a.commentaires, CHAR(10),
+               ' '),
+               'ménage:'
+       )
+       ) -(
+           INSTR(
+           REPLACE
+               (a.commentaires, CHAR(10),
+               ' '),
+               'maison:'
+       ) +7
+       )
+) AS INT
+) AS Maison,
+CAST(
+   SUBSTRING(
+   REPLACE
+       (a.commentaires, CHAR(10),
+       ' '),
+       (
+           INSTR(
+           REPLACE
+               (a.commentaires, CHAR(10),
+               ' '),
+               'ménage:'
+       ) +7
+       ),
+       (
+           INSTR(
+           REPLACE
+               (a.commentaires, CHAR(10),
+               ' '),
+               'de page:'
+       )
+       ) -(
+           INSTR(
+           REPLACE
+               (a.commentaires, CHAR(10),
+               ' '),
+               'ménage:'
+       ) +7
+       )
+) AS INT
+) AS Menage,
+p.patronyme AS Nom,
+IFNULL(prenom.libelle, '') AS Prenom,
+IFNULL(p.commentaires, '') AS Commentaires,
+IFNULL(p.age, '') AS Age,
+RIGHT(p.date_naissance, 4) AS Annee,
+c.nom AS Lieu,
+d.nom AS Profession
 FROM
    personne p
 LEFT JOIN
@@ -532,8 +639,12 @@ JOIN
 ON
    (a.idf_commune = f.idf)
 WHERE
-   a.idf_commune= '$pi_idf_commune_acte' AND a.idf_source='$pi_idf_source' AND a.idf_type_acte= '$pc_idf_type_acte'  
-   ORDER BY 'Annee_Recensement' ASC, 'NPage' ASC, 'Maison' ASC, 'Menage' ASC";
+   a.idf_commune = '208' AND a.idf_source = '1' AND a.idf_type_acte = '147'
+ORDER BY
+   'Annee_Recensement' ASC,
+   'NPage' ASC,
+   'Maison' ASC,
+   'Menage' ASC";
 
 print $sqltmp;
 $a_liste_recherches1 = $pconnexionBD->sql_select_liste($sqltmp);
