@@ -459,12 +459,13 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
   print('</div>');
   $file="/var/www/clients/client1/web3/web/v4/Publication/telechargements/ExportNimV3.csv";
    $sqltmp  = "SELECT
-   p.idf_acte,
-   p.idf,
-   'R' AS Sigle,
+   'NIMEGUEV3',
+   p.idf_commune_acte AS Num_Commune,
    f.nom AS Commune,
-   a.annee AS Annee_Recensement,
+   'codeDep',
+   'Dep'
    'R' AS Sigle,
+   a.annee AS Annee_Recensement,
    CAST(
        SUBSTRING(
            a.commentaires,
