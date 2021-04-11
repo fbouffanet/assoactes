@@ -52,5 +52,21 @@ where a.idf_commune=208 and a.idf_source=1 and a.idf_type_acte=147 order by p.id
 
 
 
+select commentaires, 
+REPLACE(`commentaires`,char(10),';') ,
 
+SUBSTRING(
+       REPLACE(`commentaires`,char(10),';'),
+       INSTR(REPLACE(`commentaires`,char(10),';') , 'Nom de la Rue:') +15,
+       (INSTR(REPLACE(`commentaires`,char(10),';') , 'Quartier:'))-(INSTR(REPLACE(`commentaires`,char(10),';') , 'Nom de la Rue:') +14)
+   ) AS Rue,
+
+SUBSTRING(
+       REPLACE(`commentaires`,char(10),';'),
+       INSTR(REPLACE(`commentaires`,char(10),';') , 'Quartier:') +9,
+       (INSTR(REPLACE(`commentaires`,char(10),';') , 'maison:')-4)-(INSTR(REPLACE(`commentaires`,char(10),';') , 'Quartier:') +9)
+   ) AS Quartier
+
+
+from acte where idf_commune= '208' and idf_source='1'and idf_type_acte='147'
 
