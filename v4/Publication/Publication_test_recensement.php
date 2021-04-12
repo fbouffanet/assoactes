@@ -496,7 +496,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
 
   (INSTR(REPLACE(a.commentaires,CHAR(10),' '),'maison:')+8) as M1,
   (INSTR(REPLACE(a.commentaires,CHAR(10),' '),'nage:')-4) as M2,
-	(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'nage:')-4)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'maison:')+8) as S1
+	(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'nage:')-4)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'maison:')+8) as S1,
 	
   SUBSTRING(
 			REPLACE(a.commentaires,CHAR(10),' '),
