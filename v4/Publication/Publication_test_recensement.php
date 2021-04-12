@@ -484,7 +484,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
 	SUBSTRING(
 		REPLACE	(a.commentaires, CHAR(10),' '),
 				(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'Nom de la Rue:')+15),
-				(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'Quartier:')-5)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'Nom de la Rue:')+14)
+				(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'Quartier:')-1)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'Nom de la Rue:')+14)
 			 ) AS Rue,
 	
 	CAST(SUBSTRING(
