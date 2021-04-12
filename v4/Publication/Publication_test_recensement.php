@@ -664,15 +664,10 @@ switch ($gst_mode) {
         $row = $connexionBD->sql_select_liste($sqltmp);
         $date_deb = $row[0];
         $date_fin = $row[1];
-        print "sqltmp : " . $sqltmp . "<br>";
-        print "date_deb : " . $date_deb . "<br>";
-        print "date_fin : " . $date_fin . "<br>";
 
         // rajout test si date ? 0
         if ($date_deb < 1500) {
           $sqltmp = "select annee from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte order by  annee";
-          print "case IDF_RECENS :" . $sqltmp . "";
-          print "</br>";
           while ($row = $connexionBD->sql_select($sqltmp)) {
             if ($row[0] > 1500) {
               $date_deb = $row[0];
@@ -739,23 +734,17 @@ switch ($gst_mode) {
         JOIN commune_acte f ON (a.idf_commune = f.idf)
   WHERE
       a.idf_commune= '$gi_idf_commune_acte' AND a.idf_source='$gi_idf_source' AND a.idf_type_acte= '$gc_idf_type_acte'";
-      //============================================================================//
-      
-            print "ligne 711<br>";
-           //print $sqltmp ;
-           print "<br></br>";
-        if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
+     
+     //============================================================================//
+              if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
         if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
         $sqltmp = $sqltmp . " ORDER BY
         'Annee_Recensement' ASC,
         'NPage' ASC,
         'Maison' ASC,
         'Menage' ASC";
-        //$sqltmp= "select * from acte";  // requete de test
-        print "requete ligne 715 <br></br> ".$sqltmp."<br>"; 
-        $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
-        print "<br>ligne break 718 <br>";
-        break;
+         $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
+         break;
 
         //=============================  RECENSEMENT FIN ===============================================
         
