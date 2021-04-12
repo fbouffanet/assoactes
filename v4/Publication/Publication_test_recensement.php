@@ -487,16 +487,17 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
 				(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'Quartier:')-1)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'Nom de la Rue:')+14)
 			 ) AS Rue,
 	
-	SUBSTRING(
-			      REPLACE(a.commentaires,CHAR(10),' '),
-					  (INSTR(REPLACE(a.commentaires,CHAR(10),' '),'maison:')+7),
-					  (INSTR(REPLACE(a.commentaires,CHAR(10),' '),'ménage:')-3)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'maison:')+7)
-			     ) AS Maison,
+	CAST(SUBSTRING(
+			 REPLACE(a.commentaires,CHAR(10),' '),
+					(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'maison:')+7),
+					(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'ménage:')-3)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'maison:')+7)
+				  )
+	AS INT)AS Maison,
 	
 	CAST(SUBSTRING(
 			REPLACE	(a.commentaires,CHAR(10),' '),
 					(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'ménage:')+7),
-					(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'de page:')-3)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'ménage:')+7)
+					(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'de page:')-4)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'ménage:')+7)
 				  ) 
 	AS INT) AS Menage,
 	
