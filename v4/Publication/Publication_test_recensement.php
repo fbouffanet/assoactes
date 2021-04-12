@@ -515,13 +515,12 @@ $a_liste_recherches = $pconnexionBD->sql_select_multiple($sqltmp);
       fwrite($pf, (implode(';', $a_ligne)));
       fwrite($pf, "\r\n");
     }
-    fclose($pf);
+    
   } 
-
-  //$st_nom_commune = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf='$pi_idf_commune_acte'");
   $nom_commune1 = utf8_encode($nom_commune);
   print "Publication des recensements de la commune <b> $nom_commune1</b> <br>";
 }
+
 //==========================================================
 
 /*------------------------------------------------------------------------------
