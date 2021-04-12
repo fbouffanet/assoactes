@@ -468,8 +468,6 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    'R' AS Sigle,
    a.annee AS Annee_Recensement,
 
-   REPLACE(a.commentaires,CHAR(10),'§') as commentaires,
-   
    CAST(SUBSTRING(
 			REPLACE(a.commentaires,CHAR(10),' '),
 				   (INSTR(REPLACE(a.commentaires,CHAR(10),' '),'de page:')+8),
