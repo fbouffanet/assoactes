@@ -495,7 +495,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
 	AS INT)AS Maison,
 	
 	SUBSTRING(
-			REPLACE	(a.commentaires,CHAR(10),' '),
+			REPLACE(a.commentaires,CHAR(10),' '),
 					(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'ménage:')+8),
 					(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'de page:')-4)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'ménage:')+8)
 				  ) AS Menage,
