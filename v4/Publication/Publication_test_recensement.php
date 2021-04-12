@@ -440,7 +440,7 @@ function export_div_nimv3($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $
   print "Publication des divers de la commune $st_nom_commune1<br> <br>";
 }
 //=========== Fonction EXPORT_RECENSEMENT ==== DEB =====================
-function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
+function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte,$sqltmp, $pa_liste_personnes, $pa_liste_actes, $pf)
 {
   $sqltmpbis  = "SELECT
    'NIMEGUEV3',
