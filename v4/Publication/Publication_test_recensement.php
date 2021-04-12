@@ -442,7 +442,7 @@ function export_div_nimv3($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $
 //=========== Fonction EXPORT_RECENSEMENT ==== DEB =====================
 function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
 {
-  $sqltmp  = "SELECT
+  $sqltmpbis  = "SELECT
    'NIMEGUEV3',
    f.code_insee AS Num_Commune,
    f.nom AS Commune,
