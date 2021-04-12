@@ -641,21 +641,15 @@ switch ($gst_mode) {
 
         //======================== RECENSEMENT DEB ============================================================
       case IDF_RECENS:
-        print "IDF_RECENS ligne 711 <br></br>";
-        print "gi_idf_commune_acte = " . $gi_idf_commune_acte . "<br>";
-        print "pi_idf_source = " . $gi_idf_source . "<br>";
-        print "pc_idf_type_acte = " . $gc_idf_type_acte . "<br>";
 
         // Rajout PL sur les dates **********************************************
         $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and   idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
-        print "sqltmp : " . $sqltmp . "<br>";
         if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
         if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
         $a_liste_actes = $connexionBD->sql_select_multiple_par_idf($sqltmp);
         // Nombre de lignes s?lect?es
         $results = $connexionBD->liste_valeur_par_clef($sqltmp);
         $nb_rows = count($results);
-        print " nombres de lignes : " . $nb_rows . "<br>";
         // pour r?cup?rer l'ann?e mini et maxi
         $sqltmp = "select min(annee) as annee_deb, max(annee) as annee_fin from acte where idf_commune=$gi_idf_commune_acte and idf_source=$gi_idf_source and  idf_type_acte=$gc_idf_type_acte";
         if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= $g_pl_date_debut";
