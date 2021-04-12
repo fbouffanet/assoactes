@@ -644,11 +644,6 @@ switch ($gst_mode) {
 
         //======================== RECENSEMENT DEB ============================================================
       case IDF_RECENS:
-        print "IDF_RECENS ligne 711 <br></br>";
-        print "gi_idf_commune_acte = " . $gi_idf_commune_acte . "<br>";
-        print "pi_idf_source = " . $gi_idf_source . "<br>";
-        print "pc_idf_type_acte = " . $gc_idf_type_acte . "<br>";
-
         // Rajout PL sur les dates **********************************************
         $sqltmp = "select idf,idf_commune,idf_type_acte,date, date_rep, cote,libre, commentaires from acte where idf_commune=$gi_idf_commune_acte and   idf_source=$gi_idf_source and idf_type_acte=$gc_idf_type_acte";
         if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
@@ -676,29 +671,65 @@ switch ($gst_mode) {
           }
         }
         // Rajout PL sur les dates ***********************************************************
-           $sqltmp="SELECT
-      p.idf_acte,
-      p.idf,
-      'R' AS Sigle,
-      f.nom AS Commune,
-      a.annee AS Annee_Recensement,
-      a.commentaires,
-      p.patronyme AS Nom,
-      IFNULL(prenom.libelle, '') AS Prenom,
-      IFNULL(p.commentaires, '') AS Commentaires,
-      IFNULL(p.age, '') AS Age,
-      RIGHT(p.date_naissance, 4) AS Annee,
-      c.nom AS Lieu,
-      d.nom AS Profession
-  FROM
-      personne p
-  LEFT JOIN prenom ON (p.idf_prenom = prenom.idf)
-  JOIN commune_personne c ON (p.idf_origine = c.idf)
-  JOIN profession d ON (p.idf_profession = d.idf)
-  JOIN acte a ON (p.idf_acte = a.idf)
-  JOIN commune_acte f ON (a.idf_commune = f.idf)
-  WHERE
+        $sqltmp  = "SELECT
+        'NIMEGUEV3',
+        f.code_insee AS Num_Commune,
+        f.nom AS Commune,
+        'codeDep',
+        'Dep',
+        'R' AS Sigle,
+        a.annee AS Annee_Recensement,
+     
+        CAST(SUBSTRING(
+           REPLACE(a.commentaires,CHAR(10),' '),
+                (INSTR(REPLACE(a.commentaires,CHAR(10),' '),'de page:')+8),
+                (LENGTH(REPLACE(a.commentaires,CHAR(10),' ')))-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'de page:')+6)
+              ) 
+       AS INT)AS NPage,
+        
+       SUBSTRING(
+         REPLACE	(a.commentaires, CHAR(10),' '),
+             (INSTR(REPLACE(a.commentaires,CHAR(10),' '),'Quartier:')+9),
+             (INSTR(REPLACE(a.commentaires,CHAR(10),' '),'maison:')-4)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'Quartier:')+9)
+           ) AS Quartier,
+     
+       SUBSTRING(
+         REPLACE	(a.commentaires, CHAR(10),' '),
+             (INSTR(REPLACE(a.commentaires,CHAR(10),' '),'Nom de la Rue:')+15),
+             (INSTR(REPLACE(a.commentaires,CHAR(10),' '),'Quartier:')-1)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'Nom de la Rue:')+14)
+            ) AS Rue,
+       
+       CAST(SUBSTRING(
+            REPLACE(a.commentaires,CHAR(10),' '),
+               (INSTR(REPLACE(a.commentaires,CHAR(10),' '),'maison:')+8),
+               (INSTR(REPLACE(a.commentaires,CHAR(10),' '),'nage:')-6)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'maison:')+8)
+               )
+       AS INT)AS Maison,
+     
+       CAST(SUBSTRING(
+           REPLACE(a.commentaires,CHAR(10),' '),
+               (INSTR(REPLACE(a.commentaires,CHAR(10),' '),'nage:')+6),
+               (INSTR(REPLACE(a.commentaires,CHAR(10),' '),'de page:')-4)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'nage:')+6)
+               ) 
+         AS INT)AS Menage,
+       
+     p.patronyme AS Nom,
+     IFNULL(prenom.libelle, '') AS Prenom,
+     IFNULL(p.commentaires, '') AS Commentaires,
+     IFNULL(p.age, '') AS Age,
+     RIGHT(p.date_naissance, 4) AS Annee,
+     c.nom AS Lieu,
+     d.nom AS Profession
+     FROM
+        personne p
+     LEFT JOIN prenom ON (p.idf_prenom = prenom.idf)
+     JOIN commune_personne c ON (p.idf_origine = c.idf)
+     JOIN profession d ON (p.idf_profession = d.idf)
+     JOIN acte a ON (p.idf_acte = a.idf)
+     JOIN commune_acte f ON (a.idf_commune = f.idf)
+     WHERE
       a.idf_commune= '$gi_idf_commune_acte' AND a.idf_source='$gi_idf_source' AND a.idf_type_acte= '$gc_idf_type_acte'";
+      
       //============================================================================//
         if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
         if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
