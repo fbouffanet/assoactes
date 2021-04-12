@@ -442,23 +442,6 @@ function export_div_nimv3($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $
 //=========== Fonction EXPORT_RECENSEMENT ==== DEB =====================
 function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
 {
-  print('<div class="alert alert-success">');
-  print "fonction export_recensement <br>";
-  print "pi_idf_source = " . $pi_idf_source . "<br>";
-  print "pi_idf_commune_acte = " . $pi_idf_commune_acte . "<br>";
-  print "pc_idf_type_acte = " . $pc_idf_type_acte . "<br>";
-  //print "pa_liste_personnes = ";
-  //print_r ($pa_liste_personnes);
-  //print "<br>";
-  //print "pa_liste_actes = ";
-  //print_r ($pa_liste_actes);
-  //print "<br>";
-  print "pf = ";
-  print_r ($pf);
-  print "<br></br>";
-  print('</div>');
-  $file="/var/www/clients/client1/web3/web/v4/Publication/telechargements/ExportNimV3.csv";
-  
   $sqltmp  = "SELECT
    'NIMEGUEV3',
    f.code_insee AS Num_Commune,
@@ -523,30 +506,16 @@ ORDER BY
    'Maison' ASC,
    'Menage' ASC";
 
-print $sqltmp;
 $a_liste_recherches1 = $pconnexionBD->sql_select_liste($sqltmp);
-
 $nom_commune=$a_liste_recherches1[3] ;
 $a_liste_recherches = $pconnexionBD->sql_select_multiple($sqltmp);
-  //$a_liste_recherches = $a_liste_recherches ('p.idf_acte','p.idf','R','Commune','Annee_Recensement','Sigle','Page','Quartier','Rue','Maison','Menage','nom','Prenom','Commentaire','Age','Annee','Lieu','Profession');
-   //print "<br>".$nom_commune."<br>";
-  //print_r($a_liste_recherches);// affichage résultat de la requ�te
+
   if (count($a_liste_recherches) > '0') {
-    $nbr=count($a_liste_recherches);
-    print "nombre de ligne".$nbr."<br>";
-    print('<br></div>');
     foreach ($a_liste_recherches as $a_ligne) {
-      print('<div class="alert alert-info">');
-      print "aprés foreach";
-      print_r ($a_ligne) ;
-      print('<br></div>');
       fwrite($pf, (implode(';', $a_ligne)));
       fwrite($pf, "\r\n");
     }
-    fclose($file);
   } 
-
-  //$st_nom_commune = $pconnexionBD->sql_select_liste("select code_insee, nom from commune_acte where idf='$pi_idf_commune_acte'");
   $nom_commune1 = utf8_encode($nom_commune);
   print "Publication des recensements de la commune <b> $nom_commune1</b> <br>";
 }
