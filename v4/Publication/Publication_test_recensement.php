@@ -490,14 +490,14 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
 	CAST(SUBSTRING(
 			 REPLACE(a.commentaires,CHAR(10),' '),
 					(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'maison:')+7),
-					(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'ménage:')-4)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'maison:')+7)
+					(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'ménage:')-4)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'maison:')+5)
 				  )
 	AS INT)AS Maison,
 	
 	CAST(SUBSTRING(
 			REPLACE	(a.commentaires,CHAR(10),' '),
-					(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'ménage:')+7),
-					(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'de page:')-4)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'ménage:')+6)
+					(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'ménage:')+8),
+					(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'de page:')-4)-(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'ménage:')+8)
 				  ) 
   AS INT)AS Menage,
 	
