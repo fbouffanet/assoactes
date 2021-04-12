@@ -494,8 +494,6 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
 				  )
 	AS INT)AS Maison,
 
-
-	
   CAST(SUBSTRING(
 			REPLACE(a.commentaires,CHAR(10),' '),
 					(INSTR(REPLACE(a.commentaires,CHAR(10),' '),'nage:')+6),
