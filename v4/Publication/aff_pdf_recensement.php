@@ -239,7 +239,7 @@ if ($type_actes_nimegue == "V")
 	case "R"://selection sur les divers
 		$titre = "Recensements";
 		$titreHP = $titre." de ".$commune;
-		//$sql= "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data10` ASC";/
+		echo ($titreHP);
 		break;
 
 }
