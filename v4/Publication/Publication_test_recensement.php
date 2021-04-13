@@ -849,7 +849,7 @@ switch ($gst_mode) {
       print('</form>');
 
       //------------------------------------
-      //print("<a href=\"aff_pdf.php\"><b>Exportation du PDF</a><br>");
+      print("<a href=\"aff_pdf.php\"><b>Exportation du PDF</a><br>");
     }
     print('<input type="hidden" name="mode" value="FORMULAIRE"/><br>');
     //print("<input type=submit value=\"Retour\"></div>");
