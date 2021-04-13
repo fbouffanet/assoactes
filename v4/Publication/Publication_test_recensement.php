@@ -823,7 +823,7 @@ switch ($gst_mode) {
         break;
       case IDF_RECENS:
         print "case IDF_RECENS: ligne 791 <br>";
-        export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $g_pl_date_debut, $g_pl_date_fin, $pf);
+        export_recensement($connexionBD, $gi_idf_source, $gi_idf_commune_acte, $gc_idf_type_acte, $g_pl_date_debut, $g_pl_date_fin, $pf);
         //export_recensement($connexionBD, $gi_idf_source, $gi_idf_commune_acte, $gc_idf_type_acte, $a_liste_personnes, $a_liste_actes, $pf);
         $menuDIV = "N";
         break;
