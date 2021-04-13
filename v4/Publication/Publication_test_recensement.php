@@ -440,7 +440,8 @@ function export_div_nimv3($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $
   print "Publication des divers de la commune $st_nom_commune1<br> <br>";
 }
 //=========== Fonction EXPORT_RECENSEMENT ==== DEB =====================
-function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
+//function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $pa_liste_personnes, $pa_liste_actes, $pf)
+function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte, $pc_idf_type_acte, $g_pl_date_debut, $g_pl_date_fin, $pf)
 {
   $sqltmp  = "SELECT
    'NIMEGUEV3',
@@ -499,12 +500,24 @@ JOIN profession d ON (p.idf_profession = d.idf)
 JOIN acte a ON (p.idf_acte = a.idf)
 JOIN commune_acte f ON (a.idf_commune = f.idf)
 WHERE
-   a.idf_commune = '$pi_idf_commune_acte' AND a.idf_source = '$pi_idf_source' AND a.idf_type_acte = '$pc_idf_type_acte'
+   a.idf_commune = '$pi_idf_commune_acte' AND a.idf_source = '$pi_idf_source' AND a.idf_type_acte = '$pc_idf_type_acte'";
+
+              if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
+              if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
+              $sqltmp = $sqltmp . " ORDER BY
+              'Annee_Recensement' ASC,
+              'NPage' ASC,
+              'Maison' ASC,
+              'Menage' ASC";
+
+
+/*
 ORDER BY
    'Annee_Recensement' ASC,
    'NPage' ASC,
    'Maison' ASC,
    'Menage' ASC";
+*/
 
 $a_liste_recherches1 = $pconnexionBD->sql_select_liste($sqltmp);
 $nom_commune=$a_liste_recherches1[2] ;
