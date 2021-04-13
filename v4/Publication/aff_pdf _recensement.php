@@ -200,7 +200,7 @@ $data=$connexionBD->ligne_suivante_resultat($req);
 $commune = $data[2];// nom de la commune
 $chaine = $data[1];// N� de la commune
 $titreN = substr ($chaine, strlen ($chaine) - 3);// N� de la commune
-$type_actes_nimegue = $data[5];// Type Acte (B,D,M,V)
+$type_actes_nimegue = $data[5];// Type Acte (B,D,M,V,R)
 $image = "./img/image".$data[5].".jpg";//Titre
 $image1 = "./img/image1".$data[5].".jpg";//Titre
 
@@ -239,6 +239,7 @@ if ($type_actes_nimegue == "V")
 	case "R"://selection sur les divers
 		$titre = "Recensements";
 		$titreHP = $titre." de ".$commune;
+		//$sql= "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data10` ASC";/
 		break;
 
 }
@@ -370,7 +371,6 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
 	$pdf->write(3,$l1);
   	$sep = "-------------------------------------------------------------------------------------------------------------------------------------------------\n";
   	$pdf->write(3,$sep);
-
   break;
 
 
@@ -430,64 +430,28 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
   	$sep = "-----------------------------------------------------------------------------------------------------------------------------------------------\n";
   	$pdf->write(3,$sep);
   break;
-
-  case "R":// $type_actes_nimegue = V
+//=================================================== RECENSEMENT DEB==========================================
+  case "R":// $type_actes_nimegue = R pour recensementt
     //affichage de chaque champ de la ligne en question
-    // info type Acte & Notaire
-	//if (empty($data[data9])) {$Notaire = "";} else {$Notaire = "               Notaire : ".$data[data9]." ";}  //$Notaire
-	//if (empty($data[data11])) {$Type_Acte  = "";} else {$Type_Acte  ="     Acte de : ".$data[data11]." ";}//$Type_Acte
-	//$pdf->Cell(80,3,$Notaire.'  '.$Type_Acte,0,1);
-	if (empty($data[9])) {$Notaire = "";} else {$Notaire = "               Notaire : ".$data[9]." ";}  //$Notaire
-	if (empty($data[8])) {$cote = "";} else {$cote = "               Cote : ".$data[8]." ";}  //$Cote
-	if (empty($data[11])) {$Type_Acte  = "";} else {$Type_Acte  ="     Acte de : ".$data[11]." ";}//$Type_Acte
-	$pdf->Cell(80,3,$Notaire.'  '.$cote.'   '.$Type_Acte,0,1);
 
-
-  // info Intervenant1
-	if (empty($data[15])) {$lieuorigine1 = "";} else {$lieuorigine1 = "Originaire de ".$data[15]." ";}  //$lieuorigine 
-	if ($data[16]!=''or empty($data[16])) {$datenaiss1 = "";} else {$datenaiss1 ="n� le : ".$data[16]." ";}//$datenaiss 
-	if (empty($data[17])) {$ages1 = "";} else {$ages1 ="Age : ".$data[17]." ans ";}//$ages 
-	$info1= $lieuorigine1.$datenaiss1.$ages1;//Lieu origine + date naiss + age
-	if (empty($data[19])) {$prof = "";} else {$prof = "Profession ".$data[19]." ";}  //Profession
-	if (empty($data[18])) {$commentaire1 = "";} else {$commentaire1 = " ".$data[18]." ";}  //commentaire1
-	$commentaireEpx = $prof.$commentaire;   
-	/*$l1 ="\n".$data[data12]."   ".$data[data13]."  ".$data[data11]."                 		Le ".$data[data6]." ".$data[data7]."";*/
-	$pdf->Cell(80,3,$data[12].'  '.$data[13],0,0,L);
-	$pdf->Cell(10,3,$data[6].'  '.$data[7],0,1);
+    $pdf->Cell(50,3,"Année : ".$data[6]." Quartier : ".$data[8]." Rue : ".$data[9]." N° de maison : " .$data[10]." N° Ménage : ",0,0,L);
+  	$pdf->Cell(20,3,$data[11]." ".$data[12]." ".$data[13]."Age : ".$data[14]." "."Année naissance :".$data[15]." Profession :".$data[16],0,0,L);
+	//
 	$l1='';
-	if (empty($info1)){} else {$l1= $l1."  - ".$info1."\n";}
-	if (empty($commentaireEpx)){} else {$l1= $l1."  - ".$commentaireEpx."\n";}  
-	if (empty($data[20])){} else {$l1= $l1."  - "."Ex �pouse : ".$data[20]." ".$data[21]." ".$data[22]."\n";}  
-	if (empty($data[23])){} else {$l1= $l1."  - "."P�re  : ".$data[23]." ".$data[24]." ".$data[25]." ".$data[26]."\n";}  
-	if (empty($data[27])){} else {$l1= $l1."  - "."M�re  : ".$data[27]." ".$data[28]." ".$data[29]." ".$data[30]."\n";} 
-	
-	//Info Intervenant2
-	if (empty($data[34])) {$lieuorigine2 = "";} else {$lieuorigine2 = "Originaire de ".$data[34]." ";}  //$lieuorigine
-	if ($data[35]!=''or empty($data[35])) {$datenaiss2 = "";} else {$datenaiss2 ="n�e le : ".$data[35]." ";}//$datenaiss 
-	if (empty($data[36])) {$ages2 = "";} else {$ages2 ="Age : ".$data[36]." ans ";}//$ages 
-	$info2= $lieuorigine2.$datenaiss2.$ages2;//Lieu origine + date naiss + age
-	if (empty($data[38])) {$prof2 = "";} else {$prof = "Profession ".$data[38]." ";}  //Profession
-	if (empty($data[37])) {$commentaire2 = "";} else {$commentaire2 = " ".$data[37]." ";}  //commentaire2
-	$commentaireEp = $prof2.$commentaire2;   
-	$l1 =$l1.$data[31]."   ".$data[32]."\n";
-	if (empty($info12)){} else {$l1= $l1."  - ".$info1."\n";}
-	if (empty($commentaireEp)){} else {$l1= $l1."  - ".$commentaireEp."\n";}  
-	if (empty($data[39])){} else {$l1= $l1."  - "."Ex �poux : ".$data[39]." ".$data[40]." ".$data[41]."\n";}  
-	if (empty($data[42])){} else {$l1= $l1."  - "."P�re  : ".$data[42]." ".$data[43]." ".$data[45]." ".$data[44]."\n";}  
-	if (empty($data[46])){} else {$l1= $l1."  - "."M�re  : ".$data[46]." ".$data[47]." ".$data[49]." ".$data[48]."\n";} 
-  	
-  	// T�moins
-  	if (empty($data[50])){} else {$l1= $l1."\n"."  - "."T�moin 1  : ".$data[50]." ".$data[51]."  ".$data[52]."\n";} 
-	if (empty($data[53])){} else {$l1= $l1."  - "."T�moin 2  : ".$data[53]." ".$data[54]."  ".$data[55]."\n";}  
-	if (empty($data[56])){} else {$l1= $l1."  - "."T�moin 3  : ".$data[56]." ".$data[57]."  ".$data[58]."\n";} 
-  	if (empty($data[59])){} else {$l1= $l1."  - "."T�moin 4  : ".$data[59]." ".$data[60]."  ".$data[61]."\n";}  
-	$com = str_replace("�"," - ",$data[62]);
-	if (empty($data[62])){} else {$l1= $l1."  - ".$com."\n";}
-  	$pdf->write(3,$l1);
-  	$sep = "-----------------------------------------------------------------------------------------------------------------------------------------------\n";
+  	//if (empty($data[14])){} else {$l1= $l1."  - "."P�re   ".$data[14]."   ".$data[15]."   ".$data[16]."   ".$data[17]."\n";}
+  	//if (empty($data[18])){} else {$l1= $l1."  - "."M�re   ".$data[18]."   ".$data[19]."   ".$data[20]."   ".$data[21]."\n";}
+ 	//if (empty($data[22])){} else {$l1= $l1."  - "."Par/T�m1   ".$data[22]."   ".$data[23]."   ".$data[24]."\n";}
+  	//if (empty($data[25])){} else {$l1= $l1."  - "."Par/T�m2   ".$data[25]."   ".$data[26]."   ".$data[27]."\n";}
+  	//if (empty($data[28])){} else {$l1= $l1. $data[28]."\n";}
+    $pdf->write(3,$l1);
+  	$sep = "-------------------------------------------------------------------------------------------------------------------------------------------------\n";
   	$pdf->write(3,$sep);
-  break;
 
+	
+
+	
+  break;
+//===================================RECENSEMENT FIN===========================================
 
   }
 }
