@@ -4,14 +4,11 @@ require_once '../Commun/config.php';
 require_once '../Commun/constantes.php';
 require_once('../Commun/Identification.php');
 require_once('../Commun/VerificationDroits.php');
-//verifie_privilege(DROIT_PUBLICATION);
+verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
 require_once('../Commun/PaginationTableau.php');
 require_once '../Commun/commun.php';
-error_reporting(E_ALL);
 $gst_repertoire_publication = $_SERVER['DOCUMENT_ROOT'] . '/v4/Publication/telechargements';
-print $gst_repertoire_publication;
-
 print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
@@ -822,10 +819,7 @@ switch ($gst_mode) {
         $menuDIV = "O";
         break;
       case IDF_RECENS:
-        print "case IDF_RECENS: ligne 791 <br>";
         export_recensement($connexionBD, $gi_idf_source, $gi_idf_commune_acte, $gc_idf_type_acte, $g_pl_date_debut, $g_pl_date_fin, $pf);
-        //export_recensement($connexionBD, $gi_idf_source, $gi_idf_commune_acte, $gc_idf_type_acte, $a_liste_personnes, $a_liste_actes, $pf);
-        $menuDIV = "N";
         break;
     }
 
