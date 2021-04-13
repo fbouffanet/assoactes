@@ -239,7 +239,6 @@ if ($type_actes_nimegue == "V")
 	case "R"://selection sur les divers
 		$titre = "Recensements";
 		$titreHP = $titre." de ".$commune;
-		echo ($titreHP);
 		break;
 
 }
@@ -434,12 +433,12 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
   case "R":// $type_actes_nimegue = R pour recensementt
     //affichage de chaque champ de la ligne en question
 
-    $pdf->Cell(50,3,"Année : ".$data[6]." Quartier : ".$data[8]." Rue : ".$data[9]." N° de maison : " .$data[10]." N° Ménage : ",0,0,L);
-  	$pdf->Cell(20,3,$data[11]." ".$data[12]." ".$data[13]."Age : ".$data[14]." "."Année naissance :".$data[15]." Profession :".$data[16],0,0,L);
+    //$pdf->Cell(50,3,"Année : ".$data[6]." Quartier : ".$data[8]." Rue : ".$data[9]." N° de maison : " .$data[10]." N° Ménage : ",0,0,L);
+  	//$pdf->Cell(20,3,$data[11]." ".$data[12]." ".$data[13]."Age : ".$data[14]." "."Année naissance :".$data[15]." Profession :".$data[16],0,0,L);
 	//
 	$l1='';
-  	//if (empty($data[14])){} else {$l1= $l1."  - "."P�re   ".$data[14]."   ".$data[15]."   ".$data[16]."   ".$data[17]."\n";}
-  	//if (empty($data[18])){} else {$l1= $l1."  - "."M�re   ".$data[18]."   ".$data[19]."   ".$data[20]."   ".$data[21]."\n";}
+  	$l1= $l1."Année : ".$data[6]." Quartier : ".$data[8]." Rue : ".$data[9]." N° de maison : " .$data[10]." N° Ménage : ".$data[11]."\n";
+  	$l1= $l1.$data[11]." ".$data[12]." ".$data[13]."Age : ".$data[14]." "."Année naissance :".$data[15]." Profession :".$data[16]."\n";
  	//if (empty($data[22])){} else {$l1= $l1."  - "."Par/T�m1   ".$data[22]."   ".$data[23]."   ".$data[24]."\n";}
   	//if (empty($data[25])){} else {$l1= $l1."  - "."Par/T�m2   ".$data[25]."   ".$data[26]."   ".$data[27]."\n";}
   	//if (empty($data[28])){} else {$l1= $l1. $data[28]."\n";}
@@ -455,6 +454,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
 
   }
 }
+
 
 switch ($type_actes_nimegue) { //Ajout du repertoire par Epouses ou Interv2
 
