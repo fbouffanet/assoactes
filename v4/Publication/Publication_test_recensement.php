@@ -648,7 +648,7 @@ switch ($gst_mode) {
         $sqltmp = $sqltmp . " order by p.idf_acte,p.idf";
         $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
         //****************************************************************************
-        //break;
+        break;
 
 
         //======================== RECENSEMENT DEB ============================================================
