@@ -8,7 +8,9 @@ verifie_privilege(DROIT_PUBLICATION);
 require_once '../Commun/ConnexionBD.php';
 require_once('../Commun/PaginationTableau.php');
 require_once '../Commun/commun.php';
+
 $gst_repertoire_publication = $_SERVER['DOCUMENT_ROOT'] . '/v4/Publication/telechargements';
+
 print('<!DOCTYPE html>');
 print("<head>");
 print('<link rel="shortcut icon" href="images/favicon.ico">');
@@ -646,7 +648,7 @@ switch ($gst_mode) {
         $sqltmp = $sqltmp . " order by p.idf_acte,p.idf";
         $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
         //****************************************************************************
-        break;
+        //break;
 
 
         //======================== RECENSEMENT DEB ============================================================
