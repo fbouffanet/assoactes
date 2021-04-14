@@ -857,8 +857,7 @@ switch ($gst_mode) {
 
     break;
 
-  default:
-    print("mode $gst_mode inconnu");
+  default : print("mode $gst_mode inconnu");
 }
 print('</form>');
 print('</body>');
