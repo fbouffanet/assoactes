@@ -862,3 +862,5 @@ switch ($gst_mode) {
 }
 print('</form>');
 print('</body>');
+
+?>
