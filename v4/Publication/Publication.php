@@ -819,7 +819,7 @@ switch ($gst_mode) {
       print "</br>";
       print('</form>');
       //  print ('<form action="aff_pdf.php" method="post">');
-      print('<form action="aff_pdf_recensement.php" method="post">');
+      print('<form action="aff_pdf.php" method="post">');
       print('<p>');
       if ($menuDIV == "O") {
         print "<br><b>Compl&egrave;ment du type acte pour les actes divers expl=> Actes Notari&egrave;s</b></br>";
