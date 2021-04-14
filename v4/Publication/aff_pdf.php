@@ -439,7 +439,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
 	//
 	$l1='';
   	$l1= $l1."Année : ".$data[6]." - Quartier : ".$data[8]." - Rue : ".$data[9]." - N de maison : " .$data[10]." - N Ménage : ".$data[11]."\n";
-  	$l1= $l1."-".$data[12]." - ".$data[13]." - ".$data[14]." - Age : ".$data[15]." - Année naissance :".$data[16]." - Profession :".$data[17]."\n";
+  	$l1= $l1."-".$data[12]." - ".$data[13]." - ".$data[14]." - Age : ".$data[15]." - né\(e\) :".$data[16]." à ".$data[17] - Profession :".$data[18]."\n";
  	//if (empty($data[22])){} else {$l1= $l1."  - "."Par/T?m1   ".$data[22]."   ".$data[23]."   ".$data[24]."\n";}
   	//if (empty($data[25])){} else {$l1= $l1."  - "."Par/T?m2   ".$data[25]."   ".$data[26]."   ".$data[27]."\n";}
   	//if (empty($data[28])){} else {$l1= $l1. $data[28]."\n";}
