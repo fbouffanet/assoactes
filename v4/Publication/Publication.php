@@ -434,7 +434,7 @@ function export_recensement($pconnexionBD, $pi_idf_source, $pi_idf_commune_acte,
    'codeDep',
    'Dep',
    'R' AS Sigle,
-   CAST (a.annee AS INT) AS Annee_Recensement,
+   CAST('a.annee' AS INT)AS Annee_Recensement,
 
    CAST(SUBSTRING(
 			REPLACE(a.commentaires,CHAR(10),' '),
@@ -674,7 +674,7 @@ switch ($gst_mode) {
            'codeDep',
            'Dep',
            'R' AS Sigle,
-           CAST (a.annee AS INT) AS Annee_Recensement,
+           CAST('a.annee' AS INT)AS Annee_Recensement,
         
            CAST(SUBSTRING(
               REPLACE(a.commentaires,CHAR(10),' '),
