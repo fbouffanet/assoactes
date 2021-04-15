@@ -490,7 +490,6 @@ WHERE
               if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
               $sqltmp = $sqltmp . " ORDER BY
               'Annee_Recensement' ASC,
-              'NPage' ASC,
               'Maison' ASC,
               'Menage' ASC";
 
