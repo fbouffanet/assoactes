@@ -489,10 +489,7 @@ WHERE
               if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
               if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
               $sqltmp = $sqltmp . " ORDER BY
-              'Annee_Recensement' ASC,
-              'NPage' ASC,
-              'Maison' ASC,
-              'Menage' ASC";
+              'Annee_Recensement','NPage','Maison','Menage' ASC";
 
 
 /*
@@ -730,10 +727,7 @@ switch ($gst_mode) {
               if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
         if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
         $sqltmp = $sqltmp . " ORDER BY
-        'Annee_Recensement' ASC,
-        'NPage' ASC,
-        'Maison' ASC,
-        'Menage' ASC";
+        'Annee_Recensement','NPage','Maison','Menage' ASC";
          $a_liste_personnes = $connexionBD->liste_valeur_par_doubles_clefs($sqltmp);
          break;
 
