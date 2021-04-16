@@ -208,7 +208,7 @@ $image1 = "./img/image1".$data[5].".jpg";//Titre
  switch ($type_actes_nimegue)
 {
     case "N": //selection sur les naissances
-	$titre = "Bapt&ecirc;mes Naissances";
+	$titre = "Baptêmes Naissances";
 	//$titreHP = $titre." de ".utf8_encode($commune);
     $titreHP = $titre." de ".$commune;
 	$pdf->titrehp = $titreHP;
