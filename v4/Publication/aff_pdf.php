@@ -277,7 +277,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
 		   $pdf->SetY(-45);// Positionnement à 1,5 cm du bas
     	   $pdf->Cell(20);
     	   $pdf->MultiCell(150,4,$copy,1,C);
-    	   $pdf->AddPage();
+    	   $pdf->AddPage(); 
 	   	}
 
    switch ($type_actes_nimegue)
