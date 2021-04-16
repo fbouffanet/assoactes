@@ -239,8 +239,8 @@ $image1 = "./img/image1".$data[5].".jpg";//Titre
 	case "R"://selection sur les divers
 	$titre = "Recensements";
 	$titreHP = $titre." de ".$commune;
-	$sql = "SELECT * FROM tmp_publication ORDER BY `data7`,`data8`,`data10`,`data11` ASC";// tri sur le année page maison ménage
-	$titre3 = "Par année, maison, ménage";
+	$sql = "SELECT * FROM tmp_publication ORDER BY `data6`,`data7`,`data10`,`data11` ASC";// tri sur le année page maison ménage
+	$titre3 = "Par année, maison,ménage";
 	break;
 	
 }
