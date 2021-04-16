@@ -233,10 +233,10 @@ $image1 = "./img/image1".$data[5].".jpg";//Titre
 	$sql = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data12` ASC";// tri sur le patronyme
 	break;
 	
-	case "R"://selection sur les divers
+	case "R"://selection sur les divers 
 	$titre = "Recensements";
 	$titreHP = $titre." de ".$commune;
-	$sql = "SELECT * FROM tmp_publication ";// tri sur le patronyme
+	$sql = "SELECT * FROM tmp_publication ORDER BY `data6`,`data7`,`data10`,`data11' ASC ";// tri sur le patronyme
 	break;
 	
 }
