@@ -333,7 +333,9 @@ class ConnexionBD {
 		// ---- modif UTF8
 		foreach ($a_champs as $st_temp)
 		{
+			print('Avant : '.$st_temp.'<br>');
 			$st_temp = mb_convert_encoding($st_temp, 'UTF8', 'cp1252');
+			print('Après : '.$st_temp.'<br>');
 		}
 		// ---- fin modif UTF8
 		$this->a_params = array();
