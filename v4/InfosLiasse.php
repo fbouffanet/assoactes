@@ -15,7 +15,7 @@ list($st_cote, $i_depose_ad, $st_idf_dept_depose_ad, $i_liasse_consult, $st_info
                                  "       in_liasse_consultable, info_complementaires ".
 								 "from liasse ".
 								 "where cote_liasse='".$gst_cote_liasse."'");
-$a_depts_depose_ad = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM departement order by nom");
+$a_depts_depose_ad = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf,nom FROM departement order by nom");
 if($i_depose_ad == 1) {
 	$st_depose_ad = "Oui";
 	$st_dept_depose_ad = $a_depts_depose_ad[$st_idf_dept_depose_ad];
@@ -60,7 +60,7 @@ print('<div class="panel panel-primary">');
 print("<div class=\"panel-heading\">Informations sur la liasse $st_cote</div>");
 print('<div class="panel-body">');
 print("<table class=\"table table-bordered table-striped\">");
-print("<tr><th>Liasse dépos&eacute;e aux AD</th><td>".$st_depose_ad."</td></tr>");
+print("<tr><th>Liasse déposée aux AD</th><td>".$st_depose_ad."</td></tr>");
 print("<tr><th>Département AD</th><td>".$st_dept_depose_ad."</td></tr>");
 print("<tr><th>Liasse consultable</th><td>".$st_liasse_consult."</td></tr>");
 print("<tr><th>Informations complémentaires</th><td>".$st_info_compl."</td></tr>");
