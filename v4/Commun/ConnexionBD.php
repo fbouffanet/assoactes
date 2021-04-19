@@ -338,6 +338,7 @@ class ConnexionBD {
 			print('Après : '.$st_temp.'<br>');
 		}
 		// ---- fin modif UTF8
+		print_r($a_champs);
 		$this->a_params = array();
 		return	$a_champs;
 	}
