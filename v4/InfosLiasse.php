@@ -11,7 +11,7 @@ require_once('Commun/VerificationDroits.php');
 $gst_cote_liasse = isset($_REQUEST['cote_liasse']) ? $_REQUEST['cote_liasse'] : '' ;
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 list($st_cote, $i_depose_ad, $st_idf_dept_depose_ad, $i_liasse_consult, $st_info_compl)
-= $connexionBD->sql_select_liste("select cote_liasse, in_liasse_depose_ad, idf_dept_depose_ad, ".
+= $connexionBD->sql_select_listeUtf8("select cote_liasse, in_liasse_depose_ad, idf_dept_depose_ad, ".
                                  "       in_liasse_consultable, info_complementaires ".
 								 "from liasse ".
 								 "where cote_liasse='".$gst_cote_liasse."'");
