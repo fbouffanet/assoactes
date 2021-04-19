@@ -329,18 +329,18 @@ class ConnexionBD {
 			print_r($this->o_lien_bd->errorInfo());
 		}
 		$this->pdo_stmt = $pdo_stmt;
-		$a_champs=$pdo_stmt->fetch(PDO::FETCH_NUM);
+		$a_champs = $pdo_stmt->fetch(PDO::FETCH_NUM);
+		$a_convert = array();
 		// ---- modif UTF8
 		foreach ($a_champs as $st_temp)
 		{
-			print('Avant : '.$st_temp.'<br>');
 			$st_temp = mb_convert_encoding($st_temp, 'UTF8', 'cp1252');
-			print('Après : '.$st_temp.'<br>');
+			array_push($a_convert, $st_temp);
 		}
 		// ---- fin modif UTF8
-		print_r($a_champs);
+		print_r($a_convert);
 		$this->a_params = array();
-		return	$a_champs;
+		return	$a_convert;
 	}
 
 	/* ----- résultat = plusieurs lignes, une colonne, tableau de résultat non indexé ----- */
