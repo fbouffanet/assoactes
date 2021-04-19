@@ -338,7 +338,6 @@ class ConnexionBD {
 			array_push($a_convert, $st_temp);
 		}
 		// ---- fin modif UTF8
-		print_r($a_convert);
 		$this->a_params = array();
 		return	$a_convert;
 	}
@@ -441,6 +440,7 @@ class ConnexionBD {
 	public function sql_select_multipleUtf8($pst_requete)
 	{
 		$a_resultat = array();
+
 		$pdo_stmt = $this->o_lien_bd->prepare($pst_requete);
 		if (!$pdo_stmt->execute($this->a_params))
 		{
@@ -454,9 +454,10 @@ class ConnexionBD {
 			foreach ($a_champs as $st_temp)
 			{
 				$st_temp = mb_convert_encoding($st_temp, 'UTF8', 'cp1252');
+				array_push($a_resultat, $st_temp);
 			}
 			// ---- fin modif UTF8
-			$a_resultat[] = $a_champs;
+			//$a_resultat[] = $a_champs;
 		}
 		$this->a_params            = array();
 		return $a_resultat;
@@ -466,6 +467,8 @@ class ConnexionBD {
 	public function sql_select_multiple_par_idfUtf8($pst_requete)
 	{
 		$a_resultat = array();
+		$a_convert = array();
+
 		$pdo_stmt = $this->o_lien_bd->prepare($pst_requete);
 		if (!$pdo_stmt->execute($this->a_params))
 		{
@@ -478,12 +481,15 @@ class ConnexionBD {
 			$i_idf = array_shift($a_champs);
 			// ---- modif UTF8
 			$i_idf = mb_convert_encoding($i_idf, 'UTF8', 'cp1252');
-			foreach ($a_champs as $a_temp)
+			foreach ($a_champs as $st_temp)
 			{
-				$a_temp = mb_convert_encoding($a_temp, 'UTF8', 'cp1252');
+				$st_temp = mb_convert_encoding($a_temp, 'UTF8', 'cp1252');
+				array_push($a_convert, $st_temp);
+			
 			}
 			// ---- fin modif UTF8
-			$a_resultat["$i_idf"] = $a_champs;
+			$a_resultat["$i_idf"] = $a_convert;
+			unset($a_convert);
 		}
 		$this->a_params = array();
 		return $a_resultat;
