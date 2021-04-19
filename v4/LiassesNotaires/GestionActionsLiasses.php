@@ -66,15 +66,15 @@ if (isset($_GET['mod'])) {
 }
 $gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 
-$a_releveur = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf,concat(nom, ' ', prenom) as nom FROM releveur order by nom");
+$a_releveur = $connexionBD->liste_valeur_par_clef("SELECT idf,concat(nom, ' ', prenom) as nom FROM releveur order by nom");
 $a_releveur[0] = 'Inconnu';
-$a_couverture_photo = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf, nom FROM couverture_photo order by idf");
+$a_couverture_photo = $connexionBD->liste_valeur_par_clef("SELECT idf, nom FROM couverture_photo order by idf");
 $a_couverture_photo[0] = '';
-$a_codif_photo = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf, nom FROM codif_photo order by idf");
+$a_codif_photo = $connexionBD->liste_valeur_par_clef("SELECT idf, nom FROM codif_photo order by idf");
 $a_codif_photo[0] = '';
-$a_priorite_program = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf, nom FROM programmation_releve order by idf");
+$a_priorite_program = $connexionBD->liste_valeur_par_clef("SELECT idf, nom FROM programmation_releve order by idf");
 $a_priorite_program[0] = '';
-$pa_publication = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf, concat(nom, ', publi&eacute; le ', ".
+$pa_publication = $connexionBD->liste_valeur_par_clef("SELECT idf, concat(nom, ', publi&eacute; le ', ".
                                                       "                   case when date_publication = str_to_date('0000/00/00', '%Y/%m/%d') then '' ".
                                                       "                        else date_format(date_publication, '%d/%m/%Y') ".
                                                       "                        end, ', ', ".
