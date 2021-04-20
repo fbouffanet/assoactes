@@ -279,7 +279,7 @@ print(      '</select>');
 print(   '</div>');
 print(   '<div class="form-group col-md-4"><label for="idf_dept">Département&nbsp</label>'.
             '<select name="idf_dept" id="idf_dept" class="js-select-avec-recherche form-control">'.chaine_select_options($gi_idf_dept,$a_dept).'</select></div>');
-print(   '</div><br>');
+print(   '<br></div>');
 
 // ---------Commune +++
 print('<div class="form-row col-md-12">');
@@ -319,7 +319,7 @@ else
 print('</label></div></div>');
 print('</div>');
 
-// -----------Cotes
+// -----------Notaire
 print('<div class="form-row col-md-12">');
 print('<div class="form-group col-md-4 col-md-offset-2">');
 print('<label for="nom_notaire" class="col-form-label">Nom Notaire&nbsp</label>');
@@ -342,7 +342,7 @@ print('</label></div></div>');
 
 print('</div>');
 
-// ------------Répertoires
+// ------------Cotes
 print('<div class="form-row col-md-12">');
 print('<div class="form-group col-md-4 col-md-offset-2 lib_erreur">');
 print('<label for="cote_debut" class="col-form-label">Première cote&nbsp</label>');
@@ -351,10 +351,11 @@ print('</div>');
 
 print('<div class="form-group col-md-4 lib_erreur">');
 print('<label for="cote_fin" class="col-form-label">Dernière cote&nbsp</label>');
-print("<input type=text name=cote_fin id=cote_fin size=15 maxlength=30 value=\"$gst_cote_fin\" class=\"form-control\">");
+print("<input type=text name=cote_fin id=cote_fin size=5 maxlength=5 value=\"$gst_cote_fin\" class=\"form-control\">");
 print('</div>');
 print('</div>');
 
+// ------------Répertoires
 print('<div class="form-row col-md-12">');
 print('<div class="form-check col-md-4 col-md-offset-2">');
 print('<label for="repertoire" class="form-check-label">Répertoires&nbsp</label>');
