@@ -301,7 +301,7 @@ print('</div>');
 print('</div>');
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-3 col-md-offset-1 lib_erreur">');
+print('<div class="form-group col-md-4 col-md-offset-1 lib_erreur">');
 print('<label for="annee_min" class="col-form-label">Années de&nbsp</label>');
 print("<input type=text name=annee_min id=annee_min size=4 value=\"$gi_annee_min\" class=\"form-control\">");
 print('</div>');
@@ -309,7 +309,7 @@ print('<div class="form-group col-md-4 lib_erreur">');
 print('<label for="annee_max" class="col-form-label">&agrave;&nbsp</label>');
 print("<input type=text name=annee_max id=annee_max size =4 value=\"$gi_annee_max\" class=\"form-control\">");
 print('</div>');
-print('<div class="form-check col-md-4">');
+print('<div class="form-check col-md-3">');
 print('<div class="checkbox lib_erreur">');
 print('<label for="sans_periode" class="form-check-label col-form-label">Liasses sans date:');
 if ($gst_sans_periode=='non')
@@ -321,7 +321,7 @@ print('</div>');
 
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-4">');
+print('<div class="form-group col-md-4 col-md-offset-1">');
 print('<label for="nom_notaire" class="col-form-label">Nom Notaire&nbsp</label>');
 print("<input type=text name=nom_notaire id=nom_notaire size=15 maxlength=30 value=\"$gst_nom_notaire\" class=\"form-control\">");
 print('</div>');
@@ -331,7 +331,7 @@ print('<label for="prenom_notaire" class="col-form-label">Prénom Notaire&nbsp</
 print("<input type=text name=prenom_notaire id=prenom_notaire size=15 maxlength=30 value=\"$gst_prenom_notaire\" class=\"form-control\">");
 print('</div>');
 
-print('<div class="form-check col-md-4">');
+print('<div class="form-check col-md-3">');
 print('<div class="checkbox lib_erreur">');
 print('<label for="sans_notaire" class="form-check-label col-form-label">Liasses sans notaire:');
 if ($gst_sans_notaire=='non')
