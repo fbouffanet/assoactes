@@ -272,7 +272,7 @@ print('<form id="recherche_liasses" method="post" class="form-inline" action="Re
 
 print('<div class="form-row col-md-12">');
 //print(   '<div class="form-group col-md-4 col-md-offset-4">');
-print(   '<div class="form-group col-md-4">');
+print(   '<div class="form-group col-md-5">');
 print(      '<label for="idf_serie_liasse" class="form-col-label">Série liasses&nbsp</label><select name="idf_serie_liasse" id="idf_serie_liasse" class="js-select-avec-recherche form-control">');
 print(      chaine_select_options($gst_idf_serie_liasse,$a_serie_liasse));
 print(      '</select>');
@@ -343,7 +343,7 @@ print('</label></div></div>');
 print('</div>');
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-4 col-md-offset-2 lib_erreur">');
+print('<div class="form-group col-md-4 col-md-offset-1 lib_erreur">');
 print('<label for="cote_debut" class="col-form-label">Première cote&nbsp</label>');
 print("<input type=text name=cote_debut id=cote_debut size=5 maxlength=5 value=\"$gst_cote_debut\" class=\"form-control\">");
 print('</div>');
@@ -355,7 +355,7 @@ print('</div>');
 print('</div>');
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-check col-md-4 col-md-offset-2">');
+print('<div class="form-check col-md-4 col-md-offset-1">');
 print('<label for="repertoire" class="form-check-label">Répertoires&nbsp</label>');
 if ($gst_repertoire=='non')
 	print('   <input type=checkbox name=repertoire id=repertoire value=oui unchecked class="form-control form-check-input">');
