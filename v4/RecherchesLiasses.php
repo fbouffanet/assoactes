@@ -317,7 +317,7 @@ print('<label for="sans_periode" class="form-check-label col-form-label">');
 if ($gst_sans_periode=='non')
    print('   <input type=checkbox name=sans_periode id=sans_periode value=oui unchecked class="form-check-input">');
 else
-   print('   <input type=checkbox name=sans_periode id=sans_periode value=oui checked class="form-control form-check-input">');
+   print('   <input type=checkbox name=sans_periode id=sans_periode value=oui checked class="form-check-input">');
 print('Liasses sans date</label></div></div>');
 //print('</div>');
 
