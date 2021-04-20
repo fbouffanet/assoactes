@@ -301,12 +301,12 @@ print('</div>');
 print('</div>');
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-2 col-md-offset-2 lib_erreur">');
-print('<label for="annee_min" class="col-form-label">Ann&eacute;es de </label>');
+print('<div class="form-group col-md-4 col-md-offset-2 lib_erreur">');
+print('<label for="annee_min" class="col-form-label">Années de&nbsp</label>');
 print("<input type=text name=annee_min id=annee_min size=4 value=\"$gi_annee_min\" class=\"form-control\">");
 print('</div>');
-print('<div class="form-group col-md-2 col-md-offset-2 lib_erreur">');
-print('<label for="annee_max" class="col-form-label">&agrave;</label>');
+print('<div class="form-group col-md-4 col-md-offset-2 lib_erreur">');
+print('<label for="annee_max" class="col-form-label">&agrave;&nbsp</label>');
 print("<input type=text name=annee_max id=annee_max size =4 value=\"$gi_annee_max\" class=\"form-control\">");
 print('</div>');
 print('<div class="form-check col-md-4">');
@@ -321,13 +321,13 @@ print('</div>');
 
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-2 col-md-offset-2">');
-print('<label for="nom_notaire" class="col-form-label">Nom Notaire:</label>');
+print('<div class="form-group col-md-4 col-md-offset-2">');
+print('<label for="nom_notaire" class="col-form-label">Nom Notaire&nbsp</label>');
 print("<input type=text name=nom_notaire id=nom_notaire size=15 maxlength=30 value=\"$gst_nom_notaire\" class=\"form-control\">");
 print('</div>');
 
-print('<div class="form-group col-md-2 col-md-offset-2">');
-print('<label for="prenom_notaire" class="col-form-label">Pr&eacute;nom Notaire:</label>');
+print('<div class="form-group col-md-4 col-md-offset-2">');
+print('<label for="prenom_notaire" class="col-form-label">Prénom Notaire&nbsp</label>');
 print("<input type=text name=prenom_notaire id=prenom_notaire size=15 maxlength=30 value=\"$gst_prenom_notaire\" class=\"form-control\">");
 print('</div>');
 
@@ -344,19 +344,19 @@ print('</div>');
 
 print('<div class="form-row col-md-12">');
 print('<div class="form-group col-md-4 col-md-offset-2 lib_erreur">');
-print('<label for="cote_debut" class="col-form-label">Premi&egrave;re cote:</label>');
+print('<label for="cote_debut" class="col-form-label">Première cote&nbsp</label>');
 print("<input type=text name=cote_debut id=cote_debut size=5 maxlength=5 value=\"$gst_cote_debut\" class=\"form-control\">");
 print('</div>');
 
 print('<div class="form-group col-md-4 lib_erreur">');
-print('<label for="cote_fin" class="col-form-label">Derni&egrave;re cote:</label>');
+print('<label for="cote_fin" class="col-form-label">Dernière cote&nbsp</label>');
 print("<input type=text name=cote_fin id=cote_fin size=15 maxlength=30 value=\"$gst_cote_fin\" class=\"form-control\">");
 print('</div>');
 print('</div>');
 
 print('<div class="form-row col-md-12">');
 print('<div class="form-check col-md-4 col-md-offset-2">');
-print('<label for="repertoire" class="form-check-label">R&eacute;pertoires:</label>');
+print('<label for="repertoire" class="form-check-label">Répertoires&nbsp</label>');
 if ($gst_repertoire=='non')
 	print('   <input type=checkbox name=repertoire id=repertoire value=oui unchecked class="form-control form-check-input">');
 else
@@ -364,7 +364,7 @@ else
 print('</div>');
 
 print('<div class="form-check col-md-4">');
-print('<label for="liasse_releve" class="form-check-label">Liasses relev&eacute;es (CM retranscrits):</label>');
+print('<label for="liasse_releve" class="form-check-label">Liasses relevées (CM retranscrits)&nbsp</label>');
 if ($gst_repertoire=='non')
 	print('   <input type=checkbox name=liasse_releve id=liasse_releve value=oui unchecked class="form-control form-check-input">');
 else
