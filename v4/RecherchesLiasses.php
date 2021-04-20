@@ -283,7 +283,7 @@ print(   '</div>');
 print('<div class="form-row col-md-12">');
 
 
-print('<div class="form-group col-md-8"><label for="idf_commune_recherche">Commune/Paroisse&nbsp</label><select name="idf_commune_recherche" id="idf_commune_recherche" class="js-select-avec-recherche form-control">');
+print('<div class="form-group col-md-6"><label for="idf_commune_recherche">Commune/Paroisse&nbsp</label><select name="idf_commune_recherche" id="idf_commune_recherche" class="js-select-avec-recherche form-control">');
 $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
 print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
 print('</select></div>');
