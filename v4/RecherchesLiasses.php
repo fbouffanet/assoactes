@@ -299,6 +299,7 @@ else
 print('Paroisses rattach&eacute;es</label>');
 print('</div>');
 print('</div>');
+print('<div class="form-row col-md-12">&nbsp</div>');
 
 // -------------Dates
 print('<div class="form-row col-md-12">');
@@ -375,6 +376,7 @@ else
 print('</div>');
 
 print('</div>');
+print('<div class="form-row col-md-12">&nbsp</div>');
 
 print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
 print('<button type=submit name=Rechercher class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Rechercher</button>');
