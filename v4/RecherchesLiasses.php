@@ -281,7 +281,7 @@ print('</div>');
 
 print('<div class="form-row col-md-12">');
 
-print('<div class="form-group col-md-4"><label for="idf_dept">Département:</label>'.
+print('<div class="form-group col-md-3"><label for="idf_dept">Département :</label>'.
 '<select name="idf_dept" id="idf_dept" class="js-select-avec-recherche form-control">'.chaine_select_options($gi_idf_dept,$a_dept).'</select></div>');
 
 print('<div class="form-group col-md-4"><label for="idf_commune_recherche">Commune/Paroisse:</label><select name="idf_commune_recherche" id="idf_commune_recherche" class="js-select-avec-recherche form-control">');
