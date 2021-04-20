@@ -284,7 +284,7 @@ print('<div class="form-row col-md-12">&nbsp</div>');
 
 // ---------Commune +++
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-6"><label for="idf_commune_recherche">Commune/Paroisse&nbsp</label><select name="idf_commune_recherche" id="idf_commune_recherche" class="js-select-avec-recherche form-control">');
+print('<div class="form-group col-md-5"><label for="idf_commune_recherche">Commune/Paroisse&nbsp</label><select name="idf_commune_recherche" id="idf_commune_recherche" class="js-select-avec-recherche form-control">');
 $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
 print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
 print('</select></div>');
@@ -334,7 +334,7 @@ print("<input type=text name=prenom_notaire id=prenom_notaire size=15 maxlength=
 print('</div>');
 
 print('<div class="form-check col-md-2">');
-print('<div class="checkbox lib_erreur">');
+//print('<div class="checkbox lib_erreur">');
 print('<label for="sans_notaire" class="form-check-label col-form-label">');
 if ($gst_sans_notaire=='non')
    print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui unchecked class="form-check-input">');
@@ -342,7 +342,7 @@ else
    print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui checked class="form-check-input">');
 print('&nbspLiasses sans notaire</label></div></div>');
 
-print('</div>');
+//print('</div>');
 
 // ------------Cotes
 print('<div class="form-row col-md-12">');
