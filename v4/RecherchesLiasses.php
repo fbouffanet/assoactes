@@ -296,7 +296,7 @@ if ($gst_paroisses_rattachees=='')
    print('<input type=checkbox name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui class="form-check-input">');
 else
    print('<input type=checkbox name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui checked class="form-check-input" >');
-print('Paroisses rattachées</label>');
+print('&nbspParoisses rattachées</label>');
 print('</div>');
 print('</div>');
 print('<div class="form-row col-md-12">&nbsp</div>');
@@ -318,7 +318,7 @@ if ($gst_sans_periode=='non')
    print('   <input type=checkbox name=sans_periode id=sans_periode value=oui unchecked class="form-check-input">');
 else
    print('   <input type=checkbox name=sans_periode id=sans_periode value=oui checked class="form-check-input">');
-print('Liasses sans date</label></div></div>');
+print('&nbspLiasses sans date</label></div></div>');
 //print('</div>');
 
 // -----------Notaire
@@ -335,12 +335,12 @@ print('</div>');
 
 print('<div class="form-check col-md-2">');
 print('<div class="checkbox lib_erreur">');
-print('<label for="sans_notaire" class="form-check-label col-form-label">Liasses sans notaire:');
+print('<label for="sans_notaire" class="form-check-label col-form-label">');
 if ($gst_sans_notaire=='non')
-   print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui unchecked class="form-control form-check-input">');
+   print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui unchecked class="form-check-input">');
 else
-   print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui checked class="form-control form-check-input">');
-print('</label></div></div>');
+   print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui checked class="form-check-input">');
+print('&nbspLiasses sans notaire</label></div></div>');
 
 print('</div>');
 
