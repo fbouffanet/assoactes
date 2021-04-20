@@ -312,14 +312,14 @@ print('<label for="annee_max" class="col-form-label">&agrave;&nbsp</label>');
 print("<input type=text name=annee_max id=annee_max size =4 value=\"$gi_annee_max\" class=\"form-control\">");
 print('</div>');
 print('<div class="form-check col-md-2">');
-print('<div class="checkbox lib_erreur">');
-print('<label for="sans_periode" class="form-check-label">');
+//print('<div class="checkbox lib_erreur">');
+print('<label for="sans_periode" class="form-check-label col-form-label">');
 if ($gst_sans_periode=='non')
    print('   <input type=checkbox name=sans_periode id=sans_periode value=oui unchecked class="form-control form-check-input">');
 else
    print('   <input type=checkbox name=sans_periode id=sans_periode value=oui checked class="form-control form-check-input">');
 print('Liasses sans date</label></div></div>');
-print('</div>');
+//print('</div>');
 
 // -----------Notaire
 print('<div class="form-row col-md-12">');
