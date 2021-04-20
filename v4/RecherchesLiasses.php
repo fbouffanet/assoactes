@@ -311,7 +311,7 @@ print('<div class="form-group col-md-4 lib_erreur">');
 print('<label for="annee_max" class="col-form-label">&agrave;&nbsp</label>');
 print("<input type=text name=annee_max id=annee_max size =4 value=\"$gi_annee_max\" class=\"form-control\">");
 print('</div>');
-print('<div class="form-check col-md-2">');
+print('<div class="form-check ">');
 //print('<div class="checkbox lib_erreur">');
 print('<label for="sans_periode" class="form-check-label col-form-label">Liasses sans date&nbsp');
 if ($gst_sans_periode=='non')
