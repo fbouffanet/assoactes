@@ -204,14 +204,6 @@ $type_actes_nimegue = $data[5];// Type Acte (B,D,M,V)
 $image = "./img/image".$data[5].".jpg";//Titre
 $image1 = "./img/image1".$data[5].".jpg";//Titre
 
-
-if ($type_actes_nimegue == "V")
-   {
-   $sql = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data12` ASC";// tri sur le patronyme
-   }else
-   {
-   $sql = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data10` ASC";// tri sur le patronyme
-   }
  switch ($type_actes_nimegue)
 {
     case "N": //selection sur les naissances
@@ -219,26 +211,36 @@ if ($type_actes_nimegue == "V")
 	//$titreHP = $titre." de ".utf8_encode($commune);
     $titreHP = $titre." de ".$commune;
 	$pdf->titrehp = $titreHP;
+	$titre3 = "Par ordre alphabétique";
+	$sql = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data10` ASC";// tri sur le patronyme
 	break;
 
 	case "D"://selection sur les décès
 	$titre = "Décès Sépulture";
 	$titreHP = $titre." de ".$commune;
+	$sql = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data10` ASC";// tri sur le patronyme
+	$titre3 = "Par ordre alphabétique";
 	break;
 
 	case "M"://selection sur les mariagees
 	$titre = "Mariages";
 	$titreHP = $titre." de ".$commune;
+	$sql = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data10` ASC";// tri sur le patronyme
+	$titre3 = "Par ordre alphabétique";
 	break;
 
 	case "V"://selection sur les divers
 	$titre = $TypeActe;
 	$titreHP = $titre." de ".$commune;
+	$sql = "SELECT * FROM tmp_publication ORDER BY `tmp_publication`.`data12` ASC";// tri sur le patronyme
+	$titre3 = "Par ordre alphabétique";
 	break;
 	
 	case "R"://selection sur les divers
 	$titre = "Recensements";
 	$titreHP = $titre." de ".$commune;
+	$sql = "SELECT * FROM tmp_publication ORDER BY `data6`,`data7`,`data10`,`data11` ASC";// tri sur le année page maison ménage
+	$titre3 = "Par année, maison,ménage";
 	break;
 	
 }
@@ -266,7 +268,7 @@ while ($data=$connexionBD->ligne_suivante_resultat($req))
     	   $pdf->Cell(0,10,$titre2,0,1,'C');// Date
 		   $pdf->SetFont('Times','',18);// Police Times gras 12// N°de paroisse
 		   $pdf->Cell(0,10,$titreN,0,1,'C');// N°de paroisse
-		   $titre3 = "Par ordre alphabétique";
+		   
 		   $pdf->SetFont('Times','',16);// Police Times gras 12
 		   $pdf->Cell(0,10,$titre3,0,1,'C');//Tri par ordre alphabétique
     	   $pdf->SetFont('Times','',8);

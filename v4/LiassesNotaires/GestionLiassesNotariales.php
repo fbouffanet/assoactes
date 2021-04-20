@@ -53,19 +53,19 @@ $gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("../Commun/menu.php");
-$a_depts_depose_ad = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf,nom FROM departement order by nom");
+$a_depts_depose_ad = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM departement order by nom");
 $a_depts_depose_ad[''] = '';
-$a_formes_liasses = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf,nom FROM forme_liasse order by nom");
+$a_formes_liasses = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM forme_liasse order by nom");
 $a_mois = array("", "01"=>"01", "02"=>"02", "03"=>"03", "04"=>"04", "05"=>"05", "06"=>"06", 
                     "07"=>"07", "08"=>"08", "09"=>"09", "10"=>"10", "11"=>"11", "12"=>"12",
                     "Vendémiaire"=>"Vendémiaire", "Brumaire"=>"Brumaire", "Frimaire"=>"Frimaire", 
 					"Nivôse"=>"Nivôse", "Pluviôse"=>"Pluviôse", "Ventôse"=>"Ventôse",
                     "Germinal"=>"Germinal", "Floréal"=>"Floréal", "Prairial"=>"Prairial", 
 					"Messidor"=>"Messidor", "Thermidor"=>"Thermidor", "Fructidor"=>"Fructidor");
-$a_communes = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf,nom FROM commune_acte order by nom");
+$a_communes = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM commune_acte order by nom");
 $a_communes[0] = '';
 
-$a_serie_liasse = $connexionBD->liste_valeur_par_clefUtf8("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
+$a_serie_liasse = $connexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 $a_serie_liasse[0] = '';
 
 

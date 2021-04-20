@@ -263,7 +263,7 @@ $st_criteres .= "\n";
 if ($gi_idf_commune>0)
 {
    $a_params_precedents=$connexionBD->params();
-   $st_nom_commune = $connexionBD->sql_select1("select nom from commune_acte where idf=$gi_idf_commune");
+   $st_nom_commune = $connexionBD->sql_select1Utf8("select nom from commune_acte where idf=$gi_idf_commune");
    $st_criteres .= "Commune s&eacute;lectionn&eacute;e: ".cp1252_vers_utf8($st_nom_commune);
    $connexionBD->initialise_params($a_params_precedents);
 }
