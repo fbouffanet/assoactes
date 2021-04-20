@@ -291,12 +291,12 @@ print('</select></div>');
 
 print("<div class=\"form-group col-md-4\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><div class=\"lib_erreur\"><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"></div><span class=\"input-group-addon\">Km</span></div></div>");
 
-print('<div class="form-check "><label for="paroisses_rattachees_recherches_communes" class="form-check-label">');
+print('<div class="form-check "><label for="paroisses_rattachees_recherches_communes" class="form-check-label">Paroisses rattachées&nbsp');
 if ($gst_paroisses_rattachees=='')
    print('<input type=checkbox name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui class="form-check-input">');
 else
    print('<input type=checkbox name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui checked class="form-check-input" >');
-print('&nbspParoisses rattachées</label>');
+print('</label>');
 print('</div>');
 print('</div>');
 print('<div class="form-row col-md-12">&nbsp</div>');
@@ -313,13 +313,14 @@ print("<input type=text name=annee_max id=annee_max size =4 value=\"$gi_annee_ma
 print('</div>');
 print('<div class="form-check col-md-2">');
 //print('<div class="checkbox lib_erreur">');
-print('<label for="sans_periode" class="form-check-label col-form-label">');
+print('<label for="sans_periode" class="form-check-label col-form-label">Liasses sans date&nbsp');
 if ($gst_sans_periode=='non')
    print('   <input type=checkbox name=sans_periode id=sans_periode value=oui unchecked class="form-check-input">');
 else
    print('   <input type=checkbox name=sans_periode id=sans_periode value=oui checked class="form-check-input">');
-print('&nbspLiasses sans date</label></div></div>');
+print('</label></div></div>');
 //print('</div>');
+print('<div class="form-row col-md-12">&nbsp</div>');
 
 // -----------Notaire
 print('<div class="form-row col-md-12">');
@@ -335,14 +336,15 @@ print('</div>');
 
 print('<div class="form-check col-md-2">');
 //print('<div class="checkbox lib_erreur">');
-print('<label for="sans_notaire" class="form-check-label col-form-label">');
+print('<label for="sans_notaire" class="form-check-label col-form-label">Liasses sans notaire&nbsp');
 if ($gst_sans_notaire=='non')
    print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui unchecked class="form-check-input">');
 else
    print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui checked class="form-check-input">');
-print('&nbspLiasses sans notaire</label></div></div>');
+print('</label></div></div>');
 
 //print('</div>');
+print('<div class="form-row col-md-12">&nbsp</div>');
 
 // ------------Cotes
 print('<div class="form-row col-md-12">');
@@ -356,6 +358,7 @@ print('<label for="cote_fin" class="col-form-label">Dernière cote&nbsp</label>'
 print("<input type=text name=cote_fin id=cote_fin size=5 maxlength=5 value=\"$gst_cote_fin\" class=\"form-control\">");
 print('</div>');
 print('</div>');
+print('<div class="form-row col-md-12">&nbsp</div>');
 
 // ------------Répertoires
 print('<div class="form-row col-md-12">');
