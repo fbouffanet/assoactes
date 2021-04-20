@@ -334,7 +334,7 @@ print('<label for="prenom_notaire" class="col-form-label">Prénom Notaire&nbsp</
 print("<input type=text name=prenom_notaire id=prenom_notaire size=15 maxlength=30 value=\"$gst_prenom_notaire\" class=\"form-control\">");
 print('</div>');
 
-print('<div class="form-check col-md-2">');
+print('<div class="form-check ">');
 //print('<div class="checkbox lib_erreur">');
 print('<label for="sans_notaire" class="form-check-label col-form-label">Liasses sans notaire&nbsp');
 if ($gst_sans_notaire=='non')
