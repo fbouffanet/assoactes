@@ -279,10 +279,10 @@ print(      '</select>');
 print(   '</div>');
 print(   '<div class="form-group col-md-4"><label for="idf_dept">Département&nbsp</label>'.
             '<select name="idf_dept" id="idf_dept" class="js-select-avec-recherche form-control">'.chaine_select_options($gi_idf_dept,$a_dept).'</select></div>');
-print(   '</div>');
-print('<div class="form-row col-md-12">');
+print(   '</div><br>');
 
 // ---------Commune +++
+print('<div class="form-row col-md-12">');
 print('<div class="form-group col-md-6"><label for="idf_commune_recherche">Commune/Paroisse&nbsp</label><select name="idf_commune_recherche" id="idf_commune_recherche" class="js-select-avec-recherche form-control">');
 $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
 print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
@@ -356,7 +356,7 @@ print('</div>');
 print('</div>');
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-check col-md-4 col-md-offset-1">');
+print('<div class="form-check col-md-4 col-md-offset-2">');
 print('<label for="repertoire" class="form-check-label">Répertoires&nbsp</label>');
 if ($gst_repertoire=='non')
 	print('   <input type=checkbox name=repertoire id=repertoire value=oui unchecked class="form-control form-check-input">');
