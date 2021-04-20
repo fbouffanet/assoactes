@@ -269,10 +269,10 @@ $a_serie_liasse = $connexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom 
 						 
 print('<form id="recherche_liasses" method="post" class="form-inline" action="ReponsesLiasseSimple.php">');
 
-
+// --------série & département
 print('<div class="form-row col-md-12">');
 //print(   '<div class="form-group col-md-4 col-md-offset-4">');
-print(   '<div class="form-group col-md-5">');
+print(   '<div class="form-group col-md-6">');
 print(      '<label for="idf_serie_liasse" class="form-col-label">Série liasses&nbsp</label><select name="idf_serie_liasse" id="idf_serie_liasse" class="js-select-avec-recherche form-control">');
 print(      chaine_select_options($gst_idf_serie_liasse,$a_serie_liasse));
 print(      '</select>');
@@ -282,7 +282,7 @@ print(   '<div class="form-group col-md-4"><label for="idf_dept">Département&nb
 print(   '</div>');
 print('<div class="form-row col-md-12">');
 
-
+// ---------Commune +++
 print('<div class="form-group col-md-6"><label for="idf_commune_recherche">Commune/Paroisse&nbsp</label><select name="idf_commune_recherche" id="idf_commune_recherche" class="js-select-avec-recherche form-control">');
 $a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
 print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
@@ -297,11 +297,11 @@ else
    print('<input type=checkbox name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui checked class="form-check-input" >');
 print('Paroisses rattach&eacute;es</label>');
 print('</div>');
-
 print('</div>');
 
+// -------------Dates
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-4 col-md-offset-1 lib_erreur">');
+print('<div class="form-group col-md-4 col-md-offset-2 lib_erreur">');
 print('<label for="annee_min" class="col-form-label">Années de&nbsp</label>');
 print("<input type=text name=annee_min id=annee_min size=4 value=\"$gi_annee_min\" class=\"form-control\">");
 print('</div>');
@@ -309,7 +309,7 @@ print('<div class="form-group col-md-4 lib_erreur">');
 print('<label for="annee_max" class="col-form-label">&agrave;&nbsp</label>');
 print("<input type=text name=annee_max id=annee_max size =4 value=\"$gi_annee_max\" class=\"form-control\">");
 print('</div>');
-print('<div class="form-check col-md-3">');
+print('<div class="form-check col-md-2">');
 print('<div class="checkbox lib_erreur">');
 print('<label for="sans_periode" class="form-check-label col-form-label">Liasses sans date:');
 if ($gst_sans_periode=='non')
@@ -319,9 +319,9 @@ else
 print('</label></div></div>');
 print('</div>');
 
-
+// -----------Cotes
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-4 col-md-offset-1">');
+print('<div class="form-group col-md-4 col-md-offset-2">');
 print('<label for="nom_notaire" class="col-form-label">Nom Notaire&nbsp</label>');
 print("<input type=text name=nom_notaire id=nom_notaire size=15 maxlength=30 value=\"$gst_nom_notaire\" class=\"form-control\">");
 print('</div>');
@@ -331,7 +331,7 @@ print('<label for="prenom_notaire" class="col-form-label">Prénom Notaire&nbsp</
 print("<input type=text name=prenom_notaire id=prenom_notaire size=15 maxlength=30 value=\"$gst_prenom_notaire\" class=\"form-control\">");
 print('</div>');
 
-print('<div class="form-check col-md-3">');
+print('<div class="form-check col-md-2">');
 print('<div class="checkbox lib_erreur">');
 print('<label for="sans_notaire" class="form-check-label col-form-label">Liasses sans notaire:');
 if ($gst_sans_notaire=='non')
@@ -342,8 +342,9 @@ print('</label></div></div>');
 
 print('</div>');
 
+// ------------Répertoires
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-4 col-md-offset-1 lib_erreur">');
+print('<div class="form-group col-md-4 col-md-offset-2 lib_erreur">');
 print('<label for="cote_debut" class="col-form-label">Première cote&nbsp</label>');
 print("<input type=text name=cote_debut id=cote_debut size=5 maxlength=5 value=\"$gst_cote_debut\" class=\"form-control\">");
 print('</div>');
