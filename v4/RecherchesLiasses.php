@@ -301,7 +301,7 @@ print('</div>');
 print('</div>');
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-4 lib_erreur">');
+print('<div class="form-group col-md-4 col-md-offset-1 lib_erreur">');
 print('<label for="annee_min" class="col-form-label">Années de&nbsp</label>');
 print("<input type=text name=annee_min id=annee_min size=4 value=\"$gi_annee_min\" class=\"form-control\">");
 print('</div>');
