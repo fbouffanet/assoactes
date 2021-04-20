@@ -321,12 +321,12 @@ print('</div>');
 
 
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-4 col-md-offset-2">');
+print('<div class="form-group col-md-4">');
 print('<label for="nom_notaire" class="col-form-label">Nom Notaire&nbsp</label>');
 print("<input type=text name=nom_notaire id=nom_notaire size=15 maxlength=30 value=\"$gst_nom_notaire\" class=\"form-control\">");
 print('</div>');
 
-print('<div class="form-group col-md-4 col-md-offset-2">');
+print('<div class="form-group col-md-4">');
 print('<label for="prenom_notaire" class="col-form-label">Prénom Notaire&nbsp</label>');
 print("<input type=text name=prenom_notaire id=prenom_notaire size=15 maxlength=30 value=\"$gst_prenom_notaire\" class=\"form-control\">");
 print('</div>');
