@@ -271,7 +271,8 @@ print('<form id="recherche_liasses" method="post" class="form-inline" action="Re
 
 
 print('<div class="form-row col-md-12">');
-print(   '<div class="form-group col-md-4 col-md-offset-4">');
+//print(   '<div class="form-group col-md-4 col-md-offset-4">');
+print(   '<div class="form-group col-md-4">');
 print(      '<label for="idf_serie_liasse" class="form-col-label">Série liasses&nbsp</label><select name="idf_serie_liasse" id="idf_serie_liasse" class="js-select-avec-recherche form-control">');
 print(      chaine_select_options($gst_idf_serie_liasse,$a_serie_liasse));
 print(      '</select>');
