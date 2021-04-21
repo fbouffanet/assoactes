@@ -408,7 +408,7 @@ function menu_ajouter_releveur($pconnexionBD)
 	$st_requete = "SELECT idf,concat(nom, ' ', prenom) as nom FROM adherent ".
 	              "where idf not in (select idf_adherent from releveur) ".
 				  "order by nom";
-	$a_adherent = $pconnexionBD->liste_valeur_par_clefUtf8($st_requete);
+	$a_adherent = $pconnexionBD->liste_valeur_par_clef($st_requete);
 	print("<div class=TITRE>Ajout d'un releveur</div><br><br>");
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsReleveur(0)\">");
 	print("<div align=center><input type=hidden name=mode value=\"AJOUTER_RELEVEUR\">");
