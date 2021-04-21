@@ -191,6 +191,16 @@ function constantes($pst_fichier)
 			$gst_prefixe_adh_gbk = $a_correspondances[1];
 		else if (preg_match('/^define\(\'NB_POINTS_GBK\',([\d]*)\);/',$st_ligne,$a_correspondances))
 			$gi_nb_points_gbk = $a_correspondances[1];
+		else if (preg_match('/^define\(\'CODE_DPT_GENEABANK\',\'([\w\.-]*)\'\);/',$st_ligne,$a_correspondances))
+			$gst_code_dpt_geneabank = $a_correspondances[1];
+		else if (preg_match('/^define\(\'CODE_REGION_GENEABANK\',\'([\w\.-]*)\'\);/',$st_ligne,$a_correspondances))
+			$gst_code_region_geneabank = $a_correspondances[1];
+		else if (preg_match('/^define\(\'CODE_PAYS_GENEABANK\',\'([\w\.-]*)\'\);/',$st_ligne,$a_correspondances))
+			$gst_code_pays_geneabank = $a_correspondances[1];
+		else if (preg_match('/^define\(\'PAYS_GENEABANK\',\'([\w\.-]*)\'\);/',$st_ligne,$a_correspondances))
+			$gst_pays_geneabank = $a_correspondances[1];
+		else if (preg_match('/^define\(\'CODE_TYPE_GENEABANK\',\'([\w\.-]*)\'\);/',$st_ligne,$a_correspondances))
+			$gst_code_type_geneabank = $a_correspondances[1];
 		else if (preg_match('/^\<\?php/',$st_ligne))
 			continue;
 		else if (preg_match('/^\?\>/',$st_ligne))
@@ -219,6 +229,11 @@ if (isset($_POST['lib_asso']))
 	$gst_idf_asso_gbk = trim($_POST['idf_asso_gbk']);
 	$gst_prefixe_adh_gbk = trim($_POST['prefixe_adh_gbk']);
 	$gi_nb_points_gbk = (int) trim($_POST['nb_points_gbk']);
+	$gst_code_dpt_geneabank = trim($_POST['code_dpt_geneabank']);
+	$gst_code_region_geneabank = trim($_POST['code_region_geneabank']);
+	$gst_code_pays_geneabank = trim($_POST['code_pays_geneabank']);
+	$gst_pays_geneabank = trim($_POST['pays_geneabank']);
+	$gst_code_type_geneabank = trim($_POST['code_type_geneabank']);
 	
 	$pf = fopen($gst_fichier_constantes, "w");
 	if ($pf===false)
@@ -246,6 +261,12 @@ if (isset($_POST['lib_asso']))
 		fwrite($pf,"define('IDF_ASSO_GBK','$gst_idf_asso_gbk');\n");
 		fwrite($pf,"define('PREFIXE_ADH_GBK','$gst_prefixe_adh_gbk');\n");
 		fwrite($pf,"define('NB_POINTS_GBK',$gi_nb_points_gbk);\n");
+		fwrite($pf,"define('CODE_DPT_GENEABANK','$gst_code_dpt_geneabank');\n");
+		fwrite($pf,"define('CODE_REGION_GENEABANK','$gst_code_region_geneabank');\n");
+		fwrite($pf,"define('CODE_PAYS_GENEABANK','$gst_code_pays_geneabank');\n");
+		fwrite($pf,"define('PAYS_GENEABANK','$gst_pays_geneabank');\n");
+		fwrite($pf,"define('CODE_TYPE_GENEABANK','$gst_code_type_geneabank');\n");
+		
 		fwrite($pf,"?>\n");
 		print("<div class=\"alert alert-success\">$gst_fichier_constantes sauvegard&eacute;</div>");
 		print("<a href=\"$gst_url_site\" class=\"btn btn-info\" role=\"button\" target=\"_blank\">Acc&eacute;der au site</a>");
@@ -336,8 +357,33 @@ else
     print('<div class="col-md-8">');
     print("<input type=text maxlength=40 size=40 name=nb_points_gbk id=nb_points_gbk value=\"$gi_nb_points_gbk\" class=\"form-control\">");
     print('</div></div>');
+   	print('<div class="form-group row">');
+    print("<label for=\"code_dpt_geneabank\" class=\"col-md-4 col-form-label control-label\">Code d&eacute;partement G&eacute;n&eacute;abank:</label>");
+    print('<div class="col-md-8">');
+    print("<input type=text maxlength=40 size=40 name=code_dpt_geneabank id=code_dpt_geneabank value=\"$gst_code_dpt_geneabank\" class=\"form-control\">");
 	print('</div></div>');
-   	
+	print('<div class="form-group row">');
+    print("<label for=\"code_region_geneabank\" class=\"col-md-4 col-form-label control-label\">Code r&eacute;gion G&eacute;n&eacute;abank:</label>");
+    print('<div class="col-md-8">');
+    print("<input type=text maxlength=40 size=40 name=code_region_geneabank id=code_region_geneabank value=\"$gst_code_region_geneabank\" class=\"form-control\">");
+	print('</div></div>');
+	print('<div class="form-group row">');
+    print("<label for=\"code_pays_geneabank\" class=\"col-md-4 col-form-label control-label\">Code Pays G&eacute;n&eacute;abank:</label>");
+    print('<div class="col-md-8">');
+    print("<input type=text maxlength=40 size=40 name=code_pays_geneabank id=code_pays_geneabank value=\"$gst_code_pays_geneabank\" class=\"form-control\">");
+	print('</div></div>');
+	print('<div class="form-group row">');
+    print("<label for=\"pays_geneabank\" class=\"col-md-4 col-form-label control-label\">Pays G&eacute;n&eacute;abank:</label>");
+    print('<div class="col-md-8">');
+    print("<input type=text maxlength=40 size=40 name=pays_geneabank id=pays_geneabank value=\"$gst_pays_geneabank\" class=\"form-control\">");
+	print('</div></div>');
+	print('<div class="form-group row">');
+    print("<label for=\"code_type_geneabank\" class=\"col-md-4 col-form-label control-label\">Code Type G&eacute;n&eacute;abank:</label>");
+    print('<div class="col-md-8">');
+    print("<input type=text maxlength=40 size=40 name=code_type_geneabank id=code_type_geneabank value=\"$gst_code_type_geneabank\" class=\"form-control\">");
+    print('</div></div>');
+	print('</div></div>');
+	
 	print('<div class="form-row col-md-12">'); 
 	print('<button type="submit" class="btn btn-primary  col-md-offset-4 col-md-4""><span class="glyphicon glyphicon-wrench"></span> Sauvegarder les constantes</button>'); 
 	print('</div>');
