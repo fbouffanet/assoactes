@@ -75,21 +75,13 @@ function  ExporteUnions($pconnexionBD,$pst_idf_geneabank,$pst_repertoire_export)
  * Le fichier est au format Index Généanet 
  * @param object $pconnexionBD Connexion à la base de donnée
  * @param string $pst_idf_geneabank Identifiant Généabank de l'association
- * @param string $pst_repertoire_export Répertoire de l'export
- * @global $gst_code_dpt_geneabank Code département généabank (Ex: F16)
- * @global $gst_code_region_geneabank Code région généabank (Ex: PCH)
- * @global $gst_code_pays_geneabank Code pays généabank (Ex: FRA)
- * @global $gst_code_type_geneabank Source généabank (Ex: C pour acte original)      
+ * @param string $pst_repertoire_export Répertoire de l'export     
  * Exemple d'export :
  * BATARD;décès;1777;1777;1;CLAIX;F16;PCH;FRA;C
  * BATARDE;décès;1791;1791;1;BECHERESSE;F16;PCH;FRA;C
  */ 
 function  ExporteIndexPatros($pconnexionBD,$pst_idf_geneabank,$pst_repertoire_export)
 {
-   global $gst_code_dpt_geneabank;
-   global $gst_code_region_geneabank;
-   global $gst_code_pays_geneabank;
-   global $gst_code_type_geneabank;
    $st_requete =  "select p.libelle,ta.nom,sp.annee_min,sp.annee_max,sp.nb_personnes,ca.nom from stats_patronyme sp join patronyme p on (sp.idf_patronyme=p.idf) join commune_acte ca on (sp.idf_commune=ca.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) join source s on (sp.idf_source=s.idf) where s.publication_geneabank=1 and p.libelle REGEXP '^[A-Za-z ()]+$' ";
    $pconnexionBD->desactive_cache();
    $pconnexionBD->execute_requete($st_requete);
@@ -97,7 +89,7 @@ function  ExporteIndexPatros($pconnexionBD,$pst_idf_geneabank,$pst_repertoire_ex
    $pf = fopen($st_fichier, "w") or die("<div class=\"alert alert-danger\">Impossible d'&eacute;crire $st_fichier</div>");
    while (list($st_patro,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_personnes,$st_commune)=$pconnexionBD->ligne_suivante_resultat())
    {
-      $st_ligne = join(';',array($st_patro,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_personnes,$st_commune,$gst_code_dpt_geneabank,$gst_code_region_geneabank,$gst_code_pays_geneabank,$gst_code_type_geneabank));
+      $st_ligne = join(';',array($st_patro,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_personnes,$st_commune,CODE_DPT_GENEABANK,CODE_REGION_GENEABANK,CODE_PAYS_GENEABANK,CODE_TYPE_GENEABANK));
       fwrite($pf,"$st_ligne\r\n");      
    }
    fclose($pf);
