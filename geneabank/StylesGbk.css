@@ -1,6 +1,6 @@
 body {
-background-color: #F0E3C0;
-color:#000000;
+//background-color: #F0E3C0;
+//color:#000000;
 font-family:Arial;
 }
 
@@ -40,7 +40,7 @@ div.flexbox {
   font-size:18px;
   background-color: #721725;
   text-align: center;
-  color : white;
+  //color : white;
   margin-right: 10%;
   margin-left: 10%;
 }
