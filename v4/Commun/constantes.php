@@ -72,6 +72,11 @@ define('DELTA_NAVIGATION',5);
 define('IDF_ASSO_GBK','agcharente');
 define('PREFIXE_ADH_GBK','AGC');
 define('NB_POINTS_GBK',100);
+define('CODE_DPT_GENEABANK','F16');
+define('CODE_REGION_GENEABANK','PCH');
+define('CODE_PAYS_GENEABANK','FRA');
+define('PAYS_GENEABANK','France');
+define('CODE_TYPE_GENEABANK','C');
 
 define('TOUS_ADHERENTS','T');
 define('ADHESION_BULLETIN','B');
