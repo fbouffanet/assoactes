@@ -7,37 +7,284 @@ require_once('../v4/Commun/constantes.php');
 require_once('../v4/Commun/ConnexionBD.php');
 require_once('../v4/Commun/config.php');
 
-print('<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"><html>');
-print("<Head>\n");
-print('<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">');
-print('<meta http-equiv="content-language" content="fr">');
+print('<!DOCTYPE html>');
+print("<head>");
+print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
+print('<meta http-equiv="content-language" content="fr"> ');
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'>");
-print("<script src='VerifieChampsRecherche.js' type='text/javascript'></script>\n");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
+print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/select2-bootstrap.min.css' type='text/css' rel='stylesheet'>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
+print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
+print("<script src='js/select2.min.js' type='text/javascript'></script>");
+print("<script src='/js/bootstrap.min.js' type='text/javascript'></script>");
+print("<title>Geneabank.".SIGLE_ASSO.": Recherches</title>");
+?>
+<script type='text/javascript'>
+$(document).ready(function() {
+	$('.raz').click(function() {
+        $("#idf_source_recherches_communes").val('').trigger('change');
+        $("#idf_type_acte_recherches_communes").val('').trigger('change');
+        $("#idf_canton_recherches_communes").val('').trigger('change');
+        $("#annee_min_recherches_communes").val('');
+        $("#annee_max_recherches_communes").val('');
+        $("#nom_epx").val('');
+        $("#prenom_epx").val('');
+        $('#variantes_epx').prop('checked', true);
+        $("#nom_epse").val('');
+        $("#prenom_epse").val('');
+        $('#variantes_epse').prop('checked', true);
+        $("#nom").val('');
+        $("#prenom").val('');
+        $('#variantes').prop('checked', true);
+        $("#idf_type_presence").val('');
+        $("#sexe").val('');
+    });
+	
+    $("#recherches_communes").validate({
+        ignore: [],
+        rules: {
+            annee_min_recherches_communes: {
+                integer: true,
+                minlength: 4
+            },
+            annee_max_recherches_communes: {
+                integer: true,
+                minlength: 4
+            }
+        },
+        messages: {
+            annee_min_recherches_communes: {
+                integer: "L'année doit être un entier",
+                minlength: "L'année doit comporter 4 chiffes"
+            },
+            annee_max_recherches_communes: {
+                integer: "L'année doit être un entier",
+                minlength: "L'année doit comporter 4 chiffes"
+            }
+        },
+		errorElement: "em",
+		errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
 
-//script Google Analytics -- debut
-print('<script type="text/javascript">');
-  print("var _gaq = _gaq || [];");
-  print("_gaq.push(['_setAccount', 'UA-9306738-6']);");
-  print("_gaq.push(['_trackPageview']);");
-  print("(function() {");
-    print("var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;");
-    print("ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';");
-    print("var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);");
-  print("})();");
-print('</script>');
-//script Google Analytics -- fin
-print("<title>Geneabank AGC: Recherches</title>");
+			// Add `has-feedback` class to the parent div.form-group
+			// in order to add icons to inputs
+			element.parents( ".lib_erreur" ).addClass( "has-feedback" );
+
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+			}
+
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !element.next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+			}
+		},
+		success: function ( label, element ) {
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !$( element ).next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+			}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+		},
+		unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+		}
+    });
+	
+	jQuery.validator.addMethod("patro_recherche", function(value, element) {
+        var patro = value.replace(/\*+/g, '*');
+        return this.optional(element) || (patro == '*' || patro.length >= 3 || patro == '!');
+    }, "Le patronyme doit comporter au moins 3 caractères (* comprises) ou correspondre à * ou ! exactement");
+
+    //validation rules
+    $("#recherches_couple").validate({
+        rules: {
+            nom_epx: {
+                required: true,
+                patro_recherche: true
+            },
+            nom_epse: {
+                required: true,
+                patro_recherche: true,
+            },
+            prenom_epx: {
+                required: {
+                   depends: function(element) {
+                         return $("#nom_epx").val() =='*';
+                   }
+                }
+            },
+            prenom_epse: {
+                required: {
+                   depends: function(element) {
+                         return $("#nom_epse").val() =='*';
+                   }
+                }
+            }
+        },
+        messages: {
+            nom_epx: {
+                required: "Le nom de l'époux est obligatoire"
+            },
+            nom_epse: {
+                required: "Le nom de l'épouse est obligatoire"
+            },
+            prenom_epx: {
+                required: "Le prénom de l'époux est obligatoire si son patronyme est vide"
+            },
+            prenom_epse: {
+                required: "Le prénom de l'épouse est obligatoire si son patronyme est vide"
+            }
+        },
+		errorElement: "em",
+		errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
+
+			// Add `has-feedback` class to the parent div.form-group
+			// in order to add icons to inputs
+			element.parents( ".col-md-2" ).addClass( "has-feedback" );
+
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+			}
+
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !element.next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+			}
+		},
+		success: function ( label, element ) {
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !$( element ).next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+			}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".col-md-2" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+		},
+		unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".col-md-2" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+		},
+        submitHandler: function(form) {
+
+            if ($("#recherches_communes").valid()) {
+				console.log("Canton="+$("#idf_canton_recherches_communes").val());
+                $("#idf_type_acte_recherches_couple").val($("#idf_type_acte_recherches_communes").val());
+                $("#idf_canton_recherches_couple").val($("#idf_canton_recherches_communes").val());
+                $("#annee_min_recherches_couple").val($("#annee_min_recherches_communes").val());
+                $("#annee_max_recherches_couple").val($("#annee_max_recherches_communes").val());      
+                form.submit();
+            }
+        }
+    });
+
+    $("#recherches_personne").validate({
+        rules: {
+            nom: {
+                required: true,
+                patro_recherche: true
+            },
+            prenom: {
+                required: {
+                   depends: function(element) {
+                         return $("#patro_recherche").val() =='*';
+                   }
+                }
+            }
+        },
+        messages: {
+            nom: {
+                required: "Le nom est obligatoire"
+            },
+            prenom: {
+                required: "Le pr&eacute;nom est obligatoire si son patronyme est vide"
+            }
+        },
+		errorElement: "em",
+		errorPlacement: function ( error, element ) {
+			// Add the `help-block` class to the error element
+			error.addClass( "help-block" );
+
+			// Add `has-feedback` class to the parent div.form-group
+			// in order to add icons to inputs
+			element.parents( ".lib_erreur" ).addClass( "has-feedback" );
+
+			if ( element.prop( "type" ) === "checkbox" ) {
+				error.insertAfter( element.parent( "label" ) );
+			} else {
+				error.insertAfter( element );
+			}
+
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !element.next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+			}
+		},
+		success: function ( label, element ) {
+			// Add the span element, if doesn't exists, and apply the icon classes to it.
+			if ( !$( element ).next( "span" )[ 0 ] ) {
+				$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+			}
+		},
+		highlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+			$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+		},
+		unhighlight: function ( element, errorClass, validClass ) {
+			$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+			$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+		},
+        submitHandler: function(form) {
+            if ($("#recherches_communes").valid()) {
+                $("#idf_type_acte_recherches_personne").val($("#idf_type_acte_recherches_communes").val());
+                $("#idf_canton_recherches_personne").val($("#idf_canton_recherches_communes").val());
+                $("#annee_min_recherches_personne").val($("#annee_min_recherches_communes").val());
+                $("#annee_max_recherches_personne").val($("#annee_max_recherches_communes").val());               
+                form.submit();
+            }
+        }
+    });
+	
+	$('#echange_patros').click(function() {
+        var nom_epx = $("#nom_epx").val();
+        $("#nom_epx").val($("#nom_epse").val());
+        $("#nom_epse").val(nom_epx);
+    });
+	
+});	
+
+</script>
+<?php
 print("</head>");
-
 print('<body>');
 
+print('<div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 $gst_type_recherche         = isset($_GET['recherche']) ? $_GET['recherche'] : '';
 
 if ($gst_type_recherche=='nouvelle')
 {
-  $gi_idf_source        = '0';
   $gi_idf_canton        = '0';
   $gi_idf_type_acte     = '0';
   $gi_annee_min         = '';
@@ -54,11 +301,9 @@ if ($gst_type_recherche=='nouvelle')
   $gst_nom              = '';
   $gst_prenom           = '';
   $gst_variantes        = 'oui';
-
 }
 else
 {
-  $gi_idf_source      = isset($_SESSION['gbk_idf_source']) ? $_SESSION['gbk_idf_source']: '0';
   $gi_idf_canton      = isset($_SESSION['gbk_idf_canton']) ? $_SESSION['gbk_idf_canton']: '0';
   $gi_idf_type_acte     = isset($_SESSION['gbk_idf_type_acte']) ? $_SESSION['gbk_idf_type_acte']: '0';
   $gi_annee_min         = isset($_SESSION['gbk_annee_min']) ? $_SESSION['gbk_annee_min']: '';
@@ -77,7 +322,6 @@ else
   $gst_variantes        = isset($_SESSION['gbk_variantes']) ? $_SESSION['gbk_variantes']: 'oui';
 }
 
-unset($_SESSION['gbk_idf_source']);
 unset($_SESSION['gbk_idf_canton']);
 unset($_SESSION['gbk_idf_type_acte']);
 unset($_SESSION['gbk_annee_min']);
@@ -99,83 +343,199 @@ $a_types_acte = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM type_ac
 $a_types_presence = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM type_presence order by nom");
 $a_types_presence[0] = 'Toutes';
 
-print("<form name=recherche method=post action=\"\">");
-print('<div align=center>');
-print("<input type=hidden name=recherche value=\"\">");
-print('<div class=alignCenter>');
-print('<a href="https://www.genea16.net"><img src="images/logo_AGC250.jpg" border="0" width="100" height="100" alt="LogoAGC"></a><img src="https://www.geneabank.org/pictures/logo4.jpg" width="233" height="104" alt="LogoGbk">');
-print('</div><br>');
+print('<div class="panel panel-primary">');
+print('<div class="panel-body">');
+print('<div class="form-row col-md-12">');
+print("<div class=\"col-md-4 col-md-offset-1\"><a href=\"$gst_url_site\"><img src=\"$gst_logo_association\"></a></div>");
+print("<div class=\"col-md-4 col-md-offset-1\"><a href=\"http://www.geneabank.org\"><img src=\"https://www.geneabank.org/pictures/logo4.jpg\"></a></div>");
+print('</div>');
+print('</div>');
+print('</div>');
 
-print('<div class=alignCenter>Ces registres concernent la Charente et sont accessibles via le syst&egrave;me <a href="https://www.geneabank.org/">G&eacute;n&eacute;aBank</a> et le <a href="https://www.genea16.net">site</a> de l\'AGC.</div>');
-print('<div class=alignCenter>Par ailleurs, vous pouvez consulter librement et compl&eacute;ter les <a href="https://www.genea16.net/?q=articles/tables-decennales-des-mariages-de-la-charente" target=\"blank\">tables d&eacute;cennales de mariages du 19&egrave;me si&egrave;cle</a> sur le site de l\'AGC</div>');
-print('<br><div class="PAVE">Registres de l\'Association G&eacute;n&eacute;alogique de la Charente</div><br>');
+if (file_exists('annonce_accueil.htm'))
+{
+	print('<blockquote>');
+	print(file_get_contents('annonce_accueil.htm'));
+	print('</blockquote>');
+}
 
-print('<div align=center> Type d\'acte: <select name="idf_type_acte" >');
-$a_types_acte[0] = 'Tous';
-print(chaine_select_options($gi_idf_type_acte,$a_types_acte));
+print('<div class="panel-group">');
+
+print('<div class="panel panel-primary">');
+print('<div class="panel-heading">Registres de '.LIB_ASSO_AVEC.'</div>');
+print('<div class="panel-body">');
+print('<form id="recherches_communes" class="form-inline" method="post">');
+
+print('<div class="form-row col-md-12">');
+print('<div class="form-group col-md-6"><label for="idf_type_acte_recherches_communes">Type d\'acte</label><select name="idf_type_acte_recherches_communes" id="idf_type_acte_recherches_communes" class="form-control">');
+print(chaine_select_options($gi_idf_type_acte,array(''=>'Tous')+$a_types_acte));
 print('</select>');
-print(" Ann&eacute;es de <input type=text name=annee_min size =4 value=\"$gi_annee_min\"> &agrave; <input type=text name=annee_max size=4 value=\"$gi_annee_max\">");
-print('</div><br>');
+print('</div>');
+print('<div class="input-group col-md-6">');
+print("<span class=\"input-group-addon\">Ann&eacute;es de</span><div class=\"lib_erreur\"><input type=text name=annee_min_recherches_communes id=\"annee_min_recherches_communes\" size=4 value=\"$gi_annee_min\" class=\"form-control\"></div>");
+print("<span class=\"input-group-addon\">&agrave;</span><div class=\"lib_erreur\"><input type=text name=annee_max_recherches_communes size=4 id=\"annee_max_recherches_communes\" value=\"$gi_annee_max\" class=\"form-control \"></div>");
+print('</div>');
+print('</div>'); // fin première ligne
 
-print('<div align=center>');
-print('Canton: <select name="idf_canton" >');
-$a_cantons[0] = 'Tous';
-print(chaine_select_options($gi_idf_canton,$a_cantons));
-print('</select><br></div><br></div>');
+print('<div class="form-row col-md-12">');
+print('<div class="form-group col-md-offset-2 col-md-6"><label for="canton_recherches_communes">Canton</label>');
+print('<select name="idf_canton_recherches_communes" id="idf_canton_recherches_communes" class="form-control">');
+print(chaine_select_options($gi_idf_canton,array(''=>'Tous')+$a_cantons));
+print('</select></div></div>'); // fin seconde ligne
+print('</form>');
 
-print('<div CLASS=PAVE>');
-print('Recherche par couple');
+print('</div>'); // fin panel body
+print('</div>'); // Fin panel primary
+
+print('<div class="pave-couple panel panel-primary">');
+print('<div class="panel-heading">Recherche par couple</div>');
+
+print('<div class="panel-body">');
+print('<form id="recherches_couple" method="post" action="reponsesgbkcouple.php" class="form-inline">');
+print('<input type="hidden" id="idf_type_acte_recherches_couple" name="idf_type_acte">');
+print('<input type="hidden" id="idf_canton_recherches_couple" name="idf_canton">');
+print('<input type="hidden" id="annee_min_recherches_couple" name="annee_min">');
+print('<input type="hidden" id="annee_max_recherches_couple" name="annee_max">');
+
+
+print('<div class="form-row col-md-12">');
+
+
+print("<label for=\"nom_epx\" class=\"col-form-label col-md-2\">Nom Epoux</label>");
+print('<div class="col-md-2">');
+print("<input type=text id=nom_epx name=nom_epx size=15 maxlength=30 value=\"$gst_nom_epx\" class=\"form-control\">");
 print('</div>');
 
-print('<div align=center><br>');
+print("<label for=\"prenom_epx\" class=\"col-form-label col-md-2\">Pr&eacute;nom Epoux</label>");
+print('<div class="col-md-2">');
+print("<input type=text name=prenom_epx id=prenom_epx size=15 maxlength=30 value=\"$gst_prenom_epx\" class=\"form-control\">");
+print('</div>');
 
-print("Nom Epoux: <input type=text name=nom_epx size=15 maxlength=30 value=\"$gst_nom_epx\" onKeyPress=\"SoumissionCouple(0,event)\"> Pr&eacute;nom Epoux: <input type=text name=prenom_epx size=15 maxlength=35 value=\"$gst_prenom_epx\" onKeyPress=\"SoumissionCouple(0,event)\"> ");
-print(' Recherche par variantes connues:');
+print('<div class="form-check col-md-4">');
 if ($gst_variantes_epx=='')
-   print('<input type=checkbox name=variantes_epx value=oui >');
+   print('<input type=checkbox name=variantes_epx id=variantes_epx value="oui" class="form-check-input">');
 else
-   print('<input type=checkbox name=variantes_epx value=oui checked>');   
-
-print('<br></div>');
-
-print('<div align=center><br>');
-
-print("Nom Epouse: <input type=text name=nom_epse size=15 maxlength=30 value=\"$gst_nom_epse\" onKeyPress=\"SoumissionCouple(0,event)\"> Pr&eacute;nom Epouse: <input type=text name=prenom_epse size=15 maxlength=35 value=\"$gst_prenom_epse\" onKeyPress=\"SoumissionCouple(0,event)\"> ");
-
-print(' Recherche par variantes connues:');
-if ($gst_variantes_epse=='')
-   print('<input type=checkbox name=variantes_epse value=oui >');
-else
-   print('<input type=checkbox name=variantes_epse value=oui checked>'); 
-print('<br></div>');
-
-print('<div align=center><br><input type=button name=Rechercher value="Rechercher le couple" onClick="VerifieChampsRecherche(0,\'RechercheCouple\')"> <input type=button value="Effacer tous les Champs"  onClick="RazChamps(0)"> <br><br></div>');
-
-print('<div CLASS=PAVE>');
-print('Recherche par personne');
+   print('<input type=checkbox name=variantes_epx id=variantes_epx value="oui" checked class="form-check-input">');   
+print('<label for="variantes_epx" class="form-check-label">Recherche par variantes connues</label>');
 print('</div>');
 
-print('<div align=center><br>');
-$ga_sexe[0] = 'Tous';
-print('Sexe: <select name="sexe" > ');
-print(chaine_select_options($gst_sexe,$ga_sexe));
-print('</select> ');
+print('</div>'); //fin ligne
 
-print("Nom: <input type=text name=nom size=15 maxlength=30 value=\"$gst_nom\" onKeyPress=\"SoumissionPersonne(0,event)\" > Pr&eacute;nom: <input type=text name=prenom size=15 maxlength=30 value=\"$gst_prenom\" onKeyPress=\"SoumissionPersonne(0,event)\">" );
-print(' Type de pr&eacute;sence<sup>*</sup>: <select name="idf_type_presence" >');
+print('<div class="form-row col-md-12">');
+
+print("<label for=\"nom_epse\" class=\"col-form-label col-md-2\">Nom Epouse</label>");
+print('<div class="col-md-2">');
+print('<div class="input-group">');
+print('<span class="input-group-addon">');
+print('<span class="glyphicon glyphicon-random"  id="echange_patros"></span>');
+print('</span>');
+print("<input type=text id=nom_epse name=nom_epse size=15 maxlength=30 value=\"$gst_nom_epse\" class=\"form-control\">");
+print('</div>');
+print('</div>');
+
+
+print("<label for=\"prenom_epse\" class=\"col-form-label col-md-2\">Pr&eacute;nom Epouse</label>");
+print('<div class="col-md-2">');
+print("<input type=text name=prenom_epse id=prenom_epse size=15 maxlength=30 value=\"$gst_prenom_epse\" class=\"form-control\">");
+print('</div>');
+
+print('<div class="col-md-4">');
+if ($gst_variantes_epse=='')
+   print('<input type=checkbox name=variantes_epse id=variantes_epse value="oui class="form-check-input">');
+else
+   print('<input type=checkbox name=variantes_epse id=variantes_epse value="oui"  checked class="form-check-input">'); 
+print('<label for="variantes_epse" class="form-check-label">Recherche par variantes connues</label>');
+print('</div>');
+
+print('</div>'); // fin ligne
+
+print('<div class="form-row">');
+
+print('<div class="btn-group col-md-6 col-md-offset-4" role="group">');
+print('<button class="btn btn-primary" type=submit name=Rechercher><span class="glyphicon glyphicon-search"></span> Rechercher le couple</button>');
+print('<button class="btn btn-warning raz" type=button name="raz"><span class="glyphicon glyphicon-erase"></span> Effacer tous les Champs</button>');
+print('</div>');
+
+print('</div>');
+print('</form>');
+print('</div>');
+print('</div>'); // fin pave-couple
+
+print('<div class="pave-personne panel panel-primary">');
+print('<div class="panel-heading">Recherche par personne</div>');
+print('<div class="panel-body">');
+print('<form id="recherches_personne" method="post" action="reponsesgbkpersonne.php" class="form-inline" method="post">');
+
+print('<input type="hidden" name="type_recherche" value="personne">');
+print('<input type="hidden" id="idf_type_acte_recherches_personne" name="idf_type_acte">');
+print('<input type="hidden" id="idf_canton_recherches_personne" name="idf_canton">');
+print('<input type="hidden" id="annee_min_recherches_personne" name="annee_min">');
+print('<input type="hidden" id="annee_max_recherches_personne" name="annee_max">');
+
+$ga_sexe[0] = 'Tous';
+print('<div class="form-row">');
+
+print("<label for=\"nom\" class=\"col-form-label col-md-1\">Nom</label>");
+print('<div class="col-md-2 lib_erreur">');
+print("<input type=text name=nom id=nom size=15 maxlength=30 value=\"$gst_nom\" class=\"form-control\">");
+print('</div>');
+
+print('<div class="col-md-1">');
+if ($gst_variantes=='')
+   print('<input type=checkbox name=variantes id=variantes value=oui class="form-check-input">');
+else
+   print('<input type=checkbox name=variantes id=variantes value=oui checked class="form-check-input">');
+print('</div>');
+print('<label for="variantes" class="form-check-label col-md-2">Recherche par variantes connues</label>');
+
+print("<label for=\"prenom\" class=\"col-form-label col-md-1\">Pr&eacute;nom</label>");
+print('<div class="col-md-2 lib_erreur">');
+print("<input type=text name=prenom id=prenom size=15 maxlength=30 value=\"$gst_prenom\" class=\"form-control\">" );
+print('</div>');
+
+print('</div>'); // fin ligne
+
+print('<div class="form-row col-md-12">');
+print('<label for="sexe" class="col-form-label col-md-1">Sexe</label>');
+print('<div class="col-md-2">');
+print('<div class="input-group">');
+print('<span class="input-group-addon">');
+print('<span class="glyphicon glyphicon-info-sign" data-toggle="collapse" data-target="#aideTP" aria-expanded="false"></span>');
+print('</span>');
+print('<select name="sexe" id="sexe" class="form-control">');
+print(chaine_select_options($gst_sexe,$ga_sexe));
+print('</select>');
+print('</div>');
+print('</div>');
+
+print('<label for="idf_type_presence" class="col-form-label col-md-1">Type de<br>pr&eacute;sence</label>');
+print('<div class="col-md-2">');
+print('<select name="idf_type_presence" id="idf_type_presence" class="form-control" aria-describedby="aideTP">');
 print(chaine_select_options($gi_idf_type_presence,$a_types_presence));
 print('</select>');
-print(' Recherche par variantes connues:');
-if ($gst_variantes=='')
-   print('<input type=checkbox name=variantes value=oui >');
-else
-   print('<input type=checkbox name=variantes value=oui checked>'); 
+print('</div>');
+print('</div>');
 
-print('<br></div>');
-print('<div class=alignCenter>(*) Nim&egrave;gue ne renseignant pas le sexe d\'un parrain, t&eacute;moin ou marraine, ne pas le sp&eacute;cifier dans une recherche de ce type<br></div>');
-print('<div align=center><input type=button name=Rechercher value="Rechercher la personne" onClick="VerifieChampsRecherche(0,\'RecherchePersonne\')"> <input type=button value="Effacer tous les Champs"  onClick="RazChamps(0)"></div> ');
+print('<div class="form-row col-md-12">');
+print('<div id="aideTP" class="collapse alert alert-warning">Nim&egrave;gue ne renseignant pas le sexe d\'un parrain, t&eacute;moin ou marraine, ne pas le sp&eacute;cifier dans une recherche de ce type</div>');
+print('</div>'); //fin ligne
+
+print('<div class="form-row">');
+
+print('<div class="btn-group col-md-6 col-md-offset-4" role="group">');
+print('<button type=submit name=Rechercher class="btn btn-primary"><span class="glyphicon glyphicon-search"></span>  Rechercher la personne</button>');
+print('<button type=button name="raz" class="btn btn-warning raz"><span class="glyphicon glyphicon-erase"></span> Effacer tous les Champs</button>');
+print('</div>');
+
+print('</div>'); //fin ligne
+
 print("</form>");
-print('<div class=alignCenter><br><a href="https://www.genea16.net" class=LienAGC>Association G&eacute;n&eacute;alogique de la Charente</a></div>');
+print('</div>'); 
+print('</div>');  // fin pavé
+
+print("<div class=\"panel-footer text-center\"><a href=\"$gst_url_site\">".LIB_ASSO."</a></div>");
+print("</div>"); // fin panel-group
+print("</div>"); // fin container
 print("</body></html>");
 $connexionBD->ferme();
 ?>
