@@ -34,7 +34,6 @@ print('</div>'); // fin panel primary
 print('<div class="panel panel-primary">');
 print('<div class="panel-heading">Registres de '.LIB_ASSO_AVEC.'</div>');
 print("<div class=\"panel-body\">");
-print('<form id="ConfirmeDemandes" class="form-inline" action="ConfirmeDemandes.php" method="post">');
 
 if (count($ga_idf_actes)==0)
 {
@@ -88,8 +87,8 @@ foreach ($a_intervenants as $i_idf_acte => $a_intervenant)
 }
 
 $st_requete_codee = md5(implode('|',$ga_idf_actes));
-print("<div class=TITRE>R&eacute;capitulatif de votre demande</div><br>");
-print("<div class=alignCenter>Cliquer sur le bouton au bas de la page pour valider votre demande</div><br>");
+print("<blockquote>R&eacute;capitulatif de votre demande<br>");
+print("Cliquer sur le bouton au bas de la page pour valider votre demande</blockquote>");
 print("<table class=\"table table-bordered table-striped\">");
 print("<thead><tr>");
 print("<th>Type d'acte</th><th>Parties</th><th>Ann&eacute;e</th><th>Commentaires</th>");
@@ -107,7 +106,7 @@ foreach ($ga_idf_actes as $i_idf_acte) {
 print('</tbody>');
 print("</table>");
 print GeneaBank($i_nb_actes,$gst_asso_gbk,$st_requete_codee,$gst_url_reponse_gbk);
-print('<div class="form-row">');
+print('<div class="row">');
 print('<div class="btn-group col-md-6 col-md-offset-4" role="group">');
 print('<a href="index.php" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-search"></span> Revenir &agrave; la page de recherche</a>');
 print('<a href="index.php?recherche=nouvelle" class="btn btn-warning raz" role="button"><span class="glyphicon glyphicon-erase"></span>Commencer une nouvelle recherche</a>');
@@ -115,8 +114,9 @@ print('</div>'); // fin btn-group
 print('</div>'); //fin ligne
 
 print('</div>'); // fin panel body
-print("<div class=\"panel-footer text-center\"><a href=\"$gst_url_site\">".LIB_ASSO."</a></div>");
 print('</div>'); // fin panel primary
+
+print("<div class=\"panel-footer text-center\"><a href=\"$gst_url_site\">".LIB_ASSO."</a></div>");
 
 print('</div>'); // fin div container
 print("</body></html>");  
