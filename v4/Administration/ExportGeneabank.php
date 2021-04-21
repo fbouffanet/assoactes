@@ -166,7 +166,7 @@ function MajCompteurAdherents($pconnexionBD,$pst_repertoire_export,$pst_nom_fich
  * @param string $pst_url_export Url du répertoire de l'export   
  */ 
 function ExporteIndexCommunes($pconnexionBD,$pst_repertoire_export,$pst_nom_fichier,$pst_url_export) {
-   global $gst_pays_geneabank,$gst_url_interrogation_geneabank;
+   global $gst_url_interrogation_geneabank;
    //IDF_ASSO_GBK
    $a_stats_commune=$pconnexionBD->sql_select_multiple("select left(ca.code_insee,2),ca.nom,ta.nom,sc.annee_min,sc.annee_max,sc.nb_actes from stats_commune sc join commune_acte ca on (sc.idf_commune=ca.idf) join type_acte ta on (sc.idf_type_acte=ta.idf) join source s on (sc.idf_source=s.idf) where s.publication_geneabank=1 order by ca.nom");
    print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");

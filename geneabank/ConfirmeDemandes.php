@@ -105,7 +105,7 @@ foreach ($ga_idf_actes as $i_idf_acte) {
 }
 print('</tbody>');
 print("</table>");
-print GeneaBank($i_nb_actes,$gst_asso_gbk,$st_requete_codee,$gst_url_reponse_gbk);
+print GeneaBank($i_nb_actes,IDF_ASSO_GBK,$st_requete_code,$gst_url_reponse_gbk);
 print('<div class="row">');
 print('<div class="btn-group col-md-6 col-md-offset-4" role="group">');
 print('<a href="index.php" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-search"></span> Revenir &agrave; la page de recherche</a>');
