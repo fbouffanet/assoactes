@@ -5,7 +5,7 @@
  */ 
 function menu_liste($pconnexionBD)
 {
-	$a_serie_liasse = $pconnexionBD->liste_valeur_par_clefUtf8("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
+	$a_serie_liasse = $pconnexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 	if( isset($_POST['serie_liasse']) ) {
 		$_SESSION['serie_liasse'] = $_POST['serie_liasse'];
 	}
