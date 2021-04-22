@@ -45,7 +45,7 @@ if (isset($_GET['mod'])) {
 }
 $gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 
-$pa_publication = $connexionBD->liste_valeur_par_clefUtf8("SELECT idf, concat(nom, ', publi&eacute; le ', ".
+$pa_publication = $connexionBD->liste_valeur_par_clef("SELECT idf, concat(nom, ', publi&eacute; le ', ".
                                                       "                   case when date_publication = str_to_date('0000/00/00', '%Y/%m/%d') then '' ".
                                                       "                        else date_format(date_publication, '%d/%m/%Y') ".
                                                       "                        end, ', ', ".
