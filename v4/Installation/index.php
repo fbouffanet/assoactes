@@ -6,11 +6,21 @@
 //-------------------------------------------------------------------
 
 $gst_url_site = isset($_SERVER['SERVER_NAME'])? "http://".$_SERVER['SERVER_NAME'] : '';
+$gst_url_interrogation_geneabank=preg_replace('/\/v4$/','geneabank',$gst_url_site);
+$gst_url_reponse_geneabank="$gst_url_interrogation_geneabank/AfficheActes.php";
 if (basename($gst_url_site)!='v4')
+{	
 	$gst_url_site.="/v4";
+	$gst_url_interrogation_geneabank="$gst_url_site/geneabank";
+	$gst_url_reponse_geneabank="$gst_url_site/geneabank/AfficheActes.php";
+	$gst_url_index_geneabank="$gst_url_site/IndexGeneaBank";
+}
 $gst_rep_site = isset($_SERVER['DOCUMENT_ROOT'])? $_SERVER['DOCUMENT_ROOT'] : '';
 if (basename($gst_rep_site)!='v4')
+{	
 	$gst_rep_site.="/v4";
+	
+}
 $gst_url_sortie = $gst_url_site;
 $gst_serveur_bd  = '';
 $gst_utilisateur_bd = '';
@@ -18,6 +28,9 @@ $gst_mdp_utilisateur_bd = '';
 $gst_nom_bd = '';
 $gst_administrateur_gbk = '';
 $gst_mdp_administrateur_gbk = '';
+
+
+$gst_url_index_geneabank='';
 $gst_fichier_configuration='../Commun/config.php';
 if (file_exists($gst_fichier_configuration))
 	require_once($gst_fichier_configuration);
@@ -254,8 +267,11 @@ function affiche_parametres_administrateur($pst_nom_administrateur,$pst_prenom_a
 *  Affiche le menu des paramètres Geneabank
 *  @param string $pst_administrateur_gbk Compte administrateur Geneabank
 *  @param string $pst_mdp_administrateur_gbk Mot de passe administrateur
+*  @param string $pst_url_interrogation_geneabank Adresse générale du site Généabank
+*  @param string $pst_url_reponse_gbk Adresse de réponse à une transaction Généabank
+*  @param string $pst_url_index_geneabank Adresse des index Généabank
 */
-function affiche_parametres_geneabank($pst_administrateur_gbk,$pst_mdp_administrateur_gbk)
+function affiche_parametres_geneabank($pst_administrateur_gbk,$pst_mdp_administrateur_gbk,$pst_url_interrogation_geneabank,$pst_url_reponse_gbk,$pst_url_index_geneabank)
 {
 	print('<div class="panel panel-primary">');
 	print("<div class=\"panel-heading\">Param&egrave;tres G&eacute;n&eacute;bank</div>");
@@ -269,6 +285,21 @@ function affiche_parametres_geneabank($pst_administrateur_gbk,$pst_mdp_administr
     print("<label for=\"mdp_administrateur_gbk\" class=\"col-md-4 col-form-label control-label\">Mot de passe administrateur:</label>");
     print('<div class="col-md-8">');
     print("<input type=text maxlength=20 size=20 name=mdp_administrateur_gbk id=mdp_administrateur_gbk value=\"$pst_mdp_administrateur_gbk\" class=\"form-control\">");
+    print('</div></div>');
+	print('<div class="form-group row">');
+    print("<label for=\"url_interrogation_geneabank\" class=\"col-md-4 col-form-label control-label\">Adresse générale G&eacute;n&eacute;abank de l'association:</label>");
+    print('<div class="col-md-8">');
+    print("<input type=text maxlength=20 size=20 name=url_interrogation_geneabank id=url_interrogation_geneabank value=\"$pst_url_interrogation_geneabank\" class=\"form-control\">");
+    print('</div></div>');
+	print('<div class="form-group row">');
+    print("<label for=\"mdp_administrateur_gbk\" class=\"col-md-4 col-form-label control-label\">Adresse de réponse &agrave; une transaction G&eacute;n&eacute;abank:</label>");
+    print('<div class="col-md-8">');
+    print("<input type=text maxlength=20 size=20 name=mdp_administrateur_gbk id=mdp_administrateur_gbk value=\"$pst_url_reponse_gbk\" class=\"form-control\">");
+    print('</div></div>');
+	print('<div class="form-group row">');
+    print("<label for=\"url_index_geneabank\" class=\"col-md-4 col-form-label control-label\">Adresse des index G&eacute;n&eacute;abank:</label>");
+    print('<div class="col-md-8">');
+    print("<input type=text maxlength=20 size=20 name=url_index_geneabank id=url_index_geneabank value=\"$pst_url_index_geneabank\" class=\"form-control\">");
     print('</div></div>');
 	print("</div></div>");
 }
@@ -284,14 +315,17 @@ function affiche_parametres_geneabank($pst_administrateur_gbk,$pst_mdp_administr
 *  @param string $pst_nom_bd nom de la base
 *  @param string $pst_administrateur_gbk Compte administrateur Geneabank
 *  @param string $pst_mdp_administrateur_gbk Mot de passe administrateur
+*  @param string $pst_url_interrogation_geneabank Adresse générale du site Généabank
+*  @param string $pst_url_reponse_geneabank Adresse de réponse à une transaction Généabank
+*  @param string $pst_url_index_geneabank Adresse des index Généabank
 */
-function affiche_menu_configuration ($pst_url_site,$pst_rep_site,$pst_logo_asso,$pst_url_sortie,$pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd,$pst_administrateur_gbk,$pst_mdp_administrateur_gbk)
+function affiche_menu_configuration ($pst_url_site,$pst_rep_site,$pst_logo_asso,$pst_url_sortie,$pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd,$pst_administrateur_gbk,$pst_mdp_administrateur_gbk,$pst_url_interrogation_geneabank,$pst_url_reponse_geneabank,$pst_url_index_geneabank)
 {
 	print('<form enctype="multipart/form-data" method="post" action='.$_SERVER['PHP_SELF'].' id="installation">');
 	affiche_parametres_site($pst_url_site,$pst_rep_site,$pst_logo_asso,$pst_url_sortie);
 	affiche_parametres_base($pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd);
 	affiche_parametres_administrateur('','','','');
-	affiche_parametres_geneabank($pst_administrateur_gbk,$pst_mdp_administrateur_gbk);
+	affiche_parametres_geneabank($pst_administrateur_gbk,$pst_mdp_administrateur_gbk,$pst_url_interrogation_geneabank,$pst_url_reponse_geneabank,$pst_url_index_geneabank);
 	print('<div class="form-row col-md-12">'); 
 	print('<button type="submit" class="btn btn-primary  col-md-offset-4 col-md-4""><span class="glyphicon glyphicon-wrench"></span> Sauvegarder les param&egrave;tres</button>'); 
 	print('</div>');
@@ -312,8 +346,11 @@ function affiche_menu_configuration ($pst_url_site,$pst_rep_site,$pst_logo_asso,
 *  @param string $pst_nom_bd nom de la base
 *  @param string $pst_administrateur_gbk Compte administrateur Geneabank
 *  @param string $pst_mdp_administrateur_gbk Mot de passe administrateur
+*  @param string $pst_url_interrogation_geneabank Adresse générale du site Généabank
+*  @param string $pst_url_reponse_geneabank Adresse de réponse à une transaction Généabank
+*  @param string $pst_url_index_geneabank Adresse des index Généabank
 */
-function ecrit_fichier_de_configuration($pst_fichier_configuration,$pst_url_site,$pst_rep_site,$pst_emails_gestbase,$pst_logo_asso,$pst_url_sortie,$pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd,$pst_administrateur_gbk,$pst_mdp_administrateur_gbk)
+function ecrit_fichier_de_configuration($pst_fichier_configuration,$pst_url_site,$pst_rep_site,$pst_emails_gestbase,$pst_logo_asso,$pst_url_sortie,$pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd,$pst_administrateur_gbk,$pst_mdp_administrateur_gbk,$pst_url_interrogation_geneabank,$pst_url_reponse_geneabank,$pst_url_index_geneabank)
 {
 	$pf = fopen($pst_fichier_configuration, "w");
 	if ($pf===false)
@@ -337,8 +374,11 @@ function ecrit_fichier_de_configuration($pst_fichier_configuration,$pst_url_site
 		fwrite($pf,"// Paramètres Généabank\n");
 		fwrite($pf,"\$gst_administrateur_gbk = \"$pst_administrateur_gbk\";\n");
 		fwrite($pf,"\$gst_mdp_administrateur_gbk = \"$pst_mdp_administrateur_gbk\";\n");
+		fwrite($pf,"\$gst_url_interrogation_geneabank = \"$pst_url_interrogation_geneabank\";\n");
+		fwrite($pf,"\$gst_url_reponse_gbk = \"$pst_url_reponse_geneabank\";\n");
+		fwrite($pf,"\$gst_url_indexes_geneabank = \"$pst_url_index_geneabank\";\n");
+		fwrite($pf,"\$gst_repertoire_indexes_geneabank = \"\$gst_rep_site/IndexGeneaBank\";\n");
 		fwrite($pf,"\n");
-		
 		fwrite($pf,'$gst_url_images = "$gst_url_site/images";');
 		fwrite($pf,"\n");
 		if(empty($pst_logo_asso))
@@ -385,6 +425,9 @@ if (isset($_POST['nom_bd']))
 	$gst_email_administrateur = trim($_POST['email_administrateur']);
 	$gst_administrateur_gbk = trim($_POST['administrateur_gbk']);
 	$gst_mdp_administrateur_gbk = trim($_POST['mdp_administrateur_gbk']);
+	$gpst_url_interrogation_geneabank = trim($_POST['url_interrogation_geneabank']);
+	$pst_url_reponse_geneabank = trim($_POST['url_reponse_geneabank']);
+	$pst_url_index_geneabank = trim($_POST['url_index_geneabank']);
 	
 	$gst_logo_asso='';
 	if (isset($_FILES['logo_asso']['name']))
@@ -416,7 +459,7 @@ if (isset($_POST['nom_bd']))
 		else
 			print("<div class=\"alert alert-error\">Impossible de supprimer les anciennes tables</div>"); 
 	}
-	ecrit_fichier_de_configuration($gst_fichier_configuration,$gst_url_site,$gst_rep_site,$gst_email_administrateur,$gst_logo_asso,$gst_url_sortie,$gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_administrateur_gbk,$gst_mdp_administrateur_gbk);
+	ecrit_fichier_de_configuration($gst_fichier_configuration,$gst_url_site,$gst_rep_site,$gst_email_administrateur,$gst_logo_asso,$gst_url_sortie,$gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_administrateur_gbk,$gst_mdp_administrateur_gbk,$gst_url_interrogation_geneabank,$gst_url_reponse_geneabank,$gst_url_index_geneabank);
 	$b_erreur=false;
 	foreach (glob("sql/*.sql") as $st_fichier)
 	{
@@ -480,7 +523,7 @@ if (isset($_POST['nom_bd']))
 }
 else
 {	
-	affiche_menu_configuration($gst_url_site,$gst_rep_site,$gst_logo_association,$gst_url_sortie,$gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_administrateur_gbk,$gst_mdp_administrateur_gbk);	
+	affiche_menu_configuration($gst_url_site,$gst_rep_site,$gst_logo_association,$gst_url_sortie,$gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_administrateur_gbk,$gst_mdp_administrateur_gbk,$gst_url_interrogation_geneabank,$gst_url_reponse_geneabank,$gst_url_index_geneabank);	
 }
 print('</div></body></html>');
 ?>
