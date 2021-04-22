@@ -1,6 +1,6 @@
 body {
-//background-color: #F0E3C0;
-//color:#000000;
+background-color:#F0E3C0;
+color:#000000;
 font-family:Arial;
 }
 
@@ -33,14 +33,13 @@ div.flexbox {
    color: #721725;
 }
 
-.panel-primary {
-  border-color:#721725; 
+.panel-heading {
+  background-color: #721725;
   border-width:1;
   border-style:solid;
   font-size:18px;
-  background-color: #721725;
   text-align: center;
-  //color : white;
+  color : white;
   margin-right: 10%;
   margin-left: 10%;
 }
