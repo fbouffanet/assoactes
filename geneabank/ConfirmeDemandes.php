@@ -91,7 +91,7 @@ foreach ($ga_idf_actes as $i_idf_acte) {
 }
 print("</table></div><br>");
 print("<div class=alignCenter>");
-print GeneaBank($i_nb_actes,$gst_asso_gbk,$st_requete_codee,$gst_url_reponse_gbk);
+print GeneaBank($i_nb_actes,IDF_ASSO_GBK,$st_requete_codee,$gst_url_reponse_gbk);
 print("</div>");
 print("<div align=center>");
 print("<a href=\"index.php\" class=\"RetourReponses\">Revenir &agrave; la page de recherche</a>");
