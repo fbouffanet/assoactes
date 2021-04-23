@@ -694,7 +694,7 @@ $gi_get_num_page = empty($_GET['num_page']) ? 1 : (int) $_GET['num_page'];
 $gi_num_page = empty($_POST['num_page']) ? $gi_get_num_page : (int) $_POST['num_page'];
 $etape_prec = getmicrotime();
 //print benchmark("Recherche ");
-
+print_r($a_liasses);
 if ($i_nb_ligne_extr>0)
 {
 	$etape_prec = getmicrotime();

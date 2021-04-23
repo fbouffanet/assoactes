@@ -182,7 +182,7 @@ function Ligne_publi_num($pa_liasse, $fond) {
 
 function Ligne_publication($pa_liasse, $fond) {
    $this->SetFont('Times','',8);
-	$this->SetFillColor(240,240,240);
+	$this->SetFillColor(150,150,150);
 	list($st_titre, $st_date_publication, $st_info_compl) = $pa_liasse;
 	if( strlen($st_titre) > 95 ) 
 		$st_titre = substr($st_titre, 0, 94)."...";
