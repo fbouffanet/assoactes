@@ -46,13 +46,14 @@ function AfficheMenu() {
  * Exporte la liste des couples pour Généabank dans le fichier
  * spécifié par  $pst_nom_fichier et $pst_nom_fichier
  * @param object $pconnexionBD Connexion à la base de donnée
+ * @param string $pst_idf_geneabank Identifiant Généabank de l'association
  * @param string $pst_repertoire_export Répertoire de l'export
  * @return string Nom du fichier temporaire créé   
  * Exemple d'export :
  * ;CHARON;René;MONDO ?;Suzanne;gbkagcharente;décès ancien cjt
  * ;DELOR;Pierre;DUMAS DELAGE;Françoise;gbkagcharente;décès  
  */ 
-function  ExporteUnions($pconnexionBD,$pst_repertoire_export)
+function  ExporteUnions($pconnexionBD,$pst_idf_geneabank,$pst_repertoire_export)
 {
    $st_fichier = "$pst_repertoire_export/gbkcpl.txt";
    $st_requete = "select trim(u.patronyme_epoux),trim(prn_epx.libelle),trim(u.patronyme_epouse),trim(prn_epse.libelle), case u.idf_type_acte when 3 then concat(ta.nom,'parents') when 4 then (case epx.idf_type_presence when 1 then (case epse.idf_type_presence when 5 then ta.nom end) when 5 then (case epse.idf_type_presence when 1 then concat(ta.nom,'ancien cjt') end) when 6 then (case epse.idf_type_presence when 7 then concat(ta.nom,'parents') end) end) when 1 then (case epx.idf_type_presence when 1 then (case epse.idf_type_presence when 1 then ta.nom when 5 then concat(ta.nom,'ancien cjt epse') end) when 5 then (case epse.idf_type_presence when 1 then concat(ta.nom,'ancien cjt epx') end) when 6 then (case epse.idf_type_presence when 7 then concat(ta.nom,'parents') end) end) else (case epx.idf_type_presence when 1 then (case epse.idf_type_presence when 1 then ta.nom when 5 then concat(ta.nom,' ancien cjt epse') end) when 5 then (case epse.idf_type_presence when 1 then concat(ta.nom,' ancien cjt epx') end) when 6 then(case epse.idf_type_presence when 7 then concat(ta.nom,' parents') end) end) end from `union` u join personne epx on (u.idf_epoux=epx.idf) join prenom prn_epx on (epx.idf_prenom=prn_epx.idf) join personne epse on (u.idf_epouse=epse.idf)  join prenom prn_epse on (epse.idf_prenom=prn_epse.idf) join type_acte ta on (u.idf_type_acte=ta.idf) join source s on (u.idf_source=s.idf) where s.publication_geneabank=1 and u.patronyme_epoux REGEXP '^[A-Za-z ()]+$' and u.patronyme_epouse REGEXP '^[A-Za-z ()]+$'" ;
@@ -61,7 +62,7 @@ function  ExporteUnions($pconnexionBD,$pst_repertoire_export)
    $pf = fopen($st_fichier, "w") or die("<div class=IMPORTANT>Impossible d'&eacute;crire $st_fichier</div>");
    while (list($st_patro_epx,$st_prn_epx,$st_patro_epse,$st_prn_epse,$st_cmt)=$pconnexionBD->ligne_suivante_resultat())
    {
-      $st_ligne = ";$st_patro_epx;$st_prn_epx;$st_patro_epse;$st_prn_epse;".IDF_ASSO_GBK.";$st_cmt"; 
+      $st_ligne = ";$st_patro_epx;$st_prn_epx;$st_patro_epse;$st_prn_epse;$pst_idf_geneabank;cp1252_vers_utf8($st_cmt)"; 
       fwrite($pf,"$st_ligne\r\n");      
    }
    fclose($pf);
@@ -74,13 +75,21 @@ function  ExporteUnions($pconnexionBD,$pst_repertoire_export)
  * Le fichier est au format Index Généanet 
  * @param object $pconnexionBD Connexion à la base de donnée
  * @param string $pst_idf_geneabank Identifiant Généabank de l'association
- * @param string $pst_repertoire_export Répertoire de l'export     
+ * @param string $pst_repertoire_export Répertoire de l'export
+ * @global $gst_code_dpt_geneabank Code département généabank (Ex: F16)
+ * @global $gst_code_region_geneabank Code région généabank (Ex: PCH)
+ * @global $gst_code_pays_geneabank Code pays généabank (Ex: FRA)
+ * @global $gst_code_type_geneabank Source généabank (Ex: C pour acte original)      
  * Exemple d'export :
  * BATARD;décès;1777;1777;1;CLAIX;F16;PCH;FRA;C
  * BATARDE;décès;1791;1791;1;BECHERESSE;F16;PCH;FRA;C
  */ 
 function  ExporteIndexPatros($pconnexionBD,$pst_idf_geneabank,$pst_repertoire_export)
 {
+   global $gst_code_dpt_geneabank;
+   global $gst_code_region_geneabank;
+   global $gst_code_pays_geneabank;
+   global $gst_code_type_geneabank;
    $st_requete =  "select p.libelle,ta.nom,sp.annee_min,sp.annee_max,sp.nb_personnes,ca.nom from stats_patronyme sp join patronyme p on (sp.idf_patronyme=p.idf) join commune_acte ca on (sp.idf_commune=ca.idf) join type_acte ta on (sp.idf_type_acte=ta.idf) join source s on (sp.idf_source=s.idf) where s.publication_geneabank=1 and p.libelle REGEXP '^[A-Za-z ()]+$' ";
    $pconnexionBD->desactive_cache();
    $pconnexionBD->execute_requete($st_requete);
@@ -88,7 +97,7 @@ function  ExporteIndexPatros($pconnexionBD,$pst_idf_geneabank,$pst_repertoire_ex
    $pf = fopen($st_fichier, "w") or die("<div class=\"alert alert-danger\">Impossible d'&eacute;crire $st_fichier</div>");
    while (list($st_patro,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_personnes,$st_commune)=$pconnexionBD->ligne_suivante_resultat())
    {
-      $st_ligne = join(';',array($st_patro,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_personnes,$st_commune,CODE_DPT_GENEABANK,CODE_REGION_GENEABANK,CODE_PAYS_GENEABANK,CODE_TYPE_GENEABANK));
+      $st_ligne = join(';',array(cp1252_vers_utf8($st_patro),cp1252_vers_utf8($st_type_acte),$i_annee_min,$i_annee_max,$i_nb_personnes,cp1252_vers_utf8($st_commune),$gst_code_dpt_geneabank,$gst_code_region_geneabank,$gst_code_pays_geneabank,$gst_code_type_geneabank));
       fwrite($pf,"$st_ligne\r\n");      
    }
    fclose($pf);
@@ -157,7 +166,7 @@ function MajCompteurAdherents($pconnexionBD,$pst_repertoire_export,$pst_nom_fich
  * @param string $pst_url_export Url du répertoire de l'export   
  */ 
 function ExporteIndexCommunes($pconnexionBD,$pst_repertoire_export,$pst_nom_fichier,$pst_url_export) {
-   global $gst_url_interrogation_geneabank;
+   global $gst_pays_geneabank,$gst_url_interrogation_geneabank;
    //IDF_ASSO_GBK
    $a_stats_commune=$pconnexionBD->sql_select_multiple("select left(ca.code_insee,2),ca.nom,ta.nom,sc.annee_min,sc.annee_max,sc.nb_actes from stats_commune sc join commune_acte ca on (sc.idf_commune=ca.idf) join type_acte ta on (sc.idf_type_acte=ta.idf) join source s on (sc.idf_source=s.idf) where s.publication_geneabank=1 order by ca.nom");
    print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
@@ -168,7 +177,7 @@ function ExporteIndexCommunes($pconnexionBD,$pst_repertoire_export,$pst_nom_fich
    foreach ($a_stats_commune as $a_stats)
    {
       list($i_dpt,$st_commune,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_actes) = $a_stats;
-      $st_ligne = join(';',array(IDF_ASSO_GBK,$gst_url_interrogation_geneabank,PAYS_GENEABANK,$i_dpt,$st_commune,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_actes));
+      $st_ligne = join(';',array(IDF_ASSO_GBK,$gst_url_interrogation_geneabank,$gst_pays_geneabank,$i_dpt,cp1252_vers_utf8($st_commune),cp1252_vers_utf8($st_type_acte),$i_annee_min,$i_annee_max,$i_nb_actes));
       fwrite($pf,"$st_ligne\n");
       print("$st_ligne\n");
    }
@@ -212,7 +221,7 @@ switch ($gst_mode) {
    break;
    case 'EXPORT_UNIONS' :
      $etape_prec = getmicrotime();
-     $st_fichier_unions = ExporteUnions($connexionBD,$gst_repertoire_indexes_geneabank);
+     $st_fichier_unions = ExporteUnions($connexionBD,IDF_ASSO_GBK,$gst_repertoire_indexes_geneabank);
      print('<div class="text-center">');
      print benchmark("Export Union : $st_fichier_unions");
      $zip = new ZipArchive();
