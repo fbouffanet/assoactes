@@ -78,7 +78,7 @@ class PaginationTableau {
     public function affiche_entete_liens_navlimite() {
 		if( $this->i_nb_pages > 1 )	{
 			print('<div class="text-center">');
-			print($this->i_nb_pages);
+			print($this->i_nb_pages.' -- '.$this->i_nb_total_lignes);
 			print('<ul class="pagination">');
 			if( $this->i_nb_pages <= 11 ){
 				$i_fin = $this->i_nb_pages;
