@@ -87,6 +87,7 @@ class PaginationTableau {
 					else
 						print("<li class=\"page-item\"><a href=\"$this->st_nom_script?$this->st_param_numpage=$i\" class=\"page-item\">$i</a></li> ");  
 				}
+			}
 			else {
 				print("<li class=\"page-item\"><a href=\"$this->st_nom_script?$this->st_param_numpage=1\" class=\"page-item\">D&eacute;but</a></li> "); 
 				if( $this->i_page_cour <=6 ) {
