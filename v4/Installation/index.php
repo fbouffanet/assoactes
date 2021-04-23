@@ -15,6 +15,7 @@ if (basename($gst_url_site)!='v4')
 	$gst_url_reponse_geneabank="$gst_url_site/geneabank/AfficheActes.php";
 	$gst_url_index_geneabank="$gst_url_site/IndexGeneaBank";
 }
+
 $gst_rep_site = isset($_SERVER['DOCUMENT_ROOT'])? $_SERVER['DOCUMENT_ROOT'] : '';
 if (basename($gst_rep_site)!='v4')
 {	
