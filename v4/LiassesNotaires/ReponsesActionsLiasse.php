@@ -789,7 +789,7 @@ if ($i_nb_ligne_extr>0)
 	}
 	$pagination->init_page_cour($gi_num_page);
 	$pagination->affiche_entete_liens_navigation();
-	$pagination->affiche_tableau_simple($a_tableau);  
+	$pagination->affiche_tableau_simple($a_tableau, false);  
 	$pagination->affiche_entete_liens_navigation();
 	
 	if( $_SESSION['menu_rla'] != 'complete' ) {
@@ -799,10 +799,10 @@ if ($i_nb_ligne_extr>0)
 }
 else {
 	print('<div style="text-align:center">');
-	print("Aucun r&eacute;sultat<br>");
-	print("V&eacute;rifiez que vous n'avez pas mis trop de contraintes<br>");
+	print("Aucun résultat<br>");
+	print("Vérifiez que vous n'avez pas mis trop de contraintes<br>");
 	print("<div class=IMPORTANT><br>");
-	print("Rappel de vos crit&egrave;res: <br>");
+	print("Rappel de vos critères: <br>");
 	print(nl2br($st_criteres));
 	print("</div>");
 	print("</div>");
