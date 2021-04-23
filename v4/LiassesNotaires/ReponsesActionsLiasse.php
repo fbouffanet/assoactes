@@ -789,9 +789,9 @@ if ($i_nb_ligne_extr>0)
 											array('Cote','Notaire(commune)','P&eacute;riode','Forme de liasse'));
 	}
 	$pagination->init_page_cour($gi_num_page);
-	$pagination->affiche_entete_liens_navigation_limite();
+	$pagination->affiche_entete_liens_navigation();
 	$pagination->affiche_tableau_simple($a_tableau);  
-	$pagination->affiche_entete_liens_navigation_limite();
+	$pagination->affiche_entete_liens_navigation();
 	
 	if( $_SESSION['menu_rla'] != 'complete' ) {
 		print("<div align=center><br><a class='RetourReponses' href=\"javascript:forcedPopUp('RecherchesActionsLiasses.php', 'ImpressionActionsLiasse.php');\">Impression</a></div>");
