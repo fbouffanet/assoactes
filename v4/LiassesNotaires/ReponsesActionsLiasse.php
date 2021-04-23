@@ -11,7 +11,7 @@ require_once('../Commun/Benchmark.inc');
 require_once('../Commun/VerificationDroits.php');
 
 print('<!DOCTYPE html>');
-print("<Head>\n");
+print('<Head>');
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
@@ -19,7 +19,6 @@ print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print('<link rel="shortcut icon" href="../images/favicon.ico">');
-//print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
 print("<script src='../Commun/jquery-min.js' type='text/javascript'></script>");
 print('<script type="text/javascript">');
 print('		function forcedPopUp(urlSelf, urlBlank){');
@@ -669,14 +668,12 @@ $_SESSION['pdf']['sous_titre'] = $st_sous_titre;
 $_SESSION['pdf']['nb_liasse'] = $i_nb_liasse_extr;
 $_SESSION['pdf']['pourc_liste'] = $i_pourc_liste;
 $_SESSION['pdf']['pourc_tot'] = $i_pourc_tot;
-//$_SESSION['pdf']['liasses'] = $a_liasses;
-
-//**---------------------------pour test PC-------------------**//   require_once('../Commun/menu.php');
+$_SESSION['pdf']['liasses'] = $a_liasses;
 
 /* ------------------------------------------------------
    affichage de l'entête 
 */   
-print("<body>");
+print('<body>');
 print('<div class="container">');
 
 print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");     
@@ -686,15 +683,9 @@ if( $_SESSION['menu_rla'] != 'publication' &&  $_SESSION['menu_rla'] != 'complet
 	print("<div class='SOUSTITRE'>".$i_nb_liasse_extr." liasses, ".$i_pourc_liste." % de la liste, ".$i_pourc_tot." % de la s&eacute;rie</div><br>");
 }
 
-/*print("<div id=col_paroisses class=\"centre\">");
-print(nl2br("\n".$st_criteres));
-print("</div>");  */
-
 $gi_get_num_page = empty($_GET['num_page']) ? 1 : (int) $_GET['num_page'];
 $gi_num_page = empty($_POST['num_page']) ? $gi_get_num_page : (int) $_POST['num_page'];
 $etape_prec = getmicrotime();
-//print benchmark("Recherche ");
-print_r($a_liasses);
 if ($i_nb_ligne_extr>0)
 {
 	$etape_prec = getmicrotime();
