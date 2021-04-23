@@ -75,7 +75,7 @@ class PaginationTableau {
      print("</div>");  
    }
    
-    public function affiche_entete_liens_navigation_limite() {
+    public function affiche_entete_liens_navlimite() {
 		if( $this->i_nb_pages > 1 )	{
 			print('<div class="text-center">');
 			print('<ul class="pagination">');
