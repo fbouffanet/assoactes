@@ -75,7 +75,48 @@ class PaginationTableau {
      print("</div>");  
    }
    
-   
+    public function affiche_entete_liens_navigation_limite() {
+		if( $this->i_nb_pages > 1 )	{
+			print('<div class="text-center">');
+			print('<ul class="pagination">');
+			if( $this->i_nb_pages <= 11 ){
+				$i_fin = $this->i_nb_pages;
+				for ($i=1;$i<=$i_fin;$i++) {
+					if ($i==$this->i_page_cour)
+						print("<li class=\"page-item active\"><span class=\"page-link\">$i<span class=\"sr-only\">(current)</span></span></li>");
+					else
+						print("<li class=\"page-item\"><a href=\"$this->st_nom_script?$this->st_param_numpage=$i\" class=\"page-item\">$i</a></li> ");  
+				}
+			else {
+				print("<li class=\"page-item\"><a href=\"$this->st_nom_script?$this->st_param_numpage=1\" class=\"page-item\">D&eacute;but</a></li> "); 
+				if( $this->i_page_cour <=6 ) {
+					$i_deb = 1;
+					$i_fin = 11;
+				}
+				else if ( $this->i_page_cour >= $this->i_nb_pages - 5 ) {
+					$i_deb = $this->i_nb_pages - 10;
+					$i_fin = $this->i_nb_pages;
+				}
+				else {
+					$i_deb = $this->i_page_cour - 5;
+					$i_fin = $this->i_page_cour + 5;
+				}
+				if( $i_fin > $this->i_nb_pages ) {
+					$i_fin = $this->i_nb_pages;
+				}
+				for ($i=$i_deb;$i<=$i_fin;$i++) {
+					if ($i==$this->i_page_cour)
+						print("<li class=\"page-item active\"><span class=\"page-link\">$i<span class=\"sr-only\">(current)</span></span></li>");
+					else
+						print("<li class=\"page-item\"><a href=\"$this->st_nom_script?$this->st_param_numpage=$i\" class=\"page-item\">$i</a></li> ");  
+				}
+				print("<li class=\"page-item\"><a href=\"$this->st_nom_script?$this->st_param_numpage=$this->i_nb_pages\" class=\"page-item\">Fin</a></li> "); 
+			}                                                             
+			print("</ul>");
+			print("</div>");  
+		}
+	}
+  
    /**
     * Affiche l'entête sous la forme d'une liste déroulante
     * @param string $pst_nom_formulaire nom du formulaire   
