@@ -13,8 +13,7 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 $requeteRecherche = new RequeteRecherche($connexionBD);    
 $a_liasses=$connexionBD->sql_select_multiple($_SESSION['pdf']['requete']);
 
-//$csv  = str_replace("&eacute;", "é", $_SESSION['pdf']['titre'])."\n";
-$csv  = $_SESSION['pdf']['titre']."\n";
+$csv  = str_replace("&eacute;", "�", $_SESSION['pdf']['titre'])."\n";
 $csv .= $_SESSION['pdf']['sous_titre']."\n";
 if( $_SESSION['menu_rla'] != 'publication' ) 
 	$csv .= $_SESSION['pdf']['nb_liasse']." liasses;".$_SESSION['pdf']['pourc_liste']." % de la liste;".$_SESSION['pdf']['pourc_tot']." % de la série\n";
