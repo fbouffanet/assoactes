@@ -116,6 +116,9 @@ class PaginationTableau {
 			print("</ul>");
 			print("</div>");  
 		}
+		else {
+			print('<div class="text-center">&nbsp</div>');
+		}
 	}
   
    /**
