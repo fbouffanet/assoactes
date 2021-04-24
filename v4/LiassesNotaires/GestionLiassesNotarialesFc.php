@@ -100,9 +100,9 @@ function menu_liste($pconnexionBD)
 		                                    10,DELTA_NAVIGATION,array('Cote','Notaire(s)','Periode(s)','Modifier','Supprimer'));		
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_entete_liens_navigation();
+		//$pagination->affiche_entete_liens_navigation();
 		$pagination->affiche_tableau_edition(2);
-		$pagination->affiche_entete_liens_navigation();      
+		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER\">");
 		print("<input type=button value=\"Supprimer les liasses s&eacute;lectionn&eacute;es\" ONCLICK=\"VerifieSuppression(0,'supp[]')\"></div>");
 	}
