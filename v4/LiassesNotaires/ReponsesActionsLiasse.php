@@ -697,7 +697,7 @@ if ($i_nb_ligne_extr>0)
 			$a_tableau[] = array($st_titre, $st_date_publication, $st_info_compl); 
 		}
 		// remplacement de NB_LIGNES_PAR_PAGE par 10
-		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),10,DELTA_NAVIGATION,
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,
 											array('Titre publication papier','Date','Informations compl&eacute;mentaires'));
 	}
 	elseif( $_SESSION['menu_rla'] == 'publi_pap' ) {
@@ -705,7 +705,7 @@ if ($i_nb_ligne_extr>0)
 			list($st_titre, $st_date_publication, $st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme) = $a_liasse;
 			$a_tableau[] = array($st_titre, $st_date_publication, $st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme); 
 		}
-		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),10,DELTA_NAVIGATION,
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,
 											array('Titre publication papier','Date','Cote','Notaire(commune)','P&eacute;riode','Forme de liasse'));
 	}
 	elseif( $_SESSION['menu_rla'] == 'program' ) {
@@ -715,7 +715,7 @@ if ($i_nb_ligne_extr>0)
 			$a_tableau[] = array($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_intervenant, $st_priorite, 
 			                     $st_date_echeance, $st_program_releve, $st_program_photo); 
 		}
-		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),10,DELTA_NAVIGATION,
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,
                                             array('Cote','Notaire(commune)','P&eacute;riode','Forme de liasse','Intervenant','Priorit&eacute;',
 											      'Ech&eacute;ance','Programmation relev&eacute;','Programmation photo'));
 	}
@@ -726,7 +726,7 @@ if ($i_nb_ligne_extr>0)
 			$a_tableau[] = array($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_consult, $st_releveur, $st_publi_pap, 
 			                     $st_publi_num, $st_date_fin_releve, $st_info_compl); 
 		}
-		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),10,DELTA_NAVIGATION,
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,
                                         array('Cote','Notaire(commune)','P&eacute;riode','Forme de liasse','Consultable', 'Releveur', 'Papier', 
 										      'Num&eacute;rique','Date relev&eacute;', 'Informations relev&eacute;'));
 	}
@@ -735,7 +735,7 @@ if ($i_nb_ligne_extr>0)
 			list($st_cote_liasse, $st_notaires, $st_commune_etude, $st_libelle_annees, $st_forme, $st_consult, $st_info_liasse, $st_releve,  $st_info_releve) = $a_liasse;
 			$a_tableau[] = array($st_cote_liasse, $st_notaires, $st_commune_etude, $st_libelle_annees, $st_forme, $st_consult, $st_info_liasse, $st_releve,  $st_info_releve); 
 		}
-		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),10,DELTA_NAVIGATION,
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,
                                         array('Cote','Notaire','Commune','P&eacute;riode','Forme de liasse','Consultable', 'Informations liasse', 'Relev&eacute;e', 'Informations relev&eacute;'));
 	}
 	elseif( $_SESSION['menu_rla'] == 'publi_num' ) {
@@ -743,7 +743,7 @@ if ($i_nb_ligne_extr>0)
 			list($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_consult, $st_releveur, $st_date_fin_releve) = $a_liasse;
 			$a_tableau[] = array($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_consult, $st_releveur, $st_date_fin_releve); 
 		}
-		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),10,DELTA_NAVIGATION,
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,
                                         array('Cote','Notaire(commune)','P&eacute;riode','Forme de liasse','Consultable', 'Releveur', 'Date relev&eacute;'));
 	}
 	elseif( $_SESSION['menu_rla'] == 'pas_releve' ) {
@@ -751,7 +751,7 @@ if ($i_nb_ligne_extr>0)
 			list($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_consult, $st_publi_num, $st_date_fin_releve) = $a_liasse;
 			$a_tableau[] = array($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_consult); 
 		}
-		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),10,DELTA_NAVIGATION,
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,
                                         array('Cote','Notaire(commune)','P&eacute;riode','Forme de liasse','Consultable'));
 	}
 	elseif( $_SESSION['menu_rla'] == 'photo' && $_SESSION['avec_commentaire_rla'] != 'oui') {
@@ -761,7 +761,7 @@ if ($i_nb_ligne_extr>0)
 			$a_tableau[] = array($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_consult, $st_publi_pap, $st_publi_num,
 			                     $st_photographe, $st_date_photo, $st_couverture_photo, $st_codif_photo); 
 		}
-		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),10,DELTA_NAVIGATION,
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,
                                         array('Cote','Notaire(commune)','P&eacute;riode','Forme de liasse','Consultable','Papier','Num&eacute;rique','Photographe','Date photo','Couverture','Codification'));
 	}
 	elseif( $_SESSION['menu_rla'] == 'photo' && $_SESSION['avec_commentaire_rla'] == 'oui') {
@@ -769,7 +769,7 @@ if ($i_nb_ligne_extr>0)
 			list($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_couverture_photo, $st_info_compl) = $a_liasse;
 			$a_tableau[] = array($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_couverture_photo, $st_info_compl); 
 		}
-		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),10,DELTA_NAVIGATION,
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,
                                         array('Cote','Notaire(commune)','P&eacute;riode','Forme de liasse','Couverture','Commentaires'));
 	}
 	elseif( $_SESSION['menu_rla'] == 'pas_photo' ) {
@@ -778,7 +778,7 @@ if ($i_nb_ligne_extr>0)
 			     $st_photographe, $st_date_photo, $st_couverture_photo, $st_codif_photo) = $a_liasse;
 			$a_tableau[] = array($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_consult); 
 		}
-		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),10,DELTA_NAVIGATION,
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,
                                         array('Cote','Notaire(commune)','P&eacute;riode','Forme de liasse','Consultable'));
 	}
 	else {
@@ -786,7 +786,7 @@ if ($i_nb_ligne_extr>0)
 			list($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme) = $a_liasse;
 			$a_tableau[] = array($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme); 
 		}
-		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),10,DELTA_NAVIGATION,
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,
 											array('Cote','Notaire(commune)','P&eacute;riode','Forme de liasse'));
 	}
 	$pagination->init_page_cour($gi_num_page);
