@@ -32,10 +32,10 @@ function Header() {
     // Décalage à droite
     $this->Cell(80);
     // Titre
-    $this->Cell(30,8,$_SESSION['pdf']['titre'],0,1,'C');
+    $this->Cell(30,8,cp1252_vers_utf8($_SESSION['pdf']['titre']),0,1,'C');
     $this->SetFont('Arial','B',10);
     $this->Cell(80);
-    $this->Cell(30,6,$_SESSION['pdf']['sous_titre'],0,0,'C');
+    $this->Cell(30,6,utf8_vers_cp1252($_SESSION['pdf']['sous_titre']),0,0,'C');
    // Saut de ligne
     $this->Ln(20);
     $this->SetFont('Times','B',7);
