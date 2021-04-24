@@ -82,7 +82,8 @@ function menu_liste($pconnexionBD)
 		else
 			print("<a href=\"".$_SERVER['PHP_SELF']."?init_dix=$c_init_dix\">$c_init_dix</a> ");
 	}
-	print('</td></tr></table>');
+	print('</td></tr>');
+	print('<tr class=ligne_paire><td align="center">&nbsp</td><td></td></tr></table>');
 	print("</div>");
 	$numero  = $gc_init_dixm == 'z' ? '0' : $gc_init_dixm;
 	$numero .= $gc_init_mill == 'z' ? '0' : $gc_init_mill;
@@ -101,7 +102,7 @@ function menu_liste($pconnexionBD)
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		//$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition(2);
+		$pagination->affiche_tableau_edition_sil(2);
 		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER\">");
 		print("<input type=button value=\"Supprimer les liasses s&eacute;lectionn&eacute;es\" ONCLICK=\"VerifieSuppression(0,'supp[]')\"></div>");
