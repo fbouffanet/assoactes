@@ -54,7 +54,7 @@ function Header() {
 			$this->Cell(15,8,'Date',1,0,'C',true);
 			$this->Cell(17,8,'Cote',1,0,'C',true);
 			$this->Cell(60,8,'Notaire(commune)',1,0,'L',true);
-			$this->Cell(40,8,'P&eacute;riode',1,0,'L',true);
+			$this->Cell(40,8,'Période',1,0,'L',true);
 			$this->Cell(20,8,'Forme liasse',1,1,'L',true);
 			break;
 		case 'program' :
