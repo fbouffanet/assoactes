@@ -17,7 +17,7 @@ verifie_privilege(DROIT_NOTAIRES);
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 $requeteRecherche = new RequeteRecherche($connexionBD);    
-$a_liasses=$connexionBD->sql_select_multipleUtf8($_SESSION['pdf']['requete']);
+$a_liasses=$connexionBD->sql_select_multiple($_SESSION['pdf']['requete']);
 
 require('../Publication/fpdf/fpdf.php');
 
@@ -32,10 +32,10 @@ function Header() {
     // Décalage à droite
     $this->Cell(80);
     // Titre
-    $this->Cell(30,8,str_replace("&eacute;", "é", $_SESSION['pdf']['titre']),0,1,'C');
+    $this->Cell(30,8,$_SESSION['pdf']['titre'],0,1,'C');
     $this->SetFont('Arial','B',10);
     $this->Cell(80);
-    $this->Cell(30,6,str_replace("&eacute;", "é", $_SESSION['pdf']['sous_titre']),0,0,'C');
+    $this->Cell(30,6,$_SESSION['pdf']['sous_titre'],0,0,'C');
    // Saut de ligne
     $this->Ln(20);
     $this->SetFont('Times','B',7);
