@@ -105,7 +105,11 @@ function menu_liste($pconnexionBD)
 		$pagination->affiche_tableau_edition_sil(2);
 		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER\">");
-		print("<input type=button value=\"Supprimer les liasses s&eacute;lectionn&eacute;es\" ONCLICK=\"VerifieSuppression(0,'supp[]')\"></div>");
+		//print("<input type=button value=\"Supprimer les liasses sélectionnées\" ONCLICK=\"VerifieSuppression(0,'supp[]')\"></div>");
+		print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
+		print("<button type=submit name=Supprimer class=\"btn btn-primary\" ONCLICK=\"VerifieSuppression(0,'supp[]')\">");
+		print("    <span class=\"glyphicon glyphicon-search\"></span> Supprimer les liasses sélectionnées</button>");
+		print('</div>');
 	}
 	else
 		print("<div align=center><br>Pas de liasses</div><br>");
@@ -114,10 +118,8 @@ function menu_liste($pconnexionBD)
 	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER\">");  
 	print("<input type=submit value=\"Ajouter une liasse\"></div>");  
 	print('</form>');
-	/*print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"EXPORTER\">");  
-	print("<input type=submit value=\"Exporter les liasses\"></div>");  
-	print('</form>');*/
+	
+
 	print('</div>');  
 }
 
