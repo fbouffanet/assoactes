@@ -7,7 +7,7 @@ require_once('../Commun/config.php');
 require_once('../Commun/ConnexionBD.php');
 require_once('../RequeteRecherche.php');
 require_once('../Commun/VerificationDroits.php');
-
+ 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 $requeteRecherche = new RequeteRecherche($connexionBD);    
