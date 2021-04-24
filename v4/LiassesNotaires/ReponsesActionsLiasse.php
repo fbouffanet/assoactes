@@ -676,6 +676,7 @@ $_SESSION['pdf']['liasses'] = $a_liasses;
 */   
 print('<body>');
 print('<div class="container">');
+require_once('../Commun/menu.php');
 
 print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");     
 
