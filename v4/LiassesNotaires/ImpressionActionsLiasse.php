@@ -88,7 +88,7 @@ function Header() {
 		case 'publi_num' :
 			$this->Cell(100,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 			$this->Cell(50,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' %utf8_vers_cp1252( de la série'),0,1,'R',true);			
+			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].utf8_vers_cp1252(' % de la série'),0,1,'R',true);			
 			$this->Cell(17,8,'Cote',1,0,'C',true);
 			$this->Cell(80,8,'Notaire(commune)',1,0,'L',true);
 			$this->Cell(50,8,utf8_vers_cp1252('Période'),1,0,'L',true);
