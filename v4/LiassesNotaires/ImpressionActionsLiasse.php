@@ -74,16 +74,16 @@ function Header() {
 		case 'releve' :
 			$this->Cell(100,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 			$this->Cell(80,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la série',0,1,'R',true);			
+			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la s&eacute;rie',0,1,'R',true);			
 			$this->Cell(17,8,'Cote',1,0,'C',true);
 			$this->Cell(80,8,'Notaire(commune)',1,0,'L',true);
-			$this->Cell(50,8,'Période',1,0,'L',true);
+			$this->Cell(50,8,'P&eacute;riode',1,0,'L',true);
 			$this->Cell(23,8,'Forme liasse',1,0,'L',true);
 			$this->Cell(15,8,'Consultable',1,0,'C',true);
 			$this->Cell(50,8,'Releveur',1,0,'C',true);
 			$this->Cell(15,8,'Papier',1,0,'C',true);
-			$this->Cell(15,8,'Numérique',1,0,'C',true);
-			$this->Cell(15,8,'Date relevé',1,1,'C',true);
+			$this->Cell(15,8,'Num&eacute;rique',1,0,'C',true);
+			$this->Cell(15,8,'Date relev&eacute;',1,1,'C',true);
 			break;
 		case 'publi_num' :
 			$this->Cell(100,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
