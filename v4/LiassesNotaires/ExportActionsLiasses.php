@@ -7,7 +7,7 @@ require_once('../Commun/config.php');
 require_once('../Commun/ConnexionBD.php');
 require_once('../RequeteRecherche.php');
 require_once('../Commun/VerificationDroits.php');
- 
+  
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 $requeteRecherche = new RequeteRecherche($connexionBD);    
@@ -20,7 +20,7 @@ if( $_SESSION['menu_rla'] != 'publication' )
 	
 switch($_SESSION['menu_rla']) {
 	case 'publication' :
-		$csv .= "Titre publication papier;Date;Informations complémentaires\n";
+		$csv .= "Titre publication papier;Date;Informations complÃ©mentaires\n";
 		foreach ($a_liasses as $a_liasse) {
 			list($st_titre, $st_date_publication, $st_info_compl) = $a_liasse;
 			$st_titre = str_replace(";", "-", $st_titre);
@@ -33,7 +33,7 @@ switch($_SESSION['menu_rla']) {
 		}
 		break;
 	case 'publi_pap' :
-		$csv .= "Titre publication papier;Date;Cote;Notaire(commune);Période;Forme liasse\n";
+		$csv .= "Titre publication papier;Date;Cote;Notaire(commune);PÃ©riode;Forme liasse\n";
 		foreach ($a_liasses as $a_liasse) {
 			list($st_titre, $st_date_publication, $st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme) = $a_liasse;
 			$st_titre = str_replace(";", "-", $st_titre);
@@ -45,7 +45,7 @@ switch($_SESSION['menu_rla']) {
 		}
 		break;
 	case 'program' :
-		$csv .= "Cote;Notaire(commune);Période;Forme liasse;Intervenant;Priorité;Echéance;Prog. relevé;Prog. photo\n";
+		$csv .= "Cote;Notaire(commune);PÃ©riode;Forme liasse;Intervenant;PrioritÃ©;EchÃ©ance;Prog. relevÃ©;Prog. photo\n";
 		foreach ($a_liasses as $a_liasse) {
 			list($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_intervenant, $st_priorite, 
 				$st_date_echeance, $st_program_releve, $st_program_photo) = $a_liasse;
@@ -56,7 +56,7 @@ switch($_SESSION['menu_rla']) {
 		}
 		break;
 	case 'releve' :
-		$csv .= "Cote;Notaire(commune);Période;Forme liasse;Consultable;Releveur;Papier;Numérique;Date relevé;Infos relevé\n";
+		$csv .= "Cote;Notaire(commune);PÃ©riode;Forme liasse;Consultable;Releveur;Papier;NumÃ©rique;Date relevÃ©;Infos relevÃ©\n";
 		foreach ($a_liasses as $a_liasse) {
 			list($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_consult, $st_releveur, $st_publi_pap, $st_publi_num, 
 			     $st_date_fin_releve, $st_info_compl) = $a_liasse;
@@ -70,7 +70,7 @@ switch($_SESSION['menu_rla']) {
 		}
 		break;
 	case 'complete' :
-		$csv .= "Cote;Notaire;Commune;Période;Forme liasse;Consultable;Infos liasse;Relevé;Infos relevé\n";
+		$csv .= "Cote;Notaire;Commune;PÃ©riode;Forme liasse;Consultable;Infos liasse;RelevÃ©;Infos relevÃ©\n";
 		foreach ($a_liasses as $a_liasse) {
 			list($st_cote_liasse, $st_notaires, $st_commune_etude, $st_libelle_annees, $st_forme, $st_consult, $st_info_liasse, $st_releve, $st_info_releve) = $a_liasse;
 			$st_notaires = str_replace(";", "-", $st_notaires);
@@ -86,7 +86,7 @@ switch($_SESSION['menu_rla']) {
 		}
 		break;
 	case 'publi_num' :
-		$csv .= "Cote;Notaire(commune);Période;Forme liasse;Consultable;Releveur;Date relevé\n";
+		$csv .= "Cote;Notaire(commune);PÃ©riode;Forme liasse;Consultable;Releveur;Date relevÃ©\n";
 		foreach ($a_liasses as $a_liasse) {
 			list($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_consult, $st_releveur, $st_date_fin_releve) = $a_liasse;
 			$st_libelle_notaires = str_replace(";", "-", $st_libelle_notaires);
@@ -96,7 +96,7 @@ switch($_SESSION['menu_rla']) {
 		break;
 	case 'photo' :
 		if( $_SESSION['avec_commentaire_rla'] != 'oui' ) {
-			$csv .= "Cote;Notaire(commune);Période;Forme liasse;Consultable;Papier;Numérique;Photographe;Date photo;Couverture;Codification\n";
+			$csv .= "Cote;Notaire(commune);PÃ©riode;Forme liasse;Consultable;Papier;NumÃ©rique;Photographe;Date photo;Couverture;Codification\n";
 			foreach ($a_liasses as $a_liasse) { 
 				list($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_consult, $st_publi_pap, $st_publi_num, $st_photographe, $st_date_photo, $st_couverture_photo, $st_codif_photo) = $a_liasse;
 			$st_libelle_notaires = str_replace(";", "-", $st_libelle_notaires);
@@ -106,7 +106,7 @@ switch($_SESSION['menu_rla']) {
 			}
 		}
 		else {
-			$csv .= "Cote;Notaire(commune);Période;Forme liasse;Couverture;Commentaires\n";
+			$csv .= "Cote;Notaire(commune);PÃ©riode;Forme liasse;Couverture;Commentaires\n";
 			foreach ($a_liasses as $a_liasse) { 
 				list($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_couverture_photo, $st_info_compl) = $a_liasse;
 			$st_libelle_notaires = str_replace(";", "-", $st_libelle_notaires);
@@ -119,7 +119,7 @@ switch($_SESSION['menu_rla']) {
 		}
 		break;
 	case 'pas_releve' :
-		$csv .= "Cote;Notaire(commune);Période;Forme liasse\n";
+		$csv .= "Cote;Notaire(commune);PÃ©riode;Forme liasse\n";
 		foreach ($a_liasses as $a_liasse) {
 			list($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_consult, $st_publi_num, $st_date_fin_releve) = $a_liasse;
 			$st_libelle_notaires = str_replace(";", "-", $st_libelle_notaires);
@@ -128,7 +128,7 @@ switch($_SESSION['menu_rla']) {
 		}
 		break;
 	case 'pas_photo':
-		$csv .= "Cote;Notaire(commune);Période;Forme liasse\n";
+		$csv .= "Cote;Notaire(commune);PÃ©riode;Forme liasse\n";
 		foreach ($a_liasses as $a_liasse) { 
 			list($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_consult, $st_photographe, $st_date_photo, $st_couverture_photo, $st_codif_photo) = $a_liasse;
 			$st_libelle_notaires = str_replace(";", "-", $st_libelle_notaires);
@@ -137,7 +137,7 @@ switch($_SESSION['menu_rla']) {
 		}
 		break;
 	default :
-		$csv .= "Cote;Notaire(commune);Période;Forme liasse\n";
+		$csv .= "Cote;Notaire(commune);PÃ©riode;Forme liasse\n";
 		foreach ($a_liasses as $a_liasse) { 
 			list($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme) = $a_liasse;
 			$st_libelle_notaires = str_replace(";", "-", $st_libelle_notaires);
@@ -146,7 +146,7 @@ switch($_SESSION['menu_rla']) {
 		}
 		break;
 }
-
+$csv = cp1252_vers_utf8($csv);
 header("Content-type: application/vnd.ms-excel");
 header("Content-disposition: attachment; filename=export_".$_SESSION['menu_rla'].".csv");
 print($csv);
