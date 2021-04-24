@@ -146,7 +146,6 @@ switch($_SESSION['menu_rla']) {
 		}
 		break;
 }
-$csv = cp1252_vers_utf8($csv);
 header("Content-type: application/vnd.ms-excel");
 header("Content-disposition: attachment; filename=export_".$_SESSION['menu_rla'].".csv");
 print($csv);
