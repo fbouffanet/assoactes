@@ -379,7 +379,7 @@ switch($_SESSION['menu_rla']) {
 		break;
 	case 'photo' :
 		foreach ($a_liasses as $a_liasse) { 
-			if( $_SESSION['avec_commentaire_rla'] == 'non' ) 
+			if( $_SESSION['avec_commentaire_rla'] != 'oui' ) 
 				$pdf->Ligne_photo_sans($a_liasse, $fond);
 			else
 				$pdf->Ligne_photo_avec($a_liasse, $fond);
