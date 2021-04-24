@@ -668,7 +668,7 @@ $_SESSION['pdf']['sous_titre'] = $st_sous_titre;
 $_SESSION['pdf']['nb_liasse'] = $i_nb_liasse_extr;
 $_SESSION['pdf']['pourc_liste'] = $i_pourc_liste;
 $_SESSION['pdf']['pourc_tot'] = $i_pourc_tot;
-$_SESSION['pdf']['liasses'] = $a_liasses;
+//$_SESSION['pdf']['liasses'] = $a_liasses;
 
 /* ------------------------------------------------------
    affichage de l'entête 
