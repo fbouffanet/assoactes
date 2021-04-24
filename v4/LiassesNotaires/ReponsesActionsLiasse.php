@@ -651,7 +651,7 @@ if( $_SESSION['menu_rla'] != 'publication' &&  $_SESSION['menu_rla'] != 'complet
 
 $gst_requete_liasses = "$st_select $st_from $st_where $st_order";
 $_SESSION['pdf']['requete'] = $gst_requete_liasses;
-$a_liasses=$connexionBD->sql_select_multipleUtf8($gst_requete_liasses);
+$a_liasses=$connexionBD->sql_select_multiple($gst_requete_liasses);
 $i_nb_ligne_extr = count($a_liasses);
 if( $i_nb_ligne_extr != 0 &&  $_SESSION['menu_rla'] != 'publication' &&  $_SESSION['menu_rla'] != 'complete' ) {
 	$i_pourc_liste = round($i_nb_liasse_extr / $i_nb_liasse_liste * 100,2);
@@ -672,6 +672,7 @@ $_SESSION['pdf']['liasses'] = $a_liasses;
 
 /* ------------------------------------------------------
    affichage de l'entête 
+   ---------------------
 */   
 print('<body>');
 print('<div class="container">');
