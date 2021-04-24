@@ -116,7 +116,12 @@ function menu_liste($pconnexionBD)
 	print("</form>");  
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
 	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER\">");  
-	print("<input type=submit value=\"Ajouter une liasse\"></div>");  
+	//print("<input type=submit value=\"Ajouter une liasse\">");
+	print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
+	print("<button type=submit name=Ajouter class=\"btn btn-primary\">");
+	print("    <span class=\"glyphicon glyphicon-search\"></span> Ajouter une liasse</button>");
+	print('</div>');
+	print("</div>");  
 	print('</form>');
 	
 
