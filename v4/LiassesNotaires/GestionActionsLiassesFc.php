@@ -148,9 +148,9 @@ function menu_liste_releve($pconnexionBD)
 											array('Releveur','Date fin relev&eacute;','Publication num&eacute;rique','Infos compl&eacute;mentaires','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_entete_liens_navigation();
+		//$pagination->affiche_entete_liens_navigation();
 		$pagination->affiche_tableau_edition(2);
-		$pagination->affiche_entete_liens_navigation();      
+		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_RELEVE\">");
 		print("<input type=button value=\"Supprimer les relev&eacute;s s&eacute;lectionn&eacute;s\" ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\"></div>");   
 	}
@@ -314,7 +314,7 @@ function menu_gerer($pconnexionBD)
 	menu_liste_publication($pconnexionBD);
 	menu_liste_photo($pconnexionBD);
 	menu_liste_program($pconnexionBD);
-	print('</form></div>');
+	print('</form></div></div>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print("<div align=center><input type=hidden name=mode value=\"LISTE\"><br><input type=submit value=\"Retour\"></div>");
 	print('</form>');
