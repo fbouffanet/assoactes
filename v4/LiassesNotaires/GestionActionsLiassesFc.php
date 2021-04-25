@@ -5,7 +5,7 @@
  */ 
 function menu_liste($pconnexionBD)
 {
-	$a_serie_liasse = $pconnexionBD->liste_valeur_par_clefUtf8("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
+	$a_serie_liasse = $pconnexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 	if( isset($_POST['serie_liasse']) ) {
 		$_SESSION['serie_liasse'] = $_POST['serie_liasse'];
 	}
@@ -25,68 +25,64 @@ function menu_liste($pconnexionBD)
 		$st_serie_liasse = '2E';
 	}
 	$a_numerotation_liasses = array("z","1","2","3","4","5","6","7","8","9"); 
-	print("<div class=TITRE>Gestion des actions sur les liasses notariales</div>");
-	print("<div align=center><br><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return\">");
-	print("<div><br>");
-	print("<div align=center>S&eacute;rie : ".
-	      "<select name=serie_liasse id='serie_liasse' onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
-		  chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select></div><br>");
+	print("<div align=center><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return\">");
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading">Actions sur les liasses notariales</div>');
+	print('<div class="panel-body">');
+	print('<table border=0 cellpadding=0 cellspacing=0>');
+	print('<tr class="ligne_paire"><td rowspan="4" width="500" align="left">');
+	print("<div class=\"row text-left\">");
+	print('<label for="serie_liasse" class="col-form-label">Série de liasses&nbsp&nbsp</label>');
+	print(             "<select name='serie_liasse' id='serie_liasse' onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
+		                    chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select>");
 	if( $st_serie_liasse == "L") {
-		print("<div align=center>Ces répertoires sont issus de la série L qui regroupe tous les actes de l'administration entre 1789 et l'an VIII. ");
-		print("Nous n'avons saisi que les numéros de la série L ayant traits à des répertoires notariés. <br>");
+		print("Ces répertoires sont issus de la série L qui regroupe tous les actes de l’administration entre 1789 et l’an VIII. ");
+		print("Nous n’avons saisi que les numéros de la série L ayant traits à des répertoires notariés. <br>");
 		print("La recherche se fait donc entre des bornes précises, selon 6 groupes : ");
-		print(" 2197 à 2263, 2328 à 2393, 2433 à 2492,< 2552 à 2596, 2607 à 2668, 2683 à 2732.</div><br>");
+		print(" 2197 à 2263, 2328 à 2393, 2433 à 2492,< 2552 à 2596, 2607 à 2668, 2683 à 2732.");
 	}
-	print("<table border=0 cellpadding=0 cellspacing=0><caption>S&eacute;lection des cotes<br></caption>");
-	print('<tr class=ligne_paire><td align="center" width="200">dizaines de milliers</td><td>');
+	print('</div></td><td rowspan="4"><label>Cotes&nbsp&nbsp&nbsp</label></td>');
+	// dizaine de milliers
+	print('<td>');
 	$i_session_init_dixm = isset($_SESSION['init_dixm']) ? $_SESSION['init_dixm'] : $a_numerotation_liasses[0];
 	$gc_init_dixm = empty($_GET['init_dixm']) ? $i_session_init_dixm : $_GET['init_dixm'];
 	$_SESSION['init_dixm'] = $gc_init_dixm;   
-	foreach ($a_numerotation_liasses as $c_init_dixm)
-	{
-		if ($c_init_dixm==$gc_init_dixm)
-			print("<span style=\"font-weight: bold;\">$c_init_dixm </span>");
-		else
-			print("<a href=\"".$_SERVER['PHP_SELF']."?init_dixm=$c_init_dixm\">$c_init_dixm</a> ");
+	foreach ($a_numerotation_liasses as $c_init_dixm) 	{
+		if ($c_init_dixm==$gc_init_dixm)	print("<span style=\"font-weight: bold;\">$c_init_dixm </span>");
+		else								print("<a href=\"".$_SERVER['PHP_SELF']."?init_dixm=$c_init_dixm\">$c_init_dixm</a> ");
 	}
-	print('</td></tr>');
-	print('<tr class=ligne_paire><td align="center">milliers</td><td>');
+	print('</td><td align="left">&nbsp&nbsp&nbsp<I>dizaine de milliers</I></td></tr>');
+	// millier
+	print('<tr class=ligne_paire><td>');
 	$i_session_init_mill = isset($_SESSION['init_mill']) ? $_SESSION['init_mill'] : $a_numerotation_liasses[0];
 	$gc_init_mill = empty($_GET['init_mill']) ? $i_session_init_mill : $_GET['init_mill'];
 	$_SESSION['init_mill'] = $gc_init_mill;   
-	foreach ($a_numerotation_liasses as $c_init_mill)
-	{
-		if ($c_init_mill==$gc_init_mill)
-			print("<span style=\"font-weight: bold;\">$c_init_mill </span>");
-		else
-			print("<a href=\"".$_SERVER['PHP_SELF']."?init_mill=$c_init_mill\">$c_init_mill</a> ");
+	foreach ($a_numerotation_liasses as $c_init_mill)	{
+		if ($c_init_mill==$gc_init_mill)	print("<span style=\"font-weight: bold;\">$c_init_mill </span>");
+		else								print("<a href=\"".$_SERVER['PHP_SELF']."?init_mill=$c_init_mill\">$c_init_mill</a> ");
 	}
-	print('</td></tr>');
-	print('<tr class=ligne_paire><td align="center">centaines</td><td>');
+	print('</td><td align="left">&nbsp&nbsp&nbsp<I>millier</I></td></tr>');
+	// centaine
+	print('<tr class=ligne_paire><td>');
 	$i_session_init_cent = isset($_SESSION['init_cent']) ? $_SESSION['init_cent'] : $a_numerotation_liasses[0];
 	$gc_init_cent = empty($_GET['init_cent']) ? $i_session_init_cent : $_GET['init_cent'];
 	$_SESSION['init_cent'] = $gc_init_cent;   
-	foreach ($a_numerotation_liasses as $c_init_cent)
-	{
-		if ($c_init_cent==$gc_init_cent)
-			print("<span style=\"font-weight: bold;\">$c_init_cent </span>");
-		else
-			print("<a href=\"".$_SERVER['PHP_SELF']."?init_cent=$c_init_cent\">$c_init_cent</a> ");
+	foreach ($a_numerotation_liasses as $c_init_cent)	{
+		if ($c_init_cent==$gc_init_cent)	print("<span style=\"font-weight: bold;\">$c_init_cent </span>");
+		else								print("<a href=\"".$_SERVER['PHP_SELF']."?init_cent=$c_init_cent\">$c_init_cent</a> ");
 	}
-	print('</td></tr>');
-	print('<tr class=ligne_paire><td align="center">dizaines</td><td>');
+	print('</td><td align="left">&nbsp&nbsp&nbsp<I>centaine</I></td></tr>');
+	// dizaine
+	print('<tr class=ligne_paire><td>');
 	$i_session_init_dix = isset($_SESSION['init_dix']) ? $_SESSION['init_dix'] : $a_numerotation_liasses[0];
 	$gc_init_dix = empty($_GET['init_dix']) ? $i_session_init_dix : $_GET['init_dix'];
 	$_SESSION['init_dix'] = $gc_init_dix;   
-	foreach ($a_numerotation_liasses as $c_init_dix)
-	{
-		if ($c_init_dix==$gc_init_dix)
-			print("<span style=\"font-weight: bold;\">$c_init_dix </span>");
-		else
-			print("<a href=\"".$_SERVER['PHP_SELF']."?init_dix=$c_init_dix\">$c_init_dix</a> ");
+	foreach ($a_numerotation_liasses as $c_init_dix)	{
+		if ($c_init_dix==$gc_init_dix)		print("<span style=\"font-weight: bold;\">$c_init_dix </span>");
+		else								print("<a href=\"".$_SERVER['PHP_SELF']."?init_dix=$c_init_dix\">$c_init_dix</a> ");
 	}
-	print('</td></tr></table>');
-	print("</div>");
+	print('</td><td align="left">&nbsp&nbsp&nbsp<I>dizaine</I></td></tr></table>');
+	print('</div></div>');
 	$numero  = $gc_init_dixm == 'z' ? '0' : $gc_init_dixm;
 	$numero .= $gc_init_mill == 'z' ? '0' : $gc_init_mill;
 	$numero .= $gc_init_cent == 'z' ? '0' : $gc_init_cent;
@@ -116,9 +112,9 @@ function menu_liste($pconnexionBD)
 											array('Cote','Notaire(s)','Periode(s)','Relev&eacute;','Papier','Num&eacute;rique','Photo','Programm&eacute;e',''));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_entete_liens_navigation();
+		//$pagination->affiche_entete_liens_navigation();
 		$pagination->affiche_tableau_edition_select();
-		$pagination->affiche_entete_liens_navigation();      
+		//$pagination->affiche_entete_liens_navigation();      
 	}
 	else
 		print("<div align=center>Pas de liasses</div>\n");
@@ -152,23 +148,24 @@ function menu_liste_releve($pconnexionBD)
 											array('Releveur','Date fin relev&eacute;','Publication num&eacute;rique','Infos compl&eacute;mentaires','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition(2);
-		$pagination->affiche_entete_liens_navigation();      
+		//$pagination->affiche_entete_liens_navigation();
+		$pagination->affiche_tableau_edition_sil(2);
+		//$pagination->affiche_entete_liens_navigation();      
+		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_RELEVE\">");
-		print("<input type=button value=\"Supprimer les relev&eacute;s s&eacute;lectionn&eacute;s\" ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\"></div>");   
+		print("<button type=submit name=\"SUPPRIMER_RELEVE\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\">");
+		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les relevés sélectionnés</button>");
+		print('</div></div>');
 	}
 	else
-		print("<div align=center>Pas de relev&eacute;</div>\n");
+		print("<div class=\"alert alert-danger\">Pas de relevé</div>");
 	print("</form>");  
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVE\"><input type=submit value=\"Ajouter un relev&eacute;\"></div>");  
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVEUR\"><input type=submit value=\"Ajouter un releveur\"></div>");  
-	print("<div align=center>______________________________________________________________________</div>");  
-	print('</form>');
-	print('</div>');
+	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVE\">");
+	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
+	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un relevé</button>");
+	print('</div></form>');
+	print('<div>&nbsp</div></div>');
 }
 
 /**
@@ -195,23 +192,24 @@ function menu_liste_publication($pconnexionBD)
 											array('Titre publication','Date publication','Infos compl&eacute;mentaires','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition(2);
-		$pagination->affiche_entete_liens_navigation();      
+		//$pagination->affiche_entete_liens_navigation();
+		$pagination->affiche_tableau_edition_sil(2);
+		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_LIEN_PUBLI\">");
-		print("<input type=button value=\"Supprimer les liens publications s&eacute;lectionn&eacute;s\" ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\"></div>");   
+		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
+		print("<button type=submit name=\"SUPPRIMER_LIEN_PUBLI\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\">");
+		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les liens publications sélectionnés</button>");
+		print('</div></div>');
 	}
 	else
-		print("<div align=center>Pas de publication papier</div>\n");
+		print("<div class=\"alert alert-danger\">Pas de publication papier</div>");
 	print("</form>");  
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_LIEN_PUBLI\"><input type=submit value=\"Ajouter un lien publication papier\"></div>");  
-	print('</form>');
-	/*print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_GERER_PUBLI\"><input type=submit value=\"G&eacute;rer les publications papiers\"></div>");  
-	print('</form>');*/
-	print("<div align=center>______________________________________________________________________</div>");  
-	print('</div>');
+	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_LIEN_PUBLI\">");
+	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
+	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un lien publication papier</button>");
+	print('</div></form>');
+	print('<div>&nbsp</div></div>');
 }
 
 /**
@@ -241,20 +239,24 @@ function menu_liste_photo($pconnexionBD)
 											array('Photographe','Date photos','Couverture photos','Codif photos','Infos compl&eacute;mentaires','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition(2);
-		$pagination->affiche_entete_liens_navigation();      
+		//$pagination->affiche_entete_liens_navigation();
+		$pagination->affiche_tableau_edition_sil(2);
+		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_PHOTO\">");
-		print("<input type=button value=\"Supprimer les photos s&eacute;lectionn&eacute;es\" ONCLICK=\"VerifieSuppressionPhotos(0,'supp[]')\"></div>");   
+		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
+		print("<button type=submit name=\"SUPPRIMER_PHOTO\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPhotos(0,'supp[]')\">");
+		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les photos sélectionnées</button>");
+		print('</div></div>');
 	}
 	else
-		print("<div align=center>Pas de photo</div>\n");
+		print("<div class=\"alert alert-danger\">Pas de photo</div>");
 	print("</form>");  
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_PHOTO\"><input type=submit value=\"Ajouter des photos\"></div>");  
-	print("<div align=center>______________________________________________________________________</div>");  
-	print('</form>');
-	print('</div>');
+	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_PHOTO\">");
+	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
+	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter des photos</button>");
+	print('</div></form>');
+	print('<div>&nbsp</div></div>');
 }
 
 /**
@@ -288,19 +290,23 @@ function menu_liste_program($pconnexionBD)
 											      'Infos compl&eacute;mentaires','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition(2);
-		$pagination->affiche_entete_liens_navigation();      
+		//$pagination->affiche_entete_liens_navigation();
+		$pagination->affiche_tableau_edition_sil(2);
+		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_PROGRAM\">");
-		print("<input type=button value=\"Supprimer les programmations s&eacute;lectionn&eacute;es\" ONCLICK=\"VerifieSuppressionPrograms(0,'supp[]')\"></div>");   
+		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
+		print("<button type=submit name=\"SUPPRIMER_PROGRAM\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPrograms(0,'supp[]')\">");
+		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les programmations sélectionnées</button>");
+		print('</div></div>');
 	}
 	else
-		print("<div align=center>Pas de programmation</div>\n");
+		print("<div class=\"alert alert-danger\">Pas de programmation</div>");
 	print("</form>");  
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_PROGRAM\"><input type=submit value=\"Ajouter une programmation\"></div>");  
-	print("<div align=center>______________________________________________________________________</div>");  
-	print('</form>');
+	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_PROGRAM\">");
+	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
+	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter une programmation</button>");
+	print('</div></form>');
 	print('</div>');
 }
 
@@ -309,16 +315,27 @@ function menu_liste_program($pconnexionBD)
  */ 
 function menu_gerer($pconnexionBD)
 {
-	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
+	                           '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'</div>');
+	print('<div class="panel-body">');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	menu_liste_releve($pconnexionBD);
 	menu_liste_publication($pconnexionBD);
 	menu_liste_photo($pconnexionBD);
 	menu_liste_program($pconnexionBD);
+	print('</form></div></div>');
+	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
+	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVEUR\">");
+	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-warning\">");
+	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un releveur ou un photographe</button>");
+	print("</div>");  
 	print('</form>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"LISTE\"><br><input type=submit value=\"Retour\"></div>");
-	print('</form>');
+	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
+	print("<button type=submit name=LISTE class=\"btn btn-sm btn-primary\">");
+	print("    <span class=\"glyphicon glyphicon-arrow-left\"></span>  Retour</button>");
+	print('</div></form>');
 }
 /** --------------------------------------- relevés ----------------------------------- **/
 /**
@@ -334,7 +351,7 @@ function menu_gerer($pconnexionBD)
 function menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $pi_idf_releveur,
                              $pst_date_fin_releve, $pi_publication_numerique, $pst_info_compl)
 {
-	print("<table border=1>");
+	print("<table border=0>");
 	print("<tr><th>Releveur</th><td>".
 	      "<select name=idf_releveur id='idf_releveur'>".chaine_select_options($pi_idf_releveur,$pa_releveur)."</select></td></tr>");
 	print("<tr><th>Date de fin de relev&eacute;</th><td>".
@@ -364,8 +381,11 @@ function menu_modifier_releve($pconnexionBD, $pi_idf_releve, $pa_releveur)
 	                                 "       in_publication_numerique, info_complementaires ".
 									 "from liasse_releve ".
 									 "where idf=$pi_idf_releve");
-	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
-	print("<div class=SOUSTITRE>Modification d'un relev&eacute;</div><br><br>");
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading">Relevé sur la liasse '.$_SESSION['cote_liasse_gal'].
+	                                '&nbsp&nbsp&nbsp-&nbsp&nbsp&nbspNotaire(s) '.$_SESSION['notaires_gal'].
+									'&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsppériode '.$_SESSION['periodes_gal'].'</div>');
+	print('<div class="panel-body">');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsReleve(0)\">");
 	print("<div align=center><input type=hidden name=mode value=\"MODIFIER_RELEVE\">");
 	print("<input type=hidden name=idf_releve value=$pi_idf_releve>");
@@ -378,6 +398,7 @@ function menu_modifier_releve($pconnexionBD, $pi_idf_releve, $pa_releveur)
 	print("<div align=center><input type=hidden name=mode value=\"MENU_GERER\">");
 	print("<br><input type=submit value=\"Annuler\"></div>");
 	print('</form>');
+	print("</div></div>");
 }
 
 /** Affiche le menu d'ajout d'un relevé
@@ -408,7 +429,7 @@ function menu_ajouter_releveur($pconnexionBD)
 	$st_requete = "SELECT idf,concat(nom, ' ', prenom) as nom FROM adherent ".
 	              "where idf not in (select idf_adherent from releveur) ".
 				  "order by nom";
-	$a_adherent = $pconnexionBD->liste_valeur_par_clefUtf8($st_requete);
+	$a_adherent = $pconnexionBD->liste_valeur_par_clef($st_requete);
 	print("<div class=TITRE>Ajout d'un releveur</div><br><br>");
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsReleveur(0)\">");
 	print("<div align=center><input type=hidden name=mode value=\"AJOUTER_RELEVEUR\">");

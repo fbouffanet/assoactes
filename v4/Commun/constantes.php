@@ -444,6 +444,5 @@ define('EMAIL_DIRASSO','agc-dir@genea16.net');
 define('EMAIL_GBKADMIN','agc-geneabank@genea16.net');
 define('EMAIL_PRESASSO','agc-dir@genea16.net');
 
-define('CLEF_API_GEOPORTAIL','cervpkrr0dboxq0t5hnw1jbm');
 
 ?>
