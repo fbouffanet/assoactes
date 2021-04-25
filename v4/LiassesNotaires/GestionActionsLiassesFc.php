@@ -245,9 +245,9 @@ function menu_liste_photo($pconnexionBD)
 											array('Photographe','Date photos','Couverture photos','Codif photos','Infos compl&eacute;mentaires','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition(2);
-		$pagination->affiche_entete_liens_navigation();      
+		//$pagination->affiche_entete_liens_navigation();
+		$pagination->affiche_tableau_edition_sil(2);
+		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_PHOTO\">");
 		print("<button type=submit name=\"SUPPRIMER_PHOTO\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPhotos(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les photos sélectionnées</button>");
@@ -296,19 +296,23 @@ function menu_liste_program($pconnexionBD)
 											      'Infos compl&eacute;mentaires','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition(2);
-		$pagination->affiche_entete_liens_navigation();      
+		//$pagination->affiche_entete_liens_navigation();
+		$pagination->affiche_tableau_edition_sil(2);
+		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_PROGRAM\">");
-		print("<input type=button value=\"Supprimer les programmations s&eacute;lectionn&eacute;es\" ONCLICK=\"VerifieSuppressionPrograms(0,'supp[]')\"></div>");   
+		print("<button type=submit name=\"SUPPRIMER_PROGRAM\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPrograms(0,'supp[]')\">");
+		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les programmations sélectionnées</button>");
+		print('</div>');
 	}
 	else
 		print("<div class=\"alert alert-danger\">Pas de programmation</div>");
 	print("</form>");  
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_PROGRAM\"><input type=submit value=\"Ajouter une programmation\"></div>");  
+	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_PROGRAM\">");
+	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
+	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter une programmation</button>");
+	print('</div></form>');
 	print("<div align=center>______________________________________________________________________</div>");  
-	print('</form>');
 	print('</div>');
 }
 
@@ -328,8 +332,10 @@ function menu_gerer($pconnexionBD)
 	menu_liste_program($pconnexionBD);
 	print('</form></div></div>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"LISTE\"><br><input type=submit value=\"Retour\"></div>");
-	print('</form>');
+	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
+	print("<button type=submit name=LISTE class=\"btn btn-sm btn-success\">");
+	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Retour</button>");
+	print('</div></form>');
 }
 /** --------------------------------------- relevés ----------------------------------- **/
 /**
