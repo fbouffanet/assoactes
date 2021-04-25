@@ -49,54 +49,46 @@ function menu_liste($pconnexionBD)
 		print(" 2197 à 2263, 2328 à 2393, 2433 à 2492,< 2552 à 2596, 2607 à 2668, 2683 à 2732.");
 	}
 	print('</div></td><td rowspan="4"><label>Cotes</label></td>');
-	print('<td align="right" width="150">dizaines de milliers&nbsp&nbsp&nbsp</td><td>');
+	// dizaine de milliers
+	print('<td>');
 	$i_session_init_dixm = isset($_SESSION['init_dixm']) ? $_SESSION['init_dixm'] : $a_numerotation_liasses[0];
 	$gc_init_dixm = empty($_GET['init_dixm']) ? $i_session_init_dixm : $_GET['init_dixm'];
 	$_SESSION['init_dixm'] = $gc_init_dixm;   
-	foreach ($a_numerotation_liasses as $c_init_dixm)
-	{
-		if ($c_init_dixm==$gc_init_dixm)
-			print("<span style=\"font-weight: bold;\">$c_init_dixm </span>");
-		else
-			print("<a href=\"".$_SERVER['PHP_SELF']."?init_dixm=$c_init_dixm\">$c_init_dixm</a> ");
+	foreach ($a_numerotation_liasses as $c_init_dixm) 	{
+		if ($c_init_dixm==$gc_init_dixm)	print("<span style=\"font-weight: bold;\">$c_init_dixm </span>");
+		else								print("<a href=\"".$_SERVER['PHP_SELF']."?init_dixm=$c_init_dixm\">$c_init_dixm</a> ");
 	}
-	print('</td></tr>');
-	print('<tr class=ligne_paire><td align="right">milliers&nbsp&nbsp&nbsp</td><td>');
+	print('</td><td align="left">dizaine de milliers&nbsp&nbsp&nbsp</td></tr>');
+	// millier
+	print('<tr class=ligne_paire><td>');
 	$i_session_init_mill = isset($_SESSION['init_mill']) ? $_SESSION['init_mill'] : $a_numerotation_liasses[0];
 	$gc_init_mill = empty($_GET['init_mill']) ? $i_session_init_mill : $_GET['init_mill'];
 	$_SESSION['init_mill'] = $gc_init_mill;   
-	foreach ($a_numerotation_liasses as $c_init_mill)
-	{
-		if ($c_init_mill==$gc_init_mill)
-			print("<span style=\"font-weight: bold;\">$c_init_mill </span>");
-		else
-			print("<a href=\"".$_SERVER['PHP_SELF']."?init_mill=$c_init_mill\">$c_init_mill</a> ");
+	foreach ($a_numerotation_liasses as $c_init_mill)	{
+		if ($c_init_mill==$gc_init_mill)	print("<span style=\"font-weight: bold;\">$c_init_mill </span>");
+		else								print("<a href=\"".$_SERVER['PHP_SELF']."?init_mill=$c_init_mill\">$c_init_mill</a> ");
 	}
-	print('</td></tr>');
-	print('<tr class=ligne_paire><td align="right">centaines&nbsp&nbsp&nbsp</td><td>');
+	print('</td><td align="left">millier&nbsp&nbsp&nbsp</td></tr>');
+	// centaine
+	print('<tr class=ligne_paire><td>');
 	$i_session_init_cent = isset($_SESSION['init_cent']) ? $_SESSION['init_cent'] : $a_numerotation_liasses[0];
 	$gc_init_cent = empty($_GET['init_cent']) ? $i_session_init_cent : $_GET['init_cent'];
 	$_SESSION['init_cent'] = $gc_init_cent;   
-	foreach ($a_numerotation_liasses as $c_init_cent)
-	{
-		if ($c_init_cent==$gc_init_cent)
-			print("<span style=\"font-weight: bold;\">$c_init_cent </span>");
-		else
-			print("<a href=\"".$_SERVER['PHP_SELF']."?init_cent=$c_init_cent\">$c_init_cent</a> ");
+	foreach ($a_numerotation_liasses as $c_init_cent)	{
+		if ($c_init_cent==$gc_init_cent)	print("<span style=\"font-weight: bold;\">$c_init_cent </span>");
+		else								print("<a href=\"".$_SERVER['PHP_SELF']."?init_cent=$c_init_cent\">$c_init_cent</a> ");
 	}
-	print('</td></tr>');
-	print('<tr class=ligne_paire><td align="right">dizaines&nbsp&nbsp&nbsp</td><td>');
+	print('</td><td align="left">centaine&nbsp&nbsp&nbsp</td></tr>');
+	// dizaine
+	print('<tr class=ligne_paire><td>');
 	$i_session_init_dix = isset($_SESSION['init_dix']) ? $_SESSION['init_dix'] : $a_numerotation_liasses[0];
 	$gc_init_dix = empty($_GET['init_dix']) ? $i_session_init_dix : $_GET['init_dix'];
 	$_SESSION['init_dix'] = $gc_init_dix;   
-	foreach ($a_numerotation_liasses as $c_init_dix)
-	{
-		if ($c_init_dix==$gc_init_dix)
-			print("<span style=\"font-weight: bold;\">$c_init_dix </span>");
-		else
-			print("<a href=\"".$_SERVER['PHP_SELF']."?init_dix=$c_init_dix\">$c_init_dix</a> ");
+	foreach ($a_numerotation_liasses as $c_init_dix)	{
+		if ($c_init_dix==$gc_init_dix)		print("<span style=\"font-weight: bold;\">$c_init_dix </span>");
+		else								print("<a href=\"".$_SERVER['PHP_SELF']."?init_dix=$c_init_dix\">$c_init_dix</a> ");
 	}
-	print('</td></tr>');
+	print('</td><td align="left">dizaine&nbsp&nbsp&nbsp</td></tr>');
 	print('<tr class=ligne_paire><td align="center">&nbsp</td><td></td></tr></table>');
 	print('</div></div>');
 	$numero  = $gc_init_dixm == 'z' ? '0' : $gc_init_dixm;
