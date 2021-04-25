@@ -48,7 +48,7 @@ function menu_liste($pconnexionBD)
 		print("La recherche se fait donc entre des bornes précises, selon 6 groupes : ");
 		print(" 2197 à 2263, 2328 à 2393, 2433 à 2492,< 2552 à 2596, 2607 à 2668, 2683 à 2732.");
 	}
-	print('</td><td rowspan="4"><label>Cotes</label></td>');
+	print('</div></td><td rowspan="4"><label>Cotes</label></td>');
 	print('<td align="right" width="200">dizaines de milliers&nbsp&nbsp&nbsp</td><td>');
 	$i_session_init_dixm = isset($_SESSION['init_dixm']) ? $_SESSION['init_dixm'] : $a_numerotation_liasses[0];
 	$gc_init_dixm = empty($_GET['init_dixm']) ? $i_session_init_dixm : $_GET['init_dixm'];
@@ -98,9 +98,7 @@ function menu_liste($pconnexionBD)
 	}
 	print('</td></tr>');
 	print('<tr class=ligne_paire><td align="center">&nbsp</td><td></td></tr></table>');
-	print("</div>");
 	print('</div></div>');
-	print("</div>");
 	$numero  = $gc_init_dixm == 'z' ? '0' : $gc_init_dixm;
 	$numero .= $gc_init_mill == 'z' ? '0' : $gc_init_mill;
 	$numero .= $gc_init_cent == 'z' ? '0' : $gc_init_cent;
