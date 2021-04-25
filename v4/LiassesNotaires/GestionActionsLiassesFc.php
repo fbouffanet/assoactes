@@ -157,7 +157,7 @@ function menu_liste_releve($pconnexionBD)
 		print('</div>');
 	}
 	else
-		print("<div align=center>Pas de relev&eacute;</div>\n");
+		print("<div class=\"alert alert-danger\">Pas de relevé</div>");
 	print("</form>");  
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
 	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVE\">");
@@ -208,7 +208,7 @@ function menu_liste_publication($pconnexionBD)
 		//print("<input type=button value=\"Supprimer les liens publications s&eacute;lectionn&eacute;s\" ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\"></div>");   
 	}
 	else
-		print("<div align=center>Pas de publication papier</div>\n");
+		print("<div class=\"alert alert-danger\">Pas de publication papier</div>");
 	print("</form>");  
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
 	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_LIEN_PUBLI\"><input type=submit value=\"Ajouter un lien publication papier\"></div>");  
@@ -251,7 +251,7 @@ function menu_liste_photo($pconnexionBD)
 		print("<input type=button value=\"Supprimer les photos s&eacute;lectionn&eacute;es\" ONCLICK=\"VerifieSuppressionPhotos(0,'supp[]')\"></div>");   
 	}
 	else
-		print("<div align=center>Pas de photo</div>\n");
+		print("<div class=\"alert alert-danger\">Pas de photo</div>");
 	print("</form>");  
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
 	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_PHOTO\"><input type=submit value=\"Ajouter des photos\"></div>");  
@@ -298,7 +298,7 @@ function menu_liste_program($pconnexionBD)
 		print("<input type=button value=\"Supprimer les programmations s&eacute;lectionn&eacute;es\" ONCLICK=\"VerifieSuppressionPrograms(0,'supp[]')\"></div>");   
 	}
 	else
-		print("<div align=center>Pas de programmation</div>\n");
+		print("<div class=\"alert alert-danger\">Pas de programmation</div>");
 	print("</form>");  
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
 	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_PROGRAM\"><input type=submit value=\"Ajouter une programmation\"></div>");  
