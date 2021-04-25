@@ -384,7 +384,7 @@ function menu_modifier_releve($pconnexionBD, $pi_idf_releve, $pa_releveur)
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading">Relevé sur la liasse '.$_SESSION['cote_liasse_gal'].
 	                                '&nbsp&nbsp&nbsp-&nbsp&nbsp&nbspNotaire(s) '.$_SESSION['notaires_gal'].
-									'&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsppériode ".$_SESSION['periodes_gal'];'</div>');
+									'&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsppériode '.$_SESSION['periodes_gal'];'</div>');
 	print('<div class="panel-body">');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsReleve(0)\">");
 	print("<div align=center><input type=hidden name=mode value=\"MODIFIER_RELEVE\">");
