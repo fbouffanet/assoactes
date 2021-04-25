@@ -123,7 +123,7 @@ function menu_liste($pconnexionBD)
 	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER\">");  
 	//print("<input type=submit value=\"Ajouter une liasse\">");
 //	print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
-	print("<button type=submit name=Ajouter class=\"btn btn-success\">");
+	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
 	print("    <span class=\"glyphicon glyphicon-new-window\"></span> Ajouter une liasse</button>");
 //	print('</div>');
 	print("</div>");  
