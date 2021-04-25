@@ -86,7 +86,7 @@ foreach ($a_intervenants as $i_idf_acte => $a_intervenant)
   }
 }
 
-$st_requete_codee = md5(implode('|',$ga_idf_actes));
+$st_requete_code = md5(implode('|',$ga_idf_actes));
 print("<blockquote>R&eacute;capitulatif de votre demande<br>");
 print("Cliquer sur le bouton au bas de la page pour valider votre demande</blockquote>");
 print("<table class=\"table table-bordered table-striped\">");
