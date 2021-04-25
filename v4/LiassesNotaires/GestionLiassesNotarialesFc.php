@@ -38,7 +38,7 @@ function menu_liste($pconnexionBD)
 	print('<div class="panel-body">');
 	print('<table border=0 cellpadding=0 cellspacing=0>');
 	print('<tr class="ligne_paire"><td rowspan="4" width="500" align="left">');
-	print("<div class=\"row text-center\">");
+	print("<div class=\"row text-left\">");
 	print('<label for="serie_liasse" class="col-form-label">Série de liasses&nbsp&nbsp</label>');
 	print(             "<select name='serie_liasse' id='serie_liasse' onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
 		                    chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select>");
@@ -58,7 +58,7 @@ function menu_liste($pconnexionBD)
 		if ($c_init_dixm==$gc_init_dixm)	print("<span style=\"font-weight: bold;\">$c_init_dixm </span>");
 		else								print("<a href=\"".$_SERVER['PHP_SELF']."?init_dixm=$c_init_dixm\">$c_init_dixm</a> ");
 	}
-	print('</td><td align="left">&nbsp&nbsp&nbspdizaine de milliers</td></tr>');
+	print('</td><td align="left">&nbsp&nbsp&nbsp<I>dizaine de milliers</I></td></tr>');
 	// millier
 	print('<tr class=ligne_paire><td>');
 	$i_session_init_mill = isset($_SESSION['init_mill']) ? $_SESSION['init_mill'] : $a_numerotation_liasses[0];
@@ -68,7 +68,7 @@ function menu_liste($pconnexionBD)
 		if ($c_init_mill==$gc_init_mill)	print("<span style=\"font-weight: bold;\">$c_init_mill </span>");
 		else								print("<a href=\"".$_SERVER['PHP_SELF']."?init_mill=$c_init_mill\">$c_init_mill</a> ");
 	}
-	print('</td><td align="left">&nbsp&nbsp&nbspmillier</td></tr>');
+	print('</td><td align="left">&nbsp&nbsp&nbsp<I>millier</I></td></tr>');
 	// centaine
 	print('<tr class=ligne_paire><td>');
 	$i_session_init_cent = isset($_SESSION['init_cent']) ? $_SESSION['init_cent'] : $a_numerotation_liasses[0];
@@ -78,7 +78,7 @@ function menu_liste($pconnexionBD)
 		if ($c_init_cent==$gc_init_cent)	print("<span style=\"font-weight: bold;\">$c_init_cent </span>");
 		else								print("<a href=\"".$_SERVER['PHP_SELF']."?init_cent=$c_init_cent\">$c_init_cent</a> ");
 	}
-	print('</td><td align="left">&nbsp&nbsp&nbspcentaine</td></tr>');
+	print('</td><td align="left">&nbsp&nbsp&nbsp<I>centaine</I></td></tr>');
 	// dizaine
 	print('<tr class=ligne_paire><td>');
 	$i_session_init_dix = isset($_SESSION['init_dix']) ? $_SESSION['init_dix'] : $a_numerotation_liasses[0];
@@ -88,7 +88,7 @@ function menu_liste($pconnexionBD)
 		if ($c_init_dix==$gc_init_dix)		print("<span style=\"font-weight: bold;\">$c_init_dix </span>");
 		else								print("<a href=\"".$_SERVER['PHP_SELF']."?init_dix=$c_init_dix\">$c_init_dix</a> ");
 	}
-	print('</td><td align="left">&nbsp&nbsp&nbspdizaine</td></tr>');
+	print('</td><td align="left">&nbsp&nbsp&nbsp<I>dizaine</I></td></tr>');
 	print('<tr class=ligne_paire><td align="center">&nbsp</td><td></td></tr></table>');
 	print('</div></div>');
 	$numero  = $gc_init_dixm == 'z' ? '0' : $gc_init_dixm;
