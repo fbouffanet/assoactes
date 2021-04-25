@@ -34,10 +34,11 @@ function menu_liste($pconnexionBD)
 		print(" 2197 à 2263, 2328 à 2393, 2433 à 2492,< 2552 à 2596, 2607 à 2668, 2683 à 2732.</div><br>");
 	}*/
 	print('<div class="panel panel-primary">');
-	print('    <div class="panel-heading">Liasses notariales</div>');
-	print('    <div class="panel-body">');
-	print("        <div class=\"row text-center\">");
-	print(             'Série de liasses&nbsp');
+	print('<div class="panel-heading">Liasses notariales</div>');
+	print('<div class="panel-body">');
+	print("<div class=\"row text-center\">");
+	print('Série de liasses&nbsp');
+	print('<label for="serie_liasse" class="col-form-label">Série de liasses&nbsp</label>');
 	print(             "<select name='serie_liasse' id='serie_liasse' onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
 		                    chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select>");
 	if( $st_serie_liasse == "L") {
