@@ -89,7 +89,7 @@ function menu_liste($pconnexionBD)
 		else								print("<a href=\"".$_SERVER['PHP_SELF']."?init_dix=$c_init_dix\">$c_init_dix</a> ");
 	}
 	print('</td><td align="left">&nbsp&nbsp&nbsp<I>dizaine</I></td></tr>');
-	print('<tr class=ligne_paire><td align="center">&nbsp</td><td></td></tr></table>');
+	print('<tr class=ligne_paire><td align="center">&nbsp</td></tr></table>');
 	print('</div></div>');
 	$numero  = $gc_init_dixm == 'z' ? '0' : $gc_init_dixm;
 	$numero .= $gc_init_mill == 'z' ? '0' : $gc_init_mill;
