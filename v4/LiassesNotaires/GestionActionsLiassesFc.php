@@ -151,8 +151,8 @@ function menu_liste_releve($pconnexionBD)
 		//$pagination->affiche_entete_liens_navigation();
 		$pagination->affiche_tableau_edition_sil(2);
 		//$pagination->affiche_entete_liens_navigation();      
+		print('<div class="btn-group" role="group">');
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_RELEVE\">");
-		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
 		print("<button type=submit name=\"SUPPRIMER_RELEVE\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span>Supprimer les relevés sélectionnés</button>");
 		print('</div>');
@@ -173,16 +173,6 @@ function menu_liste_releve($pconnexionBD)
 	print('</form>');
 	print('</div>');
 }
-
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER\">");  
-	//print("<input type=submit value=\"Ajouter une liasse\">");
-//	print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
-	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
-	print("    <span class=\"glyphicon glyphicon-new-window\"></span> Ajouter une liasse</button>");
-//	print('</div>');
-	print("</div>");  
-	print('</form>');
 
 /**
  * Affiche la liste des publications papier d'une liasse
