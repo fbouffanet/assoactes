@@ -8,24 +8,26 @@ require_once('../v4/Commun/ConnexionBD.php');
 require_once('../v4/Commun/config.php');
 
 print('<!DOCTYPE html>');
+print("<html lang=\"fr\">\n");
 print("<head>");
-print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
-print('<meta http-equiv="content-language" content="fr"> ');
-print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
-print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
-print("<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>");
-print("<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
-print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='css/select2-bootstrap.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'>");
-print("<script src='js/jquery-min.js' type='text/javascript'></script>");
-print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>");
-print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
-print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
-print("<script src='js/select2.min.js' type='text/javascript'></script>");
-print("<script src='/js/bootstrap.min.js' type='text/javascript'></script>");
-print("<title>Geneabank.".SIGLE_ASSO.": Recherches</title>");
+print("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+print("<meta http-equiv=\"content-language\" content=\"fr\">\n");
+print("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
+print("<link href='./css/bootstrap.min.css' rel='stylesheet' media=\"screen\">\n");
+print("<link href='./css/jquery-ui.css' type='text/css' rel='stylesheet'>\n");
+print("<link href='./css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>\n");
+print("<link href='./css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>\n");
+print("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n");
+//print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'>");
+//print("<link href='css/select2-bootstrap.min.css' type='text/css' rel='stylesheet'>");
+//print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>\n");
+print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>\n");
+print("<script src='js/additional-methods.min.js' type='text/javascript'></script>\n");
+print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>\n");
+//print("<script src='js/select2.min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>\n");
+print("<title>Geneabank.".SIGLE_ASSO.": Recherches</title>\n");
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {

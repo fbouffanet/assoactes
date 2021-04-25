@@ -19,7 +19,7 @@ print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'> ");
-print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'>");
+//print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'>");
 print("<script src='js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>");
 print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");

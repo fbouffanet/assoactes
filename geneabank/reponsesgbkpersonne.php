@@ -11,6 +11,7 @@ require_once('../v4/Commun/Benchmark.inc');
 
 
 print('<!DOCTYPE html>');
+print("<html lang=\"fr\">\n");
 print("<head>\n");
 print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr"> ');
@@ -20,7 +21,7 @@ print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
 print("<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
 print("<link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>");
-print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'>");
+//print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'>");
 print("<script src='js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>");
 print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
