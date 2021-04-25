@@ -164,13 +164,6 @@ function menu_liste_releve($pconnexionBD)
 	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
 	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un relevé</button>");
 	print('</div></form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVEUR\">");
-	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-warning\">");
-	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un releveur</button>");
-	print("</div>");  
-	print('</form>');
-	print('<div align=center>______________________________________________________________________</div>');
 	print('</div>');
 }
 
@@ -214,7 +207,6 @@ function menu_liste_publication($pconnexionBD)
 	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
 	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un lien publication papier</button>");
 	print('</div></form>');
-	print("<div align=center>______________________________________________________________________</div>");  
 	print('</div>');
 }
 
@@ -261,7 +253,6 @@ function menu_liste_photo($pconnexionBD)
 	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
 	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter des photos</button>");
 	print('</div></form>');
-	print("<div align=center>______________________________________________________________________</div>");  
 	print('</div>');
 }
 
@@ -312,7 +303,6 @@ function menu_liste_program($pconnexionBD)
 	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
 	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter une programmation</button>");
 	print('</div></form>');
-	print("<div align=center>______________________________________________________________________</div>");  
 	print('</div>');
 }
 
@@ -331,6 +321,12 @@ function menu_gerer($pconnexionBD)
 	menu_liste_photo($pconnexionBD);
 	menu_liste_program($pconnexionBD);
 	print('</form></div></div>');
+	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
+	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVEUR\">");
+	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-warning\">");
+	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un releveur ou un photographe</button>");
+	print("</div>");  
+	print('</form>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
 	print("<button type=submit name=LISTE class=\"btn btn-sm btn-primary\">");
