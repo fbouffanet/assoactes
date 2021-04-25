@@ -171,6 +171,7 @@ function menu_liste_releve($pconnexionBD)
 	print("</div>");  
 	print('</form>');
 	print('<div align=center>______________________________________________________________________</div>');
+	print('</div>');
 }
 
 /**
@@ -204,15 +205,15 @@ function menu_liste_publication($pconnexionBD)
 		print("<button type=submit name=\"SUPPRIMER_LIEN_PUBLI\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les liens publications sélectionnés</button>");
 		print('</div>');
-		//print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_LIEN_PUBLI\">");
-		//print("<input type=button value=\"Supprimer les liens publications s&eacute;lectionn&eacute;s\" ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\"></div>");   
 	}
 	else
 		print("<div class=\"alert alert-danger\">Pas de publication papier</div>");
 	print("</form>");  
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_LIEN_PUBLI\"><input type=submit value=\"Ajouter un lien publication papier\"></div>");  
-	print('</form>');
+	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_LIEN_PUBLI\">");
+	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
+	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un lien publication papier</button>");
+	print('</div></form>');
 	print("<div align=center>______________________________________________________________________</div>");  
 	print('</div>');
 }
@@ -248,15 +249,19 @@ function menu_liste_photo($pconnexionBD)
 		$pagination->affiche_tableau_edition(2);
 		$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_PHOTO\">");
-		print("<input type=button value=\"Supprimer les photos s&eacute;lectionn&eacute;es\" ONCLICK=\"VerifieSuppressionPhotos(0,'supp[]')\"></div>");   
+		print("<button type=submit name=\"SUPPRIMER_PHOTO\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPhotos(0,'supp[]')\">");
+		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les photos sélectionnées</button>");
+		print('</div>');
 	}
 	else
 		print("<div class=\"alert alert-danger\">Pas de photo</div>");
 	print("</form>");  
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_PHOTO\"><input type=submit value=\"Ajouter des photos\"></div>");  
+	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_PHOTO\">");
+	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
+	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter des photos</button>");
+	print('</div></form>');
 	print("<div align=center>______________________________________________________________________</div>");  
-	print('</form>');
 	print('</div>');
 }
 
