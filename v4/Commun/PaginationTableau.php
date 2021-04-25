@@ -312,7 +312,7 @@ class PaginationTableau {
 		 }
 		 
          print("<td><div class=\"checkbox\"><label><input type=checkbox name=\"supp[]\" id=\"$st_nom_col1\" value=$idf_element class=\"form-check-input\"></label></div></td>"); 
-         print("</tr>\n");
+         print("</tr>");
          $i++;
       }
       print('</tbody>');      
