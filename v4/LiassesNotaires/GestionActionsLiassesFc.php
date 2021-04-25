@@ -151,7 +151,7 @@ function menu_liste_releve($pconnexionBD)
 		//$pagination->affiche_entete_liens_navigation();
 		$pagination->affiche_tableau_edition_sil(2);
 		//$pagination->affiche_entete_liens_navigation();      
-		print('<div class="btn-group col-md-4 col-md-offset-3" role="group">');
+		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_RELEVE\">");
 		print("<button type=submit name=\"SUPPRIMER_RELEVE\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les relevés sélectionnés</button>");
