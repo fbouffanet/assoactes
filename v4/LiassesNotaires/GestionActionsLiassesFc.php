@@ -165,7 +165,7 @@ function menu_liste_releve($pconnexionBD)
 	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
 	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un relevé</button>");
 	print('</div></form>');
-	print('</div>');
+	print('<div>&nbsp</div></div>');
 }
 
 /**
