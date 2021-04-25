@@ -159,7 +159,7 @@ function menu_liste_releve($pconnexionBD)
 	else
 		print("<div align=center>Pas de relev&eacute;</div>\n");
 	print("</form>");  
-	print('<div class="btn-group role="group">');
+	print('<div class="btn-group" role="group">');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
 	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVE\">");
 	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
