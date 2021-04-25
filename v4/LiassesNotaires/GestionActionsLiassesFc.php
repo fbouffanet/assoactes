@@ -153,7 +153,7 @@ function menu_liste_releve($pconnexionBD)
 		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_RELEVE\">");
 		print("<button type=submit name=\"SUPPRIMER_RELEVE\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\">");
-		print("    <span class=\"glyphicon glyphicon-trash\"></span>Supprimer les relevés sélectionnés</button>");
+		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les relevés sélectionnés</button>");
 		print('</div>');
 	}
 	else
@@ -162,12 +162,12 @@ function menu_liste_releve($pconnexionBD)
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
 	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVE\">");
 	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
-	print("    <span class=\"glyphicon glyphicon-new-window\"></span> Ajouter un relevé</button>");
+	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un relevé</button>");
 	print('</div></form>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
 	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVEUR\">");
 	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-warning\">");
-	print("    <span class=\"glyphicon glyphicon-new-window\"></span> Ajouter un releveur</button>");
+	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un releveur</button>");
 	print("</div>");  
 	print('</form>');
 	print('<div align=center>______________________________________________________________________</div>');
@@ -197,11 +197,15 @@ function menu_liste_publication($pconnexionBD)
 											array('Titre publication','Date publication','Infos compl&eacute;mentaires','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition(2);
-		$pagination->affiche_entete_liens_navigation();      
+		//$pagination->affiche_entete_liens_navigation();
+		$pagination->affiche_tableau_edition_sil(2);
+		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_LIEN_PUBLI\">");
-		print("<input type=button value=\"Supprimer les liens publications s&eacute;lectionn&eacute;s\" ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\"></div>");   
+		print("<button type=submit name=\"SUPPRIMER_LIEN_PUBLI\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\">");
+		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les liens publications sélectionnés</button>");
+		print('</div>');
+		//print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_LIEN_PUBLI\">");
+		//print("<input type=button value=\"Supprimer les liens publications s&eacute;lectionn&eacute;s\" ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\"></div>");   
 	}
 	else
 		print("<div align=center>Pas de publication papier</div>\n");
@@ -209,9 +213,6 @@ function menu_liste_publication($pconnexionBD)
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
 	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_LIEN_PUBLI\"><input type=submit value=\"Ajouter un lien publication papier\"></div>");  
 	print('</form>');
-	/*print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_GERER_PUBLI\"><input type=submit value=\"G&eacute;rer les publications papiers\"></div>");  
-	print('</form>');*/
 	print("<div align=center>______________________________________________________________________</div>");  
 	print('</div>');
 }
