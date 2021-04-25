@@ -37,7 +37,7 @@ function menu_liste($pconnexionBD)
 	print('<div class="panel-heading">Liasses notariales</div>');
 	print('<div class="panel-body">');
 	print('<table border=0 cellpadding=0 cellspacing=0>');
-	print('<tr class="ligne_paire"><td rowspan="4" width="300">');
+	print('<tr class="ligne_paire"><td rowspan="4" width="400">');
 	print("<div class=\"row text-center\">");
 	print('<label for="serie_liasse" class="col-form-label">Série de liasses&nbsp&nbsp</label>');
 	print(             "<select name='serie_liasse' id='serie_liasse' onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
