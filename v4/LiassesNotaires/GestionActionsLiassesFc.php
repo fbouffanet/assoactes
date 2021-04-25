@@ -196,9 +196,10 @@ function menu_liste_publication($pconnexionBD)
 		$pagination->affiche_tableau_edition_sil(2);
 		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_LIEN_PUBLI\">");
+		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
 		print("<button type=submit name=\"SUPPRIMER_LIEN_PUBLI\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les liens publications sélectionnés</button>");
-		print('</div>');
+		print('</div></div>');
 	}
 	else
 		print("<div class=\"alert alert-danger\">Pas de publication papier</div>");
@@ -242,9 +243,10 @@ function menu_liste_photo($pconnexionBD)
 		$pagination->affiche_tableau_edition_sil(2);
 		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_PHOTO\">");
+		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
 		print("<button type=submit name=\"SUPPRIMER_PHOTO\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPhotos(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les photos sélectionnées</button>");
-		print('</div>');
+		print('</div></div>');
 	}
 	else
 		print("<div class=\"alert alert-danger\">Pas de photo</div>");
@@ -292,9 +294,10 @@ function menu_liste_program($pconnexionBD)
 		$pagination->affiche_tableau_edition_sil(2);
 		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_PROGRAM\">");
+		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
 		print("<button type=submit name=\"SUPPRIMER_PROGRAM\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPrograms(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les programmations sélectionnées</button>");
-		print('</div>');
+		print('</div></div>');
 	}
 	else
 		print("<div class=\"alert alert-danger\">Pas de programmation</div>");
