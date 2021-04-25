@@ -398,7 +398,7 @@ function menu_modifier_releve($pconnexionBD, $pi_idf_releve, $pa_releveur)
 	print("<div align=center><input type=hidden name=mode value=\"MENU_GERER\">");
 	print("<br><input type=submit value=\"Annuler\"></div>");
 	print('</form>');
-	print("</div>");
+	print("</div></div>");
 }
 
 /** Affiche le menu d'ajout d'un relevé
