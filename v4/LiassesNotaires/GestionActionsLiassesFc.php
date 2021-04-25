@@ -152,20 +152,37 @@ function menu_liste_releve($pconnexionBD)
 		$pagination->affiche_tableau_edition_sil(2);
 		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_RELEVE\">");
-		print("<input type=button value=\"Supprimer les relev&eacute;s s&eacute;lectionn&eacute;s\" ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\"></div>");   
+		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
+		print("<button type=submit name=\"SUPPRIMER_RELEVE\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\">");
+		print("    <span class=\"glyphicon glyphicon-trash\"></span>Supprimer les relevés sélectionnés</button>");
+		print('</div>');
 	}
 	else
 		print("<div align=center>Pas de relev&eacute;</div>\n");
 	print("</form>");  
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVE\"><input type=submit value=\"Ajouter un relev&eacute;\"></div>");  
-	print('</form>');
+	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVE\">");
+	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
+	print("    <span class=\"glyphicon glyphicon-new-window\"></span> Ajouter un relevé</button>");
+	print('</div></form>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVEUR\"><input type=submit value=\"Ajouter un releveur\"></div>");  
-	print("<div align=center>______________________________________________________________________</div>");  
+	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVEUR\">");
+	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-warning\">");
+	print("    <span class=\"glyphicon glyphicon-new-window\"></span> Ajouter un releveur</button>");
+	print("</div><div align=center>______________________________________________________________________</div>");  
 	print('</form>');
 	print('</div>');
 }
+
+	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
+	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER\">");  
+	//print("<input type=submit value=\"Ajouter une liasse\">");
+//	print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
+	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
+	print("    <span class=\"glyphicon glyphicon-new-window\"></span> Ajouter une liasse</button>");
+//	print('</div>');
+	print("</div>");  
+	print('</form>');
 
 /**
  * Affiche la liste des publications papier d'une liasse
