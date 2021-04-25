@@ -302,10 +302,10 @@ class PaginationTableau {
          switch ($pi_type_identifiant)
          {
 			 case 1: 
-				print("<td><input type=button class=\"btn btn-primary btn-block\ id=\"bouton$idf_element\" value=Modifier onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
+				print("<td><input type=button class=\"btn btn-primary btn-block\" id=\"bouton$idf_element\" value=Modifier onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
 				break;
 			 case 2: 
-				print("<td><input type=button class=\"btn btn-primary btn-block\ id=\"bouton$idf_element\" value=Modifier onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
+				print("<td><input type=button class=\"btn btn-primary btn-block\" id=\"bouton$idf_element\" value=Modifier onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
 				break;
 			 default:
 				die("<div class=\"alert alert-danger\">Type d'identifiant $ pi_type_identifiant inconnu</div>");
