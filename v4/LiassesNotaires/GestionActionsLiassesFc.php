@@ -334,7 +334,7 @@ function menu_gerer($pconnexionBD)
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
 	print("<button type=submit name=LISTE class=\"btn btn-sm btn-primary\">");
-	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Retour</button>");
+	print("    <span class=\"glyphicon glyphicon-arrow-left\"></span>  Retour</button>");
 	print('</div></form>');
 }
 /** --------------------------------------- relevés ----------------------------------- **/
