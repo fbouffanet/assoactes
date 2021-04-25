@@ -351,7 +351,7 @@ function menu_gerer($pconnexionBD)
 function menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $pi_idf_releveur,
                              $pst_date_fin_releve, $pi_publication_numerique, $pst_info_compl)
 {
-	print("<table border=1>");
+	print("<table border=0>");
 	print("<tr><th>Releveur</th><td>".
 	      "<select name=idf_releveur id='idf_releveur'>".chaine_select_options($pi_idf_releveur,$pa_releveur)."</select></td></tr>");
 	print("<tr><th>Date de fin de relev&eacute;</th><td>".
@@ -381,8 +381,11 @@ function menu_modifier_releve($pconnexionBD, $pi_idf_releve, $pa_releveur)
 	                                 "       in_publication_numerique, info_complementaires ".
 									 "from liasse_releve ".
 									 "where idf=$pi_idf_releve");
-	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
-	print("<div class=SOUSTITRE>Modification d'un relev&eacute;</div><br><br>");
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading">Relevé sur la liasse '.$_SESSION['cote_liasse_gal'].
+	                                '&nbsp&nbsp&nbsp-&nbsp&nbsp&nbspNotaire(s) '.$_SESSION['notaires_gal'].
+									'&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsppériode ".$_SESSION['periodes_gal'];'</div>');
+	print('<div class="panel-body">');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsReleve(0)\">");
 	print("<div align=center><input type=hidden name=mode value=\"MODIFIER_RELEVE\">");
 	print("<input type=hidden name=idf_releve value=$pi_idf_releve>");
