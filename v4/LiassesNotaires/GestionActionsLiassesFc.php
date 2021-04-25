@@ -209,7 +209,7 @@ function menu_liste_publication($pconnexionBD)
 	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
 	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un lien publication papier</button>");
 	print('</div></form>');
-	print('</div>');
+	print('<div>&nbsp</div></div>');
 }
 
 /**
@@ -256,7 +256,7 @@ function menu_liste_photo($pconnexionBD)
 	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
 	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter des photos</button>");
 	print('</div></form>');
-	print('</div>');
+	print('<div>&nbsp</div></div>');
 }
 
 /**
