@@ -305,7 +305,9 @@ function menu_liste_program($pconnexionBD)
  */ 
 function menu_gerer($pconnexionBD)
 {
-	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading">Actions sur la liasse'.$_SESSION['cote_liasse_gal'].'</div>');
+	print('<div class="panel-body">Notaire(s) '.$_SESSION['notaires_gal'].", période ".$_SESSION['periodes_gal']);
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	menu_liste_releve($pconnexionBD);
 	menu_liste_publication($pconnexionBD);
