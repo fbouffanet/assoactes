@@ -19,11 +19,11 @@ function menu_liste($pconnexionBD)
 	$st_serie_liasse = $_SESSION['serie_liasse'];
 	unset($_SESSION['liasse']);
 	$a_numerotation_liasses = array("z","1","2","3","4","5","6","7","8","9"); 
-	print("<div class=TITRE>Gestion des liasses notariales</div>");
 	print("<div align=center><br><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
+	/*print("<div class=TITRE>Liasses notariales</div>");
 	print("<div>");
 	print('<div style="text-align:center">');
-	print('<br>S&eacute;rie de liasses : ');
+	print('Série de liasses&nbsp');
 	print("<select name='serie_liasse' id='serie_liasse' onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
 		  chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select>");
 	print('</div><br>');
@@ -32,10 +32,26 @@ function menu_liste($pconnexionBD)
 		print("Nous n’avons saisi que les numéros de la série L ayant traits à des répertoires notariés. <br>");
 		print("La recherche se fait donc entre des bornes précises, selon 6 groupes : ");
 		print(" 2197 à 2263, 2328 à 2393, 2433 à 2492,< 2552 à 2596, 2607 à 2668, 2683 à 2732.</div><br>");
+	}*/
+	print('<div class="panel panel-primary">');
+	print('    <div class="panel-heading">Liasses notariales</div>');
+	print('    <div class="panel-body">');
+	print("        <div class=\"row text-center\">");
+	print(             'Série de liasses&nbsp');
+	print(             "<select name='serie_liasse' id='serie_liasse' onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
+		                    chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select>");
+	if( $st_serie_liasse == "L") {
+		print("Ces répertoires sont issus de la série L qui regroupe tous les actes de l’administration entre 1789 et l’an VIII. ");
+		print("Nous n’avons saisi que les numéros de la série L ayant traits à des répertoires notariés. <br>");
+		print("La recherche se fait donc entre des bornes précises, selon 6 groupes : ");
+		print(" 2197 à 2263, 2328 à 2393, 2433 à 2492,< 2552 à 2596, 2607 à 2668, 2683 à 2732.");
 	}
+	print("        </div>");
+	print('</div></div>');
 
-	print("<table border=0 cellpadding=0 cellspacing=0><caption>S&eacute;lection des cotes<br><br></caption>");
-	print('<tr class=ligne_paire><td align="center" width="200">dizaines de milliers</td><td>');
+
+	print("<table border=0 cellpadding=0 cellspacing=0><caption>Sélection des cotes<br><br></caption>");
+	print('<tr class=ligne_paire><td align="right" width="200">dizaines de milliers&nbsp&nbsp&nbsp</td><td>');
 	$i_session_init_dixm = isset($_SESSION['init_dixm']) ? $_SESSION['init_dixm'] : $a_numerotation_liasses[0];
 	$gc_init_dixm = empty($_GET['init_dixm']) ? $i_session_init_dixm : $_GET['init_dixm'];
 	$_SESSION['init_dixm'] = $gc_init_dixm;   
