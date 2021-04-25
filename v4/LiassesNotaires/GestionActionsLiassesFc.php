@@ -152,7 +152,6 @@ function menu_liste_releve($pconnexionBD)
 		$pagination->affiche_tableau_edition_sil(2);
 		//$pagination->affiche_entete_liens_navigation();      
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_RELEVE\">");
-		print('<div class="btn-group col-md-2 col-md-offset-1" role="group">');
 		print("<button type=submit name=\"SUPPRIMER_RELEVE\" class=\"btn btn-sm btn-outline-danger\" ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span>Supprimer les relevés sélectionnés</button>");
 		print('</div>');
@@ -160,6 +159,7 @@ function menu_liste_releve($pconnexionBD)
 	else
 		print("<div align=center>Pas de relev&eacute;</div>\n");
 	print("</form>");  
+	print('<div class="btn-group col-md-2 col-md-offset-1" role="group">');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
 	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVE\">");
 	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-outline-success\">");
@@ -169,9 +169,9 @@ function menu_liste_releve($pconnexionBD)
 	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVEUR\">");
 	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-outline-warning\">");
 	print("    <span class=\"glyphicon glyphicon-new-window\"></span> Ajouter un releveur</button>");
-	print("</div><div align=center>______________________________________________________________________</div>");  
+	print("</div>");  
 	print('</form>');
-	print('</div>');
+	print('</div><div align=center>______________________________________________________________________</div>');
 }
 
 /**
