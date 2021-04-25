@@ -307,14 +307,14 @@ function menu_gerer($pconnexionBD)
 {
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
-	                                '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'</div>');
-	print('<div class="panel-body">);
+	                           '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'</div>');
+	print('<div class="panel-body">');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	menu_liste_releve($pconnexionBD);
 	menu_liste_publication($pconnexionBD);
 	menu_liste_photo($pconnexionBD);
 	menu_liste_program($pconnexionBD);
-	print('</form>');
+	print('</form></div>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print("<div align=center><input type=hidden name=mode value=\"LISTE\"><br><input type=submit value=\"Retour\"></div>");
 	print('</form>');
