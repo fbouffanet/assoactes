@@ -155,7 +155,7 @@ function menu_liste_releve($pconnexionBD)
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_RELEVE\">");
 		print("<button type=submit name=\"SUPPRIMER_RELEVE\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les relevés sélectionnés</button>");
-		print('</div>');
+		print('</div></div>');
 	}
 	else
 		print("<div class=\"alert alert-danger\">Pas de relevé</div>");
@@ -165,7 +165,7 @@ function menu_liste_releve($pconnexionBD)
 	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
 	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un relevé</button>");
 	print('</div></form>');
-	print('</div></div>');
+	print('</div>');
 }
 
 /**
