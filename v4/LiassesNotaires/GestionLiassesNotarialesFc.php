@@ -37,7 +37,7 @@ function menu_liste($pconnexionBD)
 	print('<div class="panel-heading">Liasses notariales</div>');
 	print('<div class="panel-body">');
 	print('<table border=0 cellpadding=0 cellspacing=0>');
-	print('<tr class="ligne_paire"><td rowspan="4" width="400">');
+	print('<tr class="ligne_paire"><td rowspan="4" width="500">');
 	print("<div class=\"row text-center\">");
 	print('<label for="serie_liasse" class="col-form-label">Série de liasses&nbsp&nbsp</label>');
 	print(             "<select name='serie_liasse' id='serie_liasse' onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
@@ -49,7 +49,7 @@ function menu_liste($pconnexionBD)
 		print(" 2197 à 2263, 2328 à 2393, 2433 à 2492,< 2552 à 2596, 2607 à 2668, 2683 à 2732.");
 	}
 	print('</div></td><td rowspan="4"><label>Cotes</label></td>');
-	print('<td align="right" width="200">dizaines de milliers&nbsp&nbsp&nbsp</td><td>');
+	print('<td align="right" width="150">dizaines de milliers&nbsp&nbsp&nbsp</td><td>');
 	$i_session_init_dixm = isset($_SESSION['init_dixm']) ? $_SESSION['init_dixm'] : $a_numerotation_liasses[0];
 	$gc_init_dixm = empty($_GET['init_dixm']) ? $i_session_init_dixm : $_GET['init_dixm'];
 	$_SESSION['init_dixm'] = $gc_init_dixm;   
