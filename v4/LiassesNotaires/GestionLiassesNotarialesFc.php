@@ -19,7 +19,7 @@ function menu_liste($pconnexionBD)
 	$st_serie_liasse = $_SESSION['serie_liasse'];
 	unset($_SESSION['liasse']);
 	$a_numerotation_liasses = array("z","1","2","3","4","5","6","7","8","9"); 
-	print("<div align=center><br><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
+	print("<div align=center><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
 	/*print("<div class=TITRE>Liasses notariales</div>");
 	print("<div>");
 	print('<div style="text-align:center">');
@@ -37,8 +37,7 @@ function menu_liste($pconnexionBD)
 	print('<div class="panel-heading">Liasses notariales</div>');
 	print('<div class="panel-body">');
 	print("<div class=\"row text-center\">");
-	print('Série de liasses&nbsp');
-	print('<label for="serie_liasse" class="col-form-label">Série de liasses&nbsp</label>');
+	print('<label for="serie_liasse" class="col-form-label">Série de liasses&nbsp&nbsp</label>');
 	print(             "<select name='serie_liasse' id='serie_liasse' onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
 		                    chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select>");
 	if( $st_serie_liasse == "L") {
@@ -47,12 +46,9 @@ function menu_liste($pconnexionBD)
 		print("La recherche se fait donc entre des bornes précises, selon 6 groupes : ");
 		print(" 2197 à 2263, 2328 à 2393, 2433 à 2492,< 2552 à 2596, 2607 à 2668, 2683 à 2732.");
 	}
-	print("        </div>");
-	print('</div></div>');
-
-
-	print("<table border=0 cellpadding=0 cellspacing=0><caption>Sélection des cotes<br><br></caption>");
-	print('<tr class=ligne_paire><td align="right" width="200">dizaines de milliers&nbsp&nbsp&nbsp</td><td>');
+	print("<table border=0 cellpadding=0 cellspacing=0>");
+	print('<tr class=ligne_paire><td rowspan="4" width="100">Cotes</td>');
+	print('<td align="right" width="200">dizaines de milliers&nbsp&nbsp&nbsp</td><td>');
 	$i_session_init_dixm = isset($_SESSION['init_dixm']) ? $_SESSION['init_dixm'] : $a_numerotation_liasses[0];
 	$gc_init_dixm = empty($_GET['init_dixm']) ? $i_session_init_dixm : $_GET['init_dixm'];
 	$_SESSION['init_dixm'] = $gc_init_dixm;   
@@ -64,7 +60,7 @@ function menu_liste($pconnexionBD)
 			print("<a href=\"".$_SERVER['PHP_SELF']."?init_dixm=$c_init_dixm\">$c_init_dixm</a> ");
 	}
 	print('</td></tr>');
-	print('<tr class=ligne_paire><td align="center">milliers</td><td>');
+	print('<tr class=ligne_paire><td align="right">milliers&nbsp&nbsp&nbsp</td><td>');
 	$i_session_init_mill = isset($_SESSION['init_mill']) ? $_SESSION['init_mill'] : $a_numerotation_liasses[0];
 	$gc_init_mill = empty($_GET['init_mill']) ? $i_session_init_mill : $_GET['init_mill'];
 	$_SESSION['init_mill'] = $gc_init_mill;   
@@ -76,7 +72,7 @@ function menu_liste($pconnexionBD)
 			print("<a href=\"".$_SERVER['PHP_SELF']."?init_mill=$c_init_mill\">$c_init_mill</a> ");
 	}
 	print('</td></tr>');
-	print('<tr class=ligne_paire><td align="center">centaines</td><td>');
+	print('<tr class=ligne_paire><td align="right">centaines&nbsp&nbsp&nbsp</td><td>');
 	$i_session_init_cent = isset($_SESSION['init_cent']) ? $_SESSION['init_cent'] : $a_numerotation_liasses[0];
 	$gc_init_cent = empty($_GET['init_cent']) ? $i_session_init_cent : $_GET['init_cent'];
 	$_SESSION['init_cent'] = $gc_init_cent;   
@@ -88,7 +84,7 @@ function menu_liste($pconnexionBD)
 			print("<a href=\"".$_SERVER['PHP_SELF']."?init_cent=$c_init_cent\">$c_init_cent</a> ");
 	}
 	print('</td></tr>');
-	print('<tr class=ligne_paire><td align="center">dizaines</td><td>');
+	print('<tr class=ligne_paire><td align="right">dizaines&nbsp&nbsp&nbsp</td><td>');
 	$i_session_init_dix = isset($_SESSION['init_dix']) ? $_SESSION['init_dix'] : $a_numerotation_liasses[0];
 	$gc_init_dix = empty($_GET['init_dix']) ? $i_session_init_dix : $_GET['init_dix'];
 	$_SESSION['init_dix'] = $gc_init_dix;   
@@ -101,6 +97,8 @@ function menu_liste($pconnexionBD)
 	}
 	print('</td></tr>');
 	print('<tr class=ligne_paire><td align="center">&nbsp</td><td></td></tr></table>');
+	print("</div>");
+	print('</div></div>');
 	print("</div>");
 	$numero  = $gc_init_dixm == 'z' ? '0' : $gc_init_dixm;
 	$numero .= $gc_init_mill == 'z' ? '0' : $gc_init_mill;
