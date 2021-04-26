@@ -197,7 +197,8 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 									 "       idf_forme_liasse, info_complementaires ".
 									 "from liasse ".
 									 "where cote_liasse='".$pst_cote_liasse."'");
-	print('<div align=center><div class="panel panel-primary">');
+	print('<div align=center>');
+	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading">Liasses notariales</div>');
 	print('<div class="panel-body">');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
@@ -209,8 +210,11 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 	print("<div align=center><br><input type=button value=\"Modifier\" ONCLICK=\"VerifieChamps(0)\"></div>");
 	print('</form>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
-	print("<br><input type=submit value=\"Retour\"></div>");
+	print("<div align=center><input type=hid"den name=mode value=\"LISTE\">");
+	print("<button type=submit name=\"LISTE\" class=\"btn btn-sm btn-primary\">");
+	print("<span class=\"glyphicon glyphicon-arrow-left\"></span> Retour");
+	print("</button></div>");
+//	print("<input type=submit value=\"Retour\"></div>");
 	print('</form></div></div></div>');
 }
 
