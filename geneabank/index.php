@@ -20,7 +20,7 @@ print("<link href='./css/jquery-ui.theme.min.css' type='text/css' rel='styleshee
 print("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n");
 //print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'>");
 //print("<link href='css/select2-bootstrap.min.css' type='text/css' rel='stylesheet'>");
-//print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'>");
+print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'>");
 print("<script src='js/jquery-min.js' type='text/javascript'></script>\n");
 print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>\n");
 print("<script src='js/additional-methods.min.js' type='text/javascript'></script>\n");
