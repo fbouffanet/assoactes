@@ -211,11 +211,11 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 	print("<button type=submit name=\"MODIFIER\" class=\"btn btn-sm btn-warning\" ONCLICK=\"VerifieChamps(0)\">");
 	print("    <span class=\"glyphicon glyphicon-floppy-save\"></span>  Modifier</button>");
 	print('</div>');
-	print('</form>');
+	print('</form></div></div>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
 	print("<br><input type=submit value=\"Retour\"></div>");
-	print('</form></div></div></div>');
+	print('</form></div>');
 }
 
 /** Affiche le menu d'ajout d'une liasse
