@@ -20,19 +20,6 @@ function menu_liste($pconnexionBD)
 	unset($_SESSION['liasse']);
 	$a_numerotation_liasses = array("z","1","2","3","4","5","6","7","8","9"); 
 	print("<div align=center><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
-	/*print("<div class=TITRE>Liasses notariales</div>");
-	print("<div>");
-	print('<div style="text-align:center">');
-	print('Série de liasses&nbsp');
-	print("<select name='serie_liasse' id='serie_liasse' onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
-		  chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select>");
-	print('</div><br>');
-	if( $st_serie_liasse == "L") {
-		print("<div align=center>Ces répertoires sont issus de la série L qui regroupe tous les actes de l’administration entre 1789 et l’an VIII. ");
-		print("Nous n’avons saisi que les numéros de la série L ayant traits à des répertoires notariés. <br>");
-		print("La recherche se fait donc entre des bornes précises, selon 6 groupes : ");
-		print(" 2197 à 2263, 2328 à 2393, 2433 à 2492,< 2552 à 2596, 2607 à 2668, 2683 à 2732.</div><br>");
-	}*/
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading">Liasses notariales</div>');
 	print('<div class="panel-body">');
@@ -154,11 +141,11 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 	//**pc**// à remplacer par une image du site
 	$st_icone_info = 'images/PLUS.GIF';
 
-	print("<table border=1>");
+	print("<table border=0>");
 	print("<input type=hidden name='mode_enr' value='".$pst_mode."'>");
 	if( $pst_mode == 'M' ) {
 		print("<tr><th>Cote de la liasse</th><td colspan=2>$pst_cote</td></tr>");
-		print("<tr><th>P&eacute;riode(s)</th><td>$pst_periodes</td>".
+		print("<tr><th>Période(s)</th><td>$pst_periodes</td>".
 			"<td><a href='".$_SERVER['PHP_SELF']."?smode=LISTE_PERIODE&cote_liasse=$pst_cote'>".
 			"<img src='".$st_icone_info."' border=0 alt='d&eacute;tail des p&eacute;riodes'></a></td></tr>");
 		print("<tr><th>Notaire(s)</th><td>$pst_notaires</td>".
@@ -166,20 +153,20 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 			  "<img src='".$st_icone_info."' border=0 alt='d&eacute;tail des notaires'></a></td></tr>");
 	}
 	else {
-		print("<tr><th>S&eacute;rie de la liasse</th><td colspan='2'>".$_SESSION['serie_liasse']."</td></tr>");
-		print("<tr><th>Num&eacute;ro de la liasse</th><td>");
+		print("<tr><th>Série de la liasse</th><td colspan='2'>".$_SESSION['serie_liasse']."</td></tr>");
+		print("<tr><th>Numéro de la liasse</th><td>");
 		print( $_SESSION['init_dixm'] == 'z' ? '0' : $_SESSION['init_dixm']);
 		print( $_SESSION['init_mill'] == 'z' ? '0' : $_SESSION['init_mill']);
 		print( $_SESSION['init_cent'] == 'z' ? '0' : $_SESSION['init_cent']);
 		print( $_SESSION['init_dix'] == 'z' ? '0' : $_SESSION['init_dix']);
 		print("&nbsp;&nbsp;&nbsp;<input type='text\' maxlength='1' size='1' name='numero' value=''></td></tr>");
 	}
-	print("<tr><th>D&eacute;pos&eacute;e aux AD</th><td colspan=2>");
+	print("<tr><th>Déposée aux AD</th><td colspan=2>");
 	if($pi_depose_ad == 1)
 		print("<input type=checkbox name=depose_ad value=\"1\" checked></tr>");
 	else
 		print("<input type=checkbox name=depose_ad value=\"1\"></tr>");
-	print("<tr><th>D&eacute;partement</th><td colspan=2>".
+	print("<tr><th>Département</th><td colspan=2>".
 	      "<select name=dept_depose_ad id='dept_depose'>".chaine_select_options($pst_idf_dept_depose_ad,$pa_depts_depose_ad)."</select></td></tr>");
 	print("<tr><th>Liasse consultable</th><td colspan=2>");
 	if($pi_liasse_consult == 1)
@@ -190,7 +177,7 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 	      "<select name=forme_liasse>".chaine_select_options($pi_idf_forme_liasse,$pa_formes_liasses)."</select></td></tr>");
 	
  
-	print("<tr><th>Informations compl&eacute;mentaires</th><td colspan=2>".
+	print("<tr><th>Informations complémentaires</th><td colspan=2>".
 	      "<textarea rows='13' cols='80' maxlength=1000 name='info_compl'>".$pst_info_compl."</textarea></td></tr>");
 	print("</table>");
 }
@@ -210,7 +197,9 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 									 "       idf_forme_liasse, info_complementaires ".
 									 "from liasse ".
 									 "where cote_liasse='".$pst_cote_liasse."'");
-	print("<div class=TITRE>Gestion des liasses notariales</div>");
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading">Liasses notariales</div>');
+	print('<div class="panel-body">');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
 	print("<div align=center><input type=hidden name=mode value=\"MODIFIER\">");
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
@@ -222,7 +211,7 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
 	print("<br><input type=submit value=\"Retour\"></div>");
-	print('</form>');
+	print('</form></div></div>');
 }
 
 /** Affiche le menu d'ajout d'une liasse
