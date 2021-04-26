@@ -226,7 +226,9 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
  */ 
 function menu_ajouter($pconnexionBD, $pa_depts_depose_ad, $pa_formes_liasses)
 {
-	print("<div class=TITRE>Gestion des liasses notariales</div>");
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading">Liasses notariales</div>');
+	print('<div class="panel-body">');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
 	print("<div align='center'><input type='hidden' name='mode' value='AJOUTER'>");
 	menu_edition('', '', '', '', 0, '', $pa_depts_depose_ad, 0, 0, $pa_formes_liasses, '', 'A');
@@ -236,7 +238,7 @@ function menu_ajouter($pconnexionBD, $pa_depts_depose_ad, $pa_formes_liasses)
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
 	print("<br><input type=submit value=\"Annuler\"></div>");
-	print('</form>');
+	print('</form></div></div>');
 }
 
 /** Elimine les éventuels \ du texte et remplace les ' par \'
