@@ -42,10 +42,14 @@ function entre_quotes($pst_chaine)
 
 $str = verifJetonGbk();
 
-print("<div class='alert alert-info'>>Vos r&eacute;ponses</div>");
+print('<div class="form-row">');
+print("<div class='alert alert-info'>Vos r&eacute;ponses</div>");
+print('</div>'); 
 if (! $str) 
 {
+  print('<div class="form-row">');
   print("<div class='alert alert-danger'>D&eacute;sol&eacute;, mais je ne peux afficher les actes dans ce contexte.</div>");	 
+  print('</div>'); 
 }
 else
 {

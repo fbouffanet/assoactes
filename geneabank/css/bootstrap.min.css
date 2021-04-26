@@ -55,7 +55,7 @@ h2,h3{page-break-after:avoid}
 }
 .img-thumbnail,body{background-color:#f0e3c0}
 .btn,.btn-danger.active,.btn-danger:active,.btn-default.active,.btn-default:active,.btn-info.active,.btn-info:active,.btn-primary.active,.btn-primary:active,.btn-success.active,.btn-success:active,.btn-warning.active,.btn-warning:active,.btn.active,.btn:active,.form-control,.navbar-toggle,.open>.dropdown-toggle.btn-danger,.open>.dropdown-toggle.btn-default,.open>.dropdown-toggle.btn-info,.open>.dropdown-toggle.btn-primary,.open>.dropdown-toggle.btn-success,.open>.dropdown-toggle.btn-warning{background-image:none}
-@font-face{font-family:'Glyphicons Halflings';src:url(https://www.bootstrap-live-customizer.com/bootstrap-3.3.6/fonts/glyphicons-halflings-regular.eot);src:url(https://www.bootstrap-live-customizer.com/bootstrap-3.3.6/fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'),url(https://www.bootstrap-live-customizer.com/bootstrap-3.3.6/fonts/glyphicons-halflings-regular.woff2) format('woff2'),url(https://www.bootstrap-live-customizer.com/bootstrap-3.3.6/fonts/glyphicons-halflings-regular.woff) format('woff'),url(https://www.bootstrap-live-customizer.com/bootstrap-3.3.6/fonts/glyphicons-halflings-regular.ttf) format('truetype'),url(https://www.bootstrap-live-customizer.com/bootstrap-3.3.6/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')}
+@font-face{font-family:'Glyphicons Halflings';src:url(../fonts/glyphicons-halflings-regular.eot);src:url(../fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'),url(../fonts/glyphicons-halflings-regular.woff2) format('woff2'),url(../fonts/glyphicons-halflings-regular.woff) format('woff'),url(../fonts/glyphicons-halflings-regular.ttf) format('truetype'),url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')}
 .glyphicon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Halflings';font-style:normal;font-weight:400;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .glyphicon-asterisk:before{content:"\002a"}
 .glyphicon-plus:before{content:"\002b"}
@@ -1128,7 +1128,7 @@ a.thumbnail.active,a.thumbnail:focus,a.thumbnail:hover{border-color:#337ab7}
 .alert-success{background-color:#dff0d8;border-color:#d6e9c6;color:#3c763d}
 .alert-success hr{border-top-color:#c9e2b3}
 .alert-success .alert-link{color:#2b542c}
-.alert-info{background-color:#d9edf7;border-color:#bce8f1;color:#31708f}
+.alert-info{background-color:#f5deb3;border-color:#f5deb3;color:#721725}
 .alert-info hr{border-top-color:#a6e1ec}
 .alert-info .alert-link{color:#245269}
 .alert-warning{background-color:#fcf8e3;border-color:#faebcc;color:#8a6d3b}

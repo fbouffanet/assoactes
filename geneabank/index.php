@@ -18,14 +18,14 @@ print("<link href='./css/jquery-ui.css' type='text/css' rel='stylesheet'>\n");
 print("<link href='./css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>\n");
 print("<link href='./css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>\n");
 print("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n");
-//print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'>");
-//print("<link href='css/select2-bootstrap.min.css' type='text/css' rel='stylesheet'>");
-//print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/select2-bootstrap.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'>");
 print("<script src='js/jquery-min.js' type='text/javascript'></script>\n");
 print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>\n");
 print("<script src='js/additional-methods.min.js' type='text/javascript'></script>\n");
 print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>\n");
-//print("<script src='js/select2.min.js' type='text/javascript'></script>");
+print("<script src='js/select2.min.js' type='text/javascript'></script>");
 print("<script src='js/bootstrap.min.js' type='text/javascript'></script>\n");
 print("<title>Geneabank.".SIGLE_ASSO.": Recherches</title>\n");
 ?>
@@ -49,6 +49,9 @@ $(document).ready(function() {
         $("#idf_type_presence").val('');
         $("#sexe").val('');
     });
+	
+	$("#idf_canton_recherches_communes").select2({allowClear: true,placeholder: "Toutes"});
+	$("#idf_type_acte_recherches_communes").select2({allowClear: true,placeholder: "Tous"});
 	
     $("#recherches_communes").validate({
         ignore: [],

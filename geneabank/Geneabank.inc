@@ -54,7 +54,7 @@ function GeneaBank ($amount, $assoc, $str2Display,$myUrl)  {
 
 	// paramètres statiques (peuvent être inclus à partir d'un include séparé, comme dans:
 	//    include('localGbkParams.inc');
-	$gbkUrl = 'http://www.geneabank.org/cgi-bin/transaction';
+	$gbkUrl = 'https://www.geneabank.org/cgi-bin/transaction';
 	
 
 	/* Séquence paranoïde : 
