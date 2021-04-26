@@ -234,11 +234,13 @@ function menu_ajouter($pconnexionBD, $pa_depts_depose_ad, $pa_formes_liasses)
 	menu_edition('', '', '', '', 0, '', $pa_depts_depose_ad, 0, 0, $pa_formes_liasses, '', 'A');
 	print("</div>");
 	print("<div align=center><br><input type='button' value='Ajouter' ONCLICK=\"VerifieChamps(0)\"></div>");
-	print('</form>');
+	print('</form></div></div>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
-	print("<br><input type=submit value=\"Annuler\"></div>");
-	print('</form></div></div>');
+	print('<button type=submit name=LISTE class="btn btn-sm btn-primary">');
+	print('<span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
+	print('</div>');
+	print('</form>');
 }
 
 /** Elimine les éventuels \ du texte et remplace les ' par \'
