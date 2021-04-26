@@ -716,15 +716,15 @@ switch ($gst_mode) {
         FROM
            personne p
         LEFT JOIN prenom ON (p.idf_prenom = prenom.idf)
-        JOIN commune_personne c ON (p.idf_origine = c.idf)
-        JOIN profession d ON (p.idf_profession = d.idf)
+        LEFT JOIN commune_personne c ON (p.idf_origine = c.idf)
+        LEFT JOIN profession d ON (p.idf_profession = d.idf)
         JOIN acte a ON (p.idf_acte = a.idf)
         JOIN commune_acte f ON (a.idf_commune = f.idf)
   WHERE
       a.idf_commune= '$gi_idf_commune_acte' AND a.idf_source='$gi_idf_source' AND a.idf_type_acte= '$gc_idf_type_acte'";
      
      //============================================================================//
-              if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
+        if (!empty($g_pl_date_debut)) $sqltmp = $sqltmp . " and annee >= '$g_pl_date_debut'";
         if (!empty($g_pl_date_fin)) $sqltmp = $sqltmp . " and annee <= '$g_pl_date_fin'";
         $sqltmp = $sqltmp . " ORDER BY
         'Annee_Recensement','NPage','Maison','Menage' ASC";

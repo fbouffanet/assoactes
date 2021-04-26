@@ -69,9 +69,14 @@ $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
 define('NB_LIGNES_PAR_PAGE',25);
 define('DELTA_NAVIGATION',5);
 
-define('IDF_ASSO_GBK','gbkagcharente');
+define('IDF_ASSO_GBK','agcharente');
 define('PREFIXE_ADH_GBK','AGC');
 define('NB_POINTS_GBK',100);
+define('CODE_DPT_GENEABANK','F16');
+define('CODE_REGION_GENEABANK','PCH');
+define('CODE_PAYS_GENEABANK','FRA');
+define('PAYS_GENEABANK','France');
+define('CODE_TYPE_GENEABANK','C');
 
 define('TOUS_ADHERENTS','T');
 define('ADHESION_BULLETIN','B');
@@ -439,6 +444,5 @@ define('EMAIL_DIRASSO','agc-dir@genea16.net');
 define('EMAIL_GBKADMIN','agc-geneabank@genea16.net');
 define('EMAIL_PRESASSO','agc-dir@genea16.net');
 
-define('CLEF_API_GEOPORTAIL','cervpkrr0dboxq0t5hnw1jbm');
 
 ?>

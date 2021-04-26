@@ -137,7 +137,7 @@ function maj_libelle_notaire($pconnexionBD, $pst_cote_liasse)
 	              "from liasse_notaire ".
 				  "     left outer join commune_acte on liasse_notaire.idf_commune_etude = commune_acte.idf ".
 				  "where cote_liasse='" . $pst_cote_liasse . "'";
-	$a_liste_notaires = $pconnexionBD->sql_selectUtf8($st_requete);
+	$a_liste_notaires = $pconnexionBD->sql_select($st_requete);
 	if (count($a_liste_notaires)!=0)
 		$st_libelle = implode("/",$a_liste_notaires);
 	else

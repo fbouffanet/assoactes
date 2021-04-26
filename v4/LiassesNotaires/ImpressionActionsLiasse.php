@@ -17,7 +17,7 @@ verifie_privilege(DROIT_NOTAIRES);
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 $requeteRecherche = new RequeteRecherche($connexionBD);    
-$a_liasses=$connexionBD->sql_select_multipleUtf8($_SESSION['pdf']['requete']);
+$a_liasses=$connexionBD->sql_select_multiple($_SESSION['pdf']['requete']);
 
 require('../Publication/fpdf/fpdf.php');
 
@@ -32,10 +32,10 @@ function Header() {
     // Décalage à droite
     $this->Cell(80);
     // Titre
-    $this->Cell(30,8,str_replace("&eacute;", "é", $_SESSION['pdf']['titre']),0,1,'C');
+    $this->Cell(30,8,utf8_vers_cp1252($_SESSION['pdf']['titre']),0,1,'C');
     $this->SetFont('Arial','B',10);
     $this->Cell(80);
-    $this->Cell(30,6,str_replace("&eacute;", "é", $_SESSION['pdf']['sous_titre']),0,0,'C');
+    $this->Cell(30,6,utf8_vers_cp1252($_SESSION['pdf']['sous_titre']),0,0,'C');
    // Saut de ligne
     $this->Ln(20);
     $this->SetFont('Times','B',7);
@@ -44,71 +44,71 @@ function Header() {
 		case 'publication' :
 			$this->Cell(120,8,'Titre publication papier',1,0,'L',true);
 			$this->Cell(15,8,'Date',1,0,'C',true);
-			$this->Cell(137,8,'Informations compémentaires',1,1,'L',true);
+			$this->Cell(137,8,utf8_vers_cp1252('Informations complémentaires'),1,1,'L',true);
 			break;
 		case 'publi_pap' :
 			$this->Cell(100,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 			$this->Cell(72,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la série',0,1,'R',true);			
+			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].utf8_vers_cp1252(' % de la série'),0,1,'R',true);			
 			$this->Cell(120,8,'Titre publication papier',1,0,'L',true);
 			$this->Cell(15,8,'Date',1,0,'C',true);
 			$this->Cell(17,8,'Cote',1,0,'C',true);
 			$this->Cell(60,8,'Notaire(commune)',1,0,'L',true);
-			$this->Cell(40,8,'P&eacute;riode',1,0,'L',true);
+			$this->Cell(40,8,utf8_vers_cp1252('Période'),1,0,'L',true);
 			$this->Cell(20,8,'Forme liasse',1,1,'L',true);
 			break;
 		case 'program' :
 			$this->Cell(100,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 			$this->Cell(77,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la série',0,1,'R',true);			
+			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].utf8_vers_cp1252(' % de la série'),0,1,'R',true);			
 			$this->Cell(15,8,'Cote',1,0,'C',true);
 			$this->Cell(80,8,'Notaire(commune)',1,0,'L',true);
-			$this->Cell(60,8,'Période',1,0,'L',true);
+			$this->Cell(60,8,utf8_vers_cp1252('Période'),1,0,'L',true);
 			$this->Cell(30,8,'Forme liasse',1,0,'L',true);
 			$this->Cell(30,8,'Intervenant',1,0,'L',true);
-			$this->Cell(17,8,'Priorité',1,0,'L',true);
-			$this->Cell(15,8,'Echéance',1,0,'C',true);
-			$this->Cell(15,8,'Prog. relevé',1,0,'C',true);
+			$this->Cell(17,8,utf8_vers_cp1252('Priorité'),1,0,'L',true);
+			$this->Cell(15,8,utf8_vers_cp1252('Echéance'),1,0,'C',true);
+			$this->Cell(15,8,utf8_vers_cp1252('Prog. relevé'),1,0,'C',true);
 			$this->Cell(15,8,'Prog. photo',1,1,'C',true);
 			break;
 		case 'releve' :
 			$this->Cell(100,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 			$this->Cell(80,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la série',0,1,'R',true);			
+			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].utf8_vers_cp1252(' % de la série'),0,1,'R',true);			
 			$this->Cell(17,8,'Cote',1,0,'C',true);
 			$this->Cell(80,8,'Notaire(commune)',1,0,'L',true);
-			$this->Cell(50,8,'Période',1,0,'L',true);
+			$this->Cell(50,8,utf8_vers_cp1252('Période'),1,0,'L',true);
 			$this->Cell(23,8,'Forme liasse',1,0,'L',true);
 			$this->Cell(15,8,'Consultable',1,0,'C',true);
 			$this->Cell(50,8,'Releveur',1,0,'C',true);
 			$this->Cell(15,8,'Papier',1,0,'C',true);
-			$this->Cell(15,8,'Numérique',1,0,'C',true);
-			$this->Cell(15,8,'Date relevé',1,1,'C',true);
+			$this->Cell(15,8,utf8_vers_cp1252('Numérique'),1,0,'C',true);
+			$this->Cell(15,8,utf8_vers_cp1252('Date relevé'),1,1,'C',true);
 			break;
 		case 'publi_num' :
 			$this->Cell(100,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 			$this->Cell(50,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la série',0,1,'R',true);			
+			$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].utf8_vers_cp1252(' % de la série'),0,1,'R',true);			
 			$this->Cell(17,8,'Cote',1,0,'C',true);
 			$this->Cell(80,8,'Notaire(commune)',1,0,'L',true);
-			$this->Cell(50,8,'Période',1,0,'L',true);
+			$this->Cell(50,8,utf8_vers_cp1252('Période'),1,0,'L',true);
 			$this->Cell(23,8,'Forme liasse',1,0,'L',true);
 			$this->Cell(15,8,'Consultable',1,0,'C',true);
 			$this->Cell(50,8,'Releveur',1,0,'C',true);
-			$this->Cell(15,8,'Date relevé',1,1,'C',true);
+			$this->Cell(15,8,utf8_vers_cp1252('Date relevé'),1,1,'C',true);
 			break;
 		case 'photo' :
 			if( $_SESSION['avec_commentaire_rla'] != 'oui' ) {
 				$this->Cell(100,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 				$this->Cell(80,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-				$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la série',0,1,'R',true);			
+				$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].utf8_vers_cp1252(' % de la série'),0,1,'R',true);			
 				$this->Cell(15,8,'Cote',1,0,'C',true);
 				$this->Cell(70,8,'Notaire(commune)',1,0,'L',true);
-				$this->Cell(46,8,'Période',1,0,'L',true);
+				$this->Cell(46,8,utf8_vers_cp1252('Période'),1,0,'L',true);
 				$this->Cell(17,8,'Forme liasse',1,0,'L',true);
 				$this->Cell(14,8,'Consultable',1,0,'C',true);
 				$this->Cell(9,8,'Papier',1,0,'C',true);
-				$this->Cell(13,8,'Numérique',1,0,'C',true);
+				$this->Cell(13,8,utf8_vers_cp1252('Numérique'),1,0,'C',true);
 				$this->Cell(35,8,'Photographe',1,0,'L',true);
 				$this->Cell(15,8,'Date photo',1,0,'C',true);
 				$this->Cell(26,8,'Couverture',1,0,'L',true);
@@ -117,10 +117,10 @@ function Header() {
 			else {
 				$this->Cell(100,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 				$this->Cell(80,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-				$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].' % de la série',0,1,'R',true);			
+				$this->Cell(100,6,$_SESSION['pdf']['pourc_tot'].utf8_vers_cp1252(' % de la série'),0,1,'R',true);			
 				$this->Cell(15,8,'Cote',1,0,'C',true);
 				$this->Cell(70,8,'Notaire(commune)',1,0,'L',true);
-				$this->Cell(46,8,'Période',1,0,'L',true);
+				$this->Cell(46,8,utf8_vers_cp1252('Période'),1,0,'L',true);
 				$this->Cell(17,8,'Forme liasse',1,0,'L',true);
 				$this->Cell(26,8,'Couverture',1,0,'L',true);
 				$this->Cell(106,8,'Commentaires',1,1,'L',true);
@@ -131,10 +131,10 @@ function Header() {
 		default :
 			$this->Cell(61,6,$_SESSION['pdf']['nb_liasse'].' liasses',0, 0,'L',true);
 			$this->Cell(65,6,$_SESSION['pdf']['pourc_liste'].' % de la liste',0,0,'C',true);
-			$this->Cell(61,6,$_SESSION['pdf']['pourc_tot'].' % de la série',0,1,'R',true);			
+			$this->Cell(61,6,$_SESSION['pdf']['pourc_tot'].utf8_vers_cp1252(' % de la série'),0,1,'R',true);			
 			$this->Cell(17,8,'Cote',1,0,'C',true);
 			$this->Cell(80,8,'Notaire(commune)',1,0,'L',true);
-			$this->Cell(60,8,'Période',1,0,'L',true);
+			$this->Cell(60,8,utf8_vers_cp1252('Période'),1,0,'L',true);
 			$this->Cell(30,8,'Forme liasse',1,1,'L',true);
 			break;
 	}
@@ -182,7 +182,7 @@ function Ligne_publi_num($pa_liasse, $fond) {
 
 function Ligne_publication($pa_liasse, $fond) {
    $this->SetFont('Times','',8);
-	$this->SetFillColor(240,240,240);
+	$this->SetFillColor(150,150,150);
 	list($st_titre, $st_date_publication, $st_info_compl) = $pa_liasse;
 	if( strlen($st_titre) > 95 ) 
 		$st_titre = substr($st_titre, 0, 94)."...";
@@ -379,7 +379,7 @@ switch($_SESSION['menu_rla']) {
 		break;
 	case 'photo' :
 		foreach ($a_liasses as $a_liasse) { 
-			if( $_SESSION['avec_commentaire_rla'] == 'non' ) 
+			if( $_SESSION['avec_commentaire_rla'] != 'oui' ) 
 				$pdf->Ligne_photo_sans($a_liasse, $fond);
 			else
 				$pdf->Ligne_photo_avec($a_liasse, $fond);
