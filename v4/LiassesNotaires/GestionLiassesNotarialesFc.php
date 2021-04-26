@@ -214,7 +214,9 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 	print('</form></div></div>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
-	print("<input type=submit value=\"Retour\"></div>");
+	print('<button type=submit name=LISTE class="btn btn-sm btn-primary">');
+	print('<span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
+	print('</div>');
 	print('</form></div>');
 }
 
