@@ -210,11 +210,8 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 	print("<div align=center><br><input type=button value=\"Modifier\" ONCLICK=\"VerifieChamps(0)\"></div>");
 	print('</form>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hid"den name=mode value=\"LISTE\">");
-	print("<button type=submit name=\"LISTE\" class=\"btn btn-sm btn-primary\">");
-	print("<span class=\"glyphicon glyphicon-arrow-left\"></span> Retour");
-	print("</button></div>");
-//	print("<input type=submit value=\"Retour\"></div>");
+	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
+	print("<input type=submit value=\"Retour\"></div>");
 	print('</form></div></div></div>');
 }
 
