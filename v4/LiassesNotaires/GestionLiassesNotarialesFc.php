@@ -163,7 +163,7 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 		print( 		$_SESSION['init_mill'] == 'z' ? '0' : $_SESSION['init_mill']);
 		print( 		$_SESSION['init_cent'] == 'z' ? '0' : $_SESSION['init_cent']);
 		print( 		$_SESSION['init_dix'] == 'z' ? '0' : $_SESSION['init_dix']);
-		print( 		"</span></div><input type=text name='numero' id='numero' size=1 maxlength='1' value='' class="form-control"></div>");
+		print( 		"</span></div><input type=text name='numero' id='numero' size=1 maxlength='1' value='' class=\"form-control\"></div>");
 	}
 	print("<table><tr><th>Déposée aux AD</th><td colspan=2>");
 	if($pi_depose_ad == 1)
