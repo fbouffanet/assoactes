@@ -141,29 +141,31 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 	//**pc**// à remplacer par une image du site
 	$st_icone_info = '../images/infos.png';
 
-	print("<table border=0>");
 	print("<input type=hidden name='mode_enr' value='".$pst_mode."'>");
 	if( $pst_mode == 'M' ) {
-		print("<div class=\"form-group col-md-4\"><label class=\"col-form-label\">Cote de la liasse&nbsp</label>");
-		print("<div class=\"input-group\"><span class=\"input-group-addon\">$pst_cote</span></div></div>");
-	
-		print("<tr><th>Période(s)</th><td>$pst_periodes</td>".
-			"<td><a href='".$_SERVER['PHP_SELF']."?smode=LISTE_PERIODE&cote_liasse=$pst_cote'>".
-			"<img src='".$st_icone_info."' border=0 alt='d&eacute;tail des p&eacute;riodes'></a></td></tr>");
-		print("<tr><th>Notaire(s)</th><td>$pst_notaires</td>".
-			  "<td><a href='".$_SERVER['PHP_SELF']."?smode=LISTE_NOTAIRE&cote_liasse=$pst_cote'>".
-			  "<img src='".$st_icone_info."' border=0 alt='d&eacute;tail des notaires'></a></td></tr>");
+		print("<div class=\"form-group col-md-4\"><label class=\"col-form-label\">Cote de la liasse&nbsp</label>".
+					"<div class=\"input-group\"><span class=\"input-group-addon\">$pst_cote</span></div></div>");
+		print("<div class=\"form-group col-md-4\"><label class=\"col-form-label\">Période(s)&nbsp</label>".
+					"<div class=\"input-group\"><span class=\"input-group-addon\">$pst_periodes</span></div>".
+					"<div><a href='".$_SERVER['PHP_SELF']."?smode=LISTE_PERIODE&cote_liasse=$pst_cote'>".
+					"<img src='".$st_icone_info."' border=0 alt='détail des périodes'></a></div></div>");
+		print("<div class=\"form-group col-md-4\"><label class=\"col-form-label\">Notaire(s)&nbsp</label>".
+					"<div class=\"input-group\"><span class=\"input-group-addon\">$pst_notaires</span></div>".
+					"<div><a href='".$_SERVER['PHP_SELF']."?smode=LISTE_NOTAIRE&cote_liasse=$pst_cote'>".
+					"<img src='".$st_icone_info."' border=0 alt='détail des notaires'></a></div></div>");
 	}
 	else {
-		print("<tr><th>Série de la liasse</th><td colspan='2'>".$_SESSION['serie_liasse']."</td></tr>");
-		print("<tr><th>Numéro de la liasse</th><td>");
-		print( $_SESSION['init_dixm'] == 'z' ? '0' : $_SESSION['init_dixm']);
-		print( $_SESSION['init_mill'] == 'z' ? '0' : $_SESSION['init_mill']);
-		print( $_SESSION['init_cent'] == 'z' ? '0' : $_SESSION['init_cent']);
-		print( $_SESSION['init_dix'] == 'z' ? '0' : $_SESSION['init_dix']);
-		print("&nbsp;&nbsp;&nbsp;<input type='text\' maxlength='1' size='1' name='numero' value=''></td></tr>");
+		print("<div class=\"form-group col-md-4\"><label class=\"col-form-label\">Série de la liasse&nbsp</label>".
+					"<div class=\"input-group\"><span class=\"input-group-addon\">".$_SESSION['serie_liasse']."</span></div></div>");
+		print("<div class=\"form-group col-md-4\"><label class=\"col-form-label\">Numéro de la liasse&nbsp</label>".
+					"<div class=\"input-group\"><span class=\"input-group-addon\">");
+		print( 		$_SESSION['init_dixm'] == 'z' ? '0' : $_SESSION['init_dixm']);
+		print( 		$_SESSION['init_mill'] == 'z' ? '0' : $_SESSION['init_mill']);
+		print( 		$_SESSION['init_cent'] == 'z' ? '0' : $_SESSION['init_cent']);
+		print( 		$_SESSION['init_dix'] == 'z' ? '0' : $_SESSION['init_dix']);
+		print( 		"</span></div><input type=text name='numero' id='numero' size=1 maxlength='1' value='' class="form-control"></div>");
 	}
-	print("<tr><th>Déposée aux AD</th><td colspan=2>");
+	print("<table><tr><th>Déposée aux AD</th><td colspan=2>");
 	if($pi_depose_ad == 1)
 		print("<input type=checkbox name=depose_ad value=\"1\" checked></tr>");
 	else
