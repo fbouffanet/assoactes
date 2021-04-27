@@ -139,12 +139,14 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 					  $pi_liasse_consult, $pi_idf_forme_liasse, $pa_formes_liasses, $pst_info_compl, $pst_mode)
 {
 	//**pc**// à remplacer par une image du site
-	$st_icone_info = 'images/PLUS.GIF';
+	$st_icone_info = '../images/infos.png';
 
 	print("<table border=0>");
 	print("<input type=hidden name='mode_enr' value='".$pst_mode."'>");
 	if( $pst_mode == 'M' ) {
-		print("<tr><th>Cote de la liasse</th><td colspan=2>$pst_cote</td></tr>");
+		print("<div class=\"form-group col-md-4\"><label class=\"col-form-label\">Cote de la liasse&nbsp</label>");
+		print("<div class=\"input-group\"><span class=\"input-group-addon\">$pst_cote</span></div></div>")
+	
 		print("<tr><th>Période(s)</th><td>$pst_periodes</td>".
 			"<td><a href='".$_SERVER['PHP_SELF']."?smode=LISTE_PERIODE&cote_liasse=$pst_cote'>".
 			"<img src='".$st_icone_info."' border=0 alt='d&eacute;tail des p&eacute;riodes'></a></td></tr>");
