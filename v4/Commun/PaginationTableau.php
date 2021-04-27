@@ -75,7 +75,52 @@ class PaginationTableau {
      print("</div>");  
    }
    
-   
+    public function affiche_entete_liens_navlimite() {
+		if( $this->i_nb_pages > 1 )	{
+			print('<div class="text-center">');
+			print('<ul class="pagination">');
+			if( $this->i_nb_pages <= 11 ){
+				$i_fin = $this->i_nb_pages;
+				for ($i=1;$i<=$i_fin;$i++) {
+					if ($i==$this->i_page_cour)
+						print("<li class=\"page-item active\"><span class=\"page-link\">$i<span class=\"sr-only\">(current)</span></span></li>");
+					else
+						print("<li class=\"page-item\"><a href=\"$this->st_nom_script?$this->st_param_numpage=$i\" class=\"page-item\">$i</a></li> ");  
+				}
+			}
+			else {
+				print("<li class=\"page-item\"><a href=\"$this->st_nom_script?$this->st_param_numpage=1\" class=\"page-item\">D&eacute;but</a></li> "); 
+				if( $this->i_page_cour <=6 ) {
+					$i_deb = 1;
+					$i_fin = 11;
+				}
+				else if ( $this->i_page_cour >= $this->i_nb_pages - 5 ) {
+					$i_deb = $this->i_nb_pages - 10;
+					$i_fin = $this->i_nb_pages;
+				}
+				else {
+					$i_deb = $this->i_page_cour - 5;
+					$i_fin = $this->i_page_cour + 5;
+				}
+				if( $i_fin > $this->i_nb_pages ) {
+					$i_fin = $this->i_nb_pages;
+				}
+				for ($i=$i_deb;$i<=$i_fin;$i++) {
+					if ($i==$this->i_page_cour)
+						print("<li class=\"page-item active\"><span class=\"page-link\">$i<span class=\"sr-only\">(current)</span></span></li>");
+					else
+						print("<li class=\"page-item\"><a href=\"$this->st_nom_script?$this->st_param_numpage=$i\" class=\"page-item\">$i</a></li> ");  
+				}
+				print("<li class=\"page-item\"><a href=\"$this->st_nom_script?$this->st_param_numpage=$this->i_nb_pages\" class=\"page-item\">Fin</a></li> "); 
+			}                                                             
+			print("</ul>");
+			print("</div>");  
+		}
+		else {
+			print('<div class="text-center">&nbsp</div>');
+		}
+	}
+  
    /**
     * Affiche l'entête sous la forme d'une liste déroulante
     * @param string $pst_nom_formulaire nom du formulaire   
@@ -222,7 +267,62 @@ class PaginationTableau {
       // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
       print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
    }   
+  /**
+    * Affiche le contenu du tableau correspondant à $i_nb_lignes_par_page lignes de la page courante
+    * @param integer $pi_type_identifiant type d'identifiant utilisé (1: entier (défaut)| 2: chaine)  	
+    */       
+   public function affiche_tableau_edition_sil($pi_type_identifiant=1,$pb_conversion_encodage=true) {
+      $st_requete = $this->st_requete;
+      $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
+      $st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
+      print("<table class=\"table table-bordered table-striped\">");
+      print("<thead><tr>");
+      foreach ($this->a_entete as $st_cell_entete) {
+         print("<th>".cp1252_vers_utf8($st_cell_entete)."</th>");
+      }
+      print("</tr></thead>\n");
+      print('<tbody>');
+	  $a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
+      $i=0;
+      foreach ($a_lignes as $a_ligne) {
+         $idf_element = array_shift($a_ligne);
+         print("<tr>");
+         $st_nom_col1 = preg_replace('/\s/','_',$a_ligne[0]);
+         foreach ($a_ligne as $st_nom_element)
+         {
+            if ($st_nom_element!= '')
+			    if ($pb_conversion_encodage)
+					print("<td>".cp1252_vers_utf8($st_nom_element)."</td>");
+				else
+					print("<td>$st_nom_element)</td>");
+			else
+               print("<td>&nbsp;</td>");   
+         }
+
+         switch ($pi_type_identifiant)
+         {
+			 case 1: 
+				print("<td><input type=button class=\"btn btn-primary btn-sm btn-block\" id=\"bouton$idf_element\" value=Modifier onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
+				break;
+			 case 2: 
+				print("<td><input type=button class=\"btn btn-primary btn-sm btn-block\" id=\"bouton$idf_element\" value=Modifier onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
+				break;
+			 default:
+				die("<div class=\"alert alert-danger\">Type d'identifiant $ pi_type_identifiant inconnu</div>");
+		 }
+		 
+         //print("<td><div class=\"checkbox\"><label><input type=checkbox name=\"supp[]\" id=\"$st_nom_col1\" value=$idf_element class=\"form-check-input\"></label></div></td>"); 
+         print("<td><label><input type=checkbox name=\"supp[]\" id=\"$st_nom_col1\" value=$idf_element class=\"form-check-input\"></label></td>"); 
+        print("</tr>");
+         $i++;
+      }
+      print('</tbody>');      
+      print("</table>");
+      // paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
+      print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
+   }   
     
+   
 /**
     * Affiche le contenu du tableau correspondant à $i_nb_lignes_par_page lignes de la page courante  
     */       

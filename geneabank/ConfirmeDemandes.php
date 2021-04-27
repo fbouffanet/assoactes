@@ -9,27 +9,40 @@ require_once('../v4/Commun/constantes.php');
 require_once('commun_gbk.php');
 
 print('<!DOCTYPE html>');
-print("<Head>\n");
-print('<meta http-equiv="content-language" content="fr" /> ');
+print("<head>\n");
 print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
-print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'/>");
-print('</Head>');
+print('<meta http-equiv="content-language" content="fr"> ');
+print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+print("<title>Geneabank ".SIGLE_ASSO.": Recherches</title>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<link href='StylesGbk.css' type='text/css' rel='stylesheet'>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
+print("</head>\n");
+print("<body>");
+print('<div class="container">');
 
 $ga_idf_actes  = empty($_POST['actes']) ? array() : $_POST['actes'];
-print('<body>');
-print('<div class=alignCenter>');
-print('<a href="http://www.genea16.net"><img src="images/logo_AGC250.jpg" border="0" width="100" height="100"></a><img src="http://www.geneabank.org/pictures/logo4.jpg" width="233" height="104">');
-print('</div><br>');
+print('<div class="panel panel-primary">');
+print('<div class="panel-body">');
+print('<div class="form-row col-md-12">');
+print("<div class=\"col-md-4 col-md-offset-1\"><a href=\"$gst_url_site\"><img src=\"$gst_logo_association\"></a></div>");
+print("<div class=\"col-md-4 col-md-offset-1\"><a href=\"http://www.geneabank.org\"><img src=\"https://www.geneabank.org/pictures/logo4.jpg\"></a></div>");
+print('</div>'); // fin ligne
+print('</div>'); // fin panel body
+print('</div>'); // fin panel primary
 
-print('<div class="PAVE">Registres de l\'Association G&eacute;n&eacute;alogique de la Charente</a></div><br>');
-
+print('<div class="panel panel-primary">');
+print('<div class="panel-heading">Registres de '.LIB_ASSO_AVEC.'</div>');
+print("<div class=\"panel-body\">");
 
 if (count($ga_idf_actes)==0)
 {
-  print("<div class=ERREUR>Aucun acte s&eacute;lectionn&eacute;</div>");
-  print("<br><div align=alignCenter>");
-  print("<a href=index.php>Revenir &agrave; la page de recherche</a></div>");
-
+  print('<div class="form-row col-md-12">');	
+  print("<div class='alert alert-danger'>Aucun acte s&eacute;lectionn&eacute;</div>");
+  print('</div>');
+  print('<div class="form-row col-md-12">');
+  print('<a href="index.php?recherche=nouvelle" class="btn btn-primary col-md-4 col-md-offset-4">Nouvelle Recherche</a>');
+  print('</div>');
   exit();
 }
 $_SESSION['actes_gbk'] = $ga_idf_actes;
@@ -73,15 +86,16 @@ foreach ($a_intervenants as $i_idf_acte => $a_intervenant)
   }
 }
 
-$st_requete_codee = md5(implode('|',$ga_idf_actes));
-print("<div class=TITRE>R&eacute;capitulatif de votre demande</div><br>");
-print("<div class=alignCenter>Cliquer sur le bouton au bas de la page pour valider votre demande</div><br>");
-print("<div class=alignCenter><table align=center border=1>");
-print("<tr><th>Type d'acte</th><th>Parties</th><th>Ann&eacute;e</th><th>Commentaires</th></tr>");
+$st_requete_code = md5(implode('|',$ga_idf_actes));
+print("<blockquote>R&eacute;capitulatif de votre demande<br>");
+print("Cliquer sur le bouton au bas de la page pour valider votre demande</blockquote>");
+print("<table class=\"table table-bordered table-striped\">");
+print("<thead><tr>");
+print("<th>Type d'acte</th><th>Parties</th><th>Ann&eacute;e</th><th>Commentaires</th>");
 $i_nb_actes=0;
+print('<tbody>');
 foreach ($ga_idf_actes as $i_idf_acte) {
-  $st_class = ($i_nb_actes%2==0) ? 'ligne_paire':  'ligne_impaire';
-  print("<tr class=$st_class><td>$a_types_actes[$i_idf_acte]</td><td>$a_parties[$i_idf_acte]</td><td>$a_annees[$i_idf_acte]</td>");
+  print("<tr><td>$a_types_actes[$i_idf_acte]</td><td>$a_parties[$i_idf_acte]</td><td>$a_annees[$i_idf_acte]</td>");
   if ($a_renseignements[$i_idf_acte]!= '')
     print("<td>$a_renseignements[$i_idf_acte]</td>");
   else
@@ -89,15 +103,22 @@ foreach ($ga_idf_actes as $i_idf_acte) {
   print("</tr>"); 
   $i_nb_actes++;
 }
-print("</table></div><br>");
-print("<div class=alignCenter>");
-print GeneaBank($i_nb_actes,$gst_asso_gbk,$st_requete_codee,$gst_url_reponse_gbk);
-print("</div>");
-print("<div align=center>");
-print("<a href=\"index.php\" class=\"RetourReponses\">Revenir &agrave; la page de recherche</a>");
-print("<a href=\"index.php?recherche=nouvelle\" class=\"RetourReponses\">Commencer une nouvelle recherche</a>");
-print("</div>");
-print('<br><div class=alignCenter><a href="http://www.genea16.net" class=LienAGC>Association G&eacute;n&eacute;alogique de la Charente</a></div>');
-print("</body>"); 
+print('</tbody>');
+print("</table>");
+print GeneaBank($i_nb_actes,IDF_ASSO_GBK,$st_requete_code,$gst_url_reponse_gbk);
+print('<div class="row">');
+print('<div class="btn-group col-md-6 col-md-offset-4" role="group">');
+print('<a href="index.php" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-search"></span> Revenir &agrave; la page de recherche</a>');
+print('<a href="index.php?recherche=nouvelle" class="btn btn-warning raz" role="button"><span class="glyphicon glyphicon-erase"></span>Commencer une nouvelle recherche</a>');
+print('</div>'); // fin btn-group
+print('</div>'); //fin ligne
+
+print('</div>'); // fin panel body
+print('</div>'); // fin panel primary
+
+print("<div class=\"panel-footer text-center\"><a href=\"$gst_url_site\">".LIB_ASSO."</a></div>");
+
+print('</div>'); // fin div container
+print("</body></html>");  
 
 ?>

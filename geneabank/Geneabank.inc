@@ -54,7 +54,7 @@ function GeneaBank ($amount, $assoc, $str2Display,$myUrl)  {
 
 	// paramètres statiques (peuvent être inclus à partir d'un include séparé, comme dans:
 	//    include('localGbkParams.inc');
-	$gbkUrl = 'http://www.geneabank.org/cgi-bin/transaction';
+	$gbkUrl = 'https://www.geneabank.org/cgi-bin/transaction';
 	
 
 	/* Séquence paranoïde : 
@@ -84,7 +84,7 @@ function GeneaBank ($amount, $assoc, $str2Display,$myUrl)  {
 		<input type='hidden' name='to' value='$assoc'>
 		<input type='hidden' name='amount' value='$amount'>
 		<input_type='hidden' name='language' value='fr'>
-		<input type='submit' value=\"Cliquer ici pour transférer $amount point$pluriel à l'Association Généalogique de la Charente\">
+		<input type='submit' class='btn btn-primary col-md-8 col-md-offset-2' value=\"Cliquer ici pour transférer $amount point$pluriel à ".LIB_ASSO_AVEC."\">
 	</FORM>";
 	
 }

@@ -17,7 +17,7 @@ function description_mariage_ou_divers($pconnexionBD,$pa_type_acte,$pa_professio
   $st_reponse .= cp1252_vers_utf8($pa_type_acte[$i_idf_type_acte])." à ".cp1252_vers_utf8($st_commune_acte)." le $st_date";
   if ($st_date_rep!='')
      $st_reponse .=" ($st_date_rep)";
-  $st_reponse .=" $st_cote $st_libre\n";
+  $st_reponse .= ' '.cp1252_vers_utf8($st_cote).' '.cp1252_vers_utf8($st_libre)."\n";
   // Récupération des infos de conjoint pour la commune correspondante
   $a_conjointe_epx = array();
   $a_conjoint_epse = array();
@@ -158,7 +158,7 @@ function description_courte_mariage_ou_divers($pconnexionBD,$pa_type_acte,$pa_pr
   $st_reponse .= cp1252_vers_utf8($pa_type_acte[$i_idf_type_acte])." à ".cp1252_vers_utf8($st_commune_acte)." le $st_date";
   if ($st_date_rep!='')
      $st_reponse .=" ($st_date_rep)";
-  $st_reponse .=" $st_cote $st_libre\n";
+  $st_reponse .= ' '.cp1252_vers_utf8($st_cote).' '.cp1252_vers_utf8($st_libre)."\n";
   // Récupération des infos de conjoint pour la commune correspondante
   $a_conjointe_epx = array();
   $a_conjoint_epse = array();
@@ -304,7 +304,7 @@ function description_naissance($pconnexionBD,$pa_profession,$pi_idf_acte)
    $st_description .= "° à ".cp1252_vers_utf8($st_commune_acte)." le $st_date";
    if ($st_date_rep!='')
       $st_description .= " ($st_date_rep)";
-   $st_description .= " $st_cote $st_libre\n";
+   $st_description .=  ' '.cp1252_vers_utf8($st_cote).' '.cp1252_vers_utf8($st_libre)."\n";
    foreach ($a_liste_personnes as $idf_pers => $a_personne)
    {
       list($i_idf_type_presence,$c_sexe,$st_patronyme,$st_prenom,$i_idf_origine,$st_date_naissance,$st_age,$i_idf_profession,$st_commentaires,$i_idf_pere,$i_idf_mere,$i_est_decede) = $a_personne;
@@ -382,7 +382,7 @@ function description_deces($pconnexionBD,$pa_profession,$pa_commune_personne,$pi
    $st_description .= "&dagger; à ".cp1252_vers_utf8($st_commune_acte)." le $st_date";
    if ($st_date_rep!='')
       $st_description.= " ($st_date_rep)";
-   $st_description.= " $st_cote $st_libre\n";
+   $st_description .= ' '.cp1252_vers_utf8($st_cote).' '.cp1252_vers_utf8($st_libre)."\n";
    foreach ($a_liste_personnes as $i_idf_pers => $a_personne)
    {
       list($i_idf_type_presence,$c_sexe,$st_patronyme,$st_prenom,$i_idf_origine,$st_date_naissance,$st_age,$i_idf_profession,$st_commentaires,$i_idf_pere,$i_idf_mere,$i_est_decede) = $a_personne;
