@@ -416,17 +416,4 @@ define('NB_PERSONNES_BLOC_CHGMT',1000);
 define('NB_ACTES_BLOC_CHGMT',2000);
 define('PAGE_RECHERCHE','index.php');
 
-define('LIB_ASSO',"");
-define('LIB_ASSO_AVEC',"");
-define('SIGLE_ASSO','');
-
-define('EMAIL_INFOASSO','');
-define('EMAIL_INSCRIPTION_FORUM','');
-define('EMAIL_FORUM','');
-define('EMAIL_DIRASSO','');
-define('EMAIL_GBKADMIN','');
-define('EMAIL_PRESASSO','');
-
-define('CLEF_API_GEOPORTAIL','');
-
 ?>
