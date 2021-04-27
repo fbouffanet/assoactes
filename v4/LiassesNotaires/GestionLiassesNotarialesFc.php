@@ -143,18 +143,18 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 
 	print("<input type=hidden name='mode_enr' value='".$pst_mode."'>");
 	if( $pst_mode == 'M' ) {
-		print("<div class=\"form-row col-md-12\">".
-					"<div class='form-group col-md-4' align='right'><label class='col-form-label'>Cote de la liasse&nbsp</label></div>".
-					"<div class='form-group col-md-1' align='left'><div class='input-group'><span class='input-group-addon'>$pst_cote</span></div></div></div>");
-		print("<div class='form-row col-md-12'>".
-					"<div class='form-group col-md-4' align='right'><label class='col-form-label'>Période(s)&nbsp</label></div>".
-					"<div class='form-group col-md-3' align='left'><div class='input-group'><span class='input-group-addon'>$pst_periodes</span></div></div>".
-					"<div align='left'><a href='".$_SERVER['PHP_SELF']."?smode=LISTE_PERIODE&cote_liasse=".$pst_cote."'>".
+		print('<div class="form-row col-md-12">'.
+					'<div class="form-group col-md-4" align="right"><label class="col-form-label">Cote de la liasse&nbsp</label></div>'.
+					'<div class="form-group col-md-1" align="left"><div class="input-group"><span class="input-group-addon">'.$pst_cote.'</span></div></div></div>');
+		print('<div class="form-row col-md-12">'.
+					'<div class="form-group col-md-4" align="right"><label class="col-form-label">Période(s)&nbsp</label></div>'.
+					'<div class="form-group col-md-3" align="left"><div class="input-group"><span class="input-group-addon">'.$pst_periodes.'</span></div></div>'.
+					"<div align=\"left\"><a href='".$_SERVER['PHP_SELF']."?smode=LISTE_PERIODE&cote_liasse=".$pst_cote."'>".
 					"<img src='".$st_icone_info."' border=0 alt='détail des périodes'></a></div></div>");
-		print("<div class='form-row col-md-12'>";
-					"<div class='form-group col-md-4' align='right'><label class='col-form-label'>Notaire(s)&nbsp</label></div>".
-					"<div class='form-group col-md-3' align='left'><div class='input-group'><span class='input-group-addon' align=left>$pst_notaires</span></div></div>".
-					"<div align='left'><a href='".$_SERVER['PHP_SELF']."?smode=LISTE_NOTAIRE&cote_liasse=".$pst_cote."'>".
+		print('<div class="form-row col-md-12">';
+					'<div class="form-group col-md-4" align="right"><label class="col-form-label">Notaire(s)&nbsp</label></div>'.
+					'<div class="form-group col-md-3" align="left"><div class="input-group"><span class="input-group-addon">'.$pst_notaires.'</span></div></div>'.
+					"<div align=\"left\"><a href='".$_SERVER['PHP_SELF']."?smode=LISTE_NOTAIRE&cote_liasse=".$pst_cote."'>".
 					"<img src='".$st_icone_info."' border=0 alt='détail des notaires'></a></div></div>");
 	}
 	else {
