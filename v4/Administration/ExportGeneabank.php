@@ -61,7 +61,7 @@ function  ExporteUnions($pconnexionBD,$pst_repertoire_export)
    $pf = fopen($st_fichier, "w") or die("<div class=IMPORTANT>Impossible d'&eacute;crire $st_fichier</div>");
    while (list($st_patro_epx,$st_prn_epx,$st_patro_epse,$st_prn_epse,$st_cmt)=$pconnexionBD->ligne_suivante_resultat())
    {
-      $st_ligne = ";$st_patro_epx;$st_prn_epx;$st_patro_epse;$st_prn_epse;".IDF_ASSO_GBK.";$st_cmt"; 
+      $st_ligne = join(';',array('',cp1252_vers_utf8($st_patro_epx),cp1252_vers_utf8($st_prn_epx),cp1252_vers_utf8($st_patro_epse),cp1252_vers_utf8($st_prn_epse),IDF_ASSO_GBK,cp1252_vers_utf8($st_cmt)));  	  
       fwrite($pf,"$st_ligne\r\n");      
    }
    fclose($pf);
@@ -92,7 +92,7 @@ function  ExporteIndexPatros($pconnexionBD,$pst_idf_geneabank,$pst_repertoire_ex
    $pf = fopen($st_fichier, "w") or die("<div class=\"alert alert-danger\">Impossible d'&eacute;crire $st_fichier</div>");
    while (list($st_patro,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_personnes,$st_commune)=$pconnexionBD->ligne_suivante_resultat())
    {
-      $st_ligne = join(';',array($st_patro,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_personnes,$st_commune,CODE_DPT_GENEABANK,CODE_REGION_GENEABANK,CODE_PAYS_GENEABANK,CODE_TYPE_GENEABANK));
+      $st_ligne = join(';',array(cp1252_vers_utf8($st_patro),cp1252_vers_utf8($st_type_acte),$i_annee_min,$i_annee_max,$i_nb_personnes,$st_commune,CODE_DPT_GENEABANK,CODE_REGION_GENEABANK,CODE_PAYS_GENEABANK,CODE_TYPE_GENEABANK));
       fwrite($pf,"$st_ligne\r\n");      
    }
    fclose($pf);
@@ -172,7 +172,7 @@ function ExporteIndexCommunes($pconnexionBD,$pst_repertoire_export,$pst_nom_fich
    foreach ($a_stats_commune as $a_stats)
    {
       list($i_dpt,$st_commune,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_actes) = $a_stats;
-      $st_ligne = join(';',array(IDF_ASSO_GBK,$gst_url_interrogation_geneabank,$gst_pays_geneabank,$i_dpt,$st_commune,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_actes));
+      $st_ligne = join(';',array(IDF_ASSO_GBK,$gst_url_interrogation_geneabank,PAYS_GENEABANK,$i_dpt,cp1252_vers_utf8($st_commune),cp1252_vers_utf8($st_type_acte),$i_annee_min,$i_annee_max,$i_nb_actes));
       fwrite($pf,"$st_ligne\n");
       print("$st_ligne\n");
    }
