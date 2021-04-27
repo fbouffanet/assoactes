@@ -145,7 +145,7 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 	print("<input type=hidden name='mode_enr' value='".$pst_mode."'>");
 	if( $pst_mode == 'M' ) {
 		print("<div class=\"form-group col-md-4\"><label class=\"col-form-label\">Cote de la liasse&nbsp</label>");
-		print("<div class=\"input-group\"><span class=\"input-group-addon\">$pst_cote</span></div></div>")
+		print("<div class=\"input-group\"><span class=\"input-group-addon\">$pst_cote</span></div></div>");
 	
 		print("<tr><th>Période(s)</th><td>$pst_periodes</td>".
 			"<td><a href='".$_SERVER['PHP_SELF']."?smode=LISTE_PERIODE&cote_liasse=$pst_cote'>".
