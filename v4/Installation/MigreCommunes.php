@@ -151,9 +151,9 @@ if (empty($_POST['prefixe_table']))
 	print("<li>Deux communes distinctes ne doivent pas partager le m&ecirc;me code commune (l'entier doit &ecirc;tre diff&eacute;rent)</li>\n");
 	print("</ul>\n");
 	print('<div class="form-group row">');
-    print("<label for=\"prefixe_table\" class=\"col-md-4 col-form-label control-label\">Pr&eacute;fixe des tables EA:</label>");
+    print("<label for=\"prefixe_table\" class=\"col-md-4 col-form-label control-label\">Pr&eacute;fixe des tables EA (Par d&eacute;faut act):</label>");
     print('<div class="col-md-8">');
-	print("<input type=text maxlength=20 size=20 name=prefixe_table id=prefixe_table value=\"\" class=\"form-control\">");
+	print("<input type=text maxlength=20 size=20 name=prefixe_table id=prefixe_table value=\"act\" class=\"form-control\">");
     print('</div></div>');
 	print('<button type="submit" class="btn btn-primary  col-md-offset-4 col-md-4""><span class="glyphicon glyphicon-wrench"></span> Migrer les comumnes</button>'); 
 	print('</form>');

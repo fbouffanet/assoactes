@@ -290,17 +290,17 @@ function affiche_parametres_geneabank($pst_administrateur_gbk,$pst_mdp_administr
 	print('<div class="form-group row">');
     print("<label for=\"url_interrogation_geneabank\" class=\"col-md-4 col-form-label control-label\">Adresse générale G&eacute;n&eacute;abank de l'association:</label>");
     print('<div class="col-md-8">');
-    print("<input type=text maxlength=20 size=20 name=url_interrogation_geneabank id=url_interrogation_geneabank value=\"$pst_url_interrogation_geneabank\" class=\"form-control\">");
+    print("<input type=text maxlength=100 size=40 name=url_interrogation_geneabank id=url_interrogation_geneabank value=\"$pst_url_interrogation_geneabank\" class=\"form-control\">");
     print('</div></div>');
 	print('<div class="form-group row">');
-    print("<label for=\"mdp_administrateur_gbk\" class=\"col-md-4 col-form-label control-label\">Adresse de réponse &agrave; une transaction G&eacute;n&eacute;abank:</label>");
+    print("<label for=\"url_reponse_geneabank\" class=\"col-md-4 col-form-label control-label\">Adresse de réponse &agrave; une transaction G&eacute;n&eacute;abank:</label>");
     print('<div class="col-md-8">');
-    print("<input type=text maxlength=20 size=20 name=mdp_administrateur_gbk id=mdp_administrateur_gbk value=\"$pst_url_reponse_gbk\" class=\"form-control\">");
+    print("<input type=text maxlength=100 size=40 name=url_reponse_geneabank id=url_reponse_geneabank value=\"$pst_url_reponse_gbk\" class=\"form-control\">");
     print('</div></div>');
 	print('<div class="form-group row">');
     print("<label for=\"url_index_geneabank\" class=\"col-md-4 col-form-label control-label\">Adresse des index G&eacute;n&eacute;abank:</label>");
     print('<div class="col-md-8">');
-    print("<input type=text maxlength=20 size=20 name=url_index_geneabank id=url_index_geneabank value=\"$pst_url_index_geneabank\" class=\"form-control\">");
+    print("<input type=text maxlength=100 size=40 name=url_index_geneabank id=url_index_geneabank value=\"$pst_url_index_geneabank\" class=\"form-control\">");
     print('</div></div>');
 	print("</div></div>");
 }
@@ -404,6 +404,14 @@ function ecrit_fichier_de_configuration($pst_fichier_configuration,$pst_url_site
 		fwrite($pf,'$gst_time_zone =\'Europe/Paris\';');
 		fwrite($pf,"\n");
 		fwrite($pf,'$gi_precision_prenom=7;');
+		fwrite($pf,"\n");
+		fwrite($pf,'$gst_serveur_smtp = \'\';');		
+		fwrite($pf,"\n");
+		fwrite($pf,'$gst_utilisateur_smtp = \'\';');		
+		fwrite($pf,"\n");
+		fwrite($pf,'$gst_mdp_smtp = \'\';');		
+		fwrite($pf,"\n");
+		fwrite($pf,'$gi_port_smtp = 587;');		
 		fwrite($pf,"\n");
 		fwrite($pf,"\n?>\n");
 		

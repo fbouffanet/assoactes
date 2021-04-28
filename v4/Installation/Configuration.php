@@ -142,6 +142,11 @@ $gst_email_pres_asso = '';
 $gst_idf_asso_gbk = '';
 $gst_prefixe_adh_gbk = '';
 $gi_nb_points_gbk = 0;
+$gst_code_dpt_geneabank = '';
+$gst_code_region_geneabank  = '';
+$gst_code_pays_geneabank ='FRA';
+$gst_pays_geneabank ='France';
+$gst_code_type_geneabank ='C';
 
 /*
 * Renvoie le fichier de constantes dans une chaine
