@@ -253,6 +253,10 @@ else
 }
 
 print('<div class="btn-group-vertical btn-group-xs col-xs-8 col-xs-offset-2" role="group" aria-label="Groupe de demandes">');
+print("<form  action=\"PropositionModification.php\" id=\"PropositionModification\" method=\"post\" target=\"_blank\">\n");
+print("<input type=\"hidden\" name=\"idf_acte\" value=\"$gi_idf_acte\">");
+print('<button type="submit" class="btn-xs btn-primary col-xs-12 "><span class="glyphicon glyphicon-edit"></span>Proposer une correction</button>');	
+print("</form>");
 if (!empty(EMAIL_FORUM))
    print('<button type="button" id="bouton_envoi" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span> Envoyer une remarque sur le forum</button>');
 print('<button type=button id="bouton_impression" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Imprimer</button>');
