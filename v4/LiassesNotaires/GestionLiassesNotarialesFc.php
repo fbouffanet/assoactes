@@ -145,7 +145,8 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 	if( $pst_mode == 'M' ) {
 		print('<div class="form-row col-md-12">'.
 					'<div class="form-group col-md-4" align="right"><label class="col-form-label">Cote de la liasse&nbsp</label></div>'.
-					'<div class="form-group col-md-1" align="left"><div class="input-group"><span class="input-group-addon">'.$pst_cote.'</span></div></div></div>');
+					'<div class="form-group col-md-1" align="left"><div class="input"><span class="input-group-addon">'.$pst_cote.'</span></div></div></div>');
+<span class=\"input-group-addon\">Rayon de recherche:</span>
 		print('<div class="form-row col-md-12">'.
 					'<div class="form-group col-md-4" align="right"><label class="col-form-label">Période(s)&nbsp</label></div>'.
 					'<div class="form-group col-md-3"><div class="input-group" align="left"><span class="input-group-addon">'.$pst_periodes.'</span></div></div>'.
