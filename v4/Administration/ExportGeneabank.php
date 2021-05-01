@@ -55,13 +55,13 @@ function AfficheMenu() {
 function  ExporteUnions($pconnexionBD,$pst_repertoire_export)
 {
    $st_fichier = "$pst_repertoire_export/gbkcpl.txt";
-   $st_requete = "select trim(u.patronyme_epoux),trim(prn_epx.libelle),trim(u.patronyme_epouse),trim(prn_epse.libelle), case u.idf_type_acte when 3 then concat(ta.nom,'parents') when 4 then (case epx.idf_type_presence when 1 then (case epse.idf_type_presence when 5 then ta.nom end) when 5 then (case epse.idf_type_presence when 1 then concat(ta.nom,'ancien cjt') end) when 6 then (case epse.idf_type_presence when 7 then concat(ta.nom,'parents') end) end) when 1 then (case epx.idf_type_presence when 1 then (case epse.idf_type_presence when 1 then ta.nom when 5 then concat(ta.nom,'ancien cjt epse') end) when 5 then (case epse.idf_type_presence when 1 then concat(ta.nom,'ancien cjt epx') end) when 6 then (case epse.idf_type_presence when 7 then concat(ta.nom,'parents') end) end) else (case epx.idf_type_presence when 1 then (case epse.idf_type_presence when 1 then ta.nom when 5 then concat(ta.nom,' ancien cjt epse') end) when 5 then (case epse.idf_type_presence when 1 then concat(ta.nom,' ancien cjt epx') end) when 6 then(case epse.idf_type_presence when 7 then concat(ta.nom,' parents') end) end) end from `union` u join personne epx on (u.idf_epoux=epx.idf) join prenom prn_epx on (epx.idf_prenom=prn_epx.idf) join personne epse on (u.idf_epouse=epse.idf)  join prenom prn_epse on (epse.idf_prenom=prn_epse.idf) join type_acte ta on (u.idf_type_acte=ta.idf) join source s on (u.idf_source=s.idf) where s.publication_geneabank=1 and u.patronyme_epoux REGEXP '^[A-Za-z ()]+$' and u.patronyme_epouse REGEXP '^[A-Za-z ()]+$'" ;
+   $st_requete = "select trim(u.patronyme_epoux),trim(prn_epx.libelle),trim(u.patronyme_epouse),trim(prn_epse.libelle), case u.idf_type_acte when 3 then concat(ta.nom,' parents') when 4 then (case epx.idf_type_presence when 1 then (case epse.idf_type_presence when 5 then ta.nom end) when 5 then (case epse.idf_type_presence when 1 then concat(ta.nom,' ancien cjt') end) when 6 then (case epse.idf_type_presence when 7 then concat(ta.nom,' parents') end) end) when 1 then (case epx.idf_type_presence when 1 then (case epse.idf_type_presence when 1 then ta.nom when 5 then concat(ta.nom,' ancien cjt epse') end) when 5 then (case epse.idf_type_presence when 1 then concat(ta.nom,' ancien cjt epx') end) when 6 then (case epse.idf_type_presence when 7 then concat(ta.nom,' parents') end) end) else (case epx.idf_type_presence when 1 then (case epse.idf_type_presence when 1 then ta.nom when 5 then concat(ta.nom,' ancien cjt epse') end) when 5 then (case epse.idf_type_presence when 1 then concat(ta.nom,' ancien cjt epx') end) when 6 then(case epse.idf_type_presence when 7 then concat(ta.nom,' parents') end) end) end from `union` u join personne epx on (u.idf_epoux=epx.idf) join prenom prn_epx on (epx.idf_prenom=prn_epx.idf) join personne epse on (u.idf_epouse=epse.idf)  join prenom prn_epse on (epse.idf_prenom=prn_epse.idf) join type_acte ta on (u.idf_type_acte=ta.idf) join source s on (u.idf_source=s.idf) where s.publication_geneabank=1 and u.patronyme_epoux REGEXP '^[A-Za-z ()]+$' and u.patronyme_epouse REGEXP '^[A-Za-z ()]+$'" ;
    $pconnexionBD->desactive_cache();
    $pconnexionBD->execute_requete($st_requete);
    $pf = fopen($st_fichier, "w") or die("<div class=IMPORTANT>Impossible d'&eacute;crire $st_fichier</div>");
    while (list($st_patro_epx,$st_prn_epx,$st_patro_epse,$st_prn_epse,$st_cmt)=$pconnexionBD->ligne_suivante_resultat())
    {
-      $st_ligne = ";$st_patro_epx;$st_prn_epx;$st_patro_epse;$st_prn_epse;".IDF_ASSO_GBK.";$st_cmt"; 
+      $st_ligne = join(';',array('',$st_patro_epx,$st_prn_epx,$st_patro_epse,$st_prn_epse,IDF_ASSO_GBK,$st_cmt));  	  
       fwrite($pf,"$st_ligne\r\n");      
    }
    fclose($pf);
@@ -172,7 +172,7 @@ function ExporteIndexCommunes($pconnexionBD,$pst_repertoire_export,$pst_nom_fich
    foreach ($a_stats_commune as $a_stats)
    {
       list($i_dpt,$st_commune,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_actes) = $a_stats;
-      $st_ligne = join(';',array(IDF_ASSO_GBK,$gst_url_interrogation_geneabank,$gst_pays_geneabank,$i_dpt,$st_commune,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_actes));
+      $st_ligne = join(';',array(IDF_ASSO_GBK,$gst_url_interrogation_geneabank,PAYS_GENEABANK,$i_dpt,$st_commune,$st_type_acte,$i_annee_min,$i_annee_max,$i_nb_actes));
       fwrite($pf,"$st_ligne\n");
       print("$st_ligne\n");
    }
