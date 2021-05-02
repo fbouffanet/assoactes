@@ -179,9 +179,13 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 	else
 		print("unchecked>");
 	print("</div></div></div>");
-	print("<table><tr><th></th><td colspan=2>");
-	print("<tr><th>Département</th><td colspan=2>".
-	      "<select name=dept_depose_ad id='dept_depose'>".chaine_select_options($pst_idf_dept_depose_ad,$pa_depts_depose_ad)."</select></td></tr>");
+	
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label for='dept_depose_ad' class='col-form-label'>Département&nbsp</label></div>".
+		  "<div class='form-group col-md-1' align='left'><select name='dept_depose_ad' id='dept_depose_ad' class='js-select-avec-recherche form-control'>".
+		  "chaine_select_options($pst_idf_dept_depose_ad,$pa_depts_depose_ad)</select></div></div></div>");
+
+	print("<table>");
 	print("<tr><th>Liasse consultable</th><td colspan=2>");
 	if($pi_liasse_consult == 1)
 		print("<input type=checkbox name=liasse_consult value=\"1\" checked></tr>");
