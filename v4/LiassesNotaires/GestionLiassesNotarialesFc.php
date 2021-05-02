@@ -185,12 +185,17 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 		  "<div class='form-group col-md-3' align='left'><select name='dept_depose_ad' id='dept_depose_ad' class='js-select-avec-recherche form-control'>".
 		  chaine_select_options($pst_idf_dept_depose_ad,$pa_depts_depose_ad)."</select></div></div></div>");
 
-	print("<table>");
-	print("<tr><th>Liasse consultable</th><td colspan=2>");
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label for='liasse_consult' class='col-form-label'>Liasse consultable&nbsp</label></div>".
+		  "<div class='form-group col-md-1' align='left'><div class='form-check '><input type='checkbox' class='form-check-input' name='liasse_consult' id='liasse_consult' value=oui ");
 	if($pi_liasse_consult == 1)
-		print("<input type=checkbox name=liasse_consult value=\"1\" checked></tr>");
+		print("checked>");
 	else
-		print("<input type=checkbox name=liasse_consult value=\"1\"></tr>");
+		print("unchecked>");
+	print("</div></div></div>");
+		
+	print("<table>");
+
 	print("<tr><th>Forme liasse</th><td colspan=2>".
 	      "<select name=forme_liasse>".chaine_select_options($pi_idf_forme_liasse,$pa_formes_liasses)."</select></td></tr>");
 	
