@@ -163,12 +163,12 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 					"<div class='form-group col-md-1'><span class='input-group-addon'>".$_SESSION['serie_liasse']."</span></div></div>");
 		print("<div class='form-row col-md-12'>".
 					"<div class='form-group col-md-4' align='right'><label class='col-form-label'>Numéro de la liasse&nbsp</label></div>".
-					"<div class='form-group col-md-1'><span>");
+					"<div class='form-group col-md-1'>");
 		print( 		$_SESSION['init_dixm'] == 'z' ? '0' : $_SESSION['init_dixm']);
 		print( 		$_SESSION['init_mill'] == 'z' ? '0' : $_SESSION['init_mill']);
 		print( 		$_SESSION['init_cent'] == 'z' ? '0' : $_SESSION['init_cent']);
 		print( 		$_SESSION['init_dix'] == 'z' ? '0' : $_SESSION['init_dix']);
-		print( 		"</span><input type=text name='numero' id='numero' size=1 maxlength='1' value='' class='form-control'></div>");
+		print( 		"<input type=text name='numero' id='numero' size=1 maxlength='1' value='' class='form-control'></div></div>");
 	}
 	print("<table><tr><th>Déposée aux AD</th><td colspan=2>");
 	if($pi_depose_ad == 1)
