@@ -158,15 +158,17 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 					"<img src='".$st_icone_info."' border=0 alt='détail des notaires'></a></div></div>");
 	}
 	else {
-		print("<div class=\"form-row col-md-12\"><div class=\"form-group col-md-4\"><label class=\"col-form-label\">Série de la liasse&nbsp</label></div>".
-					"<div class=\"input-group\"><span class=\"input-group-addon\">".$_SESSION['serie_liasse']."</span></div></div>");
-		print("<div class=\"form-row col-md-12\"><div class=\"form-group col-md-4\"><label class=\"col-form-label\">Numéro de la liasse&nbsp</label></div>".
-					"<div class=\"input-group\"><span class=\"input-group-addon\">");
+		print("<div class='form-row col-md-12'>".
+					"<div class='form-group col-md-4' align='right'><label class='col-form-label'>Série de la liasse&nbsp</label></div>".
+					"<div class='form-group col-md-1'><span class='input-group-addon'>".$_SESSION['serie_liasse']."</span></div></div>");
+		print("<div class='form-row col-md-12'>".
+					"<div class='form-group col-md-4'><label class='col-form-label'>Numéro de la liasse&nbsp</label></div>".
+					"<div class='form-group col-md-1'><span class='input-group-addon'>");
 		print( 		$_SESSION['init_dixm'] == 'z' ? '0' : $_SESSION['init_dixm']);
 		print( 		$_SESSION['init_mill'] == 'z' ? '0' : $_SESSION['init_mill']);
 		print( 		$_SESSION['init_cent'] == 'z' ? '0' : $_SESSION['init_cent']);
 		print( 		$_SESSION['init_dix'] == 'z' ? '0' : $_SESSION['init_dix']);
-		print( 		"</span></div><input type=text name='numero' id='numero' size=1 maxlength='1' value='' class=\"form-control\"></div>");
+		print( 		"</span><input type=text name='numero' id='numero' size=1 maxlength='1' value='' class='form-control'></div>");
 	}
 	print("<table><tr><th>Déposée aux AD</th><td colspan=2>");
 	if($pi_depose_ad == 1)
