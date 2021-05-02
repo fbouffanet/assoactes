@@ -178,7 +178,7 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 		print("checked>");
 	else
 		print("unchecked>");
-	print("</div></div></div>");
+	print("</div></div>");
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label for='dept_depose_ad' class='col-form-label'>Département&nbsp</label></div>".
 		  "<div class='form-group col-md-3' align='left'><select name='dept_depose_ad' id='dept_depose_ad' class='js-select-avec-recherche form-control'>".
@@ -190,17 +190,15 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 		print("checked>");
 	else
 		print("unchecked>");
-	print("</div></div></div>");
+	print("</div></div>");
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label for='forme_liasse' class='col-form-label'>Forme liasse&nbsp</label></div>".
 		  "<div class='form-group col-md-3' align='left'><select name='forme_liasse' id='forme_liasse' class='js-select-avec-recherche form-control'>".
-		  chaine_select_options($pi_idf_forme_liasse,$pa_formes_liasses)."</select></div></div></div>");
+		  chaine_select_options($pi_idf_forme_liasse,$pa_formes_liasses)."</select></div></div>");
 
-	print("<table>");
-
-	print("<tr><th>Informations complémentaires</th><td colspan=2>".
-	      "<textarea rows='13' cols='80' maxlength=1000 name='info_compl'>".$pst_info_compl."</textarea></td></tr>");
-	print("</table>");
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Informations complémentaires&nbsp</label></div>".
+		  "<div class='form-group col-md-8'><textarea class='form-control' rows='7' maxlength=1000 name='info_compl'>".$pst_info_compl."</textarea></div></div>");
 }
 
 /** Affiche le menu de modification d'une commune
