@@ -171,11 +171,15 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 		print( 		"</div>");
 		print(		"<div class='form-group col-md-1'><input type=text name='numero' id='numero' size=1 maxlength='1' value='' class='form-control'></div></div>");
 	}
-	print("<table><tr><th>Déposée aux AD</th><td colspan=2>");
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label for='depose_ad' class='col-form-label'>Déposée aux AD&nbsp</label></div>".
+		  "<div class='form-group col-md-1'><div class='form-check '><input type='checkbox' class='form-check-input' name='depose_ad' id='depose_ad' value=oui ");
 	if($pi_depose_ad == 1)
-		print("<input type=checkbox name=depose_ad value=\"1\" checked></tr>");
+		print("checked>");
 	else
-		print("<input type=checkbox name=depose_ad value=\"1\"></tr>");
+		print("unchecked>");
+	print("</div></div></div>");
+	print("<table><tr><th></th><td colspan=2>");
 	print("<tr><th>Département</th><td colspan=2>".
 	      "<select name=dept_depose_ad id='dept_depose'>".chaine_select_options($pst_idf_dept_depose_ad,$pa_depts_depose_ad)."</select></td></tr>");
 	print("<tr><th>Liasse consultable</th><td colspan=2>");
