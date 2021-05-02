@@ -162,8 +162,8 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 					"<div class='form-group col-md-4' align='right'><label class='col-form-label'>Série de la liasse&nbsp</label></div>".
 					"<div class='form-group col-md-1'><span class='input-group-addon'>".$_SESSION['serie_liasse']."</span></div></div>");
 		print("<div class='form-row col-md-12'>".
-					"<div class='form-group col-md-4'><label class='col-form-label'>Numéro de la liasse&nbsp</label></div>".
-					"<div class='form-group col-md-1'><span class='input-group-addon'>");
+					"<div class='form-group col-md-4' align='right'><label class='col-form-label'>Numéro de la liasse&nbsp</label></div>".
+					"<div class='form-group col-md-1'><span>");
 		print( 		$_SESSION['init_dixm'] == 'z' ? '0' : $_SESSION['init_dixm']);
 		print( 		$_SESSION['init_mill'] == 'z' ? '0' : $_SESSION['init_mill']);
 		print( 		$_SESSION['init_cent'] == 'z' ? '0' : $_SESSION['init_cent']);
