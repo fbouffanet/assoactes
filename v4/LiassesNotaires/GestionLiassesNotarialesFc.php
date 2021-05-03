@@ -158,16 +158,16 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 	else {
 		print("<div class='form-row col-md-12'>".
 					"<div class='form-group col-md-4' align='right'><label class='col-form-label'>Série de la liasse&nbsp</label></div>".
-					"<div class='form-group col-md-1' align=\"left\">".$_SESSION['serie_liasse']."</div></div>");
+					"<div class='form-group col-md-1'><span class='input-group-addon'>".$_SESSION['serie_liasse']."</span></div></div>");
 		print("<div class='form-row col-md-12'>".
 					"<div class='form-group col-md-4' align='right'><label class='col-form-label'>Numéro de la liasse&nbsp</label></div>".
-					"<div class='form-group' align=\"left\">");
+					"<div class='form-group col-md-1'>");
 		print( 		$_SESSION['init_dixm'] == 'z' ? '0' : $_SESSION['init_dixm']);
 		print( 		$_SESSION['init_mill'] == 'z' ? '0' : $_SESSION['init_mill']);
 		print( 		$_SESSION['init_cent'] == 'z' ? '0' : $_SESSION['init_cent']);
 		print( 		$_SESSION['init_dix'] == 'z' ? '0' : $_SESSION['init_dix']);
 		print( 		"</div>");
-		print(		"<div class='form-group' align=\"left\"><input type=text name='numero' id='numero' size=1 maxlength='1' value='' class='form-control'></div></div>");
+		print(		"<div class='form-group col-md-1'><input type=text name='numero' id='numero' size=1 maxlength='1' value='' class='form-control'></div></div>");
 	}
 	print('<div class="form-row col-md-12">'.
 		  '<div class="form-group col-md-4" align="right"><label for="depose_ad" class="col-form-label">Déposée aux AD&nbsp</label></div>'.
