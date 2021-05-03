@@ -171,7 +171,7 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 	}
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label for='depose_ad' class='col-form-label'>Déposée aux AD&nbsp</label></div>".
-		  "<div class='form-group col-md-1' align='left'><div class='form-check '><input type='checkbox' class='form-check-input' name='depose_ad' id='depose_ad' value=oui ");
+		  "<div class='form-group col-md-1' align='left'><div class='form-check '><input type=checkbox class=form-check-input name=depose_ad id=depose_ad value=oui ");
 	if($pi_depose_ad == 1)
 		print("'checked'>");
 	else
