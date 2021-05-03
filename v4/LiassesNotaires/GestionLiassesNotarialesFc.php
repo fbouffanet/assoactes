@@ -184,7 +184,8 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 		  chaine_select_options($pst_idf_dept_depose_ad,$pa_depts_depose_ad)."</select></div></div></div>");
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label for='liasse_consult' class='col-form-label'>Liasse consultable&nbsp</label></div>".
-		  "<div class='form-group col-md-1' align='left'><div class='form-check '><input type='checkbox' class='form-check-input' name='liasse_consult' id='liasse_consult' value=oui ");
+		  "<div class='form-group col-md-1' align='left'><div class='form-check '>".
+		  "<input type='checkbox' class='form-check-input' name='liasse_consult' id='liasse_consult' value='1' ");
 	if($pi_liasse_consult == 1)
 		print("'checked'>");
 	else
