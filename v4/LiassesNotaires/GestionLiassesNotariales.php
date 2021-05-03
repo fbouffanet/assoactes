@@ -88,9 +88,6 @@ switch ($gst_mode) {
 		$i_idf_forme_liasse = $_POST['forme_liasse'];
 		//---- modif UTF8
 		$st_info_compl = mb_convert_encoding($st_info_compl, 'cp1252', 'UTF8');
-		$st_in_liasse_depose_AD = mb_convert_encoding($st_in_liasse_depose_AD, 'cp1252', 'UTF8');
-		$st_idf_dept_depose_AD = mb_convert_encoding($st_idf_dept_depose_AD, 'cp1252', 'UTF8');
-		$st_in_liasse_consultable = mb_convert_encoding($st_in_liasse_consultable, 'cp1252', 'UTF8');
 		//---- fin modif UTF8
 		$st_requete = "update liasse set ".
 					  "in_liasse_depose_AD='$st_in_liasse_depose_AD', ".

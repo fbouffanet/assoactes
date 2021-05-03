@@ -138,9 +138,7 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
                       $pi_depose_ad, $pst_idf_dept_depose_ad, $pa_depts_depose_ad, 
 					  $pi_liasse_consult, $pi_idf_forme_liasse, $pa_formes_liasses, $pst_info_compl, $pst_mode)
 {
-	//**pc**// à remplacer par une image du site
 	$st_icone_info = '../images/infos.png';
-
 	print("<input type=hidden name='mode_enr' value='".$pst_mode."'>");
 	if( $pst_mode == 'M' ) {
 		print('<div class="form-row col-md-12">'.
@@ -175,9 +173,9 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 		  "<div class='form-group col-md-4' align='right'><label for='depose_ad' class='col-form-label'>Déposée aux AD&nbsp</label></div>".
 		  "<div class='form-group col-md-1' align='left'><div class='form-check '><input type='checkbox' class='form-check-input' name='depose_ad' id='depose_ad' value=oui ");
 	if($pi_depose_ad == 1)
-		print("checked>");
+		print("'checked'>");
 	else
-		print("unchecked>");
+		print("'unchecked'>");
 	print("</div></div>");
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label for='dept_depose_ad' class='col-form-label'>Département&nbsp</label></div>".
@@ -187,9 +185,9 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 		  "<div class='form-group col-md-4' align='right'><label for='liasse_consult' class='col-form-label'>Liasse consultable&nbsp</label></div>".
 		  "<div class='form-group col-md-1' align='left'><div class='form-check '><input type='checkbox' class='form-check-input' name='liasse_consult' id='liasse_consult' value=oui ");
 	if($pi_liasse_consult == 1)
-		print("checked>");
+		print("'checked'>");
 	else
-		print("unchecked>");
+		print("'unchecked'>");
 	print("</div></div>");
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label for='forme_liasse' class='col-form-label'>Forme liasse&nbsp</label></div>".
