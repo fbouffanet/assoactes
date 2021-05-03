@@ -187,9 +187,9 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 		  "<div class='form-group col-md-1' align='left'><div class='form-check '>".
 		  "<input type='checkbox' class='form-check-input' name='liasse_consult' id='liasse_consult' value='1' ");
 	if($pi_liasse_consult == 1)
-		print("'checked'>");
+		print("checked>");
 	else
-		print("'unchecked'>");
+		print("unchecked>");
 	print("</div></div>");
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label for='forme_liasse' class='col-form-label'>Forme liasse&nbsp</label></div>".
