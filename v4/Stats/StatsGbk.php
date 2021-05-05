@@ -68,7 +68,7 @@ function affiche_stats_cumulees($pconnexionBD)
   print("<tr><th>Canton</th><th>Demandes</th></tr>\n");
   foreach ($a_ddes_canton as $st_canton => $i_ddes)
   {
-    print("<tr><td>$st_canton</td><td>$i_ddes</td></tr>\n");
+    print("<tr><td>".cp1252_vers_utf8($st_canton)."</td><td>$i_ddes</td></tr>\n");
   }
   print('</table>');
   print('</div></div>');
@@ -94,7 +94,7 @@ function affiche_stats_cumulees($pconnexionBD)
   print("<tr><th>Types d'acte</th><th>Demandes</th></tr>\n");
   foreach ($a_ddes_types_acte as $st_type => $i_ddes)
   {
-    print("<tr><td>$st_type</td><td>$i_ddes</td></tr>\n");
+    print("<tr><td>".cp1252_vers_utf8($st_type)."</td><td>$i_ddes</td></tr>\n");
   }
   print('</table>');
   print('</div></div>');
