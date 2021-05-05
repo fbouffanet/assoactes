@@ -29,9 +29,13 @@ $gst_mdp_utilisateur_bd = '';
 $gst_nom_bd = '';
 $gst_administrateur_gbk = '';
 $gst_mdp_administrateur_gbk = '';
-
-
 $gst_url_index_geneabank='';
+
+$gst_serveur_smtp  = '';
+$gst_utilisateur_smtp = '';
+$gst_mdp_smtp = '';
+$gi_port_smtp = 587;
+
 $gst_fichier_configuration='../Commun/config.php';
 if (file_exists($gst_fichier_configuration))
 	require_once($gst_fichier_configuration);
@@ -171,22 +175,23 @@ function affiche_parametres_site($pst_url_site,$pst_rep_site,$pst_logo_asso,$pst
     print("<label for=\"url_site\" class=\"col-md-4 col-form-label control-label\">Adresse http du site:</label>");
     print('<div class="col-md-8">');
     print("<input type=text maxlength=100 size=20 name=url_site id=url_site value=\"$pst_url_site\" class=\"form-control\">");
-    print('</div></div>');
+    print('</div></div>'); // fin ligne
 	print('<div class="form-group row">');
     print("<label for=\"rep_site\" class=\"col-md-4 col-form-label control-label\">Emplacement du site:</label>");
     print('<div class="col-md-8">');
     print("<input type=text maxlength=100 size=20 name=rep_site id=rep_site value=\"$pst_rep_site\" class=\"form-control\">");
-    print('</div></div>');
+    print('</div></div>'); // fin ligne
     print('<div class="form-group row"><div class="custom-file">');
 	print("<label for=\"logo_asso\" class=\"col-form-label col-md-4\">Logo de l'association (laisser vide s'il n'y en a pas):</label>");
     print('<div class="col-md-8">');
     print("<input name=logo_asso id=logo_asso type=\"file\" class=\"custom-file-input\">");
     print('</div></div></div>');
+	print('<div class="form-group row">');
     print("<label for=\"url_sortie\" class=\"col-md-4 col-form-label control-label\">Adresse de sortie du site:</label>");
-    print('<div class="col-md-8">');
+	print('<div class="col-md-8">');
     print("<input type=text maxlength=100 size=20 name=url_sortie id=url_sortie value=\"$pst_url_sortie\" class=\"form-control\">");
     print('</div></div>');	
-	print("</div></div>");
+	print("</div></div>\n");
 }
 /*
 *  Affiche le menu des paramètres de la base
@@ -228,7 +233,7 @@ function affiche_parametres_base($pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_ut
     print('<input type="checkbox" id="effacer_anciennes_tables" name="effacer_anciennes_tables" value="O">');
     print('</label>');
     print('</div></div></div>');	
-	print("</div></div>");
+	print("</div></div>\n");
 }
 /*
 *  Affiche le menu du compte administrateur de la base
@@ -262,8 +267,9 @@ function affiche_parametres_administrateur($pst_nom_administrateur,$pst_prenom_a
     print('<div class="col-md-8">');
     print("<input type=text maxlength=60 size=20 name=email_administrateur id=email_administrateur value=\"$pst_email_administrateur\" class=\"form-control\">");
     print('</div></div>');
-	print("</div></div>");
+	print("</div></div>\n");
 }
+
 /*
 *  Affiche le menu des paramètres Geneabank
 *  @param string $pst_administrateur_gbk Compte administrateur Geneabank
@@ -302,8 +308,44 @@ function affiche_parametres_geneabank($pst_administrateur_gbk,$pst_mdp_administr
     print('<div class="col-md-8">');
     print("<input type=text maxlength=100 size=40 name=url_index_geneabank id=url_index_geneabank value=\"$pst_url_index_geneabank\" class=\"form-control\">");
     print('</div></div>');
-	print("</div></div>");
+	print("</div></div>\n");
 }
+
+/*
+*  Affiche le menu des paramètres Mail SMTP
+*  @param string $pst_serveur_smtp nom du serveur
+*  @param string $pst_utilisateur_smtp utilisateur SMTP
+*  @param string $pst_mdp_smtp mot de passe utilisateur SMTP
+*  @param integer $pi_port_smtp port STMP
+*/
+function affiche_parametres_SMTP($pst_serveur_smtp,$pst_utilisateur_smtp,$pst_mdp_smtp,$pi_port_smtp)
+{
+	print('<div class="panel panel-primary">');
+	print("<div class=\"panel-heading\">Param&egrave;tres mail SMTP</div>");
+    print('<div class="panel-body">');
+	print('<div class="form-group row">');
+    print("<label for=\"serveur_smtp\" class=\"col-md-4 col-form-label control-label\">Nom du serveur: (Laisser vide si inutilisé)</label>");
+    print('<div class="col-md-8">');
+    print("<input type=text maxlength=20 size=20 name=serveur_smtp id=serveur_smtp value=\"$pst_serveur_smtp\" class=\"form-control\">");
+    print('</div></div>');
+	print('<div class="form-group row">');
+    print("<label for=\"utilisateur_smtp\" class=\"col-md-4 col-form-label control-label\">Utilisateur SMTP: (Laisser vide si inutilisé)</label>");
+    print('<div class="col-md-8">');
+    print("<input type=text maxlength=20 size=20 name=utilisateur_smtp id=utilisateur_smtp value=\"$pst_utilisateur_smtp\" class=\"form-control\">");
+    print('</div></div>');
+	print('<div class="form-group row">');
+    print("<label for=\"mdp_smtp\" class=\"col-md-4 col-form-label control-label\">Mot de passe de l'utilisateur SMTP: (Laisser vide si inutilisé)</label>");
+    print('<div class="col-md-8">');
+    print("<input type=text maxlength=20 size=20 name=mdp_smtp id=mdp_smtp value=\"$pst_mdp_smtp\" class=\"form-control\">");
+    print('</div></div>');
+	print('<div class="form-group row">');
+	print("<label for=\"port_smtp\" class=\"col-md-4 col-form-label control-label\">Port SMTP:</label>");
+    print('<div class="col-md-8">');
+    print("<input type=text maxlength=20 size=20 name=port_smtp id=port_smtp value=\"$pi_port_smtp\" class=\"form-control\">");
+    print('</div></div>');		
+	print("</div></div>\n");
+}
+
 /*
 * Affiche le menu de configuration
 *  @param string $pst_url_site Adresse du site
@@ -319,18 +361,23 @@ function affiche_parametres_geneabank($pst_administrateur_gbk,$pst_mdp_administr
 *  @param string $pst_url_interrogation_geneabank Adresse générale du site Généabank
 *  @param string $pst_url_reponse_geneabank Adresse de réponse à une transaction Généabank
 *  @param string $pst_url_index_geneabank Adresse des index Généabank
+*  @param string $pst_serveur_smtp nom du serveur
+*  @param string $pst_utilisateur_smtp utilisateur SMTP
+*  @param string $pst_mdp_smtp mot de passe utilisateur SMTP
+*  @param integer $pi_port_smtp port STMP
 */
-function affiche_menu_configuration ($pst_url_site,$pst_rep_site,$pst_logo_asso,$pst_url_sortie,$pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd,$pst_administrateur_gbk,$pst_mdp_administrateur_gbk,$pst_url_interrogation_geneabank,$pst_url_reponse_geneabank,$pst_url_index_geneabank)
+function affiche_menu_configuration ($pst_url_site,$pst_rep_site,$pst_logo_asso,$pst_url_sortie,$pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd,$pst_administrateur_gbk,$pst_mdp_administrateur_gbk,$pst_url_interrogation_geneabank,$pst_url_reponse_geneabank,$pst_url_index_geneabank,$pst_serveur_smtp,$pst_utilisateur_smtp,$pst_mdp_smtp,$pi_port_smtp)
 {
 	print('<form enctype="multipart/form-data" method="post" action='.$_SERVER['PHP_SELF'].' id="installation">');
 	affiche_parametres_site($pst_url_site,$pst_rep_site,$pst_logo_asso,$pst_url_sortie);
 	affiche_parametres_base($pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd);
 	affiche_parametres_administrateur('','','','');
 	affiche_parametres_geneabank($pst_administrateur_gbk,$pst_mdp_administrateur_gbk,$pst_url_interrogation_geneabank,$pst_url_reponse_geneabank,$pst_url_index_geneabank);
+	affiche_parametres_SMTP($pst_serveur_smtp,$pst_utilisateur_smtp,$pst_mdp_smtp,$pi_port_smtp);
 	print('<div class="form-row col-md-12">'); 
-	print('<button type="submit" class="btn btn-primary  col-md-offset-4 col-md-4""><span class="glyphicon glyphicon-wrench"></span> Sauvegarder les param&egrave;tres</button>'); 
+	print('<button type="submit" class="btn btn-primary  col-md-offset-4 col-md-4"><span class="glyphicon glyphicon-wrench"></span> Sauvegarder les param&egrave;tres</button>'); 
 	print('</div>');
-	print('</form>');
+	print("</form>\n");
 }
 /*
 * Ecrit le fichier de configuration
@@ -350,8 +397,12 @@ function affiche_menu_configuration ($pst_url_site,$pst_rep_site,$pst_logo_asso,
 *  @param string $pst_url_interrogation_geneabank Adresse générale du site Généabank
 *  @param string $pst_url_reponse_geneabank Adresse de réponse à une transaction Généabank
 *  @param string $pst_url_index_geneabank Adresse des index Généabank
+*  @param string $pst_serveur_smtp nom du serveur
+*  @param string $pst_utilisateur_smtp utilisateur SMTP
+*  @param string $pst_mdp_smtp mot de passe utilisateur SMTP
+*  @param integer $pi_port_smtp port STMP
 */
-function ecrit_fichier_de_configuration($pst_fichier_configuration,$pst_url_site,$pst_rep_site,$pst_emails_gestbase,$pst_logo_asso,$pst_url_sortie,$pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd,$pst_administrateur_gbk,$pst_mdp_administrateur_gbk,$pst_url_interrogation_geneabank,$pst_url_reponse_geneabank,$pst_url_index_geneabank)
+function ecrit_fichier_de_configuration($pst_fichier_configuration,$pst_url_site,$pst_rep_site,$pst_emails_gestbase,$pst_logo_asso,$pst_url_sortie,$pst_serveur_bd,$pst_utilisateur_bd,$pst_mdp_utilisateur_bd,$pst_nom_bd,$pst_administrateur_gbk,$pst_mdp_administrateur_gbk,$pst_url_interrogation_geneabank,$pst_url_reponse_geneabank,$pst_url_index_geneabank,$pst_serveur_smtp,$pst_utilisateur_smtp,$pst_mdp_smtp,$pi_port_smtp)
 {
 	$pf = fopen($pst_fichier_configuration, "w");
 	if ($pf===false)
@@ -405,13 +456,10 @@ function ecrit_fichier_de_configuration($pst_fichier_configuration,$pst_url_site
 		fwrite($pf,"\n");
 		fwrite($pf,'$gi_precision_prenom=7;');
 		fwrite($pf,"\n");
-		fwrite($pf,'$gst_serveur_smtp = \'\';');		
-		fwrite($pf,"\n");
-		fwrite($pf,'$gst_utilisateur_smtp = \'\';');		
-		fwrite($pf,"\n");
-		fwrite($pf,'$gst_mdp_smtp = \'\';');		
-		fwrite($pf,"\n");
-		fwrite($pf,'$gi_port_smtp = 587;');		
+		fwrite($pf,"\$gst_serveur_smtp = \"$pst_serveur_smtp\";\n");		
+		fwrite($pf,"\$gst_utilisateur_smtp = \"$pst_utilisateur_smtp\";\n");		
+		fwrite($pf,"\$gst_mdp_smtp = \"$pst_mdp_smtp\";\n");		
+		fwrite($pf,"\$gi_port_smtp = $pi_port_smtp;\n");		
 		fwrite($pf,"\n");
 		fwrite($pf,"\n?>\n");
 		
@@ -435,8 +483,12 @@ if (isset($_POST['nom_bd']))
 	$gst_administrateur_gbk = trim($_POST['administrateur_gbk']);
 	$gst_mdp_administrateur_gbk = trim($_POST['mdp_administrateur_gbk']);
 	$gpst_url_interrogation_geneabank = trim($_POST['url_interrogation_geneabank']);
-	$pst_url_reponse_geneabank = trim($_POST['url_reponse_geneabank']);
-	$pst_url_index_geneabank = trim($_POST['url_index_geneabank']);
+	$gst_url_reponse_geneabank = trim($_POST['url_reponse_geneabank']);
+	$gst_url_index_geneabank = trim($_POST['url_index_geneabank']);
+	$gst_serveur_smtp  = trim($_POST['serveur_smtp']);
+	$gst_utilisateur_smtp = trim($_POST['utilisateur_smtp']);
+	$gst_mdp_smtp = trim($_POST['mdp_smtp']);
+	$gi_port_smtp = (int) $_POST['port_smtp'];
 	
 	$gst_logo_asso='';
 	if (isset($_FILES['logo_asso']['name']))
@@ -468,21 +520,21 @@ if (isset($_POST['nom_bd']))
 		else
 			print("<div class=\"alert alert-error\">Impossible de supprimer les anciennes tables</div>"); 
 	}
-	ecrit_fichier_de_configuration($gst_fichier_configuration,$gst_url_site,$gst_rep_site,$gst_email_administrateur,$gst_logo_asso,$gst_url_sortie,$gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_administrateur_gbk,$gst_mdp_administrateur_gbk,$gst_url_interrogation_geneabank,$gst_url_reponse_geneabank,$gst_url_index_geneabank);
+	ecrit_fichier_de_configuration($gst_fichier_configuration,$gst_url_site,$gst_rep_site,$gst_email_administrateur,$gst_logo_asso,$gst_url_sortie,$gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_administrateur_gbk,$gst_mdp_administrateur_gbk,$gst_url_interrogation_geneabank,$gst_url_reponse_geneabank,$gst_url_index_geneabank,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);
 	$b_erreur=false;
 	foreach (glob("sql/*.sql") as $st_fichier)
 	{
 		$st_requete = file_get_contents($st_fichier);
 		$sth = $connexionBD->prepare($st_requete);
 		if (!$sth) { 
-			print("<div class=\"alert alert-danger\">Impossible de cr&eacute;er la table $st_fichier</div>"); 
+			print("<div class=\"alert alert-danger\">Impossible de cr&eacute;er la table $st_fichier</div>\n"); 
 			print_r($dbh->errorInfo());
 			$b_erreur=true;
 			continue;
 		}
 		if ($sth->execute())
 		{
-			print("<div class=\"alert alert-success\">Table $st_fichier cr&eacute;e</div>"); 
+			print("<div class=\"alert alert-success\">Table $st_fichier cr&eacute;e</div>\n"); 
 		}
 	}
 	if (!$b_erreur)
@@ -495,15 +547,15 @@ if (isset($_POST['nom_bd']))
 		$st_requete =  "insert into adherent(idf,ident,prenom,nom,email_perso,email_forum,mdp,statut,annee_cotisation,date_premiere_adhesion,date_paiement,confidentiel,prix,infos_agc,type_origine,description_origine,jeton_paiement,clef_nouveau_mdp) values(1,1,:prenom,:nom,:email_perso,:email_forum,:mdp,'I',:annee_cotisation,:date_premiere_adhesion,:date_paiement,:confidentiel,:prix,:infos_agc,:type_origine,:description_origine,:jeton_paiement,:clef_nouveau_mdp)";
 		$sth = $connexionBD->prepare($st_requete);
 		if (!$sth) { 
-			print("<div class=\"alert alert-danger\">Impossible de cr&eacute;er l'adh&eacute;rent</div>"); 
+			print("<div class=\"alert alert-danger\">Impossible de cr&eacute;er l'adh&eacute;rent</div>\n"); 
 			print_r($dbh->errorInfo());
 			$b_erreur=true;		
 		} 
 		if ($sth->execute(array(':prenom'=>utf8_vers_cp1252($gst_prenom_administrateur),':nom'=>utf8_vers_cp1252($gst_nom_administrateur),':email_perso'=>utf8_vers_cp1252($gst_email_administrateur),':email_forum'=>utf8_vers_cp1252($gst_email_administrateur),':mdp'=>$st_mdp_hash,':annee_cotisation'=>$i_annee_adhesion,':date_premiere_adhesion'=>$st_date_premiere_adhesion,':date_paiement'=>$st_date_premiere_adhesion,':confidentiel'=>'O',':prix'=>15,':infos_agc'=>'',':type_origine'=>0,':description_origine'=>0,':jeton_paiement'=>'',':clef_nouveau_mdp'=>0)))
-			print("<div class=\"alert alert-success\">L'adh&eacute;rent a &eacute;t&eacute; cr&eacute;&eacute;</div>");
+			print("<div class=\"alert alert-success\">L'adh&eacute;rent a &eacute;t&eacute; cr&eacute;&eacute;</div>\n");
 		else
 		{	
-			print("<div class=\"alert alert-danger\">Impossible de cr&eacute;er l'adh&eacute;rent</div>");
+			print("<div class=\"alert alert-danger\">Impossible de cr&eacute;er l'adh&eacute;rent</div>\n");
 		$b_erreur=true;
 		}
 	}
@@ -526,13 +578,13 @@ if (isset($_POST['nom_bd']))
 		print("<div class=\"alert alert-success\">Compte administrateur cr&eacute;&eacute;</div>");
 		print('<div class="form-group row">');
 		print("<a href=\"Configuration.php\" class=\"btn btn-info\" role=\"button\">Personnaliser les param&egrave;tres</a>");
-		print('</div>');
+		print("</div>\n");
 		
 	}
 }
 else
 {	
-	affiche_menu_configuration($gst_url_site,$gst_rep_site,$gst_logo_association,$gst_url_sortie,$gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_administrateur_gbk,$gst_mdp_administrateur_gbk,$gst_url_interrogation_geneabank,$gst_url_reponse_geneabank,$gst_url_index_geneabank);	
+	affiche_menu_configuration($gst_url_site,$gst_rep_site,$gst_logo_association,$gst_url_sortie,$gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd,$gst_administrateur_gbk,$gst_mdp_administrateur_gbk,$gst_url_interrogation_geneabank,$gst_url_reponse_geneabank,$gst_url_index_geneabank,$gst_serveur_smtp,$gst_utilisateur_smtp,$gst_mdp_smtp,$gi_port_smtp);	
 }
 print('</div></body></html>');
 ?>
