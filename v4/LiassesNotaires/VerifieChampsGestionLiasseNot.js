@@ -29,6 +29,7 @@ function VerifieChamps(Formulaire){
 	var selectElmt = document.getElementById('dept_depose');
 	var dept_depose_ad = selectElmt.options[selectElmt.selectedIndex].value;
 	var ListeErreurs	= "";
+	alert("test");
 	if( mode_enr == 'A' ){
 		var numero = document.forms[Formulaire].numero.value;
 		if( numero == '' ) {
