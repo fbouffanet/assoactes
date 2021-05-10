@@ -177,7 +177,7 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 		print('checked>');
 	else
 		print('unchecked>');
-	print("</div></div></div>");
+	print("</div></div>");
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label for='dept_depose_ad' class='col-form-label'>Département&nbsp</label></div>".
 		  "<div class='form-group col-md-3' align='left'><select name='dept_depose_ad' id=dept_depose_ad class='js-select-avec-recherche form-control'>".
@@ -260,7 +260,7 @@ function menu_ajouter($pconnexionBD, $pa_depts_depose_ad, $pa_formes_liasses)
 	//print("<button type=submit name=\"AJOUTER\" class=\"btn btn-sm btn-warning\" ONCLICK=\"VerifieChamps(0)\">");
 	//print("    <span class=\"glyphicon glyphicon-floppy-save\"></span>  Ajouter</button>");
 	print('</div>');
-	print('</form></div></div>');
+	print('</form></div>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
 	print('<button type=submit name=LISTE class="btn btn-sm btn-primary">');
