@@ -27,7 +27,7 @@ function menu_liste($pconnexionBD)
 	print('<tr class="ligne_paire"><td rowspan="4" width="500" align="left">');
 	print("<div class=\"row text-left\">");
 	print('<label for="serie_liasse" class="col-form-label">Série de liasses&nbsp&nbsp</label>');
-	print(             "<select name='serie_liasse' id='serie_liasse' onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
+	print(             "<select name='serie_liasse' id=serie_liasse onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
 		                    chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select>");
 	if( $st_serie_liasse == "L") {
 		print("Ces répertoires sont issus de la série L qui regroupe tous les actes de l’administration entre 1789 et l’an VIII. ");
@@ -167,12 +167,12 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 		print( 		$_SESSION['init_cent'] == 'z' ? '0' : $_SESSION['init_cent']);
 		print( 		$_SESSION['init_dix'] == 'z' ? '0' : $_SESSION['init_dix']);
 		print( 		"</div>");
-		print(		"<div class='form-group col-md-1'><input type=text name='numero' id='numero' size=1 maxlength='1' width='20' value='' class='form-control'></div></div>");
+		print(		"<div class='form-group col-md-1'><input type=text name='numero' id=numero size=1 maxlength='1' width='20' value='' class='form-control'></div></div>");
 	}
 	print('<div class="form-row col-md-12">'.
 		  '<div class="form-group col-md-4" align="right"><label for="depose_ad" class="col-form-label">Déposée aux AD&nbsp</label></div>'.
 		  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
-		  '<input type="checkbox" class="form-check-input" name="depose_ad" id="depose_ad" value="1" ');
+		  '<input type="checkbox" class="form-check-input" name="depose_ad" id=depose_ad value="1" ');
 	if($pi_depose_ad == 1)
 		print('checked>');
 	else
@@ -180,12 +180,12 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 	print("</div></div></div>");
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label for='dept_depose_ad' class='col-form-label'>Département&nbsp</label></div>".
-		  "<div class='form-group col-md-3' align='left'><select name='dept_depose_ad' id='dept_depose_ad' class='js-select-avec-recherche form-control'>".
+		  "<div class='form-group col-md-3' align='left'><select name='dept_depose_ad' id=dept_depose_ad class='js-select-avec-recherche form-control'>".
 		  chaine_select_options($pst_idf_dept_depose_ad,$pa_depts_depose_ad)."</select></div></div>");
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label for='liasse_consult' class='col-form-label'>Liasse consultable&nbsp</label></div>".
 		  "<div class='form-group col-md-1' align='left'><div class='form-check '>".
-		  "<input type='checkbox' class='form-check-input' name='liasse_consult' id='liasse_consult' value='1' ");
+		  "<input type='checkbox' class='form-check-input' name='liasse_consult' id=liasse_consult value='1' ");
 	if($pi_liasse_consult == 1)
 		print("checked>");
 	else
@@ -193,7 +193,7 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 	print("</div></div>");
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label for='forme_liasse' class='col-form-label'>Forme liasse&nbsp</label></div>".
-		  "<div class='form-group col-md-3' align='left'><select name='forme_liasse' id='forme_liasse' class='js-select-avec-recherche form-control'>".
+		  "<div class='form-group col-md-3' align='left'><select name='forme_liasse' id=forme_liasse class='js-select-avec-recherche form-control'>".
 		  chaine_select_options($pi_idf_forme_liasse,$pa_formes_liasses)."</select></div></div>");
 
 	print("<div class='form-row col-md-12'>".
