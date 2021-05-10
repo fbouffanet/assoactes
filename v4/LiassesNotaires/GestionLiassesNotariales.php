@@ -68,7 +68,7 @@ $("#maj_liasses").validate({
 		numero:			{	integer:true,	minlength:1	},
 		depose_ad:		{	depose_avec_dept:true	},
 		dept_depose_ad:	{	dept_avec_depose:true	},
-		forme_liasse:	{	integer:true	minlength:1 },	
+		forme_liasse:	{	integer:true	minlength:1 }	
   },
   messages: {
 		numero:			{	integer: "Le numéro de liasse est obligatoirement un entier"	},
