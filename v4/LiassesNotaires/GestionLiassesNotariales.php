@@ -16,11 +16,102 @@ print("<title>Gestion des actions sur les liasses notariales</title>");
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
-print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
-print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
-print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
-print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
+print("<link href='css/styles.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/bootstrap.min.css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/select2.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='css/select2-bootstrap.min.css' type='text/css' rel='stylesheet'>");
+print("<script src='js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='js/additional-methods.min.js' type='text/javascript'></script>");
+print("<script src='js/jquery-ui.min.js' type='text/javascript'></script>");
+print("<script src='js/select2.min.js' type='text/javascript'></script>");
+print("<script src='js/bootstrap.min.js' type='text/javascript'></script>");
 print("<script src='./VerifieChampsGestionLiasseNot.js' type='text/javascript'></script>");
+?>
+<script type='text/javascript'>
+$(document).ready(function() {
+	
+$.fn.select2.defaults.set( "theme", "bootstrap" );
+	
+$(".js-select-avec-recherche").select2();
+
+jQuery.validator.addMethod(
+    "depose_avec_dept",
+    function(value, element) {
+		var check = false;
+		if ($(element).is(':checked'))	{
+			check = $('#dept_depose_ad').val()!='';
+		}
+		return this.optional(element) || check;
+    },
+    "Le département doit être renseigné pour une liasse déposée aux AD"
+);
+
+jQuery.validator.addMethod(
+    "dept_avec_depose",
+    function(value, element) {
+		var check = false;
+		if ($(element).val()!='')	{
+			check = $('#dept_depose_ad').is(':checked');
+		}
+		return this.optional(element) || check;
+    },
+    "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"
+);
+
+
+$("#maj_liasses").validate({
+  rules: {
+		numero:			{	integer:true,	minlength:1	},
+		depose_ad:		{	depose_avec_dept:true	},
+		dept_depose_ad:	{	dept_avec_depose:true	},
+		forme_liasse:	{	integer:true	minlength:1 },	
+  },
+  messages: {
+		numero:			{	integer: "Le numéro de liasse est obligatoirement un entier"	},
+		depose_ad:		{	integer: "Le département doit être renseigné pour une liasse déposée aux AD"	},
+		dept_depose_ad:	{	annee_min_sans_periode: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
+		forme_liasse:	{	notaire_sans_notaire: "La forme de la liasse est obligatoire"	}
+  },
+  errorElement: "em",
+  errorPlacement: function ( error, element ) {
+	// Add the `help-block` class to the error element
+	error.addClass( "help-block" );
+
+	// Add `has-feedback` class to the parent div.form-group
+	// in order to add icons to inputs
+	element.parents( ".lib_erreur" ).addClass( "has-feedback" );
+
+	if ( element.prop( "type" ) === "checkbox" )	{	error.insertAfter( element.parent( "label" ) );	} 
+	else 											{	error.insertAfter( element );					}
+
+	// Add the span element, if doesn't exists, and apply the icon classes to it.
+	if ( !element.next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-remove form-control-feedback'></span>" ).insertAfter( element );
+		}
+	},
+	success: function ( label, element ) {
+		// Add the span element, if doesn't exists, and apply the icon classes to it.
+		if ( !$( element ).next( "span" )[ 0 ] ) {
+			$( "<span class='glyphicon glyphicon-ok form-control-feedback'></span>" ).insertAfter( $( element ) );
+		}
+	},
+	highlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".lib_erreur" ).addClass( "has-error" ).removeClass( "has-success" );
+		$( element ).next( "span" ).addClass( "glyphicon-remove" ).removeClass( "glyphicon-ok" );
+	},
+	unhighlight: function ( element, errorClass, validClass ) {
+		$( element ).parents( ".lib_erreur" ).addClass( "has-success" ).removeClass( "has-error" );
+		$( element ).next( "span" ).addClass( "glyphicon-ok" ).removeClass( "glyphicon-remove" );
+	}
+});
+
+});
+</script>
+<?php
 print('</head>');
 print("<body>");
 print('<div class="container">');
