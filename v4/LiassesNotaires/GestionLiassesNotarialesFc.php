@@ -216,12 +216,10 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 									 "       idf_forme_liasse, info_complementaires ".
 									 "from liasse ".
 									 "where cote_liasse='".$pst_cote_liasse."'");
-	print('<div align=center>');
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading">Liasses notariales</div>');
 	print('<div class="panel-body">');
 	print('<form id=maj_liasses method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
-	//print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
 	print('<div align=center><input type=hidden name=mode value="MODIFIER">');
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
 	menu_edition($st_cote, $st_libelle, $st_periodes, $st_notaires, $i_depose_ad, $st_idf_dept_depose_ad, $pa_depts_depose_ad, 
@@ -229,10 +227,8 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 	print("</div>");
 	print("<div align=center><br>");
 	print('<button type=submit name="MODIFIER" class="btn btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
-	//print("<button type=submit name=\"MODIFIER\" class=\"btn btn-sm btn-warning\" ONCLICK=\"VerifieChamps(0)\">");
-	//print("    <span class=\"glyphicon glyphicon-floppy-save\"></span>  Modifier</button>");
 	print('</div>');
-	print('</form></div></div></div>');
+	print('</form></div></div>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
 	print('<button type=submit name=LISTE class="btn btn-sm btn-primary">');
@@ -251,16 +247,13 @@ function menu_ajouter($pconnexionBD, $pa_depts_depose_ad, $pa_formes_liasses)
 	print('<div class="panel-heading" align="center">Liasses notariales</div>');
 	print('<div class="panel-body">');
 	print('<form id="maj_liasses" method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
-	//print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
 	print("<div align='center'><input type='hidden' name='mode' value='AJOUTER'>");
 	menu_edition('', '', '', '', 0, '', $pa_depts_depose_ad, 0, 0, $pa_formes_liasses, '', 'A');
 	print("</div>");
 	print("<div align=center><br>");
 	print('<button type=submit name="AJOUTER" class="btn btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
-	//print("<button type=submit name=\"AJOUTER\" class=\"btn btn-sm btn-warning\" ONCLICK=\"VerifieChamps(0)\">");
-	//print("    <span class=\"glyphicon glyphicon-floppy-save\"></span>  Ajouter</button>");
 	print('</div>');
-	print('</form></div>');
+	print('</form></div></div>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
 	print('<button type=submit name=LISTE class="btn btn-sm btn-primary">');
