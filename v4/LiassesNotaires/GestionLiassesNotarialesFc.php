@@ -190,7 +190,7 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 		print('checked>');}
 	else {
 		print('unchecked>');}
-	print("</div></div></div>");
+	print("</div></div>");
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label for='forme_liasse' class='col-form-label'>Forme liasse&nbsp</label></div>".
 		  "<div class='form-group col-md-3' align='left'><select name='forme_liasse' id=forme_liasse class='js-select-avec-recherche form-control'>".
