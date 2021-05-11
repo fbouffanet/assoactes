@@ -62,8 +62,7 @@ jQuery.validator.addMethod(
     "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"
 );
 
-
-$("#maj_liasses").validate({
+$("#cre_liasses").validate({
   rules: {
 		"numero":			{	"required": true,	"integer":true,	"minlength":1	},
 		"depose_ad":		{	depose_avec_dept:true	},
@@ -72,6 +71,18 @@ $("#maj_liasses").validate({
   },		
   messages: {
 		"numero":			{	integer: "Le numéro de liasse est obligatoirement un entier"	},
+		"depose_ad":		{	integer: "Le département doit être renseigné pour une liasse déposée aux AD"	},
+		"dept_depose_ad":	{	annee_min_sans_periode: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
+		"forme_liasse":		{	notaire_sans_notaire: "La forme de la liasse est obligatoire"	}
+  },
+
+$("#maj_liasses").validate({
+  rules: {
+		"depose_ad":		{	depose_avec_dept:true	},
+		"dept_depose_ad":	{	dept_avec_depose:true	},
+		"forme_liasse":		{	"integer":true	"minlength":1 }	
+  },		
+  messages: {
 		"depose_ad":		{	integer: "Le département doit être renseigné pour une liasse déposée aux AD"	},
 		"dept_depose_ad":	{	annee_min_sans_periode: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
 		"forme_liasse":		{	notaire_sans_notaire: "La forme de la liasse est obligatoire"	}
