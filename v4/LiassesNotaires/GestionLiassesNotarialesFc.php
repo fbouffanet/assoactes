@@ -19,7 +19,8 @@ function menu_liste($pconnexionBD)
 	$st_serie_liasse = $_SESSION['serie_liasse'];
 	unset($_SESSION['liasse']);
 	$a_numerotation_liasses = array("z","1","2","3","4","5","6","7","8","9"); 
-	print("<div align=center><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
+	//print("<div align=center><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChamps(0)\">");
+	print('<div align=center><form  action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading">Liasses notariales</div>');
 	print('<div class="panel-body">');
