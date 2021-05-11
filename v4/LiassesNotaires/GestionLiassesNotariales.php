@@ -74,7 +74,8 @@ $("#cre_liasses").validate({
 		"depose_ad":		{	integer: "Le département doit être renseigné pour une liasse déposée aux AD"	},
 		"dept_depose_ad":	{	annee_min_sans_periode: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
 		"forme_liasse":		{	notaire_sans_notaire: "La forme de la liasse est obligatoire"	}
-  },
+  }
+});
 
 $("#maj_liasses").validate({
   rules: {
@@ -87,7 +88,7 @@ $("#maj_liasses").validate({
 		"dept_depose_ad":	{	annee_min_sans_periode: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
 		"forme_liasse":		{	notaire_sans_notaire: "La forme de la liasse est obligatoire"	}
   }
-});
+})
 
 });
 </script>
