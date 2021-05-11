@@ -147,7 +147,7 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 		print('<div class="form-row col-md-12">'.
 					'<div class="form-group col-md-4" align="right"><label class="col-form-label">Période(s)&nbsp</label></div>'.
 					'<div class="form-group col-md-3" align="left">'.$pst_periodes.'</div>'.
-					"<div class='form-group' align=\"left\"><a href='".$_SERVER['PHP_SELF']."?smode=LISTE_PERIODE&cote_liasse=".$pst_cote."'>".
+					"<div align=\"left\"><a href='".$_SERVER['PHP_SELF']."?smode=LISTE_PERIODE&cote_liasse=".$pst_cote."'>".
 					"<img src='".$st_icone_info."' border=0 alt='détail des périodes'></a></div></div>");
 		print('<div class="form-row col-md-12">'.
 					'<div class="form-group col-md-4" align="right"><label class="col-form-label">Notaire(s)&nbsp</label></div>'.
