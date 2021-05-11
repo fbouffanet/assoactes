@@ -162,10 +162,10 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 		print("<div class='form-row col-md-12'>".
 					"<div class='form-group col-md-4' align='right'><label class='col-form-label'>Numéro de la liasse&nbsp</label></div>".
 					"<div class='form-group col-md-1' align=\"left\">");
-		print( 			$_SESSION['init_dixm'] == 'z' ? '0' : $_SESSION['init_dixm']);
-		print( 			$_SESSION['init_mill'] == 'z' ? '0' : $_SESSION['init_mill']);
-		print( 			$_SESSION['init_cent'] == 'z' ? '0' : $_SESSION['init_cent']);
-		print( 			$_SESSION['init_dix'] == 'z' ? '0' : $_SESSION['init_dix']);
+		print( 		$_SESSION['init_dixm'] == 'z' ? '0' : $_SESSION['init_dixm']);
+		print( 		$_SESSION['init_mill'] == 'z' ? '0' : $_SESSION['init_mill']);
+		print( 		$_SESSION['init_cent'] == 'z' ? '0' : $_SESSION['init_cent']);
+		print( 		$_SESSION['init_dix'] == 'z' ? '0' : $_SESSION['init_dix']);
 		print( 		"</div>");
 		print(		"<div class='form-group col-md-1'><input type=text name='numero' id=numero size=1 maxlength='1' width='20' value='' class='form-control'></div></div>");
 	}
@@ -217,24 +217,25 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 									 "       idf_forme_liasse, info_complementaires ".
 									 "from liasse ".
 									 "where cote_liasse='".$pst_cote_liasse."'");
+	print('<div align=center>');
 	print('<div class="panel panel-primary">');
-	print(	'<div class="panel-heading">Liasses notariales</div>');
-	print(	'<div class="panel-body">');
-	print(		'<form id=maj_liasses method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
-	print(			'<div align=center><input type=hidden name=mode value="MODIFIER">');
-	print(				"<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
-						menu_edition($st_cote, $st_libelle, $st_periodes, $st_notaires, $i_depose_ad, $st_idf_dept_depose_ad, $pa_depts_depose_ad, 
-									 $i_liasse_consult, $i_idf_forme_liasse, $pa_formes_liasses, $st_info_compl, 'M');
-	print(			"</div>");
-	print(			"<div align=center><br>");
-	print(				'<button type=submit name="MODIFIER" class="btn btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
-	print(			'</div>');
-	print(		'</form></div></div>');
+	print('<div class="panel-heading">Liasses notariales</div>');
+	print('<div class="panel-body">');
+	print('<form id=maj_liasses method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print('<div align=center><input type=hidden name=mode value="MODIFIER">');
+	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
+	menu_edition($st_cote, $st_libelle, $st_periodes, $st_notaires, $i_depose_ad, $st_idf_dept_depose_ad, $pa_depts_depose_ad, 
+                 $i_liasse_consult, $i_idf_forme_liasse, $pa_formes_liasses, $st_info_compl, 'M');
+	print("</div>");
+	print("<div align=center><br>");
+	print('<button type=submit name="MODIFIER" class="btn btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
+	print('</div>');
+	print('</form></div></div></div>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print(	"<div align=center><input type=hidden name=mode value=\"LISTE\">");
-	print(		'<button type=submit name=LISTE class="btn btn-sm btn-primary">');
-	print(		'<span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
-	print(	'</div>');
+	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
+	print('<button type=submit name=LISTE class="btn btn-sm btn-primary">');
+	print('<span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
+	print('</div>');
 	print('</form>');
 }
 
@@ -245,21 +246,21 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 function menu_ajouter($pconnexionBD, $pa_depts_depose_ad, $pa_formes_liasses)
 {
 	print('<div class="panel panel-primary">');
-	print(	'<div class="panel-heading" align="center">Liasses notariales</div>');
-	print(	'<div class="panel-body">');
-	print(		'<form id="maj_liasses" method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
-	print(			"<div align='center'><input type='hidden' name='mode' value='AJOUTER'>");
-						menu_edition('', '', '', '', 0, '', $pa_depts_depose_ad, 0, 0, $pa_formes_liasses, '', 'A');
-	print(			"</div>");
-	print(			"<div align=center><br>");
-	print(				'<button type=submit name="AJOUTER" class="btn btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
-	print(			'</div>');
-	print(		'</form></div></div>');
+	print('<div class="panel-heading" align="center">Liasses notariales</div>');
+	print('<div class="panel-body">');
+	print('<form id="maj_liasses" method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print("<div align='center'><input type='hidden' name='mode' value='AJOUTER'>");
+	menu_edition('', '', '', '', 0, '', $pa_depts_depose_ad, 0, 0, $pa_formes_liasses, '', 'A');
+	print("</div>");
+	print("<div align=center><br>");
+	print('<button type=submit name="AJOUTER" class="btn btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
+	print('</div>');
+	print('</form></div>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print(	"<div align=center><input type=hidden name=mode value=\"LISTE\">");
-	print(		'<button type=submit name=LISTE class="btn btn-sm btn-primary">');
-	print(		'<span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
-	print(	'</div>');
+	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
+	print('<button type=submit name=LISTE class="btn btn-sm btn-primary">');
+	print('<span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
+	print('</div>');
 	print('</form>');
 }
 
