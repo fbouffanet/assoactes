@@ -198,7 +198,7 @@ function menu_edition($pst_cote, $pst_libelle, $pst_periodes, $pst_notaires,
 
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Informations complémentaires&nbsp</label></div>".
-		  "<div class='form-group col-md-4'><textarea class='form-control' rows='7' maxlength=1000 name='info_compl'>".$pst_info_compl."</textarea></div></div>");
+		  "<div class='form-group col-md-4' align='left'><textarea class='form-control' rows='7' maxlength=1000 name='info_compl'>".$pst_info_compl."</textarea></div></div>");
 }
 
 /** Affiche le menu de modification d'une commune
