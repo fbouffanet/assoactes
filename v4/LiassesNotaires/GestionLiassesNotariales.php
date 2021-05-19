@@ -59,7 +59,7 @@ jQuery.validator.addMethod(
 );
 
 $("#btRetour").click(function() {
-    $("#mode").val('LISTE'); 
+    window.location = "http://www.mozilla.org";mode").val('LISTE'); 
 	});
 	
 $("#btAjouterLiasse").click(function() {
@@ -75,7 +75,7 @@ $("#btModLiasse").click(function() {
 	});
 
 $("#btCreLiasse").click(function() {
-    $("#mode").val('MODIFIER'); 
+    $("#mode").val('AJOUTER'); 
 	});
 	
 

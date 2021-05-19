@@ -234,16 +234,11 @@ function menu_ajouter($pconnexionBD, $pa_depts_depose_ad, $pa_formes_liasses)
 	print("<div align='center'><input type='hidden' name='mode' value='AJOUTER'>");
 	menu_edition('', '', '', '', 0, '', $pa_depts_depose_ad, 0, 0, $pa_formes_liasses, '', 'A');
 	print("</div>");
-	print("<div align=center><br>");
-	print('<button type=submit name="AJOUTER" class="btn btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+	print('<button type=submit id=btCreLiasse class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
+	print('<button type=submit formnovalidate id=btRetour class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
 	print('</div>');
 	print('</form></div></div>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
-	print('<button type=submit name=LISTE class="btn btn-sm btn-primary">');
-	print('<span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
-	print('</div>');
-	print('</form>');
 }
 
 /** Elimine les éventuels \ du texte et remplace les ' par \'
