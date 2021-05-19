@@ -34,10 +34,6 @@ print("<script src='./VerifieChampsGestionLiasseNot.js' type='text/javascript'><
 <script type='text/javascript'>
 $(document).ready(function() {
 	
-$.fn.select2.defaults.set( "theme", "bootstrap" );
-	
-$(".js-select-avec-recherche").select2();
-
 jQuery.validator.addMethod(
     "depose_avec_dept",
     function(value, element) {
@@ -79,14 +75,14 @@ $("#cre_liasses").validate({
 
 $("#maj_liasses").validate({
   rules: {
-		"depose_ad":		{	depose_avec_dept:true	},
-		"dept_depose_ad":	{	dept_avec_depose:true	},
-		"forme_liasse":		{	"integer":true	"minlength":1 }	
+		depose_ad:		{ depose_avec_dept:true },
+		dept_depose_ad:	{ dept_avec_depose:true },
+		forme_liasse:	{ required: true }	
   },		
   messages: {
-		"depose_ad":		{	integer: "Le département doit être renseigné pour une liasse déposée aux AD"	},
-		"dept_depose_ad":	{	annee_min_sans_periode: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
-		"forme_liasse":		{	notaire_sans_notaire: "La forme de la liasse est obligatoire"	}
+		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
+		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
+		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
   }
 });
 
