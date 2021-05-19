@@ -30,13 +30,13 @@ function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition(2);
+		$pagination->affiche_tableau_edition_sil(2);
 		$pagination->affiche_entete_liens_navigation();      
 	}
 	else
 		print("<div align=center>Pas de période</div>\n");
 	print("</div></div>");
-	print('<div class="btn-group col-md-6 col-md-offset-2" role="group">');
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
 	print("<button type=submit id=btSupprimerPeriode class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPeriodes(0,'supp[]')\">");
 	print("    <span class=\"glyphicon glyphicon-trash\"></span> Supprimer les périodes sélectionnées</button>");
 	print('<button type=submit id=btAjouterPeriode class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter une période</button>');
