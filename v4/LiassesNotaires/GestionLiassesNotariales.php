@@ -58,6 +58,19 @@ jQuery.validator.addMethod(
     "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"
 );
 
+$("#btRetour").click(function() {
+    $("#mode").val('LISTE'); 
+	});
+	
+$("#btModLiasse").click(function() {
+    $("#mode").val('MODIFIER'); 
+	});
+
+$("#btCreLiasse").click(function() {
+    $("#mode").val('MODIFIER'); 
+	});
+	
+
 $("#cre_liasses").validate({
   rules: {
 		numero:			{ required: true,	integer:true },
