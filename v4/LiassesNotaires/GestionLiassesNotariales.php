@@ -161,7 +161,7 @@ $a_serie_liasse[0] = '';
 require_once('GestionLiassesNotarialesFc.php');
 require_once('GestionLiassesNotarialesFcPeriodes.php');
 require_once('GestionLiassesNotarialesFcNotaires.php');
-print("mode : ".$gst_mode);
+
 switch ($gst_mode) {
 	case 'LISTE' : 
 		menu_liste($connexionBD); 
