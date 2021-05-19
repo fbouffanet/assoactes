@@ -64,16 +64,16 @@ jQuery.validator.addMethod(
 
 $("#cre_liasses").validate({
   rules: {
-		"numero":			{	"required": true,	"integer":true,	"minlength":1	},
-		"depose_ad":		{	depose_avec_dept:true	},
-		"dept_depose_ad":	{	dept_avec_depose:true	},
-		"forme_liasse":		{	"integer":true	"minlength":1 }	
+		numero:			{ required: true,	integer:true },
+		depose_ad:		{ depose_avec_dept:true },
+		dept_depose_ad:	{ dept_avec_depose:true },
+		forme_liasse:	{ required: true }	
   },		
   messages: {
-		"numero":			{	integer: "Le numéro de liasse est obligatoirement un entier"	},
-		"depose_ad":		{	integer: "Le département doit être renseigné pour une liasse déposée aux AD"	},
-		"dept_depose_ad":	{	annee_min_sans_periode: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
-		"forme_liasse":		{	notaire_sans_notaire: "La forme de la liasse est obligatoire"	}
+		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
+		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
+		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
+		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
   }
 });
 
