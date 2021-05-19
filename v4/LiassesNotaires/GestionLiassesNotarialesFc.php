@@ -213,13 +213,13 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
 	menu_edition($st_cote, $st_libelle, $st_periodes, $st_notaires, $i_depose_ad, $st_idf_dept_depose_ad, $pa_depts_depose_ad, 
                  $i_liasse_consult, $i_idf_forme_liasse, $pa_formes_liasses, $st_info_compl, 'M');
-	print("</div></div>");
+	print("</div></div></div>");
 	print("<div> <br><br></div>");
 	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
 	print('<button type=submit id=btModLiasse class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
 	print('<button type=submit formnovalidate id=btRetour class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
 	print('</div>');
-	print('</form></div>');
+	print('</form>');
 }
 
 /** Affiche le menu d'ajout d'une liasse
