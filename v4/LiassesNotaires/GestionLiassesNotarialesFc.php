@@ -86,7 +86,9 @@ function menu_liste($pconnexionBD)
 				  "where cote_liasse like '$st_serie_liasse-$numero%' ".
 				  "order by cote_liasse";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-  $i_nb_liasses =count($a_liste_liasses);
+	$i_nb_liasses =count($a_liste_liasses);
+  	print("<div align=center><input type=hidden name=mode id=mode value=\"SUPPRIMER\">");
+	print('<div class="btn-group col-md-2 col-md-offset-6" role="group">');
 	if ($i_nb_liasses!=0)
 	{        
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_liasses,
@@ -94,15 +96,13 @@ function menu_liste($pconnexionBD)
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
-		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER\">");
-		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
 		print("<button type=submit id=btSupprimerLiasse class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppression(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span> Supprimer les liasses sélectionnées</button>");
-		print("<button type=submit id=btAjouterLiasse class=\"btn btn-sm btn-success\"><span class=\"glyphicon glyphicon-new-window\"></span> Ajouter une liasse</button>");
-		print('</div>');
 	}
 	else
 		print("<div align=center><br>Pas de liasses</div><br>");
+		print("<button type=submit id=btAjouterLiasse class=\"btn btn-sm btn-success\"><span class=\"glyphicon glyphicon-new-window\"></span> Ajouter une liasse</button>");
+		print('</div>');
 	print("</form>");  
 	print('</div>');  
 }
