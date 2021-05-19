@@ -95,10 +95,9 @@ function menu_liste($pconnexionBD)
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
-		print('<div align=center>');
+		print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
 		print("<button type=submit id=btSupprimerLiasse class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppression(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span> Supprimer les liasses sélectionnées</button>");
-		print("&nbsp;&nbsp;&nbsp;&nbsp;");
 	}
 	else {
 		print("<div align=center><br>Pas de liasses</div><br>");
@@ -215,9 +214,8 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 	menu_edition($st_cote, $st_libelle, $st_periodes, $st_notaires, $i_depose_ad, $st_idf_dept_depose_ad, $pa_depts_depose_ad, 
                  $i_liasse_consult, $i_idf_forme_liasse, $pa_formes_liasses, $st_info_compl, 'M');
 	print("</div>");
-	print('<div align=centre>');
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
 	print('<button type=submit id=btModLiasse class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
-	print('&nbsp;&nbsp;&nbsp;&nbsp;');
 	print('<button type=submit id=btRetour class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
 	print('</div>');
 	print('</form></div></div>');
