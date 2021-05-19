@@ -205,10 +205,10 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 									 "       idf_forme_liasse, info_complementaires ".
 									 "from liasse ".
 									 "where cote_liasse='".$pst_cote_liasse."'");
+	print('<form id=maj_liasses method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading">Liasses notariales</div>');
 	print('<div class="panel-body">');
-	print('<form id=maj_liasses method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
 	print('<div align=center><input type=hidden name=mode id=mode value="MODIFIER">');
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
 	menu_edition($st_cote, $st_libelle, $st_periodes, $st_notaires, $i_depose_ad, $st_idf_dept_depose_ad, $pa_depts_depose_ad, 
