@@ -36,7 +36,7 @@ function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 	else
 		print("<div align=center>Pas de période</div>\n");
 	print("</div></div>");
-	print('<div class="btn-group align=center role="group" align=center>');
+	print('<div class="btn-group col-md-6 col-md-offset-2" role="group">');
 	print("<button type=submit id=btSupprimerPeriode class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPeriodes(0,'supp[]')\">");
 	print("    <span class=\"glyphicon glyphicon-trash\"></span> Supprimer les périodes sélectionnées</button>");
 	print('<button type=submit id=btAjouterPeriode class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter une période</button>');
