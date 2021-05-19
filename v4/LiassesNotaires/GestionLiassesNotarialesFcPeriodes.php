@@ -11,7 +11,7 @@ function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
 
 	print('<div class="panel panel-primary">');
-	print('<div class="panel-heading">Périodes couvertes par la liasse '.$pst_cote_liasse.'</div>');
+	print('<div class="panel-heading" align=center>Périodes couvertes par la liasse '.$pst_cote_liasse.'</div>');
 	print('<div class="panel-body">');
 
 	$st_requete = "select concat('PER', idf) as idf, libelle_periode, ".
@@ -36,7 +36,7 @@ function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 	else
 		print("<div align=center>Pas de période</div>\n");
 	print("</div></div>");
-	print('<div class="btn-group align=center role="group">');
+	print('<div class="btn-group align=center role="group" align=center>');
 	print("<button type=submit id=btSupprimerPeriode class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPeriodes(0,'supp[]')\">");
 	print("    <span class=\"glyphicon glyphicon-trash\"></span> Supprimer les périodes sélectionnées</button>");
 	print('<button type=submit id=btAjouterPeriode class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter une période</button>');
