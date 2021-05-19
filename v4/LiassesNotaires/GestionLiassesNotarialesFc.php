@@ -216,7 +216,7 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 	print("</div>");
 	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
 	print('<button type=submit id=btModLiasse class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
-	print('<button type=submit id=btRetour class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
+	print('<button type=submit formnovalidate id=btRetour class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
 	print('</div>');
 	print('</form></div></div>');
 }
