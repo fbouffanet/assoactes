@@ -95,13 +95,13 @@ function menu_liste($pconnexionBD)
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
-		print('<div class="btn-group col-md-6 col-md-offset-2" role="group">');
+		print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
 		print("<button type=submit id=btSupprimerLiasse class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppression(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span> Supprimer les liasses sélectionnées</button>");
 	}
 	else {
 		print("<div align=center><br>Pas de liasses</div><br>");
-		print('<div class="btn-group col-md-6 col-md-offset-2" role="group">');
+		print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
 	}
 	print("<button type=submit id=btAjouterLiasse class=\"btn btn-sm btn-success\"><span class=\"glyphicon glyphicon-new-window\"></span> Ajouter une liasse</button>");
 	print('</div>');
