@@ -231,7 +231,7 @@ function menu_ajouter($pconnexionBD, $pa_depts_depose_ad, $pa_formes_liasses)
 	print('<div class="panel-heading" align="center">Liasses notariales</div>');
 	print('<div class="panel-body">');
 	print('<form id="cre_liasses" method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
-	print("<div align='center'><input type='hidden' name='mode' value='AJOUTER'>");
+	print("<div align='center'><input type='hidden' name=mode id=mode value='AJOUTER'>");
 	menu_edition('', '', '', '', 0, '', $pa_depts_depose_ad, 0, 0, $pa_formes_liasses, '', 'A');
 	print("</div>");
 	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
