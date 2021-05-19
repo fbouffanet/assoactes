@@ -96,21 +96,14 @@ function menu_liste($pconnexionBD)
 		$pagination->affiche_tableau_edition_sil(2);
 		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER\">");
 		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
-		print("<button type=submit name=Supprimer class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppression(0,'supp[]')\">");
+		print("<button type=submit id=btSupprimerLiasse class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppression(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span> Supprimer les liasses sélectionnées</button>");
+		print("<button type=submit id=btAjouterLiasse class=\"btn btn-sm btn-success\"><span class=\"glyphicon glyphicon-new-window\"></span> Ajouter une liasse</button>");
 		print('</div>');
 	}
 	else
 		print("<div align=center><br>Pas de liasses</div><br>");
 	print("</form>");  
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER\">");  
-	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
-	print("    <span class=\"glyphicon glyphicon-new-window\"></span> Ajouter une liasse</button>");
-	print("</div>");  
-	print('</form>');
-	
-
 	print('</div>');  
 }
 

@@ -62,6 +62,14 @@ $("#btRetour").click(function() {
     $("#mode").val('LISTE'); 
 	});
 	
+$("#btAjouterLiasse").click(function() {
+    $("#mode").val('MENU_AJOUTER'); 
+	});
+	
+$("#btSupprimerLiasse").click(function() {
+    $("#mode").val('SUPPRIMER'); 
+	});
+	
 $("#btModLiasse").click(function() {
     $("#mode").val('MODIFIER'); 
 	});
