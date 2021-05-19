@@ -161,7 +161,7 @@ $a_serie_liasse[0] = '';
 require_once('GestionLiassesNotarialesFc.php');
 require_once('GestionLiassesNotarialesFcPeriodes.php');
 require_once('GestionLiassesNotarialesFcNotaires.php');
-
+print("mode : ".$gst_mode);
 switch ($gst_mode) {
 	case 'LISTE' : 
 		menu_liste($connexionBD); 
@@ -220,7 +220,7 @@ switch ($gst_mode) {
 									$i_idf_forme_liasse.", '".$st_info_compl."')";
 			$connexionBD->execute_requete($st_requete);
 		}
-		//menu_liste($connexionBD);  
+		menu_liste($connexionBD);  
 		break;
 	case 'SUPPRIMER':
 		$a_liste_liasses = $_POST['supp'];
