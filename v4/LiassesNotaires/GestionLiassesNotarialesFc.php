@@ -214,8 +214,9 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 	menu_edition($st_cote, $st_libelle, $st_periodes, $st_notaires, $i_depose_ad, $st_idf_dept_depose_ad, $pa_depts_depose_ad, 
                  $i_liasse_consult, $i_idf_forme_liasse, $pa_formes_liasses, $st_info_compl, 'M');
 	print("</div>");
-	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
-	print('<button type=submit id=btModLiasse class="btn btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
+	print('<div align=centre>');
+	print('<button type=submit id=btModLiasse class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
+	print('&nbsp;&nbsp;&nbsp;&nbsp;');
 	print('<button type=submit id=btRetour class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
 	print('</div>');
 	print('</form></div></div>');
