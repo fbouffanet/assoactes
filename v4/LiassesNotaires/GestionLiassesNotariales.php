@@ -51,7 +51,7 @@ jQuery.validator.addMethod(
     function(value, element) {
 		var check = false;
 		if ($(element).val()!='')	{
-			check = $('#dept_depose_ad').is(':checked');
+			check = $('#depose_ad').is(':checked');
 		}
 		return this.optional(element) || check;
     },
