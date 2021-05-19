@@ -78,6 +78,18 @@ $("#btCreLiasse").click(function() {
     $("#mode").val('AJOUTER'); 
 	});
 	
+b$("#tSupprimerPeriode").click(function() {
+    $("#mode").val('SUPPRIMER_PERIODE'); 
+	});
+
+$("#btAjouterPeriode").click(function() {
+    $("#mode").val('MENU_AJOUTER_PERIODE'); 
+	});
+	
+$("#btRetourLiasse").click(function() {
+    $("#mode").val('MENU_MODIFIER'); 
+	});
+
 
 $("#cre_liasses").validate({
   rules: {

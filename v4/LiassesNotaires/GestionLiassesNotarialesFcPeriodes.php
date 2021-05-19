@@ -7,10 +7,13 @@
 function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 {
 	global $gi_num_page_cour;
-	print("<div class=TITRE>Gestion des liasses notariales</div>");
-	print("<div class=SOUSTITRE>P&eacute;riodes couvertes par la liasse ".$pst_cote_liasse."</div>");
-	print("<div align=center><br><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsPeriode(0)\">");
+	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsPeriode(0)\">");
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
+
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading">Périodes couvertes par la liasse '.$pst_cote_liasse.'</div>');
+	print('<div class="panel-body">');
+
 	$st_requete = "select concat('PER', idf) as idf, libelle_periode, ".
 	              "       date_format(date_debut_periode, '%d/%m/%Y') as date_debut, ".
 				  "       date_format(date_fin_periode, '%d/%m/%Y') as date_fin ".
@@ -18,7 +21,7 @@ function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 				  "      where cote_liasse = '" . $pst_cote_liasse . "' ".
 				  "      order by 2, 1) SEL";
 	$a_liste_periodes = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-  $i_nb_periodes =count($a_liste_periodes);
+	$i_nb_periodes =count($a_liste_periodes);
 	if ($i_nb_periodes!=0)
 	{        
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_periodes,
@@ -31,20 +34,14 @@ function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 		$pagination->affiche_entete_liens_navigation();      
 	}
 	else
-		print("<div align=center>Pas de p&eacute;riode</div>\n");
-	print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_PERIODE\">");
-	print("<input type=button value=\"Supprimer les p&eacute;riodes s&eacute;lectionn&eacute;es\" ".
-	      "       ONCLICK=\"VerifieSuppressionPeriodes(0,'supp[]')\"></div>");   
-	print("</form>");  
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
-	print("<div align=center><br><input type=hidden name=mode value=\"MENU_AJOUTER_PERIODE\">");  
-	print("<input type=submit value=\"Ajouter une p&eacute;riode\"></div>");  
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."?cote_liasse='$pst_cote_liasse'\" method=\"post\">");  
-	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
-	print("<div align=center><br><input type=hidden name=mode value=\"MENU_MODIFIER\">");  
-	print("<input type=submit value=\"Revenir à la liasse\"></div>");  
+		print("<div align=center>Pas de période</div>\n");
+	print("</div></div>");
+	print('<div class="btn-group align=center role="group">');
+	print("<button type=submit id=btSupprimerPeriode class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPeriodes(0,'supp[]')\">");
+	print("    <span class=\"glyphicon glyphicon-trash\"></span> Supprimer les périodes sélectionnées</button>");
+	print('<button type=submit id=btAjouterPeriode class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter une période</button>');
+	print('<button type=submit formnovalidate id=btRetourLiasse class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Revenir à la liasse</button>');
+	print("</div>");
 	print('</form>');
 }
 
