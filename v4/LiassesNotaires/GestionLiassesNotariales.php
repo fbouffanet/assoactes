@@ -220,7 +220,7 @@ switch ($gst_mode) {
 									$i_idf_forme_liasse.", '".$st_info_compl."')";
 			$connexionBD->execute_requete($st_requete);
 		}
-		menu_liste($connexionBD);  
+		//menu_liste($connexionBD);  
 		break;
 	case 'SUPPRIMER':
 		$a_liste_liasses = $_POST['supp'];
