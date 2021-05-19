@@ -214,7 +214,7 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
 	print('<div class="panel-body">');
 	menu_edition($st_cote, $st_libelle, $st_periodes, $st_notaires, $i_depose_ad, $st_idf_dept_depose_ad, $pa_depts_depose_ad, 
                  $i_liasse_consult, $i_idf_forme_liasse, $pa_formes_liasses, $st_info_compl, 'M');
-	print("</div></div>bipbip");
+	print("</div></div>");
 	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
 	print('<button type=submit id=btModLiasse class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
 	print('<button type=submit formnovalidate id=btRetour class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
@@ -228,19 +228,19 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
  */ 
 function menu_ajouter($pconnexionBD, $pa_depts_depose_ad, $pa_formes_liasses)
 {
+	print('<form id="cre_liasses" method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print("<input type='hidden' name=mode id=mode value='AJOUTER'>");
+	
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading" align="center">Liasses notariales</div>');
 	print('<div class="panel-body">');
-	print('<form id="cre_liasses" method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
-	print("<div align='center'><input type='hidden' name=mode id=mode value='AJOUTER'>");
 	menu_edition('', '', '', '', 0, '', $pa_depts_depose_ad, 0, 0, $pa_formes_liasses, '', 'A');
-	print("</div>");
-	print("<div> <br><br></div>");
+	print("<div></div>");
 	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
 	print('<button type=submit id=btCreLiasse class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
 	print('<button type=submit formnovalidate id=btRetour class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
 	print('</div>');
-	print('</form></div></div>');
+	print('</form>');
 }
 
 /** Elimine les éventuels \ du texte et remplace les ' par \'
