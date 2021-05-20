@@ -78,16 +78,16 @@ $("#btCreLiasse").click(function() {
     $("#mode").val('AJOUTER'); 
 	});
 	
-b$("#tSupprimerPeriode").click(function() {
+b$("#tSupPeriode").click(function() {
     $("#mode").val('SUPPRIMER_PERIODE'); 
 	});
 
-$("#btAjouterPeriode").click(function() {
+$("#btAjoPeriode").click(function() {
 	alert('ajouter');
     $("#mode").val('MENU_AJOUTER_PERIODE'); 
 	});
 	
-$("#btRetourLiasse").click(function() {
+$("#btRetLiasse").click(function() {
     $("#mode").val('MENU_MODIFIER'); 
 	});
 
