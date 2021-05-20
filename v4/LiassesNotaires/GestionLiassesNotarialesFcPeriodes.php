@@ -9,7 +9,7 @@ function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 	global $gi_num_page_cour;
 	print('<form  action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
-	print('<input type=hidden name=mode id=mode value="MENU_AJOUTER_PERIODE">');
+	print('<input type=hidden name=mode id=mode value="SUPPRIMER_PERIODE">');
 
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading" align=center>Périodes couvertes par la liasse '.$pst_cote_liasse.'</div>');
