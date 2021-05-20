@@ -7,9 +7,9 @@
 function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 {
 	global $gi_num_page_cour;
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+	print('<form  action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
-	print('<input type=hidden name=mode id=mode value="">');
+	print('<input type=hidden name=mode id=mode value="MENU_AJOUTER_PERIODE">');
 
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading" align=center>Périodes couvertes par la liasse '.$pst_cote_liasse.'</div>');
@@ -40,8 +40,8 @@ function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
 	print("<button type=submit id=btSupprimerPeriode class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPeriodes(0,'supp[]')\">");
 	print("    <span class=\"glyphicon glyphicon-trash\"></span> Supprimer les périodes sélectionnées</button>");
-	print('<button type=submit id="btRetourLiasse" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Revenir à la liasse</button>');
 	print('<button type=submit id="btAjouterPeriode" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter une période</button>');
+	print('<button type=submit id="btRetourLiasse" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Revenir à la liasse</button>');
 	print("</div>");
 	print('</form>');
 }
