@@ -41,7 +41,7 @@ function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 	print("<button type=submit id=btSupprimerPer class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPeriodes(0,'supp[]')\">");
 	print("    <span class=\"glyphicon glyphicon-trash\"></span> Supprimer les périodes sélectionnées</button>");
 	print('<button type=submit id=btAjouterPer class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter une période</button>');
-	print('<button type=submit id=btRetLiasse class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Revenir à la liasse</button>');
+	print('<button type=submit id=btRetourLiasse class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Revenir à la liasse</button>');
 	print("</div>");
 	print('</form>');
 }
