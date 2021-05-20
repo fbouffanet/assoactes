@@ -7,7 +7,7 @@
 function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 {
 	global $gi_num_page_cour;
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsPeriode(0)\">");
+	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
 
 	print('<div class="panel panel-primary">');
