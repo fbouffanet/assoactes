@@ -103,7 +103,7 @@ function menu_liste($pconnexionBD)
 		print("<div align=center><br>Pas de liasses</div><br>");
 		print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
 	}
-	print("<button type=submit id=btAjouterLiasse class=\"btn btn-sm btn-success\"><span class=\"glyphicon glyphicon-new-window\"></span> Ajouter une liasse</button>");
+	print("<button type=submit id=btAjoutLiasse class=\"btn btn-sm btn-success\"><span class=\"glyphicon glyphicon-new-window\"></span> Ajouter une liasse</button>");
 	print('</div>');
 	print("</form>");  
 	print('</div>');  
@@ -216,7 +216,7 @@ function menu_modifier($pconnexionBD, $pst_cote_liasse, $pa_depts_depose_ad, $pa
                  $i_liasse_consult, $i_idf_forme_liasse, $pa_formes_liasses, $st_info_compl, 'M');
 	print("</div></div>");
 	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
-	print('<button type=submit id=btModLiasse class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
+	print('<button type=submit id=btModifierLiasse class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
 	print('<button type=submit formnovalidate id=btRetour class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
 	print('</div>');
 	print('</form>');
@@ -237,7 +237,7 @@ function menu_ajouter($pconnexionBD, $pa_depts_depose_ad, $pa_formes_liasses)
 	menu_edition('', '', '', '', 0, '', $pa_depts_depose_ad, 0, 0, $pa_formes_liasses, '', 'A');
 	print("</div></div>");
 	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
-	print('<button type=submit id=btCreLiasse class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
+	print('<button type=submit id=btAjouterLiasse class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
 	print('<button type=submit formnovalidate id=btRetour class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
 	print('</div>');
 	print('</form>');
