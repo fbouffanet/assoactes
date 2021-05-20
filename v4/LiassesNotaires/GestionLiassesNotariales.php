@@ -226,7 +226,7 @@ $("#maj_periode").validate({
   messages: {
 		annee_debut:	{ required: "Saisir au moins l'année de début de période", 
 						  annee_valide: "L'année doit être soit une année révolutionaire (an I, an II, ...), soit une année sur 4 chiffres"	},
-		mois_debut:		{ mois_debut: "Incohérence entre l'année et le mois", annee_mois_debut: 	},                                                                                              
+		mois_debut:		{ mois_debut: "Incohérence entre l'année et le mois" },                                                                                              
 		annee_fin:		{ annee_valide: "L'année doit être soit une année révolutionaire (an I, an II, ...), soit une année sur 4 chiffres"	},
 		mois_fin:		{ mois_fin: "Incohérence entre l'année et le mois", annee_mois_fin: "Saisir l'année de fin" }
   }
