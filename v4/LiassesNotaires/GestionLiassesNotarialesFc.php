@@ -76,9 +76,7 @@ function menu_liste($pconnexionBD)
 		else								print("<a href=\"".$_SERVER['PHP_SELF']."?init_dix=$c_init_dix\">$c_init_dix</a> ");
 	}
 	print('</td><td align="left">&nbsp&nbsp&nbsp<I>dizaine</I></td></tr></table>');
-	print('</div></div>');		print("<button type=submit id=btSupprimerLiasse class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppression(0,'supp[]')\">");
-		print("    <span class=\"glyphicon glyphicon-trash\"></span> Supprimer les liasses sélectionnées</button>");
-
+	print('</div></div>');
 	$numero  = $gc_init_dixm == 'z' ? '0' : $gc_init_dixm;
 	$numero .= $gc_init_mill == 'z' ? '0' : $gc_init_mill;
 	$numero .= $gc_init_cent == 'z' ? '0' : $gc_init_cent;
@@ -98,6 +96,8 @@ function menu_liste($pconnexionBD)
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
 		print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+		print("<button type=submit id=btSupprimerLiasse class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppression(0,'supp[]')\">");
+		print("    <span class=\"glyphicon glyphicon-trash\"></span> Supprimer les liasses sélectionnées</button>");
 	}
 	else {
 		print("<div align=center><br>Pas de liasses</div><br>");
