@@ -84,6 +84,21 @@ jQuery.validator.addMethod(
 );
 
 jQuery.validator.addMethod(
+    "annee_mois_fin",
+    function(value, element) {
+		var check = true;
+		var mois = $(element).val();
+		var annee = $('#annee_fin').val();
+		if ( mois != "" )   {
+			if( annee == '' ) {
+					check=false;
+			}
+		return this.optional(element) || check;
+    },
+    "Saisir l'année de fin"
+);
+
+jQuery.validator.addMethod(
     "mois_debut",
     function(value, element) {
 		var check = true;
@@ -204,16 +219,16 @@ $("#maj_liasses").validate({
 $("#maj_periode").validate({
   rules: {
 		annee_debut:	{ required:true, annee_valide:true },
-		mois_debut:		{ mois_debut:true},
+		mois_debut:		{ mois_debut:true },
 		annee_fin:		{ annee_valide:true },
-		mois_fin:		{ mois_fin:true }	
+		mois_fin:		{ mois_fin:true, annee_mois_fin:true }	
   },		
   messages: {
 		annee_debut:	{ required: "Saisir au moins l'année de début de période", 
 						  annee_valide: "L'année doit être soit une année révolutionaire (an I, an II, ...), soit une année sur 4 chiffres"	},
-		mois_debut:		{ mois_debut: "Incohérence entre l'année et le mois"	},                                                                                              
+		mois_debut:		{ mois_debut: "Incohérence entre l'année et le mois", annee_mois_debut: 	},                                                                                              
 		annee_fin:		{ annee_valide: "L'année doit être soit une année révolutionaire (an I, an II, ...), soit une année sur 4 chiffres"	},
-		mois_fin:		{ mois_fin: "Incohérence entre l'année et le mois" }
+		mois_fin:		{ mois_fin: "Incohérence entre l'année et le mois", annee_mois_fin: "Saisir l'année de fin" }
   }
 });
 
