@@ -93,6 +93,7 @@ jQuery.validator.addMethod(
 			if( annee == '' ) {
 					check=false;
 			}
+		}
 		return this.optional(element) || check;
     },
     "Saisir l'année de fin"
