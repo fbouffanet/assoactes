@@ -249,6 +249,15 @@ $("#maj_periode").validate({
   }
 });
 
+$("#maj_notaire").validate({
+  rules: {
+		nom:	{ required:true }
+  },		
+  messages: {
+		nom:	{ required: "Saisir au moins le nom du notaire"	}
+  }
+});
+
 });
 </script>
 <?php
