@@ -126,7 +126,7 @@ function menu_modifier_notaire($pconnexionBD, $pst_cote_liasse, $pi_idf_notaire,
  */ 
 function menu_ajouter_notaire($pst_cote_liasse, $pa_communes)
 {
-	print('<form id=maj_periode method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print('<form id=maj_notaire method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
 	print('<input type=hidden name=mode id=mode value="AJOUTER_NOTAIRE">');
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
 	
