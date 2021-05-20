@@ -30,9 +30,9 @@ function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 											array('P&eacute;riode','date d&eacute;but','date fin','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_entete_liens_navigation();
+		//$pagination->affiche_entete_liens_navigation();
 		$pagination->affiche_tableau_edition_sil(2);
-		$pagination->affiche_entete_liens_navigation();      
+		//$pagination->affiche_entete_liens_navigation();      
 	}
 	else
 		print("<div align=center>Pas de période</div>\n");
