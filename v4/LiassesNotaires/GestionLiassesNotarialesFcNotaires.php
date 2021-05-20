@@ -6,10 +6,14 @@
 function menu_liste_notaire($pconnexionBD, $pst_cote_liasse, $pa_communes)
 {
 	global $gi_num_page_cour;
-	print("<div class=TITRE>Gestion des liasses notariales</div>");
-	print("<div class=SOUSTITRE>Notaires de la liasse ".$pst_cote_liasse."</div>");
-	print("<div align=center><br><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsNotaires(0)\">");
+	print('<form  action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
+	print('<input type=hidden name=mode id=mode value="SUPPRIMER_NOTAIRE">');
+
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading" align=center>Notaires de la liasse '.$pst_cote_liasse.'</div>');
+	print('<div class="panel-body">');
+
 	$st_requete = "select concat('NOT', liasse_notaire.idf) as idf, liasse_notaire.nom_notaire, ".
 	              "       liasse_notaire.prenom_notaire, commentaire, libelle_lieu, commune_acte.nom ".
 	              "from liasse_notaire ".
@@ -17,7 +21,7 @@ function menu_liste_notaire($pconnexionBD, $pst_cote_liasse, $pa_communes)
 				  "where liasse_notaire.cote_liasse = '" . $pst_cote_liasse . "' ".
 				  "order by liasse_notaire.nom_notaire, liasse_notaire.prenom_notaire";
 	$a_liste_dates = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-  $i_nb_dates=count($a_liste_dates);
+	$i_nb_dates=count($a_liste_dates);
 	if ($i_nb_dates!=0)
 	{        
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_dates,
@@ -25,26 +29,22 @@ function menu_liste_notaire($pconnexionBD, $pst_cote_liasse, $pa_communes)
 											'Libell&eacute; lieu &eacute;tude', 'Commune associ&eacute;e','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition(2);
-		$pagination->affiche_entete_liens_navigation();      
+		//$pagination->affiche_entete_liens_navigation();
+		$pagination->affiche_tableau_edition_sil(2);
+		//$pagination->affiche_entete_liens_navigation();      
 	}
 	else
 		print("<div align=center>Pas de notaire</div>\n");
-	print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_NOTAIRE\">");
-	print("<input type=button value='Supprimer les notaires s&eacute;lectionn&eacute;s' ONCLICK=\"VerifieSuppressionNotaires(0,'supp[]')\"></div>");   
-	print("</form>");  
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><br><input type=hidden name=mode value=\"MENU_AJOUTER_NOTAIRE\">");  
-	print("<input type=submit value=\"Ajouter un notaire\"></div>");  
-	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
+	print('</div></div>');
+	
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+	print("<button type=submit id=btSupprimerNotaires class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionNotaires(0,'supp[]')\">");
+	print("    <span class=\"glyphicon glyphicon-trash\"></span> Supprimer les notaires sélectionnés</button>");
+	print('<button type=submit id=btAjoutNotaire class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter un notaire</button>');
+	print('<button type=submit id=btRetourLiasse class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Revenir à la liasse</button>');
+	print("</div>");
+
 	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."?cote_liasse='$pst_cote_liasse'\" method=\"post\">");  
-	print("<div align=center><br><input type=hidden name=mode value=\"MENU_MODIFIER\">");  
-	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
-	print("<input type=submit value=\"Revenir à la liasse\"></div>");  
-	print('</form>');
-	print('</div>');
 }
 
 /**

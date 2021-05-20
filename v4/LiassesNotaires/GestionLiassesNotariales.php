@@ -189,6 +189,22 @@ $("#btRetourPeriodes").click(function() {
     $("#mode").val('LISTE_PERIODE'); 
 	});
 
+$("#btAjoutNotaire").click(function() {
+    $("#mode").val('MENU_AJOUTER_NOTAIRE'); 
+	});
+	
+$("#btModifierNotaire").click(function() {
+    $("#mode").val('MODIFIER_NOTAIRE'); 
+	});
+
+$("#btAjouterNotaire").click(function() {
+    $("#mode").val('AJOUTER_NOTAIRE'); 
+	});
+
+$("#btRetourNotaires").click(function() {
+    $("#mode").val('LISTE_NOTAIRE'); 
+	});
+
 $("#cre_liasses").validate({
   rules: {
 		numero:			{ required: true,	integer:true },
