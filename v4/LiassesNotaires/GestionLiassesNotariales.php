@@ -149,11 +149,11 @@ $("#btCreLiasse").click(function() {
     $("#mode").val('AJOUTER'); 
 	});
 	
-$("#btSuprimerPer").click(function() {
+$("#btSuprimerPeriodes").click(function() {
     $("#mode").val('SUPPRIMER_PERIODE'); 
 	});
 
-$("#btAjouterPer").click(function() {
+$("#btAjoutPeriode").click(function() {
     $("#mode").val('MENU_AJOUTER_PERIODE'); 
 	});
 	
@@ -161,11 +161,15 @@ $("#btRetourLiasse").click(function() {
     $("#mode").val('MENU_MODIFIER'); 
 	});
 
-$("#btModPeriode").click(function() {
+$("#btModifierPeriode").click(function() {
     $("#mode").val('MODIFIER_PERIODE'); 
 	});
 
-$("#btRetourPer").click(function() {
+$("#btAjouterPeriode").click(function() {
+    $("#mode").val('AJOUTER_PERIODE'); 
+	});
+
+$("#btRetourPeriodes").click(function() {
     $("#mode").val('LISTE_PERIODE'); 
 	});
 
@@ -207,9 +211,9 @@ $("#maj_periode").validate({
   messages: {
 		annee_debut:	{ required: "Saisir au moins l'année de début de période", 
 						  annee_valide: "L'année doit être soit une année révolutionaire (an I, an II, ...), soit une année sur 4 chiffres"	},
-		mois_debut:		{ mois_debut: "Incohérence entre l'année et le mois de fin"	},                                                                                              
+		mois_debut:		{ mois_debut: "Incohérence entre l'année et le mois"	},                                                                                              
 		annee_fin:		{ annee_valide: "L'année doit être soit une année révolutionaire (an I, an II, ...), soit une année sur 4 chiffres"	},
-		mois_fin:		{ mois_fin: "Incohérence entre l'année et le mois de fin" }
+		mois_fin:		{ mois_fin: "Incohérence entre l'année et le mois" }
   }
 });
 

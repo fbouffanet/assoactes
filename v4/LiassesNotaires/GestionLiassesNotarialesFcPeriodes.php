@@ -38,9 +38,9 @@ function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 		print("<div align=center>Pas de période</div>\n");
 	print("</div></div>");
 	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
-	print("<button type=submit id=btSupprimerPer class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPeriodes(0,'supp[]')\">");
+	print("<button type=submit id=btSupprimerPeriodes class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPeriodes(0,'supp[]')\">");
 	print("    <span class=\"glyphicon glyphicon-trash\"></span> Supprimer les périodes sélectionnées</button>");
-	print('<button type=submit id=btAjouterPer class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter une période</button>');
+	print('<button type=submit id=btAjoutPeriode class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter une période</button>');
 	print('<button type=submit id=btRetourLiasse class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Revenir à la liasse</button>');
 	print("</div>");
 	print('</form>');
@@ -102,8 +102,8 @@ function menu_modifier_periode($pconnexionBD, $pst_cote_liasse, $pi_idf_periode,
 	print("</div></div>");
 
 	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
-	print('<button type=submit id=btModPeriode class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
-	print('<button type=submit formnovalidate id=btRetourPer class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
+	print('<button type=submit id=btModifierPeriode class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
+	print('<button type=submit formnovalidate id=btRetourPeriodes class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
 	print('</div>');
 	
 	print('</form>');
@@ -128,8 +128,8 @@ function menu_ajouter_periode($pst_cote_liasse, $pa_mois)
 	print("</div></div>");
 
 	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
-	print('<button type=submit id=btModPeriode class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
-	print('<button type=submit formnovalidate id=btRetourPer class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
+	print('<button type=submit id=btAjouterPeriode class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
+	print('<button type=submit formnovalidate id=btRetourPeriodes class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
 	print('</div>');
 	
 	print('</form>');
