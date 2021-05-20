@@ -56,16 +56,25 @@ function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
  */ 
 function menu_edition_periode($pst_annee_debut, $pst_mois_debut, $pst_annee_fin, $pst_mois_fin, $pa_mois)
 {
-	print("<table border=1>");
-	print("<tr><th>Ann&eacute;e de d&eacute;but de la p&eacute;riode</th><td>".
-	      "<input type=\"text\" maxlength=7 size=7 name=annee_debut value=\"$pst_annee_debut\"></td></tr>");
-	print("<tr><th>Mois de d&eacute;but de la p&eacute;riode</th><td>".
-	      "<select name=mois_debut id='mois_debut'>".chaine_select_options($pst_mois_debut,$pa_mois)."</select></td></tr>");
-	print("<tr><th>Ann&eacute;e de fin de la p&eacute;riode</th><td>".
-	      "<input type=\"text\" maxlength=7 size=7 name=annee_fin value=\"$pst_annee_fin\"></td></tr>");
-	print("<tr><th>Mois de fin de la p&eacute;riode</th><td>".
-	      "<select name=mois_fin id='mois_fin'>".chaine_select_options($pst_mois_fin,$pa_mois)."</select></td></tr>");
-	print("</table>");
+	print("<div class='form-row col-md-12'>");
+	print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Année de début de la période</label></div>");
+	print("<div class='form-group col-md-1'><input type=text name='annee_debut' id=annee_debut maxlength=7 size=7 value='".$pst_annee_debut."' class='form-control'></div>");
+	print("</div>");
+		  
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label for='mois_debut' class='col-form-label'>Mois de début de la période</label></div>".
+		  "<div class='form-group col-md-3' align='left'><select name='mois_debut' id=mois_debut class='js-select-avec-recherche form-control'>".
+				chaine_select_options($pst_mois_debut,$pa_mois)."</select></div></div>");
+		  
+	print("<div class='form-row col-md-12'>");
+	print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Année de fin de la période</label></div>");
+	print("<div class='form-group col-md-1'><input type=text name='annee_fin' id=annee_fin maxlength=7 size=7 value='".$pst_annee_fin."' class='form-control'></div>");
+	print("</div>");
+		  
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label for='mois_fin' class='col-form-label'>Mois de fin de la période</label></div>".
+		  "<div class='form-group col-md-3' align='left'><select name='mois_fin' id=mois_fin class='js-select-avec-recherche form-control'>".
+				chaine_select_options($pst_mois_fin,$pa_mois)."</select></div></div>");
 }
 
 /** Affiche le menu de modification d'une période
@@ -81,21 +90,24 @@ function menu_modifier_periode($pconnexionBD, $pst_cote_liasse, $pi_idf_periode,
 	                                 "       annee_fin_periode, mois_fin_periode ".
 									 "from liasse_dates ".
 									 "where idf=$pi_idf_periode");
-	print("<div class=TITRE>Gestion des liasses notariales</div>");
-	print("<div class=SOUSTITRE>P&eacute;riode couverte par la liasse ".$pst_cote_liasse."</div>");
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsPeriode(0)\">");
-	print("<div align=center><input type=hidden name=mode value=\"MODIFIER_PERIODE\">");
+	print('<form id=maj_periode method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print('<input type=hidden name=mode id=mode value="MODIFIER_PERIODE">');
 	print("<input type=hidden name=idf_periode value=$pi_idf_periode>");
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
+	
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading" align="center">Période couverte par la liasse '.$pst_cote_liasse.'</div>');
+	print('<div class="panel-body">');
 	menu_edition_periode($st_annee_debut, $st_mois_debut, $st_annee_fin, $st_mois_fin, $pa_mois);
-	print("</div>");
-	print("<div align=center><br><input type=button value=\"Modifier\" ONCLICK=\"VerifieChampsPeriode(0)\"></div>");
+	print("</div></div>");
+
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+	print('<button type=submit id=btModPeriode class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
+	print('<button type=submit formnovalidate id=btRetourPer class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
+	print('</div>');
+	
 	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
-	print("<div align=center><input type=hidden name=mode value=\"LISTE_PERIODE\">");
-	print("<br><input type=submit value=\"Annuler\"></div>");
-	print('</form>');
+
 }
 
 /** Affiche le menu d'ajout d'une période
@@ -104,20 +116,22 @@ function menu_modifier_periode($pconnexionBD, $pst_cote_liasse, $pi_idf_periode,
  */ 
 function menu_ajouter_periode($pst_cote_liasse, $pa_mois)
 {
-
-	print("<div class=TITRE>Gestion des liasses notariales</div>");
-	print("<div class=SOUSTITRE>P&eacute;riode couverte par la liasse ".$pst_cote_liasse."</div>");
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsPeriode(0)\">");
+	print('<form id=maj_periode method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print('<input type=hidden name=mode id=mode value="AJOUTER_PERIODE">');
+	print("<input type=hidden name=idf_periode value=$pi_idf_periode>");
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
-	print("<div align=center><input type=hidden name=mode value=\"AJOUTER_PERIODE\">");
+	
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading" align="center">Période couverte par la liasse '.$pst_cote_liasse.'</div>');
+	print('<div class="panel-body">');
 	menu_edition_periode('','','','',$pa_mois);
-	print("</div>");
-	print("<div align=center><br><input type=button value=\"Ajouter\" ONCLICK=\"VerifieChampsPeriode(0)\"></div>");
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
-	print("<div align=center><input type=hidden name=mode value=\"LISTE_PERIODE\">");
-	print("<br><input type=submit value=\"Annuler\"></div>");
+	print("</div></div>");
+
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+	print('<button type=submit id=btModPeriode class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
+	print('<button type=submit formnovalidate id=btRetourPer class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
+	print('</div>');
+	
 	print('</form>');
 }
 

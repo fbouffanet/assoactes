@@ -58,6 +58,77 @@ jQuery.validator.addMethod(
     "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"
 );
 
+jQuery.validator.addMethod(
+    "annee_valide",
+    function(value, element) {
+		var check = true;
+		var annee = $(element).val();
+		if( isNaN(annee) && annee.substring(0,3) != 'an ' ) {
+			check=false;
+		}
+		else if( annee.substring(0,3) == 'an ' && 
+				 annee != 'an I' && annee != 'an II' && annee != 'an III' && annee != 'an IV' && 
+				 annee != 'an V' && annee != 'an VI' && annee != 'an VII' && annee != 'an VIII' && 
+				 annee != 'an IX' && annee != 'an X' && annee != 'an XI' && annee != 'an XII' && annee != 'an XIII' && annee != 'an XIV' ) {
+			check=false;
+		}
+		else {
+			var a = annee * 1;
+			if( a < 1000 || a > 2100 ) {
+				check=false;
+			}
+		}
+		return this.optional(element) || check;
+    },
+    "L'année doit être soit une année révolutionaire (an I, an II, ...), soit une année sur 4 chiffres"
+);
+
+jQuery.validator.addMethod(
+    "mois_debut",
+    function(value, element) {
+		var check = true;
+		var mois_debut = $(element).val();
+		var annee_debut = $('#annee_debut').val();
+		if ( mois_debut != "" )   {
+			if( annee_debut.substring(0,3) != 'an ' ) {
+				if( isNaN(mois_debut ) ){
+					check=false;
+				}
+			}
+			else {
+				if( ! isNaN(mois_debut ) ){
+					check=false;
+				}
+			}
+		}
+		return this.optional(element) || check;
+    },
+    "Incohérence entre l'année et le mois de début"
+);
+
+jQuery.validator.addMethod(
+    "mois_fin",
+    function(value, element) {
+		var check = true;
+		var mois_fin = $(element).val();
+		var annee_fin = $('#annee_fin').val();
+		if ( mois_fin != "" )   {
+			if( annee_fin.substring(0,3) != 'an ' ) {
+				if( isNaN(mois_fin ) ){
+					check=false;
+				}
+			}
+			else {
+				if( ! isNaN(mois_fin ) ){
+					check=false;
+				}
+			}
+		}
+		return this.optional(element) || check;
+    },
+    "Incohérence entre l'année et le mois de fin"
+);
+
 $("#btRetour").click(function() {
     $("#mode").val('LISTE'); 
 	});
@@ -90,6 +161,14 @@ $("#btRetourLiasse").click(function() {
     $("#mode").val('MENU_MODIFIER'); 
 	});
 
+$("#btModPeriode").click(function() {
+    $("#mode").val('MODIFIER_PERIODE'); 
+	});
+
+$("#btRetourPer").click(function() {
+    $("#mode").val('LISTE_PERIODE'); 
+	});
+
 $("#cre_liasses").validate({
   rules: {
 		numero:			{ required: true,	integer:true },
@@ -115,6 +194,22 @@ $("#maj_liasses").validate({
 		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
 		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
 		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
+  }
+});
+
+$("#maj_periode").validate({
+  rules: {
+		annee_debut:	{ required:true, annee_valide:true },
+		mois_debut:		{ mois_debut:true},
+		annee_fin:		{ annee_valide:true },
+		mois_fin:		{ mois_fin:true }	
+  },		
+  messages: {
+		annee_debut:	{ required: "Saisir au moins l'année de début de période", 
+						  annee_valide: "L'année doit être soit une année révolutionaire (an I, an II, ...), soit une année sur 4 chiffres"	},
+		mois_debut:		{ mois_debut: "Incohérence entre l'année et le mois de fin"	},                                                                                              
+		annee_fin:		{ annee_valide: "L'année doit être soit une année révolutionaire (an I, an II, ...), soit une année sur 4 chiffres"	},
+		mois_fin:		{ mois_fin: "Incohérence entre l'année et le mois de fin" }
   }
 });
 
