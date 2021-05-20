@@ -83,6 +83,7 @@ b$("#tSupprimerPeriode").click(function() {
 	});
 
 $("#btAjouterPeriode").click(function() {
+	alert('ajouter');
     $("#mode").val('MENU_AJOUTER_PERIODE'); 
 	});
 	
