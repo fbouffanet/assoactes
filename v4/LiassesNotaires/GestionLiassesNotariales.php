@@ -78,7 +78,7 @@ $("#btCreLiasse").click(function() {
     $("#mode").val('AJOUTER'); 
 	});
 	
-b$("#btSuprimerPer").click(function() {
+$("#btSuprimerPer").click(function() {
     $("#mode").val('SUPPRIMER_PERIODE'); 
 	});
 
