@@ -61,18 +61,30 @@ function menu_liste_notaire($pconnexionBD, $pst_cote_liasse, $pa_communes)
 function menu_edition_notaire($pst_cote, $pi_idf, $pst_nom_notaire, $pst_prenom_notaire, $pst_commentaire, 
                               $pst_libelle_lieu, $pi_commune_etude, $pa_communes)
 {
-	print("<table border=1>");
-	print("<tr><th>Nom du notaire</th><td>".
-	      "<input type=\"text\" maxlength=30 size=30 name=nom value=\"$pst_nom_notaire\"></td></tr>");
-	print("<tr><th>Pr&eacute;nom du notaire</th><td>".
-	      "<input type=\"text\" maxlength=50 size=50 name=prenom value=\"$pst_prenom_notaire\"></td></tr>");
-	print("<tr><th>Commentaire</th><td>".
-	      "<input type=\"text\" maxlength=80 size=30 name=commentaire value=\"$pst_commentaire\"></td></tr>");
-	print("<tr><th>Nom lieu &eacute;tude</th><td>".
-	      "<input type=\"text\" maxlength=50 size=30 name=lieu value=\"$pst_libelle_lieu\"></td></tr>");
-	print("<tr><th>Commune &eacute;tude</th><td>".
-	      "<select name=idf_commune id='idf_commune'>".chaine_select_options($pi_commune_etude,$pa_communes)."</select></td></tr>");
-	print("</table>");
+	print("<div class='form-row col-md-12'>");
+	print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Nom du notaire</label></div>");
+	print("<div class='form-group col-md-3'><input type=text name='nom' id=nom maxlength=30 size=30 value='".$pst_nom_notaire."' class='form-control'></div>");
+	print("</div>");
+	
+	print("<div class='form-row col-md-12'>");
+	print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Prénom du notaire</label></div>");
+	print("<div class='form-group col-md-3'><input type=text name='prenom' id=prenom maxlength=50 size=50 value='".$pst_prenom_notaire."' class='form-control'></div>");
+	print("</div>");
+
+	print("<div class='form-row col-md-12'>");
+	print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commentaire</label></div>");
+	print("<div class='form-group col-md-3'><input type=text name='commentaire' id=commentaire maxlength=80 size=50 value='".$pst_commentaire."' class='form-control'></div>");
+	print("</div>");
+
+	print("<div class='form-row col-md-12'>");
+	print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Nom lieu de l'étude</label></div>");
+	print("<div class='form-group col-md-3'><input type=text name='lieu' id=lieu maxlength=50 size=50 value='".$pst_libelle_lieu."' class='form-control'></div>");
+	print("</div>");
+
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label for='idf_commune' class='col-form-label'>Commune de l'étude</label></div>".
+		  "<div class='form-group col-md-3' align='left'><select name='idf_commune' id=idf_commune class='js-select-avec-recherche form-control'>".
+				chaine_select_options($pi_commune_etude,$pa_communes)."</select></div></div>");
 }
 
 /** Affiche le menu de modification d'une commune
@@ -87,21 +99,24 @@ function menu_modifier_notaire($pconnexionBD, $pst_cote_liasse, $pi_idf_notaire,
 	=$pconnexionBD->sql_select_listeUtf8("select nom_notaire, prenom_notaire, commentaire, libelle_lieu, idf_commune_etude  ".
 	                                 "from liasse_notaire ".
 				                     "where idf = " . $pi_idf_notaire);
-	print("<div class=TITRE>Gestion des liasses notariales</div>");
-	print("<div class=SOUSTITRE>Notaire de la liasse ".$pst_cote_liasse."</div>");
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsNotaire(0)\">");
-	print("<div align=center><input type=hidden name=mode value=\"MODIFIER_NOTAIRE\">");
+
+	print('<form id=maj_notaire method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print('<input type=hidden name=mode id=mode value="MODIFIER_NOTAIRE">');
 	print("<input type=hidden name=idf_notaire value=$pi_idf_notaire>");
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
+	
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading" align="center">Notaire de la liasse '.$pst_cote_liasse.'</div>');
+	print('<div class="panel-body">');
 	menu_edition_notaire($pst_cote_liasse, $pi_idf_notaire, $st_nom_notaire, $st_prenom_notaire, $st_commentaire, 
 	                     $st_libelle_lieu, $i_idf_commune_etude, $pa_communes);
-	print("</div>");
-	print("<div align=center><br><input type=button value=\"Modifier\" ONCLICK=\"VerifieChampsNotaire(0)\"></div>");
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"LISTE_NOTAIRE\">");
-	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
-	print("<br><input type=submit value=\"Annuler\"></div>");
+	print("</div></div>");
+
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+	print('<button type=submit id=btModifierNotaire class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
+	print('<button type=submit formnovalidate id=btRetourNotaires class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
+	print('</div>');
+	
 	print('</form>');
 }
 
@@ -111,18 +126,21 @@ function menu_modifier_notaire($pconnexionBD, $pst_cote_liasse, $pi_idf_notaire,
  */ 
 function menu_ajouter_notaire($pst_cote_liasse, $pa_communes)
 {
-	print("<div class=TITRE>Gestion des liasses notariales</div>");
-	print("<div class=SOUSTITRE>Notaire de la liasse ".$pst_cote_liasse."</div>");
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsNotaire(0)\">");
+	print('<form id=maj_periode method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print('<input type=hidden name=mode id=mode value="AJOUTER_NOTAIRE">');
 	print("<input type=hidden name=cote_liasse value=$pst_cote_liasse>");
-	print("<div align=center><input type=hidden name=mode value=\"AJOUTER_NOTAIRE\">");
+	
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading" align="center">Notaire de la liasse '.$pst_cote_liasse.'</div>');
+	print('<div class="panel-body">');
 	menu_edition_notaire($pst_cote_liasse, 0,'','','','',0,$pa_communes);
-	print("</div>");
-	print("<div align=center><br><input type=button value=\"Ajouter\" ONCLICK=\"VerifieChampsNotaire(0)\"></div>");
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"LISTE_NOTAIRE\">");
-	print("<br><input type=submit value=\"Annuler\"></div>");
+	print("</div></div>");
+
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+	print('<button type=submit id=btAjouterNotaire class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
+	print('<button type=submit formnovalidate id=btRetourNotaires class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
+	print('</div>');
+	
 	print('</form>');
 }
 
