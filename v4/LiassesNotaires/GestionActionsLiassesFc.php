@@ -158,7 +158,7 @@ function menu_liste_releve($pconnexionBD){
 	}
 	print('<button type=submit id=btMenuAjouterReleve class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span>  Ajouter un relevé</button>');
 	print('</div></form>');
-	print('<div>&nbsp</div>');
+	print('<div>&nbspaa</div>');
 	print('</div>');
 }
 
