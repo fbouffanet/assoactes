@@ -3,8 +3,7 @@
  * Affiche la liste des liasses
  * @param object $pconnexionBD
  */ 
-function menu_liste($pconnexionBD)
-{
+function menu_liste($pconnexionBD){
 	$a_serie_liasse = $pconnexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 	if( isset($_POST['serie_liasse']) ) {
 		$_SESSION['serie_liasse'] = $_POST['serie_liasse'];
@@ -25,7 +24,7 @@ function menu_liste($pconnexionBD)
 		$st_serie_liasse = '2E';
 	}
 	$a_numerotation_liasses = array("z","1","2","3","4","5","6","7","8","9"); 
-	print("<div align=center><form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return\">");
+	print('<div align=center><form  action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading">Actions sur les liasses notariales</div>');
 	print('<div class="panel-body">');
@@ -104,7 +103,7 @@ function menu_liste($pconnexionBD)
 				  "group by liasse.cote_liasse, liasse.libelle_notaires, liasse.libelle_annees ".
 				  "order by liasse.cote_liasse";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-  $i_nb_liasses = count($a_liste_liasses);
+	$i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_liasses,
@@ -113,7 +112,7 @@ function menu_liste($pconnexionBD)
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		//$pagination->affiche_entete_liens_navigation();
-		$pagination->affiche_tableau_edition_select();
+		$pagination->affiche_tableau_edition_select_sil();
 		//$pagination->affiche_entete_liens_navigation();      
 	}
 	else
@@ -126,8 +125,7 @@ function menu_liste($pconnexionBD)
  * Affiche la liste des relevés d'une liasse
  * @param object	$pconnexionBD
  */ 
-function menu_liste_releve($pconnexionBD)
-{
+function menu_liste_releve($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('REL', liasse_releve.idf) as idf, ".
 	              "       case when liasse_releve.idf_releveur=0 then 'Inconnu' else concat(releveur.nom, ' ', releveur.prenom) end as releveur, ".
@@ -139,8 +137,8 @@ function menu_liste_releve($pconnexionBD)
 				  "where liasse_releve.cote_liasse = '".$_SESSION['cote_liasse_gal']."' ".
 				  "order by liasse_releve.date_fin_releve";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-	print("<div align=center><form name='releve' action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-  $i_nb_liasses = count($a_liste_liasses);
+	print('<div align=center><form name=menuReleve id=menuReleve action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	$i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_liasses,
@@ -148,32 +146,27 @@ function menu_liste_releve($pconnexionBD)
 											array('Releveur','Date fin relev&eacute;','Publication num&eacute;rique','Infos compl&eacute;mentaires','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		//$pagination->affiche_entete_liens_navigation();
 		$pagination->affiche_tableau_edition_sil(2);
-		//$pagination->affiche_entete_liens_navigation();      
 		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
-		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_RELEVE\">");
-		print("<button type=submit name=\"SUPPRIMER_RELEVE\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\">");
+		print('<input type=hidden name=mode id=mode value="SUPPRIMER_RELEVE">');
+		print("<button type=submit name=btSupprimerReleve id=btSupprimerReleve class='btn btn-sm btn-danger' ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les relevés sélectionnés</button>");
-		print('</div></div>');
 	}
-	else
+	else {
+		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
 		print("<div class=\"alert alert-danger\">Pas de relevé</div>");
-	print("</form>");  
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVE\">");
-	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
-	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un relevé</button>");
+	}
+	print('<button type=submit id=btAjouterReleve class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span>  Ajouter un relevé</button>');
 	print('</div></form>');
-	print('<div>&nbsp</div></div>');
+	print('<div>&nbsp</div>');
+	print('</div>');
 }
 
 /**
  * Affiche la liste des publications papier d'une liasse
  * @param object	$pconnexionBD
  */ 
-function menu_liste_publication($pconnexionBD)
-{
+function menu_liste_publication($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('PUB', liasse_publication_papier.idf) as idf, publication_papier.nom, ".
 	              "       case when date_publication = str_to_date('0000/00/00', '%Y/%m/%d') then '' else date_format(date_publication, '%d/%m/%Y') end as date_publication, ".
@@ -183,8 +176,8 @@ function menu_liste_publication($pconnexionBD)
 				  "where liasse_publication_papier.cote_liasse = '".$_SESSION['cote_liasse_gal']."' ".
 				  "order by publication_papier.date_publication";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-	print("<div align=center><form name='publi' action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-  $i_nb_liasses = count($a_liste_liasses);
+	print('<div align=center><form name=menuPubli id=menuPubli action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	$i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_liasses,
@@ -195,29 +188,26 @@ function menu_liste_publication($pconnexionBD)
 		//$pagination->affiche_entete_liens_navigation();
 		$pagination->affiche_tableau_edition_sil(2);
 		//$pagination->affiche_entete_liens_navigation();      
-		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_LIEN_PUBLI\">");
+		print('<input type=hidden name=mode value="SUPPRIMER_LIEN_PUBLI">');
 		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
-		print("<button type=submit name=\"SUPPRIMER_LIEN_PUBLI\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\">");
-		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les liens publications sélectionnés</button>");
-		print('</div></div>');
+		print("<button type=submit name=btSupprimerLienPubli id=btSupprimerLienPubli class='btn btn-sm btn-danger' ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\">");
+		print('    <span class="glyphicon glyphicon-trash"></span>  Supprimer les liens publications sélectionnés</button>');
 	}
-	else
-		print("<div class=\"alert alert-danger\">Pas de publication papier</div>");
-	print("</form>");  
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_LIEN_PUBLI\">");
-	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
-	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un lien publication papier</button>");
+	else {
+		print('<div class="alert alert-danger">Pas de publication papier</div>');
+		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
+	}
+	print('<button type=submit id=btMenuAjouterLienPubli class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter un lien publication papier</button>');
 	print('</div></form>');
-	print('<div>&nbsp</div></div>');
+	print('<div>&nbsp</div>');
+	print('</div>');
 }
 
 /**
  * Affiche la liste des photos d'une liasse
  * @param object	$pconnexionBD
  */ 
-function menu_liste_photo($pconnexionBD)
-{
+function menu_liste_photo($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('PHO', liasse_photo.idf) as idf, ".
 	              "       case when liasse_photo.idf_photographe=0 then 'Inconnu' else concat(releveur.nom, ' ', releveur.prenom) end as photographe, ".
@@ -230,8 +220,8 @@ function menu_liste_photo($pconnexionBD)
 				  "where liasse_photo.cote_liasse = '".$_SESSION['cote_liasse_gal']."' ".
 				  "order by liasse_photo.date_photo";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-	print("<div align=center><form name='photo' action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-  $i_nb_liasses=count($a_liste_liasses);
+	print('<div align=center><form name=menuPhoto id=menuPhoto action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	$i_nb_liasses=count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_liasses,
@@ -239,22 +229,18 @@ function menu_liste_photo($pconnexionBD)
 											array('Photographe','Date photos','Couverture photos','Codif photos','Infos compl&eacute;mentaires','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		//$pagination->affiche_entete_liens_navigation();
 		$pagination->affiche_tableau_edition_sil(2);
-		//$pagination->affiche_entete_liens_navigation();      
-		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_PHOTO\">");
+		print('<input type=hidden name=mode value="SUPPRIMER_PHOTO">');
 		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
-		print("<button type=submit name=\"SUPPRIMER_PHOTO\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPhotos(0,'supp[]')\">");
-		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les photos sélectionnées</button>");
-		print('</div></div>');
+		print("<button type=submit name='SUPPRIMER_PHOTO' class='btn btn-sm btn-danger' ONCLICK=\"VerifieSuppressionPhotos(0,'supp[]')\">");
+		print('    <span class="glyphicon glyphicon-trash"></span>  Supprimer les photos sélectionnées</button>');
 	}
-	else
+	else {
 		print("<div class=\"alert alert-danger\">Pas de photo</div>");
-	print("</form>");  
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
+		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
+	}
 	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_PHOTO\">");
-	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
-	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter des photos</button>");
+	print('<button type=submit id=btMenuAjouterPhoto class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter des photos</button>');
 	print('</div></form>');
 	print('<div>&nbsp</div></div>');
 }
@@ -263,8 +249,7 @@ function menu_liste_photo($pconnexionBD)
  * Affiche la liste des programmations d'une liasse
  * @param object	$pconnexionBD
  */ 
-function menu_liste_program($pconnexionBD)
-{
+function menu_liste_program($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('PRO', liasse_programmation.idf) as idf, ".
 	              "       case when liasse_programmation.idf_intervenant=0 then 'Inconnu' else concat(releveur.nom, ' ', releveur.prenom) end as intervenant, ".
@@ -280,8 +265,8 @@ function menu_liste_program($pconnexionBD)
 				  "      (liasse_programmation.date_reelle_fin is null or liasse_programmation.date_reelle_fin=str_to_date('0000/00/00', '%Y/%m/%d')) ".
 				  "order by liasse_programmation.date_creation";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-	print("<div align=center><form name='program' action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-  $i_nb_liasses=count($a_liste_liasses);
+	print('<div align=center><form name=menuProgram id=menuProgram action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	$i_nb_liasses=count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_liasses,
@@ -290,22 +275,18 @@ function menu_liste_program($pconnexionBD)
 											      'Infos compl&eacute;mentaires','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		//$pagination->affiche_entete_liens_navigation();
 		$pagination->affiche_tableau_edition_sil(2);
-		//$pagination->affiche_entete_liens_navigation();      
-		print("<div align=center><input type=hidden name=mode value=\"SUPPRIMER_PROGRAM\">");
+		print('<input type=hidden name=mode value="SUPPRIMER_PROGRAM">');
 		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
-		print("<button type=submit name=\"SUPPRIMER_PROGRAM\" class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppressionPrograms(0,'supp[]')\">");
-		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les programmations sélectionnées</button>");
+		print("<button type=submit name='SUPPRIMER_PROGRAM' class='btn btn-sm btn-danger' ONCLICK=\"VerifieSuppressionPrograms(0,'supp[]')\">");
+		print('    <span class="glyphicon glyphicon-trash"></span> Supprimer les programmations sélectionnées</button>');
 		print('</div></div>');
 	}
-	else
-		print("<div class=\"alert alert-danger\">Pas de programmation</div>");
-	print("</form>");  
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_PROGRAM\">");
-	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-success\">");
-	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter une programmation</button>");
+	else {
+		print('<div class="alert alert-danger">Pas de programmation</div>');
+		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
+	}
+	print('<button type=submit id=btMenuAjouterProgram class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter une programmation</button>');
 	print('</div></form>');
 	print('</div>');
 }
@@ -313,28 +294,19 @@ function menu_liste_program($pconnexionBD)
 /** Affiche le menu des actions sur une liasse
  * @param object	$pconnexionBD			Identifiant de la connexion de base
  */ 
-function menu_gerer($pconnexionBD)
-{
+function menu_gerer($pconnexionBD){
 	print('<div class="panel panel-primary">');
-	print('<div class="panel-heading">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
+	print('<div class="panel-heading" align="center">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
 	                           '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'</div>');
 	print('<div class="panel-body">');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	menu_liste_releve($pconnexionBD);
 	menu_liste_publication($pconnexionBD);
 	menu_liste_photo($pconnexionBD);
 	menu_liste_program($pconnexionBD);
-	print('</form></div></div>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><input type=hidden name=mode value=\"MENU_AJOUTER_RELEVEUR\">");
-	print("<button type=submit name=Ajouter class=\"btn btn-sm btn-warning\">");
-	print("    <span class=\"glyphicon glyphicon-new-window\"></span>  Ajouter un releveur ou un photographe</button>");
-	print("</div>");  
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"LISTE\">");
-	print("<button type=submit name=LISTE class=\"btn btn-sm btn-primary\">");
-	print("    <span class=\"glyphicon glyphicon-arrow-left\"></span>  Retour</button>");
+	print('<form  name=actionLiasse id=actionLiasse action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
+	print('<button type=submit id=btMenuAjouterReleveur class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-new-window"></span> Ajouter un releveur ou un photographe</button>');
+	print('<button type=submit id=btListe class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
 	print('</div></form>');
 }
 /** --------------------------------------- relevés ----------------------------------- **/
@@ -386,7 +358,7 @@ function menu_modifier_releve($pconnexionBD, $pi_idf_releve, $pa_releveur)
 	                                '&nbsp&nbsp&nbsp-&nbsp&nbsp&nbspNotaire(s) '.$_SESSION['notaires_gal'].
 									'&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsppériode '.$_SESSION['periodes_gal'].'</div>');
 	print('<div class="panel-body">');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsReleve(0)\">");
+	print("<form id=majReleve action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsReleve(0)\">");
 	print("<div align=center><input type=hidden name=mode value=\"MODIFIER_RELEVE\">");
 	print("<input type=hidden name=idf_releve value=$pi_idf_releve>");
 	menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $i_idf_releveur, $st_date_fin_releve,
@@ -409,7 +381,7 @@ function menu_ajouter_releve($pconnexionBD, $pa_releveur)
 {
 	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
 	print("<div class=SOUSTITRE>Ajout d'un relev&eacute;</div><br><br>");
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsReleve(0)\">");
+	print("<form id=majReleve action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsReleve(0)\">");
 	print("<div align=center><input type=hidden name=mode value=\"AJOUTER_RELEVE\">");
 	menu_edition_releve($pconnexionBD, $pa_releveur, '', 0, '', '', ''); 
 	print("</div>");
@@ -472,7 +444,7 @@ function menu_modifier_lien_publication($pconnexionBD, $pi_idf_lien_publication,
 	=$pconnexionBD->sql_select_listeUtf8("select idf_publication_papier from liasse_publication_papier where idf=".$pi_idf_lien_publication);
 	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
 	print("<div class=SOUSTITRE>Modification d'un lien publication papier</div><br><br>");
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsLienPubli(0)\">");
+	print("<form id=majLienPubli action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsLienPubli(0)\">");
 	print("<div align=center><input type=hidden name=mode value=\"MODIFIER_LIEN_PUBLI\">");
 	print("<input type=hidden name=idf_lien_publi value=$pi_idf_lien_publication>");
 	menu_edition_lien_publication($pconnexionBD, $pa_publication, $i_idf_publication); 
@@ -493,8 +465,8 @@ function menu_ajouter_lien_publication($pconnexionBD, $pa_publication)
 {
 	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
 	print("<div class=SOUSTITRE>Ajout d'un lien publication papier</div><br><br>");
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsLienPubli(0)\">");
-	print("<div align=center><input type=hidden name=mode value=\"AJOUTER_LIEN_PUBLI\">");
+	print("<form id=majLienPubli action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsLienPubli(0)\">");
+	print("<div align=center><input type=hidden name=mode id=mode value=\"AJOUTER_LIEN_PUBLI\">");
 	menu_edition_lien_publication($pconnexionBD, $pa_publication, 0); 
 	print("</div>");
 	print("<div align=center><br><input type=button value=\"Ajouter\" ONCLICK=\"VerifieChampsLienPubli(0)\"></div>");
@@ -680,7 +652,7 @@ function menu_modifier_photo($pconnexionBD, $pi_idf_photo, $pa_reveleur, $pa_cou
 									 "where idf=$pi_idf_photo");
 	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
 	print("<div class=SOUSTITRE>Modification d'une prise de photo</div><br><br>");
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsPhoto(0)\">");
+	print("<form id=majPhoto action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsPhoto(0)\">");
 	print("<div align=center><input type=hidden name=mode value=\"MODIFIER_PHOTO\">");
 	print("<input type=hidden name=idf_photo value=$pi_idf_photo>");
 	menu_edition_photo($pconnexionBD, $pa_reveleur, $pi_idf_photo, $i_idf_photographe, $st_date_photo,
@@ -702,7 +674,7 @@ function menu_ajouter_photo($pconnexionBD, $pa_reveleur, $pa_couverture_photo, $
 {
 	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
 	print("<div class=SOUSTITRE>Ajout d'une prise de photo</div><br><br>");
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsPhoto(0)\">");
+	print("<form id=majPhoto action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsPhoto(0)\">");
 	print("<div align=center><input type=hidden name=mode value=\"AJOUTER_PHOTO\">");
 	menu_edition_photo($pconnexionBD, $pa_reveleur, 0, 0, '', 0, 0, '', $pa_couverture_photo, $pa_codif_photo); 
 	print("</div>");
@@ -782,7 +754,7 @@ function menu_modifier_program($pconnexionBD, $pi_idf_program, $pa_reveleur, $pa
 									 "where idf=$pi_idf_program");
 	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
 	print("<div class=SOUSTITRE>Modification d'une programmation</div><br><br>");
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsProgram(0)\">");
+	print("<form id=majProgram action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsProgram(0)\">");
 	print("<div align=center><input type=hidden name=mode value=\"MODIFIER_PROGRAM\">");
 	print("<input type=hidden name=idf_program value=$pi_idf_program>");
 	menu_edition_program($pconnexionBD, $pa_reveleur, $pi_idf_program, $i_idf_intervenant, $i_priorite_program, 

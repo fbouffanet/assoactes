@@ -13,17 +13,320 @@ require_once('../Commun/commun.php');
 
 print('<!DOCTYPE html>');
 print("<head>");
+print("<title>Gestion des actions sur les liasses notariales</title>");
 print('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
-print("<script src='./VerifieChampsGestionActionsLiasse.js' type='text/javascript'></script>");
+print("<link href='../css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/select2.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/select2-bootstrap.min.css' type='text/css' rel='stylesheet'>");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='../js/additional-methods.min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
+print("<script src='../js/select2.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
-print("<title>Gestion des actions sur les liasses notariales</title>");
+print("<script src='./VerifieChampsGestionActionsLiasse.js' type='text/javascript'></script>");
+?>
+<script type='text/javascript'>
+$(document).ready(function() {
+	
+jQuery.validator.addMethod(
+    "depose_avec_dept",
+    function(value, element) {
+		var check = false;
+		if ($(element).is(':checked'))	{
+			check = $('#dept_depose_ad').val()!='';
+		}
+		return this.optional(element) || check;
+    },
+    "Le département doit être renseigné pour une liasse déposée aux AD"
+);
+
+jQuery.validator.addMethod(
+    "dept_avec_depose",
+    function(value, element) {
+		var check = false;
+		if ($(element).val()!='')	{
+			check = $('#depose_ad').is(':checked');
+		}
+		return this.optional(element) || check;
+    },
+    "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"
+);
+
+jQuery.validator.addMethod(
+    "annee_valide",
+    function(value, element) {
+		var check = true;
+		var annee = $(element).val();
+		if( isNaN(annee) && annee.substring(0,3) != 'an ' ) {
+			check=false;
+		}
+		else if( annee.substring(0,3) == 'an ' && 
+				 annee != 'an I' && annee != 'an II' && annee != 'an III' && annee != 'an IV' && 
+				 annee != 'an V' && annee != 'an VI' && annee != 'an VII' && annee != 'an VIII' && 
+				 annee != 'an IX' && annee != 'an X' && annee != 'an XI' && annee != 'an XII' && annee != 'an XIII' && annee != 'an XIV' ) {
+			check=false;
+		}
+		else {
+			var a = annee * 1;
+			if( a < 1000 || a > 2100 ) {
+				check=false;
+			}
+		}
+		return this.optional(element) || check;
+    },
+    "L'année doit être soit une année révolutionaire (an I, an II, ...), soit une année sur 4 chiffres"
+);
+
+jQuery.validator.addMethod(
+    "annee_mois_fin",
+    function(value, element) {
+		var check = true;
+		var mois = $(element).val();
+		var annee = $('#annee_fin').val();
+		if ( mois != "" )   {
+			if( annee == '' ) {
+					check=false;
+			}
+		}
+		return this.optional(element) || check;
+    },
+    "Saisir l'année de fin"
+);
+
+jQuery.validator.addMethod(
+    "mois_debut",
+    function(value, element) {
+		var check = true;
+		var mois_debut = $(element).val();
+		var annee_debut = $('#annee_debut').val();
+		if ( mois_debut != "" )   {
+			if( annee_debut.substring(0,3) != 'an ' ) {
+				if( isNaN(mois_debut ) ){
+					check=false;
+				}
+			}
+			else {
+				if( ! isNaN(mois_debut ) ){
+					check=false;
+				}
+			}
+		}
+		return this.optional(element) || check;
+    },
+    "Incohérence entre l'année et le mois de début"
+);
+
+jQuery.validator.addMethod(
+    "mois_fin",
+    function(value, element) {
+		var check = true;
+		var mois_fin = $(element).val();
+		var annee_fin = $('#annee_fin').val();
+		if ( mois_fin != "" )   {
+			if( annee_fin.substring(0,3) != 'an ' ) {
+				if( isNaN(mois_fin ) ){
+					check=false;
+				}
+			}
+			else {
+				if( ! isNaN(mois_fin ) ){
+					check=false;
+				}
+			}
+		}
+		return this.optional(element) || check;
+    },
+    "Incohérence entre l'année et le mois de fin"
+);
+
+$("#btAjouterLienPubli").click(function() {
+    $("#mode").val('AJOUTER_LIEN_PUBLI'); 
+	});
+	
+$("#btAjouterPhoto").click(function() {
+    $("#mode").val('AJOUTER_PHOTO'); 
+	});
+	
+$("#btAjouterProgram").click(function() {
+    $("#mode").val('AJOUTER_PROGRAM'); 
+	});
+	
+$("#btAjouterPubli").click(function() {
+    $("#mode").val('AJOUTER_PUBLI'); 
+	});
+	
+$("#btAjouterReleve").click(function() {
+    $("#mode").val('AJOUTER_RELEVE'); 
+	});
+	
+$("#btAjouterReleveur").click(function() {
+    $("#mode").val('AJOUTER_RELEVEUR'); 
+	});
+	
+$("#btListe").click(function() {
+    $("#mode").val('LISTE'); 
+	});
+	
+$("#btMenuAjouterLienPubli").click(function() {
+    $("#mode").val('MENU_AJOUTER_LIEN_PUBLI'); 
+	});
+	
+$("#btMenuAjouterPhoto").click(function() {
+    $("#mode").val('MENU_AJOUTER_PHOTO'); 
+	});
+	
+$("#btMenuAjouterProgram").click(function() {
+    $("#mode").val('MENU_AJOUTER_PROGRAM'); 
+	});
+	
+$("#btMenuAjouterPubli").click(function() {
+    $("#mode").val('MENU_AJOUTER_PUBLI'); 
+	});
+	
+$("#btMenuAjouterReleve").click(function() {
+    $("#mode").val('MENU_AJOUTER_RELEVE'); 
+	});
+	
+$("#btMenuAjouterReleveur").click(function() {
+    $("#mode").val('MENU_AJOUTER_RELEVEUR'); 
+	});
+	
+$("#btMenuGerer").click(function() {
+    $("#mode").val('MENU_GERER'); 
+	});
+	
+$("#btMenuGerePubli").click(function() {
+    $("#mode").val('MENU_GERER_PUBLI'); 
+	});
+	
+$("#btModifierLienPubli").click(function() {
+    $("#mode").val('MODIFIER_LIEN_PUBLI'); 
+	});
+	
+$("#btModifierPhoto").click(function() {
+    $("#mode").val('MODIFIER_PHOTO'); 
+	});
+	
+$("#btModifierProgram").click(function() {
+    $("#mode").val('MODIFIER_PROGRAM'); 
+	});
+	
+$("#btModifierPubli").click(function() {
+    $("#mode").val('MODIFIER_PUBLI'); 
+	});
+	
+$("#btModifierReleve").click(function() {
+    $("#mode").val('MODIFIER_RELEVE'); 
+	});
+	
+$("#btSupprimerLienPubli").click(function() {
+    $("#mode").val('SUPPRIMER_LIEN_PUBLI'); 
+	});
+	
+$("#btSupprimerPhoto").click(function() {
+    $("#mode").val('SUPPRIMER_PHOTO'); 
+	});
+	
+$("#btSupprimerProgram").click(function() {
+    $("#mode").val('SUPPRIMER_PROGRAM'); 
+	});
+	
+$("#btSupprimerPubli").click(function() {
+    $("#mode").val('SUPPRIMER_PUBLI'); 
+	});
+	
+$("#btSupprimerReleve").click(function() {
+    $("#mode").val('SUPPRIMER_RELEVE'); 
+	});
+	
+$("#majReleve").validate({
+  rules: {
+		numero:			{ required: true,	integer:true },
+		depose_ad:		{ depose_avec_dept:true },
+		dept_depose_ad:	{ dept_avec_depose:true },
+		forme_liasse:	{ required: true }	
+  },		
+  messages: {
+		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
+		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
+		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
+		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
+  }
+});
+
+$("#ajoutReleveur").validate({
+  rules: {
+		numero:			{ required: true,	integer:true },
+		depose_ad:		{ depose_avec_dept:true },
+		dept_depose_ad:	{ dept_avec_depose:true },
+		forme_liasse:	{ required: true }	
+  },		
+  messages: {
+		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
+		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
+		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
+		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
+  }
+});
+
+$("#majLienPubli").validate({
+  rules: {
+		numero:			{ required: true,	integer:true },
+		depose_ad:		{ depose_avec_dept:true },
+		dept_depose_ad:	{ dept_avec_depose:true },
+		forme_liasse:	{ required: true }	
+  },		
+  messages: {
+		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
+		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
+		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
+		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
+  }
+});
+
+$("#majPhoto").validate({
+  rules: {
+		numero:			{ required: true,	integer:true },
+		depose_ad:		{ depose_avec_dept:true },
+		dept_depose_ad:	{ dept_avec_depose:true },
+		forme_liasse:	{ required: true }	
+  },		
+  messages: {
+		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
+		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
+		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
+		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
+  }
+});
+
+$("#majProgram").validate({
+  rules: {
+		numero:			{ required: true,	integer:true },
+		depose_ad:		{ depose_avec_dept:true },
+		dept_depose_ad:	{ dept_avec_depose:true },
+		forme_liasse:	{ required: true }	
+  },		
+  messages: {
+		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
+		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
+		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
+		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
+  }
+});
+
+});
+</script>
+<?php
+
 print('</head>');
-print('<body> <div class="container">');
+print('<body><div class="container">');
 
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("../Commun/menu.php");

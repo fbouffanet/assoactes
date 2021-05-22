@@ -22,25 +22,6 @@ function VerifieSuppression(Formulaire,IdfElement) {
   }
 }
 
-function VerifieChampsNotaire(Formulaire){
-	var nom = document.forms[Formulaire].nom.value;
-	var selectElmt = document.getElementById('idf_commune');
-	var idf_commune = selectElmt.options[selectElmt.selectedIndex].value;
-	var ListeErreurs	= "";
-	if ( nom == "" )   {
-		ListeErreurs+="Saisir au moins le nom du notaire\n";
-	}
-	/*if ( idf_commune == 0 )   {
-		ListeErreurs+="La commune de rattachement de l'étude doit être renseignée\n";
-		}*/
-	if (ListeErreurs!= "")   {
-		alert(ListeErreurs);
-	}
-	else   {
-		document.forms[Formulaire].submit();
-	}
-}
-
 function VerifieSuppressionNotaires(Formulaire,IdfElement) {
   var chaine="";
   // Un seul élément
