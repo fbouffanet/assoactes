@@ -263,7 +263,7 @@ function menu_liste_program($pconnexionBD){
 				  "      (liasse_programmation.date_reelle_fin is null or liasse_programmation.date_reelle_fin=str_to_date('0000/00/00', '%Y/%m/%d')) ".
 				  "order by liasse_programmation.date_creation";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-	print('<div align=center><form name=menuProgram id=menuProgram action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	print('<div align=center border=1><form name=menuProgram id=menuProgram action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	$i_nb_liasses=count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
