@@ -147,16 +147,16 @@ function menu_liste_releve($pconnexionBD){
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
-		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
+		print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
 		print('<input type=hidden name=mode id=mode value="SUPPRIMER_RELEVE">');
 		print("<button type=submit name=btSupprimerReleve id=btSupprimerReleve class='btn btn-sm btn-danger' ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les relevés sélectionnés</button>");
 	}
 	else {
-		print('<div class="btn-group col-md-2 col-md-offset-3" role="group">');
+		print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
 		print("<div class=\"alert alert-danger\">Pas de relevé</div>");
 	}
-	print('<button type=submit id=btAjouterReleve class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span>  Ajouter un relevé</button>');
+	print('<button type=submit id=btMenuAjouterReleve class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span>  Ajouter un relevé</button>');
 	print('</div></form>');
 	print('<div>&nbsp</div>');
 	print('</div>');
