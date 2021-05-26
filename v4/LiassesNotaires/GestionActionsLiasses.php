@@ -312,6 +312,10 @@ print('<body><div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("../Commun/menu.php");
 
+if (isset($_POST['mode'])) {
+	print('mode : "'.$gst_mode.'"');
+}
+
 if (isset($_GET['initpub'])) {
 	$gst_m1 = 'MENU_GERER_PUBLI';
 }
@@ -334,7 +338,7 @@ else {
 	$gst_m1 = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;
 }
 $gst_mode = isset($_REQUEST['smode']) ? $_REQUEST['smode'] : $gst_m1 ;
-print('mode : "'.$gst_mode.'"');
+print('mode déduit : "'.$gst_mode.'"');
 
 if (isset($_GET['mod'])) {
 	if(substr($_GET['mod'],0,3) == 'REL') {
