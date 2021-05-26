@@ -334,7 +334,7 @@ else {
 	$gst_m1 = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;
 }
 $gst_mode = isset($_REQUEST['smode']) ? $_REQUEST['smode'] : $gst_m1 ;
-print($gst_mode);
+print('mode : "'.$gst_mode.'"');
 
 if (isset($_GET['mod'])) {
 	if(substr($_GET['mod'],0,3) == 'REL') {
