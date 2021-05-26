@@ -175,6 +175,7 @@ $("#btListe").click(function() {
 	});
 	
 $("#btMenuAjouterLienPubli").click(function() {
+	alert('coucou');
     $("#mode").val('MENU_AJOUTER_LIEN_PUBLI'); 
 	});
 	

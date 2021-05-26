@@ -195,7 +195,7 @@ function menu_liste_publication($pconnexionBD){
 		print('<div class="alert alert-danger">Pas de publication papier</div>');
 		print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
 	}
-	print('<button type=submit id=btMenuAjouterLienPubli class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter un lien publication papier</button>');
+	print('<button type=submit id="btMenuAjouterLienPubli" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter un lien publication papier</button>');
 	print('</div></form>');
 	print('<div>&nbsp;</div>');
 	print('</div>');
@@ -302,7 +302,7 @@ function menu_gerer($pconnexionBD){
 	menu_liste_program($pconnexionBD);
 	print('<form action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type=hidden name="mode" id="mode">');
-	print('<div class="btn-group" align=center role="group">');
+	print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
 	print('<button type=submit id=btMenuAjouterReleveur class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-new-window"></span> Ajouter un releveur ou un photographe</button>');
 	print('<button type=submit id=btListe class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
 	print('</div></form></div></div>');
