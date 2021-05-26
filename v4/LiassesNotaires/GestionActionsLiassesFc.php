@@ -138,7 +138,6 @@ function menu_liste_releve($pconnexionBD){
 				  "order by liasse_releve.date_fin_releve";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
-	print('<input type=hidden name="modeReleve" id="modeReleve" value="SUPPRIMER_RELEVE">');
 	print('<input type=hidden name="modeReleve" id="modeReleve">');
 	$i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
