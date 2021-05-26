@@ -138,6 +138,7 @@ function menu_liste_releve($pconnexionBD){
 				  "order by liasse_releve.date_fin_releve";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print('<div align=center><form name=menuReleve id=menuReleve action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	print('<input type=hidden name=mode id=mode value="SUPPRIMER_RELEVE">');
 	$i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
@@ -148,7 +149,6 @@ function menu_liste_releve($pconnexionBD){
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
 		print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
-		print('<input type=hidden name=mode id=mode value="SUPPRIMER_RELEVE">');
 		print("<button type=submit name=btSupprimerReleve id=btSupprimerReleve class='btn btn-sm btn-danger' ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les relevés sélectionnés</button>");
 	}
