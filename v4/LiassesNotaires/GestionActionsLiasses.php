@@ -171,7 +171,7 @@ $("#btAjouterReleveur").click(function() {
 	});
 	
 $("#btListe").click(function() {
-    $("#mode").val('LISTE'); 
+    $("#modeMenu").val('LISTE'); 
 	});
 	
 $("#btMenuAjouterLienPubli").click(function() {
@@ -196,7 +196,7 @@ $("#btMenuAjouterReleve").click(function() {
 	});
 	
 $("#btMenuAjouterReleveur").click(function() {
-    $("#mode").val('MENU_AJOUTER_RELEVEUR'); 
+    $("#modeMenu").val('MENU_AJOUTER_RELEVEUR'); 
 	});
 	
 $("#btMenuGerer").click(function() {
@@ -316,7 +316,7 @@ if (isset($_GET['initpub'])) {
 	$gst_m1 = 'MENU_GERER_PUBLI';
 }
 elseif (isset($_POST['modeReleve'])) {
-	$gst_m1 = $_POST['modeReleve'];
+	$gst_m1 = $_POST['modeReleve']; 
 }
 elseif (isset($_POST['modePubli'])) {
 	$gst_m1 = $_POST['modePubli'];
@@ -326,6 +326,9 @@ elseif (isset($_POST['modePhoto'])) {
 }
 elseif (isset($_POST['modeProgram'])) {
 	$gst_m1 = $_POST['modeProgram'];
+}
+elseif (isset($_POST['modeMenu'])) {
+	$gst_m1 = $_POST['modeMenu'];
 }
 else {
 	$gst_m1 = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;
