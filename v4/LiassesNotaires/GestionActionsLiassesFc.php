@@ -292,8 +292,6 @@ function menu_liste_program($pconnexionBD){
  * @param object	$pconnexionBD			Identifiant de la connexion de base
  */ 
 function menu_gerer($pconnexionBD){
-	print('<form  name=actionLiasse id=actionLiasse action="'.$_SERVER['PHP_SELF'].'" method="post">');
-	print('<input type=hidden name=mode id=mode>');
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading" align="center">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
 	                           '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'</div>');
@@ -302,10 +300,12 @@ function menu_gerer($pconnexionBD){
 	menu_liste_publication($pconnexionBD);
 	menu_liste_photo($pconnexionBD);
 	menu_liste_program($pconnexionBD);
+	print('<form  name=actionLiasse id=actionLiasse action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	print('<input type=hidden name=mode id=mode>');
 	print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
 	print('<button type=submit id=btMenuAjouterReleveur class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-new-window"></span> Ajouter un releveur ou un photographe</button>');
 	print('<button type=submit id=btListe class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
-	print('</div></div></div></form>');
+	print('</div></form></div></div>');
 }
 /** --------------------------------------- relevés ----------------------------------- **/
 /**
