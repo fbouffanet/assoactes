@@ -208,7 +208,6 @@ function menu_liste_publication($pconnexionBD){
  * @param object	$pconnexionBD
  */ 
 function menu_liste_photo($pconnexionBD){
-	print("photo");
 	global $gi_num_page_cour;
 	$st_requete = "select concat('PHO', liasse_photo.idf) as idf, ".
 	              "       case when liasse_photo.idf_photographe=0 then 'Inconnu' else concat(releveur.nom, ' ', releveur.prenom) end as photographe, ".
@@ -222,6 +221,7 @@ function menu_liste_photo($pconnexionBD){
 				  "order by liasse_photo.date_photo";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	print("photo");
 	print('<input type=hidden name="mode" id="mode" value="SUPPRIMER_PHOTO">');
 	print('<input type=hidden name="modePhoto" id="modePhoto">');
 	$i_nb_liasses=count($a_liste_liasses);
