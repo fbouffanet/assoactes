@@ -97,6 +97,7 @@ function VerifieSuppressionLiensPublis(Formulaire,IdfElement){
 			chaine+=document.forms['publi'].elements[IdfElement][i].id+"\n";
 		}
 	}
+	alert(chaine);
 	if (chaine=="")  {
 		alert("Pas de lien publication sélectionnée");
 	}

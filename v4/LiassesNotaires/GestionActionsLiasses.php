@@ -208,7 +208,6 @@ $("#btMenuAjouterReleve").click(function() {
 
 $("#btSupprimerReleve").click(function() {
     $("#modeReleve").val('SUPPRIMER_RELEVE'); 
-	alert("bouton supprimer");
 	});
 	
 $("#btMenuAjouterReleveur").click(function() {
