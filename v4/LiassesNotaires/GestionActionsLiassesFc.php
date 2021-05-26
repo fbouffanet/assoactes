@@ -222,7 +222,7 @@ function menu_liste_photo($pconnexionBD){
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type=hidden name="mode" id="mode" value="SUPPRIMER_PHOTO">');
-	print('<input type=hidden name="" id="modePhoto">');
+	print('<input type=hidden name="modePhoto" id="modePhoto">');
 	$i_nb_liasses=count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
