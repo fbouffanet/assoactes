@@ -296,7 +296,7 @@ function menu_gerer($pconnexionBD){
 	print('<div class="panel-heading" align="center">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
 	                           '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'</div>');
 	print('<div class="panel-body">');
-	menu_liste_releve($pconnexionBD);
+	//menu_liste_releve($pconnexionBD);
 	menu_liste_publication($pconnexionBD);
 	menu_liste_photo($pconnexionBD);
 	menu_liste_program($pconnexionBD);
