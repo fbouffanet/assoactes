@@ -175,16 +175,27 @@ $("#btListe").click(function() {
 	});
 	
 $("#btMenuAjouterLienPubli").click(function() {
-	alert('coucou');
     $("#modePubli").val('MENU_AJOUTER_LIEN_PUBLI'); 
+	});
+	
+$("#btSupprimerLienPubli").click(function() {
+    $("#modePubli").val('SUPPRIMER_LIEN_PUBLI'); 
 	});
 	
 $("#btMenuAjouterPhoto").click(function() {
     $("#modePhoto").val('MENU_AJOUTER_PHOTO'); 
 	});
 	
+$("#btSupprimerPhoto").click(function() {
+    $("#modePhoto").val('SUPPRIMER_PHOTO'); 
+	});
+	
 $("#btMenuAjouterProgram").click(function() {
     $("#modeProgram").val('MENU_AJOUTER_PROGRAM'); 
+	});
+
+$("#btSupprimerProgram").click(function() {
+    $("#modeProgram").val('SUPPRIMER_PROGRAM'); 
 	});
 	
 $("#btMenuAjouterPubli").click(function() {

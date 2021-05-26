@@ -177,7 +177,6 @@ function menu_liste_publication($pconnexionBD){
 				  "order by publication_papier.date_publication";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
-	print('<input type=hidden name="mode" id="mode" value="SUPPRIMER_LIEN_PUBLI">');
 	print('<input type=hidden name="modePubli" id="modePubli">');
 	$i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
@@ -189,7 +188,7 @@ function menu_liste_publication($pconnexionBD){
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
 		print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
-		print("<button type=submit class='btn btn-sm btn-danger' ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\">");
+		print("<button type=submit class='btn btn-sm btn-danger' id='btSupprimerLienPubli' ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\">");
 		print('    <span class="glyphicon glyphicon-trash"></span>  Supprimer les liens publications sélectionnés</button>');
 	}
 	else {
@@ -220,7 +219,6 @@ function menu_liste_photo($pconnexionBD){
 				  "order by liasse_photo.date_photo";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
-	print('<input type=hidden name="mode" id="mode" value="SUPPRIMER_PHOTO">');
 	print('<input type=hidden name="modePhoto" id="modePhoto">');
 	$i_nb_liasses=count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
@@ -232,7 +230,7 @@ function menu_liste_photo($pconnexionBD){
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
 		print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
-		print("<button type=submit class='btn btn-sm btn-danger' ONCLICK=\"VerifieSuppressionPhotos(0,'supp[]')\">");
+		print("<button type=submit class='btn btn-sm btn-danger' id='btSupprimerPhoto' ONCLICK=\"VerifieSuppressionPhotos(0,'supp[]')\">");
 		print('    <span class="glyphicon glyphicon-trash"></span>  Supprimer les photos sélectionnées</button>');
 	}
 	else {
@@ -278,7 +276,7 @@ function menu_liste_program($pconnexionBD){
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
 		print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
-		print("<button type=submit class='btn btn-sm btn-danger' ONCLICK=\"VerifieSuppressionPrograms(0,'supp[]')\">");
+		print("<button type=submit class='btn btn-sm btn-danger' id='btSupprimerProgram' ONCLICK=\"VerifieSuppressionPrograms(0,'supp[]')\">");
 		print('    <span class="glyphicon glyphicon-trash"></span> Supprimer les programmations sélectionnées</button>');
 	}
 	else {
