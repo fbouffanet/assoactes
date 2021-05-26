@@ -219,8 +219,8 @@ function menu_liste_photo($pconnexionBD){
 	              "     left outer join codif_photo on liasse_photo.idf_codif_photo = codif_photo.idf ".
 				  "where liasse_photo.cote_liasse = '".$_SESSION['cote_liasse_gal']."' ".
 				  "order by liasse_photo.date_photo";
-	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print("photo");
+	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type=hidden name="mode" id="mode" value="SUPPRIMER_PHOTO">');
 	print('<input type=hidden name="modePhoto" id="modePhoto">');
