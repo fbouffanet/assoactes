@@ -194,10 +194,15 @@ $("#btMenuAjouterPubli").click(function() {
 $("#btMenuAjouterReleve").click(function() {
     $("#modeReleve").val('MENU_AJOUTER_RELEVE'); 
 	});
+
+$("#btSupprimerReleve").click(function() {
+    $("#modeReleve").val('SUPPRIMER_RELEVE'); 
+	});
 	
 $("#btMenuAjouterReleveur").click(function() {
     $("#modeMenu").val('MENU_AJOUTER_RELEVEUR'); 
 	});
+	
 	
 $("#btMenuGerer").click(function() {
     $("#mode").val('MENU_GERER'); 
