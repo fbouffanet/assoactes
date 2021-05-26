@@ -208,6 +208,7 @@ function menu_liste_publication($pconnexionBD){
  * @param object	$pconnexionBD
  */ 
 function menu_liste_photo($pconnexionBD){
+	print("photo");
 	global $gi_num_page_cour;
 	$st_requete = "select concat('PHO', liasse_photo.idf) as idf, ".
 	              "       case when liasse_photo.idf_photographe=0 then 'Inconnu' else concat(releveur.nom, ' ', releveur.prenom) end as photographe, ".
