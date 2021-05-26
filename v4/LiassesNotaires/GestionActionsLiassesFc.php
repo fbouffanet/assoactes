@@ -281,7 +281,6 @@ function menu_liste_program($pconnexionBD){
 		print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
 		print("<button type=submit class='btn btn-sm btn-danger' ONCLICK=\"VerifieSuppressionPrograms(0,'supp[]')\">");
 		print('    <span class="glyphicon glyphicon-trash"></span> Supprimer les programmations sélectionnées</button>');
-		print('</div></div>');
 	}
 	else {
 		print('<div class="alert alert-danger">Pas de programmation</div>');
