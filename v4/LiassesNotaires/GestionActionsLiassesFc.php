@@ -297,8 +297,8 @@ function menu_gerer($pconnexionBD){
 	                           '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'</div>');
 	print('<div class="panel-body">');
 	//menu_liste_releve($pconnexionBD);
-	menu_liste_publication($pconnexionBD);
-	menu_liste_photo($pconnexionBD);
+	//menu_liste_publication($pconnexionBD);
+	//menu_liste_photo($pconnexionBD);
 	menu_liste_program($pconnexionBD);
 	print('<form name=actionLiasse id=actionLiasse action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type=hidden name=mode id=mode>');
