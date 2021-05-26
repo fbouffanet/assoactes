@@ -319,7 +319,22 @@ $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_m
 require_once("../Commun/menu.php");
 
 if (isset($_POST['mode'])) {
-	print('mode : "'.$gst_mode.'"');
+	print('mode : "'.$_POST['mode'].'"');
+}
+if (isset($_POST['modeReleve'])) {
+	print('modeReleve : "'.$_POST['modeReleve'].'"');
+}
+if (isset($_POST['modePubli'])) {
+	print('modePubli : "'.$_POST['modePubli'].'"');
+}
+if (isset($_POST['modePhoto'])) {
+	print('modePhoto : "'.$_POST['modePhoto'].'"');
+}
+if (isset($_POST['modeProgram'])) {
+	print('modeProgram : "'.$_POST['modeProgram'].'"');
+}
+if (isset($_POST['modeMenu'])) {
+	print('modeMenu : "'.$_POST['modeMenu'].'"');
 }
 
 if (isset($_GET['initpub'])) {
