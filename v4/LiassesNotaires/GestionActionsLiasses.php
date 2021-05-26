@@ -226,26 +226,6 @@ $("#btModifierReleve").click(function() {
     $("#mode").val('MODIFIER_RELEVE'); 
 	});
 	
-$("#btSupprimerLienPubli").click(function() {
-    $("#mode").val('SUPPRIMER_LIEN_PUBLI'); 
-	});
-	
-$("#btSupprimerPhoto").click(function() {
-    $("#mode").val('SUPPRIMER_PHOTO'); 
-	});
-	
-$("#btSupprimerProgram").click(function() {
-    $("#mode").val('SUPPRIMER_PROGRAM'); 
-	});
-	
-$("#btSupprimerPubli").click(function() {
-    $("#mode").val('SUPPRIMER_PUBLI'); 
-	});
-	
-$("#btSupprimerReleve").click(function() {
-    $("#mode").val('SUPPRIMER_RELEVE'); 
-	});
-	
 $("#majReleve").validate({
   rules: {
 		numero:			{ required: true,	integer:true },
@@ -338,6 +318,7 @@ else {
 	$gst_m1 = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;
 }
 $gst_mode = isset($_REQUEST['smode']) ? $_REQUEST['smode'] : $gst_m1 ;
+print($gst_mode);
 
 if (isset($_GET['mod'])) {
 	if(substr($_GET['mod'],0,3) == 'REL') {
