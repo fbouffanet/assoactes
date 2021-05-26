@@ -263,7 +263,6 @@ function menu_liste_program($pconnexionBD){
 				  "order by liasse_programmation.date_creation";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
-	print('<input type=hidden name="mode" id="mode" value="SUPPRIMER_PROGRAM">');
 	print('<input type=hidden name="modeProgram" id="modeProgram">');
 	$i_nb_liasses=count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
