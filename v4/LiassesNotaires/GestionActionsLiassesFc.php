@@ -212,14 +212,13 @@ function menu_liste_photo($pconnexionBD){
 	$st_requete = "select concat('PHO', liasse_photo.idf) as idf, ".
 	              "       case when liasse_photo.idf_photographe=0 then 'Inconnu' else concat(releveur.nom, ' ', releveur.prenom) end as photographe, ".
 	              "       case when date_photo = str_to_date('0000/00/00', '%Y/%m/%d') then '' else date_format(date_photo, '%d/%m/%Y') end as date_photo, ".
-				  "       couverturmodePhotoe_photo.nom as couverture, codif_photo.nom as codif, info_complementaires ".
+				  "       couverture_photo.nom as couverture, codif_photo.nom as codif, info_complementaires ".
 	              "from liasse_photo ".
 	              "     left outer join releveur on liasse_photo.idf_photographe = releveur.idf ".
 	              "     left outer join couverture_photo on liasse_photo.idf_couverture_photo = couverture_photo.idf ".
 	              "     left outer join codif_photo on liasse_photo.idf_codif_photo = codif_photo.idf ".
 				  "where liasse_photo.cote_liasse = '".$_SESSION['cote_liasse_gal']."' ".
 				  "order by liasse_photo.date_photo";
-	print($st_requete);
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type=hidden name="mode" id="mode" value="SUPPRIMER_PHOTO">');
