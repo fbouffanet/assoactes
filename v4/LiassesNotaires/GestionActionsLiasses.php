@@ -176,15 +176,15 @@ $("#btListe").click(function() {
 	
 $("#btMenuAjouterLienPubli").click(function() {
 	alert('coucou');
-    $("#mode").val('MENU_AJOUTER_LIEN_PUBLI'); 
+    $("#modePubli").val('MENU_AJOUTER_LIEN_PUBLI'); 
 	});
 	
 $("#btMenuAjouterPhoto").click(function() {
-    $("#mode").val('MENU_AJOUTER_PHOTO'); 
+    $("#modePhoto").val('MENU_AJOUTER_PHOTO'); 
 	});
 	
 $("#btMenuAjouterProgram").click(function() {
-    $("#mode").val('MENU_AJOUTER_PROGRAM'); 
+    $("#modeProgram").val('MENU_AJOUTER_PROGRAM'); 
 	});
 	
 $("#btMenuAjouterPubli").click(function() {
@@ -192,7 +192,7 @@ $("#btMenuAjouterPubli").click(function() {
 	});
 	
 $("#btMenuAjouterReleve").click(function() {
-    $("#mode").val('MENU_AJOUTER_RELEVE'); 
+    $("#modeReleve").val('MENU_AJOUTER_RELEVE'); 
 	});
 	
 $("#btMenuAjouterReleveur").click(function() {
@@ -314,6 +314,18 @@ require_once("../Commun/menu.php");
 
 if (isset($_GET['initpub'])) {
 	$gst_m1 = 'MENU_GERER_PUBLI';
+}
+elseif (isset($_POST['modeReleve'])) {
+	$gst_m1 = $_POST['modeReleve'];
+}
+elseif (isset($_POST['modePubli'])) {
+	$gst_m1 = $_POST['modePubli'];
+}
+elseif (isset($_POST['modePhoto'])) {
+	$gst_m1 = $_POST['modePhoto'];
+}
+elseif (isset($_POST['modeProgram'])) {
+	$gst_m1 = $_POST['modeProgram'];
 }
 else {
 	$gst_m1 = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;

@@ -139,6 +139,7 @@ function menu_liste_releve($pconnexionBD){
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type=hidden name="mode" id="mode" value="SUPPRIMER_RELEVE">');
+	print('<input type=hidden name="modeReleve" id="modeReleve"');
 	$i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
@@ -178,6 +179,7 @@ function menu_liste_publication($pconnexionBD){
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type=hidden name="mode" id="mode" value="SUPPRIMER_LIEN_PUBLI">');
+	print('<input type=hidden name="modePubli" id="modePubli">');
 	$i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
@@ -210,7 +212,7 @@ function menu_liste_photo($pconnexionBD){
 	$st_requete = "select concat('PHO', liasse_photo.idf) as idf, ".
 	              "       case when liasse_photo.idf_photographe=0 then 'Inconnu' else concat(releveur.nom, ' ', releveur.prenom) end as photographe, ".
 	              "       case when date_photo = str_to_date('0000/00/00', '%Y/%m/%d') then '' else date_format(date_photo, '%d/%m/%Y') end as date_photo, ".
-				  "       couverture_photo.nom as couverture, codif_photo.nom as codif, info_complementaires ".
+				  "       couverturmodePhotoe_photo.nom as couverture, codif_photo.nom as codif, info_complementaires ".
 	              "from liasse_photo ".
 	              "     left outer join releveur on liasse_photo.idf_photographe = releveur.idf ".
 	              "     left outer join couverture_photo on liasse_photo.idf_couverture_photo = couverture_photo.idf ".
@@ -220,6 +222,7 @@ function menu_liste_photo($pconnexionBD){
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type=hidden name="mode" id="mode" value="SUPPRIMER_PHOTO">');
+	print('<input type=hidden name="" id="modePhoto">');
 	$i_nb_liasses=count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
@@ -264,6 +267,7 @@ function menu_liste_program($pconnexionBD){
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type=hidden name="mode" id="mode" value="SUPPRIMER_PROGRAM">');
+	print('<input type=hidden name="modeProgram" id="modeProgram">');
 	$i_nb_liasses=count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
