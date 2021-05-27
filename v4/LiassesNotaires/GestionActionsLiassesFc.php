@@ -218,7 +218,7 @@ function menu_liste_photo($pconnexionBD){
 				  "where liasse_photo.cote_liasse = '".$_SESSION['cote_liasse_gal']."' ".
 				  "order by liasse_photo.date_photo";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	print('<div align=center><form id="photo" action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type=hidden name="modePhoto" id="modePhoto">');
 	$i_nb_liasses=count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
@@ -262,7 +262,7 @@ function menu_liste_program($pconnexionBD){
 				  "      (liasse_programmation.date_reelle_fin is null or liasse_programmation.date_reelle_fin=str_to_date('0000/00/00', '%Y/%m/%d')) ".
 				  "order by liasse_programmation.date_creation";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	print('<div align=center><form id="program" action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type=hidden name="modeProgram" id="modeProgram">');
 	$i_nb_liasses=count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
