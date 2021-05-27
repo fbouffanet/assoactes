@@ -176,7 +176,7 @@ function menu_liste_publication($pconnexionBD){
 				  "where liasse_publication_papier.cote_liasse = '".$_SESSION['cote_liasse_gal']."' ".
 				  "order by publication_papier.date_publication";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	print('<div align=center><form id="publi" action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type=hidden name="modePubli" id="modePubli">');
 	$i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
