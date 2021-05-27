@@ -188,7 +188,7 @@ function menu_liste_publication($pconnexionBD){
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
 		print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
-		print("<button type=submit class='btn btn-sm btn-danger' id='btSupprimerLienPubli' ONCLICK=\"VerifieSuppressionLiensPublis(1,'supp[]')\">");
+		print("<button type=submit class='btn btn-sm btn-danger' id='btSupprimerLienPubli' ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\">");
 		print('    <span class="glyphicon glyphicon-trash"></span>  Supprimer les liens publications sélectionnés</button>');
 	}
 	else {
@@ -230,7 +230,7 @@ function menu_liste_photo($pconnexionBD){
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
 		print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
-		print("<button type=submit class='btn btn-sm btn-danger' id='btSupprimerPhoto' ONCLICK=\"VerifieSuppressionPhotos(2,'supp[]')\">");
+		print("<button type=submit class='btn btn-sm btn-danger' id='btSupprimerPhoto' ONCLICK=\"VerifieSuppressionPhotos(0,'supp[]')\">");
 		print('    <span class="glyphicon glyphicon-trash"></span>  Supprimer les photos sélectionnées</button>');
 	}
 	else {
@@ -275,7 +275,7 @@ function menu_liste_program($pconnexionBD){
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
 		print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
-		print("<button type=submit class='btn btn-sm btn-danger' id='btSupprimerProgram' ONCLICK=\"VerifieSuppressionPrograms(3,'supp[]')\">");
+		print("<button type=submit class='btn btn-sm btn-danger' id='btSupprimerProgram' ONCLICK=\"VerifieSuppressionPrograms(0,'supp[]')\">");
 		print('    <span class="glyphicon glyphicon-trash"></span> Supprimer les programmations sélectionnées</button>');
 	}
 	else {

@@ -88,6 +88,7 @@ function VerifieChampsLienPubli(Formulaire){
 function VerifieSuppressionLiensPublis(Formulaire,IdfElement){
 	var chaine="";
 	// Un seul élément
+	alert("coucou");
 	if (document.forms['publi'].elements[IdfElement].checked)	{
 		 chaine+=document.forms['publi'].elements[IdfElement].id;
 	}
@@ -97,7 +98,6 @@ function VerifieSuppressionLiensPublis(Formulaire,IdfElement){
 			chaine+=document.forms['publi'].elements[IdfElement][i].id+"\n";
 		}
 	}
-	alert(chaine);
 	if (chaine=="")  {
 		alert("Pas de lien publication sélectionnée");
 	}
