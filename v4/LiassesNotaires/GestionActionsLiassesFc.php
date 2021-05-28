@@ -394,17 +394,20 @@ function menu_modifier_releve($pconnexionBD, $pi_idf_releve, $pa_releveur){
  */ 
 
 function menu_ajouter_releve($pconnexionBD, $pa_releveur){
-	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
-	print("<div class=SOUSTITRE>Ajout d'un relev&eacute;</div><br><br>");
-	print("<form id=majReleve action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsReleve(0)\">");
-	print("<div align=center><input type=hidden name=mode value=\"AJOUTER_RELEVE\">");
+	print('<form id=majReleve method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print('<input type=hidden name=mode id=mode value="AJOUTER_RELEVE">');
+	
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading" align="center">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
+	                           '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'<br>Relevé</div>');
+	print('<div class="panel-body">');
 	menu_edition_releve($pconnexionBD, $pa_releveur, '', 0, '', '', ''); 
-	print("</div>");
-	print("<div align=center><br><input type=button value=\"Ajouter\" ONCLICK=\"VerifieChampsReleve(0)\"></div>");
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"MENU_GERER\">");
-	print("<br><input type=submit value=\"Annuler\"></div>");
+	print("</div></div>");
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+	print('<button type=submit id=btAjouterReleve class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
+	print('<button type=submit formnovalidate id=btMenuGerer class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
+	print('</div>');
+	
 	print('</form>');
 }
 
