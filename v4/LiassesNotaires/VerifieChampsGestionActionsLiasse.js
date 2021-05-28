@@ -1,19 +1,3 @@
-function VerifieChampsReleve(Formulaire){
-	var selectElmt = document.getElementById('idf_releveur');
-	var idf_releveur = selectElmt.options[selectElmt.selectedIndex].value;
-	var date_fin_releve = document.forms[Formulaire].date_fin_releve.value;
-	var publi_num = document.forms[Formulaire].publi_num.checked;
-	var ListeErreurs	= "";
-	var jj=date_fin_releve.substring(0,2);
-	var mm=date_fin_releve.substring(3,5);
-	var aa=date_fin_releve.substring(6);
-	var sep1=date_fin_releve.substring(2,3);
-	var sep2=date_fin_releve.substring(5,6);
-	if ( idf_releveur == 0 && date_fin_releve == "" && ! publi_num )   {
-		ListeErreurs+="Saisir au moins une information\n";
-	}
-}
-
 function VerifieChampsReleveur(Formulaire){
 	document.forms[Formulaire].submit();
 }
