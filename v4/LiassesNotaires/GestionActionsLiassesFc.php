@@ -249,7 +249,7 @@ function menu_liste_photo($pconnexionBD){
  * Affiche la liste des programmations d'une liasse
  * @param object	$pconnexionBD
  */ 
-/*
+
 function menu_liste_program($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('PRO', liasse_programmation.idf) as idf, ".
@@ -290,7 +290,7 @@ function menu_liste_program($pconnexionBD){
 	print('</div></form>');
 	print('<div>&nbsp;</div></div>');
 }
-*/
+
 /** Affiche le menu des actions sur une liasse
  * @param object	$pconnexionBD			Identifiant de la connexion de base
  */ 
