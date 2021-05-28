@@ -612,6 +612,7 @@ function menu_edition_program($pconnexionBD, $pa_reveleur, $pi_idf_program, $pi_
 	else {
 		print('unchecked>');
 	}
+	print("</div></div></div>");
 	print('<div class="form-row col-md-12">'.
 		  '<div class="form-group col-md-4" align="right"><label class="col-form-label">Programmation photo&nbsp;</label></div>'.
 		  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
@@ -622,6 +623,7 @@ function menu_edition_program($pconnexionBD, $pa_reveleur, $pi_idf_program, $pi_
 	else {
 		print('unchecked>');
 	}
+	print("</div></div></div>");
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Informations complémentaires&nbsp;</label></div>".
 		  "<div class='form-group col-md-4' align='left'><textarea class='form-control' rows='3' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></div></div>");
