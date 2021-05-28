@@ -125,7 +125,7 @@ function menu_liste($pconnexionBD){
  * Affiche la liste des relevés d'une liasse
  * @param object	$pconnexionBD
  */ 
-function menu_liste_releve($pconnexionBD){
+/*function menu_liste_releve($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('REL', liasse_releve.idf) as idf, ".
 	              "       case when liasse_releve.idf_releveur=0 then 'Inconnu' else concat(releveur.nom, ' ', releveur.prenom) end as releveur, ".
@@ -161,8 +161,9 @@ function menu_liste_releve($pconnexionBD){
 	print('<div>&nbsp;</div>');
 	print('</div>');
 }
-
+*/
 /**
+/*
  * Affiche la liste des publications papier d'une liasse
  * @param object	$pconnexionBD
  */ 
@@ -200,11 +201,12 @@ function menu_liste_publication($pconnexionBD){
 	print('<div>&nbsp;</div>');
 	print('</div>');
 }
-
+*/
 /**
  * Affiche la liste des photos d'une liasse
  * @param object	$pconnexionBD
  */ 
+/*
 function menu_liste_photo($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('PHO', liasse_photo.idf) as idf, ".
@@ -241,11 +243,12 @@ function menu_liste_photo($pconnexionBD){
 	print('</div></form>');
 	print('<div>&nbsp;</div></div>');
 }
-
+*/
 /**
  * Affiche la liste des programmations d'une liasse
  * @param object	$pconnexionBD
  */ 
+/*
 function menu_liste_program($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('PRO', liasse_programmation.idf) as idf, ".
@@ -286,10 +289,11 @@ function menu_liste_program($pconnexionBD){
 	print('</div></form>');
 	print('<div>&nbsp;</div></div>');
 }
-
+*/
 /** Affiche le menu des actions sur une liasse
  * @param object	$pconnexionBD			Identifiant de la connexion de base
  */ 
+/*
 function menu_gerer($pconnexionBD){
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading" align="center">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
@@ -306,6 +310,7 @@ function menu_gerer($pconnexionBD){
 	print('<button type=submit id=btListe class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
 	print('</div></form></div></div>');
 }
+*/
 /** --------------------------------------- relevés ----------------------------------- **/
 /**
  * Affiche de la table d'édition d'un relevé
@@ -317,6 +322,7 @@ function menu_gerer($pconnexionBD){
  * @param integer	$pi_publication_numerique	booleen publication numérique Oui/Non
  * @param string	$pst_info_compl				Informations complémentaires sur le relevé
  */ 
+/*
 function menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $pi_idf_releveur,
                              $pst_date_fin_releve, $pi_publication_numerique, $pst_info_compl){
 	print("<div class='form-row col-md-12'>".
@@ -343,12 +349,13 @@ function menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $pi_id
 		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Informations complémentaires&nbsp;</label></div>".
 		  "<div class='form-group col-md-4' align='left'><textarea class='form-control' rows='3' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></div></div>");
 }
-
+*/
 /** Affiche le menu de modification d'un relevé
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  * @param integer	$pi_idf_releve		Identifiant du revelée à modifier 
  * @param array		$pa_releveur		Tableau des releveurs
  */ 
+/*
 function menu_modifier_releve($pconnexionBD, $pi_idf_releve, $pa_releveur){
 	list($i_idf_releveur, $st_date_fin_releve, $i_publication_numerique, $st_info_compl)
 	=$pconnexionBD->sql_select_listeUtf8("select idf_releveur, ".
@@ -377,11 +384,12 @@ function menu_modifier_releve($pconnexionBD, $pi_idf_releve, $pa_releveur){
 	
 	print('</form>');
 }
-
+*/
 /** Affiche le menu d'ajout d'un relevé
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  * @param array		$pa_releveur		Tableau des releveurs
  */ 
+/*
 function menu_ajouter_releve($pconnexionBD, $pa_releveur){
 	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
 	print("<div class=SOUSTITRE>Ajout d'un relev&eacute;</div><br><br>");
@@ -396,10 +404,11 @@ function menu_ajouter_releve($pconnexionBD, $pa_releveur){
 	print("<br><input type=submit value=\"Annuler\"></div>");
 	print('</form>');
 }
-
+*/
 /** Affiche le menu d'ajout d'un releveur
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  */ 
+/*
 function menu_ajouter_releveur($pconnexionBD){
 	$st_requete = "SELECT idf,concat(nom, ' ', prenom) as nom FROM adherent ".
 	              "where idf not in (select idf_adherent from releveur) ".
@@ -420,7 +429,7 @@ function menu_ajouter_releveur($pconnexionBD){
 	print("<br><input type=submit value=\"Annuler\"></div>");
 	print('</form>');
 }
-
+*/
 /** --------------------------------------- publication papier ----------------------------------- **/
 /**
  * Affiche de la table d'édition d'un lien publication papier
@@ -428,18 +437,20 @@ function menu_ajouter_releveur($pconnexionBD){
  * @param array		$pa_publication				Tableau des publications papier
  * @param integer	$pi_idf_publication				Identifiant d'une publication papier
  */ 
+/*
 function menu_edition_lien_publication($pconnexionBD, $pa_publication, $pi_idf_publication){
 	print("<table border=1>");
 	print("<tr><th>Publication</th><td>".
 	      "<select name=idf_publication id='idf_publication'>".chaine_select_options($pi_idf_publication,$pa_publication)."</select></td></tr>");
 	print("</table>");
 }
-
+*/
 /** Affiche le menu de modification d'un lien publication papier
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  * @param integer	$pi_idf_publication	Identifiant du lien publication papier 
  * @param array		$pa_publication		Tableau des publications papier
  */ 
+/*
 function menu_modifier_lien_publication($pconnexionBD, $pi_idf_lien_publication, $pa_publication){
 	list($i_idf_publication)
 	=$pconnexionBD->sql_select_listeUtf8("select idf_publication_papier from liasse_publication_papier where idf=".$pi_idf_lien_publication);
@@ -457,11 +468,12 @@ function menu_modifier_lien_publication($pconnexionBD, $pi_idf_lien_publication,
 	print("<br><input type=submit value=\"Annuler\"></div>");
 	print('</form>');
 }
-
+*/
 /** Affiche le menu d'ajout d'un lien publication papier
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  * @param array		$pa_publication		Tableau des publications papier
  */ 
+/*
 function menu_ajouter_lien_publication($pconnexionBD, $pa_publication){
 	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
 	print("<div class=SOUSTITRE>Ajout d'un lien publication papier</div><br><br>");
@@ -476,12 +488,13 @@ function menu_ajouter_lien_publication($pconnexionBD, $pa_publication){
 	print("<br><input type=submit value=\"Annuler\"></div>");
 	print('</form>');
 }
-
+*/
 /**
  * Affiche la liste des publications papier
  * @param object	$pconnexionBD
  * @param array		$pa_publication		Tableau des publications papier
  */ 
+/*
 function menu_gerer_publication($pconnexionBD){
 	global $gi_num_page_cour;
 	unset($_SESSION['liasse']);
@@ -538,7 +551,7 @@ function menu_gerer_publication($pconnexionBD){
 	print('</form>');
 	print('</div>');  
 }
-
+*/
 /**
  * Affiche de la table d'édition d'une publication
  * @param object	$pconnexionBD				Identifiant de la connexion de base
@@ -546,6 +559,7 @@ function menu_gerer_publication($pconnexionBD){
  * @param string	$pst_date_publication		Date de la publication
  * @param string	$pst_info_compl				Informations complémentaires sur le relevé
  */ 
+/*
 function menu_edition_publication($pconnexionBD, $pst_nom, $pst_date_publication, $pst_info_compl){
 	print("<table border=1>");
 	print("<tr><th>Titre de la publication</th><td colspan=2>".
@@ -556,11 +570,12 @@ function menu_edition_publication($pconnexionBD, $pst_nom, $pst_date_publication
 	      "<textarea rows='3' cols='80' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></td></tr>");
 	print("</table>");
 }
-
+*/
 /** Affiche le menu de modification d'une publication
  * @param object	$pconnexionBD			Identifiant de la connexion de base
  * @param string	$pi_idf_publication		Titre de la publication
  */ 
+/*
 function menu_modifier_publication($pconnexionBD, $pi_idf_publication){
 	list($st_nom, $st_date_publication, $st_info_compl)
 	=$pconnexionBD->sql_select_listeUtf8("select nom, ".
@@ -583,10 +598,11 @@ function menu_modifier_publication($pconnexionBD, $pi_idf_publication){
 	print("<br><input type=submit value=\"Annuler\"></div>");
 	print('</form>');
 }
-
+*/
 /** Affiche le menu d'ajout d'un relevé
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  */ 
+/*
 function menu_ajouter_publication($pconnexionBD){
 	print("<div class=TITRE>Gestion des publications</div>");
 	print("<div class=SOUSTITRE>Ajout d'une publication</div><br><br>");
@@ -601,7 +617,7 @@ function menu_ajouter_publication($pconnexionBD){
 	print("<br><input type=submit value=\"Annuler\"></div>");
 	print('</form>');
 }
-
+*/
 /** --------------------------------------- photos ----------------------------------- **/
 /**
  * Affiche de la table d'édition d'une photo
@@ -614,6 +630,7 @@ function menu_ajouter_publication($pconnexionBD){
  * @param integer	$pi_codif_photo			codif photo
  * @param string	$pst_info_compl				Informations complémentaires sur la prise de photo
  */ 
+/*
 function menu_edition_photo($pconnexionBD, $pa_reveleur, $pi_idf_photo, $pi_idf_photographe,
                              $pst_date_photo, $pi_couverture_photo, $pi_codif_photo, $pst_info_compl, $pa_couverture_photo, $pa_codif_photo){
 	print("<table border=1>");
@@ -629,12 +646,13 @@ function menu_edition_photo($pconnexionBD, $pa_reveleur, $pi_idf_photo, $pi_idf_
 	      "<textarea rows='3' cols='80' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></td></tr>");
 	print("</table>");
 }
-
+*/
 /** Affiche le menu de modification d'une photo
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  * @param integer	$pi_idf_photo		Identifiant de la prise de photo à modifier 
  * @param array		$pa_reveleur		Tableau des releveurs
  */ 
+/*
 function menu_modifier_photo($pconnexionBD, $pi_idf_photo, $pa_reveleur, $pa_couverture_photo, $pa_codif_photo){
 	list($i_idf_photographe, $st_date_photo, $pi_couverture_photo, $pi_codif_photo, $st_info_compl)
 	=$pconnexionBD->sql_select_listeUtf8("select idf_photographe, ".
@@ -659,11 +677,12 @@ function menu_modifier_photo($pconnexionBD, $pi_idf_photo, $pa_reveleur, $pa_cou
 	print("<br><input type=submit value=\"Annuler\"></div>");
 	print('</form>');
 }
-
+*/
 /** Affiche le menu d'ajout d'une photo
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  * @param array		$pa_reveleur		Tableau des releveurs
  */ 
+/*
 function menu_ajouter_photo($pconnexionBD, $pa_reveleur, $pa_couverture_photo, $pa_codif_photo){
 	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
 	print("<div class=SOUSTITRE>Ajout d'une prise de photo</div><br><br>");
@@ -678,7 +697,7 @@ function menu_ajouter_photo($pconnexionBD, $pa_reveleur, $pa_couverture_photo, $
 	print("<br><input type=submit value=\"Annuler\"></div>");
 	print('</form>');
 }
-
+*/
 /** --------------------------------------- programmation ----------------------------------- **/
 /**
  * Affiche de la table d'édition d'une programmation
@@ -692,6 +711,7 @@ function menu_ajouter_photo($pconnexionBD, $pa_reveleur, $pa_couverture_photo, $
  * @param integer	$pi_program_photo			booleen programmation de photos Oui/Non
  * @param string	$pst_info_compl				Informations complémentaires sur le relevé
  */ 
+/*
 function menu_edition_program($pconnexionBD, $pa_reveleur, $pi_idf_program, $pi_idf_intervenant, $pi_priorite_program, 
                               $pst_date_creation, $pst_date_echeance, $pst_date_reelle_fin, 
 							  $pi_program_releve, $pi_program_photo, $pst_info_compl, $pa_priorite_program){
@@ -721,13 +741,14 @@ function menu_edition_program($pconnexionBD, $pa_reveleur, $pi_idf_program, $pi_
 		  "<br>Si vous renseignez cette date, la programmation disparaîtra de la liste, sans être supprim&eacute;e</td></tr>");
 	print("</table>");
 }
-
+*/
 /** Affiche le menu de modification d'un relevé
  * @param object	$pconnexionBD			Identifiant de la connexion de base
  * @param integer	$pi_idf_program			Identifiant de la programmation à modifier 
  * @param array		$pa_reveleur			Tableau des releveurs
  * @param array		$pa_priorite_program	Tableau des prioriés de programmation
  */ 
+/*
 function menu_modifier_program($pconnexionBD, $pi_idf_program, $pa_reveleur, $pa_priorite_program){
 	list($i_idf_intervenant, $i_priorite_program, $st_date_creation, $pst_date_echeance, $st_date_reelle_fin, $i_program_releve, $i_program_photo, $st_info_compl)
 	=$pconnexionBD->sql_select_listeUtf8("select idf_intervenant, idf_priorite, ".
@@ -758,12 +779,13 @@ function menu_modifier_program($pconnexionBD, $pi_idf_program, $pa_reveleur, $pa
 	print("<br><input type=submit value=\"Annuler\"></div>");
 	print('</form>');
 }
-
+*/
 /** Affiche le menu d'ajout d'une programmation
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  * @param array		$pa_reveleur			Tableau des releveurs
  * @param array		$pa_priorite_program	Tableau des priorités de programmation
  */ 
+/*
 function menu_ajouter_program($pconnexionBD, $pa_reveleur, $pa_priorite_program){
 	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
 	print("<div class=SOUSTITRE>Ajout d'une programmatron</div><br><br>");
@@ -778,10 +800,11 @@ function menu_ajouter_program($pconnexionBD, $pa_reveleur, $pa_priorite_program)
 	print("<br><input type=submit value=\"Annuler\"></div>");
 	print('</form>');
 }
-
+*/
 /** Elimine les éventuels \ du texte et remplace les ' par \'
  * @param string	$pst_texte			Le texte à traiter
  */ 
+
 function escape_apostrophe($pst_texte){
 	$st_texte = str_replace("\\", "", $pst_texte);
 	$st_texte = str_replace("'", "\'", $pst_texte);
