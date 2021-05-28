@@ -30,7 +30,7 @@ print("<script src='../js/additional-methods.min.js' type='text/javascript'></sc
 print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='../js/select2.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
-print("<script src='./VerifieChampsGestionActionsLiasse.js' type='text/javascript'></script>");
+//print("<script src='./VerifieChampsGestionActionsLiasse.js' type='text/javascript'></script>");
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {
