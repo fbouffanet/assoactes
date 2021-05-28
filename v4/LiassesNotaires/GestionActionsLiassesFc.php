@@ -207,7 +207,7 @@ function menu_liste_publication($pconnexionBD){
  * Affiche la liste des photos d'une liasse
  * @param object	$pconnexionBD
  */ 
-/*
+
 function menu_liste_photo($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('PHO', liasse_photo.idf) as idf, ".
@@ -244,7 +244,7 @@ function menu_liste_photo($pconnexionBD){
 	print('</div></form>');
 	print('<div>&nbsp;</div></div>');
 }
-*/
+
 /**
  * Affiche la liste des programmations d'une liasse
  * @param object	$pconnexionBD
