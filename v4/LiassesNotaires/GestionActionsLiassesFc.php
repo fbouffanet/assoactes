@@ -443,7 +443,8 @@ function menu_modifier_lien_publication($pconnexionBD, $pi_idf_lien_publication,
 	print('<div class="panel-heading" align="center">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
 	                           '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'<br>Lien publication papier</div>');
 	print('<div class="panel-body">');
-	menu_edition_lien_publication($pconnexionBD, $pa_publication, $i_idf_publication); 	print("</div></div>");
+	menu_edition_lien_publication($pconnexionBD, $pa_publication, $i_idf_publication); 	
+	print("</div></div>");
 	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
 	print('<button type=submit id=btModifierLienPubli class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
 	print('<button type=submit formnovalidate id=btMenuGerer class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
@@ -466,6 +467,7 @@ function menu_ajouter_lien_publication($pconnexionBD, $pa_publication){
 	                           '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'<br>Lien publication papier</div>');
 	print('<div class="panel-body">');
 	menu_edition_lien_publication($pconnexionBD, $pa_publication, 0); 
+	print("</div></div>");
 	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
 	print('<button type=submit id=btAjouterLienPubli class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
 	print('<button type=submit formnovalidate id=btMenuGerer class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
