@@ -294,7 +294,7 @@ function menu_liste_program($pconnexionBD){
 /** Affiche le menu des actions sur une liasse
  * @param object	$pconnexionBD			Identifiant de la connexion de base
  */ 
-/*
+
 function menu_gerer($pconnexionBD){
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading" align="center">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
@@ -311,7 +311,7 @@ function menu_gerer($pconnexionBD){
 	print('<button type=submit id=btListe class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
 	print('</div></form></div></div>');
 }
-*/
+
 /** --------------------------------------- relevés ----------------------------------- **/
 /**
  * Affiche de la table d'édition d'un relevé
