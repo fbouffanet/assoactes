@@ -455,7 +455,6 @@ $pa_publication = $connexionBD->liste_valeur_par_clef("SELECT idf, concat(nom, '
 													  "FROM publication_papier order by nom");
 $pa_publication[0] = '';
 print('mode déduit : "'.$gst_mode.'"');
-
 require_once('GestionActionsLiassesFc.php');
 print('mode déduit : "'.$gst_mode.'"');
 switch ($gst_mode) {
