@@ -167,6 +167,7 @@ function menu_liste($pconnexionBD){
  * Affiche la liste des publications papier d'une liasse
  * @param object	$pconnexionBD
  */ 
+/*
 function menu_liste_publication($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('PUB', liasse_publication_papier.idf) as idf, publication_papier.nom, ".
