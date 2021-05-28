@@ -12,35 +12,6 @@ function VerifieChampsReleve(Formulaire){
 	if ( idf_releveur == 0 && date_fin_releve == "" && ! publi_num )   {
 		ListeErreurs+="Saisir au moins une information\n";
 	}
-	if ( date_fin_releve != "" ) {
-		if ( isNaN(jj) || jj<1 || jj>31 ) {
-			ListeErreurs+="Le jour de la date de fin de relevé n'est pas correct\n";
-		}	
-		else if ( isNaN(mm) || mm<1 || mm>12 ) {
-			ListeErreurs+="Le mois de la date de fin de relevé n'est pas correct\n";
-		}	
-		else if ( isNaN(aa) || aa<1980 || aa>2100 ) {
-			ListeErreurs+="L'année de la date de fin de relevé n'est pas correct\n";
-		}	
-		else if ( ( mm == 4 || mm == 6 || mm == 9 || mm == 11 ) && jj > 30 ) {
-			ListeErreurs+="Le jour de la date de fin de relevé n'est pas correct\n";
-		}	
-		else if ( mm == 2 && (aa % 4) == 0 && jj > 29 ){
-			ListeErreurs+="Le jour de la date de fin de relevé n'est pas correct\n";
-		}	
-		else if ( mm == 2 && (aa % 4) != 0 && jj > 28 ){
-			ListeErreurs+="Le jour de la date de fin de relevé n'est pas correct\n";
-		}		
-		else if ( sep1 != "/" || sep2 != "/" ) {
-			ListeErreurs+="Les jour, mois et année de la date de fin de relevé doivent être séparés par / \n";
-		}
-	}
-	if (ListeErreurs!= "")   {
-		alert(ListeErreurs);
-	}
-	else   {
-		document.forms[Formulaire].submit();
-	}
 }
 
 function VerifieChampsReleveur(Formulaire){
@@ -88,7 +59,6 @@ function VerifieChampsLienPubli(Formulaire){
 function VerifieSuppressionLiensPublis(Formulaire,IdfElement){
 	var chaine="";
 	// Un seul élément
-	alert("coucou");
 	if (document.forms['publi'].elements[IdfElement].checked)	{
 		 chaine+=document.forms['publi'].elements[IdfElement].id;
 	}

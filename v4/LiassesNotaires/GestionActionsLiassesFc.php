@@ -319,19 +319,29 @@ function menu_gerer($pconnexionBD){
  */ 
 function menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $pi_idf_releveur,
                              $pst_date_fin_releve, $pi_publication_numerique, $pst_info_compl){
-	print("<table border=0>");
-	print("<tr><th>Releveur</th><td>".
-	      "<select name=idf_releveur id='idf_releveur'>".chaine_select_options($pi_idf_releveur,$pa_releveur)."</select></td></tr>");
-	print("<tr><th>Date de fin de relev&eacute;</th><td>".
-	      "<input type=\"text\" maxlength=10 size=10 name=date_fin_releve value=\"$pst_date_fin_releve\"></td></tr>");
-	print("<tr><th>Publication num&eacute;rique</th><td>");
-	if($pi_publication_numerique == 1)
-		print("<input type=checkbox name=publi_num value=\"1\" checked></tr>");
-	else
-		print("<input type=checkbox name=publi_num value=\"1\" unchecked></tr>");
-	print("<tr><th>Informations compl&eacute;mentaires</th><td colspan=2>".
-	      "<textarea rows='3' cols='80' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></td></tr>");
-	print("</table>");
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Releveur&nbsp;</label></div>".
+		  "<div class='form-group col-md-3' align='left'><select name=idf_releveur id='idf_releveur' class='js-select-avec-recherche form-control'>".
+			chaine_select_options($pi_idf_releveur,$pa_releveur)."</select></div></div>");
+
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Date de fin de relevé&nbsp;</label></div>".
+	print("<div class='form-group col-md-1'>".
+		  "<input type=text name=date_fin_releve id=date_fin_releve size=10 maxlength='10' value='".$pst_date_fin_releve."' class='form-control'></div></div>");
+
+	print('<div class="form-row col-md-12">'.
+		  '<div class="form-group col-md-4" align="right"><label class="col-form-label">Publication numérique&nbsp;</label></div>'.
+		  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+		  '<input type="checkbox" class="form-check-input" name=publi_num id=publi_num value="1" ');
+	if($pi_publication_numerique == 1) {
+		print('checked>');}
+	else {
+		print('unchecked>');}
+	print("</div></div></div>");
+	
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Informations complémentaires&nbsp;</label></div>".
+		  "<div class='form-group col-md-4' align='left'><textarea class='form-control' rows='3' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></div></div>");
 }
 
 /** Affiche le menu de modification d'un relevé
@@ -348,24 +358,24 @@ function menu_modifier_releve($pconnexionBD, $pi_idf_releve, $pa_releveur){
 	                                 "       in_publication_numerique, info_complementaires ".
 									 "from liasse_releve ".
 									 "where idf=$pi_idf_releve");
-	print('<div class="panel panel-primary">');
-	print('<div class="panel-heading">Relevé sur la liasse '.$_SESSION['cote_liasse_gal'].
-	                                '&nbsp&nbsp&nbsp-&nbsp&nbsp&nbspNotaire(s) '.$_SESSION['notaires_gal'].
-									'&nbsp&nbsp&nbsp-&nbsp&nbsp&nbsppériode '.$_SESSION['periodes_gal'].'</div>');
-	print('<div class="panel-body">');
-	print("<form id=majReleve action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsReleve(0)\">");
-	print("<div align=center><input type=hidden name=mode value=\"MODIFIER_RELEVE\">");
+	
+	print('<form id=majReleve method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print('<input type=hidden name=mode id=mode value="MODIFIER_RELEVE">');
 	print("<input type=hidden name=idf_releve value=$pi_idf_releve>");
+	
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading" align="center">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
+	                           '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'<br>Relevé</div>');
+	print('<div class="panel-body">');
 	menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $i_idf_releveur, $st_date_fin_releve,
 	                    $i_publication_numerique, $st_info_compl); 
-	print("</div>");
-	print("<div align=center><br><input type=button value=\"Modifier\" ONCLICK=\"VerifieChampsReleve(0)\"></div>");
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"MENU_GERER\">");
-	print("<br><input type=submit value=\"Annuler\"></div>");
-	print('</form>');
 	print("</div></div>");
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+	print('<button type=submit id=btModifierReleve class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
+	print('<button type=submit formnovalidate id=btMenuGerer class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
+	print('</div>');
+	
+	print('</form>');
 }
 
 /** Affiche le menu d'ajout d'un relevé

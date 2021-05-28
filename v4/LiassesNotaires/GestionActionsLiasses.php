@@ -34,6 +34,44 @@ print("<script src='./VerifieChampsGestionActionsLiasse.js' type='text/javascrip
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {
+
+jQuery.validator.addMethod(
+    "format_date",
+    function(value, element) {
+		var check = true;
+		var ListeErreurs	= "";
+		var jj=value.substring(0,2);
+		var mm=value.substring(3,5);
+		var aa=value.substring(6);
+		var sep1=value.substring(2,3);
+		var sep2=value.substring(5,6);
+		if ( value != "" ) {
+			if ( isNaN(jj) || jj<1 || jj>31 ) {
+				check = false;
+			}	
+			else if ( isNaN(mm) || mm<1 || mm>12 ) {
+				check = false;
+			}	
+			else if ( isNaN(aa) || aa<1980 || aa>2100 ) {
+				check = false;
+			}	
+			else if ( ( mm == 4 || mm == 6 || mm == 9 || mm == 11 ) && jj > 30 ) {
+				check = false;
+			}	
+			else if ( mm == 2 && (aa % 4) == 0 && jj > 29 ){
+				check = false;
+			}	
+			else if ( mm == 2 && (aa % 4) != 0 && jj > 28 ){
+				check = false;
+			}		
+			else if ( sep1 != "/" || sep2 != "/" ) {
+				check = false;
+			}
+		}
+		return this.optional(element) || check;
+    },
+    "Le format de date est incorrecte. Attendu : jj/mm/aaaa"
+);
 	
 jQuery.validator.addMethod(
     "depose_avec_dept",
@@ -369,7 +407,6 @@ else {
 	$gst_m1 = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;
 }
 $gst_mode = isset($_REQUEST['smode']) ? $_REQUEST['smode'] : $gst_m1 ;
-print('mode déduit : "'.$gst_mode.'"');
 
 if (isset($_GET['mod'])) {
 	if(substr($_GET['mod'],0,3) == 'REL') {
