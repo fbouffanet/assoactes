@@ -280,7 +280,7 @@ if (isset($_POST['modeProgram'])) {
 if (isset($_POST['modeMenu'])) {
 	print('modeMenu : "'.$_POST['modeMenu'].'"');
 }
-print("coucou");
+
 if (isset($_GET['initpub'])) {
 	$gst_m1 = 'MENU_GERER_PUBLI';
 }
@@ -349,7 +349,7 @@ $pa_publication = $connexionBD->liste_valeur_par_clef("SELECT idf, concat(nom, '
 													  "                   substr(info_complementaires,1,80)) as nom ".
 													  "FROM publication_papier order by nom");
 $pa_publication[0] = '';
-
+print("coucou");
 require_once('GestionActionsLiassesFc.php');
 print('gst_mode : "'.$gst_mode.'"');
 
