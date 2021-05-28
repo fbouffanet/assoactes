@@ -3,6 +3,7 @@
  * Affiche la liste des liasses
  * @param object $pconnexionBD
  */ 
+print("avant menu_liste");
 function menu_liste($pconnexionBD){
 	$a_serie_liasse = $pconnexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 	if( isset($_POST['serie_liasse']) ) {
@@ -125,6 +126,7 @@ function menu_liste($pconnexionBD){
  * Affiche la liste des relevés d'une liasse
  * @param object	$pconnexionBD
  */ 
+print("avant menu_liste_releve");
 function menu_liste_releve($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('REL', liasse_releve.idf) as idf, ".
@@ -166,6 +168,7 @@ function menu_liste_releve($pconnexionBD){
  * Affiche la liste des publications papier d'une liasse
  * @param object	$pconnexionBD
  */ 
+print("avant menu_liste_publication");
 function menu_liste_publication($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('PUB', liasse_publication_papier.idf) as idf, publication_papier.nom, ".
@@ -205,6 +208,7 @@ function menu_liste_publication($pconnexionBD){
  * Affiche la liste des photos d'une liasse
  * @param object	$pconnexionBD
  */ 
+print("avant menu_liste_photo");
 function menu_liste_photo($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('PHO', liasse_photo.idf) as idf, ".
@@ -246,6 +250,7 @@ function menu_liste_photo($pconnexionBD){
  * Affiche la liste des programmations d'une liasse
  * @param object	$pconnexionBD
  */ 
+print("avant menu_liste_program");
 function menu_liste_program($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('PRO', liasse_programmation.idf) as idf, ".
@@ -290,6 +295,7 @@ function menu_liste_program($pconnexionBD){
 /** Affiche le menu des actions sur une liasse
  * @param object	$pconnexionBD			Identifiant de la connexion de base
  */ 
+print("avant menu_gerer");
 function menu_gerer($pconnexionBD){
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading" align="center">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
@@ -317,6 +323,7 @@ function menu_gerer($pconnexionBD){
  * @param integer	$pi_publication_numerique	booleen publication numérique Oui/Non
  * @param string	$pst_info_compl				Informations complémentaires sur le relevé
  */ 
+print("avant menu_edition_releve");
 function menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $pi_idf_releveur,
                              $pst_date_fin_releve, $pi_publication_numerique, $pst_info_compl){
 	print("<div class='form-row col-md-12'>".
@@ -349,6 +356,7 @@ function menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $pi_id
  * @param integer	$pi_idf_releve		Identifiant du revelée à modifier 
  * @param array		$pa_releveur		Tableau des releveurs
  */ 
+print("avant menu_modifier_releve");
 function menu_modifier_releve($pconnexionBD, $pi_idf_releve, $pa_releveur){
 	list($i_idf_releveur, $st_date_fin_releve, $i_publication_numerique, $st_info_compl)
 	=$pconnexionBD->sql_select_listeUtf8("select idf_releveur, ".
@@ -382,6 +390,7 @@ function menu_modifier_releve($pconnexionBD, $pi_idf_releve, $pa_releveur){
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  * @param array		$pa_releveur		Tableau des releveurs
  */ 
+print("avant menu_ajouter_releve");
 function menu_ajouter_releve($pconnexionBD, $pa_releveur){
 	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
 	print("<div class=SOUSTITRE>Ajout d'un relev&eacute;</div><br><br>");
@@ -400,6 +409,7 @@ function menu_ajouter_releve($pconnexionBD, $pa_releveur){
 /** Affiche le menu d'ajout d'un releveur
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  */ 
+print("avant menu_ajouter_releveur");
 function menu_ajouter_releveur($pconnexionBD){
 	$st_requete = "SELECT idf,concat(nom, ' ', prenom) as nom FROM adherent ".
 	              "where idf not in (select idf_adherent from releveur) ".
