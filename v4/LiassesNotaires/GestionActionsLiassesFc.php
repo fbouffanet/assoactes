@@ -125,7 +125,7 @@ function menu_liste($pconnexionBD){
  * Affiche la liste des relevés d'une liasse
  * @param object	$pconnexionBD
  */ 
-/*function menu_liste_releve($pconnexionBD){
+function menu_liste_releve($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('REL', liasse_releve.idf) as idf, ".
 	              "       case when liasse_releve.idf_releveur=0 then 'Inconnu' else concat(releveur.nom, ' ', releveur.prenom) end as releveur, ".
@@ -161,7 +161,7 @@ function menu_liste($pconnexionBD){
 	print('<div>&nbsp;</div>');
 	print('</div>');
 }
-*/
+
 /**
 /*
  * Affiche la liste des publications papier d'une liasse
