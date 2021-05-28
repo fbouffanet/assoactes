@@ -85,6 +85,77 @@ jQuery.validator.addMethod(
     "Saisir au moins le releveur ou la date de relevé"
 );
 
+$("#majReleve").validate({
+  rules: {
+		idf_releveur:	{ releveur_ou_date:true },
+		date_fin_releve:{ format_date:true }
+  },		
+  messages: {
+		idf_releveur:	{ releveur_ou_date: "Saisir au moins le releveur ou la date de relevé"	},
+		date_fin_releve:{ format_date: "Le format de date est incorrecte. Attendu : jj/mm/aaaa"	}
+  }
+});
+
+$("#majLienPubli").validate({
+  rules: {
+		numero:			{ required: true,	integer:true },
+		depose_ad:		{ depose_avec_dept:true },
+		dept_depose_ad:	{ dept_avec_depose:true },
+		forme_liasse:	{ required: true }	
+  },		
+  messages: {
+		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
+		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
+		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
+		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
+  }
+});
+
+$("#majPhoto").validate({
+  rules: {
+		numero:			{ required: true,	integer:true },
+		depose_ad:		{ depose_avec_dept:true },
+		dept_depose_ad:	{ dept_avec_depose:true },
+		forme_liasse:	{ required: true }	
+  },		
+  messages: {
+		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
+		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
+		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
+		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
+  }
+});
+
+$("#majProgram").validate({
+  rules: {
+		numero:			{ required: true,	integer:true },
+		depose_ad:		{ depose_avec_dept:true },
+		dept_depose_ad:	{ dept_avec_depose:true },
+		forme_liasse:	{ required: true }	
+  },		
+  messages: {
+		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
+		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
+		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
+		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
+  }
+});
+
+$("#ajoutReleveur").validate({
+  rules: {
+		numero:			{ required: true,	integer:true },
+		depose_ad:		{ depose_avec_dept:true },
+		dept_depose_ad:	{ dept_avec_depose:true },
+		forme_liasse:	{ required: true }	
+  },		
+  messages: {
+		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
+		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
+		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
+		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
+  }
+});
+
 $("#btAjouterLienPubli").click(function() {
     $("#mode").val('AJOUTER_LIEN_PUBLI'); 
 	});
@@ -181,77 +252,6 @@ $("#btModifierReleve").click(function() {
     $("#mode").val('MODIFIER_RELEVE'); 
 	});
 	
-$("#majReleve").validate({
-  rules: {
-		idf_releveur:	{ releveur_ou_date:true },
-		date_fin_releve:{ format_date:true }
-  },		
-  messages: {
-		idf_releveur:	{ releveur_ou_date: "Saisir au moins le releveur ou la date de relevé"	},
-		date_fin_releve:{ format_date: "Le format de date est incorrecte. Attendu : jj/mm/aaaa"	}
-  }
-});
-
-$("#ajoutReleveur").validate({
-  rules: {
-		numero:			{ required: true,	integer:true },
-		depose_ad:		{ depose_avec_dept:true },
-		dept_depose_ad:	{ dept_avec_depose:true },
-		forme_liasse:	{ required: true }	
-  },		
-  messages: {
-		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
-		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
-		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
-		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
-  }
-});
-
-$("#majLienPubli").validate({
-  rules: {
-		numero:			{ required: true,	integer:true },
-		depose_ad:		{ depose_avec_dept:true },
-		dept_depose_ad:	{ dept_avec_depose:true },
-		forme_liasse:	{ required: true }	
-  },		
-  messages: {
-		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
-		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
-		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
-		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
-  }
-});
-
-$("#majPhoto").validate({
-  rules: {
-		numero:			{ required: true,	integer:true },
-		depose_ad:		{ depose_avec_dept:true },
-		dept_depose_ad:	{ dept_avec_depose:true },
-		forme_liasse:	{ required: true }	
-  },		
-  messages: {
-		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
-		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
-		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
-		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
-  }
-});
-
-$("#majProgram").validate({
-  rules: {
-		numero:			{ required: true,	integer:true },
-		depose_ad:		{ depose_avec_dept:true },
-		dept_depose_ad:	{ dept_avec_depose:true },
-		forme_liasse:	{ required: true }	
-  },		
-  messages: {
-		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
-		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
-		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
-		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
-  }
-});
-
 });
 </script>
 <?php
@@ -280,7 +280,7 @@ if (isset($_POST['modeProgram'])) {
 if (isset($_POST['modeMenu'])) {
 	print('modeMenu : "'.$_POST['modeMenu'].'"');
 }
-
+print("coucou");
 if (isset($_GET['initpub'])) {
 	$gst_m1 = 'MENU_GERER_PUBLI';
 }
