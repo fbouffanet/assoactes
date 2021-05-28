@@ -411,31 +411,6 @@ function menu_ajouter_releve($pconnexionBD, $pa_releveur){
 	print('</form>');
 }
 
-/** Affiche le menu d'ajout d'un releveur
- * @param object	$pconnexionBD		Identifiant de la connexion de base
- */ 
-
-function menu_ajouter_releveur($pconnexionBD){
-	$st_requete = "SELECT idf,concat(nom, ' ', prenom) as nom FROM adherent ".
-	              "where idf not in (select idf_adherent from releveur) ".
-				  "order by nom";
-	$a_adherent = $pconnexionBD->liste_valeur_par_clef($st_requete);
-	print("<div class=TITRE>Ajout d'un releveur</div><br><br>");
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsReleveur(0)\">");
-	print("<div align=center><input type=hidden name=mode value=\"AJOUTER_RELEVEUR\">");
-	print("<table border=1>");
-	print("<tr><th>Adh&eacute;rent</th><td>".
-	      "<select name='idf_adherent' id='idf_adherent'>".chaine_select_options(0,$a_adherent)."</select></td></tr>");
-	print("</table>");
-	print("</div>");
-	print("<div align=center><br><input type=button value=\"Ajouter\" ONCLICK=\"VerifieChampsReleveur(0)\"></div>");
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"MENU_GERER\">");
-	print("<br><input type=submit value=\"Annuler\"></div>");
-	print('</form>');
-}
-
 /** --------------------------------------- publication papier ----------------------------------- **/
 /**
  * Affiche de la table d'édition d'un lien publication papier
@@ -445,10 +420,10 @@ function menu_ajouter_releveur($pconnexionBD){
  */ 
 
 function menu_edition_lien_publication($pconnexionBD, $pa_publication, $pi_idf_publication){
-	print("<table border=1>");
-	print("<tr><th>Publication</th><td>".
-	      "<select name=idf_publication id='idf_publication'>".chaine_select_options($pi_idf_publication,$pa_publication)."</select></td></tr>");
-	print("</table>");
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Publication&nbsp;</label></div>".
+		  "<div class='form-group col-md-6' align='left'><select name=idf_publication id='idf_publication' class='js-select-avec-recherche form-control'>".
+			chaine_select_options($pi_idf_publication,$pa_publication)."</select></div></div>");
 }
 
 /** Affiche le menu de modification d'un lien publication papier
@@ -460,18 +435,20 @@ function menu_edition_lien_publication($pconnexionBD, $pa_publication, $pi_idf_p
 function menu_modifier_lien_publication($pconnexionBD, $pi_idf_lien_publication, $pa_publication){
 	list($i_idf_publication)
 	=$pconnexionBD->sql_select_listeUtf8("select idf_publication_papier from liasse_publication_papier where idf=".$pi_idf_lien_publication);
-	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
-	print("<div class=SOUSTITRE>Modification d'un lien publication papier</div><br><br>");
-	print("<form id=majLienPubli action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsLienPubli(0)\">");
-	print("<div align=center><input type=hidden name=mode value=\"MODIFIER_LIEN_PUBLI\">");
+	print('<form id=majLienPubli method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print('<input type=hidden name=mode id=mode value="MODIFIER_LIEN_PUBLI">');
 	print("<input type=hidden name=idf_lien_publi value=$pi_idf_lien_publication>");
-	menu_edition_lien_publication($pconnexionBD, $pa_publication, $i_idf_publication); 
-	print("</div>");
-	print("<div align=center><br><input type=button value=\"Modifier\" ONCLICK=\"VerifieChampsLienPubli(0)\"></div>");
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"MENU_GERER\">");
-	print("<br><input type=submit value=\"Annuler\"></div>");
+	
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading" align="center">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
+	                           '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'<br>Lien publication papier</div>');
+	print('<div class="panel-body">');
+	menu_edition_lien_publication($pconnexionBD, $pa_publication, $i_idf_publication); 	print("</div></div>");
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+	print('<button type=submit id=btModifierLienPubli class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
+	print('<button type=submit formnovalidate id=btMenuGerer class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
+	print('</div>');
+	
 	print('</form>');
 }
 
@@ -481,17 +458,19 @@ function menu_modifier_lien_publication($pconnexionBD, $pi_idf_lien_publication,
  */ 
 
 function menu_ajouter_lien_publication($pconnexionBD, $pa_publication){
-	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
-	print("<div class=SOUSTITRE>Ajout d'un lien publication papier</div><br><br>");
-	print("<form id=majLienPubli action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsLienPubli(0)\">");
-	print("<div align=center><input type=hidden name=mode id=mode value=\"AJOUTER_LIEN_PUBLI\">");
+	print('<form id=majLienPubli method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print('<input type=hidden name=mode id=mode value="AJOUTER_LIEN_PUBLI">');
+	
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading" align="center">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
+	                           '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'<br>Lien publication papier</div>');
+	print('<div class="panel-body">');
 	menu_edition_lien_publication($pconnexionBD, $pa_publication, 0); 
-	print("</div>");
-	print("<div align=center><br><input type=button value=\"Ajouter\" ONCLICK=\"VerifieChampsLienPubli(0)\"></div>");
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"MENU_GERER\">");
-	print("<br><input type=submit value=\"Annuler\"></div>");
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+	print('<button type=submit id=btAjouterLienPubli class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
+	print('<button type=submit formnovalidate id=btMenuGerer class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
+	print('</div>');
+	
 	print('</form>');
 }
 
@@ -800,6 +779,30 @@ function menu_ajouter_program($pconnexionBD, $pa_reveleur, $pa_priorite_program)
 	menu_edition_program($pconnexionBD, $pa_reveleur, 0, 0, 0, date('d/m/Y'), '', '', 0, 0, '', $pa_priorite_program); 
 	print("</div>");
 	print("<div align=center><br><input type=button value=\"Ajouter\" ONCLICK=\"VerifieChampsProgram(0)\"></div>");
+	print('</form>');
+	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
+	print("<div align=center><input type=hidden name=mode value=\"MENU_GERER\">");
+	print("<br><input type=submit value=\"Annuler\"></div>");
+	print('</form>');
+}
+
+/** Affiche le menu d'ajout d'un releveur ou d'un photographe
+ * @param object	$pconnexionBD		Identifiant de la connexion de base
+ */ 
+function menu_ajouter_releveur($pconnexionBD){
+	$st_requete = "SELECT idf,concat(nom, ' ', prenom) as nom FROM adherent ".
+	              "where idf not in (select idf_adherent from releveur) ".
+				  "order by nom";
+	$a_adherent = $pconnexionBD->liste_valeur_par_clef($st_requete);
+	print("<div class=TITRE>Ajout d'un releveur</div><br><br>");
+	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsReleveur(0)\">");
+	print("<div align=center><input type=hidden name=mode value=\"AJOUTER_RELEVEUR\">");
+	print("<table border=1>");
+	print("<tr><th>Adh&eacute;rent</th><td>".
+	      "<select name='idf_adherent' id='idf_adherent'>".chaine_select_options(0,$a_adherent)."</select></td></tr>");
+	print("</table>");
+	print("</div>");
+	print("<div align=center><br><input type=button value=\"Ajouter\" ONCLICK=\"VerifieChampsReleveur(0)\"></div>");
 	print('</form>');
 	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
 	print("<div align=center><input type=hidden name=mode value=\"MENU_GERER\">");

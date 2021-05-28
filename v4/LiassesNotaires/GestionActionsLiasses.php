@@ -407,7 +407,6 @@ else {
 	$gst_m1 = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;
 }
 $gst_mode = isset($_REQUEST['smode']) ? $_REQUEST['smode'] : $gst_m1 ;
-print('mode déduit : "'.$gst_mode.'"');
 
 if (isset($_GET['mod'])) {
 	if(substr($_GET['mod'],0,3) == 'REL') {
@@ -454,9 +453,7 @@ $pa_publication = $connexionBD->liste_valeur_par_clef("SELECT idf, concat(nom, '
 													  "                   substr(info_complementaires,1,80)) as nom ".
 													  "FROM publication_papier order by nom");
 $pa_publication[0] = '';
-print('mode déduit : "'.$gst_mode.'"');
 require_once('GestionActionsLiassesFc.php');
-print('mode déduit : "'.$gst_mode.'"');
 switch ($gst_mode) {
 	case 'LISTE' : 
 		if(isset($_SESSION['cote_liasse_gal'])) {
