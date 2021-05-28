@@ -333,17 +333,19 @@ function menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $pi_id
 
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Date de fin de relevé&nbsp;</label></div>".
-	print("<div class='form-group col-md-1'>".
+		  "<div class='form-group col-md-1'>".
 		  "<input type=text name=date_fin_releve id=date_fin_releve size=10 maxlength='10' value='".$pst_date_fin_releve."' class='form-control'></div></div>");
 
 	print('<div class="form-row col-md-12">'.
 		  '<div class="form-group col-md-4" align="right"><label class="col-form-label">Publication numérique&nbsp;</label></div>'.
 		  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
 		  '<input type="checkbox" class="form-check-input" name=publi_num id=publi_num value="1" ');
-	if($pi_publication_numerique == 1) {
-		print('checked>');}
+	if ($pi_publication_numerique == 1) {
+		print('checked>');
+	}
 	else {
-		print('unchecked>');}
+		print('unchecked>');
+	}
 	print("</div></div></div>");
 	
 	print("<div class='form-row col-md-12'>".
