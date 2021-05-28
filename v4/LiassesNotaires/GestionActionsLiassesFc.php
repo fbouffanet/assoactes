@@ -626,7 +626,7 @@ function menu_edition_program($pconnexionBD, $pa_reveleur, $pi_idf_program, $pi_
 	print("</div></div></div>");
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Informations complémentaires&nbsp;</label></div>".
-		  "<div class='form-group col-md-4' align='left'><textarea class='form-control' rows='3' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></div></div>");
+		  "<div class='form-group col-md-7' align='left'><textarea class='form-control' rows='3' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></div></div>");
 	
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Date réelle de fin l'action programmée&nbsp;</label></div>".
