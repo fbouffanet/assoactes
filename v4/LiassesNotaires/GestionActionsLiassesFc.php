@@ -630,7 +630,7 @@ function menu_edition_program($pconnexionBD, $pa_reveleur, $pi_idf_program, $pi_
 	
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Date réelle de fin l'action programmée&nbsp;</label></div>".
-		  "<div class='form-group col-md-1'>".
+		  "<div class='form-group col-md-2'>".
 		  "<input type=text name=date_reelle_fin id=date_reelle_fin size=10 maxlength='10' value='".$pst_date_reelle_fin."' class='form-control'></div>".
 		  "<div class='form-group col-md-4'>Si vous renseignez cette date, la programmation disparaîtra de la liste, sans être supprimée</div></div>");
 }
