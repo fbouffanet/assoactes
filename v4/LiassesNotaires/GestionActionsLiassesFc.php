@@ -586,31 +586,55 @@ function menu_ajouter_photo($pconnexionBD, $pa_reveleur, $pa_couverture_photo, $
 function menu_edition_program($pconnexionBD, $pa_reveleur, $pi_idf_program, $pi_idf_intervenant, $pi_priorite_program, 
                               $pst_date_creation, $pst_date_echeance, $pst_date_reelle_fin, 
 							  $pi_program_releve, $pi_program_photo, $pst_info_compl, $pa_priorite_program){
-	print("<table border=1>");
-	print("<tr><th>Intervenant programm&eacute;</th><td>".
-	      "<select name=idf_intervenant id='idf_intervenant'>".chaine_select_options($pi_idf_intervenant,$pa_reveleur)."</select></td></tr>");
-	print("<tr><th>Date de cr&eacute;ation de la programmation</th><td>".
-	      "<input type=\"text\" maxlength=10 size=10 name=date_creation value=\"$pst_date_creation\"></td></tr>");
-	print("<tr><th>Date d'&eacute;ch&eacute;ance de la programmation</th><td>".
-	      "<input type=\"text\" maxlength=10 size=10 name=date_echeance value=\"$pst_date_echeance\"></td></tr>");
-	print("<tr><th>Priorit&eacute; de la programmation</th><td>".
-	      "<select name=idf_priorite id='idf_priorite'>".chaine_select_options($pi_priorite_program, $pa_priorite_program)."</select></td></tr>");
-	print("<tr><th>Programmation relev&eacute;</th><td>");
-	if($pi_program_releve == 1)
-		print("<input type=checkbox name=program_releve value=\"1\" checked></tr>");
-	else
-		print("<input type=checkbox name=program_releve value=\"1\" unchecked></tr>");
-	print("<tr><th>Programmation photo</th><td>");
-	if($pi_program_photo == 1)
-		print("<input type=checkbox name=program_photo value=\"1\" checked></tr>");
-	else
-		print("<input type=checkbox name=program_photo value=\"1\" unchecked></tr>");
-	print("<tr><th>Informations compl&eacute;mentaires</th><td colspan=2>".
-	      "<textarea rows='3' cols='80' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></td></tr>");
-	print("<tr><th>Date de fin r&eacute;elle de l'action programm&eacute;e</th><td>".
-	      "<input type=\"text\" maxlength=10 size=10 name=date_reelle_fin value=\"$pst_date_reelle_fin\">".
-		  "<br>Si vous renseignez cette date, la programmation disparaîtra de la liste, sans être supprim&eacute;e</td></tr>");
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Intervenant programmé&nbsp;</label></div>".
+		  "<div class='form-group col-md-3' align='left'><select name=idf_intervenant id='idf_intervenant' class='js-select-avec-recherche form-control'>".
+			chaine_select_options($pi_idf_intervenant,$pa_reveleur)."</select></div></div>");
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Date de création de la programmation&nbsp;</label></div>".
+		  "<div class='form-group col-md-1'>".
+		  "<input type=text name=date_creation id=date_creation size=10 maxlength='10' value='".$pst_date_creation."' class='form-control'></div></div>");
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Date d'échéance de la programmation&nbsp;</label></div>".
+		  "<div class='form-group col-md-1'>".
+		  "<input type=text name=date_echeance id=date_echeance size=10 maxlength='10' value='".$pst_date_echeance."' class='form-control'></div></div>");
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Priorité de la programmation&nbsp;</label></div>".
+		  "<div class='form-group col-md-3' align='left'><select name=idf_priorite id='idf_priorite' class='js-select-avec-recherche form-control'>".
+			chaine_select_options($pi_priorite_program, $pa_priorite_program)."</select></div></div>");
+	print('<div class="form-row col-md-12">'.
+		  '<div class="form-group col-md-4" align="right"><label class="col-form-label">Programmation relevé&nbsp;</label></div>'.
+		  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+		  '<input type="checkbox" class="form-check-input" name=program_releve id=program_releve value="1" ');
+	if ($pi_program_releve == 1) {
+		print('checked>');
+	}
+	else {
+		print('unchecked>');
+	}
+	print('<div class="form-row col-md-12">'.
+		  '<div class="form-group col-md-4" align="right"><label class="col-form-label">Programmation photo&nbsp;</label></div>'.
+		  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+		  '<input type="checkbox" class="form-check-input" name=program_photo id=program_photo value="1" ');
+	if ($pi_program_photo == 1) {
+		print('checked>');
+	}
+	else {
+		print('unchecked>');
+	}
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Informations complémentaires&nbsp;</label></div>".
+		  "<div class='form-group col-md-4' align='left'><textarea class='form-control' rows='3' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></div></div>");
+
+	      "<input type=\"text\" maxlength=10 size=10 name= value=\"$\">".
+		  "<br></td></tr>");
 	print("</table>");
+	
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Date réelle de fin l'action programmée&nbsp;</label></div>".
+		  "<div class='form-group col-md-1'>".
+		  "<input type=text name=date_reelle_fin id=date_reelle_fin size=10 maxlength='10' value='".$pst_date_reelle_fin."' class='form-control'></div></div>".
+		  "<div class='form-group col-md-4'>Si vous renseignez cette date, la programmation disparaîtra de la liste, sans être supprimée</div>");
 }
 
 /** Affiche le menu de modification d'un relevé
@@ -635,19 +659,22 @@ function menu_modifier_program($pconnexionBD, $pi_idf_program, $pa_reveleur, $pa
 	                                 "       in_program_releve, in_program_photo, info_complementaires ".
 									 "from liasse_programmation ".
 									 "where idf=$pi_idf_program");
-	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
-	print("<div class=SOUSTITRE>Modification d'une programmation</div><br><br>");
-	print("<form id=majProgram action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsProgram(0)\">");
-	print("<div align=center><input type=hidden name=mode value=\"MODIFIER_PROGRAM\">");
-	print("<input type=hidden name=idf_program value=$pi_idf_program>");
+	print('<form id=majProgram method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print('<input type=hidden name=mode id=mode value="MODIFIER_PROGRAM">');
+	print("<input type=hidden name=idf_photo value=$pi_idf_program>");
+	
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading" align="center">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
+	                           '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'<br>Programmation</div>');
+	print('<div class="panel-body">');
 	menu_edition_program($pconnexionBD, $pa_reveleur, $pi_idf_program, $i_idf_intervenant, $i_priorite_program, 
 	                     $st_date_creation, $pst_date_echeance, $st_date_reelle_fin, $i_program_releve, $i_program_photo, $st_info_compl, $pa_priorite_program); 
-	print("</div>");
-	print("<div align=center><br><input type=button value=\"Modifier\" ONCLICK=\"VerifieChampsProgram(0)\"></div>");
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"MENU_GERER\">");
-	print("<br><input type=submit value=\"Annuler\"></div>");
+	print("</div></div>");
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+	print('<button type=submit id=btModifierProgram class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
+	print('<button type=submit formnovalidate id=btMenuGerer class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
+	print('</div>');
+	
 	print('</form>');
 }
 
@@ -658,17 +685,20 @@ function menu_modifier_program($pconnexionBD, $pi_idf_program, $pa_reveleur, $pa
  */ 
 
 function menu_ajouter_program($pconnexionBD, $pa_reveleur, $pa_priorite_program){
-	print("<div class=TITRE>Gestion des actions sur la liasse ".$_SESSION['cote_liasse_gal']."<br>Notaire(s) ".$_SESSION['notaires_gal'].", ".$_SESSION['periodes_gal']."</div>");
-	print("<div class=SOUSTITRE>Ajout d'une programmatron</div><br><br>");
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsProgram(0)\">");
-	print("<div align=center><input type=hidden name=mode value=\"AJOUTER_PROGRAM\">");
+	print('<form id=majProgram method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print('<input type=hidden name=mode id=mode value="AJOUTER_PROGRAM">');
+	
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading" align="center">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
+	                           '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'<br>Programmation</div>');
+	print('<div class="panel-body">');
 	menu_edition_program($pconnexionBD, $pa_reveleur, 0, 0, 0, date('d/m/Y'), '', '', 0, 0, '', $pa_priorite_program); 
-	print("</div>");
-	print("<div align=center><br><input type=button value=\"Ajouter\" ONCLICK=\"VerifieChampsProgram(0)\"></div>");
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"MENU_GERER\">");
-	print("<br><input type=submit value=\"Annuler\"></div>");
+	print("</div></div>");
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+	print('<button type=submit id=btAjouterProgram class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
+	print('<button type=submit formnovalidate id=btMenuGerer class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
+	print('</div>');
+	
 	print('</form>');
 }
 
