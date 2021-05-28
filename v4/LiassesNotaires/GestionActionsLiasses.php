@@ -453,6 +453,7 @@ $pa_publication = $connexionBD->liste_valeur_par_clef("SELECT idf, concat(nom, '
 													  "                   substr(info_complementaires,1,80)) as nom ".
 													  "FROM publication_papier order by nom");
 $pa_publication[0] = '';
+print($gst_mode);
 require_once('GestionActionsLiassesFc.php');
 switch ($gst_mode) {
 	case 'LISTE' : 
