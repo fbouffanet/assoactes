@@ -421,7 +421,7 @@ function menu_ajouter_releve($pconnexionBD, $pa_releveur){
 
 function menu_edition_lien_publication($pconnexionBD, $pa_publication, $pi_idf_publication){
 	print("<div class='form-row col-md-12'>".
-		  "<div class='form-group col-md-2' align='right'><label class='col-form-label'>Publication&nbsp;</label></div>".
+		  "<div class='form-group col-md-1' align='right'><label class='col-form-label'>Publication&nbsp;</label></div>".
 		  "<div class='form-group col-md-6' align='left'><select name=idf_publication id='idf_publication' class='js-select-avec-recherche form-control'>".
 			chaine_select_options($pi_idf_publication,$pa_publication)."</select></div></div>");
 }
