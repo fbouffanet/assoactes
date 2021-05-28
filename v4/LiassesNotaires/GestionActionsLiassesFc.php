@@ -167,7 +167,7 @@ function menu_liste_releve($pconnexionBD){
  * Affiche la liste des publications papier d'une liasse
  * @param object	$pconnexionBD
  */ 
-/*
+
 function menu_liste_publication($pconnexionBD){
 	global $gi_num_page_cour;
 	$st_requete = "select concat('PUB', liasse_publication_papier.idf) as idf, publication_papier.nom, ".
@@ -202,7 +202,7 @@ function menu_liste_publication($pconnexionBD){
 	print('<div>&nbsp;</div>');
 	print('</div>');
 }
-*/
+
 /**
  * Affiche la liste des photos d'une liasse
  * @param object	$pconnexionBD
