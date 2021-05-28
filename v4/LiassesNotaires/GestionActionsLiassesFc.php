@@ -323,7 +323,7 @@ function menu_gerer($pconnexionBD){
  * @param integer	$pi_publication_numerique	booleen publication numérique Oui/Non
  * @param string	$pst_info_compl				Informations complémentaires sur le relevé
  */ 
-/*
+
 function menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $pi_idf_releveur,
                              $pst_date_fin_releve, $pi_publication_numerique, $pst_info_compl){
 	print("<div class='form-row col-md-12'>".
@@ -350,7 +350,7 @@ function menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $pi_id
 		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Informations complémentaires&nbsp;</label></div>".
 		  "<div class='form-group col-md-4' align='left'><textarea class='form-control' rows='3' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></div></div>");
 }
-*/
+
 /** Affiche le menu de modification d'un relevé
  * @param object	$pconnexionBD		Identifiant de la connexion de base
  * @param integer	$pi_idf_releve		Identifiant du revelée à modifier 
