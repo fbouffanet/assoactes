@@ -22,6 +22,9 @@ function VerifieSuppressionReleves(Formulaire,IdfElement){
 		if (confirm(Message))        {                                                                                                                                    
 			document.forms[Formulaire].submit();                                                           
 		}
+		else {
+			alert("Pas confirmé");
+		}
 	}
 }
 
