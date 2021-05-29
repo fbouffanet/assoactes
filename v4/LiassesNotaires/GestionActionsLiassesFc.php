@@ -144,7 +144,7 @@ function menu_liste_releve($pconnexionBD){
 	{        
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_liasses,
 		                                    10,DELTA_NAVIGATION,
-											array('Releveur','Date fin relev&eacute;','Publication num&eacute;rique','Infos compl&eacute;mentaires','Modifier','Supprimer'));
+											array('Releveur','Date fin relevé','Publication numérique','Infos complémentaires','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2, false);
