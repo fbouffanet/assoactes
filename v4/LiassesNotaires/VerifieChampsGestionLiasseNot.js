@@ -1,5 +1,5 @@
 
-function VerifieSuppression(Formulaire,IdfElement) {
+/*function VerifieSuppression(Formulaire,IdfElement) {
   var chaine="";
   // Un seul élément
 	if (document.forms[Formulaire].elements[IdfElement].checked)	{
@@ -20,7 +20,7 @@ function VerifieSuppression(Formulaire,IdfElement) {
         document.forms[Formulaire].submit();                                                           
      }
   }
-}
+}*/
 
 function VerifieSuppressionNotaires(Formulaire,IdfElement) {
   var chaine="";

@@ -19,7 +19,7 @@ function menu_liste($pconnexionBD)
 	$st_serie_liasse = $_SESSION['serie_liasse'];
 	unset($_SESSION['liasse']);
 	$a_numerotation_liasses = array("z","1","2","3","4","5","6","7","8","9"); 
-	print('<div align=center><form  action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	print('<div align=center><form id="listeLiasses" action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading">Liasses notariales</div>');
 	print('<div class="panel-body">');
@@ -96,7 +96,8 @@ function menu_liste($pconnexionBD)
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
 		print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
-		print("<button type=submit id=btSupprimerLiasse class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppression(0,'supp[]')\">");
+		print("<button type=submit id=btSupprimerLiasse class=\"btn btn-sm btn-danger\">");
+//		print("<button type=submit id=btSupprimerLiasse class=\"btn btn-sm btn-danger\" ONCLICK=\"VerifieSuppression(0,'supp[]')\">");
 		print("    <span class=\"glyphicon glyphicon-trash\"></span> Supprimer les liasses sélectionnées</button>");
 	}
 	else {

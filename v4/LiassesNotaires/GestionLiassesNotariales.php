@@ -154,7 +154,27 @@ $("#btAjoutLiasse").click(function() {
 	});
 	
 $("#btSupprimerLiasse").click(function() {
-    $("#mode").val('SUPPRIMER'); 
+	var chaine="";
+	// Un seul élément
+	if (document.forms['listeLiasses'].elements['supp'].checked)	{
+		chaine+=document.forms['listeLiasses'].elements['supp'].id;
+	}
+	// Au moins deux éléments 
+	for (var i = 0; i < document.forms['listeLiasses'].elements['supp'].length; i++)  {
+		if (document.forms['listeLiasses'].elements['supp'][i].checked)      {
+			chaine+=document.forms['listeLiasses'].elements['supp'][i].id+"\n";
+		}
+	}
+	$("#mode").val('LISTE'); 
+	if (chaine=="")  {
+		alert("Pas de liasse sélectionnée");
+	}
+	else  {
+		Message="Etes-vous sûr de supprimer ces liasses :\n"+chaine+"?";
+		if (confirm(Message))        {                                                                                                                                    
+			$("#mode").val('SUPPRIMER'); 
+		}
+	}
 	});
 	
 $("#btModifierLiasse").click(function() {
