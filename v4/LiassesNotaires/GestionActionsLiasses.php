@@ -453,7 +453,7 @@ $pa_publication = $connexionBD->liste_valeur_par_clef("SELECT idf, concat(nom, '
 													  "                   substr(info_complementaires,1,80)) as nom ".
 													  "FROM publication_papier order by nom");
 $pa_publication[0] = '';
-print($gst_mode);
+//print($gst_mode);
 require_once('GestionActionsLiassesFc.php');
 switch ($gst_mode) {
 	case 'LISTE' : 
@@ -677,7 +677,6 @@ switch ($gst_mode) {
 		//---- modif UTF8
 		$st_info_compl = mb_convert_encoding($st_info_compl, 'cp1252', 'UTF8');
 		//---- fin modif UTF8
-		print("avant requete");
 		$st_requete = "update liasse_programmation set ".
 		              "    idf_intervenant=".$i_idf_intervenant.", idf_priorite=".$i_idf_priorite.", ".
 					  "    date_creation=str_to_date('".$st_date_creation."', '%d/%m/%Y'), ".
@@ -685,9 +684,7 @@ switch ($gst_mode) {
 					  "    date_reelle_fin=str_to_date('".$st_date_reelle_fin."', '%d/%m/%Y'), ".
 					  "    in_program_releve=".$i_program_releve.", in_program_photo=".$i_program_photo.", info_complementaires='".$st_info_compl."' ".
 					  "where idf=".$i_idf_program."";
-		print($st_requete);
 		$connexionBD->execute_requete($st_requete);
-		print("après requete");
 		menu_gerer($connexionBD);
 		break;
 	case 'MENU_AJOUTER_PROGRAM' : 
