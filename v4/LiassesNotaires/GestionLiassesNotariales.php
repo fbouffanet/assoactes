@@ -155,7 +155,6 @@ $("#btAjoutLiasse").click(function() {
 	
 $("#btSupprimerLiasse").click(function() {
 	var chaine="";
-	alert("coucou");
 	// Un seul élément
 	if (document.forms['listeLiasses'].elements['supp'].checked)	{
 		chaine+=document.forms['listeLiasses'].elements['supp'].id;
@@ -166,6 +165,7 @@ $("#btSupprimerLiasse").click(function() {
 			chaine+=document.forms['listeLiasses'].elements['supp'][i].id+"\n";
 		}
 	}
+	alert("coucou".chaine);
 	$("#mode").val('LISTE'); 
 	if (chaine=="")  {
 		alert("Pas de liasse sélectionnée");
