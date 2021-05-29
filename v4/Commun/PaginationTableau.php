@@ -302,10 +302,13 @@ class PaginationTableau {
          switch ($pi_type_identifiant)
          {
 			 case 1: 
-				print("<td><input type=button class=\"btn btn-primary btn-sm btn-block\" id=\"bouton$idf_element\" value=Modifier onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
+				print(sprintf("<td><a class='btn btn-primary btn-sm btn-block' type='button' id=\"bouton%d\" href=\"%s?mod=%d\" role='button'><span class='glyphicon glyphicon-edit'></span> Modifier</a></td>",
+							  $idf_element,$_SERVER['PHP_SELF'],$idf_element));
 				break;
 			 case 2: 
-				print("<td><input type=button class=\"btn btn-primary btn-sm btn-block\" id=\"bouton$idf_element\" value=Modifier onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
+				print(sprintf("<td><a class='btn btn-primary btn-sm btn-block' type='button' id=\"bouton%s\" href=\"%s?mod=%s\" role='button'><span class='glyphicon glyphicon-edit'></span> Modifier</a></td>",
+							  $idf_element,$_SERVER['PHP_SELF'],$idf_element));
+				break;
 				break;
 			 default:
 				die("<div class=\"alert alert-danger\">Type d'identifiant $ pi_type_identifiant inconnu</div>");
