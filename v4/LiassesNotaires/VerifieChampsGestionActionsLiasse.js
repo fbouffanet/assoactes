@@ -20,7 +20,7 @@ function VerifieSuppressionReleves(Formulaire,IdfElement){
 	else  {
 		Message="Etes-vous sûr de supprimer ces relevés :\n"+chaine+"?";
 		if (confirm(Message))        {                                                                                                                                    
-			document.forms[Formulaire].submit();                                                           
+			//document.forms[Formulaire].submit();                                                           
 		}
 		else {
 			alert("Pas confirmé");
