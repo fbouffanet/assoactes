@@ -156,7 +156,7 @@ $("#btAjoutLiasse").click(function() {
 $("#btSupprimerLiasse").click(function() {
 	var chaine="";
 	// Un seul élément
-	alert(document.forms['listeLiasses'].elements['supp'].checked);
+	alert(document.forms['listeLiasses'].elements['supp']);
 	if (document.forms['listeLiasses'].elements['supp'].checked)	{
 		chaine+=document.forms['listeLiasses'].elements['supp'].id;
 	}
