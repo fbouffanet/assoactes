@@ -271,7 +271,7 @@ class PaginationTableau {
     * Affiche le contenu du tableau correspondant à $i_nb_lignes_par_page lignes de la page courante
     * @param integer $pi_type_identifiant type d'identifiant utilisé (1: entier (défaut)| 2: chaine)  petit bouton	
     */       
-   public function affiche_tableau_edition_sil($pi_type_identifiant=1,$pb_conversion_encodage=true) {
+   public function affiche_tableau_edition_sil($pi_type_identifiant=1) {
       $st_requete = $this->st_requete;
       $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
       $st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
@@ -291,10 +291,7 @@ class PaginationTableau {
          foreach ($a_ligne as $st_nom_element)
          {
             if ($st_nom_element!= '')
-			    if ($pb_conversion_encodage)
-					print("<td>".cp1252_vers_utf8($st_nom_element)."</td>");
-				else
-					print("<td>$st_nom_element)</td>");
+				print("<td>$st_nom_element</td>");
 			else
                print("<td>&nbsp;</td>");   
          }
