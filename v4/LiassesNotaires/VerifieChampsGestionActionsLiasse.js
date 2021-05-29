@@ -18,13 +18,13 @@ function VerifieSuppressionReleves(Formulaire,IdfElement){
 		alert("Pas de relevé sélectionné");
 	}
 	else  {
-		Message="Etes-vous sûr de supprimer ces relevés :\n"+chaine+"?";
-		if (confirm(Message))        {                                                                                                                                    
+		alert('Message="Etes-vous sûr de supprimer ces relevés :\n"'+chaine+"?");
+		//if (confirm(Message))        {                                                                                                                                    
 			//document.forms[Formulaire].submit();                                                           
-		}
-		else {
-			alert("Pas confirmé");
-		}
+		//
+		//else {
+			//alert("Pas confirmé");
+		//}
 	}
 }
 
