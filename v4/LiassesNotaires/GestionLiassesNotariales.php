@@ -156,6 +156,7 @@ $("#btAjoutLiasse").click(function() {
 $("#btSupprimerLiasse").click(function() {
 	var chaine="";
 	// Un seul élément
+	alert(document.forms['listeLiasses'].elements['supp'].checked);
 	if (document.forms['listeLiasses'].elements['supp'].checked)	{
 		chaine+=document.forms['listeLiasses'].elements['supp'].id;
 	}
@@ -165,7 +166,7 @@ $("#btSupprimerLiasse").click(function() {
 			chaine+=document.forms['listeLiasses'].elements['supp'][i].id+"\n";
 		}
 	}
-	alert("coucou".chaine);
+	alert("coucou");
 	$("#mode").val('LISTE'); 
 	if (chaine=="")  {
 		alert("Pas de liasse sélectionnée");
