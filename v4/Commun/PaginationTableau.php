@@ -278,7 +278,7 @@ class PaginationTableau {
       print("<table class=\"table table-bordered table-striped\">");
       print("<thead><tr>");
       foreach ($this->a_entete as $st_cell_entete) {
-         print("<th>".cp1252_vers_utf8($st_cell_entete)."</th>");
+         print("<th>".$st_cell_entete."</th>");
       }
       print("</tr></thead>\n");
       print('<tbody>');
