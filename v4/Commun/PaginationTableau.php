@@ -282,7 +282,7 @@ class PaginationTableau {
       }
       print("</tr></thead>\n");
       print('<tbody>');
-	  $a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
+	  $a_lignes = $this->connexionBD->sql_select_multipleUtf8($st_requete);
       $i=0;
       foreach ($a_lignes as $a_ligne) {
          $idf_element = array_shift($a_ligne);
