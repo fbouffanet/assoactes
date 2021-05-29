@@ -659,7 +659,7 @@ function menu_modifier_program($pconnexionBD, $pi_idf_program, $pa_reveleur, $pa
 									 "where idf=$pi_idf_program");
 	print('<form id=majProgram method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
 	print('<input type=hidden name=mode id=mode value="MODIFIER_PROGRAM">');
-	print("<input type=hidden name=idf_photo value=$pi_idf_program>");
+	print("<input type=hidden name=idf_program value=$pi_idf_program>");
 	
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading" align="center">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
