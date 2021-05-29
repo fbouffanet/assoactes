@@ -18,15 +18,17 @@ function VerifieSuppressionReleves(Formulaire,IdfElement){
 		alert("Pas de relevé sélectionné");
 	}
 	else  {
-		alert('Message="Etes-vous sûr de supprimer ces relevés :\n"'+chaine+"?");
+		alert("Relevé sélectionné");
+	}
+}
+
+		//alert('Message="Etes-vous sûr de supprimer ces relevés :\n"'+chaine+"?");
 		//if (confirm(Message))        {                                                                                                                                    
 			//document.forms[Formulaire].submit();                                                           
 		//
 		//else {
 			//alert("Pas confirmé");
 		//}
-	}
-}
 
 function VerifieChampsLienPubli(Formulaire){
 	var selectElmt = document.getElementById('idf_publication');
