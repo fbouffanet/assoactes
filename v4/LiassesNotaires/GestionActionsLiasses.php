@@ -685,7 +685,7 @@ switch ($gst_mode) {
 					  "    date_reelle_fin=str_to_date('".$st_date_reelle_fin."', '%d/%m/%Y'), ".
 					  "    in_program_releve=".$i_program_releve.", in_program_photo=".$i_program_photo.", info_complementaires='".$st_info_compl."' ".
 					  "where idf=".$i_idf_program."";
-		print("avant requete 2");
+		print($st_requete);
 		$connexionBD->execute_requete($st_requete);
 		print("après requete");
 		menu_gerer($connexionBD);
