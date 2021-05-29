@@ -14,7 +14,7 @@ function VerifieSuppressionReleves(Formulaire,IdfElement){
 			chaine+=document.forms[Formulaire].elements[IdfElement][i].id+"\n";
 		}
 	}
-	if (chaine=="")  {
+	if (chaine!="")  {
 		alert("Pas de relevé sélectionné");
 	}
 	else  {
