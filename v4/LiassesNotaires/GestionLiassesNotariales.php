@@ -89,8 +89,7 @@ jQuery.validator.addMethod(
 		var check = true;
 		var mois = $(element).val();
 		var annee = $('#annee_fin').val();
-		alert(':'+mois+':');
-		if ( mois != " " )   {
+		if ( mois != "0" )   {
 			if( annee == '' ) {
 					check=false;
 			}
@@ -106,7 +105,7 @@ jQuery.validator.addMethod(
 		var check = true;
 		var mois_debut = $(element).val();
 		var annee_debut = $('#annee_debut').val();
-		if ( mois_debut != " " )   {
+		if ( mois_debut != "0" )   {
 			if( annee_debut.substring(0,3) != 'an ' ) {
 				if( isNaN(mois_debut ) ){
 					check=false;
