@@ -89,6 +89,7 @@ jQuery.validator.addMethod(
 		var check = true;
 		var mois = $(element).val();
 		var annee = $('#annee_fin').val();
+		alert(':'+mois+':');
 		if ( mois != " " )   {
 			if( annee == '' ) {
 					check=false;
