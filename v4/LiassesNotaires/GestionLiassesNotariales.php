@@ -106,7 +106,7 @@ jQuery.validator.addMethod(
 		var mois_debut = $(element).val();
 		var annee_debut = $('#annee_debut').val();
 		alert(mois_debut.length)
-		if ( mois_debut != "" )   {
+		if ( mois_debut != " " )   {
 			if( annee_debut.substring(0,3) != 'an ' ) {
 				if( isNaN(mois_debut ) ){
 					check=false;
