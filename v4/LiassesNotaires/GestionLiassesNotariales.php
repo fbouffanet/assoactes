@@ -157,16 +157,16 @@ $("#btSupprimerLiasse").click(function() {
 	var chaine="";
 	// Un seul élément
 	alert(document.forms['listeLiasses'].elements['supp[]'].length);
-	if (document.forms['listeLiasses'].elements['supp'].checked)	{
+	if (document.forms['listeLiasses'].elements['supp[]'].checked)	{
 		chaine+=document.forms['listeLiasses'].elements['supp'].id;
 	}
 	// Au moins deux éléments 
-	for (var i = 0; i < document.forms['listeLiasses'].elements['supp'].length; i++)  {
-		if (document.forms['listeLiasses'].elements['supp'][i].checked)      {
-			chaine+=document.forms['listeLiasses'].elements['supp'][i].id+"\n";
-		}
+	for (var i = 0; i < document.forms['listeLiasses'].elements['supp[]'].length; i++)  {
+		if (document.forms['listeLiasses'].elements['supp[]'][i].checked)      {
+			chaine+=document.forms['listeLiasses'].elements['supp[]'][i].id+"\n";
+		}                                                             
 	}
-	alert("coucou");
+	alert(chaine);
 	$("#mode").val('LISTE'); 
 	if (chaine=="")  {
 		alert("Pas de liasse sélectionnée");
