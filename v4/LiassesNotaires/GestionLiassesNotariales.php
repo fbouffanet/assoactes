@@ -105,6 +105,7 @@ jQuery.validator.addMethod(
 		var check = true;
 		var mois_debut = $(element).val();
 		var annee_debut = $('#annee_debut').val();
+		alert(mois_debut.length)
 		if ( mois_debut != "" )   {
 			if( annee_debut.substring(0,3) != 'an ' ) {
 				if( isNaN(mois_debut ) ){
@@ -156,7 +157,6 @@ $("#btAjoutLiasse").click(function() {
 $("#btSupprimerLiasse").click(function() {
 	var chaine="";
 	// Un seul élément
-	alert(document.forms['listeLiasses'].elements['supp[]'].length);
 	if (document.forms['listeLiasses'].elements['supp[]'].checked)	{
 		chaine+=document.forms['listeLiasses'].elements['supp'].id;
 	}
@@ -166,7 +166,6 @@ $("#btSupprimerLiasse").click(function() {
 			chaine+=document.forms['listeLiasses'].elements['supp[]'][i].id+"\n";
 		}                                                             
 	}
-	alert(chaine);
 	$("#mode").val('LISTE'); 
 	if (chaine=="")  {
 		alert("Pas de liasse sélectionnée");
