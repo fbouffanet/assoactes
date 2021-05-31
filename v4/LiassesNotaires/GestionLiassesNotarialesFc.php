@@ -87,7 +87,7 @@ function menu_liste($pconnexionBD)
 				  "order by cote_liasse";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	$i_nb_liasses =count($a_liste_liasses);
-  	print("<div align=center><input type=hidden name=mode id=mode value=\"SUPPRIMER\">");
+  	print('<div align=center><input type=hidden name=mode id=mode value="SUPPRIMER">');
 	if ($i_nb_liasses!=0)
 	{        
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_liasses,
