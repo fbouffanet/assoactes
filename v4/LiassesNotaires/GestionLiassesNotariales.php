@@ -165,14 +165,15 @@ $("#btSupprimerLiasse").click(function() {
 			chaine+=document.forms['listeLiasses'].elements['supp[]'][i].id+"\n";
 		}                                                             
 	}
-	$("#mode").val('LISTE'); 
+	//$("#mode").val('LISTE'); 
 	if (chaine=="")  {
 		alert("Pas de liasse sélectionnée");
 	}
 	else  {
 		Message="Etes-vous sûr de supprimer ces liasses :\n"+chaine+"?";
 		if (confirm(Message))        {                                                                                                                                    
-			$("#mode").val('SUPPRIMER'); 
+			//$("#mode").val('SUPPRIMER'); 
+			document.forms['listeLiasses'].submit();
 		}
 	}
 	});
