@@ -207,7 +207,7 @@ $("#btAjouterLiasse").click(function() {
     $("#mode").val('AJOUTER'); 
 	});
 	
-$("#btSuprimerPeriodes").click(function() {
+$("#btSupprimerPeriodes").click(function() {
 	var chaine="";
 	// Un seul élément
 	if (document.forms['listePeriodes'].elements['supp[]'].checked)	{
