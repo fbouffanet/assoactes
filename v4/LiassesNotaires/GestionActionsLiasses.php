@@ -159,6 +159,7 @@ $("#majReleve").validate({
 // --------------------------------------------------------- Liens publications	
 $("#btSupprimerLienPubli").click(function() {
 	var chaine="";
+	alert(document.forms['listePubli'].elements['supp[]'].length);
 	// Un seul élément
 	//if (document.forms['listePubli'].elements['supp[]'].checked)	{
 	//	chaine+=document.forms['listePubli'].elements['supp'].id;
