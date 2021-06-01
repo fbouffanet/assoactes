@@ -160,9 +160,9 @@ $("#majReleve").validate({
 $("#btSupprimerLienPubli").click(function() {
 	var chaine="";
 	// Un seul élément
-	if (document.forms['listePubli'].elements['supp[]'].checked)	{
-		chaine+=document.forms['listePubli'].elements['supp'].id;
-	}
+	//if (document.forms['listePubli'].elements['supp[]'].checked)	{
+	//	chaine+=document.forms['listePubli'].elements['supp'].id;
+	//}
 	// Au moins deux éléments 
 	for (var i = 0; i < document.forms['listePubli'].elements['supp[]'].length; i++)  {
 		if (document.forms['listePubli'].elements['supp[]'][i].checked)      {
