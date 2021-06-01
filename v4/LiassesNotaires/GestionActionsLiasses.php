@@ -131,8 +131,7 @@ $("#btSupprimerReleve").click(function() {
 			document.forms['listeReleve'].submit();
 		}
 	}
-    $("#modeReleve").val('SUPPRIMER_RELEVE'); 
-	});
+ 	});
 	
 $("#btMenuAjouterReleve").click(function() {
     $("#modeReleve").val('MENU_AJOUTER_RELEVE'); 
