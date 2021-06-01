@@ -145,32 +145,32 @@ $("#majReleve").validate({
 });
 
 // --------------------------------------------------------- Liens publications	
-$("#btMenuAjouterLienPubli").click(function() {
-    $("#modePubli").val('MENU_AJOUTER_LIEN_PUBLI'); 
-	});
-	
 $("#btSupprimerLienPubli").click(function() {
 	var chaine="";
 	// Un seul élément
-	if (document.forms['listePeriodes'].elements['supp[]'].checked)	{
-		chaine+=document.forms['listePeriodes'].elements['supp'].id;
+	if (document.forms['listePubli'].elements['supp[]'].checked)	{
+		chaine+=document.forms['listePubli'].elements['supp'].id;
 	}
 	// Au moins deux éléments 
-	for (var i = 0; i < document.forms['listePeriodes'].elements['supp[]'].length; i++)  {
-		if (document.forms['listePeriodes'].elements['supp[]'][i].checked)      {
-			chaine+=document.forms['listePeriodes'].elements['supp[]'][i].id+"\n";
+	for (var i = 0; i < document.forms['listePubli'].elements['supp[]'].length; i++)  {
+		if (document.forms['listePubli'].elements['supp[]'][i].checked)      {
+			chaine+=document.forms['listePubli'].elements['supp[]'][i].id+"\n";
 		}                                                             
 	}
 	if (chaine=="")  {
-		alert("Pas de période sélectionnée");
+		alert("Pas de lien de publication sélectionné");
 	}
 	else  {
-		Message="Etes-vous sûr de supprimer ces périodes :\n"+chaine+"?";
+		Message="Etes-vous sûr de supprimer ces liens de publications :\n"+chaine+"?";
 		if (confirm(Message))        {                                                                                                                                    
-			document.forms['listePeriodes'].submit();
+			document.forms['listePubli'].submit();
 		}
 	}
     $("#modePubli").val('SUPPRIMER_LIEN_PUBLI'); 
+	});
+	
+$("#btMenuAjouterLienPubli").click(function() {
+    $("#modePubli").val('MENU_AJOUTER_LIEN_PUBLI'); 
 	});
 	
 $("#btAjouterLienPubli").click(function() {
@@ -183,16 +183,10 @@ $("#btModifierLienPubli").click(function() {
 	
 $("#majLienPubli").validate({
   rules: {
-		numero:			{ required: true,	integer:true },
-		depose_ad:		{ depose_avec_dept:true },
-		dept_depose_ad:	{ dept_avec_depose:true },
-		forme_liasse:	{ required: true }	
+		idf_publication:{ required: true }
   },		
   messages: {
-		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
-		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
-		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
-		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
+		idf_publication:{ required: "Sélectionner une publication"	}
   }
 });
 

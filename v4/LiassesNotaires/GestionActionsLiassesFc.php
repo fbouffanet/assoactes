@@ -177,7 +177,7 @@ function menu_liste_publication($pconnexionBD){
 				  "where liasse_publication_papier.cote_liasse = '".$_SESSION['cote_liasse_gal']."' ".
 				  "order by publication_papier.date_publication";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-	print('<div align=center><form id="publi" action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	print('<div align=center><form id="listePubli" action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type=hidden name="modePubli" id="modePubli">');
 	$i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
@@ -189,8 +189,7 @@ function menu_liste_publication($pconnexionBD){
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
 		print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
-		print("<button type=submit class='btn btn-sm btn-danger' id='btSupprimerLienPubli' ONCLICK=\"VerifieSuppressionLiensPublis(0,'supp[]')\">");
-		print('    <span class="glyphicon glyphicon-trash"></span>  Supprimer les liens publications sélectionnés</button>');
+		print('<button type=button class="btn btn-sm btn-danger" id="btSupprimerLienPubli"><span class="glyphicon glyphicon-trash"></span>  Supprimer les liens publications sélectionnés</button>');
 	}
 	else {
 		print('<div class="alert alert-danger">Pas de publication papier</div>');
