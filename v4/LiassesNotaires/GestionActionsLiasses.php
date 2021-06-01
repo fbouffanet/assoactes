@@ -87,6 +87,18 @@ jQuery.validator.addMethod(
     "Indiquer au moins le releveur ou la date de relevé"
 );
 
+jQuery.validator.addMethod(
+    "lien_publi_select",
+    function(value, element) {
+		var check 	= true;
+		if( $(element).val() == 0 ) {
+			check=false;
+		}
+		return this.optional(element) || check;
+    },
+    "Sélectionner une publication papier"
+);
+
 // --------------------------------------------------------- Navigation
 $("#btListe").click(function() {
     $("#modeMenu").val('LISTE'); 
@@ -183,10 +195,10 @@ $("#btModifierLienPubli").click(function() {
 	
 $("#majLienPubli").validate({
   rules: {
-		idf_publication:{ required: true }
+		idf_publication:{ lien_publi_select: true }
   },		
   messages: {
-		idf_publication:{ required: "Sélectionner une publication"	}
+		idf_publication:{ lien_publi_select: "Sélectionner une publication papier"	}
   }
 });
 
