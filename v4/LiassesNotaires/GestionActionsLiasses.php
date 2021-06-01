@@ -38,13 +38,13 @@ $(document).ready(function() {
 jQuery.validator.addMethod(
     "format_date",
     function(value, element) {
-		var check = true;
+		var check 			= true;
 		var ListeErreurs	= "";
-		var jj=value.substring(0,2);
-		var mm=value.substring(3,5);
-		var aa=value.substring(6);
-		var sep1=value.substring(2,3);
-		var sep2=value.substring(5,6);
+		var jj				= value.substring(0,2);
+		var mm				= value.substring(3,5);
+		var aa				= value.substring(6);
+		var sep1			= value.substring(2,3);
+		var sep2			= value.substring(5,6);
 		if ( value != "" ) {
 			if ( isNaN(jj) || jj<1 || jj>31 ) {
 				check = false;
@@ -76,9 +76,9 @@ jQuery.validator.addMethod(
 jQuery.validator.addMethod(
     "releveur_ou_date",
     function(value, element) {
-		var check = true;
-		var dateReleve = $(element).val();
-		var releveur = var annee = $('#idf_releveur').val();
+		var check 		= true;
+		var dateReleve	= $(element).val();
+		var releveur	= $('#idf_releveur').val();
 		if( releveur == 0 && dateReleve == '' ) {
 			check=false;
 		}
