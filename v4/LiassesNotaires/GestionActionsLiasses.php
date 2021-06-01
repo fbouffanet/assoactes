@@ -79,6 +79,8 @@ jQuery.validator.addMethod(
 		var check 		= true;
 		var dateReleve	= $(element).val();
 		var releveur	= $('#idf_releveur').val();
+		alert('Releveur:'+releveur+':');
+		alert('Date:'+dateReleve+':');
 		if( releveur == 0 && dateReleve == '' ) {
 			check=false;
 		}
