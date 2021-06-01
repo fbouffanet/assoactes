@@ -328,12 +328,12 @@ function menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $pi_id
                              $pst_date_fin_releve, $pi_publication_numerique, $pst_info_compl){
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Releveur&nbsp;</label></div>".
-		  "<div class='form-group col-md-3' align='left'><select name=idf_releveur id='idf_releveur' class='js-select-avec-recherche form-control'>".
+		  "<div class='form-group col-md-6' align='left'><select name=idf_releveur id='idf_releveur' class='js-select-avec-recherche form-control'>".
 			chaine_select_options($pi_idf_releveur,$pa_releveur)."</select></div></div>");
 
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Date de fin de relevé&nbsp;</label></div>".
-		  "<div class='form-group col-md-1'>".
+		  "<div class='form-group col-md-6'>".
 		  "<input type=text name=date_fin_releve id=date_fin_releve size=10 maxlength='10' value='".$pst_date_fin_releve."' class='form-control'></div></div>");
 
 	print('<div class="form-row col-md-12">'.
@@ -350,7 +350,7 @@ function menu_edition_releve($pconnexionBD, $pa_releveur, $pi_idf_releve, $pi_id
 	
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Informations complémentaires&nbsp;</label></div>".
-		  "<div class='form-group col-md-4' align='left'><textarea class='form-control' rows='3' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></div></div>");
+		  "<div class='form-group col-md-6' align='left'><textarea class='form-control' rows='3' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></div></div>");
 }
 
 /** Affiche le menu de modification d'un relevé
