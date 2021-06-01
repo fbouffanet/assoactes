@@ -79,10 +79,7 @@ jQuery.validator.addMethod(
 		var check 		= true;
 		var releveur	= $(element).val();
 		var dateReleve	= $('#date_fin_releve').val();
-		alert('Releveur:'+releveur+':');
-		alert('Date:'+dateReleve+':');
 		if( releveur == 0 && dateReleve == '' ) {
-			alert('faux');
 			check=false;
 		}
 		return this.optional(element) || check;
