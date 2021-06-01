@@ -70,247 +70,116 @@ jQuery.validator.addMethod(
 		}
 		return this.optional(element) || check;
     },
-    "Le département doit être renseigné pour une liasse déposée aux AD"
+    "La date est incorrecte. Attendu : jj/mm/aaaa"
 );
 	
 jQuery.validator.addMethod(
-    "depose_avec_dept",
-    function(value, element) {
-		var check = false;
-		if ($(element).is(':checked'))	{
-			check = $('#dept_depose_ad').val()!='';
-		}
-		return this.optional(element) || check;
-    },
-    "Le département doit être renseigné pour une liasse déposée aux AD"
-);
-
-jQuery.validator.addMethod(
-    "dept_avec_depose",
-    function(value, element) {
-		var check = false;
-		if ($(element).val()!='')	{
-			check = $('#depose_ad').is(':checked');
-		}
-		return this.optional(element) || check;
-    },
-    "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"
-);
-
-jQuery.validator.addMethod(
-    "annee_valide",
+    "releveur_ou_date",
     function(value, element) {
 		var check = true;
-		var annee = $(element).val();
-		if( isNaN(annee) && annee.substring(0,3) != 'an ' ) {
+		var dateReleve = $(element).val();
+		var releveur = var annee = $('#idf_releveur').val();
+		if( releveur == 0 && dateReleve == '' ) {
 			check=false;
 		}
-		else if( annee.substring(0,3) == 'an ' && 
-				 annee != 'an I' && annee != 'an II' && annee != 'an III' && annee != 'an IV' && 
-				 annee != 'an V' && annee != 'an VI' && annee != 'an VII' && annee != 'an VIII' && 
-				 annee != 'an IX' && annee != 'an X' && annee != 'an XI' && annee != 'an XII' && annee != 'an XIII' && annee != 'an XIV' ) {
-			check=false;
-		}
-		else {
-			var a = annee * 1;
-			if( a < 1000 || a > 2100 ) {
-				check=false;
-			}
-		}
 		return this.optional(element) || check;
     },
-    "L'année doit être soit une année révolutionaire (an I, an II, ...), soit une année sur 4 chiffres"
+    "Indiquer au moins le releveur ou la date de relevé"
 );
 
-jQuery.validator.addMethod(
-    "annee_mois_fin",
-    function(value, element) {
-		var check = true;
-		var mois = $(element).val();
-		var annee = $('#annee_fin').val();
-		if ( mois != "" )   {
-			if( annee == '' ) {
-					check=false;
-			}
-		}
-		return this.optional(element) || check;
-    },
-    "Saisir l'année de fin"
-);
-
-jQuery.validator.addMethod(
-    "mois_debut",
-    function(value, element) {
-		var check = true;
-		var mois_debut = $(element).val();
-		var annee_debut = $('#annee_debut').val();
-		if ( mois_debut != "" )   {
-			if( annee_debut.substring(0,3) != 'an ' ) {
-				if( isNaN(mois_debut ) ){
-					check=false;
-				}
-			}
-			else {
-				if( ! isNaN(mois_debut ) ){
-					check=false;
-				}
-			}
-		}
-		return this.optional(element) || check;
-    },
-    "Incohérence entre l'année et le mois de début"
-);
-
-jQuery.validator.addMethod(
-    "mois_fin",
-    function(value, element) {
-		var check = true;
-		var mois_fin = $(element).val();
-		var annee_fin = $('#annee_fin').val();
-		if ( mois_fin != "" )   {
-			if( annee_fin.substring(0,3) != 'an ' ) {
-				if( isNaN(mois_fin ) ){
-					check=false;
-				}
-			}
-			else {
-				if( ! isNaN(mois_fin ) ){
-					check=false;
-				}
-			}
-		}
-		return this.optional(element) || check;
-    },
-    "Incohérence entre l'année et le mois de fin"
-);
-
-$("#btAjouterLienPubli").click(function() {
-    $("#mode").val('AJOUTER_LIEN_PUBLI'); 
-	});
-	
-$("#btAjouterPhoto").click(function() {
-    $("#mode").val('AJOUTER_PHOTO'); 
-	});
-	
-$("#btAjouterProgram").click(function() {
-    $("#mode").val('AJOUTER_PROGRAM'); 
-	});
-	
-$("#btAjouterPubli").click(function() {
-    $("#mode").val('AJOUTER_PUBLI'); 
-	});
-	
-$("#btAjouterReleve").click(function() {
-    $("#mode").val('AJOUTER_RELEVE'); 
-	});
-	
-$("#btAjouterReleveur").click(function() {
-    $("#mode").val('AJOUTER_RELEVEUR'); 
-	});
-	
+// --------------------------------------------------------- Navigation
 $("#btListe").click(function() {
     $("#modeMenu").val('LISTE'); 
 	});
 	
-$("#btMenuAjouterLienPubli").click(function() {
-    $("#modePubli").val('MENU_AJOUTER_LIEN_PUBLI'); 
+$("#btMenuGerer").click(function() {
+    $("#mode").val('MENU_GERER'); 
 	});
 	
-$("#btSupprimerLienPubli").click(function() {
-    $("#modePubli").val('SUPPRIMER_LIEN_PUBLI'); 
-	});
-	
-$("#btMenuAjouterPhoto").click(function() {
-    $("#modePhoto").val('MENU_AJOUTER_PHOTO'); 
-	});
-	
-$("#btSupprimerPhoto").click(function() {
-    $("#modePhoto").val('SUPPRIMER_PHOTO'); 
-	});
-	
-$("#btMenuAjouterProgram").click(function() {
-    $("#modeProgram").val('MENU_AJOUTER_PROGRAM'); 
-	});
-
-$("#btSupprimerProgram").click(function() {
-    $("#modeProgram").val('SUPPRIMER_PROGRAM'); 
-	});
-	
-$("#btMenuAjouterPubli").click(function() {
-    $("#mode").val('MENU_AJOUTER_PUBLI'); 
+// --------------------------------------------------------- Relevés
+$("#btSupprimerReleve").click(function() {
+	var chaine="";
+	// Un seul élément
+	if (document.forms['listeReleve'].elements['supp[]'].checked)	{
+		chaine+=document.forms['listeReleve'].elements['supp'].id;
+	}
+	// Au moins deux éléments 
+	for (var i = 0; i < document.forms['listeReleve'].elements['supp[]'].length; i++)  {
+		if (document.forms['listeReleve'].elements['supp[]'][i].checked)      {
+			chaine+=document.forms['listeReleve'].elements['supp[]'][i].id+"\n";
+		}                                                             
+	}
+	if (chaine=="")  {
+		alert("Pas de relevé sélectionné");
+	}
+	else  {
+		Message="Etes-vous sûr de supprimer ces relevés :\n"+chaine+"?";
+		if (confirm(Message))        {                                                                                                                                    
+			document.forms['listeReleve'].submit();
+		}
+	}
+    $("#modeReleve").val('SUPPRIMER_RELEVE'); 
 	});
 	
 $("#btMenuAjouterReleve").click(function() {
     $("#modeReleve").val('MENU_AJOUTER_RELEVE'); 
 	});
 
-$("#btSupprimerReleve").click(function() {
-    $("#modeReleve").val('SUPPRIMER_RELEVE'); 
+$("#btAjouterReleve").click(function() {
+    $("#mode").val('AJOUTER_RELEVE'); 
 	});
-	
-$("#btMenuAjouterReleveur").click(function() {
-    $("#modeMenu").val('MENU_AJOUTER_RELEVEUR'); 
-	});
-	
-	
-$("#btMenuGerer").click(function() {
-    $("#mode").val('MENU_GERER'); 
-	});
-	
-$("#btMenuGerePubli").click(function() {
-    $("#mode").val('MENU_GERER_PUBLI'); 
-	});
-	
-$("#btModifierLienPubli").click(function() {
-    $("#mode").val('MODIFIER_LIEN_PUBLI'); 
-	});
-	
-$("#btModifierPhoto").click(function() {
-    $("#mode").val('MODIFIER_PHOTO'); 
-	});
-	
-$("#btModifierProgram").click(function() {
-    $("#mode").val('MODIFIER_PROGRAM'); 
-	});
-	
-$("#btModifierPubli").click(function() {
-    $("#mode").val('MODIFIER_PUBLI'); 
-	});
-	
+
 $("#btModifierReleve").click(function() {
     $("#mode").val('MODIFIER_RELEVE'); 
 	});
 	
 $("#majReleve").validate({
   rules: {
-		numero:			{ required: true,	integer:true },
-		depose_ad:		{ depose_avec_dept:true },
-		dept_depose_ad:	{ dept_avec_depose:true },
-		forme_liasse:	{ required: true }	
+		date_fin_releve:	{ format_date:true, releveur_ou_date:true }
   },		
   messages: {
-		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
-		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
-		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
-		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
+		date_fin_releve:	{	format_date: "La date est incorrecte. Attendu : jj/mm/aaaa", 
+								releveur_ou_date: "Indiquer au moins le releveur ou la date de relevé"	}
   }
 });
 
-$("#ajoutReleveur").validate({
-  rules: {
-		numero:			{ required: true,	integer:true },
-		depose_ad:		{ depose_avec_dept:true },
-		dept_depose_ad:	{ dept_avec_depose:true },
-		forme_liasse:	{ required: true }	
-  },		
-  messages: {
-		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
-		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
-		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
-		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
-  }
-});
+// --------------------------------------------------------- Liens publications	
+$("#btMenuAjouterLienPubli").click(function() {
+    $("#modePubli").val('MENU_AJOUTER_LIEN_PUBLI'); 
+	});
+	
+$("#btSupprimerLienPubli").click(function() {
+	var chaine="";
+	// Un seul élément
+	if (document.forms['listePeriodes'].elements['supp[]'].checked)	{
+		chaine+=document.forms['listePeriodes'].elements['supp'].id;
+	}
+	// Au moins deux éléments 
+	for (var i = 0; i < document.forms['listePeriodes'].elements['supp[]'].length; i++)  {
+		if (document.forms['listePeriodes'].elements['supp[]'][i].checked)      {
+			chaine+=document.forms['listePeriodes'].elements['supp[]'][i].id+"\n";
+		}                                                             
+	}
+	if (chaine=="")  {
+		alert("Pas de période sélectionnée");
+	}
+	else  {
+		Message="Etes-vous sûr de supprimer ces périodes :\n"+chaine+"?";
+		if (confirm(Message))        {                                                                                                                                    
+			document.forms['listePeriodes'].submit();
+		}
+	}
+    $("#modePubli").val('SUPPRIMER_LIEN_PUBLI'); 
+	});
+	
+$("#btAjouterLienPubli").click(function() {
+    $("#mode").val('AJOUTER_LIEN_PUBLI'); 
+	});
 
+$("#btModifierLienPubli").click(function() {
+    $("#mode").val('MODIFIER_LIEN_PUBLI'); 
+	});
+	
 $("#majLienPubli").validate({
   rules: {
 		numero:			{ required: true,	integer:true },
@@ -326,6 +195,23 @@ $("#majLienPubli").validate({
   }
 });
 
+// --------------------------------------------------------- Photos	
+$("#btMenuAjouterPhoto").click(function() {
+    $("#modePhoto").val('MENU_AJOUTER_PHOTO'); 
+	});
+	
+$("#btSupprimerPhoto").click(function() {
+    $("#modePhoto").val('SUPPRIMER_PHOTO'); 
+	});
+	
+$("#btAjouterPhoto").click(function() {
+    $("#mode").val('AJOUTER_PHOTO'); 
+	});
+
+$("#btModifierPhoto").click(function() {
+    $("#mode").val('MODIFIER_PHOTO'); 
+	});
+	
 $("#majPhoto").validate({
   rules: {
 		numero:			{ required: true,	integer:true },
@@ -341,6 +227,23 @@ $("#majPhoto").validate({
   }
 });
 
+// --------------------------------------------------------- Programmations	
+$("#btMenuAjouterProgram").click(function() {
+    $("#modeProgram").val('MENU_AJOUTER_PROGRAM'); 
+	});
+
+$("#btSupprimerProgram").click(function() {
+    $("#modeProgram").val('SUPPRIMER_PROGRAM'); 
+	});
+	
+$("#btAjouterProgram").click(function() {
+    $("#mode").val('AJOUTER_PROGRAM'); 
+	});
+
+$("#btModifierProgram").click(function() {
+    $("#mode").val('MODIFIER_PROGRAM'); 
+	});
+	
 $("#majProgram").validate({
   rules: {
 		numero:			{ required: true,	integer:true },
@@ -356,6 +259,47 @@ $("#majProgram").validate({
   }
 });
 
+// --------------------------------------------------------- Releveurs ou photographes	
+$("#btMenuAjouterReleveur").click(function() {
+    $("#modeMenu").val('MENU_AJOUTER_RELEVEUR'); 
+	});
+	
+$("#btAjouterReleveur").click(function() {
+    $("#mode").val('AJOUTER_RELEVEUR'); 
+	});
+	
+$("#ajoutReleveur").validate({
+  rules: {
+		numero:			{ required: true,	integer:true },
+		depose_ad:		{ depose_avec_dept:true },
+		dept_depose_ad:	{ dept_avec_depose:true },
+		forme_liasse:	{ required: true }	
+  },		
+  messages: {
+		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
+		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
+		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
+		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
+  }
+});
+
+// --------------------------------------------------------- Publications	
+$("#btMenuGerePubli").click(function() {
+    $("#mode").val('MENU_GERER_PUBLI'); 
+	});
+	
+$("#btMenuAjouterPubli").click(function() {
+    $("#mode").val('MENU_AJOUTER_PUBLI'); 
+	});
+	
+$("#btAjouterPubli").click(function() {
+    $("#mode").val('AJOUTER_PUBLI'); 
+	});
+	
+$("#btModifierPubli").click(function() {
+    $("#mode").val('MODIFIER_PUBLI'); 
+	});
+	
 });
 </script>
 <?php

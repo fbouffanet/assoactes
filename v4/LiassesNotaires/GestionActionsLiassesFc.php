@@ -137,7 +137,7 @@ function menu_liste_releve($pconnexionBD){
 				  "where liasse_releve.cote_liasse = '".$_SESSION['cote_liasse_gal']."' ".
 				  "order by liasse_releve.date_fin_releve";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-	print('<div align=center><form action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	print('<div align=center><form id="listeReleve" action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<input type=hidden name="modeReleve" id="modeReleve">');
 	$i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
@@ -149,8 +149,7 @@ function menu_liste_releve($pconnexionBD){
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
 		print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
-		print("<button type=submit class='btn btn-sm btn-danger' id='btSupprimerReleve' ONCLICK=\"VerifieSuppressionReleves(0,'supp[]')\">");
-		print("    <span class=\"glyphicon glyphicon-trash\"></span>  Supprimer les relevés sélectionnés</button>");
+		print('<button type=button class="btn btn-sm btn-danger" id="btSupprimerReleve"><span class="glyphicon glyphicon-trash"></span>  Supprimer les relevés sélectionnés</button>');
 	}
 	else {
 		print("<div class=\"alert alert-danger\">Pas de relevé</div>");

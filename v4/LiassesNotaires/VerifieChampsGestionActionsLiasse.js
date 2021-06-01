@@ -2,33 +2,6 @@ function VerifieChampsReleveur(Formulaire){
 	document.forms[Formulaire].submit();
 }
 
-function VerifieSuppressionReleves(Formulaire,IdfElement){
-	var chaine="";
-	// Un seul élément
-	if (document.forms[Formulaire].elements[IdfElement].checked)	{
-		 chaine+=document.forms[Formulaire].elements[IdfElement].id;
-	}
-	// Au moins deux éléments 
-	for (var i = 0; i < document.forms[Formulaire].elements[IdfElement].length; i++)  {
-		if (document.forms[Formulaire].elements[IdfElement][i].checked)      {
-			chaine+=document.forms[Formulaire].elements[IdfElement][i].id+"\n";
-		}
-	}
-	if (chaine!="")  {
-		alert("Pas de relevé sélectionné");
-	}
-	else  {
-		alert("Relevé sélectionné");
-	}
-}
-
-		//alert('Message="Etes-vous sûr de supprimer ces relevés :\n"'+chaine+"?");
-		//if (confirm(Message))        {                                                                                                                                    
-			//document.forms[Formulaire].submit();                                                           
-		//
-		//else {
-			//alert("Pas confirmé");
-		//}
 
 function VerifieChampsLienPubli(Formulaire){
 	var selectElmt = document.getElementById('idf_publication');
