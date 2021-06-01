@@ -142,7 +142,7 @@ $("#majReleve").validate({
 		date_fin_releve:	{ format_date:true }
   },		
   messages: {
-		idf_releveur:		{ releveur_ou_date: releveur_ou_date: "Indiquer au moins le releveur ou la date de relevé" },
+		idf_releveur:		{ releveur_ou_date: "Indiquer au moins le releveur ou la date de relevé" },
 		date_fin_releve:	{ format_date: "La date est incorrecte. Attendu : jj/mm/aaaa" }
   }
 });
