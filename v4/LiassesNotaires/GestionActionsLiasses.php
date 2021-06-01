@@ -77,8 +77,8 @@ jQuery.validator.addMethod(
     "releveur_ou_date",
     function(value, element) {
 		var check 		= true;
-		var dateReleve	= $(element).val();
-		var releveur	= $('#idf_releveur').val();
+		var releveur	= $(element).val();
+		var dateReleve	= $('#date_fin_releve').val();
 		alert('Releveur:'+releveur+':');
 		alert('Date:'+dateReleve+':');
 		if( releveur == 0 && dateReleve == '' ) {
@@ -138,11 +138,12 @@ $("#btModifierReleve").click(function() {
 	
 $("#majReleve").validate({
   rules: {
-		date_fin_releve:	{ format_date:true, releveur_ou_date:true }
+		idf_releveur:		{ releveur_ou_date:true },
+		date_fin_releve:	{ format_date:true }
   },		
   messages: {
-		date_fin_releve:	{	format_date: "La date est incorrecte. Attendu : jj/mm/aaaa", 
-								releveur_ou_date: "Indiquer au moins le releveur ou la date de relevé"	}
+		idf_releveur:		{ releveur_ou_date: releveur_ou_date: "Indiquer au moins le releveur ou la date de relevé" },
+		date_fin_releve:	{ format_date: "La date est incorrecte. Attendu : jj/mm/aaaa" }
   }
 });
 
