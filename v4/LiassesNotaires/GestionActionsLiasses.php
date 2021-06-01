@@ -82,6 +82,7 @@ jQuery.validator.addMethod(
 		alert('Releveur:'+releveur+':');
 		alert('Date:'+dateReleve+':');
 		if( releveur == 0 && dateReleve == '' ) {
+			alert('faux');
 			check=false;
 		}
 		return this.optional(element) || check;
