@@ -120,8 +120,8 @@ jQuery.validator.addMethod(
 		var check 		= true;
 		var intervenant	= $('#idf_intervenant').val();
 		var priorite	= $('#idf_priorite').val();
-		var releve		= $('#program_releve').checked;
-		var photo		= $('#program_photo').checked;
+		var releve		= $('#program_releve').is(':checked');
+		var photo		= $('#program_photo').is(':checked');
 		if ( intervenant == 0 && priorite == 0 && !releve && !photo )   {
 			check=false;
 		}
