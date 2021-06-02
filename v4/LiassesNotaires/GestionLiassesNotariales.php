@@ -33,7 +33,8 @@ print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 ?>
 <script type='text/javascript'>
 $(document).ready(function() {
-	
+
+// ------------------------------------------------------- Contrôles	
 jQuery.validator.addMethod(
     "depose_avec_dept",
     function(value, element) {
@@ -145,14 +146,24 @@ jQuery.validator.addMethod(
     "Incohérence entre l'année et le mois de fin"
 );
 
+// ------------------------------------------------------- Navigation	
 $("#btRetour").click(function() {
     $("#mode").val('LISTE'); 
 	});
 	
-$("#btAjoutLiasse").click(function() {
-    $("#mode").val('MENU_AJOUTER'); 
+$("#btRetourLiasse").click(function() {
+    $("#mode").val('MENU_MODIFIER'); 
 	});
-	
+
+$("#btRetourPeriodes").click(function() {
+    $("#mode").val('LISTE_PERIODE'); 
+	});
+
+$("#btRetourNotaires").click(function() {
+    $("#mode").val('LISTE_NOTAIRE'); 
+	});
+
+// ------------------------------------------------------- Liasses	
 $("#btSupprimerLiasse").click(function() {
 	var chaine="";
 	// Un seul élément
@@ -176,94 +187,16 @@ $("#btSupprimerLiasse").click(function() {
 	}
 	});
 	
-$("#btSupprimerNotaires").click(function() {
-	var chaine="";
-	// Un seul élément
-	if (document.forms['listeNotaires'].elements['supp[]'].checked)	{
-		chaine+=document.forms['listeNotaires'].elements['supp[]'].id+"\n";
-	}
-	// Au moins deux éléments 
-	for (var i = 0; i < document.forms['listeNotaires'].elements['supp[]'].length; i++)  {
-		if (document.forms['listeNotaires'].elements['supp[]'][i].checked)      {
-			chaine+=document.forms['listeNotaires'].elements['supp[]'][i].id+"\n";
-		}                                                             
-	}
-	if (chaine=="")  {
-		alert("Pas de notaire sélectionnée");
-	}
-	else  {
-		Message="Etes-vous sûr de supprimer ces notaires :\n"+chaine+"?";
-		if (confirm(Message))        {                                                                                                                                    
-			document.forms['listeNotaires'].submit();
-		}
-	}
-});
-
-$("#btModifierLiasse").click(function() {
-    $("#mode").val('MODIFIER'); 
+$("#btAjoutLiasse").click(function() {
+    $("#mode").val('MENU_AJOUTER'); 
 	});
-
+	
 $("#btAjouterLiasse").click(function() {
     $("#mode").val('AJOUTER'); 
 	});
 	
-$("#btSupprimerPeriodes").click(function() {
-	var chaine="";
-	// Un seul élément
-	if (document.forms['listePeriodes'].elements['supp[]'].checked)	{
-		chaine+=document.forms['listePeriodes'].elements['supp[]'].id+"\n";
-	}
-	// Au moins deux éléments 
-	for (var i = 0; i < document.forms['listePeriodes'].elements['supp[]'].length; i++)  {
-		if (document.forms['listePeriodes'].elements['supp[]'][i].checked)      {
-			chaine+=document.forms['listePeriodes'].elements['supp[]'][i].id+"\n";
-		}                                                             
-	}
-	if (chaine=="")  {
-		alert("Pas de période sélectionnée");
-	}
-	else  {
-		Message="Etes-vous sûr de supprimer ces périodes :\n"+chaine+"?";
-		if (confirm(Message))        {                                                                                                                                    
-			document.forms['listePeriodes'].submit();
-		}
-	}
-	});
-
-$("#btAjoutPeriode").click(function() {
-    $("#mode").val('MENU_AJOUTER_PERIODE'); 
-	});
-	
-$("#btRetourLiasse").click(function() {
-    $("#mode").val('MENU_MODIFIER'); 
-	});
-
-$("#btModifierPeriode").click(function() {
-    $("#mode").val('MODIFIER_PERIODE'); 
-	});
-
-$("#btAjouterPeriode").click(function() {
-    $("#mode").val('AJOUTER_PERIODE'); 
-	});
-
-$("#btRetourPeriodes").click(function() {
-    $("#mode").val('LISTE_PERIODE'); 
-	});
-
-$("#btAjoutNotaire").click(function() {
-    $("#mode").val('MENU_AJOUTER_NOTAIRE'); 
-	});
-	
-$("#btModifierNotaire").click(function() {
-    $("#mode").val('MODIFIER_NOTAIRE'); 
-	});
-
-$("#btAjouterNotaire").click(function() {
-    $("#mode").val('AJOUTER_NOTAIRE'); 
-	});
-
-$("#btRetourNotaires").click(function() {
-    $("#mode").val('LISTE_NOTAIRE'); 
+$("#btModifierLiasse").click(function() {
+    $("#mode").val('MODIFIER'); 
 	});
 
 $("#cre_liasses").validate({
@@ -294,6 +227,42 @@ $("#maj_liasses").validate({
   }
 });
 
+// ------------------------------------------------------- Périodes	
+$("#btSupprimerPeriodes").click(function() {
+	var chaine="";
+	// Un seul élément
+	if (document.forms['listePeriodes'].elements['supp[]'].checked)	{
+		chaine+=document.forms['listePeriodes'].elements['supp[]'].id+"\n";
+	}
+	// Au moins deux éléments 
+	for (var i = 0; i < document.forms['listePeriodes'].elements['supp[]'].length; i++)  {
+		if (document.forms['listePeriodes'].elements['supp[]'][i].checked)      {
+			chaine+=document.forms['listePeriodes'].elements['supp[]'][i].id+"\n";
+		}                                                             
+	}
+	if (chaine=="")  {
+		alert("Pas de période sélectionnée");
+	}
+	else  {
+		Message="Etes-vous sûr de supprimer ces périodes :\n"+chaine+"?";
+		if (confirm(Message))        {                                                                                                                                    
+			document.forms['listePeriodes'].submit();
+		}
+	}
+	});
+
+$("#btAjoutPeriode").click(function() {
+    $("#mode").val('MENU_AJOUTER_PERIODE'); 
+	});
+	
+$("#btAjouterPeriode").click(function() {
+    $("#mode").val('AJOUTER_PERIODE'); 
+	});
+
+$("#btModifierPeriode").click(function() {
+    $("#mode").val('MODIFIER_PERIODE'); 
+	});
+
 $("#maj_periode").validate({
   rules: {
 		annee_debut:	{ required:true, annee_valide:true },
@@ -309,6 +278,42 @@ $("#maj_periode").validate({
 		mois_fin:		{ mois_fin: "Incohérence entre l'année et le mois", annee_mois_fin: "Saisir l'année de fin" }
   }
 });
+
+// ------------------------------------------------------- Notaires	
+$("#btSupprimerNotaires").click(function() {
+	var chaine="";
+	// Un seul élément
+	if (document.forms['listeNotaires'].elements['supp[]'].checked)	{
+		chaine+=document.forms['listeNotaires'].elements['supp[]'].id+"\n";
+	}
+	// Au moins deux éléments 
+	for (var i = 0; i < document.forms['listeNotaires'].elements['supp[]'].length; i++)  {
+		if (document.forms['listeNotaires'].elements['supp[]'][i].checked)      {
+			chaine+=document.forms['listeNotaires'].elements['supp[]'][i].id+"\n";
+		}                                                             
+	}
+	if (chaine=="")  {
+		alert("Pas de notaire sélectionnée");
+	}
+	else  {
+		Message="Etes-vous sûr de supprimer ces notaires :\n"+chaine+"?";
+		if (confirm(Message))        {                                                                                                                                    
+			document.forms['listeNotaires'].submit();
+		}
+	}
+});
+
+$("#btAjoutNotaire").click(function() {
+    $("#mode").val('MENU_AJOUTER_NOTAIRE'); 
+	});
+	
+$("#btAjouterNotaire").click(function() {
+    $("#mode").val('AJOUTER_NOTAIRE'); 
+	});
+
+$("#btModifierNotaire").click(function() {
+    $("#mode").val('MODIFIER_NOTAIRE'); 
+	});
 
 $("#maj_notaire").validate({
   rules: {
@@ -410,7 +415,7 @@ switch ($gst_mode) {
 		$st_cote = $_SESSION['serie_liasse']."-".$st_init_dixm.$st_init_mill.$st_init_cent.$st_init_dix.$st_numero;
 		$a_liasse = $connexionBD->sql_select_multipleUtf8("select cote_liasse from liasse where cote_liasse='".$st_cote."'");
 		if( count($a_liasse)!=0 ) {
-			print("<div align='center' class='IMPORTANT'>La liasse ".$st_cote." existe d&eacute;j&agrave;. Ajout impossible.</div><br>");
+			print('<div align=center class="alert alert-danger">La liasse '.$st_cote.' existe déjà. Ajout impossible.</div><br>');
 		}
 		else {
 			$st_type_serie = substr($_SESSION['serie_liasse'], 1, 1);
