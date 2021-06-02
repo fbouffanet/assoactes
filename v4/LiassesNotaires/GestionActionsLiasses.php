@@ -259,11 +259,12 @@ $("#btModifierPhoto").click(function() {
 	
 $("#majPhoto").validate({
   rules: {
-		date_photo:	{ format_date:true , date_couverture_codif:true }
+		date_photo:		{ format_date:true  },
+		idf_codif_photo:{ date_couverture_codif:true }
   },		
   messages: {
-		date_photo:	{ format_date: "La date est incorrecte. Attendu : jj/mm/aaaa", 
-					  date_couverture_codif: "Indiquer au moins la date de photo, la couverture ou la codification"	}
+		date_photo:		{ format_date: "La date est incorrecte. Attendu : jj/mm/aaaa" },
+		idf_codif_photo:{ date_couverture_codif: "Indiquer au moins la date de photo, la couverture ou la codification"	}
   }
 });
 
