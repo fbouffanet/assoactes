@@ -448,7 +448,6 @@ switch ($gst_mode) {
 				$connexionBD->execute_requete("delete from liasse where cote_liasse='".$st_cote_liasse."'");
 			}
 			else {
-		print("<div class=\"alert alert-danger\">Pas de relevé</div>");
 				print('<div align="center" class="alert alert-danger">Toutes les informations associ&eacute;es &agrave; la liasse '.$st_cote_liasse.
 				      ' doivent être supprimées auparavant</div><br>');
 			} 
