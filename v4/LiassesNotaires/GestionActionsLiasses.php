@@ -112,9 +112,7 @@ $("#btMenuGerer").click(function() {
 $("#btSupprimerReleve").click(function() {
 	var chaine="";
 	// Un seul élément
-	alert(document.forms['listeReleve'].elements['supp[]'].length);
 	if (document.forms['listeReleve'].elements['supp[]'].checked)	{
-		alert('toto');
 		chaine+=document.forms['listeReleve'].elements['supp[]'].id+"\n";
 	}
 	// Au moins deux éléments 
@@ -127,7 +125,6 @@ $("#btSupprimerReleve").click(function() {
 		alert("Pas de relevé sélectionné");
 	}
 	else  {
-		alert(chaine);
 		Message="Etes-vous sûr de supprimer ces relevés :\n"+chaine+"?";
 		if (confirm(Message))        {                                                                                                                                    
 			document.forms['listeReleve'].submit();
@@ -161,10 +158,9 @@ $("#majReleve").validate({
 // --------------------------------------------------------- Liens publications	
 $("#btSupprimerLienPubli").click(function() {
 	var chaine="";
-	alert(document.forms['listePubli'].elements['supp[]'].length);
 	// Un seul élément
 	if (document.forms['listePubli'].elements['supp[]'].checked)	{
-		chaine+=document.forms['listePubli'].elements['supp'].id;
+		chaine+=document.forms['listePubli'].elements['supp[]'].id+"\n";
 	}
 	// Au moins deux éléments 
 	for (var i = 0; i < document.forms['listePubli'].elements['supp[]'].length; i++)  {
