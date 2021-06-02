@@ -110,7 +110,7 @@ jQuery.validator.addMethod(
 		alert("couverture:"+couverture+":");
 		alert("codif:"+codif+":");
 		if( datePhoto == '' && couverture == 0 && codif == 0 ) {
-			alet("erreur");
+			alert("erreur");
 			check=false;
 		}
 		return this.optional(element) || check;
