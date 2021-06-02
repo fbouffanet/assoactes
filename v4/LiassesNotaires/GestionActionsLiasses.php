@@ -114,6 +114,22 @@ jQuery.validator.addMethod(
     "Indiquer au moins la date de photo, la couverture ou la codification"
 );
 
+jQuery.validator.addMethod(
+    "intervenant_priorite_program",
+    function(value, element) {
+		var check 		= true;
+		var intervenant	= $('#idf_intervenant').val();
+		var priorite	= $('#idf_priorite').val();
+		var releve		= $('#program_releve').checked;
+		var photo		= $('#program_photo').checked;
+		if ( intervenant == 0 && priorite == 0 && !releve && !photo )   {
+			check=false;
+		}
+		return this.optional(element) || check;
+    },
+    "Indiquer au moins l'intervenant, la priorité ou le type de programmation"
+);
+
 
 // --------------------------------------------------------- Navigation
 $("#btListe").click(function() {
@@ -302,16 +318,16 @@ $("#btModifierProgram").click(function() {
 	
 $("#majProgram").validate({
   rules: {
-		numero:			{ required: true,	integer:true },
-		depose_ad:		{ depose_avec_dept:true },
-		dept_depose_ad:	{ dept_avec_depose:true },
-		forme_liasse:	{ required: true }	
+		idf_intervenant:{ intervenant_priorite_program: true },
+		date_creation:	{ format_date:true },
+		date_echeance:	{ format_date:true },
+		date_reelle_fin:{ format_date:true }
   },		
   messages: {
-		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
-		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
-		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
-		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
+		idf_intervenant:{ intervenant_priorite_program: "Indiquer au moins l'intervenant, la priorité ou le type de programmation"	},
+		date_creation:	{ format_date: "La date est incorrecte. Attendu : jj/mm/aaaa" },
+		date_echeance:	{ format_date: "La date est incorrecte. Attendu : jj/mm/aaaa" },                                                                                              
+		date_reelle_fin:{ format_date: "La date est incorrecte. Attendu : jj/mm/aaaa" }
   }
 });
 
