@@ -115,7 +115,7 @@ $("#btSupprimerReleve").click(function() {
 	alert(document.forms['listeReleve'].elements['supp[]'].length);
 	if (document.forms['listeReleve'].elements['supp[]'].checked)	{
 		alert('toto');
-		chaine+=document.forms['listeReleve'].elements['supp'].id+"\n";
+		chaine+=document.forms['listeReleve'].elements['supp[]'].id+"\n";
 	}
 	// Au moins deux éléments 
 	for (var i = 0; i < document.forms['listeReleve'].elements['supp[]'].length; i++)  {
