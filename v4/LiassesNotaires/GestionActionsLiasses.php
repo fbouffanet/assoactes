@@ -112,6 +112,7 @@ $("#btMenuGerer").click(function() {
 $("#btSupprimerReleve").click(function() {
 	var chaine="";
 	// Un seul élément
+	alert(document.forms['listeReleve'].elements['supp[]']);
 	if (document.forms['listeReleve'].elements['supp[]'].checked)	{
 		alert('toto');
 		chaine+=document.forms['listeReleve'].elements['supp'].id;
@@ -126,6 +127,7 @@ $("#btSupprimerReleve").click(function() {
 		alert("Pas de relevé sélectionné");
 	}
 	else  {
+		alert("sélection");
 		Message="Etes-vous sûr de supprimer ces relevés :\n"+chaine+"?";
 		if (confirm(Message))        {                                                                                                                                    
 			document.forms['listeReleve'].submit();
