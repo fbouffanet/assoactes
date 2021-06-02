@@ -219,8 +219,8 @@ function menu_liste_photo($pconnexionBD){
 				  "where liasse_photo.cote_liasse = '".$_SESSION['cote_liasse_gal']."' ".
 				  "order by liasse_photo.date_photo";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-	print('<div align=center><form id="photo" action="'.$_SERVER['PHP_SELF'].'" method="post">');
-	print('<input type=hidden name="modePhoto" id="modePhoto">');
+	print('<div align=center><form id="listePhoto" action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	print('<input type=hidden name="modePhoto" id="modePhoto" value="SUPPRIMER_PHOTO">');
 	$i_nb_liasses=count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
@@ -231,8 +231,7 @@ function menu_liste_photo($pconnexionBD){
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_tableau_edition_sil(2);
 		print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
-		print("<button type=submit class='btn btn-sm btn-danger' id='btSupprimerPhoto' ONCLICK=\"VerifieSuppressionPhotos(0,'supp[]')\">");
-		print('    <span class="glyphicon glyphicon-trash"></span>  Supprimer les photos sélectionnées</button>');
+		print('<button type=button class="btn btn-sm btn-danger" id="btSupprimerPhoto"><span class="glyphicon glyphicon-trash"></span>  Supprimer les photos sélectionnées</button>');
 	}
 	else {
 		print("<div class=\"alert alert-danger\">Pas de photo</div>");
