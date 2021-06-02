@@ -112,7 +112,7 @@ $("#btMenuGerer").click(function() {
 $("#btSupprimerReleve").click(function() {
 	var chaine="";
 	// Un seul élément
-	alert(document.forms['listeReleve'].elements['supp[]']);
+	alert(document.forms['listeReleve'].elements['supp[]'].length);
 	if (document.forms['listeReleve'].elements['supp[]'].checked)	{
 		alert('toto');
 		chaine+=document.forms['listeReleve'].elements['supp'].id;
