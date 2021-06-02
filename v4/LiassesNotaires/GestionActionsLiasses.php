@@ -106,11 +106,7 @@ jQuery.validator.addMethod(
 		var datePhoto	= $('#date_photo').val();
 		var couverture	= $('#idf_couverture_photo').val();
 		var codif		= $('#idf_codif_photo').val();
-		alert("date:"+datePhoto+":");
-		alert("couverture:"+couverture+":");
-		alert("codif:"+codif+":");
 		if( datePhoto == '' && couverture == 0 && codif == 0 ) {
-			alert("erreur");
 			check=false;
 		}
 		return this.optional(element) || check;
