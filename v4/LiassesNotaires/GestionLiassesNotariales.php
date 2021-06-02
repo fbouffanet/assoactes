@@ -157,7 +157,8 @@ $("#btSupprimerLiasse").click(function() {
 	var chaine="";
 	// Un seul élément
 	if (document.forms['listeLiasses'].elements['supp[]'].checked)	{
-		chaine+=document.forms['listeLiasses'].elements['supp'].id;
+		chaine+=document.forms['listeLiasses'].elements['supp[]'].id+"\n";
+	}
 	}
 	// Au moins deux éléments 
 	for (var i = 0; i < document.forms['listeLiasses'].elements['supp[]'].length; i++)  {
