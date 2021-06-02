@@ -99,6 +99,22 @@ jQuery.validator.addMethod(
     "Sélectionner une publication papier"
 );
 
+jQuery.validator.addMethod(
+    "date_couverture_codif",
+    function(value, element) {
+		var check 		= true;
+		var datePhoto	= $(element).val();
+		var couverture	= $('#idf_couverture_photo').val();
+		var codif		= $('#idf_codif_photo').val();
+		if( datePhoto == '' && couverture == 0 && codif == 0 ) {
+			check=false;
+		}
+		return this.optional(element) || check;
+    },
+    "Indiquer au moins la date de photo, la couverture ou la codification"
+);
+
+
 // --------------------------------------------------------- Navigation
 $("#btListe").click(function() {
     $("#modeMenu").val('LISTE'); 
@@ -239,16 +255,11 @@ $("#btModifierPhoto").click(function() {
 	
 $("#majPhoto").validate({
   rules: {
-		numero:			{ required: true,	integer:true },
-		depose_ad:		{ depose_avec_dept:true },
-		dept_depose_ad:	{ dept_avec_depose:true },
-		forme_liasse:	{ required: true }	
+		date_photo:	{ format_date:true , date_couverture_codif:true }
   },		
   messages: {
-		numero:			{ required: "Vous devez saisir le dernier chiffre du numéro de liasse", integer: "Vous devez saisir un chiffre"	},
-		depose_ad:		{ depose_avec_dept: "Le département doit être renseigné pour une liasse déposée aux AD"	},
-		dept_depose_ad:	{ dept_avec_depose: "La case 'Déposée aux AD' doit être cochée quand le département est renseigné"	},                                                                                              
-		forme_liasse:	{ required: "La forme de la liasse est obligatoire"	}
+		date_photo:	{ format_date: "La date est incorrecte. Attendu : jj/mm/aaaa", 
+					  date_couverture_codif: "Indiquer au moins la date de photo, la couverture ou la codification"	}
   }
 });
 
