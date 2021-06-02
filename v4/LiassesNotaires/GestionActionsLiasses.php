@@ -115,7 +115,7 @@ $("#btSupprimerReleve").click(function() {
 	alert(document.forms['listeReleve'].elements['supp[]'].length);
 	if (document.forms['listeReleve'].elements['supp[]'].checked)	{
 		alert('toto');
-		chaine+=document.forms['listeReleve'].elements['supp'].id;
+		chaine+=document.forms['listeReleve'].elements['supp'].id+"\n";
 	}
 	// Au moins deux éléments 
 	for (var i = 0; i < document.forms['listeReleve'].elements['supp[]'].length; i++)  {
@@ -127,7 +127,7 @@ $("#btSupprimerReleve").click(function() {
 		alert("Pas de relevé sélectionné");
 	}
 	else  {
-		alert("sélection");
+		alert(chaine);
 		Message="Etes-vous sûr de supprimer ces relevés :\n"+chaine+"?";
 		if (confirm(Message))        {                                                                                                                                    
 			document.forms['listeReleve'].submit();
