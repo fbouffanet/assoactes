@@ -202,10 +202,6 @@ $("#majLienPubli").validate({
 });
 
 // --------------------------------------------------------- Photos	
-$("#btMenuAjouterPhoto").click(function() {
-    $("#modePhoto").val('MENU_AJOUTER_PHOTO'); 
-	});
-	
 $("#btSupprimerPhoto").click(function() {
 	var chaine="";
 	// Un seul élément
@@ -227,6 +223,10 @@ $("#btSupprimerPhoto").click(function() {
 			document.forms['listePhoto'].submit();
 		}
 	}
+	});
+	
+$("#btMenuAjouterPhoto").click(function() {
+    $("#modePhoto").val('MENU_AJOUTER_PHOTO'); 
 	});
 	
 $("#btAjouterPhoto").click(function() {
@@ -253,14 +253,33 @@ $("#majPhoto").validate({
 });
 
 // --------------------------------------------------------- Programmations	
+$("#btSupprimerProgram").click(function() {
+	var chaine="";
+	// Un seul élément
+	if (document.forms['listeProgram'].elements['supp[]'].checked)	{
+		chaine+=document.forms['listeProgram'].elements['supp[]'].id+"\n";
+	}
+	// Au moins deux éléments 
+	for (var i = 0; i < document.forms['listeProgram'].elements['supp[]'].length; i++)  {
+		if (document.forms['listeProgram'].elements['supp[]'][i].checked)      {
+			chaine+=document.forms['listeProgram'].elements['supp[]'][i].id+"\n";
+		}                                                             
+	}
+	if (chaine=="")  {
+		alert("Pas de programmation sélectionnée");
+	}
+	else  {
+		Message="Etes-vous sûr de supprimer ces programmations :\n"+chaine+"?";
+		if (confirm(Message))        {                                                                                                                                    
+			document.forms['listeProgram'].submit();
+		}
+	}
+	});
+	
 $("#btMenuAjouterProgram").click(function() {
     $("#modeProgram").val('MENU_AJOUTER_PROGRAM'); 
 	});
 
-$("#btSupprimerProgram").click(function() {
-    $("#modeProgram").val('SUPPRIMER_PROGRAM'); 
-	});
-	
 $("#btAjouterProgram").click(function() {
     $("#mode").val('AJOUTER_PROGRAM'); 
 	});
