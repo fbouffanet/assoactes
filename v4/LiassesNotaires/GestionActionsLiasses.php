@@ -207,7 +207,26 @@ $("#btMenuAjouterPhoto").click(function() {
 	});
 	
 $("#btSupprimerPhoto").click(function() {
-    $("#modePhoto").val('SUPPRIMER_PHOTO'); 
+	var chaine="";
+	// Un seul élément
+	if (document.forms['listePhoto'].elements['supp[]'].checked)	{
+		chaine+=document.forms['listePhoto'].elements['supp[]'].id+"\n";
+	}
+	// Au moins deux éléments 
+	for (var i = 0; i < document.forms['listePhoto'].elements['supp[]'].length; i++)  {
+		if (document.forms['listePhoto'].elements['supp[]'][i].checked)      {
+			chaine+=document.forms['listePhoto'].elements['supp[]'][i].id+"\n";
+		}                                                             
+	}
+	if (chaine=="")  {
+		alert("Pas de photo sélectionné");
+	}
+	else  {
+		Message="Etes-vous sûr de supprimer ces photos :\n"+chaine+"?";
+		if (confirm(Message))        {                                                                                                                                    
+			document.forms['listePhoto'].submit();
+		}
+	}
 	});
 	
 $("#btAjouterPhoto").click(function() {
