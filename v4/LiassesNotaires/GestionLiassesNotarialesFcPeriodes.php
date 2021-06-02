@@ -150,7 +150,6 @@ function calculer_date_debut( $pconnexionBD, $pst_annee_debut, $pst_mois_debut)
 			$st_mois_revol = 'Vendémiaire';
 		else
 			$st_mois_revol = $pst_mois_debut;
-		print($st_mois_revol);
 		$st_requete = "select date_format(prem_jour_greg, '%Y-%m-%d') from calendrier_revolutionaire ".
 		              "where an_revol='" . $pst_annee_debut . "' and mois_revol='" . $st_mois_revol . "'";
 		list($st_date_debut) = $pconnexionBD->sql_select_listeUtf8($st_requete);
