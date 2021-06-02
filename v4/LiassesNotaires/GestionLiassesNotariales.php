@@ -180,7 +180,7 @@ $("#btSupprimerNotaires").click(function() {
 	var chaine="";
 	// Un seul élément
 	if (document.forms['listeNotaires'].elements['supp[]'].checked)	{
-		chaine+=document.forms['listeNotaires'].elements['supp'].id;
+		chaine+=document.forms['listeNotaires'].elements['supp[]'].id+"\n";
 	}
 	// Au moins deux éléments 
 	for (var i = 0; i < document.forms['listeNotaires'].elements['supp[]'].length; i++)  {
@@ -211,7 +211,7 @@ $("#btSupprimerPeriodes").click(function() {
 	var chaine="";
 	// Un seul élément
 	if (document.forms['listePeriodes'].elements['supp[]'].checked)	{
-		chaine+=document.forms['listePeriodes'].elements['supp'].id;
+		chaine+=document.forms['listePeriodes'].elements['supp[]'].id+"\n";
 	}
 	// Au moins deux éléments 
 	for (var i = 0; i < document.forms['listePeriodes'].elements['supp[]'].length; i++)  {
