@@ -178,7 +178,7 @@ function menu_liste_publication($pconnexionBD){
 				  "order by publication_papier.date_publication";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print('<div align=center><form id="listePubli" action="'.$_SERVER['PHP_SELF'].'" method="post">');
-	print('<input type=hidden name="modePubli" id="modePubli">');
+	print('<input type=hidden name="modePubli" id="modePubli" value="SUPPRIMER_LIEN_PUBLI">');
 	$i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
