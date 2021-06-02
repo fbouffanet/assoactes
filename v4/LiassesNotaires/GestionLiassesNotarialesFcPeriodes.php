@@ -30,9 +30,7 @@ function menu_liste_periode($pconnexionBD, $pst_cote_liasse)
 											array('P&eacute;riode','date d&eacute;but','date fin','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		//$pagination->affiche_entete_liens_navigation();
 		$pagination->affiche_tableau_edition_sil(2);
-		//$pagination->affiche_entete_liens_navigation();      
 	}
 	else
 		print("<div align=center>Pas de période</div>\n");
@@ -63,7 +61,7 @@ function menu_edition_periode($pst_annee_debut, $pst_mois_debut, $pst_annee_fin,
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label for='mois_debut' class='col-form-label'>Mois de début de la période</label></div>".
 		  "<div class='form-group col-md-3' align='left'><select name='mois_debut' id=mois_debut class='js-select-avec-recherche form-control'>".
-				chaine_select_options($pst_mois_debut,$pa_mois)."</select></div></div>");
+				chaine_select_options($pst_mois_debut, $pa_mois, false)."</select></div></div>");
 		  
 	print("<div class='form-row col-md-12'>");
 	print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Année de fin de la période</label></div>");
