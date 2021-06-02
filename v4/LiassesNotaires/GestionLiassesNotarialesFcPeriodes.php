@@ -71,7 +71,7 @@ function menu_edition_periode($pst_annee_debut, $pst_mois_debut, $pst_annee_fin,
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label for='mois_fin' class='col-form-label'>Mois de fin de la période</label></div>".
 		  "<div class='form-group col-md-3' align='left'><select name='mois_fin' id=mois_fin class='js-select-avec-recherche form-control'>".
-				chaine_select_options($pst_mois_fin,$pa_mois)."</select></div></div>");
+				chaine_select_options($pst_mois_fin, $pa_mois, false)."</select></div></div>");
 }
 
 /** Affiche le menu de modification d'une période
@@ -248,7 +248,7 @@ function maj_libelle_periode($pconnexionBD, $pst_cote_liasse)
 	              "from (select libelle_periode, date_debut_periode, date_fin_periode  from liasse_dates ".
 				  "      where cote_liasse = '" . $pst_cote_liasse . "' ".
 				  "      order by 2, 3) SEL";
-	$a_liste_periodes = $pconnexionBD->sql_selectUtf8($st_requete);
+	$a_liste_periodes = $pconnexionBD->sql_select($st_requete);
 	if (count($a_liste_periodes)!=0)
 		$st_libelle = implode(",",$a_liste_periodes);
 	else
