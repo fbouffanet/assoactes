@@ -150,7 +150,7 @@ $gi_commune					= 0;
 $gi_forme_liasse			= 0;
 
 if( $_SESSION['menu_rla'] != '' ){
-print('<div class="panel panel-primary">');
+print('<div class="panel panel-warning">');
 	print('<div class="panel-heading">'.$st_titre[$_SESSION['menu_rla']].'</div>');
 	print('<div class="panel-body">');
 	print("<form id='critere' action=\"".$_SERVER['PHP_SELF']."\" method='post'>");
