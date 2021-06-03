@@ -68,33 +68,33 @@ print('<div class="panel-body">');
 
 print("<div class='form-row col-md-12'><div class='form-group col-md-3'>");
 print("<input type='radio' name='menu' value='releve' ".$st_check_revele." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['releve']);
-print("</div><div class='form-group col-md-6'>");
+print("</div><div class='form-group col-md-5'>");
 print("<input type='radio' name='menu' value='publi_pap' ".$st_check_publi_pap." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['publi_pap']."<br>");
-print("</div><div class='form-group col-md-3'>");
+print("</div><div class='form-group col-md-4'>");
 print("<input type='radio' name='menu' value='photo' ".$st_check_photo." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['photo']."<br>");
 print("</div></div>");
 
 print("<div class='form-row col-md-12'><div class='form-group col-md-3'>");
 print("<input type='radio' name='menu' value='pas_releve' ".$st_check_pas_releve." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['pas_releve']."<br>");
-print("</div><div class='form-group col-md-6'>");
+print("</div><div class='form-group col-md-5'>");
 print("<input type='radio' name='menu' value='publi_num' ".$st_check_publi_num." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['publi_num']."<br>");
-print("</div><div class='form-group col-md-3'>");
+print("</div><div class='form-group col-md-4'>");
 print("<input type='radio' name='menu' value='pas_photo' ".$st_check_pas_photo." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['pas_photo']."<br>");
 print("</div></div>");
 
 print("<div class='form-row col-md-12'><div class='form-group col-md-3'>");
 print("<input type='radio' name='menu' value='repert' ".$st_check_repert." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['repert']."<br>");
-print("</div><div class='form-group col-md-6'>");
+print("</div><div class='form-group col-md-5'>");
 print("<input type='radio' name='menu' value='sans' ".$st_check_sans." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['sans']."<br>");
-print("</div><div class='form-group col-md-3'>");
+print("</div><div class='form-group col-md-4'>");
 print("<input type='radio' name='menu' value='non_comm' ".$st_check_non_comm." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['non_comm']."<br>");
 print("</div></div>");
 
 print("<div class='form-row col-md-12'><div class='form-group col-md-3'>");
 print("<input type='radio' name='menu' value='program' ".$st_check_program." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['program']."<br>");
-print("</div><div class='form-group col-md-6'>");
+print("</div><div class='form-group col-md-5'>");
 print("<input type='radio' name='menu' value='publication' ".$st_check_publication." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['publication']."<br>");
-print("</div><div class='form-group col-md-3'>");
+print("</div><div class='form-group col-md-4'>");
 print("<input type='radio' name='menu' value='complete' ".$st_check_complete." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['complete']."<br>");
 print("</div></div>");
 
