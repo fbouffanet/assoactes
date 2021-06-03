@@ -39,7 +39,7 @@ function menu_gerer_publication($pconnexionBD)
 	              "       case when date_publication = str_to_date('0000/00/00', '%Y/%m/%d') then '' else date_format(date_publication, '%d/%m/%Y') end as date_publication, ".
 				  "       info_complementaires ".
 	              "from publication_papier ".
-				  "where nom like '".$gc_init."%' ".
+				  "where upper(nom) like '".$gc_init."%' ".
 				  "order by nom, date_publication";
 	$a_liste_publis = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	$i_nb_publis = count($a_liste_publis) ;
