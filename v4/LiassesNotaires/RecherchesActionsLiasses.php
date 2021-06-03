@@ -14,7 +14,16 @@ print('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >');
 print('<meta http-equiv="content-language" content="fr">');
 print("<link href='../css/styles.css' type='text/css' rel='stylesheet'>");
 print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.structure.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/jquery-ui.theme.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/select2.min.css' type='text/css' rel='stylesheet'>");
+print("<link href='../css/select2-bootstrap.min.css' type='text/css' rel='stylesheet'>");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery.validate.min.js' type='text/javascript'></script>");
+print("<script src='../js/additional-methods.min.js' type='text/javascript'></script>");
+print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
+print("<script src='../js/select2.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 //print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
 print("<script src='./VerifieChampsRechercheActionLiasse.js' type='text/javascript'></script>");
@@ -141,7 +150,7 @@ $gi_commune					= 0;
 $gi_forme_liasse			= 0;
 
 if( $_SESSION['menu_rla'] != '' ){
-	print('<div class="panel panel-Secondary">');
+print('<div class="panel panel-primary">');
 	print('<div class="panel-heading">'.$st_titre[$_SESSION['menu_rla']].'</div>');
 	print('<div class="panel-body">');
 	print("<form id='critere' action=\"".$_SERVER['PHP_SELF']."\" method='post'>");
