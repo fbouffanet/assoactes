@@ -149,22 +149,22 @@ $("#btMenuGerePubli").click(function() {
 $("#btSupprimerPubli").click(function() {
 	var chaine="";
 	// Un seul élément
-	if (document.forms['listeProgram'].elements['supp[]'].checked)	{
-		chaine+=document.forms['listeProgram'].elements['supp[]'].id+"\n";
+	if (document.forms['listePubli'].elements['supp[]'].checked)	{
+		chaine+=document.forms['listePubli'].elements['supp[]'].id+"\n";
 	}
 	// Au moins deux éléments 
-	for (var i = 0; i < document.forms['listeProgram'].elements['supp[]'].length; i++)  {
-		if (document.forms['listeProgram'].elements['supp[]'][i].checked)      {
-			chaine+=document.forms['listeProgram'].elements['supp[]'][i].id+"\n";
+	for (var i = 0; i < document.forms['listePubli'].elements['supp[]'].length; i++)  {
+		if (document.forms['listePubli'].elements['supp[]'][i].checked)      {
+			chaine+=document.forms['listePubli'].elements['supp[]'][i].id+"\n";
 		}                                                             
 	}
 	if (chaine=="")  {
-		alert("Pas de programmation sélectionnée");
+		alert("Pas de publication sélectionnée");
 	}
 	else  {
-		Message="Etes-vous sûr de supprimer ces programmations :\n"+chaine+"?";
+		Message="Etes-vous sûr de supprimer ces publications :\n"+chaine+"?";
 		if (confirm(Message))        {                                                                                                                                    
-			document.forms['listeProgram'].submit();
+			document.forms['listePubli'].submit();
 		}
 	}
 	});
