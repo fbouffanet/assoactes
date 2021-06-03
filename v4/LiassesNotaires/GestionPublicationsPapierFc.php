@@ -15,11 +15,14 @@ function menu_gerer_publication($pconnexionBD)
 	global $gi_num_page_cour;
 	unset($_SESSION['liasse']);
 	$a_init_titres = array("A","B","C","D","E","F","G","H","I","J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "*"); 
-	print("<div class=TITRE>Gestion des publications papiers</div>");
-	print("<div align=center><br><form  name='publi' action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return\">");
-	print("<input type=hidden name=mode value=\"MENU_GERER_PUBLI\">");
-	print("<table border=0 cellpadding=0 cellspacing=0><caption>S&eacute;lection des publications<br><br></caption>");
-	print('<tr class=ligne_paire><td align="center" width="200">Premi&egrave;re lettre du titre</td><td>');
+	print('<div align=center><form  action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading">Publications papiers</div>');
+	print('<div class="panel-body">');
+	print('<form name="listePubli" id="listePubli" action='.$_SERVER['PHP_SELF'].'" method="post" onSubmit="return">');
+	print('<input type=hidden name=mode id=mode value="SUPPRIMER_PUBLI">');
+	print('<table border=0 cellpadding=0 cellspacing=0>');
+	print('<tr class=ligne_paire><td align="center" width="200"><label class="col-form-label">Première lettre du titre&nbsp&nbsp</label></td><td>');
 	$i_session_init = isset($_SESSION['init']) ? $_SESSION['init'] : $a_init_titres[0];
 	$gc_init = empty($_GET['initpub']) ? $i_session_init : $_GET['initpub'];
 	if( $gc_init == "*" )
@@ -32,7 +35,7 @@ function menu_gerer_publication($pconnexionBD)
 		else
 			print("<a href=\"".$_SERVER['PHP_SELF']."?initpub=$c_init\">$c_init</a> ");
 	}
-	print('</td></tr></table>');
+	print('</td></tr></table></div></div>');
 	$st_requete = "select concat('PPA', idf) as idf, nom, ".
 	              "       case when date_publication = str_to_date('0000/00/00', '%Y/%m/%d') then '' else date_format(date_publication, '%d/%m/%Y') end as date_publication, ".
 				  "       info_complementaires ".
@@ -43,23 +46,22 @@ function menu_gerer_publication($pconnexionBD)
 	$i_nb_publis = count($a_liste_publis) / 3;
 	if ($i_nb_publis!=0)
 	{        
-		$pagination = new PaginationTableau($_SERVER['PHP_SELF'], 'num_page', $i_nb_publis, NB_LIGNES_PAR_PAGE, DELTA_NAVIGATION,
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'], 'num_page', $i_nb_publis, 10, DELTA_NAVIGATION,
 											array('Titre publication','Date publication','Infos compl&eacute;mentaires','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
 		$pagination->affiche_entete_liens_navlimite();
-		$pagination->affiche_tableau_edition(2);
+		$pagination->affiche_tableau_edition_sil(2);
 		$pagination->affiche_entete_liens_navlimite();    
-		print("<div align=center><br><input type=hidden name=mode value=\"SUPPRIMER_PUBLI\">");
-		print("<input type=button value=\"Supprimer les publications s&eacute;lectionn&eacute;s\" ONCLICK=\"VerifieSuppressionPublis(0,'supp[]')\"></div>");   
+		print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
+		print('<button type=button class="btn btn-sm btn-danger" id="btSupprimerPubli"><span class="glyphicon glyphicon-trash"></span>  Supprimer les publications sélectionnées</button>');
 	}
-	else
-		print("<div align=center>Pas de publication papier</div>\n");
-	print("</form>");  
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");  
-	print("<div align=center><br><input type=hidden name=mode value=\"MENU_AJOUTER_PUBLI\"><input type=submit value=\"Ajouter une publication papier\"></div>");  
-	print('</form>');
-	print('</div>');  
+	else {
+		print('<div align=centerclass="alert alert-danger" >Pas de publication papier</div>\n');
+		print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
+	}
+	print('<button type=submit id="btMenuAjouterPubli" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter une publication papier</button>');
+	print('</div></form></div>');
 }
 
 /**

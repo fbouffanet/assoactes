@@ -10,7 +10,6 @@ require_once '../Commun/ConnexionBD.php';
 require_once('../Commun/PaginationTableau.php');
 require_once('../Commun/commun.php');
 
-
 print('<!DOCTYPE html>');
 print("<head>");
 print("<title>Gestion des publications papier de liasses notiariales</title>");
@@ -22,6 +21,165 @@ print("<link href='../css/bootstrap.min.css' rel='stylesheet'>");
 print("<script src='../js/jquery-min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print("<script src='./VerifieChampsGestionActionsLiasse.js' type='text/javascript'></script>");
+?>
+<script type='text/javascript'>
+$(document).ready(function() {
+
+jQuery.validator.addMethod(
+    "format_date",
+    function(value, element) {
+		var check 			= true;
+		var ListeErreurs	= "";
+		var jj				= value.substring(0,2);
+		var mm				= value.substring(3,5);
+		var aa				= value.substring(6);
+		var sep1			= value.substring(2,3);
+		var sep2			= value.substring(5,6);
+		if ( value != "" ) {
+			if ( isNaN(jj) || jj<1 || jj>31 ) {
+				check = false;
+			}	
+			else if ( isNaN(mm) || mm<1 || mm>12 ) {
+				check = false;
+			}	
+			else if ( isNaN(aa) || aa<1980 || aa>2100 ) {
+				check = false;
+			}	
+			else if ( ( mm == 4 || mm == 6 || mm == 9 || mm == 11 ) && jj > 30 ) {
+				check = false;
+			}	
+			else if ( mm == 2 && (aa % 4) == 0 && jj > 29 ){
+				check = false;
+			}	
+			else if ( mm == 2 && (aa % 4) != 0 && jj > 28 ){
+				check = false;
+			}		
+			else if ( sep1 != "/" || sep2 != "/" ) {
+				check = false;
+			}
+		}
+		return this.optional(element) || check;
+    },
+    "La date est incorrecte. Attendu : jj/mm/aaaa"
+);
+	
+jQuery.validator.addMethod(
+    "releveur_ou_date",
+    function(value, element) {
+		var check 		= true;
+		var releveur	= $(element).val();
+		var dateReleve	= $('#date_fin_releve').val();
+		if( releveur == 0 && dateReleve == '' ) {
+			check=false;
+		}
+		return this.optional(element) || check;
+    },
+    "Indiquer au moins le releveur ou la date de relevé"
+);
+
+jQuery.validator.addMethod(
+    "lien_publi_select",
+    function(value, element) {
+		var check 	= true;
+		if( $(element).val() == 0 ) {
+			check=false;
+		}
+		return this.optional(element) || check;
+    },
+    "Sélectionner une publication papier"
+);
+
+jQuery.validator.addMethod(
+    "date_couverture_codif",
+    function(value, element) {
+		var check 		= true;
+		var datePhoto	= $('#date_photo').val();
+		var couverture	= $('#idf_couverture_photo').val();
+		var codif		= $('#idf_codif_photo').val();
+		if( datePhoto == '' && couverture == 0 && codif == 0 ) {
+			check=false;
+		}
+		return this.optional(element) || check;
+    },
+    "Indiquer au moins la date de photo, la couverture ou la codification"
+);
+
+jQuery.validator.addMethod(
+    "intervenant_priorite_program",
+    function(value, element) {
+		var check 		= true;
+		var intervenant	= $('#idf_intervenant').val();
+		var priorite	= $('#idf_priorite').val();
+		var releve		= $('#program_releve').is(':checked');
+		var photo		= $('#program_photo').is(':checked');
+		if ( intervenant == 0 && priorite == 0 && !releve && !photo )   {
+			check=false;
+		}
+		return this.optional(element) || check;
+    },
+    "Indiquer au moins l'intervenant, la priorité ou le type de programmation"
+);
+
+$("#majPubli").validate({
+  rules: {
+		idf_intervenant:{ intervenant_priorite_program: true },
+		date_creation:	{ format_date:true },
+		date_echeance:	{ format_date:true },
+		date_reelle_fin:{ format_date:true }
+  },		
+  messages: {
+		idf_intervenant:{ intervenant_priorite_program: "Indiquer au moins l'intervenant, la priorité ou le type de programmation"	},
+		date_creation:	{ format_date: "La date est incorrecte. Attendu : jj/mm/aaaa" },
+		date_echeance:	{ format_date: "La date est incorrecte. Attendu : jj/mm/aaaa" },                                                                                              
+		date_reelle_fin:{ format_date: "La date est incorrecte. Attendu : jj/mm/aaaa" }
+  }
+});
+
+
+// --------------------------------------------------------- Publications	
+$("#btMenuGerePubli").click(function() {
+    $("#mode").val('MENU_GERER_PUBLI'); 
+	});
+	
+$("#btSupprimerPubli").click(function() {
+	var chaine="";
+	// Un seul élément
+	if (document.forms['listeProgram'].elements['supp[]'].checked)	{
+		chaine+=document.forms['listeProgram'].elements['supp[]'].id+"\n";
+	}
+	// Au moins deux éléments 
+	for (var i = 0; i < document.forms['listeProgram'].elements['supp[]'].length; i++)  {
+		if (document.forms['listeProgram'].elements['supp[]'][i].checked)      {
+			chaine+=document.forms['listeProgram'].elements['supp[]'][i].id+"\n";
+		}                                                             
+	}
+	if (chaine=="")  {
+		alert("Pas de programmation sélectionnée");
+	}
+	else  {
+		Message="Etes-vous sûr de supprimer ces programmations :\n"+chaine+"?";
+		if (confirm(Message))        {                                                                                                                                    
+			document.forms['listeProgram'].submit();
+		}
+	}
+	});
+	
+$("#btMenuAjouterPubli").click(function() {
+    $("#mode").val('MENU_AJOUTER_PUBLI'); 
+	});
+	
+$("#btAjouterPubli").click(function() {
+    $("#mode").val('AJOUTER_PUBLI'); 
+	});
+	
+$("#btModifierPubli").click(function() {
+    $("#mode").val('MODIFIER_PUBLI'); 
+	});
+	
+});
+</script>
+<?php
+
 print('</head>');
 print("<body>");
 print('<div class="container">');
