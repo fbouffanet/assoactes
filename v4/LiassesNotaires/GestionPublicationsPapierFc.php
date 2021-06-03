@@ -57,7 +57,7 @@ function menu_gerer_publication($pconnexionBD)
 		print('<button type=button class="btn btn-sm btn-danger" id="btSupprimerPubli"><span class="glyphicon glyphicon-trash"></span>  Supprimer les publications sélectionnées</button>');
 	}
 	else {
-		print('<div align=centerclass="alert alert-danger" >Pas de publication papier</div>\n');
+		print('<div align=center class="alert alert-danger" >Pas de publication papier</div>');
 		print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
 	}
 	print('<button type=submit id="btMenuAjouterPubli" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-new-window"></span> Ajouter une publication papier</button>');
@@ -73,14 +73,18 @@ function menu_gerer_publication($pconnexionBD)
  */ 
 function menu_edition_publication($pconnexionBD, $pst_nom, $pst_date_publication, $pst_info_compl)
 {
-	print("<table border=1>");
-	print("<tr><th>Titre de la publication</th><td colspan=2>".
-	      "<textarea rows='2' cols='80' maxlength=100 name='titre'>".$pst_nom."</textarea></td></tr>");
-	print("<tr><th>Date de publication</th><td>".
-	      "<input type=\"text\" maxlength=10 size=10 name=date_publication value=\"$pst_date_publication\"></td></tr>");
-	print("<tr><th>Informations compl&eacute;mentaires</th><td colspan=2>".
-	      "<textarea rows='3' cols='80' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></td></tr>");
-	print("</table>");
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Titre de la publication&nbsp;</label></div>".
+		  "<div class='form-group col-md-6' align='left'><textarea class='form-control' rows='3' maxlength=100 name='titre' id=titre>".$pst_nom."</textarea></div></div>");
+
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Date de publication&nbsp;</label></div>".
+		  "<div class='form-group col-md-6'>".
+		  "<input type=text name=date_publication id=date_publication size=10 maxlength='10' value='".$pst_date_publication."' class='form-control'></div></div>");
+
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Informations complémentaires&nbsp;</label></div>".
+		  "<div class='form-group col-md-6' align='left'><textarea class='form-control' rows='3' maxlength=255 name='info_compl'>".$pst_info_compl."</textarea></div></div>");
 }
 
 /** Affiche le menu de modification d'une publication
@@ -96,18 +100,20 @@ function menu_modifier_publication($pconnexionBD, $pi_idf_publication)
 									 "            end as date_publication, info_complementaires ".
 									 "from publication_papier ".
 									 "where idf=$pi_idf_publication");
-	print("<div class=TITRE>Gestion des publications</div>");
-	print("<div class=SOUSTITRE>Modification d'une publication</div><br><br>");
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsPubli(0)\">");
-	print("<div align=center><input type=hidden name=mode value=\"MODIFIER_PUBLI\">");
+	print('<form id=majPubli method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print('<input type=hidden name=mode id=mode value="MODIFIER_PUBLI">');
 	print("<input type=hidden name=idf_publication value=$pi_idf_publication>");
+	
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading" align="center">Publications papier</div>');
+	print('<div class="panel-body">');
 	menu_edition_publication($pconnexionBD, $st_nom, $st_date_publication, $st_info_compl); 
-	print("</div>");
-	print("<div align=center><br><input type=button value=\"Modifier\" ONCLICK=\"VerifieChampsPubli(0)\"></div>");
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"MENU_GERER_PUBLI\">");
-	print("<br><input type=submit value=\"Annuler\"></div>");
+	print("</div></div>");
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+	print('<button type=submit id=btModifierPubli class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Modifier</button>');
+	print('<button type=submit formnovalidate id=btMenuGerePubli class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
+	print('</div>');
+	
 	print('</form>');
 }
 
@@ -116,17 +122,19 @@ function menu_modifier_publication($pconnexionBD, $pi_idf_publication)
  */ 
 function menu_ajouter_publication($pconnexionBD)
 {
-	print("<div class=TITRE>Gestion des publications</div>");
-	print("<div class=SOUSTITRE>Ajout d'une publication</div><br><br>");
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\" onSubmit=\"return VerifieChampsPubli(0)\">");
-	print("<div align=center><input type=hidden name=mode value=\"AJOUTER_PUBLI\">");
+	print('<form id=majPubli method="post" class="form-inline" action="'.$_SERVER['PHP_SELF'].'">');
+	print('<input type=hidden name=mode id=mode value="AJOUTER_PUBLI">');
+	
+	print('<div class="panel panel-primary">');
+	print('<div class="panel-heading" align="center">Publications papier</div>');
+	print('<div class="panel-body">');
 	menu_edition_publication($pconnexionBD, '', '', ''); 
-	print("</div>");
-	print("<div align=center><br><input type=button value=\"Ajouter\" ONCLICK=\"VerifieChampsPubli(0)\"></div>");
-	print('</form>');
-	print("<form  action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");
-	print("<div align=center><input type=hidden name=mode value=\"MENU_GERER_PUBLI\">");
-	print("<br><input type=submit value=\"Annuler\"></div>");
+	print("</div></div>");
+	print('<div class="btn-group col-md-6 col-md-offset-3" role="group">');
+	print('<button type=submit id=btAjouterPubli class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-floppy-save"></span> Ajouter</button>');
+	print('<button type=submit formnovalidate id=btMenuGerePubli class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-arrow-left"></span> Annuler</button>');
+	print('</div>');
+	
 	print('</form>');
 }
 

@@ -130,16 +130,13 @@ jQuery.validator.addMethod(
 
 $("#majPubli").validate({
   rules: {
-		idf_intervenant:{ intervenant_priorite_program: true },
-		date_creation:	{ format_date:true },
-		date_echeance:	{ format_date:true },
-		date_reelle_fin:{ format_date:true }
+		titre:				{ required: true },
+		date_publication:	{ required:true, format_date:true }
   },		
   messages: {
-		idf_intervenant:{ intervenant_priorite_program: "Indiquer au moins l'intervenant, la priorité ou le type de programmation"	},
-		date_creation:	{ format_date: "La date est incorrecte. Attendu : jj/mm/aaaa" },
-		date_echeance:	{ format_date: "La date est incorrecte. Attendu : jj/mm/aaaa" },                                                                                              
-		date_reelle_fin:{ format_date: "La date est incorrecte. Attendu : jj/mm/aaaa" }
+		titre:				{ required: "Indiquer le titre de la publication"	},
+		date_publication:	{ required: "Indiquer la date de publication",
+							  format_date: "La date est incorrecte. Attendu : jj/mm/aaaa" }
   }
 });
 
