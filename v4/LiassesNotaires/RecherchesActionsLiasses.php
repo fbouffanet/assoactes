@@ -150,49 +150,66 @@ $gi_commune					= 0;
 $gi_forme_liasse			= 0;
 
 if( $_SESSION['menu_rla'] != '' ){
-print('<div class="panel panel-warning">');
+print('<div class="panel panel-primary">');
 	print('<div class="panel-heading">'.$st_titre[$_SESSION['menu_rla']].'</div>');
 	print('<div class="panel-body">');
 	print("<form id='critere' action=\"".$_SERVER['PHP_SELF']."\" method='post'>");
 	print("<input type=hidden name=menu value='".$_SESSION['menu_rla']."'>");  
 	if( $_SESSION['menu_rla'] != 'publication' ){
 	print("<div class='form-row col-md-12'>".
-		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Série de liasses&nbsp;</label></div>".
-		  "<div class='form-group col-md-6' align='left'><select name=serie_liasse id='serie_liasse' class='js-select-avec-recherche form-control' ".
+		  "<div class='form-group col-md-3' align='right'><label class='col-form-label'>Série de liasses&nbsp;</label></div>".
+		  "<div class='form-group col-md-4' align='left'><select name=serie_liasse id='serie_liasse' class='js-select-avec-recherche form-control' ".
 		  "     onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
 			chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select></div></div>");
 	}
 	switch ($_SESSION['menu_rla']) {
 		case 'releve' :
-			print('<div style="text-align:center">');
-			print("Première cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
-			print("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-			print("Dernière cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
-			print('</div><br>');
-			print('<div style="text-align:center">');
-			print('Commune : ');
-			print("<select name='commune' id='commune'>".
-				chaine_select_options($gi_commune,$a_communes)."</select>");
-			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forme de liasses : ');
-			print("<select name='forme_liasse' id='forme_liasse'>".
-					chaine_select_options($gi_forme_liasse,$a_forme_liasse)."</select>");
-			print('</div><br>');
-			print('<div style="text-align:center">');
-			if ($gst_non_comm=='non')				print('<input type="checkbox" name="non_comm" value="oui" unchecked >');
-			else									print('<input type="checkbox" name="non_comm" value="oui" checked>');
-			print(' Restreindre aux liasses non communicables');
-			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
-			if ($gst_av_1793=='non')				print('<input type="checkbox" name="av_1793" value="oui" unchecked >');
-			else									print('<input type="checkbox" name="av_1793" value="oui" checked>');
-			print(' Restreindre aux liasses antérieures &agrave; 1793</div>');
-			print('<div style="text-align:center">');
-			if ($gst_photo=='non')				    print("<input type='checkbox' name='photo' value='oui' unchecked >");
-			else									print("<input type='checkbox' name='photo' value='oui' checked>");
-			print(' Restreindre aux liasses photographiées');
-			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
-			if ($gst_pas_photo=='non')				print("<input type='checkbox' name='pas_photo' value='oui' unchecked >");
-			else									print("<input type='checkbox' name='pas_photo' value='oui' checked>");
-			print(' Restreindre aux liasses non photographiées</div><br>');
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-3' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
+				  "<div class='form-group col-md-2'>".
+				  "<input type=text name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+			print("<div class='form-group col-md-3' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
+				  "<div class='form-group col-md-2'>".
+				  "<input type=text name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+			print("</div>");
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-3' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
+				  "<div class='form-group col-md-4' align='left'><select name=commune id='commune' class='js-select-avec-recherche form-control'>".
+				  chaine_select_options($gi_commune,$a_communes)."</select></div></div>");
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-3' align='right'><label class='col-form-label'>Forme de liasses&nbsp;</label></div>".
+				  "<div class='form-group col-md-4' align='left'><select name=forme_liasse id='forme_liasse' class='js-select-avec-recherche form-control'>".
+				  chaine_select_options($gi_forme_liasse,$a_forme_liasse)."</select></div></div>");
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-3" align="right"><label class="col-form-label">Restreindre aux liasses non communicables&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=non_comm id=non_comm value="1" ');
+			if ($gst_non_comm == 1) {	print('checked>');		}
+			else 					{	print('unchecked>');	}
+			print("</div></div></div>");
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-3" align="right"><label class="col-form-label">Restreindre aux liasses antérieures à 1793&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=av_1793 id=av_1793 value="1" ');
+			if ($gst_av_1793 == 1)	{	print('checked>');		}
+			else 					{	print('unchecked>');	}
+			print("</div></div></div>");
+				  
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-3" align="right"><label class="col-form-label">Restreindre aux liasses photographiées&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=photo id=photo value="1" ');
+			if ($gst_photo == 1)	{	print('checked>');		}
+			else 					{	print('unchecked>');	}
+			print("</div></div></div>");
+
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-3" align="right"><label class="col-form-label">Restreindre aux liasses non photographiées&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=pas_photo id=pas_photo value="1" ');
+			if ($gst_pas_photo == 1) {	print('checked>');		}
+			else 					{	print('unchecked>');	}
+			print("</div></div></div>");
 			break;
 		case 'pas_releve' :
 			print('<div style="text-align:center">');
