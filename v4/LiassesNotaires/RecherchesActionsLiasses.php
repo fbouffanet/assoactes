@@ -48,36 +48,57 @@ $st_check_program		= $_SESSION['menu_rla'] == 'program'	? 'checked' : '';
 $st_check_publication	= $_SESSION['menu_rla'] == 'publication'	? 'checked' : '';
 $st_check_complete		= $_SESSION['menu_rla'] == 'complete'	? 'checked' : '';
 
-$st_titre['releve']		= "Liste des liasses ayant &eacute;t&eacute; relev&eacute;es";
-$st_titre['pas_releve']	= "Liste des liasses n'ayant pas &eacute;t&eacute; relev&eacute;es";
-$st_titre['publi_pap']	= "Liste des liasses ayant fait l'objet d'une publication papier";
-$st_titre['publi_num']	= "Liste des liasses ayant fait l'objet d'une publication num&eacute;rique";
-$st_titre['photo']		= "Liste des liasses ayant &eacute;t&eacute; photographi&eacute;es";
-$st_titre['pas_photo']	= "Liste des liasses n'ayant pas &eacute;t&eacute; photographi&eacute;es";
-$st_titre['repert']		= "Liste des r&eacute;pertoires";
-$st_titre['sans']		= "Liste des liasses sans notaire, dates ou lieu";
-$st_titre['non_comm']	= "Liste des liasses non communicables";
-$st_titre['program']	= "Liste des programmations";
-$st_titre['publication']	= "Liste des publications papier";
-$st_titre['complete']	= "Liste compl&egrave;te";
+$st_titre['releve']		= "Liasses ayant été relevées";
+$st_titre['pas_releve']	= "Liasses n'ayant pas été relevées";
+$st_titre['publi_pap']	= "Liasses ayant fait l'objet d'une publication papier";
+$st_titre['publi_num']	= "Liasses ayant fait l'objet d'une publication numérique";
+$st_titre['photo']		= "Liasses ayant été photographiées";
+$st_titre['pas_photo']	= "Liasses n'ayant pas été photographiées";
+$st_titre['repert']		= "Répertoires";
+$st_titre['sans']		= "Liasses sans notaire, dates ou lieu";
+$st_titre['non_comm']	= "Liasses non communicables";
+$st_titre['program']	= "Programmations";
+$st_titre['publication']	= "Publications papier";
+$st_titre['complete']	= "Liste complète";
 
-print("<div class=TITRE>Recherches avanc&eacute;es sur les liasses</div>");
-print("<form id='choixmenu' action=\"".$_SERVER['PHP_SELF']."\" method='post'>");
-print("<table border='0' align='center'><tr><td><div style='text-align:left'>");
-print("<input type='radio' name='menu' value='releve' ".$st_check_revele." onclick='document.getElementById(\"choixmenu\").submit()'>".$st_titre['releve']."<br>");
-print("<input type='radio' name='menu' value='pas_releve' ".$st_check_pas_releve." onclick='document.getElementById(\"choixmenu\").submit()'>".$st_titre['pas_releve']."<br>");
-print("<input type='radio' name='menu' value='publi_pap' ".$st_check_publi_pap." onclick='document.getElementById(\"choixmenu\").submit()'>".$st_titre['publi_pap']."<br>");
-print("<input type='radio' name='menu' value='publi_num' ".$st_check_publi_num." onclick='document.getElementById(\"choixmenu\").submit()'>".$st_titre['publi_num']."<br>");
-print("<input type='radio' name='menu' value='photo' ".$st_check_photo." onclick='document.getElementById(\"choixmenu\").submit()'>".$st_titre['photo']."<br>");
-print("<input type='radio' name='menu' value='pas_photo' ".$st_check_pas_photo." onclick='document.getElementById(\"choixmenu\").submit()'>".$st_titre['pas_photo']."<br>");
-print("<input type='radio' name='menu' value='repert' ".$st_check_repert." onclick='document.getElementById(\"choixmenu\").submit()'>".$st_titre['repert']."<br>");
-print("<input type='radio' name='menu' value='sans' ".$st_check_sans." onclick='document.getElementById(\"choixmenu\").submit()'>".$st_titre['sans']."<br>");
-print("<input type='radio' name='menu' value='non_comm' ".$st_check_non_comm." onclick='document.getElementById(\"choixmenu\").submit()'>".$st_titre['non_comm']."<br>");
-print("<input type='radio' name='menu' value='program' ".$st_check_program." onclick='document.getElementById(\"choixmenu\").submit()'>".$st_titre['program']."<br>");
-print("<input type='radio' name='menu' value='publication' ".$st_check_publication." onclick='document.getElementById(\"choixmenu\").submit()'>".$st_titre['publication']."<br>");
-print("<input type='radio' name='menu' value='complete' ".$st_check_complete." onclick='document.getElementById(\"choixmenu\").submit()'>".$st_titre['complete']."<br>");
-print("</td></tr></table></div>");
-print("</form>");
+print('<div align=center><form name="choixmenu" id="choixmenu" action="'.$_SERVER['PHP_SELF'].'" method="post">');
+print('<div class="panel panel-primary">');
+print('<div class="panel-heading">Recherches avancées sur les liasses</div>');
+print('<div class="panel-body">');
+
+print("<div class='form-row col-md-12'><div class='form-group col-md-4'>");
+print("<input type='radio' name='menu' value='releve' ".$st_check_revele." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['releve']);
+print("</div><div class='form-group col-md-4'>");
+print("<input type='radio' name='menu' value='publi_pap' ".$st_check_publi_pap." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['publi_pap']."<br>");
+print("</div><div class='form-group col-md-4'>");
+print("<input type='radio' name='menu' value='photo' ".$st_check_photo." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['photo']."<br>");
+print("</div></div>");
+
+print("<div class='form-row col-md-12'><div class='form-group col-md-4'>");
+print("<input type='radio' name='menu' value='pas_releve' ".$st_check_pas_releve." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['pas_releve']."<br>");
+print("</div><div class='form-group col-md-4'>");
+print("<input type='radio' name='menu' value='publi_num' ".$st_check_publi_num." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['publi_num']."<br>");
+print("</div><div class='form-group col-md-4'>");
+print("<input type='radio' name='menu' value='pas_photo' ".$st_check_pas_photo." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['pas_photo']."<br>");
+print("</div></div>");
+
+print("<div class='form-row col-md-12'><div class='form-group col-md-4'>");
+print("<input type='radio' name='menu' value='repert' ".$st_check_repert." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['repert']."<br>");
+print("</div><div class='form-group col-md-4'>");
+print("<input type='radio' name='menu' value='sans' ".$st_check_sans." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['sans']."<br>");
+print("</div><div class='form-group col-md-4'>");
+print("<input type='radio' name='menu' value='non_comm' ".$st_check_non_comm." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['non_comm']."<br>");
+print("</div></div>");
+
+print("<div class='form-row col-md-12'><div class='form-group col-md-4'>");
+print("<input type='radio' name='menu' value='program' ".$st_check_program." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['program']."<br>");
+print("</div><div class='form-group col-md-4'>");
+print("<input type='radio' name='menu' value='publication' ".$st_check_publication." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['publication']."<br>");
+print("</div><div class='form-group col-md-4'>");
+print("<input type='radio' name='menu' value='complete' ".$st_check_complete." onclick='document.getElementById(\"choixmenu\").submit()'> ".$st_titre['complete']."<br>");
+print("</div></div>");
+
+print("</div></div></form>");
 
 $a_serie_liasse = $connexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 $a_serie_liasse[0] = '';
@@ -125,7 +146,7 @@ if( $_SESSION['menu_rla'] != '' ){
 	print("<div><input type=hidden name=menu value='".$_SESSION['menu_rla']."'</div>");  
 	if( $_SESSION['menu_rla'] != 'publication' ){
 		print('<div style="text-align:center">');
-		print('<br>S&eacute;rie de liasses : ');
+		print('<br>Série de liasses : ');
 		print("<select name='serie_liasse' id='serie_liasse' onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
 				chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select>");
 		print('</div><br>');
@@ -133,9 +154,9 @@ if( $_SESSION['menu_rla'] != '' ){
 	switch ($_SESSION['menu_rla']) {
 		case 'releve' :
 			print('<div style="text-align:center">');
-			print("Premi&egrave;re cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
+			print("Première cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
 			print("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-			print("Derni&egrave;re cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
+			print("Dernière cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
 			print('</div><br>');
 			print('<div style="text-align:center">');
 			print('Commune : ');
@@ -152,21 +173,21 @@ if( $_SESSION['menu_rla'] != '' ){
 			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 			if ($gst_av_1793=='non')				print('<input type="checkbox" name="av_1793" value="oui" unchecked >');
 			else									print('<input type="checkbox" name="av_1793" value="oui" checked>');
-			print(' Restreindre aux liasses ant&eacute;rieures &agrave; 1793</div>');
+			print(' Restreindre aux liasses antérieures &agrave; 1793</div>');
 			print('<div style="text-align:center">');
 			if ($gst_photo=='non')				    print("<input type='checkbox' name='photo' value='oui' unchecked >");
 			else									print("<input type='checkbox' name='photo' value='oui' checked>");
-			print(' Restreindre aux liasses photographi&eacute;es');
+			print(' Restreindre aux liasses photographiées');
 			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 			if ($gst_pas_photo=='non')				print("<input type='checkbox' name='pas_photo' value='oui' unchecked >");
 			else									print("<input type='checkbox' name='pas_photo' value='oui' checked>");
-			print(' Restreindre aux liasses non photographi&eacute;es</div><br>');
+			print(' Restreindre aux liasses non photographiées</div><br>');
 			break;
 		case 'pas_releve' :
 			print('<div style="text-align:center">');
-			print("Premi&egrave;re cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
+			print("Première cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
 			print("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-			print("Derni&egrave;re cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
+			print("Dernière cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
 			print('</div><br>');
 			print('<div style="text-align:center">');
 			print('Commune : ');
@@ -183,13 +204,13 @@ if( $_SESSION['menu_rla'] != '' ){
 			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 			if ($gst_av_1793=='non')				print('<input type="checkbox" name="av_1793" value="oui" unchecked >');
 			else									print('<input type="checkbox" name="av_1793" value="oui" checked>');
-			print(' Restreindre aux liasses ant&eacute;rieures &agrave; 1793</div>');
+			print(' Restreindre aux liasses antérieures &agrave; 1793</div>');
 			break;
 		case 'publi_pap' :
 			print('<div style="text-align:center">');
-			print("Premi&egrave;re cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
+			print("Première cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
 			print("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-			print("Derni&egrave;re cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
+			print("Dernière cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
 			print('</div><br>');
 			print('<div style="text-align:center">');
 			print('Commune : ');
@@ -199,13 +220,13 @@ if( $_SESSION['menu_rla'] != '' ){
 			print('<div style="text-align:center">');
 			if ($gst_pas_publi_num=='non')			print("<input type='checkbox' name='pas_publi_num' value='oui' unchecked >");
 			else									print("<input type='checkbox' name='pas_publi_num' value='oui' checked>");
-			print(' Restreindre aux liasses non publi&eacute;es num&eacute;rique</div><br>');
+			print(' Restreindre aux liasses non publiées numérique</div><br>');
 			break;
 		case 'publi_num' :
 			print('<div style="text-align:center">');
-			print("Premi&egrave;re cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
+			print("Première cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
 			print("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-			print("Derni&egrave;re cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
+			print("Dernière cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
 			print('</div><br>');
 			print('<div style="text-align:center">');
 			print('Commune : ');
@@ -215,17 +236,17 @@ if( $_SESSION['menu_rla'] != '' ){
 			print('<div style="text-align:center">');
 			if ($gst_publi_pap=='non')				print("<input type='checkbox' name='publi_pap' value='oui' unchecked >");
 			else									print("<input type='checkbox' name='publi_pap' value='oui' checked>");
-			print(' Restreindre aux liasses publi&eacute;es papier');
+			print(' Restreindre aux liasses publiées papier');
 			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 			if ($gst_pas_publi_pap=='non')			print("<input type='checkbox' name='pas_publi_pap' value='oui' unchecked >");
 			else									print("<input type='checkbox' name='pas_publi_pap' value='oui' checked>");
-			print(' Restreindre aux liasses non publi&eacute;es papier</div><br>');
+			print(' Restreindre aux liasses non publiées papier</div><br>');
 			break;
 		case 'photo' :
 			print('<div style="text-align:center">');
-			print("Premi&egrave;re cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
+			print("Première cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
 			print("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-			print("Derni&egrave;re cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
+			print("Dernière cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
 			print('</div><br>');
 			print('<div style="text-align:center">');
 			print('Commune : ');
@@ -242,11 +263,11 @@ if( $_SESSION['menu_rla'] != '' ){
 			print('<div style="text-align:center">');
 			if ($gst_pas_publi_pap=='non')			print("<input type='checkbox' name='pas_publi_pap' value='oui' unchecked >");
 			else									print("<input type='checkbox' name='pas_publi_pap' value='oui' checked>");
-			print(' Restreindre aux liasses non publi&eacute;es papier');
+			print(' Restreindre aux liasses non publiées papier');
 			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 			if ($gst_pas_publi_num=='non')			print("<input type='checkbox' name='pas_publi_num' value='oui' unchecked >");
 			else									print("<input type='checkbox' name='pas_publi_num' value='oui' checked>");
-			print(' Restreindre aux liasses non publi&eacute;es num&eacute;rique</div>');
+			print(' Restreindre aux liasses non publiées numérique</div>');
 			print('<div style="text-align:center">');
 			if ($gst_sans_photographe=='non')		print("<input type='checkbox' name='sans_photographe' value='oui' unchecked >");
 			else									print("<input type='checkbox' name='sans_photographe' value='oui' checked>");
@@ -262,8 +283,8 @@ if( $_SESSION['menu_rla'] != '' ){
 			break;
 		case 'pas_photo' :
 			print('<div style="text-align:center">');
-			print("Premi&egrave;re cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
-			print("Derni&egrave;re cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
+			print("Première cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
+			print("Dernière cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
 			print('</div><br>');
 			print('<div style="text-align:center">');
 			print('Commune : ');
@@ -280,7 +301,7 @@ if( $_SESSION['menu_rla'] != '' ){
 			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
 			if ($gst_av_1793=='non')				print('<input type="checkbox" name="av_1793" value="oui" unchecked >');
 			else									print('<input type="checkbox" name="av_1793" value="oui" checked>');
-			print(' Restreindre aux liasses ant&eacute;rieures &agrave; 1793</div>');
+			print(' Restreindre aux liasses antérieures &agrave; 1793</div>');
 			break;
 		case 'repert' :
 			print('<div style="text-align:center">');
@@ -291,7 +312,7 @@ if( $_SESSION['menu_rla'] != '' ){
 			print('<div style="text-align:center">');
 			if ($gst_av_1793=='non')				print('<input type="checkbox" name="av_1793" value="oui" unchecked >');
 			else									print('<input type="checkbox" name="av_1793" value="oui" checked>');
-			print(' Restreindre aux liasses ant&eacute;rieures &agrave; 1793</div>');
+			print(' Restreindre aux liasses antérieures &agrave; 1793</div>');
 			break;
 		case 'sans' :
 			print('<div style="text-align:center">');
@@ -314,7 +335,7 @@ if( $_SESSION['menu_rla'] != '' ){
 			print('<div style="text-align:center">');
 			if ($gst_av_1793=='non')				print('<input type="checkbox" name="av_1793" value="oui" unchecked >');
 			else									print('<input type="checkbox" name="av_1793" value="oui" checked>');
-			print(' Restreindre aux liasses ant&eacute;rieures &agrave; 1793</div>');
+			print(' Restreindre aux liasses antérieures &agrave; 1793</div>');
 			break;
 		case 'program' :
 			print('<div style="text-align:center">');
@@ -325,7 +346,7 @@ if( $_SESSION['menu_rla'] != '' ){
 			print('<div style="text-align:center">');
 			if ($gst_releve=='non')					print('   <input type=checkbox name="releve" value="oui" unchecked >');
 			else									print('   <input type=checkbox name="releve" value="oui" checked>');
-			print(' Uniquement les programmations de relev&eacute;s</div>');
+			print(' Uniquement les programmations de relevés</div>');
 			print('<div style="text-align:center">');
 			if ($gst_photo=='non')					print('   <input type=checkbox name="photo" value="oui" unchecked >');
 			else									print('   <input type=checkbox name="photo" value="oui" checked>');
