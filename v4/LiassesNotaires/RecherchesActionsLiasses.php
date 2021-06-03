@@ -168,7 +168,7 @@ print('<div class="panel panel-primary">');
 			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
 				  "<input type=text name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
-			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
+			print("<div class='form-group col-md-2' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
 				  "<input type=text name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
 			print("</div>");
@@ -200,8 +200,8 @@ print('<div class="panel panel-primary">');
 			if ($gst_photo == 1)	{	print('checked>');		}
 			else 					{	print('unchecked>');	}
 			print("</div></div>");
-			print('<div class="form-group col-md-3" align="right"><label class="col-form-label">Restreindre aux liasses non photographiées&nbsp;</label></div>'.
-				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses non photographiées&nbsp;</label></div>'.
+				  '<div class="form-group col-md-2" align="left"><div class="form-check">'.
 				  '<input type="checkbox" class="form-check-input" name=pas_photo id=pas_photo value="1" ');
 			if ($gst_pas_photo == 1) {	print('checked>');		}
 			else 					{	print('unchecked>');	}
