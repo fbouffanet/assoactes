@@ -141,15 +141,17 @@ $gi_commune					= 0;
 $gi_forme_liasse			= 0;
 
 if( $_SESSION['menu_rla'] != '' ){
-	print("<div class=SOUSTITRE>".$st_titre[$_SESSION['menu_rla']]."</div>");
+	print('<div class="panel panel-warning">');
+	print('<div class="panel-heading">'.$st_titre[$_SESSION['menu_rla']].'</div>');
+	print('<div class="panel-body">');
 	print("<form id='critere' action=\"".$_SERVER['PHP_SELF']."\" method='post'>");
-	print("<div><input type=hidden name=menu value='".$_SESSION['menu_rla']."'</div>");  
+	print("<input type=hidden name=menu value='".$_SESSION['menu_rla']."'>");  
 	if( $_SESSION['menu_rla'] != 'publication' ){
-		print('<div style="text-align:center">');
-		print('<br>Série de liasses : ');
-		print("<select name='serie_liasse' id='serie_liasse' onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
-				chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select>");
-		print('</div><br>');
+	print("<div class='form-row col-md-12'>".
+		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Série de liasses&nbsp;</label></div>".
+		  "<div class='form-group col-md-6' align='left'><select name=serie_liasse id='serie_liasse' class='js-select-avec-recherche form-control' ".
+		  "     onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
+			chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select></div></div>");
 	}
 	switch ($_SESSION['menu_rla']) {
 		case 'releve' :
@@ -358,6 +360,7 @@ if( $_SESSION['menu_rla'] != '' ){
 	print('<input type="button" value="Effacer tous les Champs"  ONCLICK="RazChampsAction(0)">');
 	print('</div> ');
 	print("</form>");
+	print('</div></div>');
 }
 print('</div></body></html>');
 ?>
