@@ -15,11 +15,10 @@ function menu_gerer_publication($pconnexionBD)
 	global $gi_num_page_cour;
 	unset($_SESSION['liasse']);
 	$a_init_titres = array("A","B","C","D","E","F","G","H","I","J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "*"); 
-	print('<div align=center><form  action="'.$_SERVER['PHP_SELF'].'" method="post">');
+	print('<div align=center><form name="listePubli" id="listePubli" action="'.$_SERVER['PHP_SELF'].'" method="post">');
 	print('<div class="panel panel-primary">');
 	print('<div class="panel-heading">Publications papiers</div>');
 	print('<div class="panel-body">');
-	print('<form name="listePubli" id="listePubli" action='.$_SERVER['PHP_SELF'].'" method="post" onSubmit="return">');
 	print('<input type=hidden name=mode id=mode value="SUPPRIMER_PUBLI">');
 	print('<table border=0 cellpadding=0 cellspacing=0>');
 	print('<tr class=ligne_paire><td align="center" width="200"><label class="col-form-label">Première lettre du titre&nbsp&nbsp</label></td><td>');
