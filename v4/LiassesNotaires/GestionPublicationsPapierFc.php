@@ -42,10 +42,10 @@ function menu_gerer_publication($pconnexionBD)
 				  "where nom like '".$gc_init."%' ".
 				  "order by nom, date_publication";
 	$a_liste_publis = $pconnexionBD->sql_select_multipleUtf8($st_requete);
-	$i_nb_publis = count($a_liste_publis) / 3;
+	$i_nb_publis = count($a_liste_publis) ;
 	if ($i_nb_publis!=0)
 	{        
-		$pagination = new PaginationTableau($_SERVER['PHP_SELF'], 'num_page', $i_nb_publis, 20, DELTA_NAVIGATION,
+		$pagination = new PaginationTableau($_SERVER['PHP_SELF'], 'num_page', $i_nb_publis, 10, DELTA_NAVIGATION,
 											array('Titre publication','Date publication','Infos compl&eacute;mentaires','Modifier','Supprimer'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
