@@ -165,45 +165,41 @@ print('<div class="panel panel-primary">');
 	switch ($_SESSION['menu_rla']) {
 		case 'releve' :
 			print("<div class='form-row col-md-12'>");
-			print("<div class='form-group col-md-3' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
 				  "<input type=text name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
-			print("<div class='form-group col-md-3' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
 				  "<input type=text name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
 			print("</div>");
 			print("<div class='form-row col-md-12'>");
-			print("<div class='form-group col-md-3' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
 				  "<div class='form-group col-md-4' align='left'><select name=commune id='commune' class='js-select-avec-recherche form-control'>".
 				  chaine_select_options($gi_commune,$a_communes)."</select></div></div>");
 			print("<div class='form-row col-md-12'>");
-			print("<div class='form-group col-md-3' align='right'><label class='col-form-label'>Forme de liasses&nbsp;</label></div>".
-				  "<div class='form-group col-md-4' align='left'><select name=forme_liasse id='forme_liasse' class='js-select-avec-recherche form-control'>".
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Forme de liasses&nbsp;</label></div>".
+				  "<div class='form-group col-md-3' align='left'><select name=forme_liasse id='forme_liasse' class='js-select-avec-recherche form-control'>".
 				  chaine_select_options($gi_forme_liasse,$a_forme_liasse)."</select></div></div>");
 			print('<div class="form-row col-md-12">');
-			print('<div class="form-group col-md-3" align="right"><label class="col-form-label">Restreindre aux liasses non communicables&nbsp;</label></div>'.
-				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses non communicables&nbsp;</label></div>'.
+				  '<div class="form-group col-md-2" align="left"><div class="form-check">'.
 				  '<input type="checkbox" class="form-check-input" name=non_comm id=non_comm value="1" ');
 			if ($gst_non_comm == 1) {	print('checked>');		}
 			else 					{	print('unchecked>');	}
-			print("</div></div></div>");
-			print('<div class="form-row col-md-12">');
-			print('<div class="form-group col-md-3" align="right"><label class="col-form-label">Restreindre aux liasses antérieures à 1793&nbsp;</label></div>'.
-				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+			print("</div></div>");
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses antérieures à 1793&nbsp;</label></div>'.
+				  '<div class="form-group col-md-2" align="left"><div class="form-check">'.
 				  '<input type="checkbox" class="form-check-input" name=av_1793 id=av_1793 value="1" ');
 			if ($gst_av_1793 == 1)	{	print('checked>');		}
 			else 					{	print('unchecked>');	}
 			print("</div></div></div>");
-				  
 			print('<div class="form-row col-md-12">');
-			print('<div class="form-group col-md-3" align="right"><label class="col-form-label">Restreindre aux liasses photographiées&nbsp;</label></div>'.
-				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses photographiées&nbsp;</label></div>'.
+				  '<div class="form-group col-md-2" align="left"><div class="form-check">'.
 				  '<input type="checkbox" class="form-check-input" name=photo id=photo value="1" ');
 			if ($gst_photo == 1)	{	print('checked>');		}
 			else 					{	print('unchecked>');	}
-			print("</div></div></div>");
-
-			print('<div class="form-row col-md-12">');
+			print("</div></div>");
 			print('<div class="form-group col-md-3" align="right"><label class="col-form-label">Restreindre aux liasses non photographiées&nbsp;</label></div>'.
 				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
 				  '<input type="checkbox" class="form-check-input" name=pas_photo id=pas_photo value="1" ');
