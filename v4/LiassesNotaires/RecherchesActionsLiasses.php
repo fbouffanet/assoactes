@@ -240,10 +240,10 @@ $a_serie_liasse = $connexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom 
 $a_serie_liasse = array(0=>'')+$a_serie_liasse;
 
 $a_forme_liasse = $connexionBD->liste_valeur_par_clef("SELECT idf, nom FROM forme_liasse order by nom");
-$a_forme_liasse = aray(0=>'')+$a_forme_liasse ;
+$a_forme_liasse = array(0=>'')+$a_forme_liasse ;
 
 $a_communes = $connexionBD->liste_valeur_par_clef("SELECT idf, nom FROM commune_acte order by nom");
-$a_communes = aray(0=>'Toutes')+$a_communes ;
+$a_communes = array(0=>'Toutes')+$a_communes ;
 
 if( isset($_POST['serie_liasse']) ) {
 	$_SESSION['serie_liasse'] = $_POST['serie_liasse'];
