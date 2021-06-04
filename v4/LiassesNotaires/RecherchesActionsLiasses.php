@@ -77,7 +77,6 @@ $("#btRechercher").click(function() {
 	
 $("#btRaz").click(function() {	
 	var menu = $('#menu').val();
-	alert (menu);
 	switch(menu) {
 		case 'releve':
 			$('#cote_debut').val('');
@@ -294,10 +293,10 @@ print('<div class="panel panel-primary">');
 			print("<div class='form-row col-md-12'>");
 			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
-				  "<input type=text name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+				  "<input type=number name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
 			print("<div class='form-group col-md-2' align='right'><label class='col-form-label'>Dernière cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
-				  "<input type=text name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+				  "<input type=number name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
 			print("</div>");
 			print("<div class='form-row col-md-12'>");
 			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
@@ -338,10 +337,10 @@ print('<div class="panel panel-primary">');
 			print("<div class='form-row col-md-12'>");
 			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
-				  "<input type=text name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+				  "<input type=number name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
 			print("<div class='form-group col-md-2' align='right'><label class='col-form-label'>Dernière cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
-				  "<input type=text name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+				  "<input type=number name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
 			print("</div>");
 			print("<div class='form-row col-md-12'>");
 			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
@@ -369,10 +368,10 @@ print('<div class="panel panel-primary">');
 			print("<div class='form-row col-md-12'>");
 			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
-				  "<input type=text name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+				  "<input type=number name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
 			print("<div class='form-group col-md-2' align='right'><label class='col-form-label'>Dernière cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
-				  "<input type=text name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+				  "<input type=number name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
 			print("</div>");
 			print("<div class='form-row col-md-12'>");
 			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
@@ -391,10 +390,10 @@ print('<div class="panel panel-primary">');
 			print("<div class='form-row col-md-12'>");
 			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
-				  "<input type=text name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+				  "<input type=number name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
 			print("<div class='form-group col-md-2' align='right'><label class='col-form-label'>Dernière cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
-				  "<input type=text name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+				  "<input type=number name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
 			print("</div>");
 			print("<div class='form-row col-md-12'>");
 			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
@@ -413,15 +412,16 @@ print('<div class="panel panel-primary">');
 				  '<input type="checkbox" class="form-check-input" name=pas_publi_pap id=pas_publi_pap value="1" ');
 			if ($gst_pas_publi_pap == 1)	{	print('checked>');		}
 			else 							{	print('unchecked>');	}
+			print("</div></div></div>");
 			break;
 		case 'photo' :
 			print("<div class='form-row col-md-12'>");
 			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
-				  "<input type=text name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+				  "<input type=number name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
 			print("<div class='form-group col-md-2' align='right'><label class='col-form-label'>Dernière cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
-				  "<input type=text name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+				  "<input type=number name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
 			print("</div>");
 			print("<div class='form-row col-md-12'>");
 			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
@@ -475,10 +475,10 @@ print('<div class="panel panel-primary">');
 			print("<div class='form-row col-md-12'>");
 			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
-				  "<input type=text name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+				  "<input type=number name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
 			print("<div class='form-group col-md-2' align='right'><label class='col-form-label'>Dernière cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
-				  "<input type=text name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+				  "<input type=number name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
 			print("</div>");
 			print("<div class='form-row col-md-12'>");
 			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
