@@ -28,6 +28,130 @@ print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 //print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
 print("<script src='./VerifieChampsRechercheActionLiasse.js' type='text/javascript'></script>");
 print('<link rel="shortcut icon" href="../images/favicon.ico">');
+?>
+<script type='text/javascript'>
+$(document).ready(function() {
+
+jQuery.validator.addMethod(
+    "cote_debut_fin",
+    function(value, element) {
+		var check = true;
+		if ( $(element).val() < $('#cote_debut').val()) {
+			check = false;
+		}	
+		return this.optional(element) || check;
+    },
+    "La première cote doit être inférieure à la dernière"
+);
+	
+$("#critere").validate({
+  rules: {
+		cote_debut:		{ integer: true },
+		cote_fin:		{ integer:true, cote_debut_fin:true }
+  },		
+  messages: {
+		cote_debut:		{ integer: "Saisir des chiffres"	},
+		cote_fin:		{ integer: "Saisir des chiffres",
+						  cote_debut_fin: "La première cote doit être inférieure à la dernière" }
+  }
+});
+
+$("#btRechercher").click(function() {
+ 	var ListeErreurs = "";
+	if( document.forms['critere'].elements['menu'].val() == 'sans' ){
+		var sans_notaire = document.forms['critere'].elements['sans_notaire'].checked;
+		var sans_periode = document.forms['critere'].elements['sans_periode'].checked;
+		var sans_lieu = document.forms['critere'].elements['sans_lieu'].checked;
+		if( ! sans_notaire  && ! sans_periode && ! sans_lieu ){
+			ListeErreurs+="Cochez au moins un critère\n";
+		}
+	}
+	if (ListeErreurs!= "")	{
+		alert(ListeErreurs);
+	}
+	else {
+		document.forms['critere'].action ="ReponsesActionsLiasse.php";
+		document.forms['critere'].submit();
+	}
+	});
+	
+$("#btRaz").click(function() {	
+	switch(document.forms['critere'].elements['menu'].val()) {
+		case 'releve':
+			document.forms['critere'].elements['cote_debut'].val('');
+			document.forms['critere'].elements['cote_fin'].val('');
+			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
+			document.forms['critere'].elements['forme_liasse'].prop('selectedIndex',0);
+			document.forms['critere'].elements['non_comm'].prop('checked', false);
+			document.forms['critere'].elements['av_1793'].prop('checked', false);
+			document.forms['critere'].elements['photo'].prop('checked', false);
+			document.forms['critere'].elements['pas_photo'].prop('checked', false);
+			break;
+		case 'pas_releve':
+			document.forms['critere'].elements['cote_debut'].val('');
+			document.forms['critere'].elements['cote_fin'].val('');
+			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
+			document.forms['critere'].elements['forme_liasse'].prop('selectedIndex',0);
+			document.forms['critere'].elements['non_comm'].prop('checked', false);
+			document.forms['critere'].elements['av_1793'].prop('checked', false);
+			break;
+		case 'publi_pap':
+			document.forms['critere'].elements['cote_debut'].val('');
+			document.forms['critere'].elements['cote_fin'].val('');
+			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
+			document.forms['critere'].elements['pas_publi_num'].prop('checked', false);
+			break;
+		case 'publi_num':
+			document.forms['critere'].elements['cote_debut'].val('');
+			document.forms['critere'].elements['cote_fin'].val('');
+			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
+			document.forms['critere'].elements['publi_pap'].prop('checked', false);
+			document.forms['critere'].elements['pas_publi_pap'].prop('checked', false);
+			break;
+		case 'photo':
+			document.forms['critere'].elements['cote_debut'].val('');
+			document.forms['critere'].elements['cote_fin'].val('');
+			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
+			document.forms['critere'].elements['forme_liasse'].prop('selectedIndex',0);
+			document.forms['critere'].elements['non_comm'].prop('checked', false);
+			document.forms['critere'].elements['pas_publi_pap'].prop('checked', false);
+			document.forms['critere'].elements['pas_publi_num'].prop('checked', false);
+			document.forms['critere'].elements['sans_photographe'].prop('checked', false);
+			document.forms['critere'].elements['sans_date_photo'].prop('checked', false);
+			document.forms['critere'].elements['avec_commentaire'].prop('checked', false);
+			break;
+		case 'pas_photo':
+			document.forms['critere'].elements['cote_debut'].val('');
+			document.forms['critere'].elements['cote_fin'].val('');
+			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
+			document.forms['critere'].elements['forme_liasse'].prop('selectedIndex',0);
+			document.forms['critere'].elements['non_comm'].prop('checked', false);
+			document.forms['critere'].elements['av_1793'].prop('checked', false);
+			break;
+		case 'repert':
+			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
+			document.forms['critere'].elements['av_1793'].prop('checked', false);
+			break;
+		case 'sans':
+			document.forms['critere'].elements['sans_notaire'].prop('checked', false);
+			document.forms['critere'].elements['sans_periode'].prop('checked', false);
+			document.forms['critere'].elements['sans_lieu'].prop('checked', false);
+			break;
+		case 'non_comm':
+			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
+			document.forms['critere'].elements['av_1793'].prop('checked', false);
+			break;
+		case 'program':
+			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
+			document.forms['critere'].elements['releve'].prop('checked', false);
+			document.forms['critere'].elements['photo'].prop('checked', false);
+			break;
+	});
+
+});
+</script>
+<?php
+
 
 print("</head>");
 
@@ -168,7 +292,7 @@ print('<div class="panel panel-primary">');
 			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
 				  "<input type=text name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
-			print("<div class='form-group col-md-2' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
+			print("<div class='form-group col-md-2' align='right'><label class='col-form-label'>Dernière cote&nbsp;</label></div>".
 				  "<div class='form-group col-md-2'>".
 				  "<input type=text name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
 			print("</div>");
@@ -208,179 +332,248 @@ print('<div class="panel panel-primary">');
 			print("</div></div></div>");
 			break;
 		case 'pas_releve' :
-			print('<div style="text-align:center">');
-			print("Première cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
-			print("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-			print("Dernière cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
-			print('</div><br>');
-			print('<div style="text-align:center">');
-			print('Commune : ');
-			print("<select name='commune' id='commune'>".
-				chaine_select_options($gi_commune,$a_communes)."</select>");
-			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forme de liasses : ');
-			print("<select name='forme_liasse' id='forme_liasse'>".
-					chaine_select_options($gi_forme_liasse,$a_forme_liasse)."</select>");
-			print('</div><br>');
-			print('<div style="text-align:center">');
-			if ($gst_non_comm=='non')				print('<input type="checkbox" name="non_comm" value="oui" unchecked >');
-			else									print('<input type="checkbox" name="non_comm" value="oui" checked>');
-			print(' Restreindre aux liasses non communicables');
-			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
-			if ($gst_av_1793=='non')				print('<input type="checkbox" name="av_1793" value="oui" unchecked >');
-			else									print('<input type="checkbox" name="av_1793" value="oui" checked>');
-			print(' Restreindre aux liasses antérieures &agrave; 1793</div>');
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
+				  "<div class='form-group col-md-2'>".
+				  "<input type=text name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+			print("<div class='form-group col-md-2' align='right'><label class='col-form-label'>Dernière cote&nbsp;</label></div>".
+				  "<div class='form-group col-md-2'>".
+				  "<input type=text name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+			print("</div>");
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
+				  "<div class='form-group col-md-4' align='left'><select name=commune id='commune' class='js-select-avec-recherche form-control'>".
+				  chaine_select_options($gi_commune,$a_communes)."</select></div></div>");
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Forme de liasses&nbsp;</label></div>".
+				  "<div class='form-group col-md-3' align='left'><select name=forme_liasse id='forme_liasse' class='js-select-avec-recherche form-control'>".
+				  chaine_select_options($gi_forme_liasse,$a_forme_liasse)."</select></div></div>");
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses non communicables&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=non_comm id=non_comm value="1" ');
+			if ($gst_non_comm == 1) {	print('checked>');		}
+			else 					{	print('unchecked>');	}
+			print("</div></div>");
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses antérieures à 1793&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=av_1793 id=av_1793 value="1" ');
+			if ($gst_av_1793 == 1)	{	print('checked>');		}
+			else 					{	print('unchecked>');	}
+			print("</div></div></div>");
 			break;
 		case 'publi_pap' :
-			print('<div style="text-align:center">');
-			print("Première cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
-			print("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-			print("Dernière cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
-			print('</div><br>');
-			print('<div style="text-align:center">');
-			print('Commune : ');
-			print("<select name='commune' id='commune'>".
-				chaine_select_options($gi_commune,$a_communes)."</select>");
-			print('</div><br>');
-			print('<div style="text-align:center">');
-			if ($gst_pas_publi_num=='non')			print("<input type='checkbox' name='pas_publi_num' value='oui' unchecked >");
-			else									print("<input type='checkbox' name='pas_publi_num' value='oui' checked>");
-			print(' Restreindre aux liasses non publiées numérique</div><br>');
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
+				  "<div class='form-group col-md-2'>".
+				  "<input type=text name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+			print("<div class='form-group col-md-2' align='right'><label class='col-form-label'>Dernière cote&nbsp;</label></div>".
+				  "<div class='form-group col-md-2'>".
+				  "<input type=text name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+			print("</div>");
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
+				  "<div class='form-group col-md-4' align='left'><select name=commune id='commune' class='js-select-avec-recherche form-control'>".
+				  chaine_select_options($gi_commune,$a_communes)."</select></div></div>");
+
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses non publiées numérique&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=pas_publi_num id=pas_publi_num value="1" ');
+			if ($gst_pas_publi_num == 1) 	{	print('checked>');		}
+			else 							{	print('unchecked>');	}
+			print("</div></div></div>");
 			break;
 		case 'publi_num' :
-			print('<div style="text-align:center">');
-			print("Première cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
-			print("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-			print("Dernière cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
-			print('</div><br>');
-			print('<div style="text-align:center">');
-			print('Commune : ');
-			print("<select name='commune' id='commune'>".
-				chaine_select_options($gi_commune,$a_communes)."</select>");
-			print('</div><br>');
-			print('<div style="text-align:center">');
-			if ($gst_publi_pap=='non')				print("<input type='checkbox' name='publi_pap' value='oui' unchecked >");
-			else									print("<input type='checkbox' name='publi_pap' value='oui' checked>");
-			print(' Restreindre aux liasses publiées papier');
-			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
-			if ($gst_pas_publi_pap=='non')			print("<input type='checkbox' name='pas_publi_pap' value='oui' unchecked >");
-			else									print("<input type='checkbox' name='pas_publi_pap' value='oui' checked>");
-			print(' Restreindre aux liasses non publiées papier</div><br>');
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
+				  "<div class='form-group col-md-2'>".
+				  "<input type=text name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+			print("<div class='form-group col-md-2' align='right'><label class='col-form-label'>Dernière cote&nbsp;</label></div>".
+				  "<div class='form-group col-md-2'>".
+				  "<input type=text name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+			print("</div>");
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
+				  "<div class='form-group col-md-4' align='left'><select name=commune id='commune' class='js-select-avec-recherche form-control'>".
+				  chaine_select_options($gi_commune,$a_communes)."</select></div></div>");
+
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses publiées papier&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=publi_pap id=publi_pap value="1" ');
+			if ($gst_publi_pap == 1){	print('checked>');		}
+			else 					{	print('unchecked>');	}
+			print("</div></div>");
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses non publiées papier&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=pas_publi_pap id=pas_publi_pap value="1" ');
+			if ($gst_pas_publi_pap == 1)	{	print('checked>');		}
+			else 							{	print('unchecked>');	}
 			break;
 		case 'photo' :
-			print('<div style="text-align:center">');
-			print("Première cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
-			print("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-			print("Dernière cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
-			print('</div><br>');
-			print('<div style="text-align:center">');
-			print('Commune : ');
-			print("<select name='commune' id='commune'>".
-				chaine_select_options($gi_commune,$a_communes)."</select>");
-			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forme de liasses : ');
-			print("<select name='forme_liasse' id='forme_liasse'>".
-					chaine_select_options($gi_forme_liasse,$a_forme_liasse)."</select>");
-			print('</div><br>');
-			print('<div style="text-align:center">');
-			if ($gst_non_comm=='non')				print('<input type="checkbox" name="non_comm" value="oui" unchecked >');
-			else									print('<input type="checkbox" name="non_comm" value="oui" checked>');
-			print(' Restreindre aux liasses non communicables</div>');
-			print('<div style="text-align:center">');
-			if ($gst_pas_publi_pap=='non')			print("<input type='checkbox' name='pas_publi_pap' value='oui' unchecked >");
-			else									print("<input type='checkbox' name='pas_publi_pap' value='oui' checked>");
-			print(' Restreindre aux liasses non publiées papier');
-			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
-			if ($gst_pas_publi_num=='non')			print("<input type='checkbox' name='pas_publi_num' value='oui' unchecked >");
-			else									print("<input type='checkbox' name='pas_publi_num' value='oui' checked>");
-			print(' Restreindre aux liasses non publiées numérique</div>');
-			print('<div style="text-align:center">');
-			if ($gst_sans_photographe=='non')		print("<input type='checkbox' name='sans_photographe' value='oui' unchecked >");
-			else									print("<input type='checkbox' name='sans_photographe' value='oui' checked>");
-			print(' Restreindre aux liasses sans photographe');
-			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
-			if ($gst_sans_date_photo=='non')		print("<input type='checkbox' name='sans_date_photo' value='oui' unchecked >");
-			else									print("<input type='checkbox' name='sans_date_photo' value='oui' checked>");
-			print(' Restreindre aux liasses sans date de photo</div><br>');
-			print('<div style="text-align:center">');
-			if ($gst_avec_commentaire=='non')		print("<input type='checkbox' name='avec_commentaire' value='oui' unchecked >");
-			else									print("<input type='checkbox' name='avec_commentaire' value='oui' checked>");
-			print(' Liste avec commentaires</div><br>');
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
+				  "<div class='form-group col-md-2'>".
+				  "<input type=text name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+			print("<div class='form-group col-md-2' align='right'><label class='col-form-label'>Dernière cote&nbsp;</label></div>".
+				  "<div class='form-group col-md-2'>".
+				  "<input type=text name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+			print("</div>");
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
+				  "<div class='form-group col-md-4' align='left'><select name=commune id='commune' class='js-select-avec-recherche form-control'>".
+				  chaine_select_options($gi_commune,$a_communes)."</select></div></div>");
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Forme de liasses&nbsp;</label></div>".
+				  "<div class='form-group col-md-3' align='left'><select name=forme_liasse id='forme_liasse' class='js-select-avec-recherche form-control'>".
+				  chaine_select_options($gi_forme_liasse,$a_forme_liasse)."</select></div></div>");
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses non communicables&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=non_comm id=non_comm value="1" ');
+			if ($gst_non_comm == 1) {	print('checked>');		}
+			else 					{	print('unchecked>');	}
+			print("</div></div>");
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses non publiées papier&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=pas_publi_pap id=pas_publi_pap value="1" ');
+			if ($gst_pas_publi_pap == 1)	{	print('checked>');		}
+			else 							{	print('unchecked>');	}
+			print("</div></div></div>");
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses non publiées numérique&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=pas_publi_num id=pas_publi_num value="1" ');
+			if ($gst_pas_publi_num == 1){	print('checked>');		}
+			else 						{	print('unchecked>');	}
+			print("</div></div>");
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses sans photographe&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=sans_photographe id=sans_photographe value="1" ');
+			if ($gst_sans_photographe == 1)	{	print('checked>');		}
+			else 							{	print('unchecked>');	}
+			print("</div></div></div>");
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses sans date de photo&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=sans_date_photo id=sans_date_photo value="1" ');
+			if ($gst_sans_date_photo == 1)	{	print('checked>');		}
+			else 							{	print('unchecked>');	}
+			print("</div></div>");
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Liste avec commentaires&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=avec_commentaire id=avec_commentaire value="1" ');
+			if ($gst_avec_commentaire == 1)	{	print('checked>');		}
+			else 							{	print('unchecked>');	}
+			print("</div></div></div>");
 			break;
 		case 'pas_photo' :
-			print('<div style="text-align:center">');
-			print("Première cote: <input type='text' name='cote_debut' size='5' MAXLENGTH='5' value='".$gst_cote_debut."' onKeyPress='SoumissionAction(0,event)'>");
-			print("Dernière cote: <input type='text' name='cote_fin' size='5' MAXLENGTH='5' value='".$gst_cote_fin."' onKeyPress='SoumissionAction(0,event)'> ");
-			print('</div><br>');
-			print('<div style="text-align:center">');
-			print('Commune : ');
-			print("<select name='commune' id='commune'>".
-				chaine_select_options($gi_commune,$a_communes)."</select>");
-			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Forme de liasses : ');
-			print("<select name='forme_liasse' id='forme_liasse'>".
-					chaine_select_options($gi_forme_liasse,$a_forme_liasse)."</select>");
-			print('</div><br>');
-			print('<div style="text-align:center">');
-			if ($gst_non_comm=='non')				print('<input type="checkbox" name="non_comm" value="oui" unchecked >');
-			else									print('<input type="checkbox" name="non_comm" value="oui" checked>');
-			print(' Restreindre aux liasses non communicables');
-			print('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
-			if ($gst_av_1793=='non')				print('<input type="checkbox" name="av_1793" value="oui" unchecked >');
-			else									print('<input type="checkbox" name="av_1793" value="oui" checked>');
-			print(' Restreindre aux liasses antérieures &agrave; 1793</div>');
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Première cote&nbsp;</label></div>".
+				  "<div class='form-group col-md-2'>".
+				  "<input type=text name=cote_debut id=cote_debut size=5 maxlength='5' value='".$gst_cote_debut."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+			print("<div class='form-group col-md-2' align='right'><label class='col-form-label'>Dernière cote&nbsp;</label></div>".
+				  "<div class='form-group col-md-2'>".
+				  "<input type=text name=cote_fin id=cote_fin size=5 maxlength='5' value='".$gst_cote_fin."' class='form-control'onKeyPress='SoumissionAction(0,event)' ></div>");
+			print("</div>");
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
+				  "<div class='form-group col-md-4' align='left'><select name=commune id='commune' class='js-select-avec-recherche form-control'>".
+				  chaine_select_options($gi_commune,$a_communes)."</select></div></div>");
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Forme de liasses&nbsp;</label></div>".
+				  "<div class='form-group col-md-3' align='left'><select name=forme_liasse id='forme_liasse' class='js-select-avec-recherche form-control'>".
+				  chaine_select_options($gi_forme_liasse,$a_forme_liasse)."</select></div></div>");
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses non communicables&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=non_comm id=non_comm value="1" ');
+			if ($gst_non_comm == 1) {	print('checked>');		}
+			else 					{	print('unchecked>');	}
+			print("</div></div>");
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses antérieures à 1793&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=av_1793 id=av_1793 value="1" ');
+			if ($gst_av_1793 == 1)	{	print('checked>');		}
+			else 					{	print('unchecked>');	}
+			print("</div></div></div>");
 			break;
 		case 'repert' :
-			print('<div style="text-align:center">');
-			print('Commune : ');
-			print("<select name='commune' id='commune'>".
-				chaine_select_options($gi_commune,$a_communes)."</select>");
-			print('</div><br>');
-			print('<div style="text-align:center">');
-			if ($gst_av_1793=='non')				print('<input type="checkbox" name="av_1793" value="oui" unchecked >');
-			else									print('<input type="checkbox" name="av_1793" value="oui" checked>');
-			print(' Restreindre aux liasses antérieures &agrave; 1793</div>');
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
+				  "<div class='form-group col-md-4' align='left'><select name=commune id='commune' class='js-select-avec-recherche form-control'>".
+				  chaine_select_options($gi_commune,$a_communes)."</select></div></div>");
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses antérieures à 1793&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=av_1793 id=av_1793 value="1" ');
+			if ($gst_av_1793 == 1)	{	print('checked>');		}
+			else 					{	print('unchecked>');	}
+			print("</div></div></div>");
 			break;
 		case 'sans' :
-			print('<div style="text-align:center">');
-			if ($gst_sans_notaire=='non')			print('   <input type="checkbox" name="sans_notaire" value="oui" unchecked >');
-			else									print('   <input type="checkbox" name="sans_notaire" value="oui" checked>');
-			print(' Liasses sans notaire<br><br>');
-			if ($gst_sans_periode=='non')			print('   <input type="checkbox" name="sans_periode" value="oui" unchecked >');
-			else									print('   <input type="checkbox" name="sans_periode" value="oui" checked>');
-			print(' Liasses sans date<br><br>');
-			if ($gst_sans_lieu=='non')			print('   <input type="checkbox" name="sans_lieu" value="oui" unchecked >');
-			else									print('   <input type="checkbox" name="sans_lieu" value="oui" checked>');
-			print(' Liasses sans lieu</div>');
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Liasses sans notaire&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=sans_notaire id=sans_notaire value="1" ');
+			if ($gst_sans_notaire == 1)	{	print('checked>');		}
+			else 					{	print('unchecked>');	}
+			print("</div></div></div>");
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Liasses sans date&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=sans_periode id=sans_periode value="1" ');
+			if ($gst_sans_periode == 1)	{	print('checked>');		}
+			else 						{	print('unchecked>');	}
+			print("</div></div></div>");
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Liasses sans lieu&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=sans_lieu id=sans_lieu value="1" ');
+			if ($gst_sans_lieu == 1)	{	print('checked>');		}
+			else 						{	print('unchecked>');	}
+			print("</div></div></div>");
 			break;
 		case 'non_comm' :
-			print('<div style="text-align:center">');
-			print('Commune : ');
-			print("<select name='commune' id='commune'>".
-				chaine_select_options($gi_commune,$a_communes)."</select>");
-			print('</div><br>');
-			print('<div style="text-align:center">');
-			if ($gst_av_1793=='non')				print('<input type="checkbox" name="av_1793" value="oui" unchecked >');
-			else									print('<input type="checkbox" name="av_1793" value="oui" checked>');
-			print(' Restreindre aux liasses antérieures &agrave; 1793</div>');
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
+				  "<div class='form-group col-md-4' align='left'><select name=commune id='commune' class='js-select-avec-recherche form-control'>".
+				  chaine_select_options($gi_commune,$a_communes)."</select></div></div>");
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Restreindre aux liasses antérieures à 1793&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=av_1793 id=av_1793 value="1" ');
+			if ($gst_av_1793 == 1)	{	print('checked>');		}
+			else 					{	print('unchecked>');	}
+			print("</div></div></div>");
 			break;
 		case 'program' :
-			print('<div style="text-align:center">');
-			print('Commune : ');
-			print("<select name='commune' id='commune'>".
-				chaine_select_options($gi_commune,$a_communes)."</select>");
-			print('</div><br>');
-			print('<div style="text-align:center">');
-			if ($gst_releve=='non')					print('   <input type=checkbox name="releve" value="oui" unchecked >');
-			else									print('   <input type=checkbox name="releve" value="oui" checked>');
-			print(' Uniquement les programmations de relevés</div>');
-			print('<div style="text-align:center">');
-			if ($gst_photo=='non')					print('   <input type=checkbox name="photo" value="oui" unchecked >');
-			else									print('   <input type=checkbox name="photo" value="oui" checked>');
-			print(' Uniquement les programmations de photographies</div>');
+			print("<div class='form-row col-md-12'>");
+			print("<div class='form-group col-md-4' align='right'><label class='col-form-label'>Commune&nbsp;</label></div>".
+				  "<div class='form-group col-md-4' align='left'><select name=commune id='commune' class='js-select-avec-recherche form-control'>".
+				  chaine_select_options($gi_commune,$a_communes)."</select></div></div>");
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Uniquement les programmations de relevés&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=releve id=releve value="1" ');
+			if ($gst_releve == 1)	{	print('checked>');		}
+			else 					{	print('unchecked>');	}
+			print("</div></div></div>");
+			print('<div class="form-row col-md-12">');
+			print('<div class="form-group col-md-4" align="right"><label class="col-form-label">Uniquement les programmations de photographies&nbsp;</label></div>'.
+				  '<div class="form-group col-md-1" align="left"><div class="form-check">'.
+				  '<input type="checkbox" class="form-check-input" name=photo id=photo value="1" ');
+			if ($gst_photo == 1)	{	print('checked>');		}
+			else 					{	print('unchecked>');	}
+			print("</div></div></div>");
 			break;
 	}
-	print('<div style="text-align:center"><br>');
-	print('<input type="button" value="Rechercher" ONCLICK="VerifieChampsRechercheAction(0)">');
-	print('<input type="button" value="Effacer tous les Champs"  ONCLICK="RazChampsAction(0)">');
-	print('</div> ');
+	print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
+	print('<button type=button class="btn btn-sm btn-primary" id="btRechercher"><span class="glyphicon glyphicon-trash"></span>  Rechercher</button>');
+	print('<button type=button class="btn btn-sm btn-warning" id="btRaz"><span class="glyphicon glyphicon-new-window"></span> Effacer tous les Champs</button>');
+	print('</div>');
+	
 	print("</form>");
 	print('</div></div>');
 }
