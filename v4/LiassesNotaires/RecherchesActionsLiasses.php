@@ -58,7 +58,7 @@ $("#critere").validate({
 
 $("#btRechercher").click(function() {
  	var ListeErreurs = "";
-	if( document.forms['critere'].elements['menu'].val() == 'sans' ){
+	if( $('#menu').val() == 'sans' ){
 		var sans_notaire = document.forms['critere'].elements['sans_notaire'].checked;
 		var sans_periode = document.forms['critere'].elements['sans_periode'].checked;
 		var sans_lieu = document.forms['critere'].elements['sans_lieu'].checked;
@@ -76,7 +76,7 @@ $("#btRechercher").click(function() {
 	});
 	
 $("#btRaz").click(function() {	
-	switch(document.forms['choixmenu'].elements['menu'].val()) {
+	switch($('#menu').val()) {
 		case 'releve':
 			document.forms['critere'].elements['cote_debut'].val('');
 			document.forms['critere'].elements['cote_fin'].val('');
