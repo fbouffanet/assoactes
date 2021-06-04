@@ -281,7 +281,7 @@ print('<div class="panel panel-primary">');
 	print('<div class="panel-heading">'.$st_titre[$_SESSION['menu_rla']].'</div>');
 	print('<div class="panel-body">');
 	print("<form id='critere' action=\"".$_SERVER['PHP_SELF']."\" method='post'>");
-	print("<input type=hidden name=menu value='".$_SESSION['menu_rla']."'>");  
+	print("<input type=hidden name=menu id=menu value='".$_SESSION['menu_rla']."'>");  
 	if( $_SESSION['menu_rla'] != 'publication' ){
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Série de liasses&nbsp;</label></div>".
