@@ -59,9 +59,9 @@ $("#critere").validate({
 $("#btRechercher").click(function() {
  	var ListeErreurs = "";
 	if( $('#menu').val() == 'sans' ){
-		var sans_notaire = document.forms['critere'].elements['sans_notaire'].checked;
-		var sans_periode = document.forms['critere'].elements['sans_periode'].checked;
-		var sans_lieu = document.forms['critere'].elements['sans_lieu'].checked;
+		var sans_notaire = $('#sans_notaire').checked;
+		var sans_periode = $('#sans_periode').checked;
+		var sans_lieu = $('#sans_lieu').checked;
 		if( ! sans_notaire  && ! sans_periode && ! sans_lieu ){
 			ListeErreurs+="Cochez au moins un critère\n";
 		}
@@ -80,73 +80,73 @@ $("#btRaz").click(function() {
 	alert (menu);
 	switch(menu) {
 		case 'releve':
-			document.forms['critere'].elements['cote_debut'].val('');
-			document.forms['critere'].elements['cote_fin'].val('');
-			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
-			document.forms['critere'].elements['forme_liasse'].prop('selectedIndex',0);
-			document.forms['critere'].elements['non_comm'].prop('checked', false);
-			document.forms['critere'].elements['av_1793'].prop('checked', false);
-			document.forms['critere'].elements['photo'].prop('checked', false);
-			document.forms['critere'].elements['pas_photo'].prop('checked', false);
+			$('#cote_debut').val('');
+			$('#cote_fin').val('');
+			$('#commune').prop('selectedIndex',0);
+			$('#forme_liasse').prop('selectedIndex',0);
+			$('#non_comm').prop('checked', false);
+			$('#av_1793').prop('checked', false);
+			$('#photo').prop('checked', false);
+			$('#pas_photo').prop('checked', false);
 			break;
 		case 'pas_releve':
-			document.forms['critere'].elements['cote_debut'].val('');
-			document.forms['critere'].elements['cote_fin'].val('');
-			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
-			document.forms['critere'].elements['forme_liasse'].prop('selectedIndex',0);
-			document.forms['critere'].elements['non_comm'].prop('checked', false);
-			document.forms['critere'].elements['av_1793'].prop('checked', false);
+			$('#cote_debut').val('');
+			$('#cote_fin').val('');
+			$('#commune').prop('selectedIndex',0);
+			$('#forme_liasse').prop('selectedIndex',0);
+			$('#non_comm').prop('checked', false);
+			$('#av_1793').prop('checked', false);
 			break;
 		case 'publi_pap':
-			document.forms['critere'].elements['cote_debut'].val('');
-			document.forms['critere'].elements['cote_fin'].val('');
-			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
-			document.forms['critere'].elements['pas_publi_num'].prop('checked', false);
+			$('#cote_debut').val('');
+			$('#cote_fin').val('');
+			$('#commune').prop('selectedIndex',0);
+			$('#pas_publi_num').prop('checked', false);
 			break;
 		case 'publi_num':
-			document.forms['critere'].elements['cote_debut'].val('');
-			document.forms['critere'].elements['cote_fin'].val('');
-			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
-			document.forms['critere'].elements['publi_pap'].prop('checked', false);
-			document.forms['critere'].elements['pas_publi_pap'].prop('checked', false);
+			$('#cote_debut').val('');
+			$('#cote_fin').val('');
+			$('#commune').prop('selectedIndex',0);
+			$('#publi_pap').prop('checked', false);
+			$('#pas_publi_pap').prop('checked', false);
 			break;
 		case 'photo':
-			document.forms['critere'].elements['cote_debut'].val('');
-			document.forms['critere'].elements['cote_fin'].val('');
-			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
-			document.forms['critere'].elements['forme_liasse'].prop('selectedIndex',0);
-			document.forms['critere'].elements['non_comm'].prop('checked', false);
-			document.forms['critere'].elements['pas_publi_pap'].prop('checked', false);
-			document.forms['critere'].elements['pas_publi_num'].prop('checked', false);
-			document.forms['critere'].elements['sans_photographe'].prop('checked', false);
-			document.forms['critere'].elements['sans_date_photo'].prop('checked', false);
-			document.forms['critere'].elements['avec_commentaire'].prop('checked', false);
+			$('#cote_debut').val('');
+			$('#cote_fin').val('');
+			$('#commune').prop('selectedIndex',0);
+			$('#forme_liasse').prop('selectedIndex',0);
+			$('#non_comm').prop('checked', false);
+			$('#pas_publi_pap').prop('checked', false);
+			$('#pas_publi_num').prop('checked', false);
+			$('#sans_photographe').prop('checked', false);
+			$('#sans_date_photo').prop('checked', false);
+			$('#avec_commentaire').prop('checked', false);
 			break;
 		case 'pas_photo':
-			document.forms['critere'].elements['cote_debut'].val('');
-			document.forms['critere'].elements['cote_fin'].val('');
-			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
-			document.forms['critere'].elements['forme_liasse'].prop('selectedIndex',0);
-			document.forms['critere'].elements['non_comm'].prop('checked', false);
-			document.forms['critere'].elements['av_1793'].prop('checked', false);
+			$('#cote_debut').val('');
+			$('#cote_fin').val('');
+			$('#commune').prop('selectedIndex',0);
+			$('#forme_liasse').prop('selectedIndex',0);
+			$('#non_comm').prop('checked', false);
+			$('#av_1793').prop('checked', false);
 			break;
 		case 'repert':
-			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
-			document.forms['critere'].elements['av_1793'].prop('checked', false);
+			$('#commune').prop('selectedIndex',0);
+			$('#av_1793').prop('checked', false);
 			break;
 		case 'sans':
-			document.forms['critere'].elements['sans_notaire'].prop('checked', false);
-			document.forms['critere'].elements['sans_periode'].prop('checked', false);
-			document.forms['critere'].elements['sans_lieu'].prop('checked', false);
+			$('#sans_notaire').prop('checked', false);
+			$('#sans_periode').prop('checked', false);
+			$('#sans_lieu').prop('checked', false);
 			break;
 		case 'non_comm':
-			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
-			document.forms['critere'].elements['av_1793'].prop('checked', false);
+			$('#commune').prop('selectedIndex',0);
+			$('#av_1793').prop('checked', false);
 			break;
 		case 'program':
-			document.forms['critere'].elements['commune'].prop('selectedIndex',0);
-			document.forms['critere'].elements['releve'].prop('checked', false);
-			document.forms['critere'].elements['photo'].prop('checked', false);
+			$('#commune').prop('selectedIndex',0);
+			$('#releve').prop('checked', false);
+			$('#photo').prop('checked', false);
 			break;
 	}
 	});
