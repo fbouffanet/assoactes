@@ -146,6 +146,7 @@ $("#btRaz").click(function() {
 			document.forms['critere'].elements['releve'].prop('checked', false);
 			document.forms['critere'].elements['photo'].prop('checked', false);
 			break;
+	}
 	});
 
 });
