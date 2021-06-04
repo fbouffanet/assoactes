@@ -43,35 +43,35 @@ jQuery.validator.addMethod(
     },
     "La première cote doit être inférieure à la dernière"
 );
+
+jQuery.validator.addMethod(
+    "un_critere",
+    function(value, element) {
+		var check = true;
+		if( $('#menu').val() == 'sans' ){
+			var sans_notaire = $('#sans_notaire').checked;
+			var sans_periode = $('#sans_periode').checked;
+			var sans_lieu = $('#sans_lieu').checked;
+			if( ! sans_notaire  && ! sans_periode && ! sans_lieu ){
+				check = false;
+			}
+		}
+		return this.optional(element) || check;
+    },
+    "Cochez au moins un critère"
+);
 	
 $("#critere").validate({
   rules: {
-		cote_fin:		{ cote_debut_fin:true }
+		cote_fin:		{ cote_debut_fin:true },
+		sans_lieu:		{ un_critere:true }
   },		
   messages: {
-		cote_fin:		{ cote_debut_fin: "La première cote doit être inférieure à la dernière" }
+		cote_fin:		{ cote_debut_fin: "La première cote doit être inférieure à la dernière" },
+		sans_lieu:		{ un_critere: "Cochez au moins un critère" }
   }
 });
 
-$("#btRechercher").click(function() {
- 	var ListeErreurs = "";
-	if( $('#menu').val() == 'sans' ){
-		var sans_notaire = $('#sans_notaire').checked;
-		var sans_periode = $('#sans_periode').checked;
-		var sans_lieu = $('#sans_lieu').checked;
-		if( ! sans_notaire  && ! sans_periode && ! sans_lieu ){
-			ListeErreurs+="Cochez au moins un critère\n";
-		}
-	}
-	if (ListeErreurs!= "")	{
-		alert(ListeErreurs);
-	}
-	else {
-		document.forms['critere'].action ="ReponsesActionsLiasse.php";
-		document.forms['critere'].submit();
-	}
-	});
-	
 $("#btRaz").click(function() {	
 	var menu = $('#menu').val();
 	switch(menu) {
@@ -276,7 +276,7 @@ if( $_SESSION['menu_rla'] != '' ){
 print('<div class="panel panel-primary">');
 	print('<div class="panel-heading">'.$st_titre[$_SESSION['menu_rla']].'</div>');
 	print('<div class="panel-body">');
-	print("<form id='critere' action=\"".$_SERVER['PHP_SELF']."\" method='post'>");
+	print('<form id="critere" action=""ReponsesActionsLiasse.php" method="post">');
 	print("<input type=hidden name=menu id=menu value='".$_SESSION['menu_rla']."'>");  
 	if( $_SESSION['menu_rla'] != 'publication' ){
 	print("<div class='form-row col-md-12'>".
@@ -570,7 +570,7 @@ print('<div class="panel panel-primary">');
 			break;
 	}
 	print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
-	print('<button type=button class="btn btn-sm btn-primary" id="btRechercher"><span class="glyphicon glyphicon-trash"></span>  Rechercher</button>');
+	print('<button type=submit class="btn btn-sm btn-primary" id="btRechercher"><span class="glyphicon glyphicon-trash"></span>  Rechercher</button>');
 	print('<button type=button class="btn btn-sm btn-warning" id="btRaz"><span class="glyphicon glyphicon-new-window"></span> Effacer tous les Champs</button>');
 	print('</div>');
 	
