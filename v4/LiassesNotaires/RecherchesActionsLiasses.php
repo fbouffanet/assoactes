@@ -76,7 +76,7 @@ $("#btRechercher").click(function() {
 	});
 	
 $("#btRaz").click(function() {	
-	switch(document.forms['critere'].elements['menu'].val()) {
+	switch(document.forms['choixmenu'].elements['menu'].val()) {
 		case 'releve':
 			document.forms['critere'].elements['cote_debut'].val('');
 			document.forms['critere'].elements['cote_fin'].val('');
