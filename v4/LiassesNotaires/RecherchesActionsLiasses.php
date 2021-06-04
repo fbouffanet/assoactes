@@ -26,7 +26,7 @@ print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='../js/select2.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 //print("<link href='../Commun/Styles.css' type='text/css' rel='stylesheet'>");
-print("<script src='./VerifieChampsRechercheActionLiasse.js' type='text/javascript'></script>");
+//print("<script src='./VerifieChampsRechercheActionLiasse.js' type='text/javascript'></script>");
 print('<link rel="shortcut icon" href="../images/favicon.ico">');
 ?>
 <script type='text/javascript'>
@@ -46,13 +46,10 @@ jQuery.validator.addMethod(
 	
 $("#critere").validate({
   rules: {
-		cote_debut:		{ integer: true },
-		cote_fin:		{ integer:true, cote_debut_fin:true }
+		cote_fin:		{ cote_debut_fin:true }
   },		
   messages: {
-		cote_debut:		{ integer: "Saisir des chiffres"	},
-		cote_fin:		{ integer: "Saisir des chiffres",
-						  cote_debut_fin: "La première cote doit être inférieure à la dernière" }
+		cote_fin:		{ cote_debut_fin: "La première cote doit être inférieure à la dernière" }
   }
 });
 
