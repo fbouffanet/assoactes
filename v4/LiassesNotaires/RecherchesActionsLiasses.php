@@ -237,7 +237,8 @@ print("</div></div>");
 print("</div></div></form>");
 
 $a_serie_liasse = $connexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
-$a_serie_liasse[0] = '';
+//$a_serie_liasse[0] = '';
+$a_serie_liasse = array(0=>'')+$a_serie_liasse;
 print_r($a_serie_liasse);
 $a_forme_liasse = $connexionBD->liste_valeur_par_clef("SELECT idf, nom FROM forme_liasse order by nom");
 $a_forme_liasse[0] = '';
