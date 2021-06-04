@@ -237,14 +237,13 @@ print("</div></div>");
 print("</div></div></form>");
 
 $a_serie_liasse = $connexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
-//$a_serie_liasse[0] = '';
 $a_serie_liasse = array(0=>'')+$a_serie_liasse;
-print_r($a_serie_liasse);
+
 $a_forme_liasse = $connexionBD->liste_valeur_par_clef("SELECT idf, nom FROM forme_liasse order by nom");
-$a_forme_liasse[0] = '';
+$a_forme_liasse = aray(0=>'')+$a_forme_liasse ;
 
 $a_communes = $connexionBD->liste_valeur_par_clef("SELECT idf, nom FROM commune_acte order by nom");
-$a_communes[0] = 'Toutes';
+$a_communes = aray(0=>'Toutes')+$a_communes ;
 
 if( isset($_POST['serie_liasse']) ) {
 	$_SESSION['serie_liasse'] = $_POST['serie_liasse'];
