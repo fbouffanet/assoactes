@@ -185,7 +185,7 @@ print('<div class="panel-body">');
 //print("<table border='1' cellpadding='0' cellspacing='0' align='center' width='720'><caption class='TITRE'>AD16 - 2E</caption>");
 print("<table class='table table-bordered table-striped' align='center' width='720'><caption class='TITRE'>AD16 - 2E</caption>");
 
-print('<tr class="SOUSTITRE">'.
+print('<tr bgcolor="red">'.
       '<td align="center" width="40%">Nombre de liasses</td>'.
       '<td align="center" width="20%">Avant 1793</td>'.
       '<td align="center" width="20%">Depuis 1793</td>'.
