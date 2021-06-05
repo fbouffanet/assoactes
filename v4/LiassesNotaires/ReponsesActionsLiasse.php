@@ -40,11 +40,13 @@ function forcedPopUp(urlSelf, urlBlank){
 	};
 
 $("#btImprimer").click(function() {	
-	forcedPopUp('RecherchesActionsLiasses.php', 'ImpressionActionsLiasse.php');
+	window.open('ImpressionActionsLiasse.php');
+	window.location.href = 'RecherchesActionsLiasses.php';
 	});
 
 $("#btExporter").click(function() {	
-	forcedPopUp('RecherchesActionsLiasses.php', 'ExportActionsLiasses.php');
+	window.open('ExportActionsLiasses.php');
+	window.location.href = 'RecherchesActionsLiasses.php';
 	});
 
 $("#btRetour").click(function() {	
@@ -108,10 +110,6 @@ if( isset($_POST['menu']) ) {
 	$_SESSION['publication_rla'] = isset($_POST['publication']) ? $_POST['publication'] : '';
 	$_SESSION['avec_commentaire_rla'] = isset($_POST['avec_commentaire']) ? $_POST['avec_commentaire'] : '';
 }
-print('non_comm='.$_SESSION['non_comm_rla']);
-print('av_1793='.$_SESSION['av_1793_rla']);
-print('photo='.$_SESSION['photo_rla']);
-print('pas_photo='.$_SESSION['pas_photo_rla']);
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 $requeteRecherche = new RequeteRecherche($connexionBD);    
@@ -709,7 +707,7 @@ print('<body>');
 print('<div class="container" align="center">');
 require_once('../Commun/menu.php');
 
-print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");     
+print('<form action="RecherchesActionsLiasses.php" method="post">');     
 print('<div class="panel panel-primary">');
 print('<div class="panel-heading">'.$st_titre.'</div>');
 print('<div class="panel-body">');
@@ -833,11 +831,6 @@ if ($i_nb_ligne_extr>0)
 	$pagination->affiche_tableau_simple($a_liasses);  
 	$pagination->affiche_entete_liens_navlimite();
 
-	print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
-	print('<button type=button class="btn btn-sm btn-warning" id="btRaz"><span class="glyphicon glyphicon-new-window"></span> Effacer tous les Champs</button>');
-	print('</div>');
-
-	
 	if( $_SESSION['menu_rla'] != 'complete' ) {
 //		print("<div align=center><br><a class='RetourReponses' href=\"javascript:forcedPopUp('RecherchesActionsLiasses.php', 'ImpressionActionsLiasse.php');\">Impression</a></div>");
 		print('<button type=submit class="btn btn-sm btn-success" id="btImprimer"><span class="glyphicon glyphicon-print"></span> Imprimer</button>');
