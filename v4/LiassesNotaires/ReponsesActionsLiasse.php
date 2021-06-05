@@ -35,7 +35,7 @@ print('			window.location.href = urlSelf;');
 print('		}');
 print('</script>');
 
-print("<script src='../Commun/menu.js' type='text/javascript'></script>");
+//print("<script src='../Commun/menu.js' type='text/javascript'></script>");
 print("<title>Base AGC: Reponse à; votre recherches d'actions sur les liasses notariales</title>");
 print('</Head>');
 
