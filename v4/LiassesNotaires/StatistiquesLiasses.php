@@ -185,7 +185,7 @@ print('<div class="panel-body">');
 print('<label class="col-form-label">Série AD16 - 2E</label>');
 //print("<table border='1' cellpadding='0' cellspacing='0' align='center' width='720'><caption class='TITRE'>AD16 - 2E</caption>");
 print("<table class='table table-bordered table-striped' align='center' width='720'>");
-print('<thead class="thead-grey">');
+print('<thead class="thead-dark">');
 print('<tr align="center">'.
       '<th scope="col" width="40%">Nombre de liasses</th>'.
       '<th scope="col" width="20%">Avant 1793</th>'.
