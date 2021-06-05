@@ -34,23 +34,12 @@ print('</script>');
 <script type='text/javascript'>
 $(document).ready(function() {
 
-function forcedPopUp(urlSelf, urlBlank){
-	window.open(urlBlank);
-	window.location.href = urlSelf;
-	};
-
 $("#btImprimer").click(function() {	
 	window.open('ImpressionActionsLiasse.php');
-	window.location.href = 'RecherchesActionsLiasses.php';
 	});
 
 $("#btExporter").click(function() {	
 	window.open('ExportActionsLiasses.php');
-	window.location.href = 'RecherchesActionsLiasses.php';
-	});
-
-$("#btRetour").click(function() {	
-	window.location.href = "RecherchesActionsLiasses.php";
 	});
 
 });
@@ -832,11 +821,9 @@ if ($i_nb_ligne_extr>0)
 	$pagination->affiche_entete_liens_navlimite();
 
 	if( $_SESSION['menu_rla'] != 'complete' ) {
-//		print("<div align=center><br><a class='RetourReponses' href=\"javascript:forcedPopUp('RecherchesActionsLiasses.php', 'ImpressionActionsLiasse.php');\">Impression</a></div>");
 		print('<button type=submit class="btn btn-sm btn-success" id="btImprimer"><span class="glyphicon glyphicon-print"></span> Imprimer</button>');
 	}
 	print('<button type=submit class="btn btn-sm btn-warning" id="btExporter"><span class="glyphicon glyphicon-download-alt"></span> Exporter</button>');
-	//print("<div align=center><br><a class='RetourReponses' href=\"javascript:forcedPopUp('RecherchesActionsLiasses.php', 'ExportActionsLiasses.php');\">Export</a></div>");
 }
 else {
 	print('<div class="alert alert-danger" align="center">');
@@ -849,7 +836,6 @@ else {
 }
 print('<button type=submit class="btn btn-sm btn-primary" id="btRetour"><span class="glyphicon glyphicon-download-alt"></span> Retour</button>');
 print("</div>");
-//print("<div align=center><br><a href=\"RecherchesActionsLiasses.php\" class=\"RetourReponses\">nouvelle liste - SORTIE</a></div>");
 print ("</form>");
 print("</div></body></html>");
 //$connexionBD->ferme(); 
