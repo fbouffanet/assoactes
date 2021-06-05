@@ -301,12 +301,12 @@ print('<tr height="10">'.
       '<td> </td>'.
 	  '</tr>');
 print('<tr>'.
-      '<td> </td>'.
-      '<td align="center">% sur total</td>'.
-      '<td align="center">Avant 1793</td>'.
-      '<td align="center">Depuis 1793</td>'.
-      '<td align="center">Total</td>'.
-      '<td> </td>'.
+      '<th> </th>'.
+      '<th align="center">% sur total</th>'.
+      '<th align="center">Avant 1793</th>'.
+      '<th align="center">Depuis 1793</th>'.
+      '<th align="center">Total</th>'.
+      '<th> </th>'.
 	  '</tr>');
 print('<tr height="10">'.
       '<td> </td>'.
