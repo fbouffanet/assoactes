@@ -80,7 +80,10 @@ if( isset($_POST['menu']) ) {
 	$_SESSION['publication_rla'] = isset($_POST['publication']) ? $_POST['publication'] : '';
 	$_SESSION['avec_commentaire_rla'] = isset($_POST['avec_commentaire']) ? $_POST['avec_commentaire'] : '';
 }
-
+print('non_comm='.)$_SESSION['non_comm_rla'];
+print('av_1793='.)$_SESSION['av_1793_rla'];
+print('photo='.)$_SESSION['photo_rla'];
+print('pas_photo='.)$_SESSION['pas_photo_rla'];
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 
 $requeteRecherche = new RequeteRecherche($connexionBD);    
