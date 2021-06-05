@@ -48,11 +48,14 @@ jQuery.validator.addMethod(
     "un_critere",
     function(value, element) {
 		var check = true;
+		alert("un critère");
 		if( $('#menu').val() == 'sans' ){
+			alert("sans");
 			var sans_notaire = $('#sans_notaire').checked;
 			var sans_periode = $('#sans_periode').checked;
 			var sans_lieu = $('#sans_lieu').checked;
 			if( ! sans_notaire  && ! sans_periode && ! sans_lieu ){
+				alert("vérifié");
 				check = false;
 			}
 		}
