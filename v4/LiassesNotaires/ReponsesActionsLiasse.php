@@ -686,7 +686,7 @@ $_SESSION['pdf']['pourc_tot'] = $i_pourc_tot;
    ---------------------
 */   
 print('<body>');
-print('<div class="container">');
+print('<div class="container" align="center">');
 require_once('../Commun/menu.php');
 
 print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");     
@@ -696,7 +696,11 @@ print('<div class="panel-body">');
 
 print("<label class='col-form-label'>".$st_sous_titre."</label><br><br>");
 if( $_SESSION['menu_rla'] != 'publication' &&  $_SESSION['menu_rla'] != 'complete' ) {
-	print("<label class='col-form-label'>".$i_nb_liasse_extr." liasses, ".$i_pourc_liste." % de la liste, ".$i_pourc_tot." % de la série</label>");
+	print("<div class='form-row col-md-12'>");
+	print("<div class='form-group col-md-5'><label class='col-form-label'>".$i_nb_liasse_extr." liasses</label></div>".
+	print("<div class='form-group col-md-2' align='center'><label class='col-form-label'>".$i_pourc_liste."  % de la liste</label></div>".
+	print("<div class='form-group col-md-5' align='right'><label class='col-form-label'>".$i_pourc_tot." % de la série</label></div>".
+	print("</div>");
 }
 print('</div></div>');
 $gi_get_num_page = empty($_GET['num_page']) ? 1 : (int) $_GET['num_page'];
