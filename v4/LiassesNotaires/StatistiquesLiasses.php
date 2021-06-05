@@ -186,10 +186,10 @@ print('<label class="col-form-label">Série AD16 - 2E</label>');
 //print("<table border='1' cellpadding='0' cellspacing='0' align='center' width='720'><caption class='TITRE'>AD16 - 2E</caption>");
 print("<table class='table table-bordered table-striped' align='center' width='500'>");
 print('<tr class="table-primary">'.
-      '<td scope="col" width="40%">Nombre de liasses</td>'.
-      '<td scope="col" width="20%">Avant 1793</td>'.
-      '<td scope="col" width="20%">Depuis 1793</td>'.
-      '<td scope="col" width="20%">Total</td>'.
+      '<th align="center" width="40%">Nombre de liasses</th>'.
+      '<th align="center" width="20%">Avant 1793</th>'.
+      '<th align="center" width="20%">Depuis 1793</th>'.
+      '<th align="center" width="20%">Total</th>'.
 	  '</tr>');
 print('<tr class="ligne_impaire" height="10">'.
       '<td align="center" width="40%">Ensemble des liasses</td>'.
