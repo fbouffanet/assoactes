@@ -196,7 +196,7 @@ print('<tr class="table-primary">'.
       '<th align="center" width="10%">Total</th>'.
       '<th align="center" width="20%"> </th>'.
 	  '</tr>');
-print('<tr class="ligne_impaire" height="10">'.
+print('<tr height="10">'.
       '<td> </td>'.
       '<td align="center">Ensemble des liasses</td>'.
       '<td align="center">'.$i_nb_2E_ante_1793.'</td>'.
@@ -204,7 +204,7 @@ print('<tr class="ligne_impaire" height="10">'.
       '<td align="center">'.$i_nb_2E_total.'</td>'.
       '<td> </td>'.
 	  '</tr>');
-print('<tr class="ligne_paire" height="10">'.
+print('<tr height="10">'.
       '<td> </td>'.
       '<td align="right"><i>Relevées</i></td>'.
       '<td align="center">'.$i_nb_2E_releve_ante_1793.'</td>'.
@@ -212,7 +212,7 @@ print('<tr class="ligne_paire" height="10">'.
       '<td align="center">'.$i_nb_2E_releve_total.'</td>'.
       '<td> </td>'.
 	  '</tr>');
-print('<tr class="ligne_paire" height="10">'.
+print('<tr height="10">'.
       '<td> </td>'.
       '<td align="right"><i>Publiées papier</i></td>'.
       '<td align="center">'.$i_nb_2E_publi_ante_1793.'</td>'.
@@ -220,138 +220,140 @@ print('<tr class="ligne_paire" height="10">'.
       '<td align="center">'.$i_nb_2E_publi_total.'</td>'.
       '<td> </td>'.
 	  '</tr>');
-print('<tr class="ligne_paire" height="10">'.
+print('<tr height="10">'.
       '<td> </td>'.
-      '<td align="right" width="40%"><i>Photographiées</i></td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_photo_ante_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_photo_post_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_photo_total.'</td>'.
-      '<td> </td>'.
-	  '</tr>');
-print('<tr class="ligne_impaire" height="10">'.
-      '<td> </td>'.
-      '<td align="center" width="40%">Liasses r&eacute;pertoires</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_repert_ante_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_repert_post_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_repert_total.'</td>'.
+      '<td align="right"><i>Photographiées</i></td>'.
+      '<td align="center">'.$i_nb_2E_photo_ante_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_photo_post_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_photo_total.'</td>'.
       '<td> </td>'.
 	  '</tr>');
-print('<tr class="ligne_paire" height="10">'.
-       '<td> </td>'.
-     '<td align="center" width="40%"><i>Relev&eacute;es</i></td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_repert_releve_ante_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_repert_releve_post_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_repert_releve_total.'</td>'.
+print('<tr height="10">'.
+      '<td> </td>'.
+      '<td align="center">Liasses répertoires</td>'.
+      '<td align="center">'.$i_nb_2E_repert_ante_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_repert_post_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_repert_total.'</td>'.
       '<td> </td>'.
 	  '</tr>');
-print('<tr class="ligne_paire" height="10">'.
-      '<td align="center" width="40%"><i>Publi&eacute;es papier</i></td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_repert_publi_ante_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_repert_publi_post_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_repert_publi_total.'</td>'.
-	  '</tr>');
-print('<tr class="ligne_paire" height="10">'.
+print('<tr height="10">'.
       '<td> </td>'.
-      '<td align="center" width="40%"><i>Photographi&eacute;es</i></td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_repert_photo_ante_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_repert_photo_post_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_repert_photo_total.'</td>'.
+      '<td align="right"><i>Relevées</i></td>'.
+      '<td align="center">'.$i_nb_2E_repert_releve_ante_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_repert_releve_post_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_repert_releve_total.'</td>'.
       '<td> </td>'.
 	  '</tr>');
-print('<tr class="ligne_impaire" height="10">'.
+print('<tr height="10">'.
       '<td> </td>'.
-      '<td align="center" width="40%">Liasses non communicables</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_non_comm_ante_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_non_comm_post_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_non_comm_total.'</td>'.
-      '<td> </td>'.
-	  '</tr>');
-print('<tr class="ligne_paire" height="10">'.
-      '<td> </td>'.
-      '<td align="center" width="40%"><i>Relev&eacute;es</i></td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_non_comm_releve_ante_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_non_comm_releve_post_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_non_comm_releve_total.'</td>'.
+      '<td align="right"><i>Publiées papier</i></td>'.
+      '<td align="center">'.$i_nb_2E_repert_publi_ante_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_repert_publi_post_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_repert_publi_total.'</td>'.
       '<td> </td>'.
 	  '</tr>');
-print('<tr class="ligne_paire" height="10">'.
+print('<tr height="10">'.
       '<td> </td>'.
-      '<td align="center" width="40%"><i>Publi&eacute;es papier</i></td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_non_comm_publi_ante_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_non_comm_publi_post_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_non_comm_publi_total.'</td>'.
-      '<td> </td>'.
-	  '</tr>');
-print('<tr class="ligne_paire" height="10">'.
-      '<td> </td>'.
-      '<td align="center" width="40%"><i>Photographi&eacute;es</i></td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_non_comm_photo_ante_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_non_comm_photo_post_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_non_comm_photo_total.'</td>'.
+      '<td align="right"><i>Photographiées</i></td>'.
+      '<td align="center">'.$i_nb_2E_repert_photo_ante_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_repert_photo_post_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_repert_photo_total.'</td>'.
       '<td> </td>'.
 	  '</tr>');
-print('<tr class="ligne_impaire" height="10">'.
+print('<tr height="10">'.
       '<td> </td>'.
-      '<td align="center" width="40%">Liasses peu de pi&egrave;ces</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_peu_ante_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_peu_post_1793.'</td>'.
-      '<td align="center" width="20%">'.$i_nb_2E_peu_total.'</td>'.
-      '<td> </td>'.
-	  '</tr>');
-print('<tr class="SOUSTITRE">'.
-      '<td> </td>'.
-      '<td align="center" width="40%">% sur total</td>'.
-      '<td align="center" width="20%">Avant 1793</td>'.
-      '<td align="center" width="20%">Depuis 1793</td>'.
-      '<td align="center" width="20%">Total</td>'.
+      '<td align="center">Liasses non communicables</td>'.
+      '<td align="center">'.$i_nb_2E_non_comm_ante_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_non_comm_post_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_non_comm_total.'</td>'.
       '<td> </td>'.
 	  '</tr>');
-print('<tr class="ligne_paire" height="10">'.
+print('<tr height="10">'.
       '<td> </td>'.
-      '<td align="center" width="40%"><i>Relev&eacute;es</i></td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_releve_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_releve_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_releve_total/$i_nb_2E_total*100,2).' %</td>'.
-      '<td> </td>'.
-	  '</tr>');
-print('<tr class="ligne_paire" height="10">'.
-      '<td> </td>'.
-      '<td align="center" width="40%"><i>Publi&eacute;es papier</i></td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_publi_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_publi_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_publi_total/$i_nb_2E_total*100,2).' %</td>'.
+      '<td align="right"><i>Relevées</i></td>'.
+      '<td align="center">'.$i_nb_2E_non_comm_releve_ante_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_non_comm_releve_post_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_non_comm_releve_total.'</td>'.
       '<td> </td>'.
 	  '</tr>');
-print('<tr class="ligne_paire" height="10">'.
+print('<tr height="10">'.
       '<td> </td>'.
-      '<td align="center" width="40%"><i>Photographi&eacute;es</i></td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_photo_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_photo_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_photo_total/$i_nb_2E_total*100,2).' %</td>'.
-      '<td> </td>'.
-	  '</tr>');
-print('<tr class="ligne_impaire" height="10">'.
-       '<td> </td>'.
-     '<td align="center" width="40%">Liasses r&eacute;pertoires</td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_repert_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_repert_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_repert_total/$i_nb_2E_total*100,2).' %</td>'.
+      '<td align="right"><i>Publiées papier</i></td>'.
+      '<td align="center">'.$i_nb_2E_non_comm_publi_ante_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_non_comm_publi_post_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_non_comm_publi_total.'</td>'.
       '<td> </td>'.
 	  '</tr>');
-print('<tr class="ligne_impaire" height="10">'.
+print('<tr height="10">'.
       '<td> </td>'.
-      '<td align="center" width="40%">Liasses non communicables</td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_non_comm_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_non_comm_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_non_comm_total/$i_nb_2E_total*100,2).' %</td>'.
+      '<td align="right"><i>Photographiées</i></td>'.
+      '<td align="center">'.$i_nb_2E_non_comm_photo_ante_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_non_comm_photo_post_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_non_comm_photo_total.'</td>'.
       '<td> </td>'.
 	  '</tr>');
-print('<tr class="ligne_impaire" height="10">'.
+print('<tr height="10">'.
       '<td> </td>'.
-      '<td align="center" width="40%">Liasses peu de pi&egrave;ces</td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_peu_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_peu_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
-      '<td align="center" width="20%">'.round($i_nb_2E_peu_total/$i_nb_2E_total*100,2).' %</td>'.
+      '<td align="center">Liasses peu de pièces</td>'.
+      '<td align="center">'.$i_nb_2E_peu_ante_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_peu_post_1793.'</td>'.
+      '<td align="center">'.$i_nb_2E_peu_total.'</td>'.
+      '<td> </td>'.
+	  '</tr>');
+print('<tr>'.
+      '<td> </td>'.
+      '<td align="center">% sur total</td>'.
+      '<td align="center">Avant 1793</td>'.
+      '<td align="center">Depuis 1793</td>'.
+      '<td align="center">Total</td>'.
+      '<td> </td>'.
+	  '</tr>');
+print('<tr height="10">'.
+      '<td> </td>'.
+      '<td align="center"><i>Relevées</i></td>'.
+      '<td align="center">'.round($i_nb_2E_releve_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
+      '<td align="center">'.round($i_nb_2E_releve_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
+      '<td align="center">'.round($i_nb_2E_releve_total/$i_nb_2E_total*100,2).' %</td>'.
+      '<td> </td>'.
+	  '</tr>');
+print('<tr height="10">'.
+      '<td> </td>'.
+      '<td align="center"><i>Publiées papier</i></td>'.
+      '<td align="center">'.round($i_nb_2E_publi_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
+      '<td align="center">'.round($i_nb_2E_publi_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
+      '<td align="center">'.round($i_nb_2E_publi_total/$i_nb_2E_total*100,2).' %</td>'.
+      '<td> </td>'.
+	  '</tr>');
+print('<tr height="10">'.
+      '<td> </td>'.
+      '<td align="center"><i>Photographiées</i></td>'.
+      '<td align="center">'.round($i_nb_2E_photo_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
+      '<td align="center">'.round($i_nb_2E_photo_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
+      '<td align="center">'.round($i_nb_2E_photo_total/$i_nb_2E_total*100,2).' %</td>'.
+      '<td> </td>'.
+	  '</tr>');
+print('<tr height="10">'.
+      '<td> </td>'.
+      '<td align="center">Liasses répertoires</td>'.
+      '<td align="center">'.round($i_nb_2E_repert_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
+      '<td align="center">'.round($i_nb_2E_repert_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
+      '<td align="center">'.round($i_nb_2E_repert_total/$i_nb_2E_total*100,2).' %</td>'.
+      '<td> </td>'.
+	  '</tr>');
+print('<tr height="10">'.
+      '<td> </td>'.
+      '<td align="center">Liasses non communicables</td>'.
+      '<td align="center">'.round($i_nb_2E_non_comm_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
+      '<td align="center">'.round($i_nb_2E_non_comm_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
+      '<td align="center">'.round($i_nb_2E_non_comm_total/$i_nb_2E_total*100,2).' %</td>'.
+      '<td> </td>'.
+	  '</tr>');
+print('<tr height="10">'.
+      '<td> </td>'.
+      '<td align="center">Liasses peu de pi&egrave;ces</td>'.
+      '<td align="center">'.round($i_nb_2E_peu_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
+      '<td align="center">'.round($i_nb_2E_peu_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
+      '<td align="center">'.round($i_nb_2E_peu_total/$i_nb_2E_total*100,2).' %</td>'.
       '<td> </td>'.
 	  '</tr>');
 print('</table ><br>');
