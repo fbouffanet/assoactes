@@ -184,7 +184,7 @@ print('<div class="panel-heading">Statistiques sur les liasses</div>');
 print('<div class="panel-body">');
 print('<label class="col-form-label">Série AD16 - 2E</label>');
 //print("<table border='1' cellpadding='0' cellspacing='0' align='center' width='720'><caption class='TITRE'>AD16 - 2E</caption>");
-print("<table class='table table-bordered table-striped' align='center' width='720'>");
+print("<table class='table table-bordered table-striped' align='center' width='500'>");
 print('<tr class="table-primary">'.
       '<td scope="col" width="40%">Nombre de liasses</td>'.
       '<td scope="col" width="20%">Avant 1793</td>'.
