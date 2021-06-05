@@ -187,10 +187,10 @@ print('<label class="col-form-label">Série AD16 - 2E</label>');
 print("<table class='table table-bordered table-striped' align='center' width='720'>");
 
 print('<tr bgcolor="red">'.
-      '<td align="center" width="40%">Nombre de liasses</td>'.
-      '<td align="center" width="20%">Avant 1793</td>'.
-      '<td align="center" width="20%">Depuis 1793</td>'.
-      '<td align="center" width="20%">Total</td>'.
+      '<th align="center" width="40%">Nombre de liasses</th>'.
+      '<th align="center" width="20%">Avant 1793</th>'.
+      '<th align="center" width="20%">Depuis 1793</th>'.
+      '<th align="center" width="20%">Total</th>'.
 	  '</tr>');
 print('<tr class="ligne_impaire" height="10">'.
       '<td align="center" width="40%">Ensemble des liasses</td>'.
