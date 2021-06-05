@@ -310,7 +310,7 @@ print('<tr>'.
 	  '</tr>');
 print('<tr height="10">'.
       '<td> </td>'.
-      '<td align="center"><i>Relevées</i></td>'.
+      '<td align="right"><i>Relevées</i></td>'.
       '<td align="center">'.round($i_nb_2E_releve_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
       '<td align="center">'.round($i_nb_2E_releve_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
       '<td align="center">'.round($i_nb_2E_releve_total/$i_nb_2E_total*100,2).' %</td>'.
@@ -318,7 +318,7 @@ print('<tr height="10">'.
 	  '</tr>');
 print('<tr height="10">'.
       '<td> </td>'.
-      '<td align="center"><i>Publiées papier</i></td>'.
+      '<td align="right"><i>Publiées papier</i></td>'.
       '<td align="center">'.round($i_nb_2E_publi_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
       '<td align="center">'.round($i_nb_2E_publi_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
       '<td align="center">'.round($i_nb_2E_publi_total/$i_nb_2E_total*100,2).' %</td>'.
@@ -326,7 +326,7 @@ print('<tr height="10">'.
 	  '</tr>');
 print('<tr height="10">'.
       '<td> </td>'.
-      '<td align="center"><i>Photographiées</i></td>'.
+      '<td align="right"><i>Photographiées</i></td>'.
       '<td align="center">'.round($i_nb_2E_photo_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
       '<td align="center">'.round($i_nb_2E_photo_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
       '<td align="center">'.round($i_nb_2E_photo_total/$i_nb_2E_total*100,2).' %</td>'.
