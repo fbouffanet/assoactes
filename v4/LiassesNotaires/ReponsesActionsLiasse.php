@@ -690,12 +690,15 @@ print('<div class="container">');
 require_once('../Commun/menu.php');
 
 print("<form action=\"".$_SERVER['PHP_SELF']."\" method=\"post\">");     
+print('<div class="panel panel-primary">');
+print('<div class="panel-heading">'.$st_titre.'</div>');
+print('<div class="panel-body">');
 
-print("<div class='TITRE'>".$st_titre."<br>".$st_sous_titre."</div>");
+print("<label class='col-form-label'>".$st_sous_titre."</label><br><br>");
 if( $_SESSION['menu_rla'] != 'publication' &&  $_SESSION['menu_rla'] != 'complete' ) {
-	print("<div class='SOUSTITRE'>".$i_nb_liasse_extr." liasses, ".$i_pourc_liste." % de la liste, ".$i_pourc_tot." % de la série</div><br>");
+	print("<label class='col-form-label'>".$i_nb_liasse_extr." liasses, ".$i_pourc_liste." % de la liste, ".$i_pourc_tot." % de la série</label>");
 }
-
+print('</div></div>');
 $gi_get_num_page = empty($_GET['num_page']) ? 1 : (int) $_GET['num_page'];
 $gi_num_page = empty($_POST['num_page']) ? $gi_get_num_page : (int) $_POST['num_page'];
 $etape_prec = getmicrotime();
