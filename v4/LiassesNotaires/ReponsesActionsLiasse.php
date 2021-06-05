@@ -268,22 +268,22 @@ switch( $_SESSION['menu_rla'] ) {
 			$st_where .= " and liasse.idf_forme_liasse = ".$_SESSION['forme_liasse_rla']." ";
 			$st_criteres .= "Uniquement les liasses ".$a_forme_liasse[$_SESSION['forme_liasse_rla']]."\n";
 		}
-		if( $_SESSION['non_comm_rla'] == 'oui' ) {
+		if( $_SESSION['non_comm_rla'] == '1' ) {
 			$st_sous_titre .= " - non communicables";
 			$st_where .= " and liasse.in_liasse_consultable = 0 ";
 			$st_criteres .= "Uniquement les liasses non communicables\n";
 		}		
-		if( $_SESSION['photo_rla'] == 'oui' ) {
+		if( $_SESSION['photo_rla'] == '1' ) {
 			$st_sous_titre .= " - photographiées";
 			$st_where .= " and liasse_photo.idf is not null ";
 			$st_criteres .= "Uniquement les liasses photographiées\n";
 		}
-		if( $_SESSION['pas_photo_rla'] == 'oui' ) {
+		if( $_SESSION['pas_photo_rla'] == '1' ) {
 			$st_sous_titre .= " - pas photographiées";
 			$st_where .= " and liasse_photo.idf is null ";
 			$st_criteres .= "Uniquement les liasses pas photographiées\n";
 		}
-		if( $_SESSION['av_1793_rla'] == 'oui' ) {
+		if( $_SESSION['av_1793_rla'] == '1' ) {
 			$st_sous_titre .= " - avant 1793";
 			$st_where .= " and liasse.cote_liasse in (select distinct cote_liasse from liasse_dates where date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d'))";
 			$st_criteres .= "Uniquement les liasses antérieures à; 1793\n";
@@ -333,12 +333,12 @@ switch( $_SESSION['menu_rla'] ) {
 			$st_where .= " and liasse.idf_forme_liasse = ".$_SESSION['forme_liasse_rla']." ";
 			$st_criteres .= "Uniquement les liasses ".$a_forme_liasse[$_SESSION['forme_liasse_rla']]."\n";
 		}
-		if( $_SESSION['non_comm_rla'] == 'oui' ) {
+		if( $_SESSION['non_comm_rla'] == '1' ) {
 			$st_sous_titre .= " - non communicables";
 			$st_where .= " and liasse.in_liasse_consultable = 0 ";
 			$st_criteres .= "Uniquement les liasses non communicables\n";
 		}		
-		if( $_SESSION['av_1793_rla'] == 'oui' ) {
+		if( $_SESSION['av_1793_rla'] == '1' ) {
 			$st_sous_titre .= " - avant 1793";
 			$st_where .= " and liasse.cote_liasse in (select distinct cote_liasse from liasse_dates where date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d'))";
 			$st_criteres .= "Uniquement les liasses antérieures à; 1793\n";
@@ -375,7 +375,7 @@ switch( $_SESSION['menu_rla'] ) {
 		if( $_SESSION['cote_fin_rla'] != '' ) {
 			$st_where .= " and liasse.cote_liasse <= '".$_SESSION['serie_liasse']."-".$_SESSION['cote_fin_rla']."'";
 		}
-		if( $_SESSION['pas_publi_num_rla'] == 'oui' ) {
+		if( $_SESSION['pas_publi_num_rla'] == '1' ) {
 			$st_sous_titre .= " - pas publiées numérique";
 			$st_where .= " and (liasse_releve.idf is null or liasse_releve.in_publication_numerique = 0) ";
 			$st_criteres .= "Uniquement les liasses pas publiées numérique\n";
@@ -413,12 +413,12 @@ switch( $_SESSION['menu_rla'] ) {
 		if( $_SESSION['cote_fin_rla'] != '' ) {
 			$st_where .= " and liasse.cote_liasse <= '".$_SESSION['serie_liasse']."-".$_SESSION['cote_fin_rla']."'";
 		}
-		if( $_SESSION['publi_pap_rla'] == 'oui' ) {
+		if( $_SESSION['publi_pap_rla'] == '1' ) {
 			$st_sous_titre .= " - publiées papier";
 			$st_where .= " and liasse_publication_papier.idf is not null ";
 			$st_criteres .= "Uniquement les liasses publiées papier\n";
 		}
-		if( $_SESSION['pas_publi_pap_rla'] == 'oui' ) {
+		if( $_SESSION['pas_publi_pap_rla'] == '1' ) {
 			$st_sous_titre .= " - pas publiées papier";
 			$st_where .= " and liasse_publication_papier.idf is null ";
 			$st_criteres .= "Uniquement les liasses pas publiées papier\n";
@@ -461,27 +461,27 @@ switch( $_SESSION['menu_rla'] ) {
 			$st_where .= " and liasse.idf_forme_liasse = ".$_SESSION['forme_liasse_rla']." ";
 			$st_criteres .= "Uniquement les liasses ".$a_forme_liasse[$_SESSION['forme_liasse_rla']]."\n";
 		}
-		if( $_SESSION['non_comm_rla'] == 'oui' ) {
+		if( $_SESSION['non_comm_rla'] == '1' ) {
 			$st_sous_titre .= " - non communicables";
 			$st_where .= " and liasse.in_liasse_consultable = 0 ";
 			$st_criteres .= "Uniquement les liasses non communicables\n";
 		}		
-		if( $_SESSION['pas_publi_pap_rla'] == 'oui' ) {
+		if( $_SESSION['pas_publi_pap_rla'] == '1' ) {
 			$st_sous_titre .= " - pas publiées papier";
 			$st_where .= " and liasse_publication_papier.idf is null ";
 			$st_criteres .= "Uniquement les liasses pas publiées papier\n";
 		}
-		if( $_SESSION['pas_publi_num_rla'] == 'oui' ) {
+		if( $_SESSION['pas_publi_num_rla'] == '1' ) {
 			$st_sous_titre .= " - pas publiées numérique";
 			$st_where .= " and (liasse_releve.idf is null or liasse_releve.in_publication_numerique = 0) ";
 			$st_criteres .= "Uniquement les liasses pas publiées numérique\n";
 		}
-		if( $_SESSION['sans_photographe_rla'] == 'oui' ) {
+		if( $_SESSION['sans_photographe_rla'] == '1' ) {
 			$st_sous_titre .= " - pas de photographe";
 			$st_where .= " and liasse_photo.idf_photographe = 0 ";
 			$st_criteres .= "Uniquement les liasses sans photographe\n";
 		}
-		if( $_SESSION['sans_date_photo_rla'] == 'oui' ) {
+		if( $_SESSION['sans_date_photo_rla'] == '1' ) {
 			$st_sous_titre .= " - pas de date de photo";
 			$st_where .= " and liasse_photo.date_photo = str_to_date('0000/00/00', '%Y/%m/%d') ";
 			$st_criteres .= "Uniquement les liasses sans date de photo\n";
@@ -524,12 +524,12 @@ switch( $_SESSION['menu_rla'] ) {
 			$st_where .= " and liasse.idf_forme_liasse = ".$_SESSION['forme_liasse_rla']." ";
 			$st_criteres .= "Uniquement les liasses ".$a_forme_liasse[$_SESSION['forme_liasse_rla']]."\n";
 		}
-		if( $_SESSION['non_comm_rla'] == 'oui' ) {
+		if( $_SESSION['non_comm_rla'] == '1' ) {
 			$st_sous_titre .= " - non communicables";
 			$st_where .= " and liasse.in_liasse_consultable = 0 ";
 			$st_criteres .= "Uniquement les liasses non communicables\n";
 		}		
-		if( $_SESSION['av_1793_rla'] == 'oui' ) {
+		if( $_SESSION['av_1793_rla'] == '1' ) {
 			$st_sous_titre .= " - avant 1793";
 			$st_where .= " and liasse.cote_liasse in (select distinct cote_liasse from liasse_dates where date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d'))";
 			$st_criteres .= "Uniquement les liasses antérieures à; 1793\n";
@@ -542,7 +542,7 @@ switch( $_SESSION['menu_rla'] ) {
 	case 'repert':
 		$st_where .= " and liasse.idf_forme_liasse = 9 ";
 		$st_titre = "Répertoires de la série ".$_SESSION['serie_liasse'];
-		if( $_SESSION['av_1793_rla'] == 'oui' ) {
+		if( $_SESSION['av_1793_rla'] == '1' ) {
 			$st_sous_titre .= " - avant 1793";
 			$st_where .= " and liasse.cote_liasse in (select distinct cote_liasse from liasse_dates where date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d'))";
 			$st_criteres .= "Uniquement les liasses antérieures à; 1793\n";
@@ -558,17 +558,17 @@ switch( $_SESSION['menu_rla'] ) {
 		break;
 	case 'sans':
 		$st_titre = "Liasses de la série ".$_SESSION['serie_liasse'];
-		if( $_SESSION['sans_notaire_rla'] == 'oui' ) {
+		if( $_SESSION['sans_notaire_rla'] == '1' ) {
 			$st_sous_titre .= " - sans notaire";
 			$st_where .= " and liasse.libelle_notaires = '' ";
 			$st_criteres .= "Liasses sans notaire\n";
 		}
-		if( $_SESSION['sans_periode_rla'] == 'oui' ) {
+		if( $_SESSION['sans_periode_rla'] == '1' ) {
 			$st_sous_titre .= " - sans dates";
 			$st_where .= " and liasse.libelle_annees = '' ";
 			$st_criteres .= "Liasses sans dates\n";
 		}
-		if( $_SESSION['sans_lieu_rla'] == 'oui' ) {
+		if( $_SESSION['sans_lieu_rla'] == '1' ) {
 			$st_sous_titre .= " - sans lieu";
 			$st_where .= " and liasse.cote_liasse in (select distinct cote_liasse from liasse_notaire where idf_commune_etude = 0) ";
 			$st_criteres .= "Liasses sans lieu\n";
@@ -582,7 +582,7 @@ switch( $_SESSION['menu_rla'] ) {
 	case 'non_comm':
 		$st_titre = "Liasses de la série ".$_SESSION['serie_liasse']." non communicables";
 		$st_where .= " and liasse.in_liasse_consultable = 0 ";
-		if( $_SESSION['av_1793_rla'] == 'oui' ) {
+		if( $_SESSION['av_1793_rla'] == '1' ) {
 			$st_sous_titre .= " - avant 1793";
 			$st_where .= " and liasse.cote_liasse in (select distinct cote_liasse from liasse_dates where date_debut_periode < str_to_date('1793/01/01', '%Y/%m/%d')) ";
 			$st_criteres .= "Uniquement les liasses antérieures à; 1793\n";
@@ -599,12 +599,12 @@ switch( $_SESSION['menu_rla'] ) {
 	case 'program':
 		$st_titre = "Programmation sur la série ".$_SESSION['serie_liasse'];
 		$st_where .= " and (liasse_programmation.date_reelle_fin is null or liasse_programmation.date_reelle_fin=str_to_date('0000/00/00', '%Y/%m/%d')) ";
-		if( $_SESSION['releve_rla'] == 'oui' ) {
+		if( $_SESSION['releve_rla'] == '1' ) {
 			$st_sous_titre .= " - relevé";
 			$st_where .= " and liasse_programmation.in_program_releve = 1 ";
 			$st_criteres .= "Uniquement les liasses avec programmation de relevé\n";
 		}
-		if( $_SESSION['photo_rla'] == 'oui' ) {
+		if( $_SESSION['photo_rla'] == '1' ) {
 			$st_sous_titre .= " - photo";
 			$st_where .= " and liasse_programmation.in_program_photo = 1 ";
 			$st_criteres .= "Uniquement les liasses avec programmation de photo\n";
@@ -766,7 +766,7 @@ if ($i_nb_ligne_extr>0)
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,
                                         array('Cote','Notaire(commune)','Période','Forme de liasse','Consultable'));
 	}
-	elseif( $_SESSION['menu_rla'] == 'photo' && $_SESSION['avec_commentaire_rla'] != 'oui') {
+	elseif( $_SESSION['menu_rla'] == 'photo' && $_SESSION['avec_commentaire_rla'] != '1') {
 		foreach ($a_liasses as $a_liasse) {
 			list($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_consult, $st_publi_pap, $st_publi_num,
 			     $st_photographe, $st_date_photo, $st_couverture_photo, $st_codif_photo) = $a_liasse;
@@ -776,7 +776,7 @@ if ($i_nb_ligne_extr>0)
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',count($a_tableau),NB_LIGNES_PAR_PAGE,DELTA_NAVIGATION,
                                         array('Cote','Notaire(commune)','Période','Forme de liasse','Consultable','Papier','Numérique','Photographe','Date photo','Couverture','Codification'));
 	}
-	elseif( $_SESSION['menu_rla'] == 'photo' && $_SESSION['avec_commentaire_rla'] == 'oui') {
+	elseif( $_SESSION['menu_rla'] == 'photo' && $_SESSION['avec_commentaire_rla'] == '1') {
 		foreach ($a_liasses as $a_liasse) {
 			list($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_couverture_photo, $st_info_compl) = $a_liasse;
 			$a_tableau[] = array($st_cote_liasse, $st_libelle_notaires, $st_libelle_annees, $st_forme, $st_couverture_photo, $st_info_compl); 
