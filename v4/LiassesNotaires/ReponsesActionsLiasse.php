@@ -29,11 +29,31 @@ print("<script src='../js/jquery-ui.min.js' type='text/javascript'></script>");
 print("<script src='../js/select2.min.js' type='text/javascript'></script>");
 print("<script src='../js/bootstrap.min.js' type='text/javascript'></script>");
 print('<script type="text/javascript">');
-print('		function forcedPopUp(urlSelf, urlBlank){');
-print('			window.open(urlBlank);');
-print('			window.location.href = urlSelf;');
-print('		}');
 print('</script>');
+?>
+<script type='text/javascript'>
+$(document).ready(function() {
+
+function forcedPopUp(urlSelf, urlBlank){
+	window.open(urlBlank);
+	window.location.href = urlSelf;
+	};
+
+$("#btImprimer").click(function() {	
+	forcedPopUp('RecherchesActionsLiasses.php', 'ImpressionActionsLiasse.php');
+	});
+
+$("#btExporter").click(function() {	
+	forcedPopUp('RecherchesActionsLiasses.php', 'ExportActionsLiasses.php');
+	});
+
+$("#btRetour").click(function() {	
+	window.location.href = "RecherchesActionsLiasses.php";
+	});
+
+});
+</script>
+<?php
 
 //print("<script src='../Commun/menu.js' type='text/javascript'></script>");
 print("<title>Base AGC: Reponse à; votre recherches d'actions sur les liasses notariales</title>");
@@ -812,23 +832,31 @@ if ($i_nb_ligne_extr>0)
 	$pagination->affiche_entete_liens_navlimite();
 	$pagination->affiche_tableau_simple($a_liasses);  
 	$pagination->affiche_entete_liens_navlimite();
+
+	print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
+	print('<button type=button class="btn btn-sm btn-warning" id="btRaz"><span class="glyphicon glyphicon-new-window"></span> Effacer tous les Champs</button>');
+	print('</div>');
+
 	
 	if( $_SESSION['menu_rla'] != 'complete' ) {
-		print("<div align=center><br><a class='RetourReponses' href=\"javascript:forcedPopUp('RecherchesActionsLiasses.php', 'ImpressionActionsLiasse.php');\">Impression</a></div>");
+//		print("<div align=center><br><a class='RetourReponses' href=\"javascript:forcedPopUp('RecherchesActionsLiasses.php', 'ImpressionActionsLiasse.php');\">Impression</a></div>");
+		print('<button type=submit class="btn btn-sm btn-success" id="btImprimer"><span class="glyphicon glyphicon-print"></span> Imprimer</button>');
 	}
-	print("<div align=center><br><a class='RetourReponses' href=\"javascript:forcedPopUp('RecherchesActionsLiasses.php', 'ExportActionsLiasses.php');\">Export</a></div>");
+	print('<button type=submit class="btn btn-sm btn-warning" id="btExporter"><span class="glyphicon glyphicon-download-alt"></span> Exporter</button>');
+	//print("<div align=center><br><a class='RetourReponses' href=\"javascript:forcedPopUp('RecherchesActionsLiasses.php', 'ExportActionsLiasses.php');\">Export</a></div>");
 }
 else {
-	print('<div style="text-align:center">');
+	print('<div class="alert alert-danger" align="center">');
 	print("Aucun résultat<br>");
-	print("Vérifiez que vous n'avez pas mis trop de contraintes<br>");
-	print("<div class=IMPORTANT><br>");
-	print("Rappel de vos critères: <br>");
+	print("Vérifiez que vous n'avez pas mis trop de contraintes<br><br>");
+	print("Rappel de vos critères: <br><br>");
 	print(nl2br($st_criteres));
 	print("</div>");
-	print("</div>");
+	print('<div class="btn-group col-md-6 col-md-offset-4" role="group">');
 }
-print("<div align=center><br><a href=\"RecherchesActionsLiasses.php\" class=\"RetourReponses\">nouvelle liste - SORTIE</a></div>");
+print('<button type=submit class="btn btn-sm btn-primary" id="btRetour"><span class="glyphicon glyphicon-download-alt"></span> Retour</button>');
+print("</div>");
+//print("<div align=center><br><a href=\"RecherchesActionsLiasses.php\" class=\"RetourReponses\">nouvelle liste - SORTIE</a></div>");
 print ("</form>");
 print("</div></body></html>");
 //$connexionBD->ferme(); 
