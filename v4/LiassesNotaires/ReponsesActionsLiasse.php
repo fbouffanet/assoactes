@@ -696,10 +696,10 @@ print('<div class="panel-body">');
 
 print("<label class='col-form-label'>".$st_sous_titre."</label><br><br>");
 if( $_SESSION['menu_rla'] != 'publication' &&  $_SESSION['menu_rla'] != 'complete' ) {
-	print("<div class='form-row col-ms-12'>");
-	print("<div class='form-group col-ms-5' align='left'>".$i_nb_liasse_extr." liasses</div>");
-	print("<div class='form-group col-ms-2' align='center'>".$i_pourc_liste."  % de la liste</div>");
-	print("<div class='form-group col-ms-5' align='right'>".$i_pourc_tot." % de la série</div>");
+	print("<div class='form-row col-md-12'>");
+	print("<div class='form-group col-md-5' align='left'>".$i_nb_liasse_extr." liasses</div>");
+	print("<div class='form-group col-md-2' align='center'>".$i_pourc_liste."  % de la liste</div>");
+	print("<div class='form-group col-md-5' align='right'>".$i_pourc_tot." % de la série</div>");
 	print("</div>");
 }
 print('</div></div>');
