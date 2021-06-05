@@ -176,14 +176,15 @@ $st_chaine_log = join(';',array($st_date_log,$_SESSION['ident'],'statistiques', 
    affichage de l'entête 
 */   
 print("<body>");
-print('<div class="container">');
+print('<div class="container" align=center>');
 require_once('../Commun/menu.php');
 
 print('<div class="panel panel-primary">');
 print('<div class="panel-heading">Statistiques sur les liasses</div>');
 print('<div class="panel-body">');
+print('<label class="col-form-label">Série AD16 - 2E</label>');
 //print("<table border='1' cellpadding='0' cellspacing='0' align='center' width='720'><caption class='TITRE'>AD16 - 2E</caption>");
-print("<table class='table table-bordered table-striped' align='center' width='720'><caption class='TITRE'>AD16 - 2E</caption>");
+print("<table class='table table-bordered table-striped' align='center' width='720'>");
 
 print('<tr bgcolor="red">'.
       '<td align="center" width="40%">Nombre de liasses</td>'.
