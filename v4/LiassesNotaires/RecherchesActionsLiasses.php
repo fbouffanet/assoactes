@@ -36,7 +36,7 @@ jQuery.validator.addMethod(
     "cote_debut_fin",
     function(value, element) {
 		var check = true;
-		if ( number($(element).val()) < number($('#cote_debut').val()) ) {
+		if ( +$(element).val() < +$('#cote_debut').val() ) {
 			check = false;
 		}	
 		return this.optional(element) || check;
