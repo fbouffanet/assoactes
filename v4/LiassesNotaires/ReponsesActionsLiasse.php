@@ -834,7 +834,7 @@ else {
 	print("</div>");
 	print('<div class="btn-group col-md-6 col-md-offset-4" role="group">');
 }
-print('<button type=submit class="btn btn-sm btn-primary" id="btRetour"><span class="glyphicon glyphicon-download-alt"></span> Retour</button>');
+print('<button type=submit class="btn btn-sm btn-primary" id="btRetour"><span class="glyphicon glyphicon-arrow-left"></span> Retour</button>');
 print("</div>");
 print ("</form>");
 print("</div></body></html>");

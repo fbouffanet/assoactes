@@ -570,8 +570,8 @@ print('<div class="panel panel-primary">');
 			break;
 	}
 	print('<div class="btn-group col-md-9 col-md-offset-3" role="group">');
-	print('<button type=submit class="btn btn-sm btn-primary" id="btRechercher"><span class="glyphicon glyphicon-trash"></span>  Rechercher</button>');
-	print('<button type=button class="btn btn-sm btn-warning" id="btRaz"><span class="glyphicon glyphicon-new-window"></span> Effacer tous les Champs</button>');
+	print('<button type=submit class="btn btn-sm btn-primary" id="btRechercher"><span class="glyphicon glyphicon-search"></span>  Rechercher</button>');
+	print('<button type=button class="btn btn-sm btn-warning" id="btRaz"><span class="glyphicon glyphicon-erase"></span> Effacer tous les Champs</button>');
 	print('</div>');
 	
 	print("</form>");
