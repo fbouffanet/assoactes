@@ -48,14 +48,11 @@ jQuery.validator.addMethod(
     "un_critere",
     function(value, element) {
 		var check = true;
-		alert("un critère");
 		if( $('#menu').val() == 'sans' ){
-			alert("sans");
 			var sans_notaire = $('#sans_notaire').checked;
 			var sans_periode = $('#sans_periode').checked;
 			var sans_lieu = $('#sans_lieu').checked;
 			if( ! sans_notaire  && ! sans_periode && ! sans_lieu ){
-				alert("vérifié");
 				check = false;
 			}
 		}
@@ -66,12 +63,12 @@ jQuery.validator.addMethod(
 	
 $("#critere").validate({
   rules: {
-		cote_fin:		{ cote_debut_fin:true },
-		sans_lieu:		{ un_critere:true }
-  },		
+		sans_lieu:		{ un_critere:true },
+ 		cote_fin:		{ cote_debut_fin:true }
+ },		
   messages: {
-		cote_fin:		{ cote_debut_fin: "La première cote doit être inférieure à la dernière" },
-		sans_lieu:		{ un_critere: "Cochez au moins un critère" }
+		sans_lieu:		{ un_critere: "Cochez au moins un critère" },
+		cote_fin:		{ cote_debut_fin: "La première cote doit être inférieure à la dernière" }
   }
 });
 
