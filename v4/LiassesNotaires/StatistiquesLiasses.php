@@ -184,17 +184,17 @@ require_once('../Commun/menu.php');
 
 print('<div class="panel panel-primary">');
 print('<div class="panel-heading">Statistiques sur les liasses</div>');
-print('<div class="panel-body">');
-print('<label class="col-form-label">Série AD16 - 2E</label>');
+print('<div class="panel-body" align="center">');
+print('<div class="alert alert-info">Série AD16 - 2E</div>');
 //print("<table border='1' cellpadding='0' cellspacing='0' align='center' width='720'><caption class='TITRE'>AD16 - 2E</caption>");
-print("<table class='table table-bordered table-striped' align='center' width='500'>");
+print('<table class="table table-bordered">');
 print('<tr class="table-primary">'.
-      '<th align="center" width="20%">Série AD16 - 2E</th>'.
-      '<th align="center" width="30%">Nombre de liasses</th>'.
-      '<th align="center" width="10%">Avant 1793</th>'.
-      '<th align="center" width="10%">Depuis 1793</th>'.
-      '<th align="center" width="10%">Total</th>'.
-      '<th align="center" width="20%"> </th>'.
+      '<th align="center" width="100">Série AD16 - 2E</th>'.
+      '<th align="center" width="150">Nombre de liasses</th>'.
+      '<th align="center" width="50">Avant 1793</th>'.
+      '<th align="center" width="50">Depuis 1793</th>'.
+      '<th align="center" width="50">Total</th>'.
+      '<th align="center" width="50"> </th>'.
 	  '</tr>');
 print('<tr height="10">'.
       '<td> </td>'.
@@ -268,7 +268,7 @@ print('<tr height="10">'.
       '<td align="center">'.$i_nb_2E_non_comm_total.'</td>'.
       '<td> </td>'.
 	  '</tr>');
-print('<tr height="10">'.
+print('<tr>'.
       '<td> </td>'.
       '<td align="right"><i>Relevées</i></td>'.
       '<td align="center">'.$i_nb_2E_non_comm_releve_ante_1793.'</td>'.
@@ -276,7 +276,7 @@ print('<tr height="10">'.
       '<td align="center">'.$i_nb_2E_non_comm_releve_total.'</td>'.
       '<td> </td>'.
 	  '</tr>');
-print('<tr height="10">'.
+print('<tr>'.
       '<td> </td>'.
       '<td align="right"><i>Publiées papier</i></td>'.
       '<td align="center">'.$i_nb_2E_non_comm_publi_ante_1793.'</td>'.
