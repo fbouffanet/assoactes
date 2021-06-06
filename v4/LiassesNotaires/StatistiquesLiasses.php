@@ -335,6 +335,6 @@ foreach ($a_liasses as $a_liasse) {
 		  '<td>&nbsp;</td></tr>');
 	}
 print('</tbody></table ></div></div></div>');
-print('<br><div align="center" style="font-size:11px;color:#4f6b72"><i>Liasses relevées : liasses dont les CM ont été retranscrits</i></div>');
+print('<div align="center" style="font-size:11px;color:#4f6b72"><i>Liasses relevées : liasses dont les CM ont été retranscrits</i></div>');
 print("</body></html>");
 ?>
