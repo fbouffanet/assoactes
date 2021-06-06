@@ -190,7 +190,7 @@ print('<table class="table table-bordered">');
 print('<thead><tr><th width="20%">&nbsp;</th>'.
       '<th width="30%">Nombre de liasses</th>'.
       '<th width="10%" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avant 1793</th>'.
-      '<th width="10%" align="right">&nbsp;&nbsp;&nbsp;Depuis 1793</th>'.
+      '<th width="10%" align="right">&nbsp;&nbsp;Depuis 1793</th>'.
       '<th width="10%" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total</th>'.
 	  '<th width="20%">&nbsp;</th></tr></thead><tbody>');
 print('<tr><td>&nbsp;</td>'.
@@ -276,7 +276,7 @@ print('<table class="table table-bordered">');
 print('<thead><tr><th width="20%">&nbsp;</th>'.
       '<th width="30%">% sur total</th>'.
       '<th width="10%" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avant 1793</th>'.
-      '<th width="10%" align="right">&nbsp;&nbsp;&nbsp;Depuis 1793</th>'.
+      '<th width="10%" align="right">&nbsp;&nbsp;Depuis 1793</th>'.
       '<th width="10%" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total</th>'.
 	  '<th width="20%">&nbsp;</th></tr></thead><tbody>');
 print('<tr><td></td>'.
@@ -321,7 +321,7 @@ print('<table class="table table-bordered">');
 print('<thead><tr><th width="40%">&nbsp;</th>'.
       '<th width="10%">Série</th>'.
       '<th width="10%" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avant 1793</th>'.
-      '<th width="10%" align="right">&nbsp;&nbsp;&nbsp;Depuis 1793</th>'.
+      '<th width="10%" align="right">&nbsp;&nbsp;Depuis 1793</th>'.
       '<th width="10%" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total</th>'.
 	  '<th width="20%">&nbsp;</th></tr></thead><tbody>');
 
