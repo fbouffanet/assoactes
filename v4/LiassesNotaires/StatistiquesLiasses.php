@@ -189,7 +189,7 @@ print('<div class="alert alert-info">Série AD16 - 2E</div>');
 //print("<table border='1' cellpadding='0' cellspacing='0' align='center' width='720'><caption class='TITRE'>AD16 - 2E</caption>");
 //print('<div class="row"><div class="col-2"> </div><div class="col-8">');
 print('<table class="table table-bordered">');
-print('<thead><tr><th width="23%>&nbsp;</th>'.
+print('<thead><tr><th width="23%">&nbsp;</th>'.
       '<th width="30%">Nombre de liasses</th>'.
       '<th width="8%">Avant 1793</th>'.
       '<th width="8%">Depuis 1793</th>'.
