@@ -187,9 +187,9 @@ print('<div class="panel-heading">Statistiques sur les liasses</div>');
 print('<div class="panel-body" align="center">');
 print('<div class="alert alert-info">Série AD16 - 2E</div>');
 //print("<table border='1' cellpadding='0' cellspacing='0' align='center' width='720'><caption class='TITRE'>AD16 - 2E</caption>");
-print('<div class="row"><div class="col-2"> </div><div class="col-8">');
+//print('<div class="row"><div class="col-2"> </div><div class="col-8">');
 print('<table class="table table-bordered">');
-print('<thead><tr><th width="23%></th>'.
+print('<thead><tr><th width="23%> </th>'.
       '<th width="30%">Nombre de liasses</th>'.
       '<th width="8%">Avant 1793</th>'.
       '<th width="8%">Depuis 1793</th>'.
@@ -273,12 +273,12 @@ print('<tr><td></td>'.
       '<td align="center">'.$i_nb_2E_peu_post_1793.'</td>'.
       '<td align="center">'.$i_nb_2E_peu_total.'</td>'.
 	  '<td></td></tr>');
-print('<tr><td></td>'.
+print('<tr><th></th>'.
       '<th align="center">% sur total</th>'.
       '<th align="center">Avant 1793</th>'.
       '<th align="center">Depuis 1793</th>'.
       '<th align="center">Total</th>'.
-	  '<td></td></tr>');
+	  '<th></th></tr>');
 print('<tr><td></td>'.
       '<td align="right"><i>Relevées</i></td>'.
       '<td align="center">'.round($i_nb_2E_releve_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
@@ -332,7 +332,7 @@ foreach ($a_liasses as $a_liasse) {
 		  '<td align="center" width="20%">'.$i_nb_autre_total.'</td>'.
 		  '</tr>');
 	}
-print('</table ></div></div></div></div></div>');
+print('</table ></div></div></div>');
 print('<br><div align="center" style="font-size:11px;color:#4f6b72"><i>Liasses relevées : liasses dont les CM ont été retranscrits</i></div>');
-print("</div></body></html>");
+print("</body></html>");
 ?>
