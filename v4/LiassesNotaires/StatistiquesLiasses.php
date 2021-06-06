@@ -189,24 +189,24 @@ print('<div class="alert alert-info">Série AD16 - 2E</div>');
 //print("<table border='1' cellpadding='0' cellspacing='0' align='center' width='720'><caption class='TITRE'>AD16 - 2E</caption>");
 //print('<div class="row"><div class="col-2"> </div><div class="col-8">');
 print('<table class="table table-bordered">');
-print('<thead><tr><th width="23%> </th>'.
+print('<thead><tr><th width="23%>&nbsp;</th>'.
       '<th width="30%">Nombre de liasses</th>'.
       '<th width="8%">Avant 1793</th>'.
       '<th width="8%">Depuis 1793</th>'.
       '<th width="8%">Total</th>'.
-	  '<th width="23%></th></tr></thead><tbody>');
-print('<tr><td></td>'.
+	  '<th width="23%>&nbsp;</th></tr></thead><tbody>');
+print('<tr><td>&nbsp;</td>'.
       '<td align="center">Ensemble des liasses</td>'.
       '<td align="center">'.$i_nb_2E_ante_1793.'</td>'.
       '<td align="center">'.$i_nb_2E_post_1793.'</td>'.
       '<td align="center">'.$i_nb_2E_total.'</td>'.
-	  '<td></td></tr>');
-print('<tr><td></td>'.
+	  '<td>&nbsp;</td></tr>');
+print('<tr><td>&nbsp;</td>'.
       '<td align="right"><i>Relevées</i></td>'.
       '<td align="center">'.$i_nb_2E_releve_ante_1793.'</td>'.
       '<td align="center">'.$i_nb_2E_releve_post_1793.'</td>'.
       '<td align="center">'.$i_nb_2E_releve_total.'</td>'.
-	  '<td></td></tr>');
+	  '<td>&nbsp;</td></tr>');
 print('<tr><td></td>'.
       '<td align="right"><i>Publiées papier</i></td>'.
       '<td align="center">'.$i_nb_2E_publi_ante_1793.'</td>'.
