@@ -197,15 +197,15 @@ print('<thead><tr><th width="20%">&nbsp;</th>'.
 	  '<th width="20%">&nbsp;</th></tr></thead><tbody>');
 print('<tr><td>&nbsp;</td>'.
       '<td align="center">Ensemble des liasses</td>'.
-      '<td align="center">'.$i_nb_2E_ante_1793.'</td>'.
-      '<td align="center">'.$i_nb_2E_post_1793.'</td>'.
-      '<td align="center">'.$i_nb_2E_total.'</td>'.
+      '<td align="right">'.$i_nb_2E_ante_1793.'</td>'.
+      '<td align="right">'.$i_nb_2E_post_1793.'</td>'.
+      '<td align="right">'.$i_nb_2E_total.'</td>'.
 	  '<td>&nbsp;</td></tr>');
 print('<tr><td>&nbsp;</td>'.
       '<td align="right"><i>Relevées</i></td>'.
-      '<td align="center">'.$i_nb_2E_releve_ante_1793.'</td>'.
-      '<td align="center">'.$i_nb_2E_releve_post_1793.'</td>'.
-      '<td align="center">'.$i_nb_2E_releve_total.'</td>'.
+      '<td align="right">'.$i_nb_2E_releve_ante_1793.'</td>'.
+      '<td align="right">'.$i_nb_2E_releve_post_1793.'</td>'.
+      '<td align="right">'.$i_nb_2E_releve_total.'</td>'.
 	  '<td>&nbsp;</td></tr>');
 print('<tr><td></td>'.
       '<td align="right"><i>Publiées papier</i></td>'.
@@ -273,12 +273,14 @@ print('<tr><td></td>'.
       '<td align="center">'.$i_nb_2E_peu_post_1793.'</td>'.
       '<td align="center">'.$i_nb_2E_peu_total.'</td>'.
 	  '<td></td></tr>');
-print('<tr><th></th>'.
+print('</tbody></table>');
+print('<table class="table table-bordered">');
+print('<thead><tr><th width="20%">&nbsp;</th>'.
       '<th align="center">% sur total</th>'.
       '<th align="center">Avant 1793</th>'.
       '<th align="center">Depuis 1793</th>'.
       '<th align="center">Total</th>'.
-	  '<th></th></tr>');
+	  '<th></th></tr></thead><tbody>');
 print('<tr><td></td>'.
       '<td align="right"><i>Relevées</i></td>'.
       '<td align="center">'.round($i_nb_2E_releve_ante_1793/$i_nb_2E_ante_1793*100,2).' %</td>'.
