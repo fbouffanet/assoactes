@@ -194,7 +194,7 @@ print('<thead><tr><th width="23%></th>'.
       '<th width="8%">Avant 1793</th>'.
       '<th width="8%">Depuis 1793</th>'.
       '<th width="8%">Total</th>'.
-	  '<th width="23%></th></tr>');
+	  '<th width="23%></th></tr></thead><tbody>');
 print('<tr><td></td>'.
       '<td align="center">Ensemble des liasses</td>'.
       '<td align="center">'.$i_nb_2E_ante_1793.'</td>'.
@@ -315,7 +315,7 @@ print('<tr><td></td>'.
       '<td align="center">'.round($i_nb_2E_peu_post_1793/$i_nb_2E_post_1793*100,2).' %</td>'.
       '<td align="center">'.round($i_nb_2E_peu_total/$i_nb_2E_total*100,2).' %</td>'.
 	  '</tr>');
-print('</table ><br>');
+print('</tbody></table ><br>');
 print("<table border='1' cellpadding='0' cellspacing='0' align='center' width='720'><caption class='TITRE'>Autres s&eacute;ries</caption>");
 print('<tr class="SOUSTITRE">'.
       '<td align="center" width="40%">S&eacute;rie</td>'.
