@@ -194,7 +194,7 @@ print('<thead><tr><th width="23%">&nbsp;</th>'.
       '<th width="8%">Avant 1793</th>'.
       '<th width="8%">Depuis 1793</th>'.
       '<th width="8%">Total</th>'.
-	  '<th width="23%>&nbsp;</th></tr></thead><tbody>');
+	  '<th width="23%">&nbsp;</th></tr></thead><tbody>');
 print('<tr><td>&nbsp;</td>'.
       '<td align="center">Ensemble des liasses</td>'.
       '<td align="center">'.$i_nb_2E_ante_1793.'</td>'.
