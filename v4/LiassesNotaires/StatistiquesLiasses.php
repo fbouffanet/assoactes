@@ -275,9 +275,9 @@ print('</tbody></table>');
 print('<table class="table table-bordered">');
 print('<thead><tr><th width="20%">&nbsp;</th>'.
       '<th width="30%">% sur total</th>'.
-      '<th width="10%">Avant 1793</th>'.
-      '<th width="10%">Depuis 1793</th>'.
-      '<th width="10%">Total</th>'.
+      '<th width="10%">&nbsp;&nbsp;&nbsp;Avant 1793</th>'.
+      '<th width="10%">&nbsp;Depuis 1793</th>'.
+      '<th width="10%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total</th>'.
 	  '<th width="20%">&nbsp;</th></tr></thead><tbody>');
 print('<tr><td></td>'.
       '<td align="right"><i>Relevées</i></td>'.
@@ -320,9 +320,9 @@ print('<div class="alert alert-info">Autres séries</div>');
 print('<table class="table table-bordered">');
 print('<thead><tr><th width="40%">&nbsp;</th>'.
       '<th width="10%">Série</th>'.
-      '<th width="10%">Avant 1793</th>'.
-      '<th width="10%">Depuis 1793</th>'.
-      '<th width="10%">Total</th>'.
+      '<th width="10%">&nbsp;&nbsp;&nbsp;Avant 1793</th>'.
+      '<th width="10%">&nbsp;Depuis 1793</th>'.
+      '<th width="10%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total</th>'.
 	  '<th width="20%">&nbsp;</th></tr></thead><tbody>');
 
 foreach ($a_liasses as $a_liasse) {
