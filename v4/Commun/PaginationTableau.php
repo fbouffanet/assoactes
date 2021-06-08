@@ -269,20 +269,20 @@ class PaginationTableau {
    }   
   /**
     * Affiche le contenu du tableau correspondant à $i_nb_lignes_par_page lignes de la page courante
-    * @param integer $pi_type_identifiant type d'identifiant utilisé (1: entier (défaut)| 2: chaine)  	
+    * @param integer $pi_type_identifiant type d'identifiant utilisé (1: entier (défaut)| 2: chaine)  petit bouton	
     */       
-   public function affiche_tableau_edition_sil($pi_type_identifiant=1,$pb_conversion_encodage=true) {
+   public function affiche_tableau_edition_sil($pi_type_identifiant=1) {
       $st_requete = $this->st_requete;
       $i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
       $st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
       print("<table class=\"table table-bordered table-striped\">");
       print("<thead><tr>");
       foreach ($this->a_entete as $st_cell_entete) {
-         print("<th>".cp1252_vers_utf8($st_cell_entete)."</th>");
+         print("<th>".$st_cell_entete."</th>");
       }
       print("</tr></thead>\n");
       print('<tbody>');
-	  $a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
+	  $a_lignes = $this->connexionBD->sql_select_multipleUtf8($st_requete);
       $i=0;
       foreach ($a_lignes as $a_ligne) {
          $idf_element = array_shift($a_ligne);
@@ -291,10 +291,7 @@ class PaginationTableau {
          foreach ($a_ligne as $st_nom_element)
          {
             if ($st_nom_element!= '')
-			    if ($pb_conversion_encodage)
-					print("<td>".cp1252_vers_utf8($st_nom_element)."</td>");
-				else
-					print("<td>$st_nom_element)</td>");
+				print("<td>$st_nom_element</td>");
 			else
                print("<td>&nbsp;</td>");   
          }
@@ -302,10 +299,13 @@ class PaginationTableau {
          switch ($pi_type_identifiant)
          {
 			 case 1: 
-				print("<td><input type=button class=\"btn btn-primary btn-sm btn-block\" id=\"bouton$idf_element\" value=Modifier onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
+				print(sprintf("<td><a class='btn btn-primary btn-sm btn-block' type='button' id=\"bouton%d\" href=\"%s?mod=%d\" role='button'><span class='glyphicon glyphicon-edit'></span> Modifier</a></td>",
+							  $idf_element,$_SERVER['PHP_SELF'],$idf_element));
 				break;
 			 case 2: 
-				print("<td><input type=button class=\"btn btn-primary btn-sm btn-block\" id=\"bouton$idf_element\" value=Modifier onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
+				print(sprintf("<td><a class='btn btn-primary btn-sm btn-block' type='button' id=\"bouton%s\" href=\"%s?mod=%s\" role='button'><span class='glyphicon glyphicon-edit'></span> Modifier</a></td>",
+							  $idf_element,$_SERVER['PHP_SELF'],$idf_element));
+				break;
 				break;
 			 default:
 				die("<div class=\"alert alert-danger\">Type d'identifiant $ pi_type_identifiant inconnu</div>");
@@ -412,6 +412,45 @@ class PaginationTableau {
 			}
 			
 			print("<td><input type=button class=\"btn btn-primary btn-block\" id=\"bouton$idf_element\" value=Sélectionner onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
+			print("</tr>\n");
+			$i++;
+		}
+        print('<t/body>');		
+		print("</table>");
+		// paramètre pour gérer le numéro de page dans le cas d'un numéro de page envoyé par méthode POST
+		print("<input type=hidden name=$this->st_param_numpage value=\"\">"); 
+	}
+  
+	/**
+	 * Affiche le contenu du tableau correspondant à $i_nb_lignes_par_page lignes de la page courante bouton modifier remplacé par un bouton Sélectionner, par des cases à cocher
+     * petit bouton
+	 */       
+	public function affiche_tableau_edition_select_sil() {
+		$st_requete = $this->st_requete;
+		$i_limite_inf = ($this->i_page_cour-1)*$this->i_nb_lignes_par_page;
+		$st_requete .= " limit $i_limite_inf,$this->i_nb_lignes_par_page" ;
+		print("<table class=\"table table-bordered table-striped\">");
+		print("<thead><tr>");
+		foreach ($this->a_entete as $st_cell_entete) {
+			print("<th>".cp1252_vers_utf8($st_cell_entete)."</th>");
+		}
+		print("</tr></thead>\n");
+		print('<tbody>');
+		$a_lignes = $this->connexionBD->sql_select_multiple($st_requete);
+		$i=0;
+		foreach ($a_lignes as $a_ligne) {
+			$idf_element = array_shift($a_ligne);
+			print("<tr>");
+			$st_nom_col1 = preg_replace('/\s/','_',$a_ligne[0]);
+			foreach ($a_ligne as $st_nom_element)
+			{
+				if ($st_nom_element!= '')
+				print("<td>".cp1252_vers_utf8($st_nom_element)."</td>");
+				else
+				print("<td>&nbsp;</td>");   
+			}
+			
+			print("<td><input type=button class=\"btn btn-primary btn-sm btn-block\" id=\"bouton$idf_element\" value=Sélectionner onClick=\"document.location.href='$this->st_nom_script?mod=$idf_element'\"></td>");
 			print("</tr>\n");
 			$i++;
 		}

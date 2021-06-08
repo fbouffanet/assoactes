@@ -450,14 +450,16 @@ class ConnexionBD {
 		$this->pdo_stmt = $pdo_stmt;
 		while ($a_champs=$pdo_stmt->fetch(PDO::FETCH_NUM))
 		{
+			$a_ligne = array();
 			// ---- modif UTF8
 			foreach ($a_champs as $st_temp)
 			{
 				$st_temp = mb_convert_encoding($st_temp, 'UTF8', 'cp1252');
-				array_push($a_resultat, $st_temp);
+				array_push($a_ligne, $st_temp);
 			}
 			// ---- fin modif UTF8
-			//$a_resultat[] = $a_champs;
+			array_push($a_resultat, $a_ligne);
+			unset($a_ligne);
 		}
 		$this->a_params            = array();
 		return $a_resultat;
