@@ -239,7 +239,7 @@ class ModificationPersonne extends Personne
                  $st_chaine_deces = ($pi_idf_type_acte == IDF_DECES) ? "<button type=\"button\" class=\"maj_deces btn btn-primary\" data-cible=\"#cmt$i_num_parametre\">&dagger;</button>" : '';
                  $st_chaine .= sprintf("<th>Commentaires</th><td><input type=text id=\"cmt$i_num_parametre\" name=\"cmt$i_num_parametre\" value=\"%s\" maxlength=70 class=\"form-control form-control-xs\">%s</td>", self::cp1252_vers_utf8($this -> st_commentaire), $st_chaine_deces);
                  $st_chaine .= "</tr><tr>";
-                 $st_chaine .= sprintf("<th><a class=\"recopie_commune btn btn-info btn-xs\" data-source=\"$pst_commune\" data-cible=\"#orig$i_num_parametre\" ><span class=\"glyphicon glyphicon-copy\"></span> Lieu<br>d'origine</a></th><td><input type=text name=\"orig$i_num_parametre\"  id=\"orig$i_num_parametre\"  value=\"%s\" maxlength=50 class=\"form-control\">", self::cp1252_vers_utf8($this -> st_origine));
+                 $st_chaine .= sprintf("<th><a class=\"recopie_commune btn btn-info btn-xs\" data-source=\"".self::cp1252_vers_utf8($pst_commune)."\" data-cible=\"#orig$i_num_parametre\" ><span class=\"glyphicon glyphicon-copy\"></span> Lieu<br>d'origine</a></th><td><input type=text name=\"orig$i_num_parametre\"  id=\"orig$i_num_parametre\"  value=\"%s\" maxlength=50 class=\"form-control\">", self::cp1252_vers_utf8($this -> st_origine));
                 
                  $st_chaine .= "</td>";
                  $st_chaine .= $pi_idf_type_acte == IDF_MARIAGE ? "<th>Sexe</th><td><select name=sexe$i_num_parametre disabled>" : "<th>Sexe</th><td><select name=sexe$i_num_parametre class=\"form-control form-control-xs\">";
