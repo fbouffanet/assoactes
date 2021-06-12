@@ -452,7 +452,7 @@ $pa_publication = $connexionBD->liste_valeur_par_clef("SELECT idf, concat(nom, '
 													  "FROM publication_papier order by nom");
 $pa_publication[0] = '';
 //print($gst_mode);
-require_once('GestionActionsLiassesFc.php');
+require_once('ConsultationLiassesFc.php');
 switch ($gst_mode) {
 	case 'LISTE' : 
 		if(isset($_SESSION['cote_liasse_gal'])) {
