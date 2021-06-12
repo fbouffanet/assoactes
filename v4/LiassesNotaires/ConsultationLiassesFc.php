@@ -179,10 +179,10 @@ function menu_liste_publication($pconnexionBD){
 	{        
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_liasses,
 		                                    10,DELTA_NAVIGATION,
-											array('Titre publication','Date publication','Infos compl&eacute;mentaires','Modifier','Supprimer'));
+											array('Titre publication','Date publication','Infos compl&eacute;mentaires'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_tableau_edition_sil(2);
+		$pagination->affiche_tableau_sil(2);
 	}
 	else {
 		print('<div class="alert alert-danger">Pas de publication papier</div>');
@@ -217,10 +217,10 @@ function menu_liste_photo($pconnexionBD){
 	{        
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_liasses,
 		                                    10,DELTA_NAVIGATION,
-											array('Photographe','Date photos','Couverture photos','Codif photos','Infos compl&eacute;mentaires','Modifier','Supprimer'));
+											array('Photographe','Date photos','Couverture photos','Codif photos','Infos compl&eacute;mentaires'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_tableau_edition_sil(2);
+		$pagination->affiche_tableau_sil(2);
 	}
 	else {
 		print("<div class=\"alert alert-danger\">Pas de photo</div>");
@@ -258,10 +258,10 @@ function menu_liste_program($pconnexionBD){
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_liasses,
 		                                    10,DELTA_NAVIGATION,
 											array('Intervenant','Date cr&eacute;ation','Date &eacute;ch&eacute;ance','Etat programmation','Programmation relev&eacute;','Programmation photo',
-											      'Infos compl&eacute;mentaires','Modifier','Supprimer'));
+											      'Infos compl&eacute;mentaires'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_tableau_edition_sil(2);
+		$pagination->affiche_tableau_sil(2);
 	}
 	else {
 		print('<div class="alert alert-danger">Pas de programmation</div>');
