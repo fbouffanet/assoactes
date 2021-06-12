@@ -138,16 +138,15 @@ function menu_liste_releve($pconnexionBD){
 				  "order by liasse_releve.date_fin_releve";
 	$a_liste_liasses = $pconnexionBD->sql_select_multipleUtf8($st_requete);
 	print('<div align=center><form id="listeReleve" action="'.$_SERVER['PHP_SELF'].'" method="post">');
-	print('<input type=hidden name="modeReleve" id="modeReleve" value="SUPPRIMER_RELEVE">');
 	$i_nb_liasses = count($a_liste_liasses);
 	if ($i_nb_liasses!=0)
 	{        
 		$pagination = new PaginationTableau($_SERVER['PHP_SELF'],'num_page',$i_nb_liasses,
 		                                    10,DELTA_NAVIGATION,
-											array('Releveur','Date fin relevé','Publication numérique','Infos complémentaires','Modifier','Supprimer'));
+											array('Releveur','Date fin relevé','Publication numérique','Infos complémentaires'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_tableau_edition_sil(2);
+		$pagination->affiche_tableau_simple(2);
 	}
 	else {
 		print("<div class=\"alert alert-danger\">Pas de relevé</div>");
@@ -277,7 +276,7 @@ function menu_liste_program($pconnexionBD){
 
 function menu_gerer($pconnexionBD){
 	print('<div class="panel panel-primary">');
-	print('<div class="panel-heading" align="center">Actions sur la liasse '.$_SESSION['cote_liasse_gal'].
+	print('<div class="panel-heading" align="center">Liasse '.$_SESSION['cote_liasse_gal'].
 	                           '   -   Notaire(s) '.$_SESSION['notaires_gal']."   -   Période ".$_SESSION['periodes_gal'].'</div>');
 	print('<div class="panel-body">');
 	menu_liste_releve($pconnexionBD);
