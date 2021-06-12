@@ -146,7 +146,7 @@ function menu_liste_releve($pconnexionBD){
 											array('Releveur','Date fin relevé','Publication numérique','Infos complémentaires'));
 		$pagination->init_param_bd($pconnexionBD,$st_requete);
 		$pagination->init_page_cour($gi_num_page_cour);
-		$pagination->affiche_tableau_edition(2);
+		$pagination->affiche_tableau_sil(2);
 	}
 	else {
 		print("<div class=\"alert alert-danger\">Pas de relevé</div>");
