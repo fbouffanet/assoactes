@@ -382,8 +382,57 @@ print('<body><div class="container">');
 $connexionBD = ConnexionBD::singleton($gst_serveur_bd,$gst_utilisateur_bd,$gst_mdp_utilisateur_bd,$gst_nom_bd);
 require_once("../Commun/menu.php");
 
-$gst_m1 = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;
+if (isset($_GET['initpub'])) {
+	$gst_m1 = 'MENU_GERER_PUBLI';
+}
+elseif (isset($_POST['modeReleve'])) {
+	$gst_m1 = $_POST['modeReleve']; 
+}
+elseif (isset($_POST['modePubli'])) {
+	$gst_m1 = $_POST['modePubli'];
+}
+elseif (isset($_POST['modePhoto'])) {
+	$gst_m1 = $_POST['modePhoto'];
+}
+elseif (isset($_POST['modeProgram'])) {
+	$gst_m1 = $_POST['modeProgram'];
+}
+elseif (isset($_POST['modeMenu'])) {
+	$gst_m1 = $_POST['modeMenu'];
+}
+else {
+	$gst_m1 = empty($_POST['mode']) ? 'LISTE': $_POST['mode'] ;
+}
 $gst_mode = isset($_REQUEST['smode']) ? $_REQUEST['smode'] : $gst_m1 ;
+
+if (isset($_GET['mod'])) {
+	if(substr($_GET['mod'],0,3) == 'REL') {
+		$gst_mode='MENU_MODIFIER_RELEVE';
+		$gi_idf_releve = substr($_GET['mod'], 3,10);
+		}
+	elseif(substr($_GET['mod'],0,3) == 'PUB') {
+		$gst_mode='MENU_MODIFIER_LIEN_PUBLI';
+		$gi_idf_lien_publication = substr($_GET['mod'], 3,10);
+	}
+	elseif(substr($_GET['mod'],0,3) == 'PPA') {
+		$gst_mode='MENU_MODIFIER_PUBLI';
+		$gi_idf_publication = substr($_GET['mod'], 3,10);
+	}
+	elseif(substr($_GET['mod'],0,3) == 'PHO') {
+		$gst_mode='MENU_MODIFIER_PHOTO';
+		$gi_idf_photo = substr($_GET['mod'], 3,10);
+	}
+	elseif(substr($_GET['mod'],0,3) == 'PRO') {
+		$gst_mode='MENU_MODIFIER_PROGRAM';
+		$gi_idf_program = substr($_GET['mod'], 3,10);
+	}
+	else {
+		$gst_mode='MENU_GERER';
+		$_SESSION['cote_liasse_gal'] = $_GET['mod'];
+		list($_SESSION['periodes_gal'], $_SESSION['notaires_gal'])
+		=$connexionBD->sql_select_listeUtf8("select libelle_annees, libelle_notaires from liasse where cote_liasse='".$_SESSION['cote_liasse_gal']."'");
+	}
+}
 
 $gi_num_page_cour = empty($_GET['num_page']) ? 1 : $_GET['num_page'];
 
