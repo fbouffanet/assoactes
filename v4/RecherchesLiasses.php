@@ -189,7 +189,7 @@ $("#raz").click(function() {
     $('#sans_notaire').prop('checked', false);
     $('#sans_periode').prop('checked', false);
     $('#repertoire').prop('checked', false);
-    $('#liasse_releve ').prop('checked', false);	
+    $('#liasse_releve').prop('checked', false);	
 	});
 });
 </script>
