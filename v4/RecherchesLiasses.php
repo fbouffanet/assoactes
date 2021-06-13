@@ -177,7 +177,7 @@ $("#recherche_liasses").validate({
 $("#raz").click(function() {
     $("#idf_serie_liasse").prop('selectedIndex',0);
 	$("#idf_dept").prop('selectedIndex',0);
-	$("#idf_commune_recherche").prop('selectedIndex',0);
+	$('#idf_commune_recherche').prop('selectedIndex',0);
 	$("#rayon_recherches_communes").val('');
 	$("#annee_min").val('');
 	$("#annee_max").val('');
@@ -372,7 +372,7 @@ print('</div>');
 
 print('<div class="form-check col-md-4">');
 print('<label for="liasse_releve" class="form-check-label">Liasses relevées (CM retranscrits)&nbsp</label>');
-if ($gst_repertoire=='non')
+if ($gst_liasse_releve=='non')
 	print('   <input type=checkbox name=liasse_releve id=liasse_releve value=oui unchecked class="form-control form-check-input">');
 else
 	print('   <input type=checkbox name=liasse_releve id=liasse_releve value=oui checked class="form-control form-check-input">');
