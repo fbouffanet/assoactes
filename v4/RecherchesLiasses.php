@@ -175,16 +175,16 @@ $("#recherche_liasses").validate({
 });
 
 $("#raz").click(function() {
-    $("#idf_serie_liasse").prop('selectedIndex',0);
-	$("#idf_dept").prop('selectedIndex',0);
+    $('#idf_serie_liasse').prop('selectedIndex',0);
+	$('#idf_dept').prop('selectedIndex',0);
 	$('#idf_commune_recherche').prop('selectedIndex',0);
-	$("#rayon_recherches_communes").val('');
-	$("#annee_min").val('');
-	$("#annee_max").val('');
-	$("#nom_notaire").val('');
-	$("#prenom_notaire").val('');
-	$("#cote_debut").val('');
-	$("#cote_fin").val('');
+	$('#rayon_recherches_communes').val('');
+	$('#annee_min').val('');
+	$('#annee_max').val('');
+	$('#nom_notaire').val('');
+	$('#prenom_notaire').val('');
+	$('#cote_debut').val('');
+	$('#cote_fin').val('');
     $('#paroisses_rattachees_recherches_communes').prop('checked', true);
     $('#sans_notaire').prop('checked', false);
     $('#sans_periode').prop('checked', false);
@@ -272,15 +272,14 @@ print('<form id="recherche_liasses" method="post" class="form-inline" action="Re
 
 // --------série & département
 print('<div class="form-row col-md-12">');
-//print(   '<div class="form-group col-md-4 col-md-offset-4">');
-print(   '<div class="form-group col-md-6">');
-print(      '<label for="idf_serie_liasse" class="form-col-label">Série liasses&nbsp</label><select name="idf_serie_liasse" id="idf_serie_liasse" class="js-select-avec-recherche form-control">');
-print(      chaine_select_options($gst_idf_serie_liasse,$a_serie_liasse));
-print(      '</select>');
-print(   '</div>');
-print(   '<div class="form-group col-md-4"><label for="idf_dept">Département&nbsp</label>'.
-            '<select name="idf_dept" id="idf_dept" class="js-select-avec-recherche form-control">'.chaine_select_options($gi_idf_dept,$a_dept).'</select></div>');
-print(   '<br></div>');
+print('<div class="form-group col-md-6">'.
+      '<label for="idf_serie_liasse" class="form-col-label">Série liasses&nbsp</label>'.
+	  '<select name="idf_serie_liasse" id="idf_serie_liasse" class="js-select-avec-recherche form-control">'.
+      chaine_select_options($gst_idf_serie_liasse,$a_serie_liasse).
+      '</select></div>');
+print('<div class="form-group col-md-4"><label for="idf_dept">Département&nbsp</label>'.
+      '<select name="idf_dept" id="idf_dept" class="js-select-avec-recherche form-control">'.chaine_select_options($gi_idf_dept,$a_dept).'</select></div>');
+print('<br></div>');
 print('<div class="form-row col-md-12">&nbsp</div>');
 
 // ---------Commune +++
