@@ -32,9 +32,9 @@ print('<link rel="shortcut icon" href="../images/favicon.ico">');
 <script type='text/javascript'>
 $(document).ready(function() {
 
-$.fn.select2.defaults.set( "theme", "bootstrap" );
+//$.fn.select2.defaults.set( "theme", "bootstrap" );
 	
-$(".js-select-avec-recherche").select2();
+//$(".js-select-avec-recherche").select2();
 
 jQuery.validator.addMethod(
     "cote_debut_fin",
