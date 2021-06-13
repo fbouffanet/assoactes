@@ -177,7 +177,7 @@ $("#recherche_liasses").validate({
 $("#raz").click(function() {
     $("#idf_serie_liasse").val(0);
 	$("#idf_dept").val(0);
-	$("#idf_commune_recherche").val(0);
+	$("#idf_commune_recherche").prop('selectedIndex',0);
 	$("#rayon_recherches_communes").prop('selectedIndex',0);
 	$("#annee_min").val('');
 	$("#annee_max").val('');
