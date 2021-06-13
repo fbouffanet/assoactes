@@ -285,7 +285,7 @@ print('<div class="panel panel-primary">');
 	if( $_SESSION['menu_rla'] != 'publication' ){
 	print("<div class='form-row col-md-12'>".
 		  "<div class='form-group col-md-4' align='right'><label class='col-form-label'>Série de liasses&nbsp;</label></div>".
-		  "<div class='form-group col-md-4' align='left'><select name=serie_liasse id='serie_liasse' class='form-control' ".
+		  "<div class='form-group col-md-4' align='left'><select name=serie_liasse id='serie_liasse' ".
 		  "     onChange='window.location=\"".$_SERVER['PHP_SELF']."?serie_liasse=\"+this.value;'>".
 			chaine_select_options($st_serie_liasse,$a_serie_liasse)."</select></div></div>");
 	}
