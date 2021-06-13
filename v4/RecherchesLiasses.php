@@ -264,6 +264,7 @@ $a_dept[0] = 'Tous';
 $a_communes_acte = $connexionBD->liste_valeur_par_clef("SELECT idf,nom FROM commune_acte order by nom");
 $a_communes_acte[0] = 'Toutes';
 $a_communes_acte[-9] = 'Commune inconnue';
+$a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
 
 $a_serie_liasse = $connexionBD->liste_valeur_par_clef("SELECT serie_liasse, nom FROM serie_liasse order by ordre");
 						 
@@ -284,18 +285,19 @@ print('<div class="form-row col-md-12">&nbsp</div>');
 
 // ---------Commune +++
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-6"><label for="idf_commune_recherche">Commune/Paroisse&nbsp</label><select name="idf_commune_recherche" id="idf_commune_recherche" class="js-select-avec-recherche form-control">');
-$a_toutes_communes = array(''=>'Toutes')+$a_communes_acte;
-print(chaine_select_options($gi_idf_commune,$a_toutes_communes));
-print('</select></div>');
-
-print("<div class=\"form-group col-md-4\"><div class=\"input-group\"><span class=\"input-group-addon\">Rayon de recherche:</span><label for=\"rayon_recherches_communes\" class=\"sr-only\">Rayon</label><div class=\"lib_erreur\"><input type=text name=rayon id='rayon_recherches_communes' size=2 maxlength=2 value=\"$gi_rayon\" class=\"form-control\"></div><span class=\"input-group-addon\">Km</span></div></div>");
-
-print('<div class="form-check "><label for="paroisses_rattachees_recherches_communes" class="form-check-label">Paroisses rattachées&nbsp');
+print('<div class="form-group col-md-6"><label for="idf_commune_recherche">Commune/Paroisse&nbsp</label>'.
+            '<select name="idf_commune_recherche" id="idf_commune_recherche" class="js-select-avec-recherche form-control">'.
+			chaine_select_options($gi_idf_commune,$a_toutes_communes).'</select></div>');
+print('<div class="form-group col-md-4">'.
+      '<div class="input-group"><span class="input-group-addon">Rayon de recherche:</span>'.
+      '<label for="rayon_recherches_communes" class="sr-only">Rayon</label>'.
+      '<div class="lib_erreur"><input type=text name=rayon id="rayon_recherches_communes" size=2 maxlength=2 value="'.$gi_rayon.'" class="form-control"></div>'.
+	  '<span class="input-group-addon">Km</span></div></div>');
+print('<div class="form-check"><label for="paroisses_rattachees_recherches_communes" class="form-check-label">Paroisses rattachées&nbsp');
 if ($gst_paroisses_rattachees=='')
-   print('<input type=checkbox name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui class="form-check-input">');
+   print('<input type=checkbox class="form-check-input" name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui>');
 else
-   print('<input type=checkbox name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui checked class="form-check-input" >');
+   print('<input type=checkbox class="form-check-input" name=paroisses_rattachees id="paroisses_rattachees_recherches_communes" value=oui checked>');
 print('</label>');
 print('</div>');
 print('</div>');
