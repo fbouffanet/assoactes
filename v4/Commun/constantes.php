@@ -51,6 +51,7 @@ define('DROIT_VALIDATION_TD','TD');
 define('DROIT_STATS','STATS');
 define('DROIT_VALIDATION_PERMALIEN','PERMALIEN');
 define('DROIT_GENEABANK','GENEABANK');
+define('DROIT_CONSULT_NOT','LNOTCONSULT');
 
 
 $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
@@ -64,7 +65,8 @@ $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
                    DROIT_VALIDATION_TD => 'Validation des modifications de TD',
                    DROIT_STATS => 'Acces aux statistiques',
                    DROIT_VALIDATION_PERMALIEN => 'Validation des modifications de permalien',
-				   DROIT_GENEABANK => 'Gestion des points GeneaBank'
+				   DROIT_GENEABANK => 'Gestion des points GeneaBank',
+                   DROIT_CONSULT_NOT => 'Consultation des notaires'
                   );
 define('NB_LIGNES_PAR_PAGE',25);
 define('DELTA_NAVIGATION',5);
