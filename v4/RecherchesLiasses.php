@@ -274,11 +274,11 @@ print('<form id="recherche_liasses" method="post" class="form-inline" action="Re
 print('<div class="form-row col-md-12">');
 print('<div class="form-group col-md-6">'.
       '<label for="idf_serie_liasse" class="form-col-label">Série liasses&nbsp</label>'.
-	  '<select name="idf_serie_liasse" id="idf_serie_liasse" class="js-select-avec-recherche form-control">'.
+	  '<select name="idf_serie_liasse" id="idf_serie_liasse" class="form-control">'.
       chaine_select_options($gst_idf_serie_liasse,$a_serie_liasse).
       '</select></div>');
 print('<div class="form-group col-md-4"><label for="idf_dept">Département&nbsp</label>'.
-      '<select name="idf_dept" id="idf_dept" class="js-select-avec-recherche form-control">'.chaine_select_options($gi_idf_dept,$a_dept).'</select></div>');
+      '<select name="idf_dept" id="idf_dept" class="form-control">'.chaine_select_options($gi_idf_dept,$a_dept).'</select></div>');
 print('<br></div>');
 print('<div class="form-row col-md-12">&nbsp</div>');
 
@@ -304,7 +304,7 @@ print('<div class="form-row col-md-12">&nbsp</div>');
 
 // -------------Dates
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-4 col-md-offset-2 lib_erreur">');
+print('<div class="form-group col-md-3 col-md-offset-2 lib_erreur">');
 print('<label for="annee_min" class="col-form-label">Années de&nbsp</label>');
 print("<input type=text name=annee_min id=annee_min size=4 value=\"$gi_annee_min\" class=\"form-control\">");
 print('</div>');
