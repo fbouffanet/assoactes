@@ -272,7 +272,7 @@ print('<form id="recherche_liasses" method="post" class="form-inline" action="Re
 
 // --------série & département
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-5">'.
+print('<div class="form-group col-md-6">'.
       '<label for="idf_serie_liasse" class="form-col-label">Série liasses&nbsp</label>'.
 	  '<select name="idf_serie_liasse" id="idf_serie_liasse" class="form-control">'.
       chaine_select_options($gst_idf_serie_liasse,$a_serie_liasse).
@@ -284,7 +284,7 @@ print('<div class="form-row col-md-12">&nbsp</div>');
 
 // ---------Commune +++
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-5"><label for="idf_commune_recherche">Commune/Paroisse&nbsp</label>'.
+print('<div class="form-group col-md-6"><label for="idf_commune_recherche">Commune/Paroisse&nbsp</label>'.
             '<select name="idf_commune_recherche" id="idf_commune_recherche" class="js-select-avec-recherche form-control">'.
 			chaine_select_options($gi_idf_commune,$a_toutes_communes).'</select></div>');
 print('<div class="form-group col-md-4">'.
@@ -304,7 +304,7 @@ print('<div class="form-row col-md-12">&nbsp</div>');
 
 // -------------Dates
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-3 col-md-offset-1 lib_erreur">');
+print('<div class="form-group col-md-4 col-md-offset-2 lib_erreur">');
 print('<label for="annee_min" class="col-form-label">Années de&nbsp</label>');
 print("<input type=text name=annee_min id=annee_min size=4 value=\"$gi_annee_min\" class=\"form-control\">");
 print('</div>');
@@ -325,7 +325,7 @@ print('<div class="form-row col-md-12">&nbsp</div>');
 
 // -----------Notaire
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-3 col-md-offset-1">');
+print('<div class="form-group col-md-4 col-md-offset-2">');
 print('<label for="nom_notaire" class="col-form-label">Nom Notaire&nbsp</label>');
 print("<input type=text name=nom_notaire id=nom_notaire size=15 maxlength=30 value=\"$gst_nom_notaire\" class=\"form-control\">");
 print('</div>');
@@ -349,7 +349,7 @@ print('<div class="form-row col-md-12">&nbsp</div>');
 
 // ------------Cotes
 print('<div class="form-row col-md-12">');
-print('<div class="form-group col-md-3 col-md-offset-1 lib_erreur">');
+print('<div class="form-group col-md-4 col-md-offset-2 lib_erreur">');
 print('<label for="cote_debut" class="col-form-label">Première cote&nbsp</label>');
 print("<input type=text name=cote_debut id=cote_debut size=5 maxlength=5 value=\"$gst_cote_debut\" class=\"form-control\">");
 print('</div>');
@@ -363,7 +363,7 @@ print('<div class="form-row col-md-12">&nbsp</div>');
 
 // ------------Répertoires
 print('<div class="form-row col-md-12">');
-print('<div class="form-check col-md-3 col-md-offset-1">');
+print('<div class="form-check col-md-4 col-md-offset-2">');
 print('<label for="repertoire" class="form-check-label">Répertoires&nbsp</label>');
 if ($gst_repertoire=='non')
 	print('   <input type=checkbox name=repertoire id=repertoire value=oui unchecked class="form-control form-check-input">');
