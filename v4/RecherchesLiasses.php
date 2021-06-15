@@ -314,7 +314,7 @@ print('</div>');
 print('<div class="form-group col-md-4 lib_erreur">');
 print('<label for="annee_max" class="col-form-label">&agrave;&nbsp</label>');
 print("<input type=text name=annee_max id=annee_max size =4 value=\"$gi_annee_max\" class=\"form-control\">");
-print('</div>');
+print('</div></div>');
 print('<div class="form-row col-md-12">&nbsp</div>');
 
 // -----------Notaire
