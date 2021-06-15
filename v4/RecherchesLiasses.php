@@ -214,6 +214,7 @@ if ($gst_type_recherche=='nouvelle')
   $gst_paroisses_rattachees	= 'oui';
   $gst_nom_notaire			= '';
   $gst_prenom_notaire		= '';
+  $gst_variantes			= 'oui';
   $gst_idf_serie_liasse     = '2E';
   $gst_cote_debut			= '';
   $gst_cote_fin				= '';
@@ -233,6 +234,7 @@ else
   $gst_paroisses_rattachees	= isset($_SESSION['paroisses_rattachees_rls']) ? $_SESSION['paroisses_rattachees_rls']: 'oui';
   $gst_nom_notaire			= isset($_SESSION['nom_notaire_rls']) ? $_SESSION['nom_notaire_rls']: '';
   $gst_prenom_notaire		= isset($_SESSION['prenom_notaire_rls']) ? $_SESSION['prenom_notaire_rls']: '';
+  $gst_variantes			= isset($_SESSION['variantes_rls']) ? $_SESSION['variantes_rls']: '';
   $gst_idf_serie_liasse		= isset($_SESSION['idf_serie_liasse_rls']) ? $_SESSION['idf_serie_liasse_rls']: ''; 
   $gst_cote_debut			= isset($_SESSION['cote_debut_rls']) ? $_SESSION['cote_debut_rls']: '';
   $gst_cote_fin				= isset($_SESSION['cote_fin_rls']) ? $_SESSION['cote_fin_rls']: '';
@@ -250,6 +252,7 @@ unset($_SESSION['annee_min_rls']);
 unset($_SESSION['annee_max_rls']);
 unset($_SESSION['nom_notaire_rls']);
 unset($_SESSION['prenom_notaire_rls']);
+unset($_SESSION['variantes_rls'])
 unset($_SESSION['idf_serie_liasse_rls']);
 unset($_SESSION['cote_debut_rls']);
 unset($_SESSION['cote_fin_rls']);
@@ -312,15 +315,6 @@ print('<div class="form-group col-md-4 lib_erreur">');
 print('<label for="annee_max" class="col-form-label">&agrave;&nbsp</label>');
 print("<input type=text name=annee_max id=annee_max size =4 value=\"$gi_annee_max\" class=\"form-control\">");
 print('</div>');
-print('<div class="form-check ">');
-//print('<div class="checkbox lib_erreur">');
-print('<label for="sans_periode" class="form-check-label col-form-label">Liasses sans date&nbsp');
-if ($gst_sans_periode=='non')
-   print('   <input type=checkbox name=sans_periode id=sans_periode value=oui unchecked class="form-check-input">');
-else
-   print('   <input type=checkbox name=sans_periode id=sans_periode value=oui checked class="form-check-input">');
-print('</label></div></div>');
-//print('</div>');
 print('<div class="form-row col-md-12">&nbsp</div>');
 
 // -----------Notaire
@@ -335,16 +329,15 @@ print('<label for="prenom_notaire" class="col-form-label">Prénom Notaire&nbsp</
 print("<input type=text name=prenom_notaire id=prenom_notaire size=15 maxlength=30 value=\"$gst_prenom_notaire\" class=\"form-control\">");
 print('</div>');
 
-print('<div class="form-check ">');
-//print('<div class="checkbox lib_erreur">');
-print('<label for="sans_notaire" class="form-check-label col-form-label">Liasses sans notaire&nbsp');
-if ($gst_sans_notaire=='non')
-   print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui unchecked class="form-check-input">');
+print('<div class="form-check"><label for="variantes" class="form-check-label">Variantes connues&nbsp');
+if ($gst_variantes=='')
+   print('<input type=checkbox class="form-check-input" name=variantes id="variantes" value=oui>');
 else
-   print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui checked class="form-check-input">');
-print('</label></div></div>');
+   print('<input type=checkbox class="form-check-input" name=variantes id="variantes" value=oui checked>');
+print('</label>');
+print('</div>');
 
-//print('</div>');
+print('</div>');
 print('<div class="form-row col-md-12">&nbsp</div>');
 
 // ------------Cotes
@@ -358,6 +351,31 @@ print('<div class="form-group col-md-4 lib_erreur">');
 print('<label for="cote_fin" class="col-form-label">Dernière cote&nbsp</label>');
 print("<input type=text name=cote_fin id=cote_fin size=5 maxlength=5 value=\"$gst_cote_fin\" class=\"form-control\">");
 print('</div>');
+print('</div>');
+print('<div class="form-row col-md-12">&nbsp</div>');
+
+// ------------Sans ...
+print('<div class="form-row col-md-12">');
+
+print('<div class="form-check col-md-4 col-md-offset-2">');
+print('<div class="form-check ">');
+print('<label for="sans_periode" class="form-check-label col-form-label">Liasses sans date&nbsp');
+if ($gst_sans_periode=='non')
+   print('   <input type=checkbox name=sans_periode id=sans_periode value=oui unchecked class="form-check-input">');
+else
+   print('   <input type=checkbox name=sans_periode id=sans_periode value=oui checked class="form-check-input">');
+print('</label></div>');
+print('</div>');
+
+print('<div class="form-check col-md-4">');
+print('<div class="form-check ">');
+print('<label for="sans_notaire" class="form-check-label col-form-label">Liasses sans notaire&nbsp');
+if ($gst_sans_notaire=='non')
+   print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui unchecked class="form-check-input">');
+else
+   print('   <input type=checkbox name=sans_notaire id=sans_notaire value=oui checked class="form-check-input">');
+print('</label></div>');
+
 print('</div>');
 print('<div class="form-row col-md-12">&nbsp</div>');
 
@@ -382,6 +400,7 @@ print('</div>');
 print('</div>');
 print('<div class="form-row col-md-12">&nbsp</div>');
 
+// boutons
 print('<div class="btn-group col-md-4 col-md-offset-4" role="group">');
 print('<button type=submit name=Rechercher class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Rechercher</button>');
 print('<button type=button  id="raz" class="btn btn-warning raz"><span class="glyphicon glyphicon-erase"></span> Effacer tous les Champs</button>');
