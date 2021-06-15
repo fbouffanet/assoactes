@@ -65,6 +65,7 @@ $i_session_annee_min				= empty($_SESSION['annee_min_rls']) ? '' : $_SESSION['an
 $i_session_annee_max				= empty($_SESSION['annee_max_rls']) ? '' : $_SESSION['annee_max_rls'];
 $st_session_nom_notaire				= empty($_SESSION['nom_notaire_rls']) ? '' : $_SESSION['nom_notaire_rls'];
 $st_session_prenom_notaire			= empty($_SESSION['prenom_notaire_rls']) ? '' : $_SESSION['prenom_notaire_rls'];
+$st_session_variantes				= empty($_SESSION['variantes_rls']) ? '' : $_SESSION['variantes_rls'];
 $st_session_idf_serie_liasse		= empty($_SESSION['idf_serie_liasse_rls']) ? '' : $_SESSION['idf_serie_liasse_rls'];
 $st_session_cote_debut				= empty($_SESSION['cote_debut_rls']) ? '' : $_SESSION['cote_debut_rls'];
 $st_session_cote_fin				= empty($_SESSION['cote_fin_rls']) ? '' : $_SESSION['cote_fin_rls'];
@@ -81,6 +82,7 @@ $gi_annee_min						= empty($_POST['annee_min']) ? $i_session_annee_min: (int) tr
 $gi_annee_max						= empty($_POST['annee_max']) ? $i_session_annee_max: (int) trim($_POST['annee_max']);
 $gst_nom_notaire					= empty($_POST['nom_notaire']) ? $st_session_nom_notaire : trim($_POST['nom_notaire']);
 $gst_prenom_notaire					= empty($_POST['prenom_notaire']) ? $st_session_prenom_notaire : trim($_POST['prenom_notaire']);
+$gst_variantes						= empty($_POST['variantes']) ? $st_session_variantes : trim($_POST['variantes']);
 $gst_idf_serie_liasse				= empty($_POST['idf_serie_liasse']) ? $st_session_idf_serie_liasse : $_POST['idf_serie_liasse'];
 $gst_cote_debut						= empty($_POST['cote_debut']) ? $st_session_cote_debut : trim($_POST['cote_debut']);
 $gst_cote_fin						= empty($_POST['cote_fin']) ? $st_session_cote_fin : trim($_POST['cote_fin']);
@@ -103,6 +105,7 @@ $_SESSION['annee_max_rls']					= $gi_annee_max;
 
 $_SESSION['nom_notaire_rls']				= $gst_nom_notaire;
 $_SESSION['prenom_notaire_rls']				= $gst_prenom_notaire;
+$_SESSION['variantes_rls']					= $gst_variantes;
 $_SESSION['idf_serie_liasse_rls']			= $gst_idf_serie_liasse;
 $_SESSION['cote_debut_rls']					= $gst_cote_debut;
 $_SESSION['cote_fin_rls']					= $gst_cote_fin;
@@ -184,11 +187,11 @@ if ($gst_liasse_releve=='oui')
 $gst_nom_notaire  = str_replace('*','%', $gst_nom_notaire); 
 if ($gst_nom_notaire!='' && $gst_nom_notaire!='*') {
 	$gst_nom_notaire = strtoupper($gst_nom_notaire);
-	$a_clauses[]="n.nom_notaire ".$requeteRecherche->clause_droite_patronyme($gst_nom_notaire, '',1);
+	$a_clauses[]="n.nom_notaire ".$requeteRecherche->clause_droite_patronyme($gst_nom_notaire, $gst_variantes, 1);
 	if ($gst_prenom_notaire!='')
   {
      $gst_prenom_notaire  = str_replace('*','%', $gst_prenom_notaire); 
-       $a_clauses[]="n.prenom_notaire ".$requeteRecherche->clause_droite_prenom($gst_prenom_notaire,'',1);
+       $a_clauses[]="n.prenom_notaire ".$requeteRecherche->clause_droite_prenom($gst_prenom_notaire, $gst_variantes, 1);
        $connexionBD->ajoute_params(array(":prenom1"=>$gst_prenom_notaire));
   }
 }
