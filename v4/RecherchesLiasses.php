@@ -252,7 +252,7 @@ unset($_SESSION['annee_min_rls']);
 unset($_SESSION['annee_max_rls']);
 unset($_SESSION['nom_notaire_rls']);
 unset($_SESSION['prenom_notaire_rls']);
-unset($_SESSION['variantes_rls'])
+unset($_SESSION['variantes_rls']);
 unset($_SESSION['idf_serie_liasse_rls']);
 unset($_SESSION['cote_debut_rls']);
 unset($_SESSION['cote_fin_rls']);
