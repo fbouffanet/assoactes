@@ -175,6 +175,8 @@ $("#recherche_liasses").validate({
 	}
 });
 
+$("#idf_commune_recherche").select2({allowClear: true,placeholder: "Toutes"});
+
 $("#raz").click(function() {
     $('#idf_serie_liasse').prop('selectedIndex',0);
 	$('#idf_dept').prop('selectedIndex',0);
@@ -193,7 +195,6 @@ $("#raz").click(function() {
     $('#liasse_releve').prop('checked', false);	
 	});
 	
-	$("#idf_commune_recherche").select2({allowClear: true,placeholder: "Toutes"});
 
 });
 </script>
