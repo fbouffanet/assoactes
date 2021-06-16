@@ -34,6 +34,7 @@ $.fn.select2.defaults.set( "theme", "bootstrap" );
 	
 $(".js-select-avec-recherche").select2();
 
+
 $.validator.addMethod('plusGrand', function(value, element, param) {
         if (this.optional(element)) return true;
         var annee_max = $(param).val();
@@ -191,6 +192,9 @@ $("#raz").click(function() {
     $('#repertoire').prop('checked', false);
     $('#liasse_releve').prop('checked', false);	
 	});
+	
+	$("#idf_commune_recherche").select2({allowClear: true,placeholder: "Toutes"});
+
 });
 </script>
 <?php
