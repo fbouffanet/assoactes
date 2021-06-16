@@ -8,7 +8,8 @@ require_once('../Commun/ConnexionBD.php');
 require_once('../RequeteRecherche.php');
 require_once('../Commun/PaginationTableau.php');
 require_once('../Commun/Benchmark.inc');
-require_once('../Commun/VerificationDroits.php');
+require_once("../Commun/VerificationDroits.php");
+verifie_privilege(DROIT_NOTAIRES);
 
 print('<!DOCTYPE html>');
 print("<Head>\n");
