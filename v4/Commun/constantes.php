@@ -51,7 +51,7 @@ define('DROIT_VALIDATION_TD','TD');
 define('DROIT_STATS','STATS');
 define('DROIT_VALIDATION_PERMALIEN','PERMALIEN');
 define('DROIT_GENEABANK','GENEABANK');
-define('DROIT_CONSULT_NOT','LNOTCONSULT');
+define('DROIT_CONSULT_NOT','LNOTCONSUL');
 
 
 $ga_droits=  array(DROIT_CHARGEMENT => 'Chargement/Export',
