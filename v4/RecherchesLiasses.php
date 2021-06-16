@@ -193,7 +193,6 @@ $("#raz").click(function() {
     $('#liasse_releve').prop('checked', false);	
 	});
 	
-	$("#idf_dept").select2({allowClear: true,placeholder: "Tous"});
 	$("#idf_commune_recherche").select2({allowClear: true,placeholder: "Toutes"});
 
 });
