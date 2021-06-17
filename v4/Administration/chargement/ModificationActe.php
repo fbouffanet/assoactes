@@ -647,7 +647,7 @@ public function infos_demandeur()
          {
         $st_chaine = "<fieldset>\n";
          $st_chaine .= "<legend>demandeur</legend>\n";
-         $st_chaine .= sprintf("<div class=\"text-center\">%s %s (%s)</div>", $this -> st_nom_demandeur, $this -> st_prenom_demandeur, $this -> st_email_demandeur);
+         $st_chaine .= sprintf("<div class=\"text-center\">%s %s (%s)</div>", cp1252_vers_utf8($this -> st_nom_demandeur), cp1252_vers_utf8($this -> st_prenom_demandeur), $this -> st_email_demandeur);
          $st_chaine .= "</fieldset>\n";
          } 
     return $st_chaine;
